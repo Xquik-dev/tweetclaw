@@ -40,7 +40,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 Two options:
 
 - **Credits (Stripe)**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 120 endpoints.
-- **MPP (USDC)**: 8 read-only X-API endpoints accept anonymous payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
+- **MPP (USDC)**: 9 read-only X-API endpoints accept anonymous payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
 
 ### Free Operations
 
@@ -66,7 +66,7 @@ Get a key at [dashboard.xquik.com](https://dashboard.xquik.com/).
 
 Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 120 endpoints available. 1 credit = $0.00015.
 
-### Option C: MPP pay-per-use (no account needed, 8 read-only endpoints)
+### Option C: MPP pay-per-use (no account needed, 9 read-only endpoints)
 
 ```bash
 npm i mppx viem
