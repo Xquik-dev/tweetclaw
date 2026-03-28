@@ -206,11 +206,12 @@ async () => {
     body: { toolType: 'follower_explorer', targetUsername: 'elonmusk', resultsLimit: 1000 }
   });
   return job;
-  // 20 tool types: reply_extractor, repost_extractor, quote_extractor, thread_extractor,
+  // 23 tool types: reply_extractor, repost_extractor, quote_extractor, thread_extractor,
   // article_extractor, follower_explorer, following_explorer, verified_follower_explorer,
   // mention_extractor, post_extractor, community_extractor, community_moderator_explorer,
   // community_post_extractor, community_search, list_member_extractor, list_post_extractor,
-  // list_follower_explorer, space_explorer, people_search, tweet_search_extractor
+  // list_follower_explorer, space_explorer, people_search, tweet_search_extractor,
+  // favoriters, user_likes, user_media
 }
 \`\`\`
 

@@ -14,7 +14,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 |---|---|---|---|
 | **Monthly cost** | **$20** | $100 | $5,000 |
 | **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Cost per user lookup** | **$0.00015** | ~$0.01 | ~$0.005 |
+| **Cost per user lookup** | **$0.0003** | ~$0.01 | ~$0.005 |
 | **Write actions** | **$0.0003** | Limited | Limited |
 | **Bulk extraction** | **$0.00015/result** | Not available | Not available |
 | **Monitoring + webhooks** | **Free** | Not available | Not available |
@@ -24,7 +24,9 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 | Operation | Credits | Cost |
 |-----------|---------|------|
-| Read (tweet, user, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
+| Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
+| Read (user profile) | 2 | $0.0003 |
+| Read (trends) | 3 | $0.00045 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
 | Extraction / draw | 1/result | $0.00015/result |
@@ -34,7 +36,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 Two options:
 
-- **Credits (Stripe)**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 99 endpoints.
+- **Credits (Stripe)**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 120 endpoints.
 - **MPP (USDC)**: 8 read-only X-API endpoints accept anonymous payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
 
 ### Free Operations
@@ -49,7 +51,7 @@ openclaw plugins install @xquik/tweetclaw
 
 ## Configure
 
-### Option A: API key (full access, 99 endpoints)
+### Option A: API key (full access, 120 endpoints)
 
 ```bash
 openclaw config set plugins.entries.tweetclaw.config.apiKey 'xq_YOUR_KEY'
@@ -59,7 +61,7 @@ Get a key at [dashboard.xquik.com](https://dashboard.xquik.com/).
 
 ### Option B: Credits (pay-per-use via Stripe, no subscription)
 
-Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 99 endpoints available. 1 credit = $0.00015.
+Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 120 endpoints available. 1 credit = $0.00015.
 
 ### Option C: MPP pay-per-use (no account needed, 8 read-only endpoints)
 
@@ -70,7 +72,7 @@ openclaw config set plugins.entries.tweetclaw.config.tempoPrivateKey '0xYOUR_TEM
 
 MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. Get a Tempo wallet at [tempo.xyz](https://tempo.xyz).
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00015).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045).
 
 ### Optional settings
 
@@ -138,7 +140,7 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 
 ## API Coverage
 
-99 endpoints across 12 categories:
+120 endpoints across 12 categories:
 
 | Category | Examples | Cost |
 |----------|---------|------|
@@ -146,7 +148,7 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 | **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
 | **Twitter** | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, check follows, articles, bookmarks, notifications, timeline, DM history | 1-7 credits |
 | **Composition** | Compose, refine, score tweets; manage drafts; analyze writing styles | Free |
-| **Extraction** | Run extraction jobs (20 tool types: replies, followers, communities, etc.) | 1 credit/result |
+| **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1 credit/result |
 | **Draws** | Run giveaway draws on tweets, export results | 1 credit/entry |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
 | **Automations** | Create flows, add steps, test runs, inbound webhooks | Free |

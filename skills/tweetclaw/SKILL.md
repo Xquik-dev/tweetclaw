@@ -1,6 +1,6 @@
 ---
 name: tweetclaw
-description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts, automate flows via Xquik. 99 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends), background event poller. Reads from $0.00015/call - 66x cheaper than the official X API."
+description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts, automate flows via Xquik. 120 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends), background event poller. Reads from $0.00015/call - 66x cheaper than the official X API."
 homepage: https://xquik.com
 read_when:
   - Posting, replying, liking, retweeting, or following on X/Twitter
@@ -32,7 +32,9 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 | Operation | Credits | Cost |
 |-----------|---------|------|
-| Read (tweet, user, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
+| Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
+| Read (user profile) | 2 | $0.0003 |
+| Read (trends) | 3 | $0.00045 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
 | Extraction / draw | 1/result | $0.00015/result |
@@ -44,16 +46,16 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 |---|---|---|---|
 | **Monthly cost** | **$20** | $100 | $5,000 |
 | **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Cost per user lookup** | **$0.00015** | ~$0.01 | ~$0.005 |
+| **Cost per user lookup** | **$0.0003** | ~$0.01 | ~$0.005 |
 | **Write actions** | **$0.0003** | Limited | Limited |
 | **Bulk extraction** | **$0.00015/result** | Not available | Not available |
 
 ### Pay-Per-Use (No Subscription)
 
-- **Credits (Stripe)**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 99 endpoints.
+- **Credits (Stripe)**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 120 endpoints.
 - **MPP (USDC)**: 8 read-only endpoints accept anonymous Tempo payments. No account needed. SDK: `npm i mppx`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00015).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045).
 
 ## When to Use
 
@@ -104,7 +106,7 @@ MPP gives agents access to 8 read-only X-API endpoints without any account or su
 
 ## Tools
 
-TweetClaw registers 2 tools that cover the entire Xquik API (99 endpoints):
+TweetClaw registers 2 tools that cover the entire Xquik API (120 endpoints):
 
 ### `explore` (free, no network)
 
@@ -307,7 +309,7 @@ Agent uses tweetclaw -> creates ticket with subject and description
 | Twitter | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, bookmarks, notifications, timeline, DM history | 1-7 credits |
 | Composition | Compose, refine, score tweets; manage drafts | Free |
 | Styles | Analyze tweet styles, compare, performance | Mixed |
-| Extraction | Reply/follower/community extraction (20 tools) | 1 credit/result |
+| Extraction | Reply/follower/community extraction (23 tools) | 1 credit/result |
 | Draws | Giveaway draws, export results | 1 credit/entry |
 | Monitoring | Create monitors, view events, webhooks | Free |
 | Automations | Create flows, add steps, test runs, inbound webhooks | Free |
