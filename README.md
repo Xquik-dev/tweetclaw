@@ -26,10 +26,13 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 |-----------|---------|------|
 | Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
 | Read (user profile) | 2 | $0.0003 |
-| Read (trends) | 3 | $0.00045 |
+| Read (trends) | 1 | $0.00015 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
-| Extraction / draw | 1/result | $0.00015/result |
+| Extraction (tweets, replies, quotes, mentions, posts, likes, media, search) | 1/result | $0.00015/result |
+| Extraction (followers, following, verified followers, favoriters, retweeters, community members, people search, list members, list followers) | 2/result | $0.0003/result |
+| Extraction (articles) | 7/result | $0.00105/result |
+| Draw | 1/entry | $0.00015/entry |
 | Monitors, webhooks, radar, compose, drafts, integrations | 0 | **Free** |
 
 ### Pay-Per-Use (No Subscription)
@@ -72,7 +75,7 @@ openclaw config set plugins.entries.tweetclaw.config.tempoPrivateKey '0xYOUR_TEM
 
 MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. Get a Tempo wallet at [tempo.xyz](https://tempo.xyz).
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00015).
 
 ### Optional settings
 
@@ -148,7 +151,7 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 | **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
 | **Twitter** | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, check follows, articles, bookmarks, notifications, timeline, DM history | 1-7 credits |
 | **Composition** | Compose, refine, score tweets; manage drafts; analyze writing styles | Free |
-| **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1 credit/result |
+| **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1-7 credits/result |
 | **Draws** | Run giveaway draws on tweets, export results | 1 credit/entry |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
 | **Automations** | Create flows, add steps, test runs, inbound webhooks | Free |

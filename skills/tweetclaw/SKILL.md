@@ -34,10 +34,13 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 |-----------|---------|------|
 | Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
 | Read (user profile) | 2 | $0.0003 |
-| Read (trends) | 3 | $0.00045 |
+| Read (trends) | 1 | $0.00015 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
-| Extraction / draw | 1/result | $0.00015/result |
+| Extraction (tweets, replies, quotes, mentions, posts, likes, media, search) | 1/result | $0.00015/result |
+| Extraction (followers, following, verified followers, favoriters, retweeters, community members, people search, list members, list followers) | 2/result | $0.0003/result |
+| Extraction (articles) | 7/result | $0.00105/result |
+| Draw | 1/entry | $0.00015/entry |
 | Monitors, webhooks, radar, compose, drafts, integrations | 0 | **Free** |
 
 ### vs Official X API
@@ -55,7 +58,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 - **Credits (Stripe)**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 120 endpoints.
 - **MPP (USDC)**: 8 read-only endpoints accept anonymous Tempo payments. No account needed. SDK: `npm i mppx`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00015).
 
 ## When to Use
 
@@ -309,7 +312,7 @@ Agent uses tweetclaw -> creates ticket with subject and description
 | Twitter | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, bookmarks, notifications, timeline, DM history | 1-7 credits |
 | Composition | Compose, refine, score tweets; manage drafts | Free |
 | Styles | Analyze tweet styles, compare, performance | Mixed |
-| Extraction | Reply/follower/community extraction (23 tools) | 1 credit/result |
+| Extraction | Reply/follower/community extraction (23 tools) | 1-7 credits/result |
 | Draws | Giveaway draws, export results | 1 credit/entry |
 | Monitoring | Create monitors, view events, webhooks | Free |
 | Automations | Create flows, add steps, test runs, inbound webhooks | Free |
