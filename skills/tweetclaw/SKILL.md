@@ -58,7 +58,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 - **Credits (Stripe)**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 120 endpoints.
 - **MPP (USDC)**: 16 read-only endpoints accept anonymous Tempo payments. No account needed. SDK: `npm i mppx`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
 
 ## When to Use
 
