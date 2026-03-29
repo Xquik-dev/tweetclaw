@@ -18,7 +18,15 @@
   "openclaw": {
     "extensions": [
       "./src/index.ts"
-    ]
+    ],
+    "compat": {
+      "pluginApi": ">=2026.3.28",
+      "minGatewayVersion": "2026.3.28"
+    },
+    "build": {
+      "openclawVersion": "2026.3.28",
+      "pluginSdkVersion": "2026.3.28"
+    }
   },
   "files": [
     "src/",
