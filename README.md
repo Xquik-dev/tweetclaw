@@ -6,7 +6,7 @@
 
 Post tweets, reply, like, retweet, follow, DM & more - directly from your chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
 
-Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Reads from $0.00015/call - 66x cheaper than the official X API.**
+Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Reads from $0.00015/call - 33x cheaper than the official X API.**
 
 ## Pricing
 
@@ -44,7 +44,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 Two options:
 
 - **Credits (Stripe)**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 120 endpoints.
-- **MPP (USDC)**: 9 read-only X-API endpoints accept anonymous payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
+- **MPP (USDC)**: 16 read-only X-API endpoints accept anonymous payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
 
 ### Free Operations
 
@@ -70,16 +70,16 @@ Get a key at [dashboard.xquik.com](https://dashboard.xquik.com/).
 
 Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 120 endpoints available. 1 credit = $0.00015.
 
-### Option C: MPP pay-per-use (no account needed, 9 read-only endpoints)
+### Option C: MPP pay-per-use (no account needed, 16 read-only endpoints)
 
 ```bash
 npm i mppx viem
 openclaw config set plugins.entries.tweetclaw.config.tempoPrivateKey '0xYOUR_TEMPO_KEY'
 ```
 
-MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. Get a Tempo wallet at [tempo.xyz](https://tempo.xyz).
+MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. 16 read-only endpoints. Get a Tempo wallet at [tempo.xyz](https://tempo.xyz).
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
 
 ### Optional settings
 

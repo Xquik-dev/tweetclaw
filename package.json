@@ -41,7 +41,14 @@
     "data-extraction",
     "giveaway",
     "monitoring",
-    "tweet"
+    "tweet",
+    "twitter-scraper",
+    "twitter-bot",
+    "x-twitter",
+    "tweet-api",
+    "twitter-automation",
+    "openclaw",
+    "mcp-server"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
