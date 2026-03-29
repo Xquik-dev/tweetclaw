@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw - full X/Twitter automation via Xquik. 120 endpoints, reads from $0.00015/call.",
   "license": "MIT",
   "type": "module",
@@ -67,8 +67,12 @@
     "viem": ">=2.0.0"
   },
   "peerDependenciesMeta": {
-    "mppx": { "optional": true },
-    "viem": { "optional": true }
+    "mppx": {
+      "optional": true
+    },
+    "viem": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
