@@ -31,7 +31,17 @@
     "x",
     "automation",
     "tweetclaw",
-    "xquik"
+    "xquik",
+    "twitter-api",
+    "x-api",
+    "social-media",
+    "scraper",
+    "mcp",
+    "ai-agent",
+    "data-extraction",
+    "giveaway",
+    "monitoring",
+    "tweet"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",

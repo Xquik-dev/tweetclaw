@@ -1,5 +1,9 @@
 # TweetClaw
 
+[![npm](https://img.shields.io/npm/v/@xquik/tweetclaw)](https://www.npmjs.com/package/@xquik/tweetclaw)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw)
+
 Post tweets, reply, like, retweet, follow, DM & more - directly from your chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
 
 Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Reads from $0.00015/call - 66x cheaper than the official X API.**
@@ -25,8 +29,8 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Operation | Credits | Cost |
 |-----------|---------|------|
 | Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
-| Read (user profile) | 2 | $0.0003 |
-| Read (trends) | 1 | $0.00015 |
+| Read (user profile, favoriters, followers you know, verified followers) | 2 | $0.0003 |
+| Read (trends) | 3 | $0.00045 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search) | 1/result | $0.00015/result |
@@ -75,7 +79,7 @@ openclaw config set plugins.entries.tweetclaw.config.tempoPrivateKey '0xYOUR_TEM
 
 MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. Get a Tempo wallet at [tempo.xyz](https://tempo.xyz).
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00015).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045).
 
 ### Optional settings
 
@@ -157,8 +161,16 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 | **Automations** | Create flows, add steps, test runs, inbound webhooks | Free |
 | **Account** | Manage API keys, subscription, connected X accounts | Free |
 | **Credits** | Check balance, top up credits | Free |
-| **Trends** | X trending topics, curated radar from 7 sources | 1 credit / Free |
+| **Trends** | X trending topics, curated radar from 7 sources | 3 credits / Free |
 | **Support** | Create tickets, reply, track status | Free |
+
+## Links
+
+- [Xquik Platform](https://xquik.com)
+- [API Documentation](https://docs.xquik.com)
+- [Billing & Pricing](https://docs.xquik.com/guides/billing)
+- [npm Package](https://www.npmjs.com/package/@xquik/tweetclaw)
+- [OpenClaw](https://github.com/openclaw/openclaw)
 
 ## License
 

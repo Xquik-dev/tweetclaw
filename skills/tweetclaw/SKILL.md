@@ -34,7 +34,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 |-----------|---------|------|
 | Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
 | Read (user profile) | 2 | $0.0003 |
-| Read (trends) | 1 | $0.00015 |
+| Read (trends) | 3 | $0.00045 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search) | 1/result | $0.00015/result |
@@ -58,7 +58,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 - **Credits (Stripe)**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 120 endpoints.
 - **MPP (USDC)**: 9 read-only endpoints accept anonymous Tempo payments. No account needed. SDK: `npm i mppx`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00015).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045).
 
 ## When to Use
 
@@ -318,7 +318,7 @@ Agent uses tweetclaw -> creates ticket with subject and description
 | Automations | Create flows, add steps, test runs, inbound webhooks | Free |
 | Account | API keys, subscription, connected X accounts | Free |
 | Credits | Check balance, top up | Free |
-| Trends | X trending topics, curated radar from 7 sources | 1 credit / Free |
+| Trends | X trending topics, curated radar from 7 sources | 3 credits / Free |
 | Support | Create tickets, reply, track status | Free |
 
 ## Tips
