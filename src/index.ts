@@ -18,7 +18,7 @@ function isPollerEvent(value: unknown): value is PollerEvent {
 
 function isPluginConfig(value: unknown): value is PluginConfig {
   if (typeof value !== 'object' || value === null) return false;
-  return 'apiKey' in value || 'tempoPrivateKey' in value;
+  return 'apiKey' in value || 'tempoSigningKey' in value;
 }
 
 const DEFAULT_POLLING_INTERVAL_SECONDS = 60;
@@ -76,25 +76,25 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
   const config: unknown = api.pluginConfig;
   if (!isPluginConfig(config)) {
     api.logger.warn(
-      "TweetClaw: No API key or Tempo wallet configured. Run: openclaw config set plugins.entries.tweetclaw.config.apiKey 'xq_YOUR_KEY' or set tempoPrivateKey for MPP pay-per-use",
+      "TweetClaw: No API key or Tempo signing key configured. Run: openclaw config set plugins.entries.tweetclaw.config.apiKey 'xq_YOUR_KEY' or set tempoSigningKey for MPP pay-per-use",
     );
     return;
   }
 
-  const { apiKey, baseUrl = 'https://xquik.com', tempoPrivateKey } = config;
-  const isMppMode = apiKey === undefined && tempoPrivateKey !== undefined;
+  const { apiKey, baseUrl = 'https://xquik.com', tempoSigningKey } = config;
+  const isMppMode = apiKey === undefined && tempoSigningKey !== undefined;
   const credential = apiKey ?? '';
 
   if (isMppMode) {
     void (async (): Promise<void> => {
       try {
-        await initMpp(tempoPrivateKey);
-        api.logger.info('TweetClaw: MPP initialized - Tempo wallet ready');
+        await initMpp(tempoSigningKey);
+        api.logger.info('TweetClaw: MPP initialized - Tempo account ready');
       } catch (error: unknown) {
         api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
       }
     })();
-    api.logger.info('TweetClaw: MPP mode - pay-per-use via Tempo (16 X-API endpoints, no subscription needed)');
+    api.logger.info('TweetClaw: MPP mode - pay-per-use via Tempo account (16 X-API endpoints, no subscription needed)');
   }
 
   const request = createProxiedRequest(baseUrl, credential, fetchFunction);

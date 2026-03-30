@@ -70,7 +70,7 @@ describe('register', () => {
     const { api, tools, warnings } = createMockApi();
     register(api);
     expect(warnings).toHaveLength(1);
-    expect(warnings[0]).toContain('No API key or Tempo wallet');
+    expect(warnings[0]).toContain('No API key or Tempo signing key');
     expect(tools).toHaveLength(0);
   });
 
@@ -121,12 +121,12 @@ describe('register', () => {
     expect(services).toHaveLength(1);
   });
 
-  it('warns when apiKey and tempoPrivateKey are both missing from config object', () => {
+  it('warns when apiKey and tempoSigningKey are both missing from config object', () => {
     expect.assertions(2);
     const { api, warnings } = createMockApi({});
     register(api);
     expect(warnings).toHaveLength(1);
-    expect(warnings[0]).toContain('No API key or Tempo wallet');
+    expect(warnings[0]).toContain('No API key or Tempo signing key');
   });
 
   it('poller service can start and stop', () => {
@@ -181,10 +181,10 @@ describe('register', () => {
     expect(result?.text).toContain('AI Agents');
   });
 
-  it('registers tools in MPP mode with tempoPrivateKey and no apiKey', () => {
+  it('registers tools in MPP mode with signing key and no apiKey', () => {
     expect.assertions(4);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('skip'));
-    const { api, tools, infos, services } = createMockApi({ tempoPrivateKey: '0xabc123' });
+    const { api, tools, infos, services } = createMockApi({ tempoSigningKey: '0xabc123' });
     register(api);
     vi.restoreAllMocks();
     expect(tools).toHaveLength(2);
@@ -196,7 +196,7 @@ describe('register', () => {
   it('registers only xtrends command in MPP mode (no xstatus)', () => {
     expect.assertions(2);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('skip'));
-    const { api, commands } = createMockApi({ tempoPrivateKey: '0xabc123' });
+    const { api, commands } = createMockApi({ tempoSigningKey: '0xabc123' });
     register(api);
     vi.restoreAllMocks();
     expect(commands).toHaveLength(1);
@@ -207,7 +207,7 @@ describe('register', () => {
     expect.assertions(1);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('MPP requires mppx'));
     const errors: string[] = [];
-    const { api } = createMockApi({ tempoPrivateKey: '0xabc123' });
+    const { api } = createMockApi({ tempoSigningKey: '0xabc123' });
     const apiWithErrors = {
       ...api,
       logger: { ...api.logger, error: (m: string) => { errors.push(m); } },
@@ -222,7 +222,7 @@ describe('register', () => {
     expect.assertions(1);
     vi.spyOn(mpp, 'initMpp').mockResolvedValue();
     const infos: string[] = [];
-    const { api } = createMockApi({ tempoPrivateKey: '0xabc123' });
+    const { api } = createMockApi({ tempoSigningKey: '0xabc123' });
     const apiWithInfos = {
       ...api,
       logger: { ...api.logger, info: (m: string) => { infos.push(m); } },
@@ -237,7 +237,7 @@ describe('register', () => {
     expect.assertions(1);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue('string error');
     const errors: string[] = [];
-    const { api } = createMockApi({ tempoPrivateKey: '0xabc123' });
+    const { api } = createMockApi({ tempoSigningKey: '0xabc123' });
     const apiWithErrors = {
       ...api,
       logger: { ...api.logger, error: (m: string) => { errors.push(m); } },

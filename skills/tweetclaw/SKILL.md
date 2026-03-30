@@ -102,10 +102,10 @@ Get a key at [dashboard.xquik.com](https://dashboard.xquik.com/).
 
 ```bash
 npm i mppx viem
-openclaw config set plugins.entries.tweetclaw.config.tempoPrivateKey '0xYOUR_KEY'
+openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey '0xYOUR_SIGNING_KEY'
 ```
 
-MPP gives agents access to 16 read-only X-API endpoints without any account or subscription. The mppx SDK handles HTTP 402 payment challenges automatically.
+MPP gives agents access to 16 read-only X-API endpoints without any account or subscription. The mppx SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
 
 ## Tools
 

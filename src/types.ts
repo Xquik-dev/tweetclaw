@@ -37,7 +37,7 @@ interface PluginConfig {
   readonly baseUrl?: string;
   readonly pollingEnabled?: boolean;
   readonly pollingInterval?: number;
-  readonly tempoPrivateKey?: string;
+  readonly tempoSigningKey?: string;
 }
 
 interface EventPollerOptions {

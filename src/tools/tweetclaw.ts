@@ -302,7 +302,7 @@ async () => {
 - Subscription required: /api/v1/styles (X API refresh when cache >7 days), /api/v1/x/profile, /api/v1/x/communities, /api/v1/x/dm, /api/v1/extractions, /api/v1/draws, /api/v1/monitors, /api/v1/events, /api/v1/webhooks, /api/v1/styles/:username/performance, /api/v1/trending/:source
 - Write actions (subscription required): POST /api/v1/x/tweets, DELETE /api/v1/x/tweets/:id, POST|DELETE /api/v1/x/tweets/:id/like, POST /api/v1/x/tweets/:id/retweet, POST|DELETE /api/v1/x/users/:id/follow, POST /api/v1/x/dm/:userId, POST /api/v1/x/media, PATCH /api/v1/x/profile, PATCH /api/v1/x/profile/avatar, PATCH /api/v1/x/profile/banner, POST|DELETE /api/v1/x/communities, POST|DELETE /api/v1/x/communities/:id/join
 - IMPORTANT: Always attempt the request. Never assume subscription status. The API returns a clear error if subscription is missing.
-- MPP MODE: When configured with tempoPrivateKey (no API key), the mppx SDK auto-handles 402 challenges by paying via Tempo (USDC). Only the 16 MPP-eligible endpoints work in this mode.
+- MPP MODE: When configured with a Tempo signing key (no API key), the mppx SDK auto-handles 402 challenges by paying via Tempo (USDC). Only the 16 MPP-eligible endpoints work in this mode.
 
 ## Error handling
 - If response contains "subscription is inactive" or status 402, call POST /api/v1/subscribe to get checkout URL

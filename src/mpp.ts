@@ -22,7 +22,7 @@ function createModuleLoader(): ModuleLoader {
   };
 }
 
-async function initMpp(tempoPrivateKey: string, loadModule?: ModuleLoader): Promise<void> {
+async function initMpp(tempoSigningKey: string, loadModule?: ModuleLoader): Promise<void> {
   const load = loadModule ?? createModuleLoader();
   const mppxMod = await load('mppx/client').catch((): never => {
     throw new Error('MPP requires mppx package. Run: npm i mppx viem');
@@ -35,7 +35,7 @@ async function initMpp(tempoPrivateKey: string, loadModule?: ModuleLoader): Prom
   if (!isRecord(mppxMod.Mppx)) throw new Error('mppx missing Mppx');
   const createMethod: unknown = mppxMod.Mppx.create;
   if (!isCallable(createMethod)) throw new Error('mppx Mppx.create is not a function');
-  const account: unknown = viemMod.privateKeyToAccount(tempoPrivateKey);
+  const account: unknown = viemMod.privateKeyToAccount(tempoSigningKey);
   const method: unknown = mppxMod.tempo({ account });
   createMethod({ methods: [method] });
 }
