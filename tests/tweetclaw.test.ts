@@ -101,7 +101,7 @@ describe('handleTweetclaw', () => {
     expect(result.content[0]?.text).toContain('--- TRUNCATED ---');
   });
 
-  it('provides spec.endpoints in sandbox context', async () => {
+  it('provides spec.endpoints in execution context', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
@@ -121,7 +121,7 @@ describe('handleTweetclaw', () => {
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => new Promise(resolve => setTimeout(resolve, 5000))`,
+      code: `async () => new Promise(() => {})`,
       fetchFunction: createMockFetch({}),
       timeoutMs: 10,
     });

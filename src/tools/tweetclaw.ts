@@ -1,5 +1,5 @@
 import { createProxiedRequest } from '../request.js';
-import { AsyncFunction, errorResult, specEndpoints, successResult } from './sandbox.js';
+import { errorResult, runInSandbox, specEndpoints, successResult } from './executor.js';
 import type { FetchFunction, RequestFunction, ToolResult } from '../types.js';
 
 const EXECUTE_DESCRIPTION = `Execute X (Twitter) API calls: post tweets, reply, like, retweet, follow, DM, update profile, upload media, search tweets, look up users, extract data, run giveaways, monitor accounts, compose tweets, and more. Write an async arrow function.
@@ -325,10 +325,9 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
   const { apiKey, baseUrl, code, fetchFunction, timeoutMs = EXECUTION_TIMEOUT_MS } = options;
   try {
     const request: RequestFunction = createProxiedRequest(baseUrl, apiKey, fetchFunction);
-    const executor = new AsyncFunction('xquik', 'spec', `return (${code})()`);
 
     const result: unknown = await Promise.race([
-      executor({ request }, { endpoints: specEndpoints }),
+      runInSandbox(code, { xquik: { request }, spec: { endpoints: specEndpoints } }),
       new Promise<never>((_resolve, reject) => {
         setTimeout(() => {
           reject(new Error(`Execution timed out after ${String(timeoutMs / MS_PER_SECOND)}s`));

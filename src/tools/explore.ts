@@ -1,5 +1,5 @@
 import { API_SPEC } from '../api-spec.js';
-import { AsyncFunction, errorResult, specEndpoints, successResult } from './sandbox.js';
+import { errorResult, runInSandbox, specEndpoints, successResult } from './executor.js';
 import type { EndpointInfo, ToolResult } from '../types.js';
 
 const categories = [...new Set(API_SPEC.map((endpoint) => endpoint.category))].toSorted((a, b) => a.localeCompare(b)).join(', ');
@@ -47,8 +47,7 @@ async () => {
 
 async function handleExplore(code: string): Promise<ToolResult> {
   try {
-    const executor = new AsyncFunction('spec', `return (${code})()`);
-    const result: unknown = await executor({ endpoints: specEndpoints });
+    const result: unknown = await runInSandbox(code, { spec: { endpoints: specEndpoints } });
     return successResult(result);
   } catch (error: unknown) {
     return errorResult(error);

@@ -1,13 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import {
-  AsyncFunction,
+  createSafeProxy,
   errorResult,
   extractErrorMessage,
   getConstructorFromPrototype,
   resolveAsyncFunctionConstructor,
+  runInSandbox,
   specEndpoints,
   successResult,
-} from '../src/tools/sandbox.js';
+} from '../src/tools/executor.js';
 
 describe('getConstructorFromPrototype', () => {
   it('returns constructor from valid prototype', () => {
@@ -52,17 +53,91 @@ describe('resolveAsyncFunctionConstructor', () => {
   });
 });
 
-describe('AsyncFunction', () => {
-  it('is a function constructor', () => {
+describe('runInSandbox', () => {
+  it('executes async code with injected globals', async () => {
     expect.assertions(1);
-    expect(typeof AsyncFunction).toBe('function');
+    const result: unknown = await runInSandbox('async () => { return myVariable; }', { myVariable: 42 });
+    expect(result).toBe(42);
   });
 
-  it('creates async functions that can be called', async () => {
+  it('blocks process.env access', async () => {
     expect.assertions(1);
-    const executor = new AsyncFunction('return 42');
-    const result: unknown = await executor();
-    expect(result).toBe(42);
+    await expect(runInSandbox('async () => { return process.env; }', {})).rejects.toThrow();
+  });
+
+  it('blocks require access', async () => {
+    expect.assertions(1);
+    await expect(runInSandbox('async () => { return require("fs"); }', {})).rejects.toThrow();
+  });
+
+  it('blocks fetch access', async () => {
+    expect.assertions(1);
+    const result: unknown = await runInSandbox('async () => { return typeof fetch; }', {});
+    expect(result).toBe('undefined');
+  });
+
+  it('blocks dynamic import', async () => {
+    expect.assertions(1);
+    await expect(runInSandbox('async () => { return await import("fs"); }', {})).rejects.toThrow();
+  });
+
+  it('blocks constructor escape via this', async () => {
+    expect.assertions(1);
+    await expect(
+      runInSandbox('async () => { return this.constructor.constructor("return process")(); }', {}),
+    ).rejects.toThrow();
+  });
+
+  it('blocks constructor escape via injected object', async () => {
+    expect.assertions(1);
+    const result: unknown = await runInSandbox('async () => { return target.constructor; }', { target: { key: 1 } });
+    expect(result).toBeUndefined();
+  });
+
+  it('blocks constructor on proxied function properties', async () => {
+    expect.assertions(1);
+    const result: unknown = await runInSandbox(
+      'async () => { return target.greet.constructor; }',
+      { target: { greet: (): string => 'hi' } },
+    );
+    expect(result).toBeUndefined();
+  });
+
+  it('allows non-blocked properties on proxied functions', async () => {
+    expect.assertions(1);
+    const result: unknown = await runInSandbox(
+      'async () => { return typeof target.greet.name; }',
+      { target: { greet: (): string => 'hi' } },
+    );
+    expect(result).toBe('string');
+  });
+
+  it('wraps async function return values', async () => {
+    expect.assertions(1);
+    const result: unknown = await runInSandbox(
+      'async () => { const r = await target.fetch(); return r.constructor; }',
+      { target: { fetch: async (): Promise<Record<string, number>> => ({ ok: 1 }) } },
+    );
+    expect(result).toBeUndefined();
+  });
+});
+
+describe('createSafeProxy', () => {
+  it('returns null for null input', () => {
+    expect.assertions(1);
+    expect(createSafeProxy(null)).toBeNull();
+  });
+
+  it('returns undefined for undefined input', () => {
+    expect.assertions(1);
+    const input: unknown = void 0;
+    expect(createSafeProxy(input)).toBeUndefined();
+  });
+
+  it('returns primitives unchanged', () => {
+    expect.assertions(2);
+    expect(createSafeProxy(42)).toBe(42);
+    expect(createSafeProxy('hello')).toBe('hello');
   });
 });
 

@@ -1,4 +1,4 @@
-import { resolveAsyncFunctionConstructor } from './tools/sandbox.js';
+import { resolveAsyncFunctionConstructor } from './tools/executor.js';
 
 type ModuleLoader = (name: string) => Promise<Record<string, unknown>>;
 

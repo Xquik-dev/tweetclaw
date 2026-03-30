@@ -555,6 +555,17 @@ export default [
     },
   },
 
+  // VM sandbox executor - Proxy-based isolation requires unsafe type operations
+  {
+    files: ['src/tools/executor.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-type-assertion': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+      'security/detect-object-injection': 'off',
+    },
+  },
+
   // Config files override
   {
     files: ['*.config.ts', 'eslint.config.ts', 'knip.config.ts'],
