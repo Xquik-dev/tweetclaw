@@ -1,4 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "maintainers": ["kriptoburak"]
+  "maintainers": ["kriptoburak"],
+  "authentication": {
+    "type": "api-key",
+    "instructions": "Get an API key at dashboard.xquik.com. Keys start with xq_."
+  }
 }

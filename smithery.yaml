@@ -2,10 +2,16 @@ startCommand:
   type: http
   configSchema:
     type: object
-    required:
-      - apiKey
+    anyOf:
+      - required:
+          - apiKey
+      - required:
+          - tempoSigningKey
     properties:
       apiKey:
         type: string
-        description: "Xquik API key from https://xquik.com/account-manager"
+        description: "Xquik API key (prefix xq_) from dashboard.xquik.com. Full access to all 120 endpoints."
+      tempoSigningKey:
+        type: string
+        description: "Tempo signing key for MPP pay-per-use mode. No account needed. 16 read-only endpoints."
   url: "https://xquik.com/mcp"

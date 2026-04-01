@@ -61,10 +61,10 @@ openclaw plugins install @xquik/tweetclaw
 ### Option A: API key (full access, 120 endpoints)
 
 ```bash
-openclaw config set plugins.entries.tweetclaw.config.apiKey 'xq_YOUR_KEY'
+openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 ```
 
-Get a key at [dashboard.xquik.com](https://dashboard.xquik.com/).
+Get a key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store your key in an environment variable (`XQUIK_API_KEY`) and reference it — avoid pasting raw keys into shell history.
 
 ### Option B: Credits (pay-per-use via Stripe, no subscription)
 
@@ -74,10 +74,10 @@ Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 120 en
 
 ```bash
 npm i mppx viem
-openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey '0xYOUR_TEMPO_ACCOUNT_KEY'
+openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$TEMPO_SIGNING_KEY"
 ```
 
-MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. 16 read-only endpoints. Create a Tempo account with `mppx account create` or at [tempo.xyz](https://tempo.xyz). The key stays local and is only used to sign payment proofs.
+MPP (Machine Payments Protocol) lets agents pay per API call via Tempo (USDC). No account, no API key, no subscription. 16 read-only endpoints. Create a Tempo account with `mppx account create` or at [tempo.xyz](https://tempo.xyz). The signing key stays local and is only used to sign payment proofs — store it in an environment variable rather than pasting it directly.
 
 MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
 
