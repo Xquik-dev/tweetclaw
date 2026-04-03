@@ -165,7 +165,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     path: '/api/v1/subscribe',
     responseShape: '{ url }',
-    summary: 'Get Stripe checkout or billing portal URL',
+    summary: 'Get checkout or billing portal URL',
   },
 
   // --- Composition ---

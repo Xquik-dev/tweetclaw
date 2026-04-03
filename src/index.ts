@@ -76,7 +76,7 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
   const config: unknown = api.pluginConfig;
   if (!isPluginConfig(config)) {
     api.logger.warn(
-      "TweetClaw: No API key or Tempo signing key configured. Run: openclaw config set plugins.entries.tweetclaw.config.apiKey 'xq_YOUR_KEY' or set tempoSigningKey for MPP pay-per-use",
+      'TweetClaw: No API key or signing key configured. See the README for setup instructions.',
     );
     return;
   }
@@ -89,12 +89,12 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
     void (async (): Promise<void> => {
       try {
         await initMpp(tempoSigningKey);
-        api.logger.info('TweetClaw: MPP initialized - Tempo account ready');
+        api.logger.info('TweetClaw: MPP initialized - payment account ready');
       } catch (error: unknown) {
         api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
       }
     })();
-    api.logger.info('TweetClaw: MPP mode - pay-per-use via Tempo account (16 X-API endpoints, no subscription needed)');
+    api.logger.info('TweetClaw: MPP mode - pay-per-use (16 X-API endpoints, no subscription needed)');
   }
 
   const request = createProxiedRequest(baseUrl, credential, fetchFunction);

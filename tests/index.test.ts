@@ -65,12 +65,12 @@ afterEach(() => {
 });
 
 describe('register', () => {
-  it('warns and returns when no API key or Tempo key configured', () => {
+  it('warns and returns when no API key or signing key configured', () => {
     expect.assertions(3);
     const { api, tools, warnings } = createMockApi();
     register(api);
     expect(warnings).toHaveLength(1);
-    expect(warnings[0]).toContain('No API key or Tempo signing key');
+    expect(warnings[0]).toContain('No API key or signing key');
     expect(tools).toHaveLength(0);
   });
 
@@ -126,7 +126,7 @@ describe('register', () => {
     const { api, warnings } = createMockApi({});
     register(api);
     expect(warnings).toHaveLength(1);
-    expect(warnings[0]).toContain('No API key or Tempo signing key');
+    expect(warnings[0]).toContain('No API key or signing key');
   });
 
   it('poller service can start and stop', () => {
