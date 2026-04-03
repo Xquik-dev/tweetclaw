@@ -13,5 +13,5 @@ startCommand:
         description: "Xquik API key (prefix xq_) from dashboard.xquik.com. Full access to all 120 endpoints."
       tempoSigningKey:
         type: string
-        description: "MPP signing key for pay-per-use mode. No account needed. 16 read-only endpoints."
+        description: "MPP signing key for pay-per-use mode. No account needed. 31 read-only endpoints."
   url: "https://xquik.com/mcp"

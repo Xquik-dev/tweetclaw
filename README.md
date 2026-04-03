@@ -19,7 +19,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | **Monthly cost** | **$20** | $100 | $5,000 |
 | **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
 | **Cost per user lookup** | **$0.0003** | ~$0.01 | ~$0.005 |
-| **Write actions** | **$0.0003** | Limited | Limited |
+| **Write actions** | **$0.00075** | Limited | Limited |
 | **Bulk extraction** | **$0.00015/result** | Not available | Not available |
 | **Monitoring + webhooks** | **Free** | Not available | Not available |
 | **Giveaway draws** | **$0.00015/entry** | Not available | Not available |
@@ -32,11 +32,11 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Read (user profile, verified followers, followers you know) | 2 | $0.0003 |
 | Read (favoriters) | 1 | $0.00015 |
 | Read (trends) | 3 | $0.00045 |
-| Follow check, article | 7 | $0.00105 |
-| Write (tweet, like, retweet, follow, DM, etc.) | 2 | $0.0003 |
+| Follow check, article | 5 | $0.00075 |
+| Write (tweet, like, retweet, follow, DM, etc.) | 5 | $0.00075 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search, favoriters, retweeters, community members, people search, list members, list followers) | 1/result | $0.00015/result |
 | Extraction (followers, following, verified followers) | 2/result | $0.0003/result |
-| Extraction (articles) | 7/result | $0.00105/result |
+| Extraction (articles) | 5/result | $0.00075/result |
 | Draw | 1/entry | $0.00015/entry |
 | Monitors, webhooks, radar, compose, drafts, integrations | 0 | **Free** |
 
@@ -45,7 +45,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 Two options:
 
 - **Credits**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 120 endpoints.
-- **MPP**: 16 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
+- **MPP**: 31 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx`.
 
 ### Free Operations
 
@@ -73,9 +73,9 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 120 endpoints available. 1 credit = $0.00015.
 
-### Option C: MPP pay-per-use (no account needed, 16 read-only endpoints)
+### Option C: MPP pay-per-use (no account needed, 31 read-only endpoints)
 
-MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 16 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
+MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 31 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
 
 ```bash
 npm i mppx
@@ -84,7 +84,7 @@ openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNI
 
 **Security**: Always store your signing key in an environment variable — never paste raw keys into shell commands or config files.
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), followers ($0.00015/user), following ($0.00015/user), verified followers ($0.00015/user), followers you know ($0.00015/user), mentions ($0.00015/tweet), batch users ($0.00015), people search ($0.00015/user), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015), community timeline ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet).
 
 ### Optional settings
 
@@ -156,11 +156,11 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 
 | Category | Examples | Cost |
 |----------|---------|------|
-| **Write Actions** | Post tweets, reply, like, retweet, follow, unfollow, DM, update profile, avatar, banner | 2 credits |
+| **Write Actions** | Post tweets, reply, like, retweet, follow, unfollow, DM, update profile, avatar, banner | 5 credits |
 | **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
-| **Twitter** | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, check follows, articles, bookmarks, notifications, timeline, DM history | 1-7 credits |
+| **Twitter** | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, check follows, articles, bookmarks, notifications, timeline, DM history | 1-5 credits |
 | **Composition** | Compose, refine, score tweets; manage drafts; analyze writing styles | Free |
-| **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1-7 credits/result |
+| **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1-5 credits/result |
 | **Draws** | Run giveaway draws on tweets, export results | 1 credit/entry |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
 | **Automations** | Create flows, add steps, test runs, inbound webhooks | Free |

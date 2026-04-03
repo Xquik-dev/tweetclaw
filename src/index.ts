@@ -94,7 +94,7 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
         api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
       }
     })();
-    api.logger.info('TweetClaw: MPP mode - pay-per-use (16 X-API endpoints, no subscription needed)');
+    api.logger.info('TweetClaw: MPP mode - pay-per-use (31 X-API endpoints, no subscription needed)');
   }
 
   const request = createProxiedRequest(baseUrl, credential, fetchFunction);
