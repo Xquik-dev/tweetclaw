@@ -8,7 +8,7 @@
     "additionalProperties": false,
     "properties": {
       "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Required for full access to all 120 endpoints." },
-      "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. No account needed. 31 read-only X-API endpoints." },
+      "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. No account needed. 16 read-only X-API endpoints." },
       "baseUrl": { "type": "string", "default": "https://xquik.com" },
       "pollingInterval": { "type": "number", "default": 60, "description": "Event polling interval in seconds" },
       "pollingEnabled": { "type": "boolean", "default": true }
@@ -20,7 +20,7 @@
   },
   "uiHints": {
     "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Full access to all 120 endpoints. Generate at dashboard.xquik.com." },
-    "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Pay-per-use mode via Machine Payments Protocol. No account needed. 31 read-only X-API endpoints only." },
+    "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Pay-per-use mode via Machine Payments Protocol. No account needed. 16 read-only X-API endpoints only." },
     "baseUrl": { "label": "API Base URL", "placeholder": "https://xquik.com", "advanced": true, "help": "Only change if using a self-hosted Xquik instance." },
     "pollingInterval": { "label": "Event Poll Interval (seconds)", "advanced": true, "help": "How often to check for new monitor events. Default: 60 seconds." },
     "pollingEnabled": { "label": "Enable Event Notifications", "advanced": true, "help": "Deliver monitor alerts and extraction completions to your chat." }
