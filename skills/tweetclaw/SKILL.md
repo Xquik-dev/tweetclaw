@@ -36,7 +36,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Read (user profile) | 2 | $0.0003 |
 | Read (trends) | 3 | $0.00045 |
 | Follow check, article | 5 | $0.00075 |
-| Write (tweet, like, retweet, follow, DM, etc.) | 5 | $0.00075 |
+| Write (tweet, like, retweet, follow, DM, etc.) | 10 | $0.0015 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search, favoriters, retweeters, community members, people search, list members, list followers) | 1/result | $0.00015/result |
 | Extraction (followers, following, verified followers) | 2/result | $0.0003/result |
 | Extraction (articles) | 5/result | $0.00075/result |
@@ -50,15 +50,15 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | **Monthly cost** | **$20** | $100 | $5,000 |
 | **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
 | **Cost per user lookup** | **$0.0003** | ~$0.01 | ~$0.005 |
-| **Write actions** | **$0.00075** | Limited | Limited |
+| **Write actions** | **$0.0015** | Limited | Limited |
 | **Bulk extraction** | **$0.00015/result** | Not available | Not available |
 
 ### Pay-Per-Use (No Subscription)
 
 - **Credits**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 120 endpoints.
-- **MPP**: 31 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx`.
+- **MPP**: 16 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), followers ($0.00015/user), following ($0.00015/user), verified followers ($0.00015/user), followers you know ($0.00015/user), mentions ($0.00015/tweet), batch users ($0.00015), people search ($0.00015/user), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015), community timeline ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
 
 ## When to Use
 
@@ -100,7 +100,7 @@ Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com
 
 ### MPP mode (no account, pay-per-use)
 
-Requires the `mppx` npm package plus a signing key. MPP gives agents access to 31 read-only X-API endpoints without any account or subscription. The mppx SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
+Requires the `mppx` npm package plus a signing key. MPP gives agents access to 16 read-only X-API endpoints without any account or subscription. The mppx SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
 
 ## Tools
 
@@ -302,7 +302,7 @@ Agent uses tweetclaw -> creates ticket with subject and description
 
 | Category | Examples | Cost |
 |----------|---------|------|
-| Write Actions | Post tweets, reply, like, retweet, follow, DM, update profile, avatar, banner | 5 credits |
+| Write Actions | Post tweets, reply, like, retweet, follow, DM, update profile, avatar, banner | 10 credits |
 | Media | Upload media, download tweet media | 1-2 credits |
 | Twitter | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, bookmarks, notifications, timeline, DM history | 1-5 credits |
 | Composition | Compose, refine, score tweets; manage drafts | Free |
