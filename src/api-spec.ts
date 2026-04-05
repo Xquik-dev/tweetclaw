@@ -626,7 +626,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Source username', in: 'query', name: 'source', required: true, type: 'string' },
       { description: 'Target username', in: 'query', name: 'target', required: true, type: 'string' },
     ],
-    mpp: { intent: 'charge', price: '$0.00075/call' },
+    mpp: { intent: 'charge', price: '$0.00105/call' },
     path: '/api/v1/x/followers/check',
     responseShape: '{ isFollowing, isFollowedBy, sourceUsername, targetUsername }',
     summary: 'Check follow relationship between two users',
@@ -638,7 +638,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       { description: 'Tweet ID of the X Article', in: 'path', name: 'tweetId', required: true, type: 'string' },
     ],
-    mpp: { intent: 'charge', price: '$0.00075/call' },
+    mpp: { intent: 'charge', price: '$0.00105/call' },
     path: '/api/v1/x/articles/:tweetId',
     responseShape: '{ article: { title, previewText, coverImageUrl, contents, createdAt, likeCount, replyCount, quoteCount, viewCount }, author? }',
     summary: 'Get full content of an X Article (long-form post) by tweet ID',

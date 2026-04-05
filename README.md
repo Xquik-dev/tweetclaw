@@ -32,7 +32,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Read (user profile, verified followers, followers you know) | 2 | $0.0003 |
 | Read (favoriters) | 1 | $0.00015 |
 | Read (trends) | 3 | $0.00045 |
-| Follow check, article | 5 | $0.00075 |
+| Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 10 | $0.0015 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search, favoriters, retweeters, community members, people search, list members, list followers) | 1/result | $0.00015/result |
 | Extraction (followers, following, verified followers) | 2/result | $0.0003/result |
@@ -84,7 +84,7 @@ openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNI
 
 **Security**: Always store your signing key in an environment variable — never paste raw keys into shell commands or config files.
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00075), article lookup ($0.00075), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
 
 ### Optional settings
 
