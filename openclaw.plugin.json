@@ -1,15 +1,15 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.5.2",
-  "description": "Post tweets, reply, like, retweet, follow, DM from your chat - full X/Twitter automation powered by Xquik. 120 endpoints, reads from $0.00015/call.",
+  "version": "1.5.3",
+  "description": "Post tweets, reply, like, retweet, follow, DM from your chat - full X/Twitter automation powered by Xquik. 121 endpoints, reads from $0.00015/call.",
   "primaryCredential": "apiKey",
   "alternateCredentials": ["tempoSigningKey"],
   "configSchema": {
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Required for full access to all 120 endpoints." },
+      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Required for full access to all 121 endpoints." },
       "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. No account needed. 16 read-only X-API endpoints." },
       "baseUrl": { "type": "string", "default": "https://xquik.com" },
       "pollingInterval": { "type": "number", "default": 60, "description": "Event polling interval in seconds" },
@@ -21,7 +21,7 @@
     ]
   },
   "uiHints": {
-    "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Full access to all 120 endpoints. Generate at dashboard.xquik.com." },
+    "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Full access to all 121 endpoints. Generate at dashboard.xquik.com." },
     "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Pay-per-use mode via Machine Payments Protocol. No account needed. 16 read-only X-API endpoints only." },
     "baseUrl": { "label": "API Base URL", "placeholder": "https://xquik.com", "advanced": true, "help": "Only change if using a self-hosted Xquik instance." },
     "pollingInterval": { "label": "Event Poll Interval (seconds)", "advanced": true, "help": "How often to check for new monitor events. Default: 60 seconds." },
