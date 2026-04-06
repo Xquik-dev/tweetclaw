@@ -19,6 +19,11 @@
     "extensions": [
       "./src/index.ts"
     ],
+    "primaryCredential": "apiKey",
+    "requires": {
+      "config": ["apiKey"]
+    },
+    "alternateCredentials": ["tempoSigningKey"],
     "compat": {
       "pluginApi": ">=2026.3.28",
       "minGatewayVersion": "2026.3.28"

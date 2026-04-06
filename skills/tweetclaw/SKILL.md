@@ -100,7 +100,17 @@ Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com
 
 ### MPP mode (no account, pay-per-use)
 
-Requires the `mppx` npm package plus a signing key. MPP gives agents access to 16 read-only X-API endpoints without any account or subscription. The mppx SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
+MPP gives agents access to 16 read-only X-API endpoints without any account or subscription. The `mppx` SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
+
+```bash
+npm i mppx viem
+```
+
+Configure the signing key in your OpenClaw plugin config:
+
+```json
+{ "tempoSigningKey": "your-66-char-hex-key" }
+```
 
 ## Tools
 
