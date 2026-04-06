@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw - full X/Twitter automation via Xquik. 120 endpoints, reads from $0.00015/call.",
   "license": "MIT",
   "type": "module",
@@ -21,9 +21,13 @@
     ],
     "primaryCredential": "apiKey",
     "requires": {
-      "config": ["apiKey"]
+      "config": [
+        "apiKey"
+      ]
     },
-    "alternateCredentials": ["tempoSigningKey"],
+    "alternateCredentials": [
+      "tempoSigningKey"
+    ],
     "compat": {
       "pluginApi": ">=2026.3.28",
       "minGatewayVersion": "2026.3.28"
