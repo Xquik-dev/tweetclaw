@@ -18,7 +18,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 |---|---|---|---|
 | **Monthly cost** | **$20** | $100 | $5,000 |
 | **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Cost per user lookup** | **$0.0003** | ~$0.01 | ~$0.005 |
+| **Cost per user lookup** | **$0.00015** | ~$0.01 | ~$0.005 |
 | **Write actions** | **$0.0015** | Limited | Limited |
 | **Bulk extraction** | **$0.00015/result** | Not available | Not available |
 | **Monitoring + webhooks** | **Free** | Not available | Not available |
@@ -29,13 +29,13 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Operation | Credits | Cost |
 |-----------|---------|------|
 | Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
-| Read (user profile, verified followers, followers you know) | 2 | $0.0003 |
+| Read (user profile, verified followers, followers you know) | 1 | $0.00015 |
 | Read (favoriters) | 1 | $0.00015 |
 | Read (trends) | 3 | $0.00045 |
 | Follow check, article | 7 | $0.00105 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 10 | $0.0015 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search, favoriters, retweeters, community members, people search, list members, list followers) | 1/result | $0.00015/result |
-| Extraction (followers, following, verified followers) | 2/result | $0.0003/result |
+| Extraction (followers, following, verified followers) | 1/result | $0.00015/result |
 | Extraction (articles) | 5/result | $0.00075/result |
 | Draw | 1/entry | $0.00015/entry |
 | Monitors, webhooks, radar, compose, drafts, integrations | 0 | **Free** |
