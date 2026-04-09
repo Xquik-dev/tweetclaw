@@ -56,9 +56,9 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 ### Pay-Per-Use (No Subscription)
 
 - **Credits**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 121 endpoints.
-- **MPP**: 16 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
+- **MPP**: 32 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
 
 ## When to Use
 
@@ -100,7 +100,7 @@ Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com
 
 ### MPP mode (no account, pay-per-use)
 
-MPP gives agents access to 16 read-only X-API endpoints without any account or subscription. The `mppx` SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
+MPP gives agents access to 32 read-only X-API endpoints without any account or subscription. The `mppx` SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
 
 ```bash
 npm i mppx viem

@@ -45,7 +45,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 Two options:
 
 - **Credits**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 121 endpoints.
-- **MPP**: 16 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
+- **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
 
@@ -73,9 +73,9 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 121 endpoints available. 1 credit = $0.00015.
 
-### Option C: MPP pay-per-use (no account needed, 16 read-only endpoints)
+### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
 
-MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 16 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
+MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 32 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
 
 ```bash
 npm i mppx viem
@@ -84,7 +84,7 @@ openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNI
 
 **Security**: Always store your signing key in an environment variable — never paste raw keys into shell commands or config files.
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
 
 ### Optional settings
 
