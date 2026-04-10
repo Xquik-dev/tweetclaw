@@ -10,7 +10,7 @@ startCommand:
     properties:
       apiKey:
         type: string
-        description: "Xquik API key (prefix xq_) from dashboard.xquik.com. Full access to all 121 endpoints."
+        description: "Xquik API key (prefix xq_) from dashboard.xquik.com. Full access to all 122 endpoints."
       tempoSigningKey:
         type: string
         description: "MPP signing key for pay-per-use mode. No account needed. 32 read-only endpoints."

@@ -44,7 +44,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 Two options:
 
-- **Credits**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 121 endpoints.
+- **Credits**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 122 endpoints.
 - **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
@@ -59,7 +59,7 @@ openclaw plugins install @xquik/tweetclaw
 
 ## Configure
 
-### Option A: API key (full access, 121 endpoints)
+### Option A: API key (full access, 122 endpoints)
 
 Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it in an environment variable and configure TweetClaw to use it:
 
@@ -71,7 +71,7 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 ### Option B: Credits (pay-per-use, no subscription)
 
-Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 121 endpoints available. 1 credit = $0.00015.
+Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 122 endpoints available. 1 credit = $0.00015.
 
 ### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
 
@@ -152,7 +152,7 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 
 ## API Coverage
 
-121 endpoints across 12 categories:
+122 endpoints across 12 categories:
 
 | Category | Examples | Cost |
 |----------|---------|------|
