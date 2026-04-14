@@ -189,4 +189,27 @@ describe('specEndpoints', () => {
     expect.assertions(1);
     expect(specEndpoints.length).toBeGreaterThan(40);
   });
+
+  it('excludes agent-prohibited endpoints', () => {
+    expect.assertions(2);
+    const paths = specEndpoints.map(
+      (endpoint) => `${String((endpoint as Record<string, unknown>).method)} ${String((endpoint as Record<string, unknown>).path)}`,
+    );
+    expect(paths).not.toContain('POST /api/v1/x/accounts');
+    expect(paths).not.toContain('POST /api/v1/x/accounts/:id/reauth');
+  });
+
+  it('does not contain password or totp_secret parameters', () => {
+    expect.assertions(1);
+    const allParamNames: string[] = [];
+    for (const endpoint of specEndpoints) {
+      const params = (endpoint as Record<string, unknown>).parameters;
+      if (Array.isArray(params)) {
+        for (const parameter of params) {
+          allParamNames.push(String((parameter as Record<string, unknown>).name));
+        }
+      }
+    }
+    expect(allParamNames).not.toContain('password');
+  });
 });

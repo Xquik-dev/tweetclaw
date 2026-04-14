@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildAuthHeader, buildFetchHeaders, buildFetchUrl, createProxiedRequest } from '../src/request.js';
+import { buildAuthHeader, buildFetchHeaders, buildFetchUrl, createProxiedRequest, isProhibitedRequest } from '../src/request.js';
 
 describe('buildAuthHeader', () => {
   it('uses X-API-Key for xq_ prefix credentials', () => {
@@ -116,5 +116,79 @@ describe('createProxiedRequest', () => {
     };
     const request = createProxiedRequest('https://xquik.com', 'sk_key', mockFetch);
     await request('/api/v1/account');
+  });
+
+  it('blocks POST /api/v1/x/accounts (connect account)', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(
+      request('/api/v1/x/accounts', { method: 'POST', body: { username: 'test', email: 'a@b.com', password: 'pass' } }),
+    ).rejects.toThrow('Agent-prohibited endpoint');
+  });
+
+  it('blocks POST /api/v1/x/accounts/:id/reauth', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(
+      request('/api/v1/x/accounts/123/reauth', { method: 'POST', body: { password: 'pass' } }),
+    ).rejects.toThrow('Agent-prohibited endpoint');
+  });
+
+  it('allows GET /api/v1/x/accounts (list accounts)', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async () => new Response(JSON.stringify({ accounts: [] }));
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    const result = await request('/api/v1/x/accounts');
+    expect(result).toStrictEqual({ accounts: [] });
+  });
+
+  it('allows DELETE /api/v1/x/accounts/:id (disconnect)', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async () => new Response(JSON.stringify({ success: true }));
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    const result = await request('/api/v1/x/accounts/123', { method: 'DELETE' });
+    expect(result).toStrictEqual({ success: true });
+  });
+});
+
+describe('isProhibitedRequest', () => {
+  it('blocks POST /api/v1/x/accounts', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('POST', '/api/v1/x/accounts')).toBe(true);
+  });
+
+  it('blocks POST /api/v1/x/accounts/ (trailing slash)', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('POST', '/api/v1/x/accounts/')).toBe(true);
+  });
+
+  it('blocks POST /api/v1/x/accounts/456/reauth', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('POST', '/api/v1/x/accounts/456/reauth')).toBe(true);
+  });
+
+  it('blocks case-insensitive method', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('post', '/api/v1/x/accounts')).toBe(true);
+  });
+
+  it('allows GET /api/v1/x/accounts', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('GET', '/api/v1/x/accounts')).toBe(false);
+  });
+
+  it('allows DELETE /api/v1/x/accounts/123', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('DELETE', '/api/v1/x/accounts/123')).toBe(false);
+  });
+
+  it('allows GET /api/v1/x/accounts/123', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('GET', '/api/v1/x/accounts/123')).toBe(false);
+  });
+
+  it('allows POST /api/v1/x/tweets', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('POST', '/api/v1/x/tweets')).toBe(false);
   });
 });

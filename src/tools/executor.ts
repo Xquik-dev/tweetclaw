@@ -3,9 +3,9 @@ import { API_SPEC } from '../api-spec.js';
 import { truncateResponse } from '../truncate.js';
 import type { ToolResult } from '../types.js';
 
-const specEndpoints: ReadonlyArray<Readonly<Record<string, unknown>>> = API_SPEC.map(
-  (endpoint): Readonly<Record<string, unknown>> => ({ ...endpoint }),
-);
+const specEndpoints: ReadonlyArray<Readonly<Record<string, unknown>>> = API_SPEC
+  .filter((endpoint) => endpoint.agentProhibited !== true)
+  .map((endpoint): Readonly<Record<string, unknown>> => ({ ...endpoint }));
 
 function extractErrorMessage(error: unknown): string {
   if (error instanceof Error) {

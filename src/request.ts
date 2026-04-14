@@ -33,20 +33,45 @@ function buildFetchUrl(baseUrl: string, path: string, query?: Readonly<Record<st
   return url.toString();
 }
 
+const PROHIBITED_PATHS: ReadonlyArray<readonly [string, string]> = [
+  ['POST', '/api/v1/x/accounts'],
+  ['POST', '/api/v1/x/accounts/'],
+];
+
+const PROHIBITED_PATH_PATTERN = /^\/api\/v1\/x\/accounts\/[^/]+\/reauth\/?$/;
+
+function isProhibitedRequest(method: string, path: string): boolean {
+  const upperMethod = method.toUpperCase();
+  const matchesStaticPath = PROHIBITED_PATHS.some(
+    ([blockedMethod, blockedPath]) => upperMethod === blockedMethod && path === blockedPath,
+  );
+  return matchesStaticPath || (upperMethod === 'POST' && PROHIBITED_PATH_PATTERN.test(path));
+}
+
+function validateRequestPath(method: string, path: string): void {
+  if (!path.startsWith(API_V1_PREFIX)) {
+    throw new Error(`Path must start with /api/v1/ but got: ${path}`);
+  }
+  if (isProhibitedRequest(method, path)) {
+    throw new Error(
+      'Agent-prohibited endpoint. Account connection and re-authentication must be done through the Xquik dashboard at dashboard.xquik.com, not through the agent.',
+    );
+  }
+}
+
 function createProxiedRequest(
   baseUrl: string,
   apiKey: string,
   fetchFunction: FetchFunction = fetch,
 ): RequestFunction {
   return async (path: string, options?: Readonly<RequestOptions>): Promise<unknown> => {
-    if (!path.startsWith(API_V1_PREFIX)) {
-      throw new Error(`Path must start with /api/v1/ but got: ${path}`);
-    }
+    const method = options?.method ?? 'GET';
+    validateRequestPath(method, path);
     const hasBody = options?.body !== undefined;
     const response = await fetchFunction(buildFetchUrl(baseUrl, path, options?.query), {
       ...(hasBody ? { body: JSON.stringify(options.body) } : {}),
       headers: buildFetchHeaders(apiKey, hasBody),
-      method: options?.method ?? 'GET',
+      method,
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
     const json: unknown = await response.json();
@@ -59,4 +84,4 @@ function createProxiedRequest(
   };
 }
 
-export { buildAuthHeader, buildFetchHeaders, buildFetchUrl, createProxiedRequest };
+export { buildAuthHeader, buildFetchHeaders, buildFetchUrl, createProxiedRequest, isProhibitedRequest };

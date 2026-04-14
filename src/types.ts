@@ -7,6 +7,7 @@ interface EndpointParameter {
 }
 
 interface EndpointInfo {
+  readonly agentProhibited?: true;
   readonly category: string;
   readonly free: boolean;
   readonly method: string;
@@ -14,6 +15,7 @@ interface EndpointInfo {
   readonly parameters?: readonly EndpointParameter[];
   readonly path: string;
   readonly responseShape?: string;
+  readonly sensitive?: true;
   readonly summary: string;
 }
 

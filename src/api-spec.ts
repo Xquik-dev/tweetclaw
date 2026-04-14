@@ -825,6 +825,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'List connected X accounts',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_X_ACCOUNTS,
     free: true,
     method: 'POST',
@@ -836,7 +837,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/accounts',
     responseShape: '{ id, xUserId, xUsername, status }',
-    summary: 'Connect X account',
+    summary: 'Connect X account (dashboard only — agent-prohibited)',
   },
   {
     category: CATEGORY_X_ACCOUNTS,
@@ -857,6 +858,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Disconnect X account',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_X_ACCOUNTS,
     free: true,
     method: 'POST',
@@ -867,7 +869,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/accounts/:id/reauth',
     responseShape: '{ id, xUsername, status }',
-    summary: 'Re-authenticate X account',
+    summary: 'Re-authenticate X account (dashboard only — agent-prohibited)',
   },
 
   // --- X Write Actions ---
