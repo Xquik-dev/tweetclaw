@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Post tweets, reply, like, retweet, follow, DM from your chat - full X/Twitter automation powered by Xquik. 122 endpoints, reads from $0.00015/call.",
   "primaryCredential": "apiKey",
   "alternateCredentials": ["tempoSigningKey"],
