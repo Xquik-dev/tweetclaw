@@ -3,7 +3,7 @@ import type { EndpointInfo, EndpointParameter } from './types.js';
 const RESPONSE_SUCCESS = '{ success: true }';
 const DESCRIPTION_PAGINATION_CURSOR = 'Pagination cursor';
 const DESCRIPTION_STYLE_USERNAME = 'X username of cached style';
-const DESCRIPTION_EXPORT_FORMAT = 'Export format (csv, xlsx, md)';
+const DESCRIPTION_EXPORT_FORMAT = 'Export format (csv, json, md, md-document, pdf, txt, xlsx)';
 const CATEGORY_BOT = 'bot';
 const DESCRIPTION_PLATFORM_USER_ID = 'Platform user ID';
 const CATEGORY_INTEGRATIONS = 'integrations';
