@@ -245,21 +245,7 @@ async () => {
 }
 \`\`\`
 
-### 16. Set up Telegram alerts for monitor events (FREE)
-\`\`\`javascript
-async () => {
-  return xquik.request('/api/v1/integrations', {
-    method: 'POST',
-    body: {
-      type: 'telegram',
-      chatId: '123456789',
-      eventTypes: ['tweet.new', 'tweet.reply', 'draw.completed', 'extraction.completed']
-    }
-  });
-}
-\`\`\`
-
-### 17. Community actions (create, join, leave)
+### 16. Community actions (create, join, leave)
 \`\`\`javascript
 async () => {
   // Join a community
@@ -273,14 +259,14 @@ async () => {
 }
 \`\`\`
 
-### 18. Subscribe (FREE - returns checkout URL)
+### 17. Subscribe (FREE - returns checkout URL)
 \`\`\`javascript
 async () => {
   return xquik.request('/api/v1/subscribe', { method: 'POST' });
 }
 \`\`\`
 
-### 19. Draft & optimize tweet text (3-step compose flow, FREE)
+### 18. Draft & optimize tweet text (3-step compose flow, FREE)
 \`\`\`javascript
 async () => {
   // Use this ONLY when the user wants help WRITING tweet text.
@@ -297,7 +283,7 @@ async () => {
 \`\`\`
 
 ## Cost
-- Free: /api/v1/compose, /api/v1/styles (cached lookup/save/delete/compare), /api/v1/drafts, /api/v1/radar, /api/v1/subscribe, /api/v1/account, /api/v1/api-keys, /api/v1/bot/*, /api/v1/integrations/*, /api/v1/x/accounts, /api/v1/automations/*, /api/v1/support/*
+- Free: /api/v1/compose, /api/v1/styles (cached lookup/save/delete/compare), /api/v1/drafts, /api/v1/radar, /api/v1/subscribe, /api/v1/account, /api/v1/api-keys, /api/v1/x/accounts, /api/v1/support/*
 - MPP pay-per-use (no account/subscription needed, 32 endpoints): GET /api/v1/x/tweets/:id ($0.00015/call), GET /api/v1/x/tweets/search ($0.00015/tweet), GET /api/v1/x/tweets/:id/quotes ($0.00015/tweet), GET /api/v1/x/tweets/:id/replies ($0.00015/tweet), GET /api/v1/x/tweets/:id/retweeters ($0.00015/user), GET /api/v1/x/tweets/:id/favoriters ($0.00015/user), GET /api/v1/x/tweets/:id/thread ($0.00015/tweet), GET /api/v1/x/users/:username ($0.00015/call), GET /api/v1/x/users/:id/tweets ($0.00015/tweet), GET /api/v1/x/users/:id/likes ($0.00015/tweet), GET /api/v1/x/users/:id/media ($0.00015/tweet), GET /api/v1/x/followers/check ($0.00105/call), GET /api/v1/x/articles/:tweetId ($0.00105/call), POST /api/v1/x/media/download ($0.00015/media), GET /api/v1/trends ($0.00045/call), GET /api/v1/x/trends ($0.00045/call), GET /api/v1/x/communities/:id/info ($0.00015/call), GET /api/v1/x/communities/:id/members ($0.00015/user), GET /api/v1/x/communities/:id/moderators ($0.00015/user), GET /api/v1/x/communities/:id/tweets ($0.00015/tweet), GET /api/v1/x/communities/search ($0.00015/community), GET /api/v1/x/communities/tweets ($0.00015/tweet), GET /api/v1/x/lists/:id/followers ($0.00015/user), GET /api/v1/x/lists/:id/members ($0.00015/user), GET /api/v1/x/lists/:id/tweets ($0.00015/tweet), GET /api/v1/x/users/batch ($0.00015/user), GET /api/v1/x/users/search ($0.00015/user), GET /api/v1/x/users/:id/followers ($0.00015/user), GET /api/v1/x/users/:id/followers-you-know ($0.00015/user), GET /api/v1/x/users/:id/following ($0.00015/user), GET /api/v1/x/users/:id/mentions ($0.00015/tweet), GET /api/v1/x/users/:id/verified-followers ($0.00015/user)
 - Subscription required: /api/v1/styles (X API refresh when cache >7 days), /api/v1/x/profile, /api/v1/x/communities, /api/v1/x/dm, /api/v1/extractions, /api/v1/draws, /api/v1/monitors, /api/v1/events, /api/v1/webhooks, /api/v1/styles/:username/performance, /api/v1/trending/:source
 - Write actions (subscription required): POST /api/v1/x/tweets, DELETE /api/v1/x/tweets/:id, POST|DELETE /api/v1/x/tweets/:id/like, POST /api/v1/x/tweets/:id/retweet, POST|DELETE /api/v1/x/users/:id/follow, POST /api/v1/x/dm/:userId, POST /api/v1/x/media, PATCH /api/v1/x/profile, PATCH /api/v1/x/profile/avatar, PATCH /api/v1/x/profile/banner, POST|DELETE /api/v1/x/communities, POST|DELETE /api/v1/x/communities/:id/join

@@ -4,9 +4,6 @@ const RESPONSE_SUCCESS = '{ success: true }';
 const DESCRIPTION_PAGINATION_CURSOR = 'Pagination cursor';
 const DESCRIPTION_STYLE_USERNAME = 'X username of cached style';
 const DESCRIPTION_EXPORT_FORMAT = 'Export format (csv, json, md, md-document, pdf, txt, xlsx)';
-const CATEGORY_BOT = 'bot';
-const DESCRIPTION_PLATFORM_USER_ID = 'Platform user ID';
-const CATEGORY_INTEGRATIONS = 'integrations';
 const CATEGORY_X_ACCOUNTS = 'x-accounts';
 
 const PAGINATION_PARAMS: readonly EndpointParameter[] = [
@@ -44,9 +41,6 @@ const PARAM_DRAW_ID: EndpointParameter =
 
 const PARAM_EXTRACTION_ID: EndpointParameter =
   { description: 'Extraction public ID', in: 'path', name: 'id', required: true, type: 'string' };
-
-const PARAM_INTEGRATION_ID: EndpointParameter =
-  { description: 'Integration ID', in: 'path', name: 'id', required: true, type: 'string' };
 
 const PARAM_X_ACCOUNT: EndpointParameter =
   { description: 'X account (@username or account ID)', in: 'body', name: 'account', required: true, type: 'string' };
@@ -87,12 +81,8 @@ const PARAM_MEDIA_URL: EndpointParameter =
   { description: 'URL to download media from (alternative to file, HTTPS only)', in: 'body', name: 'url', required: false, type: 'string' };
 
 const RESPONSE_COMMUNITY_ACTION = '{ communityId, communityName, success: true }';
-const CATEGORY_AUTOMATIONS = 'automations';
 const CATEGORY_SUPPORT = 'support';
 const CATEGORY_X_WRITE = 'x-write';
-
-const PARAM_AUTOMATION_SLUG: EndpointParameter =
-  { description: 'Flow slug', in: 'path', name: 'slug', required: true, type: 'string' };
 
 const PARAM_TICKET_ID: EndpointParameter =
   { description: 'Ticket public ID', in: 'path', name: 'id', required: true, type: 'string' };
@@ -686,134 +676,6 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Get trending items by source',
   },
 
-  // --- Bot ---
-  {
-    category: CATEGORY_BOT,
-    free: true,
-    method: 'POST',
-    parameters: [
-      { description: 'Platform name (telegram)', in: 'body', name: 'platform', required: true, type: 'string' },
-      { description: DESCRIPTION_PLATFORM_USER_ID, in: 'body', name: 'platformUserId', required: true, type: 'string' },
-    ],
-    path: '/api/v1/bot/platform-links',
-    responseShape: '{ id, platform, platformUserId, createdAt }',
-    summary: 'Link a platform user to an Xquik account',
-  },
-  {
-    category: CATEGORY_BOT,
-    free: true,
-    method: 'DELETE',
-    parameters: [
-      { description: 'Platform name (telegram)', in: 'body', name: 'platform', required: true, type: 'string' },
-      { description: DESCRIPTION_PLATFORM_USER_ID, in: 'body', name: 'platformUserId', required: true, type: 'string' },
-    ],
-    path: '/api/v1/bot/platform-links',
-    responseShape: RESPONSE_SUCCESS,
-    summary: 'Unlink a platform user from an Xquik account',
-  },
-  {
-    category: CATEGORY_BOT,
-    free: true,
-    method: 'GET',
-    parameters: [
-      { description: 'Platform name', in: 'query', name: 'platform', required: true, type: 'string' },
-      { description: DESCRIPTION_PLATFORM_USER_ID, in: 'query', name: 'platformUserId', required: true, type: 'string' },
-    ],
-    path: '/api/v1/bot/platform-links/lookup',
-    responseShape: '{ userId }',
-    summary: 'Look up an Xquik user by platform identity',
-  },
-  {
-    category: CATEGORY_BOT,
-    free: true,
-    method: 'POST',
-    parameters: [
-      { description: DESCRIPTION_PLATFORM_USER_ID, in: 'body', name: 'platformUserId', required: true, type: 'string' },
-      { description: 'Input token count', in: 'body', name: 'inputTokens', required: true, type: 'number' },
-      { description: 'Output token count', in: 'body', name: 'outputTokens', required: true, type: 'number' },
-    ],
-    path: '/api/v1/bot/usage',
-    responseShape: RESPONSE_SUCCESS,
-    summary: 'Track bot token usage',
-  },
-
-  // --- Integrations ---
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'GET',
-    path: '/api/v1/integrations',
-    responseShape: '{ integrations: [{ id, type, name, config, eventTypes, isActive, ... }] }',
-    summary: 'List all integrations (Telegram push notifications)',
-  },
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'POST',
-    parameters: [
-      { description: 'Integration type (telegram)', in: 'body', name: 'type', required: true, type: 'string' },
-      { description: 'Display name', in: 'body', name: 'name', required: true, type: 'string' },
-      { description: 'Config with chatId', in: 'body', name: 'config', required: true, type: 'object' },
-      { description: 'Event types to subscribe to', in: 'body', name: 'eventTypes', required: true, type: 'string[]' },
-    ],
-    path: '/api/v1/integrations',
-    responseShape: '{ id, type, name, config, eventTypes, isActive, ... }',
-    summary: 'Create a new integration for push notifications',
-  },
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'GET',
-    parameters: [PARAM_INTEGRATION_ID],
-    path: '/api/v1/integrations/:id',
-    responseShape: '{ id, type, name, config, eventTypes, filters, isActive, ... }',
-    summary: 'Get integration details',
-  },
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'PATCH',
-    parameters: [
-      PARAM_INTEGRATION_ID,
-      { description: 'Display name', in: 'body', name: 'name', required: false, type: 'string' },
-      { description: 'Event types', in: 'body', name: 'eventTypes', required: false, type: 'string[]' },
-      { description: 'Active status', in: 'body', name: 'isActive', required: false, type: 'boolean' },
-      { description: 'Silent notifications', in: 'body', name: 'silentPush', required: false, type: 'boolean' },
-    ],
-    path: '/api/v1/integrations/:id',
-    responseShape: '{ id, type, name, config, eventTypes, isActive, ... }',
-    summary: 'Update an integration',
-  },
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'DELETE',
-    parameters: [PARAM_INTEGRATION_ID],
-    path: '/api/v1/integrations/:id',
-    responseShape: '{ success: true }',
-    summary: 'Delete an integration',
-  },
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'GET',
-    parameters: [
-      PARAM_INTEGRATION_ID,
-      { description: 'Max items', in: 'query', name: 'limit', required: false, type: 'number' },
-    ],
-    path: '/api/v1/integrations/:id/deliveries',
-    responseShape: '{ deliveries: [{ id, eventType, status, attempts, createdAt, ... }] }',
-    summary: 'List delivery history for an integration',
-  },
-  {
-    category: CATEGORY_INTEGRATIONS,
-    free: true,
-    method: 'POST',
-    parameters: [PARAM_INTEGRATION_ID],
-    path: '/api/v1/integrations/:id/test',
-    responseShape: '{ success: true }',
-    summary: 'Send a test delivery to the integration',
-  },
 
   // --- X Account Management ---
   {
@@ -1059,145 +921,6 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Leave community',
   },
 
-  // --- Automations ---
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'GET',
-    path: '/api/v1/automations',
-    responseShape: '{ items: [{ id, name, slug, triggerType, triggerConfig, isActive, runCount, lastRunAt, createdAt, updatedAt }] }',
-    summary: 'List all automation flows',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'POST',
-    parameters: [
-      { description: 'Flow name', in: 'body', name: 'name', required: true, type: 'string' },
-      { description: 'Trigger type: monitor_event, schedule, search, webhook_inbound', in: 'body', name: 'triggerType', required: true, type: 'string' },
-      { description: 'Trigger-specific configuration', in: 'body', name: 'triggerConfig', required: true, type: 'object' },
-      { description: 'Template slug to scaffold from', in: 'body', name: 'templateSlug', required: false, type: 'string' },
-    ],
-    path: '/api/v1/automations',
-    responseShape: '{ id, name, slug, triggerType, triggerConfig, isActive, createdAt, updatedAt }',
-    summary: 'Create a new automation flow',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'GET',
-    parameters: [PARAM_AUTOMATION_SLUG],
-    path: '/api/v1/automations/:slug',
-    responseShape: '{ id, name, slug, triggerType, triggerConfig, isActive, steps, recentRuns, createdAt, updatedAt }',
-    summary: 'Get flow details with steps and recent runs',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'PATCH',
-    parameters: [
-      PARAM_AUTOMATION_SLUG,
-      { description: 'Current updatedAt for optimistic concurrency', in: 'body', name: 'expectedUpdatedAt', required: true, type: 'string' },
-      { description: 'Updated flow name', in: 'body', name: 'name', required: false, type: 'string' },
-      { description: 'Updated trigger type', in: 'body', name: 'triggerType', required: false, type: 'string' },
-      { description: 'Updated trigger config', in: 'body', name: 'triggerConfig', required: false, type: 'object' },
-      { description: 'Activate or deactivate', in: 'body', name: 'isActive', required: false, type: 'boolean' },
-    ],
-    path: '/api/v1/automations/:slug',
-    responseShape: '{ id, name, slug, triggerType, triggerConfig, isActive, createdAt, updatedAt }',
-    summary: 'Update flow name, trigger, or active status',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'DELETE',
-    parameters: [PARAM_AUTOMATION_SLUG],
-    path: '/api/v1/automations/:slug',
-    responseShape: RESPONSE_SUCCESS,
-    summary: 'Delete a flow and all its steps',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'POST',
-    parameters: [
-      PARAM_AUTOMATION_SLUG,
-      { description: 'Step type: action, condition, extraction', in: 'body', name: 'stepType', required: true, type: 'string' },
-      { description: 'Branch: main, if_true, if_false', in: 'body', name: 'branch', required: true, type: 'string' },
-      { description: 'Step-specific configuration', in: 'body', name: 'config', required: true, type: 'object' },
-      { description: 'Order position in branch', in: 'body', name: 'position', required: false, type: 'number' },
-      { description: 'Parent step ID for condition branches', in: 'body', name: 'parentStepId', required: false, type: 'string' },
-      { description: 'Action type: create_tweet, follow, like, reply_tweet, retweet, send_dm, send_email, send_telegram, unfollow', in: 'body', name: 'actionType', required: false, type: 'string' },
-      { description: 'Extraction tool type', in: 'body', name: 'extractionType', required: false, type: 'string' },
-      { description: 'Variable name for extraction output', in: 'body', name: 'outputName', required: false, type: 'string' },
-    ],
-    path: '/api/v1/automations/:slug/steps',
-    responseShape: '{ id, flowId, stepType, actionType, extractionType, branch, config, position, createdAt }',
-    summary: 'Add an action, condition, or extraction step to a flow',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'PATCH',
-    parameters: [
-      PARAM_AUTOMATION_SLUG,
-      { description: 'Step ID to update', in: 'body', name: 'stepId', required: true, type: 'string' },
-      { description: 'Updated step config', in: 'body', name: 'config', required: false, type: 'object' },
-      { description: 'Updated step type', in: 'body', name: 'stepType', required: false, type: 'string' },
-      { description: 'Updated branch', in: 'body', name: 'branch', required: false, type: 'string' },
-      { description: 'Updated position', in: 'body', name: 'position', required: false, type: 'number' },
-      { description: 'Updated action type', in: 'body', name: 'actionType', required: false, type: 'string' },
-      { description: 'Updated extraction type', in: 'body', name: 'extractionType', required: false, type: 'string' },
-      { description: 'Updated output variable name', in: 'body', name: 'outputName', required: false, type: 'string' },
-    ],
-    path: '/api/v1/automations/:slug/steps',
-    responseShape: '{ id, flowId, stepType, actionType, extractionType, branch, config, position, createdAt }',
-    summary: 'Update a step configuration or position',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'DELETE',
-    parameters: [
-      PARAM_AUTOMATION_SLUG,
-      { description: 'Step ID to delete', in: 'body', name: 'stepId', required: true, type: 'string' },
-    ],
-    path: '/api/v1/automations/:slug/steps',
-    responseShape: RESPONSE_SUCCESS,
-    summary: 'Remove a step from a flow',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'PATCH',
-    parameters: [
-      PARAM_AUTOMATION_SLUG,
-      { description: 'Array of { stepId, positionX, positionY } (max 10)', in: 'body', name: 'positions', required: true, type: 'array' },
-    ],
-    path: '/api/v1/automations/:slug/steps/positions',
-    responseShape: RESPONSE_SUCCESS,
-    summary: 'Batch update canvas positions for flow steps',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'POST',
-    parameters: [PARAM_AUTOMATION_SLUG],
-    path: '/api/v1/automations/:slug/test',
-    responseShape: '{ status, result, runId, error? }',
-    summary: 'Test run a flow with synthetic trigger data',
-  },
-  {
-    category: CATEGORY_AUTOMATIONS,
-    free: true,
-    method: 'POST',
-    parameters: [
-      { description: 'Inbound webhook token', in: 'path', name: 'token', required: true, type: 'string' },
-    ],
-    path: '/api/v1/webhooks/inbound/:token',
-    responseShape: '{ accepted: true, flowId }',
-    summary: 'Trigger a flow via inbound webhook (no auth required, token acts as auth)',
-  },
 
   // --- Support ---
   {

@@ -1,6 +1,6 @@
 ---
 name: tweetclaw
-description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts, automate flows via Xquik. 122 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends), background event poller. Reads from $0.00015/call - 33x cheaper than the official X API."
+description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 111 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends), background event poller. Reads from $0.00015/call - 33x cheaper than the official X API."
 homepage: https://xquik.com
 read_when:
   - Posting, replying, liking, retweeting, or following on X/Twitter
@@ -41,7 +41,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Extraction (followers, following, verified followers) | 1/result | $0.00015/result |
 | Extraction (articles) | 5/result | $0.00075/result |
 | Draw | 1/entry | $0.00015/entry |
-| Monitors, webhooks, radar, compose, drafts, integrations | 0 | **Free** |
+| Monitors, webhooks, radar, compose, drafts | 0 | **Free** |
 
 ### vs Official X API
 
@@ -55,7 +55,7 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 ### Pay-Per-Use (No Subscription)
 
-- **Credits**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 122 endpoints.
+- **Credits**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 111 endpoints.
 - **MPP**: 32 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
 
 MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
@@ -80,8 +80,6 @@ Use TweetClaw when the user wants to:
 - Analyze a user's writing style
 - Check trending topics on X
 - Download tweet media (images, videos, GIFs)
-- Set up Telegram alerts for monitor events
-- Create and manage automation flows (triggers, steps, test runs)
 - Check credit balance or top up credits
 - Open and manage support tickets
 - Read X Articles (long-form posts)
@@ -114,7 +112,7 @@ Configure the signing key in your OpenClaw plugin config:
 
 ## Tools
 
-TweetClaw registers 2 tools that cover the entire Xquik API (122 endpoints):
+TweetClaw registers 2 tools that cover the entire Xquik API (111 endpoints):
 
 ### `explore` (free, no network)
 
@@ -287,13 +285,6 @@ You: "How many credits do I have?" or "Top up my credits"
 Agent uses tweetclaw -> GET /api/v1/credits or POST /api/v1/credits/topup
 ```
 
-### Create an automation flow (free)
-
-```
-You: "Create an automation that sends a DM when I get a new follower"
-Agent uses tweetclaw -> creates flow with monitor_event trigger, adds send_dm step, tests it
-```
-
 ### Read an X Article
 
 ```
@@ -320,7 +311,6 @@ Agent uses tweetclaw -> creates ticket with subject and description
 | Extraction | Reply/follower/community extraction (23 tools) | 1-5 credits/result |
 | Draws | Giveaway draws, export results | 1 credit/entry |
 | Monitoring | Create monitors, view events, webhooks | Free |
-| Automations | Create flows, add steps, test runs, inbound webhooks | Free |
 | Account | API keys, subscription, connected X accounts | Free |
 | Credits | Check balance, top up | Free |
 | Trends | X trending topics, curated radar from 7 sources | 3 credits / Free |

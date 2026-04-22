@@ -40,18 +40,18 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Extraction (followers, following, verified followers) | 1/result | $0.00015/result |
 | Extraction (articles) | 5/result | $0.00075/result |
 | Draw | 1/entry | $0.00015/entry |
-| Monitors, webhooks, radar, compose, drafts, integrations | 0 | **Free** |
+| Monitors, webhooks, radar, compose, drafts | 0 | **Free** |
 
 ### Pay-Per-Use (No Subscription)
 
 Two options:
 
-- **Credits**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 122 endpoints.
+- **Credits**: Top up credits via the API ($10 minimum). 1 credit = $0.00015. Works with all 111 endpoints.
 - **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
 
-Tweet composition, style analysis, drafts, curated radar (7 sources), account management, integrations, automations, support tickets - all free, no credits consumed.
+Tweet composition, style analysis, drafts, curated radar (7 sources), account management, support tickets - all free, no credits consumed.
 
 ## Install
 
@@ -61,7 +61,7 @@ openclaw plugins install @xquik/tweetclaw
 
 ## Configure
 
-### Option A: API key (full access, 122 endpoints)
+### Option A: API key (full access, 111 endpoints)
 
 Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it in an environment variable and configure TweetClaw to use it:
 
@@ -73,7 +73,7 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 ### Option B: Credits (pay-per-use, no subscription)
 
-Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 122 endpoints available. 1 credit = $0.00015.
+Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 111 endpoints available. 1 credit = $0.00015.
 
 ### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
 
@@ -154,7 +154,7 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 
 ## API Coverage
 
-122 endpoints across 12 categories:
+111 endpoints across 11 categories:
 
 | Category | Examples | Cost |
 |----------|---------|------|
@@ -165,7 +165,6 @@ You: "Monitor @elonmusk for new tweets and follower changes"
 | **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1-5 credits/result |
 | **Draws** | Run giveaway draws on tweets, export results | 1 credit/entry |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
-| **Automations** | Create flows, add steps, test runs, inbound webhooks | Free |
 | **Account** | Manage API keys, subscription, connected X accounts | Free |
 | **Credits** | Check balance, top up credits | Free |
 | **Trends** | X trending topics, curated radar from 7 sources | 3 credits / Free |

@@ -27,7 +27,7 @@ arctl mcp publish xquik \
   --type remote \
   --url https://xquik.com/mcp \
   --transport streamable-http \
-  --description "Real-time X (Twitter) data platform. 122 REST API endpoints via 2 MCP tools. Tweet search, user lookup, follower extraction, write actions, monitoring, giveaway draws, trending topics. Reads from \$0.00015/call."
+  --description "Real-time X (Twitter) data platform. 111 REST API endpoints via 2 MCP tools. Tweet search, user lookup, follower extraction, write actions, monitoring, giveaway draws, trending topics. Reads from \$0.00015/call."
 ```
 
 ## Option B: Register the npm Package
@@ -38,7 +38,7 @@ Since @xquik/tweetclaw is on npm, it can also be registered as an npm-based entr
 arctl mcp publish xquik-tweetclaw \
   --type npm \
   --package @xquik/tweetclaw \
-  --description "X/Twitter automation via Xquik. OpenClaw plugin with 122 endpoints via 2 tools. Reads from \$0.00015/call."
+  --description "X/Twitter automation via Xquik. OpenClaw plugin with 111 endpoints via 2 tools. Reads from \$0.00015/call."
 ```
 
 ## After Publishing
