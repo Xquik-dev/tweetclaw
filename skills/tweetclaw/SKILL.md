@@ -14,6 +14,7 @@ read_when:
   - Checking credit balance or topping up credits
   - Browsing bookmarks, notifications, timeline, or DM history
 metadata: {"openclaw":{"emoji":"🐦","primaryCredential":"apiKey","requires":{"config":["apiKey"]},"alternateCredentials":["tempoSigningKey"],"tags":["twitter","x","automation","social-media","tweets","scraping","giveaway","monitoring","rest-api","cheap-api"]}}
+license: MIT
 ---
 
 # TweetClaw
