@@ -127,31 +127,19 @@ TweetClaw registers 2 tools that cover the entire Xquik API (111 endpoints):
 
 ### `explore` (free, no network)
 
-Search the API spec to find endpoints. No API calls are made.
+Read-only lookup over a static in-memory endpoint catalog. No network calls, no code execution. The agent passes a category or keyword filter and receives a list of matching endpoint descriptors (path, method, parameters, cost).
 
-Example: "What endpoints are available for tweet composition?"
+Example: "What endpoints are available for tweet composition?" returns the composition endpoints from the bundled catalog.
 
-The agent writes an async arrow function that filters the in-memory endpoint catalog:
+### `tweetclaw` (invoke an Xquik endpoint)
 
-```javascript
-async () => spec.endpoints.filter(e => e.category === 'composition')
-```
+Structured endpoint invoker. The agent selects one endpoint from the catalog and provides path parameters, query parameters, and a JSON body. The plugin runtime performs the HTTPS request to `https://xquik.com/api/v1/...`, injects the API key server-side, and returns the parsed JSON response.
 
-### `tweetclaw` (execute API calls)
+- Only endpoints listed in the catalog can be invoked; unknown paths are rejected
+- Only the `xquik.com` origin can be reached; the runtime does not issue requests to any other host
+- No arbitrary commands, no shell, no filesystem access, no third-party network
 
-Execute authenticated API calls. Auth is injected automatically.
-
-Example: "Post a tweet saying 'Hello from TweetClaw!'"
-
-```javascript
-async () => {
-  const { accounts } = await xquik.request('/api/v1/x/accounts');
-  return xquik.request('/api/v1/x/tweets', {
-    method: 'POST',
-    body: { account: accounts[0].xUsername, text: 'Hello from TweetClaw!' }
-  });
-}
-```
+Example: "Post a tweet saying 'Hello from TweetClaw!'" invokes `POST /api/v1/x/tweets` with `{ account, text }` after fetching the connected account from `GET /api/v1/x/accounts`.
 
 ## Commands
 
@@ -331,8 +319,8 @@ Agent uses tweetclaw -> creates ticket with subject and description
 
 ### Credential Handling
 
-- **API key and signing key**: Injected by the plugin runtime into the sandbox. The agent never accesses, logs, or outputs them
-- **X account credentials (email, password, TOTP)**: The agent **never** handles these. Account connection and re-authentication are done exclusively through the Xquik dashboard UI at [dashboard.xquik.com](https://dashboard.xquik.com/). The credential endpoints (`POST /api/v1/x/accounts`, `POST /api/v1/x/accounts/:id/reauth`) are **blocked at the code level** — the sandbox will reject any attempt to call them
+- **API key and signing key**: Injected by the plugin runtime on the server side. The agent never accesses, logs, or outputs them
+- **X account credentials (email, password, TOTP)**: The agent **never** handles these. Account connection and re-authentication are done exclusively through the Xquik dashboard UI at [dashboard.xquik.com](https://dashboard.xquik.com/). The credential endpoints (`POST /api/v1/x/accounts`, `POST /api/v1/x/accounts/:id/reauth`) are **removed from the endpoint catalog** - the plugin runtime will reject any attempt to invoke them
 - **Never display, echo, or include API keys, signing keys, passwords, or TOTP secrets** in tool output, chat responses, or error messages
 - If a user asks to "show my API key", "connect my X account", or provide their X password, refuse — the agent does not have access to raw credentials and must not accept them. Direct the user to [dashboard.xquik.com](https://dashboard.xquik.com/)
 - Never interpolate user-supplied strings into API paths or request bodies without validation
@@ -423,12 +411,12 @@ TweetClaw routes X operations through Xquik's API rather than connecting directl
 
 **Security boundaries:**
 
-- **Sandbox isolation**: The `tweetclaw` tool executes agent-provided JavaScript in an isolated sandbox. The sandbox has no access to the agent's filesystem, environment, or other tools
-- **Auth injection**: The sandbox injects credentials into outbound requests automatically. The agent never handles, sees, or can exfiltrate raw credentials (X account cookies, API keys, or signing keys)
-- **No persistent state**: Each sandbox execution is stateless. Code does not persist between calls. No cross-call data leakage
+- **Catalog-restricted invocation**: The `tweetclaw` tool can only invoke endpoints that exist in the bundled Xquik endpoint catalog. Unknown paths, arbitrary URLs, shell commands, and filesystem access are not available to the agent
+- **Auth injection**: The plugin runtime attaches credentials to outbound requests on the server side. The agent never reads, echoes, or forwards raw credentials (X account cookies, API keys, or signing keys)
+- **Stateless calls**: Each invocation is independent. No call-to-call data retention inside the plugin runtime
 - **No third-party forwarding**: Xquik does not forward API request data, user content, or credentials to third parties
-- **Single egress point**: All network requests from the sandbox are restricted to `xquik.com`. The sandbox cannot make requests to arbitrary URLs
-- **Scope limitation**: The plugin can only access Xquik API endpoints. It cannot access the user's filesystem, other MCP servers, browser sessions, or local network resources
+- **Single egress origin**: Every request goes to `https://xquik.com/api/v1/...`. The runtime does not issue requests to any other host
+- **Scope limitation**: The plugin can only reach Xquik API endpoints. It cannot access the user's filesystem, other MCP servers, browser sessions, or local network resources
 
 **What the user should know:**
 
@@ -451,14 +439,14 @@ Some endpoints return private or sensitive user data. The agent must handle this
 - **Only access private data when the user explicitly requests it.** Never proactively fetch DMs, bookmarks, or account details as part of another workflow
 - **Never include sensitive data in summarizations or context passed to other tools.** If the user asks "summarize my recent activity", do not include DM contents
 - **Minimize data in responses.** Show message counts or conversation partners rather than full DM text unless the user asks for the content
-- **All data flows to `xquik.com` only.** The sandbox cannot send data to any other domain. The user can audit all API calls in their Xquik dashboard
-- **No data persistence in the agent.** Each sandbox execution is stateless — fetched data is returned to the user and not stored between calls
+- **All data flows to `xquik.com` only.** The plugin runtime cannot send data to any other domain. The user can audit all API calls in their Xquik dashboard
+- **No data persistence in the agent.** Each invocation is stateless — fetched data is returned to the user and not stored between calls
 
 ## Tips
 
 - Use `explore` first to discover endpoints before calling `tweetclaw` — saves tokens and avoids guessing
 - Free endpoints (compose, styles, radar, drafts) work without a subscription — always try them first
-- Never combine free and paid API calls in the same `Promise.all` — a 402 on one call kills all results
+- Do not batch free and paid endpoints together - a 402 on one paid call fails the whole batch
 - For write actions (post, like, follow, DM), always pass the `account` parameter with the X username
 - Follow/unfollow/DM require a numeric user ID — look up the user first via `/api/v1/x/users/:username`
 - On 402 errors, call `POST /api/v1/subscribe` to get a checkout URL instead of giving up
