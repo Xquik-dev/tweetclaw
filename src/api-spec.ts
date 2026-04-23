@@ -320,7 +320,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   // --- Extraction ---
   {
     category: 'extraction',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [...PAGINATION_PARAMS],
     path: '/api/v1/draws',
@@ -360,7 +360,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'extraction',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [
       ...PAGINATION_PARAMS,
@@ -435,7 +435,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   // --- Monitoring ---
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'GET',
     path: '/api/v1/monitors',
     responseShape: '{ monitors: [{ id, xUsername, eventTypes, isActive, createdAt }], total }',
@@ -486,7 +486,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [
       ...PAGINATION_PARAMS,
@@ -510,7 +510,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'GET',
     path: '/api/v1/webhooks',
     responseShape: '{ webhooks: [{ id, url, eventTypes, isActive, createdAt }] }',
@@ -518,7 +518,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'POST',
     parameters: [
       { description: 'Webhook delivery URL', in: 'body', name: 'url', required: true, type: 'string' },
@@ -975,6 +975,42 @@ const API_SPEC: readonly EndpointInfo[] = [
     path: '/api/v1/support/tickets/:id/messages',
     responseShape: '{ publicId }',
     summary: 'Reply to a support ticket',
+  },
+
+  // --- Credits ---
+  // All /api/v1/credits* endpoints are free. They expose the PAYG
+  // top-up path and balance read without requiring an active subscription.
+  // Agents should offer these when an unsubscribed user hits a 402 on a
+  // paid endpoint.
+  {
+    category: 'credits',
+    free: true,
+    method: 'GET',
+    path: '/api/v1/credits',
+    responseShape: '{ auto_topup_enabled: boolean, balance: number, lifetime_purchased: number, lifetime_used: number }',
+    summary: 'Get credits balance',
+  },
+  {
+    category: 'credits',
+    free: true,
+    method: 'POST',
+    parameters: [
+      { description: 'Amount in USD to top up ($10 minimum)', in: 'body', name: 'dollars', required: true, type: 'number' },
+    ],
+    path: '/api/v1/credits/topup',
+    responseShape: '{ url: string }',
+    summary: 'Top up credits via Stripe Checkout. $10 min.',
+  },
+  {
+    category: 'credits',
+    free: true,
+    method: 'POST',
+    parameters: [
+      { description: 'Amount in USD to charge saved card ($10 minimum, $500 maximum)', in: 'body', name: 'dollars', required: true, type: 'number' },
+    ],
+    path: '/api/v1/credits/quick-topup',
+    responseShape: '{ outcome: "charged", credits: number, balance: number } | { outcome: "no_payment_method" } | { outcome: "requires_action", clientSecret: string }',
+    summary: 'Instantly charge saved card for credits. Falls back to checkout redirect if no payment method.',
   },
 ] as const;
 
