@@ -48,7 +48,7 @@ const PARAM_X_ACCOUNT: EndpointParameter =
 const PARAM_X_ACCOUNT_ID: EndpointParameter =
   { description: 'X account ID', in: 'path', name: 'id', required: true, type: 'string' };
 
-const DESCRIPTION_EVENT_TYPES = 'tweet.new, tweet.reply, tweet.quote, tweet.retweet, follower.gained, follower.lost';
+const DESCRIPTION_EVENT_TYPES = 'tweet.new, tweet.reply, tweet.quote, tweet.retweet';
 
 const PARAM_EVENT_TYPES_REQUIRED: EndpointParameter =
   { description: `Event types: ${DESCRIPTION_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: true, type: 'string[]' };

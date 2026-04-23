@@ -159,10 +159,10 @@ async () => {
 ### 10. Monitor an account + set up webhook
 \`\`\`javascript
 async () => {
-  // Create monitor for new tweets, replies, follower changes
+  // Create monitor for new tweets, replies, quotes, retweets
   const monitor = await xquik.request('/api/v1/monitors', {
     method: 'POST',
-    body: { username: 'elonmusk', eventTypes: ['tweet.new', 'tweet.reply', 'follower.gained'] }
+    body: { username: 'elonmusk', eventTypes: ['tweet.new', 'tweet.reply', 'tweet.quote', 'tweet.retweet'] }
   });
   // Set up webhook to receive events (save the secret!)
   const webhook = await xquik.request('/api/v1/webhooks', {
