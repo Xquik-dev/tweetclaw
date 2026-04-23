@@ -1,7 +1,13 @@
 ---
 name: tweetclaw
-description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 111 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends), background event poller. Reads from $0.00015/call - 33x cheaper than the official X API."
+description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 111 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends). Reads from $0.00015/call - 33x cheaper than the official X API."
 homepage: https://xquik.com
+primaryCredential: apiKey
+requires:
+  config:
+    - apiKey
+alternateCredentials:
+  - tempoSigningKey
 read_when:
   - Posting, replying, liking, retweeting, or following on X/Twitter
   - Searching tweets or looking up X/Twitter users
@@ -110,7 +116,7 @@ Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com
 
 ### MPP mode (no account, pay-per-use)
 
-MPP gives agents access to 32 read-only X-API endpoints without any account or subscription. The `mppx` SDK handles HTTP 402 payment challenges automatically. The signing key stays local and is only used to sign payment proofs.
+MPP (Machine Payments Protocol) is an optional mode for anonymous, pay-per-use access to 32 read-only X-API endpoints - no Xquik account or API key required. The `tempoSigningKey` is a 66-character hex key that signs on-chain micropayment proofs (via the `mppx` SDK) when the runtime receives an HTTP 402 challenge. The signing key stays in the plugin config and is used only to sign payment proofs; it is not an API credential and grants no account access. If you don't use MPP, leave this field unset.
 
 ```bash
 npm i mppx viem
@@ -152,10 +158,9 @@ Example: "Post a tweet saying 'Hello from TweetClaw!'" invokes `POST /api/v1/x/t
 
 ## Event Notifications
 
-When polling is enabled (default), TweetClaw checks for new events every 60 seconds:
+Monitors are **user-created resources**. They do not exist until a user explicitly asks to create one (e.g. "monitor @elonmusk for new tweets"), which invokes `POST /api/v1/monitors` with an explicit target, event set, and user confirmation. Nothing is monitored by default.
 
-- Monitor alerts: new tweets, replies, quotes, retweets from monitored accounts
-- Follower changes: gained or lost followers on monitored accounts
+Once the user has created a monitor, the plugin polls the Xquik events endpoint every 60 seconds to surface new matches into the agent context. Polling only delivers events for monitors the user already set up; it does not scan anything autonomously and does not perform write actions. Polling can be disabled via the `pollingEnabled` plugin config flag.
 
 ## Common Workflows
 
