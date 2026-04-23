@@ -59,6 +59,8 @@ Tweet composition, style analysis, drafts, curated radar (7 sources), account ma
 openclaw plugins install @xquik/tweetclaw
 ```
 
+> **Note:** `@xquik/tweetclaw` is the only official npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is an unofficial redistribution and may ship stale metadata or outdated endpoint counts.
+
 ## Configure
 
 ### Option A: API key (full access, 111 endpoints)
