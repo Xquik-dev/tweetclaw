@@ -76,7 +76,9 @@
     "cpd": "jscpd .",
     "check-suppressions": "tsx check-suppressions.ts",
     "check-em-dash": "tsx check-em-dash.ts",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run test:coverage"
+    "check-versions": "node scripts/check-versions.mjs",
+    "prepublishOnly": "node scripts/check-versions.mjs",
+    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-versions && npm run test:coverage"
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",
