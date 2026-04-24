@@ -251,7 +251,7 @@ Agent uses tweetclaw -> estimates cost, creates extraction job
 ### Monitor an account
 
 ```
-You: "Monitor @elonmusk for new tweets and follower changes"
+You: "Monitor @elonmusk for new tweets, replies, and retweets"
 Agent uses tweetclaw -> creates monitor with event types
 ```
 

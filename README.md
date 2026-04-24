@@ -146,12 +146,11 @@ Instant responses, no LLM needed:
 When polling is enabled (default), TweetClaw checks for new events every 60 seconds and delivers them to your chat:
 
 - **Monitor alerts**: New tweets, replies, quotes, retweets from monitored accounts
-- **Follower changes**: Gained or lost followers on monitored accounts
 
 Set up a monitor first:
 
 ```
-You: "Monitor @elonmusk for new tweets and follower changes"
+You: "Monitor @elonmusk for new tweets, replies, and retweets"
 ```
 
 ## API Coverage

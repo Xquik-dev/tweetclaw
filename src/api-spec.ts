@@ -342,7 +342,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'extraction',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [PARAM_DRAW_ID],
     path: '/api/v1/draws/:id',
@@ -351,7 +351,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'extraction',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [PARAM_DRAW_ID, PARAM_EXPORT_FORMAT],
     path: '/api/v1/draws/:id/export',
@@ -411,7 +411,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'extraction',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [
       PARAM_EXTRACTION_ID,
@@ -424,7 +424,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'extraction',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [PARAM_EXTRACTION_ID, PARAM_EXPORT_FORMAT],
     path: '/api/v1/extractions/:id/export',
@@ -455,7 +455,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [PARAM_MONITOR_ID],
     path: '/api/v1/monitors/:id',
@@ -464,7 +464,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'PATCH',
     parameters: [
       PARAM_MONITOR_ID,
@@ -477,7 +477,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'DELETE',
     parameters: [PARAM_MONITOR_ID],
     path: '/api/v1/monitors/:id',
@@ -499,7 +499,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [
       { description: 'Event ID', in: 'path', name: 'id', required: true, type: 'string' },
@@ -530,7 +530,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'PATCH',
     parameters: [
       PARAM_WEBHOOK_ID,
@@ -544,7 +544,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'DELETE',
     parameters: [PARAM_WEBHOOK_ID],
     path: '/api/v1/webhooks/:id',
@@ -553,7 +553,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'GET',
     parameters: [PARAM_WEBHOOK_ID],
     path: '/api/v1/webhooks/:id/deliveries',
@@ -562,7 +562,7 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   {
     category: 'monitoring',
-    free: false,
+    free: true,
     method: 'POST',
     parameters: [PARAM_WEBHOOK_ID],
     path: '/api/v1/webhooks/:id/test',
