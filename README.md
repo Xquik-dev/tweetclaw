@@ -1,6 +1,7 @@
 # TweetClaw
 
 [![npm](https://img.shields.io/npm/v/@xquik/tweetclaw)](https://www.npmjs.com/package/@xquik/tweetclaw)
+[![npm downloads](https://img.shields.io/npm/dm/@xquik/tweetclaw.svg)](https://www.npmjs.com/package/@xquik/tweetclaw)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw)
 [![Glama MCP server](https://glama.ai/mcp/servers/Xquik-dev/x-twitter-scraper/badges/score.svg)](https://glama.ai/mcp/servers/Xquik-dev/x-twitter-scraper)
