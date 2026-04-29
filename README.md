@@ -72,7 +72,7 @@ Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it 
 openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 ```
 
-**Security**: Always reference your key via an environment variable — never paste raw keys into shell commands or config files.
+**Security**: Always reference your key via an environment variable - never paste raw keys into shell commands or config files.
 
 ### Option B: Credits (pay-per-use, no subscription)
 
@@ -87,7 +87,7 @@ npm i mppx viem
 openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
 ```
 
-**Security**: Always store your signing key in an environment variable — never paste raw keys into shell commands or config files.
+**Security**: Always store your signing key in an environment variable - never paste raw keys into shell commands or config files.
 
 MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
 
@@ -177,7 +177,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 - [Xquik Platform](https://xquik.com)
 - [API Documentation](https://docs.xquik.com)
 - [Billing & Pricing](https://docs.xquik.com/guides/billing)
-- Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [Composio migration](https://docs.xquik.com/guides/composio-migration)
+- Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [n8n](https://docs.xquik.com/guides/n8n), [Composio migration](https://docs.xquik.com/guides/composio-migration)
 - [npm Package](https://www.npmjs.com/package/@xquik/tweetclaw)
 - [OpenClaw](https://github.com/openclaw/openclaw)
 
