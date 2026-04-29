@@ -543,6 +543,18 @@ export default [
     },
   },
 
+  // Node scripts
+  {
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      ecmaVersion: 2023,
+      globals: {
+        ...globals.node,
+      },
+      sourceType: 'module',
+    },
+  },
+
   // Check scripts override
   {
     files: ['check-*.ts', 'check-common.ts'],
