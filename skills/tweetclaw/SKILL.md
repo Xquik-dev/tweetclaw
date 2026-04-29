@@ -1,6 +1,6 @@
 ---
 name: tweetclaw
-description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 111 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends). Reads from $0.00015/call - 33x cheaper than the official X API."
+description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 111 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends). Post reads from $0.00015/call - about 33x cheaper than official X API post reads."
 homepage: https://xquik.com
 primaryCredential: apiKey
 requires:
@@ -25,7 +25,7 @@ license: MIT
 
 # TweetClaw
 
-OpenClaw plugin for X/Twitter automation powered by Xquik. **Reads from $0.00015/call - 33x cheaper than the official X API.**
+OpenClaw plugin for X/Twitter automation powered by Xquik. **Post reads from $0.00015/call - about 33x cheaper than official X API post reads.**
 
 ```bash
 openclaw plugins install @xquik/tweetclaw
@@ -52,13 +52,16 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 ### vs Official X API
 
-| | Xquik | X API Basic | X API Pro |
+| | Xquik | Official X pay-per-usage | Notes |
 |---|---|---|---|
-| **Monthly cost** | **$20** | $100 | $5,000 |
-| **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Cost per user lookup** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Write actions** | **$0.0015** | Limited | Limited |
-| **Bulk extraction** | **$0.00015/result** | Not available | Not available |
+| **Access model** | **$20/month full API, plus pay-per-use options** | No subscriptions or commitments | Basic and Pro are legacy package names |
+| **Cost per post read** | **$0.00015** | $0.005 per resource | Xquik is about 33x cheaper |
+| **Cost per user lookup** | **$0.00015** | $0.010 per resource | Xquik is about 67x cheaper |
+| **Cost per trend read** | **$0.00045** | $0.010 per resource | Xquik is about 22x cheaper |
+| **Write actions** | **$0.0015** | $0.015 content or interaction create; $0.200 content create with URL | Xquik is 10x cheaper for matching $0.015 write classes |
+| **Bulk extraction** | **$0.00015/result** | Charged per returned resource | Built-in extraction jobs are included with Xquik |
+
+Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricing), which lists current pay-per-usage read and write rates.
 
 ### Pay-Per-Use (No Subscription)
 
@@ -411,7 +414,7 @@ TweetClaw is a **first-party plugin** built and operated by Xquik. All API calls
 
 TweetClaw routes X operations through Xquik's API rather than connecting directly to X's endpoints. This is intentional:
 
-- X's official API is expensive ($100-$5,000/month) and rate-limited. Xquik provides the same operations at 33x lower cost
+- Official X API pay-per-usage charges $0.005 per post read, $0.010 per user read, and $0.015 per matching create or interaction write. Xquik keeps post reads about 33x lower and routes agents through one known API
 - The agent never holds X session tokens or OAuth credentials - these stay on Xquik's servers
 - All API calls go to a single known origin (`xquik.com`), auditable via standard HTTPS inspection
 

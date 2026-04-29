@@ -9,7 +9,7 @@
 
 Post tweets, reply, like, retweet, follow, DM & more - directly from your chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
 
-Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Reads from $0.00015/call - 33x cheaper than the official X API.**
+Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Post reads from $0.00015/call - about 33x cheaper than official X API post reads.**
 
 ## Pricing
 
@@ -17,15 +17,18 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 ### vs Official X API
 
-| | Xquik (via TweetClaw) | X API Basic | X API Pro |
+| | Xquik (via TweetClaw) | Official X pay-per-usage | Notes |
 |---|---|---|---|
-| **Monthly cost** | **$20** | $100 | $5,000 |
-| **Cost per tweet read** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Cost per user lookup** | **$0.00015** | ~$0.01 | ~$0.005 |
-| **Write actions** | **$0.0015** | Limited | Limited |
-| **Bulk extraction** | **$0.00015/result** | Not available | Not available |
-| **Monitoring + webhooks** | **Free** | Not available | Not available |
-| **Giveaway draws** | **$0.00015/entry** | Not available | Not available |
+| **Access model** | **$20/month full API, plus pay-per-use options** | No subscriptions or commitments | Basic and Pro are legacy package names |
+| **Cost per post read** | **$0.00015** | $0.005 per resource | Xquik is about 33x cheaper |
+| **Cost per user lookup** | **$0.00015** | $0.010 per resource | Xquik is about 67x cheaper |
+| **Cost per trend read** | **$0.00045** | $0.010 per resource | Xquik is about 22x cheaper |
+| **Write actions** | **$0.0015** | $0.015 content or interaction create; $0.200 content create with URL | Xquik is 10x cheaper for matching $0.015 write classes |
+| **Bulk extraction** | **$0.00015/result** | Charged per returned resource | Built-in extraction jobs are included with Xquik |
+| **Monitoring + webhooks** | **Free** | No direct monitor product in pricing table | Real-time delivery is included |
+| **Giveaway draws** | **$0.00015/entry** | No comparable draw product | Draw engine is included |
+
+Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricing), which lists current pay-per-usage read and write rates.
 
 ### Per-Operation Costs
 
