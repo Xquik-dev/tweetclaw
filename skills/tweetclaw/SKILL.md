@@ -76,7 +76,7 @@ Prefer retrieval from docs for current limits, pricing, and API signatures:
 | [docs.xquik.com](https://docs.xquik.com) | Full docs home |
 | [API reference](https://docs.xquik.com/api-reference/overview) | Endpoint parameters, response shapes |
 | [Billing guide](https://docs.xquik.com/guides/billing) | Credit costs, subscription tiers, pay-per-use pricing |
-| Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [Composio migration](https://docs.xquik.com/guides/composio-migration) | Framework-specific integration recipes |
+| Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [n8n](https://docs.xquik.com/guides/n8n), [Zapier](https://docs.xquik.com/guides/zapier), [Composio migration](https://docs.xquik.com/guides/composio-migration) | Framework-specific integration recipes |
 
 ## When to Use
 
