@@ -77,6 +77,9 @@ const PARAM_USER_ID_FOLLOW: EndpointParameter =
 const PARAM_USER_ID_UNFOLLOW: EndpointParameter =
   { description: 'User ID to unfollow', in: 'path', name: 'id', required: true, type: 'string' };
 
+const PARAM_USER_ID_REMOVE_FOLLOWER: EndpointParameter =
+  { description: 'User ID to remove from your followers', in: 'path', name: 'id', required: true, type: 'string' };
+
 const PARAM_MEDIA_URL: EndpointParameter =
   { description: 'URL to download media from (alternative to file, HTTPS only)', in: 'body', name: 'url', required: false, type: 'string' };
 
@@ -664,16 +667,17 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Get current trending topics on X',
   },
   {
-    category: 'trends',
+    category: 'twitter',
     free: false,
     method: 'GET',
     parameters: [
-      { description: 'Source slug (reddit, github, hacker-news, google-trends, wikipedia, startups, polymarket)', in: 'path', name: 'source', required: true, type: 'string' },
-      { description: 'Max number of items', in: 'query', name: 'count', required: false, type: 'number' },
+      { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
+      { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
     ],
-    path: '/api/v1/trending/:source',
-    responseShape: '{ items: [{ title, url?, score? }], total, source }',
-    summary: 'Get trending items by source',
+    mpp: { intent: 'charge', price: '$0.00045/call' },
+    path: '/api/v1/x/trends',
+    responseShape: '{ trends: [{ name, query?, description?, rank? }], count, woeid }',
+    summary: 'Get X trending topics by region',
   },
 
 
@@ -805,6 +809,15 @@ const API_SPEC: readonly EndpointInfo[] = [
     path: '/api/v1/x/users/:id/follow',
     responseShape: RESPONSE_SUCCESS,
     summary: 'Unfollow user',
+  },
+  {
+    category: CATEGORY_X_WRITE,
+    free: false,
+    method: 'POST',
+    parameters: [PARAM_USER_ID_REMOVE_FOLLOWER, PARAM_X_ACCOUNT],
+    path: '/api/v1/x/users/:id/remove-follower',
+    responseShape: RESPONSE_SUCCESS,
+    summary: 'Remove follower',
   },
   {
     category: CATEGORY_X_WRITE,

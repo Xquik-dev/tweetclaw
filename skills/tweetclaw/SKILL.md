@@ -1,6 +1,6 @@
 ---
 name: tweetclaw
-description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 111 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends). Post reads from $0.00015/call - about 33x cheaper than official X API post reads."
+description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, monitor accounts via Xquik. 112 endpoints, 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends). Post reads from $0.00015/call - about 33x cheaper than official X API post reads."
 homepage: https://xquik.com
 primaryCredential: apiKey
 requires:
@@ -65,7 +65,7 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 
 ### Pay-Per-Use (No Subscription)
 
-- **Credits**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 111 endpoints.
+- **Credits**: Top up via `POST /api/v1/credits/topup` ($10 minimum). Works with all 112 endpoints.
 - **MPP**: 32 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
 
 MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
@@ -133,7 +133,7 @@ Configure the signing key in your OpenClaw plugin config:
 
 ## Tools
 
-TweetClaw registers 2 tools that cover the entire Xquik API (111 endpoints):
+TweetClaw registers 2 tools that cover the entire Xquik API (112 endpoints):
 
 ### `explore` (free, no network)
 
@@ -311,18 +311,16 @@ Agent uses tweetclaw -> creates ticket with subject and description
 
 | Category | Examples | Cost |
 |----------|---------|------|
-| Write Actions | Post tweets, reply, like, retweet, follow, DM, update profile, avatar, banner | 10 credits |
-| Media | Upload media, download tweet media | 1-2 credits |
-| Twitter | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, bookmarks, notifications, timeline, DM history | 1-5 credits |
-| Composition | Compose, refine, score tweets; manage drafts | Free |
-| Styles | Analyze tweet styles, compare, performance | Mixed |
-| Extraction | Reply/follower/community extraction (23 tools) | 1-5 credits/result |
-| Draws | Giveaway draws, export results | 1 credit/entry |
-| Monitoring | Create monitors, view events, webhooks | Free |
-| Account | API keys, subscription, connected X accounts | Free |
+| Account | API keys, account settings, subscription | Free |
+| Composition | Compose, drafts, styles, radar | Free / Mixed |
 | Credits | Check balance, top up | Free |
-| Trends | X trending topics, curated radar from 7 sources | 3 credits / Free |
+| Extraction | 23 extraction tools, giveaway draws, exports | 1-5 credits/result |
+| Media | Upload media, download tweet media | 1-2 credits |
+| Monitoring | Create monitors, view events, webhooks | Free |
 | Support | Create tickets, reply, track status | Free |
+| Twitter | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-7 credits |
+| X Accounts | List, inspect, and disconnect connected accounts | Free |
+| X Write | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | 10 credits |
 
 ## Security
 

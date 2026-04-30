@@ -40,6 +40,19 @@ describe('API_SPEC', () => {
     expect(API_SPEC.length).toBeGreaterThanOrEqual(40);
   });
 
+  it('matches the canonical trends and remove follower catalog', () => {
+    expect.assertions(5);
+    const keys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
+    const categories = new Set(API_SPEC.map((endpoint) => endpoint.category));
+    const removedTrendingRoutePath = 'trending/:source';
+
+    expect(keys).toContain('GET /api/v1/x/trends');
+    expect(keys).toContain('POST /api/v1/x/users/:id/remove-follower');
+    expect(keys).not.toContain(`GET /api/v1/${removedTrendingRoutePath}`);
+    expect(categories).not.toContain('trends');
+    expect(categories.size).toBe(10);
+  });
+
   it('has both free and paid endpoints', () => {
     expect.assertions(2);
     expect(API_SPEC.some((endpoint) => endpoint.free)).toBe(true);

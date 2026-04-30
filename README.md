@@ -50,7 +50,7 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 
 Two options:
 
-- **Credits**: Top up credits via the API. 1 credit = $0.00015. Works with all 111 endpoints.
+- **Credits**: Top up credits via the API. 1 credit = $0.00015. Works with all 112 endpoints.
 - **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
@@ -67,7 +67,7 @@ openclaw plugins install @xquik/tweetclaw
 
 ## Configure
 
-### Option A: API key (full access, 111 endpoints)
+### Option A: API key (full access, 112 endpoints)
 
 Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it in an environment variable and configure TweetClaw to use it:
 
@@ -79,7 +79,7 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 ### Option B: Credits (pay-per-use, no subscription)
 
-Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 111 endpoints available. 1 credit = $0.00015.
+Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 112 endpoints available. 1 credit = $0.00015.
 
 ### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
 
@@ -159,21 +159,20 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 
 ## API Coverage
 
-111 endpoints across 11 categories:
+112 endpoints across 10 categories:
 
 | Category | Examples | Cost |
 |----------|---------|------|
-| **Write Actions** | Post tweets, reply, like, retweet, follow, unfollow, DM, update profile, avatar, banner | 10 credits |
-| **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
-| **Twitter** | Search tweets, look up users, user tweets/likes/media, favoriters, mutual followers, check follows, articles, bookmarks, notifications, timeline, DM history | 1-5 credits |
-| **Composition** | Compose, refine, score tweets; manage drafts; analyze writing styles | Free |
-| **Extraction** | Run extraction jobs (23 tool types: replies, followers, communities, favoriters, user_likes, user_media, etc.) | 1-5 credits/result |
-| **Draws** | Run giveaway draws on tweets, export results | 1 credit/entry |
-| **Monitoring** | Create monitors, view events, manage webhooks | Free |
-| **Account** | Manage API keys, subscription, connected X accounts | Free |
+| **Account** | Account settings, API keys, subscription | Free |
+| **Composition** | Compose, drafts, writing styles, radar | Free / Mixed |
 | **Credits** | Check balance, top up credits | Free |
-| **Trends** | X trending topics, curated radar from 7 sources | 3 credits / Free |
+| **Extraction** | 23 extraction tools, giveaway draws, exports | 1-5 credits/result |
+| **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
+| **Monitoring** | Create monitors, view events, manage webhooks | Free |
 | **Support** | Create tickets, reply, track status | Free |
+| **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-7 credits |
+| **X Accounts** | List, inspect, and disconnect connected accounts | Free |
+| **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | 10 credits |
 
 ## Links
 
