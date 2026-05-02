@@ -38,7 +38,7 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 | Read (user profile, verified followers, followers you know) | 1 | $0.00015 |
 | Read (favoriters) | 1 | $0.00015 |
 | Read (trends) | 3 | $0.00045 |
-| Follow check, article | 7 | $0.00105 |
+| Follow check, article | 5 | $0.00075 |
 | Write (tweet, like, retweet, follow, DM, etc.) | 10 | $0.0015 |
 | Extraction (tweets, replies, quotes, mentions, posts, likes, media, search, favoriters, retweeters, community members, people search, list members, list followers) | 1/result | $0.00015/result |
 | Extraction (followers, following, verified followers) | 1/result | $0.00015/result |
@@ -50,7 +50,7 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 
 Two options:
 
-- **Credits**: Top up credits via the API. 1 credit = $0.00015. Works with all 112 endpoints.
+- **Credits**: Top up credits via the API. 1 credit = $0.00015. Works with all 113 endpoints.
 - **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
@@ -67,7 +67,7 @@ openclaw plugins install @xquik/tweetclaw
 
 ## Configure
 
-### Option A: API key (full access, 112 endpoints)
+### Option A: API key (full access, 113 endpoints)
 
 Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it in an environment variable and configure TweetClaw to use it:
 
@@ -79,7 +79,7 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 ### Option B: Credits (pay-per-use, no subscription)
 
-Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 112 endpoints available. 1 credit = $0.00015.
+Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 113 endpoints available. 1 credit = $0.00015.
 
 ### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
 
@@ -120,6 +120,8 @@ AI uses explore → filters spec by category "composition"
 
 Execute authenticated API calls. Auth is injected automatically - the LLM never sees your API key.
 
+OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the generated code before approving any post, delete, follow, DM, monitor, extraction, webhook, checkout, or profile-change action.
+
 ```
 You: "Post a tweet saying 'Hello from TweetClaw!'"
 
@@ -159,7 +161,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 
 ## API Coverage
 
-112 endpoints across 10 categories:
+113 endpoints across 10 categories:
 
 | Category | Examples | Cost |
 |----------|---------|------|
@@ -170,7 +172,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 | **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
 | **Support** | Create tickets, reply, track status | Free |
-| **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-7 credits |
+| **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-5 credits |
 | **X Accounts** | List, inspect, and disconnect connected accounts | Free |
 | **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | 10 credits |
 

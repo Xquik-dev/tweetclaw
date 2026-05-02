@@ -34,6 +34,28 @@ interface CommandContext {
   readonly senderId?: string;
 }
 
+interface BeforeToolCallEvent {
+  readonly params?: unknown;
+  readonly toolName?: string;
+}
+
+interface ToolApprovalRequest {
+  readonly description: string;
+  readonly pluginId?: string;
+  readonly severity?: 'critical' | 'info' | 'warning';
+  readonly timeoutBehavior?: 'allow' | 'deny';
+  readonly timeoutMs?: number;
+  readonly title: string;
+}
+
+interface BeforeToolCallResult {
+  readonly requireApproval?: ToolApprovalRequest;
+}
+
+type BeforeToolCallHandler = (
+  event: BeforeToolCallEvent,
+) => BeforeToolCallResult | Promise<BeforeToolCallResult | undefined> | undefined;
+
 interface OpenClawApi {
   readonly logger: {
     readonly debug?: (message: string) => void;
@@ -62,6 +84,16 @@ interface OpenClawApi {
     },
     options?: { readonly name?: string; readonly optional?: boolean },
   ) => void;
+  readonly on?: (
+    name: 'before_tool_call',
+    handler: BeforeToolCallHandler,
+    options?: { readonly priority?: number },
+  ) => void;
+  readonly registerHook?: (
+    name: 'before_tool_call',
+    handler: BeforeToolCallHandler,
+    options?: { readonly priority?: number },
+  ) => void;
 }
 
 const CODE_PARAMETER = {
@@ -71,6 +103,76 @@ const CODE_PARAMETER = {
   required: ['code'],
   type: 'object',
 };
+
+const WRITE_METHOD_PATTERN = /\bmethod\s*:\s*['"`](?:DELETE|PATCH|POST|PUT)['"`]/iu;
+const HIGH_IMPACT_PATH_PATTERNS = [
+  /\/api\/v1\/credits\/(?:quick-topup|topup)/u,
+  /\/api\/v1\/draws/u,
+  /\/api\/v1\/extractions/u,
+  /\/api\/v1\/monitors/u,
+  /\/api\/v1\/subscribe/u,
+  /\/api\/v1\/webhooks/u,
+  /\/api\/v1\/x\/communities/u,
+  /\/api\/v1\/x\/dm\//u,
+  /\/api\/v1\/x\/media/u,
+  /\/api\/v1\/x\/profile/u,
+  /\/api\/v1\/x\/tweets['"`]/u,
+] as const;
+
+function toolCallCode(event: BeforeToolCallEvent): string | undefined {
+  if (typeof event.params !== 'object' || event.params === null) {
+    return undefined;
+  }
+
+  const { code } = event.params as { readonly code?: unknown };
+  return typeof code === 'string' ? code : undefined;
+}
+
+function requiresTweetclawApproval(code: string): boolean {
+  if (WRITE_METHOD_PATTERN.test(code)) {
+    return true;
+  }
+
+  return HIGH_IMPACT_PATH_PATTERNS.some((pattern) => pattern.test(code));
+}
+
+function registerWriteApprovalHook(api: OpenClawApi): void {
+  const registerHook = api.on ?? api.registerHook;
+  if (registerHook === undefined) {
+    api.logger.warn(
+      'TweetClaw: OpenClaw approval hooks are unavailable. Keep explicit user approval before write actions.',
+    );
+    return;
+  }
+
+  registerHook.call(
+    api,
+    'before_tool_call',
+    (event): BeforeToolCallResult | undefined => {
+      if (event.toolName !== 'tweetclaw') {
+        return undefined;
+      }
+
+      const code = toolCallCode(event);
+      if (code === undefined || !requiresTweetclawApproval(code)) {
+        return undefined;
+      }
+
+      return {
+        requireApproval: {
+          description:
+            'TweetClaw is about to run code that can change X accounts, create jobs, or start a checkout flow. Review the tool call before allowing it.',
+          pluginId: 'tweetclaw',
+          severity: 'warning',
+          timeoutBehavior: 'deny',
+          timeoutMs: 60_000,
+          title: 'Approve TweetClaw Action',
+        },
+      };
+    },
+    { priority: 50 },
+  );
+}
 
 export default function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   const config: unknown = api.pluginConfig;
@@ -98,6 +200,7 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
   }
 
   const request = createProxiedRequest(baseUrl, credential, fetchFunction);
+  registerWriteApprovalHook(api);
 
   // --- Tools (2-tool approach, execute inside tool object) ---
   api.registerTool(

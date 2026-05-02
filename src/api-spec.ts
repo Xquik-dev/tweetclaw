@@ -1017,6 +1017,17 @@ const API_SPEC: readonly EndpointInfo[] = [
   {
     category: 'credits',
     free: true,
+    method: 'GET',
+    parameters: [
+      { description: 'Stripe Checkout session ID returned from credit top-up checkout', in: 'query', name: 'session_id', required: true, type: 'string' },
+    ],
+    path: '/api/v1/credits/topup/status',
+    responseShape: '{ status: "paid" | "open" | "expired" | "unknown", amount_dollars?: number, credits?: number }',
+    summary: 'Check credit top-up checkout status.',
+  },
+  {
+    category: 'credits',
+    free: true,
     method: 'POST',
     parameters: [
       { description: 'Amount in USD to charge saved card ($10 minimum, $500 maximum)', in: 'body', name: 'dollars', required: true, type: 'number' },

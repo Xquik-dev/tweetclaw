@@ -40,14 +40,15 @@ describe('API_SPEC', () => {
     expect(API_SPEC.length).toBeGreaterThanOrEqual(40);
   });
 
-  it('matches the canonical trends and remove follower catalog', () => {
-    expect.assertions(5);
+  it('matches the canonical trends, credits, and remove follower catalog', () => {
+    expect.assertions(6);
     const keys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
     const categories = new Set(API_SPEC.map((endpoint) => endpoint.category));
     const removedTrendingRoutePath = 'trending/:source';
 
     expect(keys).toContain('GET /api/v1/x/trends');
     expect(keys).toContain('POST /api/v1/x/users/:id/remove-follower');
+    expect(keys).toContain('GET /api/v1/credits/topup/status');
     expect(keys).not.toContain(`GET /api/v1/${removedTrendingRoutePath}`);
     expect(categories).not.toContain('trends');
     expect(categories.size).toBe(10);

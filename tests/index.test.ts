@@ -23,13 +23,48 @@ interface RegisteredService {
   readonly stop?: () => void;
 }
 
+interface RegisteredHook {
+  readonly handler: (
+    event: {
+      readonly params?: unknown;
+      readonly toolName?: string;
+    },
+  ) =>
+    | Promise<
+        | {
+            readonly requireApproval?: {
+              readonly description: string;
+              readonly severity?: string;
+              readonly timeoutBehavior?: string;
+              readonly title: string;
+            };
+          }
+        | undefined
+      >
+    | {
+        readonly requireApproval?: {
+          readonly description: string;
+          readonly severity?: string;
+          readonly timeoutBehavior?: string;
+          readonly title: string;
+        };
+      }
+    | undefined;
+  readonly name: string;
+  readonly priority?: number;
+}
+
 function createMockFetch(response: unknown): typeof fetch {
   return async () => new Response(JSON.stringify(response));
 }
 
-function createMockApi(pluginConfig?: unknown): {
+function createMockApi(
+  pluginConfig?: unknown,
+  hookMode: 'none' | 'on' | 'registerHook' = 'on',
+): {
   readonly api: Parameters<typeof register>[0];
   readonly commands: RegisteredCommand[];
+  readonly hooks: RegisteredHook[];
   readonly infos: string[];
   readonly services: RegisteredService[];
   readonly tools: RegisteredTool[];
@@ -37,11 +72,23 @@ function createMockApi(pluginConfig?: unknown): {
 } {
   const tools: RegisteredTool[] = [];
   const commands: RegisteredCommand[] = [];
+  const hooks: RegisteredHook[] = [];
   const services: RegisteredService[] = [];
   const warnings: string[] = [];
   const infos: string[] = [];
+  const addHook = (
+    name: string,
+    handler: RegisteredHook['handler'],
+    options?: { readonly priority?: number },
+  ) => {
+    if (options?.priority === undefined) {
+      hooks.push({ handler, name });
+      return;
+    }
+    hooks.push({ handler, name, priority: options.priority });
+  };
 
-  const api: Parameters<typeof register>[0] = {
+  const baseApi: Parameters<typeof register>[0] = {
     logger: {
       error: () => {},
       info: (message: string) => { infos.push(message); },
@@ -52,8 +99,14 @@ function createMockApi(pluginConfig?: unknown): {
     registerService: (options) => { services.push(options); },
     registerTool: (tool) => { tools.push(tool); },
   };
+  let api: Parameters<typeof register>[0] = baseApi;
+  if (hookMode === 'on') {
+    api = { ...baseApi, on: addHook };
+  } else if (hookMode === 'registerHook') {
+    api = { ...baseApi, registerHook: addHook };
+  }
 
-  return { api, commands, infos, services, tools, warnings };
+  return { api, commands, hooks, infos, services, tools, warnings };
 }
 
 beforeEach(() => {
@@ -98,6 +151,64 @@ describe('register', () => {
     register(api);
     expect(services).toHaveLength(1);
     expect(services[0]?.id).toBe('tweetclaw-poller');
+  });
+
+  it('requires OpenClaw approval for write-like tweetclaw tool calls', async () => {
+    expect.assertions(7);
+    const { api, hooks } = createMockApi({ apiKey: 'xq_test123' });
+    register(api);
+    const [hook] = hooks;
+    const writeResult = await hook?.handler({
+      params: {
+        code: `async () => xquik.request('/api/v1/x/tweets', {
+          method: 'POST',
+          body: { account: '@demo', text: 'hello' }
+        })`,
+      },
+      toolName: 'tweetclaw',
+    });
+    const readResult = await hook?.handler({
+      params: { code: `async () => xquik.request('/api/v1/account')` },
+      toolName: 'tweetclaw',
+    });
+    const otherToolResult = await hook?.handler({
+      params: {
+        code: `async () => xquik.request('/api/v1/x/tweets', { method: 'POST' })`,
+      },
+      toolName: 'explore',
+    });
+    const invalidCodeResult = await hook?.handler({
+      params: { code: 123 },
+      toolName: 'tweetclaw',
+    });
+
+    expect(hooks).toHaveLength(1);
+    expect(hook?.name).toBe('before_tool_call');
+    expect(hook?.priority).toBe(50);
+    expect(writeResult?.requireApproval?.severity).toBe('warning');
+    expect(readResult).toBeUndefined();
+    expect(otherToolResult).toBeUndefined();
+    expect(invalidCodeResult).toBeUndefined();
+  });
+
+  it('uses registerHook when OpenClaw exposes the legacy hook method', () => {
+    expect.assertions(3);
+    const { api, hooks, warnings } = createMockApi(
+      { apiKey: 'xq_test123' },
+      'registerHook',
+    );
+    register(api);
+    expect(hooks).toHaveLength(1);
+    expect(hooks[0]?.name).toBe('before_tool_call');
+    expect(warnings).toHaveLength(0);
+  });
+
+  it('warns when OpenClaw approval hooks are unavailable', () => {
+    expect.assertions(2);
+    const { api, hooks, warnings } = createMockApi({ apiKey: 'xq_test123' }, 'none');
+    register(api);
+    expect(hooks).toHaveLength(0);
+    expect(warnings[0]).toContain('approval hooks are unavailable');
   });
 
   it('skips event poller when pollingEnabled is false', () => {
