@@ -18,6 +18,7 @@ const sourceCommit = process.env.SOURCE_COMMIT
 const gitBranch = execFileSync("git", ["branch", "--show-current"], { cwd: root, encoding: "utf8" }).trim();
 const sourceRef = process.env.SOURCE_REF ?? (gitBranch.length > 0 ? gitBranch : "master");
 const tags = process.env.PACKAGE_TAG ?? "latest";
+const owner = process.env.CLAWHUB_OWNER ?? "kriptoburak";
 
 function runClawHub(args, options = {}) {
   return execFileSync("npx", ["--yes", `clawhub@${CLAWHUB_VERSION}`, ...args], {
@@ -66,6 +67,8 @@ const publishArgs = [
   packPath,
   "--family",
   "code-plugin",
+  "--owner",
+  owner,
   "--source-repo",
   sourceRepo,
   "--source-commit",

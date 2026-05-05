@@ -24,7 +24,7 @@ npx --yes clawhub@0.12.2 login --token "$CLAWHUB_TOKEN"
 npx --yes clawhub@0.12.2 whoami
 ```
 
-Then publish the generated ClawPack and request a fresh scan:
+Then publish the generated ClawPack and request a fresh scan. The helper defaults to owner handle `kriptoburak`; override with `CLAWHUB_OWNER=<handle>` if ownership changes.
 
 ```bash
 node scripts/clawpack.mjs publish
@@ -43,3 +43,7 @@ After publishing, inspect ClawHub and confirm:
 - The artifact is no longer `legacy-zip`.
 - ClawPack metadata is present, including sha256, size, npm integrity, npm shasum, and tarball name.
 - The summary and compatibility fields match the current package metadata.
+
+## 2026-05-06 Result
+
+`@xquik/tweetclaw@1.6.11` was published to ClawHub as release `rd740m3et9cr2kj9tqjpaq8xdn8642kd` with `artifact.kind: "npm-pack"`. A rescan was requested as `sd7d44dr8az6j800gkgqdvfxmd864nsk`; status was `in_progress` immediately after submission.
