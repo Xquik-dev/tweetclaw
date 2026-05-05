@@ -29,6 +29,23 @@ type RequestFunction = (path: string, options?: Readonly<RequestOptions>) => Pro
 
 type FetchFunction = typeof fetch;
 
+interface ExploreParams {
+  readonly category?: string;
+  readonly free?: boolean;
+  readonly limit?: number;
+  readonly method?: string;
+  readonly mpp?: boolean;
+  readonly path?: string;
+  readonly query?: string;
+}
+
+interface TweetclawParams {
+  readonly body?: unknown;
+  readonly method?: string;
+  readonly path: string;
+  readonly query?: Readonly<Record<string, boolean | number | string>>;
+}
+
 interface ToolResult {
   readonly content: ReadonlyArray<{ readonly text: string; readonly type: 'text' }>;
   readonly isError?: true;
@@ -52,9 +69,11 @@ export type {
   EndpointInfo,
   EndpointParameter,
   EventPollerOptions,
+  ExploreParams,
   FetchFunction,
   PluginConfig,
   RequestFunction,
   RequestOptions,
+  TweetclawParams,
   ToolResult,
 };

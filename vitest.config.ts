@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      'openclaw/plugin-sdk/plugin-entry': new URL('tests/openclaw-plugin-entry.ts', import.meta.url).pathname,
+    },
+  },
   test: {
     coverage: {
       exclude: ['src/types.ts', 'src/mpp.ts'],

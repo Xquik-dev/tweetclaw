@@ -1,53 +1,27 @@
-import { API_SPEC } from '../api-spec.js';
-import { errorResult, runInSandbox, specEndpoints, successResult } from './executor.js';
-import type { EndpointInfo, ToolResult } from '../types.js';
+import { exploreCatalog, specEndpoints } from './catalog.js';
+import { errorResult, successResult } from './result.js';
+import type { EndpointInfo, ExploreParams, ToolResult } from '../types.js';
 
-const categories = [...new Set(API_SPEC.map((endpoint) => endpoint.category))].toSorted((a, b) => a.localeCompare(b)).join(', ');
+const categories = [...new Set(specEndpoints.map((endpoint) => endpoint.category))]
+  .toSorted((a, b) => a.localeCompare(b))
+  .join(', ');
 
-const SEARCH_DESCRIPTION = `Search the X (Twitter) API spec for endpoints: post tweets, reply, like, retweet, follow, DM, update profile, upload media, search tweets, look up users, extract data, monitor accounts, run giveaways, compose tweets, and more. No network calls - runs against an in-memory endpoint catalog.
+const SEARCH_DESCRIPTION = `Search the X (Twitter) API endpoint catalog. No network calls and no code execution.
 
-Write an async arrow function. The sandbox provides:
+Use structured filters:
+- query: keyword search across summaries, paths, response shapes, and parameters
+- category: one of ${categories}
+- method: GET, POST, PATCH, PUT, or DELETE
+- path: exact or partial API path
+- free: true for free endpoints, false for paid endpoints
+- mpp: true for MPP-eligible endpoints only
+- limit: 1-100 results, default 25
 
-\`\`\`typescript
-interface EndpointInfo {
-  method: string;
-  path: string;
-  summary: string;
-  category: string; // ${categories}
-  free: boolean;
-  parameters?: Array<{ name: string; in: 'query' | 'path' | 'body'; required: boolean; type: string; description: string }>;
-  responseShape?: string;
-}
+Returns endpoint descriptors with method, path, summary, category, parameters, cost, and response shape.`;
 
-declare const spec: { endpoints: EndpointInfo[] };
-\`\`\`
-
-## Examples
-
-### Find all free endpoints
-\`\`\`javascript
-async () => {
-  return spec.endpoints.filter(e => e.free);
-}
-\`\`\`
-
-### Find endpoints by category
-\`\`\`javascript
-async () => {
-  return spec.endpoints.filter(e => e.category === 'composition');
-}
-\`\`\`
-
-### Search by keyword
-\`\`\`javascript
-async () => {
-  return spec.endpoints.filter(e => e.summary.toLowerCase().includes('tweet'));
-}
-\`\`\``;
-
-async function handleExplore(code: string): Promise<ToolResult> {
+async function handleExplore(params: Readonly<ExploreParams> = {}): Promise<ToolResult> {
   try {
-    const result: unknown = await runInSandbox(code, { spec: { endpoints: specEndpoints } });
+    const result = await Promise.resolve(exploreCatalog(params));
     return successResult(result);
   } catch (error: unknown) {
     return errorResult(error);

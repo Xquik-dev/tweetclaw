@@ -1,11 +1,13 @@
+import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
 import { handleXStatus } from './commands/xstatus.js';
 import { handleXTrends } from './commands/xtrends.js';
 import { initMpp } from './mpp.js';
 import { createProxiedRequest } from './request.js';
 import { createEventPoller } from './services/event-poller.js';
+import { normalizeMethod, requestNeedsApproval } from './tools/catalog.js';
 import { handleExplore, SEARCH_DESCRIPTION } from './tools/explore.js';
 import { EXECUTE_DESCRIPTION, handleTweetclaw } from './tools/tweetclaw.js';
-import type { FetchFunction, PluginConfig } from './types.js';
+import type { ExploreParams, FetchFunction, PluginConfig, TweetclawParams } from './types.js';
 
 interface PollerEvent {
   readonly eventType?: string;
@@ -78,7 +80,7 @@ interface OpenClawApi {
   readonly registerTool: (
     tool: {
       readonly description: string;
-      readonly execute: (toolCallId: string, params: { readonly code: string }) => Promise<ToolResult>;
+      readonly execute: (toolCallId: string, params: unknown) => Promise<ToolResult>;
       readonly name: string;
       readonly parameters: unknown;
     },
@@ -96,44 +98,93 @@ interface OpenClawApi {
   ) => void;
 }
 
-const CODE_PARAMETER = {
+const EXPLORE_PARAMETERS = {
   properties: {
-    code: { description: 'Async arrow function to execute', type: 'string' },
+    category: { description: 'Endpoint category filter', type: 'string' },
+    free: { description: 'Filter by free or paid endpoints', type: 'boolean' },
+    limit: { default: 25, description: 'Maximum endpoint descriptors to return', maximum: 100, minimum: 1, type: 'number' },
+    method: { description: 'HTTP method filter', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
+    mpp: { description: 'Filter by MPP eligibility', type: 'boolean' },
+    path: { description: 'Exact or partial API path filter', type: 'string' },
+    query: { description: 'Keyword search across endpoint metadata', type: 'string' },
   },
-  required: ['code'],
   type: 'object',
 };
 
-const WRITE_METHOD_PATTERN = /\bmethod\s*:\s*['"`](?:DELETE|PATCH|POST|PUT)['"`]/iu;
-const HIGH_IMPACT_PATH_PATTERNS = [
-  /\/api\/v1\/credits\/(?:quick-topup|topup)/u,
-  /\/api\/v1\/draws/u,
-  /\/api\/v1\/extractions/u,
-  /\/api\/v1\/monitors/u,
-  /\/api\/v1\/subscribe/u,
-  /\/api\/v1\/webhooks/u,
-  /\/api\/v1\/x\/communities/u,
-  /\/api\/v1\/x\/dm\//u,
-  /\/api\/v1\/x\/media/u,
-  /\/api\/v1\/x\/profile/u,
-  /\/api\/v1\/x\/tweets['"`]/u,
-] as const;
+const TWEETCLAW_PARAMETERS = {
+  additionalProperties: false,
+  properties: {
+    body: { description: 'JSON request body', type: ['object', 'array', 'string', 'number', 'boolean', 'null'] },
+    method: { default: 'GET', description: 'HTTP method', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
+    path: { description: 'Concrete /api/v1/... endpoint path from the catalog', type: 'string' },
+    query: {
+      additionalProperties: { type: ['string', 'number', 'boolean'] },
+      description: 'Query parameters',
+      type: 'object',
+    },
+  },
+  required: ['path'],
+  type: 'object',
+};
 
-function toolCallCode(event: BeforeToolCallEvent): string | undefined {
-  if (typeof event.params !== 'object' || event.params === null) {
+function asObject(value: unknown): Readonly<Record<string, unknown>> | undefined {
+  if (typeof value !== 'object' || value === null) {
     return undefined;
   }
-
-  const { code } = event.params as { readonly code?: unknown };
-  return typeof code === 'string' ? code : undefined;
+  return Object.fromEntries(Object.entries(value));
 }
 
-function requiresTweetclawApproval(code: string): boolean {
-  if (WRITE_METHOD_PATTERN.test(code)) {
-    return true;
+function asExploreParams(params: unknown): Readonly<ExploreParams> {
+  const value = asObject(params);
+  if (value === undefined) return {};
+
+  return {
+    ...(typeof value.category === 'string' ? { category: value.category } : {}),
+    ...(typeof value.free === 'boolean' ? { free: value.free } : {}),
+    ...(typeof value.limit === 'number' ? { limit: value.limit } : {}),
+    ...(typeof value.method === 'string' ? { method: value.method } : {}),
+    ...(typeof value.mpp === 'boolean' ? { mpp: value.mpp } : {}),
+    ...(typeof value.path === 'string' ? { path: value.path } : {}),
+    ...(typeof value.query === 'string' ? { query: value.query } : {}),
+  };
+}
+
+function asQueryParams(value: unknown): Readonly<Record<string, boolean | number | string>> | undefined {
+  const query = asObject(value);
+  if (query === undefined) return undefined;
+
+  const entries = Object.entries(query).filter(
+    (entry): entry is [string, boolean | number | string] =>
+      ['boolean', 'number', 'string'].includes(typeof entry[1]),
+  );
+  return Object.fromEntries(entries);
+}
+
+function asTweetclawParams(params: unknown): Readonly<TweetclawParams> {
+  const value = asObject(params);
+  if (value === undefined || typeof value.path !== 'string') {
+    return { path: '' };
   }
 
-  return HIGH_IMPACT_PATH_PATTERNS.some((pattern) => pattern.test(code));
+  const query = asQueryParams(value.query);
+  return {
+    ...(value.body === undefined ? {} : { body: value.body }),
+    ...(typeof value.method === 'string' ? { method: value.method } : {}),
+    path: value.path,
+    ...(query === undefined ? {} : { query }),
+  };
+}
+
+function toolCallParams(event: BeforeToolCallEvent): Readonly<TweetclawParams> | undefined {
+  const params = asTweetclawParams(event.params);
+  if (params.path.length === 0) {
+    return undefined;
+  }
+  return params;
+}
+
+function requiresTweetclawApproval(params: Readonly<TweetclawParams>): boolean {
+  return requestNeedsApproval(normalizeMethod(params.method), params.path);
 }
 
 function registerWriteApprovalHook(api: OpenClawApi): void {
@@ -153,15 +204,15 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
         return undefined;
       }
 
-      const code = toolCallCode(event);
-      if (code === undefined || !requiresTweetclawApproval(code)) {
+      const params = toolCallParams(event);
+      if (params === undefined || !requiresTweetclawApproval(params)) {
         return undefined;
       }
 
       return {
         requireApproval: {
           description:
-            'TweetClaw is about to run code that can change X accounts, create jobs, or start a checkout flow. Review the tool call before allowing it.',
+            'TweetClaw is about to invoke an endpoint that can change X accounts, create jobs, or expose private data. Review the tool call before allowing it.',
           pluginId: 'tweetclaw',
           severity: 'warning',
           timeoutBehavior: 'deny',
@@ -174,7 +225,7 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
   );
 }
 
-export default function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
+function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   const config: unknown = api.pluginConfig;
   if (!isPluginConfig(config)) {
     api.logger.warn(
@@ -206,9 +257,12 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
   api.registerTool(
     {
       description: SEARCH_DESCRIPTION,
-      execute: async (_toolCallId, { code }) => handleExplore(code),
+      execute: async (_toolCallId, params) => {
+        await Promise.resolve();
+        return handleExplore(asExploreParams(params));
+      },
       name: 'explore',
-      parameters: CODE_PARAMETER,
+      parameters: EXPLORE_PARAMETERS,
     },
     { name: 'explore' },
   );
@@ -216,9 +270,15 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
   api.registerTool(
     {
       description: EXECUTE_DESCRIPTION,
-      execute: async (_toolCallId, { code }) => handleTweetclaw({ apiKey: credential, baseUrl, code, fetchFunction }),
+      execute: async (_toolCallId, params) => handleTweetclaw({
+        apiKey: credential,
+        baseUrl,
+        fetchFunction,
+        mppMode: isMppMode,
+        params: asTweetclawParams(params),
+      }),
       name: 'tweetclaw',
-      parameters: CODE_PARAMETER,
+      parameters: TWEETCLAW_PARAMETERS,
     },
     { name: 'tweetclaw', optional: true },
   );
@@ -273,3 +333,13 @@ export default function register(api: OpenClawApi, fetchFunction?: FetchFunction
 
   api.logger.info('TweetClaw: Plugin registered successfully');
 }
+
+const plugin = definePluginEntry({
+  description: 'Structured X/Twitter automation through Xquik',
+  id: 'tweetclaw',
+  name: 'TweetClaw',
+  register,
+});
+
+export { register };
+export default plugin;

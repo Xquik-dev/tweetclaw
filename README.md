@@ -50,12 +50,12 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 
 Two options:
 
-- **Credits**: Top up credits via the API. 1 credit = $0.00015. Works with all 113 endpoints.
+- **Credits**: Top up credits in the Xquik dashboard. The plugin can read the current balance.
 - **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
 
-Tweet composition, style analysis, drafts, curated radar (7 sources), account management, support tickets - all free, no credits consumed.
+Tweet composition, style analysis, drafts, curated radar (7 sources), and account status checks are free.
 
 ## Install
 
@@ -67,7 +67,7 @@ openclaw plugins install @xquik/tweetclaw
 
 ## Configure
 
-### Option A: API key (full access, 113 endpoints)
+### Option A: API key (account-backed X automation)
 
 Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it in an environment variable and configure TweetClaw to use it:
 
@@ -79,7 +79,7 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 ### Option B: Credits (pay-per-use, no subscription)
 
-Top up credits from the Xquik dashboard or via `POST /credits/topup`. All 113 endpoints available. 1 credit = $0.00015.
+Top up credits from the Xquik dashboard. TweetClaw does not create checkout sessions or charge saved payment methods from the agent.
 
 ### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
 
@@ -103,7 +103,7 @@ openclaw config set plugins.entries.tweetclaw.config.pollingInterval 60
 
 ## Tools
 
-TweetClaw uses Xquik's 2-tool approach to cover the entire API:
+TweetClaw uses 2 structured tools for the agent-safe endpoint catalog:
 
 ### `explore` (free, no network)
 
@@ -116,11 +116,11 @@ AI uses explore → filters spec by category "composition"
 → Returns matching endpoints with parameters and response shapes
 ```
 
-### `tweetclaw` (execute API calls)
+### `tweetclaw` (invoke API endpoints)
 
-Execute authenticated API calls. Auth is injected automatically - the LLM never sees your API key.
+Invoke catalog-listed API endpoints with structured `path`, `method`, `query`, and `body` fields. Auth is injected automatically - the LLM never sees your API key.
 
-OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the generated code before approving any post, delete, follow, DM, monitor, extraction, webhook, checkout, or profile-change action.
+OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the structured request before approving any post, delete, follow, DM, monitor, extraction, webhook, or profile-change action.
 
 ```
 You: "Post a tweet saying 'Hello from TweetClaw!'"
@@ -161,19 +161,18 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 
 ## API Coverage
 
-113 endpoints across 10 categories:
+63 agent-callable endpoints across 9 categories. Dashboard-only account-admin, billing, support, and raw credential flows are excluded from the tool catalog and blocked at runtime.
 
 | Category | Examples | Cost |
 |----------|---------|------|
-| **Account** | Account settings, API keys, subscription | Free |
+| **Account** | Account status | Free |
 | **Composition** | Compose, drafts, writing styles, radar | Free / Mixed |
-| **Credits** | Check balance, top up credits | Free |
+| **Credits** | Check balance | Free |
 | **Extraction** | 23 extraction tools, giveaway draws, exports | 1-5 credits/result |
 | **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
-| **Support** | Create tickets, reply, track status | Free |
 | **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-5 credits |
-| **X Accounts** | List, inspect, and disconnect connected accounts | Free |
+| **X Accounts** | List connected account handles for explicit user-selected actions | Free |
 | **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | 10 credits |
 
 ## Links

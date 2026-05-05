@@ -101,6 +101,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Get current account info and subscription status',
   },
   {
+    agentProhibited: true,
     category: 'account',
     free: true,
     method: 'PATCH',
@@ -112,6 +113,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Update account settings such as locale',
   },
   {
+    agentProhibited: true,
     category: 'account',
     free: true,
     method: 'PUT',
@@ -123,6 +125,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Set or update linked X username',
   },
   {
+    agentProhibited: true,
     category: 'account',
     free: true,
     method: 'GET',
@@ -131,6 +134,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'List all API keys for the account',
   },
   {
+    agentProhibited: true,
     category: 'account',
     free: true,
     method: 'POST',
@@ -142,6 +146,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Create a new API key',
   },
   {
+    agentProhibited: true,
     category: 'account',
     free: true,
     method: 'DELETE',
@@ -153,6 +158,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Revoke an API key by ID',
   },
   {
+    agentProhibited: true,
     category: 'account',
     free: true,
     method: 'POST',
@@ -706,6 +712,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Connect X account (dashboard only - agent-prohibited)',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_X_ACCOUNTS,
     free: true,
     method: 'GET',
@@ -715,6 +722,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Get X account details',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_X_ACCOUNTS,
     free: true,
     method: 'DELETE',
@@ -937,6 +945,7 @@ const API_SPEC: readonly EndpointInfo[] = [
 
   // --- Support ---
   {
+    agentProhibited: true,
     category: CATEGORY_SUPPORT,
     free: true,
     method: 'POST',
@@ -949,6 +958,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Open a new support ticket',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_SUPPORT,
     free: true,
     method: 'GET',
@@ -957,6 +967,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'List your support tickets',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_SUPPORT,
     free: true,
     method: 'GET',
@@ -966,6 +977,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Get a ticket with message history',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_SUPPORT,
     free: true,
     method: 'PATCH',
@@ -978,6 +990,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Update ticket status',
   },
   {
+    agentProhibited: true,
     category: CATEGORY_SUPPORT,
     free: true,
     method: 'POST',
@@ -991,10 +1004,8 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
 
   // --- Credits ---
-  // All /api/v1/credits* endpoints are free. They expose the PAYG
-  // top-up path and balance read without requiring an active subscription.
-  // Agents should offer these when an unsubscribed user hits a 402 on a
-  // paid endpoint.
+  // Balance reads stay agent-callable. Checkout and saved-card charge
+  // endpoints remain documented but are dashboard-only for agent safety.
   {
     category: 'credits',
     free: true,
@@ -1004,6 +1015,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Get credits balance',
   },
   {
+    agentProhibited: true,
     category: 'credits',
     free: true,
     method: 'POST',
@@ -1015,6 +1027,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Top up credits via Stripe Checkout. $10 min.',
   },
   {
+    agentProhibited: true,
     category: 'credits',
     free: true,
     method: 'GET',
@@ -1026,6 +1039,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     summary: 'Check credit top-up checkout status.',
   },
   {
+    agentProhibited: true,
     category: 'credits',
     free: true,
     method: 'POST',

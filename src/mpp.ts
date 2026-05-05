@@ -1,5 +1,3 @@
-import { resolveAsyncFunctionConstructor } from './tools/executor.js';
-
 type ModuleLoader = (name: string) => Promise<Record<string, unknown>>;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -10,16 +8,16 @@ function isCallable(value: unknown): value is (...args: readonly unknown[]) => u
   return typeof value === 'function';
 }
 
+async function loadDynamicModule(name: string): Promise<Record<string, unknown>> {
+  const mod: unknown = await import(name);
+  if (!isRecord(mod)) {
+    throw new Error(`Failed to load ${name}`);
+  }
+  return mod;
+}
+
 function createModuleLoader(): ModuleLoader {
-  const loader = resolveAsyncFunctionConstructor();
-  const dynamicImport = new loader('n', 'return import(n)');
-  return async (name: string): Promise<Record<string, unknown>> => {
-    const mod: unknown = await dynamicImport(name);
-    if (!isRecord(mod)) {
-      throw new Error(`Failed to load ${name}`);
-    }
-    return mod;
-  };
+  return loadDynamicModule;
 }
 
 async function initMpp(tempoSigningKey: string, loadModule?: ModuleLoader): Promise<void> {

@@ -1,7 +1,7 @@
 {
   "name": "@xquik/tweetclaw",
   "version": "1.6.5",
-  "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw - full X/Twitter automation via Xquik. 113 endpoints, reads from $0.00015/call.",
+  "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -19,27 +19,18 @@
     "extensions": [
       "./src/index.ts"
     ],
-    "primaryCredential": "apiKey",
-    "requires": {
-      "config": [
-        "apiKey"
-      ]
-    },
-    "alternateCredentials": [
-      "tempoSigningKey"
-    ],
     "compat": {
-      "pluginApi": ">=2026.3.28",
-      "minGatewayVersion": "2026.3.28"
+      "pluginApi": ">=2026.5.4",
+      "minGatewayVersion": "2026.5.4"
     },
     "build": {
-      "openclawVersion": "2026.3.28",
-      "pluginSdkVersion": "2026.3.28"
+      "openclawVersion": "2026.5.4",
+      "pluginSdkVersion": "2026.5.4"
     }
   },
   "files": [
     "src/",
-    "skills/",
+    "skills/tweetclaw/SKILL.md",
     "openclaw.plugin.json"
   ],
   "keywords": [
@@ -82,7 +73,7 @@
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",
-    "openclaw": ">=2026.2.0",
+    "openclaw": ">=2026.5.4",
     "viem": ">=2.0.0"
   },
   "peerDependenciesMeta": {

@@ -7,6 +7,7 @@ const AUTHORIZATION_HEADER = 'authorization';
 const BEARER_PREFIX = 'Bearer ';
 const API_KEY_PREFIX = 'xq_';
 const API_V1_PREFIX = '/api/v1/';
+const SUPPORT_TICKETS_PREFIX = '/api/v1/support/tickets';
 
 function buildAuthHeader(credential: string): Record<string, string> {
   if (credential.startsWith(API_KEY_PREFIX)) {
@@ -34,18 +35,41 @@ function buildFetchUrl(baseUrl: string, path: string, query?: Readonly<Record<st
 }
 
 const PROHIBITED_PATHS: ReadonlyArray<readonly [string, string]> = [
+  ['PATCH', '/api/v1/account'],
+  ['PUT', '/api/v1/account/x-identity'],
+  ['GET', '/api/v1/api-keys'],
+  ['POST', '/api/v1/api-keys'],
+  ['POST', '/api/v1/credits/topup'],
+  ['GET', '/api/v1/credits/topup/status'],
+  ['POST', '/api/v1/credits/quick-topup'],
+  ['POST', '/api/v1/subscribe'],
   ['POST', '/api/v1/x/accounts'],
   ['POST', '/api/v1/x/accounts/'],
 ];
 
-const PROHIBITED_PATH_PATTERN = /^\/api\/v1\/x\/accounts\/[^/]+\/reauth\/?$/;
+const PROHIBITED_PATH_PATTERNS: ReadonlyArray<readonly [string, RegExp]> = [
+  ['DELETE', /^\/api\/v1\/api-keys\/[^/]+\/?$/u],
+  ['DELETE', /^\/api\/v1\/x\/accounts\/[^/]+\/?$/u],
+  ['GET', /^\/api\/v1\/x\/accounts\/[^/]+\/?$/u],
+  ['POST', /^\/api\/v1\/x\/accounts\/[^/]+\/reauth\/?$/u],
+];
+
+const SUPPORT_TICKET_METHODS: ReadonlySet<string> = new Set(['GET', 'PATCH', 'POST']);
+
+function isSupportTicketPath(method: string, path: string): boolean {
+  return SUPPORT_TICKET_METHODS.has(method)
+    && (path === SUPPORT_TICKETS_PREFIX || path.startsWith(`${SUPPORT_TICKETS_PREFIX}/`));
+}
 
 function isProhibitedRequest(method: string, path: string): boolean {
   const upperMethod = method.toUpperCase();
   const matchesStaticPath = PROHIBITED_PATHS.some(
     ([blockedMethod, blockedPath]) => upperMethod === blockedMethod && path === blockedPath,
   );
-  return matchesStaticPath || (upperMethod === 'POST' && PROHIBITED_PATH_PATTERN.test(path));
+  const matchesPattern = PROHIBITED_PATH_PATTERNS.some(
+    ([blockedMethod, pattern]) => upperMethod === blockedMethod && pattern.test(path),
+  );
+  return matchesStaticPath || matchesPattern || isSupportTicketPath(upperMethod, path);
 }
 
 function validateRequestPath(method: string, path: string): void {

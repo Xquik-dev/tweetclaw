@@ -1,11 +1,13 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import register from '../src/index.js';
+import plugin from '../src/index.js';
 import * as mpp from '../src/mpp.js';
 import type { ToolResult } from '../src/types.js';
 
+const { register } = plugin;
+
 interface RegisteredTool {
   readonly description: string;
-  readonly execute: (toolCallId: string, params: { readonly code: string }) => Promise<ToolResult>;
+  readonly execute: (toolCallId: string, params: unknown) => Promise<ToolResult>;
   readonly name: string;
   readonly parameters: unknown;
 }
@@ -160,25 +162,22 @@ describe('register', () => {
     const [hook] = hooks;
     const writeResult = await hook?.handler({
       params: {
-        code: `async () => xquik.request('/api/v1/x/tweets', {
-          method: 'POST',
-          body: { account: '@demo', text: 'hello' }
-        })`,
+        body: { account: '@demo', text: 'hello' },
+        method: 'POST',
+        path: '/api/v1/x/tweets',
       },
       toolName: 'tweetclaw',
     });
     const readResult = await hook?.handler({
-      params: { code: `async () => xquik.request('/api/v1/account')` },
+      params: { path: '/api/v1/account' },
       toolName: 'tweetclaw',
     });
     const otherToolResult = await hook?.handler({
-      params: {
-        code: `async () => xquik.request('/api/v1/x/tweets', { method: 'POST' })`,
-      },
+      params: { method: 'POST', path: '/api/v1/x/tweets' },
       toolName: 'explore',
     });
-    const invalidCodeResult = await hook?.handler({
-      params: { code: 123 },
+    const invalidParamsResult = await hook?.handler({
+      params: { method: 'POST' },
       toolName: 'tweetclaw',
     });
 
@@ -188,7 +187,7 @@ describe('register', () => {
     expect(writeResult?.requireApproval?.severity).toBe('warning');
     expect(readResult).toBeUndefined();
     expect(otherToolResult).toBeUndefined();
-    expect(invalidCodeResult).toBeUndefined();
+    expect(invalidParamsResult).toBeUndefined();
   });
 
   it('uses registerHook when OpenClaw exposes the legacy hook method', () => {
@@ -250,26 +249,76 @@ describe('register', () => {
     expect(true).toBe(true);
   });
 
-  it('explore tool execute runs code against spec', async () => {
+  it('explore tool executes structured catalog search', async () => {
     expect.assertions(1);
     const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
     register(api);
     const explore = tools.find((tool) => tool.name === 'explore');
-    const result = await explore?.execute('call_1', { code: 'async () => spec.endpoints.length' });
-    const count = Number(result?.content[0]?.text);
-    expect(count).toBeGreaterThan(40);
+    const result = await explore?.execute('call_1', { query: 'tweet' });
+    expect(result?.content[0]?.text).toContain('tweet');
   });
 
-  it('tweetclaw tool execute runs code', async () => {
+  it('explore tool accepts every structured filter', async () => {
+    expect.assertions(1);
+    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    register(api);
+    const explore = tools.find((tool) => tool.name === 'explore');
+    const result = await explore?.execute('call_filters', {
+      category: 'twitter',
+      free: false,
+      limit: 5,
+      method: 'GET',
+      mpp: true,
+      path: '/api/v1/x/tweets/123',
+      query: 'tweet',
+    });
+    expect(result?.content[0]?.text).toContain('/api/v1/x/tweets/:tweetId');
+  });
+
+  it('explore tool ignores unsupported filter types', async () => {
+    expect.assertions(2);
+    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    register(api);
+    const explore = tools.find((tool) => tool.name === 'explore');
+    const nullResult = await explore?.execute('call_null', null);
+    const invalidResult = await explore?.execute('call_invalid', {
+      category: 1,
+      free: 'false',
+      limit: '5',
+      method: 1,
+      mpp: 'true',
+      path: 1,
+      query: 1,
+    });
+    expect(nullResult?.content[0]?.text).toContain('/api/v1/');
+    expect(invalidResult?.content[0]?.text).toContain('/api/v1/');
+  });
+
+  it('tweetclaw tool executes structured catalog request', async () => {
     expect.assertions(1);
     const mockFetch = createMockFetch({ email: 'test@example.com' });
     const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
     register(api, mockFetch);
     const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
     const result = await tweetclaw?.execute('call_2', {
-      code: `async () => xquik.request('/api/v1/account')`,
+      path: '/api/v1/account',
     });
     expect(result?.content[0]?.text).toContain('test@example.com');
+  });
+
+  it('tweetclaw tool ignores unsupported query value types', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async (input) => {
+      expect(String(input)).toBe('https://xquik.com/api/v1/x/tweets/search?q=ai');
+      return new Response(JSON.stringify({ tweets: [] }));
+    };
+    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    register(api, mockFetch);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    await tweetclaw?.execute('call_3', {
+      path: '/api/v1/x/tweets/search',
+      query: { ignored: { nested: true }, q: 'ai' },
+    });
   });
 
   it('xstatus command handler returns formatted account', async () => {

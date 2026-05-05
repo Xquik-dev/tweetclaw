@@ -30,21 +30,21 @@ const contentChecks = [
     path: "README.md",
     required: [
       "| Follow check, article | 5 | $0.00075 |",
-      "full access, 113 endpoints",
-      "All 113 endpoints available",
-      "113 endpoints across 10 categories",
+      "account-backed X automation",
+      "63 agent-callable endpoints across 9 categories",
       "1-5 credits",
     ],
     forbidden: [
       "| Follow check, article | 7 | $0.00105 |",
+      "113 endpoints",
       "112 endpoints",
       "1-7 credits",
     ],
   },
   {
     path: "skills/tweetclaw/SKILL.md",
-    required: ["113 endpoints", "1-5 credits"],
-    forbidden: ["112 endpoints", "1-7 credits"],
+    required: ["agent-safe Xquik endpoint catalog", "1-5 credits"],
+    forbidden: ["113 endpoints", "112 endpoints", "1-7 credits"],
   },
   {
     path: "src/api-spec.ts",
@@ -53,13 +53,13 @@ const contentChecks = [
   },
   {
     path: "server.json",
-    required: ["113 endpoints"],
-    forbidden: ["112 endpoints"],
+    required: ["63 agent-callable endpoints"],
+    forbidden: ["113 endpoints", "112 endpoints"],
   },
   {
     path: "openclaw.plugin.json",
-    required: ["113 endpoints"],
-    forbidden: ["112 endpoints"],
+    required: ["structured Xquik endpoints"],
+    forbidden: ["113 endpoints", "112 endpoints"],
   },
 ];
 

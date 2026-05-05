@@ -6,16 +6,14 @@ function createMockFetch(response: unknown, status = 200): typeof fetch {
 }
 
 describe('handleTweetclaw', () => {
-  it('executes code with mock API and returns result', async () => {
+  it('executes catalog request with mock API and returns result', async () => {
     expect.assertions(2);
     const mockFetch = createMockFetch({ email: 'test@example.com' });
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return xquik.request('/api/v1/account');
-      }`,
       fetchFunction: mockFetch,
+      params: { path: '/api/v1/account' },
     });
     expect(result.isError).toBeUndefined();
     expect(result.content[0]?.text).toContain('test@example.com');
@@ -30,10 +28,8 @@ describe('handleTweetclaw', () => {
     await handleTweetclaw({
       apiKey: 'xq_mykey',
       baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return xquik.request('/api/v1/account');
-      }`,
       fetchFunction: mockFetch,
+      params: { path: '/api/v1/account' },
     });
   });
 
@@ -42,10 +38,8 @@ describe('handleTweetclaw', () => {
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return xquik.request('/api/v1/account');
-      }`,
       fetchFunction: createMockFetch({ error: 'not found' }, 404),
+      params: { path: '/api/v1/account' },
     });
     expect(result.isError).toBe(true);
     expect(result.content[0]?.text).toContain('404');
@@ -56,36 +50,35 @@ describe('handleTweetclaw', () => {
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return xquik.request('/api/v1/account');
-      }`,
       fetchFunction: createMockFetch({ error: 'server error' }, 500),
+      params: { path: '/api/v1/account' },
     });
     expect(result.isError).toBe(true);
     expect(result.content[0]?.text).toContain('500');
   });
 
-  it('handles syntax errors in code', async () => {
-    expect.assertions(1);
-    const result = await handleTweetclaw({
-      apiKey: 'xq_test',
-      baseUrl: 'https://xquik.com',
-      code: 'this is not valid code!!!',
-      fetchFunction: createMockFetch({}),
-    });
-    expect(result.isError).toBe(true);
-  });
-
-  it('handles runtime exceptions in code', async () => {
+  it('rejects unknown paths', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => { throw new Error('boom'); }`,
       fetchFunction: createMockFetch({}),
+      params: { path: '/api/v1/not-real' },
     });
     expect(result.isError).toBe(true);
-    expect(result.content[0]?.text).toContain('boom');
+    expect(result.content[0]?.text).toContain('not in the TweetClaw catalog');
+  });
+
+  it('rejects dashboard-only endpoints', async () => {
+    expect.assertions(2);
+    const result = await handleTweetclaw({
+      apiKey: 'xq_test',
+      baseUrl: 'https://xquik.com',
+      fetchFunction: createMockFetch({}),
+      params: { method: 'POST', path: '/api/v1/api-keys' },
+    });
+    expect(result.isError).toBe(true);
+    expect(result.content[0]?.text).toContain('not in the TweetClaw catalog');
   });
 
   it('truncates large responses', async () => {
@@ -93,36 +86,20 @@ describe('handleTweetclaw', () => {
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return xquik.request('/api/v1/account');
-      }`,
       fetchFunction: createMockFetch({ data: 'x'.repeat(30_000) }),
+      params: { path: '/api/v1/account' },
     });
     expect(result.content[0]?.text).toContain('--- TRUNCATED ---');
   });
 
-  it('provides spec.endpoints in execution context', async () => {
-    expect.assertions(2);
-    const result = await handleTweetclaw({
-      apiKey: 'xq_test',
-      baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return spec.endpoints.length;
-      }`,
-      fetchFunction: createMockFetch({}),
-    });
-    expect(result.isError).toBeUndefined();
-    const count = Number(result.content[0]?.text);
-    expect(count).toBeGreaterThan(40);
-  });
-
   it('handles execution timeout', async () => {
     expect.assertions(2);
+    const hangingFetch: typeof fetch = async () => new Promise<Response>(() => {});
     const result = await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => new Promise(() => {})`,
-      fetchFunction: createMockFetch({}),
+      fetchFunction: hangingFetch,
+      params: { path: '/api/v1/account' },
       timeoutMs: 10,
     });
     expect(result.isError).toBe(true);
@@ -133,19 +110,48 @@ describe('handleTweetclaw', () => {
     expect.assertions(1);
     const mockFetch: typeof fetch = async (_input, init) => {
       const body = JSON.parse(init?.body as string) as Record<string, unknown>;
-      expect(body).toStrictEqual({ text: 'hello', account: '@test' });
+      expect(body).toStrictEqual({ account: '@test', text: 'hello' });
       return new Response(JSON.stringify({ tweetId: '123', success: true }));
     };
     await handleTweetclaw({
       apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
-      code: `async () => {
-        return xquik.request('/api/v1/x/tweets', {
-          method: 'POST',
-          body: { text: 'hello', account: '@test' }
-        });
-      }`,
       fetchFunction: mockFetch,
+      params: {
+        body: { account: '@test', text: 'hello' },
+        method: 'POST',
+        path: '/api/v1/x/tweets',
+      },
     });
+  });
+
+  it('passes query parameters to catalog requests', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async (input) => {
+      expect(String(input)).toBe('https://xquik.com/api/v1/x/tweets/search?q=ai&limit=5');
+      return new Response(JSON.stringify({ tweets: [] }));
+    };
+    await handleTweetclaw({
+      apiKey: 'xq_test',
+      baseUrl: 'https://xquik.com',
+      fetchFunction: mockFetch,
+      params: {
+        path: '/api/v1/x/tweets/search',
+        query: { q: 'ai', limit: 5 },
+      },
+    });
+  });
+
+  it('rejects non-MPP endpoints in MPP mode', async () => {
+    expect.assertions(2);
+    const result = await handleTweetclaw({
+      apiKey: '',
+      baseUrl: 'https://xquik.com',
+      fetchFunction: createMockFetch({}),
+      mppMode: true,
+      params: { path: '/api/v1/account' },
+    });
+    expect(result.isError).toBe(true);
+    expect(result.content[0]?.text).toContain('not available in MPP mode');
   });
 });
