@@ -60,19 +60,23 @@ describe('catalog matching', () => {
   });
 
   it('flags write and private read requests for approval', () => {
-    expect.assertions(3);
+    expect.assertions(6);
     expect(requestNeedsApproval('POST', '/api/v1/x/tweets')).toBe(true);
     expect(requestNeedsApproval('GET', '/api/v1/events')).toBe(true);
+    expect(requestNeedsApproval('GET', '/api/v1/x/accounts')).toBe(true);
+    expect(requestNeedsApproval('GET', '/api/v1/x/bookmarks')).toBe(true);
+    expect(requestNeedsApproval('GET', '/api/v1/x/dm/123/history')).toBe(true);
     expect(requestNeedsApproval('GET', '/api/v1/x/tweets/123')).toBe(false);
   });
 });
 
 describe('specEndpoints', () => {
   it('excludes agent-prohibited endpoints', () => {
-    expect.assertions(7);
+    expect.assertions(8);
     const paths = specEndpoints.map((endpoint) => `${endpoint.method} ${endpoint.path}`);
     expect(paths).not.toContain('POST /api/v1/x/accounts');
     expect(paths).not.toContain('POST /api/v1/x/accounts/:id/reauth');
+    expect(paths).not.toContain('POST /api/v1/x/accounts/bulk-retry');
     expect(paths).not.toContain('POST /api/v1/api-keys');
     expect(paths).not.toContain('POST /api/v1/subscribe');
     expect(paths).not.toContain('POST /api/v1/credits/topup');

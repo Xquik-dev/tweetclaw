@@ -5,6 +5,13 @@ const DESCRIPTION_PAGINATION_CURSOR = 'Pagination cursor';
 const DESCRIPTION_STYLE_USERNAME = 'X username of cached style';
 const DESCRIPTION_EXPORT_FORMAT = 'Export format (csv, json, md, md-document, pdf, txt, xlsx)';
 const CATEGORY_X_ACCOUNTS = 'x-accounts';
+const MPP_PRICE_CALL = '$0.00015/call';
+const MPP_PRICE_COMMUNITY = '$0.00015/community';
+const MPP_PRICE_FOLLOW_CHECK = '$0.00105/call';
+const MPP_PRICE_MEDIA = '$0.00015/media';
+const MPP_PRICE_TREND = '$0.00045/call';
+const MPP_PRICE_TWEET = '$0.00015/tweet';
+const MPP_PRICE_USER = '$0.00015/user';
 
 const PAGINATION_PARAMS: readonly EndpointParameter[] = [
   { description: 'Max items per page', in: 'query', name: 'limit', required: false, type: 'number' },
@@ -82,6 +89,51 @@ const PARAM_USER_ID_REMOVE_FOLLOWER: EndpointParameter =
 
 const PARAM_MEDIA_URL: EndpointParameter =
   { description: 'URL to download media from (alternative to file, HTTPS only)', in: 'body', name: 'url', required: false, type: 'string' };
+
+const PARAM_KEYWORD_MONITOR_ID: EndpointParameter =
+  { description: 'Keyword monitor ID', in: 'path', name: 'id', required: true, type: 'string' };
+
+const PARAM_CURSOR: EndpointParameter =
+  { description: 'Pagination cursor from previous response', in: 'query', name: 'cursor', required: false, type: 'string' };
+
+const PARAM_AFTER_ALIAS: EndpointParameter =
+  { description: 'Legacy cursor alias. Prefer cursor.', in: 'query', name: 'after', required: false, type: 'string' };
+
+const PARAM_PAGE_SIZE_20: EndpointParameter =
+  { description: 'Upper bound for items per page (20-200, default 20)', in: 'query', name: 'pageSize', required: false, type: 'number' };
+
+const PARAM_PAGE_SIZE_200: EndpointParameter =
+  { description: 'Upper bound for items per page (20-200, default 200)', in: 'query', name: 'pageSize', required: false, type: 'number' };
+
+const PARAM_LIMIT_ALIAS: EndpointParameter =
+  { description: 'Legacy page size upper-bound alias. Prefer pageSize.', in: 'query', name: 'limit', required: false, type: 'number' };
+
+const PARAM_QUERY_TYPE: EndpointParameter =
+  { description: 'Sort order: Latest or Top', in: 'query', name: 'queryType', required: false, type: 'string' };
+
+const PARAM_SEARCH_QUERY: EndpointParameter =
+  { description: 'Search query', in: 'query', name: 'q', required: true, type: 'string' };
+
+const PARAM_SINCE_TIME: EndpointParameter =
+  { description: 'Filter results since this Unix timestamp in seconds', in: 'query', name: 'sinceTime', required: false, type: 'number' };
+
+const PARAM_UNTIL_TIME: EndpointParameter =
+  { description: 'Filter results until this Unix timestamp in seconds', in: 'query', name: 'untilTime', required: false, type: 'number' };
+
+const PARAM_USER_ID: EndpointParameter =
+  { description: 'User ID or username', in: 'path', name: 'id', required: true, type: 'string' };
+
+const PARAM_LIST_ID: EndpointParameter =
+  { description: 'List ID', in: 'path', name: 'id', required: true, type: 'string' };
+
+const RESPONSE_TWEET =
+  '{ id, text, created?, retweet_count?, reply_count?, like_count?, quote_count?, view_count?, bookmark_count?, media?, url?, lang?, is_reply?, is_note_tweet?, is_quote_status?, in_reply_to_id?, conversation_id?, source?, entities?, quoted_tweet?, author? }';
+const RESPONSE_TWEET_BASIC =
+  '{ id, text, created?, retweet_count?, reply_count?, like_count?, quote_count?, view_count?, bookmark_count?, media?, url?, lang?, is_reply?, in_reply_to_id?, conversation_id?, source?, entities?, author? }';
+const RESPONSE_TWEETS_PAGINATED = `{ tweets: [${RESPONSE_TWEET}], has_more, next_cursor }`;
+const RESPONSE_USER =
+  '{ id, username, name, followers?, following?, verified?, profile_picture?, cover_picture?, description?, location?, created?, statuses_count?, media_count?, can_dm? }';
+const RESPONSE_USERS_PAGINATED = `{ users: [${RESPONSE_USER}], has_more, next_cursor }`;
 
 const RESPONSE_COMMUNITY_ACTION = '{ communityId, communityName, success: true }';
 const CATEGORY_SUPPORT = 'support';
@@ -497,6 +549,57 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'monitoring',
     free: true,
     method: 'GET',
+    path: '/api/v1/monitors/keywords',
+    responseShape: '{ monitors: [{ id, query, eventTypes, isActive, createdAt }], total }',
+    summary: 'List all keyword monitors',
+  },
+  {
+    category: 'monitoring',
+    free: false,
+    method: 'POST',
+    parameters: [
+      { description: 'Keyword, phrase, or X search query to monitor', in: 'body', name: 'query', required: true, type: 'string' },
+      PARAM_EVENT_TYPES_REQUIRED,
+    ],
+    path: '/api/v1/monitors/keywords',
+    responseShape: '{ id, query, eventTypes, isActive, createdAt }',
+    summary: 'Create an instant keyword monitor. Active monitors cost 21 credits per hour.',
+  },
+  {
+    category: 'monitoring',
+    free: true,
+    method: 'GET',
+    parameters: [PARAM_KEYWORD_MONITOR_ID],
+    path: '/api/v1/monitors/keywords/:id',
+    responseShape: '{ id, query, eventTypes, isActive, createdAt }',
+    summary: 'Get keyword monitor details by ID',
+  },
+  {
+    category: 'monitoring',
+    free: true,
+    method: 'PATCH',
+    parameters: [
+      PARAM_KEYWORD_MONITOR_ID,
+      { description: 'Set active or paused', in: 'body', name: 'isActive', required: false, type: 'boolean' },
+      PARAM_EVENT_TYPES_OPTIONAL,
+    ],
+    path: '/api/v1/monitors/keywords/:id',
+    responseShape: '{ id, query, eventTypes, isActive, createdAt }',
+    summary: 'Update keyword monitor settings or toggle active state',
+  },
+  {
+    category: 'monitoring',
+    free: true,
+    method: 'DELETE',
+    parameters: [PARAM_KEYWORD_MONITOR_ID],
+    path: '/api/v1/monitors/keywords/:id',
+    responseShape: RESPONSE_SUCCESS,
+    summary: 'Delete a keyword monitor and stop tracking',
+  },
+  {
+    category: 'monitoring',
+    free: true,
+    method: 'GET',
     parameters: [
       ...PAGINATION_PARAMS,
       { description: 'Filter by monitor ID', in: 'query', name: 'monitorId', required: false, type: 'string' },
@@ -587,7 +690,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       { description: 'Tweet ID to look up', in: 'path', name: 'tweetId', required: true, type: 'string' },
     ],
-    mpp: { intent: 'charge', price: '$0.00015/call' },
+    mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/tweets/:tweetId',
     responseShape: '{ tweet: { id, text, likeCount, retweetCount, replyCount, viewCount, ... }, author? }',
     summary: 'Look up a single tweet with engagement metrics',
@@ -600,7 +703,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Search query (X search syntax)', in: 'query', name: 'q', required: true, type: 'string' },
       { description: 'Max tweets to return (default 20, max 200)', in: 'query', name: 'limit', required: false, type: 'number' },
     ],
-    mpp: { intent: 'session', price: '$0.00015/tweet' },
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
     path: '/api/v1/x/tweets/search',
     responseShape: '{ tweets: [{ id, text, author?, likeCount?, retweetCount?, media? }], total }',
     summary: 'Search tweets by query with optional limit for pagination',
@@ -612,7 +715,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       { description: 'X username to look up', in: 'path', name: 'username', required: true, type: 'string' },
     ],
-    mpp: { intent: 'charge', price: '$0.00015/call' },
+    mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/users/:username',
     responseShape: '{ id, username, name, followers?, following?, verified?, description? }',
     summary: 'Get X user profile by username',
@@ -625,7 +728,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Source username', in: 'query', name: 'source', required: true, type: 'string' },
       { description: 'Target username', in: 'query', name: 'target', required: true, type: 'string' },
     ],
-    mpp: { intent: 'charge', price: '$0.00105/call' },
+    mpp: { intent: 'charge', price: MPP_PRICE_FOLLOW_CHECK },
     path: '/api/v1/x/followers/check',
     responseShape: '{ isFollowing, isFollowedBy, sourceUsername, targetUsername }',
     summary: 'Check follow relationship between two users',
@@ -637,7 +740,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       { description: 'Tweet ID of the X Article', in: 'path', name: 'tweetId', required: true, type: 'string' },
     ],
-    mpp: { intent: 'charge', price: '$0.00105/call' },
+    mpp: { intent: 'charge', price: MPP_PRICE_FOLLOW_CHECK },
     path: '/api/v1/x/articles/:tweetId',
     responseShape: '{ article: { title, previewText, coverImageUrl, contents, createdAt, likeCount, replyCount, quoteCount, viewCount }, author? }',
     summary: 'Get full content of an X Article (long-form post) by tweet ID',
@@ -652,7 +755,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Tweet URL or ID (single tweet)', in: 'body', name: 'tweetInput', required: false, type: 'string' },
       { description: 'Array of tweet URLs or IDs (bulk, max 50)', in: 'body', name: 'tweetIds', required: false, type: 'string[]' },
     ],
-    mpp: { intent: 'session', price: '$0.00015/media' },
+    mpp: { intent: 'session', price: MPP_PRICE_MEDIA },
     path: '/api/v1/x/media/download',
     responseShape: 'Single: { tweetId, galleryUrl, cacheHit }. Bulk: { galleryUrl, totalTweets, totalMedia }',
     summary: 'Download media from tweets. Single tweetInput or bulk tweetIds. Returns gallery URL.',
@@ -667,7 +770,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
       { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
     ],
-    mpp: { intent: 'charge', price: '$0.00045/call' },
+    mpp: { intent: 'charge', price: MPP_PRICE_TREND },
     path: '/api/v1/trends',
     responseShape: '{ trends: [{ name, query?, description?, rank? }], total, woeid }',
     summary: 'Get current trending topics on X',
@@ -680,10 +783,343 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
       { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
     ],
-    mpp: { intent: 'charge', price: '$0.00045/call' },
+    mpp: { intent: 'charge', price: MPP_PRICE_TREND },
     path: '/api/v1/x/trends',
     responseShape: '{ trends: [{ name, query?, description?, rank? }], count, woeid }',
     summary: 'Get X trending topics by region',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/tweets/:id/favoriters',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get users who liked a tweet. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/users/:id/likes',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get tweets liked by a user. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/users/:id/media',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get media tweets by a user. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/users/:id/followers-you-know',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get followers you know for a user. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      { description: 'Optional bookmark folder ID', in: 'query', name: 'folderId', required: false, type: 'string' },
+      PARAM_CURSOR,
+    ],
+    path: '/api/v1/x/bookmarks',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    sensitive: true,
+    summary: 'Get bookmarked tweets. Requires explicit user request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_CURSOR],
+    path: '/api/v1/x/bookmarks/folders',
+    responseShape: '{ folders: [{ id, name }], has_more, next_cursor }',
+    sensitive: true,
+    summary: 'Get bookmark folders. Requires explicit user request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      { description: 'Notification type filter: All, Verified, Mentions', in: 'query', name: 'type', required: false, type: 'string' },
+      PARAM_CURSOR,
+    ],
+    path: '/api/v1/x/notifications',
+    responseShape: '{ notifications: [{ id, type?, message?, timestamp? }], has_more, next_cursor }',
+    sensitive: true,
+    summary: 'Get notifications. Requires explicit user request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      { description: 'Comma-separated tweet IDs to exclude from results', in: 'query', name: 'seenTweetIds', required: false, type: 'string' },
+      PARAM_CURSOR,
+    ],
+    path: '/api/v1/x/timeline',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    sensitive: true,
+    summary: 'Get home timeline. Requires explicit user request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      { description: 'Target user ID', in: 'path', name: 'userId', required: true, type: 'string' },
+      { description: 'Connected X account username without @', in: 'query', name: 'account', required: true, type: 'string' },
+      PARAM_CURSOR,
+    ],
+    path: '/api/v1/x/dm/:userId/history',
+    responseShape: '{ messages: [{ id, text?, sender_id?, receiver_id?, created?, media_url? }], has_more, next_cursor }',
+    sensitive: true,
+    summary: 'Get DM conversation history. Requires explicit user request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      PARAM_USER_ID,
+      PARAM_CURSOR,
+      { description: 'Include replies (default false)', in: 'query', name: 'includeReplies', required: false, type: 'boolean' },
+      { description: 'Include parent tweet for replies (default false)', in: 'query', name: 'includeParentTweet', required: false, type: 'boolean' },
+    ],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/users/:id/tweets',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get latest tweets by a user. Preferred over search for user timelines.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_COMMUNITY_ID],
+    mpp: { intent: 'charge', price: MPP_PRICE_CALL },
+    path: '/api/v1/x/communities/:id/info',
+    responseShape: '{ community: { id, name?, description?, member_count?, moderator_count?, created?, banner_url?, join_policy?, rules? } }',
+    summary: 'Get community details.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/communities/:id/members',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get community members. Use cursor for pagination.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/communities/:id/moderators',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get community moderators. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/communities/:id/tweets',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get community tweets. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_SEARCH_QUERY, PARAM_QUERY_TYPE, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_COMMUNITY },
+    path: '/api/v1/x/communities/search',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Search tweets across all communities.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_SEARCH_QUERY, PARAM_QUERY_TYPE, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/communities/tweets',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get tweets from all communities matching a query.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_LIST_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/lists/:id/followers',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get list followers.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_LIST_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/lists/:id/members',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get list members.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      PARAM_LIST_ID,
+      PARAM_CURSOR,
+      PARAM_SINCE_TIME,
+      PARAM_UNTIL_TIME,
+      { description: 'Include replies (default false)', in: 'query', name: 'includeReplies', required: false, type: 'boolean' },
+    ],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/lists/:id/tweets',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get list tweets. Returns about 20 per page.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      { description: 'Comma-separated tweet IDs (max 100)', in: 'query', name: 'ids', required: true, type: 'string' },
+    ],
+    path: '/api/v1/x/tweets',
+    responseShape: `{ tweets: [${RESPONSE_TWEET_BASIC}], has_more: false, next_cursor: "" }`,
+    summary: 'Get multiple tweets by IDs. Max 100 IDs per request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      PARAM_TWEET_ID,
+      PARAM_CURSOR,
+      PARAM_SINCE_TIME,
+      PARAM_UNTIL_TIME,
+      { description: 'Include replies (default true)', in: 'query', name: 'includeReplies', required: false, type: 'boolean' },
+    ],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/tweets/:id/quotes',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get quote tweets of a tweet.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_SINCE_TIME, PARAM_UNTIL_TIME],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/tweets/:id/replies',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get replies to a tweet.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/tweets/:id/retweeters',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get users who retweeted a tweet.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/tweets/:id/thread',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get thread context for a tweet.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [
+      { description: 'Comma-separated user IDs (max 100)', in: 'query', name: 'ids', required: true, type: 'string' },
+    ],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/users/batch',
+    responseShape: `{ users: [${RESPONSE_USER}] }`,
+    summary: 'Get multiple users by IDs. Max 100 IDs per request.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_SEARCH_QUERY, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/users/search',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Search users by name or username.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_AFTER_ALIAS, PARAM_PAGE_SIZE_200, PARAM_LIMIT_ALIAS],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/users/:id/followers',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get user followers. Use cursor for pagination.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_AFTER_ALIAS, PARAM_PAGE_SIZE_200, PARAM_LIMIT_ALIAS],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/users/:id/following',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get users this user follows. Use cursor for pagination.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_SINCE_TIME, PARAM_UNTIL_TIME],
+    mpp: { intent: 'session', price: MPP_PRICE_TWEET },
+    path: '/api/v1/x/users/:id/mentions',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get tweets mentioning a user.',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
+    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    mpp: { intent: 'session', price: MPP_PRICE_USER },
+    path: '/api/v1/x/users/:id/verified-followers',
+    responseShape: RESPONSE_USERS_PAGINATED,
+    summary: 'Get verified followers.',
   },
 
 
@@ -745,6 +1181,15 @@ const API_SPEC: readonly EndpointInfo[] = [
     responseShape: '{ id, xUsername, status }',
     summary: 'Re-authenticate X account (dashboard only - agent-prohibited)',
   },
+  {
+    agentProhibited: true,
+    category: CATEGORY_X_ACCOUNTS,
+    free: true,
+    method: 'POST',
+    path: '/api/v1/x/accounts/bulk-retry',
+    responseShape: '{ cleared }',
+    summary: 'Bulk retry temporarily failed X accounts (dashboard only - agent-prohibited)',
+  },
 
   // --- X Write Actions ---
   {
@@ -799,6 +1244,15 @@ const API_SPEC: readonly EndpointInfo[] = [
     path: '/api/v1/x/tweets/:id/retweet',
     responseShape: RESPONSE_SUCCESS,
     summary: 'Retweet',
+  },
+  {
+    category: CATEGORY_X_WRITE,
+    free: false,
+    method: 'DELETE',
+    parameters: PARAMS_TWEET_ACTION,
+    path: '/api/v1/x/tweets/:id/retweet',
+    responseShape: RESPONSE_SUCCESS,
+    summary: 'Unretweet',
   },
   {
     category: CATEGORY_X_WRITE,

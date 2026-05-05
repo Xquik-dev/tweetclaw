@@ -142,6 +142,14 @@ describe('createProxiedRequest', () => {
     expect(result).toStrictEqual({ accounts: [] });
   });
 
+  it('blocks POST /api/v1/x/accounts/bulk-retry', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(request('/api/v1/x/accounts/bulk-retry', { method: 'POST' })).rejects.toThrow(
+      'Agent-prohibited endpoint',
+    );
+  });
+
   it('blocks DELETE /api/v1/x/accounts/:id (disconnect)', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
@@ -201,6 +209,11 @@ describe('isProhibitedRequest', () => {
   it('allows GET /api/v1/x/accounts', () => {
     expect.assertions(1);
     expect(isProhibitedRequest('GET', '/api/v1/x/accounts')).toBe(false);
+  });
+
+  it('blocks POST /api/v1/x/accounts/bulk-retry', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('POST', '/api/v1/x/accounts/bulk-retry')).toBe(true);
   });
 
   it('blocks DELETE /api/v1/x/accounts/123', () => {

@@ -62,7 +62,12 @@ function requestNeedsApproval(method: string, path: string): boolean {
 
   return path.startsWith('/api/v1/events')
     || path.startsWith('/api/v1/webhooks')
-    || path.startsWith('/api/v1/x/accounts/');
+    || path === '/api/v1/x/accounts'
+    || path.startsWith('/api/v1/x/accounts/')
+    || path.startsWith('/api/v1/x/bookmarks')
+    || path.startsWith('/api/v1/x/dm/')
+    || path.startsWith('/api/v1/x/notifications')
+    || path.startsWith('/api/v1/x/timeline');
 }
 
 function resolveCatalogRequest(

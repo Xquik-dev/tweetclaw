@@ -35,13 +35,13 @@ describe('API_SPEC', () => {
     expect(allValid).toBe(true);
   });
 
-  it('has at least 40 endpoints', () => {
+  it('matches the canonical Xquik endpoint count', () => {
     expect.assertions(1);
-    expect(API_SPEC.length).toBeGreaterThanOrEqual(40);
+    expect(API_SPEC).toHaveLength(118);
   });
 
-  it('matches the canonical trends, credits, and remove follower catalog', () => {
-    expect.assertions(6);
+  it('matches the canonical trends, credits, monitor, and X read catalog', () => {
+    expect.assertions(12);
     const keys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
     const categories = new Set(API_SPEC.map((endpoint) => endpoint.category));
     const removedTrendingRoutePath = 'trending/:source';
@@ -49,9 +49,29 @@ describe('API_SPEC', () => {
     expect(keys).toContain('GET /api/v1/x/trends');
     expect(keys).toContain('POST /api/v1/x/users/:id/remove-follower');
     expect(keys).toContain('GET /api/v1/credits/topup/status');
+    expect(keys).toContain('POST /api/v1/monitors/keywords');
+    expect(keys).toContain('GET /api/v1/x/bookmarks');
+    expect(keys).toContain('GET /api/v1/x/notifications');
+    expect(keys).toContain('GET /api/v1/x/timeline');
+    expect(keys).toContain('GET /api/v1/x/dm/:userId/history');
+    expect(keys).toContain('GET /api/v1/x/users/:id/verified-followers');
     expect(keys).not.toContain(`GET /api/v1/${removedTrendingRoutePath}`);
     expect(categories).not.toContain('trends');
     expect(categories.size).toBe(10);
+  });
+
+  it('keeps MPP coverage aligned with Xquik pay-per-use routes', () => {
+    expect.assertions(4);
+    const mppKeys = new Set(
+      API_SPEC.filter((endpoint) => endpoint.mpp !== undefined).map(
+        (endpoint) => `${endpoint.method} ${endpoint.path}`,
+      ),
+    );
+
+    expect(mppKeys.size).toBe(32);
+    expect(mppKeys).toContain('GET /api/v1/x/communities/:id/info');
+    expect(mppKeys).toContain('GET /api/v1/x/lists/:id/tweets');
+    expect(mppKeys).toContain('GET /api/v1/x/users/:id/verified-followers');
   });
 
   it('has both free and paid endpoints', () => {

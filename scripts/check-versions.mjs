@@ -31,13 +31,14 @@ const contentChecks = [
     required: [
       "| Follow check, article | 5 | $0.00075 |",
       "account-backed X automation",
-      "63 agent-callable endpoints across 9 categories",
+      "99 agent-callable endpoints across 9 categories",
       "1-5 credits",
     ],
     forbidden: [
       "| Follow check, article | 7 | $0.00105 |",
       "113 endpoints",
       "112 endpoints",
+      "63 agent-callable endpoints",
       "1-7 credits",
     ],
   },
@@ -53,8 +54,8 @@ const contentChecks = [
   },
   {
     path: "server.json",
-    required: ["63 agent-callable endpoints"],
-    forbidden: ["113 endpoints", "112 endpoints"],
+    required: ["99 agent-callable endpoints"],
+    forbidden: ["113 endpoints", "112 endpoints", "63 agent-callable endpoints"],
   },
   {
     path: "openclaw.plugin.json",

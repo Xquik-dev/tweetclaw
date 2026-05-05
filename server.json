@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Xquik-dev/tweetclaw",
-  "description": "Post tweets, reply, like, retweet, follow, DM & more through structured Xquik endpoints. OpenClaw plugin with 63 agent-callable endpoints via 2 tools (explore + tweetclaw). StreamableHTTP at xquik.com/mcp with API key auth.",
+  "description": "Post tweets, reply, like, retweet, follow, DM & more through structured Xquik endpoints. OpenClaw plugin with 99 agent-callable endpoints via 2 tools (explore + tweetclaw). StreamableHTTP at xquik.com/mcp with API key auth.",
   "repository": {
     "url": "https://github.com/Xquik-dev/tweetclaw",
     "source": "github"

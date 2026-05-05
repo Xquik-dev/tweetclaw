@@ -428,9 +428,10 @@ Some endpoints return private or sensitive user data. The agent must handle this
 
 | Data type | Endpoints | Privacy concern |
 |-----------|-----------|-----------------|
-| DM conversations | `POST /api/v1/x/dm/:userId` | Private messages - never log, cache, or include full DM text in responses without explicit user request |
-| Bookmarks | Bookmarks (if available) | Private curation - user may not want bookmark contents shared |
-| Account details | `GET /api/v1/x/accounts`, `GET /api/v1/x/accounts/:id` | Connected account metadata |
+| DM conversations | `GET /api/v1/x/dm/:userId/history`, `POST /api/v1/x/dm/:userId` | Private messages - never log, cache, or include full DM text in responses without explicit user request |
+| Bookmarks | `GET /api/v1/x/bookmarks`, `GET /api/v1/x/bookmarks/folders` | Private curation - user may not want bookmark contents shared |
+| Notifications & home timeline | `GET /api/v1/x/notifications`, `GET /api/v1/x/timeline` | Private account activity and personalized feed data |
+| Account handles | `GET /api/v1/x/accounts` | Connected account metadata. Per-account detail reads are dashboard-only |
 
 **Rules for sensitive data:**
 

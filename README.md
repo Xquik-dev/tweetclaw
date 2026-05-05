@@ -161,7 +161,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 
 ## API Coverage
 
-63 agent-callable endpoints across 9 categories. Dashboard-only account-admin, billing, support, and raw credential flows are excluded from the tool catalog and blocked at runtime.
+99 agent-callable endpoints across 9 categories. Dashboard-only account-admin, billing, support, and raw credential flows are excluded from the tool catalog and blocked at runtime.
 
 | Category | Examples | Cost |
 |----------|---------|------|

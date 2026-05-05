@@ -45,6 +45,7 @@ const PROHIBITED_PATHS: ReadonlyArray<readonly [string, string]> = [
   ['POST', '/api/v1/subscribe'],
   ['POST', '/api/v1/x/accounts'],
   ['POST', '/api/v1/x/accounts/'],
+  ['POST', '/api/v1/x/accounts/bulk-retry'],
 ];
 
 const PROHIBITED_PATH_PATTERNS: ReadonlyArray<readonly [string, RegExp]> = [

@@ -38,7 +38,7 @@ Since @xquik/tweetclaw is on npm, it can also be registered as an npm-based entr
 arctl mcp publish xquik-tweetclaw \
   --type npm \
   --package @xquik/tweetclaw \
-  --description "X/Twitter automation via Xquik. OpenClaw plugin with 63 agent-callable endpoints via 2 structured tools."
+  --description "X/Twitter automation via Xquik. OpenClaw plugin with 99 agent-callable endpoints via 2 structured tools."
 ```
 
 ## After Publishing
