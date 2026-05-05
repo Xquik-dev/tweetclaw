@@ -25,6 +25,34 @@ function isPluginConfig(value: unknown): value is PluginConfig {
 
 const DEFAULT_POLLING_INTERVAL_SECONDS = 60;
 
+const CONFIG_SCHEMA = {
+  additionalProperties: false,
+  anyOf: [
+    { required: ['apiKey'] },
+    { required: ['tempoSigningKey'] },
+  ],
+  properties: {
+    apiKey: {
+      description: 'Xquik API key (get one at dashboard.xquik.com). Required for account-backed X automation.',
+      minLength: 1,
+      type: 'string',
+    },
+    baseUrl: { default: 'https://xquik.com', type: 'string' },
+    pollingEnabled: { default: true, type: 'boolean' },
+    pollingInterval: {
+      default: 60,
+      description: 'Event polling interval in seconds',
+      type: 'number',
+    },
+    tempoSigningKey: {
+      description: 'MPP signing key for pay-per-use mode. No account needed. 32 read-only X-API endpoints.',
+      minLength: 1,
+      type: 'string',
+    },
+  },
+  type: 'object',
+};
+
 interface ToolResult {
   readonly content: ReadonlyArray<{ readonly text: string; readonly type: string }>;
   readonly isError?: true;
@@ -335,6 +363,7 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
 }
 
 const plugin = definePluginEntry({
+  configSchema: CONFIG_SCHEMA,
   description: 'Structured X/Twitter automation through Xquik',
   id: 'tweetclaw',
   name: 'TweetClaw',

@@ -1,9 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import manifest from '../openclaw.plugin.json' with { type: 'json' };
 import plugin from '../src/index.js';
 import * as mpp from '../src/mpp.js';
 import type { ToolResult } from '../src/types.js';
 
-const { register } = plugin;
+const { configSchema, register } = plugin;
 
 interface RegisteredTool {
   readonly description: string;
@@ -120,6 +121,11 @@ afterEach(() => {
 });
 
 describe('register', () => {
+  it('exposes the same config schema as the manifest', () => {
+    expect.assertions(1);
+    expect(configSchema).toStrictEqual(manifest.configSchema);
+  });
+
   it('warns and returns when no API key or signing key configured', () => {
     expect.assertions(3);
     const { api, tools, warnings } = createMockApi();
