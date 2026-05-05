@@ -8,7 +8,7 @@ read_when:
   - Checking TweetClaw pricing, credentials, permissions, or safety boundaries
   - Planning X/Twitter reads, writes, extractions, draws, or monitors safely
 metadata: {"openclaw":{"emoji":"🐦","tags":["twitter","x","automation","social-media","tweets","scraping","giveaway","monitoring","rest-api","cheap-api"],"primaryEnv":"XQUIK_API_KEY","envVars":[{"name":"XQUIK_API_KEY","required":false,"description":"Optional Xquik API key for account-backed TweetClaw workflows. Prefer storing it in OpenClaw plugin config rather than exposing it to the agent session."},{"name":"MPP_SIGNING_KEY","required":false,"description":"Optional Machine Payments Protocol signing key for read-only pay-per-use mode. Store as sensitive OpenClaw plugin config and never print it."}]}}
-license: MIT
+license: MIT-0
 ---
 
 # TweetClaw
