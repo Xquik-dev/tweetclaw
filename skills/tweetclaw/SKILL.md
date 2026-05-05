@@ -1,19 +1,13 @@
 ---
 name: tweetclaw
-description: "OpenClaw plugin for X/Twitter automation. Post tweets, reply, like, retweet, follow, DM, search, extract data, run giveaways, and monitor accounts via structured Xquik endpoints. 2 tools (explore + tweetclaw), 2 commands (/xstatus, /xtrends)."
+description: "Safety-reviewed guide for @xquik/tweetclaw, the Xquik OpenClaw plugin for structured X/Twitter workflows. Covers setup, credential boundaries, explicit approval for writes and paid actions, spending limits, private-data handling, and monitor controls."
 homepage: https://xquik.com
 read_when:
-  - Posting, replying, liking, retweeting, or following on X/Twitter
-  - Searching tweets or looking up X/Twitter users
-  - Running giveaway draws from tweet replies
-  - Monitoring X/Twitter accounts for new activity
-  - Composing algorithm-optimized tweets
-  - Extracting bulk data from X/Twitter (followers, replies, communities)
-  - Downloading tweet media or uploading images
-  - Sending DMs or updating X/Twitter profile
-  - Checking credit balance
-  - Browsing bookmarks, notifications, timeline, or DM history
-metadata: {"openclaw":{"emoji":"🐦","tags":["twitter","x","automation","social-media","tweets","scraping","giveaway","monitoring","rest-api","cheap-api"]}}
+  - Installing or configuring the TweetClaw OpenClaw plugin
+  - Using Xquik from OpenClaw with explicit user approval
+  - Checking TweetClaw pricing, credentials, permissions, or safety boundaries
+  - Planning X/Twitter reads, writes, extractions, draws, or monitors safely
+metadata: {"openclaw":{"emoji":"🐦","tags":["twitter","x","automation","social-media","tweets","scraping","giveaway","monitoring","rest-api","cheap-api"],"primaryEnv":"XQUIK_API_KEY","envVars":[{"name":"XQUIK_API_KEY","required":false,"description":"Optional Xquik API key for account-backed TweetClaw workflows. Prefer storing it in OpenClaw plugin config rather than exposing it to the agent session."},{"name":"MPP_SIGNING_KEY","required":false,"description":"Optional Machine Payments Protocol signing key for read-only pay-per-use mode. Store as sensitive OpenClaw plugin config and never print it."}]}}
 license: MIT
 ---
 
@@ -24,6 +18,20 @@ OpenClaw plugin for X/Twitter automation powered by Xquik.
 ```bash
 openclaw plugins install @xquik/tweetclaw
 ```
+
+## Safety Rules
+
+Use TweetClaw only for user-authorized X/Twitter workflows. Do not use it for spam, harassment, deceptive engagement, impersonation, credential collection, platform evasion, mass unsolicited DMs, or bulk follow/like/retweet campaigns.
+
+Before any visible, state-changing, paid, or recurring action, summarize the exact target, account, action, text/media when relevant, and estimated credits, then wait for explicit user confirmation. This includes posting, replying, deleting, liking, retweeting, following, unfollowing, sending DMs, editing profiles, uploading media, creating webhooks, creating monitors, running draws, and starting extraction jobs.
+
+For reads that expose private or account-scoped data, such as bookmarks, notifications, timelines, DMs, connected accounts, and account usage, confirm the user owns or is authorized to access the account before showing results. Redact credentials and avoid exposing sensitive personal data unless the user explicitly asks for that specific data.
+
+For bulk extraction, draw, or monitor requests, keep limits narrow by default. State the requested limit, estimated cost, and storage or notification behavior. Ask for confirmation again if the user expands the scope, changes the target, or asks for recurring monitoring.
+
+For content posting, show the final text and media list before sending. Do not post confidential, proprietary, personal, or third-party private information unless the user explicitly confirms they have the right to publish it. Do not add links, mentions, hashtags, or claims the user did not request.
+
+MPP mode is read-only. Never attempt writes, account-backed actions, monitors, webhooks, DMs, profile changes, or uploads when only `tempoSigningKey` is configured. Treat the signing key as sensitive config and never print it.
 
 ## Pricing
 
@@ -123,20 +131,6 @@ Configure the signing key in your OpenClaw plugin config:
 ```json
 { "tempoSigningKey": "your-66-char-hex-key" }
 ```
-
-## Safety Rules
-
-Use TweetClaw only for user-authorized X/Twitter workflows. Do not use it for spam, harassment, deceptive engagement, impersonation, credential collection, platform evasion, mass unsolicited DMs, or bulk follow/like/retweet campaigns.
-
-Before any visible, state-changing, paid, or recurring action, summarize the exact target, account, action, text/media when relevant, and estimated credits, then wait for explicit user confirmation. This includes posting, replying, deleting, liking, retweeting, following, unfollowing, sending DMs, editing profiles, uploading media, creating webhooks, creating monitors, running draws, and starting extraction jobs.
-
-For reads that expose private or account-scoped data, such as bookmarks, notifications, timelines, DMs, connected accounts, and account usage, confirm the user owns or is authorized to access the account before showing results. Redact credentials and avoid exposing sensitive personal data unless the user explicitly asks for that specific data.
-
-For bulk extraction, draw, or monitor requests, keep limits narrow by default. State the requested limit, estimated cost, and storage or notification behavior. Ask for confirmation again if the user expands the scope, changes the target, or asks for recurring monitoring.
-
-For content posting, show the final text and media list before sending. Do not post confidential, proprietary, personal, or third-party private information unless the user explicitly confirms they have the right to publish it. Do not add links, mentions, hashtags, or claims the user did not request.
-
-MPP mode is read-only. Never attempt writes, account-backed actions, monitors, webhooks, DMs, profile changes, or uploads when only `tempoSigningKey` is configured. Treat the signing key as sensitive config and never print it.
 
 ## Tools
 
