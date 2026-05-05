@@ -91,8 +91,9 @@ Findings:
 - Local TweetClaw removed the executor, blocks sensitive account-admin endpoints, and now needs a fresh publish/rescan after the current package version lands.
 - The npm registry already has `@xquik/tweetclaw@1.6.5`, but that tarball still contains the old executor file. New local safety fixes must publish under a new version.
 - `Xquik-dev/tweetclaw` repository metadata was updated on 2026-05-05 to remove the stale `113 endpoints` description and advertise the current 99 agent-callable endpoints.
+- `@xquik/tweetclaw@1.6.6` was published to npm on 2026-05-05. The published tarball was verified with `dist/index.js` present and `src/tools/executor.ts` absent.
 
 Action:
 
-- Keep the next package version newer than the already-published `1.6.5` tarball before publishing the safety fixes.
+- Keep future package versions newer than the latest published npm version before publishing more safety or compatibility fixes.
 - After publish, request or trigger a ClawHub rescan so the security page reflects the structured tool implementation.
