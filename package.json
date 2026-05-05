@@ -26,6 +26,9 @@
     "build": {
       "openclawVersion": "2026.5.4",
       "pluginSdkVersion": "2026.5.4"
+    },
+    "install": {
+      "minHostVersion": ">=2026.5.4"
     }
   },
   "files": [

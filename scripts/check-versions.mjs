@@ -8,8 +8,8 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const expected = JSON.parse(readFileSync(join(root, "package.json"), "utf8"))
-  .version;
+const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+const expected = packageJson.version;
 
 const surfaces = [
   { path: "server.json", get: (j) => JSON.parse(j).version },
@@ -23,6 +23,32 @@ for (const s of surfaces) {
   if (found !== expected) {
     drifts.push(`  ${s.path}: ${found ?? "<missing>"} (expected ${expected})`);
   }
+}
+
+const expectedOpenClawVersion = packageJson.openclaw?.build?.openclawVersion;
+const expectedOpenClawRange = `>=${expectedOpenClawVersion}`;
+const openclawCompat = packageJson.openclaw?.compat;
+const openclawInstall = packageJson.openclaw?.install;
+
+if (packageJson.peerDependencies?.openclaw !== expectedOpenClawRange) {
+  drifts.push(
+    `  package.json: peerDependencies.openclaw ${packageJson.peerDependencies?.openclaw ?? "<missing>"} (expected ${expectedOpenClawRange})`,
+  );
+}
+if (openclawCompat?.pluginApi !== expectedOpenClawRange) {
+  drifts.push(
+    `  package.json: openclaw.compat.pluginApi ${openclawCompat?.pluginApi ?? "<missing>"} (expected ${expectedOpenClawRange})`,
+  );
+}
+if (openclawCompat?.minGatewayVersion !== expectedOpenClawVersion) {
+  drifts.push(
+    `  package.json: openclaw.compat.minGatewayVersion ${openclawCompat?.minGatewayVersion ?? "<missing>"} (expected ${expectedOpenClawVersion})`,
+  );
+}
+if (openclawInstall?.minHostVersion !== expectedOpenClawRange) {
+  drifts.push(
+    `  package.json: openclaw.install.minHostVersion ${openclawInstall?.minHostVersion ?? "<missing>"} (expected ${expectedOpenClawRange})`,
+  );
 }
 
 const contentChecks = [
