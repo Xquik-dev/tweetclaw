@@ -45,7 +45,7 @@ async function handleXTrends(request: RequestFunction, categoryFilter?: string):
   if (categoryFilter !== undefined && categoryFilter.length > 0) {
     const trimmed = categoryFilter.trim();
     if (trimmed.length > 0) {
-      query.category = trimmed;
+      query['category'] = trimmed;
     }
   }
   const hasQuery = Object.keys(query).length > 0;

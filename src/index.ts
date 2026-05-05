@@ -165,15 +165,16 @@ function asObject(value: unknown): Readonly<Record<string, unknown>> | undefined
 function asExploreParams(params: unknown): Readonly<ExploreParams> {
   const value = asObject(params);
   if (value === undefined) return {};
+  const { category, free, limit, method, mpp, path, query } = value;
 
   return {
-    ...(typeof value.category === 'string' ? { category: value.category } : {}),
-    ...(typeof value.free === 'boolean' ? { free: value.free } : {}),
-    ...(typeof value.limit === 'number' ? { limit: value.limit } : {}),
-    ...(typeof value.method === 'string' ? { method: value.method } : {}),
-    ...(typeof value.mpp === 'boolean' ? { mpp: value.mpp } : {}),
-    ...(typeof value.path === 'string' ? { path: value.path } : {}),
-    ...(typeof value.query === 'string' ? { query: value.query } : {}),
+    ...(typeof category === 'string' ? { category } : {}),
+    ...(typeof free === 'boolean' ? { free } : {}),
+    ...(typeof limit === 'number' ? { limit } : {}),
+    ...(typeof method === 'string' ? { method } : {}),
+    ...(typeof mpp === 'boolean' ? { mpp } : {}),
+    ...(typeof path === 'string' ? { path } : {}),
+    ...(typeof query === 'string' ? { query } : {}),
   };
 }
 
@@ -190,15 +191,19 @@ function asQueryParams(value: unknown): Readonly<Record<string, boolean | number
 
 function asTweetclawParams(params: unknown): Readonly<TweetclawParams> {
   const value = asObject(params);
-  if (value === undefined || typeof value.path !== 'string') {
+  if (value === undefined) {
+    return { path: '' };
+  }
+  const { body, method, path, query: rawQuery } = value;
+  if (typeof path !== 'string') {
     return { path: '' };
   }
 
-  const query = asQueryParams(value.query);
+  const query = asQueryParams(rawQuery);
   return {
-    ...(value.body === undefined ? {} : { body: value.body }),
-    ...(typeof value.method === 'string' ? { method: value.method } : {}),
-    path: value.path,
+    ...(body === undefined ? {} : { body }),
+    ...(typeof method === 'string' ? { method } : {}),
+    path,
     ...(query === undefined ? {} : { query }),
   };
 }
@@ -340,11 +345,11 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
       intervalSeconds: pollingInterval ?? DEFAULT_POLLING_INTERVAL_SECONDS,
       onEvents: (events) => {
         for (const event of events) {
-          const eventType: string = isPollerEvent(event) && typeof event.eventType === 'string'
-            ? event.eventType
+          const eventType: string = isPollerEvent(event) && typeof event['eventType'] === 'string'
+            ? event['eventType']
             : 'unknown';
-          const username: string = isPollerEvent(event) && typeof event.xUsername === 'string'
-            ? event.xUsername
+          const username: string = isPollerEvent(event) && typeof event['xUsername'] === 'string'
+            ? event['xUsername']
             : '';
           api.logger.info(`[TweetClaw] ${eventType} from @${username}`);
         }

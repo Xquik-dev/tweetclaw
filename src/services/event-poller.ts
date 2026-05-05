@@ -21,7 +21,7 @@ interface EventPollerHandle {
 
 function extractCursor(events: ReadonlyArray<Readonly<Record<string, unknown>>>): string | undefined {
   const lastEvent = events.at(-1);
-  return typeof lastEvent?.id === 'string' ? lastEvent.id : undefined;
+  return typeof lastEvent?.['id'] === 'string' ? lastEvent['id'] : undefined;
 }
 
 function createEventPoller(options: EventPollerOptions): EventPollerHandle {
@@ -34,7 +34,7 @@ function createEventPoller(options: EventPollerOptions): EventPollerHandle {
     try {
       const query: Record<string, string> = {};
       if (cursor !== undefined) {
-        query.after = cursor;
+        query['after'] = cursor;
       }
       const hasQuery = Object.keys(query).length > 0;
       const result: unknown = await options.request(

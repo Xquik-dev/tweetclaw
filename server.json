@@ -6,7 +6,7 @@
     "url": "https://github.com/Xquik-dev/tweetclaw",
     "source": "github"
   },
-  "version": "1.6.8",
+  "version": "1.6.9",
   "remotes": [
     {
       "type": "streamable-http",
