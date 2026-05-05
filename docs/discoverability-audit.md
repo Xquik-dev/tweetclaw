@@ -13,6 +13,213 @@ Persistent notes for the recurring OpenClaw compatibility poll. Use this file to
 
 ## Audited Repositories
 
+### jensrot/awesome-openclaw
+
+Status: PR open.
+
+Repository: https://github.com/jensrot/awesome-openclaw
+
+Pull request: https://github.com/jensrot/awesome-openclaw/pull/3
+
+Rules observed:
+
+- CONTRIBUTING asks for high-quality OpenClaw resources, concise `[Name](Link) - Description.` entries, direct working links, appropriate category placement, and alphabetical order.
+- PR template requires correct section, formatting, alphabetical order, duplicate search, and link validation.
+- License is CC0-1.0.
+
+Findings:
+
+- `tweetclaw`, `xquik`, and `x-twitter-scraper` were not present in README.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- README has a Plugins section with similar OpenClaw plugin entries.
+
+Action:
+
+- Opened PR 3, `Add TweetClaw plugin`, adding one concise TweetClaw entry to the Plugins section.
+- PR is open and mergeable as of 2026-05-06. Future runs should monitor it and avoid duplicate submissions unless the maintainer asks for changes.
+
+### composio-community/awesome-openclaw-plugins
+
+Status: PR already open.
+
+Repository: https://github.com/composio-community/awesome-openclaw-plugins
+
+Findings:
+
+- PR 5, `Add Social Media section with tweetclaw`, is open as of 2026-05-06.
+- No separate issue matching TweetClaw or Xquik was found.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+- Future runs may monitor PR 5, but should avoid repeated status comments unless there is concrete maintainer feedback.
+
+### ThisIsJeron/awesome-openclaw-plugins
+
+Status: already listed.
+
+Repository: https://github.com/ThisIsJeron/awesome-openclaw-plugins
+
+Rules observed:
+
+- CONTRIBUTING asks for one plugin per PR, valid `openclaw.plugin.json`, installable plugins, concise descriptions, proper category placement, and no spam.
+- README uses one-line plugin entries with install commands.
+
+Findings:
+
+- TweetClaw is already listed in README under Utility Plugins.
+- PR 8, `Add TweetClaw X/Twitter automation plugin`, merged on 2026-04-08.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+
+### vincentkoc/awesome-openclaw
+
+Status: do not duplicate.
+
+Repository: https://github.com/vincentkoc/awesome-openclaw
+
+Findings:
+
+- PR 12, `feat(readme): add TweetClaw X/Twitter automation plugin`, was closed unmerged on 2026-03-25.
+- Issue 11 for TweetClaw was closed on 2026-03-25.
+- Issue 68, `feat(list): add Xquik-dev/tweetclaw`, is open as of 2026-05-06.
+- PR 9 for `x-twitter-scraper` was closed unmerged on 2026-03-11, and issue 8 was closed on 2026-04-18.
+
+Action:
+
+- Do not open another TweetClaw or x-twitter-scraper PR here.
+- Only revisit if issue 68 receives maintainer feedback that asks for a concrete change.
+
+### alvinreal/awesome-openclaw
+
+Status: PR already open.
+
+Repository: https://github.com/alvinreal/awesome-openclaw
+
+Findings:
+
+- PR 25, `Add Xquik-dev/tweetclaw to Plugins & Channel Integrations`, is open as of 2026-05-06.
+- No separate issue matching TweetClaw or Xquik was found.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+
+### EthanYolo01/Awesome-OpenClaw
+
+Status: PR already open.
+
+Repository: https://github.com/EthanYolo01/Awesome-OpenClaw
+
+Findings:
+
+- PR 6, `Add TweetClaw X/Twitter plugin to Skills & Plugins`, is open as of 2026-05-06.
+- No separate issue matching TweetClaw or Xquik was found.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+
+### SamurAIGPT/awesome-openclaw
+
+Status: already listed.
+
+Repository: https://github.com/SamurAIGPT/awesome-openclaw
+
+Findings:
+
+- PR 64, `Add TweetClaw OpenClaw plugin for X/Twitter automation`, merged on 2026-03-13.
+- PR 58, `Add x-twitter-scraper - X API skill with 40+ tools & MCP server`, merged on 2026-03-10.
+- PR 111, `Add tweetclaw (X/Twitter automation plugin)`, was closed on 2026-04-22, after TweetClaw was already listed.
+- README currently contains TweetClaw and Xquik references.
+
+Action:
+
+- Do not submit another TweetClaw or x-twitter-scraper entry here.
+
+### thewh1teagle/awesome-openclaw
+
+Status: already listed.
+
+Repository: https://github.com/thewh1teagle/awesome-openclaw
+
+Findings:
+
+- PR 10, `Add tweetclaw to Social`, merged on 2026-05-02.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+
+### OpenClaw-Korea/awesome-openclaw
+
+Status: candidate, not submitted yet.
+
+Repository: https://github.com/OpenClaw-Korea/awesome-openclaw
+
+Rules observed:
+
+- README links to organization contribution guidelines and asks for relevant OpenClaw resources, working links, and short descriptions.
+- README has an empty Skills & Plugins section inviting PRs.
+- README has both English and Korean versions, so a high-quality contribution should update both files or follow the maintainer's bilingual pattern.
+
+Findings:
+
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- Local README search found no TweetClaw or Xquik entry.
+
+Action:
+
+- Good future candidate if a bilingual entry can be made carefully.
+- Do not submit an English-only drive-by PR without checking the shared organization contribution guidelines first.
+
+### rylena/awesome-openclaw
+
+Status: candidate, not submitted yet.
+
+Repository: https://github.com/rylena/awesome-openclaw
+
+Findings:
+
+- README is a large consolidated guide plus generated skills catalog.
+- Local search found no TweetClaw or Xquik entry.
+- No matching TweetClaw or Xquik PRs/issues were found in this run.
+
+Action:
+
+- Potential future target, but needs deeper format and generation-source review before any PR.
+
+### ZeroLu/awesome-openclaw
+
+Status: low-fit candidate.
+
+Repository: https://github.com/ZeroLu/awesome-openclaw
+
+Findings:
+
+- README focuses on tutorials, skills, and use cases rather than plugin discovery.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+
+Action:
+
+- Do not prioritize unless a useful tutorial or use-case contribution is created, not a plain plugin listing.
+
+### duanecilliers/awesome-openclaw
+
+Status: no action.
+
+Repository: https://github.com/duanecilliers/awesome-openclaw
+
+Findings:
+
+- Repository cloned as empty on 2026-05-06.
+
+Action:
+
+- Do not submit until the repository has content and contribution expectations.
+
 ### VoltAgent/awesome-openclaw-skills
 
 Status: do not duplicate.
