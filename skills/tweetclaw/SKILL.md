@@ -124,6 +124,20 @@ Configure the signing key in your OpenClaw plugin config:
 { "tempoSigningKey": "your-66-char-hex-key" }
 ```
 
+## Safety Rules
+
+Use TweetClaw only for user-authorized X/Twitter workflows. Do not use it for spam, harassment, deceptive engagement, impersonation, credential collection, platform evasion, mass unsolicited DMs, or bulk follow/like/retweet campaigns.
+
+Before any visible, state-changing, paid, or recurring action, summarize the exact target, account, action, text/media when relevant, and estimated credits, then wait for explicit user confirmation. This includes posting, replying, deleting, liking, retweeting, following, unfollowing, sending DMs, editing profiles, uploading media, creating webhooks, creating monitors, running draws, and starting extraction jobs.
+
+For reads that expose private or account-scoped data, such as bookmarks, notifications, timelines, DMs, connected accounts, and account usage, confirm the user owns or is authorized to access the account before showing results. Redact credentials and avoid exposing sensitive personal data unless the user explicitly asks for that specific data.
+
+For bulk extraction, draw, or monitor requests, keep limits narrow by default. State the requested limit, estimated cost, and storage or notification behavior. Ask for confirmation again if the user expands the scope, changes the target, or asks for recurring monitoring.
+
+For content posting, show the final text and media list before sending. Do not post confidential, proprietary, personal, or third-party private information unless the user explicitly confirms they have the right to publish it. Do not add links, mentions, hashtags, or claims the user did not request.
+
+MPP mode is read-only. Never attempt writes, account-backed actions, monitors, webhooks, DMs, profile changes, or uploads when only `tempoSigningKey` is configured. Treat the signing key as sensitive config and never print it.
+
 ## Tools
 
 TweetClaw registers 2 tools for the agent-safe Xquik endpoint catalog:
