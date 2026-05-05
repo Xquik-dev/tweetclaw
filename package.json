@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
   "license": "MIT",
   "type": "module",

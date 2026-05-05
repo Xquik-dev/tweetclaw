@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+const pluginManifest = JSON.parse(readFileSync(join(root, "openclaw.plugin.json"), "utf8"));
 
 function normalizePackagePath(value) {
   return value.replace(/\\/g, "/").replace(/^package\//u, "").replace(/^\.\//u, "");
@@ -41,20 +42,37 @@ function readPackedFiles(packageRow) {
   });
 }
 
+function readStringList(label, value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value.map((entry, index) => {
+    if (typeof entry !== "string" || entry.trim().length === 0) {
+      throw new TypeError(`${label}[${index}] must be a non-empty string`);
+    }
+    return normalizePackagePath(entry);
+  });
+}
+
+function normalizeSkillEntry(entry) {
+  const normalized = normalizePackagePath(entry);
+  return normalized.endsWith(".md") ? normalized : `${normalized}/SKILL.md`;
+}
+
 const packageRow = readPackageDryRun();
 const files = readPackedFiles(packageRow);
 const fileSet = new Set(files);
-const runtimeExtensions = Array.isArray(packageJson.openclaw?.runtimeExtensions)
-  ? packageJson.openclaw.runtimeExtensions.map((entry) => normalizePackagePath(entry))
-  : [];
+const sourceExtensions = readStringList("package.json openclaw.extensions", packageJson.openclaw?.extensions);
+const runtimeExtensions = readStringList("package.json openclaw.runtimeExtensions", packageJson.openclaw?.runtimeExtensions);
+const skillFiles = readStringList("openclaw.plugin.json skills", pluginManifest.skills).map(normalizeSkillEntry);
 const requiredFiles = [
   "LICENSE",
   "README.md",
   "openclaw.plugin.json",
   "package.json",
-  "skills/tweetclaw/SKILL.md",
-  "src/index.ts",
+  ...sourceExtensions,
   ...runtimeExtensions,
+  ...skillFiles,
 ];
 const forbiddenFiles = [
   ".DS_Store",
@@ -76,6 +94,15 @@ if (packageRow.version !== packageJson.version) {
 }
 if (runtimeExtensions.length === 0) {
   errors.push("package.json openclaw.runtimeExtensions must list built runtime entries");
+}
+if (sourceExtensions.length === 0) {
+  errors.push("package.json openclaw.extensions must list source entries");
+}
+if (sourceExtensions.length !== runtimeExtensions.length) {
+  errors.push("package.json openclaw.extensions and openclaw.runtimeExtensions must have matching lengths");
+}
+if (skillFiles.length === 0) {
+  errors.push("openclaw.plugin.json skills must list packaged skill roots");
 }
 for (const runtimeEntry of runtimeExtensions) {
   if (!runtimeEntry.endsWith(".js")) {
