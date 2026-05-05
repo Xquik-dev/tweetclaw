@@ -141,6 +141,7 @@ Structured endpoint invoker. The agent selects one endpoint from the catalog and
 - Only endpoints listed in the catalog can be invoked; unknown paths are rejected
 - Only the `xquik.com` origin can be reached; the runtime does not issue requests to any other host
 - No arbitrary commands, no shell, no filesystem access, no third-party network
+- The tool is registered as optional in OpenClaw. If it is unavailable after install, add `tweetclaw` to `tools.allow`
 
 Example: "Post a tweet saying 'Hello from TweetClaw!'" invokes `POST /api/v1/x/tweets` with `{ account, text }` after fetching the connected account from `GET /api/v1/x/accounts`.
 
