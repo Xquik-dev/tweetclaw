@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.6.10",
+  "version": "1.6.11",
   "description": "Post tweets, reply, like, retweet, follow, DM, search, and monitor X/Twitter through structured Xquik endpoints.",
   "skills": ["skills/tweetclaw"],
   "contracts": {
