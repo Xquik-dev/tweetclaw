@@ -61,6 +61,15 @@ if (!packageJson.files?.includes("dist/")) {
 if (packageJson.scripts?.prepack !== "npm run build && npm run check-versions") {
   drifts.push("  package.json: prepack must build runtime output before package dry-run/publish");
 }
+if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
+  drifts.push("  package.json: check-package-artifact must validate packed files");
+}
+if (packageJson.scripts?.prepublishOnly !== "npm run check-versions && npm run build && npm run check-package-artifact") {
+  drifts.push("  package.json: prepublishOnly must validate versions, build output, and package artifacts");
+}
+if (!packageJson.scripts?.["check:all"]?.includes("npm run check-package-artifact")) {
+  drifts.push("  package.json: check:all must include package artifact validation");
+}
 
 const contentChecks = [
   {

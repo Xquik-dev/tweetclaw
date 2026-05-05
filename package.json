@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
   "license": "MIT",
   "type": "module",
@@ -76,9 +76,10 @@
     "check-suppressions": "tsx check-suppressions.ts",
     "check-em-dash": "tsx check-em-dash.ts",
     "check-versions": "node scripts/check-versions.mjs",
+    "check-package-artifact": "node scripts/check-package-artifact.mjs",
     "prepack": "npm run build && npm run check-versions",
-    "prepublishOnly": "node scripts/check-versions.mjs",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-versions && npm run build && npm run test:coverage"
+    "prepublishOnly": "npm run check-versions && npm run build && npm run check-package-artifact",
+    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-versions && npm run build && npm run check-package-artifact && npm run test:coverage"
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",
