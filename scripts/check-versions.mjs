@@ -50,6 +50,17 @@ if (openclawInstall?.minHostVersion !== expectedOpenClawRange) {
     `  package.json: openclaw.install.minHostVersion ${openclawInstall?.minHostVersion ?? "<missing>"} (expected ${expectedOpenClawRange})`,
   );
 }
+const expectedNpmSpec = `${packageJson.name}@${expected}`;
+if (openclawInstall?.npmSpec !== expectedNpmSpec) {
+  drifts.push(
+    `  package.json: openclaw.install.npmSpec ${openclawInstall?.npmSpec ?? "<missing>"} (expected ${expectedNpmSpec})`,
+  );
+}
+if (openclawInstall?.defaultChoice !== "npm") {
+  drifts.push(
+    `  package.json: openclaw.install.defaultChoice ${openclawInstall?.defaultChoice ?? "<missing>"} (expected npm)`,
+  );
+}
 if (packageJson.openclaw?.runtimeExtensions?.[0] !== "./dist/index.js") {
   drifts.push(
     `  package.json: openclaw.runtimeExtensions ${JSON.stringify(packageJson.openclaw?.runtimeExtensions ?? null)} (expected ["./dist/index.js"])`,
