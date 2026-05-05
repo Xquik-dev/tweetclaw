@@ -50,6 +50,17 @@ if (openclawInstall?.minHostVersion !== expectedOpenClawRange) {
     `  package.json: openclaw.install.minHostVersion ${openclawInstall?.minHostVersion ?? "<missing>"} (expected ${expectedOpenClawRange})`,
   );
 }
+if (packageJson.openclaw?.runtimeExtensions?.[0] !== "./dist/index.js") {
+  drifts.push(
+    `  package.json: openclaw.runtimeExtensions ${JSON.stringify(packageJson.openclaw?.runtimeExtensions ?? null)} (expected ["./dist/index.js"])`,
+  );
+}
+if (!packageJson.files?.includes("dist/")) {
+  drifts.push("  package.json: files missing dist/");
+}
+if (packageJson.scripts?.prepack !== "npm run build && npm run check-versions") {
+  drifts.push("  package.json: prepack must build runtime output before package dry-run/publish");
+}
 
 const contentChecks = [
   {

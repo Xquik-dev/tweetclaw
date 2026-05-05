@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
   "license": "MIT",
   "type": "module",
@@ -19,6 +19,9 @@
     "extensions": [
       "./src/index.ts"
     ],
+    "runtimeExtensions": [
+      "./dist/index.js"
+    ],
     "compat": {
       "pluginApi": ">=2026.5.4",
       "minGatewayVersion": "2026.5.4"
@@ -32,6 +35,7 @@
     }
   },
   "files": [
+    "dist/",
     "src/",
     "skills/tweetclaw/SKILL.md",
     "openclaw.plugin.json"
@@ -62,6 +66,7 @@
     "mcp-server"
   ],
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
@@ -71,8 +76,9 @@
     "check-suppressions": "tsx check-suppressions.ts",
     "check-em-dash": "tsx check-em-dash.ts",
     "check-versions": "node scripts/check-versions.mjs",
+    "prepack": "npm run build && npm run check-versions",
     "prepublishOnly": "node scripts/check-versions.mjs",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-versions && npm run test:coverage"
+    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-versions && npm run build && npm run test:coverage"
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",

@@ -15,6 +15,9 @@ import globals from 'globals';
 
 export default [
   js.configs.recommended,
+  {
+    ignores: ['coverage/**', 'dist/**', 'package/**'],
+  },
 
   // Base configuration for all TypeScript files
   {

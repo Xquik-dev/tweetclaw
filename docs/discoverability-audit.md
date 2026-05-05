@@ -59,3 +59,40 @@ Action:
 
 - Do not add TweetClaw directly.
 - Consider an Xquik MCP entry only after confirming the published MCP server metadata, category placement, and no duplicate open or closed PR exists.
+
+### agent-matrix/catalog
+
+Status: already listed.
+
+Repository: https://github.com/agent-matrix/catalog
+
+Findings:
+
+- GitHub code search found `com.xquik/mcp` already listed at `servers/com-xquik/mcp-com-xquik-mcp-sse-e10bde108a/manifest.json`.
+- The same search also found canonical Xquik MCP metadata in `Xquik-dev/x-twitter-scraper/server.json` and the private `Xquik-dev/xquik/server.json`.
+
+Action:
+
+- Do not submit another Xquik MCP entry to this catalog.
+- If future metadata changes are needed, update the existing catalog entry in place and follow that repo's contribution rules.
+
+## Registry Notes
+
+### ClawHub TweetClaw Security Page
+
+Status: stale registry scan.
+
+URL: https://clawhub.ai/plugins/%40xquik%2Ftweetclaw/security/openclaw
+
+Findings:
+
+- The ClawHub security page reviewed `@xquik/tweetclaw` version `1.6.2` on 2026-05-02.
+- That review still mentions the old JavaScript executor and broad account-admin exposure.
+- Local TweetClaw removed the executor, blocks sensitive account-admin endpoints, and now needs a fresh publish/rescan after the current package version lands.
+- The npm registry already has `@xquik/tweetclaw@1.6.5`, but that tarball still contains the old executor file. New local safety fixes must publish under a new version.
+- `Xquik-dev/tweetclaw` repository metadata was updated on 2026-05-05 to remove the stale `113 endpoints` description and advertise the current 99 agent-callable endpoints.
+
+Action:
+
+- Keep the next package version newer than the already-published `1.6.5` tarball before publishing the safety fixes.
+- After publish, request or trigger a ClawHub rescan so the security page reflects the structured tool implementation.
