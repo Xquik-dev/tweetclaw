@@ -30,7 +30,7 @@ Findings:
 - `xquik-x-twitter-scraper` is already listed in README and `categories/search-and-research.md`.
 - PR 230, `Add skill: kriptoburak/xquik-x-twitter-scraper`, merged on 2026-03-10.
 - PR 255, `Add TweetClaw to Social Media`, closed on 2026-03-14.
-- PR 436, `Add skill: kriptoburak/tweetclaw`, is open as of 2026-05-05.
+- PR 436, `Add skill: kriptoburak/tweetclaw`, is open as of 2026-05-06.
 
 Action:
 

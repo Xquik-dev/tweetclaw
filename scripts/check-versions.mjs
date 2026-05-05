@@ -82,6 +82,31 @@ if (!packageJson.scripts?.["check:all"]?.includes("npm run check-package-artifac
   drifts.push("  package.json: check:all must include package artifact validation");
 }
 
+const requiredCompilerOptions = {
+  allowUnreachableCode: false,
+  allowUnusedLabels: false,
+  exactOptionalPropertyTypes: true,
+  noFallthroughCasesInSwitch: true,
+  noImplicitReturns: true,
+  noPropertyAccessFromIndexSignature: true,
+  noUncheckedIndexedAccess: true,
+  noUncheckedSideEffectImports: true,
+  strict: true,
+  verbatimModuleSyntax: true,
+};
+
+for (const configPath of ["tsconfig.json", "tsconfig.eslint.json"]) {
+  const config = JSON.parse(readFileSync(join(root, configPath), "utf8"));
+  const compilerOptions = config.compilerOptions ?? {};
+  for (const [key, expectedValue] of Object.entries(requiredCompilerOptions)) {
+    if (compilerOptions[key] !== expectedValue) {
+      drifts.push(
+        `  ${configPath}: compilerOptions.${key} ${String(compilerOptions[key] ?? "<missing>")} (expected ${String(expectedValue)})`,
+      );
+    }
+  }
+}
+
 const contentChecks = [
   {
     path: "README.md",
