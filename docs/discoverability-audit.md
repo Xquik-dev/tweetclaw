@@ -143,6 +143,35 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 2 and avoid duplicate TweetClaw tips unless the maintainer asks for a different shape.
 
+### TravisLeeeeee/awesome-openclaw-personas
+
+Status: PR open.
+
+Repository: https://github.com/TravisLeeeeee/awesome-openclaw-personas
+
+Pull request: https://github.com/TravisLeeeeee/awesome-openclaw-personas/pull/2
+
+Rules observed:
+
+- README describes production-ready OpenClaw personas made of `SOUL.md`, `AGENTS.md`, `SKILL.md`, and optional support files such as `TOOLS.md`.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+- Existing PR 1 changes a small set of persona files directly, so a focused persona-improvement PR matches the repository's review shape.
+
+Findings:
+
+- Repository tree search found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The repo already has `personas/marketing/x-twitter-growth`, so adding a second near-duplicate X/Twitter persona would be thin.
+- The useful path is to improve the existing X/Twitter Growth persona with structured TweetClaw tool guidance and stricter approval boundaries.
+
+Action:
+
+- Opened PR 2, `Add TweetClaw guidance to X Twitter Growth persona`, on 2026-05-06.
+- The PR updates the existing `x-twitter-growth` persona with TweetClaw install and `tools.alsoAllow` guidance, adds a `TOOLS.md`, adds SKILL frontmatter, and requires explicit approval before writes, DMs, follows, monitors, paid actions, and private-data reads.
+- Verification passed with `git diff --check` and a required-file/required-text check over the persona folder.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 2 and avoid duplicate persona submissions unless the maintainer requests a new persona or a different file shape.
+
 ### EthanYolo01/Awesome-OpenClaw
 
 Status: PR already open.
