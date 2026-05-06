@@ -338,6 +338,35 @@ Action:
 - Do not add TweetClaw directly.
 - Do not open another Xquik MCP PR here unless the existing entry needs a factual metadata update requested by maintainers.
 
+### abordage/awesome-mcp
+
+Status: PR open.
+
+Repository: https://github.com/abordage/awesome-mcp
+
+Pull request: https://github.com/abordage/awesome-mcp/pull/32
+
+Rules observed:
+
+- CONTRIBUTING says `README.md` is generated and contributors must edit only `repositories.yaml`.
+- The PR template requires checking existing `repositories.yaml`, pull requests, contribution rules, active maintenance, and open source license status.
+- The repository is MIT licensed and runs a YAML schema validation workflow for `repositories.yaml`.
+
+Findings:
+
+- `Xquik-dev/x-twitter-scraper` was already listed in `repositories.yaml` and generated `README.md` under Social Media.
+- The listing source still described Xquik as `40+ tools`, while current owned public surfaces describe the product as an X/Twitter API platform with REST API, MCP server, SDKs, webhooks, search, monitoring, and automation workflows.
+- Open and closed PR and issue searches found no duplicate current metadata update.
+- A same-name fork under `kriptoburak/Awesome-MCP` belongs to a different upstream, so the correctly parented fork `kriptoburak/abordage-awesome-mcp` was used.
+
+Action:
+
+- Opened PR 32, `Update Xquik MCP description`, changing only `repositories.yaml`.
+- Validation passed with `git diff --check` and Ruby YAML parsing.
+- Upstream GitHub checks `Validate changed files` and `validate` passed.
+- PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 32 and avoid duplicate metadata PRs unless maintainers request wording changes.
+
 ### appcypher/awesome-mcp-servers
 
 Status: branch pushed, PR creation blocked by integration permissions.
@@ -385,6 +414,71 @@ Action:
 - Keep MCP.Directory as a stale external listing to revisit.
 - Skip PulseMCP for now because the visible listing is materially accurate.
 - Skip MCPRepository until a documented submission or existing listing URL is found.
+
+### hridaydutta123/awesome-twitter-tools
+
+Status: already listed.
+
+Repository: https://github.com/hridaydutta123/awesome-twitter-tools
+
+Findings:
+
+- README already lists Xquik in the Tools section with a developer skill, MCP server, SDKs, REST API, webhooks, search, extraction, monitoring, giveaway, and guarded write workflow description.
+- PRs 24, 25, 26, and 32 from `kriptoburak` are merged, with PR 32 updating the live Xquik entry on 2026-05-06.
+- Open and closed issue search found no unresolved Xquik or TweetClaw follow-up.
+
+Action:
+
+- No PR opened. The live listing is current enough and another Xquik or TweetClaw entry would be a duplicate.
+
+### serenakeyitan/awesome-openclaw-roles
+
+Status: audited, no PR opened.
+
+Repository: https://github.com/serenakeyitan/awesome-openclaw-roles
+
+Findings:
+
+- README is a role-based OpenClaw skills list with PRs welcome and a Social Media / Content section containing a Twitter / X subsection.
+- Repository contents exposed only `README.md`; no CONTRIBUTING, CODE_OF_CONDUCT, or actual license file was present through the GitHub contents API during this run, despite the README badge.
+- Open and closed PR and issue searches found no `xquik`, `x-twitter-scraper`, or `tweetclaw` submission.
+
+Action:
+
+- No PR opened. A TweetClaw entry could fit the Twitter / X subsection, but the missing license and contribution files make a direct vendor listing too ambiguous for automated outreach.
+- Revisit only if a license file appears, maintainers request suggestions, or a repo-native workflow example can be contributed without lowering the list quality.
+
+### habitoai/awesome-mcp-servers
+
+Status: audited, no PR opened.
+
+Repository: https://github.com/habitoai/awesome-mcp-servers
+
+Findings:
+
+- MIT licensed repository with issues enabled, but last push was 2025-04-02 during this audit.
+- README has a Social Media section and several X/Twitter MCP entries, but no Xquik entry.
+- Open and closed PR and issue searches found no `xquik`, `x-twitter-scraper`, or `tweetclaw` submission.
+
+Action:
+
+- No PR opened. The list appears inactive relative to current MCP directories, so a new listing would be low-value unless maintainers resume curation.
+
+### andypiper/awesome-modern-twitter-api
+
+Status: archived, no PR opened.
+
+Repository: https://github.com/andypiper/awesome-modern-twitter-api
+
+Findings:
+
+- Repository is archived and last pushed in 2022.
+- CONTRIBUTING restricts additions to maintained projects directly related to modern Twitter API v2 or later and asks for one link per PR.
+- Open and closed PR and issue searches found no Xquik or TweetClaw submission.
+
+Action:
+
+- No PR opened. The repository is archived, and Xquik is broader than a direct Twitter API v2 client library entry.
 
 ### agent-matrix/catalog
 
