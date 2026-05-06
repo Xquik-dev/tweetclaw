@@ -963,6 +963,34 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
 
+### thomasbln/openclaw-marketing-agent
+
+Status: PR open.
+
+Repository: https://github.com/thomasbln/openclaw-marketing-agent
+
+Pull request: https://github.com/thomasbln/openclaw-marketing-agent/pull/1
+
+Rules observed:
+
+- README presents a Market Signal Radar OpenClaw agent blueprint that scans Hacker News, Google News, and X.com, classifies signals with an LLM, and sends Telegram digests.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+- README says the repository contains no secrets or pre-configured keys, so the contribution preserved env-only credential setup and avoided test credentials.
+
+Findings:
+
+- Repository tree, README, OpenClaw skill docs, `signal-radar/sources/x.js`, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The existing X scanner used X API v2 recent search through `X_BEARER_TOKEN`.
+- A generic listing would be thin. The repo-native useful path was an optional Xquik-backed source path inside the existing scanner, while keeping the original bearer-token behavior available.
+
+Action:
+
+- Opened PR 1, `Add optional Xquik signal source`, on 2026-05-06: https://github.com/thomasbln/openclaw-marketing-agent/pull/1
+- The PR adds optional `XQUIK_API_KEY` and `XQUIK_API_BASE_URL` support for `GET /api/v1/x/tweets/search`, keeps `X_BEARER_TOKEN` as fallback, documents provider selection, and adds skill guidance not to reveal configured tokens.
+- Verification passed with `git diff --check`, `node --check signal-radar/sources/x.js`, and JSON validation for `signal-radar/keywords/x.json`; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -989,6 +1017,7 @@ Findings:
 - ClawHub inspect still reports `tweetclaw@1.1.9` under owner `xquik` as clean with MIT-0 license metadata.
 - 2026-05-06 06:59 UTC heartbeat research confirmed OpenClaw `v2026.5.4` remains the current stable GitHub release. Its release notes include catalog-backed install hints for official external plugin references and workspace-scoped plugin metadata snapshot reuse for faster control-plane paths. TweetClaw already ships `openclaw.install.npmSpec`, `minHostVersion`, manifest metadata, and package compatibility fields, so no package change was needed.
 - 2026-05-06 07:19 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` as a clean npm-pack artifact linked to source commit `26df783a987f1a475587a8eb94336433d43fd25c`. Current manifest docs still keep install hints in `package.json#openclaw.install` rather than `openclaw.plugin.json`, matching TweetClaw's local metadata.
+- 2026-05-06 07:34 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean with owner `kriptoburak`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, and 0 static findings. Official `docs.openclaw.ai` manifest guidance still says `openclaw.plugin.json` is not for npm install metadata, so TweetClaw should keep `npmSpec` and `minHostVersion` in `package.json#openclaw.install`.
 
 Action:
 
