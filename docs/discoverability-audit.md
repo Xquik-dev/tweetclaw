@@ -1244,6 +1244,57 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
 
+### AIWerk/openclaw-mcp-bridge and AIWerk/mcp-bridge
+
+Status: server-submission issue open.
+
+Repository: https://github.com/AIWerk/openclaw-mcp-bridge
+
+Catalog repository: https://github.com/AIWerk/mcp-bridge
+
+Issue: https://github.com/AIWerk/mcp-bridge/issues/5
+
+Rules observed:
+
+- `AIWerk/openclaw-mcp-bridge` is an MIT-licensed OpenClaw plugin that bridges MCP servers into OpenClaw and points server submissions to the `AIWerk/mcp-bridge` core repository.
+- `AIWerk/openclaw-mcp-bridge` has a CONTRIBUTING guide, a server-submission issue template, no CODE_OF_CONDUCT file, and no open or closed PRs at audit time.
+- The contributing guide requires public servers, placeholder-only secrets, one-line lowercase descriptions, pinned local package versions when local installs are used, and a local tools/list validation result.
+- `AIWerk/mcp-bridge` is MIT-licensed, has issues enabled, has no CODE_OF_CONDUCT file, and no repository-local server-submission issue template. Existing accepted server submissions are routed from plugin-repo guidance into the core catalog flow.
+
+Findings:
+
+- Repository search and GitHub issue search found no existing `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` catalog entry, issue, or code reference in either AIWerk repository.
+- A direct TweetClaw package listing would not fit this repository because the catalog is for MCP servers rather than OpenClaw code plugins.
+- The useful repo-native path is the Xquik Docs MCP server, which is public, read-only, credential-free, and helps MCP Bridge users discover Xquik API docs without exposing account credentials or running paid API actions.
+- A StreamableHTTP SDK smoke test against `https://docs.xquik.com/mcp` completed tools/list and returned `search_xquik` plus `query_docs_filesystem_xquik`.
+
+Action:
+
+- Opened AIWerk/mcp-bridge issue 5, `[Server Submission] xquik-docs - read-only Xquik API documentation search`, on 2026-05-06.
+- The issue uses placeholder-only configuration, marks credentials as not required, records remote HTTP as the install method, and includes the SDK tools/list validation command and result.
+- The issue body was read back after creation and after title normalization. It uses real Markdown newlines, no literal backslash-n sequences, and no em dash characters.
+- Future runs should monitor issue 5. If maintainers request a recipe patch instead of an issue, prepare a `streamable-http` `xquik-docs` recipe with no env vars and no account-backed Xquik API MCP actions.
+
+### Polystichumlonchitissumatran261/tweetclaw
+
+Status: audited, no action available.
+
+Repository: https://github.com/Polystichumlonchitissumatran261/tweetclaw
+
+Rules observed:
+
+- The repository has issues disabled, no license, no CONTRIBUTING file, no CODE_OF_CONDUCT file, and no issue or PR templates.
+- The default branch contains only a one-line README and a ZIP artifact under `Veratrum/`.
+
+Findings:
+
+- GitHub search surfaced the repository because its name and description resemble TweetClaw, but the repository is not marked as a fork and provides no usable OpenClaw, Xquik, MCP, or package integration surface.
+- With issues disabled and no contribution guidance, there is no compliant repo-native path for a clarification issue, listing correction, or docs patch.
+
+Action:
+
+- No PR or issue opened. Future runs should only revisit if the repository adds a license, enables issues, publishes readable source, or otherwise exposes a compliant maintenance path.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -1277,6 +1328,7 @@ Findings:
 - 2026-05-06 08:50 UTC heartbeat research confirmed npm `openclaw` latest is now `2026.5.5`, published at `2026-05-06T08:46:22.905Z` with Node engine `>=22.14.0`, npm integrity `sha512-735aCg6D4xRt4g0fZfSZB0ZqFfAThLbW8WFD740jhflkk7qzoNr9PDFaOQIqsDAXlOneTJtCayUlforheJKh9A==`, and npm shasum `9eadefc00deffa118f78f651ed08e9e659f87161`. GitHub has signed tag `v2026.5.5` at commit `b1abf9d8ae4410c6a6e08f7dfd2d617f4550281c`, but `gh release view v2026.5.5` returned no release page and the GitHub releases API still lists `v2026.5.4` as the newest published release. The `v2026.5.4...v2026.5.5` compare shows plugin/update resilience fixes, including managed npm OpenClaw peer repair, official plugin sync during update, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible because its plugin API range and min host floor are `>=2026.5.4`, and no TweetClaw package change was needed.
 - 2026-05-06 09:11 UTC heartbeat research confirmed GitHub release page `v2026.5.5` is now live at https://github.com/openclaw/openclaw/releases/tag/v2026.5.5, published at `2026-05-06T09:00:55Z`. Release notes include plugin diagnostics for source-only TypeScript packages, official plugin update sync, managed npm peer repair, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible and no package metadata bump was needed.
 - 2026-05-06 09:32 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. The current OpenClaw manifest and building-plugin docs still match TweetClaw's package metadata split, optional tool metadata, and `tools.alsoAllow` guidance.
+- 2026-05-06 09:51 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. The Xquik docs MCP server at `https://docs.xquik.com/mcp` remains public, read-only, and exposes `search_xquik` plus `query_docs_filesystem_xquik`, making it suitable for credential-free MCP catalog discovery.
 
 Action:
 
