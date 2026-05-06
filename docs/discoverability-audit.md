@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 14:48 UTC recheck found it mergeable with no comments or reviews.
+Status: PR open; 2026-05-06 15:09 UTC recheck found it mergeable with no comments or reviews.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -965,6 +965,7 @@ Findings:
 - 2026-05-06 12:40 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR template, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, and review-free.
 - 2026-05-06 14:17 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 14:48 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 15:09 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1458,6 +1459,7 @@ Findings:
 - Run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433969369 then confirmed Context7 recognizes `/xquik-dev/tweetclaw`, but rejected another refresh as `too-early` because the project was updated today and the current minimum interval is 10 days. The workflow now treats that known refresh-window response as a warning.
 - Current Context7 library-update docs explain automatic refresh thresholds by popularity rank: top 100 refreshes after 1 day, top 1,000 after 15 days, top 5,000 after 30 days, and all others after 45 days. TweetClaw's refresh API response reported a 10-day minimum for this project, so treat the API response as source of truth for the active refresh window and record any future threshold drift.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25439566923 completed successfully for commit `cf6c008` and surfaced only the expected refresh-window annotation.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25443070814 completed successfully for commit `5a4eaf9` and surfaced only the expected refresh-window annotation.
 
 Action:
 
@@ -1506,6 +1508,7 @@ Findings:
 - 2026-05-06 13:42 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 - 2026-05-06 14:17 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`, and current Xquik docs still expose the public docs MCP plus 118 documented REST operations.
 - 2026-05-06 14:48 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
+- 2026-05-06 15:09 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`, and current Context7 library-update docs still describe popularity-based refresh intervals.
 
 Action:
 
@@ -1528,6 +1531,8 @@ Findings:
 - The ignore list now also covers common local auth and credential files such as `.netrc`, token/auth/credential JSON files, package-manager local auth variants, and local scratch folders.
 - `scripts/check-versions.mjs` now fails `npm run check:all` and `prepublishOnly` if public repository files contain protected confidential infrastructure wording. The protected values are stored as digests so the guard does not publish the words it blocks.
 - 2026-05-06 14:48 UTC verification passed `npm run check:all` and `node scripts/clawpack.mjs dry-run`; no package release was needed because the guard change is outside the packaged runtime and package metadata stayed unchanged.
+- 2026-05-06 15:09 UTC refined the public hygiene guard to scan `git ls-files` instead of walking the whole working tree, so ignored local OpenClaw, ClawHub, Context7, auth, cache, and scratch state cannot trigger false positives or leak local-only paths.
+- 2026-05-06 15:09 UTC verification passed `npm run check:all` and `node scripts/clawpack.mjs dry-run`; no package release was needed because the refinement is outside the packaged runtime and package metadata stayed unchanged.
 
 Action:
 

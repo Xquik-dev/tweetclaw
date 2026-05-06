@@ -4,8 +4,9 @@
 // disagrees with package.json. See Xquik-dev/xquik#2024.
 
 import { createHash } from "node:crypto";
-import { readdirSync, readFileSync, statSync } from "node:fs";
-import { join, dirname, relative } from "node:path";
+import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -102,7 +103,6 @@ const confidentialHashChunksByLength = {
   ],
 };
 const publicHygieneExtensions = [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".md", ".yml", ".yaml"];
-const publicHygieneIgnoredDirs = new Set(["node_modules", ".git", "dist", "coverage", "package"]);
 const confidentialHashesByLength = new Map(
   Object.entries(confidentialHashChunksByLength).map(([length, chunks]) => [
     Number(length),
@@ -132,33 +132,32 @@ function containsConfidentialTerm(line) {
   return false;
 }
 
-function scanPublicHygiene(currentDir) {
-  for (const entry of readdirSync(currentDir)) {
-    const fullPath = join(currentDir, entry);
-    const stats = statSync(fullPath);
+function readTrackedFiles() {
+  const output = execFileSync("git", ["ls-files", "-z"], {
+    cwd: root,
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  return output.split("\0").filter((entry) => entry.length > 0);
+}
 
-    if (stats.isDirectory()) {
-      if (!publicHygieneIgnoredDirs.has(entry)) {
-        scanPublicHygiene(fullPath);
-      }
-      continue;
-    }
-
-    if (!stats.isFile() || !publicHygieneExtensions.some((extension) => entry.endsWith(extension))) {
+function scanPublicHygiene() {
+  for (const file of readTrackedFiles()) {
+    if (!publicHygieneExtensions.some((extension) => file.endsWith(extension))) {
       continue;
     }
 
     let lineNumber = 0;
-    for (const line of readFileSync(fullPath, "utf8").split("\n")) {
+    for (const line of readFileSync(join(root, file), "utf8").split("\n")) {
       lineNumber += 1;
       if (containsConfidentialTerm(line)) {
-        drifts.push(`  ${relative(root, fullPath)}:${lineNumber} contains confidential public wording`);
+        drifts.push(`  ${file}:${lineNumber} contains confidential public wording`);
       }
     }
   }
 }
 
-scanPublicHygiene(root);
+scanPublicHygiene();
 
 const requiredCompilerOptions = {
   allowUnreachableCode: false,
