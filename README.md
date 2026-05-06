@@ -64,6 +64,8 @@ Tweet composition, style analysis, drafts, curated radar (7 sources), and accoun
 openclaw plugins install @xquik/tweetclaw
 ```
 
+TweetClaw can be installed before credentials are configured. Until you add an API key or MPP signing key, the free `explore` catalog remains available and live API calls return setup guidance instead of failing plugin installation.
+
 > **Note:** `@xquik/tweetclaw` is the only official npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is an unofficial redistribution and may ship stale metadata or outdated endpoint counts.
 
 ## Configure
@@ -76,7 +78,7 @@ Get an API key at [dashboard.xquik.com](https://dashboard.xquik.com/). Store it 
 openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 ```
 
-**Security**: Always reference your key via an environment variable - never paste raw keys into shell commands or config files.
+**Security**: Keep the key out of chats, docs, and shell history. Prefer the environment-variable command above so OpenClaw writes the secret to its local config without exposing it in the prompt.
 
 ### Option B: Credits (pay-per-use, no subscription)
 
@@ -91,16 +93,25 @@ npm i mppx viem
 openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
 ```
 
-**Security**: Always store your signing key in an environment variable - never paste raw keys into shell commands or config files.
+**Security**: Keep the signing key out of chats, docs, and shell history. Prefer the environment-variable command above so OpenClaw writes the secret to its local config without exposing it in the prompt.
 
 MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), media download ($0.00015/media), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
 
 ### Enable the optional action tool
 
-OpenClaw loads `explore` as the safe catalog tool. The live endpoint invoker, `tweetclaw`, is registered as an optional tool because it can perform paid reads, private reads, and write actions. If OpenClaw does not expose it after installation, add it to `tools.allow`:
+OpenClaw loads `explore` as the safe catalog tool. The live endpoint invoker, `tweetclaw`, is registered as an optional tool because it can perform paid reads, private reads, and write actions.
+
+OpenClaw's local onboarding default is often `tools.profile: "coding"`, which excludes external plugin tools from agent runs until they are explicitly allowed. If the agent can see the TweetClaw skill but cannot call the tools, add the tool names to `tools.alsoAllow` so you keep the normal coding tools and opt into TweetClaw.
 
 ```bash
-openclaw config set tools.allow '["tweetclaw"]'
+openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
+```
+
+Verify runtime registration after install or update:
+
+```bash
+openclaw plugins inspect tweetclaw --runtime
+openclaw skills info tweetclaw
 ```
 
 ### Optional settings

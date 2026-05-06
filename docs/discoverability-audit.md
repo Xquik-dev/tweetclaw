@@ -693,6 +693,34 @@ Action:
 - No package release was needed in this run.
 - Future strictness work item: add a SKILL frontmatter validation check when preparing the next release so OpenClaw parser compatibility stays machine-enforced.
 
+### 2026-05-06 OpenClaw Live Smoke Test
+
+Status: packaged install and agent-visible tool flow validated for `1.6.13`.
+
+Sources:
+
+- https://docs.openclaw.ai/plugins/building-plugins
+- https://docs.openclaw.ai/plugins/manifest
+- https://docs.openclaw.ai/tools/index
+- Local OpenClaw profile `tweetclaw-test` with OpenAI Codex OAuth profile `openai-codex/gpt-5.5`
+
+Findings:
+
+- The isolated `tweetclaw-test` profile stores the Xquik test credential only in the local OpenClaw profile config with polling disabled for smoke tests. Do not print, copy, commit, or move this credential.
+- Installing the published `1.6.12` package before credentials failed because `openclaw.plugin.json` required either `apiKey` or `tempoSigningKey` at config-validation time.
+- `1.6.13` removes the credential requirement from install-time schema validation. A fresh no-credential profile installed the generated ClawPack npm-pack tarball successfully, validated config, loaded the plugin, exposed runtime tools `explore` and `tweetclaw`, and made the plugin skill model-visible.
+- Full repo `--link` install is still blocked by OpenClaw's package scanner because repo maintenance scripts use `child_process`. This confirms future live tests should install the generated npm/ClawPack tarball, not the repo folder.
+- OpenClaw's default local `tools.profile: "coding"` can hide external plugin tools from model calls even when `plugins inspect --runtime` shows the plugin registered. `tools.allow: ["explore", "tweetclaw"]` is restrictive and failed before the model call when the tool resolver had not matched registered plugin tools.
+- Official tool docs recommend `tools.alsoAllow` for optional plugin tools when preserving the normal profile. With `tools.alsoAllow: ["explore", "tweetclaw"]`, the embedded OpenClaw GPT-5.5 agent saw both TweetClaw tools and successfully used `explore` for a free trend endpoint catalog query.
+- The live agent run surfaced an OpenAI tool-schema rejection for `tweetclaw.body` because the union allowed arrays without an `items` schema. `1.6.13` adds `items: {}` and a regression test for OpenAI tool validation compatibility.
+
+Action:
+
+- Keep install-before-credentials as a required UX invariant. Plugin install and config validation must not require Xquik API keys or MPP signing keys.
+- Document `tools.alsoAllow: ["explore", "tweetclaw"]` for agent-visible tool setup; avoid telling users to replace `tools.allow` unless they intentionally want restrictive allowlist mode.
+- Every future OpenClaw live smoke test should verify both runtime registration (`plugins inspect --runtime`) and model-facing visibility with an agent run that calls the free `explore` tool before attempting any live Xquik API call.
+- Continue using packaged tarballs or ClawPack artifacts for OpenClaw install tests. Do not use the repo folder as the representative release artifact.
+
 ### ClawHub TweetClaw Security Page
 
 Status: stale registry scan.

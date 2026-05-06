@@ -126,13 +126,27 @@ describe('register', () => {
     expect(configSchema).toStrictEqual(manifest.configSchema);
   });
 
-  it('warns and returns when no API key or signing key configured', () => {
+  it('declares OpenClaw tool activation and optional tool metadata', () => {
     expect.assertions(3);
+    expect(manifest.activation).toStrictEqual({ onCapabilities: ['tool'], onStartup: false });
+    expect(manifest.contracts.tools).toStrictEqual(['explore', 'tweetclaw']);
+    expect(manifest.toolMetadata.tweetclaw.optional).toBe(true);
+  });
+
+  it('loads with configuration guidance when no API key or signing key is configured', async () => {
+    expect.assertions(6);
     const { api, tools, warnings } = createMockApi();
     register(api);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    const result = await tweetclaw?.execute('call_missing_credentials', {
+      path: '/api/v1/account',
+    });
     expect(warnings).toHaveLength(1);
     expect(warnings[0]).toContain('No API key or signing key');
-    expect(tools).toHaveLength(0);
+    expect(tools).toHaveLength(2);
+    expect(tools[0]?.name).toBe('explore');
+    expect(result?.isError).toBe(true);
+    expect(result?.content[0]?.text).toContain('not configured');
   });
 
   it('registers 2 tools with valid API key', () => {
@@ -142,6 +156,15 @@ describe('register', () => {
     expect(tools).toHaveLength(2);
     expect(tools[0]?.name).toBe('explore');
     expect(tools[1]?.name).toBe('tweetclaw');
+  });
+
+  it('keeps tweetclaw body schema compatible with OpenAI tool validation', () => {
+    expect.assertions(1);
+    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    register(api);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    const parameters = tweetclaw?.parameters as { readonly properties?: { readonly body?: { readonly items?: unknown } } };
+    expect(parameters.properties?.body?.items).toStrictEqual({});
   });
 
   it('registers 2 commands', () => {
@@ -237,12 +260,16 @@ describe('register', () => {
     expect(services).toHaveLength(1);
   });
 
-  it('warns when apiKey and tempoSigningKey are both missing from config object', () => {
-    expect.assertions(2);
-    const { api, warnings } = createMockApi({});
+  it('keeps free catalog exploration available with an empty config object', async () => {
+    expect.assertions(4);
+    const { api, tools, warnings } = createMockApi({});
     register(api);
     expect(warnings).toHaveLength(1);
     expect(warnings[0]).toContain('No API key or signing key');
+    expect(tools).toHaveLength(2);
+    const explore = tools.find((tool) => tool.name === 'explore');
+    const result = await explore?.execute('call_empty_config', { query: 'trends' });
+    expect(result?.content[0]?.text).toContain('trends');
   });
 
   it('poller service can start and stop', () => {

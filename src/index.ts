@@ -6,6 +6,7 @@ import { createProxiedRequest } from './request.js';
 import { createEventPoller } from './services/event-poller.js';
 import { normalizeMethod, requestNeedsApproval } from './tools/catalog.js';
 import { handleExplore, SEARCH_DESCRIPTION } from './tools/explore.js';
+import { errorResult } from './tools/result.js';
 import { EXECUTE_DESCRIPTION, handleTweetclaw } from './tools/tweetclaw.js';
 import type { ExploreParams, FetchFunction, PluginConfig, TweetclawParams } from './types.js';
 
@@ -18,22 +19,16 @@ function isPollerEvent(value: unknown): value is PollerEvent {
   return typeof value === 'object' && value !== null;
 }
 
-function isPluginConfig(value: unknown): value is PluginConfig {
-  if (typeof value !== 'object' || value === null) return false;
-  return 'apiKey' in value || 'tempoSigningKey' in value;
-}
-
 const DEFAULT_POLLING_INTERVAL_SECONDS = 60;
+const DEFAULT_BASE_URL = 'https://xquik.com';
+const MISSING_CREDENTIALS_MESSAGE =
+  'TweetClaw is installed but not configured. Add an Xquik API key for account-backed workflows or a Tempo signing key for MPP read-only mode in OpenClaw plugin config.';
 
 const CONFIG_SCHEMA = {
   additionalProperties: false,
-  anyOf: [
-    { required: ['apiKey'] },
-    { required: ['tempoSigningKey'] },
-  ],
   properties: {
     apiKey: {
-      description: 'Xquik API key (get one at dashboard.xquik.com). Required for account-backed X automation.',
+      description: 'Xquik API key (get one at dashboard.xquik.com). Use for account-backed X automation.',
       minLength: 1,
       type: 'string',
     },
@@ -45,7 +40,7 @@ const CONFIG_SCHEMA = {
       type: 'number',
     },
     tempoSigningKey: {
-      description: 'MPP signing key for pay-per-use mode. No account needed. 32 read-only X-API endpoints.',
+      description: 'MPP signing key for pay-per-use mode. Use for accountless access to 32 read-only X-API endpoints.',
       minLength: 1,
       type: 'string',
     },
@@ -85,6 +80,22 @@ interface BeforeToolCallResult {
 type BeforeToolCallHandler = (
   event: BeforeToolCallEvent,
 ) => BeforeToolCallResult | Promise<BeforeToolCallResult | undefined> | undefined;
+
+type CredentialMode = 'api-key' | 'mpp' | 'none';
+type XquikRequest = ReturnType<typeof createProxiedRequest>;
+
+interface RegisterToolsOptions {
+  readonly baseUrl: string;
+  readonly credential: string;
+  readonly credentialMode: CredentialMode;
+  readonly fetchFunction?: FetchFunction;
+}
+
+interface CredentialState {
+  readonly accountValue: string;
+  readonly mode: CredentialMode;
+  readonly signingValue: string;
+}
 
 interface OpenClawApi {
   readonly logger: {
@@ -142,7 +153,11 @@ const EXPLORE_PARAMETERS = {
 const TWEETCLAW_PARAMETERS = {
   additionalProperties: false,
   properties: {
-    body: { description: 'JSON request body', type: ['object', 'array', 'string', 'number', 'boolean', 'null'] },
+    body: {
+      description: 'JSON request body',
+      items: {},
+      type: ['object', 'array', 'string', 'number', 'boolean', 'null'],
+    },
     method: { default: 'GET', description: 'HTTP method', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
     path: { description: 'Concrete /api/v1/... endpoint path from the catalog', type: 'string' },
     query: {
@@ -160,6 +175,20 @@ function asObject(value: unknown): Readonly<Record<string, unknown>> | undefined
     return undefined;
   }
   return Object.fromEntries(Object.entries(value));
+}
+
+function asPluginConfig(value: unknown): PluginConfig {
+  const config = asObject(value);
+  if (config === undefined) return {};
+
+  const { apiKey, baseUrl, pollingEnabled, pollingInterval, tempoSigningKey } = config;
+  return {
+    ...(typeof apiKey === 'string' && apiKey.length > 0 ? { apiKey } : {}),
+    ...(typeof baseUrl === 'string' && baseUrl.length > 0 ? { baseUrl } : {}),
+    ...(typeof pollingEnabled === 'boolean' ? { pollingEnabled } : {}),
+    ...(typeof pollingInterval === 'number' ? { pollingInterval } : {}),
+    ...(typeof tempoSigningKey === 'string' && tempoSigningKey.length > 0 ? { tempoSigningKey } : {}),
+  };
 }
 
 function asExploreParams(params: unknown): Readonly<ExploreParams> {
@@ -258,35 +287,35 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
   );
 }
 
-function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
-  const config: unknown = api.pluginConfig;
-  if (!isPluginConfig(config)) {
-    api.logger.warn(
-      'TweetClaw: No API key or signing key configured. See the README for setup instructions.',
-    );
-    return;
+function resolveCredentialState(config: Readonly<PluginConfig>): CredentialState {
+  const accountValue = config.apiKey;
+  if (accountValue !== undefined) {
+    return { accountValue, mode: 'api-key', signingValue: '' };
   }
 
-  const { apiKey, baseUrl = 'https://xquik.com', tempoSigningKey } = config;
-  const isMppMode = apiKey === undefined && tempoSigningKey !== undefined;
-  const credential = apiKey ?? '';
-
-  if (isMppMode) {
-    void (async (): Promise<void> => {
-      try {
-        await initMpp(tempoSigningKey);
-        api.logger.info('TweetClaw: MPP initialized - payment account ready');
-      } catch (error: unknown) {
-        api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
-      }
-    })();
-    api.logger.info('TweetClaw: MPP mode - pay-per-use (32 X-API endpoints, no subscription needed)');
+  const signingValue = config.tempoSigningKey;
+  if (signingValue !== undefined) {
+    return { accountValue: '', mode: 'mpp', signingValue };
   }
 
-  const request = createProxiedRequest(baseUrl, credential, fetchFunction);
-  registerWriteApprovalHook(api);
+  return { accountValue: '', mode: 'none', signingValue: '' };
+}
 
-  // --- Tools (2-tool approach, execute inside tool object) ---
+function registerMppMode(api: OpenClawApi, credentialMode: CredentialMode, signingValue: string): void {
+  if (credentialMode !== 'mpp') return;
+
+  void (async (): Promise<void> => {
+    try {
+      await initMpp(signingValue);
+      api.logger.info('TweetClaw: MPP initialized - payment account ready');
+    } catch (error: unknown) {
+      api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
+    }
+  })();
+  api.logger.info('TweetClaw: MPP mode - pay-per-use (32 X-API endpoints, no subscription needed)');
+}
+
+function registerTools(api: OpenClawApi, options: RegisterToolsOptions): void {
   api.registerTool(
     {
       description: SEARCH_DESCRIPTION,
@@ -303,21 +332,28 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   api.registerTool(
     {
       description: EXECUTE_DESCRIPTION,
-      execute: async (_toolCallId, params) => handleTweetclaw({
-        apiKey: credential,
-        baseUrl,
-        fetchFunction,
-        mppMode: isMppMode,
-        params: asTweetclawParams(params),
-      }),
+      execute: async (_toolCallId, params) => {
+        if (options.credentialMode === 'none') {
+          await Promise.resolve();
+          return errorResult(new Error(MISSING_CREDENTIALS_MESSAGE));
+        }
+        return handleTweetclaw({
+          apiKey: options.credential,
+          baseUrl: options.baseUrl,
+          fetchFunction: options.fetchFunction,
+          mppMode: options.credentialMode === 'mpp',
+          params: asTweetclawParams(params),
+        });
+      },
       name: 'tweetclaw',
       parameters: TWEETCLAW_PARAMETERS,
     },
     { name: 'tweetclaw', optional: true },
   );
+}
 
-  // --- Commands (instant, no LLM) ---
-  if (!isMppMode) {
+function registerCommands(api: OpenClawApi, credentialMode: CredentialMode, request: XquikRequest): void {
+  if (credentialMode === 'api-key') {
     api.registerCommand({
       description: 'Show Xquik account status & usage',
       handler: async () => {
@@ -337,33 +373,55 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
     },
     name: 'xtrends',
   });
+}
 
-  // --- Background event poller (requires API key, not available in MPP mode) ---
-  const { pollingEnabled, pollingInterval } = config;
-  if (!isMppMode && pollingEnabled !== false) {
-    const poller = createEventPoller({
-      intervalSeconds: pollingInterval ?? DEFAULT_POLLING_INTERVAL_SECONDS,
-      onEvents: (events) => {
-        for (const event of events) {
-          const eventType: string = isPollerEvent(event) && typeof event['eventType'] === 'string'
-            ? event['eventType']
-            : 'unknown';
-          const username: string = isPollerEvent(event) && typeof event['xUsername'] === 'string'
-            ? event['xUsername']
-            : '';
-          api.logger.info(`[TweetClaw] ${eventType} from @${username}`);
-        }
-      },
-      request,
-    });
+function registerPoller(api: OpenClawApi, config: Readonly<PluginConfig>, credentialMode: CredentialMode, request: XquikRequest): void {
+  if (credentialMode !== 'api-key' || config.pollingEnabled === false) return;
 
-    api.registerService({
-      id: 'tweetclaw-poller',
-      start: () => { poller.start(); },
-      stop: () => { poller.stop(); },
-    });
+  const poller = createEventPoller({
+    intervalSeconds: config.pollingInterval ?? DEFAULT_POLLING_INTERVAL_SECONDS,
+    onEvents: (events) => {
+      for (const event of events) {
+        const eventType: string = isPollerEvent(event) && typeof event['eventType'] === 'string'
+          ? event['eventType']
+          : 'unknown';
+        const username: string = isPollerEvent(event) && typeof event['xUsername'] === 'string'
+          ? event['xUsername']
+          : '';
+        api.logger.info(`[TweetClaw] ${eventType} from @${username}`);
+      }
+    },
+    request,
+  });
+
+  api.registerService({
+    id: 'tweetclaw-poller',
+    start: () => { poller.start(); },
+    stop: () => { poller.stop(); },
+  });
+}
+
+function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
+  const config = asPluginConfig(api.pluginConfig);
+  const { baseUrl = DEFAULT_BASE_URL } = config;
+  const credential = resolveCredentialState(config);
+
+  registerMppMode(api, credential.mode, credential.signingValue);
+  const request = createProxiedRequest(baseUrl, credential.accountValue, fetchFunction);
+  registerWriteApprovalHook(api);
+
+  if (credential.mode === 'none') {
+    api.logger.warn(
+      'TweetClaw: No API key or signing key configured. Install succeeded; configure credentials before network calls.',
+    );
   }
 
+  const toolOptions: RegisterToolsOptions = fetchFunction === undefined
+    ? { baseUrl, credential: credential.accountValue, credentialMode: credential.mode }
+    : { baseUrl, credential: credential.accountValue, credentialMode: credential.mode, fetchFunction };
+  registerTools(api, toolOptions);
+  registerCommands(api, credential.mode, request);
+  registerPoller(api, config, credential.mode, request);
   api.logger.info('TweetClaw: Plugin registered successfully');
 }
 

@@ -1,26 +1,31 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.6.12",
+  "version": "1.6.13",
   "description": "Post tweets, reply, like, retweet, follow, DM, search, and monitor X/Twitter through structured Xquik endpoints.",
+  "activation": {
+    "onStartup": false,
+    "onCapabilities": ["tool"]
+  },
   "skills": ["skills/tweetclaw"],
   "contracts": {
     "tools": ["explore", "tweetclaw"]
+  },
+  "toolMetadata": {
+    "tweetclaw": {
+      "optional": true
+    }
   },
   "configSchema": {
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Required for account-backed X automation." },
-      "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. No account needed. 32 read-only X-API endpoints." },
+      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Use for account-backed X automation." },
+      "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. Use for accountless access to 32 read-only X-API endpoints." },
       "baseUrl": { "type": "string", "default": "https://xquik.com" },
       "pollingInterval": { "type": "number", "default": 60, "description": "Event polling interval in seconds" },
       "pollingEnabled": { "type": "boolean", "default": true }
-    },
-    "anyOf": [
-      { "required": ["apiKey"] },
-      { "required": ["tempoSigningKey"] }
-    ]
+    }
   },
   "uiHints": {
     "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Account-backed X automation. Generate at dashboard.xquik.com." },

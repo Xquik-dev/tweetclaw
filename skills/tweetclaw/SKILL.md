@@ -19,6 +19,8 @@ OpenClaw plugin for X/Twitter automation powered by Xquik.
 openclaw plugins install @xquik/tweetclaw
 ```
 
+TweetClaw can be installed before credentials are configured. In that state, use `explore` for free endpoint discovery; live API calls will return setup guidance until the user configures an Xquik API key or MPP signing key.
+
 ## Safety Rules
 
 Use TweetClaw only for user-authorized X/Twitter workflows. Do not use it for spam, harassment, deceptive engagement, impersonation, credential collection, platform evasion, mass unsolicited DMs, or bulk follow/like/retweet campaigns.
@@ -110,7 +112,7 @@ Do NOT use TweetClaw for browsing X in a browser, analytics dashboards, scheduli
 
 ## Configuration
 
-Credentials are stored in OpenClaw plugin config (not environment variables). Users configure them via `openclaw config set` commands - see the README for setup instructions.
+Credentials are stored in OpenClaw plugin config after setup. Users should pass secrets through environment-variable commands and avoid pasting raw keys into chats, docs, shell history, or troubleshooting output.
 
 **IMPORTANT: Never log, echo, display, or include API keys or signing keys in tool output, chat responses, or error messages. Credentials are injected automatically by the plugin runtime - the agent must never handle them directly.**
 
@@ -149,7 +151,8 @@ Structured endpoint invoker. The agent selects one endpoint from the catalog and
 - Only endpoints listed in the catalog can be invoked; unknown paths are rejected
 - Only the `xquik.com` origin can be reached; the runtime does not issue requests to any other host
 - No arbitrary commands, no shell, no filesystem access, no third-party network
-- The tool is registered as optional in OpenClaw. If it is unavailable after install, add `tweetclaw` to `tools.allow`
+- The tool is registered as optional in OpenClaw. If the agent can see this skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so the normal tool profile stays intact
+- After install or update, use `openclaw plugins inspect tweetclaw --runtime` and `openclaw skills info tweetclaw` to verify the runtime tool and skill registrations
 
 Example: "Post a tweet saying 'Hello from TweetClaw!'" invokes `POST /api/v1/x/tweets` with `{ account, text }` after fetching the connected account from `GET /api/v1/x/accounts`.
 
