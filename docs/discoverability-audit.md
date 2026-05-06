@@ -340,7 +340,7 @@ Action:
 
 ### abordage/awesome-mcp
 
-Status: PR open.
+Status: PR open; 2026-05-06 10:12 UTC recheck found it mergeable with both workflows passing and no comments.
 
 Repository: https://github.com/abordage/awesome-mcp
 
@@ -365,6 +365,7 @@ Action:
 - Validation passed with `git diff --check` and Ruby YAML parsing.
 - Upstream GitHub checks `Validate changed files` and `validate` passed.
 - PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- 2026-05-06 10:12 UTC recheck found PR 32 still open, mergeable, comment-free, review-free, and green on both upstream workflows.
 - Future runs should monitor PR 32 and avoid duplicate metadata PRs unless maintainers request wording changes.
 
 ### appcypher/awesome-mcp-servers
@@ -414,6 +415,47 @@ Action:
 - Keep MCP.Directory as a stale external listing to revisit.
 - Skip PulseMCP for now because the visible listing is materially accurate.
 - Skip MCPRepository until a documented submission or existing listing URL is found.
+
+### Glama, MCP.so, Smithery, And Docker MCP Catalog
+
+Status: audited, no safe automated update path.
+
+Sources:
+
+- https://glama.ai/mcp/servers/Xquik-dev/x-twitter-scraper
+- https://mcp.so/server/x-twitter-scraper
+- https://smithery.ai/server/@xquik-dev/x-twitter-scraper
+- https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/
+
+Findings:
+
+- Glama already lists `Xquik-dev/x-twitter-scraper`, but the public page still shows stale high endpoint-count copy. The page exposes product-owned and report flows, not a documented public PR or API route for third-party metadata edits.
+- MCP.so already lists `x-twitter-scraper`, but the public page also shows stale high endpoint-count copy and no safe automated update route was found during this run.
+- Smithery returned `404 - Server Not Found` for `@xquik-dev/x-twitter-scraper`, so there is no existing listing to update from that URL.
+- Docker MCP Catalog docs say submissions go through the `docker/mcp-registry` repository and require catalog-compatible server packaging and metadata. Docker Hub MCP search did not show an Xquik result during this run.
+
+Action:
+
+- No automated marketplace PR or issue was opened because Glama and MCP.so need an owner-supported metadata route, Smithery has no live listing at the checked URL, and Docker needs a registry-format contribution prepared against Docker's catalog rules.
+- Future runs should revisit these only through documented owner, registry, or catalog contribution paths and should update stale endpoint-count wording without adding promotional claims.
+
+### The-Web-Scraping-Playbook/awesome-twitter-scrapers
+
+Status: PR already open, no duplicate outreach.
+
+Repository: https://github.com/The-Web-Scraping-Playbook/awesome-twitter-scrapers
+
+Pull request: https://github.com/The-Web-Scraping-Playbook/awesome-twitter-scrapers/pull/1
+
+Findings:
+
+- The repository is a focused Twitter scraper list, but no license file was exposed through the GitHub repository metadata checked in this run.
+- PR 1 from `kriptoburak` is already open, mergeable, and has no comments, reviews, or required checks as of 2026-05-06 10:12 UTC.
+- The existing PR means another Xquik, TweetClaw, or x-twitter-scraper submission would be duplicate outreach.
+
+Action:
+
+- No PR or issue opened. Future runs should monitor PR 1 and only refresh the existing submission if maintainers request wording or the open PR becomes stale enough to need a factual update.
 
 ### hridaydutta123/awesome-twitter-tools
 
