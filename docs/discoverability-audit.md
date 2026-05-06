@@ -1409,6 +1409,25 @@ Action:
 
 ## Registry Notes
 
+### 2026-05-06 DeepWiki Badge
+
+Status: added to GitHub README.
+
+Sources:
+
+- https://deepwiki.com/Xquik-dev/tweetclaw
+- https://deepwiki.com/badge.svg
+
+Findings:
+
+- DeepWiki repository page and badge asset both returned HTTP 200 on 2026-05-06.
+- The badge is a lightweight README discoverability improvement that points users to conversational repository documentation.
+
+Action:
+
+- Added the `Ask DeepWiki` badge to the README badge block.
+- No package version bump was needed because this is a GitHub README discoverability change only.
+
 ### 2026-05-06 Context7 Library Management
 
 Status: configured, indexing blocked by existing Context7 processing.
