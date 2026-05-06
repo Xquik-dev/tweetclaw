@@ -905,7 +905,7 @@ Action:
 
 ### adminlove520/openclaw-twitter-skill
 
-Status: PR open.
+Status: PR open; 2026-05-06 08:13 UTC recheck found it mergeable with no comments.
 
 Repository: https://github.com/adminlove520/openclaw-twitter-skill
 
@@ -1051,6 +1051,7 @@ Findings:
 - 2026-05-06 07:19 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` as a clean npm-pack artifact linked to source commit `26df783a987f1a475587a8eb94336433d43fd25c`. Current manifest docs still keep install hints in `package.json#openclaw.install` rather than `openclaw.plugin.json`, matching TweetClaw's local metadata.
 - 2026-05-06 07:34 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean with owner `kriptoburak`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, and 0 static findings. Official `docs.openclaw.ai` manifest guidance still says `openclaw.plugin.json` is not for npm install metadata, so TweetClaw should keep `npmSpec` and `minHostVersion` in `package.json#openclaw.install`.
 - 2026-05-06 07:55 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14` with the same npm integrity and shasum; and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean, owner `kriptoburak`, artifact kind `npm-pack`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, package scan clean, verification scan clean, and 0 static findings. Current OpenClaw docs still keep install hints in `package.json#openclaw.install`, including `npmSpec` and `minHostVersion`, so no package release was needed.
+- 2026-05-06 08:13 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean as an npm-pack code plugin, and both related ClawHub skills remain clean. Official skills docs still state that the embedded parser supports single-line frontmatter keys and single-line JSON metadata, so TweetClaw `1.6.15` normalizes packaged `read_when` to a single-line value and adds `npm run check-skill-frontmatter` to `check:all`, `prepack`, and `prepublishOnly`.
 
 Action:
 

@@ -69,14 +69,20 @@ if (packageJson.openclaw?.runtimeExtensions?.[0] !== "./dist/index.js") {
 if (!packageJson.files?.includes("dist/")) {
   drifts.push("  package.json: files missing dist/");
 }
-if (packageJson.scripts?.prepack !== "npm run build && npm run check-versions") {
-  drifts.push("  package.json: prepack must build runtime output before package dry-run/publish");
+if (packageJson.scripts?.["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.mjs") {
+  drifts.push("  package.json: check-skill-frontmatter must validate packaged skill metadata");
+}
+if (packageJson.scripts?.prepack !== "npm run build && npm run check-skill-frontmatter && npm run check-versions") {
+  drifts.push("  package.json: prepack must build runtime output and validate skill/version metadata before package dry-run/publish");
 }
 if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
   drifts.push("  package.json: check-package-artifact must validate packed files");
 }
-if (packageJson.scripts?.prepublishOnly !== "npm run check-versions && npm run build && npm run check-package-artifact") {
-  drifts.push("  package.json: prepublishOnly must validate versions, build output, and package artifacts");
+if (packageJson.scripts?.prepublishOnly !== "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact") {
+  drifts.push("  package.json: prepublishOnly must validate skill metadata, versions, build output, and package artifacts");
+}
+if (!packageJson.scripts?.["check:all"]?.includes("npm run check-skill-frontmatter")) {
+  drifts.push("  package.json: check:all must include skill frontmatter validation");
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-package-artifact")) {
   drifts.push("  package.json: check:all must include package artifact validation");

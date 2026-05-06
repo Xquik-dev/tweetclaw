@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.14",
+  "version": "1.6.15",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
   "license": "MIT",
   "type": "module",
@@ -32,7 +32,7 @@
     },
     "install": {
       "defaultChoice": "npm",
-      "npmSpec": "@xquik/tweetclaw@1.6.14",
+      "npmSpec": "@xquik/tweetclaw@1.6.15",
       "minHostVersion": ">=2026.5.4"
     }
   },
@@ -77,11 +77,12 @@
     "cpd": "jscpd .",
     "check-suppressions": "tsx check-suppressions.ts",
     "check-em-dash": "tsx check-em-dash.ts",
+    "check-skill-frontmatter": "node scripts/check-skill-frontmatter.mjs",
     "check-versions": "node scripts/check-versions.mjs",
     "check-package-artifact": "node scripts/check-package-artifact.mjs",
-    "prepack": "npm run build && npm run check-versions",
-    "prepublishOnly": "npm run check-versions && npm run build && npm run check-package-artifact",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-versions && npm run build && npm run check-package-artifact && npm run test:coverage"
+    "prepack": "npm run build && npm run check-skill-frontmatter && npm run check-versions",
+    "prepublishOnly": "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact",
+    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact && npm run test:coverage"
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",
