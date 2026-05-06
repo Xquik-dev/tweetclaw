@@ -1428,7 +1428,7 @@ Findings:
 - GitHub Actions secret `CONTEXT7_API_KEY` is configured for `Xquik-dev/tweetclaw`; the secret value is not stored in the repo.
 - Adding `https://github.com/Xquik-dev/tweetclaw` returned `400` with the message that another library is already being processed for the account, so Context7 cannot process another library yet.
 - Refreshing `/xquik-dev/tweetclaw` returned `404` with `Library not found`, so the canonical Context7 library is not refreshable until add processing completes or the live library ID is confirmed.
-- The first pushed Context7 refresh workflow observed Context7's `user-has-active-task` `400` response while another library was processing; the workflow now treats that known account-level processing lock as a warning.
+- The first pushed Context7 refresh workflow observed Context7's `user-has-active-task` `400` response while another library was processing; follow-up run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433828144 completed successfully after treating that known account-level processing lock as a warning.
 
 Action:
 
