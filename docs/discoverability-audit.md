@@ -905,6 +905,36 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
 
+### NIANS336/openclaw-x-twitter-auto
+
+Status: PR open.
+
+Repository: https://github.com/NIANS336/openclaw-x-twitter-auto
+
+Pull request: https://github.com/NIANS336/openclaw-x-twitter-auto/pull/1
+
+Rules observed:
+
+- README documents a Python-backed OpenClaw skill for posting or replying on X/Twitter with direct Twitter API credentials.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+- The repository has issues enabled and no existing open or closed PRs/issues.
+- The repository tracks credential-template shaped files, but `.gitignore` excludes `secrets/api_keys.json`; audit and PR work avoided reading, printing, or copying any secret-like values.
+
+Findings:
+
+- Repository tree, README files, SKILL.md, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The skill is useful for direct local Python posting and replies.
+- The existing `SKILL.md` told the agent to truncate tweet text to 280 characters, which risks changing user content without review.
+- The repo-native useful path is to add explicit confirmation and no-silent-truncation guidance, then document TweetClaw as an optional OpenClaw-native companion for structured Xquik workflows.
+
+Action:
+
+- Opened PR 1, `Document safer TweetClaw workflows`, on 2026-05-06: https://github.com/NIANS336/openclaw-x-twitter-auto/pull/1
+- The PR adds posting safety guidance and optional TweetClaw setup guidance to README, README_EN, README_CN, and `SKILL.md`, including `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential storage in OpenClaw plugin config, explicit confirmation before visible writes, DMs, monitors, or paid extraction jobs, and no silent truncation of tweet text.
+- Verification passed with `git diff --check` and a credential-free `python3 scripts/twitter_poster.py` smoke input that returned setup guidance instead of posting; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -929,6 +959,7 @@ Findings:
 - Official skills docs also say the embedded parser supports single-line frontmatter keys and single-line JSON metadata. TweetClaw's required `name`, `description`, `homepage`, `metadata`, and `license` fields are single-line; a future package/skill release should consider normalizing optional `read_when` to a single-line value or adding a lint guard if OpenClaw starts consuming that field.
 - ClawHub package inspect reports `@xquik/tweetclaw@1.6.14` as a clean `code-plugin` with `artifact.kind: "npm-pack"`, owner `kriptoburak`, and 0 static findings.
 - ClawHub inspect still reports `tweetclaw@1.1.9` under owner `xquik` as clean with MIT-0 license metadata.
+- 2026-05-06 06:59 UTC heartbeat research confirmed OpenClaw `v2026.5.4` remains the current stable GitHub release. Its release notes include catalog-backed install hints for official external plugin references and workspace-scoped plugin metadata snapshot reuse for faster control-plane paths. TweetClaw already ships `openclaw.install.npmSpec`, `minHostVersion`, manifest metadata, and package compatibility fields, so no package change was needed.
 
 Action:
 
