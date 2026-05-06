@@ -3,6 +3,8 @@
 .env.*
 !.env.example
 !.env.sample
+.envrc
+*.env
 .npmrc
 *.pem
 *.key
@@ -11,6 +13,11 @@
 *.pfx
 *.token
 *.secret
+openclaw.json
+openclaw.json.bak*
+.openclaw/
+.openclaw-*/
+.clawhub/
 
 # Dependencies and build output
 node_modules/
@@ -19,6 +26,9 @@ coverage/
 package/
 .clawpack-manual/
 *.tgz
+*.tar
+*.tar.gz
+*.zip
 
 # Logs and local caches
 *.log
@@ -32,14 +42,34 @@ pnpm-debug.log*
 tmp/
 temp/
 .eslintcache
+*.eslintcache
+.nyc_output/
+.vite/
+.vitest/
+.turbo/
+.pnpm-store/
+.yarn/
+.yarnrc.yml
+*.tsbuildinfo
+lcov.info
+test-results/
+playwright-report/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
 
 # Local agent, editor, and OS state
 .codex/
 .agents/
 .claude/
+.cursor/
+.windsurf/
 .idea/
 .vscode/
 .DS_Store
+._*
+Icon?
 Thumbs.db
 *.swp
 *.swo
