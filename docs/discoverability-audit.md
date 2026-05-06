@@ -1448,6 +1448,8 @@ Action:
 
 - Published `@xquik/tweetclaw@1.6.15` to npm and ClawHub after adding `npm run check-skill-frontmatter`.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` later completed clean for package and verification records.
+- Published `@xquik/tweetclaw@1.6.16` to npm and ClawHub after replacing the remaining README `tools.allow` optional-tool note with `tools.alsoAllow` guidance for `explore` and `tweetclaw`.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t` was accepted and remained pending for top-level package and verification records at 2026-05-06 11:43 UTC.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
 
