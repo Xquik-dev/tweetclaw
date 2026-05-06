@@ -761,6 +761,61 @@ Action:
 - Monitor PR 69 and avoid duplicate submissions.
 - If maintainers request changes, keep the contribution focused on the repo's agent-template format rather than promotional TweetClaw copy.
 
+### clawdbot-ai/awesome-openclaw-skills-zh
+
+Status: Xquik PR already open; no new submission.
+
+Repository: https://github.com/clawdbot-ai/awesome-openclaw-skills-zh
+
+Pull request: https://github.com/clawdbot-ai/awesome-openclaw-skills-zh/pull/26
+
+Rules observed:
+
+- Repository content is a single README skill index translated from the Clawdbot official skill library.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+- Existing PRs add one README row in the matching category, so a future accepted contribution should stay concise and table-native.
+
+Findings:
+
+- Default branch README does not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- PR 26, `feat: 添加 Xquik X/Twitter 数据平台技能`, is already open from `kriptoburak`, cleanly mergeable, and adds Xquik x-twitter-scraper to the social media table.
+- Open and closed issues did not show a separate TweetClaw submission path.
+- Opening another Xquik or TweetClaw PR now would risk duplicating an already-open Xquik submission in the same category.
+
+Action:
+
+- Do not open another Xquik or TweetClaw PR here while PR 26 is open.
+- Future runs should monitor PR 26 and only consider TweetClaw after maintainers accept or comment on that submission and the repo's table remains a good fit.
+- The PR 26 body was read back on 2026-05-06 and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+
+### nowork-studio/openclaw-social-media-skills
+
+Status: PR open.
+
+Repository: https://github.com/nowork-studio/openclaw-social-media-skills
+
+Pull request: https://github.com/nowork-studio/openclaw-social-media-skills/pull/1
+
+Rules observed:
+
+- README describes a focused collection of OpenClaw social media skills with `x-posting` and `xiaohongshu` skill folders.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE file, issue template, or PR template was present during the 2026-05-06 audit, though README states MIT.
+- Existing structure is skill-documentation-first, so a plain listing would be weaker than improving the X posting workflow itself.
+
+Findings:
+
+- Repository tree, README, skill files, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The `x-posting` skill is browser-first for posting, replying, follower counts, and session logs.
+- A repo-native useful path is to document TweetClaw as an optional API-backed companion for account checks, mention search, monitor summaries, and read-only lookups while preserving browser review before publishing.
+
+Action:
+
+- Opened PR 1, `Add TweetClaw API-backed checks`, on 2026-05-06: https://github.com/nowork-studio/openclaw-social-media-skills/pull/1
+- The PR adds one README feature bullet and an optional API-backed checks section to `x-posting/SKILL.md`, including `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential handling, explicit approval boundaries, and browser review before publishing.
+- Verification passed with `git diff --check`; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
