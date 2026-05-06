@@ -8,6 +8,7 @@ const BEARER_PREFIX = 'Bearer ';
 const API_KEY_PREFIX = 'xq_';
 const API_V1_PREFIX = '/api/v1/';
 const SUPPORT_TICKETS_PREFIX = '/api/v1/support/tickets';
+const MAX_SAFE_ERROR_CODE_LENGTH = 80;
 
 function buildAuthHeader(credential: string): Record<string, string> {
   if (credential.startsWith(API_KEY_PREFIX)) {
@@ -103,6 +104,77 @@ function validateRequestPath(method: string, path: string): void {
   }
 }
 
+async function readResponseJson(response: Response): Promise<unknown> {
+  try {
+    return await response.json();
+  } catch {
+    return undefined;
+  }
+}
+
+function isAsciiLetter(character: string): boolean {
+  const lower = character.toLowerCase();
+  return lower >= 'a' && lower <= 'z';
+}
+
+function isAsciiDigit(character: string): boolean {
+  return character >= '0' && character <= '9';
+}
+
+function isSafeErrorCodeCharacter(character: string): boolean {
+  return isAsciiLetter(character)
+    || isAsciiDigit(character)
+    || character === '_'
+    || character === '.'
+    || character === ':'
+    || character === '-';
+}
+
+function isSafeErrorCode(value: string): boolean {
+  if (
+    value.length === 0
+    || value.length > MAX_SAFE_ERROR_CODE_LENGTH
+    || !isAsciiLetter(value.slice(0, 1))
+  ) {
+    return false;
+  }
+  for (const character of value) {
+    if (!isSafeErrorCodeCharacter(character)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function stringErrorCode(value: unknown): string | undefined {
+  if (typeof value !== 'object' || value === null) {
+    return undefined;
+  }
+  if ('error' in value && typeof value.error === 'string') {
+    return value.error;
+  }
+  if ('code' in value && typeof value.code === 'string') {
+    return value.code;
+  }
+  return undefined;
+}
+
+function safeErrorCode(value: unknown): string | undefined {
+  const code = stringErrorCode(value);
+  return code !== undefined && isSafeErrorCode(code) ? code : undefined;
+}
+
+function formatApiError(response: Response, payload: unknown): string {
+  const status = response.statusText.length > 0
+    ? `${String(response.status)} ${response.statusText}`
+    : String(response.status);
+  const code = safeErrorCode(payload);
+  if (code === undefined) {
+    return `API request failed: ${status}`;
+  }
+  return `API request failed: ${status} (${code})`;
+}
+
 function createProxiedRequest(
   baseUrl: string,
   credential: string,
@@ -118,11 +190,9 @@ function createProxiedRequest(
       method,
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
-    const json: unknown = await response.json();
+    const json: unknown = await readResponseJson(response);
     if (!response.ok) {
-      throw new Error(
-        `API request failed: ${String(response.status)} ${response.statusText} - ${JSON.stringify(json)}`,
-      );
+      throw new Error(formatApiError(response, json));
     }
     return json;
   };

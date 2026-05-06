@@ -120,6 +120,70 @@ describe('createProxiedRequest', () => {
     await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 404 Not Found');
   });
 
+  it('does not echo private response fields in API error messages', async () => {
+    expect.assertions(3);
+    const mockFetch: typeof fetch = async () =>
+      new Response(
+        JSON.stringify({
+          account: 'acct_123',
+          email: 'user@example.com',
+          error: 'account_error',
+          message: 'Account user@example.com needs attention',
+        }),
+        { status: 403, statusText: 'Forbidden' },
+      );
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 403 Forbidden (account_error)');
+    await expect(request('/api/v1/account')).rejects.not.toThrow('user@example.com');
+    await expect(request('/api/v1/account')).rejects.not.toThrow('acct_123');
+  });
+
+  it('uses safe API error codes without a status text', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async () =>
+      new Response(JSON.stringify({ code: 'rate_limit' }), { status: 429 });
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 429 (rate_limit)');
+  });
+
+  it('falls back to a safe code field when error is not text', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async () =>
+      new Response(JSON.stringify({ code: 'payment_required', error: 402 }), { status: 402 });
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 402 (payment_required)');
+  });
+
+  it('omits unsafe API error codes', async () => {
+    expect.assertions(4);
+    const requestWithError = (error: string): ReturnType<typeof createProxiedRequest> =>
+      createProxiedRequest('https://xquik.com', 'xq_test', async () =>
+        new Response(JSON.stringify({ error }), { status: 400, statusText: 'Bad Request' }),
+      );
+
+    await expect(requestWithError('')('/api/v1/account')).rejects.toThrow(
+      'API request failed: 400 Bad Request',
+    );
+    await expect(requestWithError('1bad')('/api/v1/account')).rejects.toThrow(
+      'API request failed: 400 Bad Request',
+    );
+    await expect(requestWithError('bad code')('/api/v1/account')).rejects.toThrow(
+      'API request failed: 400 Bad Request',
+    );
+    await expect(requestWithError('a'.repeat(81))('/api/v1/account')).rejects.toThrow(
+      'API request failed: 400 Bad Request',
+    );
+  });
+
+  it('handles non-json API error bodies without echoing them', async () => {
+    expect.assertions(2);
+    const mockFetch: typeof fetch = async () =>
+      new Response('private body', { status: 502, statusText: 'Bad Gateway' });
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 502 Bad Gateway');
+    await expect(request('/api/v1/account')).rejects.not.toThrow('private body');
+  });
+
   it('uses Bearer auth for non-xq_ keys', async () => {
     expect.assertions(1);
     const mockFetch: typeof fetch = async (_input, init) => {
