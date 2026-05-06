@@ -142,7 +142,7 @@ AI uses explore → filters spec by category "composition"
 
 Invoke catalog-listed API endpoints with structured `path`, `method`, `query`, and `body` fields. Auth is injected automatically - the LLM never sees your API key.
 
-This tool is optional in OpenClaw. Add `tweetclaw` to `tools.allow` if your installation keeps optional tools disabled.
+This tool is optional in OpenClaw. If your agent can see the skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so your normal tool profile stays intact.
 
 OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the structured request before approving any post, delete, follow, DM, monitor, extraction, webhook, or profile-change action.
 
