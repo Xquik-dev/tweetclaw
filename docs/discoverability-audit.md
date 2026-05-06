@@ -114,6 +114,35 @@ Action:
 
 - Do not open another TweetClaw PR here.
 
+### alvinreal/awesome-openclaw-tips
+
+Status: PR open.
+
+Repository: https://github.com/alvinreal/awesome-openclaw-tips
+
+Pull request: https://github.com/alvinreal/awesome-openclaw-tips/pull/2
+
+Rules observed:
+
+- RULES.md asks for practical, specific, tested or grounded OpenClaw behavior, exact implementation details, and a copyable implementation prompt.
+- Tips should stay in README.md, be grouped by category, and use ordered ids such as `OPS-05`.
+- No license, CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- README and repository tree did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- Open PRs and issues did not show an existing TweetClaw or Xquik submission.
+- The repo is a practical tips playbook, so a plain TweetClaw listing would not fit.
+- OpenClaw docs and source support a useful tip: use `tools.alsoAllow` to add optional plugin tools while preserving the normal tool profile, instead of using `tools.allow` when strict allowlist mode is not intended.
+
+Action:
+
+- Opened PR 2, `Add optional plugin tool allowlist tip`, on 2026-05-06.
+- The PR adds `OPS-05` with a TweetClaw example using `tools.profile: "coding"` plus `tools.alsoAllow: ["explore", "tweetclaw"]`, verification commands, and a copyable implementation prompt.
+- Verification passed with `git diff --check` and a required-text/section-order check over README.md.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 2 and avoid duplicate TweetClaw tips unless the maintainer asks for a different shape.
+
 ### EthanYolo01/Awesome-OpenClaw
 
 Status: PR already open.
