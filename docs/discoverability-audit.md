@@ -816,6 +816,34 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
 
+### ununununium/openclaw-social-media-skills
+
+Status: PR open.
+
+Repository: https://github.com/ununununium/openclaw-social-media-skills
+
+Pull request: https://github.com/ununununium/openclaw-social-media-skills/pull/1
+
+Rules observed:
+
+- README describes a focused OpenClaw social media skill collection with `x-posting` and `xiaohongshu` skill folders.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE file, issue template, or PR template was present during the 2026-05-06 audit, though README states MIT.
+- Existing structure is skill-documentation-first, so a generic listing would be weaker than improving the X posting workflow itself.
+
+Findings:
+
+- Repository tree, README, `x-posting/SKILL.md`, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The `x-posting` skill is browser/session-log focused for posts, replies, follows, engagement, voice, and product mention guidance.
+- A repo-native useful path is to document TweetClaw as an optional API-backed companion for account usage checks, X search, mention lookups, monitor summaries, draws, and extraction jobs while preserving browser review before publishing visible posts and replies.
+
+Action:
+
+- Opened PR 1, `Document optional TweetClaw checks`, on 2026-05-06: https://github.com/ununununium/openclaw-social-media-skills/pull/1
+- The PR adds one README feature bullet and an optional API-backed checks section to `x-posting/SKILL.md`, including `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential handling, explicit approval boundaries, and paid monitor/draw/extraction guidance.
+- Verification passed with `git diff --check`; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
+
 ### zuocharles/openclaw-social-media-skill
 
 Status: PR open.
@@ -960,6 +988,7 @@ Findings:
 - ClawHub package inspect reports `@xquik/tweetclaw@1.6.14` as a clean `code-plugin` with `artifact.kind: "npm-pack"`, owner `kriptoburak`, and 0 static findings.
 - ClawHub inspect still reports `tweetclaw@1.1.9` under owner `xquik` as clean with MIT-0 license metadata.
 - 2026-05-06 06:59 UTC heartbeat research confirmed OpenClaw `v2026.5.4` remains the current stable GitHub release. Its release notes include catalog-backed install hints for official external plugin references and workspace-scoped plugin metadata snapshot reuse for faster control-plane paths. TweetClaw already ships `openclaw.install.npmSpec`, `minHostVersion`, manifest metadata, and package compatibility fields, so no package change was needed.
+- 2026-05-06 07:19 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` as a clean npm-pack artifact linked to source commit `26df783a987f1a475587a8eb94336433d43fd25c`. Current manifest docs still keep install hints in `package.json#openclaw.install` rather than `openclaw.plugin.json`, matching TweetClaw's local metadata.
 
 Action:
 
