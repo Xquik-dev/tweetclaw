@@ -846,6 +846,35 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
 
+### benminer/openclaw-twitter-skill
+
+Status: PR open.
+
+Repository: https://github.com/benminer/openclaw-twitter-skill
+
+Pull request: https://github.com/benminer/openclaw-twitter-skill/pull/1
+
+Rules observed:
+
+- README documents a Bun-based OpenClaw CLI skill for direct Twitter API access.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+- Existing files are concise README and `SKILL.md` usage docs, so a small documentation addition fits the repository shape.
+
+Findings:
+
+- Repository tree, README, `SKILL.md`, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The repo is useful for direct Twitter API credentials and a local CLI invoked through `exec`.
+- The repo does not provide OpenClaw-native plugin tools, Xquik endpoint discovery, monitors, draws, extraction jobs, DMs, or account usage checks.
+- A replacement-style PR would be a poor fit. The useful path is to document TweetClaw as an optional OpenClaw-native plugin path while keeping this CLI as the direct Twitter API option.
+
+Action:
+
+- Opened PR 1, `Document TweetClaw plugin option`, on 2026-05-06: https://github.com/benminer/openclaw-twitter-skill/pull/1
+- The PR adds TweetClaw setup guidance to README and `SKILL.md`, including `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential storage in OpenClaw plugin config, and explicit review before writes, DMs, monitors, or paid extraction jobs.
+- Verification passed with `git diff --check`; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -862,6 +891,7 @@ Sources:
 Findings:
 
 - npm `openclaw` latest remains `2026.5.4`, matching TweetClaw's package and manifest compatibility metadata.
+- npm `@xquik/tweetclaw` latest remains `1.6.14` with integrity `sha512-Q1ls9JimCkBMux49klgwKwadivjYnHr5CnBwiHp+YDk1Ec1cXwYNOwqLeLayRRiA/oBfJ+i8p2/d0REPxQNtYg==` and shasum `48ff4ce9dc5915a3565aa1dd21db556012bb2cce`.
 - Official manifest docs still require native plugins to ship `openclaw.plugin.json` and keep npm install metadata in `package.json#openclaw.install`, which matches TweetClaw's current split.
 - Official manifest docs now explicitly call out `openclaw.install.minHostVersion` as install and manifest-registry gating metadata. TweetClaw already sets `openclaw.install.minHostVersion` to `>=2026.5.4`.
 - Official plugin-building docs still recommend `toolMetadata.<tool>.optional: true` for optional plugin tools; TweetClaw already marks `tweetclaw` optional and keeps `explore` available for free catalog discovery.
