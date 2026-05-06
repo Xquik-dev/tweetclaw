@@ -392,6 +392,7 @@ Findings:
 - `git diff --check` passed.
 - `gh pr create` failed with `CreatePullRequest` permission denied for `kriptoburak`.
 - GitHub connector PR creation also failed with `Resource not accessible by integration`.
+- 2026-05-06 21:49 UTC recheck found no open or closed duplicate PRs for `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; issues remain disabled; the fork branch is still one commit ahead of `appcypher/main`; and a fresh `gh pr create` attempt still failed with `CreatePullRequest` permission denied for `kriptoburak`.
 
 Action:
 
@@ -1476,6 +1477,7 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25458592239 completed successfully for commit `74e28c6` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25458807520 completed successfully for commit `0d94678` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25459647849 completed successfully for commit `80aef17` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25461941309 completed successfully for commit `14c754f` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 
 Action:
 
