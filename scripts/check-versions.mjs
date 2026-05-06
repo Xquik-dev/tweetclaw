@@ -3,8 +3,9 @@
 // Pre-publish / pre-commit guard: fails if any known version surface
 // disagrees with package.json. See Xquik-dev/xquik#2024.
 
-import { readFileSync } from "node:fs";
-import { join, dirname } from "node:path";
+import { createHash } from "node:crypto";
+import { readdirSync, readFileSync, statSync } from "node:fs";
+import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -87,6 +88,77 @@ if (!packageJson.scripts?.["check:all"]?.includes("npm run check-skill-frontmatt
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-package-artifact")) {
   drifts.push("  package.json: check:all must include package artifact validation");
 }
+
+const confidentialHashChunksByLength = {
+  "6": [
+    ["58e5064b", "d852946e", "a0c8edd0", "06647456", "3c91cf12", "661da8f6", "4d3a99de", "a3377c52"],
+    ["bed7e15b", "c5f5f5c0", "284144b6", "998e2c83", "d0b60d8c", "265413eb", "77820b0c", "1c826fbe"],
+  ],
+  "8": [
+    ["bc00b512", "cef88d40", "59f4ade3", "6b426a22", "6a679a72", "db60fc8c", "83a0a2c5", "79e54948"],
+  ],
+  "10": [
+    ["b671ca7c", "993ccee7", "46fff10f", "8706d92b", "3d8e388c", "89ab6860", "3ba68cc5", "95776448"],
+  ],
+};
+const publicHygieneExtensions = [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".md", ".yml", ".yaml"];
+const publicHygieneIgnoredDirs = new Set(["node_modules", ".git", "dist", "coverage", "package"]);
+const confidentialHashesByLength = new Map(
+  Object.entries(confidentialHashChunksByLength).map(([length, chunks]) => [
+    Number(length),
+    new Set(chunks.map((parts) => parts.join(""))),
+  ]),
+);
+
+function digest(value) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+function containsConfidentialTerm(line) {
+  const normalized = line.toLowerCase();
+
+  for (const [targetLength, hashes] of confidentialHashesByLength) {
+    if (normalized.length < targetLength) {
+      continue;
+    }
+
+    for (let startIndex = 0; startIndex <= normalized.length - targetLength; startIndex += 1) {
+      if (hashes.has(digest(normalized.slice(startIndex, startIndex + targetLength)))) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function scanPublicHygiene(currentDir) {
+  for (const entry of readdirSync(currentDir)) {
+    const fullPath = join(currentDir, entry);
+    const stats = statSync(fullPath);
+
+    if (stats.isDirectory()) {
+      if (!publicHygieneIgnoredDirs.has(entry)) {
+        scanPublicHygiene(fullPath);
+      }
+      continue;
+    }
+
+    if (!stats.isFile() || !publicHygieneExtensions.some((extension) => entry.endsWith(extension))) {
+      continue;
+    }
+
+    let lineNumber = 0;
+    for (const line of readFileSync(fullPath, "utf8").split("\n")) {
+      lineNumber += 1;
+      if (containsConfidentialTerm(line)) {
+        drifts.push(`  ${relative(root, fullPath)}:${lineNumber} contains confidential public wording`);
+      }
+    }
+  }
+}
+
+scanPublicHygiene(root);
 
 const requiredCompilerOptions = {
   allowUnreachableCode: false,

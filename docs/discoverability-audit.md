@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 14:17 UTC recheck found it mergeable with no comments or reviews.
+Status: PR open; 2026-05-06 14:48 UTC recheck found it mergeable with no comments or reviews.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -964,6 +964,7 @@ Findings:
 - Verified `agents.json` parses, has no duplicate ids, and includes `x-twitter-ops-desk`; ran `git diff --check`; read back the PR body and confirmed it renders with real Markdown newlines and no literal backslash-n sequences.
 - 2026-05-06 12:40 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR template, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, and review-free.
 - 2026-05-06 14:17 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 14:48 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1504,6 +1505,7 @@ Findings:
 - 2026-05-06 13:25 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 - 2026-05-06 13:42 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 - 2026-05-06 14:17 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`, and current Xquik docs still expose the public docs MCP plus 118 documented REST operations.
+- 2026-05-06 14:48 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 
 Action:
 
@@ -1524,6 +1526,8 @@ Findings:
 - The 2026-05-06 13:42 UTC tracked-file scan found no tracked secret-like filenames and no tracked mentions of the user-flagged confidential infrastructure terms.
 - The 2026-05-06 14:17 UTC tracked-file scan again found no tracked secret-like filenames and no tracked mentions of the user-flagged confidential infrastructure terms.
 - The ignore list now also covers common local auth and credential files such as `.netrc`, token/auth/credential JSON files, package-manager local auth variants, and local scratch folders.
+- `scripts/check-versions.mjs` now fails `npm run check:all` and `prepublishOnly` if public repository files contain protected confidential infrastructure wording. The protected values are stored as digests so the guard does not publish the words it blocks.
+- 2026-05-06 14:48 UTC verification passed `npm run check:all` and `node scripts/clawpack.mjs dry-run`; no package release was needed because the guard change is outside the packaged runtime and package metadata stayed unchanged.
 
 Action:
 
