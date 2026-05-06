@@ -1584,6 +1584,7 @@ Action:
 - Automation prompt updated on 2026-05-06 to prefer local Xquik guarded-route source over public docs count text when pay-per-use eligibility drifts.
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.18` as latest and to record the completed clean ClawHub package and verification scans.
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.19` as latest and to record the completed clean ClawHub static, package, and verification scans.
+- Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.20` as latest and to record the accepted ClawHub rescan request with package and verification scans still pending.
 
 ### 2026-05-06 Public Hygiene Review
 
