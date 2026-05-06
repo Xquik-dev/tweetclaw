@@ -10,6 +10,8 @@
 
 Post tweets, reply, like, retweet, follow, DM & more - directly from your chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
 
+Hermes Agent users should use [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet), the native Python plugin for the same Xquik API contract.
+
 Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Post reads from $0.00015/call - about 33x cheaper than official X API post reads.**
 
 ## Pricing
@@ -204,6 +206,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 - [Billing & Pricing](https://docs.xquik.com/guides/billing)
 - Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [n8n](https://docs.xquik.com/guides/n8n), [Zapier](https://docs.xquik.com/guides/zapier), [Make](https://docs.xquik.com/guides/make), [Pipedream](https://docs.xquik.com/guides/pipedream), [Composio migration](https://docs.xquik.com/guides/composio-migration)
 - [npm Package](https://www.npmjs.com/package/@xquik/tweetclaw)
+- [Hermes Tweet for Hermes Agent](https://github.com/Xquik-dev/hermes-tweet)
 - [OpenClaw](https://github.com/openclaw/openclaw)
 
 ## License
