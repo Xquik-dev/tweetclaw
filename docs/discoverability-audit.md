@@ -1044,7 +1044,7 @@ Findings:
 - Official manifest docs now explicitly call out `openclaw.install.minHostVersion` as install and manifest-registry gating metadata. TweetClaw already sets `openclaw.install.minHostVersion` to `>=2026.5.4`.
 - Official plugin-building docs still recommend `toolMetadata.<tool>.optional: true` for optional plugin tools; TweetClaw already marks `tweetclaw` optional and keeps `explore` available for free catalog discovery.
 - Official skills docs confirm plugin skills should be listed in `openclaw.plugin.json` as plugin-root-relative skill directories, which matches `skills/tweetclaw`.
-- Official skills docs also say the embedded parser supports single-line frontmatter keys and single-line JSON metadata. TweetClaw's required `name`, `description`, `homepage`, `metadata`, and `license` fields are single-line; a future package/skill release should consider normalizing optional `read_when` to a single-line value or adding a lint guard if OpenClaw starts consuming that field.
+- Official skills docs also say the embedded parser supports single-line frontmatter keys and single-line JSON metadata. TweetClaw `1.6.15` normalizes optional `read_when` to a single-line value and adds a release gate for packaged skill frontmatter.
 - ClawHub package inspect reports `@xquik/tweetclaw@1.6.14` as a clean `code-plugin` with `artifact.kind: "npm-pack"`, owner `kriptoburak`, and 0 static findings.
 - ClawHub inspect still reports `tweetclaw@1.1.9` under owner `xquik` as clean with MIT-0 license metadata.
 - 2026-05-06 06:59 UTC heartbeat research confirmed OpenClaw `v2026.5.4` remains the current stable GitHub release. Its release notes include catalog-backed install hints for official external plugin references and workspace-scoped plugin metadata snapshot reuse for faster control-plane paths. TweetClaw already ships `openclaw.install.npmSpec`, `minHostVersion`, manifest metadata, and package compatibility fields, so no package change was needed.
@@ -1055,8 +1055,9 @@ Findings:
 
 Action:
 
-- No package release was needed in this run.
-- Future strictness work item: add a SKILL frontmatter validation check when preparing the next release so OpenClaw parser compatibility stays machine-enforced.
+- Published `@xquik/tweetclaw@1.6.15` to npm and ClawHub after adding `npm run check-skill-frontmatter`.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` remained in progress immediately after publication.
+- Future runs should confirm the package-level and verification-level ClawHub scan records move from pending to clean.
 
 ### 2026-05-06 OpenClaw Live Smoke Test
 
@@ -1136,6 +1137,9 @@ Findings:
 - ClawHub package release `rd7dk0dd0dxg24aa1x4864gzk5866jes` for `@xquik/tweetclaw@1.6.14` uses an npm-pack ClawPack artifact with sha256 `41c7944e80eb7a935877c969384124333b10feb2fa7eeda943800201d2e0a521`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, OpenClaw compatibility `2026.5.4`, and static-analysis engine `v2.4.22`.
 - ClawHub inspect for `1.6.14` reported release artifact `staticScan.status: "clean"` with no findings. Explicit package rescan request `sd7ax6d9h8ert5gywp215fcrb1866k1c` completed clean for both package and verification records.
 - 2026-05-06 heartbeat check: npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14`; ClawHub package inspect reports `latestVersion: "1.6.14"`, release `rd7dk0dd0dxg24aa1x4864gzk5866jes`, package scan clean, verification scan clean, version static scan clean, and 0 static findings.
+- `@xquik/tweetclaw@1.6.15` was published to npm on 2026-05-06 after normalizing packaged skill `read_when` frontmatter to a single-line value and adding `scripts/check-skill-frontmatter.mjs` to `check:all`, `prepack`, and `prepublishOnly`. npm latest reports integrity `sha512-Hj7pEI2cpiVxK+QupkGg0NPuTYiPLTv+7YJ9cx3QooC/jKHSBeGWBErbgewN++8q0bDIMB6Hduv/6MriIQatiA==` and shasum `c8ec2e38b74b4ea34e0640c8ce718f84c04229fc`; a version-pinned public `npm pack @xquik/tweetclaw@1.6.15` verified 57 files including `dist/index.js`, `openclaw.plugin.json`, and `skills/tweetclaw/SKILL.md`.
+- ClawHub package release `rd76g2a13y6vg6t0dqfpc7sv0h866has` for `@xquik/tweetclaw@1.6.15` uses an npm-pack ClawPack artifact with sha256 `2b01dd7a190bec0d37a11b93bf78cf0636702b62689029043cf53be123b01a3a`, npm integrity `sha512-Hj7pEI2cpiVxK+QupkGg0NPuTYiPLTv+7YJ9cx3QooC/jKHSBeGWBErbgewN++8q0bDIMB6Hduv/6MriIQatiA==`, npm shasum `c8ec2e38b74b4ea34e0640c8ce718f84c04229fc`, source commit `29f6c9e2395015799f55013270f5df50eba85dc4`, and OpenClaw compatibility `2026.5.4`.
+- Version-specific ClawHub inspect for `1.6.15` reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`. Explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` was accepted and remained `in_progress`; top-level package and verification scan statuses still showed `pending` immediately after publication.
 
 Action:
 
