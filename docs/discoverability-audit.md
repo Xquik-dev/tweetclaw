@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 15:28 UTC recheck found it mergeable with no comments or reviews.
+Status: PR open; 2026-05-06 15:58 UTC recheck found it mergeable with no comments, reviews, or checks.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -967,6 +967,7 @@ Findings:
 - 2026-05-06 14:48 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 15:09 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 15:28 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 15:58 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1462,6 +1463,7 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25439566923 completed successfully for commit `cf6c008` and surfaced only the expected refresh-window annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25443070814 completed successfully for commit `5a4eaf9` and surfaced only the expected refresh-window annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25444046608 completed successfully for commit `317817d`.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25445723482 completed successfully for commit `ad03349`.
 
 Action:
 
@@ -1514,6 +1516,7 @@ Findings:
 - 2026-05-06 15:28 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, Context7 shows the TweetClaw library indexed, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 - 2026-05-06 15:28 UTC local Xquik source parity check confirmed the public pay-per-use route set has 31 eligible routes and excludes `POST /api/v1/x/media/download`; TweetClaw `1.6.17` updates the catalog, tests, manifest help, README, skill, and remote MCP metadata accordingly.
 - 2026-05-06 15:41 UTC npm `@xquik/tweetclaw` latest is `1.6.17` with npm shasum `d24835d0d1a6ce3120ded85b9b9c5b36e58a605b`. ClawHub package inspect reports latest `1.6.17` as a `code-plugin` npm-pack artifact under owner `kriptoburak`, version-specific static scan clean on engine `v2.4.22`, and top-level package plus verification scans pending after explicit rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b`.
+- 2026-05-06 15:58 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, GitHub release `v2026.5.5` remains live, npm `@xquik/tweetclaw` latest remains `1.6.17`, ClawHub top-level package and verification scans are clean, and version-specific static scan remains clean with no findings on engine `v2.4.22`.
 
 Action:
 
@@ -1522,10 +1525,10 @@ Action:
 - Published `@xquik/tweetclaw@1.6.16` to npm and ClawHub after replacing the remaining README `tools.allow` optional-tool note with `tools.alsoAllow` guidance for `explore` and `tweetclaw`.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t` completed clean for top-level package and verification records.
 - Published `@xquik/tweetclaw@1.6.17` to npm and ClawHub after aligning MPP route coverage with the current Xquik pay-per-use route set and expanding the public hygiene guard to cover non-ignored untracked files.
-- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` was accepted and still reported top-level package plus verification scans as pending after follow-up inspection.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` completed clean for top-level package and verification records.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
-- Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.17` as latest and to recheck the pending ClawHub package and verification scans.
+- Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.17` as latest and to record the completed clean ClawHub package and verification scans.
 
 ### 2026-05-06 Public Hygiene Review
 
@@ -1543,6 +1546,7 @@ Findings:
 - 2026-05-06 15:09 UTC verification passed `npm run check:all` and `node scripts/clawpack.mjs dry-run`; no package release was needed because the refinement is outside the packaged runtime and package metadata stayed unchanged.
 - 2026-05-06 15:28 UTC refined the public hygiene guard to scan Git-tracked plus non-ignored untracked public files through Git exclude rules. This still ignores local auth, cache, scratch, and generated state, while catching new public files before they are staged.
 - 2026-05-06 15:28 UTC verification passed `git diff --check`, the encoded tracked-file wording scan, `npm run check:all`, and `node scripts/clawpack.mjs dry-run`; no package release was needed because package metadata and packaged runtime files stayed unchanged.
+- 2026-05-06 15:58 UTC verification found no modified, untracked, or non-ignored untracked public files containing secret-like values or protected internal service wording.
 
 Action:
 
@@ -1632,7 +1636,7 @@ Findings:
 - ClawHub package release `rd76g2a13y6vg6t0dqfpc7sv0h866has` for `@xquik/tweetclaw@1.6.15` uses an npm-pack ClawPack artifact with sha256 `2b01dd7a190bec0d37a11b93bf78cf0636702b62689029043cf53be123b01a3a`, npm integrity `sha512-Hj7pEI2cpiVxK+QupkGg0NPuTYiPLTv+7YJ9cx3QooC/jKHSBeGWBErbgewN++8q0bDIMB6Hduv/6MriIQatiA==`, npm shasum `c8ec2e38b74b4ea34e0640c8ce718f84c04229fc`, source commit `29f6c9e2395015799f55013270f5df50eba85dc4`, and OpenClaw compatibility `2026.5.4`.
 - Version-specific ClawHub inspect for `1.6.15` reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`. Explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` completed clean; top-level package inspect now reports package `scanStatus: "clean"` and verification `scanStatus: "clean"`. Version inspect also reports clean VirusTotal fallback, clean LLM analysis, and clean static scan.
 - ClawHub package release `rd79ppmfpxp8ex39w4ax7z5411866g1h` for `@xquik/tweetclaw@1.6.17` uses an npm-pack ClawPack artifact with sha256 `2fdfc2c6ad9bd165d627f8695a37bc827f8f10d371b1347e6905fc9d7267f304`, npm integrity `sha512-IM3arf9REuplZjldHviQUNAWsW+QATnhOztXKeq4RfsX/0aR/WJPrNBfYiNZImh10YixeTkLDzLJgNJcdfRAHg==`, npm shasum `d24835d0d1a6ce3120ded85b9b9c5b36e58a605b`, source commit `edb5c19c96818f54e7be238f738ae72f6254e9c7`, and OpenClaw compatibility `2026.5.4`.
-- Version-specific ClawHub inspect for `1.6.17` reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`. Explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` was accepted; top-level package inspect still reported package `scanStatus: "pending"` and verification `scanStatus: "pending"` after follow-up inspection.
+- Version-specific ClawHub inspect for `1.6.17` reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`. Explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` completed clean; top-level package inspect now reports package `scanStatus: "clean"` and verification `scanStatus: "clean"`.
 
 Action:
 
