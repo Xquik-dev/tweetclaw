@@ -338,8 +338,8 @@ function registerTools(api: OpenClawApi, options: RegisterToolsOptions): void {
           return errorResult(new Error(MISSING_CREDENTIALS_MESSAGE));
         }
         return handleTweetclaw({
-          apiKey: options.credential,
           baseUrl: options.baseUrl,
+          credential: options.credential,
           fetchFunction: options.fetchFunction,
           mppMode: options.credentialMode === 'mpp',
           params: asTweetclawParams(params),

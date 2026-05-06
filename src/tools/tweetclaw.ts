@@ -40,8 +40,8 @@ const EXECUTION_TIMEOUT_MS = 30_000;
 const MS_PER_SECOND = 1000;
 
 interface TweetclawOptions {
-  readonly apiKey: string;
   readonly baseUrl: string;
+  readonly credential: string;
   readonly fetchFunction?: FetchFunction | undefined;
   readonly mppMode?: boolean | undefined;
   readonly params: Readonly<TweetclawParams>;
@@ -50,8 +50,8 @@ interface TweetclawOptions {
 
 async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<ToolResult> {
   const {
-    apiKey,
     baseUrl,
+    credential,
     fetchFunction,
     mppMode = false,
     params,
@@ -60,7 +60,7 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
 
   try {
     const requestInfo = resolveCatalogRequest(params, { mppMode });
-    const request: RequestFunction = createProxiedRequest(baseUrl, apiKey, fetchFunction);
+    const request: RequestFunction = createProxiedRequest(baseUrl, credential, fetchFunction);
     const result: unknown = await Promise.race([
       request(requestInfo.path, {
         ...(requestInfo.body === undefined ? {} : { body: requestInfo.body }),

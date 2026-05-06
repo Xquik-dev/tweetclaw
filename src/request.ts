@@ -86,7 +86,7 @@ function validateRequestPath(method: string, path: string): void {
 
 function createProxiedRequest(
   baseUrl: string,
-  apiKey: string,
+  credential: string,
   fetchFunction: FetchFunction = fetch,
 ): RequestFunction {
   return async (path: string, options?: Readonly<RequestOptions>): Promise<unknown> => {
@@ -95,7 +95,7 @@ function createProxiedRequest(
     const hasBody = options?.body !== undefined;
     const response = await fetchFunction(buildFetchUrl(baseUrl, path, options?.query), {
       ...(hasBody ? { body: JSON.stringify(options.body) } : {}),
-      headers: buildFetchHeaders(apiKey, hasBody),
+      headers: buildFetchHeaders(credential, hasBody),
       method,
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });

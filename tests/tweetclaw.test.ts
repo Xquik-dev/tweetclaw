@@ -10,8 +10,8 @@ describe('handleTweetclaw', () => {
     expect.assertions(2);
     const mockFetch = createMockFetch({ email: 'test@example.com' });
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: mockFetch,
       params: { path: '/api/v1/account' },
     });
@@ -26,8 +26,8 @@ describe('handleTweetclaw', () => {
       return new Response(JSON.stringify({}));
     };
     await handleTweetclaw({
-      apiKey: 'xq_mykey',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_mykey',
       fetchFunction: mockFetch,
       params: { path: '/api/v1/account' },
     });
@@ -36,8 +36,8 @@ describe('handleTweetclaw', () => {
   it('handles API 4xx errors', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: createMockFetch({ error: 'not found' }, 404),
       params: { path: '/api/v1/account' },
     });
@@ -48,8 +48,8 @@ describe('handleTweetclaw', () => {
   it('handles API 5xx errors', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: createMockFetch({ error: 'server error' }, 500),
       params: { path: '/api/v1/account' },
     });
@@ -60,8 +60,8 @@ describe('handleTweetclaw', () => {
   it('rejects unknown paths', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: createMockFetch({}),
       params: { path: '/api/v1/not-real' },
     });
@@ -72,8 +72,8 @@ describe('handleTweetclaw', () => {
   it('rejects dashboard-only endpoints', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: createMockFetch({}),
       params: { method: 'POST', path: '/api/v1/api-keys' },
     });
@@ -84,8 +84,8 @@ describe('handleTweetclaw', () => {
   it('truncates large responses', async () => {
     expect.assertions(1);
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: createMockFetch({ data: 'x'.repeat(30_000) }),
       params: { path: '/api/v1/account' },
     });
@@ -96,8 +96,8 @@ describe('handleTweetclaw', () => {
     expect.assertions(2);
     const hangingFetch: typeof fetch = async () => new Promise<Response>(() => {});
     const result = await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: hangingFetch,
       params: { path: '/api/v1/account' },
       timeoutMs: 10,
@@ -114,8 +114,8 @@ describe('handleTweetclaw', () => {
       return new Response(JSON.stringify({ tweetId: '123', success: true }));
     };
     await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: mockFetch,
       params: {
         body: { account: '@test', text: 'hello' },
@@ -132,8 +132,8 @@ describe('handleTweetclaw', () => {
       return new Response(JSON.stringify({ tweets: [] }));
     };
     await handleTweetclaw({
-      apiKey: 'xq_test',
       baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
       fetchFunction: mockFetch,
       params: {
         path: '/api/v1/x/tweets/search',
@@ -145,8 +145,8 @@ describe('handleTweetclaw', () => {
   it('rejects non-MPP endpoints in MPP mode', async () => {
     expect.assertions(2);
     const result = await handleTweetclaw({
-      apiKey: '',
       baseUrl: 'https://xquik.com',
+      credential: '',
       fetchFunction: createMockFetch({}),
       mppMode: true,
       params: { path: '/api/v1/account' },
