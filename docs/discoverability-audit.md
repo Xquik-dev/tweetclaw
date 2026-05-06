@@ -769,7 +769,26 @@ Findings:
 - OpenClaw package smoke test for 1.6.14: fresh no-credential profile `tweetclaw-ux-1614` installed the ClawPack tarball, validated config, loaded `explore` plus optional `tweetclaw`, and surfaced only `xtrends` as a credential-free command. Credentialed profile `tweetclaw-test` loaded the same package, exposed `explore` plus optional `tweetclaw`, and a GPT-5.5 agent call used `tweetclaw` once against `GET /api/v1/account` with one successful tool call and no writes. Archive reinstall inspect can retain stale `install.resolvedSpec`/`resolvedVersion` from previous installs, so future checks should trust loaded plugin version plus package tarball metadata over stale archive install fields.
 - `@xquik/tweetclaw@1.6.14` was published to npm on 2026-05-06. npm latest reports integrity `sha512-Q1ls9JimCkBMux49klgwKwadivjYnHr5CnBwiHp+YDk1Ec1cXwYNOwqLeLayRRiA/oBfJ+i8p2/d0REPxQNtYg==` and shasum `48ff4ce9dc5915a3565aa1dd21db556012bb2cce`; a version-pinned public `npm pack @xquik/tweetclaw@1.6.14` verified `dist/index.js`, `dist/request.js`, `openclaw.plugin.json`, and `skills/tweetclaw/SKILL.md`.
 - ClawHub package release `rd7dk0dd0dxg24aa1x4864gzk5866jes` for `@xquik/tweetclaw@1.6.14` uses an npm-pack ClawPack artifact with sha256 `41c7944e80eb7a935877c969384124333b10feb2fa7eeda943800201d2e0a521`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, OpenClaw compatibility `2026.5.4`, and static-analysis engine `v2.4.22`.
-- ClawHub inspect for `1.6.14` reported release artifact `staticScan.status: "clean"` with no findings. Explicit package rescan request `sd7ax6d9h8ert5gywp215fcrb1866k1c` was accepted and remained package-level `status: "in_progress"` immediately after publication, while the inspected version artifact was already clean.
+- ClawHub inspect for `1.6.14` reported release artifact `staticScan.status: "clean"` with no findings. Explicit package rescan request `sd7ax6d9h8ert5gywp215fcrb1866k1c` completed clean for both package and verification records.
+- 2026-05-06 heartbeat check: npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14`; ClawHub package inspect reports `latestVersion: "1.6.14"`, release `rd7dk0dd0dxg24aa1x4864gzk5866jes`, package scan clean, verification scan clean, version static scan clean, and 0 static findings.
+
+### mergisi/awesome-openclaw-agents
+
+Status: PR open.
+
+Repository: https://github.com/mergisi/awesome-openclaw-agents
+
+Pull request: https://github.com/mergisi/awesome-openclaw-agents/pull/69
+
+Audit:
+
+- Revisited because the previous audit identified this as a richer-agent-template path instead of a thin listing.
+- Read README, CONTRIBUTING, LICENSE, issue templates, and PR template. No CODE_OF_CONDUCT was present.
+- Searched repository contents for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `x-twitter-ops-desk`; no existing entry was present.
+- Checked open and closed issues and PRs through GitHub CLI for matching submissions; no duplicates were found.
+- Existing adjacent agents include `social-media`, `multi-account-social`, `brand-monitor`, and `x-twitter-growth`, so the useful contribution path was a differentiated approval-first operations template rather than another growth/content-only entry.
+- Opened PR 69, `Add X/Twitter Ops Desk agent`, on 2026-05-06. The PR adds `agents/marketing/x-twitter-ops-desk/` with `SOUL.md`, `README.md`, `AGENTS.md`, `HEARTBEAT.md`, and `WORKING.md`; updates `agents.json`; and adds the main README entry/count updates.
+- Verified `agents.json` parses, has no duplicate ids, and includes `x-twitter-ops-desk`; ran `git diff --check`; read back the PR body and confirmed it renders with real Markdown newlines and no literal backslash-n sequences.
 
 Action:
 
