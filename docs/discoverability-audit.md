@@ -992,6 +992,37 @@ Action:
 - Automation prompt update: future discoverability runs now explicitly prefer repo-native integration patches for agent starter, scanner, plugin, or tool repos when that is more useful than a standalone listing, and require external examples to stay credential-free or placeholder-only.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
 
+### arlobottman/openclaw-twitter
+
+Status: PR open.
+
+Repository: https://github.com/arlobottman/openclaw-twitter
+
+Pull request: https://github.com/arlobottman/openclaw-twitter/pull/1
+
+Rules observed:
+
+- Repository has issues enabled and no existing open or closed PRs/issues during the 2026-05-06 audit.
+- No README, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the audit.
+- Existing repo shape is a single OpenClaw skill plus `scripts/twitter_tools.py`, so a direct skill-guidance and script-hygiene PR fits better than an external listing.
+
+Findings:
+
+- Repository tree, `SKILL.md`, `scripts/twitter_tools.py`, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- `SKILL.md` still contained scaffold TODO guidance, so agents had no concrete credential, confirmation, or command-selection rules.
+- The repo tracked generated Python bytecode under `scripts/__pycache__/`.
+- `python3 scripts/twitter_tools.py --help` failed in the audit environment because runtime-evaluated annotations used `dict | None`; deferring annotations makes the CLI import cleanly while preserving current script behavior.
+
+Action:
+
+- Opened PR 1, `Improve Twitter skill guidance`, on 2026-05-06: https://github.com/arlobottman/openclaw-twitter/pull/1
+- The PR replaces scaffold text with concrete direct X API workflows, credential boundaries, write-action confirmation rules, private-read handling, narrow search defaults, and command mapping.
+- The PR documents TweetClaw as an optional OpenClaw-native companion for endpoint discovery, Xquik-backed workflows, monitors, draws, DMs, extraction jobs, and MPP read-only pay-per-use mode while preserving this repo's direct X API script path.
+- The PR adds `.gitignore`, removes tracked Python bytecode, and adds `from __future__ import annotations` so CLI help works on older Python 3 runtimes.
+- Verification passed with `git diff --cached --check`, `python3 -m py_compile scripts/twitter_tools.py`, `python3 scripts/twitter_tools.py --help`, and a credential-free `python3 scripts/twitter_tools.py search "openclaw lang:en" --max-results 1` run that returned setup guidance because `TWITTER_BEARER_TOKEN` was not set. The upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -1019,6 +1050,7 @@ Findings:
 - 2026-05-06 06:59 UTC heartbeat research confirmed OpenClaw `v2026.5.4` remains the current stable GitHub release. Its release notes include catalog-backed install hints for official external plugin references and workspace-scoped plugin metadata snapshot reuse for faster control-plane paths. TweetClaw already ships `openclaw.install.npmSpec`, `minHostVersion`, manifest metadata, and package compatibility fields, so no package change was needed.
 - 2026-05-06 07:19 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` as a clean npm-pack artifact linked to source commit `26df783a987f1a475587a8eb94336433d43fd25c`. Current manifest docs still keep install hints in `package.json#openclaw.install` rather than `openclaw.plugin.json`, matching TweetClaw's local metadata.
 - 2026-05-06 07:34 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean with owner `kriptoburak`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, and 0 static findings. Official `docs.openclaw.ai` manifest guidance still says `openclaw.plugin.json` is not for npm install metadata, so TweetClaw should keep `npmSpec` and `minHostVersion` in `package.json#openclaw.install`.
+- 2026-05-06 07:55 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14` with the same npm integrity and shasum; and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean, owner `kriptoburak`, artifact kind `npm-pack`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, package scan clean, verification scan clean, and 0 static findings. Current OpenClaw docs still keep install hints in `package.json#openclaw.install`, including `npmSpec` and `minHostVersion`, so no package release was needed.
 
 Action:
 
