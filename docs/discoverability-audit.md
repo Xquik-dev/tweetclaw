@@ -8,6 +8,9 @@ Persistent notes for the recurring OpenClaw compatibility poll. Use this file to
 - Search the target repository for `tweetclaw`, `xquik`, and `x-twitter-scraper`.
 - Check open and closed PRs before submitting. Do not duplicate an open PR, merged PR, or previously declined submission.
 - Only contribute when the target repository is clearly relevant and the entry improves its catalog for users.
+- If a thin listing is not a good fit, look for a richer repo-native contribution instead of stopping: improve an existing related entry, update stale safety/install/version metadata, fix broken links, add a useful safety note, contribute to the upstream data source, build a tested runnable starter, or open a concise maintainer-invited issue when a PR is not appropriate.
+- For generated catalogs, identify the upstream source and contribution path before marking the repo done.
+- For use-case/example repos, prepare real tested artifacts with prompts, smoke test, KPI, sample output, security notes, and rollback before opening a PR.
 - Keep external PRs narrow, factual, and in the repository's established style.
 - Do not submit promotional copy or broad cross-posting PRs.
 
