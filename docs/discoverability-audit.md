@@ -455,6 +455,35 @@ Action:
 - Verification passed with `node scripts/generate_site.mjs --audit-only` after installing the missing local `pandoc` dependency, plus a custom runnable-example count and required-file check.
 - Future runs should monitor PR 1 and avoid opening another TweetClaw example unless the maintainer asks for a different scope.
 
+### EvoLinkAI/awesome-openclaw-usecases-moltbook
+
+Status: PR open.
+
+Repository: https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook
+
+Pull request: https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook/pull/9
+
+Rules observed:
+
+- CONTRIBUTING asks for concrete, non-repeating, actionable, attributed use cases with setup steps, prompts, success metrics, and tested changes.
+- README asks contributors to copy the use-case template, fill all sections, add the use case to the appropriate category, and submit a PR.
+- License is MIT. No CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entries on default branch.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The repo already has X/Twitter-adjacent use cases: `08-x-profile-scraper`, `64-social-media-monitor`, and `65-auto-social-posting`.
+- A new broad listing would repeat existing social workflows. The useful path is improving the existing social monitor and posting use cases with TweetClaw as the structured X/Twitter path and stricter write-action approval guidance.
+
+Action:
+
+- Opened PR 9, `Add TweetClaw to social workflows`, on 2026-05-06.
+- The PR updates use cases 64 and 65 to add TweetClaw for structured X/Twitter monitoring and publishing, preserve browser control for non-X platforms, require explicit approval before publishing, and draft replies before action.
+- Verification passed with `git diff --check` and a required-text check over the updated use-case files.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 9 and avoid duplicate TweetClaw submissions unless the maintainer requests a different use-case shape.
+
 ### AIPMAndy/awesome-openclaw-skills-CN
 
 Status: x-twitter-scraper PR already open; no direct TweetClaw submission yet.
