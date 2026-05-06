@@ -4,7 +4,6 @@
   "public_key": "pk_oCPeRRqZFJsY4cCUSotDD",
   "projectTitle": "TweetClaw",
   "description": "OpenClaw plugin for safe Xquik X/Twitter automation with endpoint discovery, explicit approval boundaries, MPP read-only mode, and ClawPack release metadata.",
-  "branch": "master",
   "folders": ["docs", "skills", "src"],
   "excludeFolders": [
     "node_modules",
