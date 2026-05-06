@@ -591,6 +591,32 @@ Action:
 - The issue asks whether the maintainer wants a static registry card PR, form submission, or gate-script run before adding TweetClaw, because the checked-in registry claims vetted entries and no public submission docs were present.
 - Do not add a TweetClaw registry card until the maintainer confirms the path or the repo documents its submission process.
 
+### mergisi/awesome-openclaw-agents
+
+Status: richer agent template needed.
+
+Repository: https://github.com/mergisi/awesome-openclaw-agents
+
+Rules observed:
+
+- CONTRIBUTING requires a complete agent folder under `agents/[category]/[agent-name]/` with required `SOUL.md` and `README.md`; optional `AGENTS.md`, `HEARTBEAT.md`, and `WORKING.md`; plus an `agents.json` entry.
+- PR template asks for correct category placement, a root README update, and local OpenClaw or similar testing.
+- License is MIT.
+
+Findings:
+
+- Local clone search on 2026-05-06 found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entry on default branch.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The repo already has adjacent social and X/Twitter agents at `agents/marketing/social-media`, `agents/marketing/multi-account-social`, and `agents/marketing/x-twitter-growth`.
+- A thin TweetClaw link would not fit the repository. The useful path is a complete TweetClaw-backed OpenClaw marketing agent template with safety-first operating rules.
+
+Action:
+
+- Do not open a thin listing PR.
+- Future run should prepare a full `agents/marketing/x-twitter-ops-desk` style agent template with `SOUL.md`, `README.md`, `AGENTS.md`, `HEARTBEAT.md`, `WORKING.md`, an `agents.json` entry, and a root README table update.
+- The template should document TweetClaw install/config, draft-first behavior, explicit write approvals, secrets boundaries, monitoring cadence, rollback, and a smoke test.
+- Open a PR only after the template is locally validated against the repo checklist.
+
 ## Registry Notes
 
 ### ClawHub TweetClaw Security Page
