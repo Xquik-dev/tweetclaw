@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 19:57 UTC recheck found it mergeable with no comments, reviews, or checks.
+Status: PR open; 2026-05-06 20:28 UTC recheck found it mergeable with no comments, reviews, or checks.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -973,6 +973,7 @@ Findings:
 - 2026-05-06 17:37 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 17:57 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 19:57 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR template, agent-submission issue template, open and closed PR lists, and open and closed issue lists; CODE_OF_CONDUCT remains absent; default-branch clone search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 20:28 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR template, agent-submission and agent-request issue templates, open and closed PR lists, and open and closed issue lists; CODE_OF_CONDUCT remains absent; default-branch clone search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks. The PR branch still passes `git diff --check`, `agents.json` parsing, and the checked agent files contain only placeholder/generic credential wording rather than live secrets.
 
 Action:
 
@@ -1472,6 +1473,7 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25446668173 completed successfully for commit `3cd815c` and surfaced the known account-level processing annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25447577140 completed successfully for commit `187f77e` and surfaced only the expected refresh-window annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25458592239 completed successfully for commit `74e28c6` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25458807520 completed successfully for commit `0d94678` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 
 Action:
 
@@ -1538,6 +1540,7 @@ Findings:
 - 2026-05-06 17:57 UTC local Xquik source parity check again confirmed the guarded pay-per-use route set has 31 eligible routes and excludes media download, so the 16:16 public docs-count drift remains an upstream docs issue rather than a TweetClaw package issue.
 - 2026-05-06 19:31 UTC heartbeat research confirmed the public Xquik API overview and billing docs now match local source: both describe 31 MPP read-only endpoints, and billing docs explicitly say media downloads require authenticated access because they create account-tied gallery links. The 16:16 public docs-count drift is resolved; continue treating local guarded-route source as source of truth for future MPP eligibility changes.
 - 2026-05-06 19:57 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6`, the GitHub release page for `v2026.5.6` remains live, npm `@xquik/tweetclaw` latest remains `1.6.17` before the local hardening bump, and ClawHub version-specific inspect still reports clean package, verification, and static scans for `1.6.17` with 0 findings on engine `v2.4.22`. Direct Xquik API overview and billing pages still describe 31 MPP endpoints and account-tied media downloads, while web search snippets can still show the stale 32-endpoint media-download row. Treat the stale snippet as search-cache lag, not a live docs or package drift.
+- 2026-05-06 20:28 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6`, the GitHub release page for `v2026.5.6` remains live, and GitHub compare `v2026.5.5...v2026.5.6` remains a 17-commit maintenance delta around release validation, fetch-header normalization, and network cleanup. npm `@xquik/tweetclaw` latest is `1.6.18`, published at `2026-05-06T20:06:46.373Z`, with npm shasum `3a67ee9a4aac7d14e1510611d43e59b7ab8456a4`. ClawHub package and version-specific inspect report `@xquik/tweetclaw@1.6.18` clean for package, verification, VirusTotal fallback, LLM, and static scans on engine `v2.4.22`; `xquik@1.6.13` and `tweetclaw@1.1.9` skills remain clean. Direct Xquik billing docs still describe 31 MPP read-only endpoints and require authenticated access for media downloads.
 
 Action:
 
@@ -1552,6 +1555,8 @@ Action:
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - No package release was needed for the Xquik docs-count drift because TweetClaw already matches the current local guarded-route source.
 - 2026-05-06 19:57 UTC dependency freshness check found major updates available for several dev-only check tools and TypeScript, plus `openclaw` wanted `2026.5.6` in the local install tree. This run did not widen TweetClaw's OpenClaw build metadata or take major tooling upgrades because the release scope was the runtime base-URL hardening and all current gates passed.
+- 2026-05-06 20:28 UTC dependency freshness check still found major updates available for several dev-only check tools and TypeScript. The lockfile-only OpenClaw peer install was refreshed from `2026.5.4` to `2026.5.6` inside the existing `openclaw >=2026.5.4` peer range, without changing package compatibility metadata, manifest compatibility, runtime code, package version, or publish state.
+- 2026-05-06 20:28 UTC Context7 direct library-update docs still describe automatic refresh thresholds of 1 day for top 100, 15 days for top 1,000, 30 days for top 5,000, and 45 days for all others. Search snippets can surface different threshold text, so treat direct docs and refresh API responses as source of truth and record snippet drift as cache lag.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.17` as latest and to record the completed clean ClawHub package and verification scans.
 - Automation prompt updated on 2026-05-06 to prefer local Xquik guarded-route source over public docs count text when pay-per-use eligibility drifts.
