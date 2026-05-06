@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { handleTweetclaw } from '../src/tools/tweetclaw.js';
 
 function createMockFetch(response: unknown, status = 200): typeof fetch {
@@ -6,6 +6,10 @@ function createMockFetch(response: unknown, status = 200): typeof fetch {
 }
 
 describe('handleTweetclaw', () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it('executes catalog request with mock API and returns result', async () => {
     expect.assertions(2);
     const mockFetch = createMockFetch({ email: 'test@example.com' });
@@ -104,6 +108,20 @@ describe('handleTweetclaw', () => {
     });
     expect(result.isError).toBe(true);
     expect(result.content[0]?.text).toContain('timed out');
+  });
+
+  it('clears execution timeout after successful response', async () => {
+    expect.assertions(2);
+    vi.useFakeTimers();
+    const result = await handleTweetclaw({
+      baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
+      fetchFunction: createMockFetch({ ok: true }),
+      params: { path: '/api/v1/account' },
+      timeoutMs: 60_000,
+    });
+    expect(result.isError).toBeUndefined();
+    expect(vi.getTimerCount()).toBe(0);
   });
 
   it('handles POST with body', async () => {

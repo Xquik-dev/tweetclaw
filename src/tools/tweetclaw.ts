@@ -61,20 +61,30 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
   try {
     const requestInfo = resolveCatalogRequest(params, { mppMode });
     const request: RequestFunction = createProxiedRequest(baseUrl, credential, fetchFunction);
-    const result: unknown = await Promise.race([
-      request(requestInfo.path, {
-        ...(requestInfo.body === undefined ? {} : { body: requestInfo.body }),
-        method: requestInfo.method,
-        ...(requestInfo.query === undefined ? {} : { query: requestInfo.query }),
-      }),
-      new Promise<never>((_resolve, reject) => {
-        setTimeout(() => {
-          reject(new Error(`Execution timed out after ${String(timeoutMs / MS_PER_SECOND)}s`));
-        }, timeoutMs);
-      }),
-    ]);
+    let rejectTimeout: (reason: Error) => void = (reason) => {
+      throw reason;
+    };
+    const timeoutPromise = new Promise<never>((_resolve, reject) => {
+      rejectTimeout = reject;
+    });
+    const timeoutId = setTimeout(() => {
+      rejectTimeout(new Error(`Execution timed out after ${String(timeoutMs / MS_PER_SECOND)}s`));
+    }, timeoutMs);
 
-    return successResult(result);
+    try {
+      const result: unknown = await Promise.race([
+        request(requestInfo.path, {
+          ...(requestInfo.body === undefined ? {} : { body: requestInfo.body }),
+          method: requestInfo.method,
+          ...(requestInfo.query === undefined ? {} : { query: requestInfo.query }),
+        }),
+        timeoutPromise,
+      ]);
+
+      return successResult(result);
+    } finally {
+      clearTimeout(timeoutId);
+    }
   } catch (error: unknown) {
     return errorResult(error);
   }
