@@ -1337,6 +1337,55 @@ Action:
 
 - No PR or issue opened. Future runs should only revisit if the repository adds a license, enables issues, publishes readable source, or otherwise exposes a compliant maintenance path.
 
+### zxfzvip/openclaw-twitter-tech-news
+
+Status: safety PR open.
+
+Repository: https://github.com/zxfzvip/openclaw-twitter-tech-news
+
+Pull request: https://github.com/zxfzvip/openclaw-twitter-tech-news/pull/1
+
+Rules observed:
+
+- The repository has issues enabled, no license file, no CONTRIBUTING file, no CODE_OF_CONDUCT file, and no issue or PR templates.
+- The default branch contains a Chinese OpenClaw skill and a shell script for fetching X/Twitter updates.
+- No open or closed issues or PRs existed at audit time.
+
+Findings:
+
+- GitHub search found no existing `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` references in the repository.
+- The skill and script contained concrete X session cookie values. The audit did not copy those values into TweetClaw docs, PR bodies, or summaries.
+- A direct TweetClaw listing would be less useful than first removing the exposed credential material from the target repo.
+
+Action:
+
+- Opened PR 1, `Redact Twitter session cookies`, on 2026-05-06. The PR replaces committed cookie values with `TWITTER_AUTH_TOKEN` and `TWITTER_CT0` environment-variable placeholders and adds a short note not to store real Cookie values in the repo, chat, logs, or scripts.
+- Verification passed with `bash -n scripts/fetch_twitter.sh`, `git diff --check`, and a search of edited files for long hex-like values after redaction.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences, no long hex-like values, and no em dash characters.
+- Future runs should monitor PR 1. If the maintainer wants a feature follow-up after the safety patch, the repo-native path is optional TweetClaw/Xquik guidance for credential-injected reads rather than direct cookie handling.
+
+### hundevmode/twitter-x-apify-actors-openclaw-skill
+
+Status: audited, no PR opened.
+
+Repository: https://github.com/hundevmode/twitter-x-apify-actors-openclaw-skill
+
+Rules observed:
+
+- The repository is MIT-licensed and has issues enabled.
+- No CONTRIBUTING file, CODE_OF_CONDUCT file, issue template, or PR template was present during the 2026-05-06 audit.
+- README, `SKILL.md`, `references/actor-contracts.md`, `references/troubleshooting.md`, and the script document an Apify actor-based Twitter/X follower and optional email-enrichment workflow.
+
+Findings:
+
+- Repository contents, open and closed issues, and open and closed PRs did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The repository already uses placeholder-style Apify token examples and environment-variable guidance, with no concrete key-like value found in the audited docs.
+- A TweetClaw listing would be thin because the repository is intentionally Apify-actor specific. The useful future path is a small optional comparison or companion section only if the maintainer wants lower-cost Xquik/TweetClaw reads before or after Apify enrichment.
+
+Action:
+
+- No PR opened. Revisit only if maintainer feedback invites non-Apify companion workflows, or if a future audit finds stale token safety guidance.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -1371,6 +1420,7 @@ Findings:
 - 2026-05-06 09:11 UTC heartbeat research confirmed GitHub release page `v2026.5.5` is now live at https://github.com/openclaw/openclaw/releases/tag/v2026.5.5, published at `2026-05-06T09:00:55Z`. Release notes include plugin diagnostics for source-only TypeScript packages, official plugin update sync, managed npm peer repair, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible and no package metadata bump was needed.
 - 2026-05-06 09:32 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. The current OpenClaw manifest and building-plugin docs still match TweetClaw's package metadata split, optional tool metadata, and `tools.alsoAllow` guidance.
 - 2026-05-06 09:51 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. The Xquik docs MCP server at `https://docs.xquik.com/mcp` remains public, read-only, and exposes `search_xquik` plus `query_docs_filesystem_xquik`, making it suitable for credential-free MCP catalog discovery.
+- 2026-05-06 10:21 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. Official manifest docs still require manifest JSON Schema and use `uiHints.sensitive` for secret fields, matching TweetClaw's current `apiKey` and `tempoSigningKey` hints.
 
 Action:
 
