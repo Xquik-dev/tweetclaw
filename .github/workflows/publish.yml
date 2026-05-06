@@ -5,6 +5,11 @@ on:
     tags:
       - "v*"
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to recover, defaults to package.json version.
+        required: false
+        type: string
 
 jobs:
   publish:
@@ -13,18 +18,56 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "22"
           registry-url: "https://registry.npmjs.org"
-      - run: npm publish --access public
+          package-manager-cache: false
+      - name: Read release metadata
+        id: release
+        shell: bash
+        run: |
+          name="$(node -p "require('./package.json').name")"
+          version="$(node -p "require('./package.json').version")"
+          expected_tag="v${version}"
+          requested_tag="${{ github.event.inputs.tag || '' }}"
+          tag="${requested_tag:-$expected_tag}"
+
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            tag="${GITHUB_REF_NAME}"
+          fi
+
+          if [ "$tag" != "$expected_tag" ]; then
+            echo "::error ::Release tag $tag does not match package version $version."
+            exit 1
+          fi
+
+          {
+            echo "name=$name"
+            echo "version=$version"
+            echo "tag=$tag"
+          } >> "$GITHUB_OUTPUT"
+      - name: Check npm registry
+        id: registry
+        shell: bash
+        run: |
+          package="${{ steps.release.outputs.name }}@${{ steps.release.outputs.version }}"
+          if npm view "$package" version --json >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "$package is already published. Skipping npm publish."
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Publish npm package
+        if: steps.registry.outputs.published != 'true'
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          tag_name: ${{ github.ref_name }}
+          tag_name: ${{ steps.release.outputs.tag }}
