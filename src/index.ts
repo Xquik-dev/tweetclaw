@@ -32,7 +32,12 @@ const CONFIG_SCHEMA = {
       minLength: 1,
       type: 'string',
     },
-    baseUrl: { default: 'https://xquik.com', type: 'string' },
+    baseUrl: {
+      default: 'https://xquik.com',
+      description: 'HTTPS Xquik-compatible API base URL. Only change if using a self-hosted Xquik instance.',
+      pattern: '^https://',
+      type: 'string',
+    },
     pollingEnabled: { default: true, type: 'boolean' },
     pollingInterval: {
       default: 60,

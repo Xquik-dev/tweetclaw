@@ -120,9 +120,12 @@ openclaw skills info tweetclaw
 ### Optional settings
 
 ```bash
+openclaw config set plugins.entries.tweetclaw.config.baseUrl "https://xquik.com"
 openclaw config set plugins.entries.tweetclaw.config.pollingEnabled true
 openclaw config set plugins.entries.tweetclaw.config.pollingInterval 60
 ```
+
+Only change `baseUrl` for a self-hosted Xquik-compatible API. TweetClaw requires an HTTPS base URL with no embedded credentials.
 
 ## Tools
 

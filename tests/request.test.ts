@@ -54,6 +54,18 @@ describe('buildFetchUrl', () => {
     const url = buildFetchUrl('https://xquik.com', '/api/v1/events', { after: 'abc', limit: '10' });
     expect(url).toBe('https://xquik.com/api/v1/events?after=abc&limit=10');
   });
+
+  it('rejects plain HTTP base URLs', () => {
+    expect.assertions(1);
+    expect(() => { buildFetchUrl('http://xquik.com', '/api/v1/account'); }).toThrow('Base URL must use HTTPS');
+  });
+
+  it('rejects credentialed base URLs', () => {
+    expect.assertions(1);
+    expect(() => { buildFetchUrl('https://user:pass@xquik.com', '/api/v1/account'); }).toThrow(
+      'Base URL must not include credentials',
+    );
+  });
 });
 
 describe('createProxiedRequest', () => {

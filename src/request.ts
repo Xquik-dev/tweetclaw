@@ -24,8 +24,27 @@ function buildFetchHeaders(credential: string, hasBody: boolean): Record<string,
   return auth;
 }
 
+function createBaseUrl(baseUrl: string): URL {
+  try {
+    return new URL(baseUrl);
+  } catch {
+    throw new Error('Base URL must be a valid HTTPS URL.');
+  }
+}
+
+function parseBaseUrl(baseUrl: string): URL {
+  const url = createBaseUrl(baseUrl);
+  if (url.protocol !== 'https:') {
+    throw new Error('Base URL must use HTTPS.');
+  }
+  if (url.username.length > 0 || url.password.length > 0) {
+    throw new Error('Base URL must not include credentials.');
+  }
+  return url;
+}
+
 function buildFetchUrl(baseUrl: string, path: string, query?: Readonly<Record<string, string>>): string {
-  const url = new URL(path, baseUrl);
+  const url = new URL(path, parseBaseUrl(baseUrl));
   if (query !== undefined) {
     for (const [key, value] of Object.entries(query)) {
       url.searchParams.set(key, value);

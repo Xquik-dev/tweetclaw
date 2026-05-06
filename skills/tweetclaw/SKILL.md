@@ -130,6 +130,8 @@ Configure the signing key in your OpenClaw plugin config:
 { "tempoSigningKey": "your-66-char-hex-key" }
 ```
 
+Only change `baseUrl` for a self-hosted Xquik-compatible API. TweetClaw requires an HTTPS base URL with no embedded credentials.
+
 ## Tools
 
 TweetClaw registers 2 tools for the agent-safe Xquik endpoint catalog:
@@ -145,7 +147,7 @@ Example: "What endpoints are available for tweet composition?" returns the compo
 Structured endpoint invoker. The agent selects one endpoint from the catalog and provides path parameters, query parameters, and a JSON body. The plugin runtime performs the HTTPS request to `https://xquik.com/api/v1/...`, injects the API key server-side, and returns the parsed JSON response.
 
 - Only endpoints listed in the catalog can be invoked; unknown paths are rejected
-- Only the `xquik.com` origin can be reached; the runtime does not issue requests to any other host
+- Only the configured HTTPS Xquik-compatible API base URL can be reached; the runtime rejects non-HTTPS and credentialed base URLs
 - No arbitrary commands, no shell, no filesystem access, no third-party network
 - The tool is registered as optional in OpenClaw. If the agent can see this skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so the normal tool profile stays intact
 - After install or update, use `openclaw plugins inspect tweetclaw --runtime` and `openclaw skills info tweetclaw` to verify the runtime tool and skill registrations
