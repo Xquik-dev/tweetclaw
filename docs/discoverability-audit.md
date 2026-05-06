@@ -1430,6 +1430,7 @@ Findings:
 - Refreshing `/xquik-dev/tweetclaw` returned `404` with `Library not found`, so the canonical Context7 library is not refreshable until add processing completes or the live library ID is confirmed.
 - The first pushed Context7 refresh workflow observed Context7's `user-has-active-task` `400` response while another library was processing; follow-up run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433828144 completed successfully after treating that known account-level processing lock as a warning.
 - Later run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433873214 returned Context7 `branch-not-found` when the workflow sent an explicit `master` branch, even though GitHub reports `master` as the repository default branch. The workflow and Context7 config now omit the branch override so Context7 can use the source default.
+- Run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433969369 then confirmed Context7 recognizes `/xquik-dev/tweetclaw`, but rejected another refresh as `too-early` because the project was updated today and the current minimum interval is 10 days. The workflow now treats that known refresh-window response as a warning.
 
 Action:
 

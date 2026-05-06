@@ -46,6 +46,9 @@ jobs:
               if grep -Eiq "active-task|being processed|already.*process" "$body_file"; then
                 echo "::warning ::Context7 is already processing another library. Retry on the next docs change."
                 cat "$body_file"
+              elif grep -Eiq "too-early|minimum .* days|required between updates" "$body_file"; then
+                echo "::warning ::Context7 refresh is not due yet."
+                cat "$body_file"
               else
                 echo "::error ::Context7 refresh returned HTTP $status."
                 cat "$body_file"
