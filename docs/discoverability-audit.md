@@ -875,6 +875,36 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
 
+### adminlove520/openclaw-twitter-skill
+
+Status: PR open.
+
+Repository: https://github.com/adminlove520/openclaw-twitter-skill
+
+Pull request: https://github.com/adminlove520/openclaw-twitter-skill/pull/1
+
+Rules observed:
+
+- README documents an npm-distributed OpenClaw browser-posting skill for X/Twitter.
+- No CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+- License is MIT.
+- Existing files emphasize screenshot-confirmed browser posting, so any TweetClaw guidance must not weaken the confirmation-first flow.
+
+Findings:
+
+- Repository tree, README, SKILL.md, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The repo is useful for browser-based new-post workflows with mandatory screenshot confirmation.
+- It does not cover structured Xquik endpoint discovery, account usage checks, DMs, monitors, draws, or extraction jobs.
+- A replacement-style PR would be a poor fit. The useful path is a short optional companion section that preserves the browser-first posting workflow.
+
+Action:
+
+- Opened PR 1, `Document TweetClaw companion workflows`, on 2026-05-06: https://github.com/adminlove520/openclaw-twitter-skill/pull/1
+- The PR adds TweetClaw setup guidance to README and `SKILL.md`, including `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential storage in OpenClaw plugin config, and explicit confirmation before writes, DMs, monitors, or paid extraction jobs.
+- Verification passed with `git diff --check` and `npm test`; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
