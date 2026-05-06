@@ -1478,6 +1478,8 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25458807520 completed successfully for commit `0d94678` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25459647849 completed successfully for commit `80aef17` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25461941309 completed successfully for commit `14c754f` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25465560059 completed successfully for commit `7f1ceca` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25465938538 completed successfully for commit `c8053c6` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 
 Action:
 
