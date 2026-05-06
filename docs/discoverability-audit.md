@@ -416,9 +416,28 @@ Action:
 - Skip PulseMCP for now because the visible listing is materially accurate.
 - Skip MCPRepository until a documented submission or existing listing URL is found.
 
+### Official MCP Registry
+
+Status: already listed.
+
+Sources:
+
+- https://modelcontextprotocol.io/registry/about
+- https://registry.modelcontextprotocol.io/
+
+Findings:
+
+- The official MCP Registry lists `com.xquik/mcp` with latest version `2.4.10` active as of 2026-05-06 10:31 UTC.
+- Older Xquik registry versions remain visible but are marked non-latest, so the current registry state is healthy.
+- Searching the registry for `x-twitter-scraper` returned no result because the canonical published server name is `com.xquik/mcp`.
+
+Action:
+
+- No publish or metadata repair needed. Future runs should search by both `xquik` and `com.xquik/mcp` before treating the official registry as missing.
+
 ### Glama, MCP.so, Smithery, And Docker MCP Catalog
 
-Status: audited, no safe automated update path.
+Status: mixed; marketplace pages audited and Docker registry PR already open.
 
 Sources:
 
@@ -426,18 +445,20 @@ Sources:
 - https://mcp.so/server/x-twitter-scraper
 - https://smithery.ai/server/@xquik-dev/x-twitter-scraper
 - https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/
+- https://github.com/docker/mcp-registry/pull/3229
 
 Findings:
 
 - Glama already lists `Xquik-dev/x-twitter-scraper`, but the public page still shows stale high endpoint-count copy. The page exposes product-owned and report flows, not a documented public PR or API route for third-party metadata edits.
 - MCP.so already lists `x-twitter-scraper`, but the public page also shows stale high endpoint-count copy and no safe automated update route was found during this run.
 - Smithery returned `404 - Server Not Found` for `@xquik-dev/x-twitter-scraper`, so there is no existing listing to update from that URL.
-- Docker MCP Catalog docs say submissions go through the `docker/mcp-registry` repository and require catalog-compatible server packaging and metadata. Docker Hub MCP search did not show an Xquik result during this run.
+- Docker MCP Catalog docs say submissions go through the `docker/mcp-registry` repository and require catalog-compatible server packaging and metadata.
+- PR 3229, `Add xquik-remote MCP server`, is already open from `kriptoburak`, mergeable, comment-free, review-free, and has no checks reported as of 2026-05-06 10:31 UTC.
 
 Action:
 
-- No automated marketplace PR or issue was opened because Glama and MCP.so need an owner-supported metadata route, Smithery has no live listing at the checked URL, and Docker needs a registry-format contribution prepared against Docker's catalog rules.
-- Future runs should revisit these only through documented owner, registry, or catalog contribution paths and should update stale endpoint-count wording without adding promotional claims.
+- No new marketplace PR or issue was opened because Glama and MCP.so need an owner-supported metadata route, Smithery has no live listing at the checked URL, and Docker already has PR 3229 open.
+- Future runs should monitor Docker PR 3229 and avoid duplicate Docker submissions unless maintainers request changes or close it with a specific alternate path.
 
 ### The-Web-Scraping-Playbook/awesome-twitter-scrapers
 

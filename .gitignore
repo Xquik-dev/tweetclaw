@@ -54,6 +54,13 @@ temp/
 lcov.info
 test-results/
 playwright-report/
+screenshots/
+secret-scan/
+secret-scan-results/
+secret-scan-report.*
+gitleaks-report.*
+trufflehog-report.*
+*.sarif
 *.sqlite
 *.sqlite3
 *.db
