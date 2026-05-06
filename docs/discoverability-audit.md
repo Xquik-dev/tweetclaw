@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 15:58 UTC recheck found it mergeable with no comments, reviews, or checks.
+Status: PR open; 2026-05-06 16:16 UTC recheck found it mergeable with no comments, reviews, or checks.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -968,6 +968,7 @@ Findings:
 - 2026-05-06 15:09 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 15:28 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 15:58 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 16:16 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1464,6 +1465,7 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25443070814 completed successfully for commit `5a4eaf9` and surfaced only the expected refresh-window annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25444046608 completed successfully for commit `317817d`.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25445723482 completed successfully for commit `ad03349`.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25446668173 completed successfully for commit `3cd815c` and surfaced the known account-level processing annotation.
 
 Action:
 
@@ -1483,6 +1485,9 @@ Sources:
 - https://docs.openclaw.ai/tools/skills
 - https://github.com/openclaw/openclaw/releases/tag/v2026.5.4
 - https://github.com/openclaw/openclaw/releases/tag/v2026.5.5
+- https://docs.xquik.com/mcp
+- https://docs.xquik.com/api-reference/overview
+- https://docs.xquik.com/guides/billing
 
 Findings:
 
@@ -1517,6 +1522,8 @@ Findings:
 - 2026-05-06 15:28 UTC local Xquik source parity check confirmed the public pay-per-use route set has 31 eligible routes and excludes `POST /api/v1/x/media/download`; TweetClaw `1.6.17` updates the catalog, tests, manifest help, README, skill, and remote MCP metadata accordingly.
 - 2026-05-06 15:41 UTC npm `@xquik/tweetclaw` latest is `1.6.17` with npm shasum `d24835d0d1a6ce3120ded85b9b9c5b36e58a605b`. ClawHub package inspect reports latest `1.6.17` as a `code-plugin` npm-pack artifact under owner `kriptoburak`, version-specific static scan clean on engine `v2.4.22`, and top-level package plus verification scans pending after explicit rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b`.
 - 2026-05-06 15:58 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, GitHub release `v2026.5.5` remains live, npm `@xquik/tweetclaw` latest remains `1.6.17`, ClawHub top-level package and verification scans are clean, and version-specific static scan remains clean with no findings on engine `v2.4.22`.
+- 2026-05-06 16:16 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.17`, OpenClaw manifest docs still keep install hints in `package.json#openclaw`, and ClawHub `1.6.17` remains clean for package, verification, and version-specific static scans.
+- 2026-05-06 16:16 UTC Xquik docs drift: the public billing and API overview pages describe 32 pay-per-use read-only endpoints and include `POST /api/v1/x/media/download`, but local Xquik source-of-truth still has 31 eligible routes in `lib/mpp/pricing.ts`, and the media-download route does not use the MPP guard. TweetClaw should continue treating that endpoint as non-MPP until the guarded-route map changes.
 
 Action:
 
@@ -1527,8 +1534,10 @@ Action:
 - Published `@xquik/tweetclaw@1.6.17` to npm and ClawHub after aligning MPP route coverage with the current Xquik pay-per-use route set and expanding the public hygiene guard to cover non-ignored untracked files.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` completed clean for top-level package and verification records.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
+- No package release was needed for the Xquik docs-count drift because TweetClaw already matches the current local guarded-route source.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.17` as latest and to record the completed clean ClawHub package and verification scans.
+- Automation prompt updated on 2026-05-06 to prefer local Xquik guarded-route source over public docs count text when pay-per-use eligibility drifts.
 
 ### 2026-05-06 Public Hygiene Review
 
