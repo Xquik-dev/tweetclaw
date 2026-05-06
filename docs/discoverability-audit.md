@@ -18,7 +18,7 @@ Persistent notes for the recurring OpenClaw compatibility poll. Use this file to
 
 ### jensrot/awesome-openclaw
 
-Status: PR open.
+Status: PR open; 2026-05-06 08:50 UTC recheck found it mergeable with no comments.
 
 Repository: https://github.com/jensrot/awesome-openclaw
 
@@ -749,9 +749,11 @@ Pull request: https://github.com/mergisi/awesome-openclaw-agents/pull/69
 
 Findings:
 
-- Local clone search on 2026-05-06 found no `tweetclaw`, `xquik`, `x-twitter-scraper`, `x-twitter-ops-desk`, or `@xquik/tweetclaw` entry on default branch.
-- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- 2026-05-06 08:50 UTC recheck read README, CONTRIBUTING, LICENSE, PR template, agent-submission issue template, open and closed PRs, and open and closed issues. No CODE_OF_CONDUCT is present.
+- GitHub code search found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entry on default branch.
+- Open and closed PRs/issues still did not show duplicate TweetClaw or Xquik submissions.
 - The repo already has adjacent social and X/Twitter agents at `agents/marketing/social-media`, `agents/marketing/multi-account-social`, and `agents/marketing/x-twitter-growth`.
+- The default-branch `x-twitter-growth` agent is a content-growth strategist; PR 69 remains distinct because it focuses on approval-first operational monitoring, triage, drafts, reporting, and explicit write-action boundaries.
 - A thin TweetClaw link would not fit the repository. The useful path is a complete TweetClaw-backed OpenClaw marketing agent template with safety-first operating rules.
 - Opened PR 69, `Add X/Twitter Ops Desk agent`, on 2026-05-06. The PR adds `agents/marketing/x-twitter-ops-desk/` with `SOUL.md`, `README.md`, `AGENTS.md`, `HEARTBEAT.md`, and `WORKING.md`; updates `agents.json`; and adds the main README entry/count updates.
 - Verified `agents.json` parses, has no duplicate ids, and includes `x-twitter-ops-desk`; ran `git diff --check`; read back the PR body and confirmed it renders with real Markdown newlines and no literal backslash-n sequences.
@@ -1052,12 +1054,13 @@ Findings:
 - 2026-05-06 07:34 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean with owner `kriptoburak`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, and 0 static findings. Official `docs.openclaw.ai` manifest guidance still says `openclaw.plugin.json` is not for npm install metadata, so TweetClaw should keep `npmSpec` and `minHostVersion` in `package.json#openclaw.install`.
 - 2026-05-06 07:55 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14` with the same npm integrity and shasum; and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean, owner `kriptoburak`, artifact kind `npm-pack`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, package scan clean, verification scan clean, and 0 static findings. Current OpenClaw docs still keep install hints in `package.json#openclaw.install`, including `npmSpec` and `minHostVersion`, so no package release was needed.
 - 2026-05-06 08:13 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean as an npm-pack code plugin, and both related ClawHub skills remain clean. Official skills docs still state that the embedded parser supports single-line frontmatter keys and single-line JSON metadata, so TweetClaw `1.6.15` normalizes packaged `read_when` to a single-line value and adds `npm run check-skill-frontmatter` to `check:all`, `prepack`, and `prepublishOnly`.
+- 2026-05-06 08:50 UTC heartbeat research confirmed npm `openclaw` latest is now `2026.5.5`, published at `2026-05-06T08:46:22.905Z` with Node engine `>=22.14.0`, npm integrity `sha512-735aCg6D4xRt4g0fZfSZB0ZqFfAThLbW8WFD740jhflkk7qzoNr9PDFaOQIqsDAXlOneTJtCayUlforheJKh9A==`, and npm shasum `9eadefc00deffa118f78f651ed08e9e659f87161`. GitHub has signed tag `v2026.5.5` at commit `b1abf9d8ae4410c6a6e08f7dfd2d617f4550281c`, but `gh release view v2026.5.5` returned no release page and the GitHub releases API still lists `v2026.5.4` as the newest published release. The `v2026.5.4...v2026.5.5` compare shows plugin/update resilience fixes, including managed npm OpenClaw peer repair, official plugin sync during update, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible because its plugin API range and min host floor are `>=2026.5.4`, and no TweetClaw package change was needed.
 
 Action:
 
 - Published `@xquik/tweetclaw@1.6.15` to npm and ClawHub after adding `npm run check-skill-frontmatter`.
-- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` remained in progress immediately after publication.
-- Future runs should confirm the package-level and verification-level ClawHub scan records move from pending to clean.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` later completed clean for package and verification records.
+- No package release was needed for OpenClaw `2026.5.5`; keep watching for a GitHub release page or documented plugin API change before raising TweetClaw's build metadata.
 
 ### 2026-05-06 OpenClaw Live Smoke Test
 
@@ -1139,7 +1142,7 @@ Findings:
 - 2026-05-06 heartbeat check: npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14`; ClawHub package inspect reports `latestVersion: "1.6.14"`, release `rd7dk0dd0dxg24aa1x4864gzk5866jes`, package scan clean, verification scan clean, version static scan clean, and 0 static findings.
 - `@xquik/tweetclaw@1.6.15` was published to npm on 2026-05-06 after normalizing packaged skill `read_when` frontmatter to a single-line value and adding `scripts/check-skill-frontmatter.mjs` to `check:all`, `prepack`, and `prepublishOnly`. npm latest reports integrity `sha512-Hj7pEI2cpiVxK+QupkGg0NPuTYiPLTv+7YJ9cx3QooC/jKHSBeGWBErbgewN++8q0bDIMB6Hduv/6MriIQatiA==` and shasum `c8ec2e38b74b4ea34e0640c8ce718f84c04229fc`; a version-pinned public `npm pack @xquik/tweetclaw@1.6.15` verified 57 files including `dist/index.js`, `openclaw.plugin.json`, and `skills/tweetclaw/SKILL.md`.
 - ClawHub package release `rd76g2a13y6vg6t0dqfpc7sv0h866has` for `@xquik/tweetclaw@1.6.15` uses an npm-pack ClawPack artifact with sha256 `2b01dd7a190bec0d37a11b93bf78cf0636702b62689029043cf53be123b01a3a`, npm integrity `sha512-Hj7pEI2cpiVxK+QupkGg0NPuTYiPLTv+7YJ9cx3QooC/jKHSBeGWBErbgewN++8q0bDIMB6Hduv/6MriIQatiA==`, npm shasum `c8ec2e38b74b4ea34e0640c8ce718f84c04229fc`, source commit `29f6c9e2395015799f55013270f5df50eba85dc4`, and OpenClaw compatibility `2026.5.4`.
-- Version-specific ClawHub inspect for `1.6.15` reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`. Explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` was accepted and remained `in_progress`; top-level package and verification scan statuses still showed `pending` immediately after publication.
+- Version-specific ClawHub inspect for `1.6.15` reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`. Explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` completed clean; top-level package inspect now reports package `scanStatus: "clean"` and verification `scanStatus: "clean"`. Version inspect also reports clean VirusTotal fallback, clean LLM analysis, and clean static scan.
 
 Action:
 
