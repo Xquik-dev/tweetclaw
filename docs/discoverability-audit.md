@@ -971,7 +971,7 @@ Action:
 
 ### clawdbot-ai/awesome-openclaw-skills-zh
 
-Status: Xquik PR already open; no new submission.
+Status: Xquik PR already open; 2026-05-06 13:25 UTC recheck found it mergeable with no comments or reviews.
 
 Repository: https://github.com/clawdbot-ai/awesome-openclaw-skills-zh
 
@@ -989,6 +989,7 @@ Findings:
 - PR 26, `feat: 添加 Xquik X/Twitter 数据平台技能`, is already open from `kriptoburak`, cleanly mergeable, and adds Xquik x-twitter-scraper to the social media table.
 - Open and closed issues did not show a separate TweetClaw submission path.
 - Opening another Xquik or TweetClaw PR now would risk duplicating an already-open Xquik submission in the same category.
+- 2026-05-06 13:25 UTC recheck read the live README and confirmed CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, PR template, and issue templates remain absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 26 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1497,6 +1498,7 @@ Findings:
 - 2026-05-06 11:37 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15` before the local release bump, GitHub release `v2026.5.5` remains latest, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` clean, and both `tweetclaw` and `xquik` skills remain clean. Official manifest docs still keep install hints in `package.json#openclaw.install` and use `uiHints.sensitive` for secret fields. The README still had one stale optional-tool sentence recommending `tools.allow`; `1.6.16` changes that package-visible guidance to `tools.alsoAllow` with both `explore` and `tweetclaw` so users preserve the normal tool profile.
 - 2026-05-06 11:53 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest is `1.6.16`, GitHub release `v2026.5.5` remains live, and ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records after rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t`.
 - 2026-05-06 12:40 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still keep install hints in `package.json#openclaw.install` instead of `openclaw.plugin.json`.
+- 2026-05-06 13:25 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 
 Action:
 
