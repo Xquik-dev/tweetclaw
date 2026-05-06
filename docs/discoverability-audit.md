@@ -474,6 +474,28 @@ Action:
 - Do not open another x-twitter-scraper PR here.
 - Do not open a TweetClaw PR until the official `openclaw/skills` source path for `xquik/tweetclaw` is confirmed and the existing x-twitter-scraper PR outcome is known.
 
+### AlexAnys/awesome-openclaw-usecases-zh
+
+Status: duplicate X/Twitter PR already open.
+
+Repository: https://github.com/AlexAnys/awesome-openclaw-usecases-zh
+
+Rules observed:
+
+- CONTRIBUTING requires realistic OpenClaw use cases, Chinese explanations, clear setup steps, practical examples, and social-media risk notes for social automation use cases.
+- License is MIT.
+
+Findings:
+
+- Local clone search on 2026-05-06 found no merged `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entry on default branch.
+- PR 41, `docs: 新增 X/Twitter 全自动化用例`, is already open and adds a TweetClaw/Xquik-backed X/Twitter automation use case.
+- Open and closed issues did not show a separate TweetClaw or Xquik issue.
+
+Action:
+
+- Do not open another X/Twitter automation PR here.
+- Future runs should monitor PR 41 and only add value if the maintainer asks for a README update, risk-note adjustment, or source refresh.
+
 ### codeaashu/awesome-openclaw-Skills
 
 Status: TweetClaw PR already open.
@@ -494,6 +516,34 @@ Action:
 
 - Do not open another TweetClaw PR here.
 - Monitor PR 2 for maintainer feedback.
+
+### LeoYeAI/openclaw-master-skills
+
+Status: TweetClaw skill submission issue open.
+
+Repository: https://github.com/LeoYeAI/openclaw-master-skills
+
+Issue: https://github.com/LeoYeAI/openclaw-master-skills/issues/38
+
+Rules observed:
+
+- README describes a curated, weekly-updated OpenClaw skill collection powered by MyClaw.ai.
+- The repository provides a `Submit a Skill` issue template with skill info, source, checklist, and notes fields.
+- License is MIT.
+
+Findings:
+
+- Local clone search on 2026-05-06 found `xquik-x-twitter-scraper` and `xquik-x-twitter` skill folders already present.
+- PR 4, `Add x-twitter-scraper - X API skill for AI coding agents`, is already open from `kriptoburak`.
+- Issue 2, `[SKILL] x-twitter-scraper`, is already open from `kriptoburak`.
+- Open and closed PRs/issues did not show an existing `tweetclaw` submission.
+- The repo appears generated or bulk-curated, so a direct PR that edits all indexes would risk fighting the generator.
+
+Action:
+
+- Opened issue 38, `[SKILL] tweetclaw`, on 2026-05-06 using the repository's skill submission format.
+- Verified the issue body after creation and confirmed it renders with real Markdown newlines and no literal backslash-n sequences.
+- Do not open another TweetClaw issue or PR here. Future runs should monitor issue 38 and only follow up if maintainers request a PR, additional test evidence, or a different submission path.
 
 ### geekjourneyx/awesome-openclaw
 
@@ -618,6 +668,30 @@ Action:
 - Open a PR only after the template is locally validated against the repo checklist.
 
 ## Registry Notes
+
+### 2026-05-06 OpenClaw Docs Research
+
+Status: current compatibility baseline confirmed.
+
+Sources:
+
+- https://docs.openclaw.ai/plugins/manifest
+- https://docs.openclaw.ai/tools/skills
+- https://github.com/openclaw/openclaw/releases/tag/v2026.5.4
+
+Findings:
+
+- npm `openclaw` latest remains `2026.5.4`, matching TweetClaw's package and manifest compatibility metadata.
+- Official manifest docs still require native plugins to ship `openclaw.plugin.json` and keep npm install metadata in `package.json#openclaw.install`, which matches TweetClaw's current split.
+- Official skills docs confirm plugin skills should be listed in `openclaw.plugin.json` as plugin-root-relative skill directories, which matches `skills/tweetclaw`.
+- Official skills docs also say the embedded parser supports single-line frontmatter keys and single-line JSON metadata. TweetClaw's required `name`, `description`, `homepage`, `metadata`, and `license` fields are single-line; a future package/skill release should consider normalizing optional `read_when` to a single-line value or adding a lint guard if OpenClaw starts consuming that field.
+- ClawHub package inspect still reports `@xquik/tweetclaw@1.6.12` as a clean `code-plugin` with `artifact.kind: "npm-pack"`, npm integrity `sha512-jqyG5xK7sjaq+LIjXPk2LYaPW14yvLkohNNycUd5411YwCnKUEkE5miJyQw/4TqD3BKi2SwypZcxQr551BghMg==`, source repo `Xquik-dev/tweetclaw`, and source commit `73ed90fd02657d6b3786fdd138e844ba05830419`.
+- ClawHub inspect still reports `tweetclaw@1.1.9` under owner `xquik` as clean with MIT-0 license metadata.
+
+Action:
+
+- No package release was needed in this run.
+- Future strictness work item: add a SKILL frontmatter validation check when preparing the next release so OpenClaw parser compatibility stays machine-enforced.
 
 ### ClawHub TweetClaw Security Page
 
