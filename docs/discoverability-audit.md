@@ -158,7 +158,7 @@ Action:
 
 ### OpenClaw-Korea/awesome-openclaw
 
-Status: candidate, not submitted yet.
+Status: PR open.
 
 Repository: https://github.com/OpenClaw-Korea/awesome-openclaw
 
@@ -175,12 +175,13 @@ Findings:
 
 Action:
 
-- Good future candidate if a bilingual entry can be made carefully.
-- Do not submit an English-only drive-by PR without checking the shared organization contribution guidelines first.
+- Opened PR 1, `Add TweetClaw OpenClaw plugin`, on 2026-05-06: https://github.com/OpenClaw-Korea/awesome-openclaw/pull/1
+- The PR adds a bilingual TweetClaw entry to `README.md` and `README.ko.md`, after checking the shared organization contribution guide and confirming no duplicate repo entry, issue, or PR existed.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer asks for changes.
 
 ### rylena/awesome-openclaw
 
-Status: candidate, not submitted yet.
+Status: PR open.
 
 Repository: https://github.com/rylena/awesome-openclaw
 
@@ -192,11 +193,13 @@ Findings:
 
 Action:
 
-- Potential future target, but needs deeper format and generation-source review before any PR.
+- Opened PR 2, `Add TweetClaw social skill`, on 2026-05-06: https://github.com/rylena/awesome-openclaw/pull/2
+- The PR adds a focused `Notable Social Skills` subsection rather than editing the generated full skills catalog.
+- Future runs should monitor PR 2 and avoid duplicate TweetClaw submissions.
 
 ### ZeroLu/awesome-openclaw
 
-Status: low-fit candidate.
+Status: PR open.
 
 Repository: https://github.com/ZeroLu/awesome-openclaw
 
@@ -207,7 +210,9 @@ Findings:
 
 Action:
 
-- Do not prioritize unless a useful tutorial or use-case contribution is created, not a plain plugin listing.
+- Opened PR 3, `Add TweetClaw social media skill`, on 2026-05-06: https://github.com/ZeroLu/awesome-openclaw/pull/3
+- The PR adds a Social Media skill category to both English and Simplified Chinese READMEs, matching the repo's bilingual pattern.
+- Future runs should monitor PR 3 and avoid duplicate submissions.
 
 ### duanecilliers/awesome-openclaw
 
@@ -250,7 +255,7 @@ Action:
 
 ### punkpeye/awesome-mcp-servers
 
-Status: candidate, not ready for PR.
+Status: already listed.
 
 Repository: https://github.com/punkpeye/awesome-mcp-servers
 
@@ -261,14 +266,15 @@ Rules observed:
 
 Findings:
 
-- Initial search found no `tweetclaw` or `xquik` entry.
-- TweetClaw is an OpenClaw plugin, not an MCP server.
-- Xquik has a remote MCP endpoint, so Xquik may fit better than TweetClaw, but it needs a deeper audit of the repo's category format and entry expectations.
+- Live clone on 2026-05-06 found `Xquik-dev/x-twitter-scraper` already listed in README under Social Media.
+- PR 4464, `Add Xquik x-twitter-scraper MCP server`, merged on 2026-04-12.
+- Earlier Xquik MCP PRs 2457, 2958, 3046, and 3341 were closed or superseded.
+- TweetClaw is an OpenClaw plugin, not an MCP server, so a separate TweetClaw entry is not appropriate here.
 
 Action:
 
 - Do not add TweetClaw directly.
-- Consider an Xquik MCP entry only after confirming the published MCP server metadata, category placement, and no duplicate open or closed PR exists.
+- Do not open another Xquik MCP PR here unless the existing entry needs a factual metadata update requested by maintainers.
 
 ### agent-matrix/catalog
 
@@ -288,7 +294,7 @@ Action:
 
 ### dvcrn/openclaw-skills-marketplace
 
-Status: generated marketplace, no direct submission.
+Status: already listed in generated marketplace.
 
 Repository: https://github.com/dvcrn/openclaw-skills-marketplace
 
@@ -300,15 +306,14 @@ Rules observed:
 
 Findings:
 
-- Repository tree search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries, but many generated X/Twitter skills from the upstream source corpus.
-- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
-- The declared upstream source URL in `.gitmodules` is `https://github.com/openclaw/skills`, but GitHub returned 404 for direct `openclaw/skills` repository lookups in this run.
-- A shallow clone attempt was too large or slow for the bounded heartbeat window and was stopped; GitHub API tree reads were used instead.
+- Full clone search on 2026-05-06 found generated entries for `tweetclaw`, `xquik-x-twitter`, and `xquik-x-twitter-scraper` under `reports/generate-marketplace.json` and `plugins/`.
+- Open and closed PRs/issues did not show a newer duplicate submission path.
+- The repository is generated, so direct PRs should update the upstream corpus or generator output only when maintainers document that flow.
 
 Action:
 
-- Do not open a direct PR here. The repository is generated, so a useful change would need to happen in its upstream source corpus or through the maintainer's documented generation flow.
-- Revisit only if `openclaw/skills` becomes accessible or the maintainer documents how third-party ClawHub skills should be submitted.
+- Do not open a direct PR here because TweetClaw and Xquik are already present in generated output.
+- Revisit only if metadata becomes stale or maintainers document an upstream correction path.
 
 ### hesamsheikh/awesome-openclaw-usecases
 
@@ -400,7 +405,7 @@ Action:
 
 ### BlockRunAI/awesome-OpenClaw-Money-Maker
 
-Status: no action.
+Status: PR open.
 
 Repository: https://github.com/BlockRunAI/awesome-OpenClaw-Money-Maker
 
@@ -417,12 +422,13 @@ Findings:
 
 Action:
 
-- Do not submit a plugin listing.
-- Revisit only with a concrete, tested monetization playbook using TweetClaw, realistic cost/revenue assumptions, and clear safety boundaries.
+- Opened PR 12, `Add TweetClaw OpenClaw skill`, on 2026-05-06: https://github.com/BlockRunAI/awesome-OpenClaw-Money-Maker/pull/12
+- The PR adds TweetClaw under OpenClaw Skills with a realistic managed social monitoring and content operations monetization range, rather than a generic plugin listing.
+- Future runs should monitor PR 12 and avoid duplicate submissions.
 
 ### OthmaneBlial/awesome-openclaw-examples
 
-Status: high-fit future candidate, not ready for PR.
+Status: PR open.
 
 Repository: https://github.com/OthmaneBlial/awesome-openclaw-examples
 
@@ -440,8 +446,10 @@ Findings:
 
 Action:
 
-- Do not open a listing PR.
-- Good future target if a tested, draft-first X/Twitter operations starter is prepared using the clean ClawHub `tweetclaw` skill or `@xquik/tweetclaw` plugin.
+- Opened PR 1, `Add X/Twitter Ops Desk starter`, on 2026-05-06: https://github.com/OthmaneBlial/awesome-openclaw-examples/pull/1
+- The PR adds runnable starter 101 with setup, prompt, scripts, sample output, smoke test, KPI, security notes, failure modes, rollback, catalog updates, and regenerated site data.
+- Verification passed with `node scripts/generate_site.mjs --audit-only` after installing the missing local `pandoc` dependency, plus a custom runnable-example count and required-file check.
+- Future runs should monitor PR 1 and avoid opening another TweetClaw example unless the maintainer asks for a different scope.
 
 ### AIPMAndy/awesome-openclaw-skills-CN
 
@@ -489,7 +497,7 @@ Action:
 
 ### geekjourneyx/awesome-openclaw
 
-Status: low-fit, no action.
+Status: PR open.
 
 Repository: https://github.com/geekjourneyx/awesome-openclaw
 
@@ -507,12 +515,13 @@ Findings:
 
 Action:
 
-- Do not open a TweetClaw listing PR now. It would require introducing a new third-party plugin/listing section or changing the scope of the README.
-- Revisit only if the repo adds a community plugins or use-cases section.
+- Opened PR 2, `Add TweetClaw community skill`, on 2026-05-06: https://github.com/geekjourneyx/awesome-openclaw/pull/2
+- The PR adds a small Community Skills section to both English and Simplified Chinese READMEs, using the format described in CONTRIBUTING.
+- Future runs should monitor PR 2 and avoid duplicate submissions.
 
 ### sean1888/clawmart
 
-Status: no direct submission path.
+Status: PR open.
 
 Repository: https://github.com/sean1888/clawmart
 
@@ -529,12 +538,14 @@ Findings:
 
 Action:
 
-- Do not open a listing PR.
-- Revisit only if the project documents a seed catalog or skill submission format.
+- Opened PR 1, `Add TweetClaw featured skill`, on 2026-05-06: https://github.com/sean1888/clawmart/pull/1
+- The PR adds TweetClaw as a real featured skill and lets skill cards link to external ClawHub pages.
+- Verification passed with `npm run lint`; `npm install` reported existing dependency audit issues unrelated to the PR.
+- Future runs should monitor PR 1 and avoid duplicate submissions.
 
 ### phoenix-assistant/openclaw-skill-marketplace
 
-Status: no direct submission path.
+Status: PR open.
 
 Repository: https://github.com/phoenix-assistant/openclaw-skill-marketplace
 
@@ -552,12 +563,14 @@ Findings:
 
 Action:
 
-- Do not open a listing PR.
-- Revisit only if a seed catalog, fixture list, or documented publish workflow appears.
+- Opened PR 1, `Add TweetClaw manifest example`, on 2026-05-06: https://github.com/phoenix-assistant/openclaw-skill-marketplace/pull/1
+- The PR adds a real `tweetclaw` skill manifest example and links it from the README manifest section, instead of inventing a seed catalog.
+- Verification passed with `npm test` for 42 tests; `npm install` reported existing dependency audit issues unrelated to the PR.
+- Future runs should monitor PR 1 and avoid duplicate submissions.
 
 ### TheClawFirm/clawfactory
 
-Status: no action.
+Status: issue open, awaiting submission path.
 
 Repository: https://github.com/TheClawFirm/clawfactory
 
@@ -574,8 +587,9 @@ Findings:
 
 Action:
 
-- Do not open a PR.
-- Revisit only if the project documents a public registry entry format or submission route.
+- Opened issue 1, `Clarify OpenClaw skill registry submission path`, on 2026-05-06: https://github.com/TheClawFirm/clawfactory/issues/1
+- The issue asks whether the maintainer wants a static registry card PR, form submission, or gate-script run before adding TweetClaw, because the checked-in registry claims vetted entries and no public submission docs were present.
+- Do not add a TweetClaw registry card until the maintainer confirms the path or the repo documents its submission process.
 
 ## Registry Notes
 
