@@ -1016,6 +1016,7 @@ Findings:
 - Repository tree, README, skill files, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
 - The `x-posting` skill is browser-first for posting, replying, follower counts, and session logs.
 - A repo-native useful path is to document TweetClaw as an optional API-backed companion for account checks, mention search, monitor summaries, and read-only lookups while preserving browser review before publishing.
+- 2026-05-06 13:42 UTC recheck read the live README and confirmed CONTRIBUTING, CODE_OF_CONDUCT, LICENSE file, PR template, and issue templates remain absent despite the README MIT note; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 1 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1499,6 +1500,7 @@ Findings:
 - 2026-05-06 11:53 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest is `1.6.16`, GitHub release `v2026.5.5` remains live, and ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records after rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t`.
 - 2026-05-06 12:40 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still keep install hints in `package.json#openclaw.install` instead of `openclaw.plugin.json`.
 - 2026-05-06 13:25 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
+- 2026-05-06 13:42 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 
 Action:
 
@@ -1508,6 +1510,21 @@ Action:
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t` completed clean for top-level package and verification records.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
+
+### 2026-05-06 Public Hygiene Review
+
+Status: strengthened.
+
+Findings:
+
+- `.gitignore` already excluded local environment files, package-manager auth files, certificate and key material, local OpenClaw, ClawHub, and Context7 state, package archives, build output, test reports, security scan reports, caches, editor folders, and OS metadata.
+- The 2026-05-06 13:42 UTC tracked-file scan found no tracked secret-like filenames and no tracked mentions of the user-flagged confidential infrastructure terms.
+- The ignore list now also covers common local auth and credential files such as `.netrc`, token/auth/credential JSON files, package-manager local auth variants, and local scratch folders.
+
+Action:
+
+- Keep future public docs and external PRs on generic wording such as "own infrastructure", "read service", "write service", or "browser service"; do not disclose provider names, key-like values, or internal routing details.
+- Automation prompt updated on 2026-05-06 to require tracked confidential-term scans and generic service wording in public surfaces.
 
 ### 2026-05-06 OpenClaw Live Smoke Test
 
