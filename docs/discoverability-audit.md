@@ -643,7 +643,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: richer agent template needed.
+Status: PR open.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -652,20 +652,23 @@ Rules observed:
 - CONTRIBUTING requires a complete agent folder under `agents/[category]/[agent-name]/` with required `SOUL.md` and `README.md`; optional `AGENTS.md`, `HEARTBEAT.md`, and `WORKING.md`; plus an `agents.json` entry.
 - PR template asks for correct category placement, a root README update, and local OpenClaw or similar testing.
 - License is MIT.
+- No CODE_OF_CONDUCT was present during the audit.
+
+Pull request: https://github.com/mergisi/awesome-openclaw-agents/pull/69
 
 Findings:
 
-- Local clone search on 2026-05-06 found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entry on default branch.
+- Local clone search on 2026-05-06 found no `tweetclaw`, `xquik`, `x-twitter-scraper`, `x-twitter-ops-desk`, or `@xquik/tweetclaw` entry on default branch.
 - Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
 - The repo already has adjacent social and X/Twitter agents at `agents/marketing/social-media`, `agents/marketing/multi-account-social`, and `agents/marketing/x-twitter-growth`.
 - A thin TweetClaw link would not fit the repository. The useful path is a complete TweetClaw-backed OpenClaw marketing agent template with safety-first operating rules.
+- Opened PR 69, `Add X/Twitter Ops Desk agent`, on 2026-05-06. The PR adds `agents/marketing/x-twitter-ops-desk/` with `SOUL.md`, `README.md`, `AGENTS.md`, `HEARTBEAT.md`, and `WORKING.md`; updates `agents.json`; and adds the main README entry/count updates.
+- Verified `agents.json` parses, has no duplicate ids, and includes `x-twitter-ops-desk`; ran `git diff --check`; read back the PR body and confirmed it renders with real Markdown newlines and no literal backslash-n sequences.
 
 Action:
 
-- Do not open a thin listing PR.
-- Future run should prepare a full `agents/marketing/x-twitter-ops-desk` style agent template with `SOUL.md`, `README.md`, `AGENTS.md`, `HEARTBEAT.md`, `WORKING.md`, an `agents.json` entry, and a root README table update.
-- The template should document TweetClaw install/config, draft-first behavior, explicit write approvals, secrets boundaries, monitoring cadence, rollback, and a smoke test.
-- Open a PR only after the template is locally validated against the repo checklist.
+- Monitor PR 69 and avoid duplicate submissions.
+- If maintainers request changes, keep the contribution focused on the repo's agent-template format rather than promotional TweetClaw copy.
 
 ## Registry Notes
 
@@ -771,24 +774,6 @@ Findings:
 - ClawHub package release `rd7dk0dd0dxg24aa1x4864gzk5866jes` for `@xquik/tweetclaw@1.6.14` uses an npm-pack ClawPack artifact with sha256 `41c7944e80eb7a935877c969384124333b10feb2fa7eeda943800201d2e0a521`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, OpenClaw compatibility `2026.5.4`, and static-analysis engine `v2.4.22`.
 - ClawHub inspect for `1.6.14` reported release artifact `staticScan.status: "clean"` with no findings. Explicit package rescan request `sd7ax6d9h8ert5gywp215fcrb1866k1c` completed clean for both package and verification records.
 - 2026-05-06 heartbeat check: npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14`; ClawHub package inspect reports `latestVersion: "1.6.14"`, release `rd7dk0dd0dxg24aa1x4864gzk5866jes`, package scan clean, verification scan clean, version static scan clean, and 0 static findings.
-
-### mergisi/awesome-openclaw-agents
-
-Status: PR open.
-
-Repository: https://github.com/mergisi/awesome-openclaw-agents
-
-Pull request: https://github.com/mergisi/awesome-openclaw-agents/pull/69
-
-Audit:
-
-- Revisited because the previous audit identified this as a richer-agent-template path instead of a thin listing.
-- Read README, CONTRIBUTING, LICENSE, issue templates, and PR template. No CODE_OF_CONDUCT was present.
-- Searched repository contents for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `x-twitter-ops-desk`; no existing entry was present.
-- Checked open and closed issues and PRs through GitHub CLI for matching submissions; no duplicates were found.
-- Existing adjacent agents include `social-media`, `multi-account-social`, `brand-monitor`, and `x-twitter-growth`, so the useful contribution path was a differentiated approval-first operations template rather than another growth/content-only entry.
-- Opened PR 69, `Add X/Twitter Ops Desk agent`, on 2026-05-06. The PR adds `agents/marketing/x-twitter-ops-desk/` with `SOUL.md`, `README.md`, `AGENTS.md`, `HEARTBEAT.md`, and `WORKING.md`; updates `agents.json`; and adds the main README entry/count updates.
-- Verified `agents.json` parses, has no duplicate ids, and includes `x-twitter-ops-desk`; ran `git diff --check`; read back the PR body and confirmed it renders with real Markdown newlines and no literal backslash-n sequences.
 
 Action:
 
