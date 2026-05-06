@@ -1409,6 +1409,33 @@ Action:
 
 ## Registry Notes
 
+### 2026-05-06 Context7 Library Management
+
+Status: configured, indexing blocked by existing Context7 processing.
+
+Sources:
+
+- https://context7.com/docs/api-guide
+- https://context7.com/docs/api-reference/add-library/add-a-github-repository
+- https://context7.com/docs/api-reference/refresh/refresh-a-library
+- https://context7.com/docs/howto/private-sources
+
+Findings:
+
+- Context7 API docs require bearer-token authentication for API calls, use `/owner/repo` library IDs for GitHub repositories, add GitHub repositories through `POST /api/v2/add/repo/github`, and refresh existing libraries through `POST /api/v1/refresh`.
+- The private-source guide documents `context7.json` as the repo-root parser configuration file with project title, description, included folders, excluded folders, excluded files, and rules.
+- `context7.json` now scopes Context7 parsing to TweetClaw docs, skills, and source, while excluding generated output, package archives, local OpenClaw and ClawHub state, GitHub workflow internals, and dependency/build folders.
+- GitHub Actions secret `CONTEXT7_API_KEY` is configured for `Xquik-dev/tweetclaw`; the secret value is not stored in the repo.
+- Adding `https://github.com/Xquik-dev/tweetclaw` returned `400` with the message that another library is already being processed for the account, so Context7 cannot process another library yet.
+- Refreshing `/xquik-dev/tweetclaw` returned `404` with `Library not found`, so the canonical Context7 library is not refreshable until add processing completes or the live library ID is confirmed.
+
+Action:
+
+- Added a push and manual GitHub Actions workflow that refreshes `/xquik-dev/tweetclaw` with `CONTEXT7_API_KEY` from repository secrets and warns instead of failing while the library is still unavailable or another library is processing.
+- Added Context7 local auth/config paths to `.gitignore` so future local experiments do not leak credentials.
+- Future runs should retry Context7 add/refresh after the current library processing finishes, verify whether the canonical ID is `/xquik-dev/tweetclaw`, and avoid creating duplicate Context7 sources while the account-level processing lock is active.
+- Automation prompt updated to require secure Context7 credential handling and to record Context7 add/refresh blockers without including token values.
+
 ### 2026-05-06 OpenClaw Docs Research
 
 Status: current compatibility baseline confirmed.
@@ -1443,13 +1470,14 @@ Findings:
 - 2026-05-06 09:51 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. The Xquik docs MCP server at `https://docs.xquik.com/mcp` remains public, read-only, and exposes `search_xquik` plus `query_docs_filesystem_xquik`, making it suitable for credential-free MCP catalog discovery.
 - 2026-05-06 10:21 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. Official manifest docs still require manifest JSON Schema and use `uiHints.sensitive` for secret fields, matching TweetClaw's current `apiKey` and `tempoSigningKey` hints.
 - 2026-05-06 11:37 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15` before the local release bump, GitHub release `v2026.5.5` remains latest, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` clean, and both `tweetclaw` and `xquik` skills remain clean. Official manifest docs still keep install hints in `package.json#openclaw.install` and use `uiHints.sensitive` for secret fields. The README still had one stale optional-tool sentence recommending `tools.allow`; `1.6.16` changes that package-visible guidance to `tools.alsoAllow` with both `explore` and `tweetclaw` so users preserve the normal tool profile.
+- 2026-05-06 11:53 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest is `1.6.16`, GitHub release `v2026.5.5` remains live, and ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records after rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t`.
 
 Action:
 
 - Published `@xquik/tweetclaw@1.6.15` to npm and ClawHub after adding `npm run check-skill-frontmatter`.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` later completed clean for package and verification records.
 - Published `@xquik/tweetclaw@1.6.16` to npm and ClawHub after replacing the remaining README `tools.allow` optional-tool note with `tools.alsoAllow` guidance for `explore` and `tweetclaw`.
-- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t` was accepted and remained pending for top-level package and verification records at 2026-05-06 11:43 UTC.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t` completed clean for top-level package and verification records.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
 

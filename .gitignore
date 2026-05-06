@@ -18,6 +18,9 @@ openclaw.json.bak*
 .openclaw/
 .openclaw-*/
 .clawhub/
+.context7/
+context7.local.json
+context7.*.local.json
 
 # Dependencies and build output
 node_modules/

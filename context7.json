@@ -1,4 +1,38 @@
 {
+  "$schema": "https://context7.com/schema/context7.json",
   "url": "https://context7.com/xquik-dev/tweetclaw",
-  "public_key": "pk_oCPeRRqZFJsY4cCUSotDD"
+  "public_key": "pk_oCPeRRqZFJsY4cCUSotDD",
+  "projectTitle": "TweetClaw",
+  "description": "OpenClaw plugin for safe Xquik X/Twitter automation with endpoint discovery, explicit approval boundaries, MPP read-only mode, and ClawPack release metadata.",
+  "branch": "master",
+  "folders": ["docs", "skills", "src"],
+  "excludeFolders": [
+    "node_modules",
+    "dist",
+    "coverage",
+    ".clawpack-manual",
+    ".openclaw",
+    ".clawhub",
+    ".git",
+    ".github"
+  ],
+  "excludeFiles": [
+    ".DS_Store",
+    "package-lock.json",
+    "xquik-tweetclaw-1.5.3.tgz",
+    "xquik-tweetclaw-1.6.2.tgz"
+  ],
+  "rules": [
+    "Use tools.alsoAllow with explore and tweetclaw so users keep their normal OpenClaw tool profile.",
+    "Do not require credentials at install time; live calls without credentials should return setup guidance.",
+    "Treat API keys and signing keys as sensitive config; never print or commit them.",
+    "MPP mode is read-only and must not create writes, monitors, webhooks, uploads, DMs, or profile changes.",
+    "Use the ClawPack npm-pack workflow for ClawHub package releases, not repo-folder uploads."
+  ],
+  "previousVersions": [
+    { "tag": "v1.6.15" },
+    { "tag": "v1.6.14" },
+    { "tag": "v1.6.13" },
+    { "tag": "v1.6.12" }
+  ]
 }
