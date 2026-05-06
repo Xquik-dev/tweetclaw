@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 16:16 UTC recheck found it mergeable with no comments, reviews, or checks.
+Status: PR open; 2026-05-06 16:42 UTC recheck found it mergeable with no comments, reviews, or checks.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -969,6 +969,7 @@ Findings:
 - 2026-05-06 15:28 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 15:58 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 16:16 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 16:42 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1466,6 +1467,7 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25444046608 completed successfully for commit `317817d`.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25445723482 completed successfully for commit `ad03349`.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25446668173 completed successfully for commit `3cd815c` and surfaced the known account-level processing annotation.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25447577140 completed successfully for commit `187f77e` and surfaced only the expected refresh-window annotation.
 
 Action:
 
@@ -1524,6 +1526,8 @@ Findings:
 - 2026-05-06 15:58 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, GitHub release `v2026.5.5` remains live, npm `@xquik/tweetclaw` latest remains `1.6.17`, ClawHub top-level package and verification scans are clean, and version-specific static scan remains clean with no findings on engine `v2.4.22`.
 - 2026-05-06 16:16 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.17`, OpenClaw manifest docs still keep install hints in `package.json#openclaw`, and ClawHub `1.6.17` remains clean for package, verification, and version-specific static scans.
 - 2026-05-06 16:16 UTC Xquik docs drift: the public billing and API overview pages describe 32 pay-per-use read-only endpoints and include `POST /api/v1/x/media/download`, but local Xquik source-of-truth still has 31 eligible routes in `lib/mpp/pricing.ts`, and the media-download route does not use the MPP guard. TweetClaw should continue treating that endpoint as non-MPP until the guarded-route map changes.
+- 2026-05-06 16:42 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.17`, GitHub release `v2026.5.5` remains live, ClawHub latest `1.6.17` remains a clean npm-pack code-plugin, and version-specific static scan remains clean with 0 findings on engine `v2.4.22`.
+- 2026-05-06 16:42 UTC local Xquik source parity check again confirmed the guarded pay-per-use route set has 31 eligible routes and excludes media download, so the 16:16 public docs-count drift remains an upstream docs issue rather than a TweetClaw package issue.
 
 Action:
 
@@ -1556,6 +1560,7 @@ Findings:
 - 2026-05-06 15:28 UTC refined the public hygiene guard to scan Git-tracked plus non-ignored untracked public files through Git exclude rules. This still ignores local auth, cache, scratch, and generated state, while catching new public files before they are staged.
 - 2026-05-06 15:28 UTC verification passed `git diff --check`, the encoded tracked-file wording scan, `npm run check:all`, and `node scripts/clawpack.mjs dry-run`; no package release was needed because package metadata and packaged runtime files stayed unchanged.
 - 2026-05-06 15:58 UTC verification found no modified, untracked, or non-ignored untracked public files containing secret-like values or protected internal service wording.
+- 2026-05-06 16:42 UTC verification again found no modified, untracked, or non-ignored untracked public files containing secret-like values or protected internal service wording.
 
 Action:
 
