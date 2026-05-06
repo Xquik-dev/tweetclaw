@@ -1025,6 +1025,35 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
 
+### zhaoxinyi02/ClawPanel-Plugins
+
+Status: safety PR open; TweetClaw listing not submitted.
+
+Repository: https://github.com/zhaoxinyi02/ClawPanel-Plugins
+
+Pull request: https://github.com/zhaoxinyi02/ClawPanel-Plugins/pull/1
+
+Rules observed:
+
+- README invites community plugin submissions through `community/`, `registry.json`, plugin README files, and PRs.
+- README also documents a ClawPanel skill marketplace through `skills/registry.json`, skill folders, `SKILL.md`, and optional `skill.json` config metadata.
+- License is MIT. No CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- GitHub code search found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- Plugin submissions use ClawPanel-specific plugin metadata and in-repo install directories, so a direct `@xquik/tweetclaw` ClawHub/npm listing would not fit without maintainer guidance.
+- Skill submissions appear possible but require copying and maintaining an in-repo skill folder plus registry entry. A TweetClaw skill PR should wait until maintainers confirm they want external OpenClaw plugin companion skills in this registry.
+- The audit found a hardcoded API key-like example in existing `34ai-api-suite` skill metadata and instructions. Do not repeat or copy the value into issues, PR bodies, or TweetClaw docs.
+
+Action:
+
+- Opened PR 1, `Redact API key example from skill docs`, on 2026-05-06. The PR removes the concrete key-like value from `skills/34ai-api-suite/skill.json` and `skills/34ai-api-suite/SKILL.md`, leaving placeholder-only user-owned credential guidance.
+- Verification passed with JSON parsing for `skills/34ai-api-suite/skill.json` and `skills/registry.json`, `git diff --check`, and a no-output search confirming the changed files no longer contain the 32-character hex-like example.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future path: if maintainers accept external skill entries, prepare a Chinese, placeholder-only TweetClaw skill folder and registry entry with explicit approval, credential, paid-action, and MPP read-only boundaries. Do not open a direct TweetClaw listing before that format question is resolved.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -1037,6 +1066,7 @@ Sources:
 - https://docs.openclaw.ai/plugins/building-plugins
 - https://docs.openclaw.ai/tools/skills
 - https://github.com/openclaw/openclaw/releases/tag/v2026.5.4
+- https://github.com/openclaw/openclaw/releases/tag/v2026.5.5
 
 Findings:
 
@@ -1055,12 +1085,14 @@ Findings:
 - 2026-05-06 07:55 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`; npm `@xquik/tweetclaw` latest remains `1.6.14` with the same npm integrity and shasum; and ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean, owner `kriptoburak`, artifact kind `npm-pack`, source commit `26df783a987f1a475587a8eb94336433d43fd25c`, package scan clean, verification scan clean, and 0 static findings. Current OpenClaw docs still keep install hints in `package.json#openclaw.install`, including `npmSpec` and `minHostVersion`, so no package release was needed.
 - 2026-05-06 08:13 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean as an npm-pack code plugin, and both related ClawHub skills remain clean. Official skills docs still state that the embedded parser supports single-line frontmatter keys and single-line JSON metadata, so TweetClaw `1.6.15` normalizes packaged `read_when` to a single-line value and adds `npm run check-skill-frontmatter` to `check:all`, `prepack`, and `prepublishOnly`.
 - 2026-05-06 08:50 UTC heartbeat research confirmed npm `openclaw` latest is now `2026.5.5`, published at `2026-05-06T08:46:22.905Z` with Node engine `>=22.14.0`, npm integrity `sha512-735aCg6D4xRt4g0fZfSZB0ZqFfAThLbW8WFD740jhflkk7qzoNr9PDFaOQIqsDAXlOneTJtCayUlforheJKh9A==`, and npm shasum `9eadefc00deffa118f78f651ed08e9e659f87161`. GitHub has signed tag `v2026.5.5` at commit `b1abf9d8ae4410c6a6e08f7dfd2d617f4550281c`, but `gh release view v2026.5.5` returned no release page and the GitHub releases API still lists `v2026.5.4` as the newest published release. The `v2026.5.4...v2026.5.5` compare shows plugin/update resilience fixes, including managed npm OpenClaw peer repair, official plugin sync during update, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible because its plugin API range and min host floor are `>=2026.5.4`, and no TweetClaw package change was needed.
+- 2026-05-06 09:11 UTC heartbeat research confirmed GitHub release page `v2026.5.5` is now live at https://github.com/openclaw/openclaw/releases/tag/v2026.5.5, published at `2026-05-06T09:00:55Z`. Release notes include plugin diagnostics for source-only TypeScript packages, official plugin update sync, managed npm peer repair, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible and no package metadata bump was needed.
 
 Action:
 
 - Published `@xquik/tweetclaw@1.6.15` to npm and ClawHub after adding `npm run check-skill-frontmatter`.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` later completed clean for package and verification records.
-- No package release was needed for OpenClaw `2026.5.5`; keep watching for a GitHub release page or documented plugin API change before raising TweetClaw's build metadata.
+- No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
+- Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
 
 ### 2026-05-06 OpenClaw Live Smoke Test
 
