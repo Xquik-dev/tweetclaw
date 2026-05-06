@@ -1452,13 +1452,13 @@ Findings:
 - The first pushed Context7 refresh workflow observed Context7's `user-has-active-task` `400` response while another library was processing; follow-up run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433828144 completed successfully after treating that known account-level processing lock as a warning.
 - Later run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433873214 returned Context7 `branch-not-found` when the workflow sent an explicit `master` branch, even though GitHub reports `master` as the repository default branch. The workflow and Context7 config now omit the branch override so Context7 can use the source default.
 - Run https://github.com/Xquik-dev/tweetclaw/actions/runs/25433969369 then confirmed Context7 recognizes `/xquik-dev/tweetclaw`, but rejected another refresh as `too-early` because the project was updated today and the current minimum interval is 10 days. The workflow now treats that known refresh-window response as a warning.
-- Current Context7 library-update docs explain automatic refresh thresholds by popularity rank: top 100 refreshes after 3 days, top 1,000 after 10 days, top 5,000 after 20 days, and all others after 30 days. This explains the observed 10-day refresh-window response and means routine docs pushes should not force refresh failures.
+- Current Context7 library-update docs explain automatic refresh thresholds by popularity rank: top 100 refreshes after 1 day, top 1,000 after 15 days, top 5,000 after 30 days, and all others after 45 days. TweetClaw's refresh API response reported a 10-day minimum for this project, so treat the API response as source of truth for the active refresh window and record any future threshold drift.
 
 Action:
 
 - Added a push and manual GitHub Actions workflow that refreshes `/xquik-dev/tweetclaw` with `CONTEXT7_API_KEY` from repository secrets and warns instead of failing while the library is still unavailable, another library is processing, or Context7 reports that refresh is not due yet.
 - Added Context7 local auth/config paths to `.gitignore` so future local experiments do not leak credentials.
-- Future runs should use `/xquik-dev/tweetclaw` without an explicit branch override, avoid duplicate Context7 sources, and only treat refresh responses as blockers when they are authentication, permission, or unexpected API failures rather than the known refresh-window limit.
+- Future runs should use `/xquik-dev/tweetclaw` without an explicit branch override, avoid duplicate Context7 sources, and only treat refresh responses as blockers when they are authentication, permission, or unexpected API failures rather than documented or API-reported refresh-window limits.
 - Automation prompt updated to require secure Context7 credential handling and to record Context7 add/refresh blockers without including token values.
 
 ### 2026-05-06 OpenClaw Docs Research
