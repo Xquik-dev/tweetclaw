@@ -989,6 +989,7 @@ Action:
 - The PR adds optional `XQUIK_API_KEY` and `XQUIK_API_BASE_URL` support for `GET /api/v1/x/tweets/search`, keeps `X_BEARER_TOKEN` as fallback, documents provider selection, and adds skill guidance not to reveal configured tokens.
 - Verification passed with `git diff --check`, `node --check signal-radar/sources/x.js`, and JSON validation for `signal-radar/keywords/x.json`; the upstream PR reports no checks.
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Automation prompt update: future discoverability runs now explicitly prefer repo-native integration patches for agent starter, scanner, plugin, or tool repos when that is more useful than a standalone listing, and require external examples to stay credential-free or placeholder-only.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
 
 ## Registry Notes
