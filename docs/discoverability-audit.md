@@ -1471,6 +1471,7 @@ Findings:
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25445723482 completed successfully for commit `ad03349`.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25446668173 completed successfully for commit `3cd815c` and surfaced the known account-level processing annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25447577140 completed successfully for commit `187f77e` and surfaced only the expected refresh-window annotation.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25458592239 completed successfully for commit `74e28c6` and surfaced only the expected `too-early` refresh-window annotation: the project was updated 0 days ago, and the API response requires 10 days between updates.
 
 Action:
 
@@ -1547,14 +1548,14 @@ Action:
 - Published `@xquik/tweetclaw@1.6.17` to npm and ClawHub after aligning MPP route coverage with the current Xquik pay-per-use route set and expanding the public hygiene guard to cover non-ignored untracked files.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` completed clean for top-level package and verification records.
 - Published `@xquik/tweetclaw@1.6.18` to npm and ClawHub after requiring HTTPS, credential-free API base URLs for self-hosted Xquik-compatible deployments.
-- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c2kxtqnmarrxbd3bqcffqvn866ewv` was accepted, and top-level package plus verification scan statuses remained `pending` after follow-up inspection.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c2kxtqnmarrxbd3bqcffqvn866ewv` completed clean for top-level package and verification records.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - No package release was needed for the Xquik docs-count drift because TweetClaw already matches the current local guarded-route source.
 - 2026-05-06 19:57 UTC dependency freshness check found major updates available for several dev-only check tools and TypeScript, plus `openclaw` wanted `2026.5.6` in the local install tree. This run did not widen TweetClaw's OpenClaw build metadata or take major tooling upgrades because the release scope was the runtime base-URL hardening and all current gates passed.
 - Automation prompt updated on 2026-05-06 to record the resolved `v2026.5.5` release-page lag and to require placeholder-only handling for key-like values found in external repos.
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.17` as latest and to record the completed clean ClawHub package and verification scans.
 - Automation prompt updated on 2026-05-06 to prefer local Xquik guarded-route source over public docs count text when pay-per-use eligibility drifts.
-- Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.18` as latest and to record the accepted but still pending ClawHub package and verification scans.
+- Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.18` as latest and to record the completed clean ClawHub package and verification scans.
 
 ### 2026-05-06 Public Hygiene Review
 
