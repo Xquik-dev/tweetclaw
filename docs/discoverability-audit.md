@@ -283,6 +283,30 @@ Action:
 - Do not submit another Xquik MCP entry to this catalog.
 - If future metadata changes are needed, update the existing catalog entry in place and follow that repo's contribution rules.
 
+### dvcrn/openclaw-skills-marketplace
+
+Status: generated marketplace, no direct submission.
+
+Repository: https://github.com/dvcrn/openclaw-skills-marketplace
+
+Rules observed:
+
+- README says the repository is an automatic conversion of an `openclaw-skills` submodule into a Claude Skills marketplace.
+- Generated outputs live under `.claude-plugin/`, `plugins/`, and `reports/`, and are rebuilt with `mise run generate`.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- Repository tree search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries, but many generated X/Twitter skills from the upstream source corpus.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The declared upstream source URL in `.gitmodules` is `https://github.com/openclaw/skills`, but GitHub returned 404 for direct `openclaw/skills` repository lookups in this run.
+- A shallow clone attempt was too large or slow for the bounded heartbeat window and was stopped; GitHub API tree reads were used instead.
+
+Action:
+
+- Do not open a direct PR here. The repository is generated, so a useful change would need to happen in its upstream source corpus or through the maintainer's documented generation flow.
+- Revisit only if `openclaw/skills` becomes accessible or the maintainer documents how third-party ClawHub skills should be submitted.
+
 ## Registry Notes
 
 ### ClawHub TweetClaw Security Page
@@ -326,6 +350,7 @@ Findings:
 - The local `skills/tweetclaw/SKILL.md` metadata and top-level content were updated to make credential boundaries, explicit write approval, paid-action confirmation, recurring monitor controls, private-data handling, and MPP read-only limits visible before workflow examples.
 - Publishing the revised discovery skill named `xquik` from the same `skills/tweetclaw/SKILL.md` path succeeded on 2026-05-06 as `xquik@1.6.13` under owner `kriptoburak`; rescan request `sd74jbhxdffn6n18b5f9w6dmsh8651qh` completed clean with engine `v2.4.22`.
 - Publishing a separate plugin package named `xquik` from the exact `@xquik/tweetclaw@1.6.12` ClawPack tarball was blocked by ClawHub because `package.json` name must match the published package name. Do not create a renamed package artifact unless the publisher explicitly approves a real alias package identity.
+- 2026-05-06 heartbeat check: npm `openclaw` latest remained `2026.5.4`, OpenClaw latest GitHub release remained `v2026.5.4`, and TweetClaw's package `openclaw` metadata already matched the current manifest/package placement guidance. TweetClaw and Xquik MCP v2 API specs both exposed 118 method/path pairs with no method/path drift.
 
 Action:
 
