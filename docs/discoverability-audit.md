@@ -307,6 +307,273 @@ Action:
 - Do not open a direct PR here. The repository is generated, so a useful change would need to happen in its upstream source corpus or through the maintainer's documented generation flow.
 - Revisit only if `openclaw/skills` becomes accessible or the maintainer documents how third-party ClawHub skills should be submitted.
 
+### hesamsheikh/awesome-openclaw-usecases
+
+Status: already listed.
+
+Repository: https://github.com/hesamsheikh/awesome-openclaw-usecases
+
+Rules observed:
+
+- CONTRIBUTING asks for one use case per markdown file, a README category row, concise reproducible detail, actual tested use cases, and no crypto-related use cases.
+- License is MIT. Issues were disabled during the 2026-05-06 audit.
+
+Findings:
+
+- README already contains `X/Twitter Automation` in the Social Media section.
+- `usecases/x-twitter-automation.md` references TweetClaw, `openclaw plugins install @xquik/tweetclaw`, the GitHub repo, and the npm package.
+- PR 72, `Add X/Twitter Automation use case (TweetClaw plugin)`, merged on 2026-03-14.
+- PR 63, `Add use case: X/Twitter Data Extraction & Automation`, closed unmerged on 2026-03-14.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+
+### rohitg00/awesome-openclaw
+
+Status: already listed, stale open PR exists.
+
+Repository: https://github.com/rohitg00/awesome-openclaw
+
+Rules observed:
+
+- CONTRIBUTING asks contributors to add resources to README in the existing format, keep descriptions concise, check links, prefer one resource per PR, and run `python3 scripts/validate_static.py` before opening PRs.
+- The repository also has a generated website directory, but the README is the main content source.
+
+Findings:
+
+- README already lists TweetClaw with GitHub and npm links.
+- `docs/website/directory.html` already contains a TweetClaw card in the Social plugin category.
+- PR 89, `Add TweetClaw X/Twitter automation plugin`, is still open from `kriptoburak`, but default branch already contains TweetClaw through later updates.
+- PR 84 for `x-twitter-scraper` closed unmerged; PRs 124 and 133 later merged broader resource updates.
+
+Action:
+
+- Do not open another TweetClaw or x-twitter-scraper PR here.
+- Future cleanup can close or supersede PR 89 if the publisher wants to reduce stale duplicate PR noise.
+
+### sundial-org/awesome-openclaw-skills
+
+Status: x-twitter-scraper PR already open; TweetClaw not ready for direct submission.
+
+Repository: https://github.com/sundial-org/awesome-openclaw-skills
+
+Rules observed:
+
+- README says the list contains top OpenClaw skills sourced from the ecosystem and organized as a curated skills index.
+- No root CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entry on default branch.
+- PR 16, `Add x-twitter-scraper to Social Media`, is open from `kriptoburak`, cleanly mergeable, and only touches README.
+- The repository includes many copied skill folders and appears closer to a curated/generated top-skills snapshot than a normal plugin directory.
+
+Action:
+
+- Do not open another x-twitter-scraper PR here.
+- Do not open a TweetClaw PR unless the maintainer accepts manual additions for currently published ClawHub skills and TweetClaw fits the repo's popularity/curation bar.
+
+### cogine-ai/awesome-openclaw-zh
+
+Status: already listed.
+
+Repository: https://github.com/cogine-ai/awesome-openclaw-zh
+
+Rules observed:
+
+- CONTRIBUTING asks for real used OpenClaw use cases, copyable prompts, clear capability description, usecase template usage, and no obvious high-risk unauthorized scraping.
+- License is MIT.
+
+Findings:
+
+- `usecases/social/07-x-twitter-automation-ops.md` already references `@xquik/tweetclaw`, install/config commands, `/xstatus`, `/xtrends`, source repo, README, and upstream use case source.
+- `resources/usecases-index.json` records `Xquik-dev/tweetclaw`.
+- PR 8, `docs: add 8 source-backed OpenClaw use cases`, merged on 2026-03-25 and included the TweetClaw social use case.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+
+### BlockRunAI/awesome-OpenClaw-Money-Maker
+
+Status: no action.
+
+Repository: https://github.com/BlockRunAI/awesome-OpenClaw-Money-Maker
+
+Rules observed:
+
+- CONTRIBUTING asks for monetization strategies with clear description, realistic price or income range, difficulty when applicable, tested skills before recommending, reputable sources, and no hype.
+- No license file was present, though README shows a CC0 badge.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The list is about making money with OpenClaw. TweetClaw is useful for social media operations, but a plain plugin listing would not meet the repo's strategy, income-range, and tested monetization requirements.
+
+Action:
+
+- Do not submit a plugin listing.
+- Revisit only with a concrete, tested monetization playbook using TweetClaw, realistic cost/revenue assumptions, and clear safety boundaries.
+
+### OthmaneBlial/awesome-openclaw-examples
+
+Status: high-fit future candidate, not ready for PR.
+
+Repository: https://github.com/OthmaneBlial/awesome-openclaw-examples
+
+Rules observed:
+
+- CONTRIBUTING requires each example to be reproducible in 2 hours or less, built on public ClawHub skills, safe by default, measurable with a KPI, tested by the contributor, and include setup, prompts, smoke test, sample output, security notes, failure modes, and rollback.
+- Rejection criteria include vague workflows, no KPI, no smoke test, no rollback, off-hub skills, and untested submissions.
+- License is MIT.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The repo is a good fit for a real TweetClaw starter, but not for a thin listing. A compliant PR needs a runnable starter folder, prompt files, sample output, smoke test, KPI, security notes, and rollback path.
+
+Action:
+
+- Do not open a listing PR.
+- Good future target if a tested, draft-first X/Twitter operations starter is prepared using the clean ClawHub `tweetclaw` skill or `@xquik/tweetclaw` plugin.
+
+### AIPMAndy/awesome-openclaw-skills-CN
+
+Status: x-twitter-scraper PR already open; no direct TweetClaw submission yet.
+
+Repository: https://github.com/AIPMAndy/awesome-openclaw-skills-CN
+
+Rules observed:
+
+- CONTRIBUTING says entries must point to the official `openclaw/skills` repository, have `SKILL.md`, be concise, be actually useful, avoid duplicates, and exclude crypto, blockchain, DeFi, and finance skills.
+- License is Apache-2.0.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entry on default branch.
+- PR 4, `添加 x-twitter-scraper 技能`, is open.
+- PR 3, `Add x-twitter-scraper`, was closed unmerged.
+- Because the repo only accepts links to `github.com/openclaw/skills`, a TweetClaw submission should wait until the corresponding official skill path is confirmed accessible and not just a ClawHub package/npm link.
+
+Action:
+
+- Do not open another x-twitter-scraper PR here.
+- Do not open a TweetClaw PR until the official `openclaw/skills` source path for `xquik/tweetclaw` is confirmed and the existing x-twitter-scraper PR outcome is known.
+
+### codeaashu/awesome-openclaw-Skills
+
+Status: TweetClaw PR already open.
+
+Repository: https://github.com/codeaashu/awesome-openclaw-Skills
+
+Rules observed:
+
+- CONTRIBUTING asks for official `openclaw/skills` links, `SKILL.md`, concise descriptions, real community usage, no brand-new skills, and no duplicate skills.
+- License is MIT.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entry on default branch.
+- PR 2, `Add TweetClaw to Social Media`, is open.
+
+Action:
+
+- Do not open another TweetClaw PR here.
+- Monitor PR 2 for maintainer feedback.
+
+### geekjourneyx/awesome-openclaw
+
+Status: low-fit, no action.
+
+Repository: https://github.com/geekjourneyx/awesome-openclaw
+
+Rules observed:
+
+- CONTRIBUTING accepts skills, guides, tools, and configs; asks for concise descriptions, working links, existing format, and valid PR checklist.
+- CODE_OF_CONDUCT, SECURITY, issue templates, and PR template are present.
+- License is MIT.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- README currently focuses on OpenClaw install/config/channels/tools/guides/official resources rather than a third-party skill or plugin directory.
+
+Action:
+
+- Do not open a TweetClaw listing PR now. It would require introducing a new third-party plugin/listing section or changing the scope of the README.
+- Revisit only if the repo adds a community plugins or use-cases section.
+
+### sean1888/clawmart
+
+Status: no direct submission path.
+
+Repository: https://github.com/sean1888/clawmart
+
+Rules observed:
+
+- README describes a Next.js OpenClaw skill marketplace MVP with planned user auth, skill publishing, payments, and one-click install API.
+- No CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The app appears to be an unfinished marketplace product, not a curated data repository accepting skill entries.
+
+Action:
+
+- Do not open a listing PR.
+- Revisit only if the project documents a seed catalog or skill submission format.
+
+### phoenix-assistant/openclaw-skill-marketplace
+
+Status: no direct submission path.
+
+Repository: https://github.com/phoenix-assistant/openclaw-skill-marketplace
+
+Rules observed:
+
+- README describes a package implementing a skill marketplace registry, CLI, REST API, billing, sandboxing, reviews, and manifest validation.
+- No CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+- License is MIT.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- Repository source has registry implementation code and tests, but no obvious public seed catalog where third-party skills should be added.
+
+Action:
+
+- Do not open a listing PR.
+- Revisit only if a seed catalog, fixture list, or documented publish workflow appears.
+
+### TheClawFirm/clawfactory
+
+Status: no action.
+
+Repository: https://github.com/TheClawFirm/clawfactory
+
+Rules observed:
+
+- No README, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, issue template, or PR template was present during the 2026-05-06 audit.
+- Repository contains a marketplace/backend app with routes, static site files, pipeline docs, and gated downloads.
+
+Findings:
+
+- Local clone search found no `tweetclaw`, `xquik`, or `x-twitter-scraper` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- No documented external skill submission process was found.
+
+Action:
+
+- Do not open a PR.
+- Revisit only if the project documents a public registry entry format or submission route.
+
 ## Registry Notes
 
 ### ClawHub TweetClaw Security Page
