@@ -338,6 +338,54 @@ Action:
 - Do not add TweetClaw directly.
 - Do not open another Xquik MCP PR here unless the existing entry needs a factual metadata update requested by maintainers.
 
+### appcypher/awesome-mcp-servers
+
+Status: branch pushed, PR creation blocked by integration permissions.
+
+Repository: https://github.com/appcypher/awesome-mcp-servers
+
+Branch: https://github.com/kriptoburak/appcypher-awesome-mcp-servers/tree/codex/add-xquik-mcp-listing
+
+Rules observed:
+
+- CONTRIBUTING asks contributors to search previous suggestions, submit one suggestion per PR, use the relevant category, keep entries succinct, check spelling and grammar, remove trailing whitespace, use a useful title, and keep the list alphabetized.
+- README has a Social Media category that accepts MCP server entries.
+- CODE_OF_CONDUCT is present.
+- Issues are disabled, so PRs are the only available contribution route.
+
+Findings:
+
+- 2026-05-06 09:32 UTC search found no existing `xquik`, `x-twitter-scraper`, `x-developer`, or `tweetclaw` entry in repository contents.
+- Open and closed PR search found no duplicate Xquik or TweetClaw submission.
+- The fork parent and upstream were verified: `kriptoburak/appcypher-awesome-mcp-servers` points at `appcypher/awesome-mcp-servers`.
+- The branch was rebased onto current `origin/main` and force-pushed with one README-only commit, `2bddd1d9e5ebb5e4294b768f81ce4e0d962aff35`.
+- `git diff --check` passed.
+- `gh pr create` failed with `CreatePullRequest` permission denied for `kriptoburak`.
+- GitHub connector PR creation also failed with `Resource not accessible by integration`.
+
+Action:
+
+- Do not count the pushed branch alone as completed outreach.
+- A human or credential with `CreatePullRequest` access must open the PR from `kriptoburak:codex/add-xquik-mcp-listing` to `appcypher:main`, or future automation must use a GitHub credential that can create cross-fork PRs.
+- Do not create a duplicate branch or issue; issues are disabled.
+
+### MCP Directory And PulseMCP Xquik Listings
+
+Status: audited, no safe automated update path.
+
+Findings:
+
+- MCP.Directory already lists `x-twitter-scraper` under publisher `Xquik-dev`, but the listing still contains stale `122 endpoints` copy and old comparative wording.
+- MCP.Directory exposes a website `Submit Server` route, but no documented PR or API update route was found during this run. The current listing should be updated only through a supported maintainer route.
+- PulseMCP already lists XQuik as an official MCP server with server.json metadata, API key auth, Streamable HTTP transport, and free-tier cost metadata. No stale endpoint-count issue was found in the accessible listing text.
+- MCPRepository `/servers/xquik` returned 404, so there was no existing listing page to update from the public URL checked.
+
+Action:
+
+- Keep MCP.Directory as a stale external listing to revisit.
+- Skip PulseMCP for now because the visible listing is materially accurate.
+- Skip MCPRepository until a documented submission or existing listing URL is found.
+
 ### agent-matrix/catalog
 
 Status: already listed.
@@ -1054,6 +1102,54 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future path: if maintainers accept external skill entries, prepare a Chinese, placeholder-only TweetClaw skill folder and registry entry with explicit approval, credential, paid-action, and MPP read-only boundaries. Do not open a direct TweetClaw listing before that format question is resolved.
 
+### af0nx/openclaw-twitterbot
+
+Status: audited, no PR opened.
+
+Repository: https://github.com/af0nx/openclaw-twitterbot
+
+Rules observed:
+
+- Repository has issues enabled, MIT license, OpenClaw-style contributing guide, security policy, issue templates, and PR template.
+- No CODE_OF_CONDUCT file was present during the 2026-05-06 audit.
+
+Findings:
+
+- The repository name suggests a Twitter bot, but the default branch is a broad OpenClaw source snapshot with a `package.json` pinned to `openclaw` `2026.3.24`, many Dependabot PRs, and no focused TweetClaw/Xquik integration surface.
+- GitHub code search found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw` entries.
+- Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
+- The useful repo-native surface is `TWITTER_BOT_PIPELINE.md`, which documents a live CS2 X bot using direct X API posting, guest-token GraphQL monitoring, human approval, daily caps, and receipt-like operations. A direct listing would be thin and would not fit the broad OpenClaw snapshot.
+
+Action:
+
+- No PR opened. A future useful path would be a narrow docs patch to `TWITTER_BOT_PIPELINE.md` documenting TweetClaw as an optional Xquik-backed read/post adapter with explicit approval, receipt, cost, and credential boundaries, but only if the maintainer appears active beyond dependency updates.
+
+### X-RayLuan/openclaw-social-media-marketing
+
+Status: PR open.
+
+Repository: https://github.com/X-RayLuan/openclaw-social-media-marketing
+
+Pull request: https://github.com/X-RayLuan/openclaw-social-media-marketing/pull/1
+
+Rules observed:
+
+- README presents a focused OpenClaw social media marketing skill for X, LinkedIn, and Facebook, with ASSET_CHECK, public URL, visibility proof, and receipt requirements.
+- License is MIT. No CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+
+Findings:
+
+- Repository tree, README, `SKILL.md`, references, examples, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The X lane currently uses a direct `twitter-api-v2` example script and environment-provided X API credentials.
+- A plain listing would be thin. The repo-native useful path is documenting TweetClaw as an optional X lane adapter that preserves the repository's existing ASSET_CHECK, approval, URL recovery, visibility proof, and receipt model.
+
+Action:
+
+- Opened PR 1, `Document optional TweetClaw X lane`, on 2026-05-06. The PR updates README, `SKILL.md`, and `references/platform-rules.md` with `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential handling, explicit approval before visible X writes, MPP read-only boundaries, and receipt requirements.
+- Verification passed with `git diff --check` and a search of edited files for key-like credential examples.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -1086,6 +1182,7 @@ Findings:
 - 2026-05-06 08:13 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.4`, npm `@xquik/tweetclaw` latest remains `1.6.14`, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.14` clean as an npm-pack code plugin, and both related ClawHub skills remain clean. Official skills docs still state that the embedded parser supports single-line frontmatter keys and single-line JSON metadata, so TweetClaw `1.6.15` normalizes packaged `read_when` to a single-line value and adds `npm run check-skill-frontmatter` to `check:all`, `prepack`, and `prepublishOnly`.
 - 2026-05-06 08:50 UTC heartbeat research confirmed npm `openclaw` latest is now `2026.5.5`, published at `2026-05-06T08:46:22.905Z` with Node engine `>=22.14.0`, npm integrity `sha512-735aCg6D4xRt4g0fZfSZB0ZqFfAThLbW8WFD740jhflkk7qzoNr9PDFaOQIqsDAXlOneTJtCayUlforheJKh9A==`, and npm shasum `9eadefc00deffa118f78f651ed08e9e659f87161`. GitHub has signed tag `v2026.5.5` at commit `b1abf9d8ae4410c6a6e08f7dfd2d617f4550281c`, but `gh release view v2026.5.5` returned no release page and the GitHub releases API still lists `v2026.5.4` as the newest published release. The `v2026.5.4...v2026.5.5` compare shows plugin/update resilience fixes, including managed npm OpenClaw peer repair, official plugin sync during update, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible because its plugin API range and min host floor are `>=2026.5.4`, and no TweetClaw package change was needed.
 - 2026-05-06 09:11 UTC heartbeat research confirmed GitHub release page `v2026.5.5` is now live at https://github.com/openclaw/openclaw/releases/tag/v2026.5.5, published at `2026-05-06T09:00:55Z`. Release notes include plugin diagnostics for source-only TypeScript packages, official plugin update sync, managed npm peer repair, and corrupt-plugin update tolerance. TweetClaw `1.6.15` remains compatible and no package metadata bump was needed.
+- 2026-05-06 09:32 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.15`, GitHub release `v2026.5.5` remains live, ClawHub package inspect still reports `@xquik/tweetclaw@1.6.15` as a clean npm-pack code-plugin under owner `kriptoburak`, and both `tweetclaw` and `xquik` skills remain clean. The current OpenClaw manifest and building-plugin docs still match TweetClaw's package metadata split, optional tool metadata, and `tools.alsoAllow` guidance.
 
 Action:
 
