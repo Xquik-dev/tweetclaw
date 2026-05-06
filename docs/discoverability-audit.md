@@ -816,6 +816,36 @@ Action:
 - The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different integration shape.
 
+### zuocharles/openclaw-social-media-skill
+
+Status: PR open.
+
+Repository: https://github.com/zuocharles/openclaw-social-media-skill
+
+Pull request: https://github.com/zuocharles/openclaw-social-media-skill/pull/1
+
+Rules observed:
+
+- README presents a browser-based OpenClaw social media search skill for X/Twitter and LinkedIn.
+- No CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template was present during the 2026-05-06 audit.
+- License is MIT.
+- The repo explicitly welcomes issues and PRs in `skill.md` and README.
+
+Findings:
+
+- Repository tree, README, `skill.md`, open and closed PRs, and issues did not contain `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`.
+- The repo's core value is a zero-cost browser workflow for low-volume X and LinkedIn discovery.
+- The skill itself lists limitations that TweetClaw can complement: it is read-only, not for real-time monitoring, not for high-frequency searches, and not for posting.
+- A direct replacement pitch would be a poor fit. The useful path is to document TweetClaw as an optional API-backed companion for X-only structured data, posting, monitors, draws, extraction jobs, and long-running workflows while preserving this repo's browser workflow for LinkedIn and low-cost discovery.
+
+Action:
+
+- Opened PR 1, `Document optional TweetClaw X workflows`, on 2026-05-06: https://github.com/zuocharles/openclaw-social-media-skill/pull/1
+- The PR adds optional API-backed X workflow sections to README and `skill.md`, including `openclaw plugins install @xquik/tweetclaw`, `tools.alsoAllow: ["explore", "tweetclaw"]`, credential handling, and explicit user review before posting, DMs, monitors, or paid extraction jobs.
+- Verification passed with `git diff --check`; the upstream PR reports no checks.
+- The PR body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs should monitor PR 1 and avoid duplicate submissions unless the maintainer requests a different positioning.
+
 ## Registry Notes
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -825,6 +855,7 @@ Status: current compatibility baseline confirmed.
 Sources:
 
 - https://docs.openclaw.ai/plugins/manifest
+- https://docs.openclaw.ai/plugins/building-plugins
 - https://docs.openclaw.ai/tools/skills
 - https://github.com/openclaw/openclaw/releases/tag/v2026.5.4
 
@@ -832,9 +863,11 @@ Findings:
 
 - npm `openclaw` latest remains `2026.5.4`, matching TweetClaw's package and manifest compatibility metadata.
 - Official manifest docs still require native plugins to ship `openclaw.plugin.json` and keep npm install metadata in `package.json#openclaw.install`, which matches TweetClaw's current split.
+- Official manifest docs now explicitly call out `openclaw.install.minHostVersion` as install and manifest-registry gating metadata. TweetClaw already sets `openclaw.install.minHostVersion` to `>=2026.5.4`.
+- Official plugin-building docs still recommend `toolMetadata.<tool>.optional: true` for optional plugin tools; TweetClaw already marks `tweetclaw` optional and keeps `explore` available for free catalog discovery.
 - Official skills docs confirm plugin skills should be listed in `openclaw.plugin.json` as plugin-root-relative skill directories, which matches `skills/tweetclaw`.
 - Official skills docs also say the embedded parser supports single-line frontmatter keys and single-line JSON metadata. TweetClaw's required `name`, `description`, `homepage`, `metadata`, and `license` fields are single-line; a future package/skill release should consider normalizing optional `read_when` to a single-line value or adding a lint guard if OpenClaw starts consuming that field.
-- ClawHub package inspect still reports `@xquik/tweetclaw@1.6.12` as a clean `code-plugin` with `artifact.kind: "npm-pack"`, npm integrity `sha512-jqyG5xK7sjaq+LIjXPk2LYaPW14yvLkohNNycUd5411YwCnKUEkE5miJyQw/4TqD3BKi2SwypZcxQr551BghMg==`, source repo `Xquik-dev/tweetclaw`, and source commit `73ed90fd02657d6b3786fdd138e844ba05830419`.
+- ClawHub package inspect reports `@xquik/tweetclaw@1.6.14` as a clean `code-plugin` with `artifact.kind: "npm-pack"`, owner `kriptoburak`, and 0 static findings.
 - ClawHub inspect still reports `tweetclaw@1.1.9` under owner `xquik` as clean with MIT-0 license metadata.
 
 Action:

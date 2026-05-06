@@ -4,9 +4,9 @@ TweetClaw should publish to ClawHub as a ClawPack npm-pack artifact, not the leg
 
 ## Current Finding
 
-As of 2026-05-06, `clawhub package inspect @xquik/tweetclaw --json` reports ClawHub latest as `1.6.2` with `artifact.kind: "legacy-zip"` and stale endpoint copy. Local `node scripts/clawpack.mjs dry-run` successfully builds `@xquik/tweetclaw@1.6.11` as an npm-pack tarball with 57 files.
+As of 2026-05-06, `clawhub package inspect @xquik/tweetclaw --json` reports ClawHub latest as `1.6.14` with `artifact.kind: "npm-pack"`, owner `kriptoburak`, `code-plugin` family, OpenClaw compatibility `2026.5.4`, and a clean static scan. The legacy ZIP warning is resolved for the current package listing.
 
-Local ClawHub auth is not configured. `clawhub whoami` fails until an owner logs in with the ClawHub CLI. The npm token is not enough for this registry action.
+Future releases should keep using `node scripts/clawpack.mjs dry-run` and `node scripts/clawpack.mjs publish` so ClawHub receives the generated npm-pack tarball instead of the repo folder. npm auth and ClawHub auth remain separate. Use local auth only through CLI config or token environment variables, and never print or commit tokens.
 
 ## Commands
 
