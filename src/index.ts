@@ -40,7 +40,7 @@ const CONFIG_SCHEMA = {
       type: 'number',
     },
     tempoSigningKey: {
-      description: 'MPP signing key for pay-per-use mode. Use for accountless access to 32 read-only X-API endpoints.',
+      description: 'MPP signing key for pay-per-use mode. Use for accountless access to 31 read-only X-API endpoints.',
       minLength: 1,
       type: 'string',
     },
@@ -312,7 +312,7 @@ function registerMppMode(api: OpenClawApi, credentialMode: CredentialMode, signi
       api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
     }
   })();
-  api.logger.info('TweetClaw: MPP mode - pay-per-use (32 X-API endpoints, no subscription needed)');
+  api.logger.info('TweetClaw: MPP mode - pay-per-use (31 X-API endpoints, no subscription needed)');
 }
 
 function registerTools(api: OpenClawApi, options: RegisterToolsOptions): void {

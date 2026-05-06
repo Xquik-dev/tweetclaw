@@ -8,7 +8,6 @@ const CATEGORY_X_ACCOUNTS = 'x-accounts';
 const MPP_PRICE_CALL = '$0.00015/call';
 const MPP_PRICE_COMMUNITY = '$0.00015/community';
 const MPP_PRICE_FOLLOW_CHECK = '$0.00105/call';
-const MPP_PRICE_MEDIA = '$0.00015/media';
 const MPP_PRICE_TREND = '$0.00045/call';
 const MPP_PRICE_TWEET = '$0.00015/tweet';
 const MPP_PRICE_USER = '$0.00015/user';
@@ -753,9 +752,10 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: [
       { description: 'Tweet URL or ID (single tweet)', in: 'body', name: 'tweetInput', required: false, type: 'string' },
+      { description: 'Numeric tweet ID alias for tweetInput', in: 'body', name: 'tweetId', required: false, type: 'string' },
+      { description: 'Tweet URL alias for tweetInput', in: 'body', name: 'tweetUrl', required: false, type: 'string' },
       { description: 'Array of tweet URLs or IDs (bulk, max 50)', in: 'body', name: 'tweetIds', required: false, type: 'string[]' },
     ],
-    mpp: { intent: 'session', price: MPP_PRICE_MEDIA },
     path: '/api/v1/x/media/download',
     responseShape: 'Single: { tweetId, galleryUrl, cacheHit }. Bulk: { galleryUrl, totalTweets, totalMedia }',
     summary: 'Download media from tweets. Single tweetInput or bulk tweetIds. Returns gallery URL.',

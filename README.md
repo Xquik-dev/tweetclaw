@@ -55,7 +55,7 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 Two options:
 
 - **Credits**: Top up credits in the Xquik dashboard. The plugin can read the current balance.
-- **MPP**: 32 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
+- **MPP**: 31 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
 
 ### Free Operations
 
@@ -87,9 +87,9 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 Top up credits from the Xquik dashboard. TweetClaw does not create checkout sessions or charge saved payment methods from the agent.
 
-### Option C: MPP pay-per-use (no account needed, 32 read-only endpoints)
+### Option C: MPP pay-per-use (no account needed, 31 read-only endpoints)
 
-MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 32 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
+MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 31 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
 
 ```bash
 npm i mppx viem

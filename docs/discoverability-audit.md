@@ -939,7 +939,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-06 15:09 UTC recheck found it mergeable with no comments or reviews.
+Status: PR open; 2026-05-06 15:28 UTC recheck found it mergeable with no comments or reviews.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -966,6 +966,7 @@ Findings:
 - 2026-05-06 14:17 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 14:48 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 - 2026-05-06 15:09 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-06 15:28 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR templates, and agent-submission issue template; CODE_OF_CONDUCT remains absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks.
 
 Action:
 
@@ -1460,6 +1461,7 @@ Findings:
 - Current Context7 library-update docs explain automatic refresh thresholds by popularity rank: top 100 refreshes after 1 day, top 1,000 after 15 days, top 5,000 after 30 days, and all others after 45 days. TweetClaw's refresh API response reported a 10-day minimum for this project, so treat the API response as source of truth for the active refresh window and record any future threshold drift.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25439566923 completed successfully for commit `cf6c008` and surfaced only the expected refresh-window annotation.
 - Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25443070814 completed successfully for commit `5a4eaf9` and surfaced only the expected refresh-window annotation.
+- Push workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25444046608 completed successfully for commit `317817d`.
 
 Action:
 
@@ -1509,6 +1511,8 @@ Findings:
 - 2026-05-06 14:17 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`, and current Xquik docs still expose the public docs MCP plus 118 documented REST operations.
 - 2026-05-06 14:48 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
 - 2026-05-06 15:09 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`, and current Context7 library-update docs still describe popularity-based refresh intervals.
+- 2026-05-06 15:28 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.5`, npm `@xquik/tweetclaw` latest remains `1.6.16`, GitHub release `v2026.5.5` remains live, ClawHub package inspect reports `@xquik/tweetclaw@1.6.16` clean for package and verification records, Context7 shows the TweetClaw library indexed, and current OpenClaw manifest docs still place install hints and entrypoints in `package.json#openclaw`.
+- 2026-05-06 15:28 UTC local Xquik source parity check confirmed the public pay-per-use route set has 31 eligible routes and excludes `POST /api/v1/x/media/download`; TweetClaw `1.6.17` updates the catalog, tests, manifest help, README, skill, and remote MCP metadata accordingly.
 
 Action:
 
@@ -1533,11 +1537,14 @@ Findings:
 - 2026-05-06 14:48 UTC verification passed `npm run check:all` and `node scripts/clawpack.mjs dry-run`; no package release was needed because the guard change is outside the packaged runtime and package metadata stayed unchanged.
 - 2026-05-06 15:09 UTC refined the public hygiene guard to scan `git ls-files` instead of walking the whole working tree, so ignored local OpenClaw, ClawHub, Context7, auth, cache, and scratch state cannot trigger false positives or leak local-only paths.
 - 2026-05-06 15:09 UTC verification passed `npm run check:all` and `node scripts/clawpack.mjs dry-run`; no package release was needed because the refinement is outside the packaged runtime and package metadata stayed unchanged.
+- 2026-05-06 15:28 UTC refined the public hygiene guard to scan Git-tracked plus non-ignored untracked public files through Git exclude rules. This still ignores local auth, cache, scratch, and generated state, while catching new public files before they are staged.
+- 2026-05-06 15:28 UTC verification passed `git diff --check`, the encoded tracked-file wording scan, `npm run check:all`, and `node scripts/clawpack.mjs dry-run`; no package release was needed because package metadata and packaged runtime files stayed unchanged.
 
 Action:
 
 - Keep future public docs and external PRs on generic wording such as "own infrastructure", "read service", "write service", or "browser service"; do not disclose provider names, key-like values, or internal routing details.
 - Automation prompt updated on 2026-05-06 to require tracked confidential-term scans and generic service wording in public surfaces.
+- Automation prompt updated on 2026-05-06 to require checking tracked and non-ignored untracked public hygiene surfaces.
 
 ### 2026-05-06 OpenClaw Live Smoke Test
 

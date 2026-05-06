@@ -61,17 +61,18 @@ describe('API_SPEC', () => {
   });
 
   it('keeps MPP coverage aligned with Xquik pay-per-use routes', () => {
-    expect.assertions(4);
+    expect.assertions(5);
     const mppKeys = new Set(
       API_SPEC.filter((endpoint) => endpoint.mpp !== undefined).map(
         (endpoint) => `${endpoint.method} ${endpoint.path}`,
       ),
     );
 
-    expect(mppKeys.size).toBe(32);
+    expect(mppKeys.size).toBe(31);
     expect(mppKeys).toContain('GET /api/v1/x/communities/:id/info');
     expect(mppKeys).toContain('GET /api/v1/x/lists/:id/tweets');
     expect(mppKeys).toContain('GET /api/v1/x/users/:id/verified-followers');
+    expect(mppKeys).not.toContain('POST /api/v1/x/media/download');
   });
 
   it('has both free and paid endpoints', () => {

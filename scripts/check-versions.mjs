@@ -132,17 +132,21 @@ function containsConfidentialTerm(line) {
   return false;
 }
 
-function readTrackedFiles() {
-  const output = execFileSync("git", ["ls-files", "-z"], {
-    cwd: root,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-  });
+function readPublicCandidateFiles() {
+  const output = execFileSync(
+    "git",
+    ["ls-files", "-z", "--cached", "--others", "--exclude-standard"],
+    {
+      cwd: root,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    },
+  );
   return output.split("\0").filter((entry) => entry.length > 0);
 }
 
 function scanPublicHygiene() {
-  for (const file of readTrackedFiles()) {
+  for (const file of readPublicCandidateFiles()) {
     if (!publicHygieneExtensions.some((extension) => file.endsWith(extension))) {
       continue;
     }
