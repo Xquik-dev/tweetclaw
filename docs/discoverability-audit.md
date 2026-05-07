@@ -43,23 +43,29 @@ Action:
 
 ### composio-community/awesome-openclaw-plugins
 
-Status: PR already open.
+Status: TweetClaw PR open; license hygiene PR open.
 
 Repository: https://github.com/composio-community/awesome-openclaw-plugins
 
-Pull request: https://github.com/composio-community/awesome-openclaw-plugins/pull/5
+TweetClaw pull request: https://github.com/composio-community/awesome-openclaw-plugins/pull/5
+
+License hygiene pull request: https://github.com/composio-community/awesome-openclaw-plugins/pull/7
 
 Findings:
 
-- PR 5, `Add Social Media section with tweetclaw`, is open as of 2026-05-06.
-- PR 5 is clean and has no comments or reviews as of 2026-05-06.
+- PR 5, `Add Social Media section with tweetclaw`, is open, mergeable, non-draft, comment-free, and review-free as of 2026-05-07 14:20 UTC.
 - The PR body uses real Markdown newlines and does not contain escaped `\n` sequences.
-- No separate issue matching TweetClaw or Xquik was found.
+- No default-branch TweetClaw, Xquik, x-twitter-scraper, or `@xquik/tweetclaw` entry was found.
+- The repository has no `.github` directory, CONTRIBUTING, CODE_OF_CONDUCT, issue templates, or PR template.
+- The README states CC0 1.0 Universal and links `LICENSE`, but the default branch did not have a license file during the 2026-05-07 audit.
+- No open or closed license issue or PR was found before opening the hygiene PR.
 
 Action:
 
 - Do not open another TweetClaw PR here.
-- Future runs may monitor PR 5, but should avoid repeated status comments unless there is concrete maintainer feedback.
+- Opened PR 7, `Add missing CC0 license file`, adding the missing CC0 license text referenced by README.
+- PR 7 body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
+- Future runs may monitor PRs 5 and 7, but should avoid repeated status comments unless there is concrete maintainer feedback.
 
 ### ThisIsJeron/awesome-openclaw-plugins
 
@@ -1580,6 +1586,9 @@ Findings:
 - 2026-05-07 13:39 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6`, npm `@xquik/tweetclaw` latest remains `1.6.21`, and GitHub release `v2026.5.6` remains the latest OpenClaw release. GitHub compare `v2026.5.5...v2026.5.6` still shows the same maintenance-only 17-commit delta with no material TweetClaw package, manifest, skill, ClawPack, scan, or Xquik route impact. Direct Context7 library-update docs still list refresh thresholds of 1 day, 15 days, 30 days, and 45 days. Direct Xquik billing Markdown still describes 31 MPP read-only endpoints and authenticated media downloads; the API overview still mentions media downloads only as an API-key or session-cookie feature.
 - 2026-05-07 13:39 UTC ClawHub latest and version-specific package inspect now report `@xquik/tweetclaw@1.6.21` clean for top-level package scan, source-linked verification scan, and version-specific static scan on engine `v2.4.22`. Explicit rescan request `sd762r105pcgtrj8g01d3fzsn1869qpk` completed clean; artifact metadata remains sha256 `a7f8aea795f8385eee662dfa066f34e816b0b63db24d0425c1b4c7298959f340`, npm integrity `sha512-vF0mlXom9blcE8EtMwdPc05+NJNl0ocy26D5awLfBaIVfb7Q9vJecM8i/+aNkqVyvALhlqLIo7+X1rqUztr8MA==`, npm shasum `05a5685f9206f7accf1ab3c78955b80b56c654e4`, and source commit `6f28cac7b7c43bb9df826fa2f822300f1597b154`.
 - 2026-05-07 13:39 UTC discoverability check re-read mergisi/awesome-openclaw-agents README, CONTRIBUTING, MIT license, PR template, agent-submission issue template, open PR and issue lists, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. CODE_OF_CONDUCT remains absent; PR 69 remains open, mergeable, non-draft, comment-free, review-free, and has no status checks. Fresh GitHub repository searches for `openclaw plugin` and `clawhub` surfaced broad plugin or skill indexes, but no higher-quality repo-native contribution path than monitoring PR 69 and avoiding duplicate submissions.
+- 2026-05-07 14:20 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6` with registry metadata modified at `2026-05-07T13:29:19.977Z`, npm `@xquik/tweetclaw` latest remains `1.6.21`, GitHub release `v2026.5.6` remains the latest OpenClaw release, and GitHub compare `v2026.5.5...v2026.5.6` still shows the same maintenance-only 17-commit delta with no material TweetClaw package, manifest, skill, ClawPack, scan, or Xquik route impact. Direct Context7 library-update docs still list refresh thresholds of 1 day, 15 days, 30 days, and 45 days. Direct Xquik billing Markdown still describes 31 MPP read-only endpoints and authenticated media downloads. The latest Context7 refresh workflow for TweetClaw completed successfully at `2026-05-07T13:57:04Z`.
+- 2026-05-07 14:20 UTC ClawHub latest and version-specific package inspect still report `@xquik/tweetclaw@1.6.21` clean for top-level package scan, source-linked verification scan, and version-specific static scan on engine `v2.4.22`; artifact metadata remains sha256 `a7f8aea795f8385eee662dfa066f34e816b0b63db24d0425c1b4c7298959f340`, npm integrity `sha512-vF0mlXom9blcE8EtMwdPc05+NJNl0ocy26D5awLfBaIVfb7Q9vJecM8i/+aNkqVyvALhlqLIo7+X1rqUztr8MA==`, npm shasum `05a5685f9206f7accf1ab3c78955b80b56c654e4`, and source commit `6f28cac7b7c43bb9df826fa2f822300f1597b154`.
+- 2026-05-07 14:20 UTC discoverability check re-read `composio-community/awesome-openclaw-plugins` README, repository contents, open and closed PRs/issues, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. PR 5 remains open, mergeable, non-draft, comment-free, and review-free; no default-branch TweetClaw or Xquik entry exists yet. The repo has no `.github`, CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template, and the README links a missing CC0 `LICENSE` file. Opened PR 7, `Add missing CC0 license file`, after confirming no open or closed license issue or PR existed; the PR body was read back and had real Markdown newlines with no literal backslash-n sequences.
 
 Action:
 
