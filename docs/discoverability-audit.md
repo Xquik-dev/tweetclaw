@@ -46,7 +46,7 @@ Action:
 
 ### composio-community/awesome-openclaw-plugins
 
-Status: TweetClaw PR open; license hygiene PR open.
+Status: TweetClaw PR open; license hygiene PR open; TweetClaw PR body refreshed on 2026-05-07 18:34 UTC.
 
 Repository: https://github.com/composio-community/awesome-openclaw-plugins
 
@@ -56,17 +56,18 @@ License hygiene pull request: https://github.com/composio-community/awesome-open
 
 Findings:
 
-- PR 5, `Add Social Media section with tweetclaw`, is open, mergeable, non-draft, comment-free, and review-free as of 2026-05-07 17:07 UTC.
+- PR 5, `Add Social Media section with tweetclaw`, is open, mergeable, non-draft, comment-free, review-free, and has no status checks as of 2026-05-07 18:34 UTC.
 - The PR body uses real Markdown newlines and does not contain escaped `\n` sequences.
 - No default-branch TweetClaw, Xquik, x-twitter-scraper, or `@xquik/tweetclaw` entry was found.
 - The repository has no `.github` directory, CONTRIBUTING, CODE_OF_CONDUCT, issue templates, or PR template.
 - The README states CC0 1.0 Universal and links `LICENSE`, but the default branch did not have a license file during the 2026-05-07 audit.
 - No open or closed license issue or PR was found before opening the hygiene PR.
-- PR 7, `Add missing CC0 license file`, is open, mergeable, non-draft, comment-free, and review-free as of 2026-05-07 17:07 UTC.
+- PR 7, `Add missing CC0 license file`, is open, mergeable, non-draft, comment-free, review-free, and has no status checks as of 2026-05-07 18:34 UTC.
 
 Action:
 
 - Do not open another TweetClaw PR here.
+- Updated the PR 5 body on 2026-05-07 18:34 UTC to remove stale `@latest` install wording, align with the README diff and current OpenClaw ClawHub-first bare package install flow, add runtime inspect verification, and verify the body has real Markdown newlines with no literal backslash-n sequences.
 - Opened PR 7, `Add missing CC0 license file`, adding the missing CC0 license text referenced by README.
 - PR 7 body was read back after creation and confirmed to use real Markdown newlines with no literal backslash-n sequences.
 - Future runs may monitor PRs 5 and 7, but should avoid repeated status comments unless there is concrete maintainer feedback.
@@ -1619,6 +1620,8 @@ Findings:
 - 2026-05-07 18:06 UTC Context7 refresh workflow for commit `1ac1acc` completed successfully at `2026-05-07T17:49:43Z`, but the public Context7 page still reflects the cached `2026-05-06T11:56:42.164Z` snapshot with stale MPP wording. Continue treating this as Context7 cache lag until the indexed page updates.
 - 2026-05-07 18:06 UTC official OpenClaw manifest docs mention `expectedIntegrity` for exact npm catalog installs, but current published-package guidance already puts ClawHub package specs first with exact npm fallback. No self-referential package metadata change was made because TweetClaw already follows the documented ClawHub-preferred path, and `expectedIntegrity` should wait for source-backed guidance for package-owned metadata.
 - 2026-05-07 18:06 UTC discoverability recheck found `jensrot/awesome-openclaw` PR 3 still open, mergeable, non-draft, comment-free, review-free, and without checks; `mergisi/awesome-openclaw-agents` PR 69 is also still open, mergeable, non-draft, comment-free, review-free, and unchanged since `2026-05-06T03:16:18Z`. No new external PR or issue was opened.
+- 2026-05-07 18:34 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6` with beta dist-tag `2026.5.7-beta.1`; npm `@xquik/tweetclaw` latest remains `1.6.23` with shasum `6fc8b7f2301428afcadda4baeeff50a651dcd1d1`; ClawHub latest and version-specific package inspect still report clean package, source-linked verification, static, LLM, and fallback security scans on engine `v2.4.22`; `xquik@1.6.13` and `tweetclaw@1.1.9` skills remain clean; `npm audit --omit=dev` found 0 vulnerabilities. Direct Xquik billing still describes 31 MPP read-only endpoints with authenticated media downloads, while the public Context7 TweetClaw page remains cached with stale MPP wording despite latest successful workflow runs.
+- 2026-05-07 18:34 UTC discoverability check re-read `composio-community/awesome-openclaw-plugins` README, default tree, open PRs and issues, PR diffs, PR checks, PR body formatting, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. PR 5 and PR 7 remain open, mergeable, non-draft, comment-free, review-free, and check-free. Updated PR 5 body to remove stale `@latest` wording, add runtime inspect verification, and verified no literal backslash-n sequences. No new external PR or issue was opened.
 
 Action:
 
