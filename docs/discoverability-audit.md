@@ -33,6 +33,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Current fix path: remove the redundant default-branch override and exclude `mpp.ts` from Context7 parsing because it is a small implementation helper, not endpoint coverage documentation. Keep MPP setup and limits sourced from `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, the skill, and `src/api-spec.ts`. Final poll still showed Context7 settings from the previous config, so next run should check whether this is cache lag or a web-UI config override.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
 - Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25523606088
+- A docs-only follow-up refresh hit HTTP 429 at https://github.com/Xquik-dev/tweetclaw/actions/runs/25523777952. The workflow now treats Context7 429s as retry-later warnings so rate limits do not leave unrelated repo commits red.
 
 ## Current Compatibility Findings
 
@@ -162,5 +163,6 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - OpenClaw npm latest remains `2026.5.6`, beta remains `2026.5.7`, and GitHub default latest still resolves to `v2026.5.6`; `v2026.5.7` exists but does not require a TweetClaw bump.
 - Context7 benchmark improved to `87` on source SHA `8d343b4`, with 175 snippets, 8 pages, 0 parse failures, and one stale generated `initMpp` snippet still saying 32 endpoints.
 - Context7 fix applied: remove the redundant default-branch override and exclude `mpp.ts` from parsing so the implementation helper stops generating endpoint-coverage prose.
+- Context7 follow-up refresh hit HTTP 429; workflow handling was tightened so future rate limits become warnings.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open.
 - External candidate audited: FranciscoBuiltDat/openclaw-tweet-summarizer-lite; no useful placement PR opened because a TweetClaw companion note would be promotional without maintainer interest.

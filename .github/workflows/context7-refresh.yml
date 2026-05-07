@@ -63,6 +63,9 @@ jobs:
               echo "::error ::Context7 authentication failed."
               exit 1
               ;;
+            429)
+              echo "::warning ::Context7 refresh is rate limited. Retry on the next docs change."
+              ;;
             *)
               echo "::error ::Context7 refresh returned HTTP $status."
               cat "$body_file"
