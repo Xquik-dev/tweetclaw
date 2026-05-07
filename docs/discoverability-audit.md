@@ -53,12 +53,13 @@ License hygiene pull request: https://github.com/composio-community/awesome-open
 
 Findings:
 
-- PR 5, `Add Social Media section with tweetclaw`, is open, mergeable, non-draft, comment-free, and review-free as of 2026-05-07 14:20 UTC.
+- PR 5, `Add Social Media section with tweetclaw`, is open, mergeable, non-draft, comment-free, and review-free as of 2026-05-07 15:22 UTC.
 - The PR body uses real Markdown newlines and does not contain escaped `\n` sequences.
 - No default-branch TweetClaw, Xquik, x-twitter-scraper, or `@xquik/tweetclaw` entry was found.
 - The repository has no `.github` directory, CONTRIBUTING, CODE_OF_CONDUCT, issue templates, or PR template.
 - The README states CC0 1.0 Universal and links `LICENSE`, but the default branch did not have a license file during the 2026-05-07 audit.
 - No open or closed license issue or PR was found before opening the hygiene PR.
+- PR 7, `Add missing CC0 license file`, is open, mergeable, non-draft, comment-free, and review-free as of 2026-05-07 15:22 UTC.
 
 Action:
 
@@ -946,7 +947,7 @@ Action:
 
 ### mergisi/awesome-openclaw-agents
 
-Status: PR open; 2026-05-07 13:39 UTC recheck found it mergeable with no comments, reviews, or checks.
+Status: PR open; 2026-05-07 15:22 UTC recheck found it mergeable with no comments, reviews, or checks.
 
 Repository: https://github.com/mergisi/awesome-openclaw-agents
 
@@ -986,6 +987,7 @@ Findings:
 - 2026-05-07 01:28 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR template, agent-submission, agent-request, and bug-report issue templates, open and closed PR lists, open and closed issue lists, and live PR diff; CODE_OF_CONDUCT remains absent; default-branch clone search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks. No maintainer action is available from the current repo state.
 - 2026-05-07 11:21 UTC recheck read the live README, CONTRIBUTING, LICENSE, PR template, agent-submission, agent-request, and bug-report issue templates, open PR and issue lists, and live PR diff; CODE_OF_CONDUCT remains absent; default-branch clone search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 69 remains open, mergeable, comment-free, review-free, and has no checks. No maintainer action is available from the current repo state.
 - 2026-05-07 13:39 UTC recheck read README, CONTRIBUTING, MIT license, PR template, agent-submission issue template, open PRs and issues, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`; CODE_OF_CONDUCT remains absent. PR 69 remains open, mergeable, non-draft, comment-free, review-free, and has no checks. Fresh GitHub repository searches for OpenClaw plugin and ClawHub candidates surfaced larger generic plugin or skill indexes but no better repo-native TweetClaw contribution path than monitoring PR 69.
+- 2026-05-07 15:22 UTC recheck read README, CONTRIBUTING, MIT license, PR template, agent-submission, agent-request, and bug-report issue templates, open and closed PRs/issues, live PR diff, PR body formatting, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`; CODE_OF_CONDUCT remains absent. PR 69 remains open, mergeable, non-draft, comment-free, review-free, and has no checks. Fresh GitHub repository searches for X/Twitter OpenClaw agent and MCP candidates returned no higher-quality repo-native contribution path than monitoring PR 69.
 
 Action:
 
@@ -1593,6 +1595,10 @@ Findings:
 - 2026-05-07 14:54 UTC published `@xquik/tweetclaw@1.6.22` to npm and ClawHub after adding a 5 second floor for event polling intervals in OpenClaw config schema and runtime normalization. This prevents `0`, negative, or non-finite `pollingInterval` values from creating immediate event-poll loops. `npm run check:all` passed with 161 tests and 100% coverage; `node scripts/clawpack.mjs dry-run` confirmed an npm-pack code-plugin from source commit `fccc29bec4700bc4b1d2b5fd2d951a9302fb8345`.
 - 2026-05-07 14:54 UTC npm `@xquik/tweetclaw` latest is `1.6.22`, published at `2026-05-07T14:52:53.688Z`, with npm shasum `12b11da141827a57478fe60d0a397440c1597d11` and npm integrity `sha512-KgOUoH9fLWgb5OiYsCwb/+eGWBChNc6RqfcI0m9BOUZZrkgiPXdBupdkyHZUYjj6jLhu/dK+19K9CByXlPoL4A==`. ClawHub latest package inspect reports `@xquik/tweetclaw@1.6.22` as an npm-pack code-plugin under owner `kriptoburak`, source-linked to commit `fccc29bec4700bc4b1d2b5fd2d951a9302fb8345`; version-specific static scan is clean on engine `v2.4.22`, while top-level package and verification scans remain pending after explicit rescan request `sd7bfyr8ar39xaqpwfw5xj9v29868w7a`.
 - 2026-05-07 14:46 UTC discoverability check re-read `composio-community/awesome-openclaw-plugins` README, repository contents, open and closed PRs/issues, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. PR 5 remains open, mergeable, non-draft, comment-free, and review-free; PR 7 remains open, mergeable, non-draft, comment-free, and review-free; no default-branch TweetClaw or Xquik entry exists yet. The repo still has no `.github`, CONTRIBUTING, CODE_OF_CONDUCT, issue template, or PR template, and default branch still lacks the README-linked CC0 `LICENSE` file until PR 7 is merged. No new external PR or issue was opened.
+- 2026-05-07 15:22 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6`, GitHub release `v2026.5.6` remains the latest OpenClaw release, and GitHub compare `v2026.5.5...v2026.5.6` still shows the same maintenance-only 17-commit delta with no material TweetClaw package, manifest, skill, ClawPack, scan, or Xquik route impact. Official OpenClaw manifest docs still keep install metadata in `package.json#openclaw.install` and manifest validation in `openclaw.plugin.json`. Direct Xquik billing and API overview Markdown still describe 31 MPP read-only endpoints and authenticated media downloads. The latest Context7 refresh workflow completed successfully for commit `dd5baecb7be0fd90da2f0747e81a3977a4d26192`.
+- 2026-05-07 15:22 UTC ClawHub latest and version-specific package inspect now report `@xquik/tweetclaw@1.6.22` clean for top-level package scan, source-linked verification scan, and version-specific static scan on engine `v2.4.22`. Explicit rescan request `sd7bfyr8ar39xaqpwfw5xj9v29868w7a` completed clean; artifact metadata remains sha256 `b75caf1da55ced30b8a2055d90edee294770d133f545360d764387c9fb5330d7`, npm integrity `sha512-KgOUoH9fLWgb5OiYsCwb/+eGWBChNc6RqfcI0m9BOUZZrkgiPXdBupdkyHZUYjj6jLhu/dK+19K9CByXlPoL4A==`, npm shasum `12b11da141827a57478fe60d0a397440c1597d11`, and source commit `fccc29bec4700bc4b1d2b5fd2d951a9302fb8345`.
+- 2026-05-07 15:22 UTC discoverability check re-read mergisi/awesome-openclaw-agents README, CONTRIBUTING, MIT license, PR template, agent-submission, agent-request, and bug-report issue templates, open and closed PRs/issues, live PR diff, PR body formatting, and default-branch repository search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. CODE_OF_CONDUCT remains absent; PR 69 remains open, mergeable, non-draft, comment-free, review-free, and has no status checks. No new external PR or issue was opened.
+- 2026-05-07 15:22 UTC automation prompt baseline was updated to treat `@xquik/tweetclaw@1.6.22` as clean for static, package, and verification scans after rescan request `sd7bfyr8ar39xaqpwfw5xj9v29868w7a` completed clean.
 
 Action:
 
@@ -1612,8 +1618,8 @@ Action:
 - Published `@xquik/tweetclaw@1.6.21` to npm and ClawHub after normalizing dashboard-only endpoint blocklist paths so trailing slashes cannot bypass exact-match protections.
 - Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd762r105pcgtrj8g01d3fzsn1869qpk` completed clean for top-level package and verification records by 2026-05-07 13:39 UTC.
 - Published `@xquik/tweetclaw@1.6.22` to npm and ClawHub after clamping event polling intervals to at least 5 seconds in schema and runtime config normalization.
-- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7bfyr8ar39xaqpwfw5xj9v29868w7a` remained pending for top-level package and verification records at 2026-05-07 14:54 UTC.
-- Automation prompt updated on 2026-05-07 to treat `@xquik/tweetclaw@1.6.22` as latest and to record the pending ClawHub package and verification rescan request.
+- Version-specific ClawHub inspection reports `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7bfyr8ar39xaqpwfw5xj9v29868w7a` completed clean for top-level package and verification records by 2026-05-07 15:22 UTC.
+- Automation prompt updated on 2026-05-07 to treat `@xquik/tweetclaw@1.6.22` as latest with clean ClawHub static, package, and verification scans.
 - No package release was needed for OpenClaw `2026.5.5`; the earlier GitHub release-page lag is resolved, so keep watching for documented plugin API or package diagnostics changes before raising TweetClaw's build metadata.
 - No package release was needed for the Xquik docs-count drift because TweetClaw already matches the current local guarded-route source.
 - 2026-05-06 19:57 UTC dependency freshness check found major updates available for several dev-only check tools and TypeScript, plus `openclaw` wanted `2026.5.6` in the local install tree. This run did not widen TweetClaw's OpenClaw build metadata or take major tooling upgrades because the release scope was the runtime base-URL hardening and all current gates passed.
