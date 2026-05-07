@@ -260,6 +260,22 @@ describe('register', () => {
     expect(services).toHaveLength(1);
   });
 
+  it('normalizes invalid polling intervals before starting the poller', async () => {
+    expect.assertions(1);
+    let callCount = 0;
+    const mockFetch: typeof fetch = async () => {
+      callCount += 1;
+      return new Response(JSON.stringify({ events: [] }));
+    };
+    const { api, services } = createMockApi({ apiKey: 'xq_test123', pollingInterval: 0 });
+    register(api, mockFetch);
+    const [pollerService] = services;
+    pollerService?.start();
+    await vi.advanceTimersByTimeAsync(1000);
+    pollerService?.stop?.();
+    expect(callCount).toBe(0);
+  });
+
   it('keeps free catalog exploration available with an empty config object', async () => {
     expect.assertions(4);
     const { api, tools, warnings } = createMockApi({});
@@ -450,7 +466,7 @@ describe('register', () => {
     register(api, mockFetch);
     const [pollerService] = services;
     pollerService?.start();
-    await vi.advanceTimersByTimeAsync(1500);
+    await vi.advanceTimersByTimeAsync(5500);
     pollerService?.stop?.();
     expect(infos.some((message) => message.includes('monitor_event'))).toBe(true);
   });
@@ -464,7 +480,7 @@ describe('register', () => {
     register(api, mockFetch);
     const [pollerService] = services;
     pollerService?.start();
-    await vi.advanceTimersByTimeAsync(1500);
+    await vi.advanceTimersByTimeAsync(5500);
     pollerService?.stop?.();
     expect(infos.some((message) => message.includes('unknown'))).toBe(true);
   });

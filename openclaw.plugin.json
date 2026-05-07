@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.6.21",
+  "version": "1.6.22",
   "description": "Post tweets, reply, like, retweet, follow, DM, search, and monitor X/Twitter through structured Xquik endpoints.",
   "activation": {
     "onStartup": false,
@@ -23,7 +23,7 @@
       "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Use for account-backed X automation." },
       "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. Use for accountless access to 31 read-only X-API endpoints." },
       "baseUrl": { "type": "string", "default": "https://xquik.com", "pattern": "^https://", "description": "HTTPS Xquik-compatible API base URL. Only change if using a self-hosted Xquik instance." },
-      "pollingInterval": { "type": "number", "default": 60, "description": "Event polling interval in seconds" },
+      "pollingInterval": { "type": "number", "default": 60, "minimum": 5, "description": "Event polling interval in seconds" },
       "pollingEnabled": { "type": "boolean", "default": true }
     }
   },

@@ -20,6 +20,7 @@ function isPollerEvent(value: unknown): value is PollerEvent {
 }
 
 const DEFAULT_POLLING_INTERVAL_SECONDS = 60;
+const MIN_POLLING_INTERVAL_SECONDS = 5;
 const DEFAULT_BASE_URL = 'https://xquik.com';
 const MISSING_CREDENTIALS_MESSAGE =
   'TweetClaw is installed but not configured. Add an Xquik API key for account-backed workflows or a Tempo signing key for MPP read-only mode in OpenClaw plugin config.';
@@ -42,6 +43,7 @@ const CONFIG_SCHEMA = {
     pollingInterval: {
       default: 60,
       description: 'Event polling interval in seconds',
+      minimum: 5,
       type: 'number',
     },
     tempoSigningKey: {
@@ -182,16 +184,24 @@ function asObject(value: unknown): Readonly<Record<string, unknown>> | undefined
   return Object.fromEntries(Object.entries(value));
 }
 
+function normalizePollingInterval(value: unknown): number | undefined {
+  if (typeof value !== 'number' || !Number.isFinite(value)) {
+    return undefined;
+  }
+  return Math.max(Math.trunc(value), MIN_POLLING_INTERVAL_SECONDS);
+}
+
 function asPluginConfig(value: unknown): PluginConfig {
   const config = asObject(value);
   if (config === undefined) return {};
 
   const { apiKey, baseUrl, pollingEnabled, pollingInterval, tempoSigningKey } = config;
+  const normalizedPollingInterval = normalizePollingInterval(pollingInterval);
   return {
     ...(typeof apiKey === 'string' && apiKey.length > 0 ? { apiKey } : {}),
     ...(typeof baseUrl === 'string' && baseUrl.length > 0 ? { baseUrl } : {}),
     ...(typeof pollingEnabled === 'boolean' ? { pollingEnabled } : {}),
-    ...(typeof pollingInterval === 'number' ? { pollingInterval } : {}),
+    ...(normalizedPollingInterval === undefined ? {} : { pollingInterval: normalizedPollingInterval }),
     ...(typeof tempoSigningKey === 'string' && tempoSigningKey.length > 0 ? { tempoSigningKey } : {}),
   };
 }
