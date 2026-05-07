@@ -17,11 +17,14 @@
   ],
   "excludeFiles": [
     ".DS_Store",
+    "clawpack-release.md",
+    "discoverability-audit.md",
     "package-lock.json",
     "xquik-tweetclaw-1.5.3.tgz",
     "xquik-tweetclaw-1.6.2.tgz"
   ],
   "rules": [
+    "Use docs/context7-agent-guide.md as the concise agent-facing map before falling back to README, skill, or source.",
     "Use tools.alsoAllow with explore and tweetclaw so users keep their normal OpenClaw tool profile.",
     "Do not require credentials at install time; live calls without credentials should return setup guidance.",
     "Treat API keys and signing keys as sensitive config; never print or commit them.",
