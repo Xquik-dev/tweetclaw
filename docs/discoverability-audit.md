@@ -18,7 +18,7 @@ Persistent notes for the recurring OpenClaw compatibility poll. Use this file to
 
 ### jensrot/awesome-openclaw
 
-Status: PR open; 2026-05-06 08:50 UTC recheck found it mergeable with no comments.
+Status: PR open; 2026-05-07 17:43 UTC recheck found it mergeable with no comments.
 
 Repository: https://github.com/jensrot/awesome-openclaw
 
@@ -35,11 +35,14 @@ Findings:
 - `tweetclaw`, `xquik`, and `x-twitter-scraper` were not present in README.
 - Open and closed PRs/issues did not show existing TweetClaw or Xquik submissions.
 - README has a Plugins section with similar OpenClaw plugin entries.
+- CODE_OF_CONDUCT is absent; CONTRIBUTING, CC0-1.0 license, PR template, README validation workflow, and link checker workflow are present.
+- PR 3, `Add TweetClaw plugin`, is open, mergeable, non-draft, comment-free, review-free, and has no status checks as of 2026-05-07 17:43 UTC.
+- The PR body uses real Markdown newlines and does not contain escaped `\n` sequences.
 
 Action:
 
 - Opened PR 3, `Add TweetClaw plugin`, adding one concise TweetClaw entry to the Plugins section.
-- PR is open and mergeable as of 2026-05-06. Future runs should monitor it and avoid duplicate submissions unless the maintainer asks for changes.
+- PR is open and mergeable as of 2026-05-07. Future runs should monitor it and avoid duplicate submissions unless the maintainer asks for changes.
 
 ### composio-community/awesome-openclaw-plugins
 
@@ -1606,6 +1609,11 @@ Findings:
 - 2026-05-07 17:21 UTC npm `@xquik/tweetclaw` latest is `1.6.23`, published at `2026-05-07T17:15:14.070Z`, with npm shasum `6fc8b7f2301428afcadda4baeeff50a651dcd1d1` and npm integrity `sha512-udbvNnrOzQYWKHyhwabUKRZdV8Qo4lgHHc1wBN4g2TrjEhwrc15awYkEUNXGrmbNWhD1l9zTPP3Lv2Ta7pgrNg==`. ClawHub latest package inspect reports `@xquik/tweetclaw@1.6.23` as an npm-pack code-plugin under owner `kriptoburak`, source-linked to commit `ae14deacbe5b7f89f66698d7770dd1a0ff58cb06`; version-specific inspect with `--version 1.6.23` reports clean static scan on engine `v2.4.22`, and explicit rescan request `sd7c7nqby0btrteqh556061qyd869e8r` completed clean for top-level package and source-linked verification scans. A direct package-name lookup shaped as `@xquik/tweetclaw@1.6.23` returned `Package not found`; use `package inspect @xquik/tweetclaw --version 1.6.23 --json` for version-specific checks.
 - 2026-05-07 17:07 UTC discoverability check re-read `composio-community/awesome-openclaw-plugins` README, repository contents, open and closed PRs/issues, PR diffs, PR checks, PR body formatting, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. PR 5 remains open, mergeable, non-draft, comment-free, review-free, and check-free; PR 7 remains open, mergeable, non-draft, comment-free, review-free, and check-free. Default branch still lacks the TweetClaw listing and README-linked CC0 `LICENSE` file until those PRs merge. No new external PR or issue was opened.
 - 2026-05-07 17:21 UTC automation prompt baseline was updated to treat `@xquik/tweetclaw@1.6.23` as latest with clean static, package, and verification scans, to use `package inspect @xquik/tweetclaw --version <version> --json` for version-specific checks, and to keep `clawhubSpec`, `npmSpec`, and `defaultChoice` synchronized for published ClawHub packages.
+- 2026-05-07 17:43 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6`, while npm dist-tags now include `beta: 2026.5.7-beta.1` and the GitHub tag `v2026.5.7-beta.1` exists without a GitHub release page. Compare `v2026.5.6...v2026.5.7-beta.1` shows a broad beta delta that includes managed npm plugin install fixes, ClawHub plugin publish hardening, plugin startup, channel recovery, cron, provider auth, and delivery changes. No TweetClaw package bump is needed until a stable OpenClaw release or documented plugin API, manifest, package, install, scan, or diagnostics change materially affects TweetClaw.
+- 2026-05-07 17:43 UTC live registry checks confirmed npm `@xquik/tweetclaw` latest remains `1.6.23` with shasum `6fc8b7f2301428afcadda4baeeff50a651dcd1d1`; ClawHub latest and version-specific inspect report `1.6.23` clean for package, source-linked verification, static, LLM, and fallback security scans on engine `v2.4.22`; `xquik@1.6.13` and `tweetclaw@1.1.9` skills remain clean. `npm audit --omit=dev` found 0 vulnerabilities. Dependency freshness still shows one patch update for `@types/node`, major dev-tool updates, and optional MPP peer versions; no release-critical dependency drift was found.
+- 2026-05-07 17:43 UTC direct Xquik API overview and billing Markdown still describe 118 documented operations, 31 MPP read-only endpoints, and authenticated media downloads outside MPP. The public Context7 page for `/xquik-dev/tweetclaw` remains cached from `2026-05-06T11:56:42.164Z` and still contains stale MPP wording that mentions 32 endpoints and media download eligibility. The latest Context7 refresh workflow for TweetClaw completed successfully for commit `7774b20` at `2026-05-07T17:23:57Z`, so this is Context7 cache lag rather than TweetClaw package drift.
+- 2026-05-07 17:43 UTC discoverability check re-read `jensrot/awesome-openclaw` README, CONTRIBUTING, CC0 license, PR template, validation workflow, link-checker workflow, open and closed PRs/issues, PR 3 diff, PR 3 body formatting, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. CODE_OF_CONDUCT remains absent; PR 3 remains open, mergeable, non-draft, comment-free, review-free, and has no status checks. GitHub repository and PR searches returned no higher-quality repo-native contribution path than monitoring open PRs and avoiding duplicate submissions. Mergisi PR 69 remains open, mergeable, non-draft, comment-free, review-free, and unchanged since 2026-05-06T03:16:18Z.
+- 2026-05-07 17:43 UTC automation prompt was not changed: the existing OpenClaw release note already requires a documented stable plugin API, manifest, skill, scan, package, diagnostics, or compatibility change before changing TweetClaw metadata, which covers the newly observed beta dist-tag and tag state.
 
 Action:
 
