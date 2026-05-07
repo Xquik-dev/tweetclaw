@@ -77,6 +77,14 @@ const PROHIBITED_PATH_PATTERNS: ReadonlyArray<readonly [string, RegExp]> = [
 
 const SUPPORT_TICKET_METHODS: ReadonlySet<string> = new Set(['GET', 'PATCH', 'POST']);
 
+function normalizeProhibitedPath(path: string): string {
+  let end = path.length;
+  while (end > 1 && path.charAt(end - 1) === '/') {
+    end -= 1;
+  }
+  return end === path.length ? path : path.slice(0, end);
+}
+
 function isSupportTicketPath(method: string, path: string): boolean {
   return SUPPORT_TICKET_METHODS.has(method)
     && (path === SUPPORT_TICKETS_PREFIX || path.startsWith(`${SUPPORT_TICKETS_PREFIX}/`));
@@ -84,13 +92,14 @@ function isSupportTicketPath(method: string, path: string): boolean {
 
 function isProhibitedRequest(method: string, path: string): boolean {
   const upperMethod = method.toUpperCase();
+  const normalizedPath = normalizeProhibitedPath(path);
   const matchesStaticPath = PROHIBITED_PATHS.some(
-    ([blockedMethod, blockedPath]) => upperMethod === blockedMethod && path === blockedPath,
+    ([blockedMethod, blockedPath]) => upperMethod === blockedMethod && normalizedPath === blockedPath,
   );
   const matchesPattern = PROHIBITED_PATH_PATTERNS.some(
-    ([blockedMethod, pattern]) => upperMethod === blockedMethod && pattern.test(path),
+    ([blockedMethod, pattern]) => upperMethod === blockedMethod && pattern.test(normalizedPath),
   );
-  return matchesStaticPath || matchesPattern || isSupportTicketPath(upperMethod, path);
+  return matchesStaticPath || matchesPattern || isSupportTicketPath(upperMethod, normalizedPath);
 }
 
 function validateRequestPath(method: string, path: string): void {

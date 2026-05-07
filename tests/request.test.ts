@@ -240,10 +240,22 @@ describe('createProxiedRequest', () => {
     );
   });
 
+  it('blocks API key reads with trailing slash', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(request('/api/v1/api-keys/')).rejects.toThrow('Agent-prohibited endpoint');
+  });
+
   it('blocks checkout creation', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(request('/api/v1/subscribe', { method: 'POST' })).rejects.toThrow('Agent-prohibited endpoint');
+  });
+
+  it('blocks checkout creation with trailing slash', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(request('/api/v1/subscribe/', { method: 'POST' })).rejects.toThrow('Agent-prohibited endpoint');
   });
 
   it('blocks credit top-up status reads', async () => {
@@ -251,6 +263,14 @@ describe('createProxiedRequest', () => {
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(
       request('/api/v1/credits/topup/status', { query: { session_id: 'cs_test' } }),
+    ).rejects.toThrow('Agent-prohibited endpoint');
+  });
+
+  it('blocks credit top-up status reads with trailing slash', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(
+      request('/api/v1/credits/topup/status/', { query: { session_id: 'cs_test' } }),
     ).rejects.toThrow('Agent-prohibited endpoint');
   });
 
@@ -270,6 +290,11 @@ describe('isProhibitedRequest', () => {
   it('blocks POST /api/v1/x/accounts/ (trailing slash)', () => {
     expect.assertions(1);
     expect(isProhibitedRequest('POST', '/api/v1/x/accounts/')).toBe(true);
+  });
+
+  it('blocks dashboard-only exact paths with repeated trailing slashes', () => {
+    expect.assertions(1);
+    expect(isProhibitedRequest('POST', '/api/v1/credits/quick-topup//')).toBe(true);
   });
 
   it('blocks POST /api/v1/x/accounts/456/reauth', () => {
