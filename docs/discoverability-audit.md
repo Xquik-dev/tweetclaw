@@ -28,11 +28,11 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-07 21:34 UTC: score `47.2`, 175 snippets, 8 pages, 0 parse failures, last update `2026-05-07T21:34:36.230Z`, source SHA `c14e6200584490d78e478ac170094d5562563d74`.
+- Current observed benchmark on 2026-05-07 21:41 UTC: score `87`, 175 snippets, 8 pages, 0 parse failures, last update `2026-05-07T21:41:53.677Z`, source SHA `8d343b4bd411d5c7a7db3f51ec80f4051b3ae26a`.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. Context API retrieval still returned one stale generated `llms.txt` `initMpp` snippet describing 32 read-only endpoints, even though current repo docs and Context7 rules say 31.
-- Current fix path: remove the redundant default-branch override and exclude `mpp.ts` from Context7 parsing because it is a small implementation helper, not endpoint coverage documentation. Keep MPP setup and limits sourced from `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, the skill, and `src/api-spec.ts`.
+- Current fix path: remove the redundant default-branch override and exclude `mpp.ts` from Context7 parsing because it is a small implementation helper, not endpoint coverage documentation. Keep MPP setup and limits sourced from `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, the skill, and `src/api-spec.ts`. Final poll still showed Context7 settings from the previous config, so next run should check whether this is cache lag or a web-UI config override.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
-- Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25523159921
+- Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25523606088
 
 ## Current Compatibility Findings
 
@@ -160,7 +160,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Local repo clean at `c14e620` before edits; no open TweetClaw repo issues or PRs.
 - npm `@xquik/tweetclaw@1.6.25`, ClawHub latest, package scan, verification scan, and version-specific static scan still matched the clean 1.6.25 baseline.
 - OpenClaw npm latest remains `2026.5.6`, beta remains `2026.5.7`, and GitHub default latest still resolves to `v2026.5.6`; `v2026.5.7` exists but does not require a TweetClaw bump.
-- Context7 benchmark on source SHA `c14e620` was `47.2`, with 175 snippets, 8 pages, 0 parse failures, and one stale generated `initMpp` snippet still saying 32 endpoints.
+- Context7 benchmark improved to `87` on source SHA `8d343b4`, with 175 snippets, 8 pages, 0 parse failures, and one stale generated `initMpp` snippet still saying 32 endpoints.
 - Context7 fix applied: remove the redundant default-branch override and exclude `mpp.ts` from parsing so the implementation helper stops generating endpoint-coverage prose.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open.
 - External candidate audited: FranciscoBuiltDat/openclaw-tweet-summarizer-lite; no useful placement PR opened because a TweetClaw companion note would be promotional without maintainer interest.
