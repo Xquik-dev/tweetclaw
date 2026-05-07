@@ -1,0 +1,127 @@
+# OpenClaw Setup Guide
+
+Use this guide when installing, configuring, or verifying TweetClaw in OpenClaw. It is optimized for agent retrieval and keeps the setup path short, current, and public-safe.
+
+## What TweetClaw Adds
+
+TweetClaw is the `@xquik/tweetclaw` OpenClaw plugin for Xquik X/Twitter workflows. It registers 2 structured tools:
+
+- `explore`: free local catalog search with no network request.
+- `tweetclaw`: live endpoint invoker for catalog-listed Xquik API paths.
+
+The plugin can install before credentials exist. Without credentials, `explore` remains usable and live calls return setup guidance.
+
+## Install
+
+Install the published package:
+
+```bash
+openclaw plugins install @xquik/tweetclaw
+```
+
+TweetClaw publishes ClawHub-first install metadata with an exact npm fallback. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
+
+## Verify Runtime Loading
+
+After install or update, inspect the runtime and bundled skill:
+
+```bash
+openclaw plugins inspect tweetclaw --runtime
+openclaw skills info tweetclaw
+```
+
+Expected result:
+
+- The `tweetclaw` plugin loads.
+- The `explore` tool is available.
+- The optional `tweetclaw` tool is available when the OpenClaw tool profile allows it.
+- The TweetClaw skill is visible to the agent.
+
+## Enable The Optional Tool
+
+Many OpenClaw profiles keep a coding-focused tool set by default. If the skill is visible but the agent cannot call TweetClaw tools, add the 2 tool names to `tools.alsoAllow`:
+
+```bash
+openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
+```
+
+Use `tools.alsoAllow` instead of replacing the whole tool profile unless strict allowlist mode is intentional.
+
+## Credential Modes
+
+TweetClaw has 3 modes:
+
+| Mode | Required config | Use it for |
+|------|-----------------|------------|
+| Explore-only | none | Install checks, docs, and endpoint discovery |
+| API key | `plugins.entries.tweetclaw.config.apiKey` | Account-backed reads, writes, extraction, monitors, webhooks, media, commands, and account status |
+| MPP | `plugins.entries.tweetclaw.config.tempoSigningKey` | 31 read-only pay-per-use endpoints with no Xquik account |
+
+Store credentials in OpenClaw plugin config. Never paste API keys, signing keys, passwords, cookies, account IDs, or payment material into chat, docs, issues, logs, screenshots, or tool arguments.
+
+API key mode:
+
+```bash
+openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
+```
+
+MPP mode:
+
+```bash
+npm i mppx viem
+openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
+```
+
+## Base URL
+
+The default API base URL is `https://xquik.com`. Only change it for a trusted Xquik-compatible HTTPS API:
+
+```bash
+openclaw config set plugins.entries.tweetclaw.config.baseUrl "https://xquik.com"
+```
+
+TweetClaw rejects non-HTTPS URLs and URLs with embedded credentials.
+
+## Event Polling
+
+Polling is optional runtime behavior for monitor events the user already created. It does not create monitors, scan targets, post content, or change account state.
+
+Disable polling in isolated install tests unless notification delivery is under test:
+
+```bash
+openclaw config set plugins.entries.tweetclaw.config.pollingEnabled false
+```
+
+The default interval is 60 seconds. The config schema and runtime normalize the interval to a minimum of 5 seconds:
+
+```bash
+openclaw config set plugins.entries.tweetclaw.config.pollingInterval 60
+```
+
+## First Checks
+
+Use `explore` before live calls:
+
+```json
+{ "query": "tweet search", "limit": 5 }
+```
+
+For MPP mode, filter for eligible endpoints:
+
+```json
+{ "mpp": true, "method": "GET", "limit": 25 }
+```
+
+For live calls, pass only catalog-listed `/api/v1/...` paths. Put query parameters in the `query` object, not inside the path string.
+
+## Troubleshooting
+
+If install fails, verify OpenClaw is at least `2026.5.4` and install the published package.
+
+If tools are not visible, inspect runtime loading and set `tools.alsoAllow` for `explore` and `tweetclaw`.
+
+If live calls return setup guidance, configure either `apiKey` or `tempoSigningKey`.
+
+If an MPP call is rejected, use `explore` with `mpp: true`. MPP covers 31 read-only endpoints. Media download is not MPP-eligible because it creates account-tied gallery links and requires authenticated access.
+
+If a path is rejected, remove embedded query strings and fragments from the path, then provide query fields through the structured `query` object.

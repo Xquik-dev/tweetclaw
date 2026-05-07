@@ -11,6 +11,7 @@ Persistent notes for the recurring OpenClaw compatibility poll. Use this file to
 - If a thin listing is not a good fit, look for a richer repo-native contribution instead of stopping: improve an existing related entry, update stale safety/install/version metadata, fix broken links, add a useful safety note, contribute to the upstream data source, build a tested runnable starter, or open a concise maintainer-invited issue when a PR is not appropriate.
 - For generated catalogs, identify the upstream source and contribution path before marking the repo done.
 - For use-case/example repos, prepare real tested artifacts with prompts, smoke test, KPI, sample output, security notes, and rollback before opening a PR.
+- Treat GitHub repository marketability, discoverability, SEO, trust, and quality as a primary recurring objective. Prefer useful public-surface improvements and maintainer-appropriate external placement over promotional copy.
 - Keep external PRs narrow, factual, and in the repository's established style.
 - Do not submit promotional copy or broad cross-posting PRs.
 
@@ -847,6 +848,7 @@ Findings:
 - Issue 2, `[SKILL] x-twitter-scraper`, is already open from `kriptoburak`.
 - Open and closed PRs/issues did not show an existing `tweetclaw` submission.
 - The repo appears generated or bulk-curated, so a direct PR that edits all indexes would risk fighting the generator.
+- 2026-05-07 19:45 UTC recheck read README, MIT license, submit-skill issue template, open and closed PRs/issues, PR 4, issue 38, and a default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`; CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, and PR template remain absent. Issue 38 remains open with no comments, and PR 4 remains open but conflicting, so a duplicate TweetClaw issue or PR would not help maintainers.
 
 Action:
 
@@ -1021,6 +1023,7 @@ Findings:
 - Open and closed issues did not show a separate TweetClaw submission path.
 - Opening another Xquik or TweetClaw PR now would risk duplicating an already-open Xquik submission in the same category.
 - 2026-05-06 13:25 UTC recheck read the live README and confirmed CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, PR template, and issue templates remain absent; default-branch search still found no `tweetclaw`, `xquik`, `x-twitter-scraper`, or `@xquik/tweetclaw`; PR 26 remains open, mergeable, comment-free, review-free, and has no checks.
+- 2026-05-07 19:45 UTC recheck read the live README, open and closed PRs/issues, PR 26 body/comments/status, and repository metadata; CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, PR template, and issue templates remain absent. PR 26 remains open, mergeable, comment-free, review-free, and the only Xquik-family submission, so no duplicate TweetClaw PR or issue was opened.
 
 Action:
 
@@ -1514,7 +1517,7 @@ Action:
 
 ### 2026-05-07 Context7 Benchmark Management
 
-Status: claimed; benchmark improvement active.
+Status: claimed; benchmark improvement active after post-claim parser change.
 
 Sources:
 
@@ -1525,7 +1528,9 @@ Sources:
 Findings:
 
 - Context7 now reports TweetClaw as verified and managed from `context7.json`.
-- The live benchmark tab still reflects the cached run from `2026-05-06T11:56:42.164Z`: score `83.8`, `150` snippets, `6` pages, and `0` parse failures.
+- The 2026-05-07 19:21 UTC benchmark check still reflected the cached run from `2026-05-06T11:56:42.164Z`: score `83.8`, `150` snippets, `6` pages, and `0` parse failures.
+- The 2026-05-07 19:45 UTC benchmark check reflects the new claimed `context7.json` parse from commit `943c9fc5d54e819a5cb507d4e1fc46e09a9877eb`: score `47`, `18` snippets, `3` pages, `0` parse failures, and `lastRunDate` `2026-05-07T19:34:02.299Z`.
+- The public `llms.txt` summary still carries a stale analysis timestamp from `2026-05-06T11:56:41.057Z` and stale MPP wording, so treat it as cache lag until Context7 regenerates summaries from the latest rules and docs.
 - Static HTML exposes benchmark metadata but not category-level benchmark findings, so the current blocker is lack of visible per-category detail from safe static inspection.
 - Official Context7 owner docs say `folders` limits parsed paths while root-level Markdown is always included, and `excludeFiles` takes filenames rather than full paths.
 - `docs/discoverability-audit.md` and `docs/clawpack-release.md` are operational logs and release checklists, not concise user retrieval docs. Including them likely dilutes benchmark retrieval quality.
@@ -1535,6 +1540,9 @@ Action:
 - Added `docs/context7-agent-guide.md` as a concise, public-safe agent map for install, credential modes, `tools.alsoAllow`, safety boundaries, MPP read-only behavior, endpoint coverage, costs, event polling, and troubleshooting.
 - Excluded `discoverability-audit.md` and `clawpack-release.md` from Context7 parsing by filename while keeping README, skill, source, and the new guide available.
 - Added a Context7 rule telling agents to use `docs/context7-agent-guide.md` first before falling back to README, skill, or source.
+- Added `docs/openclaw-setup.md` and `docs/agent-workflows.md` to expand retrieval with focused install, verification, approval, MPP, monitor, webhook, media, and troubleshooting guidance without re-including operational logs.
+- Updated `context7.json` rules and the Context7 agent guide source map so the new focused docs become preferred retrieval targets.
+- Added a README Context7 badge plus setup and workflow guide links to improve GitHub discoverability and route users to current agent-facing docs.
 - No package version bump was needed because this changes repository docs and Context7 parser guidance only.
 
 ### 2026-05-06 OpenClaw Docs Research
@@ -1657,6 +1665,11 @@ Findings:
 - 2026-05-07 19:21 UTC Context7 benchmark check found TweetClaw claimed, verified, and using `context7json`, but still on cached run `2026-05-06T11:56:42.164Z` with score `83.8`, `150` snippets, `6` pages, and `0` parse failures. Static benchmark HTML did not expose category-level findings, so this run improved parser inputs by adding a concise Context7 agent guide and excluding operational logs from Context7 parsing.
 - 2026-05-07 19:21 UTC public hygiene checks found no tracked or non-ignored untracked secret-like filenames, and diff-only confidential-term scanning found no newly added internal infrastructure wording.
 - 2026-05-07 19:21 UTC discoverability check re-read `jensrot/awesome-openclaw` README, CONTRIBUTING, CC0 license, PR template, validation workflow, link-checker workflow, open and closed PRs/issues, PR 3 body formatting, and default-branch clone search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`; CODE_OF_CONDUCT remains absent. PR 3 remains open, mergeable, non-draft, comment-free, review-free, and check-free. No new external PR or issue was opened.
+- 2026-05-07 19:45 UTC heartbeat research confirmed npm `openclaw` latest remains `2026.5.6` with beta dist-tag `2026.5.7-beta.1`, GitHub releases still list `v2026.5.6` as latest stable, and npm `@xquik/tweetclaw` latest remains `1.6.23` with shasum `6fc8b7f2301428afcadda4baeeff50a651dcd1d1`. ClawHub latest and version-specific package inspect still report `1.6.23` clean for package, source-linked verification, static, LLM, and fallback security scans on engine `v2.4.22`; `xquik@1.6.13` and `tweetclaw@1.1.9` skills remain clean.
+- 2026-05-07 19:45 UTC Context7 benchmark check found TweetClaw claimed, verified, and using `context7json` with score `47`, `18` snippets, `3` pages, `0` parse failures, and last run `2026-05-07T19:34:02.299Z`. Static benchmark HTML still did not expose category-level findings, and public `llms.txt` still had a stale analysis timestamp and stale MPP wording, so this run added focused setup and workflow docs plus parser rules instead of widening ingestion into operational logs.
+- 2026-05-07 19:45 UTC public hygiene checks found no tracked or non-ignored untracked secret-like filenames. Diff-only confidential-term scanning found no newly added internal infrastructure wording.
+- 2026-05-07 19:45 UTC discoverability check audited `LeoYeAI/openclaw-master-skills` and `clawdbot-ai/awesome-openclaw-skills-zh`, including README, available contribution files, license state, open and closed PRs/issues, relevant PR/issue bodies, and searches for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`. Existing issue 38, PR 4, and PR 26 make a duplicate TweetClaw/Xquik submission inappropriate, so no external PR or issue was opened.
+- 2026-05-07 19:45 UTC automation prompt state was reviewed after the user's marketability request. The active prompt already treats GitHub repository marketability, discoverability, SEO, trust, and external placement as primary recurring objectives while preserving the duplicate-safe, maintainer-appropriate contribution rules.
 
 Action:
 

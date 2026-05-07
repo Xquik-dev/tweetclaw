@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.23",
+  "version": "1.6.24",
   "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
   "license": "MIT",
   "type": "module",
@@ -32,8 +32,8 @@
     },
     "install": {
       "defaultChoice": "clawhub",
-      "clawhubSpec": "clawhub:@xquik/tweetclaw@1.6.23",
-      "npmSpec": "@xquik/tweetclaw@1.6.23",
+      "clawhubSpec": "clawhub:@xquik/tweetclaw@1.6.24",
+      "npmSpec": "@xquik/tweetclaw@1.6.24",
       "minHostVersion": ">=2026.5.4"
     }
   },

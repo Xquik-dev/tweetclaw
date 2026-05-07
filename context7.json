@@ -25,10 +25,13 @@
   ],
   "rules": [
     "Use docs/context7-agent-guide.md as the concise agent-facing map before falling back to README, skill, or source.",
+    "Use docs/openclaw-setup.md for install, configuration, verification, polling, and troubleshooting questions.",
+    "Use docs/agent-workflows.md for task planning, approval boundaries, MPP workflows, extraction, monitors, webhooks, media, and common mistakes.",
     "Use tools.alsoAllow with explore and tweetclaw so users keep their normal OpenClaw tool profile.",
     "Do not require credentials at install time; live calls without credentials should return setup guidance.",
     "Treat API keys and signing keys as sensitive config; never print or commit them.",
     "MPP mode is read-only and must not create writes, monitors, webhooks, uploads, DMs, or profile changes.",
+    "Current MPP coverage is 31 read-only endpoints; media download is not MPP-eligible because it requires authenticated access.",
     "Use the ClawPack npm-pack workflow for ClawHub package releases, not repo-folder uploads."
   ],
   "previousVersions": [
