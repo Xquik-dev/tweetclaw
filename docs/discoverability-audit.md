@@ -21,14 +21,14 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - ClawHub package: latest `1.6.25`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
 - ClawHub release: `rd7836qrymyw45xjzba2t1jzqh869ceh`, source commit `d276e7301571a866c8b837651ec6c3956f86bc75`, sha256 `0462d82fa1b6b350381a4bf7c7d96fc034d6701cb273248cb3a0fe71e5b62bfd`.
 - GitHub repo metadata as of 2026-05-07 21:01 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, X/Twitter, MCP, pay-per-use, skills, automation, and TweetClaw.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-07 21:01 UTC.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-07 21:59 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-07 21:46 UTC: score `85.2`, 175 snippets, 8 pages, 0 parse failures, last update `2026-05-07T21:41:53.677Z`, source SHA `8d343b4bd411d5c7a7db3f51ec80f4051b3ae26a`.
+- Current observed benchmark on 2026-05-07 21:59 UTC: score `85.2`, 175 snippets, 8 pages, 0 parse failures, last update `2026-05-07T21:41:53.677Z`, source SHA `8d343b4bd411d5c7a7db3f51ec80f4051b3ae26a`.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. Context API retrieval still returned one stale generated `llms.txt` `initMpp` snippet describing 32 read-only endpoints, even though current repo docs and Context7 rules say 31.
 - Current fix path: remove the redundant default-branch override and exclude `mpp.ts` from Context7 parsing because it is a small implementation helper, not endpoint coverage documentation. Keep MPP setup and limits sourced from `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, the skill, and `src/api-spec.ts`. Final poll still showed Context7 settings from the previous config, so next run should check whether this is cache lag or a web-UI config override.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
@@ -37,8 +37,8 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Current Compatibility Findings
 
-- OpenClaw npm latest is `2026.5.6`; beta is `2026.5.7` as of 2026-05-07 21:01 UTC.
-- OpenClaw `v2026.5.7` release page exists and was published at `2026-05-07T20:57:43Z`, but `gh release view --repo openclaw/openclaw` still returns `v2026.5.6` as the default latest release. Compare `v2026.5.6...v2026.5.7` showed plugin install, release-publish, channel, cron, and provider maintenance with no required TweetClaw manifest or route change.
+- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-07 21:59 UTC.
+- OpenClaw `v2026.5.7` is now the default latest GitHub release, published at `2026-05-07T20:57:43Z`. Compare `v2026.5.6...v2026.5.7` showed 76 commits focused on release hardening, managed plugin dependency handling, channel commands, cron/task repair, and package metadata, with no required TweetClaw manifest, schema, or route change.
 - Official OpenClaw manifest docs still place native plugin discovery metadata in `openclaw.plugin.json` and install-on-demand metadata in `package.json#openclaw.install`.
 - OpenClaw plugin build docs still support published package installs and ClawHub-first bare package resolution.
 - GitHub docs continue to frame README files and topics as primary repo discovery and evaluation surfaces.
@@ -51,8 +51,8 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | Target | Status | Link | Next action |
 | --- | --- | --- | --- |
 | jensrot/awesome-openclaw | TweetClaw PR open, mergeable, no comments as of 2026-05-07 19:21 UTC | https://github.com/jensrot/awesome-openclaw/pull/3 | Monitor only |
-| composio-community/awesome-openclaw-plugins | TweetClaw PR open, mergeable, no comments as of 2026-05-07 20:37 UTC | https://github.com/composio-community/awesome-openclaw-plugins/pull/5 | Monitor only |
-| composio-community/awesome-openclaw-plugins | CC0 license hygiene PR open, mergeable, no comments as of 2026-05-07 20:37 UTC | https://github.com/composio-community/awesome-openclaw-plugins/pull/7 | Monitor only |
+| composio-community/awesome-openclaw-plugins | TweetClaw PR open, mergeable, no comments as of 2026-05-07 21:59 UTC | https://github.com/composio-community/awesome-openclaw-plugins/pull/5 | Monitor only |
+| composio-community/awesome-openclaw-plugins | CC0 license hygiene PR open, mergeable, no comments as of 2026-05-07 21:59 UTC | https://github.com/composio-community/awesome-openclaw-plugins/pull/7 | Monitor only |
 | alvinreal/awesome-openclaw | TweetClaw PR already open | https://github.com/alvinreal/awesome-openclaw/pull/25 | Monitor only |
 | alvinreal/awesome-openclaw-tips | Optional plugin tool allowlist tip PR open | https://github.com/alvinreal/awesome-openclaw-tips/pull/2 | Monitor only |
 | TravisLeeeeee/awesome-openclaw-personas | X/Twitter Growth persona TweetClaw guidance PR open | https://github.com/TravisLeeeeee/awesome-openclaw-personas/pull/2 | Monitor only |
@@ -72,7 +72,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | sean1888/clawmart | Featured skill PR open | https://github.com/sean1888/clawmart/pull/1 | Monitor only |
 | phoenix-assistant/openclaw-skill-marketplace | TweetClaw manifest example PR open | https://github.com/phoenix-assistant/openclaw-skill-marketplace/pull/1 | Monitor only |
 | TheClawFirm/clawfactory | Submission-path issue open | https://github.com/TheClawFirm/clawfactory/issues/1 | Wait for maintainer path |
-| mergisi/awesome-openclaw-agents | X/Twitter Ops Desk agent PR open, clean, no comments/reviews/checks as of 2026-05-07 20:37 UTC | https://github.com/mergisi/awesome-openclaw-agents/pull/69 | Monitor only |
+| mergisi/awesome-openclaw-agents | X/Twitter Ops Desk agent PR open, clean, no comments/reviews/checks as of 2026-05-07 21:59 UTC | https://github.com/mergisi/awesome-openclaw-agents/pull/69 | Monitor only |
 | clawdbot-ai/awesome-openclaw-skills-zh | Xquik PR open, mergeable, no comments as of 2026-05-07 19:45 UTC | https://github.com/clawdbot-ai/awesome-openclaw-skills-zh/pull/26 | Monitor, no duplicate TweetClaw PR while open |
 | nowork-studio/openclaw-social-media-skills | TweetClaw checks PR open | https://github.com/nowork-studio/openclaw-social-media-skills/pull/1 | Monitor only |
 | ununununium/openclaw-social-media-skills | TweetClaw checks PR open | https://github.com/ununununium/openclaw-social-media-skills/pull/1 | Monitor only |
@@ -138,6 +138,8 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - hundevmode/twitter-x-apify-actors-openclaw-skill: Apify-specific; revisit only if maintainer invites non-Apify companion workflows.
 - Lobstash/twitter-plugin: read README, contribution text, license status, templates, issues, and PRs on 2026-05-07. No license file despite README MIT note, no contribution templates, zero issues/PRs, tracked dependencies, and no TweetClaw/Xquik references; no placement PR opened.
 - FranciscoBuiltDat/openclaw-tweet-summarizer-lite: read README, SECURITY.md, SKILL.md, package metadata, scripts, issue list, PR list, and repository metadata on 2026-05-07. No license file despite README badge, no contribution templates, zero issues/PRs, and the workflow depends on user session cookies. No TweetClaw placement opened because a companion listing would be promotional without maintainer interest; future useful path is a maintainer-requested credential-boundary or alternative-integration note.
+- seantunley/openclaw-social-pipeline: read README, package metadata, docs, issue list, PR list, and repository metadata on 2026-05-07. No license file despite README and package MIT metadata, no contribution templates, one prior merged install-doc PR, and no TweetClaw/Xquik references. No placement PR opened because the repo is a full publishing pipeline; useful future path is license hygiene after maintainer confirms copyright text or a maintainer-requested companion integration note.
+- Lala0Land/openclaw-social-skills: read README, issue list, closed PR 1, repository metadata, and searched for TweetClaw/Xquik terms on 2026-05-07. The repo is directly relevant but has no license file despite a README license link, no templates, and a closed prior listing PR; no TweetClaw PR opened because changing a top-10 ranked list would be low-context without maintainer interest.
 
 ## Package And Release Notes
 
@@ -156,13 +158,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-07 21:35 UTC:
+2026-05-07 21:59 UTC:
 
-- Local repo clean at `c14e620` before edits; no open TweetClaw repo issues or PRs.
+- Local repo clean at `0719c16` before edits; no open TweetClaw repo issues or PRs.
 - npm `@xquik/tweetclaw@1.6.25`, ClawHub latest, package scan, verification scan, and version-specific static scan still matched the clean 1.6.25 baseline.
-- OpenClaw npm latest remains `2026.5.6`, beta remains `2026.5.7`, and GitHub default latest still resolves to `v2026.5.6`; `v2026.5.7` exists but does not require a TweetClaw bump.
+- OpenClaw npm latest and beta are now `2026.5.7`; GitHub default latest now resolves to `v2026.5.7`, and the compare does not require a TweetClaw bump.
 - Context7 benchmark improved to `85.2` on source SHA `8d343b4`, with 175 snippets, 8 pages, 0 parse failures, and one stale generated `initMpp` snippet still saying 32 endpoints.
-- Context7 fix applied: remove the redundant default-branch override and exclude `mpp.ts` from parsing so the implementation helper stops generating endpoint-coverage prose.
-- Context7 follow-up refresh hit HTTP 429; workflow handling was tightened so future rate limits become warnings.
+- Context7 still appears to serve the previous parsing config; next run should check cache lag or whether the web UI config overrides `context7.json`.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open.
-- External candidate audited: FranciscoBuiltDat/openclaw-tweet-summarizer-lite; no useful placement PR opened because a TweetClaw companion note would be promotional without maintainer interest.
+- External candidates audited: seantunley/openclaw-social-pipeline and Lala0Land/openclaw-social-skills; no PR opened because both paths need maintainer confirmation or would be low-context.
