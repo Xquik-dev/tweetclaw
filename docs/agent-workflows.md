@@ -112,6 +112,8 @@ Then call only an endpoint that returned an `mpp` field:
 
 If MPP details conflict across public surfaces, trust `src/api-spec.ts`, `docs/context7-agent-guide.md`, this guide, and live Xquik billing docs. Media download remains outside MPP unless Xquik publishes a source-backed API-spec change.
 
+The MPP user media endpoint is a media-tweet timeline read. It is not media file download or gallery creation.
+
 ## Extraction And Draw Workflow
 
 Extraction jobs and giveaway draws can process many results. Ask for:
@@ -136,7 +138,7 @@ Polling only surfaces events for monitors the user created. It does not create m
 
 ## Media Workflow
 
-Media upload is a write-like action and requires approval. Media download requires authenticated access and is not MPP-eligible.
+Media upload is a write-like action and requires approval. Media download requires authenticated access and is not MPP-eligible. MPP user media reads return timeline posts that contain media, not media files.
 
 For media upload, verify the media URL is user-provided and intended for the post. For media download, summarize the gallery link and avoid exposing unrelated private data.
 

@@ -99,7 +99,9 @@ openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNI
 
 **Security**: Keep the signing key out of chats, docs, and shell history. Prefer the environment-variable command above so OpenClaw writes the secret to its local config without exposing it in the prompt.
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
+MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media timeline reads ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
+
+Media downloads and gallery creation are not MPP-eligible. The user media endpoint returns a user's media-tweet timeline; it does not download files or create gallery links.
 
 ### Enable the optional action tool
 
@@ -198,11 +200,13 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 | **Composition** | Compose, drafts, writing styles, radar | Free / Mixed |
 | **Credits** | Check balance | Free |
 | **Extraction** | 23 extraction tools, giveaway draws, exports | 1-5 credits/result |
-| **Media** | Upload media via URL, download tweet media, get gallery links | 1-2 credits |
+| **Media** | Upload media via URL, authenticated media download, gallery links | 1-2 credits |
 | **Monitoring** | Create monitors, view events, manage webhooks | Free |
 | **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-5 credits |
 | **X Accounts** | List connected account handles for explicit user-selected actions | Free |
 | **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | 10 credits |
+
+Media download requires authenticated access and is not MPP-eligible. MPP only includes media-tweet timeline reads, not file download or gallery creation.
 
 ## Links
 

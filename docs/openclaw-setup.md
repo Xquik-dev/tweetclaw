@@ -122,6 +122,6 @@ If tools are not visible, inspect runtime loading and set `tools.alsoAllow` for 
 
 If live calls return setup guidance, configure either `apiKey` or `tempoSigningKey`.
 
-If an MPP call is rejected, use `explore` with `mpp: true`. MPP covers 31 read-only endpoints. Media download is not MPP-eligible because it creates account-tied gallery links and requires authenticated access.
+If an MPP call is rejected, use `explore` with `mpp: true`. MPP covers 31 read-only endpoints. Media download is not MPP-eligible because it creates account-tied gallery links and requires authenticated access. The MPP user media endpoint returns media-tweet timeline posts, not media files.
 
 If a path is rejected, remove embedded query strings and fragments from the path, then provide query fields through the structured `query` object.

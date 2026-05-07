@@ -68,7 +68,7 @@ Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricin
 - **Credits**: Top up credits in the Xquik dashboard. The plugin can read the current balance.
 - **MPP**: 31 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
+MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media timeline reads ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
 
 ## Documentation
 
@@ -118,7 +118,7 @@ Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com
 
 ### MPP mode (no account, pay-per-use)
 
-MPP (Machine Payments Protocol) is an optional mode for anonymous, pay-per-use access to 31 read-only X-API endpoints - no Xquik account or API key required. The `tempoSigningKey` is a 66-character hex key that signs on-chain micropayment proofs (via the `mppx` SDK) when the runtime receives an HTTP 402 challenge. The signing key stays in the plugin config and is used only to sign payment proofs; it is not an API credential and grants no account access. If you don't use MPP, leave this field unset.
+MPP (Machine Payments Protocol) is an optional mode for anonymous, pay-per-use access to 31 read-only X-API endpoints - no Xquik account or API key required. The `tempoSigningKey` is a 66-character hex key that signs on-chain micropayment proofs (via the `mppx` SDK) when the runtime receives an HTTP 402 challenge. The signing key stays in the plugin config and is used only to sign payment proofs; it is not an API credential and grants no account access. The user media endpoint is a timeline read, not media file download; media downloads require account-backed access and are not MPP-eligible. If you don't use MPP, leave this field unset.
 
 ```bash
 npm i mppx viem
@@ -311,7 +311,7 @@ Agent uses tweetclaw -> calls /api/v1/x/articles/:tweetId, returns title, body, 
 | Composition | Compose, drafts, styles, radar | Free / Mixed |
 | Credits | Check balance | Free |
 | Extraction | 23 extraction tools, giveaway draws, exports | 1-5 credits/result |
-| Media | Upload media, download tweet media | 1-2 credits |
+| Media | Upload media, authenticated tweet media download | 1-2 credits |
 | Monitoring | Create monitors, view events, webhooks | Free |
 | Twitter | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-5 credits |
 | X Accounts | List connected account handles for explicit user-selected actions | Free |

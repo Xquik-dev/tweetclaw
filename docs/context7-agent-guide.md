@@ -83,6 +83,8 @@ MPP mode is read-only. If only `tempoSigningKey` is configured, do not try write
 
 MPP currently covers 31 read-only X API endpoints. Media download is not MPP-eligible because it creates account-tied gallery links and requires authenticated access.
 
+The MPP user media endpoint returns media tweets from a user timeline. It does not download media files or create gallery links.
+
 Use `explore` with `mpp: true` to find MPP-eligible endpoints.
 
 ## Endpoint Catalog
@@ -95,7 +97,7 @@ Agent-callable coverage is 99 endpoints across:
 - Composition, drafts, styles, and radar
 - Credit balance
 - Extraction jobs, exports, and giveaway draws
-- Media upload, media download, and gallery links
+- Authenticated media upload, media download, and gallery links
 - Monitors, events, and webhooks
 - X search, tweets, users, timelines, articles, trends, bookmarks, notifications, and DMs
 - Connected X accounts
