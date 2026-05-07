@@ -18,7 +18,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 - GitHub repo: https://github.com/Xquik-dev/tweetclaw
 - npm: `@xquik/tweetclaw@1.6.25`, shasum `911d99756bd393b6c134e6b23d81bc8603c49a71`, modified `2026-05-07T21:10:49.147Z`.
-- ClawHub package: latest `1.6.25`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, static scan clean on engine `v2.4.22`; package and verification scan statuses pending after accepted rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
+- ClawHub package: latest `1.6.25`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
 - ClawHub release: `rd7836qrymyw45xjzba2t1jzqh869ceh`, source commit `d276e7301571a866c8b837651ec6c3956f86bc75`, sha256 `0462d82fa1b6b350381a4bf7c7d96fc034d6701cb273248cb3a0fe71e5b62bfd`.
 - GitHub repo metadata as of 2026-05-07 21:01 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, X/Twitter, MCP, pay-per-use, skills, automation, and TweetClaw.
 - Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-07 21:01 UTC.
@@ -28,11 +28,11 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-07 21:12 UTC: score `54.5`, 31 snippets, 5 pages, 0 parse failures, last update `2026-05-07T21:11:57.999Z`.
-- Previous baseline: score `51.9`, 31 snippets, 5 pages, 0 parse failures, last update `2026-05-07T20:15:44.573Z`.
-- Static HTML exposes top-level benchmark numbers but not category-level findings. It still generated stale `32 read-only endpoints` snippets after the 1.6.25 package commit, so `context7.json` now explicitly says not to describe MPP as 32 endpoints.
+- Current observed benchmark on 2026-05-07 21:20 UTC: score `50.3`, 30 snippets, 5 pages, 0 parse failures, last update `2026-05-07T21:11:57.999Z`.
+- Previous baseline: score `54.5`, 31 snippets, 5 pages, 0 parse failures, last update `2026-05-07T21:11:57.999Z`.
+- Static HTML exposes top-level benchmark numbers but not category-level findings. It still generated stale `32 read-only endpoints` snippets even after the explicit `context7.json` no-32 rule; next run should inspect whether more source-level wording can remove that generated drift.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
-- Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25522268518
+- Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25522572381
 
 ## Current Compatibility Findings
 
@@ -160,6 +160,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Context7 benchmark was `54.5` after the 1.6.25 docs refresh, with 31 snippets, 5 pages, 0 parse failures, and no category-level findings visible in static HTML.
 - Published `@xquik/tweetclaw@1.6.25` to npm and ClawHub from source commit `d276e7301571a866c8b837651ec6c3956f86bc75`.
 - Quality gates passed: `npm run check:all`, `npm pack --dry-run --json`, and `node scripts/clawpack.mjs dry-run`.
-- ClawHub version-specific static scan was clean; top-level package and verification statuses were still pending after rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
+- ClawHub package, verification, and version-specific static scans were clean after rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
+- Context7 still emitted stale `32 read-only endpoints` snippets and the benchmark score settled at `50.3`; keep this as the next active Context7 target.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open.
 - External candidate audited: Lobstash/twitter-plugin; no useful placement PR opened because repo hygiene and contribution surfaces were too weak.
