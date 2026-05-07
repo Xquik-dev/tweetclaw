@@ -1604,6 +1604,7 @@ Action:
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.19` as latest and to record the completed clean ClawHub static, package, and verification scans.
 - Automation prompt updated on 2026-05-06 to treat `@xquik/tweetclaw@1.6.20` as latest and to record the accepted ClawHub rescan request with package and verification scans still pending.
 - Automation prompt updated on 2026-05-07 to record `@xquik/tweetclaw@1.6.20` clean package and verification scans and the renewed Xquik public billing-docs MPP count drift.
+- Automation prompt updated on 2026-05-07 to record the resolved Xquik billing-docs MPP count drift: billing and API overview Markdown both describe 31 MPP read-only endpoints, and media downloads remain authenticated.
 
 ### 2026-05-06 Public Hygiene Review
 
