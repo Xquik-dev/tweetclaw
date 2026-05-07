@@ -68,6 +68,8 @@ Tweet composition, style analysis, drafts, curated radar (7 sources), and accoun
 openclaw plugins install @xquik/tweetclaw
 ```
 
+OpenClaw resolves this package through ClawHub first and uses the exact npm package as a fallback when needed.
+
 TweetClaw can be installed before credentials are configured. Until you add an API key or MPP signing key, the free `explore` catalog remains available and live API calls return setup guidance instead of failing plugin installation.
 
 > **Note:** `@xquik/tweetclaw` is the only official npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is an unofficial redistribution and may ship stale metadata or outdated endpoint counts.
