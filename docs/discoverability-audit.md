@@ -33,7 +33,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Current fix path: remove `previousVersions` from `context7.json` so outdated tags cannot pollute current agent retrieval, while keeping MPP setup and limits sourced from `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, the skill, and `src/api-spec.ts`.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
 - Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25523606088
-- Docs-only follow-up refreshes hit HTTP 429 at https://github.com/Xquik-dev/tweetclaw/actions/runs/25523777952, https://github.com/Xquik-dev/tweetclaw/actions/runs/25523821197, and https://github.com/Xquik-dev/tweetclaw/actions/runs/25524732104. The workflow now treats Context7 429s as retry-later warnings so rate limits do not leave unrelated repo commits red.
+- Docs-only follow-up refreshes hit HTTP 429 at https://github.com/Xquik-dev/tweetclaw/actions/runs/25523777952, https://github.com/Xquik-dev/tweetclaw/actions/runs/25523821197, https://github.com/Xquik-dev/tweetclaw/actions/runs/25524732104, and https://github.com/Xquik-dev/tweetclaw/actions/runs/25525682256. The workflow now treats Context7 429s as retry-later warnings so rate limits do not leave unrelated repo commits red.
 
 ## Current Compatibility Findings
 
@@ -165,6 +165,6 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - npm `@xquik/tweetclaw@1.6.25`, ClawHub latest, package scan, verification scan, and version-specific static scan still matched the clean 1.6.25 baseline.
 - OpenClaw npm latest and beta remain `2026.5.7`; GitHub default latest remains `v2026.5.7`.
 - Context7 benchmark remains `85.2` on source SHA `8d343b4`, with 175 snippets, 8 pages, 0 parse failures, and stale previous-version MPP snippets still returned by the Context API.
-- Context7 fix applied: remove stale `previousVersions` entries from `context7.json`; next run should check whether refresh succeeds and stale MPP snippets disappear.
+- Context7 fix applied: remove stale `previousVersions` entries from `context7.json`; the follow-up refresh was rate-limited, so next run should check whether refresh succeeds and stale MPP snippets disappear.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open.
 - External candidate audited: RAFOLIE/openclaw-mcp-twitter-reader; no PR opened because a TweetClaw mention would be low-context without maintainer interest.
