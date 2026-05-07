@@ -49,11 +49,5 @@
     "Current MPP coverage is 31 read-only endpoints; media download is not MPP-eligible because it requires authenticated access.",
     "Do not describe MPP coverage as 32 endpoints; user media is a timeline read, not media file download.",
     "Use the ClawPack npm-pack workflow for ClawHub package releases, not repo-folder uploads."
-  ],
-  "previousVersions": [
-    { "tag": "v1.6.15" },
-    { "tag": "v1.6.14" },
-    { "tag": "v1.6.13" },
-    { "tag": "v1.6.12" }
   ]
 }
