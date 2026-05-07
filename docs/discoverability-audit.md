@@ -1531,6 +1531,7 @@ Findings:
 - The 2026-05-07 19:21 UTC benchmark check still reflected the cached run from `2026-05-06T11:56:42.164Z`: score `83.8`, `150` snippets, `6` pages, and `0` parse failures.
 - The 2026-05-07 19:45 UTC benchmark check reflects the new claimed `context7.json` parse from commit `943c9fc5d54e819a5cb507d4e1fc46e09a9877eb`: score `47`, `18` snippets, `3` pages, `0` parse failures, and `lastRunDate` `2026-05-07T19:34:02.299Z`.
 - The 2026-05-07 20:06 UTC benchmark check reflects the focused setup/workflow docs from commit `21b6a5ebbfe4559a5b7303cd5ebdba093247d9c6`: score `55.9`, `31` snippets, `5` pages, `0` parse failures, and `lastRunDate` `2026-05-07T20:03:37.961Z`.
+- The 2026-05-07 20:12 UTC benchmark check reflects the final audit-only refresh state: score `51.5`, `31` snippets, `5` pages, `0` parse failures, and `lastRunDate` `2026-05-07T20:07:52.865Z`.
 - The public `llms.txt` summary still carries a stale analysis timestamp from `2026-05-06T11:56:41.057Z` and stale MPP wording, so treat it as cache lag until Context7 regenerates summaries from the latest rules and docs.
 - Static HTML exposes benchmark metadata but not category-level benchmark findings, so the current blocker is lack of visible per-category detail from safe static inspection.
 - Official Context7 owner docs say `folders` limits parsed paths while root-level Markdown is always included, and `excludeFiles` takes filenames rather than full paths.
@@ -1676,7 +1677,8 @@ Findings:
 - 2026-05-07 20:06 UTC Context7 refresh workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25519226784 completed successfully for commit `c75354069e40b37dfc10a245fe8e725be6d907c0`, and the public benchmark improved to score `55.9`, `31` snippets, `5` pages, and `0` parse failures. ClawHub top-level package and verification scans for `1.6.24` remained pending on the same check.
 - 2026-05-07 20:07 UTC automation prompt baseline was updated to treat `@xquik/tweetclaw@1.6.24` as latest, preserve the current Context7 benchmark score `55.9`, and continue monitoring pending ClawHub package and verification scans from rescan request `sd78ne5291p1jgkkmvn39898zx869fxp`.
 - 2026-05-07 20:09 UTC ClawHub latest package inspect reports `@xquik/tweetclaw@1.6.24` clean for package and source-linked verification scans after rescan request `sd78ne5291p1jgkkmvn39898zx869fxp` completed clean. The clean artifact remains source-linked to commit `21b6a5ebbfe4559a5b7303cd5ebdba093247d9c6` with sha256 `eb167146858b09d3b7541a3c0e03792f0dfb481c3a450696d43fb70d92c27cc1`.
-- 2026-05-07 20:10 UTC automation prompt baseline was updated again to treat `@xquik/tweetclaw@1.6.24` as latest with clean static, package, and verification scans.
+- 2026-05-07 20:13 UTC automation prompt baseline was updated again to treat `@xquik/tweetclaw@1.6.24` as latest with clean static, package, and verification scans, and to record the current Context7 benchmark score `51.5`.
+- 2026-05-07 20:12 UTC Context7 refresh workflow run https://github.com/Xquik-dev/tweetclaw/actions/runs/25519486524 completed successfully for commit `e4a654dd57c53fddb2142cee62f063a744d50031`, and the public benchmark settled at score `51.5`, `31` snippets, `5` pages, and `0` parse failures.
 
 Action:
 
