@@ -17,31 +17,31 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 ## Current TweetClaw State
 
 - GitHub repo: https://github.com/Xquik-dev/tweetclaw
-- npm: `@xquik/tweetclaw@1.6.24`, shasum `5da8308228ac6fe6151d4bfa362da279301e0b07`, modified `2026-05-07T20:01:19.306Z`.
-- ClawHub package: latest `1.6.24`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22`.
-- ClawHub release: `rd777d38rp3g895s4n7m2gkhvx869j20`, source commit `21b6a5ebbfe4559a5b7303cd5ebdba093247d9c6`, sha256 `eb167146858b09d3b7541a3c0e03792f0dfb481c3a450696d43fb70d92c27cc1`, rescan request `sd78ne5291p1jgkkmvn39898zx869fxp`.
-- GitHub repo metadata as of 2026-05-07 20:37 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, X/Twitter, MCP, pay-per-use, skills, automation, and TweetClaw.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-07 20:37 UTC.
+- npm: `@xquik/tweetclaw@1.6.25`, shasum `911d99756bd393b6c134e6b23d81bc8603c49a71`, modified `2026-05-07T21:10:49.147Z`.
+- ClawHub package: latest `1.6.25`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, static scan clean on engine `v2.4.22`; package and verification scan statuses pending after accepted rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
+- ClawHub release: `rd7836qrymyw45xjzba2t1jzqh869ceh`, source commit `d276e7301571a866c8b837651ec6c3956f86bc75`, sha256 `0462d82fa1b6b350381a4bf7c7d96fc034d6701cb273248cb3a0fe71e5b62bfd`.
+- GitHub repo metadata as of 2026-05-07 21:01 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, X/Twitter, MCP, pay-per-use, skills, automation, and TweetClaw.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-07 21:01 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-07 20:37 UTC: score `51.9`, 31 snippets, 5 pages, 0 parse failures, last update `2026-05-07T20:15:44.573Z`.
-- Previous baseline: score `51.5`, 31 snippets, 5 pages, 0 parse failures, lastRunDate `2026-05-07T20:07:52.865Z`.
-- Static HTML exposes the top-level benchmark numbers but not category-level findings. Continue improving focused docs and parser rules without re-including operational logs.
+- Current observed benchmark on 2026-05-07 21:12 UTC: score `54.5`, 31 snippets, 5 pages, 0 parse failures, last update `2026-05-07T21:11:57.999Z`.
+- Previous baseline: score `51.9`, 31 snippets, 5 pages, 0 parse failures, last update `2026-05-07T20:15:44.573Z`.
+- Static HTML exposes top-level benchmark numbers but not category-level findings. It still generated stale `32 read-only endpoints` snippets after the 1.6.25 package commit, so `context7.json` now explicitly says not to describe MPP as 32 endpoints.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
-- Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25519625475
+- Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25522268518
 
 ## Current Compatibility Findings
 
-- OpenClaw npm latest is `2026.5.6`; beta is `2026.5.7-beta.1` as of 2026-05-07 20:37 UTC.
-- OpenClaw `v2026.5.6` remains a maintenance release with no known TweetClaw manifest, plugin API, skill, package, scan, or route impact.
+- OpenClaw npm latest is `2026.5.6`; beta is `2026.5.7` as of 2026-05-07 21:01 UTC.
+- OpenClaw `v2026.5.7` release page exists and was published at `2026-05-07T20:57:43Z`, but `gh release view --repo openclaw/openclaw` still returns `v2026.5.6` as the default latest release. Compare `v2026.5.6...v2026.5.7` showed plugin install, release-publish, channel, cron, and provider maintenance with no required TweetClaw manifest or route change.
 - Official OpenClaw manifest docs still place native plugin discovery metadata in `openclaw.plugin.json` and install-on-demand metadata in `package.json#openclaw.install`.
 - OpenClaw plugin build docs still support published package installs and ClawHub-first bare package resolution.
 - GitHub docs continue to frame README files and topics as primary repo discovery and evaluation surfaces.
-- Xquik docs drift reappeared on 2026-05-07 20:37 UTC: public billing search text says 32 MPP endpoints and lists media download. Local Xquik source remains source of truth: `lib/mpp/pricing.test.ts` asserts 31 eligible routes and `POST /api/v1/x/media/download` is not MPP eligible; route source and TweetClaw docs should stay at 31 until the guarded-route map or generated API spec changes.
+- Xquik docs drift reappeared on 2026-05-07 20:37 UTC: public billing search text says 32 MPP endpoints and lists media download. Local Xquik source remains source of truth: `lib/mpp/pricing.test.ts` asserts 31 eligible routes and `POST /api/v1/x/media/download` is not MPP eligible; TweetClaw 1.6.25 clarifies that user media MPP means timeline reads, not media file download.
 
 ## Open External Work To Monitor
 
@@ -135,6 +135,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - af0nx/openclaw-twitterbot: broad OpenClaw snapshot; future path could be a narrow docs patch only if maintainer appears active beyond dependency updates.
 - Polystichumlonchitissumatran261/tweetclaw: no license, issues disabled, no usable integration surface.
 - hundevmode/twitter-x-apify-actors-openclaw-skill: Apify-specific; revisit only if maintainer invites non-Apify companion workflows.
+- Lobstash/twitter-plugin: read README, contribution text, license status, templates, issues, and PRs on 2026-05-07. No license file despite README MIT note, no contribution templates, zero issues/PRs, tracked dependencies, and no TweetClaw/Xquik references; no placement PR opened.
 
 ## Package And Release Notes
 
@@ -153,13 +154,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-07 20:37 UTC:
+2026-05-07 21:15 UTC:
 
-- Local repo clean at `0b8bad3` before edits; no open TweetClaw repo issues or PRs.
-- npm `openclaw` latest remained `2026.5.6`; beta remained `2026.5.7-beta.1`.
-- npm `@xquik/tweetclaw` latest remained `1.6.24` with expected shasum and integrity.
-- ClawHub latest and version-specific inspect for `@xquik/tweetclaw@1.6.24` remained clean.
-- Context7 benchmark improved slightly to `51.9`; still below 100 and still lacks visible category-level details in static HTML.
+- Local repo clean at `793848c` before edits; no open TweetClaw repo issues or PRs.
+- Context7 benchmark was `54.5` after the 1.6.25 docs refresh, with 31 snippets, 5 pages, 0 parse failures, and no category-level findings visible in static HTML.
+- Published `@xquik/tweetclaw@1.6.25` to npm and ClawHub from source commit `d276e7301571a866c8b837651ec6c3956f86bc75`.
+- Quality gates passed: `npm run check:all`, `npm pack --dry-run --json`, and `node scripts/clawpack.mjs dry-run`.
+- ClawHub version-specific static scan was clean; top-level package and verification statuses were still pending after rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq`.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open.
-- Fresh Xquik docs drift found: public billing text again says 32 MPP endpoints and includes media download, but local Xquik source and tests still prove 31 eligible routes and media download non-MPP. No TweetClaw route or package change is warranted until source-backed Xquik route truth changes.
-- This audit file was compacted from repeated run logs into durable current state.
+- External candidate audited: Lobstash/twitter-plugin; no useful placement PR opened because repo hygiene and contribution surfaces were too weak.

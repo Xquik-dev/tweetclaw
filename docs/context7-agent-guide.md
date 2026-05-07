@@ -85,6 +85,8 @@ MPP currently covers 31 read-only X API endpoints. Media download is not MPP-eli
 
 The MPP user media endpoint returns media tweets from a user timeline. It does not download media files or create gallery links.
 
+Do not describe MPP coverage as 32 endpoints. Current source-backed coverage is 31 until the endpoint catalog changes.
+
 Use `explore` with `mpp: true` to find MPP-eligible endpoints.
 
 ## Endpoint Catalog
