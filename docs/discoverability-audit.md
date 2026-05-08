@@ -21,18 +21,19 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - GitHub release: `v1.6.27`, published `2026-05-08T02:33:51Z`, tag and release source commit `88b7879ed62c1a47ed33833afabe4654d9d86d9c`.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
-- GitHub repo metadata as of 2026-05-08 01:31 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-08 02:31 UTC.
+- GitHub repo metadata as of 2026-05-08 04:30 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-08 04:30 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-08 02:52 UTC: score `86.6`, 179 snippets, 8 pages, 0 parse failures, last update `2026-05-08T02:09:20.843Z`, source SHA `88b7879ed62c1a47ed33833afabe4654d9d86d9c`.
+- Current observed benchmark on 2026-05-08 04:30 UTC: score `86.6`, 179 snippets, 8 pages, 0 parse failures, last update `2026-05-08T02:09:20.843Z`, source SHA `88b7879ed62c1a47ed33833afabe4654d9d86d9c`.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. The benchmark page and generated `llms.txt` still include old 32-endpoint and MPP media-download snippets from generated version-cache content even though current repository files have only the current 31-endpoint guidance and `src/api-spec.ts` marks `/api/v1/x/media/download` as authenticated-only and not MPP-eligible.
-- Context7 public page data still lists old finalized tag versions `v1.6.12`, `v1.6.13`, `v1.6.14`, and `v1.6.15`. Official Context7 docs say previous tag versions are managed from the Versions tab, so the next useful fix is removing those old versions in the Context7 web UI or through a documented owner API, not another TweetClaw source patch.
-- 2026-05-07 23:58 UTC direct documentation API checks returned HTTP 400 `invalid_format` for attempted library-name variants, so future runs should verify the current public API shape before using direct retrieval as evidence.
+- Context7 public page data still lists old finalized tag versions `v1.6.12`, `v1.6.13`, `v1.6.14`, and `v1.6.15`. Official Context7 docs say previous tag versions are managed from the Versions tab, so the next useful fix is removing those old versions in the Context7 web UI, not another TweetClaw source patch.
+- 2026-05-08 04:30 UTC: the documented public Context7 API shape is `GET /api/v2/context` with `libraryId=/xquik-dev/tweetclaw`. That API now works for TweetClaw and returns correct current docs for 31-endpoint MPP and non-MPP media downloads, but it also still returns stale generated `llms.txt` APIDOC snippets that say 32 endpoints and imply MPP media download support.
+- No documented public Context7 owner API for deleting old configured versions was found in the current API docs; the documented refresh API only triggers reprocessing.
 - Current fix path: inspect Context7 web UI version settings and generated `llms.txt` cache behavior before changing source again, because Context7 has parsed current source but still surfaces stale snippets from old generated/version content.
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
 - Latest release-source Context7 refresh workflow: https://github.com/Xquik-dev/tweetclaw/actions/runs/25532613893 returned success and Context7 parsed source `88b7879ed62c1a47ed33833afabe4654d9d86d9c`. Follow-up docs workflows https://github.com/Xquik-dev/tweetclaw/actions/runs/25532901864, https://github.com/Xquik-dev/tweetclaw/actions/runs/25533496996, and https://github.com/Xquik-dev/tweetclaw/actions/runs/25533999540 completed with `user-has-active-task` warnings.
@@ -41,12 +42,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Current Compatibility Findings
 
-- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-07 23:58 UTC.
+- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-08 04:30 UTC.
 - OpenClaw `v2026.5.7` is now the default latest GitHub release, published at `2026-05-07T20:57:43Z`. Compare `v2026.5.6...v2026.5.7` showed 76 commits focused on release hardening, managed plugin dependency handling, channel commands, cron/task repair, and package metadata, with no required TweetClaw manifest, schema, or route change.
 - Official OpenClaw manifest docs still place native plugin discovery metadata in `openclaw.plugin.json` and install-on-demand metadata in `package.json#openclaw.install`.
 - OpenClaw plugin build docs still support published package installs and ClawHub-first bare package resolution.
 - GitHub docs continue to frame README files and topics as primary repo discovery and evaluation surfaces.
-- Xquik public API overview now says MPP covers 31 X API endpoints as of 2026-05-08 01:31 UTC. Local Xquik source remains source of truth: `lib/mpp/pricing.test.ts` asserts 31 eligible routes and `POST /api/v1/x/media/download` is not MPP eligible; TweetClaw 1.6.25 clarifies that user media MPP means timeline reads, not media file download.
+- Xquik public `llms.txt` says MPP covers 31 X-API endpoints as of 2026-05-08 04:30 UTC. Local Xquik source remains source of truth: `lib/mpp/pricing.test.ts` asserts 31 eligible routes and `POST /api/v1/x/media/download` is not MPP eligible; TweetClaw 1.6.25 clarifies that user media MPP means timeline reads, not media file download.
 
 ## Open External Work To Monitor
 
@@ -78,7 +79,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | TheClawFirm/clawfactory | Submission-path issue open | https://github.com/TheClawFirm/clawfactory/issues/1 | Wait for maintainer path |
 | mergisi/awesome-openclaw-agents | X/Twitter Ops Desk agent PR open, clean, no comments/reviews/checks as of 2026-05-08 00:28 UTC | https://github.com/mergisi/awesome-openclaw-agents/pull/69 | Monitor only |
 | philipbankier/awesome-agent-skills | TweetClaw OpenClaw plugin PR open, no comments/reviews/checks as of 2026-05-08 01:40 UTC | https://github.com/philipbankier/awesome-agent-skills/pull/12 | Monitor only |
-| ythx-101/x-tweet-fetcher | MIT license-file PR open, clean, no comments or reviews as of 2026-05-08 02:52 UTC | https://github.com/ythx-101/x-tweet-fetcher/pull/68 | Monitor only |
+| ythx-101/x-tweet-fetcher | MIT license-file PR open, clean, no comments or reviews as of 2026-05-08 04:30 UTC | https://github.com/ythx-101/x-tweet-fetcher/pull/68 | Monitor only |
 | clawdbot-ai/awesome-openclaw-skills-zh | Xquik PR open, mergeable, no comments as of 2026-05-07 19:45 UTC | https://github.com/clawdbot-ai/awesome-openclaw-skills-zh/pull/26 | Monitor, no duplicate TweetClaw PR while open |
 | nowork-studio/openclaw-social-media-skills | TweetClaw checks PR open | https://github.com/nowork-studio/openclaw-social-media-skills/pull/1 | Monitor only |
 | ununununium/openclaw-social-media-skills | TweetClaw checks PR open | https://github.com/ununununium/openclaw-social-media-skills/pull/1 | Monitor only |
@@ -178,12 +179,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-08 02:52 UTC:
+2026-05-08 04:30 UTC:
 
-- Local repo clean at `ab681b5` before edits; no open TweetClaw repo issues or PRs.
+- Local repo clean at `22920f7` before edits; no open TweetClaw repo issues or PRs.
 - npm latest remains `@xquik/tweetclaw@1.6.27`; GitHub release `v1.6.27` remains live; ClawHub latest remains `1.6.26` and `1.6.27` is still blocked by owner-scope validation.
 - OpenClaw npm latest and beta remain `2026.5.7`; GitHub default latest remains `v2026.5.7`, with no required TweetClaw manifest or route change.
-- Context7 benchmark remains score `86.6`, 179 snippets, 8 pages, and 0 parse failures at source `88b7879ed62c1a47ed33833afabe4654d9d86d9c`. The stale 32-endpoint snippets now appear tied to old Context7 tag versions still listed on the public page; next useful action is Context7 Versions-tab cleanup.
+- Context7 benchmark remains score `86.6`, 179 snippets, 8 pages, and 0 parse failures at source `88b7879ed62c1a47ed33833afabe4654d9d86d9c`. The documented `GET /api/v2/context` route works with `libraryId=/xquik-dev/tweetclaw`, but retrieval still mixes current 31-endpoint docs with stale generated `llms.txt` APIDOC snippets. The next useful action is Context7 Versions-tab cleanup or documented owner-side cache removal, not another TweetClaw source patch.
 - Xquik public `llms.txt` says MPP covers 31 X API endpoints; keep local guarded-route tests as source of truth.
 - `npm audit --audit-level=moderate --json` reported 0 vulnerabilities. `npm outdated --json` showed only dev/tooling updates; no package metadata was changed because OpenClaw 2026.5.7 has no material TweetClaw API impact.
-- External placement recheck: ythx-101/x-tweet-fetcher PR 68 remains open and clean with no comments or reviews; no duplicate PR opened.
+- External placement recheck: ythx-101/x-tweet-fetcher PR 68 remains open and clean with no comments or reviews; rohunvora/x-research-skill issue 9 remains open; core known TweetClaw placement PRs rechecked remain open, mergeable, and uncommented. No duplicate PR opened.
