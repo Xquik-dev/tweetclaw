@@ -12,7 +12,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Use Markdown body files or stdin with real newlines for external PRs/issues/comments, then read back the body and verify no literal `\n` sequences.
 - If a target exposes secret-like examples, prefer a narrow safety patch or private disclosure path and never repeat the value.
 - For generated catalogs, identify the upstream source before opening direct generated-output PRs.
-- Current automation cadence is 60 minutes. The automation prompt includes the NHS Agentic Readiness badge rule for relevant handled badge areas and the explicit exception to never add it to Apify READMEs or Apify actor docs.
+- Current automation cadence is 5 minutes. The automation prompt includes the NHS Agentic Readiness badge rule for relevant handled badge areas and the explicit exception to never add it to Apify READMEs or Apify actor docs.
 - Compact this audit whenever repeated run history starts hiding the current action state.
 
 ## Current TweetClaw State
@@ -22,15 +22,15 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - GitHub release: `v1.6.27`, published `2026-05-08T02:33:51Z`, tag and release source commit `88b7879ed62c1a47ed33833afabe4654d9d86d9c`.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
-- GitHub repo metadata as of 2026-05-08 22:42 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-08 22:42 UTC.
+- GitHub repo metadata as of 2026-05-08 23:50 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-08 23:50 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-08 22:42 UTC: embedded static benchmark data showed score `85.4`, 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-08T12:23:05.519Z`; the rendered page showed 202 snippets and "Update: 5 hours ago". The visible/static snippet count still drifts between rendered page elements and embedded data; treat this as Context7 presentation or cache drift.
+- Current observed benchmark on 2026-05-08 23:50 UTC: embedded static benchmark data showed score `85.4`, 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-08T12:23:05.519Z`. The visible/static snippet count still drifts between rendered page elements and embedded data; treat this as Context7 presentation or cache drift.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. The benchmark page, generated `llms.txt`, and public `GET /api/v2/context?libraryId=/xquik-dev/tweetclaw` results still include old 32-endpoint and MPP media-download snippets from generated version-cache content even though current repository files have only the current 31-endpoint guidance and `src/api-spec.ts` marks `/api/v1/x/media/download` as authenticated-only and not MPP-eligible.
 - Context7 public page data still lists old finalized tag versions `v1.6.12`, `v1.6.13`, `v1.6.14`, and `v1.6.15`. Official Context7 docs say previous tag versions are managed from the Versions tab, so the next useful fix is removing those old versions in the Context7 web UI, not another TweetClaw source patch.
 - 2026-05-08 04:30 UTC: the documented public Context7 API shape is `GET /api/v2/context` with `libraryId=/xquik-dev/tweetclaw`. That API now works for TweetClaw and returns correct current docs for 31-endpoint MPP and non-MPP media downloads, but it also still returns stale generated `llms.txt` APIDOC snippets that say 32 endpoints and imply MPP media download support.
@@ -43,12 +43,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Current Compatibility Findings
 
-- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-08 22:42 UTC.
+- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-08 23:50 UTC.
 - OpenClaw `v2026.5.7` is now the default latest GitHub release, published at `2026-05-07T20:57:43Z`. Compare `v2026.5.6...v2026.5.7` showed 76 commits focused on release hardening, managed plugin dependency handling, channel commands, cron/task repair, and package metadata, with no required TweetClaw manifest, schema, or route change.
 - Official OpenClaw manifest docs still place native plugin discovery metadata in `openclaw.plugin.json` and install-on-demand metadata in `package.json#openclaw.install`.
 - OpenClaw plugin build docs still support published package installs and ClawHub-first bare package resolution.
 - GitHub docs continue to frame README files and topics as primary repo discovery and evaluation surfaces.
-- Xquik public `llms.txt` and billing page say MPP covers 31 X-API read-only endpoints as of 2026-05-08 22:42 UTC. The billing page says media downloads require API key or session-cookie authentication because they create gallery links. The API overview regex check still produced one false-positive `32` hit from rendered style text, not an MPP endpoint statement. Local Xquik source remains source of truth: `lib/mpp/pricing.test.ts` asserts 31 eligible routes and `POST /api/v1/x/media/download` is not MPP eligible; TweetClaw 1.6.25 clarifies that user media MPP means timeline reads, not media file download.
+- Xquik public `llms.txt` and billing page say MPP covers 31 X-API read-only endpoints as of 2026-05-08 22:42 UTC. The billing page says media downloads require API key or session-cookie authentication because they create gallery links. The API overview regex check produced one false-positive `32` hit from rendered style text, not an MPP endpoint statement. Local Xquik source remains source of truth: `lib/mpp/pricing.test.ts` asserts 31 eligible routes and `POST /api/v1/x/media/download` is not MPP eligible; TweetClaw 1.6.25 clarifies that user media MPP means timeline reads, not media file download.
 
 ## Open External Work To Monitor
 
@@ -108,7 +108,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | Target | Status | Link | Next action |
 | --- | --- | --- | --- |
 | abordage/awesome-mcp | Xquik MCP description update PR open and previously green | https://github.com/abordage/awesome-mcp/pull/32 | Monitor only |
-| appcypher/awesome-mcp-servers | Branch pushed; PR creation blocked by cross-fork permission; issues disabled | https://github.com/kriptoburak/appcypher-awesome-mcp-servers/tree/codex/add-xquik-mcp-listing | Human or credential with PR permission must open it |
+| appcypher/awesome-mcp-servers | Branch pushed; PR creation still blocked on 2026-05-08 despite current `repo`-scoped GitHub auth. GraphQL returned `CreatePullRequest` permission denial, REST returned HTTP 404, and issues are disabled. | https://github.com/kriptoburak/awesome-mcp-servers-appcypher/tree/codex/add-xquik-mcp-listing | Human with upstream permission or maintainer-side PR path must open it |
 | Panniantong/Agent-Reach | Existing Xquik channel PR updated with a TweetClaw OpenClaw plugin option after reading README, license, open PRs/issues, and duplicate terms; body formatting verified | https://github.com/Panniantong/Agent-Reach/pull/260 | Monitor for maintainer feedback |
 | docker/mcp-registry | Xquik remote MCP PR open | https://github.com/docker/mcp-registry/pull/3229 | Monitor only |
 | The-Web-Scraping-Playbook/awesome-twitter-scrapers | Xquik PR already open | https://github.com/The-Web-Scraping-Playbook/awesome-twitter-scrapers/pull/1 | Monitor only |
@@ -189,13 +189,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-08 22:42 UTC:
+2026-05-08 23:50 UTC:
 
-- Local repo clean at `cfdc0af` before edits; no open TweetClaw repo issues or PRs.
+- Local repo clean at `9666170` before edits; no untracked non-ignored files.
 - npm latest remains `@xquik/tweetclaw@1.6.27`; GitHub release `v1.6.27` remains live; ClawHub latest remains `1.6.26`, clean, and `1.6.27` is still blocked by owner-scope validation.
 - OpenClaw npm latest and beta remain `2026.5.7`; GitHub default latest remains `v2026.5.7`, with no required TweetClaw manifest or route change.
-- Context7 benchmark remains score `85.4`, with embedded data showing 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-08T12:23:05.519Z`; the rendered page showed 202 snippets and "Update: 5 hours ago". Old finalized versions `v1.6.12` through `v1.6.15` still appear and stale 32-endpoint/media-download snippets remain in benchmark and public context API results, so the next useful action remains Context7 Versions-tab cleanup or documented owner-side cache removal.
-- Xquik public `llms.txt` and billing page still show the current 31-endpoint MPP rule; billing says media downloads require API key or session-cookie authentication because they create gallery links. A public API overview `32` match was again a rendered style-text false positive, not MPP guidance.
-- `npm audit --audit-level=moderate --json` reported 0 vulnerabilities. `npm outdated --json` showed dev/tooling updates and local OpenClaw `2026.5.7` availability; no package metadata was changed because OpenClaw 2026.5.7 has no material TweetClaw API impact.
-- External placement action: updated https://github.com/Panniantong/Agent-Reach/pull/260 with a docs-only TweetClaw note for OpenClaw users who want Xquik through plugin tools instead of shell/curl calls. The note uses concrete search-intent wording for tweet search, tweet replies, posting, follower export, media workflows, monitors, webhooks, and giveaway draws.
-- External validation: read the target README, MIT license, open PRs/issues, and duplicate terms; `git diff --check` passed; TweetClaw GitHub and Context7 links returned HTTP 200; the PR body headings, table row, checklist, links, and absence of literal `\n` sequences were verified after editing. Python tests were not rerun because `pytest` is not installed in the available `python3` environment and the change was docs-only.
+- Context7 benchmark remains score `85.4`, with embedded data showing 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-08T12:23:05.519Z`. Old finalized versions `v1.6.12` through `v1.6.15` still appear and stale 32-endpoint/media-download snippets remain, so the next useful action remains Context7 Versions-tab cleanup or documented owner-side cache removal.
+- GitHub auth is active for `kriptoburak` with `repo` scope; the TweetClaw automation is now confirmed at a 5-minute cadence.
+- External placement action: retried https://github.com/appcypher/awesome-mcp-servers using the existing `codex/add-xquik-mcp-listing` branch after reading README, CONTRIBUTING, Code of Conduct, repo metadata, open PRs, issue state, and duplicate terms. PR creation remains blocked: GraphQL returned `CreatePullRequest` permission denial, REST returned HTTP 404, and upstream issues are disabled.
+- External validation: `git diff --check` passed for the appcypher branch, the Xquik GitHub link returned HTTP 200, and the PR body was created from a real Markdown file with no literal `\n` sequences, but no upstream PR could be opened.
