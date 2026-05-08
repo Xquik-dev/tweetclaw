@@ -758,7 +758,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/media/download',
     responseShape: 'Single: { tweetId, galleryUrl, cacheHit }. Bulk: { galleryUrl, totalTweets, totalMedia }',
-    summary: 'Download media from tweets. Single tweetInput or bulk tweetIds. Returns gallery URL.',
+    summary: 'Download media from tweets with authenticated access only. Not MPP-eligible. Returns gallery URL.',
   },
 
   // --- Twitter (Trends) ---
