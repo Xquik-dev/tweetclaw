@@ -35,6 +35,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Active source map for retrieval: `docs/context7-agent-guide.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, `skills/tweetclaw/SKILL.md`, `openclaw.plugin.json`, `package.json`, and `src/api-spec.ts`.
 - Latest known successful Context7 workflow after docs changes: https://github.com/Xquik-dev/tweetclaw/actions/runs/25523606088
 - Docs-only follow-up refreshes hit HTTP 429 at https://github.com/Xquik-dev/tweetclaw/actions/runs/25523777952, https://github.com/Xquik-dev/tweetclaw/actions/runs/25523821197, https://github.com/Xquik-dev/tweetclaw/actions/runs/25524732104, https://github.com/Xquik-dev/tweetclaw/actions/runs/25525682256, https://github.com/Xquik-dev/tweetclaw/actions/runs/25525721660, https://github.com/Xquik-dev/tweetclaw/actions/runs/25526577045, https://github.com/Xquik-dev/tweetclaw/actions/runs/25527556582, and https://github.com/Xquik-dev/tweetclaw/actions/runs/25528273046. The workflow now treats Context7 429s as retry-later warnings so rate limits do not leave unrelated repo commits red.
+- Follow-up refresh https://github.com/Xquik-dev/tweetclaw/actions/runs/25528883982 returned `user-has-active-task`, meaning another Context7 library was already processing. Wait for the active task to finish before retrying.
 
 ## Current Compatibility Findings
 
@@ -172,7 +173,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - npm `@xquik/tweetclaw@1.6.25`, ClawHub latest, package scan, verification scan, and version-specific static scan still matched the clean 1.6.25 baseline.
 - OpenClaw npm latest and beta remain `2026.5.7`; GitHub default latest remains `v2026.5.7`.
 - Context7 benchmark remains `85.2` on source SHA `8d343b4`, with 175 snippets, 8 pages, 0 parse failures, and one stale 32-endpoint install snippet visible in benchmark HTML.
-- Context7 refresh run https://github.com/Xquik-dev/tweetclaw/actions/runs/25528273046 completed with an HTTP 429 warning. The remaining blocker is still benchmark/cache lag until Context7 accepts a refresh after the `previousVersions` removal.
+- Context7 refresh run https://github.com/Xquik-dev/tweetclaw/actions/runs/25528273046 completed with an HTTP 429 warning; run https://github.com/Xquik-dev/tweetclaw/actions/runs/25528883982 then returned `user-has-active-task`. The remaining blocker is still benchmark/cache lag until Context7 accepts a refresh after the `previousVersions` removal.
 - GitHub repo topics were updated for non-spammy discoverability: removed generic `cheap-api` and `tweet`, added `clawhub` and `context7`.
 - PR rechecks: mergisi/awesome-openclaw-agents PR 69 clean/open; composio-community/awesome-openclaw-plugins PRs 5 and 7 clean/open; hiveminderbot/openclaw-social-scheduler PR 1 clean/open.
 - External candidate audited: cberktavsan/x-advisor. README, license, root files, issue/PR lists, contribution/template state, and TweetClaw/Xquik term searches showed a valid MIT repo with no open issues/PRs and a broken local-development clone URL.
