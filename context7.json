@@ -39,6 +39,7 @@
     "xquik-tweetclaw-1.6.2.tgz"
   ],
   "rules": [
+    "Use docs/context7-quickstarts.md first for copy-paste install, auth, explore, read, write, MPP, monitor, webhook, media, and troubleshooting recipes.",
     "Use docs/context7-agent-guide.md as the concise agent-facing map before falling back to README, skill, or source.",
     "Use docs/openclaw-setup.md for install, configuration, verification, polling, and troubleshooting questions.",
     "Use docs/agent-workflows.md for task planning, approval boundaries, MPP workflows, extraction, monitors, webhooks, media, and common mistakes.",

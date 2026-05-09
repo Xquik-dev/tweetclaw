@@ -153,6 +153,7 @@ If Context7 results mention stale endpoint counts, trust `src/api-spec.ts`, `REA
 ## Source Map
 
 - `README.md`: user-facing install, pricing, configuration, and API coverage.
+- `docs/context7-quickstarts.md`: copy-paste install, auth, explore, read, write, MPP, monitor, webhook, media, and troubleshooting recipes.
 - `docs/openclaw-setup.md`: install, config, verification, polling, and troubleshooting.
 - `docs/agent-workflows.md`: task flow, approvals, MPP, extraction, monitors, webhooks, media, and mistakes.
 - `skills/tweetclaw/SKILL.md`: agent-facing safety rules and workflow details.
