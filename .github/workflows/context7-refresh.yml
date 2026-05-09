@@ -5,6 +5,7 @@ on:
     branches:
       - master
     paths:
+      - ".github/workflows/context7-refresh.yml"
       - "README.md"
       - "context7.json"
       - "docs/**"
