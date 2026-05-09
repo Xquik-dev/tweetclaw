@@ -10,6 +10,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Do not duplicate open PRs, merged PRs, declined submissions, maintainer decisions, or generated catalog entries.
 - Keep external PRs narrow, factual, credential-free, placeholder-only, and in the target repo's style.
 - Use Markdown body files or stdin with real newlines for external PRs/issues/comments, then read back the body and verify no literal `\n` sequences.
+- Check Socket.dev for the latest published npm version before releases and dependency or package-metadata changes. Target 100/100 across Supply Chain Risk, Quality, Maintenance, Vulnerabilities, and License for both the package view and dependency view. If any score drops below 100, treat it as a blocker until the offending package or dependency is removed, replaced, or explicitly documented with a concrete mitigation and replacement plan.
 - If a target exposes secret-like examples, prefer a narrow safety patch or private disclosure path and never repeat the value.
 - For generated catalogs, identify the upstream source before opening direct generated-output PRs.
 - Current automation cadence is 5 minutes. The automation prompt includes the NHS Agentic Readiness badge rule for relevant handled badge areas and the explicit exception to never add it to Apify READMEs or Apify actor docs.
@@ -25,6 +26,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
 - GitHub repo metadata as of 2026-05-09 15:08 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description says "Post tweets, reply, like, retweet, follow, DM and more from OpenClaw through structured Xquik endpoints. 99 agent-callable endpoints via Xquik."; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
 - Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none open as of 2026-05-09 14:25 UTC. Closed issue `#1` remains the only historical issue.
+- Socket latest alerts page for the published npm package: https://socket.dev/npm/package/@xquik/tweetclaw/alerts/1.6.27?tab=dependencies . Current Socket docs say the official `socket package` CLI is the supported path for shallow and deep score inspection, but the local environment has no `SOCKET_CLI_API_TOKEN`, so automated score capture is blocked until a Socket token or an authenticated browser session is available.
 
 ## Current Context7 State
 
@@ -253,12 +255,13 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-09 16:39 UTC:
+2026-05-09 16:55 UTC:
 
 - Local repo started clean on `master`; npm latest stayed `@xquik/tweetclaw@1.6.27` with gitHead `88b7879ed62c1a47ed33833afabe4654d9d86d9c`; OpenClaw latest stayed `2026.5.7` and `beta` stayed `2026.5.9-beta.1`.
 - GitHub repo metadata remained public, MIT, 37 stars, 3 forks, with no open TweetClaw issues or PRs.
 - Context7 public benchmark still visibly returned score `78.7`, Trust Score `7.5`, 180 snippets, `Update: 2 hours ago`, and the same page-source snapshot for source SHA `987c074442482c9fbd1fcb1feb69247ff368fd39`, 8 pages, 0 parse failures, and `lastUpdateDate` `2026-05-09T12:46:02.093Z`. Old finalized versions and stale 32-endpoint generated snippets remain the blocker.
 - Hygiene scan rechecked `package.json`, `openclaw.plugin.json`, `server.json`, `skills/tweetclaw/SKILL.md`, `README.md`, `context7.json`, and `.gitignore`; `package.json` still keeps exact `clawhubSpec` and `npmSpec` pinned to `1.6.27`, and no tracked secret-like paths were found.
+- Socket rule added to recurring audit flow after checking the current public alerts URL and the current official Socket docs for package scores. The public HTML alerts page is Cloudflare-shell only in unauthenticated fetches, and the official `socket package deep` path currently stops locally because no Socket API token is configured, so future automated score checks need either `SOCKET_CLI_API_TOKEN` or an authenticated browser session.
 - External placement action: opened `msitarzewski/agency-agents` PR 522 after reading README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs/issues, and duplicate terms. The contribution adds TweetClaw as the optional OpenClaw execution path for the existing Twitter Engager agent, adds concrete search tweets, search tweet replies, approval-gated posting, follower research, monitor, and giveaway workflow guidance, and tightens the README roster row to match X/Twitter use cases.
 - External validation: `git diff --check` passed in the target repo; PR 522 body and changed-file list were read back from GitHub after creation.
 - No NHS badge change was made because the repo badges describe The Agency itself and would not help readers evaluate one agent entry.
