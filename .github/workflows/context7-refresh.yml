@@ -27,8 +27,8 @@ jobs:
           set -euo pipefail
 
           if [ -z "$CONTEXT7_API_KEY" ]; then
-            echo "::error ::CONTEXT7_API_KEY secret is not configured."
-            exit 1
+            echo "::warning ::CONTEXT7_API_KEY secret is not configured. Configure it to enable automatic Context7 refreshes."
+            exit 0
           fi
 
           body_file="$(mktemp)"
