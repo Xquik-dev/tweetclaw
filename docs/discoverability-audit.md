@@ -23,7 +23,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Skills.sh listing: https://skills.sh/xquik-dev/tweetclaw, with install command `npx skills add xquik-dev/tweetclaw` and 22 total installs as of 2026-05-09 02:24 UTC.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
-- GitHub repo metadata as of 2026-05-09 14:25 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
+- GitHub repo metadata as of 2026-05-09 14:49 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
 - Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none open as of 2026-05-09 14:25 UTC. Closed issue `#1` remains the only historical issue.
 
 ## Current Context7 State
@@ -103,6 +103,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | rohitg00/skillkit | TweetClaw source submission issue opened through the official add-source template after reading README, CONTRIBUTING, Apache-2.0 license, issue template, open and closed PRs/issues, and duplicate terms; body formatting verified | https://github.com/rohitg00/skillkit/issues/120 | Monitor for source acceptance or maintainer feedback |
 | SkillsMD | TweetClaw submitted through the documented `/api/submit` review endpoint after reading public docs, API reference, submission form, registry search results, GitHub repo metadata, open and closed issues/PRs, and duplicate terms; submission ID `8067cdd9-acd7-4321-b6bd-638c11816845` | https://skillsmd.dev/ | Monitor registry search for acceptance |
 | philipbankier/awesome-agent-skills | TweetClaw OpenClaw plugin PR open, no comments/reviews, mergeability recalculating as of 2026-05-08 10:01 UTC | https://github.com/philipbankier/awesome-agent-skills/pull/12 | Monitor only |
+| kodustech/awesome-agent-skills | TweetClaw AI/ML skill PR open after reading README, CONTRIBUTING, repo metadata, open and closed PRs/issues, and duplicate terms; contribution keeps the existing `x-twitter-scraper` entry intact and adds TweetClaw as the OpenClaw plugin path for search tweets, posting, replies, follower export, monitors, and giveaway draws; PR body formatting verified; NHS badge not added because the repo uses skill-table rows and has no badge area where the xquik.com readiness badge would help readers evaluate one entry | https://github.com/kodustech/awesome-agent-skills/pull/14 | Monitor for maintainer feedback |
 | junminhong/awesome-agent-skills | Existing Xquik Codex skill PR updated with a TweetClaw Codex skill after reading README, CONTRIBUTING, license, repo files, open PRs/issues, and duplicate terms; body formatting verified | https://github.com/junminhong/awesome-agent-skills/pull/2 | Monitor for maintainer feedback |
 | littleben/awesomeAgentskills | TweetClaw skill PR open after reading README, README_CN, CONTRIBUTING, license, repo metadata, open and closed PRs/issues, and duplicate terms; body formatting verified | https://github.com/littleben/awesomeAgentskills/pull/8 | Monitor for maintainer feedback |
 | ythx-101/x-tweet-fetcher | MIT license-file PR open, mergeable, no comments or reviews as of 2026-05-08 10:01 UTC | https://github.com/ythx-101/x-tweet-fetcher/pull/68 | Monitor only |
@@ -239,14 +240,13 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-09 14:25 UTC:
+2026-05-09 14:49 UTC:
 
-- Local repo clean at `4f02b97` before edits; no untracked non-ignored files.
-- npm latest remains `@xquik/tweetclaw@1.6.27` with gitHead `88b7879ed62c1a47ed33833afabe4654d9d86d9c`; OpenClaw latest remains `2026.5.7`; `beta` is `2026.5.9-beta.1`; GitHub release `v2026.5.7` remains the latest stable tag.
-- GitHub repo metadata remains public, MIT, 37 stars, 3 forks, and no open TweetClaw issues or PRs.
-- Context7 public benchmark still visibly shows `78.7`, Trust Score `7.5`, 180 snippets, and `Update: 1 hour ago`. Keep treating the benchmark as cache/version-drifted.
-- Hygiene scan: `package.json` was rechecked and still keeps exact `clawhubSpec` and `npmSpec` pinned to `1.6.27`. No tracked secret-like paths were found.
-- External placement action: opened https://github.com/AbsolutelySkilled/AbsolutelySkilled/pull/5 after reading README, CONTRIBUTING, MIT license, repo metadata, open PRs/issues, duplicate terms, and local skill package conventions. The PR adds a real `tweetclaw-social-automation` skill package with `SKILL.md`, `evals.json`, `sources.yaml`, and a Marketing section README row.
-- External validation: `git diff --check` passed before commit, `evals.json` was validated with `jq empty`, the skill and sources files stayed under the documented line limits, and the PR body was read back after creation. No NHS badge change was made because the target's existing badge area focuses on registry installs and does not help users evaluate xquik.com readiness.
-- Additional no-duplicate finding: 0xNyk/awesome-hermes-agent already closed issue 44 with a maintainer note preferring `x-twitter-scraper` over TweetClaw for that ecosystem, so future runs should not reopen the TweetClaw angle there.
-- TweetClaw validation target for this run: audit update and lightweight metadata recheck only.
+- Local repo clean at `58846d6` before edits; no untracked non-ignored files.
+- npm latest remains `@xquik/tweetclaw@1.6.27` with gitHead `88b7879ed62c1a47ed33833afabe4654d9d86d9c`; OpenClaw latest remains `2026.5.7`; `beta` remains `2026.5.9-beta.1`.
+- GitHub repo metadata remains public, MIT, 37 stars, 3 forks, no open TweetClaw issues or PRs, and latest repo activity moved to `2026-05-09T14:32:32Z`.
+- Context7 public benchmark still visibly returns `78.7`; keep treating the public score as cache/version-drifted until the old finalized versions are removed from Context7.
+- Hygiene scan: `package.json` still keeps exact `clawhubSpec` and `npmSpec` pinned to `1.6.27`; `openclaw.plugin.json`, `server.json`, `skills/tweetclaw/SKILL.md`, `README.md`, `context7.json`, and `.gitignore` were rechecked; no tracked secret-like paths were found.
+- External placement action: opened https://github.com/kodustech/awesome-agent-skills/pull/14 after reading README, CONTRIBUTING, repo metadata, open and closed PRs/issues, and duplicate terms. The PR keeps the existing `x-twitter-scraper` listing intact and adds TweetClaw as a separate OpenClaw-oriented skill entry in the AI/ML section.
+- External validation: `git diff --check` passed before the external commit, the PR body was written through a real Markdown file and read back after creation, and duplicate searches confirmed no prior TweetClaw submission in this repo. No NHS badge change was made because the repo uses skill-table rows and has no badge area where the xquik.com readiness badge would help readers evaluate one entry.
+- TweetClaw validation target for this run: audit update plus lightweight metadata and confidentiality recheck only.
