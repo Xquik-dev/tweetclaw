@@ -23,15 +23,15 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Skills.sh listing: https://skills.sh/xquik-dev/tweetclaw, with install command `npx skills add xquik-dev/tweetclaw` and 22 total installs as of 2026-05-09 02:24 UTC.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
-- GitHub repo metadata as of 2026-05-09 03:41 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-09 03:41 UTC.
+- GitHub repo metadata as of 2026-05-09 03:53 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-09 03:53 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-09 03:41 UTC: static HTML page data showed benchmark score `82.6`, Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T00:51:33.456Z`, and parsed source SHA `0204b95dbf8a270859f093aae0e2d52d3ed3e669`. The visible/static snippet count still drifts between rendered page elements and embedded data; treat this as Context7 presentation or cache drift.
+- Current observed benchmark on 2026-05-09 03:53 UTC: static HTML page data showed benchmark score `82.6`, Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T00:51:33.456Z`, and parsed source SHA `0204b95dbf8a270859f093aae0e2d52d3ed3e669`. The visible/static snippet count still drifts between rendered page elements and embedded data; treat this as Context7 presentation or cache drift.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. The benchmark page, generated `llms.txt`, and public `GET /api/v2/context?libraryId=/xquik-dev/tweetclaw` results still include old 32-endpoint and MPP media-download snippets from generated version-cache content even though current repository files have only the current 31-endpoint guidance and `src/api-spec.ts` marks `/api/v1/x/media/download` as authenticated-only and not MPP-eligible.
 - Context7 public page data still lists old finalized tag versions `v1.6.12`, `v1.6.13`, `v1.6.14`, and `v1.6.15`. Official Context7 docs say previous tag versions are managed from the Versions tab, so the next useful fix is removing those old versions in the Context7 web UI, not another TweetClaw source patch.
 - 2026-05-08 04:30 UTC: the documented public Context7 API shape is `GET /api/v2/context` with `libraryId=/xquik-dev/tweetclaw`. That API now works for TweetClaw and returns correct current docs for 31-endpoint MPP and non-MPP media downloads, but it also still returns stale generated `llms.txt` APIDOC snippets that say 32 endpoints and imply MPP media download support.
@@ -193,6 +193,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - doanbactam/agent-skills-directory and dmgrok/agent_skills_directory: checked repo metadata and open PRs/issues on 2026-05-09. Existing Xquik submissions are already open, so no duplicate TweetClaw/Xquik issue or PR was opened.
 - evgyur/awesome-openclaw: read repository metadata, issue and PR state, cloned README, and searched for TweetClaw/Xquik terms on 2026-05-09. The repo has no detected license, no description, zero stars, and no contribution rules; no placement PR was opened.
 - cporter202/social-media-scraping-apis: read README, repo metadata, missing contribution/code of conduct/license/security/template files, open PR 1, closed PR 2, comments, issue state, and duplicate terms on 2026-05-09. The repo is a large Apify marketplace-style social media scraping list with affiliate-tracked Apify links, no detected license, no contribution path, and an open README expansion PR. No TweetClaw PR or NHS badge change was opened because the user explicitly excludes Apify README and actor-doc badge placement, and a non-Apify entry would be low-context in this target.
+- hesreallyhim/awesome-claude-code: read README, docs/CONTRIBUTING, code of conduct path, license, security path, PR template, resource issue template, enhancement issue template, repo metadata, open PRs/issues, closed Xquik/TweetClaw-family submissions 955, 964, 979, 1285, and 1385, comments, and duplicate terms on 2026-05-09. The repo is high-reach but currently unsafe for outreach: resource submissions must be human-created through the GitHub web UI, programmatic submissions are explicitly disallowed, OpenClaw-related submissions are temporarily banned, and the `kriptoburak` account is permanently restricted there after repeated prior Xquik submissions. Do not open PRs, CLI issues, or automated resource recommendations there unless the maintainer explicitly lifts the restriction.
 
 ## Package And Release Notes
 
@@ -211,13 +212,13 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-09 03:41 UTC:
+2026-05-09 03:53 UTC:
 
-- Local repo clean at `26f452d` before edits; no untracked non-ignored files.
+- Local repo clean at `0b591bc` before edits; no untracked non-ignored files.
 - npm latest remains `@xquik/tweetclaw@1.6.27` with gitHead `88b7879ed62c1a47ed33833afabe4654d9d86d9c`; GitHub release `v1.6.27` remains live; ClawHub latest remains `1.6.26`, clean, and `1.6.27` is still blocked by owner-scope validation.
 - OpenClaw npm latest and beta remain `2026.5.7`; no required TweetClaw manifest or route change found in the checked sources.
 - GitHub repo metadata remains public, MIT, 37 stars, 3 forks, no open TweetClaw issues, and a search-intent description that mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints.
 - Context7 static HTML page data still shows benchmark score `82.6`, Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T00:51:33.456Z`, and parsed source SHA `0204b95dbf8a270859f093aae0e2d52d3ed3e669`. Old finalized versions still appear and stale 32-endpoint/media-download snippets remain, so the next useful action remains Context7 Versions-tab cleanup or documented owner-side cache removal.
 - Security and registry checks: Dependabot open alerts are 0, and `npm audit --audit-level=low` reports 0 vulnerabilities.
-- External placement action: audited https://github.com/cporter202/social-media-scraping-apis as a potential social media scraping API surface. No PR was opened because the target is an Apify marketplace-style generated list with no detected license, no contribution path, one open README PR, and the user's Apify README and actor-doc badge exception.
-- TweetClaw validation: `git diff --check` and `npm run check-em-dash` passed for this docs-only audit update.
+- External placement action: audited https://github.com/hesreallyhim/awesome-claude-code after GitHub search surfaced it as a high-reach agent skill directory. No PR or issue was opened because its contribution rules require human web UI submissions, programmatic resource submissions are disallowed, OpenClaw-related submissions are temporarily banned, and prior Xquik submissions from the owner account were closed with a permanent restriction.
+- TweetClaw validation: `git diff --check`, `npm run check-em-dash`, `npm run check-versions`, and `npm run check-skill-frontmatter` passed for this docs-only audit update.
