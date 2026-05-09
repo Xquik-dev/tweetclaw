@@ -20,6 +20,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - GitHub repo: https://github.com/Xquik-dev/tweetclaw
 - npm: `@xquik/tweetclaw@1.6.27`, shasum `6a75ea6b07628fb39d96974d649afc34eb05232d`, modified `2026-05-08T02:08:21.040Z`.
 - GitHub release: `v1.6.27`, published `2026-05-08T02:33:51Z`, tag and release source commit `88b7879ed62c1a47ed33833afabe4654d9d86d9c`.
+- Skills.sh listing: https://skills.sh/xquik-dev/tweetclaw, with install command `npx skills add xquik-dev/tweetclaw` and 22 total installs as of 2026-05-09 02:24 UTC.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
 - GitHub repo metadata as of 2026-05-09 01:26 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
@@ -139,6 +140,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - MCP Directory and PulseMCP: Xquik already listed; MCP.Directory has stale endpoint copy and no supported automated update route found.
 - Glama and MCP.so: Xquik already listed but visible copy may be stale; no documented public update route found.
 - ClawHub package page for the published plugin is https://clawhub.ai/kriptoburak/xquik-tweetclaw; the skill page remains https://clawhub.ai/xquik/tweetclaw.
+- Skills.sh: TweetClaw is indexed at https://skills.sh/xquik-dev/tweetclaw with a working `npx skills add xquik-dev/tweetclaw` install command.
 
 ## Do Not Duplicate
 
@@ -180,6 +182,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - nirholas/XActions: read README, CONTRIBUTING, license, repo metadata, open and closed issues, open and closed PRs, and searched for TweetClaw/Xquik/OpenClaw terms on 2026-05-08. The repo is a broad X/Twitter automation toolkit with its own comparison and plugin story, Business Source License terms, and many open feature PRs; no TweetClaw placement opened because an alternatives entry would be competitor-like and low-context without maintainer interest.
 - brandonhimpfen/awesome-x: read README, CONTRIBUTING, code of conduct, license state, open and closed PRs/issues, and searched for TweetClaw/Xquik/OpenClaw terms on 2026-05-09. The repo is a relevant X/Twitter awesome list, but prior Xquik PR 1 from kriptoburak was closed unmerged on 2026-04-10, so no duplicate TweetClaw issue or PR was opened.
 - wong2/awesome-mcp-servers: read README, MIT license, PR template, workflow, open PRs, issue state, and duplicate terms on 2026-05-09. The repo explicitly says it does not accept PRs, issues are disabled, and submissions route through https://mcpservers.org/submit with a required contact email; no submission was made.
+- vercel-labs/skills and skills.sh: read README, public directory page, issue templates, repo metadata, open and closed PRs/issues, and duplicate terms on 2026-05-09. TweetClaw is already indexed on Skills.sh, so no duplicate directory issue was opened; README now links the badge and skill-install path.
 - TensorBlock/awesome-mcp-servers: checked repo metadata, open and closed PRs/issues, and duplicate terms on 2026-05-09. Xquik is already listed, issue 501 and PR 511 already cover stale Xquik metadata, so no duplicate PR was opened.
 - ever-works/awesome-mcp-servers: checked repo metadata, open and closed PRs/issues, and duplicate terms on 2026-05-09. Open Xquik PRs 36 and 87 already exist, so no duplicate PR was opened.
 - MobinX/awesome-mcp-list: read README, repo files, open PRs/issues, and duplicate terms on 2026-05-09. The repo has no detected license or contribution docs, and open PR 196 already adds Xquik, so no duplicate PR was opened.
@@ -204,12 +207,12 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-09 02:04 UTC:
+2026-05-09 02:24 UTC:
 
-- Local repo clean at `80694a9` before edits; no untracked non-ignored files.
+- Local repo clean at `9d77816` before edits; no untracked non-ignored files.
 - npm latest remains `@xquik/tweetclaw@1.6.27`; GitHub release `v1.6.27` remains live; ClawHub latest remains `1.6.26`, clean, and `1.6.27` is still blocked by owner-scope validation.
 - OpenClaw npm latest and beta remain `2026.5.7`; GitHub default latest remains `v2026.5.7`, with no required TweetClaw manifest or route change.
 - Context7 static HTML page data showed benchmark score `82.6`, Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T00:51:33.456Z`, and parsed source SHA `0204b95dbf8a270859f093aae0e2d52d3ed3e669`. Old finalized versions still appear and stale 32-endpoint/media-download snippets remain, so the next useful action remains Context7 Versions-tab cleanup or documented owner-side cache removal.
-- External placement action: submitted TweetClaw to SkillsMD through the documented `POST /api/submit` review endpoint; response ID `8067cdd9-acd7-4321-b6bd-638c11816845`.
-- External validation: read SkillsMD public docs, API reference, submit form, registry API/search output, linked GitHub repo metadata, open and closed PRs/issues, and duplicate terms. The public registry and search API returned no TweetClaw or Xquik duplicate before submission.
-- No-action candidate: AgenticSkills has a relevant submission form, but its web form requires an author email, so no submission was made without owner contact confirmation.
+- External placement action: confirmed TweetClaw is already indexed at https://skills.sh/xquik-dev/tweetclaw with 22 total installs and added the Skills.sh badge plus `npx skills add xquik-dev/tweetclaw` skill-install guidance to the README.
+- External validation: read Open Agent Skills docs, Agent Skills spec repo metadata, vercel-labs/skills README, issue templates, repo metadata, open and closed PRs/issues, skills.sh public page output, and duplicate terms. No Vercel directory issue was opened because TweetClaw is already indexed.
+- No-action candidate: Open Agent Skills did not expose a new source-specific submission path in static docs beyond standard SKILL.md format and existing indexed skills surfaces.
