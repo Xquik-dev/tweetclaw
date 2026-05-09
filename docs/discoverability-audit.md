@@ -22,15 +22,15 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - GitHub release: `v1.6.27`, published `2026-05-08T02:33:51Z`, tag and release source commit `88b7879ed62c1a47ed33833afabe4654d9d86d9c`.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
-- GitHub repo metadata as of 2026-05-09 00:44 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-09 00:44 UTC.
+- GitHub repo metadata as of 2026-05-09 00:59 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-09 00:59 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-09 00:44 UTC: embedded static benchmark data showed score `81.6`, 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-09T00:37:46.565Z`. The visible/static snippet count still drifts between rendered page elements and embedded data; treat this as Context7 presentation or cache drift.
+- Current observed benchmark on 2026-05-09 00:59 UTC: embedded static benchmark data showed score `82.6`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T00:51:33.456Z`, and parsed source SHA `0204b95dbf8a270859f093aae0e2d52d3ed3e669`. The visible/static snippet count still drifts between rendered page elements and embedded data; treat this as Context7 presentation or cache drift.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. The benchmark page, generated `llms.txt`, and public `GET /api/v2/context?libraryId=/xquik-dev/tweetclaw` results still include old 32-endpoint and MPP media-download snippets from generated version-cache content even though current repository files have only the current 31-endpoint guidance and `src/api-spec.ts` marks `/api/v1/x/media/download` as authenticated-only and not MPP-eligible.
 - Context7 public page data still lists old finalized tag versions `v1.6.12`, `v1.6.13`, `v1.6.14`, and `v1.6.15`. Official Context7 docs say previous tag versions are managed from the Versions tab, so the next useful fix is removing those old versions in the Context7 web UI, not another TweetClaw source patch.
 - 2026-05-08 04:30 UTC: the documented public Context7 API shape is `GET /api/v2/context` with `libraryId=/xquik-dev/tweetclaw`. That API now works for TweetClaw and returns correct current docs for 31-endpoint MPP and non-MPP media downloads, but it also still returns stale generated `llms.txt` APIDOC snippets that say 32 endpoints and imply MPP media download support.
@@ -43,7 +43,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Current Compatibility Findings
 
-- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-09 00:05 UTC.
+- OpenClaw npm latest and beta are both `2026.5.7` as of 2026-05-09 00:59 UTC.
 - OpenClaw `v2026.5.7` is now the default latest GitHub release, published at `2026-05-07T20:57:43Z`. Compare `v2026.5.6...v2026.5.7` showed 76 commits focused on release hardening, managed plugin dependency handling, channel commands, cron/task repair, and package metadata, with no required TweetClaw manifest, schema, or route change.
 - Official OpenClaw manifest docs still place native plugin discovery metadata in `openclaw.plugin.json` and install-on-demand metadata in `package.json#openclaw.install`.
 - OpenClaw plugin build docs still support published package installs and ClawHub-first bare package resolution.
@@ -80,6 +80,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | TheClawFirm/clawfactory | Submission-path issue open | https://github.com/TheClawFirm/clawfactory/issues/1 | Wait for maintainer path |
 | mergisi/awesome-openclaw-agents | X/Twitter Ops Desk agent PR open, clean, no comments/reviews/checks as of 2026-05-08 00:28 UTC | https://github.com/mergisi/awesome-openclaw-agents/pull/69 | Monitor only |
 | heilcheng/awesome-agent-skills | Existing x-twitter-scraper PR updated to include TweetClaw after reading README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs/issues, and duplicate terms; body formatting verified | https://github.com/heilcheng/awesome-agent-skills/pull/142 | Monitor for maintainer feedback |
+| Code-and-Sorts/awesome-copilot-agents | TweetClaw Social Media agent-skill reference PR open after reading README, CONTRIBUTING, code of conduct, CC0 license, workflow, repo metadata, open and closed PRs/issues, and duplicate terms; body formatting verified | https://github.com/Code-and-Sorts/awesome-copilot-agents/pull/55 | Monitor for maintainer feedback |
 | philipbankier/awesome-agent-skills | TweetClaw OpenClaw plugin PR open, no comments/reviews, mergeability recalculating as of 2026-05-08 10:01 UTC | https://github.com/philipbankier/awesome-agent-skills/pull/12 | Monitor only |
 | junminhong/awesome-agent-skills | Existing Xquik Codex skill PR updated with a TweetClaw Codex skill after reading README, CONTRIBUTING, license, repo files, open PRs/issues, and duplicate terms; body formatting verified | https://github.com/junminhong/awesome-agent-skills/pull/2 | Monitor for maintainer feedback |
 | littleben/awesomeAgentskills | TweetClaw skill PR open after reading README, README_CN, CONTRIBUTING, license, repo metadata, open and closed PRs/issues, and duplicate terms; body formatting verified | https://github.com/littleben/awesomeAgentskills/pull/8 | Monitor for maintainer feedback |
@@ -180,6 +181,8 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - MobinX/awesome-mcp-list: read README, repo files, open PRs/issues, and duplicate terms on 2026-05-09. The repo has no detected license or contribution docs, and open PR 196 already adds Xquik, so no duplicate PR was opened.
 - YuzeHao2023/Awesome-MCP-Servers, toolsdk-ai/toolsdk-mcp-registry, e2b-dev/awesome-ai-agents, jim-schwoebel/awesome_ai_agents, and slavakurilyak/awesome-ai-agents: checked repo metadata and open/closed PRs/issues on 2026-05-09. Each already has an open or merged Xquik/OpenClaw submission, so no duplicate TweetClaw/Xquik PR was opened.
 - doanbactam/agent-skills-directory and dmgrok/agent_skills_directory: checked repo metadata and open PRs/issues on 2026-05-09. Existing Xquik submissions are already open, so no duplicate TweetClaw/Xquik issue or PR was opened.
+- evgyur/awesome-openclaw: read repository metadata, issue and PR state, cloned README, and searched for TweetClaw/Xquik terms on 2026-05-09. The repo has no detected license, no description, zero stars, and no contribution rules; no placement PR was opened.
+- caramaschiHG/awesome-ai-agents-2026: read README, CONTRIBUTING, CC0 license, repository metadata, open and closed PRs/issues, and duplicate terms on 2026-05-09. The catalog is broad and viable, but Code-and-Sorts was the higher-intent skill surface for this run; future path is a narrow TweetClaw entry only if a social automation or agent-tool category fit stays clear.
 
 ## Package And Release Notes
 
@@ -198,12 +201,13 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-09 00:44 UTC:
+2026-05-09 00:59 UTC:
 
-- Local repo clean at `daf3610` before edits; no untracked non-ignored files.
+- Local repo clean at `0204b95` before edits; no untracked non-ignored files.
 - npm latest remains `@xquik/tweetclaw@1.6.27`; GitHub release `v1.6.27` remains live; ClawHub latest remains `1.6.26`, clean, and `1.6.27` is still blocked by owner-scope validation.
 - OpenClaw npm latest and beta remain `2026.5.7`; GitHub default latest remains `v2026.5.7`, with no required TweetClaw manifest or route change.
-- Context7 benchmark moved to score `81.6`, with embedded data showing 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-09T00:37:46.565Z`. Old finalized versions still appear and stale 32-endpoint/media-download snippets remain, so the next useful action remains Context7 Versions-tab cleanup or documented owner-side cache removal.
-- External placement action: updated https://github.com/heilcheng/awesome-agent-skills/pull/142 instead of opening a duplicate PR. The mergeable PR now adds TweetClaw's real skill path alongside x-twitter-scraper in a 4.6k-star Agent Skill Index, using concrete search-intent wording for tweet search, tweet lookup, post tweets and replies, DMs, follower export, media workflows, webhooks, MCP, and REST endpoints.
-- External validation: read README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs/issues, and duplicate terms; `git diff --check` passed; both GitHub links returned HTTP 200; PR body headings, checklist, links, blank lines, and absence of literal `\n` sequences were verified after editing. `npm --prefix website run build` could not run in the fresh checkout because dependencies were not installed and `next` was missing.
-- No-action duplicate candidates: heilcheng/awesome-agent-skills already had our x-twitter-scraper PR, so it was updated in place; doanbactam/agent-skills-directory and dmgrok/agent_skills_directory already have open Xquik submissions.
+- Context7 benchmark moved to score `82.6`, with embedded data showing 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T00:51:33.456Z`, and parsed source SHA `0204b95dbf8a270859f093aae0e2d52d3ed3e669`. Old finalized versions still appear and stale 32-endpoint/media-download snippets remain, so the next useful action remains Context7 Versions-tab cleanup or documented owner-side cache removal.
+- External placement action: opened https://github.com/Code-and-Sorts/awesome-copilot-agents/pull/55. The PR adds TweetClaw to a 500+ star CC0 agent-skill catalog under a new Social Media category, links the maintained upstream skill, repo, and npm package, and uses concrete search-intent wording for search tweets, scrape tweet data, post tweets and replies, monitor X/Twitter, media, DMs, and giveaway draws.
+- External validation: read README, CONTRIBUTING, code of conduct, CC0 license, workflow, repo metadata, open and closed PRs/issues, and duplicate terms; PR body headings, links, blank lines, and absence of literal `\n` sequences were verified. `npx --yes markdownlint-cli2 README.md skills/social/tweetclaw/README.md` passed. `npx --yes awesome-lint README.md` now only reports local temporary-clone repository detection. Full repo markdownlint still reports pre-existing table-style issues in existing Azure skill files.
+- No-action candidates: evgyur/awesome-openclaw lacks license, description, and contribution rules; caramaschiHG/awesome-ai-agents-2026 is viable but broader than the Code-and-Sorts skill catalog, so it was deferred for a future narrow category fit.
+- Automation check: `improve-tweetclaw-openclaw-integration` is already scheduled every 5 minutes with the current placement-first prompt and Apify badge exception.
