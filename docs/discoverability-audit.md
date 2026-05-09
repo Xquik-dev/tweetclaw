@@ -23,15 +23,15 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Skills.sh listing: https://skills.sh/xquik-dev/tweetclaw, with install command `npx skills add xquik-dev/tweetclaw` and 22 total installs as of 2026-05-09 02:24 UTC.
 - ClawHub package: latest `1.6.26`, owner `kriptoburak`, family `code-plugin`, artifact `npm-pack`, package scan clean, verification scan clean, static scan clean on engine `v2.4.22` after accepted rescan request `sd794yd3eeb4av48t4tta8cyt186by6p`. ClawHub publish for `1.6.27` is blocked by owner-scope validation requiring an `@xquik` package to publish under owner `xquik`.
 - ClawHub release: `rd72xygfzsrwgzvqx9aaggrkwx86ak8c`, source commit `76e3db4b14b08937b6a8611d36ce531394499111`, sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`.
-- GitHub repo metadata as of 2026-05-09 12:25 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
-- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-09 12:25 UTC.
+- GitHub repo metadata as of 2026-05-09 12:42 UTC: public, MIT, default branch `master`, 37 stars, 3 forks, description mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints; topics include OpenClaw, TweetClaw, Xquik, X/Twitter, MCP, pay-per-use, skills, automation, ClawHub, Context7, social media, and data extraction.
+- Open GitHub issues and PRs in `Xquik-dev/tweetclaw`: none as of 2026-05-09 12:42 UTC.
 
 ## Current Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
 - Ownership: claimed and verified, managed from `context7.json`.
-- Current observed benchmark on 2026-05-09 12:25 UTC: static HTML plus embedded page data showed benchmark score `85.7`, Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T11:43:55.705Z`, and parsed source SHA `a7471ea967936f6dea7e650366468ad9fa43a91a`. Context7 is still one TweetClaw commit behind current `master`, and old finalized versions plus stale generated snippets still remain.
+- Current observed benchmark on 2026-05-09 12:42 UTC: static HTML plus embedded page data showed benchmark score `84.3`, Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, last update `2026-05-09T12:29:57.332Z`, and parsed source SHA `345b83dfedfc219325e6a31d4cd8a331031209b8`. Context7 has now parsed current `master`, but old finalized versions and stale generated snippets still remain.
 - Static HTML exposes top-level benchmark numbers but not category-level findings. The benchmark page and generated `llms.txt` still include old 32-endpoint and MPP media-download snippets from generated version-cache content even though current repository files have only the current 31-endpoint guidance and `src/api-spec.ts` marks `/api/v1/x/media/download` as authenticated-only and not MPP-eligible.
 - Context7 public page data still lists old finalized tag versions `v1.6.12`, `v1.6.13`, `v1.6.14`, and `v1.6.15`. Official Context7 docs say previous tag versions are managed from the Versions tab, so the next useful fix is removing those old versions in the Context7 web UI, not another TweetClaw source patch.
 - 2026-05-09 11:05 UTC: rechecking `GET /api/v2/context?libraryId=/xquik-dev/tweetclaw` returned `{"error":"validation_error","message":"Invalid input: expected string, received undefined"}`. Treat the public API shape as unstable until the official docs and live endpoint agree again, and do not use it as evidence for current TweetClaw content.
@@ -73,6 +73,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | awesome-claw/awesome-claw | TweetClaw plugin PR open after reading README, CONTRIBUTING, CODE_OF_CONDUCT, CC0 license, SECURITY, repo metadata, issue state, PR state, and duplicate terms; body formatting verified; NHS badge not added because the repo-level badge area would not help readers evaluate one plugin entry | https://github.com/awesome-claw/awesome-claw/pull/13 | Monitor for maintainer feedback |
 | OthmaneBlial/awesome-openclaw-examples | X/Twitter Ops Desk starter PR open | https://github.com/OthmaneBlial/awesome-openclaw-examples/pull/1 | Monitor only |
 | EvoLinkAI/awesome-openclaw-usecases-moltbook | TweetClaw social workflows PR open | https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook/pull/9 | Monitor only |
+| cogine-ai/awesome-openclaw-zh | TweetClaw use-case refresh PR open after reading README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs/issues, and the existing social use-case format; body formatting verified | https://github.com/cogine-ai/awesome-openclaw-zh/pull/10 | Monitor for maintainer feedback |
 | AIPMAndy/awesome-openclaw-skills-CN | x-twitter-scraper PR open; TweetClaw should wait | https://github.com/AIPMAndy/awesome-openclaw-skills-CN/pull/4 | Monitor, no duplicate |
 | AlexAnys/awesome-openclaw-usecases-zh | X/Twitter TweetClaw/Xquik use-case PR open | https://github.com/AlexAnys/awesome-openclaw-usecases-zh/pull/41 | Monitor only |
 | codeaashu/awesome-openclaw-Skills | TweetClaw PR open | https://github.com/codeaashu/awesome-openclaw-Skills/pull/2 | Monitor only |
@@ -165,6 +166,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - AlexAnys/awesome-openclaw-usecases-zh: PR 41 already covers X/Twitter automation.
 - codeaashu/awesome-openclaw-Skills: TweetClaw PR 2 open.
 - LeoYeAI/openclaw-master-skills: issue 38 already submitted TweetClaw.
+- cogine-ai/awesome-openclaw-zh: PR 10 now covers TweetClaw use-case refresh; monitor that thread instead of opening another submission.
 
 ## Audited No-Action Or Blocked Candidates
 
@@ -221,15 +223,15 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-09 12:25 UTC:
+2026-05-09 12:42 UTC:
 
-- Local repo clean at `555d254` before edits; no untracked non-ignored files.
+- Local repo clean at `345b83d` before edits; no untracked non-ignored files.
 - npm latest remains `@xquik/tweetclaw@1.6.27` with gitHead `88b7879ed62c1a47ed33833afabe4654d9d86d9c`; GitHub release `v1.6.27` remains live; ClawHub latest remains `1.6.26`, clean, and `1.6.27` is still blocked by owner-scope validation.
 - OpenClaw npm latest and beta remain `2026.5.7`; no required TweetClaw manifest or route change found in the checked sources.
 - GitHub repo metadata remains public, MIT, 37 stars, 3 forks, no open TweetClaw issues, and a search-intent description that mentions posting tweets, replies, likes, retweets, follows, DMs, OpenClaw, structured Xquik endpoints, and 99 agent-callable endpoints.
-- Context7 benchmark state improved in the current public page check to score `85.7` with Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-09T11:43:55.705Z`, but the parsed source SHA is still `a7471ea967936f6dea7e650366468ad9fa43a91a`, one TweetClaw commit behind current `master`. Keep treating old finalized versions and generated cache as the blocker, not the TweetClaw source tree.
+- Context7 benchmark state regressed in the current public page check to score `84.3` with Trust Score `7.5`, 180 snippets, 8 pages, 0 parse failures, and last update `2026-05-09T12:29:57.332Z`, even though the parsed source SHA is now current `master` commit `345b83dfedfc219325e6a31d4cd8a331031209b8`. Keep treating old finalized versions and generated cache as the blocker, not the TweetClaw source tree.
 - Context7 public `GET /api/v2/context?libraryId=/xquik-dev/tweetclaw` still should not be used as evidence until official docs and the live endpoint agree again.
 - Security and registry checks: Dependabot open alerts are 0, and `npm audit --audit-level=low` reports 0 vulnerabilities.
-- External placement action: updated https://github.com/sundial-org/awesome-openclaw-skills/pull/16 after reading README, repo metadata, open and closed PRs/issues, and duplicate terms. The PR now adds TweetClaw beside x-twitter-scraper in the Social Media category, using concrete wording around search tweets, search tweet replies, post tweets, post tweet replies, follower export, monitors, media workflows, and giveaway draws.
-- External validation: `git diff --check` passed in the fork, the PR title and body were updated and read back from GitHub, and the ClawHub skill page resolves at `https://clawhub.ai/xquik/tweetclaw`. The NHS badge was not added because it would not help users evaluate this list entry.
+- External placement action: opened https://github.com/cogine-ai/awesome-openclaw-zh/pull/10 after reading README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs/issues, and the existing social use-case format. The PR refreshes the existing TweetClaw use case with the current plugin setup path, actual `tempoSigningKey` field, `tools.alsoAllow` guidance, runtime verification, MPP read-only limits, and stronger search-intent workflows for search tweets, search tweet replies, post tweets, follower export, and monitoring.
+- External validation: `git diff --check` passed in the fork, the branch was pushed to `codex/update-tweetclaw-usecase`, and the PR body was read back from GitHub after creation. No NHS badge change was needed because this repo uses content pages, not a badge area.
 - TweetClaw validation: audit update only.
