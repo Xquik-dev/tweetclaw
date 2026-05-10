@@ -11,6 +11,7 @@
     "coverage",
     "tests",
     "types",
+    "src",
     "scripts",
     ".clawpack-manual",
     ".openclaw",
