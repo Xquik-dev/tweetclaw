@@ -80,8 +80,14 @@ if (!packageJson.files?.includes("dist/")) {
 if (packageJson.scripts?.["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.mjs") {
   drifts.push("  package.json: check-skill-frontmatter must validate packaged skill metadata");
 }
-if (packageJson.scripts?.prepack !== "npm run build && npm run check-skill-frontmatter && npm run check-versions") {
-  drifts.push("  package.json: prepack must build runtime output and validate skill/version metadata before package dry-run/publish");
+if (
+  packageJson.scripts?.prepack !==
+  "npm run build && npm run check-skill-frontmatter && npm run check-versions && node scripts/pack-package-json.mjs prepare"
+) {
+  drifts.push("  package.json: prepack must build output, validate metadata, and sanitize package.json before packing");
+}
+if (packageJson.scripts?.postpack !== "node scripts/pack-package-json.mjs restore") {
+  drifts.push("  package.json: postpack must restore the working package.json after packing");
 }
 if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
   drifts.push("  package.json: check-package-artifact must validate packed files");
