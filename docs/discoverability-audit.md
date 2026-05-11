@@ -1,6 +1,6 @@
 # Discoverability Audit
 
-Persistent state for TweetClaw GitHub discoverability, Context7 quality, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
+Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
 ## Recurring Rules
 
@@ -15,6 +15,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - If a target exposes secret-like examples, prefer a narrow safety patch or private disclosure path and never repeat the value.
 - For generated catalogs, identify the upstream source before opening direct generated-output PRs.
 - Current automation cadence is 5 minutes. The automation prompt includes the NHS Agentic Readiness badge rule for relevant handled badge areas and the explicit exception to never add it to Apify READMEs or Apify actor docs.
+- Context7 work is paused by user request. Do not monitor or update Context7 unless the user explicitly asks later.
 - Compact this audit whenever repeated run history starts hiding the current action state.
 
 ## Current TweetClaw State
@@ -30,7 +31,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - Socket latest alerts page for the published npm package: https://socket.dev/npm/package/@xquik/tweetclaw/alerts/1.6.27?tab=dependencies . A Keychain-backed `SOCKET_CLI_API_TOKEN` is now configured locally. Latest successful Socket package score capture on 2026-05-10 showed published `@xquik/tweetclaw@1.6.27` self scores of License `100`, Quality `100`, Vulnerability `100`, Maintenance `95`, Supply Chain `77`, Overall `77`, with the remaining self alert limited to low-severity `urlStrings`. The same capture showed the published dependency view at Dependency Count `417`, License `70`, Maintenance `50`, Quality `36`, Supply Chain `50`, Overall `36`; the main avoidable cause was that the tarball still published `devDependencies`, `overrides`, and `scripts` in `package/package.json`. A local package fix now strips those fields during packing and was verified by tarball inspection on 2026-05-10, but the score route is quota-limited again after the capture (`429`, requires `100`, token had `9` remaining), so the next run should re-query Socket after quota reset to measure the post-fix score.
 - Socket package lookup for `xquik@0.1.0` returned not found on 2026-05-10, so treat the Xquik repo scan as the in-scope Socket surface for the main app until a published npm package exists. The latest local repo scan command succeeded with `healthy: true` for org `Xquik`, repo `xquik`, scan ID `516b215c-47f3-4240-8090-4c9c5d4b9580`.
 
-## Current Context7 State
+## Paused Context7 State
 
 - Library: https://context7.com/xquik-dev/tweetclaw
 - Benchmark: https://context7.com/xquik-dev/tweetclaw?tab=benchmark
@@ -85,6 +86,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | jrleon30/awesome-openclaw-usecases-zh | TweetClaw X account analysis path PR open after reading README, CONTRIBUTING, MIT license, repo metadata, issue state, open and closed PRs, duplicate terms, and the existing X account analysis use case; issues are disabled, so PR was the only useful contribution path; contribution adds TweetClaw as an optional OpenClaw plugin/API-key path, safer credential handling, concrete search tweets, search tweet replies, follower export, monitors, webhooks, approval-gated post tweets/post tweet replies prompts, and platform risk notes; PR body and changed-file list read back after creation; NHS badge not added because the repo badge area describes the use-case library and would not help readers evaluate one optional tool path | https://github.com/jrleon30/awesome-openclaw-usecases-zh/pull/1 | Monitor for maintainer feedback |
 | Jvisionary/OpenClaw-Use-Cases | TweetClaw X account analysis option PR open after reading README, CONTRIBUTING, MIT license, repo metadata, issue state, open and closed PRs, duplicate terms, and the existing X Account Analysis use case; contribution adds TweetClaw as an optional API-key path for search tweets, search tweet replies, follower export, account monitoring, and content-quality review, plus GitHub, npm, and ClawHub links; PR body and changed-file list read back after creation | https://github.com/Jvisionary/OpenClaw-Use-Cases/pull/1 | Monitor for maintainer feedback |
 | salmaanakhtar/awesome-openclaw-usecases | TweetClaw X account analysis option PR open after reading README, README_CN, CONTRIBUTING, MIT license, workflow, repo metadata, issue state, open and closed PRs, duplicate terms, and the existing X Account Analysis use case; issues are disabled, so PR was the only useful contribution path; contribution adds TweetClaw as an optional API-key path for search tweets, search tweet replies, follower export, user lookup, account monitoring, and content-quality review, plus GitHub, npm, and ClawHub links | https://github.com/salmaanakhtar/awesome-openclaw-usecases/pull/1 | Monitor for maintainer feedback |
+| fendouai/awesome-openclaw-usecases-Chinese | TweetClaw X account analysis option PR open after reading README, README_EN, CONTRIBUTING, MIT license, repo metadata, issue state, open and closed PRs, duplicate terms, and the existing X Account Analysis use case; contribution adds TweetClaw as an optional OpenClaw plugin path, safer credential handling, search tweets, tweet replies, follower export, monitors, webhook-style alerts, and approval-gated post/reply drafts; PR body and changed-file list read back after creation; NHS badge not added because the repo badge area is list-level and would not help readers evaluate one optional tool path | https://github.com/fendouai/awesome-openclaw-usecases-Chinese/pull/1 | Monitor for maintainer feedback |
 | AlexAnys/awesome-openclaw-usecases-zh | X/Twitter TweetClaw/Xquik use-case PR open | https://github.com/AlexAnys/awesome-openclaw-usecases-zh/pull/41 | Monitor only |
 | codeaashu/awesome-openclaw-Skills | TweetClaw PR open | https://github.com/codeaashu/awesome-openclaw-Skills/pull/2 | Monitor only |
 | LeoYeAI/openclaw-master-skills | TweetClaw submission issue open; x-twitter-scraper PR 4 also open but conflicting | https://github.com/LeoYeAI/openclaw-master-skills/issues/38 | Monitor only |
@@ -197,6 +199,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - jrleon30/awesome-openclaw-usecases-zh: PR 1 now covers TweetClaw as the safer API-key path for X account analysis, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - Jvisionary/OpenClaw-Use-Cases: PR 1 now covers TweetClaw as the optional API-key path for the existing X Account Analysis use case, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - salmaanakhtar/awesome-openclaw-usecases: PR 1 now covers TweetClaw as the optional API-key path for the existing X Account Analysis use case, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
+- fendouai/awesome-openclaw-usecases-Chinese: PR 1 now covers TweetClaw as the optional OpenClaw plugin path for the existing X Account Analysis use case, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - xianyu110/awesome-openclaw-tutorial: PR 70 now covers TweetClaw in the Chinese community resources appendix and committed search index, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - AlexAnys/awesome-openclaw-usecases-zh: PR 41 already covers X/Twitter automation.
 - codeaashu/awesome-openclaw-Skills: TweetClaw PR 2 open.
@@ -278,10 +281,10 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-11 22:02 UTC:
+2026-05-11 22:12 UTC:
 
 - Browser visual check of `https://github.com/Xquik-dev/tweetclaw` completed. First-screen repo presentation still leads with post tweets, replies, DMs, OpenClaw, `@xquik/tweetclaw`, ClawHub, MIT license, and security signals.
-- Searched OpenClaw use-case repos again. Screened `salmaanakhtar/awesome-openclaw-usecases`, which is MIT-licensed, has English and Chinese READMEs, no TweetClaw content, no TweetClaw open or closed PRs, disabled issues, and an existing X Account Analysis use case where an API-key path is useful.
-- Opened `salmaanakhtar/awesome-openclaw-usecases` PR 1 after checking README, README_CN, CONTRIBUTING, MIT license, workflow, repo metadata, PR history, issue state, duplicate terms, and the existing X Account Analysis format. The PR adds TweetClaw as an optional API-key path for search tweets, search tweet replies, follower export, user lookup, account monitoring, and content-quality review.
+- Searched OpenClaw social and use-case repos again. The obvious social plugin targets were already duplicate-blocked by open TweetClaw PRs, so the run moved to licensed use-case libraries with independent reader value.
+- Opened `fendouai/awesome-openclaw-usecases-Chinese` PR 1 after checking README, README_EN, CONTRIBUTING, MIT license, repo metadata, PR history, issue state, duplicate terms, and the existing X Account Analysis format. The PR adds TweetClaw as an optional OpenClaw plugin path, removes raw-cookie-in-chat wording, and covers search tweets, tweet replies, follower export, monitors, webhook-style alerts, and approval-gated post/reply drafts.
 - External validation in the target repo: `git diff --check` passed and a secret-pattern scan over touched files found no real tokens or cookies. PR 1 is open and mergeable.
-- TweetClaw validation target for this run: audit update plus external PR verification only.
+- Context7 work remains paused by user request; no Context7 check was performed.
