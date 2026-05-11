@@ -192,6 +192,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - AIPMAndy/awesome-openclaw-skills-CN: x-twitter-scraper PR 4 open; TweetClaw should wait for official skill-path requirements.
 - AIPMAndy/awesome-openclaw-use-cases-cn: PR 4 now covers TweetClaw as a concrete X/Twitter automation use case, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - jrleon30/awesome-openclaw-usecases-zh: PR 1 now covers TweetClaw as the safer API-key path for X account analysis, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
+- xianyu110/awesome-openclaw-tutorial: PR 70 now covers TweetClaw in the Chinese community resources appendix and committed search index, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - AlexAnys/awesome-openclaw-usecases-zh: PR 41 already covers X/Twitter automation.
 - codeaashu/awesome-openclaw-Skills: TweetClaw PR 2 open.
 - LeoYeAI/openclaw-master-skills: issue 38 already submitted TweetClaw.
@@ -271,10 +272,10 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-11 21:08 UTC:
+2026-05-11 21:33 UTC:
 
 - Browser visual check of `https://github.com/Xquik-dev/tweetclaw` completed. First-screen repo presentation still leads with post tweets, replies, DMs, OpenClaw, `@xquik/tweetclaw`, ClawHub, MIT license, and security signals.
-- Searched OpenClaw use-case repos again and screened `jrleon30/awesome-openclaw-usecases-zh`, which was active, MIT-licensed, not in the audit, and had no TweetClaw content or prior TweetClaw PRs. Issues are disabled.
-- Opened `jrleon30/awesome-openclaw-usecases-zh` PR 1 after checking README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs, issue state, duplicate terms, and the existing X account analysis use case. The PR adds TweetClaw as the optional API-key path with safer credential handling, concrete X/Twitter analysis tasks, approval-gated draft prompts, and platform risk notes.
-- External validation in the target repo: `git diff --check` passed and a secret-pattern scan over touched files found no obvious token or cookie values. PR 1 is open, non-draft, mergeable, and the PR body plus changed-file list were read back from GitHub.
+- Searched OpenClaw tutorial and use-case repos again. Skipped already-covered or duplicate targets including `avenstack/awesome-openclaw-cases`, `AdemBenAbdallah/awesome-openclaw-usecases`, `VoltAgent/awesome-openclaw-skills`, `openclaw/openclaw`, `hesamsheikh/awesome-openclaw-usecases`, `AlexAnys/awesome-openclaw-usecases-zh`, `SamurAIGPT/awesome-openclaw`, `alvinreal/awesome-openclaw`, `vincentkoc/awesome-openclaw`, `OthmaneBlial/awesome-openclaw-examples`, `cogine-ai/awesome-openclaw-zh`, and `mergisi/awesome-openclaw-agents`.
+- Opened `xianyu110/awesome-openclaw-tutorial` PR 70 after checking README, license, existing appendix format, open PRs, open and closed PR/issue history, and duplicate terms. The PR adds TweetClaw to the Chinese community resources appendix, includes GitHub, npm, ClawHub, and install links, and updates committed search indexes with concrete X/Twitter automation terms.
+- External validation in the target repo: `git diff --check` passed and both changed search index JSON files parse. `bash scripts/check-format.sh` still reports pre-existing formatting issues outside this patch. PR 70 is open and mergeable.
 - TweetClaw validation target for this run: audit update plus external PR verification only.
