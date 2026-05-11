@@ -81,6 +81,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 | EvoLinkAI/awesome-openclaw-usecases-moltbook | TweetClaw social workflows PR open | https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook/pull/9 | Monitor only |
 | cogine-ai/awesome-openclaw-zh | TweetClaw use-case refresh PR open after reading README, CONTRIBUTING, MIT license, repo metadata, open and closed PRs/issues, and the existing social use-case format; body formatting verified | https://github.com/cogine-ai/awesome-openclaw-zh/pull/10 | Monitor for maintainer feedback |
 | AIPMAndy/awesome-openclaw-skills-CN | x-twitter-scraper PR open; TweetClaw should wait | https://github.com/AIPMAndy/awesome-openclaw-skills-CN/pull/4 | Monitor, no duplicate |
+| AIPMAndy/awesome-openclaw-use-cases-cn | TweetClaw X/Twitter automation use-case PR open after reading README, README_EN, CONTRIBUTING, Apache-2.0 license, PR template, issue template, repo metadata, open and closed PRs/issues, and duplicate terms; contribution adds `usecases/x-twitter-automation-tweetclaw.md` plus Chinese and English README placement for search tweets, search tweet replies, post tweets, post tweet replies, follower export, user lookup, monitors, webhooks, and giveaway draws; PR body and changed-file list read back after creation; NHS badge not added because the repo badges describe the use-case library, not one tool entry | https://github.com/AIPMAndy/awesome-openclaw-use-cases-cn/pull/4 | Monitor for maintainer feedback |
 | AlexAnys/awesome-openclaw-usecases-zh | X/Twitter TweetClaw/Xquik use-case PR open | https://github.com/AlexAnys/awesome-openclaw-usecases-zh/pull/41 | Monitor only |
 | codeaashu/awesome-openclaw-Skills | TweetClaw PR open | https://github.com/codeaashu/awesome-openclaw-Skills/pull/2 | Monitor only |
 | LeoYeAI/openclaw-master-skills | TweetClaw submission issue open; x-twitter-scraper PR 4 also open but conflicting | https://github.com/LeoYeAI/openclaw-master-skills/issues/38 | Monitor only |
@@ -188,6 +189,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 - sundial-org/awesome-openclaw-skills: PR 16 now covers both x-twitter-scraper and TweetClaw; monitor that thread instead of opening another submission.
 - clawdbot-ai/awesome-openclaw-skills-zh: PR 26 already covers Xquik family in the same category.
 - AIPMAndy/awesome-openclaw-skills-CN: x-twitter-scraper PR 4 open; TweetClaw should wait for official skill-path requirements.
+- AIPMAndy/awesome-openclaw-use-cases-cn: PR 4 now covers TweetClaw as a concrete X/Twitter automation use case, so do not open a second TweetClaw or Xquik thread there unless maintainers ask for follow-up changes.
 - AlexAnys/awesome-openclaw-usecases-zh: PR 41 already covers X/Twitter automation.
 - codeaashu/awesome-openclaw-Skills: TweetClaw PR 2 open.
 - LeoYeAI/openclaw-master-skills: issue 38 already submitted TweetClaw.
@@ -267,9 +269,10 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 ## Last Run Summary
 
-2026-05-11 20:53 UTC:
+2026-05-11 21:01 UTC:
 
 - Browser visual check of `https://github.com/Xquik-dev/tweetclaw` completed. First-screen repo presentation still leads with post tweets, replies, DMs, OpenClaw, `@xquik/tweetclaw`, ClawHub, MIT license, and security signals.
-- Opened `zaokan/openclaw-marketing-skills` PR 1 after checking README, CONTRIBUTING, AGENTS, MIT license, PR templates, open and closed PRs/issues, and duplicate terms. The PR adds TweetClaw to the marketing tools registry, adds a dedicated integration guide, and adds a concise `social-content` note for X/Twitter search, posting, replies, follower export, monitors, webhooks, and giveaway workflows.
-- External validation: `git diff --check` and direct `skills-ref validate skills/social-content` passed in the target repo; the repo-level validation scripts have pre-existing local shell portability failures unrelated to this change. PR 1 is open, non-draft, mergeable, and the PR body plus changed-file list were read back from GitHub.
+- Searched specifically for OpenClaw use-case repos. Existing coverage already blocked duplicates for `hesamsheikh/awesome-openclaw-usecases`, `EvoLinkAI/awesome-openclaw-usecases-moltbook`, `OthmaneBlial/awesome-openclaw-examples`, `AlexAnys/awesome-openclaw-usecases-zh`, and `cogine-ai/awesome-openclaw-zh`; Xquik-only hits were not treated as TweetClaw duplicates.
+- Opened `AIPMAndy/awesome-openclaw-use-cases-cn` PR 4 after checking README, README_EN, CONTRIBUTING, Apache-2.0 license, templates, open and closed PRs/issues, and duplicate terms. The PR adds a Chinese TweetClaw X/Twitter automation use case plus bilingual README placement.
+- External validation in the target repo: `git diff --check`, `make test`, and `scripts/run_quality_gates.sh --commands lint,test,build` passed. PR 4 is open, non-draft, mergeable, and the PR body plus changed-file list were read back from GitHub.
 - TweetClaw validation target for this run: audit update plus external PR verification only.
