@@ -6,6 +6,7 @@ Persistent state for TweetClaw GitHub discoverability, Context7 quality, externa
 
 - Treat GitHub repo marketability, discoverability, SEO, trust, and quality as a primary recurring objective.
 - Before external outreach, read the target README, contribution rules, license, templates, open and closed PRs/issues, and search for `tweetclaw`, `xquik`, `x-twitter-scraper`, and `@xquik/tweetclaw`.
+- Treat any existing TweetClaw mention, TweetClaw listing, merged TweetClaw change, or open or closed TweetClaw PR/issue as a duplicate blocker unless a maintainer explicitly asks for follow-up. Xquik-only or `x-twitter-scraper` placement is not a TweetClaw duplicate by itself, but the new contribution must add distinct TweetClaw/OpenClaw plugin or npm package value.
 - Prefer one useful repo-native contribution over many thin listings.
 - Do not duplicate open PRs, merged PRs, declined submissions, maintainer decisions, or generated catalog entries.
 - Keep external PRs narrow, factual, credential-free, placeholder-only, and in the target repo's style.
