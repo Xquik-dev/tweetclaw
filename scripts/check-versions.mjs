@@ -92,11 +92,11 @@ if (
 if (packageJson.scripts?.postpack !== "node scripts/pack-package-json.mjs restore-after-pack") {
   drifts.push("  package.json: postpack must restore after npm pack and defer restore during npm publish");
 }
-if (packageJson.scripts?.postpublish !== "node scripts/pack-package-json.mjs restore") {
-  drifts.push("  package.json: postpublish must restore the working package.json after publishing");
-}
 if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
   drifts.push("  package.json: check-package-artifact must validate packed files");
+}
+if (packageJson.scripts?.["publish-clean"] !== "node scripts/publish-clean.mjs") {
+  drifts.push("  package.json: publish-clean must publish with sanitized package metadata");
 }
 if (packageJson.scripts?.prepublishOnly !== "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact") {
   drifts.push("  package.json: prepublishOnly must validate skill metadata, versions, build output, and package artifacts");

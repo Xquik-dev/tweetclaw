@@ -65,7 +65,7 @@ jobs:
           fi
       - name: Publish npm package
         if: steps.registry.outputs.published != 'true'
-        run: npm publish --access public --provenance
+        run: npm run publish-clean -- --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub Release
