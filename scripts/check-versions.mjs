@@ -89,8 +89,11 @@ if (
 ) {
   drifts.push("  package.json: prepack must build output, validate metadata, and sanitize package.json before packing");
 }
-if (packageJson.scripts?.postpack !== "node scripts/pack-package-json.mjs restore") {
-  drifts.push("  package.json: postpack must restore the working package.json after packing");
+if (packageJson.scripts?.postpack !== "node scripts/pack-package-json.mjs restore-after-pack") {
+  drifts.push("  package.json: postpack must restore after npm pack and defer restore during npm publish");
+}
+if (packageJson.scripts?.postpublish !== "node scripts/pack-package-json.mjs restore") {
+  drifts.push("  package.json: postpublish must restore the working package.json after publishing");
 }
 if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
   drifts.push("  package.json: check-package-artifact must validate packed files");

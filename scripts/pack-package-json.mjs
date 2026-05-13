@@ -46,16 +46,26 @@ function restorePackedPackageJson() {
   rmSync(backupPath);
 }
 
+function restorePackedPackageJsonAfterPack() {
+  if (process.env.npm_command === "publish") {
+    return;
+  }
+
+  restorePackedPackageJson();
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const command = process.argv[2];
 
   if (command === "prepare") {
     preparePackedPackageJson();
+  } else if (command === "restore-after-pack") {
+    restorePackedPackageJsonAfterPack();
   } else if (command === "restore") {
     restorePackedPackageJson();
   } else {
-    throw new Error("Expected one of: prepare, restore");
+    throw new Error("Expected one of: prepare, restore-after-pack, restore");
   }
 }
 
-export { buildPackedPackageJson, preparePackedPackageJson, restorePackedPackageJson };
+export { buildPackedPackageJson, preparePackedPackageJson, restorePackedPackageJson, restorePackedPackageJsonAfterPack };
