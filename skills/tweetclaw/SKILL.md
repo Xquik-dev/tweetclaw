@@ -208,7 +208,7 @@ Agent uses tweetclaw -> PATCH /api/v1/x/profile, PATCH /api/v1/x/profile/avatar
 ### Upload media and tweet with image
 
 ```
-You: "Tweet 'Check this out!' with this image: https://example.com/photo.jpg"
+You: "Tweet 'Check this out!' with the attached image file"
 Agent uses tweetclaw -> uploads media, posts tweet with media_ids
 ```
 
