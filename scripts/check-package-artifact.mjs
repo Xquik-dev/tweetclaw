@@ -131,6 +131,12 @@ for (const forbiddenManifestField of ["devDependencies", "overrides", "scripts"]
     errors.push(`packed package.json must omit ${forbiddenManifestField}`);
   }
 }
+if (packedPackageJson.peerDependencies?.openclaw !== packageJson.peerDependencies?.openclaw) {
+  errors.push("packed package.json must preserve the OpenClaw host peer dependency");
+}
+if (packedPackageJson.peerDependenciesMeta?.openclaw?.optional === true) {
+  errors.push("packed package.json must not mark the OpenClaw host peer optional");
+}
 if (runtimeExtensions.length === 0) {
   errors.push("package.json openclaw.runtimeExtensions must list built runtime entries");
 }

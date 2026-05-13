@@ -37,6 +37,9 @@ if (packageJson.peerDependencies?.openclaw !== expectedOpenClawRange) {
     `  package.json: peerDependencies.openclaw ${packageJson.peerDependencies?.openclaw ?? "<missing>"} (expected ${expectedOpenClawRange})`,
   );
 }
+if (packageJson.peerDependenciesMeta?.openclaw?.optional === true) {
+  drifts.push("  package.json: peerDependenciesMeta.openclaw must not mark the OpenClaw host peer optional");
+}
 if (openclawCompat?.pluginApi !== expectedOpenClawRange) {
   drifts.push(
     `  package.json: openclaw.compat.pluginApi ${openclawCompat?.pluginApi ?? "<missing>"} (expected ${expectedOpenClawRange})`,

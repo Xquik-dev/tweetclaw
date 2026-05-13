@@ -8,6 +8,8 @@ As of 2026-05-08 02:38 UTC, npm latest is `@xquik/tweetclaw@1.6.27`, published f
 
 Publishing `1.6.27` to ClawHub through `node scripts/clawpack.mjs publish` failed after auth as `kriptoburak`: ClawHub now rejects publishing a package scoped as `@xquik` under owner `@kriptoburak` and requires the package scope to match the selected owner. Do not republish under owner `xquik` without explicit approval because the separate `xquik/tweetclaw` skill identity must not be disturbed. Next useful path is confirming the intended ClawHub owner migration or requesting a ClawHub policy exception for the existing source-linked package.
 
+As of 2026-05-13 04:02 UTC, `1.6.28` is prepared locally for Socket.dev package hygiene. It keeps TweetClaw as a native OpenClaw code plugin by preserving the required `openclaw` peer dependency, matching `openclaw.extensions` to built `runtimeExtensions`, and retaining `pluginApi` and `minGatewayVersion` compatibility metadata. The packed manifest omits `devDependencies`, `overrides`, and `scripts`; `npm run check-package-artifact` now fails if the OpenClaw host peer is removed or marked optional. Socket repo scan `9f3dde3f-bad7-4c60-b745-9df848d2b9de` completed `healthy: true` with 0 policy alerts.
+
 Future releases should keep using `node scripts/clawpack.mjs dry-run` and `node scripts/clawpack.mjs publish` so ClawHub receives the generated npm-pack tarball instead of the repo folder. npm auth and ClawHub auth remain separate. Use local auth only through CLI config or token environment variables, and never print or commit tokens.
 
 ## Commands
