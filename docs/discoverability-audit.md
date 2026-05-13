@@ -296,7 +296,7 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - cogine-ai/awesome-openclaw-zh: TweetClaw social use case merged via PR 8.
 - MCP Directory and PulseMCP: Xquik already listed; MCP.Directory has stale endpoint copy and no supported automated update route found.
 - Glama and MCP.so: Xquik already listed but visible copy may be stale; no documented public update route found.
-- ClawHub package page for the published plugin is https://clawhub.ai/kriptoburak/xquik-tweetclaw; the skill page remains https://clawhub.ai/xquik/tweetclaw.
+- ClawHub package page for the published plugin is https://clawhub.ai/plugins/@xquik/tweetclaw; the skill page remains https://clawhub.ai/xquik/tweetclaw.
 - Skills.sh: TweetClaw is indexed at https://skills.sh/xquik-dev/tweetclaw with a working `npx skills add xquik-dev/tweetclaw` install command.
 
 ## Do Not Duplicate
