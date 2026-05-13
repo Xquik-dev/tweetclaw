@@ -13,57 +13,16 @@
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
 
-Post tweets, reply, like, retweet, follow, DM & more - directly from your chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
+Post tweets, reply, like, retweet, follow, DM & more - directly from your
+chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
 
 Hermes Agent users should use [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet), the native Python plugin for the same Xquik API contract.
 
-Powered by [Xquik](https://xquik.com), the all-in-one X automation platform. **Post reads from $0.00015/call - about 33x cheaper than official X API post reads.**
-
-## Pricing
-
-TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
-
-### vs Official X API
-
-| | Xquik (via TweetClaw) | Official X pay-per-usage | Notes |
-|---|---|---|---|
-| **Access model** | **$20/month full API, plus pay-per-use options** | No subscriptions or commitments | Basic and Pro are legacy package names |
-| **Cost per post read** | **$0.00015** | $0.005 per resource | Xquik is about 33x cheaper |
-| **Cost per user lookup** | **$0.00015** | $0.010 per resource | Xquik is about 67x cheaper |
-| **Cost per trend read** | **$0.00045** | $0.010 per resource | Xquik is about 22x cheaper |
-| **Write actions** | **$0.0015** | $0.015 content or interaction create; $0.200 content create with URL | Xquik is 10x cheaper for matching $0.015 write classes |
-| **Bulk extraction** | **$0.00015/result** | Charged per returned resource | Built-in extraction jobs are included with Xquik |
-| **Monitoring + webhooks** | **Free** | No direct monitor product in pricing table | Real-time delivery is included |
-| **Giveaway draws** | **$0.00015/entry** | No comparable draw product | Draw engine is included |
-
-Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricing), which lists current pay-per-usage read and write rates.
-
-### Per-Operation Costs
-
-| Operation | Credits | Cost |
-|-----------|---------|------|
-| Read (tweet, search, timeline, bookmarks, etc.) | 1 | $0.00015 |
-| Read (user profile, verified followers, followers you know) | 1 | $0.00015 |
-| Read (favoriters) | 1 | $0.00015 |
-| Read (trends) | 3 | $0.00045 |
-| Follow check, article | 5 | $0.00075 |
-| Write (tweet, like, retweet, follow, DM, etc.) | 10 | $0.0015 |
-| Extraction (tweets, replies, quotes, mentions, posts, likes, media, search, favoriters, retweeters, community members, people search, list members, list followers) | 1/result | $0.00015/result |
-| Extraction (followers, following, verified followers) | 1/result | $0.00015/result |
-| Extraction (articles) | 5/result | $0.00075/result |
-| Draw | 1/entry | $0.00015/entry |
-| Monitors, webhooks, radar, compose, drafts | 0 | **Free** |
-
-### Pay-Per-Use (No Subscription)
-
-Two options:
-
-- **Credits**: Top up credits in the Xquik dashboard. The plugin can read the current balance.
-- **MPP**: 31 read-only X-API endpoints accept anonymous on-chain payments via Machine Payments Protocol. No account needed. SDK: `npm i mppx viem`.
-
-### Free Operations
-
-Tweet composition, style analysis, drafts, curated radar (7 sources), and account status checks are free.
+Search tweets, search tweet replies, post tweets, post tweet replies, export
+followers, look up users, upload media, download media, send direct messages,
+monitor tweets, deliver webhooks, and run giveaway draws through structured
+agent tools. Powered by [Xquik](https://xquik.com), the all-in-one X automation
+platform.
 
 ## Install
 
@@ -82,6 +41,12 @@ npx skills add xquik-dev/tweetclaw
 ```
 
 > **Note:** `@xquik/tweetclaw` is the only official npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is an unofficial redistribution and may ship stale metadata or outdated endpoint counts.
+
+## Pricing
+
+TweetClaw uses Xquik billing for account-backed automation, credit top-ups, and
+optional MPP pay-per-use reads. See [Billing & Pricing](https://docs.xquik.com/guides/billing)
+for the current plans, eligible endpoints, and operation costs.
 
 ## Configure
 
@@ -110,7 +75,11 @@ openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNI
 
 **Security**: Keep the signing key out of chats, docs, and shell history. Prefer the environment-variable command above so OpenClaw writes the secret to its local config without exposing it in the prompt.
 
-MPP-eligible endpoints: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article lookup ($0.00105), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media timeline reads ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
+MPP-eligible read endpoints include tweet lookup, tweet search, user lookup,
+user tweets, follower checks, articles, trends, quotes, replies, retweeters,
+favoriters, threads, user likes, user media timeline reads, communities, lists,
+users batch lookup, people search, followers, following, mentions, and verified
+followers. See the billing guide for current endpoint eligibility and costs.
 
 Media downloads and gallery creation are not MPP-eligible. The user media endpoint returns a user's media-tweet timeline; it does not download files or create gallery links.
 
@@ -205,17 +174,17 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 
 99 agent-callable endpoints across 9 categories. Dashboard-only account-admin, billing, support, and raw credential flows are excluded from the tool catalog and blocked at runtime.
 
-| Category | Examples | Cost |
-|----------|---------|------|
-| **Account** | Account status | Free |
-| **Composition** | Compose, drafts, writing styles, radar | Free / Mixed |
-| **Credits** | Check balance | Free |
-| **Extraction** | 23 extraction tools, giveaway draws, exports | 1-5 credits/result |
-| **Media** | Upload media via URL, authenticated media download, gallery links | 1-2 credits |
-| **Monitoring** | Create monitors, view events, manage webhooks | Free |
-| **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | 1-5 credits |
-| **X Accounts** | List connected account handles for explicit user-selected actions | Free |
-| **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | 10 credits |
+| Category | Examples | Access |
+|----------|---------|--------|
+| **Account** | Account status | Account-backed |
+| **Composition** | Compose, drafts, writing styles, radar | Account-backed |
+| **Credits** | Check balance | Account-backed |
+| **Extraction** | 23 extraction tools, giveaway draws, exports | Account-backed |
+| **Media** | Upload media via URL, authenticated media download, gallery links | Account-backed |
+| **Monitoring** | Create monitors, view events, manage webhooks | Account-backed |
+| **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | Account-backed or MPP where eligible |
+| **X Accounts** | List connected account handles for explicit user-selected actions | Account-backed |
+| **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | Account-backed with approval |
 
 Media download requires authenticated access and is not MPP-eligible. MPP only includes media-tweet timeline reads, not file download or gallery creation.
 

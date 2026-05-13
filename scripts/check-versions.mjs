@@ -204,12 +204,16 @@ const contentChecks = [
   {
     path: "README.md",
     required: [
-      "| Follow check, article | 5 | $0.00075 |",
       "account-backed X automation",
       "99 agent-callable endpoints across 9 categories",
-      "1-5 credits",
+      "Search tweets, search tweet replies, post tweets, post tweet replies",
+      "for the current plans, eligible endpoints, and operation costs",
+      "Account-backed or MPP where eligible",
     ],
     forbidden: [
+      "about 33x cheaper",
+      "vs Official X API",
+      "Per-Operation Costs",
       "| Follow check, article | 7 | $0.00105 |",
       "113 endpoints",
       "112 endpoints",
