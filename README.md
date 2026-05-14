@@ -18,7 +18,7 @@ chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openc
 
 Hermes Agent users should use [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet), the native Python plugin for the same Xquik API contract.
 
-Scrape tweets through structured agent tools. Search tweets, search tweet replies, post tweets, post tweet replies, export followers, look up users, upload media, download media, send direct messages, monitor tweets, deliver webhooks, and run giveaway draws. Powered by [Xquik](https://xquik.com), the all-in-one X automation platform.
+Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Search tweets, search tweet replies, post tweets, post tweet replies, scrape tweets, run follower export, perform user lookup, handle media upload and media download, send direct messages, monitor tweets, deliver webhooks, and run giveaway draws. Powered by [Xquik](https://xquik.com), the all-in-one X automation platform.
 
 ## Install
 
