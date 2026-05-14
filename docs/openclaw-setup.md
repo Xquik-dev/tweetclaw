@@ -19,7 +19,7 @@ Install the published package:
 openclaw plugins install @xquik/tweetclaw
 ```
 
-TweetClaw publishes ClawHub-first install metadata with an exact npm fallback. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
+TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw` package version. Use the ClawHub page for browsing only while its listing lags behind npm. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
 
 ## Verify Runtime Loading
 

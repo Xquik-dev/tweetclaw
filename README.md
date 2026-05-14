@@ -26,7 +26,7 @@ Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Sear
 openclaw plugins install @xquik/tweetclaw
 ```
 
-This command installs the official npm package `@xquik/tweetclaw`. The [ClawHub discovery page](https://clawhub.ai/plugins/@xquik/tweetclaw) remains useful for browsing, but npm is the canonical install source until the ClawHub owner record catches up with the `@xquik` package scope.
+This command installs the official npm package `@xquik/tweetclaw`. The [ClawHub discovery page](https://clawhub.ai/plugins/@xquik/tweetclaw) remains useful for browsing, but npm is the canonical install source while the ClawHub listing lags behind the npm release.
 
 TweetClaw can be installed before credentials are configured. Until you add an API key or MPP signing key, the free `explore` catalog remains available and live API calls return setup guidance instead of failing plugin installation.
 
