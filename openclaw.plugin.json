@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.6.29",
+  "version": "1.6.30",
   "description": "Post tweets, reply, like, retweet, follow, DM, search, and monitor X/Twitter through structured Xquik endpoints.",
   "activation": {
     "onStartup": false,
