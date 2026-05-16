@@ -364,6 +364,7 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 | AIWerk/mcp-bridge | Xquik docs MCP server submission issue open | https://github.com/AIWerk/mcp-bridge/issues/5 | Monitor; prepare recipe only if requested |
 | rohunvora/x-research-skill | License-file metadata issue opened after no-duplicate audit; Xquik backend PR already open | https://github.com/rohunvora/x-research-skill/issues/9 | Monitor only |
 | zhuyansen/agent-skills-hub | TweetClaw metadata refresh issue opened after public index showed stale MCP-server classification and old endpoint counts; no duplicate issue or PR found | https://github.com/zhuyansen/agent-skills-hub/issues/5 | Monitor for pipeline refresh or maintainer guidance |
+| loaditoutadmin/loaditout-mcp-server | Loaditout TweetClaw metadata refresh issue open after web search found public Loaditout snippets with stale 120-endpoint wording, the public `loaditout` package pointed to a non-public repo, the accessible MCP server repo had no issues or PRs, local code had no TweetClaw data to patch, and the public API returned `DEPLOYMENT_NOT_FOUND`; issue asks maintainers to refresh the `Xquik-dev/tweetclaw` registry record to the current npm/OpenClaw install and 31 read-only MPP endpoint guidance | https://github.com/loaditoutadmin/loaditout-mcp-server/issues/1 | Monitor for registry refresh or maintainer guidance |
 
 ## Already Listed Or Completed
 
@@ -684,8 +685,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 
 ## Last Run Summary
 
-2026-05-16 02:56 UTC:
+2026-05-16 02:45 UTC:
 
-- Verified the live TweetClaw GitHub page, repo issue state, canonical GitHub, npm registry, and ClawHub links, then searched fresh OpenClaw and X/Twitter placement surfaces while backing off broad GitHub search after a secondary rate limit.
-- Skipped already-handled OpenClaw social and Twitter targets with open or merged TweetClaw threads, recorded Lobstash/twitter-ads-plugin as no-action, and opened mbeato/awesome-mpp PR 13 to refresh the existing TweetClaw MPP registry entry rather than add a duplicate listing.
-- The MPP PR updates README and registry JSON from stale 120-endpoint wording to current 31 read-only MPP endpoint guidance, with account-backed posting, replies, media, monitoring, and webhooks called out separately. Validation covered registry JSON parse, `git diff --check`, stale-wording scan, TweetClaw GitHub link 200, target repo 200, PR body readback, PR diff readback, and GitHub PR readback at head `47ddadd` with mergeable `MERGEABLE`, mergeStateStatus `UNSTABLE`, and no checks configured.
+- Verified the live TweetClaw GitHub page, repo issue and PR state, canonical GitHub, npm registry, and ClawHub links, then searched fresh stale-metadata surfaces for TweetClaw public discovery.
+- Opened loaditoutadmin/loaditout-mcp-server issue 1 after public Loaditout search snippets showed stale TweetClaw 120-endpoint wording, the public API returned `DEPLOYMENT_NOT_FOUND`, the npm package metadata pointed to the accessible MCP server support repo, and target issues, PRs, and local code had no duplicate TweetClaw thread or editable registry data.
+- The issue asks maintainers to refresh `Xquik-dev/tweetclaw` to the current npm/OpenClaw install path and 31 read-only MPP endpoint guidance. Validation covered TweetClaw GitHub link 200, target repo 200, npm registry metadata for `@xquik/tweetclaw@1.6.31`, Loaditout API 404 evidence, issue body dash scan, and issue creation readback.
