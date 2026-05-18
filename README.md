@@ -13,8 +13,9 @@
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
 
-Post tweets, reply, like, retweet, follow, DM & more - directly from your
-chat. Full X/Twitter automation for [OpenClaw](https://github.com/openclaw/openclaw).
+Search tweets, search tweet replies, post tweets, post tweet replies, export
+followers, monitor X/Twitter, manage media, send direct messages, and run
+giveaway draws from [OpenClaw](https://github.com/openclaw/openclaw).
 
 Hermes Agent users should use [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet), the native Python plugin for the same Xquik API contract.
 

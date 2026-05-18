@@ -1,7 +1,7 @@
 {
   "name": "@xquik/tweetclaw",
   "version": "1.6.31",
-  "description": "Post tweets, reply, like, retweet, follow, DM & more from OpenClaw through structured Xquik endpoints.",
+  "description": "Search tweets, search replies, post tweets, export followers, manage media, monitor X/Twitter, and run giveaway draws from OpenClaw via Xquik.",
   "license": "MIT",
   "type": "module",
   "repository": {

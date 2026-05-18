@@ -2,7 +2,7 @@
   "id": "tweetclaw",
   "name": "TweetClaw",
   "version": "1.6.31",
-  "description": "Post tweets, reply, like, retweet, follow, DM, search, and monitor X/Twitter through structured Xquik endpoints.",
+  "description": "Search tweets, search replies, post tweets, export followers, manage media, monitor X/Twitter, and run giveaway draws from OpenClaw through structured Xquik endpoints.",
   "activation": {
     "onStartup": false,
     "onCapabilities": ["tool"]
