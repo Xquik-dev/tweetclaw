@@ -17,8 +17,6 @@ Search tweets, search tweet replies, post tweets, post tweet replies, export
 followers, monitor X/Twitter, manage media, send direct messages, and run
 giveaway draws from [OpenClaw](https://github.com/openclaw/openclaw).
 
-Hermes Agent users should use [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet), the native Python plugin for the same Xquik API contract.
-
 Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Search tweets, search tweet replies, post tweets, post tweet replies, scrape tweets, run follower export, perform user lookup, handle media upload and media download, send direct messages, monitor tweets, deliver webhooks, and run giveaway draws. Powered by [Xquik](https://xquik.com), the all-in-one X automation platform.
 
 ## Install
@@ -195,7 +193,6 @@ Media download requires authenticated access and is not MPP-eligible. MPP only i
 - [Agent Workflow Guide](docs/agent-workflows.md)
 - Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [n8n](https://docs.xquik.com/guides/n8n), [Zapier](https://docs.xquik.com/guides/zapier), [Make](https://docs.xquik.com/guides/make), [Pipedream](https://docs.xquik.com/guides/pipedream), [Composio migration](https://docs.xquik.com/guides/composio-migration)
 - [npm Package](https://www.npmjs.com/package/@xquik/tweetclaw)
-- [Hermes Tweet for Hermes Agent](https://github.com/Xquik-dev/hermes-tweet)
 - [OpenClaw](https://github.com/openclaw/openclaw)
 
 ## License
