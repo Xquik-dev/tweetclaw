@@ -50,4 +50,19 @@ describe('handleExplore', () => {
     expect(result.isError).toBeUndefined();
     expect(result.content[0]?.text).toContain('/draws');
   });
+
+  it('returns an error result when catalog filtering throws', async () => {
+    expect.assertions(2);
+    const params = new Proxy({}, {
+      get(_target, property) {
+        if (property === 'method') {
+          throw new Error('bad params');
+        }
+        return null;
+      },
+    });
+    const result = await handleExplore(params);
+    expect(result.isError).toBe(true);
+    expect(result.content[0]?.text).toContain('bad params');
+  });
 });

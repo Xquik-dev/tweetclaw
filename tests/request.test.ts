@@ -60,6 +60,11 @@ describe('buildFetchUrl', () => {
     expect(() => { buildFetchUrl('http://xquik.com', '/api/v1/account'); }).toThrow('Base URL must use HTTPS');
   });
 
+  it('rejects malformed base URLs', () => {
+    expect.assertions(1);
+    expect(() => { buildFetchUrl('not a url', '/api/v1/account'); }).toThrow('Base URL must be a valid HTTPS URL.');
+  });
+
   it('rejects credentialed base URLs', () => {
     expect.assertions(1);
     expect(() => { buildFetchUrl('https://user:pass@xquik.com', '/api/v1/account'); }).toThrow(
@@ -152,6 +157,14 @@ describe('createProxiedRequest', () => {
       new Response(JSON.stringify({ code: 'payment_required', error: 402 }), { status: 402 });
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
     await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 402 (payment_required)');
+  });
+
+  it('omits API error codes when the error body has no string code', async () => {
+    expect.assertions(1);
+    const mockFetch: typeof fetch = async () =>
+      new Response(JSON.stringify({ message: 'private failure' }), { status: 400, statusText: 'Bad Request' });
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 400 Bad Request');
   });
 
   it('omits unsafe API error codes', async () => {

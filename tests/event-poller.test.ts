@@ -19,7 +19,9 @@ describe('createEventPoller', () => {
       onEvents: () => {},
       request: mockRequest,
     });
+    poller.stop();
     poller.start();
+    poller.stop();
     poller.stop();
     expect(true).toBe(true);
   });

@@ -27,6 +27,15 @@ describe('formatAccountStatus', () => {
     expect(result).toContain('Inactive');
   });
 
+  it('formats partial usage fields independently', () => {
+    expect.assertions(3);
+    const remainingOnly = formatAccountStatus({ usage: { remaining: 5 } });
+    const percentOnly = formatAccountStatus({ usage: { percent: 25 } });
+    expect(remainingOnly).toContain('Remaining: 5');
+    expect(remainingOnly).not.toContain('Usage:');
+    expect(percentOnly).toContain('Usage: 25%');
+  });
+
   it('handles missing fields gracefully', () => {
     expect.assertions(1);
     const result = formatAccountStatus({});

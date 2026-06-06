@@ -39,6 +39,24 @@ Auth is injected automatically. Never pass API keys, signing keys, passwords, co
 const EXECUTION_TIMEOUT_MS = 30_000;
 const MS_PER_SECOND = 1000;
 
+function createExecutionTimeout(timeoutMs: number): {
+  readonly cancel: () => void;
+  readonly promise: Promise<never>;
+} {
+  const controller = new AbortController();
+  const promise = new Promise<never>((_resolve, reject) => {
+    const timeoutId = setTimeout(() => {
+      reject(new Error(`Execution timed out after ${String(timeoutMs / MS_PER_SECOND)}s`));
+    }, timeoutMs);
+    controller.signal.addEventListener('abort', () => { clearTimeout(timeoutId); }, { once: true });
+  });
+
+  return {
+    cancel: (): void => { controller.abort(); },
+    promise,
+  };
+}
+
 interface TweetclawOptions {
   readonly baseUrl: string;
   readonly credential: string;
@@ -61,15 +79,7 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
   try {
     const requestInfo = resolveCatalogRequest(params, { mppMode });
     const request: RequestFunction = createProxiedRequest(baseUrl, credential, fetchFunction);
-    let rejectTimeout: (reason: Error) => void = (reason) => {
-      throw reason;
-    };
-    const timeoutPromise = new Promise<never>((_resolve, reject) => {
-      rejectTimeout = reject;
-    });
-    const timeoutId = setTimeout(() => {
-      rejectTimeout(new Error(`Execution timed out after ${String(timeoutMs / MS_PER_SECOND)}s`));
-    }, timeoutMs);
+    const timeout = createExecutionTimeout(timeoutMs);
 
     try {
       const result: unknown = await Promise.race([
@@ -78,12 +88,12 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
           method: requestInfo.method,
           ...(requestInfo.query === undefined ? {} : { query: requestInfo.query }),
         }),
-        timeoutPromise,
+        timeout.promise,
       ]);
 
       return successResult(result);
     } finally {
-      clearTimeout(timeoutId);
+      timeout.cancel();
     }
   } catch (error: unknown) {
     return errorResult(error);

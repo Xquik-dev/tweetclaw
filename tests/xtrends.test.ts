@@ -54,6 +54,15 @@ describe('handleXTrends', () => {
     await handleXTrends(mockRequest, '');
   });
 
+  it('handles whitespace-only args', async () => {
+    expect.assertions(1);
+    const mockRequest: RequestFunction = async (_path, options) => {
+      expect(options).toBeUndefined();
+      return { items: [], total: 0 };
+    };
+    await handleXTrends(mockRequest, '   ');
+  });
+
   it('handles undefined args', async () => {
     expect.assertions(1);
     const mockRequest: RequestFunction = async (_path, options) => {

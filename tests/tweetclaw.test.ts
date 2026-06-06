@@ -110,6 +110,21 @@ describe('handleTweetclaw', () => {
     expect(result.content[0]?.text).toContain('timed out');
   });
 
+  it('handles synchronous request failures before timeout setup completes', async () => {
+    expect.assertions(2);
+    const throwingFetch: typeof fetch = () => {
+      throw new Error('sync failure');
+    };
+    const result = await handleTweetclaw({
+      baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
+      fetchFunction: throwingFetch,
+      params: { path: '/api/v1/account' },
+    });
+    expect(result.isError).toBe(true);
+    expect(result.content[0]?.text).toContain('sync failure');
+  });
+
   it('clears execution timeout after successful response', async () => {
     expect.assertions(2);
     vi.useFakeTimers();

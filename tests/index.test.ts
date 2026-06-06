@@ -185,7 +185,7 @@ describe('register', () => {
   });
 
   it('requires OpenClaw approval for write-like tweetclaw tool calls', async () => {
-    expect.assertions(7);
+    expect.assertions(8);
     const { api, hooks } = createMockApi({ apiKey: 'xq_test123' });
     register(api);
     const [hook] = hooks;
@@ -209,6 +209,9 @@ describe('register', () => {
       params: { method: 'POST' },
       toolName: 'tweetclaw',
     });
+    const missingParamsResult = await hook?.handler({
+      toolName: 'tweetclaw',
+    });
 
     expect(hooks).toHaveLength(1);
     expect(hook?.name).toBe('before_tool_call');
@@ -217,6 +220,7 @@ describe('register', () => {
     expect(readResult).toBeUndefined();
     expect(otherToolResult).toBeUndefined();
     expect(invalidParamsResult).toBeUndefined();
+    expect(missingParamsResult).toBeUndefined();
   });
 
   it('uses registerHook when OpenClaw exposes the legacy hook method', () => {

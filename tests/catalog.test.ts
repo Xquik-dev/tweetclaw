@@ -40,6 +40,11 @@ describe('catalog matching', () => {
     expect(() => resolveCatalogRequest({ path: '/api/v1/not-real' })).toThrow('not in the TweetClaw catalog');
   });
 
+  it('rejects unsafe paths before catalog lookup', () => {
+    expect.assertions(1);
+    expect(() => resolveCatalogRequest({ path: '/invalid/path' })).toThrow('Path must start with /api/v1/');
+  });
+
   it('rejects query strings in path', () => {
     expect.assertions(1);
     expect(() => resolveCatalogRequest({ path: '/api/v1/account?x=1' })).toThrow('query object');
