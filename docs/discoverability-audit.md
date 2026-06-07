@@ -47,12 +47,8 @@ archive, before any outreach or duplicate decision.
 
 - GitHub: https://github.com/Xquik-dev/tweetclaw
 - npm: `@xquik/tweetclaw@1.6.31`
-- Recent pushed baseline before automation-doc refresh:
-  `7f774f7 Enforce compact TweetClaw memory docs`
 - Latest OpenClaw stable checked as of 2026-06-07 15:41 UTC:
   `openclaw@2026.6.1`
-- Newer OpenClaw builds were beta-only at that check:
-  `2026.6.5-beta.2`
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -111,17 +107,23 @@ archive, before any outreach or duplicate decision.
 
 - Every run must aggressively find new maintained repositories or websites
   before routine maintenance.
-- Use GitHub repo, code, issue, and PR search; topics; dependency manifests;
-  OpenClaw and ClawHub trails; MCP registries; npm metadata; examples;
-  marketplaces; forks; web indexes; awesome lists; plugin directories; skill
-  catalogs; tutorials; blog and resource lists; package registries; and the
-  internal crawler.
+- Never claim all unsubmitted GitHub skill repositories are exhausted. Treat
+  coverage as ongoing and evidence-bounded.
+- Every run must include a crawler-first skill-repository coverage pass before
+  routine maintenance, with screened lanes, repos, duplicate results, blockers,
+  and the next unscreened lane recorded.
+- Use crawler-first GitHub, OpenClaw, ClawHub, MCP, npm, marketplace, fork,
+  web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog,
+  and package-registry lanes.
 - Run the crawler from `/Users/burak/Developer/xquik` with:
   `bun run github:crawl --use-research-proxy`
 - For JSON use:
   `bun run github:crawl --use-research-proxy --format json`
 - Use focused crawler query sets for authored PRs, audit-tracked PRs, TweetClaw,
   OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs.
+- Skill-repo query inventory lives in the archive; include `SKILL.md`,
+  `.agents/skills`, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill
+  variants, awesome lists, registries, forks, and generated catalogs.
 - Do not use GitHub tokens for crawler searches.
 - Do not print, store, or commit crawler credential values.
 - If crawler output stalls after proxy-refresh logs, kill only owned crawler
@@ -188,16 +190,12 @@ archive, before any outreach or duplicate decision.
 - 2026-06-07 16:05 UTC: updated the heartbeat and audit rules for crawler-first
   broad PR/opportunity discovery, with API/CLI reserved for narrow state
   readbacks.
+- 2026-06-07 16:10 UTC: updated the heartbeat and audit rules so unsubmitted
+  skill-repository coverage is treated as a recurring crawler-first matrix, not
+  a finished whole-GitHub claim.
 
 ## Reporting Checklist
 
-- PR and issue monitoring.
-- Fresh candidates and actions.
-- Duplicate checks.
-- Target policy checks.
-- Changed files.
-- Validation.
-- Broken-link results.
-- Prompt self-improvement and prompt byte size.
-- Commits pushed.
-- External PR or issue URLs or blockers.
+Report PR/issue monitoring, fresh candidates/actions, duplicate and target
+policy checks, changed files, validation, broken links, prompt self-improvement
+and byte size, commits pushed, and external URLs or blockers.

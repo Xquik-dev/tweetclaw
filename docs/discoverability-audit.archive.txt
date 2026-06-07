@@ -19,6 +19,12 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Broad authenticated GitHub code, issue, and PR searches should be avoided when the crawler or read-only metadata can find candidates. GitHub CLI/API remains necessary for narrow known-PR readbacks such as mergeability, checks, reviews, comments, maintainer requests, conflicts, DCO, CLA, target-owned blockers, and final PR/issue body verification.
 - Focused crawler query sets should cover authored PRs, audit-tracked PRs, TweetClaw, OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs before any authenticated fallback. If rate limits occur, stop broad authenticated searching in that run and continue with crawler output, exact-repo REST lists, clone plus `rg`, archive downloads, sparse/blobless clones, API tree reads for exact repos, and target metadata.
 
+2026-06-07 whole-GitHub skill repository coverage update:
+
+- User asked whether any skill repositories across all GitHub were still unsubmitted. Durable answer: do not claim global GitHub exhaustion. GitHub indexing, query limits, forks, archives, private repos, naming variants, and crawler/query coverage make a universal negative impossible to prove.
+- Automation prompt now treats unsubmitted skill-repository discovery as a recurring crawler-first coverage matrix, not a completed one-time search. Every run should include focused crawler lanes for `SKILL.md`, `.agents/skills`, skills directories, OpenClaw skill, MCP skill, Codex skill, Claude skill, agent skill, social media skill, Twitter/X skill, awesome skill lists, registries, forks, and generated catalogs.
+- Future outcomes should report screened lanes, candidate repos, duplicate results, blockers, and the next unscreened lane. If no PR or issue is opened, record whether the blocker was duplicate history, no license, low target-native fit, target policy, inaccessible source, or missing validation path.
+
 ## Recurring Rules
 
 - Treat GitHub repo marketability, discoverability, SEO, trust, and quality as a primary recurring objective.
