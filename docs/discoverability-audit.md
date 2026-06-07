@@ -71,9 +71,12 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- `npm audit --audit-level=moderate` returned 0 vulnerabilities on
-  2026-06-07 20:08 UTC, so the earlier nested `hono` advisory blocker no
-  longer reproduces.
+- Known blocker: GitHub Dependabot alerts 22-25 and fresh `npm audit --json`
+  still flag `node_modules/openclaw/node_modules/hono@4.12.18` under
+  `openclaw@2026.6.1` as vulnerable to four moderate advisories fixed in
+  `hono@4.12.21`. Root `overrides` plus `npm install --package-lock-only` and
+  `npm audit fix` did not rewrite the nested OpenClaw shrinkwrap entry on
+  2026-06-07, so treat this as an upstream OpenClaw stable-package blocker.
 
 ## GitHub-First Rule
 
@@ -188,14 +191,6 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- 2026-06-07: aligned TweetClaw with OpenClaw `2026.6.1`, added compact memory,
-  crawler-first discovery, skill-repo coverage, and Codex automation rules.
-- 2026-06-07 16:35-18:05 UTC: prepared source `1.6.32` with npm auth blocker,
-  opened `sno-ai/mda#43`, `Hao0321/claude-skill-social-post#3`,
-  `framerslab/agentos-skills#1`,
-  `seaworld008/Commonly-used-high-value-skills#35`,
-  `tang-vu/social-posting-skills#1`, and repaired or replied on
-  `cschanhniem/ClawSeatbelt#1`.
 - 2026-06-07 18:26 UTC: no actionable PR repair was pending; opened
   `clairelin1994/founder-story-content#1` for optional TweetClaw X/Twitter
   source context before founder-story content drafting.
