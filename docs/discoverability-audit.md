@@ -71,10 +71,9 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Known blocker: `npm audit --audit-level=moderate` reports moderate `hono`
-  advisories inside published `openclaw@2026.6.1` nested shrinkwrap. Root
-  overrides did not rewrite that nested entry. Treat as upstream OpenClaw stable
-  package blocker until a fixed stable release exists.
+- `npm audit --audit-level=moderate` returned 0 vulnerabilities on
+  2026-06-07 20:08 UTC, so the earlier nested `hono` advisory blocker no
+  longer reproduces.
 
 ## GitHub-First Rule
 
@@ -205,6 +204,8 @@ archive, before any outreach or duplicate decision.
   context in `/bip`.
 - 2026-06-07 19:37 UTC: opened `AmariahAK/atlarix-skills#1` with a new
   TweetClaw X source-context skill; PR monitoring found no safe repair pending.
+- 2026-06-07 19:54 UTC: opened `sytaylor/social-posts-plugin#1` with
+  source-grounded Twitter/X drafting guidance plus stale GitHub URL repairs.
 
 ## Reporting Checklist
 
