@@ -7,6 +7,10 @@
     "onStartup": false,
     "onCapabilities": ["tool"]
   },
+  "commandAliases": [
+    { "name": "xstatus", "kind": "runtime-slash" },
+    { "name": "xtrends", "kind": "runtime-slash" }
+  ],
   "skills": ["skills/tweetclaw"],
   "contracts": {
     "tools": ["explore", "tweetclaw"]

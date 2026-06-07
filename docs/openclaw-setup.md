@@ -26,7 +26,7 @@ TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw`
 After install or update, inspect the runtime and bundled skill:
 
 ```bash
-openclaw plugins inspect tweetclaw --runtime
+openclaw plugins inspect tweetclaw --runtime --json
 openclaw skills info tweetclaw
 ```
 
@@ -35,6 +35,8 @@ Expected result:
 - The `tweetclaw` plugin loads.
 - The `explore` tool is available.
 - The optional `tweetclaw` tool is available when the OpenClaw tool profile allows it.
+- The `before_tool_call` approval hook is registered for risky `tweetclaw` calls.
+- The `xtrends` command is registered.
 - The TweetClaw skill is visible to the agent.
 
 For packaged release checks, validate the installed artifact instead of the source checkout:
@@ -47,6 +49,13 @@ openclaw plugins inspect tweetclaw --runtime --json
 
 `openclaw plugins build --entry ./dist/index.js --check` and `openclaw plugins validate --entry ./dist/index.js` are the generated metadata lane for simple `defineToolPlugin` packages. TweetClaw uses `definePluginEntry` because it registers tools, a command, an approval hook, and an event-polling service, so the package smoke above is the authoritative local release proof.
 
+For slow install or inspect debugging, keep machine-readable output and send
+lifecycle timings to stderr:
+
+```bash
+OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json
+```
+
 ## Enable The Optional Tool
 
 Many OpenClaw profiles keep a coding-focused tool set by default. If the skill is visible but the agent cannot call TweetClaw tools, add the 2 tool names to `tools.alsoAllow`:
@@ -56,6 +65,21 @@ openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
 ```
 
 Use `tools.alsoAllow` instead of replacing the whole tool profile unless strict allowlist mode is intentional.
+
+## Approval Model
+
+OpenClaw optional tools and plugin permission requests solve different problems.
+TweetClaw uses both:
+
+- `tweetclaw` is optional so the model does not see the live endpoint invoker
+  until the user opts in.
+- The plugin approval hook runs after the model selects `tweetclaw` and before
+  OpenClaw executes the call.
+
+TweetClaw requests approval for write-like, private, paid, recurring,
+extraction, monitor, webhook, and account-scoped calls. Approval prompts offer
+one-time approval or deny; they do not offer persistent trust for future
+social-account actions.
 
 ## Credential Modes
 
@@ -128,7 +152,7 @@ For live calls, pass only catalog-listed `/api/v1/...` paths. Put query paramete
 
 If install fails, verify OpenClaw is at least `2026.5.4` and install the published package.
 
-If tools are not visible, inspect runtime loading and set `tools.alsoAllow` for `explore` and `tweetclaw`.
+If tools are not visible, inspect runtime loading with `--runtime --json` and set `tools.alsoAllow` for `explore` and `tweetclaw`.
 
 If live calls return setup guidance, configure either `apiKey` or `tempoSigningKey`.
 

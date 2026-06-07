@@ -19,11 +19,28 @@ The `npm:` selector makes OpenClaw install the official npm package explicitly. 
 
 TweetClaw can be installed before credentials are configured. In that state, use `explore` for free endpoint discovery; live API calls will return setup guidance until the user configures an Xquik API key or MPP signing key.
 
+Verify the installed runtime before live work:
+
+```bash
+openclaw plugins inspect tweetclaw --runtime --json
+openclaw skills info tweetclaw
+```
+
+The runtime inspection should show `explore`, optional `tweetclaw`, the
+`before_tool_call` approval hook, and the `xtrends` command. For slow install or
+inspection debugging, use
+`OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json`
+so lifecycle timings go to stderr while JSON stays parseable.
+
 ## Safety Rules
 
 Use TweetClaw only for user-authorized X/Twitter workflows. Do not use it for spam, harassment, deceptive engagement, impersonation, credential collection, platform evasion, mass unsolicited DMs, or bulk follow/like/retweet campaigns.
 
 Before any visible, state-changing, paid, or recurring action, summarize the exact target, account, action, text/media when relevant, and estimated credits, then wait for explicit user confirmation. This includes posting, replying, deleting, liking, retweeting, following, unfollowing, sending DMs, editing profiles, uploading media, creating webhooks, creating monitors, running draws, and starting extraction jobs.
+
+OpenClaw's `tweetclaw` tool is optional, and approval prompts still run after
+the user opts into the tool. Risky `tweetclaw` calls offer one-time approval or
+deny. Do not treat any approval as durable trust for future X account actions.
 
 For reads that expose private or account-scoped data, such as bookmarks, notifications, timelines, DMs, connected accounts, and account usage, confirm the user owns or is authorized to access the account before showing results. Redact credentials and avoid exposing sensitive personal data unless the user explicitly asks for that specific data.
 
@@ -152,7 +169,7 @@ Structured endpoint invoker. The agent selects one endpoint from the catalog and
 - Only the configured HTTPS Xquik-compatible API base URL can be reached; the runtime rejects non-HTTPS and credentialed base URLs
 - No arbitrary commands, no shell, no filesystem access, no third-party network
 - The tool is registered as optional in OpenClaw. If the agent can see this skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so the normal tool profile stays intact
-- After install or update, use `openclaw plugins inspect tweetclaw --runtime` and `openclaw skills info tweetclaw` to verify the runtime tool and skill registrations
+- After install or update, use `openclaw plugins inspect tweetclaw --runtime --json` and `openclaw skills info tweetclaw` to verify the runtime tool, hook, command, and skill registrations
 
 Example: "Post a tweet saying 'Hello from TweetClaw!'" invokes `POST /api/v1/x/tweets` with `{ account, text }` after fetching the connected account from `GET /api/v1/x/accounts`.
 
@@ -389,7 +406,7 @@ Endpoints that initiate financial transactions are dashboard-only and blocked by
 
 ### Write Action Confirmation
 
-OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls, but the agent must still show the exact endpoint and payload before asking the user to approve.
+OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls, but the agent must still show the exact endpoint and payload before asking the user to approve. Risky calls offer one-time approval or deny.
 
 All write endpoints modify the user's X account or Xquik resources. These are **irreversible public actions** - a posted tweet, sent DM, or profile change is immediately visible. Before calling any write endpoint, **show the user exactly what will be sent** and wait for explicit approval:
 

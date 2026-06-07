@@ -91,9 +91,16 @@ openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
 Verify runtime registration after install or update:
 
 ```bash
-openclaw plugins inspect tweetclaw --runtime
+openclaw plugins inspect tweetclaw --runtime --json
 openclaw skills info tweetclaw
 ```
+
+The runtime inspection should show the loaded `tweetclaw` plugin, the `explore`
+tool, the optional `tweetclaw` tool, the `before_tool_call` approval hook, and
+the `xtrends` command. Use
+`OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json`
+when install or runtime inspection is slow; OpenClaw keeps JSON output parseable
+while printing lifecycle timing to stderr.
 
 For release-like local checks, pack and install the artifact rather than a repo folder so OpenClaw loads the published `dist/index.js` entry:
 
@@ -112,6 +119,24 @@ openclaw config set plugins.entries.tweetclaw.config.pollingInterval 60
 ```
 
 Only change `baseUrl` for a self-hosted Xquik-compatible API. TweetClaw requires an HTTPS base URL with no embedded credentials.
+
+## OpenClaw Trust Model
+
+TweetClaw uses 2 OpenClaw gates:
+
+- Optional tool exposure: `explore` is always safe local catalog search, while
+  `tweetclaw` stays optional until the user allows it with `tools.alsoAllow`.
+- Per-call approval: write-like, private, paid, recurring, extraction, monitor,
+  webhook, and account-scoped calls trigger a plugin approval prompt. TweetClaw
+  offers one-time approval or deny for those calls so a social-account action is
+  reviewed each time.
+
+That shape makes TweetClaw useful for source-backed social workflows without
+turning an agent into an unattended publisher. Good OpenClaw use cases include
+searching tweets before a draft, checking tweet replies before a giveaway draw,
+exporting followers for review, collecting user lookup context, uploading media
+for an approved post, monitoring tweets after the user creates a monitor, and
+using webhooks for reviewed follow-up automation.
 
 ## Tools
 
@@ -134,7 +159,7 @@ Invoke catalog-listed API endpoints with structured `path`, `method`, `query`, a
 
 This tool is optional in OpenClaw. If your agent can see the skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so your normal tool profile stays intact.
 
-OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the structured request before approving any post, delete, follow, DM, monitor, extraction, webhook, or profile-change action.
+OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the structured request before approving any post, delete, follow, DM, monitor, extraction, webhook, or profile-change action. Risky calls offer one-time approval or deny so future social-account actions still require review.
 
 ```
 You: "Post a tweet saying 'Hello from TweetClaw!'"

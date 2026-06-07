@@ -72,6 +72,7 @@ interface BeforeToolCallEvent {
 }
 
 interface ToolApprovalRequest {
+  readonly allowedDecisions?: readonly ['allow-once', 'deny'];
   readonly description: string;
   readonly pluginId?: string;
   readonly severity?: 'critical' | 'info' | 'warning';
@@ -288,6 +289,7 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
 
       return {
         requireApproval: {
+          allowedDecisions: ['allow-once', 'deny'],
           description:
             'TweetClaw is about to invoke an endpoint that can change X accounts, create jobs, or expose private data. Review the tool call before allowing it.',
           pluginId: 'tweetclaw',

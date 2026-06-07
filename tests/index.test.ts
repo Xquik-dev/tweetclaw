@@ -36,6 +36,7 @@ interface RegisteredHook {
     | Promise<
         | {
             readonly requireApproval?: {
+              readonly allowedDecisions?: readonly string[];
               readonly description: string;
               readonly severity?: string;
               readonly timeoutBehavior?: string;
@@ -46,6 +47,7 @@ interface RegisteredHook {
       >
     | {
         readonly requireApproval?: {
+          readonly allowedDecisions?: readonly string[];
           readonly description: string;
           readonly severity?: string;
           readonly timeoutBehavior?: string;
@@ -59,6 +61,14 @@ interface RegisteredHook {
 
 function createMockFetch(response: unknown): typeof fetch {
   return async () => new Response(JSON.stringify(response));
+}
+
+function requireHook(hooks: readonly RegisteredHook[]): RegisteredHook {
+  const [hook] = hooks;
+  if (hook === undefined) {
+    throw new Error('Expected OpenClaw hook registration');
+  }
+  return hook;
 }
 
 function createMockApi(
@@ -127,8 +137,12 @@ describe('register', () => {
   });
 
   it('declares OpenClaw tool activation and optional tool metadata', () => {
-    expect.assertions(3);
+    expect.assertions(4);
     expect(manifest.activation).toStrictEqual({ onCapabilities: ['tool'], onStartup: false });
+    expect(manifest.commandAliases).toStrictEqual([
+      { kind: 'runtime-slash', name: 'xstatus' },
+      { kind: 'runtime-slash', name: 'xtrends' },
+    ]);
     expect(manifest.contracts.tools).toStrictEqual(['explore', 'tweetclaw']);
     expect(manifest.toolMetadata.tweetclaw.optional).toBe(true);
   });
@@ -185,11 +199,11 @@ describe('register', () => {
   });
 
   it('requires OpenClaw approval for write-like tweetclaw tool calls', async () => {
-    expect.assertions(8);
+    expect.assertions(9);
     const { api, hooks } = createMockApi({ apiKey: 'xq_test123' });
     register(api);
-    const [hook] = hooks;
-    const writeResult = await hook?.handler({
+    const hook = requireHook(hooks);
+    const writeResult = await hook.handler({
       params: {
         body: { account: '@demo', text: 'hello' },
         method: 'POST',
@@ -197,26 +211,28 @@ describe('register', () => {
       },
       toolName: 'tweetclaw',
     });
-    const readResult = await hook?.handler({
+    const readResult = await hook.handler({
       params: { path: '/api/v1/account' },
       toolName: 'tweetclaw',
     });
-    const otherToolResult = await hook?.handler({
+    const otherToolResult = await hook.handler({
       params: { method: 'POST', path: '/api/v1/x/tweets' },
       toolName: 'explore',
     });
-    const invalidParamsResult = await hook?.handler({
+    const invalidParamsResult = await hook.handler({
       params: { method: 'POST' },
       toolName: 'tweetclaw',
     });
-    const missingParamsResult = await hook?.handler({
+    const missingParamsResult = await hook.handler({
       toolName: 'tweetclaw',
     });
+    const approval = writeResult?.requireApproval;
 
     expect(hooks).toHaveLength(1);
-    expect(hook?.name).toBe('before_tool_call');
-    expect(hook?.priority).toBe(50);
-    expect(writeResult?.requireApproval?.severity).toBe('warning');
+    expect(hook.name).toBe('before_tool_call');
+    expect(hook.priority).toBe(50);
+    expect(approval?.allowedDecisions).toStrictEqual(['allow-once', 'deny']);
+    expect(approval?.severity).toBe('warning');
     expect(readResult).toBeUndefined();
     expect(otherToolResult).toBeUndefined();
     expect(invalidParamsResult).toBeUndefined();
