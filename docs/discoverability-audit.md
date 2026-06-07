@@ -191,9 +191,6 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- 2026-06-07 18:57 UTC: repaired `clawwork-ai/ClawWork#531` session-target
-  docs and opened `aimerge-studio/bip-skills#1` for optional TweetClaw source
-  context in `/bip`.
 - 2026-06-07 19:37 UTC: opened `AmariahAK/atlarix-skills#1` with a new
   TweetClaw X source-context skill; PR monitoring found no safe repair pending.
 - 2026-06-07 19:54 UTC: opened `sytaylor/social-posts-plugin#1` with
@@ -205,6 +202,9 @@ archive, before any outreach or duplicate decision.
   `realnaka/claim-verification#1` and
   `moonpiesheldon1337/grounded-research#1` for TweetClaw social-source context
   that stays low-tier until primary sources verify claims.
+- 2026-06-07 21:07 UTC: verified tracked PRs had no safe repair pending and
+  opened `Aanlifire/social-media-automation-skills#1` for TweetClaw/X public
+  source-intake guidance in `social-content-studio`.
 
 ## Reporting Checklist
 
