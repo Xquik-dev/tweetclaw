@@ -83,8 +83,12 @@ archive, before any outreach or duplicate decision.
 - Before routine maintenance, check open PRs created by `kriptoburak` and
   audit-tracked relevant PRs for TweetClaw, Xquik, OpenClaw, ClawHub, MCP,
   X/Twitter automation, agent tools, skill catalogs, examples, and outreach.
-- Inspect state, mergeability, checks, reviews, comments, maintainer requests,
-  conflicts, DCO, CLA, and target-owned blockers.
+- Use the internal GitHub crawler first for broad PR, issue, repo, code, and
+  outreach-candidate discovery. Avoid broad authenticated GitHub searches when
+  crawler output or read-only metadata can find candidates.
+- Use GitHub CLI/API only for narrow known-repo/PR readbacks: state,
+  mergeability, checks, reviews, comments, maintainer requests, conflicts, DCO,
+  CLA, target blockers, and body verification.
 - Act only when useful and maintainer-appropriate.
 - Avoid duplicate follow-ups.
 - Record status here or in the archive.
@@ -116,10 +120,16 @@ archive, before any outreach or duplicate decision.
   `bun run github:crawl --use-research-proxy`
 - For JSON use:
   `bun run github:crawl --use-research-proxy --format json`
+- Use focused crawler query sets for authored PRs, audit-tracked PRs, TweetClaw,
+  OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs.
 - Do not use GitHub tokens for crawler searches.
 - Do not print, store, or commit crawler credential values.
 - If crawler output stalls after proxy-refresh logs, kill only owned crawler
   PIDs, record the blocker, and rerun smaller focused batches.
+- If GitHub API, code, issue, or PR search hits API or secondary rate limits,
+  stop broad authenticated GitHub searching for that run and continue with
+  crawler output, exact-repo REST lists, clone plus `rg`, archive downloads,
+  sparse/blobless clones, API tree reads for exact repos, and target metadata.
 
 ## Duplicate And Fork Rules
 
@@ -172,17 +182,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- 2026-06-07 15:20 UTC: aligned TweetClaw with `openclaw@2026.6.1`, added the
-  OpenClaw platform-fitness gate, validated isolated npm-pack runtime inspect,
-  link sweep, and `npm run check:all`, then pushed `6183949`.
-- 2026-06-07 15:41 UTC: no TweetClaw PRs or issues, no maintainer-actionable
-  tracked PR requests, and no stronger fresh outreach candidate. Pushed
-  `4e5a9b6`.
-- 2026-06-07 15:55 UTC: compacted automation Markdown memory, preserved full
-  history in `.archive.txt`, added the size gate, and pushed `7f774f7`.
-- 2026-06-07 15:55 UTC: checked official Codex automation docs and updated the
-  heartbeat prompt for durable same-thread automation, quiet autonomy, and
-  platform-limit awareness.
+- 2026-06-07: aligned TweetClaw with `openclaw@2026.6.1`, added the OpenClaw
+  and Markdown memory gates, compacted history into archives, checked official
+  Codex automation docs, and pushed `6183949`, `4e5a9b6`, `7f774f7`, `498e820`.
+- 2026-06-07 16:05 UTC: updated the heartbeat and audit rules for crawler-first
+  broad PR/opportunity discovery, with API/CLI reserved for narrow state
+  readbacks.
 
 ## Reporting Checklist
 

@@ -13,6 +13,12 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Quiet-autonomy update: the prompt now defaults to `DONT_NOTIFY` with no user-facing prose for successful runs, no-op runs, expected blockers, completed maintenance, and internal audit updates. It notifies only for unavoidable user action caused by platform, security, credential, maintainer-owner, destructive, out-of-scope, or repeated hard-blocker conditions.
 - User permission captured: the automation may read and write TweetClaw files, use network searches, GitHub CLI/API, internal crawler, tests, builds, link checks, package checks, compact audit updates, prompt edits, commits, pushes, and maintainer-appropriate external PRs or issues when duplicate and target-policy gates pass.
 
+2026-06-07 crawler-first PR discovery update:
+
+- User requested that the automation use the internal GitHub crawler for PR discovery to avoid constant GitHub API and secondary rate limits. The heartbeat prompt now makes crawler output the first broad discovery path for PRs, issues, repos, code, and outreach candidates.
+- Broad authenticated GitHub code, issue, and PR searches should be avoided when the crawler or read-only metadata can find candidates. GitHub CLI/API remains necessary for narrow known-PR readbacks such as mergeability, checks, reviews, comments, maintainer requests, conflicts, DCO, CLA, target-owned blockers, and final PR/issue body verification.
+- Focused crawler query sets should cover authored PRs, audit-tracked PRs, TweetClaw, OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs before any authenticated fallback. If rate limits occur, stop broad authenticated searching in that run and continue with crawler output, exact-repo REST lists, clone plus `rg`, archive downloads, sparse/blobless clones, API tree reads for exact repos, and target metadata.
+
 ## Recurring Rules
 
 - Treat GitHub repo marketability, discoverability, SEO, trust, and quality as a primary recurring objective.
