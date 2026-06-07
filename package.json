@@ -23,17 +23,17 @@
       "./dist/index.js"
     ],
     "compat": {
-      "pluginApi": ">=2026.5.4",
-      "minGatewayVersion": "2026.5.4"
+      "pluginApi": ">=2026.6.1",
+      "minGatewayVersion": "2026.6.1"
     },
     "build": {
-      "openclawVersion": "2026.5.4",
-      "pluginSdkVersion": "2026.5.4"
+      "openclawVersion": "2026.6.1",
+      "pluginSdkVersion": "2026.6.1"
     },
     "install": {
       "defaultChoice": "npm",
       "npmSpec": "@xquik/tweetclaw@1.6.31",
-      "minHostVersion": ">=2026.5.4"
+      "minHostVersion": ">=2026.6.1"
     }
   },
   "files": [
@@ -79,16 +79,17 @@
     "check-em-dash": "tsx check-em-dash.ts",
     "check-skill-frontmatter": "node scripts/check-skill-frontmatter.mjs",
     "check-versions": "node scripts/check-versions.mjs",
+    "check-openclaw-platform-fitness": "node scripts/check-openclaw-platform-fitness.mjs",
     "check-package-artifact": "node scripts/check-package-artifact.mjs",
     "publish-clean": "node scripts/publish-clean.mjs",
-    "prepack": "npm run build && npm run check-skill-frontmatter && npm run check-versions && node scripts/pack-package-json.mjs prepare",
+    "prepack": "npm run build && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare",
     "postpack": "node scripts/pack-package-json.mjs restore-after-pack",
-    "prepublishOnly": "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact && npm run test:coverage"
+    "prepublishOnly": "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact",
+    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact && npm run test:coverage"
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",
-    "openclaw": ">=2026.5.4",
+    "openclaw": ">=2026.6.1",
     "viem": ">=2.0.0"
   },
   "peerDependenciesMeta": {

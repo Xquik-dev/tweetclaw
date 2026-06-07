@@ -80,9 +80,12 @@ if (!packageJson.files?.includes("dist/")) {
 if (packageJson.scripts?.["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.mjs") {
   drifts.push("  package.json: check-skill-frontmatter must validate packaged skill metadata");
 }
+if (packageJson.scripts?.["check-openclaw-platform-fitness"] !== "node scripts/check-openclaw-platform-fitness.mjs") {
+  drifts.push("  package.json: check-openclaw-platform-fitness must validate OpenClaw platform metadata");
+}
 if (
   packageJson.scripts?.prepack !==
-  "npm run build && npm run check-skill-frontmatter && npm run check-versions && node scripts/pack-package-json.mjs prepare"
+  "npm run build && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare"
 ) {
   drifts.push("  package.json: prepack must build output, validate metadata, and sanitize package.json before packing");
 }
@@ -95,11 +98,17 @@ if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-pack
 if (packageJson.scripts?.["publish-clean"] !== "node scripts/publish-clean.mjs") {
   drifts.push("  package.json: publish-clean must publish with sanitized package metadata");
 }
-if (packageJson.scripts?.prepublishOnly !== "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-package-artifact") {
+if (
+  packageJson.scripts?.prepublishOnly !==
+  "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact"
+) {
   drifts.push("  package.json: prepublishOnly must validate skill metadata, versions, build output, and package artifacts");
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-skill-frontmatter")) {
   drifts.push("  package.json: check:all must include skill frontmatter validation");
+}
+if (!packageJson.scripts?.["check:all"]?.includes("npm run check-openclaw-platform-fitness")) {
+  drifts.push("  package.json: check:all must include OpenClaw platform fitness validation");
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-package-artifact")) {
   drifts.push("  package.json: check:all must include package artifact validation");

@@ -27,6 +27,8 @@ openclaw plugins install npm:@xquik/tweetclaw
 
 This command installs the official npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while the [ClawHub discovery page](https://clawhub.ai/plugins/@xquik/tweetclaw) lags behind the npm release.
 
+Current source metadata targets OpenClaw `2026.6.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
+
 TweetClaw can be installed before credentials are configured. Until you add an API key or MPP signing key, the free `explore` catalog remains available and live API calls return setup guidance instead of failing plugin installation.
 
 Agent-skill installers can also discover TweetClaw through [Skills.sh](https://skills.sh/xquik-dev/tweetclaw). This installs the packaged `SKILL.md` for agents that use skills directories; use the OpenClaw command above for the plugin runtime.
@@ -109,6 +111,8 @@ npm pack
 openclaw plugins install npm-pack:./xquik-tweetclaw-<version>.tgz
 openclaw plugins inspect tweetclaw --runtime --json
 ```
+
+Maintainers should run `npm run check-openclaw-platform-fitness` after `npm run build`. The gate keeps package metadata, OpenClaw compatibility fields, manifest tool ownership, optional-tool metadata, approval hooks, runtime entries, docs, and the packaged skill aligned.
 
 ### Optional settings
 
