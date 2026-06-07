@@ -16,10 +16,10 @@ The plugin can install before credentials exist. Without credentials, `explore` 
 Install the published package:
 
 ```bash
-openclaw plugins install @xquik/tweetclaw
+openclaw plugins install npm:@xquik/tweetclaw
 ```
 
-TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw` package version. Use the ClawHub page for browsing only while its listing lags behind npm. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
+TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw` package version. The `npm:` selector keeps source selection explicit. Bare `@xquik/tweetclaw` still installs from npm during OpenClaw's launch cutover, but use the ClawHub page for browsing only while its listing lags behind npm. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
 
 ## Verify Runtime Loading
 
@@ -36,6 +36,16 @@ Expected result:
 - The `explore` tool is available.
 - The optional `tweetclaw` tool is available when the OpenClaw tool profile allows it.
 - The TweetClaw skill is visible to the agent.
+
+For packaged release checks, validate the installed artifact instead of the source checkout:
+
+```bash
+npm pack
+openclaw plugins install npm-pack:./xquik-tweetclaw-<version>.tgz
+openclaw plugins inspect tweetclaw --runtime --json
+```
+
+`openclaw plugins build --entry ./dist/index.js --check` and `openclaw plugins validate --entry ./dist/index.js` are the generated metadata lane for simple `defineToolPlugin` packages. TweetClaw uses `definePluginEntry` because it registers tools, a command, an approval hook, and an event-polling service, so the package smoke above is the authoritative local release proof.
 
 ## Enable The Optional Tool
 

@@ -12,8 +12,10 @@ license: MIT-0
 OpenClaw plugin for X/Twitter automation powered by Xquik.
 
 ```bash
-openclaw plugins install @xquik/tweetclaw
+openclaw plugins install npm:@xquik/tweetclaw
 ```
+
+The `npm:` selector makes OpenClaw install the official npm package explicitly. Bare `@xquik/tweetclaw` remains compatible during OpenClaw's launch cutover, but use `npm:` when the ClawHub listing is behind npm.
 
 TweetClaw can be installed before credentials are configured. In that state, use `explore` for free endpoint discovery; live API calls will return setup guidance until the user configures an Xquik API key or MPP signing key.
 
