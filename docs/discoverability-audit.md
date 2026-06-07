@@ -193,11 +193,12 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-07 22:44 UTC: crawler-first monitoring found no safe repair pending.
-  Fresh skill coverage opened `TheMattBerman/x-algo-skill#3`, adding a public
-  source-evidence workflow and optional read-only TweetClaw handoff before X
-  draft scoring. Target validation, link checks, and TweetClaw gates passed;
-  duplicate blockers and broad-directory skips are archived.
+- 2026-06-07 22:59 UTC: crawler-first monitoring found no safe repair pending.
+  Fresh skill coverage opened `tonkotsuboy/x-impact-checker#1`, clarifying
+  public-source scoring limits, fixing stale target docs, and adding optional
+  read-only TweetClaw source evidence before X impact scoring. Target
+  validation, link checks, and TweetClaw gates passed; monitored blockers and
+  screened candidates are archived.
 
 ## Reporting Checklist
 
