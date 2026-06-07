@@ -49,8 +49,9 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-07 16:35 UTC:
-  `openclaw@2026.6.1`
+- Latest OpenClaw stable checked as of 2026-06-07 21:40 UTC:
+  `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
+  metadata reports `2026.6.2`.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -191,20 +192,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- 2026-06-07 19:37 UTC: opened `AmariahAK/atlarix-skills#1` with a new
-  TweetClaw X source-context skill; PR monitoring found no safe repair pending.
-- 2026-06-07 19:54 UTC: opened `sytaylor/social-posts-plugin#1` with
-  source-grounded Twitter/X drafting guidance plus stale GitHub URL repairs.
-- 2026-06-07 20:34 UTC: repaired `tang-vu/social-posting-skills#1`
-  stale-source feedback and opened `tweet-md/skill#2` plus
-  `Bunnykey/twitter-extract-skill#1` for URL-first TweetClaw source discovery.
-- 2026-06-07 20:46 UTC: no actionable PR repair was pending; opened
-  `realnaka/claim-verification#1` and
-  `moonpiesheldon1337/grounded-research#1` for TweetClaw social-source context
-  that stays low-tier until primary sources verify claims.
+- Earlier 2026-06-07 outreach and repair details are archived.
 - 2026-06-07 21:07 UTC: verified tracked PRs had no safe repair pending and
   opened `Aanlifire/social-media-automation-skills#1` for TweetClaw/X public
   source-intake guidance in `social-content-studio`.
+- 2026-06-07 21:28 UTC: repaired
+  `BienvenuONIODJE/twitter-init-kit#3` conflicts, then opened
+  `hyungyunlim/obsidian-social-archiver-skills#1` with TweetClaw/X source-pack
+  intake plus stale README link repairs. Only bot usage-limit comments remain.
 
 ## Reporting Checklist
 
