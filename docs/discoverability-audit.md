@@ -200,6 +200,9 @@ archive, before any outreach or duplicate decision.
 - 2026-06-07 18:26 UTC: no actionable PR repair was pending; opened
   `clairelin1994/founder-story-content#1` for optional TweetClaw X/Twitter
   source context before founder-story content drafting.
+- 2026-06-07 18:57 UTC: repaired `clawwork-ai/ClawWork#531` session-target
+  docs and opened `aimerge-studio/bip-skills#1` for optional TweetClaw source
+  context in `/bip`.
 
 ## Reporting Checklist
 
