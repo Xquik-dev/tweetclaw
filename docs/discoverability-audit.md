@@ -193,12 +193,13 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-07 23:14 UTC: crawler-first monitoring found no safe repair pending.
-  Fresh skill coverage opened `jiamizhongshifu/x-tweet-scorer#1`, clarifying
-  public-source scoring limits, fixing stale README links, updating Phoenix
-  signal mapping, and adding optional read-only TweetClaw source evidence before
-  tweet scoring. Target validation, link checks, and TweetClaw gates passed;
-  monitored blockers and screened candidates are archived.
+- 2026-06-07 23:37 UTC: crawler-first monitoring plus 100 authored-PR
+  readbacks found no safe repair pending. Fresh skill coverage opened
+  `OpenMinis/MinisSkills#66`, fixing a README license-label mismatch and adding
+  an optional TweetClaw/OpenClaw handoff boundary to `twitter-x-hub`. Official
+  OpenClaw plugin docs were rechecked for explicit `npm:` installs, runtime
+  inspect, and approval boundaries. Target validation, link checks, and
+  TweetClaw gates passed; screened candidates and blockers are archived.
 
 ## Reporting Checklist
 
