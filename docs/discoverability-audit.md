@@ -114,6 +114,9 @@ archive, before any outreach or duplicate decision.
 - Every run must include a crawler-first skill-repository coverage pass before
   routine maintenance, with screened lanes, repos, duplicate results, blockers,
   and the next unscreened lane recorded.
+- Do not stop after the first clean skill target; advance multiple
+  duplicate-clean, licensed, target-native submissions while validation time is
+  safe, otherwise record why each remaining target is blocked.
 - Use crawler-first GitHub, OpenClaw, ClawHub, MCP, npm, marketplace, fork,
   web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog,
   and package-registry lanes.
@@ -194,6 +197,10 @@ archive, before any outreach or duplicate decision.
   for 8 flagged PRs; no new maintainer request required action this run.
 - 2026-06-07 17:05 UTC: opened `Hao0321/claude-skill-social-post#3` and
   recorded no prompt edit because the saved prompt remains near cap.
+- 2026-06-07 17:35 UTC: opened `framerslab/agentos-skills#1`, opened
+  `seaworld008/Commonly-used-high-value-skills#35`, addressed AgentOS automated
+  review blockers, and compacted the saved prompt to enforce multi-target
+  skill-repo coverage.
 
 ## Reporting Checklist
 
