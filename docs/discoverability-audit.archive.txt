@@ -2,6 +2,17 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+2026-06-07 Codex automation refresh:
+
+- Official OpenAI Codex manual was fetched by the openai-docs skill helper and was already current in the local temp cache. Relevant official source sections were Automations, Best Practices, Prompting, and Agent approvals and security.
+- Automation docs confirmed this TweetClaw job is correctly modeled as a thread heartbeat because it needs to keep returning to the same conversation context. Standalone automations are better when each run should be independent or report separate Triage findings.
+- Docs confirmed durable automation prompts should say what Codex should do on every wake-up, how to decide whether anything important should be reported, and when to stop or ask for input.
+- Docs confirmed automations run unattended using the Codex app's default sandbox settings, and use `approval_policy = never` when organization policy allows. The prompt cannot override system, admin, tool, or repository safety limits, so the prompt now treats user-granted full permission as broad permission for in-scope non-destructive work while preserving safety boundaries.
+- Docs best practices reinforced keeping task context explicit, reusable instructions durable, diffs reviewable, and validation gates clear. The prompt now records those constraints directly rather than relying on ad hoc heartbeat memory.
+- Prompt update outcome: heartbeat remains `ACTIVE`, `kind = "heartbeat"`, `rrule = "FREQ=MINUTELY;INTERVAL=1"`, and `target_thread_id = "019df91a-3b9e-70e3-a267-d4b635d3ed7f"`. Persisted prompt measured 12,988 bytes and persisted TOML measured 13,336 bytes.
+- Quiet-autonomy update: the prompt now defaults to `DONT_NOTIFY` with no user-facing prose for successful runs, no-op runs, expected blockers, completed maintenance, and internal audit updates. It notifies only for unavoidable user action caused by platform, security, credential, maintainer-owner, destructive, out-of-scope, or repeated hard-blocker conditions.
+- User permission captured: the automation may read and write TweetClaw files, use network searches, GitHub CLI/API, internal crawler, tests, builds, link checks, package checks, compact audit updates, prompt edits, commits, pushes, and maintainer-appropriate external PRs or issues when duplicate and target-policy gates pass.
+
 ## Recurring Rules
 
 - Treat GitHub repo marketability, discoverability, SEO, trust, and quality as a primary recurring objective.

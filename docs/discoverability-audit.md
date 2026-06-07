@@ -47,8 +47,8 @@ archive, before any outreach or duplicate decision.
 
 - GitHub: https://github.com/Xquik-dev/tweetclaw
 - npm: `@xquik/tweetclaw@1.6.31`
-- Latest pushed commit as of 2026-06-07 15:41 UTC:
-  `4e5a9b6 Record TweetClaw heartbeat screening`
+- Recent pushed baseline before automation-doc refresh:
+  `7f774f7 Enforce compact TweetClaw memory docs`
 - Latest OpenClaw stable checked as of 2026-06-07 15:41 UTC:
   `openclaw@2026.6.1`
 - Newer OpenClaw builds were beta-only at that check:
@@ -88,6 +88,20 @@ archive, before any outreach or duplicate decision.
 - Act only when useful and maintainer-appropriate.
 - Avoid duplicate follow-ups.
 - Record status here or in the archive.
+
+## Codex Automation Rule
+
+- Official Codex Automations, Best Practices, Prompting, and Agent approvals
+  docs were checked on 2026-06-07; detailed notes are archived.
+- Keep this as a same-thread heartbeat with durable goal, context, constraints,
+  done criteria, report rules, stop rules, and unavoidable-input conditions.
+- Default to quiet autonomous operation: `DONT_NOTIFY` for successful, no-op,
+  expected-blocker, completed maintenance, or internal audit-update runs.
+- Notify only for unavoidable platform, security, credential,
+  maintainer-owner, destructive, out-of-scope, or repeated hard-blocker
+  conditions.
+- Treat user permission as broad in-scope non-destructive automation permission,
+  but never bypass system, admin, tool, repo-safety, or secret boundaries.
 
 ## Discovery Rule
 
@@ -158,19 +172,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- 2026-06-07 15:20 UTC: updated source metadata and lockfile expectations to
-  `openclaw@2026.6.1`, added `scripts/check-openclaw-platform-fitness.mjs`,
-  wired it into pack, publish, and full validation, updated public setup docs,
-  and pushed `6183949`.
-- 2026-06-07 15:20 UTC validation passed `npm run check-openclaw-platform-fitness`,
-  `npm run check-versions`, `npm run check-em-dash`, `git diff --check`,
-  isolated `npm-pack:` install with `openclaw@2026.6.1`, lifecycle-trace runtime
-  inspect JSON, link sweep, and `npm run check:all` with 168 tests and 100%
-  coverage.
-- 2026-06-07 15:41 UTC: TweetClaw repo still had no open PRs or issues,
-  `openclaw@2026.6.1` remained latest stable, focused tracked PRs had no
-  maintainer-actionable requests, and broad crawler leads were duplicate-covered
-  or lower native fit. Pushed audit-only commit `4e5a9b6`.
+- 2026-06-07 15:20 UTC: aligned TweetClaw with `openclaw@2026.6.1`, added the
+  OpenClaw platform-fitness gate, validated isolated npm-pack runtime inspect,
+  link sweep, and `npm run check:all`, then pushed `6183949`.
+- 2026-06-07 15:41 UTC: no TweetClaw PRs or issues, no maintainer-actionable
+  tracked PR requests, and no stronger fresh outreach candidate. Pushed
+  `4e5a9b6`.
+- 2026-06-07 15:55 UTC: compacted automation Markdown memory, preserved full
+  history in `.archive.txt`, added the size gate, and pushed `7f774f7`.
+- 2026-06-07 15:55 UTC: checked official Codex automation docs and updated the
+  heartbeat prompt for durable same-thread automation, quiet autonomy, and
+  platform-limit awareness.
 
 ## Reporting Checklist
 
