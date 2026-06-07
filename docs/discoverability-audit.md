@@ -46,8 +46,10 @@ archive, before any outreach or duplicate decision.
 ## Current TweetClaw State
 
 - GitHub: https://github.com/Xquik-dev/tweetclaw
-- npm: `@xquik/tweetclaw@1.6.31`
-- Latest OpenClaw stable checked as of 2026-06-07 15:41 UTC:
+- npm latest: `@xquik/tweetclaw@1.6.31`
+- Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
+  returned E401 on 2026-06-07.
+- Latest OpenClaw stable checked as of 2026-06-07 16:35 UTC:
   `openclaw@2026.6.1`
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
@@ -184,15 +186,10 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- 2026-06-07: aligned TweetClaw with `openclaw@2026.6.1`, added the OpenClaw
-  and Markdown memory gates, compacted history into archives, checked official
-  Codex automation docs, and pushed `6183949`, `4e5a9b6`, `7f774f7`, `498e820`.
-- 2026-06-07 16:05 UTC: updated the heartbeat and audit rules for crawler-first
-  broad PR/opportunity discovery, with API/CLI reserved for narrow state
-  readbacks.
-- 2026-06-07 16:10 UTC: updated the heartbeat and audit rules so unsubmitted
-  skill-repository coverage is treated as a recurring crawler-first matrix, not
-  a finished whole-GitHub claim.
+- 2026-06-07: aligned TweetClaw with OpenClaw `2026.6.1`, added compact memory,
+  crawler-first discovery, skill-repo coverage, and Codex automation rules.
+- 2026-06-07 16:35 UTC: opened `sno-ai/mda#43`, prepared source `1.6.32`, and
+  recorded npm auth E401 as the publish blocker.
 
 ## Reporting Checklist
 

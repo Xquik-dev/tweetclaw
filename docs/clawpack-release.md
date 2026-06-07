@@ -19,6 +19,9 @@ the archive, before any release or ClawHub decision.
 ## Current Release State
 
 - npm latest: `@xquik/tweetclaw@1.6.31`
+- Release-ready source: `@xquik/tweetclaw@1.6.32`, unpublished.
+- Local npm publish auth blocked on 2026-06-07: `npm whoami` returned E401.
+  Do not claim npm `1.6.32` until publish succeeds.
 - Published: 2026-05-14 20:04 UTC
 - Source commit: `9a645f87b01f4c8440429394c83a2ca4e09fcb9a`
 - npm shasum: `c878edab8c3cd1344aa81757ac450385377bb43f`
@@ -26,8 +29,8 @@ the archive, before any release or ClawHub decision.
   `sha512-4Nr536Z+8yZQYDdp9avKLC5K8TEcN0yB5dskYf0y87prZdxwmyTY6iVpFceHgh9/iEDt5ncYdCT75B9o6rDo9A==`
 - GitHub release:
   https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.31
-- Install metadata uses `defaultChoice: "npm"` with
-  `npmSpec: "@xquik/tweetclaw@1.6.31"`.
+- Source install metadata uses `defaultChoice: "npm"` with
+  `npmSpec: "@xquik/tweetclaw@1.6.32"`.
 - `openclaw.install.clawhubSpec` must stay absent until ClawHub publishes the
   current scoped package.
 
