@@ -80,6 +80,9 @@ if (!packageJson.files?.includes("dist/")) {
 if (packageJson.scripts?.["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.mjs") {
   drifts.push("  package.json: check-skill-frontmatter must validate packaged skill metadata");
 }
+if (packageJson.scripts?.["check-memory-md-size"] !== "node scripts/check-memory-md-size.mjs") {
+  drifts.push("  package.json: check-memory-md-size must validate automation memory Markdown size");
+}
 if (packageJson.scripts?.["check-openclaw-platform-fitness"] !== "node scripts/check-openclaw-platform-fitness.mjs") {
   drifts.push("  package.json: check-openclaw-platform-fitness must validate OpenClaw platform metadata");
 }
@@ -106,6 +109,9 @@ if (
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-skill-frontmatter")) {
   drifts.push("  package.json: check:all must include skill frontmatter validation");
+}
+if (!packageJson.scripts?.["check:all"]?.includes("npm run check-memory-md-size")) {
+  drifts.push("  package.json: check:all must include automation memory Markdown size validation");
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-openclaw-platform-fitness")) {
   drifts.push("  package.json: check:all must include OpenClaw platform fitness validation");

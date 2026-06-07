@@ -1,102 +1,84 @@
-# ClawPack Release
+# ClawPack Release Notes
 
-TweetClaw should publish to ClawHub as a ClawPack npm-pack artifact, not the legacy ZIP path. OpenClaw prefers ClawPack metadata when ClawHub provides it, verifies the downloaded bytes and digest headers, and records npm integrity, shasum, tarball name, and ClawPack digest fields for future updates.
+Compact release memory for TweetClaw npm, OpenClaw, and ClawHub publishing.
 
-## Current Finding
+This Markdown file is intentionally small. Full pre-compaction release history
+was moved losslessly to `docs/clawpack-release.archive.txt` on 2026-06-07 after
+the user added a 15 KiB total Markdown memory cap. Search this file first, then
+the archive, before any release or ClawHub decision.
 
-As of 2026-05-14 20:04 UTC, npm latest is `@xquik/tweetclaw@1.6.31`, published from commit `9a645f87b01f4c8440429394c83a2ca4e09fcb9a` with shasum `c878edab8c3cd1344aa81757ac450385377bb43f` and integrity `sha512-4Nr536Z+8yZQYDdp9avKLC5K8TEcN0yB5dskYf0y87prZdxwmyTY6iVpFceHgh9/iEDt5ncYdCT75B9o6rDo9A==`. GitHub release `v1.6.31` is published at https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.31 for that source commit. The package install metadata now uses `defaultChoice: "npm"` with `npmSpec: "@xquik/tweetclaw@1.6.31"` and intentionally omits `clawhubSpec` until ClawHub publishes the current `@xquik/tweetclaw` package. Version `1.6.30` was published, then deprecated because it still preferred stale ClawHub metadata.
+## Size Rule
 
-As of 2026-06-07 15:20 UTC, current source metadata targets OpenClaw `2026.6.1` through `openclaw.compat.pluginApi`, `openclaw.compat.minGatewayVersion`, `openclaw.build.openclawVersion`, `openclaw.build.pluginSdkVersion`, `openclaw.install.minHostVersion`, and the required host peer. `npm run check-openclaw-platform-fitness` now blocks stale package, manifest, runtime, setup-doc, workflow-doc, and packaged-skill drift before pack, publish, or full validation. `npm audit --audit-level=moderate` currently reports a moderate `hono` advisory under `node_modules/openclaw/node_modules/hono` from the published `openclaw@2026.6.1` shrinkwrap; npm root overrides do not rewrite that nested shrinkwrap entry. Treat that as an upstream OpenClaw stable-package blocker until OpenClaw publishes a stable fix.
+- Automation-owned Markdown memory scope is this file plus
+  `docs/discoverability-audit.md`.
+- Their combined size must stay under 15 KiB.
+- Use `npm run check-memory-md-size` before committing prompt, audit, or release
+  memory changes.
+- Move historical detail into non-Markdown archives without deleting information.
 
-ClawHub latest remains `1.6.26` with `artifact.kind: "npm-pack"`, owner `kriptoburak`, `code-plugin` family, package `scanStatus: "clean"`, and verification `scanStatus: "clean"` after explicit rescan request `sd794yd3eeb4av48t4tta8cyt186by6p` completed clean. Version-specific inspect with the 1.6.26 version flag reports a clean static scan with no static findings on engine `v2.4.22`. The old skill-style route https://clawhub.ai/kriptoburak/xquik-tweetclaw still resolves but is stale and must not be used as the canonical TweetClaw install link; use the npm package and the browsing page https://clawhub.ai/plugins/@xquik/tweetclaw until ownership is resolved.
+## Current Release State
 
-Publishing `1.6.30` to ClawHub failed in both owner directions: owner `xquik` returned that the package already exists and belongs to another publisher, while owner `kriptoburak` rejected the `@xquik` scope and requires publishing as owner `xquik` or renaming the package. Do not run ClawHub publish again until the `@xquik/tweetclaw` owner record is migrated or ClawHub grants a scope exception. Keep `node scripts/clawpack.mjs dry-run` in release checks because it still validates the generated npm-pack artifact without changing ClawHub state.
+- npm latest: `@xquik/tweetclaw@1.6.31`
+- Published: 2026-05-14 20:04 UTC
+- Source commit: `9a645f87b01f4c8440429394c83a2ca4e09fcb9a`
+- npm shasum: `c878edab8c3cd1344aa81757ac450385377bb43f`
+- npm integrity:
+  `sha512-4Nr536Z+8yZQYDdp9avKLC5K8TEcN0yB5dskYf0y87prZdxwmyTY6iVpFceHgh9/iEDt5ncYdCT75B9o6rDo9A==`
+- GitHub release:
+  https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.31
+- Install metadata uses `defaultChoice: "npm"` with
+  `npmSpec: "@xquik/tweetclaw@1.6.31"`.
+- `openclaw.install.clawhubSpec` must stay absent until ClawHub publishes the
+  current scoped package.
 
-`1.6.29` was published to npm on 2026-05-13 for Socket.dev package hygiene after `1.6.28` proved that the tarball was clean but the registry metadata still exposed stripped fields. It keeps TweetClaw as a native OpenClaw code plugin by preserving the required `openclaw` peer dependency, matching `openclaw.extensions` to built `runtimeExtensions`, and retaining `pluginApi` and `minGatewayVersion` compatibility metadata. The packed and published manifests omit `devDependencies`, `overrides`, and `scripts`; `npm run check-package-artifact` now fails if the OpenClaw host peer is removed or marked optional. Future GitHub publishes use the `publish-clean` script with provenance enabled so npm sees the sanitized manifest until publish exits, then the local source manifest is restored. Socket repo scan `40ae65ce-fc49-4159-9124-5c2661648833` completed `healthy: true` with 0 policy alerts. Socket package score lookup for `@xquik/tweetclaw@1.6.29` returned self scores of license 100, maintenance 95, quality 100, vulnerability 100, supply chain 77, and overall 77 with only the low `urlStrings` alert. The transitive score still follows the required OpenClaw host peer tree; do not remove or mark `openclaw` optional to chase that score because OpenClaw's dependency-resolution docs require plugins that import `openclaw/plugin-sdk/*` to declare the host package as a peer dependency.
+## OpenClaw Release Fitness
 
-Future releases should keep using `npm run publish-clean` for npm and `node scripts/clawpack.mjs dry-run` for ClawPack artifact verification. npm auth and ClawHub auth remain separate. Use local auth only through CLI config or token environment variables, and never print or commit tokens.
+- Current source metadata targets OpenClaw `2026.6.1`.
+- Required metadata fields:
+  `openclaw.compat.pluginApi`, `openclaw.compat.minGatewayVersion`,
+  `openclaw.build.openclawVersion`, `openclaw.build.pluginSdkVersion`,
+  `openclaw.install.minHostVersion`, and required host peer.
+- `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
+  runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
+  validation.
+- Known blocker: `npm audit --audit-level=moderate` reports moderate `hono`
+  advisories under `node_modules/openclaw/node_modules/hono` from published
+  `openclaw@2026.6.1` shrinkwrap. Root overrides did not rewrite that nested
+  shrinkwrap. Treat as upstream OpenClaw stable-package blocker.
 
-## Commands
+## ClawHub State
 
-Run these from `/Users/burak/Developer/tweetclaw`.
+- ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
+- Latest ClawHub version remains `1.6.26`.
+- Owner: `kriptoburak`
+- Family: `code-plugin`
+- Artifact kind: `npm-pack`
+- Package, verification, and static scans were clean for the last accepted
+  package rescan.
+- Old route https://clawhub.ai/kriptoburak/xquik-tweetclaw still resolves but is
+  stale and must not be used as canonical install link.
+- ClawHub publish for `1.6.27` through `1.6.30` remains blocked by owner-scope
+  validation: owner `xquik` reports the package belongs to another publisher,
+  while owner `kriptoburak` rejects the `@xquik` scope.
+- Do not run ClawHub publish again until the `@xquik/tweetclaw` owner record is
+  migrated or ClawHub grants a scope exception.
+
+## Release Gate
+
+Run before release-like claims:
 
 ```bash
+npm run check-memory-md-size
+npm run check-openclaw-platform-fitness
 npm run check:all
-node scripts/clawpack.mjs dry-run
+npm audit --audit-level=moderate
 ```
 
-If the dry run shows `family: "code-plugin"` and the intended version, authenticate with ClawHub without printing the token:
+Then run isolated `npm-pack:` install plus runtime inspect:
 
 ```bash
-npx --yes clawhub@0.12.2 login --token "$CLAWHUB_TOKEN"
-npx --yes clawhub@0.12.2 whoami
+openclaw plugins install npm-pack:./xquik-tweetclaw-<version>.tgz
+OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json
 ```
 
-Do not publish to ClawHub until ownership changes or ClawHub grants a scope exception. When that happens, publish the generated ClawPack and request a fresh scan. The helper defaults to owner handle `kriptoburak`; override with `CLAWHUB_OWNER=<handle>` if ownership changes.
-
-```bash
-node scripts/clawpack.mjs publish
-npx --yes clawhub@0.12.2 package inspect @xquik/tweetclaw --json
-npx --yes clawhub@0.12.2 package inspect @xquik/tweetclaw --version <version> --json
-npx --yes clawhub@0.12.2 package rescan @xquik/tweetclaw --yes --json
-```
-
-Do not publish the repo folder directly. The current CLI dry-run classified the folder source as `bundle-plugin`; publishing the generated tarball with `--family code-plugin` preserves TweetClaw as a native OpenClaw code plugin.
-
-## Verification
-
-After publishing, inspect ClawHub and confirm:
-
-- `latestVersion` equals the local `package.json` version.
-- The package family is `code-plugin`.
-- The artifact is no longer `legacy-zip`.
-- ClawPack metadata is present, including sha256, size, npm integrity, npm shasum, and tarball name.
-- The summary and compatibility fields match the current package metadata.
-
-## 2026-05-06 Result
-
-`@xquik/tweetclaw@1.6.11` was published to ClawHub as release `rd740m3et9cr2kj9tqjpaq8xdn8642kd` with `artifact.kind: "npm-pack"`. A rescan was requested as `sd7d44dr8az6j800gkgqdvfxmd864nsk`; the package scan later reported `clean`.
-
-`@xquik/tweetclaw@1.6.12` was published to npm and ClawHub on 2026-05-06 after adding explicit skill safety guidance. ClawHub release `rd778yshrw0mkyhhsc2efh6qk58642d9` uses an npm-pack ClawPack artifact with sha256 `e0dee0c281fe6b574a4c0a87be95c5e8d79f8f24096c5ee075c9e269060b8c9c`, npm integrity `sha512-jqyG5xK7sjaq+LIjXPk2LYaPW14yvLkohNNycUd5411YwCnKUEkE5miJyQw/4TqD3BKi2SwypZcxQr551BghMg==`, and npm shasum `8d265a3f23fcc5dcd75d2e3f4b8cbf56985c1379`. Rescan request `sd70hgg2acj0zps78m1edrk1vx864vge` was accepted and remained pending immediately after publication.
-
-`@xquik/tweetclaw@1.6.13` was published to npm and ClawHub on 2026-05-06 after fixing install-before-credentials UX, OpenClaw tool visibility guidance, manifest optional tool metadata, and OpenAI function schema compatibility. ClawHub release `rd7fx4d2gbq1zv89phb5k2hwjh866dst` uses an npm-pack ClawPack artifact with sha256 `d98ed230085b35337ac21a05150580e8d585d1bd61a692a09899745ed148f2d3`, npm integrity `sha512-3nZ6ytpyYwaNhKzM1GCegieaAvd4qqzebwsaUAJMpXvxRAbK4TMmrP8RGK+50AXvQ004kWTYND8qx9tc2vO9fw==`, npm shasum `a1ebf316a2fb3f21be1c1e87c36edf2f8995abc9`, and source commit `68ae8f9518e40ee9ba44bc1250f22e6779683f26`. Rescan request `sd73f43pm2ky0h5rf0wh0h28318674fa` later reported a static-analysis `exposed_secret_literal` finding against an internal `apiKey` object-literal field, so 1.6.14 keeps the public config key stable but renames internal credential plumbing before republishing.
-
-`@xquik/tweetclaw@1.6.14` was published to npm and ClawHub on 2026-05-06 to supersede the 1.6.13 static-analysis false positive. ClawHub release `rd7dk0dd0dxg24aa1x4864gzk5866jes` uses an npm-pack ClawPack artifact with sha256 `41c7944e80eb7a935877c969384124333b10feb2fa7eeda943800201d2e0a521`, npm integrity `sha512-Q1ls9JimCkBMux49klgwKwadivjYnHr5CnBwiHp+YDk1Ec1cXwYNOwqLeLayRRiA/oBfJ+i8p2/d0REPxQNtYg==`, npm shasum `48ff4ce9dc5915a3565aa1dd21db556012bb2cce`, and source commit `26df783a987f1a475587a8eb94336433d43fd25c`. The inspected release artifact reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit rescan request `sd7ax6d9h8ert5gywp215fcrb1866k1c` completed clean for the package and verification records.
-
-`@xquik/tweetclaw@1.6.15` was published to npm and ClawHub on 2026-05-06 after normalizing packaged skill frontmatter and adding `npm run check-skill-frontmatter` to release gates. ClawHub release `rd76g2a13y6vg6t0dqfpc7sv0h866has` uses an npm-pack ClawPack artifact with sha256 `2b01dd7a190bec0d37a11b93bf78cf0636702b62689029043cf53be123b01a3a`, npm integrity `sha512-Hj7pEI2cpiVxK+QupkGg0NPuTYiPLTv+7YJ9cx3QooC/jKHSBeGWBErbgewN++8q0bDIMB6Hduv/6MriIQatiA==`, npm shasum `c8ec2e38b74b4ea34e0640c8ce718f84c04229fc`, and source commit `29f6c9e2395015799f55013270f5df50eba85dc4`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd715z79aa1j5k2t0zy55hgfq1867gj9` completed clean for package and verification records.
-
-`@xquik/tweetclaw@1.6.16` was published to npm and ClawHub on 2026-05-06 after replacing a stale README optional-tool note that recommended `tools.allow` with `tools.alsoAllow` guidance for `explore` and `tweetclaw`. ClawHub release `rd7dy2n83gjxwr9hxec5hvravs867e6f` uses an npm-pack ClawPack artifact with sha256 `19951648c36bae7b9b1a0dc1f8092f46ffb7867d1809b87ed84aa8b6cc72dd25`, npm integrity `sha512-ihMPIiAx2p9r1g0E1XVKRtsY69i2oBIssCxM1ny5pPnAFx7vn3LN71f280QbpI797r6Gi0lrPiwEcSXvIYpj5g==`, npm shasum `5fe53ca2981f1567fe035e070a7460cd1cdf5296`, and source commit `44102cab7efde1ef6dd82d8386742d75d4087057`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c1d6v41q3w252n121v5dzbs866k1t` completed clean for top-level package and verification records.
-
-`@xquik/tweetclaw@1.6.17` was published to npm and ClawHub on 2026-05-06 after aligning MPP route coverage with the current Xquik pay-per-use route set, documenting the media endpoint as non-MPP, adding media input aliases, and expanding the public hygiene guard to cover non-ignored untracked files. ClawHub release `rd79ppmfpxp8ex39w4ax7z5411866g1h` uses an npm-pack ClawPack artifact with sha256 `2fdfc2c6ad9bd165d627f8695a37bc827f8f10d371b1347e6905fc9d7267f304`, npm integrity `sha512-IM3arf9REuplZjldHviQUNAWsW+QATnhOztXKeq4RfsX/0aR/WJPrNBfYiNZImh10YixeTkLDzLJgNJcdfRAHg==`, npm shasum `d24835d0d1a6ce3120ded85b9b9c5b36e58a605b`, and source commit `edb5c19c96818f54e7be238f738ae72f6254e9c7`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7cfzryk628v1g0nrzgyz9ew5866t0b` completed clean for top-level package and verification records.
-
-`@xquik/tweetclaw@1.6.18` was published to npm and ClawHub on 2026-05-06 after requiring HTTPS, credential-free API base URLs for self-hosted Xquik-compatible deployments. ClawHub release `rd77y9s34jhmc1xqzfw8pbvbw1866m2j` uses an npm-pack ClawPack artifact with sha256 `7d52b5f5616afef666cef84c35970e04b645103c62b6657ccd1a3f8d09efb77b`, npm integrity `sha512-dqJ1vTIM82bzA10keF4qMiTBSHsi3biEVdaOhDbmgbU23ENbGkWw4i8JUpmOW3wTPS6FQA8VUYwaYL0KKX0oVA==`, npm shasum `3a67ee9a4aac7d14e1510611d43e59b7ab8456a4`, and source commit `0d640f8ea696ac3c8226994afcf08021f69d0817`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c2kxtqnmarrxbd3bqcffqvn866ewv` completed clean for top-level package and verification records.
-
-`@xquik/tweetclaw@1.6.19` was published to npm and ClawHub on 2026-05-06 after redacting upstream API error response bodies from OpenClaw-facing failures while retaining safe short error codes. ClawHub release `rd7bveeghd6xsc71nwp30kvjgn867844` uses an npm-pack ClawPack artifact with sha256 `54dc1c6021eb5976fa7836db6ec1b7c64c2ed062f4246f928ad8786255e105c1`, npm integrity `sha512-VKXPFP9houJUTTqez8b28sih01w3ozitgspEPhtrpkAo46vk/70WnOezU4pZzuysHTF7hqTwVb007oVubcmrcg==`, npm shasum `8a44fff6bd167ff4789578a59680a111b70e0c5f`, and source commit `7f1cecadba01d0ec479e13feb29e2489f42f2e3c`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7fzwy0r5r6ajjbpyg5nvz805866cmh` completed clean for top-level package and verification records.
-
-`@xquik/tweetclaw@1.6.20` was published to npm and ClawHub on 2026-05-06 after clearing the TweetClaw execution timeout after successful API calls, avoiding delayed process shutdown in real tool smoke tests. ClawHub release `rd7akgmr7v2gn3avb7352pscnh866qsx` uses an npm-pack ClawPack artifact with sha256 `73d9c4591f79c281f8024c5d672c4b3ac5711a20571966953059ce9c6fd4c9c8`, npm integrity `sha512-SrSNxx2IliyIia+TakMXqlkM7fILXvCfA2fnLOQbKAk8kaXO0+6JHWdcUa5oaIpOmF7x39PXkXmaLM1v5fZ8yw==`, npm shasum `661aea3bf9a3371e696564aaff2044e6a5e5064c`, and source commit `6b3ecbc62eec513fa51e42a03b96c4c3ec09f600`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7e9jw78zcqgtgr10gs71ps0n866f4k` completed clean for top-level package and verification records.
-
-`@xquik/tweetclaw@1.6.21` was published to npm and ClawHub on 2026-05-07 after normalizing dashboard-only endpoint blocklist paths so trailing slashes cannot bypass exact-match protections. ClawHub release `rd768p47n2bg22zfhp9hx4vddh869v16` uses an npm-pack ClawPack artifact with sha256 `a7f8aea795f8385eee662dfa066f34e816b0b63db24d0425c1b4c7298959f340`, npm integrity `sha512-vF0mlXom9blcE8EtMwdPc05+NJNl0ocy26D5awLfBaIVfb7Q9vJecM8i/+aNkqVyvALhlqLIo7+X1rqUztr8MA==`, npm shasum `05a5685f9206f7accf1ab3c78955b80b56c654e4`, and source commit `6f28cac7b7c43bb9df826fa2f822300f1597b154`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd762r105pcgtrj8g01d3fzsn1869qpk` completed clean for top-level package and verification records by 2026-05-07 13:39 UTC.
-
-`@xquik/tweetclaw@1.6.22` was published to npm and ClawHub on 2026-05-07 after adding a 5 second floor for event polling intervals in both the OpenClaw config schema and runtime normalization. ClawHub release `rd7ag7rvjtw7mkfr6ppnm1xjf18688dv` uses an npm-pack ClawPack artifact with sha256 `b75caf1da55ced30b8a2055d90edee294770d133f545360d764387c9fb5330d7`, npm integrity `sha512-KgOUoH9fLWgb5OiYsCwb/+eGWBChNc6RqfcI0m9BOUZZrkgiPXdBupdkyHZUYjj6jLhu/dK+19K9CByXlPoL4A==`, npm shasum `12b11da141827a57478fe60d0a397440c1597d11`, and source commit `fccc29bec4700bc4b1d2b5fd2d951a9302fb8345`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7bfyr8ar39xaqpwfw5xj9v29868w7a` completed clean for top-level package and verification records by 2026-05-07 15:22 UTC.
-
-`@xquik/tweetclaw@1.6.23` was published to npm and ClawHub on 2026-05-07 after switching OpenClaw install-on-demand metadata to prefer exact ClawHub installs with an exact npm fallback. ClawHub release `rd74tc9mrzhkh31e05mq1hdqex869r2d` uses an npm-pack ClawPack artifact with sha256 `20ff754e3950b05bfa29ed6a25cb1dc112c6dd7a1d741e7f1b4c3348d9fcc21d`, npm integrity `sha512-udbvNnrOzQYWKHyhwabUKRZdV8Qo4lgHHc1wBN4g2TrjEhwrc15awYkEUNXGrmbNWhD1l9zTPP3Lv2Ta7pgrNg==`, npm shasum `6fc8b7f2301428afcadda4baeeff50a651dcd1d1`, and source commit `ae14deacbe5b7f89f66698d7770dd1a0ff58cb06`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7c7nqby0btrteqh556061qyd869e8r` completed clean for top-level package and verification records by 2026-05-07 17:21 UTC.
-
-`@xquik/tweetclaw@1.6.24` was published to npm and ClawHub on 2026-05-07 after improving Context7 and GitHub discoverability with focused setup/workflow docs, README Context7 links, and synchronized install metadata. ClawHub release `rd777d38rp3g895s4n7m2gkhvx869j20` uses an npm-pack ClawPack artifact with sha256 `eb167146858b09d3b7541a3c0e03792f0dfb481c3a450696d43fb70d92c27cc1`, npm integrity `sha512-OMeeJWqs3dSjXvTWxLnHydPVYEAVvF8mgdCy27Nljqd+QMKaAqfwFaffR54qaTnGbfOMx/7VvBIg3dCBqiaiIA==`, npm shasum `5da8308228ac6fe6151d4bfa362da279301e0b07`, and source commit `21b6a5ebbfe4559a5b7303cd5ebdba093247d9c6`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd78ne5291p1jgkkmvn39898zx869fxp` completed clean for top-level package and verification records by 2026-05-07 20:09 UTC.
-
-`@xquik/tweetclaw@1.6.25` was published to npm and ClawHub on 2026-05-07 after clarifying that MPP user media is a timeline read, not media file download, across the README, setup docs, agent workflow docs, skill, manifest, and install metadata. ClawHub release `rd7836qrymyw45xjzba2t1jzqh869ceh` uses an npm-pack ClawPack artifact with sha256 `0462d82fa1b6b350381a4bf7c7d96fc034d6701cb273248cb3a0fe71e5b62bfd`, npm integrity `sha512-BK+odyFH9O+3t/Wuccy/ySOCeupqxwvF3VZ4B5CECxn1gutDz/Q2B0XRK//qSJfeg8Vx8mOJA3Z1PbC33gPHQg==`, npm shasum `911d99756bd393b6c134e6b23d81bc8603c49a71`, and source commit `d276e7301571a866c8b837651ec6c3956f86bc75`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd7ds0wqjw6h641y9r835ehreh869fqq` completed clean for top-level package and verification records by 2026-05-07 21:20 UTC.
-
-## 2026-05-08 Result
-
-`@xquik/tweetclaw@1.6.26` was published to npm and ClawHub on 2026-05-08 after replacing the packaged skill's broad `cheap-api` discovery tag with `pay-per-use`, `clawhub`, and `context7`, and synchronizing exact install metadata to `1.6.26`. ClawHub release `rd72xygfzsrwgzvqx9aaggrkwx86ak8c` uses an npm-pack ClawPack artifact with sha256 `1869312b2c46aae9d3cb06634a6040d2a1d2e1b4f09c9d6bb5d3cc7e5fc4d27e`, npm integrity `sha512-nHzTrcBDnXDOvaMAZxgmGXG09DPSxdFXSyHSpHJ527Cpbnv9uJ/Oc4N5gfN7n3RiyT1h06uMzeVOlFPJg2Dfsg==`, npm shasum `07039500940e20bf63870dbd8fba156ccef058c6`, and source commit `76e3db4b14b08937b6a8611d36ce531394499111`. Version-specific inspect reported `staticScan.status: "clean"` with no findings on engine `v2.4.22`; explicit package rescan request `sd794yd3eeb4av48t4tta8cyt186by6p` completed clean for top-level package and verification records by 2026-05-08 01:07 UTC.
-
-`@xquik/tweetclaw@1.6.27` was published to npm on 2026-05-08 after marking the authenticated media-download endpoint as not MPP-eligible in the runtime catalog and adding a regression test. npm shasum is `6a75ea6b07628fb39d96974d649afc34eb05232d`; npm integrity is `sha512-3u7GwG6Rmui+/DtBwwnVW1uThyBDYRmRyAwTr4gHdI7rYDopkf9vM+RYu+ij9de++eiF3wjVofXYMLgEnqEiCw==`; source commit is `88b7879ed62c1a47ed33833afabe4654d9d86d9c`. Lightweight tag `v1.6.27` now points at that commit, and the GitHub publish workflow created release https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.27 after confirming npm was already published. ClawPack dry-run produced sha256 `ab25bb7f29b5dd86f23a371601193e4b5706f6a6d6630d070ed11497733b7d7b`, 57 files, and `code-plugin` family metadata, but ClawHub publish failed because the current owner token is `kriptoburak` and the package scope is `@xquik`. ClawHub latest remains `1.6.26`; no `1.6.27` ClawHub scan exists yet.
-
-## 2026-05-13 Result
-
-`@xquik/tweetclaw@1.6.28` was published to npm on 2026-05-13 after hardening Socket.dev package hygiene without weakening OpenClaw compatibility. The tarball manifest was clean, but `npm view` still exposed `scripts`, `devDependencies`, and `overrides` because the package restore hook ran before npm finalized registry metadata. `@xquik/tweetclaw@1.6.29` superseded it the same day by deferring manifest restore until after publish. npm shasum is `e702e5da828fc3a68ae2140aaff7faea82bae661`; npm integrity is `sha512-AvTsNiGYOlAdU7wuPMSeEfu6vGbfRaGW+cYNwJdMlV0TLCdrvX9MugCU+eR5mgQLKg1uWzSWVj+ym1FqDlT8eA==`; source commit is `7765b83ca959a3260921df0758b4b53fe22ef6ae`. Lightweight tag `v1.6.29` points at that commit, and GitHub release https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.29 was created after local npm publish. The GitHub publish workflow now installs dependencies with `npm ci --ignore-scripts` before publishing and should publish through the provenance-enabled `publish-clean` script; the repository secret still lacks `@xquik` scope publish rights, so local owner auth completed the npm publish. ClawHub latest remains `1.6.26`; no `1.6.29` ClawHub scan exists yet.
-
-## 2026-05-14 Result
-
-`@xquik/tweetclaw@1.6.30` was published to npm while correcting the stale TweetClaw ClawHub links reported from the SwarmClaw docs review. ClawPack dry-run succeeded with sha256 `3e8fd0b3ba52d7c6c269302a5e6394ae8b2fd2c8231d39`, npm integrity `sha512-2Ek/3b4fxvMgnq11KJKHgEI3l9UsNiubyJWeTbj+6S2wjLdAnka+iz5kCfYXb+yPnmJtUYUuaFxGtMU3bf74Sw==`, and npm shasum `00a0370998ea143dc1da092160d3406c88d91315`, but ClawHub publish failed because the existing package owner record and `@xquik` package scope disagree. npm version `1.6.30` is now deprecated with the message that `1.6.31` supersedes it because install metadata uses npm while ClawHub owner migration is blocked.
-
-`@xquik/tweetclaw@1.6.31` superseded `1.6.30` the same day. npm shasum is `c878edab8c3cd1344aa81757ac450385377bb43f`; npm integrity is `sha512-4Nr536Z+8yZQYDdp9avKLC5K8TEcN0yB5dskYf0y87prZdxwmyTY6iVpFceHgh9/iEDt5ncYdCT75B9o6rDo9A==`; source commit is `9a645f87b01f4c8440429394c83a2ca4e09fcb9a`. Lightweight tag `v1.6.31` points at that commit, and GitHub release https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.31 is current. The release removes `openclaw.install.clawhubSpec`, sets `defaultChoice` to `npm`, pins `npmSpec` to `@xquik/tweetclaw@1.6.31`, and updates the npm README to say the ClawHub plugin page is useful for browsing while npm is the canonical install source.
+Record expected upstream or target-owned blockers before committing.
