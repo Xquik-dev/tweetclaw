@@ -193,13 +193,12 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-07 22:06 UTC: crawler-first monitoring found no TweetClaw repo PRs or
-  issues and repaired `eskobar95/guapo-agent-skills#1` bot review feedback on
-  the existing TweetClaw branch. Fresh skill coverage screened crawler MCP,
-  registry, generated-catalog, directory, and social-skill candidates; new
-  outreach was blocked by duplicate history, missing licenses, generated
-  README-only fit, target-owned review queues, or design-approval risk. Full
-  details are archived.
+- 2026-06-07 22:23 UTC: crawler-first monitoring found no TweetClaw repo PRs or
+  issues, no maintainer-actionable repair, and `twitter-init-kit#3` `.DS_Store`
+  entries as target-owned deletions. Fresh coverage opened
+  `hashgraph-online/registry-broker-skills#16` for design approval on a
+  Registry Broker OpenClaw social-skill example; duplicate, no-license,
+  generated-catalog, and thin-fit blockers are archived.
 
 ## Reporting Checklist
 
