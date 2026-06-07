@@ -193,12 +193,12 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-07 22:23 UTC: crawler-first monitoring found no TweetClaw repo PRs or
-  issues, no maintainer-actionable repair, and `twitter-init-kit#3` `.DS_Store`
-  entries as target-owned deletions. Fresh coverage opened
+- 2026-06-07 22:23 UTC: crawler-first monitoring repaired
+  `BienvenuONIODJE/twitter-init-kit#3` after upstream `main` was rewritten,
+  rebuilding the TweetClaw evidence branch at `cc06790` and restoring
+  `MERGEABLE`/`CLEAN`. Fresh coverage opened
   `hashgraph-online/registry-broker-skills#16` for design approval on a
-  Registry Broker OpenClaw social-skill example; duplicate, no-license,
-  generated-catalog, and thin-fit blockers are archived.
+  Registry Broker OpenClaw social-skill example; blockers are archived.
 
 ## Reporting Checklist
 
