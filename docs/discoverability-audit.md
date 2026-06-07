@@ -201,6 +201,9 @@ archive, before any outreach or duplicate decision.
   TweetClaw X source-context skill; PR monitoring found no safe repair pending.
 - 2026-06-07 19:54 UTC: opened `sytaylor/social-posts-plugin#1` with
   source-grounded Twitter/X drafting guidance plus stale GitHub URL repairs.
+- 2026-06-07 20:34 UTC: repaired `tang-vu/social-posting-skills#1`
+  stale-source feedback and opened `tweet-md/skill#2` plus
+  `Bunnykey/twitter-extract-skill#1` for URL-first TweetClaw source discovery.
 
 ## Reporting Checklist
 
