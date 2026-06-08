@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-08 18:09 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 18:25 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
   metadata reports `2026.6.2`.
-- Official OpenClaw docs checked as of 2026-06-08 18:09 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-08 18:25 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-08 18:09 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-08 18:25 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,14 +195,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 17:53 UTC: crawler-first monitoring read back 100 open authored
+- 2026-06-08 18:14 UTC: crawler-first monitoring read back 100 open authored
   PRs; no maintainer-actionable repair blocked fresh outreach.
-- External submission: opened `citedy/citedy-seo-agent#12`, a docs PR adding
-  optional TweetClaw/OpenClaw X/Twitter source context to README and root,
-  OpenClaw, and packaged skill surfaces.
-- Product maintenance: rechecked current OpenClaw docs and added Nix-mode
-  install/update caveats to TweetClaw README, setup guide, packaged skill, and
-  the OpenClaw fitness gate.
+- External submission: opened `Kamalnrf/claude-plugins#117`, an issue asking
+  how to index canonical `Xquik-dev/tweetclaw` after registry API checks found
+  no `xquik` skill and only a third-party TweetClaw mirror.
+- Product maintenance: rechecked current OpenClaw docs and expanded packaged
+  skill tags for Xquik, tweet scraper, search, replies, posting, API, follower
+  export, media, direct messages, webhooks, MCP, OpenClaw plugin, and agent
+  tool discovery.
 - Full monitoring, duplicate gates, target validation, link checks, prompt size,
   self-improvement notes, and validation results are archived.
 
