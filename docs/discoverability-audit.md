@@ -193,12 +193,6 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-08 00:39 UTC: exact PR readbacks found 6 stale review threads on
-  `HosakaKeigo/x-mcp-server#14`; current head already satisfied them, target
-  validation passed, and the threads were resolved. Fresh skill coverage opened
-  `K0rsantan/x-post-writer#1`, adding optional TweetClaw/OpenClaw read-only
-  source context before drafting. Full crawler results, blockers, docs readback,
-  validation, and link checks are archived.
 - 2026-06-08 01:05 UTC: crawler-first PR monitoring found no safe repair
   blocker after 101 exact PR readbacks and 12 thread-aware review checks. Fresh
   skill coverage opened `typefully/agent-skills#24` and
@@ -207,6 +201,14 @@ archive, before any outreach or duplicate decision.
   target keeps writing, scheduling, publishing, and analytics ownership. Full
   validation, duplicate checks, docs readback, link checks, and blockers are
   archived.
+- 2026-06-08 01:31 UTC: crawler-first monitoring covered 100 open authored PRs
+  plus audit-tracked PRs and found no safe repair blocker after 12
+  thread-aware review checks. Fresh skill coverage screened 19 focused
+  OpenClaw, Typefully, Twitter-X, SEO, and social-skill repos, then opened
+  `gisk0/typefully-skill#5`, adding optional TweetClaw source-intake guidance
+  before Typefully draft creation while Typefully keeps scheduling and
+  publishing ownership. Full PR monitoring, duplicate gates, validation, link
+  checks, and blockers are archived.
 
 ## Reporting Checklist
 
