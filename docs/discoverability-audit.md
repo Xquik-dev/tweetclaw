@@ -193,19 +193,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-08 00:23 UTC: crawler-first monitoring found no repair blocker after
-  exact PR readbacks. Fresh skill coverage opened
-  `ericosiu/ai-marketing-skills#7`, adding optional TweetClaw/OpenClaw
-  read-only source context to `x-longform-post` and fixing a stale README link.
-  The PR is open, ready, mergeable, and has only the expected Codex
-  usage-limit bot comment. Full validation, duplicate checks, docs readback, and
-  screened blockers are archived.
 - 2026-06-08 00:39 UTC: exact PR readbacks found 6 stale review threads on
   `HosakaKeigo/x-mcp-server#14`; current head already satisfied them, target
   validation passed, and the threads were resolved. Fresh skill coverage opened
   `K0rsantan/x-post-writer#1`, adding optional TweetClaw/OpenClaw read-only
   source context before drafting. Full crawler results, blockers, docs readback,
   validation, and link checks are archived.
+- 2026-06-08 01:05 UTC: crawler-first PR monitoring found no safe repair
+  blocker after 101 exact PR readbacks and 12 thread-aware review checks. Fresh
+  skill coverage opened `typefully/agent-skills#24` and
+  `nomastudioai/x-twitter-writer-claude-skill#1`, adding optional
+  TweetClaw/OpenClaw read-only X source context before drafting while each
+  target keeps writing, scheduling, publishing, and analytics ownership. Full
+  validation, duplicate checks, docs readback, link checks, and blockers are
+  archived.
 
 ## Reporting Checklist
 
