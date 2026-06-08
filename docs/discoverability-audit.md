@@ -193,14 +193,6 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-08 00:02 UTC: crawler-first monitoring plus 100 authored-PR
-  readbacks found no safe repair pending. Fresh skill coverage opened
-  `alchaincyf/x-mentor-skill#6`, adding an optional read-only TweetClaw data
-  intake reference for account diagnosis while preserving browser/manual
-  fallbacks and approval boundaries. Official OpenClaw plugin docs were
-  rechecked for runtime inspect, install-source, approval, and ClawHub guidance.
-  Target validation passed; full candidates, blockers, and link results are
-  archived.
 - 2026-06-08 00:23 UTC: crawler-first monitoring found no repair blocker after
   exact PR readbacks. Fresh skill coverage opened
   `ericosiu/ai-marketing-skills#7`, adding optional TweetClaw/OpenClaw
@@ -208,6 +200,12 @@ archive, before any outreach or duplicate decision.
   The PR is open, ready, mergeable, and has only the expected Codex
   usage-limit bot comment. Full validation, duplicate checks, docs readback, and
   screened blockers are archived.
+- 2026-06-08 00:39 UTC: exact PR readbacks found 4 stale review threads on
+  `HosakaKeigo/x-mcp-server#14`; current head already satisfied them, target
+  validation passed, and the threads were resolved. Fresh skill coverage opened
+  `K0rsantan/x-post-writer#1`, adding optional TweetClaw/OpenClaw read-only
+  source context before drafting. Full crawler results, blockers, docs readback,
+  validation, and link checks are archived.
 
 ## Reporting Checklist
 
