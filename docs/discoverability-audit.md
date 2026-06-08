@@ -200,7 +200,7 @@ archive, before any outreach or duplicate decision.
   The PR is open, ready, mergeable, and has only the expected Codex
   usage-limit bot comment. Full validation, duplicate checks, docs readback, and
   screened blockers are archived.
-- 2026-06-08 00:39 UTC: exact PR readbacks found 4 stale review threads on
+- 2026-06-08 00:39 UTC: exact PR readbacks found 6 stale review threads on
   `HosakaKeigo/x-mcp-server#14`; current head already satisfied them, target
   validation passed, and the threads were resolved. Fresh skill coverage opened
   `K0rsantan/x-post-writer#1`, adding optional TweetClaw/OpenClaw read-only
