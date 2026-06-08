@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-07 21:40 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 16:08 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
   metadata reports `2026.6.2`.
-- Official OpenClaw docs checked as of 2026-06-08 15:36 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-08 16:06 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, and skill format.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-08 15:36 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-08 16:06 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -194,18 +194,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 15:36 UTC: crawler-first monitoring covered 100 open authored PRs,
-  88 exact readbacks, and 36 thread-aware readbacks; no maintainer-actionable
-  repair blocked fresh work.
-- External submission: opened `ddeleon82/anything-to-skill#1`, a mergeable
-  docs PR that fixes the stale clone URL and adds a validated OpenClaw/TweetClaw
-  generated-skill example.
-- Screened skill targets were mostly duplicate-blocked, no-license, or already
-  covered; `anything-to-skill` was licensed, duplicate-clean, and fit a concrete
-  example-output contribution.
-- OpenClaw docs were rechecked, no TweetClaw product code/doc update was needed,
-  and prompt bytes remain within cap with the mandatory submission rule already
-  persisted.
+- 2026-06-08 15:58 UTC: crawler-first monitoring covered 100 open authored PRs,
+  93 exact PR readbacks, and a focused 30-repo skill coverage pass.
+- Repaired `seaworld008/Commonly-used-high-value-skills#35` by rebasing the
+  TweetClaw skill PR onto upstream main, regenerating target catalog outputs,
+  and pushing a clean, mergeable head.
+- External submission: opened `MichaelLod/openclaw-promote#1`, a design issue
+  for optional TweetClaw source research before promotion drafts.
+- OpenClaw docs were rechecked. Current TweetClaw docs already match install,
+  update, pin, npm-pack, runtime inspection, approval, and ClawHub guidance.
 - Full monitoring, duplicate gates, target validation, link checks, prompt size,
   self-improvement notes, and validation results are archived.
 
