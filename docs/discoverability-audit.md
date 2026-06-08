@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-08 18:42 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 18:56 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
-  metadata reports `2026.6.2`.
-- Official OpenClaw docs checked as of 2026-06-08 18:42 UTC: `llms.txt`,
+  metadata reports `2026.6.1`.
+- Official OpenClaw docs checked as of 2026-06-08 18:56 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-08 18:42 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-08 18:56 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,17 +195,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 18:35 UTC: crawler-first monitoring read back 100 open authored
+- 2026-06-08 18:45 UTC: crawler-first monitoring read back 100 open authored
   PRs; no maintainer-actionable repair blocked fresh outreach.
 - External submission: opened
-  `poweredbyai-directory/best-ai-tools-poweredbyai#1`, a generated-directory
-  listing request for TweetClaw after duplicate-clean checks and target README
-  review showed issue submission fits better than editing generated catalog
-  content.
-- Product maintenance: rechecked current OpenClaw docs and npm metadata; no
-  TweetClaw product change was needed because install/update, pinning,
-  runtime-inspection, Nix-mode, approval, ClawHub skill, and packaged-skill
-  guidance remained aligned.
+  `man0l/ai-directories#8`, an issue-only AI directory submission payload for
+  TweetClaw after duplicate-clean checks and no-license metadata blocked direct
+  target file edits.
+- Product maintenance: rechecked current OpenClaw docs and npm metadata, then
+  removed brittle third-party pricing comparisons and raw route-link examples
+  from the packaged TweetClaw skill so public guidance stays stable and focused
+  on Xquik-mediated access, user jobs, OpenClaw approvals, and current billing
+  surfaces.
 - Full monitoring, duplicate gates, target validation, link checks, prompt size,
   self-improvement notes, and validation results are archived.
 

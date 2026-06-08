@@ -89,18 +89,12 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 | Draw | 1/entry | $0.00015/entry |
 | Monitors, webhooks, radar, compose, drafts | 0 | **Free** |
 
-### vs Official X API
+### Why Xquik-Mediated Access
 
-| | Xquik | Official X pay-per-usage | Notes |
-|---|---|---|---|
-| **Access model** | **$20/month full API, plus pay-per-use options** | No subscriptions or commitments | Basic and Pro are legacy package names |
-| **Cost per post read** | **$0.00015** | $0.005 per resource | Xquik is about 33x cheaper |
-| **Cost per user lookup** | **$0.00015** | $0.010 per resource | Xquik is about 67x cheaper |
-| **Cost per trend read** | **$0.00045** | $0.010 per resource | Xquik is about 22x cheaper |
-| **Write actions** | **$0.0015** | $0.015 content or interaction create; $0.200 content create with URL | Xquik is 10x cheaper for matching $0.015 write classes |
-| **Bulk extraction** | **$0.00015/result** | Charged per returned resource | Built-in extraction jobs are included with Xquik |
-
-Source: [official X API pricing](https://docs.x.com/x-api/getting-started/pricing), which lists current pay-per-usage read and write rates.
+- One reviewed API surface covers search tweets, search tweet replies, user lookup, follower export, media workflows, direct messages, monitors, webhooks, giveaway draws, and approval-gated posting.
+- Account setup and re-authentication stay in the Xquik dashboard, not in agent prompts or tool arguments.
+- OpenClaw approval prompts keep write-like, private, paid, recurring, extraction, monitor, webhook, and account-scoped actions reviewed per call.
+- Use the Xquik dashboard and public Xquik docs for current plan, credit, and billing details.
 
 ### Pay-Per-Use (No Subscription)
 
@@ -183,7 +177,7 @@ Example: "What endpoints are available for tweet composition?" returns the compo
 
 ### `tweetclaw` (invoke an Xquik endpoint)
 
-Structured endpoint invoker. The agent selects one endpoint from the catalog and provides path parameters, query parameters, and a JSON body. The plugin runtime performs the HTTPS request to `https://xquik.com/api/v1/...`, injects the API key server-side, and returns the parsed JSON response.
+Structured endpoint invoker. The agent selects one endpoint from the catalog and provides path parameters, query parameters, and a JSON body. The plugin runtime performs the HTTPS request to the configured `https://xquik.com` API origin under `/api/v1/...`, injects the API key server-side, and returns the parsed JSON response.
 
 - Only endpoints listed in the catalog can be invoked; unknown paths are rejected
 - Only the configured HTTPS Xquik-compatible API base URL can be reached; the runtime rejects non-HTTPS and credentialed base URLs
@@ -446,13 +440,13 @@ All write endpoints modify the user's X account or Xquik resources. These are **
 
 ### Trust Model & Data Flow
 
-TweetClaw is a **first-party plugin** built and operated by Xquik. All API calls are sent to `https://xquik.com/api/v1` - the same infrastructure that powers the Xquik platform. The agent connects to a single, known backend - not to arbitrary third-party services.
+TweetClaw is a **first-party plugin** built and operated by Xquik. All API calls are sent to the Xquik API origin at `https://xquik.com` under the `/api/v1` route prefix. The agent connects to a single, known backend - not to arbitrary third-party services.
 
 **Why a mediated architecture:**
 
-TweetClaw routes X operations through Xquik's API rather than connecting directly to X's endpoints. This is intentional:
+TweetClaw routes X/Twitter operations through Xquik's API rather than connecting the agent directly to social-account endpoints. This is intentional:
 
-- Official X API pay-per-usage charges $0.005 per post read, $0.010 per user read, and $0.015 per matching create or interaction write. Xquik keeps post reads about 33x lower and routes agents through one known API
+- Agents use one reviewed API origin for X/Twitter automation instead of arbitrary network destinations
 - The agent never holds X session tokens or OAuth credentials - these stay on Xquik's servers
 - All API calls go to a single known origin (`xquik.com`), auditable via standard HTTPS inspection
 
@@ -462,7 +456,7 @@ TweetClaw routes X operations through Xquik's API rather than connecting directl
 - **Auth injection**: The plugin runtime attaches credentials to outbound requests on the server side. The agent never reads, echoes, or forwards raw credentials (X account cookies, API keys, or signing keys)
 - **Stateless calls**: Each invocation is independent. No call-to-call data retention inside the plugin runtime
 - **No third-party forwarding**: Xquik does not forward API request data, user content, or credentials to third parties
-- **Single egress origin**: Every request goes to `https://xquik.com/api/v1/...`. The runtime does not issue requests to any other host
+- **Single egress origin**: Every request goes to the Xquik API route prefix under `https://xquik.com`. The runtime does not issue requests to any other host
 - **Scope limitation**: The plugin can only reach Xquik API endpoints. It cannot access the user's filesystem, other MCP servers, browser sessions, or local network resources
 
 **What the user should know:**
