@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-08 16:31 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 17:03 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
   metadata reports `2026.6.2`.
-- Official OpenClaw docs checked as of 2026-06-08 16:31 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-08 17:03 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, and skill format.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,14 +194,13 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 16:19 UTC: crawler-first monitoring covered 100 open authored PRs,
-  88 relevant exact PR readbacks, and 21 focused crawler candidates.
-- Existing PR repair gate: `framerslab/agentos-skills#1` bot feedback was
-  current-head-clean after verification; scoped validation and links passed, so
-  no duplicate bot follow-up was posted.
-- External submission: opened `sawyer0x110/openclaw-exa-search#2`, an
-  issue-only design lane for an optional TweetClaw companion recipe beside Exa
-  search.
+- 2026-06-08 16:50 UTC: crawler-first monitoring covered 100 open authored PRs,
+  46 non-clean or commented exact readbacks, and 36 focused crawler candidates.
+- Existing PR repair gate: human-visible review/comment PRs were already
+  addressed or bot-only after exact readback, so no safe repair blocked outreach.
+- External submission: opened `baijunjie/skill-x-social#2`, a docs PR adding
+  TweetClaw/OpenClaw source-context handoff guidance before browser write
+  actions.
 - OpenClaw docs were rechecked. Current TweetClaw docs already match install,
   update, pin, npm-pack, runtime inspection, approval, and ClawHub guidance.
 - Full monitoring, duplicate gates, target validation, link checks, prompt size,
