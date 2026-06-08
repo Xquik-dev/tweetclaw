@@ -193,15 +193,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 03:08 UTC: crawler-first monitoring covered 100 open authored PRs
-  plus audit-tracked PRs and found no safe repair blocker after thread-aware
-  reads. Only target-owned blockers remained: `cschanhniem/ClawSeatbelt#1`
-  Snyk quota and `openclaw/openclaw#91303` dependency-graph/shrinkwrap checks.
-- Fresh skill coverage opened `woshiheihei/heihei-skills#1` for optional
-  TweetClaw/OpenClaw source packets in an X thread context-capture skill and
-  `yamz8/x-thread-skill#1` for TweetClaw/OpenClaw pre-draft source context in
-  an X thread writer. Both PRs are ready, duplicate-clean, fork-verified, and
-  mergeable; only Codex quota bot comments are present.
+- 2026-06-08 03:30 UTC: crawler-first monitoring covered 100 open authored PRs
+  plus audit-tracked PRs. Thread-aware reads found 0 active unresolved review
+  threads. Only target-owned blockers remained: `cschanhniem/ClawSeatbelt#1`
+  Snyk quota and `openclaw/openclaw#91303` Hono shrinkwrap/behavior checks.
+- Fresh skill coverage opened `Kappaemme-git/x-phoenix-score-codex-skill#2`
+  for optional TweetClaw/OpenClaw source evidence in an X scoring skill and
+  `ritvikctsipl/sma_skill#1` to plan Twitter/X report source notes before a
+  full platform skill. The Kappa PR is ready, fork-verified, and mergeable; the
+  SMA issue is open by design because platform schema approval is needed.
 - Full validation, duplicate gates, link checks, screened candidates, prompt
   size, and self-improvement notes are archived.
 
