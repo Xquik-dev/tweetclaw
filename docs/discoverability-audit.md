@@ -52,6 +52,9 @@ archive, before any outreach or duplicate decision.
 - Latest OpenClaw stable checked as of 2026-06-07 21:40 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
   metadata reports `2026.6.2`.
+- Official OpenClaw docs checked as of 2026-06-08 04:09 UTC: `llms.txt`,
+  CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
+  runtime helpers, install overrides, ClawHub publishing, and skill format.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -72,11 +75,10 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Known blocker: GitHub Dependabot alerts 22-25 still flag `hono` in
-  `package-lock.json` for four moderate advisories, while local
-  `npm audit --audit-level=moderate --omit=dev` is currently clean. Treat the
-  GitHub alerts as upstream OpenClaw stable-package tracking until
-  `openclaw/openclaw#91303` or a maintainer-owned package refresh lands.
+- Known blocker: GitHub Dependabot alerts 22-25 still flag nested OpenClaw
+  `hono` in `package-lock.json`; local omit-dev npm audit is clean as of
+  2026-06-08 04:09 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
 
@@ -95,20 +97,21 @@ archive, before any outreach or duplicate decision.
 
 ## Codex Automation Rule
 
-- Official Codex Automations, Best Practices, Prompting, and Agent approvals
-  docs were checked on 2026-06-07; detailed notes are archived.
-- Keep this as a same-thread heartbeat with durable goal, context, constraints,
-  done criteria, report rules, stop rules, and unavoidable-input conditions.
-- Default to quiet autonomous operation: `DONT_NOTIFY` for successful, no-op,
-  expected-blocker, completed maintenance, or internal audit-update runs.
-- Notify only for unavoidable platform, security, credential,
-  maintainer-owner, destructive, out-of-scope, or repeated hard-blocker
-  conditions.
-- Treat user permission as broad in-scope non-destructive automation permission,
-  but never bypass system, admin, tool, repo-safety, or secret boundaries.
+- Official Codex automation and approvals docs were checked on 2026-06-07;
+  detailed notes are archived.
+- Keep same-thread quiet autonomy, durable goal context, strict stop rules, and
+  `DONT_NOTIFY` for successful, no-op, expected-blocker, maintenance, or audit
+  runs.
+- Notify only for platform, security, credential, maintainer-owner,
+  destructive, out-of-scope, or repeated hard-blocker conditions.
+- Broad user permission covers in-scope non-destructive work only; never bypass
+  system, admin, tool, repo-safety, or secret boundaries.
 
 ## Discovery Rule
 
+- Every run must submit at least one useful target-native PR or issue to an
+  external repo or registry lane unless every path is duplicate, unlicensed,
+  policy-blocked, unsafe, out of scope, or maintainer-inappropriate.
 - Every run must aggressively find new maintained repositories or websites
   before routine maintenance.
 - Never claim all unsubmitted GitHub skill repositories are exhausted. Treat
@@ -116,9 +119,9 @@ archive, before any outreach or duplicate decision.
 - Every run must include a crawler-first skill-repository coverage pass before
   routine maintenance, with screened lanes, repos, duplicate results, blockers,
   and the next unscreened lane recorded.
-- Do not stop after the first clean skill target; advance multiple
-  duplicate-clean, licensed, target-native submissions while validation time is
-  safe, otherwise record why each remaining target is blocked.
+- Do not stop after the first clean skill target; advance multiple safe
+  duplicate-clean, licensed, target-native submissions when validation time
+  allows, otherwise record exact blockers.
 - Use crawler-first GitHub, OpenClaw, ClawHub, MCP, npm, marketplace, fork,
   web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog,
   and package-registry lanes.
@@ -162,10 +165,9 @@ archive, before any outreach or duplicate decision.
   CI-safe checks, safety guidance, catalog metadata, plugin manifests, starter
   configs, and skill templates.
 - Avoid thin marketing mentions.
-- For tweet-scoring, draft-optimization, ranking, or validator targets, frame
-  TweetClaw as pre-draft evidence or context only.
-- For scheduler, calendar, voice-match, or publishing targets, frame TweetClaw as
-  reviewed pre-draft source context only.
+- For scoring, drafting, scheduling, publishing, analytics, voice-match,
+  validator, or control-layer targets, frame TweetClaw as source evidence or
+  approval-gated context only.
 - Keep TweetClaw write-like actions inside OpenClaw/TweetClaw approval flow.
 - For runtime detector targets, prefer tested detector, policy rule, fixture, or
   docs reference that marks TweetClaw/OpenClaw social-account writes as
@@ -192,14 +194,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 03:50 UTC: crawler-first monitoring covered 100 open authored PRs
-  plus audit-tracked PRs. Thread-aware reads found 0 active unresolved review
-  threads. Only target-owned blockers remained: `cschanhniem/ClawSeatbelt#1`
-  Snyk quota and `openclaw/openclaw#91303` Hono shrinkwrap/behavior checks.
-- Fresh skill coverage opened `dylan-buck/x-algorithm-skill#1` for mirrored
-  TweetClaw/OpenClaw source-context guidance across README, packaged skill,
-  website usage, and LLM notes. The PR is ready, fork-verified, mergeable, and
-  also fixes a pre-existing broken public source link.
+- 2026-06-08 04:09 UTC: crawler-first monitoring covered 100 open authored PRs
+  plus audit-tracked OpenClaw and skill PRs. Thread-aware reads found 0 active
+  unresolved review threads. Only target-owned blockers remained:
+  `cschanhniem/ClawSeatbelt#1` Snyk quota and `openclaw/openclaw#91303`
+  Hono shrinkwrap and behavior checks.
+- Fresh skill coverage opened `jeremyknows/x-master#1` for a narrow TweetClaw
+  OpenClaw route in an MIT routing skill, and
+  `software-ai-life/X-account-digest-skills#1` as an issue-only no-license path
+  for `SKILL.md` encoding plus optional source-intake approval. Both read back
+  open; `x-master#1` is fork-verified, mergeable, and clean.
+- Product update: README, setup guide, bundled skill, and
+  `check-openclaw-platform-fitness` now include current OpenClaw `plugins update`,
+  pinned npm install, and managed Gateway restart guidance. Stale Glama badge was
+  replaced with canonical ClawHub.
+- Prompt update: persisted automation prompt is 12,259 bytes and now requires a
+  safe external PR or issue submission every run after PR repair gates.
 - Full validation, duplicate gates, link checks, screened candidates, prompt
   size, and self-improvement notes are archived.
 

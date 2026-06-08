@@ -23,6 +23,22 @@ TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw`
 
 Current source metadata targets OpenClaw `2026.6.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
+## Update
+
+For routine upgrades, keep the tracked install source and update the installed plugin id:
+
+```bash
+openclaw plugins update tweetclaw
+```
+
+For reproducible production installs, pin a published npm version:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
+```
+
+OpenClaw keeps pinned npm records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
+
 ## Verify Runtime Loading
 
 After install or update, inspect the runtime and bundled skill:
@@ -40,6 +56,8 @@ Expected result:
 - The `before_tool_call` approval hook is registered for risky `tweetclaw` calls.
 - The `xtrends` command is registered.
 - The TweetClaw skill is visible to the agent.
+
+Managed Gateways with config reload enabled can restart automatically after an install or update. If the Gateway is unmanaged or reload is disabled, run `openclaw gateway restart` before runtime inspection.
 
 For packaged release checks, validate the installed artifact instead of the source checkout:
 

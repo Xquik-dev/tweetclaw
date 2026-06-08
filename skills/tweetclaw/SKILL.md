@@ -17,6 +17,20 @@ openclaw plugins install npm:@xquik/tweetclaw
 
 The `npm:` selector makes OpenClaw install the official npm package explicitly. Bare `@xquik/tweetclaw` remains compatible during OpenClaw's launch cutover, but use `npm:` when the ClawHub listing is behind npm.
 
+For routine upgrades, keep the tracked install source:
+
+```bash
+openclaw plugins update tweetclaw
+```
+
+For reproducible production installs, pin a published npm version:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
+```
+
+OpenClaw keeps pinned records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
+
 TweetClaw can be installed before credentials are configured. In that state, use `explore` for free endpoint discovery; live API calls will return setup guidance until the user configures an Xquik API key or MPP signing key.
 
 Verify the installed runtime before live work:
@@ -27,8 +41,10 @@ openclaw skills info tweetclaw
 ```
 
 The runtime inspection should show `explore`, optional `tweetclaw`, the
-`before_tool_call` approval hook, and the `xtrends` command. For slow install or
-inspection debugging, use
+`before_tool_call` approval hook, and the `xtrends` command. A managed Gateway
+with reload enabled can restart automatically after install or update; otherwise
+run `openclaw gateway restart` before inspecting live runtime surfaces. For slow
+install or inspection debugging, use
 `OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json`
 so lifecycle timings go to stderr while JSON stays parseable.
 

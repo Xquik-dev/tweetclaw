@@ -8,7 +8,7 @@
 [![Context7](https://img.shields.io/badge/Context7-agent_docs-059669)](https://context7.com/xquik-dev/tweetclaw)
 [![Skills.sh](https://skills.sh/b/xquik-dev/tweetclaw)](https://skills.sh/xquik-dev/tweetclaw)
 [![Skills.sh x-twitter-scraper Skill](https://skills.sh/b/xquik-dev/x-twitter-scraper)](https://skills.sh/xquik-dev/x-twitter-scraper)
-[![Glama TweetClaw MCP server](https://img.shields.io/badge/Glama-TweetClaw%20MCP%20server-3b82f6)](https://glama.ai/mcp/servers/xquik-dev-tweetclaw)
+[![ClawHub](https://img.shields.io/badge/ClawHub-TweetClaw-2563eb)](https://clawhub.ai/plugins/@xquik/tweetclaw)
 [![Smithery](https://smithery.ai/badge/github/Xquik-dev/tweetclaw)](https://smithery.ai/server/github/Xquik-dev/tweetclaw)
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
@@ -26,6 +26,20 @@ openclaw plugins install npm:@xquik/tweetclaw
 ```
 
 This command installs the official npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while the [ClawHub discovery page](https://clawhub.ai/plugins/@xquik/tweetclaw) lags behind the npm release.
+
+For normal upgrades, reuse the tracked install source:
+
+```bash
+openclaw plugins update tweetclaw
+```
+
+For reproducible production installs, pin a published npm version:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
+```
+
+OpenClaw keeps pinned records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
 
 Current source metadata targets OpenClaw `2026.6.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
@@ -99,7 +113,9 @@ openclaw skills info tweetclaw
 
 The runtime inspection should show the loaded `tweetclaw` plugin, the `explore`
 tool, the optional `tweetclaw` tool, the `before_tool_call` approval hook, and
-the `xtrends` command. Use
+the `xtrends` command. A managed Gateway with reload enabled can restart
+automatically after install or update; otherwise run `openclaw gateway restart`
+before inspecting live runtime surfaces. Use
 `OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json`
 when install or runtime inspection is slow; OpenClaw keeps JSON output parseable
 while printing lifecycle timing to stderr.

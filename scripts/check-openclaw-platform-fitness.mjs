@@ -167,7 +167,10 @@ const docChecks = [
     path: "README.md",
     fragments: [
       "openclaw plugins install npm:@xquik/tweetclaw",
+      "openclaw plugins update tweetclaw",
+      "openclaw plugins install npm:@xquik/tweetclaw@<version> --pin",
       "openclaw plugins inspect tweetclaw --runtime --json",
+      "openclaw gateway restart",
       "OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1",
       "tools.alsoAllow",
       "one-time approval or deny",
@@ -177,7 +180,10 @@ const docChecks = [
     path: "docs/openclaw-setup.md",
     fragments: [
       "openclaw plugins install npm:@xquik/tweetclaw",
+      "openclaw plugins update tweetclaw",
+      "openclaw plugins install npm:@xquik/tweetclaw@<version> --pin",
       "openclaw plugins inspect tweetclaw --runtime --json",
+      "openclaw gateway restart",
       "npm-pack:",
       "OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1",
       "definePluginEntry",
@@ -195,7 +201,10 @@ const docChecks = [
     path: "skills/tweetclaw/SKILL.md",
     fragments: [
       "openclaw plugins install npm:@xquik/tweetclaw",
+      "openclaw plugins update tweetclaw",
+      "openclaw plugins install npm:@xquik/tweetclaw@<version> --pin",
       "openclaw plugins inspect tweetclaw --runtime --json",
+      "openclaw gateway restart",
       "one-time approval or deny",
     ],
   },
