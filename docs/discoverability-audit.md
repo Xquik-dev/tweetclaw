@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-08 20:36 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 20:54 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-08 20:36 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-08 20:54 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-08 20:36 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-08 20:56 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,13 +195,13 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 20:26 UTC: crawler-first monitoring read back 100 open authored
+- 2026-06-08 20:47 UTC: crawler-first monitoring read back 100 open authored
   PRs; no maintainer-actionable repair blocked fresh outreach.
 - External submission: opened
-  `tokuno0809-create/x-api-mcp-server#1`, an issue-only proposal for optional
-  TweetClaw/OpenClaw source context before the target MCP server calls
-  `post_tweet`. Issue path was used because the repo has no detected license
-  metadata.
+  `silentcool/blackmatter-xmcp#1`, an issue-only target-native README drift
+  report plus optional TweetClaw/OpenClaw source-context recipe for the target's
+  13 X API MCP tools. Issue path was used because the repo has no detected
+  license metadata.
 - Product maintenance: rechecked current OpenClaw docs and npm metadata. No
   TweetClaw product change was needed after prior packaged skill and install
   guidance updates remained aligned.
