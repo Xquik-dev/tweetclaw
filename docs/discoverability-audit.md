@@ -72,12 +72,11 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Known blocker: GitHub Dependabot alerts 22-25 and fresh `npm audit --json`
-  still flag `node_modules/openclaw/node_modules/hono@4.12.18` under
-  `openclaw@2026.6.1` as vulnerable to four moderate advisories fixed in
-  `hono@4.12.21`. Root `overrides` plus `npm install --package-lock-only` and
-  `npm audit fix` did not rewrite the nested OpenClaw shrinkwrap entry on
-  2026-06-07, so treat this as an upstream OpenClaw stable-package blocker.
+- Known blocker: GitHub Dependabot alerts 22-25 still flag `hono` in
+  `package-lock.json` for four moderate advisories, while local
+  `npm audit --audit-level=moderate --omit=dev` is currently clean. Treat the
+  GitHub alerts as upstream OpenClaw stable-package tracking until
+  `openclaw/openclaw#91303` or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
 
