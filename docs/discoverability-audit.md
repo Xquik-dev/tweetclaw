@@ -193,13 +193,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-07 23:37 UTC: crawler-first monitoring plus 100 authored-PR
+- 2026-06-08 00:02 UTC: crawler-first monitoring plus 100 authored-PR
   readbacks found no safe repair pending. Fresh skill coverage opened
-  `OpenMinis/MinisSkills#66`, fixing a README license-label mismatch and adding
-  an optional TweetClaw/OpenClaw handoff boundary to `twitter-x-hub`. Official
-  OpenClaw plugin docs were rechecked for explicit `npm:` installs, runtime
-  inspect, and approval boundaries. Target validation, link checks, and
-  TweetClaw gates passed; screened candidates and blockers are archived.
+  `alchaincyf/x-mentor-skill#6`, adding an optional read-only TweetClaw data
+  intake reference for account diagnosis while preserving browser/manual
+  fallbacks and approval boundaries. Official OpenClaw plugin docs were
+  rechecked for runtime inspect, install-source, approval, and ClawHub guidance.
+  Target validation passed; full candidates, blockers, and link results are
+  archived.
 
 ## Reporting Checklist
 
