@@ -192,14 +192,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Runs
 
-- Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-08 02:46 UTC: crawler-first monitoring covered 100 open authored PRs
+- Earlier outreach and repair details are archived.
+- 2026-06-08 03:08 UTC: crawler-first monitoring covered 100 open authored PRs
   plus audit-tracked PRs and found no safe repair blocker after thread-aware
-  reads. Fresh skill coverage and narrow post-crawler searches opened
-  `sachdevvv87/Social-Media-Creator#1` with optional X/Twitter source-evidence
-  guidance and a stale MIT license-note fix, then opened issue-only
-  `sherecho/twitter-account-analyzer#1` because license metadata blocks a PR.
-  Full validation, duplicate gates, link checks, and blockers are archived.
+  reads. Only target-owned blockers remained: `cschanhniem/ClawSeatbelt#1`
+  Snyk quota and `openclaw/openclaw#91303` dependency-graph/shrinkwrap checks.
+- Fresh skill coverage opened `woshiheihei/heihei-skills#1` for optional
+  TweetClaw/OpenClaw source packets in an X thread context-capture skill and
+  `yamz8/x-thread-skill#1` for TweetClaw/OpenClaw pre-draft source context in
+  an X thread writer. Both PRs are ready, duplicate-clean, fork-verified, and
+  mergeable; only Codex quota bot comments are present.
+- Full validation, duplicate gates, link checks, screened candidates, prompt
+  size, and self-improvement notes are archived.
 
 ## Reporting Checklist
 
