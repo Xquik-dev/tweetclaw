@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-08 21:12 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 21:40 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.3`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-08 21:12 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-08 21:40 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-08 21:13 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-08 21:40 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,13 +195,12 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 21:08 UTC: crawler-first monitoring read back 100 open authored
+- 2026-06-08 21:45 UTC: crawler-first monitoring read back 100 open authored
   PRs; no maintainer-actionable repair blocked fresh outreach.
 - External submission: opened
-  `AmuMoon/openclaw-x-skill#1`, a MIT-licensed docs PR that fixes a broken
-  OpenClaw link, uses the existing env template, and adds optional TweetClaw
-  source-context guidance while keeping `openclaw-x` responsible for final
-  X/Twitter actions.
+  `RonanCodes/ronan-skills#57`, a MIT-licensed docs PR that adds explicit
+  TweetClaw/OpenClaw read-context fallback guidance to `x-scan`, keeps the
+  skill read-only, and bumps the Claude plugin patch version.
 - Product maintenance: rechecked current OpenClaw docs and npm metadata. No
   TweetClaw product change was needed after prior packaged skill and install
   guidance updates remained aligned.
