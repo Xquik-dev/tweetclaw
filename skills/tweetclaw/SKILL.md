@@ -31,6 +31,10 @@ openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
 
 OpenClaw keeps pinned records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
 
+If OpenClaw runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle mutators are
+disabled. Install or update TweetClaw through your Nix OpenClaw source instead
+of `openclaw plugins install` or `openclaw plugins update`.
+
 TweetClaw can be installed before credentials are configured. In that state, use `explore` for free endpoint discovery; live API calls will return setup guidance until the user configures an Xquik API key or MPP signing key.
 
 Verify the installed runtime before live work:

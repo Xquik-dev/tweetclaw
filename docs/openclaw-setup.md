@@ -23,6 +23,10 @@ TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw`
 
 Current source metadata targets OpenClaw `2026.6.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
+If OpenClaw runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle mutators are
+disabled. Install or update TweetClaw through your Nix OpenClaw source instead
+of `openclaw plugins install` or `openclaw plugins update`.
+
 ## Update
 
 For routine upgrades, keep the tracked install source and update the installed plugin id:

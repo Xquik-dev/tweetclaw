@@ -43,6 +43,10 @@ OpenClaw keeps pinned records on the selected version during later `plugins upda
 
 Current source metadata targets OpenClaw `2026.6.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
+If your OpenClaw install runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle
+mutators are disabled. Install or update TweetClaw through your Nix OpenClaw
+source instead of `openclaw plugins install` or `openclaw plugins update`.
+
 TweetClaw can be installed before credentials are configured. Until you add an API key or MPP signing key, the free `explore` catalog remains available and live API calls return setup guidance instead of failing plugin installation.
 
 Agent-skill installers can also discover TweetClaw through [Skills.sh](https://skills.sh/xquik-dev/tweetclaw). This installs the packaged `SKILL.md` for agents that use skills directories; use the OpenClaw command above for the plugin runtime.
