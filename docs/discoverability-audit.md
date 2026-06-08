@@ -49,12 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-08 17:26 UTC:
+- Latest OpenClaw stable checked as of 2026-06-08 17:43 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.2`; source main package
   metadata reports `2026.6.2`.
-- Official OpenClaw docs checked as of 2026-06-08 17:26 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-08 17:43 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
-  runtime helpers, install overrides, ClawHub publishing, and skill format.
+  runtime helpers, install overrides, ClawHub publishing, skill format, and
+  the current help debugging page.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -77,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-08 16:06 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-08 17:45 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -194,17 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-08 17:11 UTC: crawler-first monitoring covered 100 open authored PRs,
-  exact readbacks for all, review/comment drills for active bot-signal PRs, and
-  36 focused crawler candidates.
+- 2026-06-08 17:32 UTC: crawler-first monitoring covered 100 open authored PRs,
+  exact readbacks for all, focused skill coverage, and targeted review drills
+  for active bot-signal PRs.
 - Existing PR repair gate: `framerslab/agentos-skills#1` review suggestions
   were already fixed on head; other signals were bot usage notes, target queues,
   or previously addressed comments.
-- External submission: opened `publora/skills#3`, a docs PR adding optional
-  TweetClaw/OpenClaw source research before Publora X/Twitter posts and fixing
-  stale Publora docs links.
-- OpenClaw docs were rechecked. Current TweetClaw docs already match install,
-  update, pin, npm-pack, runtime inspection, approval, and ClawHub guidance.
+- External submission: opened `yuki5v5yuki/x-search-skill#1`, a docs PR adding
+  optional TweetClaw/OpenClaw structured X/Twitter source data to a Playwright
+  search skill and fixing its stale Playwright MCP link.
+- Product maintenance: TweetClaw's packaged skill now uses non-clickable tweet
+  ID placeholders instead of dead example X URLs; OpenClaw docs were rechecked
+  and current TweetClaw install, update, pin, npm-pack, runtime inspection,
+  approval, and ClawHub guidance still matches.
 - Full monitoring, duplicate gates, target validation, link checks, prompt size,
   self-improvement notes, and validation results are archived.
 

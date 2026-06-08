@@ -215,7 +215,7 @@ Agent uses tweetclaw -> finds connected account, posts tweet
 ### Reply to a tweet
 
 ```
-You: "Reply 'Great thread!' to this tweet: https://x.com/user/status/123"
+You: "Reply 'Great thread!' to this tweet: x.com/user/status/<tweet_id>"
 Agent uses tweetclaw -> posts reply with reply_to_tweet_id
 ```
 
@@ -278,7 +278,7 @@ Agent uses tweetclaw -> GET /api/v1/x/bookmarks or GET /api/v1/x/timeline
 ### Run a giveaway draw
 
 ```
-You: "Pick 3 random winners from replies to this tweet: https://x.com/..."
+You: "Pick 3 random winners from replies to this tweet: x.com/user/status/<tweet_id>"
 Agent uses tweetclaw -> creates draw with filters
 ```
 
@@ -334,7 +334,7 @@ Agent uses tweetclaw -> GET /api/v1/credits
 ### Read an X Article
 
 ```
-You: "Get the full article from this tweet: https://x.com/user/status/123"
+You: "Get the full article from this tweet: x.com/user/status/<tweet_id>"
 Agent uses tweetclaw -> calls /api/v1/x/articles/:tweetId, returns title, body, images
 ```
 
