@@ -198,7 +198,7 @@ archive, before any outreach or duplicate decision.
   93 exact PR readbacks, and a focused 30-repo skill coverage pass.
 - Repaired `seaworld008/Commonly-used-high-value-skills#35` by rebasing the
   TweetClaw skill PR onto upstream main, regenerating target catalog outputs,
-  and pushing a clean, mergeable head.
+  and pushing a mergeable head; GitHub later labeled it unstable with no checks.
 - External submission: opened `MichaelLod/openclaw-promote#1`, a design issue
   for optional TweetClaw source research before promotion drafts.
 - OpenClaw docs were rechecked. Current TweetClaw docs already match install,
