@@ -193,14 +193,6 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier 2026-06-07 outreach and repair details are archived.
-- 2026-06-08 01:05 UTC: crawler-first PR monitoring found no safe repair
-  blocker after 101 exact PR readbacks and 12 thread-aware review checks. Fresh
-  skill coverage opened `typefully/agent-skills#24` and
-  `nomastudioai/x-twitter-writer-claude-skill#1`, adding optional
-  TweetClaw/OpenClaw read-only X source context before drafting while each
-  target keeps writing, scheduling, publishing, and analytics ownership. Full
-  validation, duplicate checks, docs readback, link checks, and blockers are
-  archived.
 - 2026-06-08 01:31 UTC: crawler-first monitoring covered 100 open authored PRs
   plus audit-tracked PRs and found no safe repair blocker after 12
   thread-aware review checks. Fresh skill coverage screened 19 focused
@@ -209,6 +201,16 @@ archive, before any outreach or duplicate decision.
   before Typefully draft creation while Typefully keeps scheduling and
   publishing ownership. Full PR monitoring, duplicate gates, validation, link
   checks, and blockers are archived.
+- 2026-06-08 01:50 UTC: crawler-first monitoring covered 100 open authored PRs
+  plus audit-tracked PRs and found no safe repair blocker after 12
+  thread-aware review checks. Fresh skill coverage screened focused SKILL,
+  OpenClaw, MCP, Claude, Codex, registry, and Twitter-X lanes plus licensed
+  backlog targets, then opened
+  `LZHOU317/x-post-writer-product-announcement#1`, adding optional TweetClaw
+  source-context intake before product-announcement drafting while publishing,
+  replies, scheduling, direct messages, and account actions stay out of the
+  writing flow. Full validation, duplicate gates, link checks, and blockers are
+  archived.
 
 ## Reporting Checklist
 
