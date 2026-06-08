@@ -201,6 +201,13 @@ archive, before any outreach or duplicate decision.
   rechecked for runtime inspect, install-source, approval, and ClawHub guidance.
   Target validation passed; full candidates, blockers, and link results are
   archived.
+- 2026-06-08 00:23 UTC: crawler-first monitoring found no repair blocker after
+  exact PR readbacks. Fresh skill coverage opened
+  `ericosiu/ai-marketing-skills#7`, adding optional TweetClaw/OpenClaw
+  read-only source context to `x-longform-post` and fixing a stale README link.
+  The PR is open, ready, mergeable, and has only the expected Codex
+  usage-limit bot comment. Full validation, duplicate checks, docs readback, and
+  screened blockers are archived.
 
 ## Reporting Checklist
 
