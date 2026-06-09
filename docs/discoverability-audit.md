@@ -199,14 +199,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 09:25 UTC: crawler-first monitoring read back 140 recent or
-  commented `kriptoburak` PRs after broad crawler coverage. No safely repairable
-  maintainer request or current failed-check fix blocked outreach.
+- 2026-06-09 09:45 UTC: crawler-first monitoring plus exact readback covered
+  150 recent or commented `kriptoburak` PRs after broad and focused crawler
+  passes. No safely repairable maintainer request, conflict, review thread, or
+  current failed-check fix blocked outreach.
 - Mandatory fresh PR:
-  `YangsonHung/awesome-agent-skills#1` adds paired English and Chinese
-  TweetClaw Twitter automation Skills plus README and AGENTS indexes. It is
-  open, ready, mergeable, and clean at head `cc7c8fe`; full screening and
-  validation details are archived.
+  `Chaoqi31/awesome-agent-skills#1` adds a bilingual TweetClaw catalog listing
+  with direct packaged-skill links. It is open, ready, clean, and mergeable at
+  head `c323687`; full screening and validation details are archived.
 
 ## Reporting Checklist
 
