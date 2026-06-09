@@ -49,8 +49,8 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-09 17:56 UTC: latest
-  `2026.6.1`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
+- OpenClaw docs/npm checked as of 2026-06-09 18:16 UTC: latest
+  `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 17:56 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 18:16 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,24 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 17:35 UTC: runtime model/effort selectors unavailable; prompt
+- 2026-06-09 18:00 UTC: runtime model/effort selectors unavailable; prompt
   TOML/content stayed 13,287/12,949 bytes with mandatory PR wording.
-- Crawler skill/MCP/registry slices returned 3/1/6 opportunities. Exact
-  readbacks covered 87 recent/comment/watch PRs from 300 open with 0 errors and
-  55 signals.
-- Repaired actionable `jjfantini/humblSKILLS#110` maintainer feedback by
-  converting `use-tweetclaw` to the target's Smart Skill layout, regenerating
-  registry data, validating, pushing commit `b8d70ca`, and replying.
-- Duplicate and policy gates blocked crawler repeats, unlicensed repos, and
-  strict/self-promotion skill lists. `danielamram/awesome-agent-skills` was
-  selected as a CC0, duplicate-clean skillspec.dev JSON registry.
-- Mandatory fresh PR: `danielamram/awesome-agent-skills#1` adds TweetClaw to
-  `skills/index.json` and the README Automation & Integrations table. Latest
-  readback is open, ready, `MERGEABLE`/`UNSTABLE`, with no comments, reviews, or
-  checks.
-- TweetClaw build and OpenClaw fitness passed. Official docs returned 200;
-  `openclaw` latest/beta remain `2026.6.1`/`2026.6.5-beta.6`. Link checks only
-  hit expected npm web 403, registry 200; npm audit remains known Hono blocker.
+- Crawler registry slice returned 5 opportunities; skill/MCP slices timed out
+  or returned no usable entries. Targeted readbacks of watched PRs found no
+  safely repairable maintainer, review, CI, conflict, DCO, CLA, or bot blocker.
+- Duplicate and policy gates blocked prior-history targets including
+  `iflytek/skillhub`, `hashgraph-online/registry-broker-skills`,
+  `openclaw/clawhub`, `skilluse/skilluse`, and `danielamram/awesome-agent-skills`.
+- Mandatory fresh PR: `jo-inc/safe-skill-search#1` adds the Xquik TweetClaw
+  skill repository as an untrusted registry, scores TweetClaw in `skills.json`,
+  and refreshes registry docs. Latest readback is open, ready, and `MERGEABLE`.
+- Target validation passed Rust format, locked tests, README links, direct URL
+  checks, duplicate checks, and hygiene scans. TweetClaw build and OpenClaw
+  fitness passed. `openclaw` latest/beta are `2026.6.5`/`2026.6.5-beta.6`; link
+  checks only hit expected npm web 403, registry 200; npm audit remains known
+  Hono blocker.
 
 ## Reporting Checklist
 
