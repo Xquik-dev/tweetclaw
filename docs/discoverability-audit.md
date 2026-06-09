@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 07:33 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 08:15 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 07:33 UTC: CLI MCP, plugins,
+- Official OpenClaw docs checked as of 2026-06-09 08:15 UTC: CLI MCP, plugins,
   plugin management, manifest, permissions, SDK entrypoints/runtime, tool
   plugins, install overrides, ClawHub publishing, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 07:33 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 08:15 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -109,9 +109,13 @@ archive, before any outreach or duplicate decision.
 
 ## Discovery Rule
 
-- Every run must submit at least one useful target-native PR or issue to an
-  external repo or registry lane unless every path is duplicate, unlicensed,
-  policy-blocked, unsafe, out of scope, or maintainer-inappropriate.
+- Every run must open at least one useful target-native PR to an eligible
+  external GitHub repo for listing, native integration, native plugin, skill,
+  catalog, docs, validator, or tooling placement.
+- Issue-only work may supplement a run but does not satisfy the PR mandate while
+  any eligible GitHub PR target remains. Use issue-only only after every safe PR
+  path is duplicate, unlicensed, policy-blocked, unsafe, out of scope, or
+  maintainer-inappropriate.
 - Every run must aggressively find new maintained repositories or websites
   before routine maintenance.
 - Never claim all unsubmitted GitHub skill repositories are exhausted. Treat
@@ -194,13 +198,16 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 07:33 UTC: broad crawler returned 25 directory/registry/MCP
-  leads; 5 focused skill, OpenClaw, and X MCP segments returned 0. Exact
-  readbacks covered 300 authored PRs; thread checks covered 77 signal PRs with
-  no unresolved current review threads.
-- Fresh submission: opened issue `rgthelen/x-mcp-server#1` for license clarity,
-  token-shaped docs placeholders, future OpenClaw MCP setup, and optional
-  TweetClaw plugin handoff after licensing is clear. Full details are archived.
+- 2026-06-09 08:15 UTC: broad crawler returned 25 known directory, registry,
+  MCP, and skill leads; focused skill and direct X MCP segments returned 0.
+  Exact readbacks covered 300 authored PRs and thread checks covered 78 signal
+  PRs with no unresolved current review threads.
+- PR repair: refreshed `WilliamAlexYT/x-research-skill#1`; final readback is
+  open, mergeable, and clean at head `0a43b76`.
+- Mandatory fresh PR: opened
+  `AutomateLab-tech/content-distribution-mcp#5` to align current skill tool
+  names, OpenClaw and MCP version metadata, lockfile root metadata, and optional
+  TweetClaw source-context guidance. Full details are archived.
 
 ## Reporting Checklist
 
