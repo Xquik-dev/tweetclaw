@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 12:04 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 12:29 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.6`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 12:04 UTC: CLI plugins,
+- Official OpenClaw docs checked as of 2026-06-09 12:29 UTC: CLI plugins,
   plugin management, manifest, permissions, SDK entrypoints/runtime, tool
   plugins, install overrides, ClawHub publishing, skill format, skills, and
   debugging.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 12:04 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 12:29 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -199,14 +199,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 12:04 UTC: crawler-first monitoring ran focused skill coverage
+- 2026-06-09 12:29 UTC: crawler-first monitoring ran focused skill coverage
   with 0 structured opportunities and broad JSON coverage with 25 opportunities.
   Exact readbacks covered 300 open `kriptoburak` PRs with 0 errors; no repair
   gate blocked outreach.
-- Mandatory fresh PR: `jjfantini/humblSKILLS#110` adds `use-tweetclaw` as a
-  humblSKILLS registry skill plus regenerated `registry.json`. Fork parent,
-  duplicate, license, target validation, link checks, public hygiene, and final
-  PR readback passed; GitGuardian finished successfully.
+- Mandatory fresh PR: `qingxuantang/postall#6` adds optional TweetClaw
+  source-context guidance to PostAll agent docs and hosted skill docs. Fork
+  parent, duplicate, license, target validation, link checks, public hygiene,
+  and final PR readback passed; only a usage-limit bot comment is present.
 
 ## Reporting Checklist
 
