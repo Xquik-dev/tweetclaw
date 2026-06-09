@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 00:02 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 00:39 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 00:02 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-09 00:39 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 00:02 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 00:39 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,21 +195,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 00:02 UTC: crawler-first monitoring read back 220 open authored
-  PRs; thread-level checks covered 33 review-like PRs and found no unresolved
-  current review threads.
-- Repair: merged latest target `main` into `BienvenuONIODJE/twitter-init-kit#3`;
-  GitHub now reports it `MERGEABLE` and `CLEAN`.
-- External submission: opened `ahmadawais/typefully-cli#2`, a PR adding
-  optional TweetClaw/OpenClaw source-evidence guidance to the Typefully agent
-  skill while keeping Typefully responsible for draft creation, scheduling, and
-  publishing. The PR also fixes stale version-test expectations so target tests
-  pass after build.
-- Product maintenance: rechecked current OpenClaw docs and npm metadata. No
-  TweetClaw product change was needed after prior packaged skill and install
-  guidance updates remained aligned.
+- 2026-06-09 00:39 UTC: crawler-first monitoring read back 220 open authored
+  PRs, thread-checked 33 review-like PRs, and found no unresolved review
+  threads. Repaired `Aqmar777/openclaw-competitive-intel#1` to head `352af28`
+  and GitHub now reports it `MERGEABLE` and `CLEAN`.
+- Fresh submission: opened `moonshineaitech/LunaStack#4` from `kriptoburak`,
+  head `9626f98`, adding a TweetClaw evidence loop to `/social-media` and
+  fixing the stale OpenClaw repo link to `openclaw/openclaw`.
+- Product maintenance: current OpenClaw docs, npm metadata, platform fitness,
+  public links, and package hygiene stayed aligned. The only package blocker is
+  the known nested OpenClaw `hono` advisory group.
 - Full monitoring, duplicate gates, target validation, link checks, prompt size,
-  self-improvement notes, and validation results are archived.
+  self-improvement notes, and URLs are archived.
 
 ## Reporting Checklist
 
