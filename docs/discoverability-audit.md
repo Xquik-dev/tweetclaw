@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 11:03 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 11:21 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.6`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 11:03 UTC: CLI plugins,
+- Official OpenClaw docs checked as of 2026-06-09 11:21 UTC: CLI plugins,
   plugin management, manifest, permissions, SDK entrypoints/runtime, tool
   plugins, install overrides, ClawHub publishing, skill format, skills, and
   debugging.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 11:03 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 11:21 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -199,16 +199,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 11:03 UTC: crawler-first monitoring plus exact readback covered
-  96 recent, commented, and watch-list `kriptoburak` PRs after broad and
-  focused crawler passes. Thread-level checks found no unresolved actionable
-  review threads; no safe maintainer, conflict, DCO/CLA, or failed-check repair
-  blocked outreach.
-- Mandatory fresh PR:
-  `Ciro-Gallo/awesome-agent-skills#1` adds `tweetclaw-openclaw-workflows` and a
-  README skill index after duplicate, license, fork, link, and hygiene checks.
-  It is open, ready, mergeable, and clean at head `bd48b65`; full details are
-  archived.
+- 2026-06-09 11:21 UTC: crawler-first monitoring plus exact readback covered
+  143 recent, commented, and watch-list `kriptoburak` PRs after broad and
+  focused crawler passes. The run repaired conflicts on
+  `BienvenuONIODJE/twitter-init-kit#3` at `f292fa0` and
+  `WilliamAlexYT/x-research-skill#1` at `89c82f5`; both read back mergeable and
+  clean after validation.
+- Mandatory fresh PRs: `EolosSpain/awesome-agent-skills#1` adds a concise
+  TweetClaw OpenClaw skill listing, and `spraphul/agent-skill-registry#1` adds a
+  remote Codex registry entry plus a schema repair for the existing top-level
+  `$schema` field. Both PRs were duplicate-clean, parent-verified, validated,
+  and opened from `kriptoburak` forks; full details are archived.
 
 ## Reporting Checklist
 
