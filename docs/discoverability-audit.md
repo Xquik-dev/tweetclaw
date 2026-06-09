@@ -49,13 +49,15 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 06:00 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 06:36 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 06:00 UTC: `llms.txt`,
-  CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
-  runtime helpers, install overrides, ClawHub publishing, skill format, and
-  the current help debugging and CLI MCP pages.
+- Official OpenClaw docs checked as of 2026-06-09 06:36 UTC: CLI MCP, CLI
+  plugins, plugin management, manifest, permission requests, SDK entrypoints,
+  runtime helpers, tool plugins, install overrides, ClawHub publishing, skill
+  creation, skills, and help debugging. The current source tree keeps plugin
+  docs under `docs/plugins/`; stale singular `docs/plugin/` raw paths returned
+  404 and were not used as canonical docs.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -78,7 +80,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 06:00 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 06:36 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,15 +197,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 06:00 UTC: broad and skill-focused crawler passes aborted after
-  credential-free proxy refresh logs; one focused MCP pass returned candidates.
-  Exact readbacks covered 300 open authored PRs and thread checks covered 112
-  signal PRs with no current actionable repair gate before fresh outreach.
-- Fresh submission: opened `mbelinky/x-mcp-server#5`, head `a10f6ec`, adding
-  OpenClaw MCP setup, fixing stale setup paths and a dead npm badge, and
-  documenting TweetClaw as a separate optional OpenClaw plugin. Product
-  maintenance, duplicate gates, package hygiene, and durable lessons are
-  archived.
+- 2026-06-09 06:36 UTC: broad crawler returned 25 directory, registry, MCP, and
+  skill-lane opportunities; focused skill and X MCP segments returned no extra
+  structured opportunities. Exact readbacks covered 300 open authored PRs, and
+  thread checks covered 76 signal PRs.
+- Repairs before fresh outreach: `Rodert/awesome-mcp#11` and
+  `BienvenuONIODJE/twitter-init-kit#3` were repaired from conflicts, validated,
+  pushed, and commented. Remaining check signals were target-owned Vercel,
+  Snyk, cancelled labeler, stale-review, or usage-limit states.
+- Fresh submission: opened `vidhupv/x-mcp#5`, head `f5925c8`, fixing the clone
+  URL, replacing the README uv setup with the supported project-selection
+  form, updating the X API docs link, adding OpenClaw MCP setup, and mentioning
+  TweetClaw as a separate optional OpenClaw plugin. Product maintenance,
+  duplicate gates, package hygiene, and durable lessons are archived.
 
 ## Reporting Checklist
 
