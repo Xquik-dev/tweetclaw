@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 02:34 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 02:59 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 02:34 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-09 02:59 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 02:34 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 02:59 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,21 +195,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 02:34 UTC: crawler-first monitoring read back 220 open authored
-  PRs, thread-checked 90 signal PRs, and found no unresolved current review
-  threads. Repaired `reall8164/wechat-openclaw-plugin#1` to head `b7f53d3`;
-  GitHub now reports it `MERGEABLE` and `CLEAN`.
-- Fresh submission: opened `Rollandcodes/BizAI#1` from correctly parented fork
-  `kriptoburak/bizai-tweetclaw-skill`, head `96a5530`, adding X/Twitter
-  evidence-packet guidance for the social-content skill while keeping strategy,
-  voice, drafting, calendar guidance, and account actions separated. Latest
-  readback is `MERGEABLE` with GitGuardian green and target-owned Vercel
-  authorization blocking only the deployment check.
-- Product maintenance: current OpenClaw docs, npm metadata, platform fitness,
-  public links, and package hygiene stayed aligned. The only package blocker is
-  the known nested OpenClaw `hono` advisory group.
-- Full monitoring, duplicate gates, target validation, link checks, prompt size,
-  self-improvement notes, and URLs are archived.
+- 2026-06-09 02:59 UTC: focused crawler returned zero structured skill leads;
+  exact readbacks covered 220 open authored PRs, and 95 signal PRs had
+  thread-aware checks with no unresolved current review threads.
+- Repair: refreshed `jamald33n/tweetsave-mcp#2` to head `15f3523`; GitHub now
+  reports it `MERGEABLE` and `CLEAN` after the README conflict repair.
+- Fresh submission: opened `sarwang-sinha/tweetvid-mcp#1` from correctly
+  parented fork `kriptoburak/tweetvid-mcp`, head `58dbe81`, fixing the README
+  title and adding optional TweetClaw source-packet guidance while keeping
+  TweetVid render-only. Latest readback is `MERGEABLE` and `CLEAN`.
+- Product maintenance, OpenClaw docs, package metadata, platform fitness,
+  public links, package hygiene, duplicate gates, prompt size, and durable
+  lessons are archived.
 
 ## Reporting Checklist
 
