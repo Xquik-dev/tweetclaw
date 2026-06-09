@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-09 16:57 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-09 17:27 UTC: latest
   `2026.6.1`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 16:57 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 17:27 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,22 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 16:41 UTC: runtime model/effort selectors were unavailable;
-  automation TOML/prompt measured 13,287/12,949 bytes with mandatory PR wording.
-- PR monitoring read back 91 high-signal PRs from a 300-PR set with 0 errors
-  and 6 signals. `prompt-security/clawsec#261` Baz recheck succeeded; no safe
-  maintainer, CI, conflict, or bot repair remained before outreach.
-- Crawler-first skill coverage screened 4 opportunities plus archive and target
-  duplicates. `heilcheng/awesome-agent-skills#142` duplicate-blocked the best
-  list lane. MIT target `skilluse/skilluse` was selected.
-- Mandatory fresh PR: `skilluse/skilluse#4` adds a real TweetClaw packaged-skill
-  install example to SkillUse docs and removes a stale README Blog link. Latest
-  readback is `MERGEABLE` with only target-owned Vercel authorization failure.
-- TweetClaw build and OpenClaw platform fitness passed. Official OpenClaw docs
-  returned 200; `openclaw` latest/beta are `2026.6.1`/`2026.6.5-beta.6`.
-  TweetClaw npm/source are `1.6.31`/`1.6.32`. Link checks only hit expected npm
-  web 403, registry 200; npm audit remains the known nested OpenClaw Hono
-  blocker.
+- 2026-06-09 17:14 UTC: runtime model/effort selectors unavailable; prompt
+  TOML/content stayed 13,287/12,949 bytes with mandatory PR wording.
+- Crawler skill/MCP/catalog slices returned 3/0/0 opportunities. Exact readbacks
+  covered 64 recent/comment/watch PRs from 300 open with 0 errors and 26
+  signals; no safe repair blocked outreach.
+- Duplicate gates blocked crawler repeats and `heilcheng/awesome-agent-skills`.
+  MIT target `Mingdao007/codex-skill-registry-public` was selected.
+- Mandatory fresh PR: `Mingdao007/codex-skill-registry-public#1` adds TweetClaw
+  as a routed L2 sanitized public-skill example. Latest readback is
+  `MERGEABLE`/`CLEAN`, with no comments, reviews, or checks.
+- TweetClaw build and OpenClaw fitness passed. Official docs returned 200;
+  `openclaw` latest/beta remain `2026.6.1`/`2026.6.5-beta.6`. Link checks only
+  hit expected npm web 403, registry 200; npm audit remains known Hono blocker.
 
 ## Reporting Checklist
 
