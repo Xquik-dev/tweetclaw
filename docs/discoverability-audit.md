@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 03:45 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 04:01 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 03:45 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-09 04:01 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 03:45 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 04:01 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,22 +195,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 03:45 UTC: focused crawler returned zero structured skill leads;
-  exact readbacks covered 220 open authored PRs, and 110 signal PRs had
-  thread-aware checks with no unresolved current review threads.
-- Repair: refreshed `Calliopeperpendicular906/openclaw-skills#1` to head
-  `076d90c`; GitHub now reports it `MERGEABLE` and `CLEAN` after the README
-  conflict repair and npm-source install wording update.
-- Fresh submission: opened `mypracticaltools/Twitter-MCP-Server#1` from
-  correctly parented distinct fork `kriptoburak/mypracticaltools-twitter-mcp-server`,
-  head `9c70e1c`, fixing stale Reddit docs and adding optional OpenClaw plus
-  TweetClaw handoff guidance while keeping the MCP server read-focused. Latest
-  readback is `MERGEABLE` and `CLEAN`.
-- Product maintenance, OpenClaw docs, package metadata, platform fitness,
-  public links, package hygiene, duplicate gates, prompt size, and durable
-  lessons are archived. Local Hono override and audit-fix probes did not safely
-  repair the peer-installed OpenClaw subtree, so no package metadata change was
-  kept.
+- 2026-06-09 04:01 UTC: crawler returned zero structured skill leads; exact
+  readbacks covered 300 open authored PRs, and thread checks covered 145 signal
+  PRs. Actionable review threads were repaired or resolved.
+- Repair: refreshed `paperclipai/paperclip#6646` to head `f0be9ac`, resolved
+  its review thread, and resolved 2 already-addressed
+  `illancillotto/twitter-mcp-server#2` Codex threads. Paperclip now reports
+  `MERGEABLE`, `CLEAN`, and all checks successful.
+- Fresh submission: opened `Jing-yilin/twitterapi-mcp-server#1`, head
+  `ab0d4aa`, with scoped npm package setup fixes plus optional OpenClaw and
+  TweetClaw handoff guidance. Product maintenance, links, package hygiene,
+  duplicate gates, prompt size, and durable lessons are archived.
 
 ## Reporting Checklist
 
