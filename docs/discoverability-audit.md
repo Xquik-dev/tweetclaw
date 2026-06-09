@@ -196,16 +196,17 @@ archive, before any outreach or duplicate decision.
 - Add the NHS Agentic Readiness badge only when a handled surface already has a
   useful badge area. Never add it to Apify READMEs or Apify actor docs.
 
-## Latest Validated Runs
+## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 08:45 UTC: repaired conflict in
-  `RonanCodes/ronan-skills#57`; final readback is open, mergeable, and clean at
-  head `08f3717`.
-- Mandatory fresh PR: `JSONbored/awesome-claude#2067` added a
-  source-backed TweetClaw OpenClaw X Automation skill entry. HeyClaude accepted
-  and merged it at `7a3e026`. Full validation and screening details are
-  archived.
+- 2026-06-09 09:10 UTC: crawler-first monitoring read back the newest 300 open
+  `kriptoburak` PRs and 80 commented recent PRs. No safely repairable
+  maintainer request blocked outreach; `cschanhniem/ClawSeatbelt#1` remains
+  target-owned Snyk-check blocked without public fix detail.
+- Mandatory fresh PR:
+  `mu-zi-lee/that-tweet-skill#1` adds a Chinese TweetClaw live-source handoff to
+  the local ThatTweet analysis Skill. It is open, ready, mergeable, and clean at
+  head `6a96ac8`; full screening and validation details are archived.
 
 ## Reporting Checklist
 
