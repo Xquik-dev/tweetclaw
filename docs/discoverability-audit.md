@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 04:41 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 05:24 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 04:41 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-09 05:24 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
-  the current help debugging page.
+  the current help debugging and CLI MCP pages.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -195,15 +195,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 04:41 UTC: crawler returned zero structured skill leads; exact
-  readbacks covered 300 open authored PRs and thread checks covered 111 signal
-  PRs. Repaired conflict drift on `Rodert/awesome-mcp#11`,
-  `BienvenuONIODJE/twitter-init-kit#3`, and
-  `WilliamAlexYT/x-research-skill#1`.
-- Fresh submission: opened `scrape-badger/scrapebadger-mcp#3`, head `701cfd2`,
-  with OpenClaw MCP setup, a corrected 16-tool count, and an optional TweetClaw
-  handoff link. Product maintenance, links, package hygiene, duplicate gates,
-  prompt size, and durable lessons are archived.
+- 2026-06-09 05:24 UTC: crawler returned zero structured skill leads; exact
+  readbacks covered 300 open authored PRs and thread checks covered 145 signal
+  PRs. Repaired `paperclipinc/openclaw-operator#539` by reframing the TweetClaw
+  operator docs as a reusable external social-plugin workflow.
+- Fresh submission: opened `DataWhisker/x-mcp-server#10`, head `92ec188`, with
+  9 read-only user-data MCP tools, corrected 26-tool docs, and validation for
+  build, links, audit, and tool count. Product maintenance, duplicate gates,
+  package hygiene, and durable lessons are archived.
 
 ## Reporting Checklist
 
