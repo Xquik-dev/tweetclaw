@@ -199,14 +199,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 09:10 UTC: crawler-first monitoring read back the newest 300 open
-  `kriptoburak` PRs and 80 commented recent PRs. No safely repairable
-  maintainer request blocked outreach; `cschanhniem/ClawSeatbelt#1` remains
-  target-owned Snyk-check blocked without public fix detail.
+- 2026-06-09 09:25 UTC: crawler-first monitoring read back 140 recent or
+  commented `kriptoburak` PRs after broad crawler coverage. No safely repairable
+  maintainer request or current failed-check fix blocked outreach.
 - Mandatory fresh PR:
-  `mu-zi-lee/that-tweet-skill#1` adds a Chinese TweetClaw live-source handoff to
-  the local ThatTweet analysis Skill. It is open, ready, mergeable, and clean at
-  head `6a96ac8`; full screening and validation details are archived.
+  `YangsonHung/awesome-agent-skills#1` adds paired English and Chinese
+  TweetClaw Twitter automation Skills plus README and AGENTS indexes. It is
+  open, ready, mergeable, and clean at head `cc7c8fe`; full screening and
+  validation details are archived.
 
 ## Reporting Checklist
 
