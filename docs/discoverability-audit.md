@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 00:39 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 01:22 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 00:39 UTC: `llms.txt`,
+- Official OpenClaw docs checked as of 2026-06-09 01:22 UTC: `llms.txt`,
   CLI plugins, manage plugins, manifest, permission requests, SDK entrypoints,
   runtime helpers, install overrides, ClawHub publishing, skill format, and
   the current help debugging page.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 00:39 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 01:22 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,13 +195,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 00:39 UTC: crawler-first monitoring read back 220 open authored
-  PRs, thread-checked 33 review-like PRs, and found no unresolved review
-  threads. Repaired `Aqmar777/openclaw-competitive-intel#1` to head `352af28`
-  and GitHub now reports it `MERGEABLE` and `CLEAN`.
-- Fresh submission: opened `moonshineaitech/LunaStack#4` from `kriptoburak`,
-  head `9626f98`, adding a TweetClaw evidence loop to `/social-media` and
-  fixing the stale OpenClaw repo link to `openclaw/openclaw`.
+- 2026-06-09 01:22 UTC: crawler-first monitoring read back 220 open authored
+  PRs, thread-checked 43 review-like PRs, and found no unresolved review
+  threads. Repaired `Hairy-jumper134/last30days-cn-skill#1` to head `0534a7f`;
+  GitHub now reports it `MERGEABLE` and `CLEAN`.
+- Fresh submission: opened `affaan-m/ECC#2199` from correctly parented fork
+  `kriptoburak/everything-claude-code`, head `53b3af0`, adding a pinned,
+  approval-gated TweetClaw evidence handoff to `social-publisher` before
+  SocialClaw scheduling. Automated review findings were fixed, and latest
+  readback is mergeable with CodeRabbit and GitGuardian green.
 - Product maintenance: current OpenClaw docs, npm metadata, platform fitness,
   public links, and package hygiene stayed aligned. The only package blocker is
   the known nested OpenClaw `hono` advisory group.
