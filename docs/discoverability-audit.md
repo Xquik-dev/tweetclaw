@@ -49,12 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 08:15 UTC:
-  `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.5`; source main package
+- Latest OpenClaw stable checked as of 2026-06-09 08:45 UTC:
+  `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.6`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 08:15 UTC: CLI MCP, plugins,
+- Official OpenClaw docs checked as of 2026-06-09 08:45 UTC: CLI plugins,
   plugin management, manifest, permissions, SDK entrypoints/runtime, tool
-  plugins, install overrides, ClawHub publishing, skills, and debugging.
+  plugins, install overrides, ClawHub publishing, skill format, skills, and
+  debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -77,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 08:15 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 08:45 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -198,16 +199,13 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Runs
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 08:15 UTC: broad crawler returned 25 known directory, registry,
-  MCP, and skill leads; focused skill and direct X MCP segments returned 0.
-  Exact readbacks covered 300 authored PRs and thread checks covered 78 signal
-  PRs with no unresolved current review threads.
-- PR repair: refreshed `WilliamAlexYT/x-research-skill#1`; final readback is
-  open, mergeable, and clean at head `0a43b76`.
-- Mandatory fresh PR: opened
-  `AutomateLab-tech/content-distribution-mcp#5` to align current skill tool
-  names, OpenClaw and MCP version metadata, lockfile root metadata, and optional
-  TweetClaw source-context guidance. Full details are archived.
+- 2026-06-09 08:45 UTC: repaired conflict in
+  `RonanCodes/ronan-skills#57`; final readback is open, mergeable, and clean at
+  head `08f3717`.
+- Mandatory fresh PR: `JSONbored/awesome-claude#2067` added a
+  source-backed TweetClaw OpenClaw X Automation skill entry. HeyClaude accepted
+  and merged it at `7a3e026`. Full validation and screening details are
+  archived.
 
 ## Reporting Checklist
 
