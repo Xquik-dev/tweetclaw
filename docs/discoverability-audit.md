@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- Latest OpenClaw stable checked as of 2026-06-09 15:43 UTC:
+- Latest OpenClaw stable checked as of 2026-06-09 16:16 UTC:
   `openclaw@2026.6.1`; npm beta is `2026.6.5-beta.6`; source main package
   metadata reports `2026.6.1`.
-- Official OpenClaw docs checked as of 2026-06-09 15:43 UTC: CLI plugins,
+- Official OpenClaw docs checked as of 2026-06-09 16:16 UTC: CLI plugins,
   plugin management, manifest, permissions, SDK entrypoints/runtime, tool
   plugins, install overrides, ClawHub publishing, skill format, skills, and
   debugging.
@@ -78,7 +78,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-09 15:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-09 16:16 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -199,16 +199,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 15:43 UTC: crawler-first monitoring ran 3 successful focused
-  slices with 30 opportunities and 2 timed-out follow-up slices. Exact readbacks
-  covered 300 open `kriptoburak` PRs with 0 errors and 149 signals.
-- Repaired `BienvenuONIODJE/twitter-init-kit#3` README conflict to
-  `MERGEABLE` and `CLEAN`.
-- Mandatory fresh PR: `DaviddTech/ai-trading-agent#1` adds optional TweetClaw
-  X/Twitter source-context guidance for OpenClaw users while keeping trading
-  research OHLCV, Pine Script, and backtest first. Duplicate, license, fork,
-  target validation, public hygiene, and final PR readback passed; only
-  pre-existing target-owned README media links failed link checks.
+- 2026-06-09 16:16 UTC: crawler-first skill/MCP coverage ran with 12 usable
+  skill opportunities and 0 MCP opportunities. Exact readbacks covered 300 open
+  `kriptoburak` PRs with 0 errors and 111 signals.
+- Repaired `WilliamAlexYT/x-research-skill#1` README conflict to `MERGEABLE`
+  and `CLEAN` after pushing to the actual PR fork.
+- Mandatory fresh PR: `prompt-security/clawsec#261` adds TweetClaw/X-Twitter
+  social-account mutation examples to OpenClaw Traffic Guardian policy-review
+  docs. A valid bot review gap was repaired in `b6b707a`; duplicate, license,
+  fork, target validation, OpenClaw docs, and public hygiene passed. Latest
+  readback is `MERGEABLE`, `BLOCKED` by target review policy, with reviewer
+  recheck in progress.
 
 ## Reporting Checklist
 
