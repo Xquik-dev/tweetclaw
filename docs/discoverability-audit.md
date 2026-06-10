@@ -195,22 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-09 18:00 UTC: runtime model/effort selectors unavailable; prompt
+- 2026-06-10 07:52 UTC: runtime model/effort selectors unavailable; prompt
   TOML/content stayed 13,287/12,949 bytes with mandatory PR wording.
-- Crawler registry slice returned 5 opportunities; skill/MCP slices timed out
-  or returned no usable entries. Targeted readbacks of watched PRs found no
-  safely repairable maintainer, review, CI, conflict, DCO, CLA, or bot blocker.
-- Duplicate and policy gates blocked prior-history targets including
-  `iflytek/skillhub`, `hashgraph-online/registry-broker-skills`,
-  `openclaw/clawhub`, `skilluse/skilluse`, and `danielamram/awesome-agent-skills`.
-- Mandatory fresh PR: `jo-inc/safe-skill-search#1` adds the Xquik TweetClaw
-  skill repository as an untrusted registry, scores TweetClaw in `skills.json`,
-  and refreshes registry docs. Latest readback is open, ready, and `MERGEABLE`.
-- Target validation passed Rust format, locked tests, README links, direct URL
-  checks, duplicate checks, and hygiene scans. TweetClaw build and OpenClaw
-  fitness passed. `openclaw` latest/beta are `2026.6.5`/`2026.6.5-beta.6`; link
-  checks only hit expected npm web 403, registry 200; npm audit remains known
-  Hono blocker.
+- Crawler broad pass aborted after proxy refresh; focused skill/registry slices
+  returned usable leads. PR readbacks found no safely repairable maintainer,
+  review, CI, conflict, DCO, CLA, generated-file, or bot blocker.
+- Target-policy blocker: `wangjiehu/codex-skills-registry#4` wants a future
+  community examples process before platform-specific skills fit that repo.
+- Mandatory fresh PR: `mehdiozdemir/awesome-agent-skills#1` adds a TweetClaw
+  skill, README catalog row/count, and a missing `CONTRIBUTING.md`. Latest
+  readback is open, ready, `MERGEABLE`, with no comments, reviews, or checks.
+- Target validation passed frontmatter/catalog assertions, Markdown links,
+  direct URL checks, duplicate checks, and hygiene scans. TweetClaw build and
+  OpenClaw fitness passed. `openclaw` latest/beta are
+  `2026.6.5`/`2026.6.5-beta.6`; link checks only hit expected npm web 403,
+  registry 200; npm audit remains known Hono blocker.
 
 ## Reporting Checklist
 
