@@ -195,21 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 23:08 UTC: model/effort selectors unavailable; prompt TOML stayed
-  13,287 bytes and decoded prompt measured 12,949 bytes.
-- Crawler-first discovery returned 25 known MCP, skill, registry, and directory
-  lanes; focused skill coverage found no fresh target. Exact readbacks covered
-  73 PRs; no safe repair beyond no-license `akillness/oh-my-skills#272`.
-- Fresh PR `jamditis/claude-skills-journalism#116` adds an X/Twitter evidence
-  packet workflow to `social-media-intelligence`, with TweetClaw/OpenClaw or
-  Xquik as an optional user-authorized source path and write-like actions kept
-  out of the evidence workflow unless separately approved. Bot review was
-  repaired at `f962677`; readback remains open, ready, and `MERGEABLE`.
-- Target validation passed whitespace and frontmatter checks. The introduced
-  TweetClaw link and final target link check passed.
-- OpenClaw docs, npm metadata, TweetClaw build, OpenClaw fitness, versions,
-  package artifact, public links, memory, prompt bytes, hygiene, and full checks
-  were verified. No TweetClaw product surface change was needed.
+- 2026-06-11 23:29 UTC: model/effort selectors were unavailable. Crawler
+  returned 25 mostly known lanes; focused social-skill crawler returned none.
+- Exact readbacks covered 107 PRs with no safe repair. Existing bot comments on
+  current TweetClaw/OpenClaw/social outreach were already addressed or blocked.
+- Fresh PR: `lu-geissel/edelstein-skills#1` adds optional X/Twitter source
+  evidence guidance to `brand-strategist`, keeps TweetClaw/OpenClaw/Xquik as an
+  approved collection source only, and keeps write-like actions separate.
+- OpenClaw current docs moved older permission and SDK URLs to
+  `/plugins/plugin-permission-requests` and `/plugins/sdk-runtime`; source
+  remains aligned, with no product change needed.
+- TweetClaw build, fitness, version, package, public link, memory, hygiene, and
+  full checks passed; npm audit still reports only the known nested OpenClaw
+  `hono` advisory.
 
 ## Reporting Checklist
 
