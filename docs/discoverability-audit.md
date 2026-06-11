@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 11:49 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 12:02 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 11:49 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-11 12:02 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,23 +195,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 11:49 UTC: runtime model/effort selectors unavailable; prompt
-  TOML/content stayed 13,287/12,949 bytes.
-- Crawler and exact PR readbacks found no safely repairable maintainer, review,
-  CI, conflict, DCO, CLA, generated-file, or bot blocker. `clawsec#261`,
-  `wundercorp/awesome-mcp#4`, and `badhope/AI-SKILL#32` are merged.
-- Mandatory fresh PR: `zakyjundana/awesome-agent-skills#1` adds a TweetClaw AI
-  and Data row with the target's required title and 10-word validation format.
-  Latest readback is open, ready, `MERGEABLE`, with no comments or checks.
-- Duplicate and target-policy gates blocked already-used crawler leads including
-  `blacktwist/social-media-skills`, `typefully/agent-skills`,
-  `rohunvora/x-research-skill`, `luna-prompts/skillnote`, and Hashgraph repos.
-- Target validation passed workflow-equivalent README format, direct TweetClaw
-  URL 200, diff whitespace, duplicate checks, and hygiene scans. Generic
-  README link check still reports target-owned placeholder 404 links.
-- TweetClaw build and OpenClaw fitness passed. `openclaw` latest/beta are
-  `2026.6.5`/`2026.6.5-beta.6`; TweetClaw link checks only hit expected npm
-  web 403 with registry 200; npm audit remains the known Hono blocker.
+- 2026-06-11 12:02 UTC: runtime model/effort selectors unavailable; prompt
+  TOML stayed 13,287 bytes.
+- PR readbacks found no repair blocker. Bot comments were usage-limit,
+  target-owned deploy auth, review queues, or stale/off-topic review notes.
+- Mandatory fresh PR: `wilwaldon/Claude-Code-Content-Marketing-Toolkit#3`
+  adds TweetClaw to research tools and quick reference, and repairs a stale
+  DataForSEO link. Readback is open, ready, `MERGEABLE`, `CLEAN`.
+- Candidate gates blocked repeats including XPOZ, `blacktwist`, `hyperfx-ai`,
+  `serenakeyitan`, `mvanhorn`, and used skill-list lanes.
+- Target README link check passed 22/22 after repair; TweetClaw public link
+  check passed 62/62. Build and OpenClaw fitness passed; npm audit remains the
+  known nested OpenClaw Hono blocker.
 
 ## Reporting Checklist
 
