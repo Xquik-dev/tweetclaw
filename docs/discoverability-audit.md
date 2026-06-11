@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 20:40 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 22:34 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 20:40 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-11 22:34 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,15 +195,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 21:50 UTC: model/effort selectors unavailable; prompt TOML stayed
+- 2026-06-11 22:11 UTC: model/effort selectors unavailable; prompt TOML stayed
   13,287 bytes and decoded prompt measured 12,949 bytes.
-- Monitoring read 300 open `kriptoburak` PRs. It closed duplicate
-  `zakyjundana/awesome-agent-skills#1` in favor of #2, repaired
-  `RonanCodes/ronan-skills#57` to `3a14923`, and left it open, ready,
-  `MERGEABLE`, and clean.
-- Fresh PR `MSApps-Mobile/claude-plugins#29` adds optional reviewed TweetClaw
-  source exports to x-content-intelligence. Readback is open, ready,
-  `MERGEABLE`, `UNSTABLE`, 1 addressed bot review, 1 comment, and no checks.
+- Monitoring read 300 open `kriptoburak` PRs. It repaired Codex review comments
+  on `Skill-Space#1`, `TweetScraperR#9`, and
+  `Claude-Code-Content-Marketing-Toolkit#3`, then refreshed
+  `Rodert/awesome-mcp#11` to `262341d`, open and `MERGEABLE`.
+- Fresh PR `ejikezebedee/openclaw-skilltrust#1` adds social-account capability
+  scoring, detector `ST013`, and a TweetClaw-style X/Twitter review fixture.
+  Readback is open, ready, `MERGEABLE`, no checks, comments, or reviews.
 - Candidate gates, target-owned link blockers, conflict queue, OpenClaw docs,
   npm metadata, validation, and prompt self-improvement details are archived.
 - TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
