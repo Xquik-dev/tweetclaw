@@ -203,7 +203,7 @@ archive, before any outreach or duplicate decision.
   `MERGEABLE`, and clean.
 - Fresh PR `MSApps-Mobile/claude-plugins#29` adds optional reviewed TweetClaw
   source exports to x-content-intelligence. Readback is open, ready,
-  `MERGEABLE`, `UNSTABLE`, no comments, reviews, or checks.
+  `MERGEABLE`, `UNSTABLE`, 1 addressed bot review, 1 comment, and no checks.
 - Candidate gates, target-owned link blockers, conflict queue, OpenClaw docs,
   npm metadata, validation, and prompt self-improvement details are archived.
 - TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
