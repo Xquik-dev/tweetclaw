@@ -195,18 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 13:27 UTC: runtime model/effort selectors unavailable; prompt
-  TOML stayed 13,287 bytes.
-- PR monitoring read back newest/tracked PRs; all signals were clean, already
-  addressed, review queues, or target-owned policy/deploy blockers.
-- Mandatory fresh PR: `vorpalengineering/asrpm#1` lets `verify --target` inspect
-  explicit manifest target kinds while `install` stays Claude-only. Readback is
-  open, ready, and `MERGEABLE`.
-- Candidate gates blocked crawler leads with existing PRs, missing licenses, or
-  direct-competitor fit; `asrpm` was MIT, duplicate-clean, PR-enabled, and
-  correctly forked through `kriptoburak`.
-- TweetClaw build, OpenClaw fitness, public links, memory check, and
-  `npm run check:all` passed. npm audit remains the known nested OpenClaw Hono
+- 2026-06-11 13:58 UTC: runtime model/effort selectors unavailable; prompt TOML
+  stayed 13,287 bytes and decoded prompt stayed 12,949 bytes.
+- PR monitoring found no safely repairable blocker. `Xquik-dev/hermes-tweet#173`
+  moved from a transient failed check to merged after exact CI readback.
+- Mandatory fresh PR: `Rushik-Ghuntala/claude-code-skills#1` documents optional
+  TweetClaw source context for trend discovery and keeps writes, DMs, media,
+  monitors, scheduling, and publishing in a separate approval flow. Readback is
+  open, ready, `MERGEABLE`, and `CLEAN`.
+- Candidate gates blocked crawler and web-index lanes for missing license,
+  duplicate PR history, prior target use, or direct-competitor fit. A renamed
+  fork `kriptoburak/rushik-claude-code-skills` was needed because the default
+  fork name was already used for another parent.
+- TweetClaw build, OpenClaw fitness, version, package-artifact, public-link, and
+  memory checks passed. npm audit remains the known nested OpenClaw Hono
   blocker.
 
 ## Reporting Checklist
