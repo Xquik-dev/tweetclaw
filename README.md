@@ -1,7 +1,7 @@
 # TweetClaw
 
-[![npm](https://img.shields.io/npm/v/@xquik/tweetclaw)](https://www.npmjs.com/package/@xquik/tweetclaw)
-[![npm downloads](https://img.shields.io/npm/dm/@xquik/tweetclaw.svg)](https://www.npmjs.com/package/@xquik/tweetclaw)
+[![npm](https://img.shields.io/npm/v/@xquik/tweetclaw)](https://registry.npmjs.org/@xquik%2ftweetclaw)
+[![npm downloads](https://img.shields.io/npm/dm/@xquik/tweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg?url=https%3A%2F%2Fgithub.com%2FXquik-dev%2Ftweetclaw)](https://deepwiki.com/Xquik-dev/tweetclaw)
@@ -249,7 +249,7 @@ Media download requires authenticated access and is not MPP-eligible. MPP only i
 - [OpenClaw Setup Guide](docs/openclaw-setup.md)
 - [Agent Workflow Guide](docs/agent-workflows.md)
 - Framework guides: [Mastra](https://docs.xquik.com/guides/mastra), [CrewAI](https://docs.xquik.com/guides/crewai), [LangChain](https://docs.xquik.com/guides/langchain), [Pydantic AI](https://docs.xquik.com/guides/pydantic-ai), [Google ADK](https://docs.xquik.com/guides/google-adk), [Microsoft Agent Framework](https://docs.xquik.com/guides/microsoft-agent-framework), [n8n](https://docs.xquik.com/guides/n8n), [Zapier](https://docs.xquik.com/guides/zapier), [Make](https://docs.xquik.com/guides/make), [Pipedream](https://docs.xquik.com/guides/pipedream), [Composio migration](https://docs.xquik.com/guides/composio-migration)
-- [npm Package](https://www.npmjs.com/package/@xquik/tweetclaw)
+- [npm Registry Metadata](https://registry.npmjs.org/@xquik%2ftweetclaw)
 - [OpenClaw](https://github.com/openclaw/openclaw)
 
 ## License

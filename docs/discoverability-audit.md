@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 12:39 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 13:07 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 12:39 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-11 13:07 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,20 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 12:39 UTC: runtime model/effort selectors unavailable; prompt
+- 2026-06-11 13:10 UTC: runtime model/effort selectors unavailable; prompt
   TOML stayed 13,287 bytes.
-- Repair pass addressed `ayush-that/sub-agents.directory#7` by confirming the
-  branch had removed a stale endpoint-count claim, validating the
-  target, and posting a maintainer-safe update comment.
-- Mandatory fresh PR: `klimekszymon/gemproject#1` adds a TweetClaw skill,
-  registry manifest row, index row, and request classifier script. Readback is
-  open, ready, and `MERGEABLE`; an automated classifier review was repaired in
-  `83d27c4`.
-- Candidate gates blocked duplicates, no-license targets, and lower-fit direct
-  competitor repos; `gemproject` was MIT, duplicate-clean, PR-enabled, and
-  correctly forked through `kriptoburak`.
-- TweetClaw public links, memory check, and `npm run check:all` passed.
-  npm audit remains the known nested OpenClaw Hono blocker.
+- PR monitoring read back newest/tracked PRs including `eaccesdev#1`,
+  `klimekszymon#1`, and `ayush-that#7`; no safely repairable blocker remained.
+- Mandatory fresh PR: `garagon/aguara-observatory#6` adds OpenClaw npm keyword
+  coverage plus README/Makefile surfacing for existing package and registry
+  crawlers. Readback is open, ready, and `MERGEABLE`.
+- Candidate gates screened `garagon/aguara-observatory`, `vorpalengineering/asrpm`,
+  and `aios-rs/skillhub`; `aguara-observatory` was Apache-2.0, duplicate-clean,
+  PR-enabled, and correctly forked through `kriptoburak`.
+- TweetClaw README npm package links now use registry metadata after npmjs
+  package pages returned 403. Build, OpenClaw fitness, public links, memory
+  check, and `npm run check:all` passed. npm audit remains the known nested
+  OpenClaw Hono blocker.
 
 ## Reporting Checklist
 
