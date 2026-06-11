@@ -202,7 +202,8 @@ archive, before any outreach or duplicate decision.
   target, and posting a maintainer-safe update comment.
 - Mandatory fresh PR: `klimekszymon/gemproject#1` adds a TweetClaw skill,
   registry manifest row, index row, and request classifier script. Readback is
-  open, ready, and `MERGEABLE`.
+  open, ready, and `MERGEABLE`; an automated classifier review was repaired in
+  `83d27c4`.
 - Candidate gates blocked duplicates, no-license targets, and lower-fit direct
   competitor repos; `gemproject` was MIT, duplicate-clean, PR-enabled, and
   correctly forked through `kriptoburak`.
