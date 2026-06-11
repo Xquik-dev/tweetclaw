@@ -195,21 +195,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 21:26 UTC: runtime model/effort selectors unavailable; prompt TOML
-  stayed 13,287 bytes and decoded prompt measured 12,949 bytes.
-- PR monitoring read back 300 open `kriptoburak` PRs with 0 final errors after
-  one transient retry. It repaired `posteverywhere/mcp#1` by merging current
-  `main`, resolving changelog drift, fixing a stale changelog link, validating,
-  pushing `cf052ac`, and commenting. Final readback is open, ready,
+- 2026-06-11 21:50 UTC: model/effort selectors unavailable; prompt TOML stayed
+  13,287 bytes and decoded prompt measured 12,949 bytes.
+- Monitoring read 300 open `kriptoburak` PRs. It closed duplicate
+  `zakyjundana/awesome-agent-skills#1` in favor of #2, repaired
+  `RonanCodes/ronan-skills#57` to `3a14923`, and left it open, ready,
   `MERGEABLE`, and clean.
-- Mandatory fresh PR: `zakyjundana/awesome-agent-skills#2` adds TweetClaw to the
-  Marketing skill list and fixes the target contribution-format fence. Readback
-  is open, ready, `MERGEABLE`, currently `UNSTABLE` with no check payload yet,
-  and no comments or reviews.
-- Candidate gates blocked crawler-repeat MCP, registry, skill-list, direct
-  X/Twitter, and personal-runtime lanes by duplicate history, missing licenses,
-  generated-only policy, direct-provider shape, unsafe target source material,
-  weak fit, or existing submissions. Remaining conflict queue is archived.
+- Fresh PR `MSApps-Mobile/claude-plugins#29` adds optional reviewed TweetClaw
+  source exports to x-content-intelligence. Readback is open, ready,
+  `MERGEABLE`, `UNSTABLE`, no comments, reviews, or checks.
+- Candidate gates, target-owned link blockers, conflict queue, OpenClaw docs,
+  npm metadata, validation, and prompt self-improvement details are archived.
 - TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
   memory, and full checks passed. npm audit remains the known nested OpenClaw
   Hono blocker.
