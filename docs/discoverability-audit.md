@@ -195,19 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 20:40 UTC: runtime model/effort selectors unavailable; prompt TOML
+- 2026-06-11 21:26 UTC: runtime model/effort selectors unavailable; prompt TOML
   stayed 13,287 bytes and decoded prompt measured 12,949 bytes.
-- PR monitoring read back 300 open `kriptoburak` PRs with 0 errors. It repaired
-  `ndesv21/socialclaw#3` by merging current `main`, resolving mirrored skill
-  conflicts, validating, pushing `ca1fcc8`, and commenting. Final readback is
-  open, ready, `MERGEABLE`, and clean.
-- Mandatory fresh PR: `20perline/skills#1` adds a TweetClaw skill and README
-  index entry in the target's existing `skills/<name>/SKILL.md` layout.
-  Readback is open, ready, `MERGEABLE`, clean, with no comments, reviews, or
-  checks.
-- Candidate gates blocked crawler-repeat MCP, registry, and skill-list lanes by
-  duplicate history, missing licenses, generated-only policy, weak fit, or
-  existing submissions. Remaining conflict queue is archived for later repair.
+- PR monitoring read back 300 open `kriptoburak` PRs with 0 final errors after
+  one transient retry. It repaired `posteverywhere/mcp#1` by merging current
+  `main`, resolving changelog drift, fixing a stale changelog link, validating,
+  pushing `cf052ac`, and commenting. Final readback is open, ready,
+  `MERGEABLE`, and clean.
+- Mandatory fresh PR: `zakyjundana/awesome-agent-skills#2` adds TweetClaw to the
+  Marketing skill list and fixes the target contribution-format fence. Readback
+  is open, ready, `MERGEABLE`, currently `UNSTABLE` with no check payload yet,
+  and no comments or reviews.
+- Candidate gates blocked crawler-repeat MCP, registry, skill-list, direct
+  X/Twitter, and personal-runtime lanes by duplicate history, missing licenses,
+  generated-only policy, direct-provider shape, unsafe target source material,
+  weak fit, or existing submissions. Remaining conflict queue is archived.
 - TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
   memory, and full checks passed. npm audit remains the known nested OpenClaw
   Hono blocker.
