@@ -195,20 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 22:11 UTC: model/effort selectors unavailable; prompt TOML stayed
+- 2026-06-11 22:42 UTC: model/effort selectors unavailable; prompt TOML stayed
   13,287 bytes and decoded prompt measured 12,949 bytes.
-- Monitoring read 300 open `kriptoburak` PRs. It repaired Codex review comments
-  on `Skill-Space#1`, `TweetScraperR#9`, and
-  `Claude-Code-Content-Marketing-Toolkit#3`, then refreshed
-  `Rodert/awesome-mcp#11` to `262341d`, open and `MERGEABLE`.
-- Fresh PR `ejikezebedee/openclaw-skilltrust#1` adds social-account capability
-  scoring, detector `ST013`, and a TweetClaw-style X/Twitter review fixture.
-  Readback is open, ready, `MERGEABLE`, no checks, comments, or reviews.
-- Candidate gates, target-owned link blockers, conflict queue, OpenClaw docs,
-  npm metadata, validation, and prompt self-improvement details are archived.
-- TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
-  memory, and full checks passed. npm audit remains the known nested OpenClaw
-  Hono blocker.
+- Crawler JSON passes returned empty during a research-proxy socket outage.
+  Monitoring read 300 open `kriptoburak` PRs; 150 GraphQL readbacks completed
+  before GitHub returned 502, then targeted readbacks finished the action queue.
+- Repairs pushed `openclaw-skilltrust#1` to `6431a74`,
+  `twitter-init-kit#3` to `a5122eb`, and `media-mcp#1` to `8c936b1`; all read
+  back open and `MERGEABLE`.
+- Fresh PR `ReactSphere/awesome-copilot-agents#4` adds a read-only X/Twitter
+  source-evidence skill for TweetClaw/OpenClaw or Xquik source packets. Readback
+  is open, ready, `MERGEABLE`, no checks, comments, or reviews.
+- Blockers recorded: `akillness/oh-my-skills#272` lacks license metadata;
+  `media-mcp` npm web 403 and npm advisories are target-owned; TweetClaw npm
+  audit remains the known nested OpenClaw Hono blocker.
+- OpenClaw docs, npm metadata, TweetClaw build, OpenClaw fitness, versions,
+  package artifact, public links, memory, prompt bytes, hygiene, and full checks
+  were verified. No TweetClaw product surface change was needed.
 
 ## Reporting Checklist
 
