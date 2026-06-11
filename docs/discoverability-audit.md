@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 13:24 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 14:05 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 13:24 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-11 14:05 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,21 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 13:58 UTC: runtime model/effort selectors unavailable; prompt TOML
+- 2026-06-11 14:05 UTC: runtime model/effort selectors unavailable; prompt TOML
   stayed 13,287 bytes and decoded prompt stayed 12,949 bytes.
-- PR monitoring found no safely repairable blocker. `Xquik-dev/hermes-tweet#173`
-  moved from a transient failed check to merged after exact CI readback.
-- Mandatory fresh PR: `Rushik-Ghuntala/claude-code-skills#1` documents optional
-  TweetClaw source context for trend discovery and keeps writes, DMs, media,
-  monitors, scheduling, and publishing in a separate approval flow. Readback is
-  open, ready, `MERGEABLE`, and `CLEAN`.
-- Candidate gates blocked crawler and web-index lanes for missing license,
-  duplicate PR history, prior target use, or direct-competitor fit. A renamed
-  fork `kriptoburak/rushik-claude-code-skills` was needed because the default
-  fork name was already used for another parent.
-- TweetClaw build, OpenClaw fitness, version, package-artifact, public-link, and
-  memory checks passed. npm audit remains the known nested OpenClaw Hono
-  blocker.
+- PR monitoring, including newest and watched `kriptoburak` PRs, found no
+  safely repairable maintainer request, review thread, CI failure, conflict,
+  DCO/CLA, generated-file drift, or valid bot blocker.
+- Mandatory fresh PR: `tradermonty/claude-trading-skills#160` adds optional
+  TweetClaw/OpenClaw public X/Twitter source-collection context to
+  `market-news-analyst` and `us-market-bubble-detector`, mirrors it in the
+  weekly example, and regenerates the two `.skill` archives. Readback is open,
+  ready, `MERGEABLE`, with no comments, reviews, or checks.
+- Candidate gates duplicate-blocked prior skill/catalog lanes. NotFair was
+  skipped as weaker fit after its OpenClaw removal; TraderMonty was MIT
+  licensed, active, duplicate-clean, packaged-skill native, and safety-aligned.
+- TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
+  memory, and full checks passed. npm audit remains the known nested OpenClaw
+  Hono blocker.
 
 ## Reporting Checklist
 
