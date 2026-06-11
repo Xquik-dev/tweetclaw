@@ -197,18 +197,16 @@ archive, before any outreach or duplicate decision.
 - Earlier outreach and repair details are archived.
 - 2026-06-11 23:08 UTC: model/effort selectors unavailable; prompt TOML stayed
   13,287 bytes and decoded prompt measured 12,949 bytes.
-- Crawler-first discovery returned 25 mostly known MCP, skill, registry, and
-  directory lanes; focused skill coverage returned no fresh crawler-only target.
-  Exact readbacks covered 73 current PRs. No new maintainer, review, CI, DCO, or
-  conflict repair was safely actionable beyond known no-license blocker
-  `akillness/oh-my-skills#272`.
+- Crawler-first discovery returned 25 known MCP, skill, registry, and directory
+  lanes; focused skill coverage found no fresh target. Exact readbacks covered
+  73 PRs; no safe repair beyond no-license `akillness/oh-my-skills#272`.
 - Fresh PR `jamditis/claude-skills-journalism#116` adds an X/Twitter evidence
   packet workflow to `social-media-intelligence`, with TweetClaw/OpenClaw or
   Xquik as an optional user-authorized source path and write-like actions kept
-  out of the evidence workflow unless separately approved.
+  out of the evidence workflow unless separately approved. Bot review was
+  repaired at `f962677`; readback remains open, ready, and `MERGEABLE`.
 - Target validation passed whitespace and frontmatter checks. The introduced
-  TweetClaw link passed; markdown-link-check flagged a pre-existing WITNESS URL,
-  but direct HTTP verification returned 200.
+  TweetClaw link and final target link check passed.
 - OpenClaw docs, npm metadata, TweetClaw build, OpenClaw fitness, versions,
   package artifact, public links, memory, prompt bytes, hygiene, and full checks
   were verified. No TweetClaw product surface change was needed.
