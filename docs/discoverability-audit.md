@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 17:41 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 20:40 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 17:41 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-11 20:40 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,19 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 17:41 UTC: runtime model/effort selectors unavailable; prompt TOML
-  stayed 13,287 bytes and decoded prompt measured 13,060 bytes.
+- 2026-06-11 20:40 UTC: runtime model/effort selectors unavailable; prompt TOML
+  stayed 13,287 bytes and decoded prompt measured 12,949 bytes.
 - PR monitoring read back 300 open `kriptoburak` PRs with 0 errors. It repaired
-  `BienvenuONIODJE/twitter-init-kit#3` by merging current `main`, resolving the
-  README conflict, validating, pushing `e21befe`, and commenting. Final readback
-  is open, ready, `MERGEABLE`, and clean.
-- Mandatory fresh PR: `yestar2023-alt/awesome-ai-agent-skills-cn#1` adds
-  TweetClaw to the Chinese skill catalog data and README. Readback is open,
-  ready, `MERGEABLE`, clean, with no comments, reviews, or checks.
-- Candidate gates blocked crawler-repeat skill, MCP, catalog, and API-list lanes
-  by duplicate history, missing licenses, weak fit, or existing submissions.
-  Targeted skill searches screened clean `gitstq`, `mapan0424`, and `yestar`
-  options before selecting the schema-backed Chinese catalog.
+  `ndesv21/socialclaw#3` by merging current `main`, resolving mirrored skill
+  conflicts, validating, pushing `ca1fcc8`, and commenting. Final readback is
+  open, ready, `MERGEABLE`, and clean.
+- Mandatory fresh PR: `20perline/skills#1` adds a TweetClaw skill and README
+  index entry in the target's existing `skills/<name>/SKILL.md` layout.
+  Readback is open, ready, `MERGEABLE`, clean, with no comments, reviews, or
+  checks.
+- Candidate gates blocked crawler-repeat MCP, registry, and skill-list lanes by
+  duplicate history, missing licenses, generated-only policy, weak fit, or
+  existing submissions. Remaining conflict queue is archived for later repair.
 - TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
   memory, and full checks passed. npm audit remains the known nested OpenClaw
   Hono blocker.
