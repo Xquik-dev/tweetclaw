@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 14:39 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 15:00 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -195,20 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 14:45 UTC: runtime model/effort selectors unavailable; prompt TOML
+- 2026-06-11 15:00 UTC: runtime model/effort selectors unavailable; prompt TOML
   stayed 13,287 bytes and decoded prompt stayed 12,949 bytes.
 - PR monitoring, including newest and watched `kriptoburak` PRs, found no
   safely repairable maintainer request, review thread, CI failure, conflict,
   DCO/CLA, generated-file drift, or valid bot blocker.
-- Mandatory fresh PR: `seb1n/awesome-ai-agent-skills#8` adds optional
-  TweetClaw/OpenClaw X/Twitter source-evidence guidance to the existing
-  `social-media-posting` skill. Readback is open, ready, `MERGEABLE`, clean,
-  with no comments, reviews, or checks.
+- Mandatory fresh PR: `maxvaega/awesome-skills#2` adds optional
+  TweetClaw/OpenClaw X/Twitter source-evidence checks to the existing Reddit
+  strategist skill. Readback is open, ready, `MERGEABLE`, clean, with no
+  comments, reviews, or checks.
 - Candidate gates blocked prior skill/catalog/MCP lanes by duplicate history,
-  target no-PR policy, missing license, direct competing fit, or existing
-  TweetClaw/Xquik content. GitHub search hit an API rate limit during one
-  duplicate readback, so the run stopped broad authenticated searching and used
-  clone, metadata, exact lists, and archives.
+  missing license, design-approval needs, wrong fork parents, or existing
+  TweetClaw/Xquik content. Broad authenticated search was avoided after earlier
+  rate limiting; clone, metadata, exact lists, crawler output, and archives were
+  used.
 - TweetClaw build, OpenClaw fitness, version, package-artifact, public-link,
   memory, and full checks passed. npm audit remains the known nested OpenClaw
   Hono blocker.
