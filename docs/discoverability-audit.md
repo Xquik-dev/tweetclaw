@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 01:43 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 01:58 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 01:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 01:58 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,21 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 01:43 UTC: model/effort selectors unavailable. Broad crawler found
+- 2026-06-12 01:58 UTC: model/effort selectors unavailable. Broad crawler found
   25 known lanes; focused skill crawl found none.
-- Exact readbacks covered 300 open authored PRs. No safe repair remained: qvr
-  Greptile findings were fixed and followed by a safe-to-merge summary; other
-  blockers were target-owned auth/Snyk/review gates, no-license/conflict, or
-  already answered.
-- Fresh PR: `Sup4ikX/skillhub-cli#1` adds `@xquik/tweetclaw` to the SkillHub
-  registry, points to the canonical TweetClaw SKILL.md, and validates search,
-  info, install, check, raw URL, JSON, and `cargo test`. Kilo review passed.
+- Exact readbacks covered 300 open authored PRs. No safe repair remained:
+  `Sup4ikX/skillhub-cli#1` Kilo passed, old bot threads were already repaired,
+  and other blockers were target-owned auth/Snyk/review gates or no-license
+  conflicts.
+- Fresh PR: `timBrockman/prompt-skill-eval#2` adds a tested
+  `tweetclaw_workflow` skill and README entry for TweetClaw X/Twitter planning,
+  source-collection jobs, approval-gated write actions, secret handling, MCP,
+  and OpenClaw plugin routing.
 - OpenClaw docs, ClawHub, npm, TweetClaw build, fitness, version, package,
   memory, link, hygiene, and full checks passed. `openclaw` `2026.6.5`; beta
   `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`; audit still only
   known nested OpenClaw `hono`.
-- Prompt lesson: duplicate-block `Sup4ikX/skillhub-cli`; registry targets are
-  strongest when install, search, info, and check flows validate live SKILL.md.
+- Prompt lesson: duplicate-block `timBrockman/prompt-skill-eval`; prompt-skill
+  targets need deterministic tests for safety, source, and approval boundaries.
 
 ## Reporting Checklist
 
