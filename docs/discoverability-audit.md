@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 14:29 UTC: latest
-  `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
-  permissions, hooks, tool plugins, install overrides, ClawHub, validation,
-  testing, dependency resolution, inventory, and debugging.
+- OpenClaw docs/npm checked as of 2026-06-12 14:50 UTC: latest
+  `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
+  plugin SDK, install overrides, ClawHub, validation, testing, dependency
+  resolution, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -195,24 +195,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 14:29 UTC: model/effort selectors unavailable. Current Codex
-  manual remains current for same-thread heartbeat automations.
-- Repaired conflicts in `Garenaof2462/browser-ops#1`,
-  `Calliopeperpendicular906/openclaw-skills#1`,
-  `Aqmar777/openclaw-competitive-intel#1`, and
-  `AbdNour627/awesome-openclaw-configs#1`; all read back clean and mergeable.
-  `AyoubKezzoula/hermes-autonomous-server#1` stayed blocked by missing license.
-- Fresh PR opened: `msdakot/ai-foundary#1`
-  https://github.com/msdakot/ai-foundary/pull/1. It adds a
-  `tweetclaw-social-research` skill, registry entry, and README row for public
-  X/Twitter evidence collection with TweetClaw and approval-gated writes.
-- Screened blockers: `browsing-skills/browsing-skills` duplicate,
-  `SkillsCatalog/registry` existing PR, multiple no-license skill registries,
-  and `astra-sh/qvr` prior PR history. `the-bao/skills-registry` remains a
-  licensed future lane.
-- Durable lesson: `msdakot/ai-foundary#1` is now duplicate-blocked. Its
-  `.gitignore` ignores `evals/`, so do not force eval fixtures there without
-  maintainer direction; keep target searches bounded to the cloned repo.
+- 2026-06-12 14:50 UTC: model/effort selectors unavailable. Rechecked the
+  current Codex automation manual.
+- Existing PR repairs: `msdakot/ai-foundary#1` approval-gate review comments
+  were fixed and are outdated after commit `59ad767`; `memohai/supermarket#11`
+  now maps the Xquik API key header after commit `5edc770`, with bot thread
+  re-evaluation pending.
+- Fresh PR opened: `the-bao/skills-registry#1`
+  https://github.com/the-bao/skills-registry/pull/1. It fixes local add-skill
+  registry path storage when the source folder differs from `SKILL.md` name,
+  using a TweetClaw-style regression fixture. Readback: open, mergeable, clean,
+  no checks.
+- Screened blockers and notes: `0xNyk/xint` and
+  `dorukardahan/twitterapi-io-skill` remain lower-fit duplicate or competitor
+  lanes; registry crawler retry hit proxy socket and US pool outage blockers;
+  target README link check in `the-bao/skills-registry` hits a pre-existing
+  malformed localhost autolink.
+- Durable lessons: `the-bao/skills-registry#1` is now duplicate-blocked for
+  future TweetClaw submissions. For cross-repo PR review scripts, verify base
+  repo resolution because helper defaults may query the head fork.
 
 ## Reporting Checklist
 
