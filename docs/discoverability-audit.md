@@ -194,25 +194,27 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 19:07 UTC: model/effort selectors unavailable. PR monitoring
-  repaired `framerslab/agentos-skills#2` by clarifying `xquikMcp` vs
-  `xquikApi`, public/consented X/Twitter data boundaries, HTTPS webhooks, and
-  secret handling. Branch head: `558e0bb`.
-- Crawler returned 10 skill/validator opportunities. Fresh PR opened:
-  `cengicadis/blankvisuals-validator#2`
-  https://github.com/cengicadis/blankvisuals-validator/pull/2.
-  It adds a reusable OpenClaw social tool plugin `VALIDATION.md` example using
-  TweetClaw as a concrete validation target for install-source, runtime inspect,
-  optional-tool, approval-gate, and secret-handling checks.
-- Blockers: TikHub, AINight, Rabden, Tang, Aimerge, Shensi, `rp_da`, and
-  `scrape-creators-skills` were no-license, duplicate, prior-history,
-  nonstandard-license, or lower-fit paths.
-- Validation: target checks, TweetClaw public links, omit-dev audit, build,
-  OpenClaw fitness, package artifact, and `npm run check:all` passed. Prompt:
-  14,530 bytes.
-- Durable lesson: `cengicadis/blankvisuals-validator#2` is now
-  duplicate-blocked. Validator targets work best when TweetClaw is the example
-  target under evidence collection, not a promoted listing.
+- 2026-06-12 19:28 UTC: model/effort selectors unavailable. PR monitoring
+  repaired `emreisik95/social-media-marketing#1` and
+  `tmchow/agent-skills#53`; `memohai/supermarket#11` and
+  `simota/agent-skills#39` were already fixed on current heads.
+- Current target-owned blockers: Vercel authorization on `arvindrk/twitter-agent#13`,
+  `intelseclab/osintelligence#22`, `tankpkg/tank#477`,
+  `sx4im/skillcheck#4`, and `atilaahmettaner/skills-plane#3`.
+- Crawler-first discovery plus targeted screening found fresh target
+  `atilaahmettaner/skills-plane`. New PR:
+  https://github.com/atilaahmettaner/skills-plane/pull/3 adds a Supabase seed
+  entry for the packaged TweetClaw skill.
+- Blockers: duplicate, no-license, prior-history, lower-fit, or
+  validation-policy blocked lanes are archived.
+- OpenClaw docs/npm checked on 2026-06-12 20:00 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; plugin install/update, manifest, tool-plugin, install
+  override, debugging, and ClawHub skill-format contracts remain compatible.
+- Validation: repaired PR checks, Skills Plane target checks, target links, and
+  public-hygiene scans passed. Final TweetClaw validation is archived.
+- Durable lesson: `atilaahmettaner/skills-plane#3` is now duplicate-blocked.
+  Marketplace seed targets are useful when they point at a packaged skill and
+  follow the target's native seed/install pattern.
 
 ## Reporting Checklist
 
