@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 01:20 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 01:43 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 01:20 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 01:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,24 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 01:20 UTC: model/effort selectors unavailable. Broad crawler found
+- 2026-06-12 01:43 UTC: model/effort selectors unavailable. Broad crawler found
   25 known lanes; focused skill crawl found none.
-- Exact readbacks covered 300 open authored PRs. Repaired `astra-sh/qvr#256`
-  after Greptile flagged valid metadata parser issues; pushed `cb57354` and
-  `2126033` for `metadata: null`, YAML aliases, block-style coverage, and
-  empty-value key presence. Other signals were target-owned auth/check gates,
-  no-license/conflict blockers, or already-addressed reviews.
-- Fresh PR: `LuzLiang/SkillsMap#1` adds a `tweetclaw-x-twitter` demo route to
-  core and dashboard demo maps, covers search tweet replies routing, and makes 3
-  path assertions realpath-safe on macOS. PR is open, ready, and mergeable.
-- OpenClaw docs, ClawHub, registry metadata, and public links returned HTTP 200.
-  `openclaw` `2026.6.5`; beta `2026.6.5-beta.6`; TweetClaw npm `1.6.31`;
-  source `1.6.32`.
-- TweetClaw build, fitness, version, package-artifact, memory, link, hygiene,
-  and full checks passed. npm audit still only known nested OpenClaw `hono`.
-- Prompt lesson: duplicate-block `astra-sh/qvr` and `LuzLiang/SkillsMap`; prefer
-  target-native parser, demo-router, validation, and portability fixes over thin
-  listings.
+- Exact readbacks covered 300 open authored PRs. No safe repair remained: qvr
+  Greptile findings were fixed and followed by a safe-to-merge summary; other
+  blockers were target-owned auth/Snyk/review gates, no-license/conflict, or
+  already answered.
+- Fresh PR: `Sup4ikX/skillhub-cli#1` adds `@xquik/tweetclaw` to the SkillHub
+  registry, points to the canonical TweetClaw SKILL.md, and validates search,
+  info, install, check, raw URL, JSON, and `cargo test`. Kilo review passed.
+- OpenClaw docs, ClawHub, npm, TweetClaw build, fitness, version, package,
+  memory, link, hygiene, and full checks passed. `openclaw` `2026.6.5`; beta
+  `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`; audit still only
+  known nested OpenClaw `hono`.
+- Prompt lesson: duplicate-block `Sup4ikX/skillhub-cli`; registry targets are
+  strongest when install, search, info, and check flows validate live SKILL.md.
 
 ## Reporting Checklist
 
