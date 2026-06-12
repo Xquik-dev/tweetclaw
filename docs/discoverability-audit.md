@@ -49,9 +49,9 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 03:22 UTC: latest
-  `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
-  SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
+- OpenClaw docs/npm checked as of 2026-06-12 04:09 UTC: latest
+  `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
+  permission requests, tool plugins, install overrides, ClawHub, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 03:22 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 04:09 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,20 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 03:46 UTC: model/effort selectors unavailable. Broad and focused
+- 2026-06-12 04:09 UTC: model/effort selectors unavailable. Broad and focused
   crawler passes completed from Xquik; exact readbacks covered 300 authored PRs.
-- `Agentora#68` still has only target-owned bot/check noise. `oh-my-skills#272`
-  is dirty but blocked by missing target license or contribution terms.
-- Opened `efecanbasoz/vibeprint#9`:
-  https://github.com/efecanbasoz/vibeprint/pull/9. It adds bounded public
-  X/Twitter source notes to `discover_profile`, prompt context, tests, and docs;
-  final readback is `MERGEABLE` and `CLEAN`.
-- OpenClaw current docs are now under canonical `docs.openclaw.ai` pages such as
-  `plugins/building-plugins`, `plugins/plugin-permission-requests`,
-  `plugins/sdk-runtime`, `plugins/install-overrides`, and `help/debugging`.
-  TweetClaw build, fitness, package, link, memory, and hygiene checks passed.
-- Prompt lesson: prefer code-backed source-note lanes over docs-only mentions
-  for strategy or content MCP targets, and record moved OpenClaw doc slugs.
+- `Agentora#68` current head already fixed separator handling and passed repeat
+  validation. `oh-my-skills#272` is still blocked by missing target terms.
+- Opened `6missedcalls/personal-finance-skill#2`:
+  https://github.com/6missedcalls/personal-finance-skill/pull/2. It adds a
+  reviewed TweetClaw source-evidence packet workflow, a JSON example, and
+  target README link repairs; final readback is `MERGEABLE`.
+- OpenClaw current docs and npm metadata remain aligned with TweetClaw source.
+  TweetClaw link, memory, build, fitness, package, and hygiene checks passed.
+- Prompt lesson: finance and research targets should keep TweetClaw upstream as
+  reviewed source evidence and leave financial interpretation plus actions to
+  the target workflow and approval gates.
 
 ## Reporting Checklist
 
