@@ -195,25 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 02:10 UTC: model/effort selectors unavailable. Broad crawler found
-  25 known lanes; focused skill crawl found none.
-- Exact readbacks covered 300 open authored PRs. Repaired `astra-sh/qvr#256`
-  with block-style metadata coverage and alias-loop cleanup, pushed `ad4e652`,
-  and replied. Other flagged items were target-owned, stale, pending, or already
-  repaired.
-- Fresh PR: `KooshaPari/Agentora#68` adds a runnable Rust
-  `tweetclaw_workflow` skill example plus README link for TweetClaw X/Twitter
-  source-collection jobs and approval-gated account actions.
-- Agentora validation and derive follow-up `903a528` passed example, fmt, tests,
-  clippy, diff, hygiene, and link checks. README has a pre-existing crates.io
-  404. CodeRabbit approved first head, latest review rate-limited, and Kilo
-  sandbox failed.
-- OpenClaw docs, ClawHub, npm, TweetClaw build, fitness, version, package,
-  memory, link, hygiene, and full checks passed. `openclaw` `2026.6.5`; beta
-  `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`; audit still only
-  known nested OpenClaw `hono`.
-- Prompt lesson: duplicate-block `KooshaPari/Agentora`; prefer runnable
-  examples with no new default dependencies.
+- 2026-06-12 02:33 UTC: model/effort selectors unavailable. Broad and focused
+  crawler passes returned 25 known skill, MCP, registry, and directory lanes.
+- Exact readbacks covered 300 open authored PRs. Repaired `KooshaPari/Agentora#68`
+  separator normalization with `4fe5123`, and `MSApps-Mobile/claude-plugins#29`
+  retrieval/SOSA review comments with `e7cc1a8`; `Unla#321`, SkillTrust, and
+  GemProject threads were stale or already addressed.
+- Fresh PR: `agentregistry-dev/agentregistry#547` adds source-backed
+  `examples/tweetclaw-skill.yaml` plus a docs pointer. Readback: ready,
+  review-required, head `5655230`.
+- Screened `JSONbored/awesome-claude` duplicate-blocked by existing TweetClaw and
+  Xquik entries; `agentregistry` passed license, fork, duplicate, and validation
+  gates. No badge was added because the badge row is target package health.
+- OpenClaw docs, ClawHub, npm, build, fitness, package, links, memory, and
+  hygiene checks passed. `openclaw` `2026.6.5`; beta
+  `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`.
+- Prompt lesson: duplicate-block HeyClaude TweetClaw/Xquik listings and
+  AgentRegistry example PRs; Kilo sandbox-connect failures with 0 annotations are
+  platform-owned.
 
 ## Reporting Checklist
 
