@@ -195,24 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 04:32 UTC: model/effort selectors unavailable. Broad and focused
-  crawler passes completed from Xquik; exact readbacks covered 300 authored PRs
-  with no repairable blocker.
-- Opened `kesslerio/finance-news-openclaw-skill#128`:
-  https://github.com/kesslerio/finance-news-openclaw-skill/pull/128. It adds
-  optional reviewed external context packets, a TweetClaw X/Twitter packet
-  example, prompt hardening for social context, tests, docs, and a local
-  context-file ignore rule; Codex bot feedback was fixed.
+- 2026-06-12 04:54 UTC: model/effort selectors unavailable. Broad and focused
+  crawler passes completed from Xquik; exact readbacks covered 300 authored PRs.
+- `oluwaeinstein007/social-mcp#1` had stale bot-review flags only; current head
+  already covers timeout, exact username, and fetch-call assertions.
+- Opened `d-wwei/openclaw-financial-services#1`:
+  https://github.com/d-wwei/openclaw-financial-services/pull/1. It adds an
+  optional public X/Twitter signal-packet workflow and JSON example for the
+  morning-note skill, plus a pre-existing README link repair.
 - Screened crawler and search lanes including `hashgraph-online`,
   `chatmcp/mcpso`, `Kamalnrf/claude-plugins`, `man0l/ai-directories`,
-  `agentic-community/mcp-gateway-registry`, OpenClaw social skills, and finance
-  skills; blockers were duplicate history, issue-only paths, missing license,
-  or lower fit.
+  `agentic-community/mcp-gateway-registry`, `benmillerat`, `JerryGou96`, and
+  finance OpenClaw skill packs; blockers were duplicate history, issue-only
+  paths, missing license, or lower fit.
 - OpenClaw current docs and npm metadata remain aligned with TweetClaw source.
   TweetClaw link, memory, build, fitness, package, and hygiene checks passed.
-- Prompt lesson: finance and research targets should keep TweetClaw upstream as
-  reviewed public source context and leave interpretation plus actions to the
-  target workflow and approval gates.
+- Prompt lesson: finance skill packs are strongest when TweetClaw supplies
+  reviewed public source packets while the target owns analysis, conclusions,
+  disclaimers, and any actions.
 
 ## Reporting Checklist
 
