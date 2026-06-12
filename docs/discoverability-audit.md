@@ -195,26 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 16:16 UTC: model/effort selectors unavailable; Codex manual was
-  current.
-- PR repairs: readbacks covered 110 PR URLs and 36 thread-bearing PRs.
-  Repaired `BienvenuONIODJE/twitter-init-kit#3` conflict; final readback was
-  clean and mergeable. Other conflict blockers lacked license metadata or safe
-  repair path; old bot/watch threads were already addressed.
-- Fresh PR opened: `Fanccy315/openclaw-docker#5`
-  https://github.com/Fanccy315/openclaw-docker/pull/5. It makes the OpenClaw
-  Docker version configurable with a `2026.6.6` default and documents installing
-  `npm:@xquik/tweetclaw@1.6.31` from the CLI container after onboarding.
-- Screened blockers: repeated skill, social, registry, validator, and plugin
-  targets were duplicate, no-license, policy, or lower-fit. `openclaw`
-  kitchen-sink was rejected as a credential-free conformance fixture; ClawPanel
-  already has an open TweetClaw PR.
-- Hygiene and validation: target whitespace, shell syntax, README links,
-  OpenClaw help, and isolated TweetClaw install/runtime inspect passed. Final
-  TweetClaw link, audit, build, fitness, artifact, and full checks passed.
-- Durable lesson: `Fanccy315/openclaw-docker#5` is now duplicate-blocked. Docker
-  template placements should install TweetClaw into mounted OpenClaw home after
-  onboarding and keep API keys/account config out of images and Dockerfiles.
+- 2026-06-12 16:41 UTC: model/effort selectors unavailable; Codex manual was
+  current. Readbacks covered 211 selected PR URLs. Repaired `astra-sh/qvr#256`
+  maintainer quality/docs request and `tongchen92/xsquared#2` conflict.
+- Fresh PR opened: `Crawlora-org/crawlora-skills#1`
+  https://github.com/Crawlora-org/crawlora-skills/pull/1. It clarifies that
+  Crawlora has no X/Twitter endpoints yet and points OpenClaw users to
+  `npm:@xquik/tweetclaw@1.6.31` for tweet scraping/search, posting, media,
+  monitors, webhooks, DMs, followers, lookup, and giveaway inputs.
+- Screened blockers: `weak-fox/openclaw-offline-seed`, `redf0x1/camofox-browser`,
+  and `composio-community/awesome-openclaw-plugins` were duplicate-blocked by
+  existing TweetClaw PRs.
+- Hygiene and validation: qvr, xsquared, Crawlora, OpenClaw docs/npm, TweetClaw
+  links, audit, build, fitness, artifact, and full checks passed.
+- Durable lesson: `Crawlora-org/crawlora-skills#1` is now duplicate-blocked.
+  Coverage-boundary PRs are useful when a data skill lacks X/Twitter routes.
 
 ## Reporting Checklist
 
