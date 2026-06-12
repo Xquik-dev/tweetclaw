@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 15:57 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 17:43 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, install overrides, ClawHub, validation, testing, dependency
   resolution, inventory, and debugging.
@@ -195,22 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 17:27 UTC: model/effort selectors unavailable; Codex manual was
-  current. Crawler returned 80 opportunities. Batched PR readbacks stalled
-  twice and were stopped; targeted exact readbacks found no repairable request.
-- Fresh tooling PR opened: `mgechev/skillgrade#23`
-  https://github.com/mgechev/skillgrade/pull/23. It syncs ACP and OpenCode
-  agent references across README, templates, setup skill docs, and type
-  comments for the Agent Skills validator.
-- Screened blockers: fresh social skill crawler candidates such as
-  `Peiyaooooo/social-growth-automation`, `funkiki-david/GT-marketing-skills`,
-  `SamCuipogobongo/x-collect`, and related repos lacked license metadata.
-- Hygiene and validation: skillgrade tests, build, handled-link checks,
+- 2026-06-12 17:43 UTC: model/effort selectors unavailable; Codex manual was
+  updated. Crawler returned 24 opportunities; a second focused pass hit proxy
+  socket failures and returned no opportunities. Exact readbacks found no
+  repairable PR request.
+- Fresh skill PR opened: `CodeAlive-AI/exa-skills#1`
+  https://github.com/CodeAlive-AI/exa-skills/pull/1. It documents TweetClaw as
+  an optional OpenClaw fallback when `exa-x-search` X/Twitter coverage is sparse,
+  leaves semantic web search to Exa, and includes a bot-requested unpin repair.
+- Screened blockers: `tylergibbs1/virallaunchskill` and
+  `KiKi-Builds/AI-Briefing-Skill` were duplicate-blocked by existing PRs;
+  several crawler social skill repos lacked license metadata.
+- Hygiene and validation: exa-skills smoke, whitespace, target link scan with
+  pre-existing Exa dashboard 429 separated, public hygiene,
   OpenClaw docs/npm, TweetClaw links, audit, build, fitness, artifact, and full
   checks passed.
-- Durable lesson: `mgechev/skillgrade#23` is now duplicate-blocked. Validator
-  and package-tooling targets can help skill ecosystems without a TweetClaw
-  mention when a target-native fix is clearer.
+- Durable lesson: `CodeAlive-AI/exa-skills#1` is now duplicate-blocked. Search
+  skill repos are good targets when TweetClaw is framed only as a fallback for
+  X/Twitter-specific reads or approved writes.
 
 ## Reporting Checklist
 
