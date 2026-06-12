@@ -194,26 +194,27 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 20:31 UTC: model/effort selectors unavailable. PR monitoring
-  exact-read 100 open authored PRs plus 28 thread readbacks. Repaired
-  https://github.com/sarveshtalele/mcp-skills-registry/pull/10 for documented
-  `q` search params and single-`tweet` lookup normalization, then pushed
-  `af7463f` and commented validation.
-- Crawler-first discovery returned 3 known skill/social candidates. Fresh
-  registry screening found `manu14357/zskills` eligible; `eugenepyvovarov`
-  MCPBundler was held because an open Xquik skill PR already targets that repo.
-  New PR: https://github.com/manu14357/zskills/pull/1 adds a TweetClaw skill to
-  the MIT ZSkills registry. Its only check blocker is target-owned Vercel team
-  authorization.
-- OpenClaw docs/npm checked on 2026-06-12 20:50 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; ClawHub quickstart, publishing, and skill-format contracts
-  remain compatible.
-- Target validation passed ZSkills frontmatter parity, Markdown link, diff, and
-  public-hygiene checks. TweetClaw public link and package validation are
-  archived.
-- Durable lesson: `manu14357/zskills#1` is now duplicate-blocked. Skill
-  registries are strong fits when TweetClaw is contributed as a real `SKILL.md`
-  package and the target owns registry, install, validation, and discovery.
+- 2026-06-12 20:55 UTC: model/effort selectors unavailable. PR monitoring read
+  100 open authored PRs plus 32 threads. No safe current-head repair remained;
+  stale threads were fixed or false-positive. Posted frontmatter clarification on
+  `jeremylongshore/claude-code-plugins-plus-skills#865`.
+- Crawler-first discovery found duplicate-blocked
+  `elbis330/social-media-scraper-skill`; a registry lane returned 0 hits after
+  proxy pool outages. Fresh screening found `nikships/skills-registry` eligible
+  and `turazashvili/notion-skills-registry` lower fit. New PR:
+  https://github.com/nikships/skills-registry/pull/45 adds a TweetClaw public
+  repo import example and fixes transferred-owner README links.
+- OpenClaw docs/npm checked 2026-06-12 21:14 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; CLI plugin, skill, manifest, permission, SDK runtime,
+  install override, debugging, and ClawHub skill-format contracts remain
+  compatible.
+- Target validation passed README link, whitespace, and Go tests. Gemini
+  wording was repaired in `ec39c97`; CodeRabbit installer-owner feedback in
+  `4a14b43`. TweetClaw public links passed after the local AgentRegistry UI
+  endpoint became code.
+- Durable lesson: `nikships/skills-registry#45` is duplicate-blocked. For
+  transferred repos, fix stale owner links found by handled link checks, but
+  keep module paths untouched unless target code requires migration.
 
 ## Reporting Checklist
 

@@ -49,7 +49,7 @@ The entry will appear at https://aregistry.ai and be discoverable via:
 arctl list --search xquik
 ```
 
-The web UI is also available at http://localhost:12121 after running any arctl command.
+The local web UI is also available at `localhost:12121` after running any arctl command.
 
 ## Notes
 
