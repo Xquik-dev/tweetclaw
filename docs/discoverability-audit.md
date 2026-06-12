@@ -49,10 +49,11 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 08:55 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 09:43 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
-  permission requests, hooks, tool plugins, install overrides, SDK entrypoints,
-  ClawHub, plugin validation fixes, testing updates, and debugging.
+  current permission requests, hooks, tool plugins, install overrides,
+  ClawHub, plugin validation fixes, testing updates, dependency resolution,
+  plugin internals, plugin inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -75,7 +76,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 06:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 09:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -196,17 +197,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 08:55 UTC: model/effort selectors unavailable. Crawler passes ran;
-  exact readbacks covered 322 PR URLs. Repaired `Garenaof2462/browser-ops#1`
-  and `Rodert/awesome-mcp#11`; no maintainer-actionable feedback remained.
-- Opened `ClawCap/Magic-Mirror#1`:
-  https://github.com/ClawCap/Magic-Mirror/pull/1. It adds an optional
-  X/Twitter deep-profile sub-skill using TweetClaw, fixes a stale target README
-  link, and keeps Magic Mirror responsible for report analysis and storage.
+- 2026-06-12 09:43 UTC: model/effort selectors unavailable. Crawler ran first;
+  focused proxy search hit short socket-closed pool outage. `gh search prs`
+  returned 1,000 of 1,039 open authored PRs; all-open GraphQL exact readback hit
+  GitHub 502/resource limits, so exact readbacks covered all recently updated
+  PRs plus the new PR. No safe maintainer-actionable repair blocked outreach.
+- Opened `Xzeroone/bird-mcp#1`:
+  https://github.com/Xzeroone/bird-mcp/pull/1. It adds a TweetClaw OpenClaw
+  companion path to Bird MCP docs and Kilo skill notes while keeping Bird as the
+  cookie-backed local MCP path and separating `AUTH_TOKEN`/`CT0` from Xquik API
+  key configuration.
 - OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target links, target
   hygiene, build, fitness, package checks, and `check:all` passed.
-- Prompt lesson: profile and persona skills are strong fits when TweetClaw stays
-  a user-approved X/Twitter source and the target owns analysis and outputs.
+- Prompt lesson: direct X/Twitter MCP targets can fit when Bird or the target
+  stays primary and TweetClaw is only a separate approval-gated OpenClaw
+  companion.
 
 ## Reporting Checklist
 
