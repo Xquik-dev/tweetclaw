@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 23:53 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 00:14 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 23:53 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 00:14 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,23 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 23:53 UTC: model/effort selectors were unavailable. Crawler
-  returned 25 mostly known lanes; focused skill and social crawlers returned
-  none.
-- Exact readbacks covered 124 PRs. Repaired `agusnieto77/TweetScraperR#9`:
-  added issue `#10`, exact-limit pagination, dedupe, core-column ordering, and
-  a status comment. R tooling and a required `type:*` label are target blockers.
-- Fresh PR: `jgmakko2/openclaw-skill-content-research-pipeline#1` adds optional
-  X/Twitter public-evidence source guidance, with TweetClaw/OpenClaw/Xquik as
-  read-only collection options and write-like actions outside the workflow.
+- 2026-06-12 00:14 UTC: model/effort selectors were unavailable. Crawler
+  returned 25 mostly known lanes; focused skill crawler returned none.
+- Exact readbacks covered 148 PRs. Repaired `BienvenuONIODJE/twitter-init-kit#3`
+  by merging upstream, resolving its README conflict, validating 32 tests, and
+  posting a status comment.
+- Fresh PR: `rainbowgore/agent-skill-registry-builder#1` captures public-source
+  fields for repository, package, marketplace, and registry skill entries, adds
+  source/license/platform/approval fields to generated cards and detail views,
+  and uses TweetClaw as a high-impact automation example.
 - OpenClaw docs, ClawHub, and registry metadata returned HTTP 200. `openclaw`
   latest is `2026.6.5`; TweetClaw npm is `1.6.31`; source is `1.6.32`.
 - Target validation, TweetClaw build, fitness, version, package, public links,
   memory, hygiene, and full checks passed. npm audit still reports only the
   known nested OpenClaw `hono` advisory.
-- Prompt lesson: content-research skills are a good read-only evidence lane;
-  future PR bodies with inline code should use a body file to avoid shell
-  expansion. Duplicate-block the content-research pipeline for this lane.
+- Prompt lesson: `rainbowgore/agent-skill-registry-builder` is now used and must
+  be duplicate-blocked; registry-builder docs can be a useful lane when they
+  improve provenance, approval, and sensitive-action modeling for public skills.
 
 ## Reporting Checklist
 
