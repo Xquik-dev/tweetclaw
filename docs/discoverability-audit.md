@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 10:20 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 10:39 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   current permission requests, current hooks, tool plugins, install overrides,
   ClawHub, plugin validation fixes, testing updates, dependency resolution,
@@ -197,20 +197,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 10:20 UTC: model/effort selectors unavailable. Crawler returned
-  80 opportunities. Recent authored PR readbacks found no safe repair blocker.
-- Screened `Friz-zy/ai-capability-registry` as a fresh MIT registry target:
-  active, not a fork, PR-enabled, issue-enabled, and duplicate-clean across
-  compact memory, archive, content, and open/closed PRs and issues.
-- Opened `Friz-zy/ai-capability-registry#1`:
-  https://github.com/Friz-zy/ai-capability-registry/pull/1. It adds TweetClaw
-  as a disabled, pinned candidate skill source in `registry/skills.yaml` with
-  no generated catalog churn.
-- OpenClaw docs, npm metadata, TweetClaw links, target link, target schema,
-  submodule sync, generation, diff hygiene, and fitness checks passed or matched
-  known upstream blockers.
-- Prompt lesson: AI capability registries are useful fresh targets when
-  TweetClaw is a disabled candidate source with maintainer-owned enablement.
+- 2026-06-12 10:39 UTC: model/effort selectors unavailable. Crawler returned
+  80 opportunities. Recent authored PR readbacks found `browser-ops#1` dirty.
+- Repaired `Garenaof2462/browser-ops#1`:
+  https://github.com/Garenaof2462/browser-ops/pull/1#issuecomment-4690368422.
+  The README conflict was identical-link churn; final readback is `CLEAN`.
+- Opened `redhat-et/skillimage#47`:
+  https://github.com/redhat-et/skillimage/pull/47. It adds a validated
+  TweetClaw OpenClaw SkillImage example with provenance and approval guidance;
+  a valid CodeRabbit version nit was fixed and the PR title clarified.
+- OpenClaw docs, npm metadata, TweetClaw links, target links, target schema,
+  Go tests, diff hygiene, and fitness checks passed or matched known upstream
+  blockers.
+- Prompt lesson: OCI skill registries are useful framework targets when
+  TweetClaw is a packaged example with source provenance and explicit approval
+  boundaries.
 
 ## Reporting Checklist
 
