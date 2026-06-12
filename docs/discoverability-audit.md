@@ -195,24 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 03:22 UTC: model/effort selectors unavailable. Broad and focused
-  crawler passes completed from Xquik.
-- Exact readbacks covered 300 open authored PRs; 43 were flagged, 12 tracked.
-  Current-head readbacks showed `agentos-skills#1`, `x-api-mcp#1`,
-  `ClawSeatbelt#1`, and `social-mcp#1` already addressed prior review threads,
-  so no duplicate public comments were posted.
-- Repair-priority conflict work updated `BienvenuONIODJE/twitter-init-kit#3` to
-  `063dc48`; PR is now `CLEAN` after README conflict resolution, link checks,
-  conflict scan, whitespace check, and 32 passing tests. No new PR was opened
-  because repair priority remained active; `oh-my-skills#272` still needs a
-  separate license and conflict decision.
-- OpenClaw canonical docs on `docs.openclaw.ai`, ClawHub, npm, TweetClaw build,
-  fitness, package, links, memory, and hygiene checks passed. `openclaw`
-  `2026.6.5`; TweetClaw npm `1.6.31`; source `1.6.32`. Local audit still
-  reports only nested OpenClaw `hono`.
-- Prompt lesson: use `docs.openclaw.ai`, avoid duplicate comments on already
-  resolved current-head review threads, and keep conflict lanes ahead of fresh
-  outreach.
+- 2026-06-12 03:46 UTC: model/effort selectors unavailable. Broad and focused
+  crawler passes completed from Xquik; exact readbacks covered 300 authored PRs.
+- `Agentora#68` still has only target-owned bot/check noise. `oh-my-skills#272`
+  is dirty but blocked by missing target license or contribution terms.
+- Opened `efecanbasoz/vibeprint#9`:
+  https://github.com/efecanbasoz/vibeprint/pull/9. It adds bounded public
+  X/Twitter source notes to `discover_profile`, prompt context, tests, and docs;
+  final readback is `MERGEABLE` and `CLEAN`.
+- OpenClaw current docs are now under canonical `docs.openclaw.ai` pages such as
+  `plugins/building-plugins`, `plugins/plugin-permission-requests`,
+  `plugins/sdk-runtime`, `plugins/install-overrides`, and `help/debugging`.
+  TweetClaw build, fitness, package, link, memory, and hygiene checks passed.
+- Prompt lesson: prefer code-backed source-note lanes over docs-only mentions
+  for strategy or content MCP targets, and record moved OpenClaw doc slugs.
 
 ## Reporting Checklist
 
