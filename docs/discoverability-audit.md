@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 13:23 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 13:47 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -195,22 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 13:23 UTC: model/effort selectors unavailable. Current Codex
-  manual confirms same-thread automations and selectable model/reasoning when
-  exposed.
+- 2026-06-12 13:47 UTC: model/effort selectors unavailable. Current Codex
+  manual remains current for same-thread heartbeat automations.
 - Crawler returned 120 opportunities. Authored PR readbacks covered 100 hot PRs;
-  5 conflict repairs were pushed and only target-owned Vercel authorization
-  blockers remained.
-- New target PR opened: `chigwell/skilldock.io#2`
-  https://github.com/chigwell/skilldock.io/pull/2. It adds a
-  repository-backed `skilldock skill verify` example using TweetClaw's packaged
-  OpenClaw/Codex skill.
-- Policy blocker recorded: `agentver/agentver#118` was opened after validation
-  but auto-closed by target policy because external PRs are temporarily blocked.
-- Durable lesson: `chigwell/skilldock.io#2` and `agentver/agentver#118` are now
-  duplicate-blocked. Skill registries and installers are useful targets when
-  TweetClaw is used as a real packaged skill fixture and the target owns
-  verification, publishing, and install semantics.
+  no maintainer request, review comment, CI failure, DCO, CLA, generated drift,
+  conflict, or valid bot finding safely blocked outreach.
+- Fresh PR opened: `ara-registry/spec#11`
+  https://github.com/ara-registry/spec/pull/11. It adds a schema-valid
+  TweetClaw skill manifest example with OpenClaw platform routing, links it from
+  the README, aligns API package-type examples with the schema enum, and removes
+  a dead `skillmd.org` link.
+- Screened blockers: `cosmicstack-labs/mercury-agent-skills` duplicate,
+  `luna-prompts/skillnote` duplicate, `SynapSync/skills-registry` no license,
+  `aiagenta2z/agtm` no license, and `BlazeUp-AI/Observal` prior policy block.
+- Durable lesson: `ara-registry/spec#11` is now duplicate-blocked. Registry spec
+  repos are useful when TweetClaw is a schema-valid manifest fixture and the
+  target owns package types, platform routing, validation, and API semantics.
 
 ## Reporting Checklist
 
