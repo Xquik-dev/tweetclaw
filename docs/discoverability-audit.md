@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 06:11 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 06:28 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   permission requests, tool plugins, install overrides, ClawHub, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -195,18 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 06:11 UTC: model/effort selectors unavailable. Crawler passes ran;
-  exact readbacks covered 306 PRs with no failures and no safely repairable
-  maintainer, CI, DCO, CLA, generated-file, or conflict item.
-- Opened `nardovibecoding/simply-social-pipeline#1`:
-  https://github.com/nardovibecoding/simply-social-pipeline/pull/1. It adds a
-  reviewed TweetClaw X/Twitter source-packet workflow to the target `x-tweet`
-  skill while preserving the target manual posting gate.
+- 2026-06-12 06:28 UTC: model/effort selectors unavailable. Crawler passes ran;
+  exact readbacks covered 307 PRs with no failures and no safely repairable
+  maintainer, CI, DCO, CLA, generated-file, conflict, or valid bot-review item.
+- Opened `shensi8312/blogburst-claude-skill#1`:
+  https://github.com/shensi8312/blogburst-claude-skill/pull/1. It adds optional
+  TweetClaw X/Twitter source context to BlogBurst docs and skill guidance while
+  preserving BlogBurst ownership of drafts, approvals, scheduling, publishing,
+  replies, analytics, and brand voice.
 - OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target docs links,
-  Python compile, hygiene, build, fitness, package, and `check:all` passed.
-- Prompt lesson: draft and posting skills are good fits when TweetClaw stays
-  upstream as reviewed public source collection and the target owns draft
-  voice, queue placement, manual approval, and posting.
+  target hygiene, build, fitness, package, and `check:all` passed.
+- Prompt lesson: social-manager skills are good fits when TweetClaw remains
+  optional evidence context and the target owns generation, approval, delivery,
+  measurement, and account interaction decisions.
 
 ## Reporting Checklist
 
