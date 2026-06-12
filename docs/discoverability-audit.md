@@ -194,27 +194,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 20:55 UTC: model/effort selectors unavailable. PR monitoring read
-  100 open authored PRs plus 32 threads. No safe current-head repair remained;
-  stale threads were fixed or false-positive. Posted frontmatter clarification on
-  `jeremylongshore/claude-code-plugins-plus-skills#865`.
-- Crawler-first discovery found duplicate-blocked
-  `elbis330/social-media-scraper-skill`; a registry lane returned 0 hits after
-  proxy pool outages. Fresh screening found `nikships/skills-registry` eligible
-  and `turazashvili/notion-skills-registry` lower fit. New PR:
-  https://github.com/nikships/skills-registry/pull/45 adds a TweetClaw public
-  repo import example and fixes transferred-owner README links.
-- OpenClaw docs/npm checked 2026-06-12 21:14 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; CLI plugin, skill, manifest, permission, SDK runtime,
-  install override, debugging, and ClawHub skill-format contracts remain
-  compatible.
-- Target validation passed README link, whitespace, and Go tests. Gemini
-  wording was repaired in `ec39c97`; CodeRabbit installer-owner feedback in
-  `4a14b43`. TweetClaw public links passed after the local AgentRegistry UI
-  endpoint became code.
-- Durable lesson: `nikships/skills-registry#45` is duplicate-blocked. For
-  transferred repos, fix stale owner links found by handled link checks, but
-  keep module paths untouched unless target code requires migration.
+- 2026-06-12 21:27 UTC: model/effort selectors unavailable. PR monitoring read
+  100 open authored PRs; remaining non-clean items were stale bot reviews,
+  false positives, Vercel auth, or target-owner queues.
+- Crawler-first discovery screened 3 no-license or nonstandard-license social
+  skill targets. Targeted follow-up found
+  `rediumvex/social-media-caption-generator-claude` MIT, active, and
+  duplicate-clean. New PR:
+  https://github.com/rediumvex/social-media-caption-generator-claude/pull/1
+  adds TweetClaw/X source-packet input guidance to README and `SKILL.md`.
+- OpenClaw docs/npm checked 2026-06-12 21:34 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; CLI plugin/skill, manage-plugin, permission, tool-plugin,
+  manifest, install-override, debugging, and ClawHub skill-format docs remain
+  compatible with explicit `npm:` install and runtime inspection wording.
+- Target validation passed whitespace, target links, added-line hygiene, and
+  typo scans. Full markdownlint and typos still have pre-existing target
+  style/brand findings. TweetClaw public links and package URLs passed.
+- Durable lesson: `rediumvex/social-media-caption-generator-claude#1` is
+  duplicate-blocked. Caption skills are useful only when TweetClaw is optional
+  source context and the target keeps drafting, CTA, and platform adaptation.
 
 ## Reporting Checklist
 
