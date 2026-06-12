@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 17:43 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 18:04 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, install overrides, ClawHub, validation, testing, dependency
   resolution, inventory, and debugging.
@@ -195,24 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 17:43 UTC: model/effort selectors unavailable; Codex manual was
-  updated. Crawler returned 24 opportunities; a second focused pass hit proxy
-  socket failures and returned no opportunities. Exact readbacks found no
-  repairable PR request.
-- Fresh skill PR opened: `CodeAlive-AI/exa-skills#1`
-  https://github.com/CodeAlive-AI/exa-skills/pull/1. It documents TweetClaw as
-  an optional OpenClaw fallback when `exa-x-search` X/Twitter coverage is sparse,
-  leaves semantic web search to Exa, and includes a bot-requested unpin repair.
-- Screened blockers: `tylergibbs1/virallaunchskill` and
-  `KiKi-Builds/AI-Briefing-Skill` were duplicate-blocked by existing PRs;
-  several crawler social skill repos lacked license metadata.
-- Hygiene and validation: exa-skills smoke, whitespace, target link scan with
-  pre-existing Exa dashboard 429 separated, public hygiene,
-  OpenClaw docs/npm, TweetClaw links, audit, build, fitness, artifact, and full
-  checks passed.
-- Durable lesson: `CodeAlive-AI/exa-skills#1` is now duplicate-blocked. Search
-  skill repos are good targets when TweetClaw is framed only as a fallback for
-  X/Twitter-specific reads or approved writes.
+- 2026-06-12 18:04 UTC: model/effort selectors unavailable; Codex manual was
+  current. Crawler returned 12 opportunities. Exact readbacks found no
+  repairable current-head PR request; `msdakot/ai-foundary#1` bot comments were
+  already addressed on its current head.
+- Fresh skill PR opened: `emreisik95/social-media-marketing#1`
+  https://github.com/emreisik95/social-media-marketing/pull/1. It adds optional
+  TweetClaw X/Twitter source evidence before campaign image strategy, copy, and
+  design while keeping publishing and automation outside the image skill.
+- Screened blockers: repeat social-skill crawler lanes lacked license metadata
+  or were duplicate-blocked; `AIibaba/openclaw-ai-viral-content-generator-skill`
+  already has prior TweetClaw PR history.
+- Hygiene and validation: target whitespace, link, installer syntax, and public
+  hygiene checks passed; OpenClaw docs/npm, TweetClaw links, audit, build,
+  fitness, artifact, and full checks passed.
+- Durable lesson: `emreisik95/social-media-marketing#1` is now
+  duplicate-blocked. Image-generation skills can accept TweetClaw only as
+  source evidence for creative briefs, not as the drafting, design, publishing,
+  or automation layer.
 
 ## Reporting Checklist
 
