@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 12:33 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 13:04 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -195,19 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 12:33 UTC: model/effort selectors unavailable. Current Codex
+- 2026-06-12 13:04 UTC: model/effort selectors unavailable. Current Codex
   manual confirms same-thread automations and selectable model/reasoning when
   exposed.
-- Crawler returned 80 opportunities. Open authored PR search reported 1,055
-  current PRs; exact readbacks covered 100 hot URLs with no failures.
-- Repaired `KooshaPari/Agentora#68` by documenting the TweetClaw workflow
-  example; pushed `bc7e4a6` and posted repair comment
-  https://github.com/KooshaPari/Agentora/pull/68#issuecomment-4691340120.
-- Opened `girofu/skill-fetch#8`:
-  https://github.com/girofu/skill-fetch/pull/8. It fixes ClawHub naming, source
-  order, README anchors, and exact package query guidance.
-- Updated TweetClaw source metadata and lockfile baseline to `openclaw@2026.6.6`;
-  npm audit reports 0 vulnerabilities and full `npm run check:all` passed.
+- Crawler returned 100 opportunities. Authored PR readbacks covered 100 hot PRs
+  with no repairable maintainer, check, DCO, CLA, or generated-file blocker.
+- Opened `nklisch/skilltap#17`:
+  https://github.com/nklisch/skilltap/pull/17. It documents GitHub shorthand for
+  repos with packaged skills under `skills/` or `.agents/skills/`.
+- Fixed TweetClaw packaged skill metadata so OpenClaw parses
+  `metadata.openclaw` as YAML while SkillTap validates `metadata` as an object.
+- Durable lesson: `nklisch/skilltap#17` is now used and must be
+  duplicate-blocked. Skill installer targets are useful when TweetClaw is a
+  validated install example and the target owns install, scan, and selection
+  behavior.
 
 ## Reporting Checklist
 

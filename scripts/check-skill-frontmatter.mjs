@@ -54,7 +54,7 @@ function parseFrontmatter(filePath) {
   }
 
   const fields = new Map();
-  const keyPattern = /^([A-Za-z][A-Za-z0-9_-]*):\s+(.+)$/u;
+  const keyPattern = /^([A-Za-z][A-Za-z0-9_-]*):(?:\s+(.+))?$/u;
 
   for (let index = 1; index < endIndex; index += 1) {
     const line = lines[index] ?? "";
@@ -74,11 +74,32 @@ function parseFrontmatter(filePath) {
       continue;
     }
 
-    const [, key, rawValue] = match;
+    const [, key, rawValue = ""] = match;
     if (fields.has(key)) {
       addViolation(filePath, lineNumber, `duplicate frontmatter key: ${key}`);
     }
-    fields.set(key, { line: lineNumber, value: rawValue.trim() });
+    if (rawValue.trim().length > 0) {
+      fields.set(key, { line: lineNumber, value: rawValue.trim() });
+      continue;
+    }
+
+    if (key !== "metadata") {
+      addViolation(filePath, lineNumber, "frontmatter line must be `key: value`");
+      continue;
+    }
+
+    const block = [];
+    index += 1;
+    while (index < endIndex) {
+      const blockLine = lines[index] ?? "";
+      if (!/^\s/u.test(blockLine) || blockLine.trim() === "") {
+        index -= 1;
+        break;
+      }
+      block.push({ line: index + 1, value: blockLine });
+      index += 1;
+    }
+    fields.set(key, { block, line: lineNumber, value: "" });
   }
 
   return fields;
@@ -99,6 +120,29 @@ function validateMetadata(filePath, fields) {
   const field = fields.get("metadata");
   if (!field) {
     addViolation(filePath, 1, "missing required frontmatter key: metadata");
+    return;
+  }
+
+  if (field.block) {
+    if (field.block.length !== 1) {
+      addViolation(filePath, field.line, "metadata block must contain exactly one openclaw entry");
+      return;
+    }
+    const entry = field.block[0];
+    const openclawMatch = /^\s+openclaw:\s+(.+)$/u.exec(entry.value);
+    if (!openclawMatch) {
+      addViolation(filePath, entry.line, "metadata block must use `openclaw: { ... }`");
+      return;
+    }
+    try {
+      const parsed = JSON.parse(openclawMatch[1]);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        addViolation(filePath, entry.line, "metadata.openclaw must be a JSON object");
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "unknown JSON parse error";
+      addViolation(filePath, entry.line, `metadata.openclaw must be valid JSON: ${message}`);
+    }
     return;
   }
 
