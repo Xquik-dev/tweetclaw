@@ -195,24 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 04:54 UTC: model/effort selectors unavailable. Broad and focused
-  crawler passes completed from Xquik; exact readbacks covered 300 authored PRs.
-- `oluwaeinstein007/social-mcp#1` had stale bot-review flags only; current head
-  already covers timeout, exact username, and fetch-call assertions.
-- Opened `d-wwei/openclaw-financial-services#1`:
-  https://github.com/d-wwei/openclaw-financial-services/pull/1. It adds an
-  optional public X/Twitter signal-packet workflow and JSON example for the
-  morning-note skill, plus a pre-existing README link repair.
-- Screened crawler and search lanes including `hashgraph-online`,
-  `chatmcp/mcpso`, `Kamalnrf/claude-plugins`, `man0l/ai-directories`,
-  `agentic-community/mcp-gateway-registry`, `benmillerat`, `JerryGou96`, and
-  finance OpenClaw skill packs; blockers were duplicate history, issue-only
-  paths, missing license, or lower fit.
-- OpenClaw current docs and npm metadata remain aligned with TweetClaw source.
-  TweetClaw link, memory, build, fitness, package, and hygiene checks passed.
-- Prompt lesson: finance skill packs are strongest when TweetClaw supplies
-  reviewed public source packets while the target owns analysis, conclusions,
-  disclaimers, and any actions.
+- 2026-06-12 05:10 UTC: model/effort selectors unavailable. Xquik crawler
+  passes ran; exact readbacks covered 300 authored PRs.
+- No repair was safe: flags were target-owned checks, old bot text, review
+  gates, or the no-license conflict on `akillness/oh-my-skills#272`.
+- Opened `Pajimo/social-media-department-skill#1`:
+  https://github.com/Pajimo/social-media-department-skill/pull/1. It adds an
+  optional X/Twitter source-packet guide for tech and business research agents,
+  links both research protocols, and keeps TweetClaw upstream of briefs.
+- Screened crawler and skill lanes including `hashgraph-online`, `chatmcp`,
+  `Kamalnrf`, `man0l`, `agentic-community`, `poweredbyai`, `kostja94`,
+  `Aanlifire`, `ndesv21`, `agentgram`, and `huangji`; blockers were duplicate
+  history, missing license, issue-only path, lower fit, or prior PR.
+- OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target links, target
+  hygiene, and GitGuardian checks passed.
+- Prompt lesson: multi-agent social skills are strongest when TweetClaw supplies
+  approved public source packets while the target owns content and posting.
 
 ## Reporting Checklist
 
