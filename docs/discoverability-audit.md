@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 06:43 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 08:55 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   permission requests, hooks, tool plugins, install overrides, SDK entrypoints,
   ClawHub, plugin validation fixes, testing updates, and debugging.
@@ -196,22 +196,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 06:43 UTC: model/effort selectors unavailable. Crawler passes ran;
-  exact readbacks covered 316 PRs. Repairable MIT conflicts were fixed for
-  `Hairy-jumper134/last30days-cn-skill#1`,
-  `Calliopeperpendicular906/openclaw-skills#1`, `jamald33n/tweetsave-mcp#2`,
-  and `BienvenuONIODJE/twitter-init-kit#3`. Remaining conflicts are
-  no-license or policy-blocked.
-- Opened `ClawCap/Mimic#2`: https://github.com/ClawCap/Mimic/pull/2. It adds
-  optional TweetClaw X/Twitter source-packet guidance to Mimic README, English
-  README, packaged skill, and social-media guide while preserving Mimic
-  ownership of collection cleanup, team-post filtering, persona analysis,
-  SOUL.md generation, and local raw.json storage.
-- OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target docs links,
-  target hygiene, build, fitness, package checks, and `check:all` passed.
-- Prompt lesson: persona and roleplay skills are good fits when TweetClaw stays
-  an optional public X/Twitter evidence collector and the target owns identity
-  confirmation, cleaning, persona analysis, generation, and storage.
+- 2026-06-12 08:55 UTC: model/effort selectors unavailable. Crawler passes ran;
+  exact readbacks covered 322 PR URLs. Repaired `Garenaof2462/browser-ops#1`
+  and `Rodert/awesome-mcp#11`; no maintainer-actionable feedback remained.
+- Opened `ClawCap/Magic-Mirror#1`:
+  https://github.com/ClawCap/Magic-Mirror/pull/1. It adds an optional
+  X/Twitter deep-profile sub-skill using TweetClaw, fixes a stale target README
+  link, and keeps Magic Mirror responsible for report analysis and storage.
+- OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target links, target
+  hygiene, build, fitness, package checks, and `check:all` passed.
+- Prompt lesson: profile and persona skills are strong fits when TweetClaw stays
+  a user-approved X/Twitter source and the target owns analysis and outputs.
 
 ## Reporting Checklist
 
