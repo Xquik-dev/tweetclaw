@@ -195,26 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 17:05 UTC: model/effort selectors unavailable; Codex manual was
-  current. Exact readbacks covered 147 authored and audit-tracked PR URLs.
-  Repaired `zeroaltitude/openclaw-plugins#15` maintainer review feedback and
-  `zhengyanglsun/openclaw-iflow-plugin#1` conflict before fresh outreach.
-- Fresh PR opened: `charlie947/social-media-skills#6`
-  https://github.com/charlie947/social-media-skills/pull/6. It adds TweetClaw
-  as an optional X/Twitter evidence source for the `niche-research` skill while
-  keeping the target responsible for research synthesis, voice, drafting, and
-  publishing decisions.
-- Screened blockers: `azeemkafridi/bulkpublish-ai-toolkit`,
-  `theaayushstha1/agentic-skills`, `win4r/x-post-cowork-claude-skill`, and
-  several fresh social skill repos lacked license metadata; `langchain-ai`
-  and prior awesome-agent-skill lanes were duplicate-blocked by existing
-  TweetClaw history.
-- Hygiene and validation: openclaw-plugins, iflow-plugin, social-media-skills,
+- 2026-06-12 17:27 UTC: model/effort selectors unavailable; Codex manual was
+  current. Crawler returned 80 opportunities. Batched PR readbacks stalled
+  twice and were stopped; targeted exact readbacks found no repairable request.
+- Fresh tooling PR opened: `mgechev/skillgrade#23`
+  https://github.com/mgechev/skillgrade/pull/23. It syncs ACP and OpenCode
+  agent references across README, templates, setup skill docs, and type
+  comments for the Agent Skills validator.
+- Screened blockers: fresh social skill crawler candidates such as
+  `Peiyaooooo/social-growth-automation`, `funkiki-david/GT-marketing-skills`,
+  `SamCuipogobongo/x-collect`, and related repos lacked license metadata.
+- Hygiene and validation: skillgrade tests, build, handled-link checks,
   OpenClaw docs/npm, TweetClaw links, audit, build, fitness, artifact, and full
   checks passed.
-- Durable lesson: `charlie947/social-media-skills#6` is now duplicate-blocked.
-  Niche research skills are good targets when TweetClaw stays source evidence
-  only and the host skill keeps synthesis and publication responsibility.
+- Durable lesson: `mgechev/skillgrade#23` is now duplicate-blocked. Validator
+  and package-tooling targets can help skill ecosystems without a TweetClaw
+  mention when a target-native fix is clearer.
 
 ## Reporting Checklist
 
