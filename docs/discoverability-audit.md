@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 20:10 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 20:50 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,23 +194,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 20:10 UTC: model/effort selectors unavailable. PR monitoring
-  covered 100 open authored PRs plus thread readbacks; no safely actionable
-  repair blocked fresh outreach. Current target-owned blockers remain Vercel
-  authorization or review policy, archived with exact PRs.
-- Crawler-first discovery returned 11 skill/social/OpenClaw candidates. New PR:
-  https://github.com/whoisdhana/x-monitor/pull/2 adds optional TweetClaw
-  source-packet guidance, repairs the stale Agent Reach link, and adds the NHS
-  Agentic Readiness badge in the target's existing badge area.
-- OpenClaw docs/npm checked on 2026-06-12 20:10 UTC: latest `2026.6.6`, beta
+- 2026-06-12 20:31 UTC: model/effort selectors unavailable. PR monitoring
+  exact-read 100 open authored PRs plus 28 thread readbacks. Repaired
+  https://github.com/sarveshtalele/mcp-skills-registry/pull/10 for documented
+  `q` search params and single-`tweet` lookup normalization, then pushed
+  `af7463f` and commented validation.
+- Crawler-first discovery returned 3 known skill/social candidates. Fresh
+  registry screening found `manu14357/zskills` eligible; `eugenepyvovarov`
+  MCPBundler was held because an open Xquik skill PR already targets that repo.
+  New PR: https://github.com/manu14357/zskills/pull/1 adds a TweetClaw skill to
+  the MIT ZSkills registry. Its only check blocker is target-owned Vercel team
+  authorization.
+- OpenClaw docs/npm checked on 2026-06-12 20:50 UTC: latest `2026.6.6`, beta
   `2026.6.6-beta.2`; ClawHub quickstart, publishing, and skill-format contracts
   remain compatible.
-- Target validation passed diff, package JSON, and Markdown link checks; npm
-  package metadata was verified with `npm view`. TweetClaw final validation is
+- Target validation passed ZSkills frontmatter parity, Markdown link, diff, and
+  public-hygiene checks. TweetClaw public link and package validation are
   archived.
-- Durable lesson: `whoisdhana/x-monitor#2` is now duplicate-blocked. Monitoring
-  skills are good fits when TweetClaw is framed as optional read-only source
-  evidence and the target owns polling, deduping, summaries, and delivery.
+- Durable lesson: `manu14357/zskills#1` is now duplicate-blocked. Skill
+  registries are strong fits when TweetClaw is contributed as a real `SKILL.md`
+  package and the target owns registry, install, validation, and discovery.
 
 ## Reporting Checklist
 
