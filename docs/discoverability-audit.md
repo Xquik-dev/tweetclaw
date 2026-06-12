@@ -195,25 +195,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 15:57 UTC: model/effort selectors unavailable; Codex manual was
+- 2026-06-12 16:16 UTC: model/effort selectors unavailable; Codex manual was
   current.
-- PR repairs: exact readbacks covered 100 open authored PRs plus 31
-  review-thread PRs. No safe repairable maintainer, review, CI, conflict, DCO,
-  CLA, or generated-file blocker was found; old bot/watch threads were already
-  addressed.
-- Fresh PR opened: `Pratiyush/skill-sdk#74`
-  https://github.com/Pratiyush/skill-sdk/pull/74. It documents the `open-claw`
-  install target, adds a TweetClaw OpenClaw install example, derives
-  unknown-target help from supported paths, and tests `.openclaw/skills`.
-- Screened blockers: repeated skill, social, registry, validator, and framework
-  targets were duplicate, no-license, missing-dependency, policy, or lower-fit
-  blocked; details are archived.
-- Public hygiene and validation: target tests, build, lint, typecheck, and link
-  checks passed; target root formatter drift remains pre-existing. Final
+- PR repairs: readbacks covered 110 PR URLs and 36 thread-bearing PRs.
+  Repaired `BienvenuONIODJE/twitter-init-kit#3` conflict; final readback was
+  clean and mergeable. Other conflict blockers lacked license metadata or safe
+  repair path; old bot/watch threads were already addressed.
+- Fresh PR opened: `Fanccy315/openclaw-docker#5`
+  https://github.com/Fanccy315/openclaw-docker/pull/5. It makes the OpenClaw
+  Docker version configurable with a `2026.6.6` default and documents installing
+  `npm:@xquik/tweetclaw@1.6.31` from the CLI container after onboarding.
+- Screened blockers: repeated skill, social, registry, validator, and plugin
+  targets were duplicate, no-license, policy, or lower-fit. `openclaw`
+  kitchen-sink was rejected as a credential-free conformance fixture; ClawPanel
+  already has an open TweetClaw PR.
+- Hygiene and validation: target whitespace, shell syntax, README links,
+  OpenClaw help, and isolated TweetClaw install/runtime inspect passed. Final
   TweetClaw link, audit, build, fitness, artifact, and full checks passed.
-- Durable lesson: `Pratiyush/skill-sdk#74` is now duplicate-blocked. Skill SDKs
-  are useful when TweetClaw is a real install fixture and the target owns install
-  validation.
+- Durable lesson: `Fanccy315/openclaw-docker#5` is now duplicate-blocked. Docker
+  template placements should install TweetClaw into mounted OpenClaw home after
+  onboarding and keep API keys/account config out of images and Dockerfiles.
 
 ## Reporting Checklist
 
