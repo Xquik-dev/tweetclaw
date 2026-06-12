@@ -49,11 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 10:39 UTC: latest
-  `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
-  current permission requests, current hooks, tool plugins, install overrides,
-  ClawHub, plugin validation fixes, testing updates, dependency resolution,
-  plugin internals, plugin inventory, and debugging.
+- OpenClaw docs/npm checked as of 2026-06-12 11:00 UTC: latest
+  `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
+  permissions, hooks, tool plugins, install overrides, ClawHub, validation,
+  testing, dependency resolution, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -197,21 +196,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 10:39 UTC: model/effort selectors unavailable. Crawler returned
-  80 opportunities. Recent authored PR readbacks found `browser-ops#1` dirty.
-- Repaired `Garenaof2462/browser-ops#1`:
-  https://github.com/Garenaof2462/browser-ops/pull/1#issuecomment-4690368422.
-  The README conflict was identical-link churn; final readback is `CLEAN`.
-- Opened `redhat-et/skillimage#47`:
-  https://github.com/redhat-et/skillimage/pull/47. It adds a validated
-  TweetClaw OpenClaw SkillImage example with provenance and approval guidance;
-  a valid CodeRabbit version nit was fixed and the PR title clarified.
-- OpenClaw docs, npm metadata, TweetClaw links, target links, target schema,
-  Go tests, diff hygiene, and fitness checks passed or matched known upstream
+- 2026-06-12 11:00 UTC: model/effort selectors unavailable. Crawler returned
+  80 opportunities. Recent authored PR readbacks found 4 dirty in-scope PRs.
+- Repaired dirty licensed PRs: `Hairy-jumper134/last30days-cn-skill#1`,
+  `Calliopeperpendicular906/openclaw-skills#1`, and
+  `AbdNour627/awesome-openclaw-configs#1`. `reall8164/wechat-openclaw-plugin#1`
+  stayed blocked by missing license metadata.
+- Opened `tankpkg/tank#477`: https://github.com/tankpkg/tank/pull/477. It adds
+  scanner-safe scoped npm, GitHub folder, and ClawHub URL examples, plus a
+  TweetClaw scoped npm regression test.
+- Target validation passed focused Tank install, scanner test, formatting, link,
+  diff, and public-hygiene checks. Target Vercel auth contexts are not
+  branch-actionable.
+- OpenClaw docs, npm metadata, TweetClaw links, target links, duplicate checks,
+  fork parent checks, and prompt size checks passed or matched known upstream
   blockers.
-- Prompt lesson: OCI skill registries are useful framework targets when
-  TweetClaw is a packaged example with source provenance and explicit approval
-  boundaries.
+- Prompt lesson: scanner frameworks are useful when TweetClaw validates package
+  URL handling instead of acting as a thin listing.
 
 ## Reporting Checklist
 
