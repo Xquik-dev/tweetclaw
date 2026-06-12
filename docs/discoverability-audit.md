@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 18:46 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 20:10 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,27 +194,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 19:28 UTC: model/effort selectors unavailable. PR monitoring
-  repaired `emreisik95/social-media-marketing#1` and
-  `tmchow/agent-skills#53`; `memohai/supermarket#11` and
-  `simota/agent-skills#39` were already fixed on current heads.
-- Current target-owned blockers: Vercel authorization on `arvindrk/twitter-agent#13`,
-  `intelseclab/osintelligence#22`, `tankpkg/tank#477`,
-  `sx4im/skillcheck#4`, and `atilaahmettaner/skills-plane#3`.
-- Crawler-first discovery plus targeted screening found fresh target
-  `atilaahmettaner/skills-plane`. New PR:
-  https://github.com/atilaahmettaner/skills-plane/pull/3 adds a Supabase seed
-  entry for the packaged TweetClaw skill.
-- Blockers: duplicate, no-license, prior-history, lower-fit, or
-  validation-policy blocked lanes are archived.
-- OpenClaw docs/npm checked on 2026-06-12 20:00 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; plugin install/update, manifest, tool-plugin, install
-  override, debugging, and ClawHub skill-format contracts remain compatible.
-- Validation: repaired PR checks, Skills Plane target checks, target links, and
-  public-hygiene scans passed. Final TweetClaw validation is archived.
-- Durable lesson: `atilaahmettaner/skills-plane#3` is now duplicate-blocked.
-  Marketplace seed targets are useful when they point at a packaged skill and
-  follow the target's native seed/install pattern.
+- 2026-06-12 20:10 UTC: model/effort selectors unavailable. PR monitoring
+  covered 100 open authored PRs plus thread readbacks; no safely actionable
+  repair blocked fresh outreach. Current target-owned blockers remain Vercel
+  authorization or review policy, archived with exact PRs.
+- Crawler-first discovery returned 11 skill/social/OpenClaw candidates. New PR:
+  https://github.com/whoisdhana/x-monitor/pull/2 adds optional TweetClaw
+  source-packet guidance, repairs the stale Agent Reach link, and adds the NHS
+  Agentic Readiness badge in the target's existing badge area.
+- OpenClaw docs/npm checked on 2026-06-12 20:10 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; ClawHub quickstart, publishing, and skill-format contracts
+  remain compatible.
+- Target validation passed diff, package JSON, and Markdown link checks; npm
+  package metadata was verified with `npm view`. TweetClaw final validation is
+  archived.
+- Durable lesson: `whoisdhana/x-monitor#2` is now duplicate-blocked. Monitoring
+  skills are good fits when TweetClaw is framed as optional read-only source
+  evidence and the target owns polling, deduping, summaries, and delivery.
 
 ## Reporting Checklist
 
