@@ -9,7 +9,7 @@
 [![Skills.sh](https://skills.sh/b/xquik-dev/tweetclaw)](https://skills.sh/xquik-dev/tweetclaw)
 [![Skills.sh x-twitter-scraper Skill](https://skills.sh/b/xquik-dev/x-twitter-scraper)](https://skills.sh/xquik-dev/x-twitter-scraper)
 [![ClawHub](https://img.shields.io/badge/ClawHub-TweetClaw-2563eb)](https://clawhub.ai/plugins/@xquik/tweetclaw)
-[![Smithery](https://smithery.ai/badge/github/Xquik-dev/tweetclaw)](https://smithery.ai/server/github/Xquik-dev/tweetclaw)
+[![Smithery](https://smithery.ai/badge/github/Xquik-dev/tweetclaw)](https://smithery.ai/servers/github/Xquik-dev/tweetclaw)
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
 
@@ -41,7 +41,7 @@ openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
 
 OpenClaw keeps pinned records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
 
-Current source metadata targets OpenClaw `2026.6.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
+Current source metadata targets OpenClaw `2026.6.6` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
 If your OpenClaw install runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle
 mutators are disabled. Install or update TweetClaw through your Nix OpenClaw

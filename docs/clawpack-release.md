@@ -36,7 +36,7 @@ the archive, before any release or ClawHub decision.
 
 ## OpenClaw Release Fitness
 
-- Current source metadata targets OpenClaw `2026.6.1`.
+- Current source metadata targets OpenClaw `2026.6.6`.
 - Required metadata fields:
   `openclaw.compat.pluginApi`, `openclaw.compat.minGatewayVersion`,
   `openclaw.build.openclawVersion`, `openclaw.build.pluginSdkVersion`,
@@ -44,10 +44,9 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- Known blocker: `npm audit --audit-level=moderate` reports moderate `hono`
-  advisories under `node_modules/openclaw/node_modules/hono` from published
-  `openclaw@2026.6.1` shrinkwrap. Root overrides did not rewrite that nested
-  shrinkwrap. Treat as upstream OpenClaw stable-package blocker.
+- `openclaw@2026.6.6` supersedes the previous stable package that carried the
+  nested Hono audit blocker; rerun `npm audit --audit-level=moderate` after
+  any OpenClaw lockfile refresh.
 
 ## ClawHub State
 

@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 12:12 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 12:33 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -61,7 +61,7 @@ archive, before any outreach or duplicate decision.
 
 ## Current OpenClaw Fitness
 
-- TweetClaw source targets OpenClaw `2026.6.1`.
+- TweetClaw source targets OpenClaw `2026.6.6`.
 - Compatibility, build, install, host peer, and lockfile metadata are aligned.
 - `npm run check-openclaw-platform-fitness` is required after build for any
   OpenClaw metadata, manifest, runtime, approval, docs, packaged-skill, or
@@ -73,10 +73,9 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
-  still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 10:01 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
-  GitHub alerts clear or a maintainer-owned package refresh lands.
+- Prior nested OpenClaw Hono audit blocker was superseded by `openclaw@2026.6.6`;
+  rerun audit after each host lockfile refresh and keep upstream issue/PR
+  91301/91303 only as historical context.
 
 ## GitHub-First Rule
 
@@ -196,21 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 12:12 UTC: model/effort selectors unavailable. Current Codex
+- 2026-06-12 12:33 UTC: model/effort selectors unavailable. Current Codex
   manual confirms same-thread automations and selectable model/reasoning when
   exposed.
-- Crawler returned 80 opportunities. Open authored PR search reported 1,052
+- Crawler returned 80 opportunities. Open authored PR search reported 1,055
   current PRs; exact readbacks covered 100 hot URLs with no failures.
-- Repaired `BienvenuONIODJE/twitter-init-kit#3` by merging upstream and
-  resolving the recurring README conflict; pushed `8a6958f` and posted repair
-  comment https://github.com/BienvenuONIODJE/twitter-init-kit/pull/3#issuecomment-4691215942.
-- Dirty PRs in unlicensed or nonstandard-license targets stayed unsafe to touch;
-  Vercel authorization failures stayed target-owned.
-- Opened `den-vasyliev/agentregistry-inventory#49`:
-  https://github.com/den-vasyliev/agentregistry-inventory/pull/49. It adds a
-  TweetClaw OpenClaw `SkillCatalog` Kubernetes sample and a parser test.
-- Target checks passed focused Go tests, `make test`, links, whitespace, fork,
-  duplicate, and public-hygiene gates. Product surfaces needed no change.
+- Repaired `KooshaPari/Agentora#68` by documenting the TweetClaw workflow
+  example; pushed `bc7e4a6` and posted repair comment
+  https://github.com/KooshaPari/Agentora/pull/68#issuecomment-4691340120.
+- Opened `girofu/skill-fetch#8`:
+  https://github.com/girofu/skill-fetch/pull/8. It fixes ClawHub naming, source
+  order, README anchors, and exact package query guidance.
+- Updated TweetClaw source metadata and lockfile baseline to `openclaw@2026.6.6`;
+  npm audit reports 0 vulnerabilities and full `npm run check:all` passed.
 
 ## Reporting Checklist
 
