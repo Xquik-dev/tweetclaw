@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 05:54 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 06:11 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   permission requests, tool plugins, install overrides, ClawHub, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 05:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 06:11 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,18 +195,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 05:54 UTC: model/effort selectors unavailable. Crawler passes ran;
-  exact readbacks covered 315 PRs.
-- Repaired `Aqmar777/openclaw-competitive-intel#1` and
-  `Garenaof2462/browser-ops#1`; both are mergeable after README conflict
-  repairs and validation comments.
-- Opened `kevinho/clawfeed#62`:
-  https://github.com/kevinho/clawfeed/pull/62. It documents reviewed
-  TweetClaw X/Twitter source packets for ClawFeed `custom_api` digests.
+- 2026-06-12 06:11 UTC: model/effort selectors unavailable. Crawler passes ran;
+  exact readbacks covered 306 PRs with no failures and no safely repairable
+  maintainer, CI, DCO, CLA, generated-file, or conflict item.
+- Opened `nardovibecoding/simply-social-pipeline#1`:
+  https://github.com/nardovibecoding/simply-social-pipeline/pull/1. It adds a
+  reviewed TweetClaw X/Twitter source-packet workflow to the target `x-tweet`
+  skill while preserving the target manual posting gate.
 - OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target docs links,
-  lint, hygiene, build, fitness, package, and `check:all` passed.
-- Prompt lesson: digest apps are good fits when TweetClaw stays a reviewed read
-  source and account actions stay outside automatic digest generation.
+  Python compile, hygiene, build, fitness, package, and `check:all` passed.
+- Prompt lesson: draft and posting skills are good fits when TweetClaw stays
+  upstream as reviewed public source collection and the target owns draft
+  voice, queue placement, manual approval, and posting.
 
 ## Reporting Checklist
 
