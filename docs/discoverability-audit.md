@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 00:32 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 00:47 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 00:32 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 00:47 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,21 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 00:32 UTC: model/effort selectors unavailable; crawler found 25
+- 2026-06-12 00:47 UTC: model/effort selectors unavailable; crawler found 25
   known lanes and focused skill crawl found none.
-- Exact readbacks covered 178 PRs. No safe repair remained: TweetScraperR and
-  humblSKILLS were already answered, Vercel gates were target-owned, and
-  `akillness/oh-my-skills#272` stayed no-license.
-- Fresh PR: `1chenmm/skills-install-workflow#1` adds TweetClaw to a
-  security-first install workflow with install, npm/OpenClaw metadata, and
-  source-collection vs approval-gated X/Twitter action checks.
-- OpenClaw docs, ClawHub retry, registry metadata, and public links returned
-  HTTP 200. `openclaw` `2026.6.5`; TweetClaw npm `1.6.31`; source `1.6.32`.
+- Exact readbacks covered 223 PRs after a larger readback was stopped for
+  latency. No safe repair remained: prior requests were answered, Vercel gates
+  target-owned, ECC bot noise off-diff, and `oh-my-skills#272` no-license.
+- Fresh PR: `jnMetaCode/skillet#1` adds TweetClaw to the skillet SKILL.md
+  registry with a validated `Xquik-dev/tweetclaw/skills/tweetclaw` entry and
+  searchable X/Twitter automation keywords.
+- OpenClaw docs, ClawHub, registry metadata, and public links returned HTTP 200.
+  `openclaw` `2026.6.5`; TweetClaw npm `1.6.31`; source `1.6.32`.
 - Target checks and TweetClaw build, fitness, version, package, memory, hygiene,
   and full checks passed. npm audit still only known nested OpenClaw `hono`.
-- Prompt lesson: duplicate-block `1chenmm/skills-install-workflow`; install
-  workflows are useful when they teach registry verification and approval
-  boundaries, not only install commands.
+- Prompt lesson: duplicate-block `jnMetaCode/skillet`; SKILL.md package-manager
+  registries are useful when they validate the source skill and searchable user
+  jobs, not only add a listing.
 
 ## Reporting Checklist
 
