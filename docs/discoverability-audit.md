@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 11:50 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 12:12 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -196,18 +196,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 11:50 UTC: model/effort selectors unavailable. Crawler returned
-  80 opportunities. Exact PR readbacks found no safe repair blocking outreach.
-- Opened `stacklok/toolhive-registry-server#816`:
-  https://github.com/stacklok/toolhive-registry-server/pull/816. It adds a
-  pinned TweetClaw ToolHive skill fixture and guards skill ingestion in tests.
-- Repaired a valid Codex review by removing the moving Git ref and asserting the
-  pinned commit; final head `7968e94`.
-- Target checks passed focused Go tests, JSON parse, links, whitespace, fork,
-  duplicate, and public-hygiene gates. Full target `go test ./...` is
-  Docker/Testcontainers blocked locally.
-- TweetClaw product surfaces needed no change. Full details and prompt lessons
-  are archived.
+- 2026-06-12 12:12 UTC: model/effort selectors unavailable. Current Codex
+  manual confirms same-thread automations and selectable model/reasoning when
+  exposed.
+- Crawler returned 80 opportunities. Open authored PR search reported 1,052
+  current PRs; exact readbacks covered 100 hot URLs with no failures.
+- Repaired `BienvenuONIODJE/twitter-init-kit#3` by merging upstream and
+  resolving the recurring README conflict; pushed `8a6958f` and posted repair
+  comment https://github.com/BienvenuONIODJE/twitter-init-kit/pull/3#issuecomment-4691215942.
+- Dirty PRs in unlicensed or nonstandard-license targets stayed unsafe to touch;
+  Vercel authorization failures stayed target-owned.
+- Opened `den-vasyliev/agentregistry-inventory#49`:
+  https://github.com/den-vasyliev/agentregistry-inventory/pull/49. It adds a
+  TweetClaw OpenClaw `SkillCatalog` Kubernetes sample and a parser test.
+- Target checks passed focused Go tests, `make test`, links, whitespace, fork,
+  duplicate, and public-hygiene gates. Product surfaces needed no change.
 
 ## Reporting Checklist
 
