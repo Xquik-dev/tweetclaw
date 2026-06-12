@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 04:32 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 05:25 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   permission requests, tool plugins, install overrides, ClawHub, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 04:09 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 05:25 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,22 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 05:10 UTC: model/effort selectors unavailable. Xquik crawler
-  passes ran; exact readbacks covered 300 authored PRs.
+- 2026-06-12 05:25 UTC: model/effort selectors unavailable. Xquik crawler
+  passes ran; exact readbacks covered 300 authored PRs with no safe repair.
 - No repair was safe: flags were target-owned checks, old bot text, review
   gates, or the no-license conflict on `akillness/oh-my-skills#272`.
-- Opened `Pajimo/social-media-department-skill#1`:
-  https://github.com/Pajimo/social-media-department-skill/pull/1. It adds an
-  optional X/Twitter source-packet guide for tech and business research agents,
-  links both research protocols, and keeps TweetClaw upstream of briefs.
+- Opened `JerryGou96/Finance-Skill#1`:
+  https://github.com/JerryGou96/Finance-Skill/pull/1. It adds optional public
+  X/Twitter signal-packet guidance for `daily-portfolio-review`.
 - Screened crawler and skill lanes including `hashgraph-online`, `chatmcp`,
-  `Kamalnrf`, `man0l`, `agentic-community`, `poweredbyai`, `kostja94`,
-  `Aanlifire`, `ndesv21`, `agentgram`, and `huangji`; blockers were duplicate
-  history, missing license, issue-only path, lower fit, or prior PR.
+  `Kamalnrf`, `poweredbyai`, `BlazeUp`, and finance-skill fallbacks; blockers
+  were duplicate history, missing license, policy, issue-only path, or prior PR.
 - OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target links, target
-  hygiene, and GitGuardian checks passed.
-- Prompt lesson: multi-agent social skills are strongest when TweetClaw supplies
-  approved public source packets while the target owns content and posting.
+  hygiene, and target skill validation passed.
+- Prompt lesson: finance skills are strongest when TweetClaw supplies reviewed
+  public social evidence while targets own analysis and investment boundaries.
 
 ## Reporting Checklist
 
