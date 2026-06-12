@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 01:58 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 03:00 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 01:58 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 03:00 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,24 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 02:33 UTC: model/effort selectors unavailable. Broad and focused
-  crawler passes returned 25 known skill, MCP, registry, and directory lanes.
-- Exact readbacks covered 300 open authored PRs. Repaired `KooshaPari/Agentora#68`
-  separator normalization with `4fe5123`, and `MSApps-Mobile/claude-plugins#29`
-  retrieval/SOSA review comments with `e7cc1a8`; `Unla#321`, SkillTrust, and
-  GemProject threads were stale or already addressed.
-- Fresh PR: `agentregistry-dev/agentregistry#547` adds source-backed
-  `examples/tweetclaw-skill.yaml` plus a docs pointer. Readback: ready,
-  review-required, head `5655230`.
-- Screened `JSONbored/awesome-claude` duplicate-blocked by existing TweetClaw and
-  Xquik entries; `agentregistry` passed license, fork, duplicate, and validation
-  gates. No badge was added because the badge row is target package health.
-- OpenClaw docs, ClawHub, npm, build, fitness, package, links, memory, and
-  hygiene checks passed. `openclaw` `2026.6.5`; beta
-  `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`.
-- Prompt lesson: duplicate-block HeyClaude TweetClaw/Xquik listings and
-  AgentRegistry example PRs; Kilo sandbox-connect failures with 0 annotations are
-  platform-owned.
+- 2026-06-12 03:00 UTC: model/effort selectors unavailable. Broad and focused
+  crawler passes completed from Xquik.
+- Exact readbacks covered 300 open authored PRs. Repair-priority work posted
+  addressed-thread replies on `jamditis/claude-skills-journalism#116`,
+  `fralapo/awesome-agent-skills#3`, `ejikezebedee/openclaw-skilltrust#1`,
+  `klimekszymon/gemproject#1`, and maintainer reply on
+  `agusnieto77/TweetScraperR#9`; `GoPlusSecurity/agentguard#102` was already
+  repaired and replied.
+- No fresh PR was opened because in-scope PR repair remained the priority. Next:
+  `framerslab/agentos-skills#1`, `aidanllewellyn/x-api-mcp#1`,
+  `cschanhniem/ClawSeatbelt#1`, `oluwaeinstein007/social-mcp#1`, and selected
+  conflict refreshes.
+- OpenClaw docs, ClawHub, npm, TweetClaw build, fitness, package, links, memory,
+  and hygiene checks passed. `openclaw` `2026.6.5`; beta
+  `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`. Local audit still
+  reports only nested OpenClaw `hono`.
+- Prompt lesson: if review threads are already addressed in the current head,
+  reply with the exact commit and validation instead of adding redundant code.
 
 ## Reporting Checklist
 
