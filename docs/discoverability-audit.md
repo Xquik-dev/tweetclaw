@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 13:04 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 13:23 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -195,20 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 13:04 UTC: model/effort selectors unavailable. Current Codex
+- 2026-06-12 13:23 UTC: model/effort selectors unavailable. Current Codex
   manual confirms same-thread automations and selectable model/reasoning when
   exposed.
-- Crawler returned 100 opportunities. Authored PR readbacks covered 100 hot PRs
-  with no repairable maintainer, check, DCO, CLA, or generated-file blocker.
-- Opened `nklisch/skilltap#17`:
-  https://github.com/nklisch/skilltap/pull/17. It documents GitHub shorthand for
-  repos with packaged skills under `skills/` or `.agents/skills/`.
-- Fixed TweetClaw packaged skill metadata so OpenClaw parses
-  `metadata.openclaw` as YAML while SkillTap validates `metadata` as an object.
-- Durable lesson: `nklisch/skilltap#17` is now used and must be
-  duplicate-blocked. Skill installer targets are useful when TweetClaw is a
-  validated install example and the target owns install, scan, and selection
-  behavior.
+- Crawler returned 120 opportunities. Authored PR readbacks covered 100 hot PRs;
+  5 conflict repairs were pushed and only target-owned Vercel authorization
+  blockers remained.
+- New target PR opened: `chigwell/skilldock.io#2`
+  https://github.com/chigwell/skilldock.io/pull/2. It adds a
+  repository-backed `skilldock skill verify` example using TweetClaw's packaged
+  OpenClaw/Codex skill.
+- Policy blocker recorded: `agentver/agentver#118` was opened after validation
+  but auto-closed by target policy because external PRs are temporarily blocked.
+- Durable lesson: `chigwell/skilldock.io#2` and `agentver/agentver#118` are now
+  duplicate-blocked. Skill registries and installers are useful targets when
+  TweetClaw is used as a real packaged skill fixture and the target owns
+  verification, publishing, and install semantics.
 
 ## Reporting Checklist
 
