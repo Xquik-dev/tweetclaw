@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 14:50 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 15:57 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, install overrides, ClawHub, validation, testing, dependency
   resolution, inventory, and debugging.
@@ -195,23 +195,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 15:32 UTC: model/effort selectors unavailable. Rechecked the
-  current Codex automation manual.
-- Existing PR repairs: exact readbacks of 100 open authored PRs found no safe
-  repairable maintainer request, review, CI, conflict, DCO, CLA, or generated
-  drift. Target-owned Vercel auth failures remain non-actionable.
-- Fresh PR opened: `WendyK-LS/omni-image-studio-skill#1`
-  https://github.com/WendyK-LS/omni-image-studio-skill/pull/1. It adds an
-  X/Twitter source-image workflow example and skill boundary guidance for
-  source-led image assets. Readback: open, mergeable, no comments or checks.
-- Screened blockers and notes: media-skill, registry, validator, and social
-  skill targets were duplicate, no-license, dependency, or policy blocked;
-  details are archived.
-- Public hygiene: fixed the README GitHub-stars badge to the canonical SVG URL.
-  Final TweetClaw links, audit, build, artifact, and full checks passed.
-- Durable lessons: `WendyK-LS/omni-image-studio-skill#1` is now
-  duplicate-blocked for future TweetClaw submissions. Image-skill targets are
-  useful when TweetClaw only supplies reviewed source context.
+- 2026-06-12 15:57 UTC: model/effort selectors unavailable; Codex manual was
+  current.
+- PR repairs: exact readbacks covered 100 open authored PRs plus 31
+  review-thread PRs. No safe repairable maintainer, review, CI, conflict, DCO,
+  CLA, or generated-file blocker was found; old bot/watch threads were already
+  addressed.
+- Fresh PR opened: `Pratiyush/skill-sdk#74`
+  https://github.com/Pratiyush/skill-sdk/pull/74. It documents the `open-claw`
+  install target, adds a TweetClaw OpenClaw install example, derives
+  unknown-target help from supported paths, and tests `.openclaw/skills`.
+- Screened blockers: repeated skill, social, registry, validator, and framework
+  targets were duplicate, no-license, missing-dependency, policy, or lower-fit
+  blocked; details are archived.
+- Public hygiene and validation: target tests, build, lint, typecheck, and link
+  checks passed; target root formatter drift remains pre-existing. Final
+  TweetClaw link, audit, build, fitness, artifact, and full checks passed.
+- Durable lesson: `Pratiyush/skill-sdk#74` is now duplicate-blocked. Skill SDKs
+  are useful when TweetClaw is a real install fixture and the target owns install
+  validation.
 
 ## Reporting Checklist
 
