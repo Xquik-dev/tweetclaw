@@ -195,25 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 14:50 UTC: model/effort selectors unavailable. Rechecked the
+- 2026-06-12 15:12 UTC: model/effort selectors unavailable. Rechecked the
   current Codex automation manual.
-- Existing PR repairs: `msdakot/ai-foundary#1` approval-gate review comments
-  were fixed and are outdated after commit `59ad767`; `memohai/supermarket#11`
-  now maps the Xquik API key header after commit `5edc770`, with bot thread
-  re-evaluation pending.
-- Fresh PR opened: `the-bao/skills-registry#1`
-  https://github.com/the-bao/skills-registry/pull/1. It fixes local add-skill
-  registry path storage when the source folder differs from `SKILL.md` name,
-  using a TweetClaw-style regression fixture. Readback: open, mergeable, clean,
-  no checks.
-- Screened blockers and notes: `0xNyk/xint` and
-  `dorukardahan/twitterapi-io-skill` remain lower-fit duplicate or competitor
-  lanes; registry crawler retry hit proxy socket and US pool outage blockers;
-  target README link check in `the-bao/skills-registry` hits a pre-existing
-  malformed localhost autolink.
-- Durable lessons: `the-bao/skills-registry#1` is now duplicate-blocked for
-  future TweetClaw submissions. For cross-repo PR review scripts, verify base
-  repo resolution because helper defaults may query the head fork.
+- Existing PR repairs: exact readbacks found no safe repairable maintainer
+  request, review, CI, conflict, DCO, CLA, or generated-file drift.
+- Fresh PR opened: `arvindrk/twitter-agent#13`
+  https://github.com/arvindrk/twitter-agent/pull/13. It adds optional
+  `RESEARCH_CONTEXT_FILE` support so the daily researcher can verify a local
+  reviewed X/Twitter source packet, with a TweetClaw evidence example.
+  Readback: open, mergeable, target-owned Vercel auth failure only.
+- Screened blockers and notes: prior skill, registry, and OpenClaw targets
+  remain duplicate or no-license blocked; details are archived. The existing
+  `kriptoburak/twitter-agent` fork had the wrong parent, so
+  `kriptoburak/arvindrk-twitter-agent` was created and verified.
+- Durable lessons: `arvindrk/twitter-agent#13` is now duplicate-blocked for
+  future TweetClaw submissions. If a fork name is occupied by another upstream
+  fork network, create a distinct correctly parented fork before pushing.
 
 ## Reporting Checklist
 
