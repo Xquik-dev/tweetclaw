@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 23:01 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 23:32 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,25 +194,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 23:01 UTC: model/effort selectors unavailable. PR monitoring read
-  100 authored PRs plus focused GraphQL threads. `mcp-skills-registry#10` and
-  `simota/agent-skills#39` already contained the requested fixes on current
-  heads, so no repair commit was needed.
+- 2026-06-12 23:32 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+  had no open issues. PR monitoring read 100 authored PRs plus 35 GraphQL
+  thread readbacks; unresolved bot threads were already fixed, clarified, or
+  target-review state.
 - Crawler-first discovery screened 14 skill/social hits and 0 tooling hits.
-  Duplicate, no-license, and prior-history blockers are archived. New PR:
-  https://github.com/d-wwei/superb-publisher/pull/1 adds optional TweetClaw
-  X/Twitter source context while keeping Superb Publisher responsible for final
-  publishing and confirmation gates.
-- OpenClaw docs/npm checked 2026-06-12 23:01 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; plugin install, permissions, tool-plugin, overrides,
-  debugging, and ClawHub skill-format docs remain compatible.
-- Target validation passed whitespace, handled Markdown links, npm metadata
-  readback, fork-parent checks, public-hygiene scan, and PR readback
-  `MERGEABLE`/`CLEAN`/no checks. TweetClaw validation passed links, audits,
-  build, OpenClaw fitness, package artifact, and full checks.
-- Durable lesson: `d-wwei/superb-publisher#1` is duplicate-blocked. Publishing
-  skills fit TweetClaw only as optional source evidence and approval context,
-  not as the final publisher.
+  Duplicate, no-license, prior-history, and lower-fit blockers are archived.
+  New PR: https://github.com/contextosai/skills/pull/3 adds a validated
+  `x-twitter-source-packet` skill, README row, marketplace registration, and
+  changelog entry for reviewed X/Twitter evidence packets.
+- OpenClaw docs/npm checked 2026-06-12 23:32 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; plugin install, skills, permissions, tool-plugin,
+  overrides, debugging, and ClawHub skill-format docs remain compatible.
+- Target validation passed validator, whitespace, handled links, duplicate
+  checks, fork-parent checks, public-hygiene scan, and PR readback
+  `MERGEABLE`/`BLOCKED` by target review policy/no checks. TweetClaw validation
+  passed links, audits, build, OpenClaw fitness, package artifact, full checks,
+  and memory cap.
+- Durable lesson: `contextosai/skills#3` is duplicate-blocked. General skill
+  marketplaces fit TweetClaw when the contribution is a reusable evidence
+  workflow and TweetClaw/Xquik stay optional configured sources.
 
 ## Reporting Checklist
 
