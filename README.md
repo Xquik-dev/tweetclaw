@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/@xquik/tweetclaw)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![npm downloads](https://img.shields.io/npm/dm/@xquik/tweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw)
+![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw.svg)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg?url=https%3A%2F%2Fgithub.com%2FXquik-dev%2Ftweetclaw)](https://deepwiki.com/Xquik-dev/tweetclaw)
 [![Context7](https://img.shields.io/badge/Context7-agent_docs-059669)](https://context7.com/xquik-dev/tweetclaw)
 [![Skills.sh](https://skills.sh/b/xquik-dev/tweetclaw)](https://skills.sh/xquik-dev/tweetclaw)

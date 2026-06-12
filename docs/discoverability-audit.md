@@ -195,22 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 15:12 UTC: model/effort selectors unavailable. Rechecked the
+- 2026-06-12 15:32 UTC: model/effort selectors unavailable. Rechecked the
   current Codex automation manual.
-- Existing PR repairs: exact readbacks found no safe repairable maintainer
-  request, review, CI, conflict, DCO, CLA, or generated-file drift.
-- Fresh PR opened: `arvindrk/twitter-agent#13`
-  https://github.com/arvindrk/twitter-agent/pull/13. It adds optional
-  `RESEARCH_CONTEXT_FILE` support so the daily researcher can verify a local
-  reviewed X/Twitter source packet, with a TweetClaw evidence example.
-  Readback: open, mergeable, target-owned Vercel auth failure only.
-- Screened blockers and notes: prior skill, registry, and OpenClaw targets
-  remain duplicate or no-license blocked; details are archived. The existing
-  `kriptoburak/twitter-agent` fork had the wrong parent, so
-  `kriptoburak/arvindrk-twitter-agent` was created and verified.
-- Durable lessons: `arvindrk/twitter-agent#13` is now duplicate-blocked for
-  future TweetClaw submissions. If a fork name is occupied by another upstream
-  fork network, create a distinct correctly parented fork before pushing.
+- Existing PR repairs: exact readbacks of 100 open authored PRs found no safe
+  repairable maintainer request, review, CI, conflict, DCO, CLA, or generated
+  drift. Target-owned Vercel auth failures remain non-actionable.
+- Fresh PR opened: `WendyK-LS/omni-image-studio-skill#1`
+  https://github.com/WendyK-LS/omni-image-studio-skill/pull/1. It adds an
+  X/Twitter source-image workflow example and skill boundary guidance for
+  source-led image assets. Readback: open, mergeable, no comments or checks.
+- Screened blockers and notes: media-skill, registry, validator, and social
+  skill targets were duplicate, no-license, dependency, or policy blocked;
+  details are archived.
+- Public hygiene: fixed the README GitHub-stars badge to the canonical SVG URL.
+  Final TweetClaw links, audit, build, artifact, and full checks passed.
+- Durable lessons: `WendyK-LS/omni-image-studio-skill#1` is now
+  duplicate-blocked for future TweetClaw submissions. Image-skill targets are
+  useful when TweetClaw only supplies reviewed source context.
 
 ## Reporting Checklist
 
