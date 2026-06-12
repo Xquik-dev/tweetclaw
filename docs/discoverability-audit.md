@@ -207,8 +207,9 @@ archive, before any outreach or duplicate decision.
   overrides, debugging, and ClawHub skill-format docs remain compatible.
 - Target validation passed whitespace, handled links, script syntax, fork-parent
   checks, public-hygiene scan, and PR readback `MERGEABLE`/`CLEAN`/no checks.
-  TweetClaw links, package URLs, omit-dev npm audit, build, OpenClaw fitness,
-  package artifact, and full checks passed.
+  TweetClaw links, package URLs, audit, build, OpenClaw fitness, package
+  artifact, and full checks passed. Security follow-up updated `tsx` to
+  `4.22.4` and `esbuild` to `0.28.1`.
 - Durable lesson: `sanjeevneo/xpull#2` is duplicate-blocked. Public X/Twitter
   pull skills fit TweetClaw only as a separate account-backed companion.
 
