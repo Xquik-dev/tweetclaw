@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 20:50 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 22:36 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,21 +194,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 21:48 UTC: model/effort selectors unavailable. PR monitoring read
-  100 open authored PRs plus 37 thread readbacks; no current-head repair was
-  needed. Broad authenticated code search hit rate limit and stopped.
-- Crawler-first discovery screened 6 skill/social hits and 0 framework hits.
+- 2026-06-12 22:15 UTC: model/effort selectors unavailable. PR monitoring read
+  100 authored PRs plus 38 thread readbacks. Repaired
+  https://github.com/antstudiocz/ant-marketplace/pull/37 with action-gate copy
+  and posted maintainer follow-up.
+- Crawler-first discovery screened 21 skill/social hits and 0 tooling hits.
   Duplicate and license blockers were archived. New PR:
-  https://github.com/the-bao/skills-registry/pull/2
-  adds a README TweetClaw GitHub import example and fixes target link hygiene.
-- OpenClaw docs/npm checked 2026-06-12 21:59 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; install, skills, manifest, permission, tool-plugin,
-  override, debugging, and ClawHub skill-format docs remain compatible.
-- Target validation passed whitespace, README links with localhost ignored,
-  fork-parent check, and PR readback `MERGEABLE`/`CLEAN`/no checks. TweetClaw
-  public links, package URLs, and omit-dev npm audit passed.
-- Durable lesson: `the-bao/skills-registry#2` is duplicate-blocked. Recursive
-  skill registries fit source-repo import examples; fix handled link hygiene.
+  https://github.com/sanjeevneo/xpull/pull/2 adds a TweetClaw companion workflow
+  note for account-backed or approval-gated X/Twitter work.
+- OpenClaw docs/npm checked 2026-06-12 22:36 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; install, skills, manifest, permissions, tool-plugin,
+  overrides, debugging, and ClawHub skill-format docs remain compatible.
+- Target validation passed whitespace, handled links, script syntax, fork-parent
+  checks, public-hygiene scan, and PR readback `MERGEABLE`/`CLEAN`/no checks.
+  TweetClaw links, package URLs, omit-dev npm audit, build, OpenClaw fitness,
+  package artifact, and full checks passed.
+- Durable lesson: `sanjeevneo/xpull#2` is duplicate-blocked. Public X/Twitter
+  pull skills fit TweetClaw only as a separate account-backed companion.
 
 ## Reporting Checklist
 
