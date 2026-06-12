@@ -195,22 +195,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 01:58 UTC: model/effort selectors unavailable. Broad crawler found
+- 2026-06-12 02:10 UTC: model/effort selectors unavailable. Broad crawler found
   25 known lanes; focused skill crawl found none.
-- Exact readbacks covered 300 open authored PRs. No safe repair remained:
-  `Sup4ikX/skillhub-cli#1` Kilo passed, old bot threads were already repaired,
-  and other blockers were target-owned auth/Snyk/review gates or no-license
-  conflicts.
-- Fresh PR: `timBrockman/prompt-skill-eval#2` adds a tested
-  `tweetclaw_workflow` skill and README entry for TweetClaw X/Twitter planning,
-  source-collection jobs, approval-gated write actions, secret handling, MCP,
-  and OpenClaw plugin routing.
+- Exact readbacks covered 300 open authored PRs. Repaired `astra-sh/qvr#256`
+  with block-style metadata coverage and alias-loop cleanup, pushed `ad4e652`,
+  and replied. Other flagged items were target-owned, stale, pending, or already
+  repaired.
+- Fresh PR: `KooshaPari/Agentora#68` adds a runnable Rust
+  `tweetclaw_workflow` skill example plus README link for TweetClaw X/Twitter
+  source-collection jobs and approval-gated account actions.
+- Agentora validation and derive follow-up `903a528` passed example, fmt, tests,
+  clippy, diff, hygiene, and link checks. README has a pre-existing crates.io
+  404. CodeRabbit approved first head, latest review rate-limited, and Kilo
+  sandbox failed.
 - OpenClaw docs, ClawHub, npm, TweetClaw build, fitness, version, package,
   memory, link, hygiene, and full checks passed. `openclaw` `2026.6.5`; beta
   `2026.6.5-beta.6`; TweetClaw npm `1.6.31`; source `1.6.32`; audit still only
   known nested OpenClaw `hono`.
-- Prompt lesson: duplicate-block `timBrockman/prompt-skill-eval`; prompt-skill
-  targets need deterministic tests for safety, source, and approval boundaries.
+- Prompt lesson: duplicate-block `KooshaPari/Agentora`; prefer runnable
+  examples with no new default dependencies.
 
 ## Reporting Checklist
 
