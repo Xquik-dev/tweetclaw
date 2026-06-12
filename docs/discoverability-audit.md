@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 04:09 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 04:32 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   permission requests, tool plugins, install overrides, ClawHub, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -195,19 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 04:09 UTC: model/effort selectors unavailable. Broad and focused
-  crawler passes completed from Xquik; exact readbacks covered 300 authored PRs.
-- `Agentora#68` current head already fixed separator handling and passed repeat
-  validation. `oh-my-skills#272` is still blocked by missing target terms.
-- Opened `6missedcalls/personal-finance-skill#2`:
-  https://github.com/6missedcalls/personal-finance-skill/pull/2. It adds a
-  reviewed TweetClaw source-evidence packet workflow, a JSON example, and
-  target README link repairs; final readback is `MERGEABLE`.
+- 2026-06-12 04:32 UTC: model/effort selectors unavailable. Broad and focused
+  crawler passes completed from Xquik; exact readbacks covered 300 authored PRs
+  with no repairable blocker.
+- Opened `kesslerio/finance-news-openclaw-skill#128`:
+  https://github.com/kesslerio/finance-news-openclaw-skill/pull/128. It adds
+  optional reviewed external context packets, a TweetClaw X/Twitter packet
+  example, prompt hardening for social context, tests, docs, and a local
+  context-file ignore rule; Codex bot feedback was fixed.
+- Screened crawler and search lanes including `hashgraph-online`,
+  `chatmcp/mcpso`, `Kamalnrf/claude-plugins`, `man0l/ai-directories`,
+  `agentic-community/mcp-gateway-registry`, OpenClaw social skills, and finance
+  skills; blockers were duplicate history, issue-only paths, missing license,
+  or lower fit.
 - OpenClaw current docs and npm metadata remain aligned with TweetClaw source.
   TweetClaw link, memory, build, fitness, package, and hygiene checks passed.
 - Prompt lesson: finance and research targets should keep TweetClaw upstream as
-  reviewed source evidence and leave financial interpretation plus actions to
-  the target workflow and approval gates.
+  reviewed public source context and leave interpretation plus actions to the
+  target workflow and approval gates.
 
 ## Reporting Checklist
 
