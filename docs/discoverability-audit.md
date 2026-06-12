@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 05:43 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 05:54 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
   permission requests, tool plugins, install overrides, ClawHub, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -195,20 +195,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 05:43 UTC: model/effort selectors unavailable. Xquik crawler
-  passes ran; exact readbacks covered 300 authored PRs with no safe repair.
-- No repair was safe: flags were target-owned checks, old bot text, review
-  gates, closed PRs, or no-license conflicts.
-- Opened `paperclipinc/openclaw-operator#543`:
-  https://github.com/paperclipinc/openclaw-operator/pull/543. It follows a
-  maintainer request from closed PR 539 and clarifies plugin ClawHub installs.
-- Screened crawler lanes plus `BlazeUp`, `Kamalnrf`, `poweredbyai`, and
-  `paperclipinc`; blockers were duplicate history, missing license, policy,
-  generated content, issue-only history, or prior PR.
-- OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target README links,
-  target hygiene, and docs-only validation passed.
-- Prompt lesson: when a TweetClaw PR is closed with a maintainer-requested
-  target docs gap, a narrow follow-up repair builds trust without re-pitching.
+- 2026-06-12 05:54 UTC: model/effort selectors unavailable. Crawler passes ran;
+  exact readbacks covered 315 PRs.
+- Repaired `Aqmar777/openclaw-competitive-intel#1` and
+  `Garenaof2462/browser-ops#1`; both are mergeable after README conflict
+  repairs and validation comments.
+- Opened `kevinho/clawfeed#62`:
+  https://github.com/kevinho/clawfeed/pull/62. It documents reviewed
+  TweetClaw X/Twitter source packets for ClawFeed `custom_api` digests.
+- OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target docs links,
+  lint, hygiene, build, fitness, package, and `check:all` passed.
+- Prompt lesson: digest apps are good fits when TweetClaw stays a reviewed read
+  source and account actions stay outside automatic digest generation.
 
 ## Reporting Checklist
 
