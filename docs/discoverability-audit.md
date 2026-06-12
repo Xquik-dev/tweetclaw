@@ -195,22 +195,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 16:41 UTC: model/effort selectors unavailable; Codex manual was
-  current. Readbacks covered 211 selected PR URLs. Repaired `astra-sh/qvr#256`
-  maintainer quality/docs request and `tongchen92/xsquared#2` conflict; qvr
-  later merged with all CI checks passing.
-- Fresh PR opened: `Crawlora-org/crawlora-skills#1`
-  https://github.com/Crawlora-org/crawlora-skills/pull/1. It clarifies that
-  Crawlora has no X/Twitter endpoints yet and points OpenClaw users to
-  `npm:@xquik/tweetclaw@1.6.31` for tweet scraping/search, posting, media,
-  monitors, webhooks, DMs, followers, lookup, and giveaway inputs.
-- Screened blockers: `weak-fox/openclaw-offline-seed`, `redf0x1/camofox-browser`,
-  and `composio-community/awesome-openclaw-plugins` were duplicate-blocked by
-  existing TweetClaw PRs.
-- Hygiene and validation: qvr, xsquared, Crawlora, OpenClaw docs/npm, TweetClaw
-  links, audit, build, fitness, artifact, and full checks passed.
-- Durable lesson: `Crawlora-org/crawlora-skills#1` is now duplicate-blocked.
-  Coverage-boundary PRs are useful when a data skill lacks X/Twitter routes.
+- 2026-06-12 17:05 UTC: model/effort selectors unavailable; Codex manual was
+  current. Exact readbacks covered 147 authored and audit-tracked PR URLs.
+  Repaired `zeroaltitude/openclaw-plugins#15` maintainer review feedback and
+  `zhengyanglsun/openclaw-iflow-plugin#1` conflict before fresh outreach.
+- Fresh PR opened: `charlie947/social-media-skills#6`
+  https://github.com/charlie947/social-media-skills/pull/6. It adds TweetClaw
+  as an optional X/Twitter evidence source for the `niche-research` skill while
+  keeping the target responsible for research synthesis, voice, drafting, and
+  publishing decisions.
+- Screened blockers: `azeemkafridi/bulkpublish-ai-toolkit`,
+  `theaayushstha1/agentic-skills`, `win4r/x-post-cowork-claude-skill`, and
+  several fresh social skill repos lacked license metadata; `langchain-ai`
+  and prior awesome-agent-skill lanes were duplicate-blocked by existing
+  TweetClaw history.
+- Hygiene and validation: openclaw-plugins, iflow-plugin, social-media-skills,
+  OpenClaw docs/npm, TweetClaw links, audit, build, fitness, artifact, and full
+  checks passed.
+- Durable lesson: `charlie947/social-media-skills#6` is now duplicate-blocked.
+  Niche research skills are good targets when TweetClaw stays source evidence
+  only and the host skill keeps synthesis and publication responsibility.
 
 ## Reporting Checklist
 
