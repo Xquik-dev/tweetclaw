@@ -49,10 +49,9 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 18:25 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 18:46 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
-  plugin SDK, install overrides, ClawHub, validation, testing, dependency
-  resolution, inventory, and debugging.
+  plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -195,25 +194,28 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 18:25 UTC: model/effort selectors unavailable. Crawler returned
-  43 skill/social opportunities. Exact readbacks across 30 recent authored PRs
-  found no repairable current-head request, conflict, DCO, CLA, or failing
-  check.
-- Fresh PR opened: `SpillwaveSolutions/running-marketing-campaigns-agent-skill#17`
-  https://github.com/SpillwaveSolutions/running-marketing-campaigns-agent-skill/pull/17.
-  It adds optional TweetClaw X/Twitter source evidence, keeps strategy,
-  calendars, UTMs, tactics, and measurement in the campaign skill, fixes one
-  local SKILL anchor, and adds the xquik.com NHS badge.
-- Screened blockers: `mvanhorn/last30days-skill` and direct X/Twitter skill
-  lanes remained duplicate or lower fit; `hyperfx-ai/marketing-skills` stayed
-  prior-history blocked; several social-skill lanes lacked license metadata.
-- Hygiene and validation: target whitespace, Python compile, changed-link, NHS
-  link, and public-hygiene checks passed. Target README still has pre-existing
-  SkillzWave endpoint failures. OpenClaw docs/npm and TweetClaw checks passed.
-- Durable lesson: `SpillwaveSolutions/running-marketing-campaigns-agent-skill#17`
-  is now duplicate-blocked. Campaign skills are good targets when TweetClaw is
-  source evidence, not the campaign strategy, copy, scheduling, publishing, or
-  analytics layer.
+- 2026-06-12 18:46 UTC: model/effort selectors unavailable. Authored PR
+  readbacks found no current-head repair. `msdakot/ai-foundary#1` CodeRabbit
+  comments were stale against head `59ad767`.
+- Crawler returned 26 skill/social opportunities. Fresh PR opened:
+  `alexclowe/awesome-copilot-cowork-plugins#1`
+  https://github.com/alexclowe/awesome-copilot-cowork-plugins/pull/1.
+  It adds optional TweetClaw X/Twitter evidence guidance to Copilot Cowork
+  social analytics and content skills while keeping analysis, drafting,
+  publishing, monitors, webhooks, and draws in target workflows or approval
+  gates.
+- Screened blockers: `aimerge-studio/bip-skills` and
+  `clairelin1994/founder-story-content` already had open TweetClaw PRs;
+  `AINightCoder/claude-code-social-skills` lacked license metadata;
+  direct scraper lanes `ythx-101/x-tweet-fetcher` and
+  `alienrelics/x-scraper-toolkit` were lower fit after one high-fit skill PR.
+- Validation: target whitespace, manifest JSON parse, changed-link checks,
+  TweetClaw links, omit-dev audit, build, OpenClaw fitness, package artifact,
+  and `npm run check:all` passed. Prompt: 14,530 bytes.
+- Durable lesson: `alexclowe/awesome-copilot-cowork-plugins#1` is now
+  duplicate-blocked. Copilot Cowork social skills can accept TweetClaw only as
+  optional source evidence, not as the analysis, drafting, scheduling, or
+  publishing layer.
 
 ## Reporting Checklist
 

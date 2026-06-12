@@ -6,8 +6,8 @@
 ![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw.svg)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg?url=https%3A%2F%2Fgithub.com%2FXquik-dev%2Ftweetclaw)](https://deepwiki.com/Xquik-dev/tweetclaw)
 [![Context7](https://img.shields.io/badge/Context7-agent_docs-059669)](https://context7.com/xquik-dev/tweetclaw)
-[![Skills.sh](https://skills.sh/b/xquik-dev/tweetclaw)](https://skills.sh/xquik-dev/tweetclaw)
-[![Skills.sh x-twitter-scraper Skill](https://skills.sh/b/xquik-dev/x-twitter-scraper)](https://skills.sh/xquik-dev/x-twitter-scraper)
+[![Skills.sh](https://www.skills.sh/b/xquik-dev/tweetclaw)](https://www.skills.sh/xquik-dev/tweetclaw)
+[![Skills.sh x-twitter-scraper Skill](https://www.skills.sh/b/xquik-dev/x-twitter-scraper)](https://www.skills.sh/xquik-dev/x-twitter-scraper)
 [![ClawHub](https://img.shields.io/badge/ClawHub-TweetClaw-2563eb)](https://clawhub.ai/plugins/@xquik/tweetclaw)
 [![Smithery](https://smithery.ai/badge/github/Xquik-dev/tweetclaw)](https://smithery.ai/servers/github/Xquik-dev/tweetclaw)
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
@@ -49,7 +49,7 @@ source instead of `openclaw plugins install` or `openclaw plugins update`.
 
 TweetClaw can be installed before credentials are configured. Until you add an API key or MPP signing key, the free `explore` catalog remains available and live API calls return setup guidance instead of failing plugin installation.
 
-Agent-skill installers can also discover TweetClaw through [Skills.sh](https://skills.sh/xquik-dev/tweetclaw). This installs the packaged `SKILL.md` for agents that use skills directories; use the OpenClaw command above for the plugin runtime.
+Agent-skill installers can also discover TweetClaw through [Skills.sh](https://www.skills.sh/xquik-dev/tweetclaw). This installs the packaged `SKILL.md` for agents that use skills directories; use the OpenClaw command above for the plugin runtime.
 
 ```bash
 npx skills add xquik-dev/tweetclaw
