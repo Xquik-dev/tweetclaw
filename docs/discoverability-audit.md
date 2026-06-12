@@ -197,7 +197,8 @@ archive, before any outreach or duplicate decision.
 - Earlier outreach and repair details are archived.
 - 2026-06-12 16:41 UTC: model/effort selectors unavailable; Codex manual was
   current. Readbacks covered 211 selected PR URLs. Repaired `astra-sh/qvr#256`
-  maintainer quality/docs request and `tongchen92/xsquared#2` conflict.
+  maintainer quality/docs request and `tongchen92/xsquared#2` conflict; qvr
+  later merged with all CI checks passing.
 - Fresh PR opened: `Crawlora-org/crawlora-skills#1`
   https://github.com/Crawlora-org/crawlora-skills/pull/1. It clarifies that
   Crawlora has no X/Twitter endpoints yet and points OpenClaw users to
