@@ -203,9 +203,9 @@ archive, before any outreach or duplicate decision.
   maintainer-actionable repair blocked outreach.
 - Opened `framerslab/agentos-skills-registry#1`:
   https://github.com/framerslab/agentos-skills-registry/pull/1. It adds a
-  TweetClaw OpenClaw `CAPABILITY.yaml` example for AgentOS workspace capability
-  discovery with explicit `XQUIK_API_KEY` separation and side-effectful
-  publishing boundaries.
+  TweetClaw OpenClaw `CAPABILITY.yaml` example for AgentOS capability discovery,
+  then repaired bot findings for approval wording and the required `explore`
+  plus `tweetclaw` tools.
 - OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target links, target
   hygiene, build, fitness, package checks, and `check:all` passed.
 - Prompt lesson: SDK and framework repos can be useful placement targets when
