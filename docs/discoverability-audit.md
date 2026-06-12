@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 11:00 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 11:22 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -196,23 +196,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 11:00 UTC: model/effort selectors unavailable. Crawler returned
-  80 opportunities. Recent authored PR readbacks found 4 dirty in-scope PRs.
-- Repaired dirty licensed PRs: `Hairy-jumper134/last30days-cn-skill#1`,
-  `Calliopeperpendicular906/openclaw-skills#1`, and
-  `AbdNour627/awesome-openclaw-configs#1`. `reall8164/wechat-openclaw-plugin#1`
-  stayed blocked by missing license metadata.
-- Opened `tankpkg/tank#477`: https://github.com/tankpkg/tank/pull/477. It adds
-  scanner-safe scoped npm, GitHub folder, and ClawHub URL examples, plus a
-  TweetClaw scoped npm regression test.
-- Target validation passed focused Tank install, scanner test, formatting, link,
-  diff, and public-hygiene checks. Target Vercel auth contexts are not
-  branch-actionable.
-- OpenClaw docs, npm metadata, TweetClaw links, target links, duplicate checks,
-  fork parent checks, and prompt size checks passed or matched known upstream
-  blockers.
-- Prompt lesson: scanner frameworks are useful when TweetClaw validates package
-  URL handling instead of acting as a thin listing.
+- 2026-06-12 11:22 UTC: model/effort selectors unavailable. Crawler returned
+  80 opportunities. Exact readbacks found no actionable maintainer request.
+- Repaired 5 dirty MIT PRs:
+  `NightFury02/ClawTeam#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`,
+  `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1`, and
+  `jamald33n/tweetsave-mcp#2`. Four dirty PRs stayed license-blocked.
+- Opened `dutifuldev/skillflag#21`:
+  https://github.com/dutifuldev/skillflag/pull/21. It adds OpenClaw plugin
+  package Skillflag guidance using TweetClaw as the package-shape example and
+  repairs two spec link-check blockers.
+- Target validation passed npm install from lockfile, Prettier, Markdown links,
+  ESLint, Node tests, whitespace, duplicate, fork, and public-hygiene checks.
+- OpenClaw docs, npm metadata, TweetClaw links, target links, prompt size, and
+  memory size checks passed or matched known upstream blockers.
+- Prompt lesson: package-skill tooling is a good fresh lane when TweetClaw is a
+  real packaged-skill example and the target owns export/install semantics.
 
 ## Reporting Checklist
 
