@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 11:22 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 11:50 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -196,23 +196,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 11:22 UTC: model/effort selectors unavailable. Crawler returned
-  80 opportunities. Exact readbacks found no actionable maintainer request.
-- Repaired 5 dirty MIT PRs:
-  `NightFury02/ClawTeam#1`, `Aqmar777/openclaw-competitive-intel#1`,
-  `Aditya923-c/xpoz-agent-skills#1`,
-  `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1`, and
-  `jamald33n/tweetsave-mcp#2`. Four dirty PRs stayed license-blocked.
-- Opened `dutifuldev/skillflag#21`:
-  https://github.com/dutifuldev/skillflag/pull/21. It adds OpenClaw plugin
-  package Skillflag guidance using TweetClaw as the package-shape example and
-  repairs two spec link-check blockers.
-- Target validation passed npm install from lockfile, Prettier, Markdown links,
-  ESLint, Node tests, whitespace, duplicate, fork, and public-hygiene checks.
-- OpenClaw docs, npm metadata, TweetClaw links, target links, prompt size, and
-  memory size checks passed or matched known upstream blockers.
-- Prompt lesson: package-skill tooling is a good fresh lane when TweetClaw is a
-  real packaged-skill example and the target owns export/install semantics.
+- 2026-06-12 11:50 UTC: model/effort selectors unavailable. Crawler returned
+  80 opportunities. Exact PR readbacks found no safe repair blocking outreach.
+- Opened `stacklok/toolhive-registry-server#816`:
+  https://github.com/stacklok/toolhive-registry-server/pull/816. It adds a
+  pinned TweetClaw ToolHive skill fixture and guards skill ingestion in tests.
+- Repaired a valid Codex review by removing the moving Git ref and asserting the
+  pinned commit; final head `7968e94`.
+- Target checks passed focused Go tests, JSON parse, links, whitespace, fork,
+  duplicate, and public-hygiene gates. Full target `go test ./...` is
+  Docker/Testcontainers blocked locally.
+- TweetClaw product surfaces needed no change. Full details and prompt lessons
+  are archived.
 
 ## Reporting Checklist
 
