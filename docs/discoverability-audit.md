@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 14:08 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 14:29 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -195,23 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 14:08 UTC: model/effort selectors unavailable. Current Codex
+- 2026-06-12 14:29 UTC: model/effort selectors unavailable. Current Codex
   manual remains current for same-thread heartbeat automations.
-- Repaired conflicts in `Aditya923-c/xpoz-agent-skills#1`,
-  `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1`,
-  `jamald33n/tweetsave-mcp#2`, and `WilliamAlexYT/x-research-skill#1`.
-  Target-owned Vercel authorization blockers remained non-actionable.
-- Fresh PR opened: `wrenfix/oag#3` https://github.com/wrenfix/oag/pull/3. It
-  adds an `oag` registry skill asset for TweetClaw with npm OpenClaw install,
-  runtime inspection, optional tool allowlisting, credential boundaries, and
-  one-time approval rules.
-- Screened blockers: `librefang/librefang-registry` duplicate,
-  `opena2a-org/ai-trust` no license, `api-evangelist/smithery` no license, and
-  `browsing-skills/browsing-skills` duplicate. `CloudLLM-ai/mentisdb` remains a
+- Repaired conflicts in `Garenaof2462/browser-ops#1`,
+  `Calliopeperpendicular906/openclaw-skills#1`,
+  `Aqmar777/openclaw-competitive-intel#1`, and
+  `AbdNour627/awesome-openclaw-configs#1`; all read back clean and mergeable.
+  `AyoubKezzoula/hermes-autonomous-server#1` stayed blocked by missing license.
+- Fresh PR opened: `msdakot/ai-foundary#1`
+  https://github.com/msdakot/ai-foundary/pull/1. It adds a
+  `tweetclaw-social-research` skill, registry entry, and README row for public
+  X/Twitter evidence collection with TweetClaw and approval-gated writes.
+- Screened blockers: `browsing-skills/browsing-skills` duplicate,
+  `SkillsCatalog/registry` existing PR, multiple no-license skill registries,
+  and `astra-sh/qvr` prior PR history. `the-bao/skills-registry` remains a
   licensed future lane.
-- Durable lesson: `wrenfix/oag#3` is now duplicate-blocked. Always verify
-  `headRepository.nameWithOwner` before repairing old forks; `x-research-skill`
-  used `kriptoburak/william-x-research-skill`.
+- Durable lesson: `msdakot/ai-foundary#1` is now duplicate-blocked. Its
+  `.gitignore` ignores `evals/`, so do not force eval fixtures there without
+  maintainer direction; keep target searches bounded to the cloned repo.
 
 ## Reporting Checklist
 
