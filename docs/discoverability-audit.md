@@ -194,25 +194,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 21:27 UTC: model/effort selectors unavailable. PR monitoring read
-  100 open authored PRs; remaining non-clean items were stale bot reviews,
-  false positives, Vercel auth, or target-owner queues.
-- Crawler-first discovery screened 3 no-license or nonstandard-license social
-  skill targets. Targeted follow-up found
-  `rediumvex/social-media-caption-generator-claude` MIT, active, and
-  duplicate-clean. New PR:
-  https://github.com/rediumvex/social-media-caption-generator-claude/pull/1
-  adds TweetClaw/X source-packet input guidance to README and `SKILL.md`.
-- OpenClaw docs/npm checked 2026-06-12 21:34 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; CLI plugin/skill, manage-plugin, permission, tool-plugin,
-  manifest, install-override, debugging, and ClawHub skill-format docs remain
-  compatible with explicit `npm:` install and runtime inspection wording.
-- Target validation passed whitespace, target links, added-line hygiene, and
-  typo scans. Full markdownlint and typos still have pre-existing target
-  style/brand findings. TweetClaw public links and package URLs passed.
-- Durable lesson: `rediumvex/social-media-caption-generator-claude#1` is
-  duplicate-blocked. Caption skills are useful only when TweetClaw is optional
-  source context and the target keeps drafting, CTA, and platform adaptation.
+- 2026-06-12 21:48 UTC: model/effort selectors unavailable. PR monitoring read
+  100 open authored PRs plus 37 thread readbacks; no current-head repair was
+  needed. Broad authenticated code search hit rate limit and stopped.
+- Crawler-first discovery screened 6 skill/social hits and 0 framework hits.
+  Duplicate and license blockers were archived. New PR:
+  https://github.com/the-bao/skills-registry/pull/2
+  adds a README TweetClaw GitHub import example and fixes target link hygiene.
+- OpenClaw docs/npm checked 2026-06-12 21:59 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; install, skills, manifest, permission, tool-plugin,
+  override, debugging, and ClawHub skill-format docs remain compatible.
+- Target validation passed whitespace, README links with localhost ignored,
+  fork-parent check, and PR readback `MERGEABLE`/`CLEAN`/no checks. TweetClaw
+  public links, package URLs, and omit-dev npm audit passed.
+- Durable lesson: `the-bao/skills-registry#2` is duplicate-blocked. Recursive
+  skill registries fit source-repo import examples; fix handled link hygiene.
 
 ## Reporting Checklist
 
