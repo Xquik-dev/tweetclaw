@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-11 22:34 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-11 23:53 UTC: latest
   `2026.6.5`, beta `2026.6.5-beta.6`; CLI plugins, manifest, permissions,
   SDK, tool plugins, install overrides, ClawHub, skills, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-11 22:34 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-11 23:53 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -195,19 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-11 23:29 UTC: model/effort selectors were unavailable. Crawler
-  returned 25 mostly known lanes; focused social-skill crawler returned none.
-- Exact readbacks covered 107 PRs with no safe repair. Existing bot comments on
-  current TweetClaw/OpenClaw/social outreach were already addressed or blocked.
-- Fresh PR: `lu-geissel/edelstein-skills#1` adds optional X/Twitter source
-  evidence guidance to `brand-strategist`, keeps TweetClaw/OpenClaw/Xquik as an
-  approved collection source only, and keeps write-like actions separate.
-- OpenClaw current docs moved older permission and SDK URLs to
-  `/plugins/plugin-permission-requests` and `/plugins/sdk-runtime`; source
-  remains aligned, with no product change needed.
-- TweetClaw build, fitness, version, package, public link, memory, hygiene, and
-  full checks passed; npm audit still reports only the known nested OpenClaw
-  `hono` advisory.
+- 2026-06-11 23:53 UTC: model/effort selectors were unavailable. Crawler
+  returned 25 mostly known lanes; focused skill and social crawlers returned
+  none.
+- Exact readbacks covered 124 PRs. Repaired `agusnieto77/TweetScraperR#9`:
+  added issue `#10`, exact-limit pagination, dedupe, core-column ordering, and
+  a status comment. R tooling and a required `type:*` label are target blockers.
+- Fresh PR: `jgmakko2/openclaw-skill-content-research-pipeline#1` adds optional
+  X/Twitter public-evidence source guidance, with TweetClaw/OpenClaw/Xquik as
+  read-only collection options and write-like actions outside the workflow.
+- OpenClaw docs, ClawHub, and registry metadata returned HTTP 200. `openclaw`
+  latest is `2026.6.5`; TweetClaw npm is `1.6.31`; source is `1.6.32`.
+- Target validation, TweetClaw build, fitness, version, package, public links,
+  memory, hygiene, and full checks passed. npm audit still reports only the
+  known nested OpenClaw `hono` advisory.
+- Prompt lesson: content-research skills are a good read-only evidence lane;
+  future PR bodies with inline code should use a body file to avoid shell
+  expansion. Duplicate-block the content-research pipeline for this lane.
 
 ## Reporting Checklist
 
