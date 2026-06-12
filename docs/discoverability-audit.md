@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 22:36 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 23:01 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,24 +194,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 22:15 UTC: model/effort selectors unavailable. PR monitoring read
-  100 authored PRs plus 38 thread readbacks. Repaired
-  https://github.com/antstudiocz/ant-marketplace/pull/37 with action-gate copy
-  and posted maintainer follow-up.
-- Crawler-first discovery screened 21 skill/social hits and 0 tooling hits.
-  Duplicate and license blockers were archived. New PR:
-  https://github.com/sanjeevneo/xpull/pull/2 adds a TweetClaw companion workflow
-  note for account-backed or approval-gated X/Twitter work.
-- OpenClaw docs/npm checked 2026-06-12 22:36 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; install, skills, manifest, permissions, tool-plugin,
-  overrides, debugging, and ClawHub skill-format docs remain compatible.
-- Target validation passed whitespace, handled links, script syntax, fork-parent
-  checks, public-hygiene scan, and PR readback `MERGEABLE`/`CLEAN`/no checks.
-  TweetClaw links, package URLs, audit, build, OpenClaw fitness, package
-  artifact, and full checks passed. Security follow-up updated `tsx` to
-  `4.22.4` and `esbuild` to `0.28.1`.
-- Durable lesson: `sanjeevneo/xpull#2` is duplicate-blocked. Public X/Twitter
-  pull skills fit TweetClaw only as a separate account-backed companion.
+- 2026-06-12 23:01 UTC: model/effort selectors unavailable. PR monitoring read
+  100 authored PRs plus focused GraphQL threads. `mcp-skills-registry#10` and
+  `simota/agent-skills#39` already contained the requested fixes on current
+  heads, so no repair commit was needed.
+- Crawler-first discovery screened 14 skill/social hits and 0 tooling hits.
+  Duplicate, no-license, and prior-history blockers are archived. New PR:
+  https://github.com/d-wwei/superb-publisher/pull/1 adds optional TweetClaw
+  X/Twitter source context while keeping Superb Publisher responsible for final
+  publishing and confirmation gates.
+- OpenClaw docs/npm checked 2026-06-12 23:01 UTC: latest `2026.6.6`, beta
+  `2026.6.6-beta.2`; plugin install, permissions, tool-plugin, overrides,
+  debugging, and ClawHub skill-format docs remain compatible.
+- Target validation passed whitespace, handled Markdown links, npm metadata
+  readback, fork-parent checks, public-hygiene scan, and PR readback
+  `MERGEABLE`/`CLEAN`/no checks. TweetClaw validation passed links, audits,
+  build, OpenClaw fitness, package artifact, and full checks.
+- Durable lesson: `d-wwei/superb-publisher#1` is duplicate-blocked. Publishing
+  skills fit TweetClaw only as optional source evidence and approval context,
+  not as the final publisher.
 
 ## Reporting Checklist
 
