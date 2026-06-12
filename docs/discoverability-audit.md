@@ -49,9 +49,9 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 09:43 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 10:01 UTC: latest
   `2026.6.5`, beta `2026.6.6-beta.2`; CLI plugins, CLI skills, manifest,
-  current permission requests, hooks, tool plugins, install overrides,
+  current permission requests, current hooks, tool plugins, install overrides,
   ClawHub, plugin validation fixes, testing updates, dependency resolution,
   plugin internals, plugin inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Known blocker: GitHub Dependabot alerts 22-25 and local omit-dev npm audit
   still flag nested OpenClaw `hono` in `package-lock.json` as of
-  2026-06-12 09:43 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
+  2026-06-12 10:01 UTC. Track upstream OpenClaw issue/PR 91301/91303 until
   GitHub alerts clear or a maintainer-owned package refresh lands.
 
 ## GitHub-First Rule
@@ -96,8 +96,8 @@ archive, before any outreach or duplicate decision.
 
 ## Codex Automation Rule
 
-- Official Codex automation and approvals docs were checked on 2026-06-07;
-  detailed notes are archived.
+- Official Codex manual automation, model, and approvals docs were checked on
+  2026-06-12; detailed notes are archived.
 - Keep same-thread quiet autonomy, durable goal context, strict stop rules, and
   `DONT_NOTIFY` for successful, no-op, expected-blocker, maintenance, or audit
   runs.
@@ -197,21 +197,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 09:43 UTC: model/effort selectors unavailable. Crawler ran first;
-  focused proxy search hit short socket-closed pool outage. `gh search prs`
-  returned 1,000 of 1,039 open authored PRs; all-open GraphQL exact readback hit
-  GitHub 502/resource limits, so exact readbacks covered all recently updated
-  PRs plus the new PR. No safe maintainer-actionable repair blocked outreach.
-- Opened `Xzeroone/bird-mcp#1`:
-  https://github.com/Xzeroone/bird-mcp/pull/1. It adds a TweetClaw OpenClaw
-  companion path to Bird MCP docs and Kilo skill notes while keeping Bird as the
-  cookie-backed local MCP path and separating `AUTH_TOKEN`/`CT0` from Xquik API
-  key configuration.
+- 2026-06-12 10:01 UTC: model/effort selectors unavailable. Crawler ran first;
+  focused proxy search hit short socket-closed pool outage. Exact readbacks
+  covered all authored PRs updated since the prior heartbeat. No safe
+  maintainer-actionable repair blocked outreach.
+- Opened `framerslab/agentos-skills-registry#1`:
+  https://github.com/framerslab/agentos-skills-registry/pull/1. It adds a
+  TweetClaw OpenClaw `CAPABILITY.yaml` example for AgentOS workspace capability
+  discovery with explicit `XQUIK_API_KEY` separation and side-effectful
+  publishing boundaries.
 - OpenClaw docs, ClawHub, npm metadata, TweetClaw links, target links, target
   hygiene, build, fitness, package checks, and `check:all` passed.
-- Prompt lesson: direct X/Twitter MCP targets can fit when Bird or the target
-  stays primary and TweetClaw is only a separate approval-gated OpenClaw
-  companion.
+- Prompt lesson: SDK and framework repos can be useful placement targets when
+  TweetClaw appears as a runnable example that validates target APIs without
+  depending on unmerged catalog content.
 
 ## Reporting Checklist
 
