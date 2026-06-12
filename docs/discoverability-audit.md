@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 13:47 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 14:08 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest,
   permissions, hooks, tool plugins, install overrides, ClawHub, validation,
   testing, dependency resolution, inventory, and debugging.
@@ -195,22 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 13:47 UTC: model/effort selectors unavailable. Current Codex
+- 2026-06-12 14:08 UTC: model/effort selectors unavailable. Current Codex
   manual remains current for same-thread heartbeat automations.
-- Crawler returned 120 opportunities. Authored PR readbacks covered 100 hot PRs;
-  no maintainer request, review comment, CI failure, DCO, CLA, generated drift,
-  conflict, or valid bot finding safely blocked outreach.
-- Fresh PR opened: `ara-registry/spec#11`
-  https://github.com/ara-registry/spec/pull/11. It adds a schema-valid
-  TweetClaw skill manifest example with OpenClaw platform routing, links it from
-  the README, aligns API package-type examples with the schema enum, and removes
-  a dead `skillmd.org` link.
-- Screened blockers: `cosmicstack-labs/mercury-agent-skills` duplicate,
-  `luna-prompts/skillnote` duplicate, `SynapSync/skills-registry` no license,
-  `aiagenta2z/agtm` no license, and `BlazeUp-AI/Observal` prior policy block.
-- Durable lesson: `ara-registry/spec#11` is now duplicate-blocked. Registry spec
-  repos are useful when TweetClaw is a schema-valid manifest fixture and the
-  target owns package types, platform routing, validation, and API semantics.
+- Repaired conflicts in `Aditya923-c/xpoz-agent-skills#1`,
+  `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1`,
+  `jamald33n/tweetsave-mcp#2`, and `WilliamAlexYT/x-research-skill#1`.
+  Target-owned Vercel authorization blockers remained non-actionable.
+- Fresh PR opened: `wrenfix/oag#3` https://github.com/wrenfix/oag/pull/3. It
+  adds an `oag` registry skill asset for TweetClaw with npm OpenClaw install,
+  runtime inspection, optional tool allowlisting, credential boundaries, and
+  one-time approval rules.
+- Screened blockers: `librefang/librefang-registry` duplicate,
+  `opena2a-org/ai-trust` no license, `api-evangelist/smithery` no license, and
+  `browsing-skills/browsing-skills` duplicate. `CloudLLM-ai/mentisdb` remains a
+  licensed future lane.
+- Durable lesson: `wrenfix/oag#3` is now duplicate-blocked. Always verify
+  `headRepository.nameWithOwner` before repairing old forks; `x-research-skill`
+  used `kriptoburak/william-x-research-skill`.
 
 ## Reporting Checklist
 
