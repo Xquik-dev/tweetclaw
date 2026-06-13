@@ -195,24 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 20:48 UTC: model/effort selectors unavailable; normal `gh`,
-  crawler, git, npm, curl, and static checks used. TweetClaw/Xquik issues were
-  empty. Crawler returned 25 monitor candidates and no focused skill/tooling
-  hits. Proxy logs printed no protected values.
-- PR gate: a 200-PR readback script field mismatch was corrected, and a full
-  rerun that stalled was stopped; targeted exact readbacks covered 39 recent and
-  audit-tracked PRs. No safely repairable maintainer request, conflict, DCO/CLA
-  blocker, generated drift, current review finding, or fixable CI failure
-  remained. Known failures were target-owned or already explained.
-- New PR: https://github.com/ailabs-393/ai-labs-claude-skills/pull/3 adds
-  TweetClaw X/Twitter source-context guidance to `social-media-generator`, mirrors
-  packaged `dist`, and adds the xquik.com NHS badge in the existing badge strip.
+- 2026-06-13 21:20 UTC: model/effort selectors unavailable; no prompt edit.
+  Xquik had unrelated untracked proxy and X preflight files left untouched.
+  Crawler coverage returned 25 prior monitor candidates, 0 focused skill/tooling
+  hits, and no protected proxy values.
+- PR gate repaired `warlockoussama/twitter-cli#1` conflict and
+  `jayteealao/agent-skills#3` generated-map source drift. Remaining inspected
+  failures were target-owned or stale bot state.
+- New PR: https://github.com/Jamkris/everything-gemini-code/pull/91 adds
+  optional TweetClaw/OpenClaw tooling guidance to the X API skill. No NHS badge:
+  the target badge strip is project health/count metadata.
+- CodeRabbit requested `1.6.32`; registry evidence still shows npm latest
+  `1.6.31`, so the PR was replied to and left pinned to published npm.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. TweetClaw link checks, target link checks,
-  npm audits, OpenClaw fitness, memory check, and final `check:all` passed.
-- Lesson: drafting skills are good targets when TweetClaw is reviewed source
-  context for language, URLs, handles, timestamps, themes, and caveats while the
-  target owns final copy and account actions stay approval-gated elsewhere.
+  remains `1.6.31`, source `1.6.32`. Target tests, TweetClaw links, npm audits,
+  OpenClaw fitness, memory, and final `check:all` passed.
+- Lesson: API reference skills are good targets when TweetClaw is an optional
+  approved execution tool while the target keeps raw API ownership.
 
 ## Reporting Checklist
 
