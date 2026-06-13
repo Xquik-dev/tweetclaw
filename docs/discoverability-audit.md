@@ -204,7 +204,8 @@ archive, before any outreach or duplicate decision.
   safe repair blocker before outreach.
 - New PR: https://github.com/AresChenAI/x-followback-audit/pull/1 adds
   TweetClaw-style camelCase export aliases, a synthetic fixture, and docs that
-  keep followback audits offline, read-only, and credential-free.
+  keep followback audits offline, read-only, and credential-free. Current head
+  `236d283` is mergeable with no comments, reviews, or checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
   `1.6.31` while source remains `1.6.32`. Current docs, canonical links,
   audits, build, OpenClaw fitness, package artifact, and full checks passed.
