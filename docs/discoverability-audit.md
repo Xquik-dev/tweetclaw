@@ -195,22 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 17:46 UTC: model/effort selectors unavailable; normal `gh` used.
-  TweetClaw/Xquik issues empty. Crawler screens found 4 fresh skill repos;
-  exact duplicate, license, policy, and fit checks selected
-  `FloydTang/trade-customer-intel`.
-- PR gate read back 200 authored PRs. Current failures were target-owned or
-  already explained; `drtamar/agent-skills#1` review text matched current head,
-  so no repair commit was needed before fresh outreach.
-- New PR: https://github.com/FloydTang/trade-customer-intel/pull/2 adds a
-  TweetClaw X/Twitter source-evidence fixture and OpenClaw docs so reviewed
-  social signals can enter customer-intel reports without account actions.
+- 2026-06-13 18:07 UTC: model/effort selectors unavailable; normal `gh` used.
+  TweetClaw/Xquik issues empty. Crawler screens returned self or 0 candidates,
+  so post-crawler web and repo checks screened fresh skill and research lanes.
+- PR gate read back 200 authored PRs. Current failures were target-owned Vercel,
+  base-branch automation, or no-check states; no current-head review, conflict,
+  DCO, CLA, generated-file, or CI repair blocked outreach.
+- New PR: https://github.com/lovensky1992-wk/deep-research/pull/1 adds social
+  source-packet guidance so reviewed public X/Twitter exports can enter the
+  deep-research evidence store with original URLs, capture time, credibility,
+  and no account actions.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. Link checks, direct URL probes, target
-  validation, npm audits, build, OpenClaw fitness, package artifact, and final
+  remains `1.6.31`, source `1.6.32`. Target validation, link checks, direct URL
+  probes, npm audits, build, OpenClaw fitness, package artifact, and final
   `check:all` passed.
-- Lesson: customer-intel skills are good targets when TweetClaw stays optional
-  read-only evidence and the target owns identity, risk, and outreach judgment.
+- Lesson: generic research skills are good targets when TweetClaw stays an
+  optional public-source packet producer and the target owns synthesis,
+  citations, credibility, and cross-source verification.
 
 ## Reporting Checklist
 
