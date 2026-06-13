@@ -194,24 +194,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 00:14 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+- 2026-06-13 00:35 UTC: model/effort selectors unavailable. TweetClaw/Xquik
   issues were empty. PR monitoring read 100 authored PRs plus 29 GraphQL thread
-  readbacks; no current-head repair was safely needed.
+  readbacks; stale bot findings were already fixed, clarified, or target-owned.
 - Crawler-first discovery screened 30 skill/social hits and 7 tooling hits.
   Duplicate, no-license, direct-competitor, and prior-history blockers are
-  archived. New PR: https://github.com/agent-catalog/examples/pull/1 adds an
-  OpenClaw harness walkthrough for agent-catalog examples.
-- OpenClaw docs/npm checked 2026-06-13 00:14 UTC: latest `2026.6.6`, beta
-  `2026.6.6-beta.2`; plugin install, skills, permissions, tool-plugin,
-  overrides, debugging, and ClawHub skill-format docs remain compatible.
-- Target validation passed handled links, whitespace, duplicate checks,
-  fork-parent checks, public-hygiene scan, and PR readback `MERGEABLE` with no
-  checks. Target CLI verification is blocked by unpublished package names in
-  target docs. TweetClaw validation passed links, audits, build, OpenClaw
-  fitness, package artifact, full checks, and memory cap.
-- Durable lesson: `agent-catalog/examples#1` is duplicate-blocked. Ecosystem
-  example repos fit OpenClaw placement when the change improves native harness
-  consumption without forcing TweetClaw into unrelated catalog semantics.
+  archived. New PR: https://github.com/the-long-ride/skill-master/pull/1 adds
+  marketing-growth social evidence guidance and routes TweetClaw X/Twitter
+  evidence requests without making TweetClaw draft, approve, schedule, or
+  publish.
+- OpenClaw docs/npm checked 2026-06-13 00:35 UTC: `openclaw@2026.6.6`,
+  `clawhub@0.21.0`; specific docs and mirror passed. `docs.openclaw.ai/llms.txt`
+  timed out once.
+- Target validation passed `npm test`, `npm run verify`, `npm pack --dry-run`,
+  whitespace, fork-parent checks, public-hygiene scan, and PR readback
+  `MERGEABLE` with no checks. TweetClaw validation passed links, direct URL
+  checks, audits, build, OpenClaw fitness, package artifact, full checks, and
+  memory cap.
+- Durable lesson: `the-long-ride/skill-master#1` is duplicate-blocked. Skill
+  authoring catalogs fit when the change improves routing and evidence-source
+  boundaries rather than adding a product listing.
 
 ## Reporting Checklist
 
