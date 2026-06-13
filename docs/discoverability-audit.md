@@ -195,22 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 15:35 UTC: model/effort selectors unavailable; normal `gh` used.
+- 2026-06-13 15:56 UTC: model/effort selectors unavailable; normal `gh` used.
   TweetClaw and Xquik issues empty. Crawler monitor/tooling returned 0;
-  skill coverage returned 2 repos.
+  skill coverage returned one eligible relay-skill lane, one no-license repo,
+  and mostly duplicate-blocked social/X skill repeats.
 - PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA,
-  current-head bot findings, or generated drift. Failures were target labeler
-  config. `Tanvi030/Twitter-Analytics-Dashboard-Power-BI` lacks license terms.
-- New PR: https://github.com/ProfTrader/twitter-influencer-skill/pull/1 adds
-  public source-packet fallback docs, optional TweetClaw export guidance, safe
-  account-action boundaries, and stale API link repairs. Head `c9875dc` is
-  mergeable and clean with CodeRabbit success.
+  current-head bot findings, or generated drift. Failing checks were target
+  Vercel auth, base-branch labeler config, and one base-branch FindAPIs
+  automation error with a clarifying comment posted.
+- New PR: https://github.com/fa0311/twitter_api_safe_relay_skills/pull/1 adds
+  read-only source handoff guidance for public X/Twitter evidence and keeps
+  relay actions plus operator approval inside the target. Head `be4914b` is
+  mergeable and clean.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Link checks and package audits passed;
   npm web 403 and `xquik.com/mcp` 401 are expected blockers.
-- Durable lesson: influencer-drafting skills are good targets when TweetClaw
-  remains optional public evidence only. Keep drafting separate from posting,
-  replies, DMs, likes, follows, media, monitors, webhooks, and giveaways.
+- Durable lesson: relay and posting skills are good targets only when TweetClaw
+  stays optional read-only evidence and final actions stay under target
+  approval.
 
 ## Reporting Checklist
 
