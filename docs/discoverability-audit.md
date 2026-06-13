@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 14:22 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 14:53 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,24 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 14:32 UTC: model/effort selectors unavailable; normal `gh` used
-  because the runtime cannot pass `sandbox_permissions`. TweetClaw and Xquik
-  issues empty. Crawler monitor/tooling returned 0 opportunities; skill coverage
-  returned 52 repos and one fully new no-license blocker:
-  `jackleeio/bnbot-skill`.
-- PR gate read back 200 authored PRs. No conflicts required repair. Valid bot
-  notes were already addressed; failing checks were target-owned Vercel
-  authorization gates.
-- New PR: https://github.com/boltaai/bolta-skills/pull/2 documents reviewed
-  X/Twitter source packets for Bolta drafts and keeps Bolta responsible for
-  drafting, review, scheduling, publishing, analytics, and audit decisions. Head
-  `19495b8` is mergeable and clean with no comments, reviews, or checks.
+- 2026-06-13 14:53 UTC: model/effort selectors unavailable; normal `gh` used
+  because `sandbox_permissions` cannot be passed. TweetClaw and Xquik issues
+  empty. Crawler monitor/tooling returned 0 opportunities; skill coverage
+  returned 52 already-recorded repos. Extra focused crawler lanes returned 0
+  due proxy-pool outage warnings without credential output.
+- PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA, bot
+  findings, or generated drift. Failures were target labeler config or
+  target-owned Vercel authorization.
+- New PR: https://github.com/lianyanshe-ai/twitter-archive-to-skill/pull/1
+  adds optional TweetClaw live public X/Twitter context guidance, keeps the
+  official archive primary, adds a source-packet template, and adds the
+  xquik.com NHS badge. Head `2f04519` is mergeable and clean.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Canonical ClawHub route returned 200;
-  wrong probe host `clawhub.openclaw.ai` failed DNS and is not a source link.
-- Durable lesson: content automation suites are good targets when TweetClaw or
-  Xquik are framed as reviewed public source packets, never as permission for
-  account actions or as a replacement for the target policy engine.
+  npm package web 403 and `xquik.com/mcp` 401 are expected blockers.
+- Durable lesson: archive-to-Skill repos are good targets when TweetClaw is
+  framed as separate public freshness evidence, never mixed into official
+  archive output or used as permission for account actions.
 
 ## Reporting Checklist
 
