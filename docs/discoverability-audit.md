@@ -195,25 +195,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 18:28 UTC: model/effort selectors unavailable; normal `gh` used
-  because the active runtime cannot use `sandbox_permissions`. TweetClaw/Xquik
-  issues empty. Crawler returned TweetClaw self, 11 skill candidates, and 1
-  irrelevant tooling hit; proxy logs printed no protected values.
-- PR gate read back 200 authored PRs. Repaired conflicts on
-  https://github.com/gliptak/kitfind/pull/10 and
-  https://github.com/warlockoussama/twitter-cli/pull/1; both branches were
-  validated and pushed. Remaining failures were target-owned.
-- New PR: https://github.com/quantskills/skill-serenity-research-model/pull/1
-  documents TweetClaw public X/Twitter source imports for a Serenity-style
-  research skill, adds data-contract fields, clarifies boundaries, and keeps
-  thesis labeling, evaluation, and investment-advice limits owned by the target.
+- 2026-06-13 18:48 UTC: model/effort selectors unavailable; normal `gh` used
+  because the runtime cannot use `sandbox_permissions`. TweetClaw/Xquik issues
+  empty. Crawler returned 25 monitor candidates and 2 false-positive skill
+  hits; one GitHub rate limit stopped broad authenticated search. Proxy logs
+  printed no protected values.
+- PR gate read back 200 authored PRs: 143 `CLEAN`, 40 `UNSTABLE`, 17
+  `BLOCKED`; no current-head repairable comments, conflicts, DCO/CLA blockers,
+  generated drift, or fixable CI failures. Failures were target-owned.
+- New PR: https://github.com/EveryInc/product-launch-video/pull/1 adds optional
+  public X/Twitter source packets for launch hooks, reply context, quote
+  context, media references, and voice calibration while keeping video, caption,
+  posting, scheduling, analytics, and private data outside TweetClaw's role.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Target validation, link checks, direct URL
   probes, npm audits, build, OpenClaw fitness, package artifact, memory check,
   and final `check:all` passed.
-- Lesson: trader-research skills are good targets when TweetClaw remains an
-  optional public capture source and the target owns evidence review, thesis
-  labeling, return evaluation, and advice boundaries.
+- Lesson: product-launch-video skills are useful targets when TweetClaw remains
+  optional public source context and the target owns storyboarding, rendering,
+  captions, publishing choices, and social-platform delivery.
 
 ## Reporting Checklist
 
