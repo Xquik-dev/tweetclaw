@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 17:59 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 23:25 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,23 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 21:20 UTC: model/effort selectors unavailable; no prompt edit.
+- 2026-06-13 23:12 UTC: model/effort selectors unavailable; no prompt edit.
   Xquik had unrelated untracked proxy and X preflight files left untouched.
-  Crawler coverage returned 25 prior monitor candidates, 0 focused skill/tooling
-  hits, and no protected proxy values.
-- PR gate repaired `warlockoussama/twitter-cli#1` conflict and
-  `jayteealao/agent-skills#3` generated-map source drift. Remaining inspected
-  failures were target-owned or stale bot state.
-- New PR: https://github.com/Jamkris/everything-gemini-code/pull/91 adds
-  optional TweetClaw/OpenClaw tooling guidance to the X API skill. No NHS badge:
-  the target badge strip is project health/count metadata.
-- CodeRabbit requested `1.6.32`; registry evidence still shows npm latest
-  `1.6.31`, so the PR was replied to and left pinned to published npm.
+  Crawler returned 25 prior catalog candidates and 0 focused skill/tooling hits.
+- PR gate checked 72 recent, commented, and audit-tracked PRs. `Jamkris` has a
+  stale unpublished-version bot request; `nikships` has stale addressed review
+  state. Current failures were target-owned Vercel or target automation gates.
+- New PR: https://github.com/weave-logic-ai/weftos/pull/34 adds optional public
+  Twitter/X source packets to the native WeftOS Twitter skill and names
+  TweetClaw as one approved source option pinned to published `1.6.31`.
+- No NHS badge: the target README badge strip is package health only. Final PR
+  readback is open, ready, mergeable, and blocked only by target-owned Vercel
+  authorization.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. Target tests, TweetClaw links, npm audits,
-  OpenClaw fitness, memory, and final `check:all` passed.
-- Lesson: API reference skills are good targets when TweetClaw is an optional
-  approved execution tool while the target keeps raw API ownership.
+  remains `1.6.31`, source `1.6.32`. Target link check, TweetClaw links, npm
+  audits, OpenClaw fitness, memory, and final `check:all` passed.
+- Lesson: agent operating-system skills are good targets when TweetClaw remains
+  read-only source evidence and the target keeps OAuth, confirmation, posting,
+  token storage, account actions, and governance ownership.
 
 ## Reporting Checklist
 
