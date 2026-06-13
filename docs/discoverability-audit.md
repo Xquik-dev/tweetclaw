@@ -195,23 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 09:15 UTC: model/effort selectors unavailable; prompt 14,530
+- 2026-06-13 09:49 UTC: model/effort selectors unavailable; prompt 14,530
   bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor, skill,
-  and tooling passes returned 0 after managed-proxy outage logs.
-- PR gate read back 200 authored PRs. Repaired the current conflict on
-  https://github.com/jnMetaCode/skillet/pull/1 with head `9fbdee8`; Vercel
-  authorization failures and stale bot states were target-owned, with no other
-  safe repair blocker before outreach.
-- New PR: https://github.com/AresChenAI/x-followback-audit/pull/1 adds
-  TweetClaw-style camelCase export aliases, a synthetic fixture, and docs that
-  keep followback audits offline, read-only, and credential-free. Current head
-  `236d283` is mergeable with no comments, reviews, or checks.
+  and tooling passes returned 0 opportunities.
+- PR gate read back 200 authored PRs. No conflict or dirty state blocked
+  outreach; older change requests were superseded, resolved, or target-owned.
+- New PR: https://github.com/the911fund/skill-of-skills/pull/11 adds
+  `xquik-tweetclaw` as a high-trust OpenClaw source registry entry, docs, route
+  fixture, and smoke test. Head `562544c` is mergeable and clean with no
+  comments, reviews, or checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
   `1.6.31` while source remains `1.6.32`. Current docs, canonical links,
   audits, build, OpenClaw fitness, package artifact, and full checks passed.
-- Durable lesson: publishing skills are good targets only when TweetClaw stays
-  source context and never authorizes posts, replies, DMs, media, webhooks, or
-  account changes.
+- Durable lesson: source registries are strong targets when the PR adds a
+  concrete source entry plus route validation, not a marketing-only listing.
 
 ## Reporting Checklist
 
