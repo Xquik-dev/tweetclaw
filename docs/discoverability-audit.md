@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 03:39 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 04:25 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,21 +194,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 03:39 UTC: model/effort selectors unavailable; prompt 14,530
+- 2026-06-13 04:25 UTC: model/effort selectors unavailable; prompt 14,530
   bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor/tooling 0;
-  skill coverage 73, all crawler hits repeats; fresh fallback screens archived.
-- PR monitoring read 100 authored PRs and thread-checked 27 flagged PRs. Repaired
-  https://github.com/cryptowizard0/TweetFlow/pull/2 in commit `3ea11a7` after a
-  valid Codex review; no current unresolved review thread remains.
-- New PR: https://github.com/warlockoussama/twitter-cli/pull/1 aligns README
-  command scope with actual read/write commands, adds credential safety, and
-  points out optional companion tooling for MCP/OpenClaw automation jobs.
+  skill coverage 78 found 4 fresh candidates; full screening is archived.
+- PR monitoring read 120 authored PRs and thread-checked 37 flagged PRs. Repaired
+  https://github.com/anup4khandelwal/awesome-codex-skills/pull/6 with commits
+  `c89e223` and `2e797b4`; old review state remains pending maintainer refresh.
+- New PR: https://github.com/nick905846753-crypto/x-publisher-clean-profile/pull/1
+  documents source-evidence companion boundaries, adds the NHS xquik.com badge,
+  and refreshes the packaged skill tarball.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`,
   TweetClaw npm `1.6.31`; public Markdown links, target links, audits, package
   artifact, OpenClaw fitness, full checks, and memory passed.
-- Durable lessons: `warlockoussama/twitter-cli#1` is duplicate-blocked.
-  Local Twitter/X CLIs are good targets for scope, credential-safety, and
-  companion-tooling docs when code already exposes write commands.
+- Durable lessons: `x-publisher-clean-profile#1` is duplicate-blocked. Browser
+  publishing skills are good targets for separating source evidence from final
+  draft/send control; update packaged artifacts when docs are bundled.
 
 ## Reporting Checklist
 
