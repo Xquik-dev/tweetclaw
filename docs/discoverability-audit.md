@@ -195,24 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 14:22 UTC: model/effort selectors unavailable; prompt 14,641
-  bytes, automation TOML 14,872 bytes. TweetClaw and Xquik issues empty.
-  Crawler monitor/tooling returned 0 opportunities; skill coverage returned 25
-  already-seen repos. Extra crawler coverage found `nicoxia/skills-x-to-notebooklm`
-  and `ProfTrader/twitter-influencer-skill` as future lanes.
-- PR gate read back 200 authored PRs, found `warlockoussama/twitter-cli#1`
-  conflicting, merged upstream, revalidated, and pushed head `dcbf6c3`; PR now
-  reads mergeable and clean. Other failing checks were target-owned Vercel gates.
-- New PR: https://github.com/underdogYnino/social-growth-audit-skill/pull/1
-  adds public X/Twitter context-packet boundaries, keeps backend analytics as
-  funnel truth, syncs the packaged skill, and fixes the README Chinese anchor.
-  Head `fdf813a` is mergeable and clean with no comments, reviews, or checks.
+- 2026-06-13 14:32 UTC: model/effort selectors unavailable; normal `gh` used
+  because the runtime cannot pass `sandbox_permissions`. TweetClaw and Xquik
+  issues empty. Crawler monitor/tooling returned 0 opportunities; skill coverage
+  returned 52 repos and one fully new no-license blocker:
+  `jackleeio/bnbot-skill`.
+- PR gate read back 200 authored PRs. No conflicts required repair. Valid bot
+  notes were already addressed; failing checks were target-owned Vercel
+  authorization gates.
+- New PR: https://github.com/boltaai/bolta-skills/pull/2 documents reviewed
+  X/Twitter source packets for Bolta drafts and keeps Bolta responsible for
+  drafting, review, scheduling, publishing, analytics, and audit decisions. Head
+  `19495b8` is mergeable and clean with no comments, reviews, or checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. Link, audit, target, and final checks
-  passed.
-- Durable lesson: growth-audit skills need backend analytics as funnel truth.
-  TweetClaw packets can support hook, reply, quote, topic, and audience-language
-  analysis only.
+  remains `1.6.31`, source `1.6.32`. Canonical ClawHub route returned 200;
+  wrong probe host `clawhub.openclaw.ai` failed DNS and is not a source link.
+- Durable lesson: content automation suites are good targets when TweetClaw or
+  Xquik are framed as reviewed public source packets, never as permission for
+  account actions or as a replacement for the target policy engine.
 
 ## Reporting Checklist
 
