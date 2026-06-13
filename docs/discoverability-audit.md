@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 12:46 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 13:03 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,22 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 12:46 UTC: model/effort selectors unavailable; prompt 14,530
+- 2026-06-13 13:03 UTC: model/effort selectors unavailable; prompt 14,530
   bytes, automation TOML 14,872 bytes. TweetClaw and Xquik issues empty.
   Crawler monitor, skill, and tooling passes returned valid empty JSON.
 - PR gate read back 200 authored PRs plus tracked PRs. No current-head conflict,
-  DCO, CLA, generated-file drift, CI failure, or valid bot finding needed
-  repair. Stale review notes were already fixed or target-owned.
-- New PR: https://github.com/golapkamal/AI-marketing-claude-code/pull/1 adds
-  optional public Twitter/X source-evidence guidance to social calendar and
-  competitor skills. Head `9456793` is mergeable, clean, and has no comments,
-  reviews, or checks.
+  DCO, CLA, generated-file drift, or GitHub Actions failure needed repair.
+  Current-head bot notes were false-positive, empty, rate-limit-only, or
+  target-owned Vercel authorization failures.
+- New PR: https://github.com/OpenClaudia/openclaudia-skills/pull/8 adds
+  optional public Twitter/X source-packet guidance to `social-content` and
+  `competitor-analysis`, and fixes the README `similarweb-traffic` table row.
+  Head `9d8757c` is mergeable with no comments, reviews, or reported checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
   `1.6.31` while source remains `1.6.32`. Markdown links, direct URL checks,
   npm audits, target checks, and final validation passed.
-- Durable lesson: small marketing skill forks can still be useful if MIT
-  licensed, duplicate-clean, and current. Keep TweetClaw as reviewed X/Twitter
-  source evidence only, with URL/date citations and no account control.
+- Durable lesson: high-reach marketing skill catalogs are good targets when the
+  PR improves validation and source-evidence rules, keeps TweetClaw optional,
+  and preserves explicit approval boundaries for posts and account actions.
 
 ## Reporting Checklist
 
