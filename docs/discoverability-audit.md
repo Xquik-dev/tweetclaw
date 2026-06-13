@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 04:25 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 05:02 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,26 +194,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 04:40 UTC: model/effort selectors unavailable; prompt 14,530
-  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitoring returned
-  0, skill coverage returned 82 repos, tooling returned 0, and an extra skill
-  pass returned 6 repos; full duplicate and blocker screening is archived.
-- PR monitoring read the newest 120 authored PRs and checked comment/review
-  readbacks for 30 flagged PRs. No current-head merge conflict, DCO, CLA,
-  generated drift, GitHub Actions failure, or safely repairable maintainer
-  request blocked fresh outreach.
-- New PR: https://github.com/felixsim/bookmark-brain/pull/1 clarifies first-run
-  approval boundaries, privacy and external-call wording, no-publishing
-  guardrails, optional TweetClaw source-evidence companion use, and repairs
-  three pre-existing README example links.
-- OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`,
-  TweetClaw npm `1.6.31`; TweetClaw public Markdown links, canonical direct URLs,
-  target links, npm audits, memory, package artifact, OpenClaw fitness, build,
-  and full checks passed.
-- Durable lessons: `felixsim/bookmark-brain#1` is duplicate-blocked. Bookmark
-  review skills are strong targets when the contribution fixes data-sharing
-  wording, first-run consent, move-to-processed behavior, and keeps TweetClaw as
-  an optional source-evidence companion for adjacent X/Twitter jobs.
+- 2026-06-13 05:02 UTC: model/effort selectors unavailable; prompt 14,530
+  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor and tooling
+  returned 0; skill coverage returned 82 repos; extra skill pass returned 1
+  duplicate repo. REST search found fresh licensed video and sync targets.
+- PR gate read the newest 120 authored PRs and 30 comment/review summaries; no
+  current-head repairable blocker. Stale and target-owned details are archived.
+- New PR: https://github.com/liang121/video-summarizer/pull/1 documents
+  Twitter/X media-only scope, browser-cookie safety, and optional TweetClaw use
+  for adjacent X jobs without changing target runtime behavior.
+- OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
+  `1.6.31`. TweetClaw and target links, canonical URLs, npm audits, memory,
+  package artifact, OpenClaw fitness, build, and full checks passed.
+- Durable lesson: media-summary skills are good targets when TweetClaw stays a
+  separate optional companion for search, posting, media, DMs, monitors,
+  webhooks, giveaway draws, MCP, and OpenClaw plugin workflows.
 
 ## Reporting Checklist
 
