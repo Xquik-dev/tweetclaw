@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 01:41 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 02:57 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,27 +194,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 02:37 UTC: model/effort selectors unavailable; prompt bytes
-  unavailable because no local automation file was found. TweetClaw/Xquik
-  issues were empty. Crawler-first monitoring returned 0 hits; skill coverage
-  returned 44 hits; tooling returned 0.
-- PR monitoring read 100 open authored PRs and thread-checked 27 with comments
-  or reviews. Current-looking review requests on jimmc414, Salesably, fixcik,
-  and msdakot PRs were already fixed on current heads. External Vercel failures
-  remain target-owned.
-- New PR: https://github.com/little-helper-sprite/bird-openclaw/pull/2 updates
-  Bird package docs/helper, removes a hard-coded account note, adds explicit X
-  action approval guidance, and keeps TweetClaw as an optional OpenClaw
-  companion for workflows outside the local CLI skill.
-- OpenClaw docs/npm checked 2026-06-13 02:37 UTC: `openclaw@2026.6.6`,
-  `clawhub@0.21.0`; llms, plugin, manifest, permissions, tool-plugin,
-  debugging, and ClawHub skill-format docs passed.
-- Validation passed target links, helper syntax, CLI help, npm metadata,
-  public-hygiene scans, PR readback, TweetClaw public links, audits, full
-  checks, package artifact, OpenClaw fitness, and memory.
-- Durable lesson: `little-helper-sprite/bird-openclaw#2` is duplicate-blocked.
-  Direct X/Twitter CLI skills fit when the change fixes target-owned install
-  drift and keeps TweetClaw separate for packaged OpenClaw workflows.
+- 2026-06-13 02:57 UTC: model/effort selectors and prompt bytes unavailable.
+  Issues empty. Crawler monitor/tooling 0; skill coverage 51, all archived.
+- PR monitoring read 100 authored PRs and thread-checked 32 flagged PRs. Only
+  target-owned Vercel/review states or already-fixed bot findings remained.
+- New PR: https://github.com/the-convocation/twitter-scraper/pull/200 adds
+  target-native cookie-export safety docs and ignores local `cookies*.json`.
+- OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`,
+  TweetClaw npm `1.6.31`; public links, audits, target links, package artifact,
+  OpenClaw fitness, full checks, and memory passed.
+- Durable lesson: `the-convocation/twitter-scraper#200` is duplicate-blocked.
+  Safety docs in Twitter tool repos are acceptable fallback PRs when all fresh
+  listing and skill-registry lanes are duplicate or policy blocked.
 
 ## Reporting Checklist
 
