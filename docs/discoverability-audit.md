@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 17:01 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 17:59 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,22 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 17:20 UTC: model/effort selectors unavailable; normal `gh` used.
-  TweetClaw/Xquik issues empty. Crawler and follow-up screens found duplicate,
-  empty, or no-license skill/catalog lanes before selecting
-  `grandamenium/social-media-insights`.
-- PR gate read back 200 authored PRs. Current review/check blockers were stale,
-  already addressed, or target-owned Vercel, labeler, and automation failures;
-  no safe repair commit was pending.
-- New PR: https://github.com/grandamenium/social-media-insights/pull/1 adds a
-  credential-free TweetClaw-style source-packet input path, fixture, and docs so
-  the target can analyze reviewed X/Twitter evidence without another scrape.
+- 2026-06-13 17:46 UTC: model/effort selectors unavailable; normal `gh` used.
+  TweetClaw/Xquik issues empty. Crawler screens found 4 fresh skill repos;
+  exact duplicate, license, policy, and fit checks selected
+  `FloydTang/trade-customer-intel`.
+- PR gate read back 200 authored PRs. Current failures were target-owned or
+  already explained; `drtamar/agent-skills#1` review text matched current head,
+  so no repair commit was needed before fresh outreach.
+- New PR: https://github.com/FloydTang/trade-customer-intel/pull/2 adds a
+  TweetClaw X/Twitter source-evidence fixture and OpenClaw docs so reviewed
+  social signals can enter customer-intel reports without account actions.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Link checks, direct URL probes, target
   validation, npm audits, build, OpenClaw fitness, package artifact, and final
   `check:all` passed.
-- Lesson: social analysis skills are good targets when TweetClaw is source
-  evidence only and the target records whether a network scraper was used.
+- Lesson: customer-intel skills are good targets when TweetClaw stays optional
+  read-only evidence and the target owns identity, risk, and outreach judgment.
 
 ## Reporting Checklist
 
