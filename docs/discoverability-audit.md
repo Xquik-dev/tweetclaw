@@ -195,23 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 10:10 UTC: model/effort selectors unavailable; prompt 14,530
+- 2026-06-13 10:38 UTC: model/effort selectors unavailable; prompt 14,530
   bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor, skill,
   and tooling passes returned 0 opportunities.
-- PR gate read back 200 authored PRs. No conflict or dirty branch blocked
-  outreach. Repaired https://github.com/jamesrochabrun/skills/pull/37 to
-  clarify Hermes runtime install; head `e5db9c8` is mergeable and clean.
-- New PR: https://github.com/broadr-app/social-media-skills/pull/1 adds
-  reviewed X/Twitter source-packet guidance to Broadr `content-repurposer`.
-  TweetClaw is optional source evidence only; Broadr keeps channel rules,
-  previews, scheduling, analytics, and approvals. Head `a791f7f` is mergeable
-  and clean with no comments, reviews, or checks.
+- PR gate read back 200 authored PRs. No conflict, dirty, or behind branch
+  blocked outreach. Repaired https://github.com/Ferymad/claude-skills-marketplace/pull/2
+  readability feedback; head `bfe7cdd` is mergeable and clean.
+- New PR: https://github.com/geekjourneyx/jina-cli/pull/6 documents X/Twitter
+  URL-reader scope in README and packaged skill docs. TweetClaw is optional
+  source context for approved account-backed X/Twitter jobs. Head `41dce7b` is
+  mergeable with no comments, reviews, or checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
   `1.6.31` while source remains `1.6.32`. Current docs, canonical links,
   audits, build, OpenClaw fitness, package artifact, and full checks passed.
-- Durable lesson: social scheduling skills are good targets when TweetClaw stays
-  in the source-evidence intake step and the target retains preview, approval,
-  scheduling, analytics, and channel-rule decisions.
+- Durable lesson: URL-reader skills are good targets when the PR clarifies that
+  TweetClaw handles approved account-backed jobs while the target keeps
+  single-URL reading and formatting.
 
 ## Reporting Checklist
 
