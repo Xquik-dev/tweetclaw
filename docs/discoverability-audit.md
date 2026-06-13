@@ -49,9 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 05:02 UTC: latest
-  `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
-  plugin SDK, ClawHub, validation, testing, inventory, and debugging.
+- OpenClaw docs/npm checked as of 2026-06-13 08:27 UTC: latest
+  `2026.6.6`, beta `2026.6.6-beta.2`; current docs keep plugin install,
+  inspect, update, source selection, npm pinning, and runtime JSON inspection on
+  `/cli/plugins`, not separate deep command pages.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
 - ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
   Keep npm as canonical install source until ownership is migrated.
@@ -194,21 +195,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 05:02 UTC: model/effort selectors unavailable; prompt 14,530
-  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor and tooling
-  returned 0; skill coverage returned 82 repos; extra skill pass returned 1
-  duplicate repo. REST search found fresh licensed video and sync targets.
-- PR gate read the newest 120 authored PRs and 30 comment/review summaries; no
-  current-head repairable blocker. Stale and target-owned details are archived.
-- New PR: https://github.com/liang121/video-summarizer/pull/1 documents
-  Twitter/X media-only scope, browser-cookie safety, and optional TweetClaw use
-  for adjacent X jobs without changing target runtime behavior.
+- 2026-06-13 08:27 UTC: model/effort selectors unavailable; prompt 14,530
+  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor, tooling,
+  and framework passes returned 0; skill coverage returned 82 repos.
+- PR gate read back 200 authored PRs. Repaired
+  https://github.com/warlockoussama/twitter-cli/pull/1 by rebasing the fork
+  branch; final readback is clean and mergeable. Other blockers were stale bot
+  state, required review, or target-owned Vercel authorization.
+- New PR: https://github.com/sunyifeng11111/sun-daily-topics/pull/1 adds
+  exported Markdown frontmatter aliases, section aliases, and local-only source
+  guidance that allows TweetClaw exports without giving that skill credentials.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
-  `1.6.31`. TweetClaw and target links, canonical URLs, npm audits, memory,
-  package artifact, OpenClaw fitness, build, and full checks passed.
-- Durable lesson: media-summary skills are good targets when TweetClaw stays a
-  separate optional companion for search, posting, media, DMs, monitors,
-  webhooks, giveaway draws, MCP, and OpenClaw plugin workflows.
+  `1.6.31` while source remains `1.6.32`. Canonical docs and links passed;
+  noncanonical deep plugin-command URLs now return 404 and should not be used.
+  TweetClaw audits, memory, build, OpenClaw fitness, package artifact, and full
+  checks passed.
+- Durable lesson: local Markdown clip skills are good targets when the
+  contribution improves parser compatibility and preserves local-only,
+  no-credentials boundaries. Keep TweetClaw as an optional upstream exporter,
+  not the owner of topic selection.
 
 ## Reporting Checklist
 
