@@ -199,7 +199,7 @@ archive, before any outreach or duplicate decision.
   skill coverage 78 found 4 fresh candidates; full screening is archived.
 - PR monitoring read 120 authored PRs and thread-checked 37 flagged PRs. Repaired
   https://github.com/anup4khandelwal/awesome-codex-skills/pull/6 with commits
-  `c89e223` and `2e797b4`; old review state remains pending maintainer refresh.
+  `c89e223` and `2e797b4`; final readback is mergeable and approved.
 - New PR: https://github.com/nick905846753-crypto/x-publisher-clean-profile/pull/1
   documents source-evidence companion boundaries, adds the NHS xquik.com badge,
   and refreshes the packaged skill tarball.
