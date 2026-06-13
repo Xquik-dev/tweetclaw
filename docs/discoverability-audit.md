@@ -204,7 +204,7 @@ archive, before any outreach or duplicate decision.
 - New PR: https://github.com/ProfTrader/twitter-influencer-skill/pull/1 adds
   public source-packet fallback docs, optional TweetClaw export guidance, safe
   account-action boundaries, and stale API link repairs. Head `c9875dc` is
-  mergeable; CodeRabbit was still pending at final readback.
+  mergeable and clean with CodeRabbit success.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Link checks and package audits passed;
   npm web 403 and `xquik.com/mcp` 401 are expected blockers.
