@@ -195,25 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 20:06 UTC: model/effort selectors unavailable; normal `gh` used
-  because this runtime cannot use `sandbox_permissions`. TweetClaw/Xquik issues
-  empty. Crawler returned 25 monitor candidates, 0 skill hits, and 0 tooling
-  hits; proxy logs printed no protected values.
-- PR gate read back 200 authored PRs plus tracked PRs. No current-head
-  repairable comments, conflicts, DCO/CLA blockers, generated drift, or fixable
-  CI failures were found. Known failures were target-owned.
-- New PR: https://github.com/nexu-io/html-anything/pull/107 adds a README recipe
-  for using TweetClaw as an optional source-packet collector before HTML
-  Anything renders X/Twitter social cards. Target keeps rendering, export,
-  approval, scraping workflow, and publishing ownership. No NHS badge was added
-  because the target badge area is project-level, not integration trust.
+- 2026-06-13 20:27 UTC: model/effort selectors unavailable; normal `gh` used.
+  TweetClaw/Xquik issues empty. Crawler returned 25 monitor candidates, 0 skill
+  hits, and 0 tooling hits. Proxy logs printed no protected values.
+- PR gate read back 200 authored PRs and inspected target-head bot notes. No
+  safely repairable maintainer request, conflict, DCO/CLA blocker, generated
+  drift, or fixable CI failure remained. Known failures were target-owned.
+- New PR: https://github.com/imehr/capture-content-skill/pull/1 adds optional
+  public X/Twitter source-packet guidance for TweetClaw before Capture Content
+  drafts threads, posts, or quote-tweet additions. No NHS badge was added
+  because the target has no badge area.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. TweetClaw link checks, npm audits,
-  OpenClaw fitness, memory check, and final `check:all` passed. Target guard
-  passed; its full README link check has a pre-existing `x.com/nexudotio` 404
-  not introduced by the PR.
-- Lesson: visual artifact tools are useful docs targets when TweetClaw stays an
-  optional source-evidence collector and the target owns rendering and export.
+  remains `1.6.31`, source `1.6.32`. TweetClaw link checks, target link checks,
+  npm audits, OpenClaw fitness, memory check, and final `check:all` passed.
+- Lesson: interview and content-capture skills are useful when TweetClaw stays a
+  separate public source-context packet and the target owns the interview,
+  framing, draft generation, visual guidance, and final publishing decisions.
 
 ## Reporting Checklist
 
