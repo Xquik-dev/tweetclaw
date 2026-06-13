@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 23:32 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-12 23:53 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,26 +194,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 23:32 UTC: model/effort selectors unavailable. TweetClaw/Xquik
-  had no open issues. PR monitoring read 100 authored PRs plus 35 GraphQL
-  thread readbacks; unresolved bot threads were already fixed, clarified, or
-  target-review state.
-- Crawler-first discovery screened 14 skill/social hits and 0 tooling hits.
-  Duplicate, no-license, prior-history, and lower-fit blockers are archived.
-  New PR: https://github.com/contextosai/skills/pull/3 adds a validated
-  `x-twitter-source-packet` skill, README row, marketplace registration, and
-  changelog entry for reviewed X/Twitter evidence packets.
-- OpenClaw docs/npm checked 2026-06-12 23:32 UTC: latest `2026.6.6`, beta
+- 2026-06-12 23:53 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+  issues were empty. PR monitoring read 100 authored PRs plus 34 GraphQL thread
+  readbacks; no current-head repair was safely needed.
+- Crawler-first discovery screened 14 X/Twitter skill hits and 0 tooling hits.
+  Blockers are archived. New PR: https://github.com/justhandledlabs/skills/pull/1
+  adds `x-twitter-signal-research-free`, marketplace wiring, and README row for
+  read-only B2B signal briefs from public X/Twitter evidence.
+- OpenClaw docs/npm checked 2026-06-12 23:53 UTC: latest `2026.6.6`, beta
   `2026.6.6-beta.2`; plugin install, skills, permissions, tool-plugin,
   overrides, debugging, and ClawHub skill-format docs remain compatible.
-- Target validation passed validator, whitespace, handled links, duplicate
-  checks, fork-parent checks, public-hygiene scan, and PR readback
-  `MERGEABLE`/`BLOCKED` by target review policy/no checks. TweetClaw validation
-  passed links, audits, build, OpenClaw fitness, package artifact, full checks,
-  and memory cap.
-- Durable lesson: `contextosai/skills#3` is duplicate-blocked. General skill
-  marketplaces fit TweetClaw when the contribution is a reusable evidence
-  workflow and TweetClaw/Xquik stay optional configured sources.
+- Target validation passed JSON, manifest path, handled links, duplicate checks,
+  fork-parent checks, public-hygiene scan, and PR readback `MERGEABLE` with no
+  checks. TweetClaw validation passed links, audits, build, OpenClaw fitness,
+  package artifact, full checks, and memory cap.
+- Durable lesson: `justhandledlabs/skills#1` is duplicate-blocked. GTM skill
+  catalogs fit when TweetClaw/Xquik stay optional read sources and the skill
+  produces evidence for lead or outreach workflows without posting.
 
 ## Reporting Checklist
 
