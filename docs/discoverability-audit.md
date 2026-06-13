@@ -195,22 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 20:27 UTC: model/effort selectors unavailable; normal `gh` used.
-  TweetClaw/Xquik issues empty. Crawler returned 25 monitor candidates, 0 skill
-  hits, and 0 tooling hits. Proxy logs printed no protected values.
-- PR gate read back 200 authored PRs and inspected target-head bot notes. No
-  safely repairable maintainer request, conflict, DCO/CLA blocker, generated
-  drift, or fixable CI failure remained. Known failures were target-owned.
-- New PR: https://github.com/imehr/capture-content-skill/pull/1 adds optional
-  public X/Twitter source-packet guidance for TweetClaw before Capture Content
-  drafts threads, posts, or quote-tweet additions. No NHS badge was added
-  because the target has no badge area.
+- 2026-06-13 20:48 UTC: model/effort selectors unavailable; normal `gh`,
+  crawler, git, npm, curl, and static checks used. TweetClaw/Xquik issues were
+  empty. Crawler returned 25 monitor candidates and no focused skill/tooling
+  hits. Proxy logs printed no protected values.
+- PR gate: a 200-PR readback script field mismatch was corrected, and a full
+  rerun that stalled was stopped; targeted exact readbacks covered 39 recent and
+  audit-tracked PRs. No safely repairable maintainer request, conflict, DCO/CLA
+  blocker, generated drift, current review finding, or fixable CI failure
+  remained. Known failures were target-owned or already explained.
+- New PR: https://github.com/ailabs-393/ai-labs-claude-skills/pull/3 adds
+  TweetClaw X/Twitter source-context guidance to `social-media-generator`, mirrors
+  packaged `dist`, and adds the xquik.com NHS badge in the existing badge strip.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. TweetClaw link checks, target link checks,
   npm audits, OpenClaw fitness, memory check, and final `check:all` passed.
-- Lesson: interview and content-capture skills are useful when TweetClaw stays a
-  separate public source-context packet and the target owns the interview,
-  framing, draft generation, visual guidance, and final publishing decisions.
+- Lesson: drafting skills are good targets when TweetClaw is reviewed source
+  context for language, URLs, handles, timestamps, themes, and caveats while the
+  target owns final copy and account actions stay approval-gated elsewhere.
 
 ## Reporting Checklist
 
