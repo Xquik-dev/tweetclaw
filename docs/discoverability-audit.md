@@ -195,24 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 15:14 UTC: model/effort selectors unavailable; normal `gh` used.
+- 2026-06-13 15:35 UTC: model/effort selectors unavailable; normal `gh` used.
   TweetClaw and Xquik issues empty. Crawler monitor/tooling returned 0;
-  skill coverage returned 3 repos.
+  skill coverage returned 2 repos.
 - PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA,
   current-head bot findings, or generated drift. Failures were target labeler
-  config or target-owned Vercel authorization.
-- Fresh screen: `mr-shaper/argus` is Apache-2.0 and duplicate-clean, but direct
-  PR work is blocked by its requested drop-in `bird` CLI contract.
-  `nicoxia/skills-x-to-notebooklm` was MIT and duplicate-clean.
-- New PR: https://github.com/nicoxia/skills-x-to-notebooklm/pull/1 adds
-  `--file`/`--title` local Markdown uploads, optional TweetClaw source-packet
-  docs, stale-link repairs, and temp-file cleanup. Head `ed4db33` is clean.
+  config. `Tanvi030/Twitter-Analytics-Dashboard-Power-BI` lacks license terms.
+- New PR: https://github.com/ProfTrader/twitter-influencer-skill/pull/1 adds
+  public source-packet fallback docs, optional TweetClaw export guidance, safe
+  account-action boundaries, and stale API link repairs. Head `c9875dc` is
+  mergeable; CodeRabbit was still pending at final readback.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Link checks and package audits passed;
   npm web 403 and `xquik.com/mcp` 401 are expected blockers.
-- Durable lesson: NotebookLM and research-ingest skills are good targets when
-  TweetClaw is an optional public source-packet provider behind a native local
-  file fallback, never credentials, private content, or account actions.
+- Durable lesson: influencer-drafting skills are good targets when TweetClaw
+  remains optional public evidence only. Keep drafting separate from posting,
+  replies, DMs, likes, follows, media, monitors, webhooks, and giveaways.
 
 ## Reporting Checklist
 
