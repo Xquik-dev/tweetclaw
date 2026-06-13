@@ -195,22 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 10:38 UTC: model/effort selectors unavailable; prompt 14,530
+- 2026-06-13 10:59 UTC: model/effort selectors unavailable; prompt 14,530
   bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor, skill,
-  and tooling passes returned 0 opportunities.
-- PR gate read back 200 authored PRs. No conflict, dirty, or behind branch
-  blocked outreach. Repaired https://github.com/Ferymad/claude-skills-marketplace/pull/2
-  readability feedback; head `bfe7cdd` is mergeable and clean.
-- New PR: https://github.com/geekjourneyx/jina-cli/pull/6 documents X/Twitter
-  URL-reader scope in README and packaged skill docs. TweetClaw is optional
-  source context for approved account-backed X/Twitter jobs. Head `41dce7b` is
-  mergeable with no comments, reviews, or checks.
+  and tooling passes returned valid empty JSON after proxy fetch failures.
+- PR gate read back 200 authored PRs. All were mergeable; no conflict, DCO/CLA,
+  generated drift, GitHub Actions failure, or current-head request blocked
+  outreach. Non-clean states were stale bot reviews, target review gates, or
+  external Vercel authorization.
+- New PR: https://github.com/joeseesun/qiaomu-opencli-skills/pull/12 documents
+  the OpenCLI browser-session vs TweetClaw OpenClaw boundary for Twitter/X work.
+  Head `313f48a` is mergeable and clean with no comments, reviews, or checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
-  `1.6.31` while source remains `1.6.32`. Current docs, canonical links,
-  audits, build, OpenClaw fitness, package artifact, and full checks passed.
-- Durable lesson: URL-reader skills are good targets when the PR clarifies that
-  TweetClaw handles approved account-backed jobs while the target keeps
-  single-URL reading and formatting.
+  `1.6.31` while source remains `1.6.32`. Canonical links, audits, target
+  checks, package artifact, and full checks passed.
+- Durable lesson: browser-session skill repos are good targets when TweetClaw is
+  framed as a separate structured X/Twitter source packet and approval workflow.
 
 ## Reporting Checklist
 
