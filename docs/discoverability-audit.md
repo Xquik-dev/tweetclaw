@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 02:57 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 03:18 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,18 +194,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 02:57 UTC: model/effort selectors and prompt bytes unavailable.
-  Issues empty. Crawler monitor/tooling 0; skill coverage 51, all archived.
-- PR monitoring read 100 authored PRs and thread-checked 32 flagged PRs. Only
-  target-owned Vercel/review states or already-fixed bot findings remained.
-- New PR: https://github.com/the-convocation/twitter-scraper/pull/200 adds
-  target-native cookie-export safety docs and ignores local `cookies*.json`.
+- 2026-06-13 03:18 UTC: model/effort selectors unavailable; prompt 14,530
+  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor/tooling 0;
+  skill coverage 73, fresh candidates archived.
+- PR monitoring read 100 authored PRs and thread-checked 44 flagged PRs. Only
+  target-owned Vercel/review states, stale threads, or already-fixed bot
+  findings remained.
+- New PRs: https://github.com/cryptowizard0/TweetFlow/pull/2 documents
+  browser-backed control boundaries and optional TweetClaw API/MCP companion
+  use; https://github.com/robinbril/social-context/pull/1 documents lightweight
+  link-reader scope and optional structured Twitter/X companion tooling.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`,
-  TweetClaw npm `1.6.31`; public links, audits, target links, package artifact,
-  OpenClaw fitness, full checks, and memory passed.
-- Durable lesson: `the-convocation/twitter-scraper#200` is duplicate-blocked.
-  Safety docs in Twitter tool repos are acceptable fallback PRs when all fresh
-  listing and skill-registry lanes are duplicate or policy blocked.
+  TweetClaw npm `1.6.31`; public Markdown links, target links except a
+  pre-existing target-owned TikWM 403, audits, package artifact, OpenClaw
+  fitness, full checks, and memory passed.
+- Durable lessons: `cryptowizard0/TweetFlow#2` and
+  `robinbril/social-context#1` are duplicate-blocked. For browser-backed social
+  skills and single-link context readers, keep TweetClaw framed as an optional
+  structured API/MCP companion; the target keeps drafting, approval, publishing,
+  and link-reading responsibility.
 
 ## Reporting Checklist
 
