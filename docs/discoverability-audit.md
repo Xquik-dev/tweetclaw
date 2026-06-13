@@ -195,24 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 14:53 UTC: model/effort selectors unavailable; normal `gh` used
-  because `sandbox_permissions` cannot be passed. TweetClaw and Xquik issues
-  empty. Crawler monitor/tooling returned 0 opportunities; skill coverage
-  returned 52 already-recorded repos. Extra focused crawler lanes returned 0
-  due proxy-pool outage warnings without credential output.
-- PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA, bot
-  findings, or generated drift. Failures were target labeler config or
-  target-owned Vercel authorization.
-- New PR: https://github.com/lianyanshe-ai/twitter-archive-to-skill/pull/1
-  adds optional TweetClaw live public X/Twitter context guidance, keeps the
-  official archive primary, adds a source-packet template, and adds the
-  xquik.com NHS badge. Head `2f04519` is mergeable and clean.
+- 2026-06-13 15:14 UTC: model/effort selectors unavailable; normal `gh` used.
+  TweetClaw and Xquik issues empty. Crawler monitor/tooling returned 0;
+  skill coverage returned 3 repos.
+- PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA,
+  current-head bot findings, or generated drift. Failures were target labeler
+  config or target-owned Vercel authorization.
+- Fresh screen: `mr-shaper/argus` is Apache-2.0 and duplicate-clean, but direct
+  PR work is blocked by its requested drop-in `bird` CLI contract.
+  `nicoxia/skills-x-to-notebooklm` was MIT and duplicate-clean.
+- New PR: https://github.com/nicoxia/skills-x-to-notebooklm/pull/1 adds
+  `--file`/`--title` local Markdown uploads, optional TweetClaw source-packet
+  docs, stale-link repairs, and temp-file cleanup. Head `ed4db33` is clean.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. Canonical ClawHub route returned 200;
-  npm package web 403 and `xquik.com/mcp` 401 are expected blockers.
-- Durable lesson: archive-to-Skill repos are good targets when TweetClaw is
-  framed as separate public freshness evidence, never mixed into official
-  archive output or used as permission for account actions.
+  remains `1.6.31`, source `1.6.32`. Link checks and package audits passed;
+  npm web 403 and `xquik.com/mcp` 401 are expected blockers.
+- Durable lesson: NotebookLM and research-ingest skills are good targets when
+  TweetClaw is an optional public source-packet provider behind a native local
+  file fallback, never credentials, private content, or account actions.
 
 ## Reporting Checklist
 
