@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 13:55 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 14:22 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,26 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 13:55 UTC: model/effort selectors unavailable; prompt 14,641
+- 2026-06-13 14:22 UTC: model/effort selectors unavailable; prompt 14,641
   bytes, automation TOML 14,872 bytes. TweetClaw and Xquik issues empty.
   Crawler monitor/tooling returned 0 opportunities; skill coverage returned 25
-  already-seen repos. Fresh `aadarshvelu/syndicate` was blocked by its existing
-  Xquik Twitter backend PR.
-- PR gate read back 200 authored PRs: 133 clean, 45 unstable, 22 blocked, and
-  no current-head conflict, DCO, CLA, generated-file drift, GitHub Actions
-  failure, or valid bot finding needing repair. Failing checks were target-owned
-  Vercel authorization gates.
-- New PR: https://github.com/cellear/claude-fact-check-skill/pull/1 adds
-  X/Twitter evidence-packet guidance to README, SKILL, prompt, and free-user
-  docs, fixes the issue link, and keeps TweetClaw as source material rather than
-  a verdict. Head `4c37255` is mergeable and clean with no comments, reviews, or
-  checks.
+  already-seen repos. Extra crawler coverage found `nicoxia/skills-x-to-notebooklm`
+  and `ProfTrader/twitter-influencer-skill` as future lanes.
+- PR gate read back 200 authored PRs, found `warlockoussama/twitter-cli#1`
+  conflicting, merged upstream, revalidated, and pushed head `dcbf6c3`; PR now
+  reads mergeable and clean. Other failing checks were target-owned Vercel gates.
+- New PR: https://github.com/underdogYnino/social-growth-audit-skill/pull/1
+  adds public X/Twitter context-packet boundaries, keeps backend analytics as
+  funnel truth, syncs the packaged skill, and fixes the README Chinese anchor.
+  Head `fdf813a` is mergeable and clean with no comments, reviews, or checks.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Link, audit, target, and final checks
   passed.
-- Durable lesson: fact-checking skills are good targets when the change improves
-  capture-date and source-context handling. Treat X/Twitter exports as evidence,
-  not proof or permission for account actions.
+- Durable lesson: growth-audit skills need backend analytics as funnel truth.
+  TweetClaw packets can support hook, reply, quote, topic, and audience-language
+  analysis only.
 
 ## Reporting Checklist
 
