@@ -194,26 +194,25 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 01:41 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+- 2026-06-13 02:02 UTC: model/effort selectors unavailable. TweetClaw/Xquik
   issues were empty. PR monitoring read 100 authored PRs and found no
-  actionable GitHub Actions, conflict, DCO, CLA, generated-file, or
-  current-head review blocker. Vercel authorization failures and stale bot
-  threads are archived.
-- Crawler-first discovery screened 73 skill/social hits and 48 tooling hits.
+  GitHub Actions, conflict, DCO, CLA, or maintainer blockers. Repaired
+  https://github.com/DemumuMind/mcp-servers-catalog/pull/1 by updating Xquik
+  seed stars; Vercel authorization and CodeRabbit rate limits are target-owned.
+- Crawler-first discovery screened 91 skill/social hits and 56 tooling hits.
   Blockers are archived. New PR:
-  https://github.com/Trierner/social-content-analysis-skill/pull/1 adds
-  optional X/Twitter source evidence while keeping analysis and automation
-  control in the target flow.
-- OpenClaw docs/npm checked 2026-06-13 01:41 UTC: `openclaw@2026.6.6`,
+  https://github.com/MaxKmet/idea-validation-agents/pull/2 adds X/Twitter as a
+  first-class trend-analysis source with TweetClaw only as optional source
+  evidence.
+- OpenClaw docs/npm checked 2026-06-13 02:02 UTC: `openclaw@2026.6.6`,
   `clawhub@0.21.0`; llms, plugin, skill, manifest, permissions, tool-plugin,
   overrides, debugging, and ClawHub skill-format docs passed.
-- Validation passed target links, frontmatter, template script, whitespace,
-  fork-parent checks, hygiene scan, PR readbacks, public links, direct URLs,
-  audits, build, OpenClaw fitness, package artifact, full checks, and memory.
-- Durable lesson: `Trierner/social-content-analysis-skill#1` is
-  duplicate-blocked. Social analysis skills fit when TweetClaw is source
-  evidence only; analysis, caveats, originality, posting, monitors, webhooks,
-  and publishing decisions stay outside the evidence tool.
+- Validation passed target links, prompt wiring, whitespace, fork-parent checks,
+  hygiene scan, PR readbacks, public links, direct URLs, audits, build,
+  OpenClaw fitness, package artifact, full checks, and memory.
+- Durable lesson: `MaxKmet/idea-validation-agents#2` is duplicate-blocked.
+  Market-validation skills fit when TweetClaw is public X/Twitter evidence
+  only; strategy, scoring, experiments, and decisions stay target-owned.
 
 ## Reporting Checklist
 
