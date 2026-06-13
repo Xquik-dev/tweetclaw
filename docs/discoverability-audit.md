@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 01:12 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 01:41 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,27 +194,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 01:12 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+- 2026-06-13 01:41 UTC: model/effort selectors unavailable. TweetClaw/Xquik
   issues were empty. PR monitoring read 100 authored PRs and found no
-  actionable CI, conflict, DCO, CLA, generated-file, or current-head review
-  blocker. Stale/invalid bot threads are archived.
-- Crawler-first discovery screened 22 skill/social hits, 1 tooling hit, and
-  extra passes. Duplicate, no-license, stale, and target-fit blockers are
-  archived. New PR:
-  https://github.com/rigarcia07/social-creative-director-skill/pull/1 adds
-  optional X/Twitter source-evidence guidance and keeps creative direction,
-  drafting, approval, publishing, and automation decisions in the target flow.
-- OpenClaw docs/npm checked 2026-06-13 01:12 UTC: `openclaw@2026.6.6`,
+  actionable GitHub Actions, conflict, DCO, CLA, generated-file, or
+  current-head review blocker. Vercel authorization failures and stale bot
+  threads are archived.
+- Crawler-first discovery screened 73 skill/social hits and 48 tooling hits.
+  Blockers are archived. New PR:
+  https://github.com/Trierner/social-content-analysis-skill/pull/1 adds
+  optional X/Twitter source evidence while keeping analysis and automation
+  control in the target flow.
+- OpenClaw docs/npm checked 2026-06-13 01:41 UTC: `openclaw@2026.6.6`,
   `clawhub@0.21.0`; llms, plugin, skill, manifest, permissions, tool-plugin,
   overrides, debugging, and ClawHub skill-format docs passed.
-- Validation passed target links, zip parity, whitespace, fork-parent checks,
-  public-hygiene scan, PR readbacks, TweetClaw public links, canonical direct
-  URLs, audits, build, OpenClaw fitness, package artifact, full checks, and
-  memory cap.
-- Durable lesson: `rigarcia07/social-creative-director-skill#1` is
-  duplicate-blocked. Creative director and brand skills fit when TweetClaw is
-  only optional source evidence, never the owner of copy, approval, scheduling,
-  publishing, analytics, or automation control.
+- Validation passed target links, frontmatter, template script, whitespace,
+  fork-parent checks, hygiene scan, PR readbacks, public links, direct URLs,
+  audits, build, OpenClaw fitness, package artifact, full checks, and memory.
+- Durable lesson: `Trierner/social-content-analysis-skill#1` is
+  duplicate-blocked. Social analysis skills fit when TweetClaw is source
+  evidence only; analysis, caveats, originality, posting, monitors, webhooks,
+  and publishing decisions stay outside the evidence tool.
 
 ## Reporting Checklist
 
