@@ -194,26 +194,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 00:35 UTC: model/effort selectors unavailable. TweetClaw/Xquik
-  issues were empty. PR monitoring read 100 authored PRs plus 29 GraphQL thread
-  readbacks; stale bot findings were already fixed, clarified, or target-owned.
-- Crawler-first discovery screened 30 skill/social hits and 7 tooling hits.
-  Duplicate, no-license, direct-competitor, and prior-history blockers are
-  archived. New PR: https://github.com/the-long-ride/skill-master/pull/1 adds
-  marketing-growth social evidence guidance and routes TweetClaw X/Twitter
-  evidence requests without making TweetClaw draft, approve, schedule, or
-  publish.
-- OpenClaw docs/npm checked 2026-06-13 00:35 UTC: `openclaw@2026.6.6`,
-  `clawhub@0.21.0`; specific docs and mirror passed. `docs.openclaw.ai/llms.txt`
-  timed out once.
-- Target validation passed `npm test`, `npm run verify`, `npm pack --dry-run`,
-  whitespace, fork-parent checks, public-hygiene scan, and PR readback
-  `MERGEABLE` with no checks. TweetClaw validation passed links, direct URL
-  checks, audits, build, OpenClaw fitness, package artifact, full checks, and
-  memory cap.
-- Durable lesson: `the-long-ride/skill-master#1` is duplicate-blocked. Skill
-  authoring catalogs fit when the change improves routing and evidence-source
-  boundaries rather than adding a product listing.
+- 2026-06-13 00:56 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+  issues were empty. PR monitoring read 100 authored PRs; repaired current
+  CodeRabbit feedback on https://github.com/Salesably/salesably-marketplace/pull/1.
+- Crawler-first discovery screened 22 skill/social hits, then extra registry
+  passes returned no new hits. Duplicate, no-license, direct-provider, and
+  prior-history blockers are archived. New PR:
+  https://github.com/AstralFibonacci/x-twitter-posting-skill/pull/2 adds
+  approval boundaries and keeps TweetClaw as optional upstream evidence only.
+- OpenClaw docs/npm checked 2026-06-13 00:56 UTC: `openclaw@2026.6.6`,
+  `clawhub@0.21.0`; llms, plugin, skill, manifest, permissions, tool-plugin,
+  overrides, debugging, and ClawHub skill-format docs passed.
+- Validation passed target links, whitespace, fork-parent checks,
+  public-hygiene scan, PR readbacks, TweetClaw public links, direct URLs,
+  audits, build, OpenClaw fitness, package artifact, full checks, and memory cap.
+- Durable lesson: `AstralFibonacci/x-twitter-posting-skill#2` is
+  duplicate-blocked. Direct X write skills fit only when the change improves
+  approval boundaries and keeps TweetClaw out of final publishing decisions.
 
 ## Reporting Checklist
 
