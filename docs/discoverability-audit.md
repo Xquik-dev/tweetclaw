@@ -195,25 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 18:48 UTC: model/effort selectors unavailable; normal `gh` used
-  because the runtime cannot use `sandbox_permissions`. TweetClaw/Xquik issues
-  empty. Crawler returned 25 monitor candidates and 2 false-positive skill
-  hits; one GitHub rate limit stopped broad authenticated search. Proxy logs
-  printed no protected values.
-- PR gate read back 200 authored PRs: 143 `CLEAN`, 40 `UNSTABLE`, 17
-  `BLOCKED`; no current-head repairable comments, conflicts, DCO/CLA blockers,
-  generated drift, or fixable CI failures. Failures were target-owned.
-- New PR: https://github.com/EveryInc/product-launch-video/pull/1 adds optional
-  public X/Twitter source packets for launch hooks, reply context, quote
-  context, media references, and voice calibration while keeping video, caption,
-  posting, scheduling, analytics, and private data outside TweetClaw's role.
+- 2026-06-13 19:09 UTC: model/effort selectors unavailable; normal `gh` used
+  because this runtime cannot use `sandbox_permissions`. TweetClaw/Xquik issues
+  empty. Crawler returned 25 monitor candidates, 0 skill hits, and 0 tooling
+  hits; proxy logs printed no protected values.
+- PR gate read back 184/200 authored PRs before timeout, then exact tracked
+  PRs. No current-head repairable comments, conflicts, DCO/CLA blockers,
+  generated drift, or fixable CI failures were found. Failures were target-owned.
+- New PR: https://github.com/itchernetski/threads-carousel-claude-skill/pull/3
+  documents optional public X/Twitter source packets for carousel generation
+  while keeping slide design, copy trimming, PNG/PDF export, posting,
+  scheduling, analytics, credentials, and private data outside TweetClaw's role.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Target validation, link checks, direct URL
-  probes, npm audits, build, OpenClaw fitness, package artifact, memory check,
-  and final `check:all` passed.
-- Lesson: product-launch-video skills are useful targets when TweetClaw remains
-  optional public source context and the target owns storyboarding, rendering,
-  captions, publishing choices, and social-platform delivery.
+  probes, npm audits, OpenClaw fitness, memory check, and final gates passed.
+- Lesson: carousel and visual-repackaging skills are useful targets when
+  TweetClaw remains optional public source context and the target owns visual
+  hierarchy, format presets, copy trimming, export, and platform delivery.
 
 ## Reporting Checklist
 
