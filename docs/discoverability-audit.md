@@ -195,23 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 19:09 UTC: model/effort selectors unavailable; normal `gh` used
+- 2026-06-13 19:33 UTC: model/effort selectors unavailable; normal `gh` used
   because this runtime cannot use `sandbox_permissions`. TweetClaw/Xquik issues
   empty. Crawler returned 25 monitor candidates, 0 skill hits, and 0 tooling
   hits; proxy logs printed no protected values.
-- PR gate read back 184/200 authored PRs before timeout, then exact tracked
-  PRs. No current-head repairable comments, conflicts, DCO/CLA blockers,
-  generated drift, or fixable CI failures were found. Failures were target-owned.
-- New PR: https://github.com/itchernetski/threads-carousel-claude-skill/pull/3
-  documents optional public X/Twitter source packets for carousel generation
-  while keeping slide design, copy trimming, PNG/PDF export, posting,
-  scheduling, analytics, credentials, and private data outside TweetClaw's role.
+- PR gate read back 200 authored PRs plus tracked PRs. No current-head
+  repairable comments, conflicts, DCO/CLA blockers, generated drift, or fixable
+  CI failures were found. Failures were target-owned.
+- New PR: https://github.com/FoundDream/editorial-card-generator-skill/pull/1
+  documents optional public X/Twitter source packets for editorial card
+  generation, adds the xquik.com NHS badge, and keeps design, card splitting,
+  export, posting, scheduling, analytics, credentials, and private data outside
+  TweetClaw's role.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Target validation, link checks, direct URL
   probes, npm audits, OpenClaw fitness, memory check, and final gates passed.
-- Lesson: carousel and visual-repackaging skills are useful targets when
-  TweetClaw remains optional public source context and the target owns visual
-  hierarchy, format presets, copy trimming, export, and platform delivery.
+- Lesson: visual-card skills are useful targets when TweetClaw remains optional
+  public source context and the target owns hierarchy, pagination, typography,
+  export quality, and final copy trimming.
 
 ## Reporting Checklist
 
