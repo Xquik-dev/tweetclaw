@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-12 23:53 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 00:14 UTC: latest
   `2026.6.6`, beta `2026.6.6-beta.2`; CLI plugins, skills, manifest, hooks,
   plugin SDK, ClawHub, validation, testing, inventory, and debugging.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -194,23 +194,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-12 23:53 UTC: model/effort selectors unavailable. TweetClaw/Xquik
-  issues were empty. PR monitoring read 100 authored PRs plus 34 GraphQL thread
+- 2026-06-13 00:14 UTC: model/effort selectors unavailable. TweetClaw/Xquik
+  issues were empty. PR monitoring read 100 authored PRs plus 29 GraphQL thread
   readbacks; no current-head repair was safely needed.
-- Crawler-first discovery screened 14 X/Twitter skill hits and 0 tooling hits.
-  Blockers are archived. New PR: https://github.com/justhandledlabs/skills/pull/1
-  adds `x-twitter-signal-research-free`, marketplace wiring, and README row for
-  read-only B2B signal briefs from public X/Twitter evidence.
-- OpenClaw docs/npm checked 2026-06-12 23:53 UTC: latest `2026.6.6`, beta
+- Crawler-first discovery screened 30 skill/social hits and 7 tooling hits.
+  Duplicate, no-license, direct-competitor, and prior-history blockers are
+  archived. New PR: https://github.com/agent-catalog/examples/pull/1 adds an
+  OpenClaw harness walkthrough for agent-catalog examples.
+- OpenClaw docs/npm checked 2026-06-13 00:14 UTC: latest `2026.6.6`, beta
   `2026.6.6-beta.2`; plugin install, skills, permissions, tool-plugin,
   overrides, debugging, and ClawHub skill-format docs remain compatible.
-- Target validation passed JSON, manifest path, handled links, duplicate checks,
+- Target validation passed handled links, whitespace, duplicate checks,
   fork-parent checks, public-hygiene scan, and PR readback `MERGEABLE` with no
-  checks. TweetClaw validation passed links, audits, build, OpenClaw fitness,
-  package artifact, full checks, and memory cap.
-- Durable lesson: `justhandledlabs/skills#1` is duplicate-blocked. GTM skill
-  catalogs fit when TweetClaw/Xquik stay optional read sources and the skill
-  produces evidence for lead or outreach workflows without posting.
+  checks. Target CLI verification is blocked by unpublished package names in
+  target docs. TweetClaw validation passed links, audits, build, OpenClaw
+  fitness, package artifact, full checks, and memory cap.
+- Durable lesson: `agent-catalog/examples#1` is duplicate-blocked. Ecosystem
+  example repos fit OpenClaw placement when the change improves native harness
+  consumption without forcing TweetClaw into unrelated catalog semantics.
 
 ## Reporting Checklist
 
