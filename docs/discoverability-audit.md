@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 16:17 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 17:01 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,25 +195,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 16:17 UTC: model/effort selectors unavailable; normal `gh` used.
-  TweetClaw/Xquik issues empty. Xquik had unrelated
-  `deploy/scripts/xquik-postgres-basebackup-ship.sh`, untouched. Crawler
-  monitor, skill, and tooling JSON passes returned 0.
+- 2026-06-13 16:49 UTC: model/effort selectors unavailable; normal `gh` used.
+  TweetClaw/Xquik issues empty. Crawler monitor found only TweetClaw self and
+  prior `rrrrrredy/x-twitter-scraper`; skill/tooling passes found duplicate,
+  no-license, or direct-competing X/Twitter repos.
 - PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA,
   current-head bot findings, generated drift, or maintainer requests. Known
   failures were target-owned Vercel auth, labeler config, and FindAPIs
   automation already explained.
-- New PR: https://github.com/rohitg00/awesome-claude-code-toolkit/pull/537 adds
-  TweetClaw to All Plugins. Target was Apache-2.0, not a fork, duplicate-clean;
-  its existing `x-twitter-scraper` skill row is distinct. CodeRabbit row-order
-  feedback was fixed in head `cd0d481`; final bot check passed.
+- New PR: https://github.com/paperfoot/xmaster-cli/pull/20 documents local
+  OpenClaw skill install for XMaster and an optional TweetClaw upstream
+  source-context workflow before approved account actions. Target was MIT,
+  duplicate-clean, and used `kriptoburak/xmaster-cli`.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
   remains `1.6.31`, source `1.6.32`. Link checks, direct URL probes, npm
-  audits, build, OpenClaw fitness, and package artifact checks passed; npm web
-  403 and `xquik.com/mcp` 401 are expected blockers.
-- Durable lesson: an existing `x-twitter-scraper` skill row does not block a
-  distinct TweetClaw plugin row when the target has separate plugin and skill
-  sections and duplicate checks find no TweetClaw history.
+  audits, build, OpenClaw fitness, package artifact, and xmaster `cargo check`
+  passed; crates.io link-check false negative and `xquik.com/mcp` 401 are
+  expected blockers.
+- Durable lesson: direct X/Twitter tools are usually lower fit, but a bundled
+  agent skill can be acceptable when TweetClaw stays optional upstream evidence
+  and the target keeps final account actions behind its own approval boundary.
 
 ## Reporting Checklist
 
