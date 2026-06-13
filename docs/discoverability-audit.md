@@ -195,26 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 16:49 UTC: model/effort selectors unavailable; normal `gh` used.
-  TweetClaw/Xquik issues empty. Crawler monitor found only TweetClaw self and
-  prior `rrrrrredy/x-twitter-scraper`; skill/tooling passes found duplicate,
-  no-license, or direct-competing X/Twitter repos.
-- PR gate read back 200 authored PRs: no repairable conflicts, DCO, CLA,
-  current-head bot findings, generated drift, or maintainer requests. Known
-  failures were target-owned Vercel auth, labeler config, and FindAPIs
-  automation already explained.
-- New PR: https://github.com/paperfoot/xmaster-cli/pull/20 documents local
-  OpenClaw skill install for XMaster and an optional TweetClaw upstream
-  source-context workflow before approved account actions. Target was MIT,
-  duplicate-clean, and used `kriptoburak/xmaster-cli`.
+- 2026-06-13 17:20 UTC: model/effort selectors unavailable; normal `gh` used.
+  TweetClaw/Xquik issues empty. Crawler and follow-up screens found duplicate,
+  empty, or no-license skill/catalog lanes before selecting
+  `grandamenium/social-media-insights`.
+- PR gate read back 200 authored PRs. Current review/check blockers were stale,
+  already addressed, or target-owned Vercel, labeler, and automation failures;
+  no safe repair commit was pending.
+- New PR: https://github.com/grandamenium/social-media-insights/pull/1 adds a
+  credential-free TweetClaw-style source-packet input path, fixture, and docs so
+  the target can analyze reviewed X/Twitter evidence without another scrape.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. Link checks, direct URL probes, npm
-  audits, build, OpenClaw fitness, package artifact, and xmaster `cargo check`
-  passed; crates.io link-check false negative and `xquik.com/mcp` 401 are
-  expected blockers.
-- Durable lesson: direct X/Twitter tools are usually lower fit, but a bundled
-  agent skill can be acceptable when TweetClaw stays optional upstream evidence
-  and the target keeps final account actions behind its own approval boundary.
+  remains `1.6.31`, source `1.6.32`. Link checks, direct URL probes, target
+  validation, npm audits, build, OpenClaw fitness, package artifact, and final
+  `check:all` passed.
+- Lesson: social analysis skills are good targets when TweetClaw is source
+  evidence only and the target records whether a network scraper was used.
 
 ## Reporting Checklist
 
