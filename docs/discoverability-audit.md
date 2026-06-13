@@ -195,25 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 08:27 UTC: model/effort selectors unavailable; prompt 14,530
-  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor, tooling,
-  and framework passes returned 0; skill coverage returned 82 repos.
-- PR gate read back 200 authored PRs. Repaired
-  https://github.com/warlockoussama/twitter-cli/pull/1 by rebasing the fork
-  branch; final readback is clean and mergeable. Other blockers were stale bot
-  state, required review, or target-owned Vercel authorization.
-- New PR: https://github.com/sunyifeng11111/sun-daily-topics/pull/1 adds
-  exported Markdown frontmatter aliases, section aliases, and local-only source
-  guidance that allows TweetClaw exports without giving that skill credentials.
+- 2026-06-13 08:40 UTC: model/effort selectors unavailable; prompt 14,530
+  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor/tooling
+  returned 0; skill coverage returned 68 already tracked repos.
+- PR gate read back 200 authored PRs. Replied to the maintainer question on
+  https://github.com/maxvaega/awesome-skills/pull/2; no safe repair blocker
+  remained before outreach.
+- New PR: https://github.com/WoopSocial/woopsocial-social-media-skill/pull/1
+  documents source-evidence and approval boundaries for publishing workflows
+  while keeping TweetClaw/OpenClaw output optional X/Twitter context only.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
-  `1.6.31` while source remains `1.6.32`. Canonical docs and links passed;
-  noncanonical deep plugin-command URLs now return 404 and should not be used.
-  TweetClaw audits, memory, build, OpenClaw fitness, package artifact, and full
-  checks passed.
-- Durable lesson: local Markdown clip skills are good targets when the
-  contribution improves parser compatibility and preserves local-only,
-  no-credentials boundaries. Keep TweetClaw as an optional upstream exporter,
-  not the owner of topic selection.
+  `1.6.31` while source remains `1.6.32`. Current docs, canonical links,
+  audits, build, OpenClaw fitness, package artifact, and full checks passed.
+- Durable lesson: publishing skills are good targets only when TweetClaw stays
+  source context and never authorizes posts, replies, DMs, media, webhooks, or
+  account changes.
 
 ## Reporting Checklist
 
