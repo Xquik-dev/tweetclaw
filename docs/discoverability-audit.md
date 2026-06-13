@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
   returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-13 11:55 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-13 12:17 UTC: latest
   `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,23 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 11:43 UTC: model/effort selectors unavailable; prompt 14,530
+- 2026-06-13 12:17 UTC: model/effort selectors unavailable; prompt 14,530
   bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor, skill,
   and tooling passes returned valid empty JSON.
 - PR gate read back 200 authored PRs. No current-head conflict, DCO, CLA,
   generated-file drift, CI failure, or valid bot finding needed repair. Visible
   blockers were stale, already fixed on newer heads, or target-owned Vercel
   authorization failures.
-- New PR: https://github.com/ScaleBrick/founder-marketing-skills/pull/2 adds
-  reviewed X/Twitter source-packet guidance to the competitor-intelligence
-  skill. Head `500e017` is mergeable and clean with no comments, reviews, or
-  checks.
+- New PR: https://github.com/aitytech/agentkits-marketing/pull/27 adds optional
+  public Twitter/X source-packet guidance to competitor and market research
+  commands. Head `64af2d3` is mergeable with target label/welcome checks
+  passing, release-drafter update skipped, and no comments or reviews.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`, TweetClaw npm
   `1.6.31` while source remains `1.6.32`. Canonical links, audits, target
-  checks, package artifact, and full `npm run check:all` passed.
-- Durable lesson: competitor-intelligence skills are good targets when
-  TweetClaw is source evidence only, and the target keeps analysis, gap finding,
-  prioritization, and weekly actions.
+  checks, Markdown link checks, package artifact, and full validation passed.
+- Durable lesson: marketing-research command packs are good targets when
+  TweetClaw is cited social evidence only, with source URLs and capture dates,
+  and the target keeps analysis, strategy, scheduling, publishing, and metrics.
 
 ## Reporting Checklist
 
