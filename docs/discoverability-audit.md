@@ -194,21 +194,26 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 04:25 UTC: model/effort selectors unavailable; prompt 14,530
-  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitor/tooling 0;
-  skill coverage 78 found 4 fresh candidates; full screening is archived.
-- PR monitoring read 120 authored PRs and thread-checked 37 flagged PRs. Repaired
-  https://github.com/anup4khandelwal/awesome-codex-skills/pull/6 with commits
-  `c89e223` and `2e797b4`; final readback is mergeable and approved.
-- New PR: https://github.com/nick905846753-crypto/x-publisher-clean-profile/pull/1
-  documents source-evidence companion boundaries, adds the NHS xquik.com badge,
-  and refreshes the packaged skill tarball.
+- 2026-06-13 04:40 UTC: model/effort selectors unavailable; prompt 14,530
+  bytes, automation TOML 14,872 bytes. Issues empty. Crawler monitoring returned
+  0, skill coverage returned 82 repos, tooling returned 0, and an extra skill
+  pass returned 6 repos; full duplicate and blocker screening is archived.
+- PR monitoring read the newest 120 authored PRs and checked comment/review
+  readbacks for 30 flagged PRs. No current-head merge conflict, DCO, CLA,
+  generated drift, GitHub Actions failure, or safely repairable maintainer
+  request blocked fresh outreach.
+- New PR: https://github.com/felixsim/bookmark-brain/pull/1 clarifies first-run
+  approval boundaries, privacy and external-call wording, no-publishing
+  guardrails, optional TweetClaw source-evidence companion use, and repairs
+  three pre-existing README example links.
 - OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`,
-  TweetClaw npm `1.6.31`; public Markdown links, target links, audits, package
-  artifact, OpenClaw fitness, full checks, and memory passed.
-- Durable lessons: `x-publisher-clean-profile#1` is duplicate-blocked. Browser
-  publishing skills are good targets for separating source evidence from final
-  draft/send control; update packaged artifacts when docs are bundled.
+  TweetClaw npm `1.6.31`; TweetClaw public Markdown links, canonical direct URLs,
+  target links, npm audits, memory, package artifact, OpenClaw fitness, build,
+  and full checks passed.
+- Durable lessons: `felixsim/bookmark-brain#1` is duplicate-blocked. Bookmark
+  review skills are strong targets when the contribution fixes data-sharing
+  wording, first-run consent, move-to-processed behavior, and keeps TweetClaw as
+  an optional source-evidence companion for adjacent X/Twitter jobs.
 
 ## Reporting Checklist
 
