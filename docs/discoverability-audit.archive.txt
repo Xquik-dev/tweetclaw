@@ -8600,3 +8600,106 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   Final readback showed the Gemini thread outdated, the PR still open, ready,
   `MERGEABLE`, `CLEAN`, with no checks configured and no current actionable
   review thread left to fix.
+
+2026-06-15 01:55 UTC heartbeat discovery, Product Hunt skill PR, and xquik-docs check
+- Runtime and safety: current Codex desktop runtime still does not expose a
+  GPT-5.5 or extra-high reasoning selector, so the requested model and effort
+  are unavailable for this run and work continued with that limitation recorded.
+  No Context7 work, Browser/Chrome visual repo inspection, dev server,
+  production SSH, Socket.dev token use, destructive git action, or secret
+  printing occurred. The chat-pasted npm credential was treated as
+  compromised, was not repeated, stored, or used, and no npm publish was
+  attempted. `npm whoami` returned 401, so publishing the committed
+  `@xquik/tweetclaw@1.6.32` package remains blocked until a rotated credential
+  is installed through an approved secret store.
+- Monitoring and repair gate: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik`
+  issue lists were empty. The newest 100 authored open `kriptoburak` PRs were
+  read back exactly. Thread-aware GraphQL checked current review state for
+  `savethepolarbears/agenthaus-marketplace#125`,
+  `Flopsstuff/flugins#6`, `wondelai/skills#6`,
+  `ondrej-svec/heart-of-gold-toolkit#1`, and
+  `marktantongco/ai-agent-skills#2`; no current actionable maintainer request,
+  review thread, CI failure, conflict, DCO/CLA blocker, or generated-file drift
+  remained. AgentHaus had one outdated Gemini thread after prior repair, and
+  Flugins had a resolved CodeRabbit thread.
+- OpenClaw and package metadata: official OpenClaw docs were rechecked through
+  current CLI, plugin install, update, inspect, manifest, setup, bundle,
+  permission request, tool-plugin, SDK/runtime, ClawHub publishing, overrides,
+  lifecycle trace, and debugging docs. They still support explicit npm installs,
+  `openclaw plugins update`, runtime JSON inspection, managed Gateway restart
+  behavior, and ClawHub publishing. npm registry metadata still exposes
+  `@xquik/tweetclaw@1.6.31`, while local TweetClaw source and xquik-docs are
+  already committed for `1.6.32` and OpenClaw `2026.6.6`; `1.6.32` is not yet
+  available on npm.
+- Crawler-first discovery and candidate screening: the Xquik crawler ran first
+  with research proxy, focused skill and social-media queries, strict JSON
+  output, and bounded request timeouts. It returned valid JSON with zero
+  opportunities, while stderr recorded proxy socket-close failures, endpoint
+  quarantines, and a proxy-pool outage circuit; no credentials were printed.
+  Compact audit, archive, crawler output, web-index results, exact repo
+  metadata, target content, local clones, target open/closed PRs, and target
+  issues were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw,
+  ClawHub, Twitter/X, Product Hunt, SKILL.md, agent skills, source packets,
+  social-media launch skills, and badge variants. `blacktwist/social-media-skills`,
+  `SpillwaveSolutions/running-marketing-campaigns-agent-skill`,
+  `vstorm-co/content-skills`, `zubair-trabzada/ai-marketing-claude`, and
+  related lanes were blocked by existing audit or PR history. Fresh
+  `yoanbernabeu/producthunt-skills` was MIT licensed, public, non-fork,
+  non-archived, issue-enabled, duplicate-clean across audit, target content,
+  target PRs, and target issues, and fit because its Product Hunt
+  `ph-social-media-launch` skill already owns Twitter/X launch planning.
+- New PR: opened `yoanbernabeu/producthunt-skills#1` at
+  https://github.com/yoanbernabeu/producthunt-skills/pull/1 from correctly
+  parented fork `kriptoburak/producthunt-skills`, branch
+  `codex/tweetclaw-launch-source-packets`, commit `02ac26e`. The PR adds
+  evidence-first Twitter/X drafting guidance to `ph-social-media-launch`, adds
+  optional OpenClaw plus TweetClaw source collection for public launch mentions,
+  replies, user profiles, supporter lists, and launch-day keyword monitoring,
+  keeps drafting, schedule, approvals, final wording, publishing choice, and
+  analytics review inside the target skill, adds source-note checklist and
+  output fields, and adds the xquik.com NHS Agentic Readiness badge to the
+  existing README badge strip.
+- Target validation and readback: target validation passed `git diff --check`,
+  public-hygiene and sensitive-string diff scans, `npx --yes
+  markdown-link-check README.md skills/marketing/ph-social-media-launch/SKILL.md`,
+  direct 200 checks for the NHS page, NHS badge SVG, TweetClaw GitHub, and npm
+  registry metadata, and `npm view @xquik/tweetclaw version openclaw.install
+  --json`. Final PR readback showed open, ready, `MERGEABLE`, `CLEAN`, no
+  comments, no reviews, no checks configured, and changed files limited to
+  README plus the social-media launch skill.
+- xquik-docs direct user request: `/Users/burak/Developer/xquik-docs` was
+  inspected as the docs.xquik.com repo. It is clean on `main`, synced to
+  `origin/main` at `e679fd2`, public, non-fork, non-archived, and the latest
+  GitHub Actions for that commit, `Agent-Friendly Docs` and `Refresh Context7
+  Docs`, both succeeded. The only in-scope skill support file is `skill.md`;
+  README, `skill.md`, `guides/tweetclaw.mdx`, `introduction.mdx`, and
+  `llms.txt` were checked. `bun run test:agent-docs` passed with 16 files, 258
+  tests, and 1 skipped test. Mintlify through `bunx --bun` failed because the
+  transient CLI install missed its own dependencies, and `npx mint` with shell
+  Node 26 failed because Mintlify rejects Node 25+. Re-running with the bundled
+  Node 24 first in `PATH` passed `npx --yes mint validate` and `npx --yes mint
+  broken-links` with no broken links. No xquik-docs file changes were made
+  because its TweetClaw docs align with the local source tree; the remaining
+  problem is npm publication of `1.6.32`, which is credential-blocked as noted
+  above.
+- TweetClaw public links, validation, and self-improvement: a strict
+  source-derived TweetClaw public URL sweep checked README, OpenClaw setup docs,
+  agent workflows docs, packaged skill, package metadata, plugin manifest, and
+  code of conduct; all 46 non-Context7 URLs returned 200, including canonical
+  TweetClaw GitHub, GitHub issues, npm registry metadata, ClawHub plugin page,
+  xquik.com, dashboard.xquik.com, docs.xquik.com, Skills.sh, Not Human Search,
+  DeepWiki, Smithery, Apify actor, and current OpenClaw docs. Omit-dev and full
+  `npm audit` found 0 vulnerabilities. `git diff --check`,
+  `npm run check-memory-md-size`, and `npm run check-openclaw-platform-fitness`
+  passed before this archive write. Final post-edit validation passed
+  `npm run check:all` with 11 test files, 168 tests, and 100% coverage. Compact
+  Markdown memory remains exactly 15360/15360 bytes, and automation TOML remains
+  14872 bytes; no prompt edit was useful because the prompt already preserves
+  model/effort wording, quiet
+  autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate and
+  fork rules, official OpenClaw checks, link checks, validation gates, badge
+  rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Changed TweetClaw
+  file is `docs/discoverability-audit.archive.txt`.
