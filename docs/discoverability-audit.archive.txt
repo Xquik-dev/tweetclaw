@@ -11725,3 +11725,93 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   priority, duplicate and fork rules, OpenClaw docs checks, link checks,
   validation gates, badge rule, explicit target exclusion, secret handling,
   commit/push requirement, Markdown cap, and self-improvement rule.
+
+2026-06-15 23:23 UTC heartbeat archive
+
+- Runtime: GPT-5.5 and extra-high reasoning selectors were unavailable in this
+  Codex runtime. Continued with the available model and effort, per automation
+  rule.
+- Starting state: TweetClaw was clean on `master` at `926626c`. Explicit
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issue reads returned no open
+  issues.
+- Crawler-first discovery: ran the xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with focused SKILL.md, OpenClaw, MCP,
+  Twitter/X, social, validator, and package-tooling queries. The first pass
+  returned strict JSON with an empty opportunities array. A second focused pass
+  hit managed proxy socket failures, endpoint quarantines, and a US proxy pool
+  outage, then returned an empty opportunities array. No credential values were
+  printed.
+- PR monitoring: listed 60 newest open PRs authored by `kriptoburak` and exact
+  read each. Summary was 39 `CLEAN`, 16 `UNSTABLE`, 4 `BLOCKED`, 1 `UNKNOWN`,
+  59 mergeable, 0 conflicting, 3 review-required, 0 changes-requested, 6 with
+  comments, 2 with reviews, and 3 with failing checks.
+- Repair decisions: failing checks on `modu-ai/cowork-plugins#5`,
+  `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290` were Vercel authorization gates.
+  `Walliiee/openclaw-skills#2`, `Sukumar-Elley/awesome-mcp-servers#1`,
+  `wangzhongmin/awesome-mcp-servers#2`, `himself65/skill-lint#3`,
+  `agent-ecosystem/skill-validator#80`, and
+  `Flash-Brew-Digital/validate-skill#2` had no current actionable maintainer
+  request, review comment, conflict, DCO/CLA issue, or safe CI fix.
+- Fresh candidate screening: `vesselofone/openclaw-skills` was MIT,
+  non-fork, and duplicate-clean for TweetClaw, but target docs and methodology
+  say the CSV data is generated from `openclaw/skills` and row fixes should go
+  through issues or upstream source. Its data already includes
+  `x-twitter-scraper`; direct TweetClaw row edits were policy-blocked.
+  Additional searches blocked unlicensed or prior-history targets including
+  `harrypham2000/skill-audit`, `anshuman-singh-93/purecloud-social-listening-mcp`,
+  direct own-account repos, and many already handled Twitter/X MCP lanes.
+  `replica882/twitter-bridge-mcp` was selected because it is MIT licensed,
+  non-fork, issue-enabled, duplicate-clean across compact memory, archive,
+  target content, and open plus closed target PRs/issues, and it had target-native
+  stale README guidance.
+- New external PR: opened https://github.com/replica882/twitter-bridge-mcp/pull/1
+  from verified fork `kriptoburak/twitter-bridge-mcp`, parent
+  `replica882/twitter-bridge-mcp`, branch
+  `codex/update-openclaw-workflow-docs`, commit `fc9afaa`. The PR fixes the
+  architecture tool count from 19 to 21, replaces the stale restart-token gotcha
+  with the current `.tokens.json` persistence behavior, and adds a short
+  optional OpenClaw/TweetClaw companion note that keeps Twitter Bridge MCP
+  responsible for browser-session control while TweetClaw owns its OpenClaw
+  plugin, API, and webhook workflow. No NHS badge was added because the target
+  has no useful xquik.com readiness badge area.
+- Target validation for `twitter-bridge-mcp#1`: passed `git diff --check`,
+  `node --check server.mjs`, `npm pack --dry-run --json`, `npx --yes
+  markdown-link-check README.md --quiet`, direct target repo and TweetClaw
+  GitHub HTTP 200 checks, `npm view @xquik/tweetclaw version openclaw.install
+  repository.url homepage --json`, and public-diff hygiene scans. The package
+  dry-run emitted only a pre-existing `.npmignore` suggestion; no dependency or
+  lock files changed.
+- PR readback: PR #1 is open, ready, `MERGEABLE`, `CLEAN`, head
+  `fc9afaa0c3668c1efbb1f16ab75044a158ee6f5f`, changed file `README.md`, no
+  comments, no reviews, and no checks configured.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt`, `/cli/plugins`, `/clawhub/skill-format`, `/clawhub/publishing`,
+  `/plugins/manifest`, and `/plugins/sdk-runtime` with HTTP 200. Npm metadata
+  returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub
+  `0.21.0`, and published TweetClaw `1.6.31`; local source remains `1.6.32`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflows docs, packaged skill, and code of
+  conduct. Direct checks returned HTTP 200 for current OpenClaw docs, ClawHub
+  plugin route, TweetClaw GitHub, npm registry metadata, xquik.com public docs
+  links covered by README, target repo, target PR, and fork branch. The probe
+  `https://openclaw.directory` now redirects to a Spaceship purchase page and
+  returns 403, but current TweetClaw public surfaces do not link to it; the
+  useful stale OpenClaw Directory note still uses `openclawdir.com`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`; after audit
+  edits, `npm run check-memory-md-size` passed at `15231/15360` and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit
+  --audit-level=moderate` remains blocked by nested OpenClaw advisories for
+  `protobufjs` and `tar`; no source dependency files changed.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful.
+  Keep treating generated catalogs as policy-blocked for direct row edits when
+  their methodology says another upstream repo is the source of truth. Preserve
+  model/effort wording, same-thread quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill-repo coverage, fresh target
+  discovery, PR repair priority, duplicate and fork rules, official OpenClaw
+  checks, broken-link checks, validation gates, badge rule, explicit target
+  exclusion, secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
