@@ -195,20 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 10:44 UTC: model/effort selectors unavailable; automation remains
-  minutely at `FREQ=MINUTELY;INTERVAL=1`; prompt bytes 14,872.
-- PR gate read 120 open authored PRs, repaired
-  `grasscaograss/AwesomeWeldoneSkills#5` from dirty/conflicting to clean by
-  merging upstream and resolving the skill-count conflict. Other comments,
-  reviews, and the Kilo check had no current safe repair payload.
-- Crawler-first discovery returned valid zero-opportunity JSON after a short
-  proxy pool outage. Fresh screening selected `stone16/wingman-x` as MIT,
-  non-fork, duplicate-clean, and useful after no-license and duplicate lanes.
-- New PR: https://github.com/stone16/wingman-x/pull/21 fixes packaged skill
-  docs links, updates the current `@wingman-x/agent-kit` package name, and adds
-  optional TweetClaw/OpenClaw public source-evidence guidance.
-- OpenClaw docs, npm metadata, target docs, TweetClaw public links, audits,
-  OpenClaw fitness, memory, and `check:all` passed.
+- 2026-06-15 11:05 UTC: model/effort selectors unavailable; automation remains
+  minutely at `FREQ=MINUTELY;INTERVAL=1`.
+- PR gate read 140 open authored PRs, repaired
+  `fuzzylabs/awesome-secure-mcp-servers#364` and
+  `zgybkjcn-a11y/openclaw-exa-research-skills#1` from conflicting to
+  mergeable. `Flopsstuff/flugins#6` already had the requested author email fix.
+- Crawler-first discovery returned valid zero-opportunity JSON after proxy
+  socket closures and quarantine logs. Fresh screening selected
+  `heyjello/x-to-markdown` as licensed by repository files, duplicate-clean,
+  and useful for URL-discovery guidance.
+- New PR: https://github.com/heyjello/x-to-markdown/pull/3 documents optional
+  TweetClaw/OpenClaw URL discovery before local Markdown conversion while
+  preserving the target's API, archive, media, and credential boundaries.
+- OpenClaw docs, npm metadata, repaired and new target docs, xquik-docs README
+  and skill checks, TweetClaw public links, audits, OpenClaw fitness, memory,
+  and final validation passed.
 
 ## Reporting Checklist
 
