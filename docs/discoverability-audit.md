@@ -195,19 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 18:05 UTC: model/effort selectors unavailable; minutely unchanged.
-- PR gate exact-read 120 of 200 open PRs; no safely repairable blocker. BeeAI
-  repair remains check-clean for DCO and labeler; other findings were external
-  bot or maintainer-policy states.
-- Crawler returned zero JSON after research-route failures. `aaglexx` blocked
-  direct PRs by policy; `liz7788/awesome-mcp-servers` was MIT, non-fork,
-  duplicate-clean, and hand-editable.
-- New PR: https://github.com/liz7788/awesome-mcp-servers/pull/5 adds TweetClaw
-  to Automation & Workflow; readback was open, ready, and `CLEAN`.
+- 2026-06-15 18:27 UTC: model/effort selectors unavailable; minutely unchanged.
+- PR gate exact-read 120 of 200 open PRs. Repaired
+  `warlockoussama/twitter-cli#1` by merging upstream, resolving the README
+  conflict, pushing `d6da100`, and commenting validation results.
+- Crawler returned zero JSON after research-route failures. `Sukumar-Elley` and
+  `lilyth-y` MCP-list candidates were MIT, non-fork, and duplicate-clean;
+  `Sukumar-Elley/awesome-mcp-servers` was fresher and PR-welcome.
+- New PR: https://github.com/Sukumar-Elley/awesome-mcp-servers/pull/1 adds
+  TweetClaw to Social Media. Readback is open, ready, `CLEAN`; target workflow
+  passed but posted a Glama-badge request, answered without adding a broken or
+  misleading badge because no TweetClaw score badge exists yet.
 - Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, and final
-  `npm run check:all` passed. Target link failures were pre-existing. Npm audit
-  is newly blocked by nested OpenClaw `protobufjs` and `tar`; npm publish still
-  E401.
+  `npm run check:all` passed. Target-wide link check timed out after 2 minutes;
+  focused check for the added TweetClaw entry passed. Npm audit stays blocked by
+  nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
 
 ## Reporting Checklist
 

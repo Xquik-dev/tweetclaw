@@ -10379,3 +10379,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   lesson: if npm audit starts failing after an OpenClaw stable refresh, check
   whether the advisory lives inside the host package shrinkwrap before adding
   root overrides; record it as upstream when npm refuses to rewrite it.
+
+## 2026-06-15 18:07 UTC heartbeat
+
+- Runtime limitation: this Codex runtime did not expose a GPT-5.5 selector or
+  extra-high reasoning selector. The run recorded that limitation and
+  continued. The same-thread heartbeat automation is already minutely; prompt
+  TOML measured 14,872 bytes and was not edited.
+- Start state: TweetClaw `master` was clean at `06c98ad`; xquik `master` had
+  unrelated untracked webshare and X preflight files, left untouched.
+- Crawler-first discovery: ran the xquik GitHub opportunity crawler with the
+  managed research proxy and strict JSON output across skill, OpenClaw, MCP,
+  Codex, Claude, social media, Twitter/X, and awesome-list terms. The research
+  route reported socket and pool failures without printing credentials; parsed
+  output was strict JSON with zero opportunities.
+- PR monitoring: searched 200 open authored PRs and exact-read 120 known PRs
+  after correcting an initial readback field mistake. No maintainer-requested
+  code change or failing GitHub Actions check was found before repair. Notable
+  states were target-owned auth, external bot, reviewer-policy, behind-branch,
+  and conflict states.
+- PR repair: `warlockoussama/twitter-cli#1` was conflict-only and safe to fix.
+  The fork branch `codex/update-readme-command-scope` was merged with upstream
+  `main`, README conflict markers were removed where both sides had the same
+  final download link, and commit `d6da100` was pushed. Validation passed with
+  `git diff --check`, conflict-marker scan, README markdown-link-check, and
+  changed-diff public-hygiene scan. Commented the repair at
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4710952838;
+  final readback was open, ready, and `CLEAN`.
+- Fresh screening: archive and compact audit checks were run before target
+  selection. `Sukumar-Elley/awesome-mcp-servers` was MIT, non-fork, PR-welcome,
+  updated 2026-05-12, and duplicate-clean across compact audit, archive, target
+  content, and target open/closed PRs and issues for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub and npm URLs, ClawHub, Xquik, and
+  x-twitter-scraper variants. `lilyth-y/awesome-mcp-servers` was also MIT,
+  non-fork, and duplicate-clean but older.
+- New external PR: opened https://github.com/Sukumar-Elley/awesome-mcp-servers/pull/1
+  from correctly parented fork `kriptoburak/sukumar-awesome-mcp-servers`, branch
+  `codex/add-tweetclaw-social-mcp-entry`, commit `79d6730`. It adds TweetClaw
+  to Social Media as an OpenClaw plugin for X/Twitter search, posting, replies,
+  follower export, media, direct messages, monitors, webhooks, and giveaway
+  draws, with the official `openclaw plugins install npm:@xquik/tweetclaw`
+  command. PR readback was open, ready, `CLEAN`; `check-submission` passed and
+  `welcome` skipped.
+- Target follow-up: the target workflow posted a Glama-badge request. I checked
+  Glama before editing and found the TweetClaw server path currently resolves to
+  the existing `Xquik-dev/x-twitter-scraper` listing while the matching
+  TweetClaw score-badge path is unavailable. I did not add a broken or
+  misleading badge. The PR comment was answered and then edited to avoid raw
+  broken-link URLs in public text:
+  https://github.com/Sukumar-Elley/awesome-mcp-servers/pull/1#issuecomment-4711035143.
+- Target validation: `git diff --check` passed. Direct HEAD check for the new
+  TweetClaw GitHub URL returned HTTP 200. Focused markdown-link-check for the
+  added TweetClaw row passed. Full target README link check was started but did
+  not finish within 2 minutes, so it was stopped and recorded as a target-wide
+  timeout rather than a TweetClaw link failure. Added-line hygiene found no
+  secret values, private implementation details, unsupported claims, stale
+  metadata, em dash, or banned space-hyphen sequence.
+- OpenClaw and npm checks: fetched current official `llms.txt`, `/cli/plugins`,
+  manifest, permission-request, ClawHub publishing, and skill-format docs. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`,
+  ClawHub `0.21.0`, and published `@xquik/tweetclaw@1.6.31`; local source
+  remains `1.6.32`.
+- TweetClaw public-link validation: markdown-link-check passed for README,
+  OpenClaw setup, agent workflows, packaged skill, and code of conduct. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry, ClawHub plugin
+  page, and xquik.com. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`.
+- Security/package validation: `npm audit --omit=dev --audit-level=moderate`
+  and full `npm audit --audit-level=moderate` both failed on nested
+  `openclaw@2026.6.6` shrinkwrap advisories for `protobufjs` and `tar`.
+  Treat this as an upstream OpenClaw stable-package blocker before release-like
+  claims.
+- Package publication boundary: `npm whoami` returned E401 again. The
+  previously exposed npm credential was not used, printed, stored, or repeated;
+  npm publish stays blocked until the owner rotates it and configures an
+  approved npm session or secret store.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation after audit update: `git diff` whitespace check
+  passed; `npm run check-memory-md-size` passed at the measured post-edit size;
+  diff hygiene found no secret values or forbidden dash additions; `npm run
+  check:all` passed with typecheck, lint, duplicate detection, knip,
+  suppression checks, dash hygiene, memory, skill frontmatter, version parity,
+  build, OpenClaw fitness, package artifact, and 168 coverage tests at 100
+  percent coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory per-run PR submission,
+  PR repair priority, duplicate and fork rules, OpenClaw docs checks, link
+  checks, validation gates, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, and self-improvement rule. Durable
+  lesson: if an awesome MCP target now requires a Glama badge, verify the exact
+  score-badge path before editing. Do not add a badge that points to another
+  Xquik listing or returns a broken response; record the target-policy blocker
+  and keep the public comment link-clean.
