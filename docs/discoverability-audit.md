@@ -195,22 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 11:05 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 11:38 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`.
-- PR gate read 140 open authored PRs, repaired
-  `fuzzylabs/awesome-secure-mcp-servers#364` and
-  `zgybkjcn-a11y/openclaw-exa-research-skills#1` from conflicting to
-  mergeable. `Flopsstuff/flugins#6` already had the requested author email fix.
+- PR gate started from 140 open authored PRs; one broad-read GraphQL 401 led to
+  targeted readbacks. No safe repair was needed: `Flopsstuff/flugins#6` already
+  had email and wording fixes; other flags were clean, stale-bot,
+  target-policy, or external-check blocked.
 - Crawler-first discovery returned valid zero-opportunity JSON after proxy
-  socket closures and quarantine logs. Fresh screening selected
-  `heyjello/x-to-markdown` as licensed by repository files, duplicate-clean,
-  and useful for URL-discovery guidance.
-- New PR: https://github.com/heyjello/x-to-markdown/pull/3 documents optional
-  TweetClaw/OpenClaw URL discovery before local Markdown conversion while
-  preserving the target's API, archive, media, and credential boundaries.
-- OpenClaw docs, npm metadata, repaired and new target docs, xquik-docs README
-  and skill checks, TweetClaw public links, audits, OpenClaw fitness, memory,
-  and final validation passed.
+  socket closures and quarantine logs. Fresh screening duplicate-blocked
+  `StarboWang/momcozy-public-feedback-monitoring-skill` and selected
+  `abhishekpanda-dev/X-content-skill` as MIT, non-fork, duplicate-clean, and
+  useful for source-context safety plus stale docs fixes.
+- New PR: https://github.com/abhishekpanda-dev/X-content-skill/pull/1 fixes a
+  stale Grok Skills docs link, corrects the clone URL, and adds optional
+  TweetClaw/OpenClaw source-context guidance while keeping account actions and
+  credentials out of scope.
+- OpenClaw docs, npm metadata, new target README, TweetClaw public links,
+  audits, OpenClaw fitness, memory, and final validation passed.
 
 ## Reporting Checklist
 

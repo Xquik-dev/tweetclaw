@@ -9518,3 +9518,98 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   self-improvement rule. Durable lesson: URL-archiver skills are good targets
   when TweetClaw is only a reviewed public URL discovery step and the target
   keeps content conversion, storage, API token use, and media handling.
+
+## 2026-06-15 11:38 UTC Heartbeat
+
+- Runtime and scope: the heartbeat runtime still exposed no GPT-5.5 or
+  extra-high reasoning-effort selector, so the run continued under the
+  available runtime and recorded the limitation. The automation cadence was
+  already `FREQ=MINUTELY;INTERVAL=1`; persisted prompt bytes measured 14,530.
+  The earlier chat-exposed npm publish token was treated as compromised, was
+  not used, and was not stored. No Browser, Chrome, Context7, dev server,
+  production SSH, or Socket.dev token path was used.
+- Starting state: TweetClaw was clean on `master...origin/master`. The xquik
+  crawler workspace still had unrelated untracked proxy and X API preflight
+  files; they were left untouched.
+- PR monitoring: `gh search prs` returned 140 open authored PRs. The broad
+  exact readback wrote 87 PR objects before one GraphQL 401 stopped the batch.
+  `gh auth status` still reported the kriptoburak keyring login with
+  repo/workflow scopes, so the run switched to targeted readbacks for recent
+  and audit-tracked PRs rather than widening authenticated search.
+- PR repair decisions: targeted readbacks covered current recent PRs plus
+  `heyjello/x-to-markdown#3`, `fuzzylabs/awesome-secure-mcp-servers#364`,
+  `zgybkjcn-a11y/openclaw-exa-research-skills#1`, `Flopsstuff/flugins#6`,
+  `github/awesome-copilot#2001`, `MylesMCook/mcook-skills#11`,
+  `Toyoclara233/registry#1`, `Ultimate-Agent-Directory#84`,
+  `Unifying-sheeptick539/revops-skills#1`, and `edwardtay/awesome-scrapers#1`.
+  Recent PRs were mergeable or target-owned unstable. `wangzhongmin/awesome-mcp-servers#2`
+  already addressed Sourcery's link-label suggestion. `MylesMCook/mcook-skills#11`
+  had only stale Gemini feedback and current Pullfrog "no new issues" reviews.
+  `Flopsstuff/flugins#6` was cloned from the correctly parented personal fork;
+  current head already had `support@xquik.com` author metadata plus the varied
+  `tweet_explore`, `tweet_read`, and `tweet_action` wording requested by
+  CodeRabbit, so no noise commit was pushed. `github/awesome-copilot#2001`
+  remained blocked only by target soft gates and contributor review.
+  `Ultimate-Agent-Directory#84` still had only an external Kilo Code Review
+  failure with no GitHub Actions log or actionable payload.
+- Crawler-first discovery: the xquik GitHub opportunity crawler ran first from
+  `/Users/burak/Developer/xquik` in research-proxy JSON mode with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, social media,
+  Twitter/X, source-evidence, registry, validator, examples, framework, and
+  package-tooling lanes. It returned strict zero-opportunity JSON. Stderr showed
+  proxy socket closures, endpoint quarantines, and a short US proxy pool outage,
+  with no credential values printed.
+- Official OpenClaw docs: current docs were rechecked through `llms.txt` plus
+  `/cli/plugins`, `/clawhub/publishing`, `/clawhub/skill-format`, and
+  `/plugins/manifest`. Explicit `npm:`, `clawhub:`, `git:`, and `npm-pack:`
+  install source selection, runtime inspect, plugin update, managed npm
+  install semantics, manifest expectations, ClawHub skill/plugin publishing,
+  and skill folder/frontmatter guidance still match TweetClaw's current public
+  posture. Public install examples should remain pinned to `openclaw plugins
+  install npm:@xquik/tweetclaw@1.6.31` until npm latest advances.
+- Fresh candidate screening: compact audit, archive, crawler output, exact
+  metadata, target content, fork metadata, local clones, and open plus closed
+  target PRs/issues were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  xquik.com, OpenClaw, Twitter/X, skill, source context, public evidence,
+  profile audit, reply drafting, and Grok Build variants.
+  `StarboWang/momcozy-public-feedback-monitoring-skill` was duplicate-blocked
+  by an existing open kriptoburak PR. `abhishekpanda-dev/X-content-skill` was
+  selected because it is MIT licensed, active enough, non-fork, non-archived,
+  issue-enabled, duplicate-clean across target content plus PRs/issues, and its
+  Grok Build X content skill benefits from public source-context boundaries.
+- New external PR: opened `abhishekpanda-dev/X-content-skill#1` at
+  https://github.com/abhishekpanda-dev/X-content-skill/pull/1 from correctly
+  parented fork `kriptoburak/X-content-skill`, branch
+  `codex/add-source-context-boundary`, commit
+  `6d7b4773458ca81f5d1ba29ca34150d9fb74978c`. The PR fixes the stale
+  `docs.x.ai/build/skills` link to the current xAI Skills, Plugins and
+  Marketplaces docs page, corrects the clone URL after the repo rename, and
+  adds optional TweetClaw/OpenClaw public-source context guidance before audits,
+  reply drafts, and weekly plans while keeping posting, replies, DMs, follows,
+  scheduling, monitoring, account settings, and credentials out of scope. No
+  NHS badge was added because the target has no useful badge area.
+- Target validation for `X-content-skill#1`: passed `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`, `npm view
+  @xquik/tweetclaw@1.6.31 version repository.url homepage openclaw.install
+  --json`, and public-hygiene diff scan. Final PR readback showed open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks, and changed files
+  limited to README plus SKILL.md.
+- TweetClaw validation before audit update: production and full npm audits
+  found 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`. Public
+  Markdown link checks passed for README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, and code of conduct. JSON metadata link checks passed
+  for `package.json` and `openclaw.plugin.json`. Npm latest remains
+  `@xquik/tweetclaw@1.6.31`. Memory before final audit write was 15,020 of
+  15,360 bytes.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory per-run PR submission, aggressive
+  skill-repo coverage, fresh repo/framework/library discovery, PR repair
+  priority, duplicate and fork rules, OpenClaw docs checks, link checks,
+  validation gates, badge rule, Context7 exclusion, credential safety, cadence,
+  thread binding, commit/push requirement, Markdown cap, and this
+  self-improvement rule. Durable lesson: Grok/X content drafting skills are
+  good targets when TweetClaw is framed as optional public-source context and
+  the target keeps drafting and all account actions separate.
