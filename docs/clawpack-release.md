@@ -52,8 +52,9 @@ the archive, before any release or ClawHub decision.
 
 ## ClawHub State
 
-- ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 500
-  on 2026-06-15 22:06 UTC, so avoid public ClawHub links until it recovers.
+- ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
+  on 2026-06-15 22:35 UTC, but keep npm canonical until current scoped package
+  publishing succeeds.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`
 - Family: `code-plugin`

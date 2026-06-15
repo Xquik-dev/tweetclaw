@@ -49,13 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 21:45 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 22:35 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
-- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 500
-  on 2026-06-15 22:06 UTC. Keep npm canonical; avoid public ClawHub links until
-  owner-scope validation and route availability are fixed.
+- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
+  on 2026-06-15 22:35 UTC, but latest ClawHub package remains `1.6.26` and
+  owner-scope publishing is blocked. Keep npm canonical until current package
+  publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
   https://openclawdir.com/plugins/tweetclaw-m2h8cr
 
@@ -195,22 +196,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 22:06 UTC: model/effort selectors unavailable. Crawler JSON had
-  zero opportunities after managed proxy failures. Exact-read newest 200 open
-  authored PRs: 143 `CLEAN`, 42 `UNSTABLE`, 13 `BLOCKED`, 2 `UNKNOWN`; 6
-  review-gated.
-- Repair: marktantongco/ai-agent-skills#2 stale-root bot finding was already
-  fixed at `57e3cf1`; root and docs indexes both include count 91 and
-  x-twitter-scraper. Other blockers are review gates or target-owned checks.
-- New PR: https://github.com/agent-ecosystem/skill-validator/pull/80 adds a
-  social-source-review skill example and CLI regression check. Repo license MIT,
-  no duplicate history, `kriptoburak` fork parent verified, target tests and
-  link checks passed. PR is open, review/protection blocked, with no checks yet.
-- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` now returns HTTP 500.
-  Removed the README badge/link and kept npm canonical; old route is stale.
-- OpenClaw docs/npm, link checks after fix, OpenClaw fitness, memory, and final
-  `npm run check:all` passed. Npm audit remains blocked by nested OpenClaw
-  `protobufjs` and `tar`; npm auth remains E401.
+- 2026-06-15 22:35 UTC: model/effort selectors unavailable. Crawler JSON was
+  valid but empty after proxy socket failures and US pool outage. Exact-read 180
+  newest authored PRs before bounded stop: 130 `CLEAN`, 37 `UNSTABLE`, 13
+  `BLOCKED`; 6 review-required; 4 failing checks.
+- Repair: Flugins#6 was already fixed at current head. Repaired
+  ondrej-svec/heart-of-gold-toolkit#1 with `87de93d` so missing or empty social
+  exports are skipped with a brief warning; target checks and CodeRabbit passed.
+- New PR: https://github.com/himself65/skill-lint/pull/3 adds a
+  social-source-review fixture and lint regression. Repo MIT, duplicate-clean,
+  fork parent verified, target lint/test/build/link checks passed. PR is open,
+  mergeable, with no comments or checks yet.
+- OpenClaw docs/npm and public links checked. ClawHub route recovered HTTP 200
+  but remains stale at `1.6.26`; keep npm canonical until current package
+  publishing works. TweetClaw checks passed. Known nested OpenClaw audit and npm
+  auth blockers remain.
 
 ## Reporting Checklist
 

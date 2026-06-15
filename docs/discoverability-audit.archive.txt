@@ -11544,3 +11544,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   the current rule that broken public links must be fixed rather than archived;
   when a canonical ClawHub plugin route returns 500, remove public links and
   keep npm canonical instead of falling back to the stale skill route.
+
+2026-06-15 22:35 UTC heartbeat archive
+
+- Runtime: GPT-5.5 and extra-high reasoning selectors were not available in this
+  Codex runtime. Continued with the available model and effort, per automation
+  rule.
+- Starting state: TweetClaw was clean on `master` at `b8b0710`; TweetClaw and
+  Xquik GitHub issue lists were empty. Xquik had unrelated owner-local changes
+  and untracked files, so it was used only for the crawler.
+- Crawler-first discovery: ran the xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with focused SKILL.md, OpenClaw, MCP,
+  Twitter/X, social-agent, validator, and package-tooling queries. Strict JSON
+  output parsed as `{"opportunities":[]}` after managed proxy socket failures,
+  endpoint quarantines, and a US proxy pool outage. No credentials were printed.
+- PR monitoring: exact-read `agent-ecosystem/skill-validator#80`; it remains
+  open, mergeable, review/protection blocked, with no comments, reviews, or
+  checks. A bounded exact readback covered 180 of the newest 200 authored open
+  PRs before stopping the owned loop: 130 `CLEAN`, 37 `UNSTABLE`, 13 `BLOCKED`,
+  180 mergeable, 6 review-required, 14 with comments, 6 with reviews, and 4
+  with failing checks.
+- Repair decisions: `marktantongco/ai-agent-skills#2` remains blocked only by
+  target-owned Vercel authorization, with the stale-root issue already fixed.
+  `Flopsstuff/flugins#6` current head already fixes the CodeRabbit author-email
+  and repeated-wording findings. `MylesMCook/mcook-skills#11`,
+  `Walliiee/openclaw-skills#2`, `stone16/wingman-x#21`,
+  `aliammari1/awesome-ai-tools#97`, and `wondelai/skills#6` had no current
+  actionable findings or only previously handled bot comments.
+- Repair action: updated `ondrej-svec/heart-of-gold-toolkit#1` because
+  CodeRabbit's still-valid note asked for explicit behavior when
+  `sources.web_search.include_social` is enabled but the social export is
+  missing or empty. Pushed `87de93d` to the existing correctly parented
+  `kriptoburak/heart-of-gold-toolkit` PR branch. The fix documents that Guide
+  skips social ingestion, notes the missing export in the brief footer, and does
+  not fail the pipeline when other sources can still produce a brief. Validation
+  passed `git diff --check`, changed Markdown link checks, `npm run
+  check:publish-safety`, `npm run check:compat`, and `npm run check:security`.
+  Final readback showed CodeRabbit `SUCCESS` and no actionable recent comments;
+  merge state remains `UNSTABLE`.
+- Fresh candidate screening: compact audit, archive, target content, target open
+  and closed PRs, and target open and closed issues were checked for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, TweetClaw URLs, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, Twitter/X, social, source evidence, and skill
+  variants. `Flash-Brew-Digital/validate-skill` and
+  `vesselofone/openclaw-skills` stayed in backlog. `himself65/skill-lint` was
+  selected because it is MIT licensed, non-fork, active enough, issue-enabled,
+  duplicate-clean, and has native test fixtures for realistic `SKILL.md`
+  validation.
+- New external PR: opened https://github.com/himself65/skill-lint/pull/3 from
+  verified fork `kriptoburak/skill-lint`, parent `himself65/skill-lint`, branch
+  `codex/add-social-source-fixture`, commit `1f3e2f3`. The PR adds a
+  `social-source-review` fixture with metadata, allowed tools, compatibility
+  text, and an existing one-level reference file, plus a `lintSkill` regression
+  test with Claude-specific checks enabled. TweetClaw is framed only as an
+  optional read-only source for search tweets, search replies, and user lookup.
+- Target validation for `skill-lint#3`: passed `git diff --check`,
+  `npx --yes markdown-link-check` on changed fixture docs, `npm run lint`,
+  `npm test` with 63 tests passed, `npm run build`, direct HTTP 200 checks for
+  TweetClaw GitHub, agentskills.io, and the target repo, and changed-diff public
+  hygiene scans. `npm audit --audit-level=moderate` failed on pre-existing
+  target dev-tool advisories for `esbuild`, `postcss`, and `vitest`; no
+  dependency files were changed. Final PR readback showed the PR open,
+  mergeable, `UNSTABLE` while checks initialize or remain absent, no comments,
+  no reviews, no checks, and three changed files.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt`, `/cli/plugins`, `/clawhub/skill-format`, `/clawhub/publishing`,
+  `/plugins/manifest`, and `/plugins/sdk-runtime` with HTTP 200. Npm metadata
+  returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub
+  `0.21.0`, and published TweetClaw `1.6.31`; local source remains `1.6.32`.
+- Broken-link and public hygiene: direct public checks returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, xquik.com, docs.xquik.com, current
+  OpenClaw docs, ClawHub plugin route, OpenClaw Directory, the new skill-lint
+  PR, and the repaired Heart of Gold PR. ClawHub route recovery was recorded,
+  but npm remains canonical because ClawHub latest is still `1.6.26` and
+  owner-scope publishing is blocked. No NHS badge was added because the handled
+  target badge areas are not useful xquik.com trust surfaces.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- TweetClaw validation after audit edits: `npm run check:all` passed, including
+  memory size `15328/15360`, OpenClaw platform fitness, package artifact
+  verification, and 168 covered tests. Separate `npm audit --audit-level=moderate`
+  remains blocked by nested OpenClaw dependency advisories for `protobufjs` and
+  `tar`; `npm whoami` remains E401 without safe local npm auth.
+- Required skill reviews: GitHub, GitHub publish, gh-address-comments,
+  gh-fix-ci, simplify, and thermo-nuclear-code-quality-review skills were read
+  before commit. TweetClaw changes are compact docs plus append-only archive
+  history, so no source-code simplification finding applied.
+- Prompt self-improvement: no persisted prompt edit was useful. Keep the current
+  rule that zsh `path` is a special shell variable tied to command lookup; use
+  names like `route` in automation shell loops. Preserve model/effort wording,
+  quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate and
+  fork rules, OpenClaw docs checks, link checks, validation gates, badge rule,
+  explicit target exclusion, secret handling, commit/push requirement, Markdown
+  cap, and self-improvement rule.
