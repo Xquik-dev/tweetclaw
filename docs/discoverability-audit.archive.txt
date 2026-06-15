@@ -8296,3 +8296,52 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   help the target directly and TweetClaw remains an optional public source
   context provider. Reused fork names can point at different upstream parents;
   verify parent metadata and use a renamed fork when necessary.
+
+### 2026-06-15 00:23 UTC correction and replacement PR
+
+- Correction: immediate final readback after the TweetClaw audit push showed
+  `angheljf/social-media-mcp#2` was self-closed by `kriptoburak` from another
+  context with the comment that the submission was too TweetClaw-oriented for
+  that target. Treat it as historical and do not reopen it unless the maintainer
+  explicitly asks for follow-up.
+- Replacement target: `twittershots/twittershots-mcp` was screened after the
+  self-close. It is MIT licensed, non-fork, non-archived, issue-enabled,
+  duplicate-clean across target content, target PRs, target issues, compact
+  audit, and archive, and complementary because TwitterShots turns selected
+  tweet URLs or IDs into screenshots. The target had real target-native hygiene
+  gaps: `package.json` declared ISC while the license file is MIT, omitted the
+  runtime imports and TypeScript dev dependency needed for a fresh build, linked
+  directly to an account-settings URL that returns 400 to link checkers, and
+  showed a user-specific absolute path plus `sk_xxxxxx` placeholder in public
+  docs.
+- Replacement PR: opened `twittershots/twittershots-mcp#1` at
+  https://github.com/twittershots/twittershots-mcp/pull/1 from correctly
+  parented fork `kriptoburak/twittershots-mcp`, branch
+  `codex/openclaw-tweet-url-workflow`, commit
+  `52c8c0979778fe94f0cee525fcc1b2c90020d2ba`. The PR adds missing runtime and
+  TypeScript dependencies, generates `package-lock.json`, aligns package
+  metadata with the MIT license file, adds repository/homepage/bugs metadata,
+  adds Node types to `tsconfig.json`, replaces the stale account-settings link
+  with the TwitterShots home page, removes the user-specific local path and
+  secret-shaped API-key placeholder, adds OpenClaw MCP registry setup using
+  `openclaw mcp add`, `--cwd`, `--env`, `--include`, and `openclaw mcp doctor
+  twittershots --probe`, and adds optional TweetClaw tweet URL discovery pinned
+  to the currently published `@xquik/tweetclaw@1.6.31`. The wording keeps
+  screenshot rendering, API usage checks, quota handling, and TwitterShots API
+  keys inside the target MCP server.
+- Replacement validation and public hygiene: validation passed `npm install
+  --ignore-scripts --no-audit --no-fund`, `npm run build`,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`,
+  public-hygiene scan, `npm view @xquik/tweetclaw@1.6.31 version license
+  repository.url homepage --json`, direct 200 checks for `https://twittershots.com`,
+  the target repo, the target PR, and the fork branch, plus exact final PR
+  readback. Final readback showed the PR open, ready, mergeable, clean, no
+  comments, no reviews, no checks, 4 changed files, 1261 additions, 9 deletions,
+  and head `52c8c09`. No NHS badge was added because the target has no useful
+  badge area.
+- Updated durable lesson: screenshot MCP servers are good targets when TweetClaw
+  is only used to find candidate public tweet URLs, tweet IDs, user context, or
+  media references, and the screenshot service keeps rendering, usage checks,
+  quota limits, and its own API key handling. Do not keep an active outreach
+  record for a PR that was self-closed as a fit miss, even if it was opened and
+  validated earlier in the run.
