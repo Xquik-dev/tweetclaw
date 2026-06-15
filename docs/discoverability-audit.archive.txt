@@ -9231,3 +9231,77 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   dead links as pre-existing target-owned blockers first; if the same skill file
   is already being edited and the target uses fictional examples, changing to
   `https://example.com/` is a low-risk hygiene improvement.
+
+## 2026-06-15 10:26 UTC heartbeat
+
+- Runtime and schedule: model and reasoning selectors were unavailable in this
+  runtime, so GPT-5.5 plus extra-high effort could not be selected. The same
+  thread heartbeat automation already uses `FREQ=MINUTELY;INTERVAL=1`; prompt
+  byte size stayed 14,872. A chat-exposed npm token remains treated as
+  compromised and was not used, stored, printed, or written to any file.
+- Starting state: `/Users/burak/Developer/tweetclaw` was clean on
+  `master...origin/master` at `b218176`. The xquik crawler workspace had
+  unrelated untracked proxy and X API preflight/dry-run files; they were left
+  untouched.
+- PR monitoring: targeted GitHub readbacks found 100 open PRs authored by
+  `kriptoburak`; a bounded exact readback parsed 82 before manual interruption
+  after the loop stopped making useful progress. Parsed state was 82 open PRs,
+  62 clean, 12 unstable, 7 blocked, 1 unknown, 81 mergeable, 1 unknown, 4 with
+  reviews, 5 with comments, and 1 failing check.
+- PR repair gate: `MylesMCook/mcook-skills#11`, `Flopsstuff/flugins#6`, and
+  `savethepolarbears/agenthaus-marketplace#125` all had stale or already-fixed
+  review findings when checked against current heads. The Flopsstuff fork parent
+  was verified as `Flopsstuff/flugins`. `moshehbenavraham/Ultimate-Agent-
+  Directory#84` has only an external Kilo Code Review failure with no GitHub
+  Actions logs, comments, or actionable payload, so no safe repair was possible.
+- Crawler-first discovery: the xquik GitHub opportunity crawler ran first with
+  focused skill, OpenClaw, MCP, Twitter/X, and social-source query lanes through
+  the research proxy path. It returned strict JSON with zero opportunities after
+  transient proxy socket/quarantine logs and no credential values.
+- OpenClaw documentation check: current official OpenClaw docs were rechecked
+  through docs search/readbacks for plugin install source selection, explicit
+  source prefixes, ClawHub skill/plugin discovery, runtime inspection, manifest
+  expectations, and publishing guidance. Public install guidance remains pinned
+  to `openclaw plugins install npm:@xquik/tweetclaw@1.6.31` until npm latest
+  advances beyond 1.6.31.
+- Fresh screening: compact audit and archive were searched before target
+  decisions. Blocked candidates included `YoppaV/twitter-mcp` and
+  `RyanKramer/shippost-mcp` by prior duplicate history, `Astra-97/twitter-mcp`,
+  `nuxe/twitter-mcp-server`, and `0xGval/twitter-X-mcp-server` by missing
+  license metadata or prior history, several OpenClaw skill repos by missing
+  licenses, and `eskobar95/guapo-agent-skills` by duplicate prior PR history.
+- New eligible target: `Miles0sage/twitter-mcp` was MIT-licensed, public,
+  non-fork, non-archived, issue-enabled, and duplicate-clean across compact
+  audit, archive, target content, and target open/closed PRs and issues for
+  TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, and OpenClaw
+  variants. Its README covered posting through a logged-in browser profile but
+  lacked review-first safety guidance and an optional public-source context
+  companion.
+- New external PR: opened https://github.com/Miles0sage/twitter-mcp/pull/3 from
+  verified fork `kriptoburak/miles-twitter-mcp`, branch
+  `codex/add-review-first-openclaw-companion`, commit `b79fb3e`. The PR adds
+  review-first workflow guidance for write-like tools, optional TweetClaw
+  public X/Twitter source-context use through OpenClaw, provenance fields,
+  untrusted-input handling, and boundary wording that keeps final drafting,
+  approval, browser login, cookie storage, and posting inside the target MCP
+  server or chosen workflow. It also removes a stale `api_server.py` project
+  structure entry. No NHS badge was added because the badge area is package/app
+  health only.
+- Target validation: passed `git diff --check`, Markdown link check for
+  `README.md`, Python compile checks for target Python modules, npm metadata
+  readback for `@xquik/tweetclaw@1.6.31`, and a public-hygiene diff scan.
+  Final PR readback showed open, ready, `MERGEABLE`, `CLEAN`, no comments, no
+  reviews, no checks, 1 changed file, and head `b79fb3e`.
+- TweetClaw validation: `npm audit` for production and full dependency trees
+  found zero moderate-or-higher vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed. Public Markdown link checks passed
+  for README, OpenClaw setup docs, agent workflow docs, packaged skill, and code
+  of conduct. JSON metadata link checks passed for `package.json` and
+  `openclaw.plugin.json`. Final repository gate `npm run check:all` passed with
+  typecheck, lint, copy-paste detection, knip, suppression, dash, memory,
+  frontmatter, version, build, OpenClaw fitness, package artifact, and coverage
+  checks clean; memory ended at 14,994 of 15,360 bytes.
+- Prompt self-improvement: no prompt edit was needed. Durable lessons: generic
+  repo names such as `twitter-mcp` can collide with existing forks, so verify
+  fork parent before pushing and create a distinct fork name when needed. Stale
+  bot reviews should be checked against current head before making noise commits.
