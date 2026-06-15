@@ -8703,3 +8703,103 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   rule, Context7 exclusion, secret handling, cadence, thread binding,
   commit/push requirement, Markdown cap, and self-improvement. Changed TweetClaw
   file is `docs/discoverability-audit.archive.txt`.
+
+2026-06-15 01:59 UTC heartbeat
+- Runtime and credential boundary: the runtime still exposed no GPT-5.5 or
+  extra-high reasoning selector, so the run continued on the available model
+  and recorded the limitation. The chat-pasted npm credential was treated as
+  compromised and was not repeated, stored, or used. npm auth remains blocked:
+  `@xquik/tweetclaw@1.6.32` is committed locally, while public npm metadata
+  still reports `1.6.31` with `openclaw.install.npmSpec`
+  `@xquik/tweetclaw@1.6.31`.
+- Session and issue start state: TweetClaw started clean on
+  `master...origin/master` at `56fd5e9`. `gh issue list` for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` returned no open issues.
+  Compact Markdown memory was 15360/15360 bytes before archive edits.
+- PR monitoring and repair: crawler-fed monitoring read back 100 open
+  `kriptoburak` PRs exactly into
+  `/tmp/tweetclaw-open-pr-readbacks-0159.jsonl`. Actionable open PRs included
+  older conflicts, blocked reviews, and `Hairy-jumper134/last30days-cn-skill#1`
+  in `CONFLICTING` and `DIRTY` state. That PR was safe to repair because the
+  target is public, non-fork, non-archived, has an MIT license in the clone, and
+  prior audit already tracked the TweetClaw PR. The fork branch
+  `codex/tweetclaw-x-workflow` was merged with upstream `main`, the README ZIP
+  link conflict was resolved without changing target content, and merge commit
+  `c486f205d8f9cf19584c26e7e560f79b8f430f16` was pushed to
+  `kriptoburak/last30days-cn-skill`. Validation passed `git diff --check`,
+  conflict-marker scan, Python compile for `scripts/last30days.py`,
+  `scripts/briefing.py`, and `scripts/lib/*.py`, `unzip -t` for
+  `references/last-skill-days-cn-v2.5.zip`, markdown-link-check for README and
+  SKILL, public-hygiene scan, direct 200 checks for the target repo, ZIP,
+  TweetClaw GitHub, and npm registry metadata. Final exact readback showed
+  https://github.com/Hairy-jumper134/last30days-cn-skill/pull/1 open, ready,
+  `MERGEABLE`, `CLEAN`, no reviews, and no checks configured. No duplicate
+  self-comment was posted.
+- Crawler-first discovery and candidate screening: the Xquik crawler ran first
+  with research proxy, strict JSON output, focused skill/social/media/source
+  evidence queries, bounded request timeouts, and proxy warmup skipped. It
+  returned valid JSON with zero opportunities while stderr recorded managed
+  proxy socket closures, endpoint quarantines, and proxy-pool outage state; no
+  credentials were printed. Compact audit, archive, target content, local
+  clones, exact GitHub metadata, and open/closed PRs/issues were searched for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub, Xquik, x-twitter-scraper, OpenClaw, ClawHub, NHS, SKILL.md, agent
+  skill, social-media skill, Twitter/X skill, source evidence, and launch
+  variants. `AISA-skills/social-media-skills` was blocked by existing issue #1;
+  `realjaymes/marketingagentskills` by existing PR #2;
+  `ComposioHQ/awesome-claude-skills` by existing PR #790;
+  `rohunvora/x-research-skill` by prior issue/PR history;
+  `coreyhaines31/marketingskills` by prior TweetClaw PR #294 and Hermes PR
+  #350; `aaaronmiller/create-viral-content` and `inference-sh/skills` by
+  missing detected license. Fresh `shawnpang/startup-founder-skills` was public,
+  non-fork, non-archived, MIT licensed, issue-enabled, duplicate-clean in
+  audit, archive, target content, and target PRs/issues, and fit because it
+  already has founder `social-content` and `launch-strategy` skills that benefit
+  from real X/Twitter source evidence.
+- New external PR: opened `shawnpang/startup-founder-skills#2` at
+  https://github.com/shawnpang/startup-founder-skills/pull/2 from correctly
+  parented fork `kriptoburak/startup-founder-skills`, branch
+  `codex/tweetclaw-social-evidence`, commit `77949eeb3c1e8cb42416c73decf6007faeb549a5`.
+  The PR adds source-evidence requirements to `skills/social-content/SKILL.md`
+  and `skills/launch-strategy/SKILL.md`, adds evidence output fields, tells
+  agents not to invent audience reactions or traction claims, and mentions
+  TweetClaw only as an optional Twitter/X retrieval source for posts, replies,
+  search results, competitor chatter, and engagement signals. Strategy,
+  drafting, approvals, publishing, timing, and follow-up stay in the target
+  skills and founder workflow.
+- Target validation and readback: target validation passed `git diff --check`,
+  changed-line em dash and space-hyphen-hyphen-space scan, public-hygiene diff
+  scan, `npx --yes markdown-link-check skills/social-content/SKILL.md
+  skills/launch-strategy/SKILL.md --quiet`, and direct 200 checks for
+  TweetClaw GitHub and the target repo. Final exact PR readback showed the PR
+  open, ready, `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks
+  configured, and changed files limited to `skills/launch-strategy/SKILL.md`
+  and `skills/social-content/SKILL.md`.
+- Official OpenClaw docs and TweetClaw public hygiene: current official
+  OpenClaw docs were rechecked through `docs.openclaw.ai` search and exact
+  result review for `openclaw plugins install`, `clawhub:`, `npm:`, `git:`,
+  `npm-pack:`, `openclaw plugins update`, `openclaw plugins inspect <id>
+  --runtime --json`, managed Gateway restart, manifest requirements, tool
+  plugins, bundles, dependency resolution, and ClawHub publishing. They still
+  align with TweetClaw source-selection, runtime JSON inspection, npm-pack
+  proof, explicit ClawHub/npm positioning, managed Gateway restart behavior,
+  and publishing guidance. A strict source-derived TweetClaw public URL sweep
+  checked README, OpenClaw setup docs, agent workflow docs, packaged skill,
+  package metadata, plugin manifest, and code of conduct; all 46 non-Context7
+  URLs returned 200. `npm audit --omit=dev` and full `npm audit` found 0
+  vulnerabilities. `git diff --check`, `npm run check-memory-md-size`, and
+  `npm run check-openclaw-platform-fitness` passed before this archive write.
+  Final post-archive validation passed `npm run check:all` with 11 test files,
+  168 tests, and 100% coverage.
+- Prompt self-improvement: the run reinforced that fresh skill-catalog targets
+  should be screened for evidence-gathering improvements, not just listings.
+  Keep TweetClaw framed as optional retrieval/source evidence for X/Twitter
+  workflows, and leave strategy, drafting, approval, publishing, and analytics
+  decisions with the target skill or founder. No prompt edit was useful because
+  the current automation prompt already preserves model/effort wording, quiet
+  autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and this self-improvement rule.
+  Changed TweetClaw file is `docs/discoverability-audit.archive.txt`.
