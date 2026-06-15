@@ -11093,3 +11093,101 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   self-improvement rule. Durable lesson: OpenClaw MCP registry examples should
   prefer installed package commands over `PYTHONPATH` env blocks because current
   OpenClaw stdio env safety rejects runtime-startup env keys.
+
+## 2026-06-15 20:41 UTC Heartbeat
+
+- Runtime capability: this environment did not expose model or reasoning-effort
+  selectors, so GPT-5.5 and extra-high effort could not be selected. The run
+  continued and the limitation is recorded here and in the heartbeat outcome.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran the
+  internal GitHub opportunity crawler with managed research route and focused
+  skill/MCP/OpenClaw/Twitter-X queries. Output parsed as strict JSON with zero
+  opportunities after route failures. No credential values were printed or
+  stored.
+- PR monitoring: exact-read 90 of 120 open `kriptoburak` PRs. Merge-state
+  summary was 65 `CLEAN`, 12 `UNSTABLE`, 11 `DIRTY`, 1 `BEHIND`, and 1
+  `BLOCKED`; 1 PR required review. No TweetClaw or xquik issues were open.
+- Repair action: selected `Calliopeperpendicular906/openclaw-skills#1` because
+  it was dirty, in scope, and repairable. The target is MIT, non-fork, public,
+  and not archived. Fork `kriptoburak/openclaw-skills` was verified as correctly
+  parented before pushing.
+- Repair details: merged current upstream main into branch
+  `codex/add-tweetclaw-skill`, resolved the repeated `README.md` ZIP-link
+  conflict, preserved the repository ZIP download, clone command,
+  OpenClaw/ClawHub links, and TweetClaw skill entry, and avoided the unrelated
+  Goodreads ZIP URL in general project links. Commit `313eeba` was pushed and a
+  validation comment was posted:
+  https://github.com/Calliopeperpendicular906/openclaw-skills/pull/1#issuecomment-4712199928
+- Repair validation: `git diff` whitespace check, conflict-marker scan,
+  `tweetclaw/SKILL.md` frontmatter/link parse, Python compile for target
+  scripts, Goodreads ZIP integrity check, README/SKILL markdown-link-check,
+  direct checks for target repo, repo ZIP, Shields badge, OpenClaw, ClawHub,
+  TweetClaw GitHub, npm registry metadata, and Xquik docs, npm metadata readback
+  for `@xquik/tweetclaw@1.6.31`, and changed-diff public-hygiene scan passed.
+  Final readback was open, ready, and `CLEAN`.
+- Fresh candidate screening: searched compact audit and archive first.
+  `CentauriAgent/agent-social-skills` had no prior blocker, no target content
+  duplicate, and no open or closed target PR/issue for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw URLs, ClawHub, Xquik, x-twitter-scraper, or
+  OpenClaw variants. The repo is MIT, non-fork, public, issue-enabled, recently
+  updated, and a strong skill-repo fit because it owns social posting workflows
+  where pre-draft X/Twitter evidence should stay separate from publishing.
+  `inorilzy/mcp-twitter-server` remained a screened backup candidate but was not
+  needed after the eligible skill target passed.
+- New external PR: opened
+  https://github.com/CentauriAgent/agent-social-skills/pull/1 from correctly
+  parented fork `kriptoburak/agent-social-skills`, branch
+  `codex/add-tweetclaw-research-brief`, commit `38a2264`. The PR adds
+  `social-cross-poster/templates/x-research-brief-example.md`, links it from the
+  README and `SKILL.md`, and frames TweetClaw/OpenClaw as source-gathering
+  context before the target creates reviewed drafts. It leaves formatting,
+  dry-run, approval, and publishing decisions in `social-cross-poster`.
+- New PR validation: `git diff` whitespace check, conflict-marker scan,
+  changed-diff credential-shaped text scan, markdown-link-check for README,
+  `SKILL.md`, and the new brief, JSON parse check for existing package and
+  draft templates, `npm view @xquik/tweetclaw version openclaw.install --json`,
+  and direct link checks for TweetClaw GitHub, ClawHub listing, target repo, and
+  npm registry metadata passed. The npm website package page returned HTTP 403
+  to direct curl but markdown-link-check passed and registry metadata returned
+  HTTP 200. Final readback was open, ready, and `CLEAN`. No NHS badge was added
+  because the target had no badge area.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt` plus Markdown exports for `/cli/mcp`, `/cli/plugins`,
+  `/plugins/manage-plugins`, and `/clawhub/skill-format`. Current docs still
+  cover MCP saved definitions, `openclaw mcp add`, `doctor --probe`, live
+  probes, static checks, tool filters, env safety, Control UI `/mcp`, plugin
+  install source selection, npm pinning, npm-pack proof, runtime JSON
+  inspection, managed Gateway restart behavior, ClawHub discovery, and current
+  skill format rules. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.1`, ClawHub `0.21.0`, and published TweetClaw `1.6.31` while
+  local source remains `1.6.32`.
+- TweetClaw link validation: markdown-link-check passed for README, OpenClaw
+  setup, agent workflows, packaged skill, and code of conduct. Direct checks
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub legacy
+  and browsing pages, xquik.com, OpenClaw MCP docs, OpenClaw plugin docs,
+  OpenClaw manage-plugins docs, the repaired openclaw-skills PR, the new
+  agent-social-skills PR, and the new fork.
+- Local TweetClaw validation before audit update: `npm run
+  check-openclaw-platform-fitness` passed for local TweetClaw `1.6.32` targeting
+  OpenClaw `2026.6.6`.
+- Package boundaries: production and full `npm audit` both failed on nested
+  OpenClaw stable package advisories for `protobufjs` and `tar`; this remains a
+  host-package blocker. `npm whoami` returned E401, so publishing remains
+  blocked. The earlier exposed npm auth value was not used, printed, stored, or
+  repeated.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Required skill reviews: the GitHub skill was read for PR triage, and
+  simplify plus thermo-nuclear-code-quality-review were read before commit. The
+  TweetClaw diff is compact docs plus append-only text archive history, so no
+  code simplification or structural source finding applied.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, OpenClaw docs checks, link checks, validation gates, badge
+  rule, secret handling, commit/push requirement, Markdown cap, and
+  self-improvement rule. Durable lesson: for social publishing skill targets,
+  a reviewed research brief is a stronger fit than wiring external posting
+  behavior, because it keeps source gathering separate from drafting and
+  publishing.
