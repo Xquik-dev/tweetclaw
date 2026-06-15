@@ -9810,3 +9810,114 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   skills are good targets when TweetClaw is framed as optional public
   source-packet evidence and the target keeps validation, scoring, build
   decisions, and launch content separate.
+
+## 2026-06-15 15:22 UTC Heartbeat
+
+- Runtime and scope: the heartbeat runtime still exposed no GPT-5.5 or
+  extra-high reasoning-effort selector, so the run continued under the
+  available runtime and recorded the limitation. The automation stayed on the
+  existing minutely cadence. The earlier chat-exposed npm publish credential
+  remained treated as compromised and was not used, stored, or printed. No
+  Browser, Chrome, Context7, dev server, production SSH, destructive git
+  command, or Socket.dev credential path was used.
+- Starting state: TweetClaw was clean on `master...origin/master`; compact
+  Markdown memory measured 14,949 of 15,360 bytes. The xquik crawler workspace
+  still had unrelated untracked proxy and X API preflight files, and they were
+  left untouched.
+- PR monitoring: crawler-first PR monitoring was followed by exact GitHub
+  readbacks for 200 open `kriptoburak` PRs plus audit-tracked outreach PRs.
+  Thirty-two flagged PRs were inspected. No safe repair was needed because
+  current findings were clean, already addressed, stale-bot, target-policy,
+  target-owned, or external-check blocked.
+- PR repair decisions: `marktantongco/ai-agent-skills#2` had a stale Qodo
+  generated-index finding on an old commit. Local and branch readback showed
+  commit `57e3cf1` already synced `index.html` and `docs/index.html`; both
+  include `x-twitter-scraper`, and `git diff --check` passed. The target README
+  link failure was pre-existing upstream content, not introduced by the PR.
+  `davila7/claude-code-templates#634` failures were target/workflow-owned:
+  hosted preview authorization, comment-step 403, and a broad repository
+  security report unrelated to the changed skill, while the changed-skill scan
+  passed. `moshehbenavraham/Ultimate-Agent-Directory#84` remained blocked only
+  by an external review gate. Other inspected PRs had no actionable maintainer
+  requests, CI fixes, conflicts, DCO, CLA, or valid bot findings.
+- Safety note: a target PR checkout command was accidentally run while the
+  shell was inside TweetClaw. No tracked files changed, and TweetClaw was
+  immediately switched back to `master` with clean status before continuing.
+- Crawler-first discovery: the xquik GitHub opportunity crawler ran first from
+  `/Users/burak/Developer/xquik` in research-route JSON mode with focused
+  lanes for `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, social
+  media, Twitter/X, source-evidence, registries, validators, examples,
+  package-tooling, Grok Build, image-publishing, and launch-demand skills. It
+  returned strict zero-opportunity JSON after managed research-route network
+  failures. No credential values were printed.
+- Official OpenClaw docs and package check: current docs were rechecked through
+  `llms.txt` plus `/cli/plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/manifest`. Explicit `npm:`,
+  `clawhub:`, `git:`, and `npm-pack:` install source selection, runtime
+  inspect, plugin update, manifest expectations, ClawHub publishing, and skill
+  folder/frontmatter guidance still match TweetClaw's current public posture.
+  `npm view openclaw` returned latest `2026.6.6`, beta `2026.6.8-beta.1`;
+  `npm view clawhub` returned `0.21.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, while local source remains `1.6.32`.
+- Package publication boundary: `npm whoami` returned E401, so there is no
+  safe existing npm session available for publishing local `1.6.32`. The
+  chat-exposed credential must be rotated and installed through an approved
+  secret store or npm session before publication.
+- Fresh candidate screening: compact audit, archive, crawler output, exact repo
+  metadata, target content, fork metadata, local clone, and open plus closed
+  target PRs/issues were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, xquik.com, OpenClaw, Twitter/X, skill-map, agent hub,
+  skill registry, social media skill, source evidence, and skill-directory
+  variants. Fresh OpenClaw and Twitter skill repos such as
+  `harrylabsj/twitter-thread-crafter`,
+  `RAFOLIE/openclaw-skill-twitter-trending`,
+  `96528025/openclaw-skill-twitter-digest`, `dissaozw/openclaw-skill-twitter`,
+  `zhiyuanw0/openclaw-skill-twitter`, `anamipit/twitter-x`,
+  `bussgrowwithlucky-crypto/openclaw-skill-twitter-poster`,
+  `grapeot/typefully-twitter-skill`, and `nemoaigc/grok-x-skills` were blocked
+  by absent license or weak target fit. MIT non-forks screened clean included
+  `ssly/agent-hub`, `work0r-ai/agent-kit`, `dhk/skill-map`,
+  `elliottwaves-20/agent-guard`, `Un1quer23/github-repo-publisher`,
+  `lliangcol/agent-routines`, and `orchestra-hq/orchestra-skills`; `dhk/skill-map`
+  was selected as the highest-fit target because its generated graph was stale
+  against the upstream `VoltAgent/awesome-agent-skills` corpus that already
+  includes TweetClaw and x-twitter-scraper.
+- New external PR: opened `dhk/skill-map#1` at
+  https://github.com/dhk/skill-map/pull/1 from correctly parented fork
+  `kriptoburak/skill-map`, branch `codex/sync-xquik-skill-map`, commit
+  `dbd56f1`. The PR adds `Xquik-dev/x-twitter-scraper`,
+  `Xquik-dev/tweetclaw`, and `org:Xquik-dev` to `data/skills-graph.json`,
+  syncs generated `index.html`, updates README totals from 1,119 skills and 52
+  organizations to 1,121 skills and 53 organizations, and preserves target
+  graph structure. No NHS badge was added because the target has no useful
+  badge area for it.
+- Target validation for `dhk/skill-map#1`: generated data and embedded HTML
+  graph parse checks passed with matching node/link counts, required Xquik
+  nodes, org node, and Marketing count. `git diff --check` passed.
+  `npx --yes markdown-link-check README.md --quiet` passed. Final PR readback
+  showed open, ready, `CLEAN`, no comments, no reviews, and no checks.
+- TweetClaw validation before audit update: production and full npm audits
+  found 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`. Public
+  Markdown link checks passed for README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, and code of conduct. JSON metadata link checks passed
+  for `package.json` and `openclaw.plugin.json`.
+- Changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation after audit update: `git diff --check` passed.
+  `npm run check-memory-md-size` passed at 14,999 of 15,360 bytes.
+  `npm run check:all` passed, including typecheck, lint, copy-paste detection,
+  knip, suppression checks, dash hygiene, memory, skill frontmatter, version
+  parity, build, OpenClaw fitness, package artifact, and 168 coverage tests at
+  100 percent coverage.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory per-run PR submission, aggressive
+  skill-repo coverage, fresh repo/framework/library discovery, PR repair
+  priority, duplicate and fork rules, OpenClaw docs checks, link checks,
+  validation gates, badge rule, Context7 exclusion, credential safety, cadence,
+  thread binding, commit/push requirement, Markdown cap, and this
+  self-improvement rule. Durable lesson: generated skill maps are strong
+  outreach targets when a target already imports or mirrors a corpus that
+  contains TweetClaw or x-twitter-scraper but has stale generated graph output.

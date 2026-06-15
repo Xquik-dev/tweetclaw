@@ -47,10 +47,10 @@ archive, before any outreach or duplicate decision.
 
 - GitHub: https://github.com/Xquik-dev/tweetclaw
 - npm latest: `@xquik/tweetclaw@1.6.31`
-- Source package: `@xquik/tweetclaw@1.6.32`, unpublished because local npm auth
-  returned E401 on 2026-06-07.
-- OpenClaw docs/npm checked as of 2026-06-15 10:05 UTC: latest
-  `2026.6.6`, beta `2026.6.7-beta.1`; current docs keep plugin install,
+- Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
+  auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
+- OpenClaw docs/npm checked as of 2026-06-15 15:22 UTC: latest
+  `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
@@ -195,20 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 15:12 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 15:22 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`.
 - PR gate read 200 open authored PRs plus audit-tracked PRs. No safe repair was
-  needed: current flags were clean, already addressed, stale-bot, target-policy,
-  target-owned unstable, or external-check blocked.
-- Crawler-first discovery returned valid zero-opportunity JSON after proxy
-  socket closures and quarantine logs. Fresh screening selected
-  `KeWang0622/nobodybuilt` as MIT, non-fork, duplicate-clean, and useful for
-  public X/Twitter source-packet guidance.
-- New PR: https://github.com/KeWang0622/nobodybuilt/pull/1 adds TweetClaw as
-  one possible public evidence input while keeping scoring, winner selection,
-  credentials, scheduling, and publishing out of source-tool scope.
+  needed; flags were already addressed, stale-bot, target-owned, policy-owned,
+  or external-check blocked.
+- Crawler-first discovery returned valid zero-opportunity JSON after managed
+  research-route network failures. Fresh screening selected `dhk/skill-map` as
+  MIT, non-fork, duplicate-clean, and useful for graph parity with its upstream
+  `awesome-agent-skills` corpus.
+- New PR: https://github.com/dhk/skill-map/pull/1 syncs TweetClaw and
+  x-twitter-scraper into graph data, generated static HTML, README counts, and
+  org metadata.
 - OpenClaw docs, npm metadata, target links, TweetClaw public links, audits,
-  OpenClaw fitness, memory checks, and final `npm run check:all` passed.
+  OpenClaw fitness, memory checks, and final `npm run check:all` passed. Npm
+  publish for local `1.6.32` remains blocked by unavailable safe npm auth.
 
 ## Reporting Checklist
 
