@@ -195,21 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 18:27 UTC: model/effort selectors unavailable; minutely unchanged.
+- 2026-06-15 18:52 UTC: model/effort selectors unavailable; minutely unchanged.
 - PR gate exact-read 120 of 200 open PRs. Repaired
-  `warlockoussama/twitter-cli#1` by merging upstream, resolving the README
-  conflict, pushing `d6da100`, and commenting validation results.
-- Crawler returned zero JSON after research-route failures. `Sukumar-Elley` and
-  `lilyth-y` MCP-list candidates were MIT, non-fork, and duplicate-clean;
-  `Sukumar-Elley/awesome-mcp-servers` was fresher and PR-welcome.
-- New PR: https://github.com/Sukumar-Elley/awesome-mcp-servers/pull/1 adds
-  TweetClaw to Social Media. Readback is open, ready, `CLEAN`; target workflow
-  passed but posted a Glama-badge request, answered without adding a broken or
-  misleading badge because no TweetClaw score badge exists yet.
+  `Hairy-jumper134/last30days-cn-skill#1` by merging upstream, resolving the
+  README conflict, pushing `9e35f65`, and commenting validation results.
+- Crawler returned zero JSON after research-route failures. `lilyth-y` was MIT,
+  non-fork, PR-enabled, duplicate-clean, and had README contribution guidance.
+- New PR: https://github.com/lilyth-y/awesome-mcp-servers/pull/3 adds
+  TweetClaw to Social Media. Readback is open, ready, `CLEAN`, with no checks or
+  reviews yet.
 - Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, and final
-  `npm run check:all` passed. Target-wide link check timed out after 2 minutes;
-  focused check for the added TweetClaw entry passed. Npm audit stays blocked by
-  nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
+  `npm run check:all` passed. Full target link check timed out after 3 minutes;
+  the added TweetClaw URL returned HTTP 200. Npm audit stays blocked by nested
+  OpenClaw `protobufjs` and `tar`; npm publish still E401.
 
 ## Reporting Checklist
 
