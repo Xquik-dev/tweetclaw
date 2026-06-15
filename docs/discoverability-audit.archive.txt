@@ -11191,3 +11191,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   a reviewed research brief is a stronger fit than wiring external posting
   behavior, because it keeps source gathering separate from drafting and
   publishing.
+
+## 2026-06-15 20:48 UTC Heartbeat
+
+- Runtime capability: this environment did not expose model or reasoning-effort
+  selectors, so GPT-5.5 and extra-high effort could not be selected. The run
+  continued and the limitation is recorded here and in the heartbeat outcome.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran the
+  internal GitHub opportunity crawler with managed research route and focused
+  skill, MCP, OpenClaw, Twitter-X, and social-tool queries. Output parsed as
+  strict JSON with zero opportunities after route failures. No credential
+  values were printed or stored.
+- PR monitoring: checked `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issues
+  first; both had no open issues. Exact-read all 120 open `kriptoburak` PRs.
+  Merge-state summary was 89 `CLEAN`, 24 `UNSTABLE`, and 7 `BLOCKED`; 4 were
+  review-gated. `bobmatnyc/claude-mpm-skills#26`,
+  `github/awesome-copilot#2001`, `sjhalani7/agentic-tool-registry#1`,
+  `grixu/cc-toolkit#3`, and `denniscalazans/denniscalazans-plugins#71`
+  remained maintainer-review gates with no actionable comments. `MylesMCook/
+  mcook-skills#11` had the earlier bot finding already addressed and no new
+  review issue. `moshehbenavraham/Ultimate-Agent-Directory#84` had an
+  inaccessible bot detail page, no PR comments or reviews, and no concrete
+  fixable finding. No repairable conflict, failing check with accessible logs,
+  DCO/CLA request, generated-file drift, or maintainer request blocked fresh
+  outreach.
+- Fresh candidate screening: searched compact audit and archive first, then
+  crawler output and exact repo metadata. Duplicate-blocked
+  `hyperfx-ai/marketing-skills`, `ndesv21/socialclaw`,
+  `blacktwist/social-media-skills`, `Aditya923-c/xpoz-agent-skills`,
+  `mamboyepez17/trendscope`, and `woosal1337/media-mcp` because existing open,
+  closed, or merged TweetClaw-family submissions already cover them.
+  `creatorcrawl/mcp-server` had no compact/archive blocker for this repo, no
+  target content duplicate, and no open or closed target PR/issue for TweetClaw,
+  `tweetclaw`, `@xquik/tweetclaw`, TweetClaw URLs, ClawHub, Xquik,
+  x-twitter-scraper, or OpenClaw variants. The repo is MIT, non-fork, public,
+  issue-enabled, recently updated, and a strong MCP docs fit because it already
+  documents multiple MCP clients but not OpenClaw.
+- New external PR: opened
+  https://github.com/creatorcrawl/mcp-server/pull/1 from correctly parented
+  fork `kriptoburak/mcp-server`, branch
+  `codex/openclaw-tweetclaw-workflow`, commit `fa409df`. The PR adds OpenClaw
+  MCP setup examples for CreatorCrawl's local stdio server and hosted
+  Streamable HTTP endpoint, mentions TweetClaw only as an optional companion for
+  X/Twitter posting, replies, follower exports, media actions, direct messages,
+  monitors, webhooks, and OpenClaw plugin workflows outside CreatorCrawl's
+  read-only scope, adds Node type coverage so the target's existing
+  `type-check` script passes, and refreshes transitive pins for a clean audit.
+- New PR validation: `pnpm install --frozen-lockfile`, `pnpm type-check`,
+  `pnpm build`, production audit, full audit, `npx --yes markdown-link-check
+  README.md --quiet`, `git diff --check`, and changed-diff public-hygiene scan
+  passed. The first target `pnpm type-check` exposed missing Node types, and
+  the first production/full audits exposed transitive advisories; both were
+  fixed in the target PR. Final readback is open, ready, `MERGEABLE`, and
+  `UNSTABLE` with no checks configured. No NHS badge was added because the
+  target has no badge area.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt` plus Markdown exports for `/cli/mcp`, `/cli/plugins`,
+  `/plugins/manage-plugins`, and `/clawhub/skill-format`. Current docs still
+  cover MCP saved definitions, `openclaw mcp add`, `doctor --probe`, static
+  checks, live probes, tool filters, stdio env handling, Streamable HTTP,
+  static headers, plugin install source selection, npm pinning, runtime JSON
+  inspection, managed Gateway restart behavior, ClawHub discovery, and current
+  skill format rules. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.1`, ClawHub `0.21.0`, and published TweetClaw `1.6.31` while
+  local source remains `1.6.32`.
+- TweetClaw link validation: markdown-link-check passed for README, OpenClaw
+  setup docs, agent workflows docs, packaged skill, and code of conduct. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub
+  legacy and browsing pages, xquik.com, current OpenClaw docs, the new
+  CreatorCrawl PR, and the new fork.
+- Local TweetClaw validation before audit update: `npm run
+  check-openclaw-platform-fitness` passed for local TweetClaw `1.6.32` targeting
+  OpenClaw `2026.6.6`.
+- Package boundaries: production and full `npm audit` both failed on nested
+  OpenClaw stable package advisories for `protobufjs` and `tar`; this remains a
+  host-package blocker. `npm whoami` returned E401, so publishing remains
+  blocked. The earlier exposed npm auth value was not used, printed, stored, or
+  repeated.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Required skill reviews: the GitHub and GitHub publish skills were read for PR
+  triage and PR creation, and simplify plus
+  thermo-nuclear-code-quality-review were read before commit. The TweetClaw diff
+  is compact docs plus append-only text archive history, so no code
+  simplification or structural source finding applied.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, OpenClaw docs checks, link checks, validation gates, badge
+  rule, secret handling, commit/push requirement, Markdown cap, and
+  self-improvement rule. Durable lesson: when an MCP server already documents
+  several clients, an OpenClaw `mcp add` section is target-native only when the
+  PR also preserves the target's own install modes and validates the target's
+  declared checks.
