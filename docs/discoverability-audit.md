@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 20:48 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 21:18 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,16 +195,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 20:48 UTC: model/effort selectors unavailable; minutely unchanged.
-- Crawler returned strict JSON with zero opportunities after managed route
-  failures. PR gate exact-read all 120 open PRs: 89 `CLEAN`, 24 `UNSTABLE`, 7
-  `BLOCKED`, 4 review-gated. No safe maintainer-actionable repair was visible.
-- New PR: https://github.com/creatorcrawl/mcp-server/pull/1 adds OpenClaw MCP
-  setup docs for CreatorCrawl, a narrow TweetClaw companion note for X/Twitter
-  workflows outside CreatorCrawl's read-only scope, Node type coverage, and
-  audit-clean dependency pins. Target is MIT, non-fork, duplicate-clean, and
-  PR-enabled. Readback is open, ready, `MERGEABLE`, and `UNSTABLE` with no
-  checks configured.
+- 2026-06-15 21:18 UTC: model/effort selectors unavailable. Crawler returned
+  strict JSON with zero opportunities. Exact-read all 120 open PRs: 88
+  `CLEAN`, 25 `UNSTABLE`, 6 `BLOCKED`, 1 `DIRTY`, and 3 review-gated.
+- Repair: https://github.com/modu-ai/cowork-plugins/pull/5 was merged with
+  upstream, its marketplace conflict was resolved by keeping both `moai-tutor`
+  and `moai-xquik`, and validation was posted. Readback is open, ready,
+  `MERGEABLE`, and `UNSTABLE`; remaining Vercel auth is target-owned.
+- New PR:
+  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
+  adds TweetClaw to the licensed, active Chinese OpenClaw Twitter/X list from a
+  correctly parented fork. Readback is open, ready, `MERGEABLE`, and `CLEAN`.
 - Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, target checks,
   memory, and final `npm run check:all` passed. Npm audit stays blocked by
   nested OpenClaw `protobufjs` and `tar`; npm publish still E401.

@@ -11285,3 +11285,91 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   several clients, an OpenClaw `mcp add` section is target-native only when the
   PR also preserves the target's own install modes and validates the target's
   declared checks.
+
+## 2026-06-15 21:18 UTC Heartbeat
+
+- Runtime capability: this environment did not expose model or reasoning-effort
+  selectors, so GPT-5.5 and extra-high effort could not be selected. The run
+  continued and the limitation is recorded here and in the heartbeat outcome.
+- Starting state: TweetClaw `master` was clean at `6704489`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran the
+  internal GitHub opportunity crawler through the managed research route with
+  focused skill, MCP, OpenClaw, Twitter-X, social-tool, validator, and package
+  tooling queries. Output parsed as strict JSON with zero opportunities after
+  managed route warnings. No credential values were printed or stored.
+- PR monitoring: checked `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issues
+  first; both had no open issues. Exact-read all 120 open `kriptoburak` PRs.
+  Merge-state summary was 88 `CLEAN`, 25 `UNSTABLE`, 6 `BLOCKED`, and 1
+  `DIRTY`; 3 were review-gated. `modu-ai/cowork-plugins#5` was the only
+  actionable in-scope blocker because it had a merge conflict.
+- PR repair: cloned the correctly parented `kriptoburak` fork for
+  `modu-ai/cowork-plugins#5`, merged upstream `main`, and resolved the
+  `.claude-plugin/marketplace.json` conflict by keeping both upstream
+  `moai-tutor` and the existing `moai-xquik` entry. Updated README live counts,
+  catalog row, and detail text so the marketplace reflects 29 plugins and 177
+  skills.
+- Repair validation: `jq` passed for marketplace and plugin JSON,
+  `npm test` returned the target's no-unit-tests echo, `git diff --check` and
+  cached diff checks passed, merge-marker scan was clean, target markdown link
+  checks passed for the moai-xquik README and skill, and direct checks passed
+  for Xquik MCP docs, the authenticated xquik.com MCP endpoint's expected 401,
+  and the PR URL. Full target README link check found only pre-existing
+  target-owned blockers: `claude.ai` 403, a Gemini image-preview docs 404, the
+  target release tag 404, Typefully MCP 404, Post Bridge MCP status 0, two
+  Korean public-service roots status 0, Korea food safety API status 0, and ISO
+  standard page 403.
+- Repair publish: committed `5616209` on `feature/moai-xquik`, pushed it, and
+  posted validation at
+  https://github.com/modu-ai/cowork-plugins/pull/5#issuecomment-4712610522.
+  Readback after repair is open, ready, `MERGEABLE`, and `UNSTABLE`; remaining
+  Vercel auth is target-owned.
+- Fresh candidate screening: searched compact audit and archive first, then
+  crawler output and exact repo metadata. `eskobar95/guapo-agent-skills` was
+  duplicate-blocked by existing PR history. Several OpenClaw adjacent repos
+  were blocked by prior duplicate, closed-unmerged, or no-follow-up history.
+  `loaded-napierianlogarithm458/awesome-openclaw-skills-zh` was MIT, active,
+  non-fork, duplicate-clean, issue-disabled, and PR-enabled by inferred
+  metadata. Local content already had a `Twitter/X` section, so a single
+  target-native row was a good fit.
+- Fork gate: an older `kriptoburak/awesome-openclaw-skills-zh` fork had the
+  wrong parent, so it was not reused. Created and verified the correctly
+  parented `kriptoburak/loaded-awesome-openclaw-skills-zh` fork before pushing.
+- New external PR:
+  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
+  from branch `codex/add-tweetclaw-twitter-entry`, commit `5752afc`, adds
+  TweetClaw to the Chinese OpenClaw Twitter/X table with canonical GitHub and
+  Shields links. No NHS badge was added because the target badge area summarizes
+  list health rather than xquik.com readiness.
+- New PR validation: `git diff --check`, markdown-link-check for README, direct
+  checks for the TweetClaw GitHub URL and Shields badge, and changed-diff public
+  hygiene scan passed. PR readback is open, ready, `MERGEABLE`, `CLEAN`, and has
+  no checks configured.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`, and
+  `/clawhub/skill-format` Markdown exports. Npm metadata returned OpenClaw
+  latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub `0.21.0`, and published
+  TweetClaw `1.6.31` while local source remains `1.6.32`.
+- TweetClaw link validation: markdown-link-check passed for README, OpenClaw
+  setup docs, agent workflows docs, packaged skill, and code of conduct. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub
+  browsing page, OpenClaw Directory listing, Xquik MCP docs, the repaired PR,
+  and the new PR.
+- Package boundaries: production and full `npm audit` still fail on nested
+  OpenClaw stable package advisories for `protobufjs` and `tar`; this remains a
+  host-package blocker. `npm whoami` returned E401, so publishing remains
+  blocked. No auth value was used, printed, stored, or repeated.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Required skill reviews: the GitHub, GitHub publish, simplify, and
+  thermo-nuclear-code-quality-review skills were read before commit. The
+  TweetClaw diff is compact docs plus append-only text archive history, so no
+  code simplification or structural source finding applied.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate and
+  fork rules, OpenClaw docs checks, link checks, validation gates, badge rule,
+  explicit target exclusion, secret handling, commit/push requirement, Markdown
+  cap, and self-improvement rule. Durable lesson: when an existing fork under
+  `kriptoburak` points at the wrong parent, create a distinct correctly
+  parented fork and verify parent identity before pushing outreach.
