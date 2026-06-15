@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 19:02 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 20:21 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,20 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 20:08 UTC: model/effort selectors unavailable; minutely unchanged.
+- 2026-06-15 20:21 UTC: model/effort selectors unavailable; minutely unchanged.
 - Crawler returned strict JSON with zero opportunities after managed
-  research-route failures. PR gate exact-read 70 of 120 open PRs.
-- Repaired `Hairy-jumper134/last30days-cn-skill#1` by merging upstream,
-  resolving the repeated README ZIP-link conflict, pushing `4233511`, and
-  commenting validation. Readback is open, ready, and `CLEAN`.
-- New PR: https://github.com/p0ki/x-bookmarks-mcp/pull/1 adds OpenClaw MCP
-  setup for the local bookmark server and optional TweetClaw follow-up guidance
-  for account-scoped X/Twitter work after bookmark review. Target is MIT,
-  non-fork, duplicate-clean, and PR-enabled. Readback is open, ready, and
-  `UNSTABLE` with no checks configured.
+  research-route failures. PR gate exact-read 80 of 120 open PRs.
+- Repaired `Garenaof2462/browser-ops#1` by merging upstream, resolving the
+  repeated README ZIP-link conflict, pushing `0f09ba2`, and commenting
+  validation. Readback is open, ready, and `CLEAN`.
+- New PR: https://github.com/mameshivaa/x-archive-rag/pull/13 adds OpenClaw MCP
+  setup for the local archive RAG server and optional TweetClaw live X follow-up
+  guidance that keeps local archive data separate. Target is MIT, non-fork,
+  duplicate-clean, and PR-enabled. Readback is open, ready, and `UNSTABLE` with
+  no checks configured.
 - Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, target
-  README checks, and final `npm run check:all` passed. Npm audit stays blocked
-  by nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
+  tests, target release checks, and final `npm run check:all` passed. Npm audit
+  stays blocked by nested OpenClaw `protobufjs` and `tar`; npm publish still
+  E401.
 
 ## Reporting Checklist
 
