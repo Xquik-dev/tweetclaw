@@ -10664,3 +10664,120 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   lesson: for portable skill repos, prefer a self-contained `SKILL.md` with the
   target's own frontmatter validator and size script instead of a thin catalog
   link.
+
+## 2026-06-15 19:36 UTC heartbeat
+
+- Runtime limitation: this Codex runtime did not expose a GPT-5.5 selector or
+  extra-high reasoning selector. The run recorded that limitation and
+  continued. The same-thread heartbeat automation remains minutely; prompt TOML
+  measured 14,872 bytes and was not edited.
+- Start state: TweetClaw `master` was clean; xquik `master` had unrelated
+  untracked webshare and X preflight files, left untouched.
+- Crawler-first discovery: ran the xquik GitHub opportunity crawler with
+  managed research proxy, strict JSON output, bounded timeouts, and fresh
+  SKILL.md, `.agents/skills`, OpenClaw skill, MCP skill, Codex skill, Claude
+  skill, agent skill, social media skill, Twitter-X skill, awesome-list,
+  registry, docs, examples, validator, framework, and package-tooling queries.
+  Managed research routes reported socket, endpoint, and pool failures without
+  printing credentials; parsed output was strict JSON with zero opportunities.
+- PR monitoring: searched 200 open authored PRs and exact-read 120 known PRs.
+  Rollup states were BEHIND 1, BLOCKED 4, CLEAN 84, DIRTY 6, UNKNOWN 11, and
+  UNSTABLE 14; review states were NONE 117 and REVIEW_REQUIRED 3. No
+  maintainer comments, review comments, DCO/CLA blockers, generated-file drift,
+  or target-owned check failures required action before the safe conflict
+  repair below.
+- PR repair: `Aditya923-c/xpoz-agent-skills#1` was conflict-only and safe to
+  fix from correctly parented fork `kriptoburak/xpoz-agent-skills`, branch
+  `codex/add-tweetclaw-openclaw-resource`. The branch merged upstream `main`,
+  resolved the README quick-links conflict by preserving the upstream GitHub
+  Repository link and removing the duplicate raw ZIP variant, committed
+  `73d64db`, pushed, and posted
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4711493736.
+  Validation passed `git diff` whitespace check, conflict-marker scan, README
+  markdown-link-check, direct link checks for the target ZIP, target repo,
+  TweetClaw GitHub, and TweetClaw npm metadata, plus added-line public hygiene.
+  Final readback was open, ready, and `CLEAN`.
+- Fresh screening and duplicate gates: compact audit, archive, crawler output,
+  exact GitHub metadata, local target content, target open and closed PRs, and
+  target open and closed issues were checked for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub and npm URLs, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, MCP, social, and Twitter-X variants.
+  `ayaanjan76/awesome-mcp-servers` was MIT and non-fork but issues were
+  disabled and the target looked like raw ZIP landing-page content.
+  `DhanushNehru/awesome-mcp-servers` was blocked by existing Xquik history.
+  `umairakrm007/awesome-mcp-servers` had open related Xquik PR #2 and low fit.
+  `toolsdk-ai/toolsdk-mcp-registry` had merged Xquik PRs #193 and #305.
+  `adminlove520/openclaw-twitter-skill`, `kennyzir/twitter-automation-local`,
+  `Aanlifire/social-media-automation-skills`, `freecodewu/hn-brand-monitoring`,
+  `miyahluvgames-source/brand-reputation-monitor-skill`,
+  `minilozio/tweet-composer-skill`, and `Miles0sage/twitter-mcp` were
+  duplicate-blocked by prior open TweetClaw PRs. Several direct Twitter scraper
+  and MCP repos lacked licenses or were too competitor-like for a useful
+  target-native edit.
+- New external PR: opened https://github.com/tangivis/twitter-mcp/pull/100 from
+  correctly parented fork `kriptoburak/tangivis-twitter-mcp`, branch
+  `codex/openclaw-mcp-companion`, commit `08c3846`. The PR adds OpenClaw MCP
+  setup docs for saving the target MCP server, probing it, and narrowing
+  exposed tools for read-only agent runs; adds optional TweetClaw plugin
+  companion install notes for separate approval-reviewed X/Twitter jobs; and
+  fixes stale README links so each localized technical-guide link points at its
+  matching file.
+  Target was MIT, non-fork, issue-enabled, PR-enabled, active, duplicate-clean,
+  and target-native. Final readback was open, ready, `UNSTABLE`, with no
+  comments, reviews, or checks.
+- Target validation: `git diff` whitespace check, conflict-marker scan,
+  added-line public-hygiene scan, README and install docs markdown-link-check,
+  direct checks for OpenClaw MCP docs, OpenClaw plugins docs, TweetClaw GitHub,
+  TweetClaw npm metadata, ClawHub, target repo, and target PR passed. Target
+  lint passed with `ruff format` check and `ruff check`. Full pytest exposed an
+  unrelated local Python 3.14 terminal-width assertion failure in
+  `tests/test_human_cards.py::test_card_width_uses_clamped_terminal`. Strict
+  MkDocs exposed existing missing docs nav targets including `api.md`. These
+  were recorded in the PR body and not treated as regressions. No NHS badge was
+  added because the existing badge area is package and CI health only.
+- OpenClaw and npm checks: fetched current official `llms.txt`, `/cli/mcp`,
+  `/cli/plugins`, manifest, and migration docs. `llms.txt` points MCP docs to
+  `/cli/mcp`; stale probes for `/mcp.md` and `/tools/mcp*` returned 404 and
+  were treated as doc-route evidence, not TweetClaw drift. Npm metadata returned
+  OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub `0.21.0`, and
+  published `@xquik/tweetclaw@1.6.31`; local source remains `1.6.32`.
+- TweetClaw public-link validation: markdown-link-check passed for README,
+  OpenClaw setup, agent workflows, packaged skill, and code of conduct. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  ClawHub plugin page, xquik.com, OpenClaw MCP docs, OpenClaw plugins docs, the
+  repaired Aditya PR, and the new tangivis PR. `npm run
+  check-openclaw-platform-fitness` passed for local `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.6`.
+- Security/package validation: production and full `npm audit` both failed on
+  nested `openclaw@2026.6.6` shrinkwrap advisories for `protobufjs` and `tar`.
+  Treat this as an upstream OpenClaw stable-package blocker before release-like
+  claims.
+- Package publication boundary: `npm whoami` returned E401 again. The
+  previously exposed npm credential was not used, printed, stored, or repeated;
+  npm publish stays blocked until the owner rotates it and configures an
+  approved npm session.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Required skill reviews: the simplify and thermo-nuclear-code-quality-review
+  skills were read before commit. The audit-only docs diff is direct,
+  append-only, and keeps detailed history in the non-Markdown archive, so there
+  is no code structure, abstraction, file-size, or branching concern to fix.
+- Final TweetClaw validation after audit update: `git diff` whitespace check
+  passed; `npm run check-memory-md-size` passed under the 15 KiB Markdown cap;
+  `npm run check-em-dash` passed; diff hygiene found no secret values,
+  credential patterns, private implementation details, pricing-internal claims,
+  unsupported claims, em dash additions, or banned double-hyphen additions;
+  final `npm run check:all` passed with typecheck, lint, duplicate detection,
+  knip, suppression checks, dash hygiene, memory, skill frontmatter, version
+  parity, build, OpenClaw fitness, package artifact, and coverage tests at
+  100 percent coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory per-run PR submission,
+  PR repair priority, duplicate and fork rules, OpenClaw docs checks, link
+  checks, validation gates, badge rule, secret handling, commit/push
+  requirement, Markdown cap, and self-improvement rule. Durable lesson: when a
+  same-name fork under `kriptoburak` points to a different parent, create a
+  target-specific fork name and verify parent before pushing. Also, when a
+  target has stale localized docs links, fix those target-native broken links
+  in the same PR instead of recording them as target-owned blockers.

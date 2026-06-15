@@ -195,19 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 19:05 UTC: model/effort selectors unavailable; minutely unchanged.
+- 2026-06-15 19:36 UTC: model/effort selectors unavailable; minutely unchanged.
 - Crawler returned strict JSON with zero opportunities after managed
   research-route failures. PR gate exact-read 120 of 200 open PRs.
-- Repaired `WilliamAlexYT/x-research-skill#1` by merging upstream, resolving the
-  README conflict, pushing `f79be0a`, and commenting validation results.
+- Repaired `Aditya923-c/xpoz-agent-skills#1` by merging upstream, resolving the
+  README quick-links conflict, pushing `73d64db`, and commenting validation.
   Readback is open, ready, and `CLEAN`.
-- New PR: https://github.com/Walliiee/openclaw-skills/pull/2 adds a portable
-  `tweetclaw-twitter-workflows` OpenClaw skill. Target is MIT, non-fork,
-  duplicate-clean, and PR-enabled. Gemini requested a clearer skill description;
-  `d68cb43` fixed it and readback is open, ready, `CLEAN`.
-- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, target
-  skill validators, and final `npm run check:all` passed. Npm audit stays
-  blocked by nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
+- New PR: https://github.com/tangivis/twitter-mcp/pull/100 adds OpenClaw MCP
+  setup docs for the target MCP server, optional TweetClaw companion notes, and
+  fixes stale localized technical-guide links. Target is MIT, non-fork,
+  duplicate-clean, and PR-enabled. Readback is open, ready, and `UNSTABLE` with
+  no checks, comments, or reviews.
+- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory,
+  target lint, and final `npm run check:all` passed. Target pytest and strict
+  MkDocs exposed pre-existing unrelated failures; npm audit stays blocked by
+  nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
 
 ## Reporting Checklist
 
