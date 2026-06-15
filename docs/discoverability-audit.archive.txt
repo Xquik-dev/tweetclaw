@@ -10610,14 +10610,17 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   PR-enabled, active, duplicate-clean, and target-native for a portable skill.
 - New external PR: opened https://github.com/Walliiee/openclaw-skills/pull/2
   from correctly parented fork `kriptoburak/walliiee-openclaw-skills`, branch
-  `codex/add-tweetclaw-twitter-workflows`, commit `7b25d77`. It adds
+  `codex/add-tweetclaw-twitter-workflows`, initial commit `7b25d77`. It adds
   `tweetclaw-twitter-workflows`, a portable Agent Skill for X/Twitter research,
   setup checks, read-first evidence, monitoring, and approval-gated TweetClaw
-  actions. PR readback was open, ready, `CLEAN`, with no comments, reviews, or
-  checks.
+  actions. Gemini Code Assist requested a clearer description that states what
+  the skill does and when to use it under 200 characters. Commit `d68cb43`
+  refined the description, reran target validation, posted
+  https://github.com/Walliiee/openclaw-skills/pull/2#issuecomment-4711410470,
+  and final readback was open, ready, `CLEAN`, with no checks.
 - Target validation: `bash skill-auditor/scripts/validate-frontmatter.sh
   tweetclaw-twitter-workflows` passed. `bash skill-auditor/scripts/measure.sh
-  tweetclaw-twitter-workflows` passed at 158 description chars and 136 lines.
+  tweetclaw-twitter-workflows` passed at 177 description chars and 136 lines.
   `git diff --check`, conflict-marker scan, added-line public-hygiene scan, and
   README plus skill markdown-link-check passed. Direct checks returned
   HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub, Xquik,
@@ -10646,7 +10649,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 - Final TweetClaw validation after audit update: `git diff` whitespace check
-  passed; `npm run check-memory-md-size` passed at 15,035 of 15,360 bytes;
+  passed; `npm run check-memory-md-size` passed at 15,073 of 15,360 bytes;
   diff hygiene found no secret values or forbidden dash additions; `npm run
   check:all` passed with typecheck, lint, duplicate detection, knip,
   suppression checks, dash hygiene, memory, skill frontmatter, version parity,

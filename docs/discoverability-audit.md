@@ -203,8 +203,8 @@ archive, before any outreach or duplicate decision.
   Readback is open, ready, and `CLEAN`.
 - New PR: https://github.com/Walliiee/openclaw-skills/pull/2 adds a portable
   `tweetclaw-twitter-workflows` OpenClaw skill. Target is MIT, non-fork,
-  duplicate-clean, and PR-enabled. Readback is open, ready, `CLEAN`, with no
-  checks or reviews yet.
+  duplicate-clean, and PR-enabled. Gemini requested a clearer skill description;
+  `d68cb43` fixed it and readback is open, ready, `CLEAN`.
 - Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, target
   skill validators, and final `npm run check:all` passed. Npm audit stays
   blocked by nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
