@@ -195,19 +195,22 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 16:19 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 17:20 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`.
-- PR gate searched 200 open authored PRs and exact-read 85 newest/tracked PRs.
-  Repaired `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1` twice
-  after upstream force-updates; latest head `a51126c` read back `CLEAN`.
+- PR gate searched 200 open authored PRs and exact-read 100 newest/tracked PRs.
+  No actionable maintainer, review, CI, conflict, CLA, DCO, or bot blocker was
+  repairable; `Flopsstuff/flugins#6` readback confirmed prior fixes persist.
 - Crawler-first discovery returned strict zero JSON after managed research-route
-  failures. Fresh screening selected `Drhir2460/agentskills-mcp`, MIT,
-  non-fork, duplicate-clean, and target-native for repo-source examples.
-- New PR: https://github.com/Drhir2460/agentskills-mcp/pull/1 adds a concrete
-  TweetClaw source entry plus README guidance; readback was open and `CLEAN`.
-- OpenClaw docs, npm metadata, target validation, TweetClaw links, audits,
-  OpenClaw fitness, memory checks, and final `npm run check:all` passed. Npm
-  publish for local `1.6.32` remains blocked by unavailable safe npm auth.
+  failures. Fresh MCP and skill-list screening found several duplicate or
+  policy-blocked targets and selected `geesugar/awesome-mcp`, MIT, non-fork,
+  duplicate-clean, and hand-editable.
+- New PR: https://github.com/geesugar/awesome-mcp/pull/7 adds TweetClaw to the
+  English and Chinese MCP listings; readback was open and `CLEAN`.
+- Target diff, new links, OpenClaw docs, npm metadata, TweetClaw public links,
+  npm audits, OpenClaw fitness, memory checks, and final `npm run check:all`
+  passed. Target markdown link check only found pre-existing target-owned
+  broken links. Npm publish for local `1.6.32` remains blocked by safe npm auth
+  E401.
 
 ## Reporting Checklist
 

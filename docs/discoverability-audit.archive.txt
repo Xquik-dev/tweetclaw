@@ -10104,3 +10104,103 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   MCPs when the target already supports configured GitHub source repos; verify
   both the example JSON and the target parser against the real TweetClaw
   `SKILL.md`.
+
+## 2026-06-15 17:20 UTC heartbeat
+
+- Runtime selectors: GPT-5.5 and extra-high reasoning effort could not be
+  selected by this runtime. Continued with the available model and recorded the
+  limitation. The heartbeat automation already uses
+  `FREQ=MINUTELY;INTERVAL=1`, so no automation update was needed for the
+  user's minutely cadence request.
+- Start state: `/Users/burak/Developer/tweetclaw` was clean on `master` at
+  `6ef5271`. Markdown memory check started at 14,984 of 15,360 bytes.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran the
+  research-route GitHub crawler with focused authored-PR, `SKILL.md`,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, social media, Twitter/X,
+  skill-registry, tool-catalog, and package-tooling queries. The managed
+  research route returned strict zero-opportunity JSON after network-route
+  failures; no credential values were printed.
+- PR monitoring: `gh search prs` found 200 open `kriptoburak` PRs. Exact
+  readbacks covered 100 newest or tracked PRs and flagged 29 for review. No
+  actionable maintainer comment, review request, check failure, conflict, CLA,
+  DCO, generated-file drift, or valid bot finding could be safely repaired.
+  `Flopsstuff/flugins#6` was locally cloned and verified at head `1b06a37`; the
+  prior CodeRabbit author-email and imperative-heading findings remain fixed.
+  Several PRs are target-owned unstable or blocked, including external Kilo
+  Code Review failure on `moshehbenavraham/Ultimate-Agent-Directory#84` and
+  GitHub policy review state on `github/awesome-copilot#2001`.
+- Fresh screening: compact audit, archive, crawler output, repo metadata,
+  target content, open and closed PRs/issues, and local clones were checked for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub, Xquik, x-twitter-scraper, OpenClaw, skill, MCP, and social/Twitter
+  variants. Duplicate or policy blockers included
+  `JustInCache/awesome-mcp-collection`, `abordage/awesome-mcp`,
+  `AIAnytime/Awesome-MCP-Server`, `habitoai/awesome-mcp-servers`,
+  `collabnix/awesome-mcp-lists`, `BrethofAI/awesome-mcp-servers`,
+  `DhanushNehru/awesome-mcp-servers`, `Rodert/awesome-mcp`,
+  `wundercorp/awesome-mcp`, `AlexMili/Awesome-MCP`,
+  `TrueHaiq/awesome-mcp`, `devinsightdotio/awesome_mcp`,
+  `Sagargupta16/awesome-mcp-servers`, `PrincejiCoder/awesome-mcp`,
+  `VoltAgent/awesome-agent-skills`, `fralapo/awesome-agent-skills`,
+  `YangsonHung/awesome-agent-skills`, and
+  `shadowrootdev/awesome-agent-skills-mcp`. Other blocked targets:
+  `sunnamed434/awesome-mcp-registry` uses generated AI-curated content and a
+  content-PR rejection workflow; `OrenVill/awesome-mcp` focuses on no-key local
+  API servers; `ayaanjan76/awesome-mcp-servers` is a raw ZIP landing page with
+  issues disabled; `cafe3310/public-agent-skills` is a personal skill
+  collection where an unsolicited TweetClaw skill would be too intrusive;
+  `korchasa/awesome-mcp` is automatically compiled with issues disabled;
+  `Albertchamberlain/Awesome-MCP`, `moikot/awesome-mcp`, and
+  `iAmCorey/Awesome-MCP` were too thin or had no README.
+- New target: `geesugar/awesome-mcp` was selected as MIT, non-fork,
+  duplicate-clean, hand-editable, and target-native. It has English and Chinese
+  README lists, contribution guidance, and no existing TweetClaw or Xquik PRs
+  or issues.
+- New external PR: opened https://github.com/geesugar/awesome-mcp/pull/7 from
+  correctly parented fork `kriptoburak/geesugar-awesome-mcp`, branch
+  `codex/add-tweetclaw-mcp-entry`, commit `22cd368`. The PR adds TweetClaw to
+  `README.md` and `README-zh.md` for X/Twitter tweet search, reply search,
+  approval-gated posting, follower export, media workflows, direct messages,
+  monitors, webhooks, and giveaway draws through Xquik. PR readback was open,
+  ready, `CLEAN`, with no comments, reviews, or checks.
+- Target validation for `geesugar/awesome-mcp#7`: `git diff --check` passed;
+  direct checks for the new TweetClaw GitHub URL, shields badge, and
+  simple-icons URLs returned HTTP 200; changed-diff public hygiene scan found
+  no secrets, confidential details, unsupported claims, stale metadata, em dash,
+  or banned space-hyphen sequence. `markdown-link-check README.md README-zh.md`
+  found only pre-existing target-owned broken links unrelated to the new entry:
+  old `modelcontextprotocol/servers` paths, simple-icons slugs for csharp,
+  java, windows, and nodejs, plus a `pydantic-ai` path in the Chinese README.
+- OpenClaw check: current docs fetched successfully from `llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/plugins/plugin-permission-requests`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, and `/help/debugging`.
+  `npm view openclaw` returned latest `2026.6.6` and beta `2026.6.8-beta.1`;
+  `npm view clawhub` returned `0.21.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, while local source remains `1.6.32`.
+- Package publication boundary: `npm whoami` returned E401 again. The
+  previously exposed npm credential was not used, printed, stored, or repeated;
+  safe publication remains blocked until the owner rotates it and configures an
+  approved npm session or secret store.
+- TweetClaw validation before audit update: `npm run
+  check-openclaw-platform-fitness` passed for local `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.6`; production and full npm audits found
+  0 vulnerabilities; public Markdown link checks passed for README, OpenClaw
+  setup docs, agent workflows, packaged skill, and code of conduct.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation after audit update: `git diff --check` passed;
+  `npm run check-memory-md-size` passed at 15,118 of 15,360 bytes; diff
+  hygiene found no secrets, confidential details, unsupported claims, stale
+  metadata, em dash, or banned space-hyphen sequence; `npm run check:all`
+  passed with typecheck, lint, duplicate detection, knip, suppression checks,
+  dash hygiene, memory, skill frontmatter, version parity, build, OpenClaw
+  fitness, package artifact, and 168 coverage tests at 100 percent coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory per-run PR submission,
+  PR repair priority, duplicate and fork rules, OpenClaw docs checks, link
+  checks, validation gates, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, and self-improvement rule. Durable
+  lesson: older awesome MCP lists often have stale upstream links, so run full
+  markdown-link-check to separate pre-existing target debt from newly added
+  links, then direct-check the new URLs before opening PRs.
