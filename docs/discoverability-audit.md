@@ -195,25 +195,23 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-13 23:36 UTC: model/effort selectors unavailable; no prompt edit.
-  Xquik had unrelated untracked proxy and X preflight files left untouched.
-  Crawler returned 25 prior catalog candidates and 0 focused skill/tooling hits.
-- PR gate checked 62 recent, commented, and audit-tracked PRs after readback
-  correction. `marktantongco/ai-agent-skills#1` and
-  `rohitg00/awesome-claude-code-toolkit#537` already satisfied current bot
-  comments on their pushed heads. Remaining failures were target-owned gates.
-- New PR: https://github.com/kangarooking/x-skills/pull/5 adds optional public
-  X/Twitter source context to `x-publish`, keeps draft saving and manual publish
-  approval with the target skill, and adds the NHS badge to existing README
-  badge strips. Existing Xquik PR 3 is distinct because it covers `x-collect`.
-- Final PR readback is open, ready, mergeable, clean, with no comments or
-  reviews. Target validation and public-hygiene scans passed.
-- OpenClaw/npm checked: `openclaw@2026.6.6`, `clawhub@0.21.0`; TweetClaw npm
-  remains `1.6.31`, source `1.6.32`. Target links, TweetClaw links, npm audits,
-  OpenClaw fitness, memory, and final `check:all` passed.
-- Lesson: draft-publisher skills are good targets only when TweetClaw remains
-  optional source evidence and the target keeps draft creation, browser state,
-  final review, and publish authority.
+- 2026-06-15 09:23 UTC: model/effort selectors unavailable; automation already
+  active at `FREQ=MINUTELY;INTERVAL=1`; no prompt edit needed.
+- PR gate exact-read 100 open `kriptoburak` PRs, repaired conflicts on
+  `Aditya923-c/xpoz-agent-skills#1` and `warlockoussama/twitter-cli#1`, and
+  recorded remaining conflict backlog in the archive.
+- Crawler-first discovery returned valid zero-opportunity JSON with managed
+  proxy route failures only. Fresh web/API screening selected
+  `public-clis/twitter-cli` as licensed, non-fork, duplicate-clean, and useful.
+- New PR: https://github.com/public-clis/twitter-cli/pull/67 documents local
+  skill vs OpenClaw plugin boundaries, fixes a pre-existing malformed `x.com`
+  link, and leaves package-health badges unchanged.
+- Target validation passed markdown links, diff check, `uv` dev sync, ruff,
+  mypy, and 242 tests. Final readback: open, ready, mergeable, no checks.
+- OpenClaw docs, npm metadata, 46 public TweetClaw links, audits,
+  OpenClaw fitness, memory, and `check:all` passed.
+- Lesson: when a fork name is already tied to a different parent, create a
+  distinct `kriptoburak` fork name and verify parent before pushing.
 
 ## Reporting Checklist
 

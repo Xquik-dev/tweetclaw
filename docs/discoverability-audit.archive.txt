@@ -8918,3 +8918,109 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   secret handling, cadence, thread binding, commit/push requirement, Markdown
   cap, and self-improvement. Changed TweetClaw file is
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-15 09:23 UTC heartbeat
+
+- Runtime and cadence: model and reasoning-effort selectors were unavailable in
+  this runtime, so the run continued under the current model. The local
+  automation record is active and already uses `FREQ=MINUTELY;INTERVAL=1`.
+  The persisted automation prompt measured 14,872 bytes. No prompt edit was
+  needed because the prompt already requires crawler-first discovery, one new
+  PR when eligible, PR repair priority, link checks, OpenClaw docs checks,
+  quiet autonomy, and self-improvement.
+- PR monitoring: exact readback checked 100 open PRs authored by `kriptoburak`.
+  Five PRs needed conflict attention at scan time:
+  `Aditya923-c/xpoz-agent-skills#1`,
+  `WilliamAlexYT/x-research-skill#1`,
+  `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1`,
+  `warlockoussama/twitter-cli#1`, and
+  `Aion2500/hermes-ai-infrastructure-monitoring-toolkit#1`.
+  No existing in-scope open issues were found in `Xquik-dev/tweetclaw` or
+  `Xquik-dev/xquik`.
+- PR repair 1: `Aditya923-c/xpoz-agent-skills#1` had a README-only conflict.
+  The upstream conflict was between the intended repository URL and a raw ZIP
+  URL under a label that says GitHub Repository. The repair kept the repository
+  URL, passed `git diff --check`, conflict-marker scan,
+  `npx --yes markdown-link-check README.md --quiet`, direct 200 checks for the
+  target and TweetClaw URLs, npm metadata check for `@xquik/tweetclaw@1.6.31`,
+  and public-hygiene scan. Commit `859b669` was pushed to the PR branch.
+  Final readback: open, ready, `MERGEABLE`, `CLEAN`, no checks configured, no
+  comments or reviews, head `859b669`.
+- PR repair 2: `warlockoussama/twitter-cli#1` had a README-only conflict in a
+  duplicated footer download link. The repair removed only the conflict markers
+  and kept the target URL unchanged. Validation passed `git diff --check`,
+  conflict-marker scan, `npx --yes markdown-link-check README.md --quiet`,
+  `uv run --extra dev pytest -q` with 151 passing tests and 6 deselected,
+  `uv run ruff check .`, and `uv run mypy twitter_cli`. Merge commit
+  `79624f0` was pushed. Final readback after GitHub recalculation: open,
+  ready, `MERGEABLE`, `CLEAN`, no checks configured, no comments or reviews.
+- Remaining repair backlog: `WilliamAlexYT/x-research-skill#1`,
+  `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1`, and
+  `Aion2500/hermes-ai-infrastructure-monitoring-toolkit#1` still need future
+  conflict review. `Antobtez/Adverant-Nexus-Plugin-OpenClaw#1` has one
+  external comment to inspect before editing. Do not open duplicate follow-ups;
+  repair these branches first when safely actionable.
+- Crawler-first discovery: ran the Xquik GitHub opportunity crawler with
+  research proxy, strict JSON, request timeout, skipped warmup, and focused
+  SKILL.md, OpenClaw skill, social media skill, Twitter/X skill, MCP registry,
+  and agent skill marketplace queries. It returned valid JSON with zero
+  opportunities. Stderr recorded managed proxy socket closures, endpoint
+  quarantines, and a proxy-pool outage circuit; no credential values were
+  printed.
+- Fresh screening: web and exact GitHub metadata checks covered
+  `public-clis/twitter-cli`, `daymade/claude-code-skills`,
+  `elbis330/social-media-scraper-skill`, `Upload-Post/upload-post-skill`,
+  `wshuyi/x-article-publisher-skill`, `gitroomhq/postiz-agent`,
+  `marcusquinn/aidevops`, and `fuyalan126/dingyi-x-operator`. Archive and
+  target-history checks blocked the prior handled or duplicate skill lanes:
+  daymade, elbis330, wshuyi, and gitroom. `Upload-Post/upload-post-skill` still
+  lacked license metadata. `public-clis/twitter-cli` was selected because it is
+  Apache-2.0, public, non-fork, non-archived, issue-enabled, duplicate-clean
+  across compact audit, archive, target content, open/closed PRs, and
+  open/closed issues, and has an existing agent skill plus deprecated
+  OpenClaw/ClawHub wording where an OpenClaw boundary note helps readers.
+- New external PR: opened `public-clis/twitter-cli#67` at
+  https://github.com/public-clis/twitter-cli/pull/67 from correctly parented
+  fork `kriptoburak/twitter-cli-public-clis`, branch
+  `codex/openclaw-agent-boundary`, commit `d1a5622`. The existing
+  `kriptoburak/twitter-cli` fork belonged to `warlockoussama/twitter-cli`, so
+  a distinct fork name was required and the parent was verified before push.
+  The PR updates README and SKILL docs to distinguish local shell/cookie skill
+  workflows from OpenClaw plugin runtime workflows, points OpenClaw plugin jobs
+  to `openclaw plugins install npm:@xquik/tweetclaw@1.6.31`, and fixes a
+  pre-existing malformed `https://x.com` Markdown link in `SKILL.md`.
+  The target badge area is package/app health only, so no NHS badge was added.
+- Target validation for `public-clis/twitter-cli#67`: passed
+  `npx --yes markdown-link-check README.md SKILL.md --quiet`,
+  `git diff --check`, direct 200 checks for TweetClaw GitHub, npm registry,
+  and target repo, `npm view @xquik/tweetclaw version openclaw.install --json`,
+  `uv sync --extra dev`, `uv run ruff check .`, `uv run mypy twitter_cli`,
+  and `uv run pytest -q` with 242 passing tests and 6 deselected. Final PR
+  readback: open, ready, `MERGEABLE`, `UNSTABLE` only because no checks were
+  configured, no comments, no reviews, two changed files.
+- Official OpenClaw docs: current docs were rechecked through
+  `docs.openclaw.ai` search and exact result review for plugin install source
+  prefixes, npm installs, plugin updates, runtime JSON inspection, managed
+  Gateway restart, ClawHub as public discovery, and ClawHub publishing. The
+  `npm:@xquik/tweetclaw@1.6.31` install syntax used in external docs remains
+  aligned with current official source-selection guidance.
+- TweetClaw public hygiene: source-derived public URL sweep checked README,
+  OpenClaw setup docs, agent workflow docs, Context7 docs, packaged skill,
+  package metadata, plugin manifest, and code of conduct. After correcting the
+  extractor to avoid reference-link label suffixes, it checked 46 non-Context7
+  URLs with zero bad links. Omit-dev and full npm audits found 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed. Final
+  `npm run check:all` passed, including typecheck, lint, CPD, knip,
+  suppression check, dash check, memory size, skill frontmatter, version check,
+  build, OpenClaw platform fitness, package artifact check, and 168 tests with
+  100 percent coverage.
+- Security boundary: a credential value pasted in chat was not used, printed,
+  stored, staged, or committed. Future publish work must use approved secret
+  stores only after the owner rotates any exposed credential.
+- Prompt self-improvement: keep the one-minute cadence check as an audit item,
+  but do not rewrite the prompt when the local automation record already
+  matches the requested cadence. Preserve the fork-parent lesson: when a
+  `kriptoburak` fork name is already tied to another upstream, create a
+  distinct fork name, verify `.parent.full_name`, and only then push or open a
+  PR. Changed TweetClaw files are `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
