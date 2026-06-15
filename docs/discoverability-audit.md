@@ -195,18 +195,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 19:54 UTC: model/effort selectors unavailable; minutely unchanged.
+- 2026-06-15 20:08 UTC: model/effort selectors unavailable; minutely unchanged.
 - Crawler returned strict JSON with zero opportunities after managed
-  research-route failures. PR gate exact-read 60 of 120 open PRs.
-- Repaired `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1` on the
-  correct `awesome-claude-code-skills-sensible` fork, pushing `d187ce3`; readback
-  is open, ready, and `CLEAN`. A mistaken same-name fork push/comment was
-  corrected in-thread.
-- New PR: https://github.com/kukapay/twitter-username-changes-mcp/pull/6 adds
-  OpenClaw MCP setup and optional TweetClaw follow-up guidance for
-  account-scoped X/Twitter checks after username-history signals. Target is MIT,
+  research-route failures. PR gate exact-read 70 of 120 open PRs.
+- Repaired `Hairy-jumper134/last30days-cn-skill#1` by merging upstream,
+  resolving the repeated README ZIP-link conflict, pushing `4233511`, and
+  commenting validation. Readback is open, ready, and `CLEAN`.
+- New PR: https://github.com/p0ki/x-bookmarks-mcp/pull/1 adds OpenClaw MCP
+  setup for the local bookmark server and optional TweetClaw follow-up guidance
+  for account-scoped X/Twitter work after bookmark review. Target is MIT,
   non-fork, duplicate-clean, and PR-enabled. Readback is open, ready, and
-  `CLEAN`.
+  `UNSTABLE` with no checks configured.
 - Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, target
   README checks, and final `npm run check:all` passed. Npm audit stays blocked
   by nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
