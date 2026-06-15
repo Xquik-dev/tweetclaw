@@ -195,20 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 10:26 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 10:44 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`; prompt bytes 14,872.
-- PR gate read 82 open authored PRs before bounded interruption. `MylesMCook`,
-  `Flopsstuff`, and `agenthaus-marketplace` review items were stale or already
-  fixed at current heads; `Ultimate-Agent-Directory#84` is blocked only by an
-  external Kilo Code Review check with no actionable payload.
-- Crawler-first discovery returned valid zero-opportunity JSON. Fresh screening
-  selected `Miles0sage/twitter-mcp` as MIT, non-fork, duplicate-clean, and
-  useful after no-license and duplicate skill/MCP targets were blocked.
-- New PR: https://github.com/Miles0sage/twitter-mcp/pull/3 adds review-first
-  workflow guidance, optional TweetClaw/OpenClaw public X/Twitter source-context
-  use, and removes a stale project-structure file entry.
+- PR gate read 120 open authored PRs, repaired
+  `grasscaograss/AwesomeWeldoneSkills#5` from dirty/conflicting to clean by
+  merging upstream and resolving the skill-count conflict. Other comments,
+  reviews, and the Kilo check had no current safe repair payload.
+- Crawler-first discovery returned valid zero-opportunity JSON after a short
+  proxy pool outage. Fresh screening selected `stone16/wingman-x` as MIT,
+  non-fork, duplicate-clean, and useful after no-license and duplicate lanes.
+- New PR: https://github.com/stone16/wingman-x/pull/21 fixes packaged skill
+  docs links, updates the current `@wingman-x/agent-kit` package name, and adds
+  optional TweetClaw/OpenClaw public source-evidence guidance.
 - OpenClaw docs, npm metadata, target docs, TweetClaw public links, audits,
-  OpenClaw fitness, memory, and final checks passed.
+  OpenClaw fitness, memory, and `check:all` passed.
 
 ## Reporting Checklist
 

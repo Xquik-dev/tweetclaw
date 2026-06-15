@@ -9305,3 +9305,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   repo names such as `twitter-mcp` can collide with existing forks, so verify
   fork parent before pushing and create a distinct fork name when needed. Stale
   bot reviews should be checked against current head before making noise commits.
+
+## 2026-06-15 10:44 UTC heartbeat
+
+- Runtime and safety: model and reasoning selectors were unavailable, so GPT-5.5
+  plus extra-high effort could not be selected. The automation already runs
+  minutely with `FREQ=MINUTELY;INTERVAL=1`; prompt byte size stayed 14,872.
+  The chat-exposed npm token was treated as compromised and was not used,
+  stored, printed, or written to any file.
+- Starting state: TweetClaw was clean on `master...origin/master` at `dd2f63d`.
+  The xquik crawler workspace still had unrelated untracked proxy and X API
+  preflight/dry-run files; they were left untouched.
+- PR monitoring: `gh search prs` returned 120 open authored PRs. Exact
+  readbacks completed with 0 errors: 120 open, 87 clean, 22 unstable,
+  10 blocked, 1 dirty, 119 mergeable, 1 conflicting, 4 review-required,
+  7 with comments, 4 with reviews, and 1 failing check.
+- PR repair decisions: `grasscaograss/AwesomeWeldoneSkills#5` was the only
+  current safe actionable repair. The correctly parented fork
+  `kriptoburak/AwesomeWeldoneSkills` was cloned, upstream `main` was merged,
+  and the README conflict was resolved to the correct combined count of
+  30 skills after upstream added `weldone-hybrid-seam-replay-debug` and the PR
+  added `x-twitter-scraper`. Validation passed conflict-marker scans, JSON
+  parses for marketplace/catalog files, README and skill Markdown link checks,
+  Python compile for the upstream script introduced by the merge, npm metadata
+  readback for `@xquik/tweetclaw@1.6.31`, whitespace checks, and public-hygiene
+  scans. Pushed merge commit `b2e75f5`; final readback showed the PR open,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, and no checks.
+- Other monitored PRs: `github/awesome-copilot#2001` had successful target
+  checks and only non-actionable soft-gate comments about no code block and
+  contributor reputation review. `sjhalani7/agentic-tool-registry#1`,
+  `grixu/cc-toolkit#3`, and `hmcts/agentic-plugins-marketplace#13` were
+  review-required by target policy without comments. `Ultimate-Agent-Directory#84`
+  remained blocked only by an external Kilo Code Review failure with no GitHub
+  Actions logs, review, or comment payload. `Flopsstuff/flugins#6`,
+  `MylesMCook/mcook-skills#11`, `aliammari1/awesome-ai-tools#97`,
+  `itx-sherazi/best-hootsuite-alternatives#2`, `wondelai/skills#6`, and
+  `ondrej-svec/heart-of-gold-toolkit#1` had no current safe repair request.
+- Crawler-first discovery: the xquik GitHub opportunity crawler ran first in
+  research-proxy JSON mode with focused SKILL.md, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social media, Twitter/X, tweet scraper, source evidence,
+  registry, validator, framework, examples, and package-tooling lanes. It
+  returned strict JSON with zero opportunities after transient proxy socket
+  closures, endpoint quarantines, and a short US proxy pool outage; no credential
+  values were printed.
+- OpenClaw documentation check: official docs were rechecked for ClawHub skill
+  and plugin discovery, explicit `clawhub:`, `npm:`, `git:`, and `npm-pack:`
+  install source selection, plugin update behavior, runtime inspection,
+  plugin manifest expectations, ClawHub publishing, skill format, dependency
+  resolution, and Gateway restart guidance. The current public install command
+  remains `openclaw plugins install npm:@xquik/tweetclaw@1.6.31` until npm
+  publishes a newer package.
+- Fresh screening: compact audit and archive were searched before decisions.
+  No-license or prior-history blockers included `jamald33n/tweetsave-mcp`,
+  `GenAIwithMS/twitter-mcp`, `woosal1337/media-mcp`, `Eyalm321/zernio-mcp`,
+  `AutomateLab-tech/content-distribution-mcp`, `aphrody-code/bxc`,
+  `libraz/grok-mcp`, `samson-art/transcriptor-mcp`,
+  `kaitoInfra/twitterapi-io-mcp-server`, `designoor/mcp-twitterapi`,
+  `armatrix/twitter-mcp`, `Aashish-Jha-11/MCP-Twitter-X-`,
+  `Aditya923-c/xpoz-agent-skills`, and prior duplicate direct Twitter/X MCP
+  or skill lanes. `stone16/wingman-x` was selected because it is MIT licensed,
+  non-fork, non-archived, issue-enabled, active, duplicate-clean across target
+  content plus open and closed PRs/issues, and target-native for a reviewed
+  source-evidence workflow.
+- New external PR: opened https://github.com/stone16/wingman-x/pull/21 from
+  correctly parented fork `kriptoburak/wingman-x`, branch
+  `codex/add-source-evidence-workflow`, commit `48d9e52`. The PR fixes the
+  packaged Claude skill's relative links to repo-level docs, updates the stale
+  `@twitter-helper/agent-kit` package reference to `@wingman-x/agent-kit`, and
+  adds optional OpenClaw plus TweetClaw public source-evidence guidance while
+  keeping final synthesis, daemon state, browser session material, review, and
+  posting inside Wingman-X. No NHS badge was added because the badge area is
+  target package/app health only.
+- Target validation: passed `git diff --check`, Markdown link checks for
+  `docs/agent-workflow.md` and `.claude/skills/discover-twitter-candidates/SKILL.md`,
+  public-hygiene scan, `npm view @xquik/tweetclaw@1.6.31 ...`, `npm ci
+  --ignore-scripts --no-audit --no-fund`, `npm run build:no-bump`, and
+  `npm run typecheck`. A first typecheck before local workspace build artifacts
+  existed failed on workspace package resolution; after `build:no-bump`, the
+  same typecheck passed. Generated `dist/` files and `node_modules/` stayed
+  ignored and uncommitted. Final PR readback showed open, ready, mergeable,
+  unstable only because CodeRabbit was pending, no comments, no reviews, 2
+  changed files, and head `48d9e52`.
+- TweetClaw validation before audit update: production and full `npm audit`
+  runs found 0 moderate-or-higher vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed. Public Markdown link checks passed
+  for README, OpenClaw setup docs, agent workflow docs, packaged skill, and code
+  of conduct. JSON metadata link checks passed for `package.json` and
+  `openclaw.plugin.json`. Memory before final audit write was 14,994 of
+  15,360 bytes. Final `npm run check:all` passed after the audit update with
+  memory at 14,965 of 15,360 bytes.
+- Prompt self-improvement: no prompt edit was needed. Durable lessons: when a
+  target skill lives under `.claude/skills/<name>/`, repo-level docs links need
+  `../../../docs/...`, not `../../docs/...`. For human-in-the-loop reply tools,
+  TweetClaw should be framed as optional public evidence before drafting, not as
+  a replacement for the target's review, composer-fill, or posting boundary.
