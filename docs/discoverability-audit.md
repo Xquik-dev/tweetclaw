@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 23:23 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 23:53 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-15 23:23 UTC, but latest ClawHub package remains `1.6.26` and
+  on 2026-06-15 23:53 UTC, but latest ClawHub package remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,19 +196,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 23:23 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates after proxy refresh/outage. Exact-read 60 newest authored PRs: 39
-  `CLEAN`, 16 `UNSTABLE`, 4 `BLOCKED`, no changes-requested reviews; Vercel and
-  inaccessible external checks were target-owned.
-- New PR: https://github.com/replica882/twitter-bridge-mcp/pull/1 fixes stale
-  README tool count and OAuth token persistence notes, then adds a bounded
-  optional OpenClaw/TweetClaw companion workflow. Repo MIT, duplicate-clean, fork
-  parent verified, docs-only validation passed. PR is open, mergeable, and clean.
+- 2026-06-15 23:53 UTC: model/effort selectors unavailable. Crawler strict JSON
+  returned no candidates. Exact-read 80 newest authored PRs: 52 `CLEAN`, 19
+  `UNSTABLE`, 7 `BLOCKED`, 1 repaired conflict, and no changes-requested reviews.
+- Repair: https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
+  had a README table conflict; pushed `1985932`, now `MERGEABLE` and `CLEAN`.
+- New PR: https://github.com/annismckenzie/x-article-exporter/pull/6 adds an
+  OpenClaw/TweetClaw source-discovery recipe to MCP docs. Repo MIT,
+  duplicate-clean, fork parent verified, docs validation passed; PR is open,
+  mergeable, and clean.
 - OpenClaw docs/npm and public links checked. ClawHub route stayed HTTP 200 but
-  stale at `1.6.26`; `openclaw.directory` now redirects to a purchase page and is
-  not linked from current TweetClaw public surfaces. TweetClaw links, memory,
-  `check:all`, and platform fitness passed. Known nested OpenClaw audit and npm
-  auth blockers remain.
+  stale at `1.6.26`. TweetClaw links, memory, `check:all`, and platform fitness
+  passed. Known nested OpenClaw audit and npm auth blockers remain.
 
 ## Reporting Checklist
 

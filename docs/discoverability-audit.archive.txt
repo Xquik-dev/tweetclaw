@@ -11815,3 +11815,105 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   checks, broken-link checks, validation gates, badge rule, explicit target
   exclusion, secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+2026-06-15 23:53 UTC heartbeat run
+
+- Runtime note: current automation runtime did not expose GPT-5.5 or
+  extra-high reasoning selectors, so the run continued under the available
+  model and effort settings. This limitation was recorded for audit and final
+  heartbeat reporting.
+- TweetClaw repo state started clean on `master`. `Xquik-dev/tweetclaw` and
+  `Xquik-dev/xquik` had no open GitHub issues at session start.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with focused SKILL.md, OpenClaw, MCP,
+  Twitter/X, social, validator, and package-tooling queries. The pass refreshed
+  the proxy list and returned strict JSON with an empty opportunities array. No
+  credential values were printed.
+- PR monitoring: listed 80 newest open PRs authored by `kriptoburak` and exact
+  read each. Summary was 52 `CLEAN`, 19 `UNSTABLE`, 7 `BLOCKED`, 1 `DIRTY`, 1
+  `UNKNOWN`, 78 mergeable, 1 conflicting, 1 unknown mergeability, 7
+  review-required, 0 changes-requested, 9 with comments, 3 with reviews, and 3
+  with failing checks. Failing Vercel checks on `modu-ai/cowork-plugins#5`,
+  `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290` were target-owned. No DCO, CLA,
+  maintainer-request, or valid bot-review repair was available except the
+  conflicting README PR below.
+- PR repair: `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1` was
+  MIT licensed, not archived, not a fork, and correctly forked from
+  `kriptoburak/loaded-awesome-openclaw-skills-zh`. The PR had no comments,
+  reviews, or checks, but was `CONFLICTING` and `DIRTY` after upstream added
+  `x-research-skill` and `x-tweet-fetcher` rows in the same Twitter/X table.
+  Resolved the README conflict by keeping upstream rows plus the existing
+  TweetClaw row. Validation passed: conflict marker check, `git diff --check`,
+  direct TweetClaw GitHub and shields.io HTTP 200 checks, full
+  `npx --yes markdown-link-check README.md --quiet`, and public-diff hygiene
+  scan. Pushed commit `1985932` to
+  `codex/add-tweetclaw-twitter-entry`; final readback showed PR #1 open, ready,
+  `MERGEABLE`, `CLEAN`, no checks, no comments, and no reviews.
+- Fresh target screening: compact audit and archive searches blocked or held
+  prior-history targets including `ranaroussi/xpal`, `l3wi/x-mcp`,
+  `samson-art/transcriptor-mcp`, and `sarwang-sinha/tweetvid-mcp`.
+  Targeted repo screens found `EllypsisAI/twitter-x-api-mcp#1` already had an
+  open Xquik PR and `anhuaxiang/twitter-mcp#1` already had an open Hermes
+  backend PR. `Dishant27/twitter-mcp` was MIT and duplicate-clean but stale
+  since 2025 and lower fit. `annismckenzie/x-article-exporter` was selected
+  because it is MIT licensed, non-fork, active in 2026, issue-enabled,
+  duplicate-clean across compact memory, archive, target content, and open plus
+  closed PRs/issues, and has a real MCP article-export workflow where source URL
+  discovery guidance helps without taking over PDF export.
+- New external PR: opened https://github.com/annismckenzie/x-article-exporter/pull/6
+  from verified fork `kriptoburak/x-article-exporter`, parent
+  `annismckenzie/x-article-exporter`, branch
+  `codex/openclaw-source-discovery-docs`, commit `2ccc692`. The PR adds a
+  concise OpenClaw source-discovery recipe to `docs/mcp-setup.md` and the Hugo
+  site page `site/content/docs/mcp.md`. It keeps X Article Exporter responsible
+  for article preview and PDF export, suggests TweetClaw only for reviewed
+  article URL discovery from search, monitors, webhooks, or account research,
+  and explicitly says not to pass TweetClaw API keys, browser cookies, or raw
+  account material into the MCP server. No NHS badge was added because the
+  target badge area is only Go/license health.
+- Target validation for `x-article-exporter#6`: passed `git diff --check`,
+  `npx --yes markdown-link-check docs/mcp-setup.md --quiet`, direct TweetClaw
+  GitHub HTTP 200 check, and public-diff hygiene scan. `go test ./...` reached
+  package tests and passed all earlier packages, then failed only in
+  `internal/validate` because local `typst` is not installed; this was recorded
+  as a local validation blocker, not a target regression. `npx --yes
+  markdown-link-check site/content/docs/mcp.md --quiet` reported pre-existing
+  Hugo shorthand links `installation` and `configuration`; the PR did not add
+  or change those links. Hugo CLI was not installed locally, so the site build
+  was not run.
+- PR readback: `x-article-exporter#6` is open, ready, `MERGEABLE`, `CLEAN`, head
+  `2ccc692c59c2ca2aa9a4c9d9000a305d2afb1a89`, changed files
+  `docs/mcp-setup.md` and `site/content/docs/mcp.md`, no comments, no reviews,
+  and no checks configured.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt` plus `/cli/plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/plugins/building-plugins`, `/plugins/architecture`,
+  `/clawhub/plugin-validation-fixes`, and `/help/testing-updates-plugins` with
+  HTTP 200. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.1`, ClawHub `0.21.0`, and published TweetClaw `1.6.31`; local
+  source remains `1.6.32`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflows docs, packaged skill, and code of
+  conduct. Direct checks returned HTTP 200 for current OpenClaw docs, ClawHub
+  plugin route, and TweetClaw GitHub. Npm registry metadata was verified with
+  `npm view`; npmjs.com page probing returned 403 and was treated as a website
+  access blocker, not a package metadata failure.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`.
+  `npm run check-memory-md-size` passed at `15163/15360`. `npm run check:all`
+  passed with 168 tests and 100% coverage. `npm audit --audit-level=moderate`
+  remains blocked by nested `openclaw@2026.6.6` advisories for `protobufjs` and
+  `tar`; no dependency files changed.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful.
+  Keep prioritizing existing PR conflict repair before new outreach, and keep
+  differentiating target-owned validation prerequisites such as `typst` or Hugo
+  from regressions introduced by docs-only contributions. Preserve model/effort
+  wording, same-thread quiet autonomy, crawler-first discovery, mandatory PR
+  submission, aggressive skill-repo coverage, fresh target discovery, PR repair
+  priority, duplicate and fork rules, official OpenClaw checks, broken-link
+  checks, validation gates, badge rule, explicit target exclusion, secret
+  handling, commit/push requirement, Markdown cap, and this self-improvement
+  rule.
