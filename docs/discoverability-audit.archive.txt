@@ -11622,7 +11622,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
 - TweetClaw validation after audit edits: `npm run check:all` passed, including
-  memory size `15328/15360`, OpenClaw platform fitness, package artifact
+  memory size `15313/15360`, OpenClaw platform fitness, package artifact
   verification, and 168 covered tests. Separate `npm audit --audit-level=moderate`
   remains blocked by nested OpenClaw dependency advisories for `protobufjs` and
   `tar`; `npm whoami` remains E401 without safe local npm auth.
