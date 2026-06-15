@@ -9384,8 +9384,9 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   existed failed on workspace package resolution; after `build:no-bump`, the
   same typecheck passed. Generated `dist/` files and `node_modules/` stayed
   ignored and uncommitted. Final PR readback showed open, ready, mergeable,
-  unstable only because CodeRabbit was pending, no comments, no reviews, 2
-  changed files, and head `48d9e52`.
+  unstable only because CodeRabbit was pending, one in-progress CodeRabbit
+  comment with no actionable finding yet, no reviews, 2 changed files, and head
+  `48d9e52`.
 - TweetClaw validation before audit update: production and full `npm audit`
   runs found 0 moderate-or-higher vulnerabilities. `npm run
   check-openclaw-platform-fitness` passed. Public Markdown link checks passed
