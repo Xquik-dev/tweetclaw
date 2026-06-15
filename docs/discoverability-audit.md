@@ -195,23 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 11:38 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 14:55 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`.
-- PR gate started from 140 open authored PRs; one broad-read GraphQL 401 led to
-  targeted readbacks. No safe repair was needed: `Flopsstuff/flugins#6` already
-  had email and wording fixes; other flags were clean, stale-bot,
-  target-policy, or external-check blocked.
+- PR gate read 160 open authored PRs plus audit-tracked PRs. No safe repair was
+  needed: current flags were already fixed, clean, stale-bot, target-policy, or
+  external-check blocked.
 - Crawler-first discovery returned valid zero-opportunity JSON after proxy
-  socket closures and quarantine logs. Fresh screening duplicate-blocked
-  `StarboWang/momcozy-public-feedback-monitoring-skill` and selected
-  `abhishekpanda-dev/X-content-skill` as MIT, non-fork, duplicate-clean, and
-  useful for source-context safety plus stale docs fixes.
-- New PR: https://github.com/abhishekpanda-dev/X-content-skill/pull/1 fixes a
-  stale Grok Skills docs link, corrects the clone URL, and adds optional
-  TweetClaw/OpenClaw source-context guidance while keeping account actions and
-  credentials out of scope.
-- OpenClaw docs, npm metadata, new target README, TweetClaw public links,
-  audits, OpenClaw fitness, memory, and final validation passed.
+  socket closures and quarantine logs. Fresh screening selected
+  `joeeeeey/twitter-teach-share-with-image` as MIT, non-fork, duplicate-clean,
+  and useful for optional source-evidence guidance.
+- New PR: https://github.com/joeeeeey/twitter-teach-share-with-image/pull/1
+  adds TweetClaw as one possible public X/Twitter evidence input while keeping
+  raw data, credentials, scoring, scheduling, and publishing out of scope.
+- OpenClaw docs, npm metadata, target links, TweetClaw public links, audits,
+  OpenClaw fitness, memory checks, and final `npm run check:all` passed.
 
 ## Reporting Checklist
 
