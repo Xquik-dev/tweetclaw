@@ -8803,3 +8803,115 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   badge rule, Context7 exclusion, secret handling, cadence, thread binding,
   commit/push requirement, Markdown cap, and this self-improvement rule.
   Changed TweetClaw file is `docs/discoverability-audit.archive.txt`.
+
+2026-06-15 02:25 UTC heartbeat:
+- Runtime and secret boundary: this run could not select GPT-5.5 or extra-high
+  reasoning because the current Codex runtime exposes no model or effort
+  selector. The chat-pasted npm access token was treated as compromised,
+  was not repeated or used, and npm publishing was not attempted with it.
+  `npm whoami` remained unauthenticated with E401. Public npm still reports
+  `@xquik/tweetclaw` latest `1.6.31` with OpenClaw install metadata pinned to
+  `@xquik/tweetclaw@1.6.31`, while local TweetClaw source is `1.6.32`.
+- Session and issue start state: TweetClaw started clean on `master` at
+  `c03b21e`, in sync with origin. Exact issue checks found no open issues for
+  `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`. xquik-docs also started clean on
+  `main`, in sync with `origin/main`, with no open GitHub issues or PRs.
+- Monitoring and PR repair: read 100 open `kriptoburak` PRs into
+  `/tmp/tweetclaw-open-pr-readbacks-0225.jsonl`; 35 were flagged for attention.
+  `hashgraph-online/awesome-codex-plugins#211` had an inline alphabetical-order
+  review on `README.md`. Local replay showed the requested move would fail the
+  target validator, while the branch order passed `python3
+  scripts/check-alphabetical.py README.md` and `python3
+  scripts/validate-plugin-pr.py --base-ref upstream/main`. Posted
+  validator evidence at
+  https://github.com/hashgraph-online/awesome-codex-plugins/pull/211#issuecomment-4704004882
+  and left the branch unchanged. Final readback later in the run showed #211
+  merged. `moshehbenavraham/Ultimate-Agent-Directory#84` still has a Kilo Code
+  Review failure whose linked details require app login; no GitHub comments or
+  review threads were actionable. `Garenaof2462/browser-ops#1` was repaired by
+  merging upstream `main`, resolving the README footer URL conflict to the
+  single canonical URL, committing `31ae5fb`, and pushing
+  `codex/tweetclaw-browser-workflows` to the correctly parented `kriptoburak`
+  fork. Repair validation passed whitespace checks, conflict-marker scan,
+  Python compile for `scripts`, markdown link check for README, public-hygiene
+  scans, direct 200 checks for target repo, raw ZIP, and TweetClaw GitHub, plus
+  npm metadata check for current TweetClaw. A settled readback showed the PR
+  open, ready, `MERGEABLE`, and `CLEAN`; a later readback after other GitHub
+  updates returned transient `UNKNOWN` mergeability with the PR still open.
+- Crawler-first discovery and candidate screening: the Xquik opportunity
+  crawler ran first with research proxy, strict JSON output, focused
+  social-skill, source-evidence, MCP, OpenClaw, Codex, and catalog queries,
+  bounded request timeout, and proxy warmup skipped. It returned valid JSON
+  with zero opportunities while stderr recorded managed proxy socket closures,
+  endpoint quarantines, and proxy-pool outage state; no credential values were
+  printed. Follow-up web and exact metadata screening checked
+  `wulaosiji/founder-skills`, `jedi4ever/social-skills`, `ian/startupkit`,
+  `zocomputer/skills`, `syntax-syndicate/marketing-skills`,
+  `emotixco/claude-skills-founder`, `borghei/Claude-Skills`,
+  `gmh5225/awesome-skills`, `heilcheng/awesome-agent-skills`, and
+  `nirholas/XActions`. Prior history blocked `jedi4ever/social-skills`,
+  `zocomputer/skills`, `gmh5225/awesome-skills`, and
+  `heilcheng/awesome-agent-skills`; `syntax-syndicate/marketing-skills` was a
+  fork with issues disabled; `ian/startupkit` metadata could not be read;
+  `nirholas/XActions` remained low-fit and previously blocked.
+  `wulaosiji/founder-skills` was selected because it is public, non-fork,
+  non-archived, MIT licensed, issue-enabled, duplicate-clean in audit, archive,
+  target content, PRs, and issues, and has a target-native social-intelligence
+  skill where source evidence improves output quality.
+- New external PR: opened `wulaosiji/founder-skills#1` at
+  https://github.com/wulaosiji/founder-skills/pull/1 from correctly parented
+  fork `kriptoburak/founder-skills`, branch
+  `codex/tweetclaw-social-intelligence`, commit `935daafe`. The PR changes
+  only `skills/social-intelligence/SKILL.md`, adds source-evidence collection,
+  adds source-note fields for captured date, evidence, confidence, and caveats,
+  removes unreachable `uniqueclub.ai` links from the edited file, and mentions
+  TweetClaw only as an optional Twitter/X retrieval source. Analysis,
+  recommendations, alerts, and actions stay approval-gated in the target skill.
+  Validation passed `git diff --check`, changed-line dash and public-hygiene
+  scans, markdown-link-check for the changed skill file, and direct 200 checks
+  for target repo and TweetClaw GitHub. Final exact PR readback showed the PR
+  open, ready, `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks
+  configured, and head `935daafe`.
+- xquik-docs maintenance requested by the user: inspected
+  `/Users/burak/Developer/xquik-docs`, GitHub metadata, commits, remotes,
+  README, root `skill.md`, and TweetClaw guide. The repo had no open issues or
+  PRs. Corrected public TweetClaw install guidance because `guides/tweetclaw.mdx`
+  pinned unpublished `@xquik/tweetclaw@1.6.32` while npm latest is `1.6.31`.
+  The guide now tells repeatable public installs to pin `1.6.31` and separately
+  records local source truth `1.6.32`; `plugin-docs.test.ts` and
+  `repo-discovery.test.ts` now guard both values. Validation passed
+  `git diff --check`, `npm run test:agent-docs` with 16 files and 258 passing
+  tests plus 1 skipped test, `npx mint validate` with bundled Node 24, and
+  `npx mint broken-links` with bundled Node 24. Direct `bunx --bun mint`
+  commands were blocked by a transient Mint CLI dependency-resolution error,
+  and Node 26 was blocked by Mintlify's LTS-node guard; bundled Node 24 was the
+  working path. Commit `c9f8502 Align TweetClaw docs with published npm
+  version` was pushed to `Xquik-dev/xquik-docs` `main`.
+- Official OpenClaw and TweetClaw public hygiene: current official OpenClaw
+  docs were rechecked through `docs.openclaw.ai` search and exact result review
+  for plugin install selectors (`clawhub:`, `npm:`, `git:`, `npm-pack:`),
+  plugin update, runtime JSON inspection, managed Gateway restart, manifest
+  requirements, tool plugins, bundles, dependency resolution, lifecycle-script
+  policy, and ClawHub publishing. They still align with TweetClaw source
+  selection, runtime inspection, npm-pack proof, explicit ClawHub/npm
+  positioning, and managed Gateway restart guidance. A strict source-derived
+  TweetClaw public URL sweep checked README, OpenClaw setup docs, agent
+  workflow docs, Context7 facts, packaged skill, package metadata, plugin
+  manifest, and code of conduct; all 46 non-Context7 URLs returned 200.
+  Omit-dev and full npm audits found 0 vulnerabilities. `npm run
+  check-memory-md-size` and `npm run check-openclaw-platform-fitness` passed
+  before this archive write.
+- Prompt self-improvement: preserve the rule that public install docs must
+  distinguish source-truth versions from actually published npm versions when
+  publish credentials are blocked. Do not use credentials pasted into chat;
+  record only that they were treated as compromised. Keep xquik-docs in scope
+  when the user explicitly requests docs.xquik.com skill or README correctness,
+  but continue to avoid Context7 work and visual GitHub inspection. No saved
+  automation prompt edit was useful because the current prompt already
+  preserves model/effort wording, quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill-repo coverage, fresh target
+  discovery, PR repair priority, duplicate and fork rules, official OpenClaw
+  checks, link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, cadence, thread binding, commit/push requirement, Markdown
+  cap, and self-improvement. Changed TweetClaw file is
+  `docs/discoverability-audit.archive.txt`.
