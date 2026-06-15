@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 17:25 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 17:55 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -73,9 +73,9 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Prior nested OpenClaw Hono audit blocker was superseded by `openclaw@2026.6.6`;
-  rerun audit after each host lockfile refresh and keep upstream issue/PR
-  91301/91303 only as historical context.
+- Npm audit on 2026-06-15 found nested OpenClaw shrinkwrap advisories for
+  `protobufjs` and `tar`; root overrides do not rewrite them. Treat as an
+  upstream host blocker until OpenClaw refreshes stable.
 
 ## GitHub-First Rule
 
@@ -195,25 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 17:55 UTC: model/effort selectors unavailable; automation remains
-  minutely at `FREQ=MINUTELY;INTERVAL=1`.
-- PR gate searched 200 open authored PRs and exact-read 120. Repaired
-  https://github.com/i-am-bee/beeai-framework/pull/1456 by commit `50c7c8f`,
-  fixing the Python `Tool._run` parameter name CI failure; local compile and
-  Pyrefly checks passed, DCO and labeler passed, and broader CI had not
-  reappeared in the rollup.
-- Crawler-first discovery returned strict zero JSON after managed research-route
-  failures. Fresh MCP/skill-list screening found duplicate, prior-history, or
-  policy-blocked targets before selecting `itskiranbabu/awesome-mcp-servers`,
-  MIT, non-fork, duplicate-clean, and hand-editable.
-- New PR: https://github.com/itskiranbabu/awesome-mcp-servers/pull/7 adds
-  TweetClaw to the Communication & Collaboration community MCP list; readback
-  was open, ready, and `CLEAN`.
-- Target diff, new TweetClaw link, OpenClaw docs, npm metadata, TweetClaw
-  public links, npm audits, OpenClaw fitness, memory checks, and final
-  `npm run check:all` passed. Target README link check only found pre-existing
-  target-owned broken links. Npm publish for local `1.6.32` remains blocked by
-  safe npm auth E401.
+- 2026-06-15 18:05 UTC: model/effort selectors unavailable; minutely unchanged.
+- PR gate exact-read 120 of 200 open PRs; no safely repairable blocker. BeeAI
+  repair remains check-clean for DCO and labeler; other findings were external
+  bot or maintainer-policy states.
+- Crawler returned zero JSON after research-route failures. `aaglexx` blocked
+  direct PRs by policy; `liz7788/awesome-mcp-servers` was MIT, non-fork,
+  duplicate-clean, and hand-editable.
+- New PR: https://github.com/liz7788/awesome-mcp-servers/pull/5 adds TweetClaw
+  to Automation & Workflow; readback was open, ready, and `CLEAN`.
+- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, and final
+  `npm run check:all` passed. Target link failures were pre-existing. Npm audit
+  is newly blocked by nested OpenClaw `protobufjs` and `tar`; npm publish still
+  E401.
 
 ## Reporting Checklist
 

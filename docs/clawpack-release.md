@@ -19,7 +19,9 @@ the archive, before any release or ClawHub decision.
 ## Current Release State
 
 - npm latest: `@xquik/tweetclaw@1.6.31`
-- Release-ready source: `@xquik/tweetclaw@1.6.32`, unpublished.
+- Source package: `@xquik/tweetclaw@1.6.32`, unpublished.
+- Release gate is blocked by nested OpenClaw audit advisories until the host
+  package refreshes.
 - Local npm publish auth blocked on 2026-06-07: `npm whoami` returned E401.
   Do not claim npm `1.6.32` until publish succeeds.
 - Published: 2026-05-14 20:04 UTC
@@ -44,9 +46,9 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- `openclaw@2026.6.6` supersedes the previous stable package that carried the
-  nested Hono audit blocker; rerun `npm audit --audit-level=moderate` after
-  any OpenClaw lockfile refresh.
+- Npm audit on 2026-06-15 reports nested `openclaw@2026.6.6` advisories for
+  `protobufjs` and `tar`; root overrides do not rewrite the host shrinkwrap.
+  Rerun audit after each OpenClaw lockfile refresh.
 
 ## ClawHub State
 
