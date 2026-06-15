@@ -8590,3 +8590,13 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   without repeating the token value. Also keep the stricter URL parser that
   stops at `]` for reference-style Markdown so link sweeps do not probe
   bracket-suffixed aliases.
+- Post-PR repair before run close: final readback surfaced a new
+  `gemini-code-assist` review on `agenthaus-marketplace#125` requesting the
+  added `Optional X/Twitter Source Context` heading move from `###` to `####`.
+  The existing GitHub comment-handling skill was loaded, thread-aware GraphQL
+  confirmed one unresolved current thread, and the PR branch was repaired in
+  commit `e590f35` after rerunning target `git diff --check`,
+  `bash scripts/validate-plugins.sh`, and changed-file markdown link checks.
+  Final readback showed the Gemini thread outdated, the PR still open, ready,
+  `MERGEABLE`, `CLEAN`, with no checks configured and no current actionable
+  review thread left to fix.
