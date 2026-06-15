@@ -8345,3 +8345,88 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   quota limits, and its own API key handling. Do not keep an active outreach
   record for a PR that was self-closed as a fit miss, even if it was opened and
   validated earlier in the run.
+
+### 2026-06-15 00:59 UTC heartbeat
+
+- Runtime and repo state: this heartbeat runtime did not expose model or
+  reasoning-effort selectors, so GPT-5.5 and extra-high effort could not be
+  selected; recorded and continued. TweetClaw started clean on `master` at
+  `9f3d357`, exact `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issue checks
+  found no open issues, and no Browser, Chrome, Context7, production SSH, dev
+  server, Socket.dev token, or npm publish path was used. The user-exposed npm
+  token from chat was treated as compromised and was not used or repeated.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with managed research proxy, focused skill,
+  OpenClaw, MCP, Twitter/X, social-media, and awesome-skill queries, JSON
+  output, bounded request timeouts, and proxy warmup skipped. The crawler
+  returned valid empty JSON while stderr showed socket-close fetch failures,
+  endpoint quarantine logs, and `Proxy pool outage circuit opened`; no
+  credentials printed. Continued with targeted fallback metadata, repo search,
+  clone, and issue/PR readbacks.
+- PR monitoring and repairs: authored open PR search plus exact readbacks
+  covered `twittershots/twittershots-mcp#1`,
+  `davidmathers/codex-agent-skills#3`, `MunhoLau/twitter-mcp-secure#2`,
+  `damanijb/claude-skills-marketplace#1`,
+  `lucianfialho/build-in-public-mcp#2`,
+  `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1`,
+  `angheljf/social-media-mcp#2`, `OtoDock/community-mcps#2`,
+  `Jamkris/everything-gemini-code#91`, `nikships/skills-registry#45`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `marktantongco/ai-agent-skills#1`, `marktantongco/ai-agent-skills#2`,
+  `davila7/claude-code-templates#634`,
+  `denniscalazans/denniscalazans-plugins#69`, and
+  `rohitg00/awesome-claude-code-toolkit#537`. No safely repairable current-head
+  maintainer request was found. Jamkris CodeRabbit feedback was resolved or
+  withdrawn, nikships Gemini feedback was outdated and already addressed,
+  ClawDoc's older vendor-neutral request had no active review thread after
+  repair, davila7 failures were target-owned fork PR comment-permission
+  failures while SkillSpector content passed, and marktantongco Vercel checks
+  were target authorization blockers. No duplicate comments posted.
+- Official OpenClaw and package check: npm reported `openclaw` stable
+  `2026.6.6`, beta `2026.6.8-beta.1`, and modified
+  `2026-06-14T22:41:57.504Z`; `clawhub` `0.21.0`; and npm
+  `@xquik/tweetclaw` latest `1.6.31` with `openclaw.install.npmSpec`
+  `@xquik/tweetclaw@1.6.31`, default choice `npm`, and minimum host
+  `>=2026.5.4`. Direct `https://docs.openclaw.ai/llms.txt` shell fetch failed
+  DNS resolution, while read-only web results confirmed official plugin,
+  building-plugin, and CLI plugin docs plus `openclaw plugins install
+  clawhub:<package-name>` style source selection.
+- Fresh candidate screening: crawler outage led to targeted metadata and clone
+  screening across `fluyeporlaweb/mcp-x-intelligence`,
+  `tayler-id/social-media-mcp`, `sonpiaz/hidrix-tools`,
+  `alexkess/publer-mcp-server`, `TheSethRose/SocialData-MCP-Server`,
+  `LokiMCPUniverse/hootsuite-mcp-server`, `namdzmaso02/mcp-metricool`,
+  `kennyzir/twitter-automation-local`, `boobutler/boo-skills`,
+  `0xGval/twitter-X-mcp-server`, and additional skill/openclaw repos. Several
+  candidates lacked a license, were issue-only, were lower fit, or were
+  duplicate-blocked by archive history. `sonpiaz/hidrix-tools` was MIT and
+  briefly patched locally, then blocked before submission by existing open
+  `sonpiaz/hidrix-tools#4` because it already covers the target's Hermes/Xquik
+  companion route. `alexkess/publer-mcp-server` was selected because it is MIT,
+  non-fork, non-archived, duplicate-clean, Node/npm TypeScript, and high fit for
+  a Publer-owned scheduling workflow that can use TweetClaw only as reviewed
+  X/Twitter source context.
+- New PR: opened `alexkess/publer-mcp-server#4` at
+  https://github.com/alexkess/publer-mcp-server/pull/4 from correctly parented
+  fork `kriptoburak/publer-mcp-server`, branch
+  `codex/tweetclaw-source-context`, commit `2a8dd94`. The README addition shows
+  a reviewed-source workflow using `openclaw plugins install
+  npm:@xquik/tweetclaw@1.6.31`, `tweetclaw.searchTweets`, and
+  `publer_create_post` with approval, scheduling, publishing, analytics,
+  accounts, and media remaining in Publer. No NHS badge was added because the
+  target has no badge area.
+- Validation and link hygiene: target validation passed `git diff --check`,
+  direct 200 checks for TweetClaw GitHub, npm registry, target PR, target repo,
+  and fork branch, `npm view @xquik/tweetclaw`, `npx --yes markdown-link-check
+  README.md`, `npm ci`, and `npm run build`. Target-owned `npm ci` advisory
+  output reported 5 pre-existing vulnerabilities but the README-only PR did not
+  change package files. TweetClaw source link sweep checked 43 URL-like entries;
+  all real canonical public URLs returned 200, and only backtick-inclusive
+  extractor false positives failed. Target PR readback was open, ready,
+  mergeable, clean, with no comments, reviews, or checks.
+- Prompt self-improvement: automation TOML measured 14872 bytes, under the
+  15 KiB prompt cap, so no prompt edit was saved. Durable lesson: when GitHub
+  GraphQL `licenseInfo.spdxId` is null, check `licenseInfo.key` or REST
+  metadata before classifying a candidate as no-license; and a same-target
+  existing Hermes/Xquik companion PR blocks a new TweetClaw companion PR unless
+  the TweetClaw plugin value is clearly distinct and non-overlapping.
