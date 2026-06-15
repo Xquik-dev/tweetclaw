@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 15:22 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 16:19 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,16 +195,16 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 15:54 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 16:19 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`.
-- PR gate searched 200 open authored PRs and exact-read 44 newest/tracked PRs.
-  No safe repair was needed; flagged PRs were already fixed, clean,
-  stale-bot-only, target-owned, policy-owned, or external-check blocked.
+- PR gate searched 200 open authored PRs and exact-read 85 newest/tracked PRs.
+  Repaired `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1` twice
+  after upstream force-updates; latest head `a51126c` read back `CLEAN`.
 - Crawler-first discovery returned strict zero JSON after managed research-route
-  failures. Fresh screening selected `trickv/clawskills`, MIT, non-fork,
-  duplicate-clean, and useful for a real skill-submission example.
-- New PR: https://github.com/trickv/clawskills/pull/1 adds a fetchable
-  TweetClaw skill submission example and repairs target test fixture URLs.
+  failures. Fresh screening selected `Drhir2460/agentskills-mcp`, MIT,
+  non-fork, duplicate-clean, and target-native for repo-source examples.
+- New PR: https://github.com/Drhir2460/agentskills-mcp/pull/1 adds a concrete
+  TweetClaw source entry plus README guidance; readback was open and `CLEAN`.
 - OpenClaw docs, npm metadata, target validation, TweetClaw links, audits,
   OpenClaw fitness, memory checks, and final `npm run check:all` passed. Npm
   publish for local `1.6.32` remains blocked by unavailable safe npm auth.
