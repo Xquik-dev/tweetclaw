@@ -11373,3 +11373,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   cap, and self-improvement rule. Durable lesson: when an existing fork under
   `kriptoburak` points at the wrong parent, create a distinct correctly
   parented fork and verify parent identity before pushing outreach.
+
+## 2026-06-15 21:45 UTC Heartbeat
+
+- Runtime capability: this environment did not expose model or reasoning-effort
+  selectors, so GPT-5.5 and extra-high effort could not be selected. The run
+  continued and the limitation is recorded here and in the heartbeat outcome.
+- Starting state: TweetClaw `master` was clean at `f5346b6`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran the
+  internal GitHub opportunity crawler through the managed research route with
+  focused skill, OpenClaw, MCP, Twitter-X, social-tool, validator, and package
+  tooling queries. Output parsed as strict JSON with zero opportunities after
+  managed route socket failures, endpoint quarantine, and proxy-pool outage
+  warnings. No credential values were printed or stored.
+- PR monitoring: checked `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issues
+  first; both had no open issues. Exact-read the 120 newest open authored PRs.
+  Merge-state summary was 85 `CLEAN`, 26 `UNSTABLE`, 7 `BLOCKED`, and 2
+  `UNKNOWN`; 4 were review-gated. Also exact-read the discovered duplicate
+  `nmn-labs/x-likes-digest#1`.
+- PR repair triage: `Flopsstuff/flugins#6` is on correctly parented fork
+  `kriptoburak/flugins`, and the current branch already contains the visible
+  CodeRabbit wording fix. The only review thread is resolved, so no new commit
+  was useful. `moshehbenavraham/Ultimate-Agent-Directory#84` is blocked by the
+  external Kilo Code Review check; its detail URL redirects to sign-in and
+  GitHub has no comments, reviews, or logs to act on. Other non-clean PRs were
+  maintainer review gates, target-owned checks, or no-comment blockers.
+- Fresh candidate screening: searched compact audit and archive first, then
+  crawler output and exact repo metadata. `agentskillexchange/skills` was
+  duplicate-blocked by open TweetClaw PR #1 and merged Xquik PR #7.
+  `Cluka-399/openclaw-skills-explorer` lacks a license and has duplicate issue
+  history. `natan89/awesome-openclaw-skills`,
+  `Jovanbeats/awesome-openclaw-Skills`, and
+  `Sehab121/awesome-openclaw-skills-CN` remain blocked by generated or official
+  mirror fit. `Panniantong/Agent-Reach` is duplicate-blocked by open PR #260.
+  `nmn-labs/x-likes-digest` is duplicate-blocked by open PR #1.
+  `8co/undertow` is MIT, active, OpenClaw adjacent, and duplicate-clean, but its
+  curated index is developer-workflow focused, so TweetClaw/social placement is
+  off-domain. Multiple prior social and OpenClaw skill repos were blocked by
+  archive duplicate history.
+- New target: `acailic/tweetnugget` is MIT, non-fork, public, issue-enabled,
+  recently updated, and OpenClaw-skill themed. Target duplicate searches found
+  no TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, or prior OpenClaw companion
+  submission. The target already requires real quotes, attribution, source
+  verification, and tweet URLs, so optional source lookup guidance is
+  target-native.
+- New external PR: opened https://github.com/acailic/tweetnugget/pull/1 from
+  correctly parented fork `kriptoburak/tweetnugget`, branch
+  `codex/add-tweetclaw-source-verification`, commit `0a14289`. The PR fixes
+  stale ClawHub README links from `clawhub.dev` to the current
+  `clawhub.ai/acailic/tweetnugget` listing and adds source-verification guidance
+  for new Twitter/X quote collections. TweetClaw is framed only as an optional
+  OpenClaw source-lookup companion for search tweets, search tweet replies, and
+  user lookup. TweetNugget remains static and responsible for curation and quote
+  delivery. No NHS badge was added because the badge area summarizes target
+  package/list health.
+- New PR validation: `python3 test_skill.py` passed. Markdown link checking for
+  README, CONTRIBUTING, and SKILL passed after the stale ClawHub link repair.
+  JSON validation passed for `clawhub.json` and all `references` files.
+  `git diff --check` and changed-diff public-hygiene scans passed. Initial
+  readback showed GitGuardian in progress; final readback is open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, and GitGuardian success.
+- Official OpenClaw docs and package metadata: Python's default user agent
+  received 403 from docs routes, but curl with a normal browser user agent
+  returned HTTP 200 for current `llms.txt`, `/cli/plugins`,
+  `/plugins/manage-plugins`, `/clawhub/skill-format`, and `/plugins/manifest`.
+  Npm metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`,
+  ClawHub `0.21.0`, and published TweetClaw `1.6.31` while local source remains
+  `1.6.32`.
+- TweetClaw link validation: markdown-link-check passed for README, OpenClaw
+  setup docs, agent workflows docs, packaged skill, and code of conduct. The
+  new TweetNugget PR URL and target ClawHub listing returned healthy readbacks.
+- Local TweetClaw validation before audit update: `npm run check-versions`,
+  `npm run check-em-dash`, `npm run check-openclaw-platform-fitness`, and
+  `npm run check-memory-md-size` passed. Final `npm run check:all` passed with
+  168 tests and 100 percent coverage.
+- Package boundaries: production and full `npm audit` still fail on nested
+  OpenClaw stable package advisories for `protobufjs` and `tar`; this remains a
+  host-package blocker. `npm whoami` returned E401, so publishing remains
+  blocked. No auth value was used, printed, stored, or repeated.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Required skill reviews: the GitHub, GitHub publish, gh-address-comments,
+  gh-fix-ci, simplify, and thermo-nuclear-code-quality-review skills were read
+  before commit. The TweetClaw diff is compact docs plus append-only archive
+  history, so no code simplification or structural source finding applied.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate and
+  fork rules, OpenClaw docs checks, link checks, validation gates, badge rule,
+  explicit target exclusion, secret handling, commit/push requirement, Markdown
+  cap, and self-improvement rule. Durable lesson: for curation-style skills,
+  TweetClaw placement is strongest as optional source lookup for exact source
+  verification, not as runtime dependency or quote-generation guidance.

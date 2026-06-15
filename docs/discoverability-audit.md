@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 21:18 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 21:45 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,20 +195,24 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 21:18 UTC: model/effort selectors unavailable. Crawler returned
-  strict JSON with zero opportunities. Exact-read all 120 open PRs: 88
-  `CLEAN`, 25 `UNSTABLE`, 6 `BLOCKED`, 1 `DIRTY`, and 3 review-gated.
-- Repair: https://github.com/modu-ai/cowork-plugins/pull/5 was merged with
-  upstream, its marketplace conflict was resolved by keeping both `moai-tutor`
-  and `moai-xquik`, and validation was posted. Readback is open, ready,
-  `MERGEABLE`, and `UNSTABLE`; remaining Vercel auth is target-owned.
-- New PR:
-  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
-  adds TweetClaw to the licensed, active Chinese OpenClaw Twitter/X list from a
-  correctly parented fork. Readback is open, ready, `MERGEABLE`, and `CLEAN`.
-- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, target checks,
-  memory, and final `npm run check:all` passed. Npm audit stays blocked by
-  nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
+- 2026-06-15 21:45 UTC: model/effort selectors unavailable. Crawler JSON had
+  zero opportunities after managed-route failures. Exact-read 120 newest open
+  authored PRs: 85 `CLEAN`, 26 `UNSTABLE`, 7 `BLOCKED`, 2 `UNKNOWN`, and 4
+  review-gated.
+- Repair: Flugins #6 already contains the visible CodeRabbit wording fix and
+  only thread is resolved. Ultimate-Agent-Directory #84 is blocked by
+  sign-in-gated Kilo detail; other blockers are review gates or target-owned
+  checks.
+- New PR: https://github.com/acailic/tweetnugget/pull/1 fixes stale ClawHub
+  links and adds optional TweetClaw source-verification guidance for curated
+  Twitter/X quotes. Readback is open, ready, `MERGEABLE`, `CLEAN`, and
+  GitGuardian success.
+- Fresh blockers: agentskillexchange/skills, nmn-labs/x-likes-digest, and
+  several social/OpenClaw skill repos were duplicate-blocked; Cluka lacks
+  license; 8co/undertow is off-domain.
+- Links, OpenClaw docs/npm, OpenClaw fitness, target checks, memory, and final
+  `npm run check:all` passed. Npm audit remains blocked by nested OpenClaw
+  `protobufjs` and `tar`; npm auth remains E401.
 
 ## Reporting Checklist
 
