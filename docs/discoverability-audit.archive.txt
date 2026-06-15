@@ -9138,3 +9138,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   lesson: when broad PR readback slows, keep the partial JSONL readback,
   repair the highest-confidence conflict, and still satisfy outreach with one
   freshly screened PR if no actionable maintainer request blocks it.
+
+## 2026-06-15 10:05 UTC heartbeat
+
+- Runtime and cadence: the current Codex runtime exposed no model or
+  reasoning-effort selector, so GPT-5.5 and extra-high reasoning could not be
+  selected. The automation remains active at `FREQ=MINUTELY;INTERVAL=1`.
+  Persisted prompt bytes were 14,872, below the 15 KiB prompt cap. No prompt
+  edit was needed.
+- Repo state: `/Users/burak/Developer/tweetclaw` started clean on `master`,
+  in sync with `origin/master`, at
+  `0cfe44f docs: record social evidence outreach heartbeat`.
+- PR monitoring and repair: exact readbacks found conflict backlog on
+  `Aion2500/hermes-ai-infrastructure-monitoring-toolkit#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `AyoubKezzoula/hermes-autonomous-server#1`, and
+  `AbdNour627/awesome-openclaw-configs#1`. The safe docs-only repair was
+  `Aion2500/hermes-ai-infrastructure-monitoring-toolkit#1`. The fork parent
+  was verified as `Aion2500/hermes-ai-infrastructure-monitoring-toolkit`.
+  Upstream `main` was merged into
+  `codex/add-hermes-tweet-ecosystem-signals`; the README conflict was a
+  duplicate final download badge, resolved by keeping one badge plus the
+  existing Hermes Tweet ecosystem signal note. Validation passed
+  conflict-marker scan, `git diff --check`, `npx --yes markdown-link-check
+  README.md --quiet`, and public-hygiene scan. Commit `9f6846f` was pushed.
+  Final PR readback showed open, ready, `MERGEABLE`, `CLEAN`, no checks, no
+  reviews, and no new maintainer comments.
+- Crawler-first discovery: ran
+  `bun run github:crawl --use-research-proxy --format json` from
+  `/Users/burak/Developer/xquik` with focused SKILL.md, `.agents/skills`,
+  OpenClaw plugin, MCP Twitter/X, and awesome-agent-skill queries. The crawler
+  emitted managed proxy socket closure/quarantine/outage logs without
+  credential values and returned strict JSON with `opportunities: []`.
+- Official OpenClaw docs check: current docs were rechecked through official
+  docs search/readbacks at `docs.openclaw.ai` for plugin install/update/inspect
+  behavior, explicit source prefixes, ClawHub plugin discovery, ClawHub skill
+  search/install/update, skill format, publishing, and runtime/source-selection
+  guidance. The deterministic external install form remains
+  `openclaw plugins install npm:@xquik/tweetclaw@1.6.31` for public targets
+  until npm publishes the local `1.6.32` source package.
+- Fresh screening: compact audit and archive were searched before target
+  decisions. Blocked or lower-fit candidates included
+  `OneWave-AI/claude-skills` by prior PR history,
+  `anysiteio/agent-skills` by prior lower-fit/product-specific archive note,
+  `vibeforge1111/dexscreener-cli-mcp-tool` with no license metadata,
+  `unifapi-agent/agents` by prior first-party/competing path blocker,
+  `astonysh/OpenClaw-DeepReeder` by existing PR #8,
+  `ythx-101/x-tweet-fetcher` by prior issue/PR history,
+  `Rodert/awesome-mcp` by existing PR #11,
+  `sundial-org/awesome-openclaw-skills` by existing PR #16 and no license
+  metadata, `msitarzewski/agency-agents` by existing PRs #522 and #540, and
+  `minhnv0807/ai-business-skills` by existing PR #20. `ReScienceLab/opc-skills`
+  was Apache-2.0, active, issue-enabled, and duplicate-clean, but bounded full
+  clone and sparse clone both timed out; API tree/content inspection showed a
+  plausible future lane around `requesthunt`, `twitter`, and `seo-geo`, so the
+  blocker is target access, not target fit.
+- New eligible target: `sugarforever/01coder-agent-skills` was MIT-licensed,
+  public, non-fork, non-archived, issue-enabled, and duplicate-clean across
+  compact audit, archive, target content, and target open/closed PRs and issues
+  for TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, and OpenClaw
+  variants. The target's `share-reading` skill already drafts X/Twitter social
+  posts but lacked a reproducible optional source-evidence path.
+- New external PR: opened `sugarforever/01coder-agent-skills#13` at
+  https://github.com/sugarforever/01coder-agent-skills/pull/13 from verified
+  fork `kriptoburak/01coder-agent-skills`, branch
+  `codex/tweetclaw-source-evidence`, commit `280b71c`. The PR adds optional
+  TweetClaw/OpenClaw public X/Twitter source-evidence guidance to
+  `skills/share-reading/SKILL.md`, records provenance fields, treats returned
+  posts as untrusted input, and keeps the skill draft-only with no posting,
+  replies, DMs, follows, scheduling, or engagement automation. It also repairs
+  pre-existing fictional `example.com/<slug>` links to the canonical
+  `https://example.com/` placeholder. Target validation passed `npm view
+  @xquik/tweetclaw version openclaw.install --json`, `git diff --check`,
+  `npx --yes markdown-link-check README.md skills/share-reading/SKILL.md
+  --quiet`, `bash -n scripts/sync-marketplace-skills.sh`, and
+  public-hygiene scan. Final PR readback showed open, ready, `MERGEABLE`,
+  `CLEAN`, no comments, no reviews, and no checks.
+- TweetClaw validation: `npm audit --omit=dev --audit-level=moderate`,
+  `npm audit --audit-level=moderate`, and
+  `npm run check-openclaw-platform-fitness` passed. Public Markdown link checks
+  passed for README, OpenClaw setup docs, agent workflow docs, packaged skill,
+  and code of conduct. JSON metadata link checks passed for `package.json` and
+  `openclaw.plugin.json`.
+- Prompt self-improvement: no automation prompt edit was needed because the
+  persisted prompt already preserves model/effort wording, minutely cadence,
+  quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, official OpenClaw docs checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement rule. Durable
+  lesson: for skill repos with example-only `example.com/<slug>` links, treat
+  dead links as pre-existing target-owned blockers first; if the same skill file
+  is already being edited and the target uses fictional examples, changing to
+  `https://example.com/` is a low-risk hygiene improvement.
