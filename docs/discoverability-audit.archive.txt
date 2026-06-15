@@ -8151,3 +8151,148 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - TweetClaw product maintenance: no product code, README, public docs, packaged skill, manifest, runtime code, package metadata, or lockfile change was needed. Current OpenClaw docs, npm metadata, ClawHub state, target contribution, Markdown link checks, direct URL checks, package audits, OpenClaw fitness, and public user-job wording still match TweetClaw install source selection, runtime inspection, approval boundaries, ClawHub skill format, packaged-skill metadata, and npm-first release positioning. Omit-dev and full npm audits found 0 vulnerabilities. `npm run build` and `npm run check-openclaw-platform-fitness` passed.
 - Broken links, validation, and prompt self-improvement: TweetClaw public Markdown link checks passed for README, OpenClaw setup docs, agent workflows docs, packaged skill, registry steps, and code of conduct with Context7, mailto links, and exact `xquik.com` plus `dashboard.xquik.com` roots ignored by the link-check config. Direct source-backed URL checks returned 200 for canonical TweetClaw GitHub, GitHub issues API, npm registry metadata, current ClawHub plugin page, current Skills.sh TweetClaw and x-twitter-scraper pages and badges, current Smithery page and badge, DeepWiki, Apify x-tweet-scraper, Apify x-follower-scraper, xquik.com, dashboard.xquik.com, docs.xquik.com, docs API overview, new `MunhoLau/twitter-mcp-secure#2`, its correctly parented fork branch, and current OpenClaw docs listed above. Probe-only Not Human Search aliases returned DNS failure and the npm package webpage returned expected 403 bot protection, but neither required a source change. Final validation ran after this archive edit. No saved automation prompt edit was useful because the prompt already preserves model/effort wording, same-thread automation notes, quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive skill-repo coverage, fresh repo/framework/library discovery, PR repair priority, duplicate and fork rules, official OpenClaw checks, link checks, validation gates, badge rule, Context7 exclusion, access-material safety, cadence, thread binding, commit/push requirement, Markdown cap, and self-improvement. Changed TweetClaw file is `docs/discoverability-audit.archive.txt`.
 - Durable lessons: `MunhoLau/twitter-mcp-secure#2` is now duplicate-blocked for future TweetClaw source-context submissions unless the maintainer asks for follow-up. Security-focused MCP forks should avoid logging user search queries as well as tweet bodies and API payloads. When `llms.txt` moves OpenClaw docs paths, record the stale probe and use the resolved current path rather than patching TweetClaw links that do not reference the stale URL. Probe-only Not Human Search aliases are not source-backed TweetClaw links.
+
+## 2026-06-15 00:03 UTC heartbeat
+
+- Runtime and starting state: this same-thread Codex Desktop heartbeat still did
+  not expose a GPT-5.5 model selector or extra-high reasoning-effort selector,
+  so the run continued under the available runtime and recorded the limitation.
+  TweetClaw `master` started clean and in sync with origin at
+  `79009d5b5dbd5a64d64ed36e8a8ef06945867977`; `gh issue list` returned no
+  open issues for `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`. Xquik had
+  unrelated local credit, extraction, MCP, OpenAPI, proxy, egress, login
+  preflight, run-state, script, and pricing-plan edits; all were left untouched.
+  Compact Markdown memory was full at 15360/15360 bytes, so this run wrote only
+  to this archive. The persisted automation TOML measured 14872 bytes and was
+  not edited.
+- Crawler-first discovery and PR monitoring: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in research-proxy JSON mode with
+  bounded timeouts across SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw, MCP, Codex, Claude, agent skills, social media, Twitter/X, tweet
+  scraper, follower export, media download, direct messages, giveaway, source
+  evidence, brand monitoring, social listening, skill registries, plugin
+  frameworks, validators, examples, package tooling, social publishing,
+  content-calendar, noauth scheduled tweets, Bluesky, Mastodon, and LinkedIn
+  lanes. The crawler returned a valid empty opportunities list and printed route
+  metadata only, with no access values printed. Authored PR monitoring found
+  changes-requested PRs at `Jamkris/everything-gemini-code#91`,
+  `nikships/skills-registry#45`, and `Hashi-Ai-Dev/openclaw-clawdoc#6`; known
+  failing-check PRs remained target-owned or stale per previous readbacks.
+  A broad exact readback was stopped when it stalled; targeted and newest-open
+  reads continued without using broad authenticated search.
+- Existing PR repair and decisions: repaired
+  `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1` before fresh
+  outreach because exact readback showed a README-only conflict on the correctly
+  parented `kriptoburak/awesome-claude-code-skills-sensible` fork, with MIT
+  license, no comments, no reviews, and no checks. The branch was merged with
+  current upstream `main`; the conflict kept the upstream table plus the Xquik
+  skill row:
+  `X 数据查询、MCP 与 webhook 工作流`. Validation passed `git diff --check`,
+  conflict-marker scan, `npx --yes markdown-link-check README.md --quiet`, a
+  direct 200 check for
+  `https://github.com/Xquik-dev/x-twitter-scraper/tree/master/skills/x-twitter-scraper`,
+  and changed-line public-hygiene scan. Pushed commit
+  `3952e2264701288389ef18b140c8c3ff9bebee0f` and posted repair comment
+  https://github.com/Sensiblehorizonmatahari4990/awesome-claude-code-skills/pull/1#issuecomment-4703516722.
+  Final readback showed the PR open, ready, mergeable, clean, no reviews, no
+  checks, and head `3952e22`. `Jamkris/everything-gemini-code#91` stayed blocked
+  by the bot request for unpublished `@xquik/tweetclaw@1.6.32`.
+- Fresh candidate screening and duplicate gates: after crawler-first discovery
+  returned no candidates, targeted screening covered Twitter/X MCP servers,
+  social-media MCP servers, Smithery/Glama registry surfaces, OpenClaw MCP
+  setup docs, source-context workflows, skill repos, examples, validators, and
+  package-metadata lanes. Compact audit, archive, target content, local clones,
+  GitHub metadata, fork metadata, and open plus closed target PRs/issues were
+  checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL,
+  npm URL, ClawHub listing, Xquik, x-twitter-scraper, xquik.com, OpenClaw,
+  Twitter/X, MCP, SKILL.md, source evidence, follower export, media, direct
+  messages, monitors, webhooks, giveaway, validators, catalogs, and tooling
+  variants. `tangivis/twitter-mcp` and `twittershots/twittershots-mcp` were
+  recorded as viable but lower-fit or more complex candidates for later.
+  `angheljf/social-media-mcp` was selected because it is MIT licensed,
+  non-fork, non-archived, issue-enabled, duplicate-clean, already owns X posting
+  through MCP, and had target-native package metadata plus OpenClaw MCP setup
+  gaps. An existing `kriptoburak/social-media-mcp` fork pointed to a different
+  parent, so a correctly parented renamed fork
+  `kriptoburak/social-media-mcp-angheljf` was created and verified.
+- External PR: opened `angheljf/social-media-mcp#2` at
+  https://github.com/angheljf/social-media-mcp/pull/2 from the correctly
+  parented fork `kriptoburak/social-media-mcp-angheljf`, branch
+  `codex/openclaw-source-context`, commit
+  `4f69ebb97ed81abc00bc497c2c70237b0151a8b2`. The PR adds MIT package metadata,
+  repository/homepage/bugs fields, refreshes the lockfile to match
+  `package.json`, removes the stale Smithery per-server click-through while
+  keeping the healthy Smithery badge image, links to the current Smithery
+  servers page, adds OpenClaw MCP registry setup using `openclaw mcp add`,
+  `--cwd`, `--include`, and `openclaw mcp doctor social-media --probe`, and
+  adds optional TweetClaw source-context guidance pinned to the currently
+  published `@xquik/tweetclaw@1.6.31`. The wording keeps final copy, approvals,
+  posting, replies, threads, and X API credentials inside the target MCP server
+  or its MCP client. No NHS badge was added because the target badge area is for
+  target registry/package badges, and adding an xquik.com readiness badge would
+  confuse the target surface.
+- Target validation and public hygiene: target README, package metadata,
+  package lock, MIT license, duplicate PR and issue history, fork parent
+  metadata, PR body, public links, and final PR readback were checked before and
+  after PR creation. Validation passed `npm ci --ignore-scripts --no-audit
+  --no-fund`, `npm run build`, `npx --yes markdown-link-check README.md
+  --quiet`, `git diff --check`, changed-line public-hygiene scan, direct 200
+  checks for Smithery servers page, Smithery badge image, Glama page, TweetClaw
+  npm metadata, the target PR, and the fork branch. Final PR readback showed the
+  PR open, ready, mergeable, clean, no comments, no reviews, GitGuardian
+  security check success, 3 changed files, 51 additions, 18 deletions, and head
+  `4f69ebb`.
+- Official OpenClaw docs and package recheck: fetched current
+  `https://docs.openclaw.ai/llms.txt`, `https://docs.openclaw.ai/cli/mcp.md`,
+  `https://docs.openclaw.ai/cli/plugins.md`,
+  `https://docs.openclaw.ai/tools/plugin.md`, and
+  `https://docs.openclaw.ai/clawhub/skill-format.md`. Current MCP docs still
+  support `openclaw mcp add`, `openclaw mcp status --verbose`,
+  `openclaw mcp doctor --probe`, tool filters with `--include`, and `--cwd`
+  for local stdio servers. Plugin docs still support explicit source selection
+  with `openclaw plugins install npm:<package>` and runtime inspection.
+  `npm view openclaw` returned latest `2026.6.6`, alpha
+  `2026.5.19-alpha.1`, beta `2026.6.8-beta.1`, modified
+  `2026-06-14T22:41:57.504Z`; `npm view clawhub` returned `0.21.0`, modified
+  `2026-06-12T01:02:24.225Z`; `npm view @xquik/tweetclaw` returned published
+  `1.6.31` with MIT license, canonical GitHub metadata, homepage, and
+  npm-first OpenClaw install metadata. `@xquik/tweetclaw@1.6.32` still returns
+  404, so public outreach continues to pin `1.6.31`.
+- TweetClaw product maintenance: no product code, README, public docs, packaged
+  skill, manifest, runtime code, package metadata, or lockfile change was
+  needed. Current OpenClaw docs, npm metadata, ClawHub state, target
+  contribution, Markdown link checks, direct URL checks, package audits,
+  OpenClaw fitness, and public user-job wording still match TweetClaw install
+  source selection, runtime inspection, approval boundaries, ClawHub skill
+  format, packaged-skill metadata, and npm-first release positioning. Omit-dev
+  and full npm audits found 0 vulnerabilities. `npm run build` and
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken links, validation, and prompt self-improvement: TweetClaw public
+  Markdown link checks passed for README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, registry steps, code of conduct, contributing guide, and
+  security policy. Direct checks returned 200 for canonical TweetClaw GitHub,
+  GitHub issues API, npm registry metadata, current ClawHub plugin page, current
+  Skills.sh TweetClaw and x-twitter-scraper pages and badges, current Smithery
+  page and badge, DeepWiki, Apify x-tweet-scraper, Apify x-follower-scraper,
+  xquik.com, dashboard.xquik.com, docs.xquik.com, billing docs, Not Human
+  Search xquik.com page and badge, repaired
+  `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1`, new
+  `angheljf/social-media-mcp#2`, its correctly parented fork branch, and current
+  OpenClaw docs listed above. No saved automation prompt edit was useful because
+  the prompt already preserves model/effort wording, same-thread automation
+  notes, quiet autonomy, crawler-first discovery, mandatory PR submission,
+  aggressive skill-repo coverage, fresh repo/framework/library discovery, PR
+  repair priority, duplicate and fork rules, official OpenClaw checks, link
+  checks, validation gates, badge rule, Context7 exclusion, access-material
+  safety, cadence, thread binding, commit/push requirement, Markdown cap, and
+  self-improvement. Changed TweetClaw file is
+  `docs/discoverability-audit.archive.txt`, with final validation run after
+  this archive edit.
+- Durable lessons: `angheljf/social-media-mcp#2` is now duplicate-blocked for
+  future TweetClaw source-context submissions unless the maintainer asks for
+  follow-up. When a target has a stale Smithery page but a live badge image,
+  remove or retarget the click-through without discarding the useful badge.
+  Social-posting MCP servers are good targets when OpenClaw MCP registry docs
+  help the target directly and TweetClaw remains an optional public source
+  context provider. Reused fork names can point at different upstream parents;
+  verify parent metadata and use a renamed fork when necessary.
