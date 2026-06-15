@@ -8430,3 +8430,79 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   metadata before classifying a candidate as no-license; and a same-target
   existing Hermes/Xquik companion PR blocks a new TweetClaw companion PR unless
   the TweetClaw plugin value is clearly distinct and non-overlapping.
+
+### 2026-06-15 01:17 UTC heartbeat
+
+- Runtime and repo state: this heartbeat runtime still did not expose model or
+  reasoning-effort selectors, so GPT-5.5 and extra-high effort could not be
+  selected; recorded and continued. TweetClaw started clean on `master` at
+  `2043964`, exact `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issue checks
+  found no open issues, and no Browser, Chrome, Context7, production SSH, dev
+  server, Socket.dev token, or npm publish path was used. No local `AGENTS.md`
+  was present in TweetClaw or its direct parent.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with managed research proxy, focused skill,
+  OpenClaw, MCP, Twitter/X, social-media, and awesome-skill queries, JSON
+  output, bounded request timeouts, and proxy warmup skipped. The crawler
+  returned valid empty JSON while stderr showed socket-close fetch failures,
+  endpoint quarantine logs, and `Proxy pool outage circuit opened`; no
+  credentials printed. Continued with exact PR readbacks, read-only web index
+  results, targeted GitHub metadata, clone scans, and issue/PR searches.
+- PR monitoring and repair pass: authored open PR search found 100 recent open
+  PRs, and exact `gh pr view` readbacks covered the newest 60. Most were clean
+  or target-owned unstable states with no comments, reviews, or checks needing
+  repair. `Flopsstuff/flugins#6` was the only active-looking bot review signal;
+  thread-aware GraphQL showed the major author-field contract issue resolved in
+  commit `1b06a37`, and local branch inspection confirmed the two wording nits
+  were already fixed. No duplicate repair comment or empty commit was posted.
+- Official OpenClaw and package check: npm reported `openclaw` stable
+  `2026.6.6`, beta `2026.6.8-beta.1`, and modified
+  `2026-06-14T22:41:57.504Z`; `clawhub` `0.21.0`; and npm
+  `@xquik/tweetclaw` latest `1.6.31` with current OpenClaw install metadata.
+  Read-only official-docs search reconfirmed current plugin install, update,
+  inspect, runtime JSON, manifest, bundle, dependency-resolution, community,
+  and tool-plugin guidance without changing TweetClaw OpenClaw metadata.
+- Fresh candidate screening: direct GitHub search was empty for several narrow
+  skill query packs, then broader and web-index searches screened licensed or
+  adjacent targets including `rafaljanicki/x-twitter-mcp-server`,
+  `touchmeangel/twitter-mcp-server`, `talm/eclincher-mcp-server`,
+  `luminarylane/x-twitter-mcp-server`, `EnesCinr/twitter-mcp`,
+  `armatrix/twitter-mcp`, `JohannesHoppe/x-autonomous-mcp`,
+  `rohunvora/x-research-skill`, `taazkareem/twitter-mcp-server`,
+  `coreyhaines31/marketingskills`, `heilcheng/awesome-agent-skills`,
+  `rylena/awesome-openclaw`, `armatrix/twitter-mcp`, and
+  `arnaldo-delisio/x-mcp`. Prior TweetClaw, Xquik, or Hermes Tweet history
+  blocked the handled targets. `arnaldo-delisio/x-mcp` was selected because it
+  is MIT licensed, non-fork, non-archived, issue-enabled, duplicate-clean across
+  compact audit, archive, target content, and target open/closed PRs and issues,
+  and its direct Twitter/X MCP README benefits from an optional OpenClaw
+  companion workflow while keeping the target responsible for OAuth 1.0a direct
+  actions.
+- New PR: opened `arnaldo-delisio/x-mcp#1` at
+  https://github.com/arnaldo-delisio/x-mcp/pull/1 from correctly parented fork
+  `kriptoburak/x-mcp-1`, branch `codex/tweetclaw-openclaw-companion`, commit
+  `28c894b`. The README-only addition shows `openclaw plugins install
+  npm:@xquik/tweetclaw@1.6.31`, frames TweetClaw as a separate companion for
+  source packets, monitors, webhooks, follower export, media workflows, direct
+  messages, giveaway draws, and approval-gated X/Twitter automation, and keeps
+  `x_post_tweet`, `x_post_thread`, `x_reply`, `x_get_tweet`, and
+  `x_delete_tweet` responsible for final target actions. No NHS badge was added
+  because the target has no badge area.
+- Validation and link hygiene: target validation passed `git diff --check`,
+  `python3 -m py_compile server.py`, `npx --yes markdown-link-check README.md`,
+  and `npm view @xquik/tweetclaw version openclaw.install repository.url
+  homepage --json`. Direct checks returned 200 for the target PR, target repo,
+  fork branch, TweetClaw GitHub, and npm registry metadata. A public-hygiene scan
+  showed secret/token terms only in pre-existing target credential-placeholder
+  docs, not in added lines. Final PR readback showed open, ready, `MERGEABLE`,
+  `CLEAN`, no comments, no reviews, no checks, 20 additions, 0 deletions, and
+  one changed file.
+- TweetClaw public links and prompt self-improvement: TweetClaw source link
+  sweep found 43 URL-like entries; 41 non-Context7 URLs returned 200, and
+  Context7 URLs were skipped under hard scope. Automation TOML remained 14872
+  bytes, under the 15 KiB prompt cap, so no prompt edit was saved. Durable
+  lesson: for same-name forks, `gh repo fork` may create a suffixed fork such as
+  `x-mcp-1`; verify parentage with `gh api repos/<owner>/<repo>` because
+  `gh repo view --json parent` can omit the parent object even when `isFork` is
+  true. Also avoid multi-URL `curl` commands with a single `-o /dev/null`;
+  loop per URL so public registry bodies are not dumped into logs.
