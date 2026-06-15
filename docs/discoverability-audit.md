@@ -195,19 +195,17 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 15:22 UTC: model/effort selectors unavailable; automation remains
+- 2026-06-15 15:54 UTC: model/effort selectors unavailable; automation remains
   minutely at `FREQ=MINUTELY;INTERVAL=1`.
-- PR gate read 200 open authored PRs plus audit-tracked PRs. No safe repair was
-  needed; flags were already addressed, stale-bot, target-owned, policy-owned,
-  or external-check blocked.
-- Crawler-first discovery returned valid zero-opportunity JSON after managed
-  research-route network failures. Fresh screening selected `dhk/skill-map` as
-  MIT, non-fork, duplicate-clean, and useful for graph parity with its upstream
-  `awesome-agent-skills` corpus.
-- New PR: https://github.com/dhk/skill-map/pull/1 syncs TweetClaw and
-  x-twitter-scraper into graph data, generated static HTML, README counts, and
-  org metadata.
-- OpenClaw docs, npm metadata, target links, TweetClaw public links, audits,
+- PR gate searched 200 open authored PRs and exact-read 44 newest/tracked PRs.
+  No safe repair was needed; flagged PRs were already fixed, clean,
+  stale-bot-only, target-owned, policy-owned, or external-check blocked.
+- Crawler-first discovery returned strict zero JSON after managed research-route
+  failures. Fresh screening selected `trickv/clawskills`, MIT, non-fork,
+  duplicate-clean, and useful for a real skill-submission example.
+- New PR: https://github.com/trickv/clawskills/pull/1 adds a fetchable
+  TweetClaw skill submission example and repairs target test fixture URLs.
+- OpenClaw docs, npm metadata, target validation, TweetClaw links, audits,
   OpenClaw fitness, memory checks, and final `npm run check:all` passed. Npm
   publish for local `1.6.32` remains blocked by unavailable safe npm auth.
 

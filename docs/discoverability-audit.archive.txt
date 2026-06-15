@@ -9921,3 +9921,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   self-improvement rule. Durable lesson: generated skill maps are strong
   outreach targets when a target already imports or mirrors a corpus that
   contains TweetClaw or x-twitter-scraper but has stale generated graph output.
+
+2026-06-15 15:54 UTC heartbeat archive
+
+- Runtime note: this Codex runtime did not expose model or reasoning-effort
+  selection, so the requested GPT-5.5 and extra-high reasoning selectors could
+  not be set. The run continued and recorded the limitation.
+- Starting state: TweetClaw `master` was clean against `origin/master`;
+  Markdown memory was 14,999 of 15,360 bytes; xquik had unrelated untracked
+  proxy and X login helper files that were left untouched.
+- Existing PR monitoring: `gh search prs --author kriptoburak --state open`
+  returned 200 open PRs. Exact readback was bounded to 44 newest plus tracked
+  PRs after the broad loop was too slow. No safe actionable repair was found.
+  `Flopsstuff/flugins#6` already contained the requested wording repair and
+  passed `git diff --check`; `Narylr350/source-radar#1` was clean; other flags
+  were stale-bot-only, target-owned, policy-owned, or external-check blocked.
+- Crawler-first discovery: the xquik crawler ran first with focused PR,
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, social media,
+  Twitter/X, skill registry, catalog, and package-tooling queries. Managed
+  research-route network failures produced strict zero-opportunity JSON, with
+  no credential values printed.
+- Fresh screening: MIT repos `dissaozw/openclaw-skill-twitter` and
+  `zhiyuanw0/openclaw-skill-twitter` were duplicate-blocked by existing
+  `kriptoburak` PRs. `aios-rs/skillhub` was MIT and duplicate-clean but
+  policy-blocked by its issue-first contribution rule. Several fresh Twitter
+  and skill repos were blocked by absent licenses, weak target fit, prior
+  TweetClaw/Xquik history, or existing open `kriptoburak` PRs.
+- New target: `trickv/clawskills` was selected as MIT, non-fork, active,
+  duplicate-clean for TweetClaw, Xquik, x-twitter-scraper, OpenClaw, and
+  Twitter/X variants, with a direct target-native value path in API docs and
+  tests. The correctly parented fork was `kriptoburak/clawskills`.
+- New external PR: opened https://github.com/trickv/clawskills/pull/1 from
+  `kriptoburak:codex/add-tweetclaw-example`, commit `6247d35`. The PR adds a
+  concrete ClawSkills API submission example using the public TweetClaw raw
+  `SKILL.md` URL and repairs tests to use the target repo's own raw `SKILL.md`
+  URL instead of dead `github.com/example` fixtures.
+- Target validation: TweetClaw raw skill URL fetched with HTTP 200 and
+  frontmatter present. Target-owned raw `SKILL.md` fetched with HTTP 200 and
+  frontmatter present. `git diff --check` passed. Markdown link check passed
+  with only pre-existing target-owned `localhost` and API-base links ignored.
+  `/tmp/clawskills-venv-1554/bin/python -m pytest tests/ -q` passed with
+  10 tests and 4 pre-existing Starlette deprecation warnings. PR readback showed
+  open, ready, `CLEAN`, no comments, no reviews, no checks, and head owner
+  `kriptoburak`.
+- OpenClaw check: current docs fetched successfully from `llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/plugins/plugin-permission-requests`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, and `/help/debugging`.
+  `npm view openclaw` returned latest `2026.6.6` and beta `2026.6.8-beta.1`;
+  `npm view clawhub` returned `0.21.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, while local source remains `1.6.32`.
+- Package publication boundary: `npm whoami` returned E401 again. The
+  chat-exposed npm credential was not used, printed, stored, or repeated; safe
+  publication remains blocked until the owner rotates it and configures an
+  approved npm session or secret store.
+- TweetClaw validation before audit update: `npm run
+  check-openclaw-platform-fitness` passed for local `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.6`; production and full npm audits found
+  0 vulnerabilities; public Markdown link checks passed for README, OpenClaw
+  setup docs, agent workflows, packaged skill, and code of conduct; JSON
+  metadata link checks passed for 4 package and OpenClaw manifest URLs.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation after audit update: `git diff --check` passed;
+  `npm run check-memory-md-size` passed at 14,962 of 15,360 bytes; diff hygiene
+  found no secrets, private implementation details, confidential source labels,
+  confidential pricing details, unsupported claims, stale metadata, em dash, or
+  space-hyphen-hyphen-space. `npm run check:all` passed, including
+  typecheck, lint, copy-paste detection, knip, suppression checks, dash hygiene,
+  memory, skill frontmatter, version parity, build, OpenClaw fitness, package
+  artifact, and 168 coverage tests at 100 percent coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory per-run PR submission,
+  PR repair priority, duplicate and fork rules, OpenClaw docs checks, link
+  checks, validation gates, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, and self-improvement rule. Durable
+  lesson: docs-plus-test-fixture PRs are a strong target-native lane when a
+  registry validates submitted skill URLs but its own tests still use dead
+  placeholder skill URLs.
