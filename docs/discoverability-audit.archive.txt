@@ -10781,3 +10781,100 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target-specific fork name and verify parent before pushing. Also, when a
   target has stale localized docs links, fix those target-native broken links
   in the same PR instead of recording them as target-owned blockers.
+
+2026-06-15 19:54 UTC heartbeat
+
+- Runtime and selector state: same-thread heartbeat continued without runtime
+  controls for GPT-5.5 or extra-high reasoning effort. Recorded the limitation
+  and continued. Persisted automation prompt was measured at 14872 bytes; no
+  prompt edit was useful.
+- Starting state: TweetClaw was clean on `master` against `origin/master`.
+  Xquik still had unrelated local untracked files from the owner; they were
+  ignored.
+- Crawler-first discovery: ran the internal crawler from xquik with focused
+  Twitter, MCP, OpenClaw, social-agent, and skill queries through the managed
+  research route. The run produced strict JSON with zero opportunities after
+  route socket and pool failures. No credential values were printed, stored, or
+  committed.
+- PR monitoring: exact-read 60 of 120 open `kriptoburak` PRs after crawler
+  output. Merge rollup was `BEHIND` 1, `BLOCKED` 1, `CLEAN` 36, `DIRTY` 12,
+  `UNKNOWN` 5, and `UNSTABLE` 5. `tangivis/twitter-mcp#100` remained open,
+  ready, and `UNSTABLE` with no comments, reviews, or checks.
+  `Aditya923-c/xpoz-agent-skills#1` remained open, ready, and `CLEAN` after the
+  earlier README quick-links repair. `i-am-bee/beeai-framework#1456` was behind
+  but its checks were successful, so no safe repair was needed.
+- Existing PR repair: `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1`
+  had a dirty merge state. A same-name fork under `kriptoburak` initially pointed
+  at a different parent and received an unintended merge-repair push plus comment.
+  The PR head readback then showed the real head fork was
+  `kriptoburak/awesome-claude-code-skills-sensible`. Repaired the correct fork by
+  merging upstream `main`, resolving README conflicts, preserving the Xquik row,
+  using plain hyphen separators, and pushing commit `d187ce3` to
+  `codex/add-xquik-skill-listing-20260614`. Final readback was open, ready, and
+  `CLEAN`. Corrected validation comment:
+  https://github.com/Sensiblehorizonmatahari4990/awesome-claude-code-skills/pull/1#issuecomment-4711749997
+- Existing PR repair validation: `git diff` whitespace check, conflict-marker
+  scan, added-line public-hygiene scan, and README markdown-link-check passed.
+  No NHS badge was added because the handled badge area is package or project
+  health only.
+- Fresh candidate screening: searched the compact audit and archive, crawler
+  output, exact repo metadata, target contents, and target PRs/issues for
+  TweetClaw, Xquik, OpenClaw, npm, ClawHub, and scraper variants. Blockers:
+  `rafaljanicki/x-twitter-mcp-server` duplicate-blocked by merged and closed
+  TweetClaw history; `woosal1337/media-mcp`, `BlockRunAI/blockrun-mcp`, and
+  `baryhuang/mcp-twitter-noauth` duplicate-blocked by prior outreach. Selected
+  `kukapay/twitter-username-changes-mcp` because it was MIT, non-fork,
+  duplicate-clean, PR-enabled, issue-enabled, active enough, and target-native.
+- New external PR: opened
+  https://github.com/kukapay/twitter-username-changes-mcp/pull/6 from correctly
+  parented fork `kriptoburak/twitter-username-changes-mcp`, branch
+  `codex/add-openclaw-workflow`, commit `929476d`. The README addition documents
+  OpenClaw MCP save/probe commands for the target username-history server and
+  optional TweetClaw plugin use for separate account-scoped follow-up checks
+  after a username-history signal, including user lookup, follower export,
+  search tweet replies, media download, monitors, webhooks, giveaway draw
+  evidence, and approval-reviewed post or reply jobs. Final readback was open,
+  ready, and `CLEAN` with no comments, reviews, or checks.
+- New PR validation: `git diff` whitespace check, conflict-marker scan,
+  added-line public-hygiene scan, README markdown-link-check, and
+  `python3 -m py_compile main.py` passed. Direct checks returned HTTP 200 for
+  OpenClaw MCP docs, OpenClaw plugin docs, TweetClaw GitHub, TweetClaw npm
+  metadata, ClawHub, target repo, and target PR. No NHS badge was added because
+  the target had no useful badge area.
+- OpenClaw and package metadata: fetched current official `llms.txt`,
+  `/cli/mcp`, `/cli/plugins`, and manifest docs. MCP docs still cover saved MCP
+  servers, `openclaw mcp add`, `doctor --probe`, `tools`, command args, env
+  handling, and sensitive value redaction. Plugin docs still cover explicit npm
+  source installs and runtime JSON inspection. Npm metadata returned OpenClaw
+  latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub `0.21.0`, and published
+  TweetClaw `1.6.31` while local source remains `1.6.32`.
+- TweetClaw public-link validation: markdown-link-check passed for README,
+  OpenClaw setup, agent workflows, packaged skill, and code of conduct. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub,
+  xquik.com, OpenClaw MCP docs, OpenClaw plugin docs, the repaired Sensible PR,
+  and the new kukapay PR. `npm run check-openclaw-platform-fitness` passed for
+  local TweetClaw `1.6.32` targeting OpenClaw `2026.6.6`.
+- Security/package validation: production and full `npm audit` both failed on
+  nested OpenClaw stable package advisories for `protobufjs` and `tar`. Treat
+  this as a release-like blocker until OpenClaw ships a clean dependency graph.
+- Package publication boundary: `npm whoami` still returned E401. The exposed
+  npm credential from earlier chat was not used, printed, stored, or repeated;
+  publication stays blocked until the owner rotates it and configures an approved
+  npm session.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Required skill reviews: the simplify and thermo-nuclear-code-quality-review
+  skills were read before commit. The docs-only diff is compact, append-only in
+  the non-Markdown archive, and has no code structure, branching, abstraction, or
+  oversized source concern to fix.
+- Final TweetClaw validation after audit update: `git diff` whitespace check
+  passed; `npm run check-memory-md-size` passed under the 15 KiB Markdown cap;
+  `npm run check-em-dash` passed; added-line hygiene found no secret values,
+  credential patterns, private implementation details, pricing mechanics,
+  unsupported claims, em dash additions, or banned double-hyphen additions;
+  `npm run check-versions` passed; final `npm run check:all` passed.
+- Prompt self-improvement: no persisted automation prompt edit was useful.
+  Durable lesson: always resolve the PR head repository from exact PR metadata
+  before repairing a dirty PR when multiple same-name forks exist under
+  `kriptoburak`. Keep recording accidental wrong-fork actions in the archive so
+  future runs can distinguish corrected outreach from active PR state.

@@ -195,21 +195,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 19:36 UTC: model/effort selectors unavailable; minutely unchanged.
+- 2026-06-15 19:54 UTC: model/effort selectors unavailable; minutely unchanged.
 - Crawler returned strict JSON with zero opportunities after managed
-  research-route failures. PR gate exact-read 120 of 200 open PRs.
-- Repaired `Aditya923-c/xpoz-agent-skills#1` by merging upstream, resolving the
-  README quick-links conflict, pushing `73d64db`, and commenting validation.
-  Readback is open, ready, and `CLEAN`.
-- New PR: https://github.com/tangivis/twitter-mcp/pull/100 adds OpenClaw MCP
-  setup docs for the target MCP server, optional TweetClaw companion notes, and
-  fixes stale localized technical-guide links. Target is MIT, non-fork,
-  duplicate-clean, and PR-enabled. Readback is open, ready, and `UNSTABLE` with
-  no checks, comments, or reviews.
-- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory,
-  target lint, and final `npm run check:all` passed. Target pytest and strict
-  MkDocs exposed pre-existing unrelated failures; npm audit stays blocked by
-  nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
+  research-route failures. PR gate exact-read 60 of 120 open PRs.
+- Repaired `Sensiblehorizonmatahari4990/awesome-claude-code-skills#1` on the
+  correct `awesome-claude-code-skills-sensible` fork, pushing `d187ce3`; readback
+  is open, ready, and `CLEAN`. A mistaken same-name fork push/comment was
+  corrected in-thread.
+- New PR: https://github.com/kukapay/twitter-username-changes-mcp/pull/6 adds
+  OpenClaw MCP setup and optional TweetClaw follow-up guidance for
+  account-scoped X/Twitter checks after username-history signals. Target is MIT,
+  non-fork, duplicate-clean, and PR-enabled. Readback is open, ready, and
+  `CLEAN`.
+- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, target
+  README checks, and final `npm run check:all` passed. Npm audit stays blocked
+  by nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
 
 ## Reporting Checklist
 
