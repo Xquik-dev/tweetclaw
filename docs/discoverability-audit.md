@@ -53,9 +53,9 @@ archive, before any outreach or duplicate decision.
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
-- ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
-- ClawHub still lags at `1.6.26` and remains blocked by owner-scope validation.
-  Keep npm as canonical install source until ownership is migrated.
+- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 500
+  on 2026-06-15 22:06 UTC. Keep npm canonical; avoid public ClawHub links until
+  owner-scope validation and route availability are fixed.
 - OpenClaw Directory listing remains useful but stale:
   https://openclawdir.com/plugins/tweetclaw-m2h8cr
 
@@ -195,22 +195,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 21:45 UTC: model/effort selectors unavailable. Crawler JSON had
-  zero opportunities after managed-route failures. Exact-read 120 newest open
-  authored PRs: 85 `CLEAN`, 26 `UNSTABLE`, 7 `BLOCKED`, 2 `UNKNOWN`, and 4
+- 2026-06-15 22:06 UTC: model/effort selectors unavailable. Crawler JSON had
+  zero opportunities after managed proxy failures. Exact-read newest 200 open
+  authored PRs: 143 `CLEAN`, 42 `UNSTABLE`, 13 `BLOCKED`, 2 `UNKNOWN`; 6
   review-gated.
-- Repair: Flugins #6 already contains the visible CodeRabbit wording fix and
-  only thread is resolved. Ultimate-Agent-Directory #84 is blocked by
-  sign-in-gated Kilo detail; other blockers are review gates or target-owned
-  checks.
-- New PR: https://github.com/acailic/tweetnugget/pull/1 fixes stale ClawHub
-  links and adds optional TweetClaw source-verification guidance for curated
-  Twitter/X quotes. Readback is open, ready, `MERGEABLE`, `CLEAN`, and
-  GitGuardian success.
-- Fresh blockers: agentskillexchange/skills, nmn-labs/x-likes-digest, and
-  several social/OpenClaw skill repos were duplicate-blocked; Cluka lacks
-  license; 8co/undertow is off-domain.
-- Links, OpenClaw docs/npm, OpenClaw fitness, target checks, memory, and final
+- Repair: marktantongco/ai-agent-skills#2 stale-root bot finding was already
+  fixed at `57e3cf1`; root and docs indexes both include count 91 and
+  x-twitter-scraper. Other blockers are review gates or target-owned checks.
+- New PR: https://github.com/agent-ecosystem/skill-validator/pull/80 adds a
+  social-source-review skill example and CLI regression check. Repo license MIT,
+  no duplicate history, `kriptoburak` fork parent verified, target tests and
+  link checks passed. PR is open, review/protection blocked, with no checks yet.
+- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` now returns HTTP 500.
+  Removed the README badge/link and kept npm canonical; old route is stale.
+- OpenClaw docs/npm, link checks after fix, OpenClaw fitness, memory, and final
   `npm run check:all` passed. Npm audit remains blocked by nested OpenClaw
   `protobufjs` and `tar`; npm auth remains E401.
 

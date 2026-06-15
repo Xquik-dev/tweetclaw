@@ -52,14 +52,15 @@ the archive, before any release or ClawHub decision.
 
 ## ClawHub State
 
-- ClawHub browsing page: https://clawhub.ai/plugins/@xquik/tweetclaw
+- ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 500
+  on 2026-06-15 22:06 UTC, so avoid public ClawHub links until it recovers.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`
 - Family: `code-plugin`
 - Artifact kind: `npm-pack`
 - Package, verification, and static scans were clean for the last accepted
   package rescan.
-- Old route https://clawhub.ai/kriptoburak/xquik-tweetclaw still resolves but is
+- Old route `clawhub.ai/kriptoburak/xquik-tweetclaw` still resolves but is
   stale and must not be used as canonical install link.
 - ClawHub publish for `1.6.27` through `1.6.30` remains blocked by owner-scope
   validation: owner `xquik` reports the package belongs to another publisher,

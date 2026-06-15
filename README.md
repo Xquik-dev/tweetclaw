@@ -8,7 +8,6 @@
 [![Context7](https://img.shields.io/badge/Context7-agent_docs-059669)](https://context7.com/xquik-dev/tweetclaw)
 [![Skills.sh](https://www.skills.sh/b/xquik-dev/tweetclaw)](https://www.skills.sh/xquik-dev/tweetclaw)
 [![Skills.sh x-twitter-scraper Skill](https://www.skills.sh/b/xquik-dev/x-twitter-scraper)](https://www.skills.sh/xquik-dev/x-twitter-scraper)
-[![ClawHub](https://img.shields.io/badge/ClawHub-TweetClaw-2563eb)](https://clawhub.ai/plugins/@xquik/tweetclaw)
 [![Smithery](https://smithery.ai/badge/github/Xquik-dev/tweetclaw)](https://smithery.ai/servers/github/Xquik-dev/tweetclaw)
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
@@ -25,7 +24,7 @@ Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Sear
 openclaw plugins install npm:@xquik/tweetclaw
 ```
 
-This command installs the official npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while the [ClawHub discovery page](https://clawhub.ai/plugins/@xquik/tweetclaw) lags behind the npm release.
+This command installs the official npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while ClawHub owner-scope validation is pending.
 
 For normal upgrades, reuse the tracked install source:
 

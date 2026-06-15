@@ -11467,3 +11467,80 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   cap, and self-improvement rule. Durable lesson: for curation-style skills,
   TweetClaw placement is strongest as optional source lookup for exact source
   verification, not as runtime dependency or quote-generation guidance.
+
+2026-06-15 22:06 UTC heartbeat archive
+
+- Runtime: GPT-5.5 and extra-high effort selectors were not available in this
+  Codex runtime. Continued with the available model and effort, per automation
+  rule.
+- Crawler-first discovery: ran xquik crawler from
+  `/Users/burak/Developer/xquik` with focused skill, OpenClaw, MCP, Twitter/X,
+  and package-tooling queries. Strict JSON output was valid and contained zero
+  opportunities after managed route socket failures, endpoint quarantine, and
+  US proxy pool outage logs. No credentials were printed.
+- PR monitoring: GitHub search reported 1,510 open authored PRs. Exact-read the
+  newest 200 authored open PRs via `gh pr view`; summary was 143 `CLEAN`, 42
+  `UNSTABLE`, 13 `BLOCKED`, 2 `UNKNOWN`, 198 mergeable, 2 unknown mergeability,
+  and 6 review-gated.
+- Repair gate: inspected review/comment/check candidates. The only plausible
+  actionable target was marktantongco/ai-agent-skills#2 Qodo stale-root note.
+  Exact readback and fork clone showed current PR head `57e3cf1` already syncs
+  root `index.html` with `docs/index.html`; both include the Xquik skill, count
+  91, and no stale count 90. Remaining blockers were target-owned Vercel checks,
+  review gates without actionable comments, or resolved bot threads.
+- Fresh target screening: crawler yielded no candidates, so follow-up search
+  screened skill and validator lanes. `dissaozw/openclaw-skill-twitter`,
+  `zhiyuanw0/openclaw-skill-twitter`, `Aashish-Jha-11/MCP-Twitter-X-`, and
+  `zezeron/tweetsave-mcp` were duplicate-blocked by prior TweetClaw/Xquik
+  history. `RAFOLIE/openclaw-skill-twitter-trending`,
+  `bussgrowwithlucky-crypto/openclaw-skill-twitter-poster`,
+  `anamipit/twitter-x`, and `harrylabsj/twitter-thread-crafter` remained
+  no-license or prior-history blockers. Validator/tooling candidates included
+  `agent-ecosystem/skill-validator`, `himself65/skill-lint`,
+  `Flash-Brew-Digital/validate-skill`, `TanStack/intent`, and
+  `vesselofone/openclaw-skills`.
+- New PR: opened https://github.com/agent-ecosystem/skill-validator/pull/80
+  from verified fork `kriptoburak/skill-validator`, parent
+  `agent-ecosystem/skill-validator`. The target has MIT in `LICENSE`, no
+  duplicate TweetClaw/Xquik PR or issue history, and accepts examples/tests.
+  Contribution adds `examples/social-source-review`, documents it in
+  `examples/README.md`, and adds a CLI exit-code regression test. TweetClaw is
+  framed as read-only X/Twitter source evidence for approval-gated social
+  actions.
+- Target validation: `go run ./cmd/skill-validator check
+  examples/social-source-review` passed, including the TweetClaw GitHub link.
+  `go test -race ./... -count=1` passed. `npx --yes markdown-link-check`
+  passed for changed target markdown. `git diff --check` passed. Public hygiene
+  scan found only a pre-existing target README API-key-shaped placeholder; no
+  new secrets, private implementation details, unsupported claims, or stale
+  metadata were introduced. Badge was skipped because the target badge area is
+  CI/license package health and an xquik.com badge would not help readers.
+- PR readback: PR #80 is open, head branch
+  `codex/add-social-source-review-example`, commit `1211985`, four files
+  changed, `mergeStateStatus: BLOCKED`, no reviews, no checks yet. Blocker is
+  review/protection, not a validation failure.
+- OpenClaw docs and package metadata: current official docs readbacks succeeded
+  for `llms.txt`, `/cli/plugins`, `/clawhub/skill-format`,
+  `/clawhub/publishing`, `/plugins/manifest`, and `/plugins/sdk-runtime`.
+  Current docs still document plugin install, update, inspect, source
+  selection, npm pinning, runtime JSON inspection, skill frontmatter, owner
+  scope, package validation, and manifest/runtime metadata through these pages.
+  npm metadata remained OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`,
+  ClawHub `0.21.0`, and published TweetClaw `1.6.31`; local source remains
+  `1.6.32`.
+- Link hygiene: TweetClaw markdown-link-check initially failed because
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 500 from the
+  ClawHub app route. The old `https://clawhub.ai/kriptoburak/xquik-tweetclaw`
+  route returned HTTP 200 but is stale and not canonical for plugin install.
+  Removed the README ClawHub badge/link and replaced compact memory raw links
+  with non-clickable route notes until ClawHub owner-scope validation and route
+  availability are fixed.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed before
+  memory edits. Follow-up link check, memory check, and full local gate were run
+  after edits and recorded in the compact audit. The known nested OpenClaw
+  `protobufjs` and `tar` audit blocker and local `npm whoami` E401 blocker
+  remain unchanged.
+- Prompt self-improvement: no persisted automation prompt edit was needed. Keep
+  the current rule that broken public links must be fixed rather than archived;
+  when a canonical ClawHub plugin route returns 500, remove public links and
+  keep npm canonical instead of falling back to the stale skill route.
