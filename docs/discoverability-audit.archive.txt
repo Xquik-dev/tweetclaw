@@ -10567,3 +10567,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target-specific fork name and verify the fork parent before pushing. If a full
   target link check times out, include a narrow direct-link proof and avoid
   claiming target-wide health.
+
+## 2026-06-15 18:49 UTC heartbeat
+
+- Runtime limitation: this Codex runtime did not expose a GPT-5.5 selector or
+  extra-high reasoning selector. The run recorded that limitation and
+  continued. The same-thread heartbeat automation is already minutely; prompt
+  TOML measured 14,872 bytes and was not edited.
+- Start state: TweetClaw `master` was clean; xquik `master` had unrelated
+  untracked webshare and X preflight files, left untouched.
+- Crawler-first discovery: ran the xquik GitHub opportunity crawler with
+  managed research proxy, strict JSON output, bounded timeouts, and fresh
+  awesome-MCP, skill, OpenClaw, MCP, Codex, Claude, social media, Twitter-X,
+  registry, docs, examples, validator, framework, and package-tooling queries.
+  Managed research routes reported socket and pool failures without printing
+  credentials; parsed output was strict JSON with zero opportunities.
+- PR monitoring: searched 200 open authored PRs and exact-read 120 known PRs.
+  Rollup states were BEHIND 1, BLOCKED 5, CLEAN 87, DIRTY 13, UNKNOWN 1, and
+  UNSTABLE 13. No maintainer comments, review comments, DCO/CLA blockers,
+  generated-file drift, or target-owned check failures required action before
+  the safe conflict repair below.
+- PR repair: `WilliamAlexYT/x-research-skill#1` was conflict-only and safe to
+  fix from correctly parented fork `kriptoburak/william-x-research-skill`,
+  branch `codex/add-hermes-tweet-backend`. The branch merged current upstream
+  `main`, removed duplicate README footer conflict markers, preserved the
+  Hermes Tweet-compatible backend docs, committed `f79be0a`, pushed, and posted
+  https://github.com/WilliamAlexYT/x-research-skill/pull/1#issuecomment-4711302829.
+  Validation passed `git diff --check`, conflict-marker scan, README
+  markdown-link-check, direct link checks for the target ZIP, TweetClaw GitHub,
+  TweetClaw npm metadata, and xquik.com, plus `bun test lib/api.test.ts` with
+  7 tests passing. Final readback was open, ready, and `CLEAN`.
+- Fresh screening and duplicate gates: compact audit, archive, crawler output,
+  exact GitHub metadata, local target content, target open and closed PRs, and
+  target open and closed issues were checked for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub and npm URLs, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, MCP, social, and Twitter-X variants.
+  `SIRFU3G0/awesome-agent-skills` stayed low-trust because raw ZIP downloads
+  dominate and issues are disabled. `philipbankier/awesome-agent-skills` and
+  `junminhong/awesome-agent-skills` were duplicate-blocked by existing
+  TweetClaw or Xquik skill PRs. `tako068/awesome-agent-skills-mcp` stayed
+  lower-fit. `Walliiee/openclaw-skills` was MIT, non-fork, issue-enabled,
+  PR-enabled, active, duplicate-clean, and target-native for a portable skill.
+- New external PR: opened https://github.com/Walliiee/openclaw-skills/pull/2
+  from correctly parented fork `kriptoburak/walliiee-openclaw-skills`, branch
+  `codex/add-tweetclaw-twitter-workflows`, commit `7b25d77`. It adds
+  `tweetclaw-twitter-workflows`, a portable Agent Skill for X/Twitter research,
+  setup checks, read-first evidence, monitoring, and approval-gated TweetClaw
+  actions. PR readback was open, ready, `CLEAN`, with no comments, reviews, or
+  checks.
+- Target validation: `bash skill-auditor/scripts/validate-frontmatter.sh
+  tweetclaw-twitter-workflows` passed. `bash skill-auditor/scripts/measure.sh
+  tweetclaw-twitter-workflows` passed at 158 description chars and 136 lines.
+  `git diff --check`, conflict-marker scan, added-line public-hygiene scan, and
+  README plus skill markdown-link-check passed. Direct checks returned
+  HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub, Xquik,
+  OpenClaw, and AgentSkills. No NHS badge was added because the target has no
+  useful badge area.
+- OpenClaw and npm checks: fetched current official `llms.txt`, `/cli/plugins`,
+  manifest, permission-request, ClawHub publishing, and skill-format docs. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`,
+  ClawHub `0.21.0`, and published `@xquik/tweetclaw@1.6.31`; local source
+  remains `1.6.32`.
+- TweetClaw public-link validation: markdown-link-check passed for README,
+  OpenClaw setup, agent workflows, packaged skill, and code of conduct. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  ClawHub plugin page, xquik.com, the new Walliiee PR, and the repaired
+  WilliamAlexYT PR. `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`.
+- Security/package validation: `npm audit --omit=dev --audit-level=moderate`
+  and full `npm audit --audit-level=moderate` both failed on nested
+  `openclaw@2026.6.6` shrinkwrap advisories for `protobufjs` and `tar`. Treat
+  this as an upstream OpenClaw stable-package blocker before release-like
+  claims.
+- Package publication boundary: `npm whoami` returned E401 again. The
+  previously exposed npm credential was not used, printed, stored, or repeated;
+  npm publish stays blocked until the owner rotates it and configures an
+  approved npm session or secret store.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation after audit update: `git diff` whitespace check
+  passed; `npm run check-memory-md-size` passed at 15,035 of 15,360 bytes;
+  diff hygiene found no secret values or forbidden dash additions; `npm run
+  check:all` passed with typecheck, lint, duplicate detection, knip,
+  suppression checks, dash hygiene, memory, skill frontmatter, version parity,
+  build, OpenClaw fitness, package artifact, and 168 coverage tests at 100
+  percent coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, minutely cadence, mandatory per-run PR submission,
+  PR repair priority, duplicate and fork rules, OpenClaw docs checks, link
+  checks, validation gates, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, and self-improvement rule. Durable
+  lesson: for portable skill repos, prefer a self-contained `SKILL.md` with the
+  target's own frontmatter validator and size script instead of a thin catalog
+  link.

@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-15 17:55 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-15 19:02 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
@@ -195,19 +195,19 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-15 18:52 UTC: model/effort selectors unavailable; minutely unchanged.
-- PR gate exact-read 120 of 200 open PRs. Repaired
-  `Hairy-jumper134/last30days-cn-skill#1` by merging upstream, resolving the
-  README conflict, pushing `9e35f65`, and commenting validation results.
-- Crawler returned zero JSON after research-route failures. `lilyth-y` was MIT,
-  non-fork, PR-enabled, duplicate-clean, and had README contribution guidance.
-- New PR: https://github.com/lilyth-y/awesome-mcp-servers/pull/3 adds
-  TweetClaw to Social Media. Readback is open, ready, `CLEAN`, with no checks or
-  reviews yet.
-- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, and final
-  `npm run check:all` passed. Full target link check timed out after 3 minutes;
-  the added TweetClaw URL returned HTTP 200. Npm audit stays blocked by nested
-  OpenClaw `protobufjs` and `tar`; npm publish still E401.
+- 2026-06-15 19:05 UTC: model/effort selectors unavailable; minutely unchanged.
+- Crawler returned strict JSON with zero opportunities after managed
+  research-route failures. PR gate exact-read 120 of 200 open PRs.
+- Repaired `WilliamAlexYT/x-research-skill#1` by merging upstream, resolving the
+  README conflict, pushing `f79be0a`, and commenting validation results.
+  Readback is open, ready, and `CLEAN`.
+- New PR: https://github.com/Walliiee/openclaw-skills/pull/2 adds a portable
+  `tweetclaw-twitter-workflows` OpenClaw skill. Target is MIT, non-fork,
+  duplicate-clean, and PR-enabled. Readback is open, ready, `CLEAN`, with no
+  checks or reviews yet.
+- Target/TweetClaw links, OpenClaw docs/npm, OpenClaw fitness, memory, target
+  skill validators, and final `npm run check:all` passed. Npm audit stays
+  blocked by nested OpenClaw `protobufjs` and `tar`; npm publish still E401.
 
 ## Reporting Checklist
 
