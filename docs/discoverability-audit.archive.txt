@@ -8835,9 +8835,12 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   fork. Repair validation passed whitespace checks, conflict-marker scan,
   Python compile for `scripts`, markdown link check for README, public-hygiene
   scans, direct 200 checks for target repo, raw ZIP, and TweetClaw GitHub, plus
-  npm metadata check for current TweetClaw. A settled readback showed the PR
-  open, ready, `MERGEABLE`, and `CLEAN`; a later readback after other GitHub
-  updates returned transient `UNKNOWN` mergeability with the PR still open.
+  npm metadata check for current TweetClaw. A later final readback showed
+  upstream had moved again and the PR had returned to `CONFLICTING`/`DIRTY`;
+  the branch was merged with the new upstream `main`, the identical README
+  footer URL conflict was resolved again, commit `5aed877` was pushed, and the
+  final settled readback showed the PR open, ready, `MERGEABLE`, `CLEAN`, no
+  checks configured, and head `5aed877`.
 - Crawler-first discovery and candidate screening: the Xquik opportunity
   crawler ran first with research proxy, strict JSON output, focused
   social-skill, source-evidence, MCP, OpenClaw, Codex, and catalog queries,
