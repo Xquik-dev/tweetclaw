@@ -8506,3 +8506,87 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `gh repo view --json parent` can omit the parent object even when `isFork` is
   true. Also avoid multi-URL `curl` commands with a single `-o /dev/null`;
   loop per URL so public registry bodies are not dumped into logs.
+
+### 2026-06-15 01:35 UTC heartbeat
+
+- Runtime, security, and repo state: this heartbeat runtime still did not
+  expose model or reasoning-effort selectors, so GPT-5.5 and extra-high effort
+  could not be selected; recorded and continued. A full-access npm token was
+  exposed in chat before this heartbeat; it was treated as compromised, never
+  used, never printed, never stored, and no npm publish path was attempted.
+  TweetClaw started clean on `master` at `655ebed`, exact
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issue checks found no open
+  issues, and no Browser, Chrome, Context7, production SSH, dev server,
+  Socket.dev token, or npm publish path was used. No local `AGENTS.md` was
+  present in TweetClaw or its direct parent.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with managed research proxy, focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Twitter/X, social-media, and
+  awesome-skill queries, JSON output, bounded request timeouts, and proxy
+  warmup skipped. The crawler returned valid empty JSON while stderr showed
+  socket-close fetch failures, endpoint quarantine logs, and
+  `Proxy pool outage circuit opened`; no credentials printed. Continued with
+  exact PR readbacks, read-only web index results, targeted GitHub metadata,
+  clone scans, and issue/PR searches as permitted after crawler failure.
+- PR monitoring and repair pass: authored open PR search found 80 recent open
+  PRs by `kriptoburak`, and exact `gh pr view` readbacks covered all 80. The
+  only active-looking review metadata was `Flopsstuff/flugins#6`; thread-aware
+  GraphQL showed the CodeRabbit author-field comment is resolved, so no repair
+  commit or duplicate comment was needed. No maintainer request, DCO, CLA,
+  conflict, generated-file drift, failing current-head check, or valid current
+  bot finding blocked fresh outreach.
+- Official OpenClaw and package check: npm reported `openclaw` stable
+  `2026.6.6`, beta `2026.6.8-beta.1`, and modified
+  `2026-06-14T22:41:57.504Z`; `clawhub` `0.21.0`; and npm
+  `@xquik/tweetclaw` latest `1.6.31` with current OpenClaw install metadata.
+  Official-docs search reconfirmed current plugin install, update, inspect,
+  runtime JSON, manifest, bundle, dependency-resolution, community,
+  install-policy, and tool-plugin guidance without changing TweetClaw metadata.
+- Fresh candidate screening: compact audit, archive, web-index results, exact
+  metadata, target content, local clones, fork metadata, and open plus closed
+  target PRs/issues were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, xquik.com, OpenClaw, Twitter/X, SKILL.md, social media,
+  source packets, marketplace, MCP, plugin, and badge variants.
+  `alirezarezvani/claude-skills` was blocked by prior Xquik history and
+  self-contained library conventions; `blacktwist/social-media-skills` and
+  `jonathimer/devmarketing-skills` were duplicate-blocked by existing open PRs;
+  `savethepolarbears/agenthaus-marketplace` was selected because it is MIT
+  licensed, non-fork, non-archived, issue-enabled, duplicate-clean across audit,
+  target content, and target open/closed PRs/issues, has a native
+  `social-media` plugin, and benefits from optional X/Twitter source packets
+  while keeping drafting and publishing inside AgentHaus.
+- New PR: opened `savethepolarbears/agenthaus-marketplace#125` at
+  https://github.com/savethepolarbears/agenthaus-marketplace/pull/125 from the
+  correctly parented fork `kriptoburak/agenthaus-marketplace`, branch
+  `codex/tweetclaw-source-packets`, commit `b0ca9d1`. The PR adds optional
+  TweetClaw/OpenClaw source-packet guidance to the `social-media` skill, keeps
+  final wording, approvals, scheduling, posting, credentials, analytics, and
+  strategy decisions inside AgentHaus or the user's chosen publishing flow,
+  adds the xquik.com NHS Agentic Readiness badge to the existing root badge
+  strip, and repairs 2 pre-existing stale README links.
+- Target validation and readback: target validation passed `git diff --check`,
+  `bash scripts/validate-plugins.sh` with 30 plugins passed, 0 failed, and the
+  pre-existing missing `skills_index.json` warning, and `npx --yes
+  markdown-link-check README.md plugins/social-media/README.md
+  plugins/social-media/skills/social-content/SKILL.md`. Direct checks returned
+  200 for the new PR, fork branch, AgentHaus releases page, live MCP
+  specification page, NHS page and badge, TweetClaw GitHub, npm registry
+  metadata, and current OpenClaw docs. Added-line public-hygiene scans found no
+  exposed secrets, private implementation details, internal cost mechanics,
+  restricted provider/source names, or unsupported claims. Final PR readback
+  showed open, ready, `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks,
+  and 3 changed files.
+- TweetClaw links, validation, and prompt self-improvement: a strict
+  source-derived TweetClaw public URL sweep checked README, OpenClaw setup docs,
+  agent workflows docs, packaged skill, package metadata, plugin manifest, and
+  code of conduct; all 46 non-Context7 URLs returned 200. Omit-dev and full
+  `npm audit` found 0 vulnerabilities. `npm run check-memory-md-size` remained
+  exactly 15360/15360 bytes, and automation TOML remained 14872 bytes, so no
+  prompt edit was saved. `npm run check-openclaw-platform-fitness` passed
+  before the archive write. Durable lesson: when a user pastes a package
+  publish token into chat, treat it as compromised even if a later duplicate
+  request omits it; do not use it for publishing, and record the rotation need
+  without repeating the token value. Also keep the stricter URL parser that
+  stops at `]` for reference-style Markdown so link sweeps do not probe
+  bracket-suffixed aliases.
