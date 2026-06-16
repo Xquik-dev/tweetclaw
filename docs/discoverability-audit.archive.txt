@@ -11016,6 +11016,95 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - TweetClaw audit commit prepared for push:
   `06e0e0807a7a0610861309e2e26566c3af982bc3`.
 
+## 2026-06-16 19:03 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, tweet-scraper, TweetClaw, and catalog queries. The
+  crawler returned strict JSON with one candidate,
+  `pkobielak/social-superpowers-mcp`, blocked by existing open TweetClaw PR 1.
+  Proxy metadata only was observed; no credential values were printed or stored.
+- PR monitoring and repair gate: `Xquik-dev/tweetclaw` had no open issues or
+  PRs. Exact readbacks covered 100 open `kriptoburak` PRs. Narrowed flags were
+  bot review summaries, target-owned Vercel authorization, successful review
+  checks, or already-addressed bot findings. `indranilbanerjee/digital-marketing-pro#7`
+  already had the CodeRabbit naming nit repaired; `MauricioPerera/agent-skills-pack#2`
+  already had the Gemini parallelism nit repaired; `Qredence/skill-fleet#80`
+  already had the schema-example drift repaired. No safely repairable maintainer
+  request, review comment, CI failure, conflict, DCO, CLA, generated-file drift,
+  or valid bot finding blocked fresh outreach.
+- Fresh screening: target searches covered awesome MCP directories, MCP
+  marketplaces, agent-skill repositories, Claude Code skill repositories, and
+  OpenClaw Twitter/X skill repos. `hoodini/ai-agents-skills` was blocked by
+  missing license and merged x-twitter-scraper PR 1. `MasonLee3721/agent_skills`
+  was blocked by missing license. `gregoryfoster/skills` and
+  `yenava/yenava-skills` were MIT and duplicate-clean but lower fit for this
+  run. `NORSAIN-AI/claude-code-skills` was selected because it is MIT, active,
+  non-fork, non-archived, issue-enabled, duplicate-clean across compact audit,
+  archive, target content, and target PRs/issues, and it has a structured
+  `skills/integrations/` area plus metadata validator.
+- Fresh PR submitted: https://github.com/NORSAIN-AI/claude-code-skills/pull/7
+  from correctly parented fork `kriptoburak/norsain-claude-code-skills`, branch
+  `codex/tweetclaw-x-source-evidence`, commit `57f3bfb`. The PR adds
+  `skills/integrations/tweetclaw-x-source-evidence/SKILL.md` and registers it
+  in `skills/INDEX.md`. The skill keeps TweetClaw as a read-only evidence
+  collector for public tweets, replies, followers, user lookup, media
+  references, monitor snapshots, webhook events, and giveaway evidence, while
+  routing drafting, posting, replies, DMs, uploads, scheduling, and
+  account-control actions to separate explicit approval workflows. Readback:
+  open, mergeable, no comments, no reviews, no checks.
+- Target validation: `python3 tools/validate-skill-metadata.py --file
+  skills/integrations/tweetclaw-x-source-evidence/SKILL.md`, `git diff
+  --check`, `npx --yes markdown-link-check skills/INDEX.md
+  skills/integrations/tweetclaw-x-source-evidence/SKILL.md --quiet`, and
+  `npx --yes markdownlint-cli2 skills/INDEX.md
+  skills/integrations/tweetclaw-x-source-evidence/SKILL.md` passed. Direct
+  checks returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  OpenClaw plugin docs, and the PR. The npm package web page was avoided in the
+  target skill because automated checks get HTTP 403 while the registry endpoint
+  returns metadata. No NHS badge was added because the target has no useful
+  badge area.
+- Official OpenClaw and package checks: `docs.openclaw.ai` returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/cli/skills`,
+  `/plugins/install-overrides`, and `/help/debugging`. Npm metadata returned
+  OpenClaw latest `2026.6.8`, beta `2026.6.8-beta.2`, modified
+  `2026-06-16T16:27:41.883Z`; `clawhub` remained `0.22.0`; published TweetClaw
+  remained `1.6.31` while source remains unpublished `1.6.32`.
+- Broken links and public surfaces: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry, canonical ClawHub route, OpenClaw Directory, xquik.com,
+  docs.xquik.com, and the new PR. The npm web page still returned curl HTTP 403,
+  while `npm view` and the registry endpoint returned current metadata.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; forced fix remains unsafe
+  because it would install `openclaw@0.0.1`. GitHub Dependabot reports the
+  matching three open alerts: one `tar` and two `protobufjs`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  structured skill repos with validators are a strong fit when TweetClaw is
+  contributed as an experimental integration skill with explicit read-only
+  evidence boundaries and write-action approval gates.
+- Prompt byte check: automation TOML measured `14872` bytes; decoded prompt
+  measured `14530` bytes. Both remained under the 15 KiB persisted prompt cap.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 17:55 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
