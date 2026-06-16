@@ -195,21 +195,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- Earlier outreach and repair details are archived.
-- 2026-06-16 14:27 UTC: model/effort selectors unavailable. Crawler returned 0
-  repos. TweetClaw had no open PRs/issues. Readback of 100 authored PRs found no
-  safely repairable maintainer request; blockers were review queues, branch
-  protection, owner-side Vercel authorization, or GitHub unknown merge state.
-- Fresh PR: https://github.com/Bin-Huang/x-analytics-cli/pull/1 adds a packaged
-  skill boundary that keeps `x-analytics-cli` on read-only X API analytics,
-  points OpenClaw users to configured TweetClaw only for unsupported write,
-  media, DM, follower export, or monitoring jobs, and fixes a stale X docs link.
-  Readback: open, clean, mergeable, no checks configured.
-- Checks: target link check passed; OpenClaw docs/npm current at `2026.6.6`;
-  TweetClaw links and `npm run check:all` passed. Known npm audit blocker
-  remains nested OpenClaw `hono`/`protobufjs`/`tar`; dry-run did not provide a
-  safe root fix and force would downgrade OpenClaw. Prompt bytes `14530`;
-  automation TOML `14872`.
+- 2026-06-16 14:44 UTC: model/effort selectors unavailable. Crawler returned 0
+  repos; TweetClaw had no PRs/issues. 100-PR readback found 1 conflict; repaired
+  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
+  at `83ddd5d`, final clean/mergeable.
+- Fresh PR: https://github.com/pockebot/openpocket/pull/117 adds a
+  Data-Heavy Workflows boundary to `x-twitter-play`, keeping visible UI actions
+  in OpenPocket while routing bulk search, follower export, user lookup, media,
+  monitoring, webhooks, giveaway draws, and broad DM inspection to tools such as
+  TweetClaw. Readback: open, mergeable, blocked by owner-side Vercel auth.
+- Checks: target diff, frontmatter, TweetClaw URL, and link checks passed.
+  OpenClaw docs/npm current at `2026.6.6`; TweetClaw links, build, platform
+  fitness, and `npm run check:all` passed. Known audit blocker remains nested
+  OpenClaw `hono`/`protobufjs`/`tar`. Prompt bytes `14530`; TOML `14872`.
 
 ## Reporting Checklist
 
