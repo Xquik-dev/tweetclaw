@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 21:50 UTC: latest
+- OpenClaw npm checked as of 2026-06-16 22:13 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
   llms, plugin CLI, manifest, permissions, tool plugins, SDK entrypoints,
   ClawHub publishing, skills, plugin install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 21:50 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 22:13 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,17 +194,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 21:50 UTC: model/effort selectors unavailable. Crawler returned 0
-  opportunities after proxy-route failures. TweetClaw had no PRs/issues.
-  Audit-tracked PRs had no safe maintainer-actionable repair.
-- Fresh PR: https://github.com/Kartikm09/agentic-social-redteam-skillpack/pull/1
-  adds a tested source-provenance audit check, updates packaged skill guidance,
-  and keeps TweetClaw as optional X/Twitter source intake only. Readback: open,
-  mergeable, no comments, reviews, or checks.
-- Checks: duplicate gates, fork-parent verification, target tests and links,
-  OpenClaw docs/package metadata, TweetClaw links, platform fitness, memory cap,
-  and `npm run check:all` passed. npm audit still reports nested OpenClaw
-  `protobufjs` and `tar` advisories.
+- 2026-06-16 22:13 UTC: model/effort selectors unavailable. Crawler returned 0
+  opportunities with proxy metadata only. TweetClaw had no PRs/issues. Open
+  kriptoburak and audit-tracked PR readbacks had no safe repair.
+- Fresh PR: https://github.com/Rickidie/marketing-workflow-template/pull/1
+  adds optional X/Twitter discourse source intake to the content trends skill,
+  keeps TweetClaw as optional source intake, and leaves drafting, review,
+  scheduling, and publishing with the target workflow. Readback: open,
+  mergeable, clean, no comments, reviews, or checks.
+- Checks: duplicate gates, fork-parent verification, target link/frontmatter
+  checks, OpenClaw docs/package metadata, TweetClaw links, platform fitness,
+  memory cap, and `npm run check:all` passed. npm audit still reports nested
+  OpenClaw `protobufjs` and `tar` advisories.
 
 ## Reporting Checklist
 
