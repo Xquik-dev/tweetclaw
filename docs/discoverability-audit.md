@@ -49,12 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 22:33 UTC: latest
+- OpenClaw npm checked as of 2026-06-16 22:43 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
-  llms, plugin CLI, manifest, permissions, tool plugins, SDK entrypoints,
-  ClawHub publishing, skills, plugin install overrides, and debugging.
+  llms, plugin CLI, current plugin manifest, permissions, tool plugins, SDK
+  entrypoints, ClawHub publishing and skill format, plugin management, and help
+  debugging. Old shortcut routes now return 404; use canonical `/plugins/...`
+  and `/help/...` paths.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 22:33 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 22:43 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,16 +196,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 22:33 UTC: model/effort selectors unavailable. Crawler returned 0
-  opportunities with proxy metadata only. TweetClaw had no PRs/issues. Sixty
-  open kriptoburak PRs plus audit-tracked readbacks had no safe repair.
-- Fresh PR: https://github.com/demtomi/social-media-agent-toolkit/pull/1 adds
-  optional X/Twitter source packets to content ideation and the Topic Bank
-  schema, keeps TweetClaw as optional source intake, and leaves writing,
-  scheduling, publishing, replies, messages, and account changes with the
-  target workflow. Readback: open, mergeable, clean, no comments, reviews, or
-  checks.
-- Checks: duplicate gates, fork-parent verification, target link/frontmatter
+- 2026-06-16 22:43 UTC: model/effort selectors unavailable. Two crawler passes
+  returned 0 opportunities with proxy metadata only. TweetClaw had no PRs or
+  issues. Current open outreach readbacks had no safe repair.
+- Fresh PR: https://github.com/mrsahilbeniwal/social-campaigns/pull/1 adds
+  public X/Twitter source-packet guidance, an optional TweetClaw/OpenClaw
+  collection path, and approval boundaries to Social Campaign; it also repairs
+  a pre-existing disabled Discussions link. Readback: open, mergeable,
+  unstable only because no checks were reported, no comments or reviews.
+- Checks: duplicate gates, fork-parent verification, target markdown lint/link
   checks, OpenClaw docs/package metadata, TweetClaw links, platform fitness,
   memory cap, and `npm run check:all` passed. npm audit still reports nested
   OpenClaw `protobufjs` and `tar` advisories.
