@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 15:26 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 15:47 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 15:26 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 15:47 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,18 +194,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 15:26 UTC: model/effort selectors unavailable. Crawler returned 0
-  repos; TweetClaw had no PRs/issues. 100 authored PR readbacks found only
-  target-owned Vercel auth failures, non-actionable bot notes, and invalid or
-  outdated review comments.
-- Fresh PR: https://github.com/AliceLJY/digital-clone-skill/pull/1 adds
-  public/consented X/Twitter source-packet guidance for Mentor Mode and removes
-  one stale target-owned `content-publisher` link. Readback: open, ready,
-  mergeable, no checks/comments.
-- Checks: target diff/frontmatter/link checks, TweetClaw links, official
+- 2026-06-16 15:47 UTC: model/effort selectors unavailable. Crawler returned 0
+  repos; TweetClaw had no PRs/issues. Authored PR readbacks found
+  `modu-ai/cowork-plugins#5` conflicted; repaired and pushed `f2c40d2`, now
+  mergeable with only target-owned Vercel authorization failing.
+- Fresh PR: https://github.com/kushalsamani/social-media-ai-agent/pull/1 adds
+  optional X/Twitter source-packet support and docs to a MIT CrewAI workflow,
+  with TweetClaw as optional extractor. Readback: open, clean, mergeable, no
+  checks/comments.
+- Checks: target Python compile/diff/link checks, TweetClaw links, official
   OpenClaw docs, npm metadata, and platform fitness passed. `npm audit` remains
   blocked by nested OpenClaw `hono`/`protobufjs`/`tar`; dry-run made no fix.
-  Prompt bytes `14530`; TOML `14872`.
+  Prompt unchanged; automation TOML remains under cap.
 
 ## Reporting Checklist
 

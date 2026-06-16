@@ -14524,3 +14524,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   over evidence grading, refinement, negative-space analysis, and verification.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-16 15:47 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`, no Context7 work was done, and no
+  Browser, Chrome, GUI, dev server, production SSH, destructive git action, or
+  secret read was used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-evidence, and skill-catalog queries. The
+  crawler returned strict JSON with zero opportunities. Proxy metadata only was
+  observed; no credential values were printed or stored.
+- PR monitoring and repair: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  A readback of 100 open `kriptoburak` PRs found `modu-ai/cowork-plugins#5`
+  conflicted and dirty. The branch was updated in `/tmp/tc-repair-cowork` by
+  merging upstream `main`, resolving marketplace and README conflicts, aligning
+  `moai-xquik` plugin and skill metadata with the upstream `2.23.0` validator,
+  and removing 2 pre-existing invalid agent colon references that the upstream
+  validator now rejects. Commit `f2c40d2` was pushed to
+  `feature/moai-xquik`. Readback: open, mergeable, head `f2c40d2`, with only a
+  target-owned Vercel authorization failure remaining. Comment:
+  https://github.com/modu-ai/cowork-plugins/pull/5#issuecomment-4720755481
+- Repair validation: `bash scripts/validate-marketplace.sh`, `npm test`,
+  `git diff --check`, staged diff check, and
+  `npx --yes markdown-link-check moai-xquik/skills/xquik-mcp-setup/SKILL.md --quiet`
+  passed. Full root README link checking reported 9 pre-existing target-owned
+  external failures such as `claude.ai` 403 and third-party 404 or timeout
+  responses, with no new link introduced by the repair.
+- Fresh target screening: after the crawler returned zero, archive and target
+  duplicate checks plus exact metadata screened social-source, MCP, and skill
+  lanes. Duplicate-blocked or already-handled examples included
+  `kennyzir/twitter-automation-local`, `zhuyansen/onchain-alpha-radar`,
+  `arvindrk/twitter-agent`, and known Twitter MCP repos from prior archives.
+  `kushalsamani/social-media-ai-agent` was selected because it is public, MIT
+  licensed, not a fork, not archived, recently pushed, and has no open or closed
+  TweetClaw, Xquik, x-twitter-scraper, OpenClaw, or ClawHub PR, issue, or
+  content duplicate.
+- Fresh PR submitted: https://github.com/kushalsamani/social-media-ai-agent/pull/1
+  from correctly parented fork `kriptoburak/social-media-ai-agent`, branch
+  `codex/x-twitter-source-packet`, commit `5fa3456`. The PR adds optional
+  `resources/context/x_twitter_source_packet.md` input for CrewAI market
+  research and social post planning, ignores local source packets, adds a safe
+  example packet, fixes the README badge alt typo, and aligns the default
+  product description with the project. TweetClaw is framed only as an optional
+  extractor; the target still owns research, drafting, review, scheduling, and
+  publishing decisions. Readback: open, clean, mergeable, zero comments, zero
+  reviews, and zero check runs.
+- Target validation: passed `python3 -m py_compile marketing_crew.py
+  render_markdown.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Public-hygiene scan found
+  only intentional privacy guidance in the new example packet and target-owned
+  existing text such as `Google GenAI provider` and SEO internal-linking terms.
+- Badge rule: the target README has badges, but the badge area describes stars
+  and license. An xquik.com readiness badge would not help readers evaluate the
+  project, so no badge was added.
+- Official OpenClaw and package checks: current official docs returned HTTP 200
+  for `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, and `/help/debugging`.
+  Npm metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  modified `2026-06-16T01:38:56.845Z`; `clawhub` remained `0.22.0`; published
+  TweetClaw remained `1.6.31`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, canonical ClawHub route, OpenClaw Directory, xquik.com, docs.xquik.com,
+  `kushalsamani/social-media-ai-agent#1`, and `modu-ai/cowork-plugins#5`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  high advisories for `hono` and `protobufjs` plus a moderate `tar` advisory.
+  `npm audit fix --package-lock-only --dry-run` made no package-lock changes
+  and still reported the same nested OpenClaw tree; the forced path would
+  install invalid `openclaw@0.0.1` for `tar`, so this remains an upstream host
+  dependency blocker rather than a TweetClaw package edit.
+- Memory and prompt: compact audit and release notes were updated and details
+  moved here. `npm run check-memory-md-size` passed at 14996/15360 bytes.
+  Automation TOML measured 14872 bytes, with prompt text at 14530 bytes, under
+  the 15 KiB prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  CrewAI marketing workflows are a good fit when TweetClaw remains an optional
+  source-packet extractor and the target keeps strategy, drafting, scheduling,
+  publishing, and analytics authority.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
