@@ -12878,6 +12878,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
 
+## 2026-06-16 04:45 UTC - tmchow Agent Skills TweetClaw workflow skill
+
+- Runtime and scope: same-thread heartbeat runtime did not expose model or
+  reasoning-effort selection, so GPT-5.5 and extra-high effort could not be
+  selected. Continued under the available runtime and recorded the limitation.
+  Xquik remained dirty with unrelated user changes and was used only for the
+  crawler; TweetClaw started clean on `master` at `3a15dcd`.
+- PR monitoring: crawler-first PR/opportunity pass from
+  `/Users/burak/Developer/xquik` with managed research proxy returned strict
+  JSON and no opportunities. Exact `gh pr view` readbacks covered 100 open
+  authored PRs: 7 blocked, 0 dirty, 26 unstable, 9 with comments, 5 with
+  reviews, 5 with non-success checks, and 0 readback errors. Comment/check
+  readbacks found no maintainer-actionable repair: Vercel failures in
+  `yaacovcorcos/papiskill#1`, `modu-ai/cowork-plugins#5`,
+  `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290` are target-owner authorization gates;
+  `diaz3618/argus-mcp-catalog#1`, `Sukumar-Elley/awesome-mcp-servers#1`,
+  `Walliiee/openclaw-skills#2`, `wangzhongmin/awesome-mcp-servers#2`, and
+  `stone16/wingman-x#21` had only bot summaries, already-addressed notes, or
+  no-change approvals. `Qredence/skill-fleet#80` Gemini inline comments were
+  checked against PR head `c19a2b8`; `SendMessageResponse` already contains
+  `response`, `reasoning`, `suggested_actions`, `session_id`, and optional
+  `metadata`, and `SessionHistoryResponse` has no required `metadata`, so no
+  repair was made.
+- Fresh discovery and duplicate gates: searched compact audit, archive, target
+  metadata, local clones, target content, and open plus closed target PRs/issues
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, the TweetClaw GitHub URL, npm
+  URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Twitter/X, skill,
+  catalog, validator, source-evidence, media, direct-message, monitor, webhook,
+  giveaway, and package-tooling variants. Duplicate or prior-history blockers
+  included `TerminalSkills/skills`, `himself65/skill-lint`,
+  `VoltAgent/awesome-openclaw-skills`, `LeoYeAI/openclaw-master-skills`,
+  `blessonism/openclaw-search-skills`, and `sharbelxyz/x-bookmarks`.
+  `tmchow/agent-skills` was selected because it is MIT licensed, active,
+  non-fork, non-archived, issue-enabled, duplicate-clean, and has a native
+  top-level `SKILL.md` layout plus ClawHub publish opt-in registry.
+- External PR: opened https://github.com/tmchow/agent-skills/pull/54 from the
+  correctly parented fork `kriptoburak/tmchow-agent-skills`, branch
+  `codex/add-tweetclaw-twitter-workflows`, commit
+  `d5b1e3f063b7a5212ef5e39a2d1474531a997499`. The common fork name
+  `kriptoburak/agent-skills` was rejected because it points at parent
+  `drtamar/agent-skills`. PR 54 adds `tweetclaw-twitter-workflows/` with
+  `SKILL.md`, `README.md`, and `references/source-packets.md`, updates the root
+  catalog, and opts the skill into `.github/clawhub-publishable.txt`.
+  TweetClaw is framed as an already configured X/Twitter source-evidence layer
+  for search tweets, search replies, scrape tweets, user lookup, follower
+  export, media workflows, monitors, webhooks, giveaway draws, and
+  one-time-approved posting or replies. Drafting, scoring, scheduling,
+  analytics, publishing decisions, credentials, and raw session material stay
+  outside the skill.
+- Target validation and readback: target validation passed `git diff --check`,
+  Python YAML/frontmatter parsing for every `SKILL.md`, target frontmatter
+  version helper for `tweetclaw-twitter-workflows`, installed bundle size check,
+  skills CLI local listing, Markdown link checks for root README and the new
+  skill docs, added-line public-hygiene and dash scans, current skills CLI,
+  Hermes skills install help, OpenClaw skills help, and OpenClaw plugins help.
+  Direct link checks returned HTTP 200 for TweetClaw GitHub, npm registry
+  metadata, the future ClawHub slug, OpenClaw docs, PR 54, and the fork branch.
+  PR readback showed open, ready, mergeable, clean, 5 changed files, 220
+  additions, no comments, no reviews, no checks, and head `d5b1e3f`. No NHS
+  badge was added because the target badge area is not a useful per-skill trust
+  surface.
+- OpenClaw, package, and broken-link checks: official OpenClaw docs routes
+  `llms.txt`, `/cli/plugins`, `/clawhub/publishing`, plus previously checked
+  plugin docs returned HTTP 200. Npm metadata returned OpenClaw latest
+  `2026.6.6`, beta `2026.6.8-beta.2`, ClawHub CLI `0.22.0`, and published
+  TweetClaw `1.6.31`; source remains `1.6.32`. TweetClaw Markdown link checks
+  passed for README, OpenClaw setup docs, agent workflows docs, packaged skill,
+  compact release notes, and compact audit. OpenClaw platform fitness passed.
+  `npm run check:all` passed with 168 tests and 100% coverage after the audit
+  update. Final automation Markdown memory measured `14968/15360` bytes. Changed
+  TweetClaw files were `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+  `npm audit` at moderate level remains blocked by nested OpenClaw `protobufjs`
+  and `tar` advisories; the force fix would install invalid `openclaw@0.0.1`,
+  so dependency files were not changed.
+- Prompt self-improvement: no persisted automation prompt edit was useful. New
+  durable lessons are now archived: when a generic fork name already targets a
+  different parent, create a parent-specific fork before pushing; `tmchow/
+  agent-skills#54` is duplicate-blocked for future TweetClaw submissions unless
+  the maintainer asks for follow-up; external Agent Skills repos with ClawHub
+  publish registries can accept a source-evidence workflow skill when it
+  includes human README, agent instructions, source-packet reference, root
+  catalog row, and publish opt-in together. Persisted prompt bytes were checked
+  at `14530`, TOML bytes at `14872`, and no prompt edit was saved.
+
 ## 2026-06-16 04:20 UTC - Skill Generator third-party API example
 
 - Runtime and scope: the heartbeat requested GPT-5.5 with extra-high reasoning,

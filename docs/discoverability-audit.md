@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 04:20 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 04:45 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 04:20 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 04:45 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,18 +196,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 04:20 UTC: model/effort selectors unavailable. Exact-read 100 open
-  authored PRs found no conflict, DCO, CLA, or current-head repair blocker;
-  `Qredence/skill-fleet#80` bot notes were invalid against PR head.
-- Crawler strict JSON returned no candidates; fresh screening selected Apache-2.0
-  `mattsfraser/skill-generator` after duplicate and license gates.
-- Fresh PR: https://github.com/mattsfraser/skill-generator/pull/1 adds a
-  reviewable third-party API skill example using TweetClaw only as optional
-  public X/Twitter source-packet evidence. Target diff, frontmatter, Markdown
-  links, source link, fork parent, and PR readback passed.
+- 2026-06-16 04:45 UTC: model/effort selectors unavailable. Crawler strict JSON
+  returned no candidates. Exact-read 100 authored open PRs found no safe repair
+  blocker; target-owned Vercel gates and stale Qredence bot notes remain.
+- Fresh PR: https://github.com/tmchow/agent-skills/pull/54 adds a
+  TweetClaw X/Twitter workflow skill to a MIT Agent Skills repo after duplicate,
+  license, fork, target-policy, link, frontmatter, CLI, and PR readback gates.
 - OpenClaw docs/npm and TweetClaw public links stayed current. ClawHub route
   stayed HTTP 200 but stale at `1.6.26`; nested OpenClaw audit advisories remain
-  upstream. `check:all` passed.
+  upstream. Target links and TweetClaw checks passed.
 
 ## Reporting Checklist
 
