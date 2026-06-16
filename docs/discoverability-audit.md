@@ -49,14 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 18:05 UTC: latest
-  `2026.6.8`, beta `2026.6.8-beta.2`; `developers.openclaw.com` failed DNS and
-  `openclaw.com/llms.txt` returned HTTP 500, so `docs.openclaw.ai` plus exact
-  `openclaw/openclaw` GitHub docs were checked for plugins, manifest,
-  permission requests, tool plugins, bundles, SDK entrypoints, ClawHub,
-  skills, install overrides, and debugging.
+- OpenClaw npm checked as of 2026-06-16 18:25 UTC: latest
+  `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
+  llms, plugin CLI, manifest, permissions, tool plugins, SDK entrypoints,
+  ClawHub publishing, skills, install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 18:07 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 18:29 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,16 +194,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 17:55 UTC: model/effort selectors unavailable. Crawler returned 0;
-  TweetClaw had no PRs/issues, and no existing outreach PR needed repair.
-- Fresh PR: https://github.com/Prem95/socialautonomies/pull/2 adds optional
-  TweetClaw source-context guidance to an existing X automation library section
-  and corrects package repository metadata. Readback: open, mergeable, with
-  GitGuardian success.
-- Checks: target diffs, target package JSON, direct new links, TweetClaw
-  Markdown links, OpenClaw docs and repo-doc fallback, npm metadata, public
-  probes, build, platform fitness, and memory size passed. Known blockers:
-  nested OpenClaw `protobufjs`/`tar`, npm page curl 403, Glama curl timeout.
+- 2026-06-16 18:16 UTC: model/effort selectors unavailable. Crawler returned 0;
+  TweetClaw had no PRs/issues, and 100 open authored PR readbacks found no
+  actionable repair.
+- Fresh PR: https://github.com/fayazara/twitter-ai-agent/pull/1 documents
+  optional TweetClaw source context before confirmed posting in a Cloudflare
+  Twitter agent and fixes README/env-example setup wording. Readback: open,
+  mergeable, no checks.
+- Checks: target whitespace, README Prettier, README links, duplicate gates,
+  OpenClaw docs, npm metadata, TweetClaw Markdown links, platform fitness, audit
+  state, and registry/public probes passed. Known blockers: target-owned
+  Prettier/TypeScript drift, nested OpenClaw `protobufjs`/`tar`, npm page curl
+  403 while npm registry is 200.
 
 ## Reporting Checklist
 

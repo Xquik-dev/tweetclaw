@@ -10855,6 +10855,83 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-16 18:16 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-context, tweet-scraper, and catalog queries.
+  The crawler returned strict JSON with zero opportunities. Proxy metadata only
+  was observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found 17 flagged items. Each flagged PR was checked
+  for maintainer comments, review comments, CI failures, conflicts, DCO/CLA
+  blockers, and valid bot feedback. No actionable repair remained. Target-owned
+  Vercel authorization failures, review-required labels without comments, and
+  already-addressed bot suggestions were recorded as no-action states.
+- Fresh target screening: after crawler returned zero, exact GitHub searches
+  screened Twitter AI agent, X API agent, source-context, and skill lanes.
+  Duplicate or blocked leads included previously archived
+  `Saminiscool/twitter-ai-agent`, `jarrodwatts/x-api-skill`, and the last-run
+  `Prem95/socialautonomies`. `fayazara/twitter-ai-agent` was fresh, MIT,
+  non-fork, active enough for the lane, and duplicate-clean across compact
+  memory, archive, target content, and open/closed PRs/issues.
+- Fresh PR submitted: https://github.com/fayazara/twitter-ai-agent/pull/1 from
+  correctly parented fork `kriptoburak/fayazara-twitter-ai-agent`, branch
+  `codex/add-source-context-docs`, commit `7de245d`. The original
+  `kriptoburak/twitter-ai-agent` fork pointed to a different upstream, so the
+  target was forked with a distinct user-owned name to preserve parent clarity.
+  The PR documents optional TweetClaw source context before the existing
+  confirmed `composeTweet` flow, keeps drafting and posting authority inside the
+  target app, fixes the README title and keys heading, and makes the access-token
+  example generic. No NHS badge was added because the target has no useful badge
+  area.
+- Target validation: `git diff --check`, focused Prettier check for README, and
+  Markdown link checking for README passed. `npm ci --ignore-scripts` completed
+  but reported pre-existing dependency audit findings. `npm run check` still
+  fails on pre-existing Prettier drift in package/source files. `npx tsc` still
+  fails on pre-existing typing issues in `src/tools.ts` and `src/twitter-api.ts`.
+  Biome completed with existing warnings. The PR body distinguishes these
+  target-owned blockers from the two-file docs contribution.
+- Broken links and public hygiene: target README link checking passed. Direct
+  public probes returned HTTP 200 for the new PR, TweetClaw GitHub, canonical
+  ClawHub route, OpenClaw Directory, xquik.com, and docs.xquik.com. The npm
+  package page returned curl HTTP 403, while `npm view` and the npm registry
+  endpoint returned current package metadata and HTTP 200. Target diff and PR
+  body scans found only intended X/Twitter context and env-placeholder wording.
+- Official OpenClaw and package checks: `docs.openclaw.ai` returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/cli/skills`,
+  `/plugins/install-overrides`, and `/help/debugging`. Npm metadata returned
+  OpenClaw latest `2026.6.8`, beta `2026.6.8-beta.2`, modified
+  `2026-06-16T16:27:41.883Z`; `clawhub` remained `0.22.0`; published TweetClaw
+  remained `1.6.31` while source remains unpublished `1.6.32`.
+- TweetClaw validation: TweetClaw README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, compact release memory, and compact audit passed
+  Markdown link checking. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; forced fix remains unsafe
+  because it would install `openclaw@0.0.1`. GitHub Dependabot reports the
+  matching three open alerts: one `tar` and two `protobufjs`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  when a user account has an existing fork name for a different upstream, use a
+  distinct fork name and verify parent before pushing.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 17:55 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
