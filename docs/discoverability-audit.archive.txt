@@ -10855,6 +10855,95 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-16 21:50 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-packet, validator, and skill-catalog queries.
+  Proxy routes failed or were quarantined and the final strict JSON contained
+  zero opportunities. Proxy metadata only was observed; no credential values
+  were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. Broad
+  authenticated PR search failed with query and transport errors, so broad
+  authenticated search was stopped for this run. Exact readbacks checked
+  `i-am-bee/beeai-framework#1456`,
+  `TABARC-Code/-B2B-B2C-audience-strategist-and-market-researcher-Claude-Skill#1`,
+  `modu-ai/cowork-plugins#5`, `Jamkris/everything-gemini-code#91`,
+  `nikships/skills-registry#45`, `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `GTMify/aigtm#14`, and `pinkpixel-dev/skills-collection-1#3`. No safe repair
+  was pending. Remaining blockers were target-owned Vercel authorization,
+  review-required queues, old already-addressed comments, stale bot advice to
+  use unpublished `@xquik/tweetclaw@1.6.32`, or clean PR state.
+- Fresh candidate screening: compact audit, archive, crawler output, exact repo
+  metadata, local target content, fork metadata, and open plus closed target PRs
+  and issues were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  xquik.com, OpenClaw, Twitter/X, SKILL.md, source evidence, social automation,
+  red-team, validator, package-tooling, and catalog variants. Prior-history or
+  duplicate blockers included `bradautomates/head-of-content`,
+  `blacktwist/social-media-skills`, `hyperfx-ai/marketing-skills`,
+  `jedi4ever/social-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `CentauriAgent/agent-social-skills`, `typefully/agent-skills`,
+  `Hao0321/claude-skill-social-post`, `TheMattBerman/x-algo-skill`, and
+  `arome3/code-to-content`. `Kartikm09/agentic-social-redteam-skillpack` was
+  selected because it is MIT licensed, active, non-fork, non-archived,
+  issue-enabled, duplicate-clean across target content plus target PRs/issues,
+  and has executable social-automation red-team checks where source provenance
+  improves the target without turning it into a TweetClaw listing.
+- Fresh PR submitted: https://github.com/Kartikm09/agentic-social-redteam-skillpack/pull/1
+  from correctly parented fork `kriptoburak/agentic-social-redteam-skillpack`,
+  branch `codex/source-provenance-audit`, commit
+  `eb16e7781333dc1a228fba10204caef99647cab4`. The PR adds a tested
+  `source_provenance` audit check, updates the synthetic workflow, generated
+  skill checklist, README, and Codex, Claude Code, and OpenClaw packaged skills.
+  TweetClaw appears only as an optional X/Twitter source-intake collector while
+  approval, scheduling, publishing, scoring, and red-team decisions remain owned
+  by the target workflow. Readback: open, ready, `MERGEABLE`, `UNSTABLE` because
+  no checks are configured, zero comments, zero reviews, and zero check runs. No
+  NHS badge was added because the target has no useful reader-facing badge area.
+- Target validation: `PYTHONPATH=src python3 -m unittest discover -s tests`
+  passed 6 tests. `git diff --check` passed. Changed Markdown link checks
+  passed for README and the three packaged skill files. Direct check returned
+  HTTP 200 for `https://github.com/Xquik-dev/tweetclaw`. JSON formatting and
+  public-hygiene scans found no introduced secret, restricted-source,
+  internal-cost, unsupported-claim, stale-metadata, or banned-dash wording.
+- Official OpenClaw and package checks: official docs returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/tools/skills`, and
+  `/help/debugging`. `npm view openclaw` returned latest `2026.6.8`, beta
+  `2026.6.8-beta.2`; `npm view clawhub` returned latest `0.22.0`; published
+  TweetClaw remained `1.6.31`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  code of conduct, and AgentRegistry steps passed Markdown link checking. Direct
+  probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata, canonical
+  ClawHub route, OpenClaw Directory, and the new external PR.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness`,
+  `npm run check-memory-md-size`, and `npm run check:all` passed. Memory stayed
+  under cap at 15092/15360 bytes before the compact update and 14958/15360 bytes
+  after the final archive write. `npm audit --audit-level=moderate --omit=dev` still
+  reports 4 moderate nested OpenClaw advisories for `protobufjs` and `tar`; the
+  force path remains unsafe because it would install `openclaw@0.0.1`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, same-thread
+  automation notes, quiet autonomy, crawler-first discovery, mandatory PR
+  submission, aggressive skill-repo coverage, fresh repo/framework/library
+  discovery, PR repair priority, duplicate/fork rules, official OpenClaw checks,
+  link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap, and
+  self-improvement. Durable lesson: social-automation red-team packages are good
+  targets when TweetClaw is framed as optional source intake and the target keeps
+  approval, publishing, scoring, and safety authority.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 21:28 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not

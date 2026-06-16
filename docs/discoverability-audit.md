@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 21:07 UTC: latest
+- OpenClaw npm checked as of 2026-06-16 21:50 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
   llms, plugin CLI, manifest, permissions, tool plugins, SDK entrypoints,
   ClawHub publishing, skills, plugin install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 21:07 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 21:50 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,18 +194,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 21:28 UTC: model/effort selectors unavailable. Crawler returned
-  strict JSON with 0 opportunities. TweetClaw had no PRs/issues.
-  `i-am-bee/beeai-framework#1456` had actionable Ruff and DCO blockers; branch
-  repaired, signed, pushed, and commented. DCO is green.
-- Fresh PR: https://github.com/TABARC-Code/-B2B-B2C-audience-strategist-and-market-researcher-Claude-Skill/pull/1
-  adds public X/Twitter audience evidence packets, links TweetClaw as optional
-  collection help, and fixes 3 pre-existing README dead links. Readback: open,
-  clean, mergeable, no comments, reviews, or checks.
-- Checks: target link/archive/whitespace gates, duplicate gates, fork-parent
-  verification, OpenClaw docs index, package metadata, TweetClaw links, platform
-  fitness, public probes, memory cap, and `npm run check:all` passed. npm audit
-  still reports nested OpenClaw `protobufjs`/`tar` advisories.
+- 2026-06-16 21:50 UTC: model/effort selectors unavailable. Crawler returned 0
+  opportunities after proxy-route failures. TweetClaw had no PRs/issues.
+  Audit-tracked PRs had no safe maintainer-actionable repair.
+- Fresh PR: https://github.com/Kartikm09/agentic-social-redteam-skillpack/pull/1
+  adds a tested source-provenance audit check, updates packaged skill guidance,
+  and keeps TweetClaw as optional X/Twitter source intake only. Readback: open,
+  mergeable, no comments, reviews, or checks.
+- Checks: duplicate gates, fork-parent verification, target tests and links,
+  OpenClaw docs/package metadata, TweetClaw links, platform fitness, memory cap,
+  and `npm run check:all` passed. npm audit still reports nested OpenClaw
+  `protobufjs` and `tar` advisories.
 
 ## Reporting Checklist
 
