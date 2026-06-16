@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 13:28 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 13:44 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 13:28 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 13:44 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,18 +196,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 13:28 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates. Repaired 7 conflict-dirty open PRs and posted validation
-  readbacks; maintainer-auth Vercel failures on `modu-ai/cowork-plugins#5` and
-  `yaacovcorcos/papiskill#1` remain external boundaries.
-- Fresh PR: https://github.com/Claude-Code-Community-Ireland/claude-code-resources/pull/3
-  adds a Claude Code X/Twitter source-evidence skill with TweetClaw as an
-  optional source tool. Readback: open, ready, mergeable, head `b947a49`, no
-  checks reported yet.
+- 2026-06-16 13:44 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates. Repaired conflict-dirty
+  `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1` and
+  `modu-ai/cowork-plugins#5`; both are now mergeable. Cowork still has a
+  target-owned Vercel authorization failure.
+- Fresh PR: https://github.com/michalparkola/tapestry-skills/pull/7 adds an
+  X/Twitter source-packet skill and wires `learn-this` to route X/Twitter URLs.
+  TweetClaw is optional read-only OpenClaw extraction context. Readback: open,
+  mergeable, head `cd5a972`, no checks configured.
 - Checks: OpenClaw docs/npm current at `2026.6.6`; TweetClaw registry latest
-  `1.6.31`, source `1.6.32`; ClawHub/OpenClawDir links 200; markdown links,
-  platform fitness, and `npm run check:all` passed. Known npm audit blocker is
-  nested OpenClaw `protobufjs`/`tar`; npm web page still returns expected 403.
+  `1.6.31`, source `1.6.32`; ClawHub/OpenClawDir and handled PR links 200;
+  markdown links, platform fitness, and `npm run check:all` passed. Known npm
+  audit blocker is nested OpenClaw `protobufjs`/`tar`; npm web still returns
+  expected 403. Prompt bytes `14530`; automation TOML `14872`.
 
 ## Reporting Checklist
 

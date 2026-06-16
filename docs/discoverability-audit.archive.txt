@@ -8919,6 +8919,112 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   cap, and self-improvement. Changed TweetClaw file is
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-16 13:44 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`, no Context7 work was done, and no
+  Browser, Chrome, GUI, dev server, production SSH, destructive git action, or
+  secret read was used.
+- Crawler-first discovery: ran the internal Xquik GitHub opportunity crawler
+  from `/Users/burak/Developer/xquik` with research proxy, JSON output, focused
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter-X, registry, fork, and generated-catalog queries,
+  bounded request timeouts, and strict JSON parsing. It returned zero
+  repositories. Follow-up GitHub searches were targeted to exact duplicate
+  checks and fresh licensed candidates after the crawler pass.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found two actionable conflict-dirty PRs:
+  `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1` and
+  `modu-ai/cowork-plugins#5`. Non-actionable external blockers remained Vercel
+  owner authorization on `yaacovcorcos/papiskill#1`,
+  `ArshdeepGrover/ai-tools-manager#169`,
+  `heilcheng/awesome-agent-skills#290`, and `modu-ai/cowork-plugins#5`.
+- Repair 1: verified fork
+  `kriptoburak/loaded-awesome-openclaw-skills-zh` with parent
+  `loaded-napierianlogarithm458/awesome-openclaw-skills-zh`, merged
+  `upstream/main`, resolved the README Twitter-X table conflict by keeping the
+  upstream rows plus the TweetClaw row, validated with `git diff --check`,
+  exact conflict-marker scan, and `markdown-link-check README.md --quiet`, then
+  pushed branch `codex/add-tweetclaw-twitter-entry` at head `8ae719d`.
+  Posted validation comment:
+  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1#issuecomment-4719513668.
+  Final readback: open, ready, mergeable, clean, no checks configured.
+- Repair 2: verified fork `kriptoburak/cowork-plugins-modu-xquik` with parent
+  `modu-ai/cowork-plugins`, merged `upstream/main`, and resolved conflicts in
+  `.claude-plugin/marketplace.json` and `README.md` by preserving upstream
+  v2.22.0 metadata while keeping the `moai-xquik` plugin and 29-plugin totals.
+  Also fixed two upstream trailing spaces in the newly merged design-system
+  registry so `git diff --check` passed. Validation: `jq empty` for marketplace
+  and moai-xquik plugin JSON, marketplace plugin count 29 with `moai-xquik`
+  present, `npm test`, `markdown-link-check` for `moai-xquik/README.md` and its
+  setup skill, staged public-hygiene scan, conflict-marker scan, and diff
+  whitespace checks. Pushed branch `feature/moai-xquik` at head `e537bcf`.
+  Posted validation comment:
+  https://github.com/modu-ai/cowork-plugins/pull/5#issuecomment-4719513744.
+  Final readback: open, mergeable, unstable only because the target-owned Vercel
+  authorization check is failing.
+- Fresh target screening: compact audit and archive showed
+  `punkpeye/awesome-mcp-servers` duplicate-blocked by open, closed, and merged
+  Xquik MCP PR history, and `daymade/claude-code-skills` duplicate-blocked by
+  existing x-twitter-scraper PRs. `michalparkola/tapestry-skills` was newly
+  screened as MIT licensed, active, not archived, not a fork, issue-enabled,
+  PR-enabled, and duplicate-clean across target content, open and closed target
+  PRs, open and closed target issues, compact audit, archive, TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, and xquik.com variants.
+- Fresh PR: created fork `kriptoburak/tapestry-skills`, branch
+  `codex/add-x-source-packet-skill`, commit `cd5a972`, and opened
+  https://github.com/michalparkola/tapestry-skills/pull/7. The PR adds
+  `x-twitter-source-packet/SKILL.md`, updates `learn-this` to route
+  `x.com` and `twitter.com` URLs, and updates README plus `install.sh`. The
+  skill keeps the target workflow focused on source ingestion, uses TweetClaw
+  only as optional OpenClaw-backed read-only extraction context, and excludes
+  posting, DMs, monitors, webhooks, media upload, giveaways, and recurring work.
+  The first `gh pr create` body command let shell backticks expand locally; the
+  PR was immediately edited with a safely quoted body and read back correctly.
+  Readback: open, mergeable, clean, no checks configured.
+- Target validation for PR 7: passed `git diff --check`, `bash -n install.sh`,
+  exact conflict-marker scan, `markdown-link-check README.md
+  learn-this/SKILL.md x-twitter-source-packet/SKILL.md --quiet`, and focused
+  diff scan for secret-like strings. No NHS badge was added because the target
+  has no useful badge area.
+- Official OpenClaw and package checks: official `llms.txt`, `/cli/plugins`,
+  `/plugins/manage-plugins`, manifest, permission requests, tool plugins, SDK
+  entrypoints, ClawHub publishing, and debugging routes returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI `0.22.0`, and published TweetClaw `1.6.31`; local source remains
+  `1.6.32`.
+- Broken-link and public-hygiene checks: TweetClaw README, OpenClaw setup,
+  workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct status checks returned 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub plugin route, canonical
+  OpenClaw Directory route, xquik.com, docs.xquik.com, both repaired PRs, and
+  the new PR. The npm package web page still returns expected 403 bot
+  protection to command-line checks. ClawHub still renders stale `1.6.26`
+  metadata and legacy install text, so npm remains canonical.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  `protobufjs` and `tar` advisories under `openclaw@2026.6.6`; the suggested
+  forced fix would install invalid `openclaw@0.0.1`, so this remains an
+  upstream host dependency blocker. Final `npm run check:all` passed with
+  package artifact proof and 168 tests at 100% coverage.
+- Prompt and memory: automation TOML measured 14872 bytes and the escaped prompt
+  string measured 14530 bytes. No saved automation prompt edit was useful
+  because current instructions already preserve model/effort wording, quiet
+  autonomy, crawler-first discovery, mandatory PR submission, skill-repo
+  coverage, fresh repo discovery, PR repair priority, duplicate/fork rules,
+  OpenClaw checks, link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, cadence, thread binding, commit/push requirement,
+  Markdown cap, and self-improvement.
+- Durable lesson: for `gh pr create` or `gh pr edit` bodies containing
+  backticks, use single quotes or a file body to prevent local shell expansion
+  before public PR text is posted. For source-ingestion skill targets, route
+  TweetClaw through read-only evidence collection and make unavailable
+  TweetClaw/OpenClaw a fallback path, not a required runtime.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-15 09:23 UTC heartbeat
 
 - Runtime and cadence: model and reasoning-effort selectors were unavailable in
