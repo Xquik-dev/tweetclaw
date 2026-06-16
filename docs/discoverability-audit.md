@@ -194,20 +194,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 19:45 UTC: model/effort selectors unavailable. Crawler returned
-  strict JSON with 0 opportunities. TweetClaw had no PRs/issues; 39 focused
-  authored/audit PR readbacks found no safely repairable maintainer, review,
-  CI, DCO, CLA, conflict, or generated-file blocker. Vercel failures were
+- 2026-06-16 20:07 UTC: model/effort selectors unavailable. Crawler returned
+  strict JSON with 0 opportunities. TweetClaw had no PRs/issues; 49 focused
+  authored/audit PR readbacks found no safely repairable maintainer, review, CI,
+  DCO, CLA, conflict, or generated-file blocker. Vercel failures were
   target-owner authorization gates.
-- Fresh PR: https://github.com/stian-a-johansen/skills/pull/1 fixes MIT license
-  metadata in `x.com/SKILL.md` and adds an optional TweetClaw/OpenClaw
-  source-pack handoff without replacing the target X API v2 list reader.
-  Readback: open, mergeable, no comments, no reviews, no checks.
-- Checks: target whitespace, target markdown links, duplicate gates, fork-parent
-  verification, OpenClaw docs, npm metadata, TweetClaw Markdown links, platform
-  fitness, Dependabot readback, public probes, audit dry-run, and
-  `npm run check:all` passed. Known blocker: nested OpenClaw `protobufjs`/`tar`
-  advisories remain upstream.
+- Fresh PR: https://github.com/fastclaw-ai/anyclaw/pull/2 adds a native
+  `tweetclaw` AnyClaw registry package, source-context helper, install guidance,
+  and local OpenClaw plugin status check. Readback: open, mergeable, no
+  comments, no reviews, no checks.
+- Checks: target YAML parsing, whitespace, local registry install, target
+  command smoke tests, duplicate gates, fork-parent verification, OpenClaw docs,
+  npm metadata, TweetClaw Markdown links, platform fitness, public probes, and
+  `npm run check:all` passed. Audit dry-run matched the known upstream blocker:
+  nested OpenClaw `protobufjs`/`tar` advisories remain upstream.
 
 ## Reporting Checklist
 
