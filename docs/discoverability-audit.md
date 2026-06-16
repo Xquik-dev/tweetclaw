@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 00:54 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 01:12 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 00:53 UTC, but latest ClawHub package remains `1.6.26` and
+  on 2026-06-16 01:12 UTC, but latest ClawHub package remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,14 +196,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 00:54 UTC: model/effort selectors unavailable. Crawler strict JSON
-  returned no candidates. Exact-read 100 authored PRs found no safe repair;
-  Vercel auth and policy gates remain target-owned. GitHub code search then hit
-  rate limit, so broad authenticated search stopped for this run.
-- New PR: https://github.com/crabwise-ai/crabwalk/pull/67 documents how
-  Crabwalk monitors OpenClaw X/Twitter workflows and optional TweetClaw source
-  context before account-changing actions. Repo MIT, duplicate-clean, fork
-  parent verified, docs validation passed; PR is open, mergeable, and clean.
+- 2026-06-16 01:12 UTC: model/effort selectors unavailable. Crawler strict JSON
+  returned no candidates after proxy refresh. Exact-read 100 authored PRs found
+  no safe repair; target-owned Vercel auth, policy, and listing gates remain.
+- New PR: https://github.com/urikkkk/nimble-social-feeds/pull/1 adds
+  Twitter/X source-quality fields, optional TweetClaw structured context, and
+  output data-quality notes to a Claude Code social feeds skill. Repo MIT,
+  duplicate-clean, fork parent verified, docs validation passed; PR is open,
+  mergeable, and clean.
 - OpenClaw docs/npm and public links checked. ClawHub route stayed HTTP 200 but
   stale at `1.6.26`. TweetClaw links, memory, `check:all`, and platform fitness
   passed. Known nested OpenClaw audit and npm auth blockers remain.

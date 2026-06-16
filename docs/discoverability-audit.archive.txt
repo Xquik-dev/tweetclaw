@@ -12116,3 +12116,91 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
   exclusion, secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+2026-06-16 01:12 UTC heartbeat run
+- Runtime limitation: this runtime did not expose model or reasoning-effort
+  selection, so GPT-5.5 and extra-high effort could not be selected here. The
+  run continued under the available model.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` with research-proxy JSON output,
+  bounded timeouts, and focused PR-monitoring, `SKILL.md`, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, agent, social media, Twitter/X, evidence,
+  registry, validator, framework, library, and package-tooling lanes. The
+  crawler returned strict JSON with `opportunities: []`; proxy output showed
+  refresh and one quarantined endpoint only.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 70 `CLEAN`, 24 `UNSTABLE`, 6 `BLOCKED`, 0 `DIRTY`,
+  0 `UNKNOWN`, 0 `CONFLICTING`, 0 changes-requested, 12 with comments, 6 with
+  reviews, and 4 with failing checks. `diaz3618/argus-mcp-catalog#1` had new
+  Sourcery and CodeRabbit comments that were informational only. Vercel
+  authorization failures on `yaacovcorcos/papiskill#1`,
+  `modu-ai/cowork-plugins#5`, `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290` remain target-owned.
+  `Sukumar-Elley/awesome-mcp-servers#1` still depends on Glama listing
+  availability. No DCO, CLA, merge conflict, generated-file drift,
+  maintainer-request, valid bot-review repair, or safe current-head CI repair
+  blocked fresh outreach.
+- Fresh candidate discovery and duplicate gates: after crawler-first discovery
+  returned no candidates, targeted repository search found
+  `agilemeshnet/willow-skills`, `urikkkk/nimble-social-feeds`,
+  `kriptoburak/openclaw-skill-social-roi-calculator`,
+  `harrylabsj/social-media-batch-kit`, and `JNHFlow21/ocl-social-fetcher`.
+  Willow, Harry Labs, and JNHFlow lacked acceptable license or policy clarity
+  for a direct PR. The kriptoburak repository was own-scope and not a fresh
+  external target. `urikkkk/nimble-social-feeds` was MIT licensed, not archived,
+  not a fork, issue-enabled, duplicate-clean across compact audit, archive,
+  target content, and target PR/issue lists, and fit the skill-repository lane.
+- Selected target: `urikkkk/nimble-social-feeds` is a Claude Code skill for
+  social media data collection and analysis across TikTok, Instagram, YouTube,
+  Twitter, and X. The target-native contribution improves source quality for
+  Twitter/X analysis by requiring canonical post URLs, post IDs, handles,
+  timestamps, captured text, public metrics, query terms, collection time, and
+  data-quality notes. TweetClaw is optional structured public context only; the
+  target remains responsible for normalization, ranking, and analysis.
+- New external PR: opened https://github.com/urikkkk/nimble-social-feeds/pull/1
+  from correctly parented fork `kriptoburak/nimble-social-feeds`, branch
+  `codex/twitter-source-quality`, commit
+  `f6039024a72df9a6fa16d281f71cbca8d514109e`. The PR updates `README.md`,
+  `SKILL.md`, `references/workflow.md`, and `references/output-template.md`;
+  it also replaces pre-existing dead template links in the touched output file
+  with plain placeholders. No NHS badge was added because the target has no
+  badge area.
+- Target validation for `urikkkk/nimble-social-feeds#1`: passed
+  `git diff --check`, markdown link checks for `README.md`, `SKILL.md`,
+  `references/workflow.md`, and `references/output-template.md`, a SKILL
+  frontmatter sanity check, direct TweetClaw public links, direct new PR HTTP
+  200, and public-diff hygiene review. PR readback showed open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks configured, 4
+  changed files, 47 additions, and 2 deletions.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub
+  `0.21.0`, and published TweetClaw `1.6.31`; local source remains `1.6.32`.
+  The canonical `clawhub.ai/plugins/@xquik/tweetclaw` route returned HTTP 200
+  and remains stale at `1.6.26`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, and
+  `skills/tweetclaw/SKILL.md`. Direct checks returned HTTP 200 for the
+  canonical ClawHub plugin route, OpenClaw Directory listing, and the new Nimble
+  PR. The added diffs were checked for confidential wording, credentials,
+  unsupported claims, stale metadata, and dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`15070/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit
+  --audit-level=moderate` remains blocked by nested
+  `openclaw@2026.6.6` advisories for `protobufjs` and `tar`; no dependency
+  files changed. Changed TweetClaw files are `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the Nimble lesson: skill repos
+  with social data aggregation can accept source-quality improvements when
+  TweetClaw stays optional and structured, and the target retains analysis,
+  ranking, and reporting decisions. Preserve model/effort wording, same-thread
+  quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, official OpenClaw checks, broken-link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, commit/push
+  requirement, Markdown cap, and this self-improvement rule.
