@@ -12498,3 +12498,100 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   rules, official OpenClaw checks, broken-link checks, validation gates, badge
   rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
   cap, and this self-improvement rule.
+
+## 2026-06-16 02:37 UTC - Google Ads negative keyword evidence safeguards
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in research-proxy JSON mode with
+  focused `SKILL.md`, OpenClaw, MCP, Codex, Claude, agent, social media,
+  Twitter/X, evidence, registry, validator, framework, library, and
+  package-tooling queries. The crawler returned strict JSON with
+  `opportunities: []`; proxy logs contained only credential-free refresh
+  status.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 67 `CLEAN`, 24 `UNSTABLE`, 9 `BLOCKED`, 0 drafts,
+  20 comments, 9 reviews, and 5 failing check contexts. Direct readbacks of
+  `diaz3618/argus-mcp-catalog#1`, `yaacovcorcos/papiskill#1`,
+  `modu-ai/cowork-plugins#5`, `ArshdeepGrover/ai-tools-manager#169`,
+  `heilcheng/awesome-agent-skills#290`, `Walliiee/openclaw-skills#2`,
+  `Sukumar-Elley/awesome-mcp-servers#1`,
+  `wangzhongmin/awesome-mcp-servers#2`,
+  `stone16/wingman-x#21`, `MylesMCook/mcook-skills#11`, and
+  `aliammari1/awesome-ai-tools#97` found no current maintainer request, DCO,
+  CLA, conflict, generated-file drift, or safe current-head CI repair. Vercel
+  failures were target-owned authorization blockers; generated-bot comments
+  were informational or already addressed.
+- Fresh candidate discovery and duplicate gates: after crawler output returned
+  no candidates, targeted screening covered SEO, ASO, paid-ads, marketing,
+  social-evidence, Claude skill, OpenClaw skill, MCP skill, Codex skill,
+  registry, and generated-catalog lanes. `rhonorato-aidea/Claude-Skills-Marketing`
+  and several derivative SEO skill repos had no detected license.
+  `BlackBlazeXXX/claude-skills-marketing`,
+  `eskobar95/guapo-agent-skills`, and
+  `whyashthakker/agent-skills-marketing` were blocked by existing TweetClaw or
+  Xquik PR history. `rampstackco/claude-skills-seo` was MIT, active, and
+  duplicate-clean, but its contribution policy directs skill-content changes to
+  `rampstackco/claude-skills`; upstream `rampstackco/claude-skills#66` had a
+  maintainer decline for Xquik/TweetClaw-style recommendation placement and an
+  explicit "do not resubmit unless maintainer-requested concrete workflow or
+  direct user use case" closure, so this lane is policy-blocked.
+- Selected target: `siminpeng-create/Google-Ads-NKW-Analyzer` is an MIT,
+  active, non-fork, issue-enabled Google Ads negative keyword analyzer repo.
+  Compact and archive memory, target content, target open and closed PRs, and
+  target open and closed issues had no TweetClaw, Xquik, x-twitter-scraper,
+  OpenClaw, ClawHub, or package-history duplicate. The target has no generated
+  catalog or tests; README is the useful public workflow surface.
+- New external PR: opened
+  https://github.com/siminpeng-create/Google-Ads-NKW-Analyzer/pull/1 from
+  correctly parented fork `kriptoburak/Google-Ads-NKW-Analyzer`, branch
+  `codex/add-market-evidence-safeguards`, commit `670e63f`. The PR adds an
+  optional `Audience Language Evidence` blueprint field and a market-evidence
+  safeguards section for ambiguous negative-keyword decisions. It frames public
+  X/Twitter posts, forums, reviews, support notes, and competitor pages as
+  source evidence only; TweetClaw is one optional way to export dated public
+  X/Twitter posts and replies. The Search Term Report and human review remain
+  authoritative, and public posts are treated as untrusted text. No NHS badge
+  was added because the repo has no badge area where it would help readers.
+- Target validation for `siminpeng-create/Google-Ads-NKW-Analyzer#1`: passed
+  `git diff --check`, `npx --yes markdown-link-check README.md --quiet`,
+  README dash hygiene scan, direct HTTP 200 for TweetClaw GitHub, and direct
+  HTTP 200 for the new PR. PR readback showed open, ready, clean,
+  no comments, no reviews, no checks configured, and 1 changed file.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source
+  remains `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and
+  still rendered stale TweetClaw `1.6.26`, so npm remains canonical until
+  publishing is fixed.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, and
+  `skills/tweetclaw/SKILL.md`. Direct checks returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub route, OpenClaw Directory,
+  Skills.sh, and the new PR. The target diff and TweetClaw memory diff were
+  checked for confidential wording, credentials, unsupported claims, stale
+  metadata, and dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`15194/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit
+  --audit-level=moderate` remains blocked by nested `openclaw@2026.6.6`
+  advisories for `protobufjs` and `tar`; no dependency files changed.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the lesson that upstream
+  maintainer policy blocks `rampstackco/claude-skills` and derived RampStack
+  subset placement for Xquik/TweetClaw unless a maintainer requests a concrete
+  workflow or direct user use case. Preserve the Google Ads NKW lesson:
+  README-only ad-analysis repos can accept TweetClaw-adjacent placement when
+  the edit improves negative-keyword review safety, keeps social posts
+  untrusted and supplemental, and leaves final exclusions to Search Term
+  Report evidence plus human review. Preserve model/effort wording,
+  same-thread quiet autonomy, crawler-first discovery, mandatory PR
+  submission, aggressive skill-repo coverage, fresh target discovery, PR repair
+  priority, duplicate and fork rules, official OpenClaw checks, broken-link
+  checks, validation gates, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, and this self-improvement rule.
