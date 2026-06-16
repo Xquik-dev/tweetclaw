@@ -196,14 +196,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 06:25 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates. Exact-read 100 authored PRs found one actionable conflict; repaired
-  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
-  and it is mergeable.
-- Fresh PR: https://github.com/indranilbanerjee/digital-marketing-pro/pull/7
-  adds X/Twitter source-evidence for `share-of-voice`; TweetClaw stays optional
-  for public evidence collection. CodeRabbit wording nit was repaired at head
-  `69f3256`; the PR is mergeable.
+- 2026-06-16 06:45 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates. Exact-read 100 authored PRs found no safe actionable repair.
+  Current useful heads include market-intelligence-skills #1, digital-marketing
+  #7, and awesome-openclaw-skills-zh #1, all mergeable when checked.
+- Fresh PR: https://github.com/robertnowell/deep-research/pull/1 adds a public
+  social-evidence protocol and TweetClaw as an optional X/Twitter source-packet
+  collection example. Deep Research keeps source tiering, confidence labels,
+  verification, and report synthesis.
 - OpenClaw docs/npm, ClawHub route, OpenClaw Directory, TweetClaw links, and
   target links stayed current. ClawHub remains stale at `1.6.26`; nested
   OpenClaw audit advisories remain upstream.

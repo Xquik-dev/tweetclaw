@@ -13534,3 +13534,72 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
   exclusion, secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+## 2026-06-16 06:45 UTC heartbeat
+
+- Runtime limitation: the current Codex runtime exposed no selector for GPT-5.5
+  or extra-high reasoning effort. The run recorded the limitation and continued.
+- PR monitoring and repairs: crawler-first broad discovery from
+  `/Users/burak/Developer/xquik` with four skill/social/OpenClaw queries
+  returned strict JSON with zero opportunities. Exact GitHub readback of 100
+  open PRs authored by `kriptoburak` found no new safe actionable repair.
+  `travcjohnson/market-intelligence-skills#1`,
+  `indranilbanerjee/digital-marketing-pro#7`, and
+  `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1` were mergeable or
+  clean at readback. Other non-success signals were target-owned Vercel
+  authorization checks, old bot reviews attached to superseded commits, already
+  answered catalog requirements, or maintainer queues.
+- Fresh discovery and duplicate gates: after crawler output was empty, web-index
+  and targeted GitHub metadata screened fresh skill and research repos.
+  `birne-sk/claude-skills`, `inference-sh/skills`, and several small skill repos
+  were blocked by missing or nonstandard license. `alirezarezvani/claude-skills`,
+  `borghei/Claude-Skills`, `claude-office-skills/skills`,
+  `affaan-m/ECC`, `ailabs-393/ai-labs-claude-skills`,
+  `mturac/everything-openai-codex`, `charlie947/social-media-skills`,
+  `SpillwaveSolutions/running-marketing-campaigns-agent-skill`,
+  `OneWave-AI/claude-skills`, and `jamditis/claude-skills-journalism` were
+  duplicate or archive-blocked by prior TweetClaw/Xquik history or target-fit
+  decisions. `robertnowell/deep-research` was selected because it is MIT
+  licensed, active, non-fork, and duplicate-clean across target content plus
+  open and closed PRs/issues.
+- New external PR: verified existing `kriptoburak/deep-research` was the wrong
+  fork parent, created `kriptoburak/robertnowell-deep-research` with parent
+  `robertnowell/deep-research`, pushed branch
+  `codex/public-social-source-evidence`, and opened
+  https://github.com/robertnowell/deep-research/pull/1. The PR adds public
+  social-evidence handling to Deep Research, requires capture metadata in the
+  research-agent prompt, and links TweetClaw only as an optional X/Twitter
+  source-packet collector. Deep Research keeps tiering, verification,
+  confidence labels, and synthesis. No NHS badge was added because the target
+  badge row is package and app health.
+- Target validation and public hygiene: target content duplicate `rg`, open and
+  closed PR/issue searches, `git diff --check`, `bash evals/run-evals.sh
+  --fixtures-only`, and Markdown link checks for the touched target files
+  passed. Direct TweetClaw GitHub link check returned HTTP 200. Diff and PR body
+  review found no credential values, private source names, internal cost
+  mechanics, unsupported claims, or stale public metadata. PR readback showed
+  open, ready, mergeable, head `86dbde5`, and no checks, comments, or reviews.
+- Official OpenClaw and TweetClaw checks: official `llms.txt`, `/cli/plugins`,
+  manifest, permission requests, tool plugins, SDK entrypoints, ClawHub
+  publishing, and debugging routes all returned HTTP 200. Npm metadata returned
+  OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, and published TweetClaw
+  latest `1.6.31`; local source remains `1.6.32`. ClawHub canonical route and
+  OpenClaw Directory listing returned HTTP 200.
+- TweetClaw validation: Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. `npm run check-openclaw-platform-fitness`
+  passed for local TweetClaw `1.6.32` targeting OpenClaw `2026.6.6`.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested
+  `openclaw@2026.6.6` `protobufjs` and `tar` advisories; the suggested forced
+  fix would install invalid `openclaw@0.0.1`.
+- Final TweetClaw changed files were `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. `npm run check:all` passed,
+  including memory 15069/15360, OpenClaw platform fitness, package artifact
+  validation, and 168 tests at 100% coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful.
+  Durable lesson: research and source-quality targets can accept TweetClaw when
+  it is framed as optional public evidence collection with preserved URLs,
+  author IDs, timestamps, query windows, and capture notes. Keep verification,
+  source tiering, confidence labels, and final findings inside the target.
+  Automation TOML measured 14872 bytes, with prompt text at 14530 bytes.
