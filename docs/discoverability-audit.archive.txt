@@ -10928,6 +10928,82 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-16 23:50 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran two focused `/Users/burak/Developer/xquik`
+  crawler passes with `bun run github:crawl --use-research-proxy --format json`
+  for authored PRs plus SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex,
+  Claude, agent, social media, Twitter/X, source-evidence, tweet-scraper,
+  package-tooling, validator, and catalog lanes. Both returned strict JSON with
+  zero opportunities after proxy-list refresh logs. No crawler credential values
+  were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. Exact readback
+  of 100 open `kriptoburak` PRs found no repairable maintainer request, review
+  change request, conflict, DCO/CLA blocker, or actionable failed check. The only
+  alert was `pockebot/openpocket#117`, blocked by target-owned Vercel team
+  authorization.
+- Fresh target screening: compact and archive duplicate gates, target content,
+  open and closed PRs, issue availability, repo metadata, local clone scans, and
+  license checks covered Twitter-thread skill, social-listening MCP,
+  tweet-scheduler, social-media prompt, sentiment-agent, marketing-skill, and
+  Twitter OSINT lanes. Empty or no-license blockers included direct MCP and
+  social-listening repos. `Drgon37/foreign-trade-social-media-guide` was
+  selected because it is MIT licensed, active, non-fork, non-archived, has PRs
+  enabled, and has a target-native README hygiene gap plus a useful B2B social
+  market-signal section.
+- Fresh PR submitted: https://github.com/Drgon37/foreign-trade-social-media-guide/pull/1
+  from correctly parented fork `kriptoburak/foreign-trade-social-media-guide`,
+  branch `codex/x-source-evidence-guide`, commit `bcfa285`. The PR replaces a
+  broken ZIP-as-badge README link with a normal guide archive link, removes
+  broken table-of-contents anchors, fixes contact and resources text that pointed
+  to the ZIP URL, and adds optional TweetClaw/OpenClaw X/Twitter market-signal
+  guidance. TweetClaw is framed only as optional source-evidence collection; the
+  guide keeps campaign messaging, channel choice, and publishing decisions. No
+  NHS badge was added because the target had no useful badge area.
+- Target validation: passed `npx --yes markdown-link-check README.md --quiet`,
+  `git diff --check`, direct HTTP 200 checks for the guide archive, TweetClaw
+  GitHub, TweetClaw npm registry metadata, and OpenClaw plugin CLI docs, plus a
+  public-hygiene scan. A broad target link check still reports pre-existing
+  third-party APKMirror/APKPure/Uptodown blockers in
+  `foreign-trade-social-media-apps.md`; the PR edits only README. Direct PR
+  readback: open, ready, merge state `CLEAN`, no comments, no reviews, no
+  checks, and head `bcfa28520356b6051e3fcdc53031cae4389c8e3d`.
+- Official OpenClaw and package checks: official docs returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. Npm metadata returned OpenClaw latest `2026.6.8`, beta
+  `2026.6.8-beta.2`, modified `2026-06-16T16:27:41.883Z`; `clawhub` remained
+  `0.22.0`; published TweetClaw remained `1.6.31`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  code of conduct, and AgentRegistry steps passed Markdown link checking. Direct
+  HTTP probes returned 200 for TweetClaw GitHub, npm registry metadata, canonical
+  ClawHub route, OpenClaw Directory, xquik.com, docs.xquik.com, and the new
+  external PR.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; force remains unsafe because
+  it would install `openclaw@0.0.1`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  broad industry social-media guides are acceptable targets when the PR first
+  fixes reader-facing link hygiene and frames TweetClaw as optional source
+  evidence before target-owned campaign planning.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 23:08 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were

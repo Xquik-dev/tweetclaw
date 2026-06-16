@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 23:29 UTC: latest
+- OpenClaw npm checked as of 2026-06-16 23:50 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
   llms, plugin CLI, current plugin manifest, permissions, tool plugins, SDK
   entrypoints, ClawHub publishing and skill format, plugin management, and help
   debugging. Old shortcut routes now return 404; use canonical `/plugins/...`
   and `/help/...` paths.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 23:29 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 23:50 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,17 +196,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 23:29 UTC: model/effort selectors unavailable. Crawler authored-PR
-  and skill passes returned 0 opportunities. TweetClaw had no PRs/issues. Exact
-  readback of 100 open outreach PRs found no repairable request.
-- Fresh PR: https://github.com/kartikbansode/AI-News-Tweet-Agent/pull/4 adds a
-  source-context review guide, optional TweetClaw/OpenClaw collection guidance,
-  cron wording cleanup, and local-secret/source-packet ignores. Readback: open,
-  clean, GitGuardian success, no comments or reviews.
-- Checks: duplicate/fork gates, target compile, target and TweetClaw links,
-  public hygiene, OpenClaw docs/package metadata, platform fitness, and memory
-  cap passed. npm audit still reports nested OpenClaw `protobufjs` and `tar`
-  advisories.
+- 2026-06-16 23:50 UTC: model/effort selectors unavailable. Crawler passes
+  returned 0 opportunities. TweetClaw had no PRs/issues. Exact readback of 100
+  open outreach PRs found only target-owned Vercel authorization.
+- Fresh PR: https://github.com/Drgon37/foreign-trade-social-media-guide/pull/1
+  fixes broken README archive/contact links, removes broken anchors, and adds
+  optional TweetClaw/OpenClaw X/Twitter market-signal guidance. Readback: open,
+  clean, no comments, reviews, or checks.
+- Checks: duplicate/fork gates, target README link check, target public hygiene,
+  TweetClaw links, OpenClaw docs/package metadata, platform fitness, and memory
+  cap passed. npm audit still reports nested OpenClaw `protobufjs` and `tar`.
 
 ## Reporting Checklist
 
