@@ -10855,6 +10855,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-16 22:33 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, extractor, source-provenance, source-packet,
+  validator, and skill-catalog queries. The crawler returned strict JSON with
+  zero opportunities. Proxy metadata only was observed; no credential values
+  were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback
+  pass covered 60 open `kriptoburak` PRs plus audit-tracked PRs. Exact readbacks
+  included `funkatorium/x-mcp#1`, `Rickidie/marketing-workflow-template#1`,
+  `Kartikm09/agentic-social-redteam-skillpack#1`,
+  `jing787/dify-marketing-skills#1`, `rongarede/claude-skills-research#1`,
+  `i-am-bee/beeai-framework#1456`, `pinkpixel-dev/skills-collection-1#3`,
+  `understudy-ai/understudy#24`, `pockebot/openpocket#117`,
+  `cookiy-ai/user-research-skill#53`, and `Prem95/socialautonomies#2`. No safe
+  maintainer comment, review, check, conflict, DCO, or CLA blocker needed
+  repair. Pinkpixel bot feedback was already addressed on the current head,
+  BeeAI has only successful DCO and labeler checks after the signed Ruff fix,
+  and remaining blocked states were target-owned review queues or Vercel
+  authorization.
+- Fresh target screening: compact audit, archive, crawler output, exact repo
+  metadata, target content, fork metadata, and open plus closed target PRs and
+  issues were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, xquik.com,
+  OpenClaw, Twitter/X, `SKILL.md`, source evidence, source packet, social media
+  toolkit, Notion, Claude Code skills, and social pipeline variants.
+  `demtomi/social-media-agent-toolkit` was selected from the backup lane
+  because it is MIT licensed, active, non-fork, non-archived, issue-enabled,
+  duplicate-clean across target content plus target PRs/issues, and its
+  `content-ideation` skill already scans X/Twitter but lacked durable source
+  packet fields and account-action boundaries.
+- Fresh PR submitted: https://github.com/demtomi/social-media-agent-toolkit/pull/1
+  from correctly parented fork `kriptoburak/social-media-agent-toolkit`, branch
+  `codex/x-source-packet-ideation`, commit
+  `c4664e1c4eef3767762d66584782de89fa4a7fc1`. The PR adds optional X/Twitter
+  source packets to `skills/content-ideation/SKILL.md`, adds `Source Packet` to
+  `docs/notion-setup/topic-bank-schema.md`, uses TweetClaw only as optional
+  source intake, and keeps writing, scheduling, publishing, replies, messages,
+  follows, and account-state changes with the existing gated skills. Readback:
+  open, ready, `MERGEABLE`, `CLEAN`, zero comments, zero reviews, and zero
+  check runs. No NHS badge was added because the target has no badge area.
+- Target validation: `npx --yes markdown-link-check
+  skills/content-ideation/SKILL.md docs/notion-setup/topic-bank-schema.md
+  --quiet` passed. A Node frontmatter metadata parse passed. `git diff --check`
+  passed. Direct check returned HTTP 200 for
+  `https://github.com/Xquik-dev/tweetclaw`. Public-hygiene scans found no
+  introduced secret, restricted-source, internal-cost, unsupported-claim,
+  stale-metadata, or banned-dash wording in changed files or PR body.
+- Official OpenClaw and package checks: official docs returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/tools/skills`, and
+  `/help/debugging`. `npm view openclaw` returned latest `2026.6.8`, beta
+  `2026.6.8-beta.2`; `npm view clawhub` returned latest `0.22.0`; published
+  TweetClaw remained `1.6.31` while local source remained `1.6.32`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  code of conduct, and AgentRegistry steps passed Markdown link checking. Direct
+  probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  canonical ClawHub route, OpenClaw Directory, and the new external PR.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness`,
+  `npm run check-memory-md-size`, and `npm run check:all` passed.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; the force path remains unsafe
+  because it would install `openclaw@0.0.1`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, same-thread
+  automation notes, quiet autonomy, crawler-first discovery, mandatory PR
+  submission, aggressive skill-repo coverage, fresh repo/framework/library
+  discovery, PR repair priority, duplicate/fork rules, official OpenClaw checks,
+  link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap, and
+  self-improvement. Automation TOML measured 14872 bytes, below the 15 KiB
+  prompt cap. Durable lesson: social media pipeline skill repos can accept
+  TweetClaw when source packets attach evidence to ideation and the target keeps
+  writing, review, scheduling, publishing, and account-state authority.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 22:13 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
