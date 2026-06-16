@@ -194,20 +194,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 20:07 UTC: model/effort selectors unavailable. Crawler returned
-  strict JSON with 0 opportunities. TweetClaw had no PRs/issues; 49 focused
-  authored/audit PR readbacks found no safely repairable maintainer, review, CI,
-  DCO, CLA, conflict, or generated-file blocker. Vercel failures were
-  target-owner authorization gates.
-- Fresh PR: https://github.com/fastclaw-ai/anyclaw/pull/2 adds a native
-  `tweetclaw` AnyClaw registry package, source-context helper, install guidance,
-  and local OpenClaw plugin status check. Readback: open, mergeable, no
-  comments, no reviews, no checks.
-- Checks: target YAML parsing, whitespace, local registry install, target
-  command smoke tests, duplicate gates, fork-parent verification, OpenClaw docs,
-  npm metadata, TweetClaw Markdown links, platform fitness, public probes, and
-  `npm run check:all` passed. Audit dry-run matched the known upstream blocker:
-  nested OpenClaw `protobufjs`/`tar` advisories remain upstream.
+- 2026-06-16 20:25 UTC: model/effort selectors unavailable. Crawler returned
+  strict JSON with 0 opportunities. TweetClaw had no PRs/issues; focused
+  authored/audit readbacks found no safely repairable blocker. Pinkpixel review
+  feedback is outdated after the prior branch fix.
+- Fresh PR: https://github.com/cookiy-ai/user-research-skill/pull/53 adds
+  public social source-evidence guidance for research plans, screeners,
+  interviews, surveys, and synthesis. Readback: open, mergeable, review
+  required, no comments, reviews, or checks.
+- Checks: target whitespace and Markdown links, duplicate gates, fork-parent
+  verification, OpenClaw docs, package metadata, TweetClaw Markdown links,
+  platform fitness, public probes, memory cap, and `npm run check:all` passed.
+  Npm audit still reports nested OpenClaw `protobufjs`/`tar` advisories.
 
 ## Reporting Checklist
 
