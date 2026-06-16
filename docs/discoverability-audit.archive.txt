@@ -10854,6 +10854,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   session or secret store.
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
+## 2026-06-16 17:01 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, social-media, Twitter/X,
+  LangGraph, FastAPI, n8n, source-context, and skill-catalog queries. The
+  crawler returned strict JSON with zero opportunities. Proxy metadata only was
+  observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found 14 flagged items. Target-owned blockers were
+  Vercel team authorization failures on `pockebot/openpocket#117`,
+  `yaacovcorcos/papiskill#1`, `modu-ai/cowork-plugins#5`, and
+  `ArshdeepGrover/ai-tools-manager#169`; `Sukumar-Elley/awesome-mcp-servers#1`
+  remains blocked on a Glama listing/badge path unavailable for TweetClaw. Prior
+  `Qredence/skill-fleet#80` repair readback showed Semgrep success.
+- PR repair: `MauricioPerera/agent-skills-pack#2` had valid Gemini feedback to
+  make the README workflow list more parallel. The correctly parented
+  `kriptoburak/agent-skills-pack` fork branch
+  `codex/domain-api-skill-pattern` was repaired in
+  `/tmp/tc-repair-agent-skills-pack` with commit `bcfaac6`, splitting the
+  domain-specific wrapper guidance into parallel pattern bullets and keeping
+  TweetClaw as optional source-evidence context. Validation passed
+  `git diff --check`; direct TweetClaw GitHub probe returned HTTP 200. Full
+  README markdown-link-check still reports the pre-existing target-owned npm
+  package URL as HTTP 403 Cloudflare challenge. Comment posted:
+  https://github.com/MauricioPerera/agent-skills-pack/pull/2#issuecomment-4721340830
+- Fresh target screening: `Nin444ja/AI-Twitter-Agent` was selected from the
+  rolling AI Twitter agent backlog because it was MIT, non-fork, not archived,
+  pushed in 2026, and duplicate-clean across compact audit, archive, target
+  content, and open/closed PRs/issues for TweetClaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, OpenClaw, and ClawHub. The README had generated
+  editor wrapper text and no useful badge area, so no NHS badge was added.
+- Fresh PR submitted: https://github.com/Nin444ja/AI-Twitter-Agent/pull/1 from
+  correctly parented fork `kriptoburak/AI-Twitter-Agent`, branch
+  `codex/add-source-context-readme`, commit `07bddd4`. The PR removes generated
+  README wrapper/follow-up text and adds optional source-context guidance before
+  posting, with TweetClaw framed only as optional X/Twitter evidence collection
+  while the target keeps generation, review, scheduling, and final posting.
+  Readback: open, clean, zero checks, zero comments, zero reviews.
+- Target validation: `git diff --check` passed. Target README
+  markdown-link-check reports only the pre-existing LinkedIn HTTP 999 bot-block
+  response. Direct probes returned HTTP 200 for the introduced TweetClaw GitHub
+  link and the existing Google Docs link. Public-hygiene scan found no secret,
+  internal-provider, billing, or unsupported-claim text in the added diff.
+- Official OpenClaw and package checks: npm metadata returned OpenClaw latest
+  `2026.6.8`, beta `2026.6.8-beta.2`, modified
+  `2026-06-16T16:27:41.883Z`; `clawhub` remained `0.22.0`; published TweetClaw
+  remained `1.6.31`. `developers.openclaw.com` failed DNS and `openclaw.com`
+  returned HTTP 500, so the run used npm package metadata and the official
+  package-linked `openclaw/openclaw` repository. Current repo docs were read for
+  `docs/cli/plugins.md`, `docs/plugins/manifest.md`,
+  `docs/plugins/plugin-permission-requests.md`, `docs/plugins/tool-plugins.md`,
+  `docs/plugins/sdk-entrypoints.md`, `docs/clawhub/publishing.md`, and
+  `docs/help/debugging.md`; no `llms.txt` export was present in the repo tree.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm package page, canonical ClawHub route, OpenClaw Directory,
+  xquik.com, docs.xquik.com, repaired `MauricioPerera/agent-skills-pack#2`, and
+  new `Nin444ja/AI-Twitter-Agent#1`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check:all` also passed, including typecheck, lint, cpd, knip,
+  suppression and dash checks, memory cap, skill frontmatter, version checks,
+  build, package artifact, OpenClaw fitness, and 100% coverage across 168 tests.
+  `npm audit --audit-level=moderate --omit=dev` and dry-run fix still report 4
+  moderate nested OpenClaw advisories for `protobufjs` and `tar`; force remains
+  unsafe because it would install `openclaw@0.0.1`. GitHub Dependabot reports
+  the matching three open alerts: one `tar` and two `protobufjs`.
+- Prompt self-improvement: no saved prompt edit was useful because the prompt
+  already preserves model/effort wording, quiet autonomy, crawler-first
+  discovery, mandatory PR submission, aggressive skill-repo coverage, fresh
+  repo/framework/library discovery, PR repair priority, duplicate/fork rules,
+  official OpenClaw checks, link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, cadence, thread binding, commit/push requirement,
+  Markdown cap, and self-improvement. Durable lesson: when the official
+  OpenClaw web-doc host fails, use npm metadata plus package-linked
+  `openclaw/openclaw` docs, and record that fallback rather than claiming web
+  docs passed.
+- Memory and prompt caps: compact Markdown memory measured `14888/15360` bytes.
+  Saved automation TOML measured `14872` bytes and decoded prompt text measured
+  `14530` bytes. No prompt file changed.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 - Final TweetClaw validation after audit update: `git diff` whitespace check
   passed; `npm run check-memory-md-size` passed at 15,000 of 15,360 bytes; diff
   hygiene found no secret values or forbidden dash additions; `npm run
