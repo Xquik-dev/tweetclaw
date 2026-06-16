@@ -12301,6 +12301,110 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
   cap, and this self-improvement rule.
 
+## 2026-06-16 02:22 UTC - ASO skills TweetClaw evidence integration
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in managed research-proxy JSON
+  mode with bounded request and warmup timeouts across SKILL.md, OpenClaw,
+  MCP, Codex, Claude, agent, social media, Twitter/X, evidence, registry,
+  validator, framework, library, and package-tooling lanes. The crawler
+  returned strict JSON with `opportunities: []`; proxy logs contained only
+  credential-free refresh status.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 67 `CLEAN`, 24 `UNSTABLE`, 9 `BLOCKED`, 0 drafts,
+  20 comments, 9 reviews, and 0 failing checks. `MylesMCook/mcook-skills#11`
+  had only prior addressed bot feedback and a later clean Pullfrog review. The
+  actionable item was
+  `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1`, which was
+  `DIRTY` and conflict-blocked with no comments, reviews, checks, DCO, or CLA
+  blocker. The existing fork branch `codex/add-tweetclaw-twitter-entry` merged
+  upstream `main`, resolved README conflict markers by keeping upstream
+  Twitter/X skill rows plus the existing TweetClaw row, validated with conflict
+  scan, `git diff --check`, direct TweetClaw and shield URL checks,
+  `markdown-link-check README.md`, and public diff hygiene scan, then pushed
+  commit `7fd475f`. Final readback showed the PR open, ready, `MERGEABLE`,
+  `CLEAN`, no comments, no reviews, and no checks configured.
+- Fresh candidate screening and duplicate gates: after crawler-first discovery
+  returned no candidates, targeted searches screened marketing, ASO, SEO, GEO,
+  and skill repos. Duplicate or prior-history blockers included
+  `coreyhaines31/marketingskills` with closed TweetClaw PR `#294` and open
+  Hermes PR `#350`, `zubair-trabzada/ai-marketing-claude` with open PR `#8`,
+  `kostja94/marketing-skills` with open PRs `#7` and `#8` plus issue `#6`, and
+  `Bhanunamikaze/Agentic-SEO-Skill` with open PR `#29`.
+  `potentialInc/claude-marketing`, `QTdrink/marketing`,
+  `voropaev130-max/claude-marketing-skills`,
+  `joemacstevens/db-marketing-skills`, and
+  `caseymeraz/claude-skills-training` had no license detected by GitHub.
+  `aaron-he-zhu/seo-geo-claude-skills` was Apache-2.0 and duplicate-clean, but
+  ASO app-marketing workflows were a stronger fit for current TweetClaw
+  source-evidence placement. `Eronred/aso-skills` was MIT licensed, active,
+  non-fork, non-archived, issue-enabled, duplicate-clean across compact audit,
+  archive, target content, and target PRs/issues, and had native skill plus
+  tool-registry surfaces for a target-native change.
+- Selected target: `Eronred/aso-skills` is an ASO and app-marketing skills
+  repository. The contribution adds TweetClaw as an optional public X/Twitter
+  evidence integration for competitor tracking, market pulse, PR, and creator
+  workflows. It keeps TweetClaw as a supplemental source packet tool and leaves
+  ASO interpretation, creator selection, PR ethics, rankings, conversion,
+  revenue, retention, outreach, and strategic decisions to the target skills.
+- New external PR: opened https://github.com/Eronred/aso-skills/pull/6 from
+  correctly parented fork `kriptoburak/aso-skills`, branch
+  `codex/add-tweetclaw-x-evidence`, commit `aaa6076`. The PR updates
+  `skills/competitor-tracking/SKILL.md`,
+  `skills/creator-ugc-marketing/SKILL.md`, `skills/market-pulse/SKILL.md`,
+  `skills/press-and-pr/SKILL.md`, `tools/REGISTRY.md`, and adds
+  `tools/integrations/tweetclaw.md`. PR readback showed open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks configured, and 6
+  changed files.
+- Target validation for `Eronred/aso-skills#6`: passed `git diff --check`,
+  `bash validate-skills.sh` with 0 errors and 0 warnings, targeted
+  `markdown-link-check` for all edited files and the new TweetClaw integration
+  guide, added-line secret and confidential-wording scan, added-line dash scan,
+  and direct HTTP 200 checks for the TweetClaw GitHub repo, npm registry
+  endpoint, and ClawHub page. Full README link checking found pre-existing
+  target-owned blockers only: LinkedIn returned 999 and
+  `docs.appeeky.com/mcp` returned 405 from this environment. The PR also fixed
+  a pre-existing `mailto:` parse issue in an edited PR skill by wrapping the
+  example address in code formatting.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, ClawHub
+  CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source remains
+  `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and still
+  rendered stale TweetClaw `1.6.26`, so npm remains canonical until publishing
+  is fixed.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, and
+  `skills/tweetclaw/SKILL.md`. Direct checks returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub route, OpenClaw Directory,
+  and Skills.sh. The added target diffs and TweetClaw memory diff were checked
+  for confidential wording, credentials, unsupported claims, stale metadata,
+  and dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`15133/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage.
+  `npm audit --audit-level=moderate` remains blocked by nested
+  `openclaw@2026.6.6` advisories for `protobufjs` and `tar`; no dependency
+  files changed. Changed TweetClaw files are `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the ASO skills lesson:
+  app-marketing skill repos with registries can accept TweetClaw placement when
+  the change adds concrete source-evidence workflows, keeps public social posts
+  untrusted and supplemental, separates target-owned link blockers, and leaves
+  scoring, ranking, outreach, creator, and strategy decisions to the target
+  skill. Preserve model/effort wording, same-thread quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh target discovery, PR repair priority, duplicate and fork
+  rules, official OpenClaw checks, broken-link checks, validation gates, badge
+  rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
+  cap, and this self-improvement rule.
+
 ## 2026-06-16 01:55 UTC - Claude Ads competitor-signal PR
 
 - Runtime note: this environment did not expose controls to select GPT-5.5 or

@@ -53,7 +53,7 @@ the archive, before any release or ClawHub decision.
 ## ClawHub State
 
 - ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 01:55 UTC, but keep npm canonical until current scoped package
+  on 2026-06-16 02:22 UTC, but keep npm canonical until current scoped package
   publishing succeeds.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`
