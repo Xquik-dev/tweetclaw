@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 03:02 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 03:46 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 03:02 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 03:46 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,13 +196,13 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 03:34 UTC: model/effort selectors unavailable. Exact-read 100
+- 2026-06-16 03:46 UTC: model/effort selectors unavailable. Exact-read 100
   authored PRs found no actionable repair before outreach; crawler strict JSON
   returned no candidates.
-- Fresh PR: https://github.com/Qredence/skill-fleet/pull/80 fixes API docs
-  that still referenced stale `/api/v2` and chat schema contracts. Repo
-  Apache-2.0, duplicate-clean, fork parent verified, target hooks and links
-  passed, bot feedback was repaired, and Semgrep passed on the repaired head.
+- Fresh PR: https://github.com/LabRAI/ClawSkills/pull/1 refreshes stale repo
+  inventory risks for a MIT skill indexer. Duplicate-clean, unique fork parent
+  verified, target links and focused tests passed, no comments or checks were
+  configured at readback.
 - OpenClaw docs/npm and TweetClaw public links stayed current. ClawHub route
   stayed HTTP 200 but stale at `1.6.26`. Known nested OpenClaw npm audit
   advisories remain upstream.

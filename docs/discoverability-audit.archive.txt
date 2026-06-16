@@ -12785,3 +12785,95 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   rules, official OpenClaw checks, broken-link checks, validation gates, badge
   rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
   cap, and this self-improvement rule.
+
+## 2026-06-16 03:46 UTC - ClawSkills inventory docs refresh
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in research-proxy JSON mode with
+  focused `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X, evidence, registry, validator, framework, library,
+  and package-tooling queries. The crawler returned strict JSON with
+  `opportunities: []`; proxy logs contained only credential-free refresh
+  status and one quarantined endpoint.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 67 clean, 24 unstable, 9 blocked, 0 drafts, 17
+  comments, 8 reviews, and 9 non-success or external-status contexts. Focused
+  attention readbacks found no current maintainer request, DCO, CLA, conflict,
+  generated-file drift, dirty merge state, or safe current-head CI repair.
+  `Qredence/skill-fleet#80` had only old Gemini comments on the prior commit
+  after the repair commit. Other attention items were target-owned Vercel
+  authorization failures, required-review or branch-protection states, skipped
+  or successful external checks, informational bot comments, or
+  already-addressed bot reviews.
+- Fresh candidate discovery and duplicate gates: crawler output returned no
+  candidates, so targeted GitHub code and repo searches covered OpenClaw,
+  `SKILL.md`, `.agents/skills`, agent-skill registries, Claude skills,
+  social-media skills, Twitter/X skills, and TweetClaw duplicate terms.
+  `LabRAI/ClawSkills` surfaced as a fresh code-search target and was not
+  present in the compact audit or archive as a handled repo. Target PR and
+  issue searches for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub, Xquik, x-twitter-scraper, OpenClaw, and the
+  specific repo-inventory drift returned no duplicates.
+- Selected target: `LabRAI/ClawSkills` is MIT, active, non-archived, non-fork,
+  and accepts PRs to `main`; the README asks for issues only for larger
+  changes. It is a skill indexer for Claude Code, Cursor, OpenClaw, Codex, and
+  other targets, so stale repo inventory docs are a useful target-native skill
+  ecosystem fix.
+- Fork safety: `gh repo fork LabRAI/ClawSkills` first collided with the
+  existing personal `kriptoburak/clawskills` fork for a different parent
+  (`trickv/clawskills`). The run did not push there. A unique fork
+  `kriptoburak/labrai-clawskills` was created and read back with parent
+  `LabRAI/ClawSkills` before pushing.
+- New external PR: opened https://github.com/LabRAI/ClawSkills/pull/1 from the
+  correctly parented fork `kriptoburak/labrai-clawskills`, branch
+  `codex/refresh-repo-inventory-docs`, commit `3a64b51`. The PR updates
+  `docs/repo_inventory.md` so risks no longer claim `config/README.md` still
+  points at a stale `skill_config.json`, clarifies that `skills/` and `dist/`
+  are generated outputs in a fresh checkout, and notes that docs now span
+  `docs/`, the root README, and module READMEs. No NHS badge was added because
+  the README badge row is target package health only.
+- Target validation for `LabRAI/ClawSkills#1`: passed `git diff --check`,
+  `npx --yes markdown-link-check docs/repo_inventory.md --quiet`, and
+  `python3 -m pytest tests/test_imports.py -q` with 8 tests passing. Target
+  hygiene scans found only a pre-existing generic provider-abstraction line, no
+  new TweetClaw, Xquik, credentials, or private implementation wording. PR
+  readback showed open, ready, mergeStateStatus `UNSTABLE`, no comments, no
+  reviews, no configured checks, one changed file, 3 additions, and 3
+  deletions.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source
+  remains `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and
+  still rendered stale TweetClaw `1.6.26`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. Direct checks returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClaw
+  Directory, OpenClaw docs, the new PR, and the fork branch. The target diff,
+  PR body, and TweetClaw memory diff were checked for confidential wording,
+  credentials, unsupported claims, stale metadata, and dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`14898/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit` at
+  moderate level remains blocked by nested `openclaw@2026.6.6` advisories for
+  `protobufjs` and `tar`; no dependency files changed.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the fork-collision lesson:
+  GitHub fork names are account-wide and case-insensitive enough to collide
+  across parents, so verify the fork parent after creation and use a unique
+  fork name before pushing. Preserve the docs-inventory lesson: skill indexer
+  docs can be high-fit outreach targets when the edit fixes stale repository
+  self-description and does not force a TweetClaw mention. Preserve
+  model/effort wording, same-thread quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill-repo coverage, fresh target
+  discovery, PR repair priority, duplicate and fork rules, official OpenClaw
+  checks, broken-link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
