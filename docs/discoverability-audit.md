@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 05:29 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 05:59 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 05:29 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 05:59 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,18 +196,15 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 05:29 UTC: model/effort selectors unavailable. Crawler-first
-  discovery returned no fresh candidates. Exact-read 100 authored open PRs
-  found `modu-ai/cowork-plugins#5` conflicting; repaired it with upstream main,
-  head `7e225c8`, now mergeable with only target-owned Vercel auth failing.
-- Fresh PR: https://github.com/anysearch-ai/anysearch-skill/pull/19 adds a
-  `social_media` vertical-domain source handoff and positions TweetClaw as an
-  optional OpenClaw X/Twitter evidence follow-up after duplicate, license, fork,
-  link, generator, and PR readback gates.
+- 2026-06-16 05:59 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates. Exact-read 100 authored PRs found no safe repair; Qredence review
+  comments were already fixed in current head.
+- Fresh PR: https://github.com/Arindam200/awesome-ai-apps/pull/226 documents an
+  optional TweetClaw/OpenClaw source layer for `memory_agents/social_media_agent`
+  after duplicate, license, fork, link, and PR readback gates.
 - OpenClaw docs/npm, ClawHub route, OpenClaw Directory, TweetClaw links, and
-  new target links stayed current. `npm run check:all` passed. ClawHub remains
-  stale at `1.6.26`; npm web page bot-protects with 403 while registry OK;
-  nested OpenClaw audit advisories remain upstream.
+  target links stayed current. ClawHub remains stale at `1.6.26`; nested
+  OpenClaw audit advisories remain upstream.
 
 ## Reporting Checklist
 

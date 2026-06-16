@@ -13364,3 +13364,79 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
   exclusion, secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+## 2026-06-16 05:59 UTC - Awesome AI Apps social agent handoff
+
+- Runtime and scope: the heartbeat runtime still did not expose GPT-5.5 or
+  extra-high reasoning selectors. The run continued under the available
+  runtime, with the limitation recorded here and in the heartbeat outcome.
+  Context7, Browser, Chrome, GUI repo inspection, dev servers, production SSH,
+  secret exposure, destructive git, and unrelated Xquik changes were avoided.
+- Crawler-first monitoring: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with research proxy JSON output for SKILL.md,
+  OpenClaw, MCP, Codex, Claude, social-media, Twitter/X, and registry lanes.
+  The focused pass returned 0 opportunities and printed only proxy health
+  metadata. `Xquik-dev/tweetclaw` had no open PRs or issues.
+- Authored PR readbacks: exact-read covered 100 open PRs by `kriptoburak`.
+  Summary was 0 dirty, 2 unknown mergeability, 9 with comments, 6 with reviews,
+  and 4 with non-success checks. Vercel failures on target repos remained
+  target-owned authorization blockers. Existing comments on prior TweetClaw,
+  OpenClaw, MCP, and skill PRs were bot or maintainer notes with no safe new
+  repair. `Qredence/skill-fleet#80` Gemini comments were checked against the
+  current branch, and the chat route schema docs were already fixed in head
+  `c19a2b8`.
+- Fresh discovery and duplicate gates: searched compact memory, archive, target
+  repos, open and closed target PRs, issues, and code for TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub, npm, ClawHub, Xquik, and
+  x-twitter-scraper variants. `phuc-nt/openclaw-skills` was blocked by an
+  existing open `kriptoburak` PR. `Kevjade/openclaw-api-list` was blocked by no
+  detectable license. `Arindam200/awesome-ai-apps` was selected because it is
+  MIT, active, non-fork, duplicate-clean, and has a social-media agent that
+  scrapes, analyzes, and posts X/Twitter content without documenting an
+  account-scoped OpenClaw handoff.
+- New external PR: the existing `kriptoburak/awesome-ai-apps` fork had the wrong
+  parent, so a new verified fork `kriptoburak/arindam-awesome-ai-apps` was
+  created with parent `Arindam200/awesome-ai-apps`. Pushed branch
+  `codex/tweetclaw-openclaw-source-layer` and opened
+  https://github.com/Arindam200/awesome-ai-apps/pull/226. The docs-only PR adds
+  an optional TweetClaw/OpenClaw source layer to
+  `memory_agents/social_media_agent/README.md`, keeps the app's existing stack
+  unchanged, and pins the published install example to
+  `openclaw plugins install npm:@xquik/tweetclaw@1.6.31`.
+- Target validation and public hygiene: `git diff --check` passed for the
+  target. Markdown link check passed for the edited README. Direct link checks
+  for TweetClaw GitHub, npm registry metadata, ClawHub, OpenClaw Directory, and
+  current OpenClaw plugin docs returned HTTP 200. Diff and PR body review found
+  no credentials, private source names, internal cost mechanics, unsupported
+  claims, or stale public metadata. No NHS badge was added because the handled
+  app README has no relevant badge area and a repo-root badge would be
+  unrelated to this nested app note.
+- PR readback: PR #226 is open, non-draft, mergeable, and head
+  `f6f2c971c9888aec622b6829c50a89e3a7547e14`. GitGuardian and Kilo Code Review
+  completed successfully; Kilo also posted a no-issues recommendation.
+- Official OpenClaw and TweetClaw checks: current official routes `llms.txt`,
+  `/cli/plugins`, manifest, permission requests, tool plugins, SDK entrypoints,
+  ClawHub publishing, and debugging returned HTTP 200. Npm metadata returned
+  OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, and published TweetClaw
+  latest `1.6.31`; local source remains `1.6.32`. ClawHub canonical route,
+  OpenClaw Directory listing, TweetClaw GitHub, and npm registry metadata
+  returned HTTP 200. ClawHub still renders stale TweetClaw `1.6.26`.
+- TweetClaw validation: Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. `npm run check-openclaw-platform-fitness`
+  passed. `npm run check:all` passed with 168 tests and 100% coverage. Moderate
+  `npm audit` remains blocked by nested OpenClaw `protobufjs` and `tar`
+  advisories; forced fix would install invalid `openclaw@0.0.1`, so no package
+  files changed. Memory size passed at 14923/15360 bytes. Automation TOML
+  measured 14872 bytes, with prompt text at 14641 bytes.
+- Prompt self-improvement: no persisted automation prompt edit was useful. Keep
+  the social-app lesson: when a target already owns scraping, memory, drafting,
+  or posting flow, add TweetClaw only as an optional account-scoped OpenClaw
+  source or approval layer, not as a replacement for the target's existing
+  stack. Preserve model/effort wording, quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill coverage, fresh target discovery,
+  PR repair priority, duplicate and fork rules, official OpenClaw checks,
+  broken-link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, commit/push requirement, Markdown cap, and this self-improvement
+  rule.
