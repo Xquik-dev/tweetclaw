@@ -10959,7 +10959,8 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   source-notes recipe rather than new publishing automation.
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
-  TweetClaw audit commit pending.
+  TweetClaw audit commit `bcd28b45b4be1a4e3a4990fd4819e372978405e4`; follow-up
+  hash-record commit pending.
 
 ## 2026-06-16 18:16 UTC heartbeat
 
