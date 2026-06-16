@@ -10935,6 +10935,85 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `docs/discoverability-audit.archive.txt`.
 - TweetClaw commit pushed: `d0a7aecc43a50bbc915bc312560b56c48c73b638`.
 
+## 2026-06-16 18:42 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, tweet-scraper, and catalog queries. The crawler
+  returned strict JSON with one candidate, `pkobielak/social-superpowers-mcp`.
+  Proxy metadata only was observed; no credential values were printed or stored.
+  The candidate was blocked by existing open TweetClaw PR 1.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found 4 narrowed flags. `pockebot/openpocket#117`
+  and `yaacovcorcos/papiskill#1` were target-owned Vercel authorization
+  failures; `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1` and
+  `modu-ai/cowork-plugins#5` were prior self-repair comments with no maintainer
+  request. No actionable repair remained before new outreach.
+- Fresh target screening: after the crawler candidate was duplicate-blocked,
+  targeted GitHub searches screened X/Twitter MCP servers, social-media MCP
+  servers, SKILL.md repos, and awesome MCP lists. Duplicate or prior-history
+  blockers included `pkobielak/social-superpowers-mcp`,
+  `blacktwist/social-media-skills`, `EnesCinr/twitter-mcp`,
+  `rafaljanicki/x-twitter-mcp-server`, `DataWhisker/x-mcp-server`,
+  `GenAIwithMS/twitter-mcp`, and `woosal1337/media-mcp`. `Owlseer-AI/Social-ops`
+  was fresh in compact/archive memory, MIT licensed, non-fork, non-archived,
+  duplicate-clean across target content and open/closed PRs/issues, and had a
+  target-native report-to-action boundary plus a stale README security link.
+- Fresh PR submitted: https://github.com/Owlseer-AI/Social-ops/pull/1 from
+  correctly parented fork `kriptoburak/Social-ops`, branch
+  `codex/add-x-action-handoff`, commit `14a00ef`. The PR keeps Social-Ops as the
+  evidence/report system of record and frames TweetClaw only as an optional
+  OpenClaw downstream action layer after user review. It also removes an absent
+  `SECURITY.md` link and points security reports to GitHub Security Advisories
+  when enabled. No NHS badge was added because the repo has no useful badge
+  area.
+- Target validation: `git diff --check` passed. `markdown-link-check README.md`
+  reported one pre-existing target-owned local console route,
+  `http://localhost:8088/reports`, which requires the app to be running. Link
+  checking passed with localhost ignored. Direct link checks returned HTTP 200
+  for the new TweetClaw URL and the PR. Public-hygiene scan found only intended
+  security-reporting and approval-gated workflow wording.
+- Official OpenClaw and package checks: `docs.openclaw.ai` returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/cli/skills`,
+  `/plugins/install-overrides`, and `/help/debugging`. Npm metadata returned
+  OpenClaw latest `2026.6.8`, beta `2026.6.8-beta.2`, modified
+  `2026-06-16T16:27:41.883Z`; `clawhub` remained `0.22.0`; published TweetClaw
+  remained `1.6.31` while source remains unpublished `1.6.32`.
+- Broken links and public surfaces: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry, canonical ClawHub route, OpenClaw Directory, xquik.com,
+  docs.xquik.com, and the new PR. The npm web page still returned curl HTTP 403,
+  while `npm view` and the registry endpoint returned current metadata.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; forced fix remains unsafe
+  because it would install `openclaw@0.0.1`. GitHub Dependabot reports the
+  matching three open alerts: one `tar` and two `protobufjs`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  social-intelligence MCP repos are a better fit when TweetClaw is presented as
+  a downstream approval-gated action layer rather than as a competing data
+  collector.
+- Prompt byte check: automation TOML measured `14872` bytes; decoded prompt
+  measured `14530` bytes. Both remained under the 15 KiB persisted prompt cap.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 17:55 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
