@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 05:59 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 06:25 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 05:59 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 06:25 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,12 +196,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 05:59 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates. Exact-read 100 authored PRs found no safe repair; Qredence review
-  comments were already fixed in current head.
-- Fresh PR: https://github.com/Arindam200/awesome-ai-apps/pull/226 documents an
-  optional TweetClaw/OpenClaw source layer for `memory_agents/social_media_agent`
-  after duplicate, license, fork, link, and PR readback gates.
+- 2026-06-16 06:25 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates. Exact-read 100 authored PRs found one actionable conflict; repaired
+  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
+  and it is mergeable.
+- Fresh PR: https://github.com/indranilbanerjee/digital-marketing-pro/pull/7
+  adds X/Twitter source-evidence for `share-of-voice`; TweetClaw stays optional
+  for public evidence collection. CodeRabbit wording nit was repaired at head
+  `69f3256`; the PR is mergeable.
 - OpenClaw docs/npm, ClawHub route, OpenClaw Directory, TweetClaw links, and
   target links stayed current. ClawHub remains stale at `1.6.26`; nested
   OpenClaw audit advisories remain upstream.

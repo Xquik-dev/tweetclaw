@@ -13440,3 +13440,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   broken-link checks, validation gates, badge rule, Context7 exclusion, secret
   handling, commit/push requirement, Markdown cap, and this self-improvement
   rule.
+
+## 2026-06-16 06:25 UTC - Digital Marketing Pro X/Twitter SOV source evidence
+
+- Runtime and scope: the heartbeat runtime still did not expose GPT-5.5 or
+  extra-high reasoning selectors. The run continued under the available runtime,
+  with the limitation recorded here and in the heartbeat outcome. Context7,
+  Browser, Chrome, GUI repo inspection, dev servers, production SSH, secret
+  exposure, destructive git, and unrelated Xquik changes were avoided.
+- Crawler-first monitoring: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with research proxy JSON output for SKILL.md,
+  OpenClaw, MCP, Codex, Claude, social-media, Twitter/X, and registry lanes.
+  The focused pass returned 0 opportunities and printed only proxy health
+  metadata. `Xquik-dev/tweetclaw` had no open PRs or issues.
+- Authored PR readbacks and repair: exact-read covered 100 open PRs by
+  `kriptoburak`; summary was 1 conflicting PR, 10 with comments, 6 with reviews,
+  and 4 with non-success checks. The actionable conflict was
+  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1.
+  The correct fork `kriptoburak/loaded-awesome-openclaw-skills-zh` was verified
+  with parent `loaded-napierianlogarithm458/awesome-openclaw-skills-zh`, the
+  target `main` merge conflict was reproduced locally, README was resolved to
+  target current content plus the TweetClaw row only, and branch
+  `codex/add-tweetclaw-twitter-entry` was pushed at head `8d30b1c`. PR body was
+  refreshed, and readback shows `MERGEABLE` with no checks configured. Other
+  noisy PR signals were target-owned Vercel authorization, usage-limit bot
+  comments, old bot reviews already fixed in current heads, or maintainer queues.
+- Fresh discovery and duplicate gates: after the repair, targeted searches
+  screened skill and marketing repositories because crawler output was empty.
+  Archive or metadata blocked `coreyhaines31/marketingskills` by prior
+  TweetClaw PR 294, `jonathimer/devmarketing-skills` by existing PR 2,
+  `gooseworks-ai/goose-skills` by missing license, and `sales-skills/sales` by
+  missing license despite a badge. `indranilbanerjee/digital-marketing-pro` was
+  selected because it is MIT licensed, active, non-fork, duplicate-clean across
+  target content plus open and closed PRs/issues, and its `share-of-voice` skill
+  measures social SOV without a traceable X/Twitter source-evidence appendix.
+- New external PR: created and verified fork
+  `kriptoburak/digital-marketing-pro` with parent
+  `indranilbanerjee/digital-marketing-pro`, pushed branch
+  `codex/x-twitter-sov-source-evidence`, and opened
+  https://github.com/indranilbanerjee/digital-marketing-pro/pull/7. The PR adds
+  `skills/share-of-voice/x-twitter-source-evidence.md` and tells
+  `share-of-voice` to load it when X/Twitter is in scope and connector coverage
+  is incomplete. TweetClaw is framed only as an optional public evidence
+  collection helper; Digital Marketing Pro keeps counting,
+  sentiment weighting, confidence labels, and recommendations. No NHS badge was
+  added because the target badge row describes package and app health, not
+  optional collection sources.
+- Target validation and public hygiene: `python3 scripts/skill-line-check.py`,
+  `git diff` whitespace check, Markdown link checks for both touched files, and
+  `python3 tests/run_all.py` all passed. Direct link checks returned HTTP 200
+  for TweetClaw GitHub and the PR URL. The npm web page returned bot-protection
+  HTTP 403 during direct probing, so the new reference keeps the npm package name
+  as plain text and links only the GitHub repo. Diff and PR body review found no
+  credential values, private source names, internal cost mechanics, unsupported
+  claims, or stale public metadata. Initial PR #7 readback showed open,
+  non-draft, mergeable, head `833a56c`, and one valid CodeRabbit wording nit.
+  Pushed follow-up head `69f3256` clarifying TweetClaw as the collection helper,
+  then reran the line check, whitespace check, both Markdown link checks, and
+  `python3 tests/run_all.py`. Latest PR readback stayed open, non-draft, and
+  `MERGEABLE`; the old CodeRabbit review remains attached to the prior commit
+  and no fresh actionable review was present.
+- Official OpenClaw and TweetClaw checks: current official routes `llms.txt`,
+  `/cli/plugins`, manifest, permission requests, tool plugins, SDK entrypoints,
+  ClawHub publishing, and debugging returned HTTP 200. Npm metadata returned
+  OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, and published TweetClaw
+  latest `1.6.31`; local source remains `1.6.32`. ClawHub canonical route,
+  OpenClaw Directory listing, TweetClaw GitHub, npm registry metadata, Xquik,
+  docs.xquik.com, and the new PR returned HTTP 200 or redirect-success. ClawHub
+  still renders stale TweetClaw `1.6.26`.
+- TweetClaw validation: Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. `npm run check-openclaw-platform-fitness`
+  passed for local TweetClaw `1.6.32` targeting OpenClaw `2026.6.6`.
+  Moderate-level production and full npm audits reported nested
+  `openclaw@2026.6.6` `protobufjs` and `tar` advisories; dry-run package-lock
+  fix found no non-breaking local fix, while the forced fix would install
+  invalid `openclaw@0.0.1`. Memory size passed before audit edits at
+  14923/15360 bytes. Automation TOML measured 14872 bytes, with prompt text at
+  14641 bytes.
+- Prompt self-improvement: no persisted automation prompt edit was useful. Keep
+  the Digital Marketing Pro lesson: for analytics, SOV, scoring, or
+  recommendation skills, make TweetClaw an optional source-evidence collector
+  and keep normalization, scoring, sentiment, recommendations, and final
+  decisions inside the target. Preserve model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill coverage,
+  fresh target discovery, PR repair priority, duplicate and fork rules, official
+  OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
