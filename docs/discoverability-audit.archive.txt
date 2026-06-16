@@ -13229,8 +13229,10 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - External PR: created and verified the correctly parented
   `kriptoburak/agent-skills-pack` fork, then opened
   https://github.com/MauricioPerera/agent-skills-pack/pull/2 from branch
-  `codex/domain-api-skill-pattern`, commit
-  `52ed9ed30d2003d72c880cff1332e121e7536483`. The docs-only PR adds a
+  `codex/domain-api-skill-pattern`; final readback head is
+  `e38c078e73a5a8aefcb7e4578241adf12e1af865` after follow-up commit
+  `e38c078` addressed Gemini's parallel workflow wording suggestion. The
+  docs-only PR adds a
   target-native README pattern for domain-specific CLI/API wrappers, keeps
   secrets in runtime env or delegated CLIs, constrains network and side-effect
   wording, uses `@xquik/tweetclaw` as a concrete X/Twitter source-evidence
@@ -13247,6 +13249,9 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   links. The diff and PR body were checked for credentials, private source
   names, internal cost mechanics, unsupported claims, and stale public metadata.
   No NHS badge was added because this docs pattern is not a badge-area surface.
+  Final PR readback showed open, non-draft, mergeable, unstable only because no
+  checks are configured, with the addressed Gemini comment attached to the old
+  diff line.
 - Official OpenClaw and TweetClaw checks: current official OpenClaw docs routes
   `llms.txt`, plugin install/update/inspect, manifest, permission requests, tool
   plugins, SDK entrypoints, ClawHub publishing, and debugging all returned HTTP

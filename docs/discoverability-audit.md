@@ -203,7 +203,8 @@ archive, before any outreach or duplicate decision.
 - Fresh PR: https://github.com/MauricioPerera/agent-skills-pack/pull/2
   documents domain-specific API skill wrappers with TweetClaw as an X/Twitter
   source-evidence example and refreshes stale `llms.txt` `v2.2.0` links after
-  duplicate, license, fork, link, target-owned npm-403, and PR readback gates.
+  duplicate, license, fork, link, target-owned npm-403, Gemini repair, and PR
+  readback gates.
 - OpenClaw docs/npm, ClawHub route, OpenClaw Directory, and TweetClaw links
   stayed current. ClawHub page remains stale at `1.6.26`; nested OpenClaw audit
   advisories remain upstream. Target and TweetClaw checks passed except the
