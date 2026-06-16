@@ -12691,3 +12691,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
   exclusion, secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+## 2026-06-16 03:34 UTC - Skill Fleet API docs version repair
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in research-proxy JSON mode with
+  focused `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X, evidence, registry, validator, framework, library,
+  and package-tooling queries. The crawler returned strict JSON with
+  `opportunities: []`; proxy logs contained only credential-free refresh
+  status.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 67 clean, 24 unstable, 9 blocked, 0 drafts, 17
+  comments, 7 reviews, and 5 failing check contexts. Focused readbacks found no
+  current maintainer request, DCO, CLA, conflict, generated-file drift, dirty
+  merge state, or safe current-head CI repair. Attention items were target-owned
+  authorization failures, stale or already-addressed bot reviews, or
+  informational comments on prior outreach PRs.
+- Fresh candidate discovery and duplicate gates: crawler output returned no
+  candidates, so targeted screening covered skill, OpenClaw, ClawHub,
+  framework, library, package-tooling, and social-media lanes.
+  `VoltAgent/awesome-openclaw-skills`, `VoltAgent/awesome-agent-skills`,
+  `Flash-Brew-Digital/validate-skill`, `daymade/claude-code-skills`,
+  `wshuyi/x-article-publisher-skill`, and
+  `SpillwaveSolutions/running-marketing-campaigns-agent-skill` were duplicate
+  or prior-history blocked. `MSiccDev/ai-context-kit` was MIT and
+  duplicate-clean but had no concrete high-fit TweetClaw or OpenClaw path.
+  `openclaw/clawhub` remained blocked by registry ownership state and prior
+  issues. `anysiteio/agent-skills` was lower-fit and product-specific.
+  `unifapi-agent/agents` had issues disabled and first-party competing scope.
+  `letta-ai/social-cli` lacked license metadata.
+- Selected target: `Qredence/skill-fleet` is an Apache-2.0, active, non-fork,
+  duplicate-clean skill-generation repo. Open issue 59 requested API docs
+  cleanup, and target code mounts routes under `/api/v1` only. The useful
+  target-native fix was correcting stale `/api/v2` docs, stale
+  `/api/v1/conversational` paths, and chat schema references.
+- New external PR: opened
+  https://github.com/Qredence/skill-fleet/pull/80 from correctly parented fork
+  `kriptoburak/skill-fleet`, branch `codex/fix-api-version-docs`. Initial
+  commit `08f4e80` updated `docs/reference/api/migration-v1-v2.md`,
+  `docs/reference/api/jobs.md`, `docs/reference/api/endpoints.md`, and
+  `docs/reference/api/schemas.md`.
+- PR repair: Gemini Code Assist left comments on the initial commit saying the
+  chat examples disagreed with exported conversational schemas. Exact code
+  readback showed the live router in `src/skill_fleet/api/v1/conversational.py`
+  already returned `response`, `reasoning`, `suggested_actions`, `session_id`,
+  and `metadata` for chat messages, and no `metadata` on session history. The
+  exported `src/skill_fleet/api/schemas/conversational.py` file was stale and
+  unused by that router. Repair commit `c19a2b8` aligned the exported schemas
+  with the live route and removed the nonexistent `StreamingRequest` docs list
+  entry. The old review comments stayed attached to the first commit; the
+  current head contains the repair.
+- Target validation for `Qredence/skill-fleet#80`: passed Markdown link checks
+  for the touched API docs, `git diff --check`, and target pre-commit hooks for
+  the touched docs and schema file. The hooks included ruff, ruff format, ty
+  type check, bandit, and unit tests. Target hygiene scans found only
+  pre-existing target examples such as `webhook_secret` placeholders and token
+  metrics, not new TweetClaw or Xquik content. Semgrep passed on the repaired
+  commit at the latest readback.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source
+  remains `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and
+  still rendered stale TweetClaw `1.6.26`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. Direct checks returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClaw
+  Directory, OpenClaw docs, the new PR, and the fork branch. The npm web page
+  returned expected bot-protection 403 while registry metadata worked. The
+  target diff, PR body, and TweetClaw memory diff were checked for
+  confidential wording, credentials, unsupported claims, stale metadata, and
+  dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`14939/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit` at
+  moderate level remains blocked by nested `openclaw@2026.6.6` advisories for
+  `protobufjs` and `tar`; no dependency files changed.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the docs-repair lesson:
+  issue-backed docs repos can be high-fit outreach targets when the edit fixes
+  target-native API drift first, then only records TweetClaw discovery value in
+  the private audit. Preserve model/effort wording, same-thread quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh target discovery, PR repair priority, duplicate and fork
+  rules, official OpenClaw checks, broken-link checks, validation gates, badge
+  rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
+  cap, and this self-improvement rule.

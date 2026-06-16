@@ -196,16 +196,16 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 03:02 UTC: model/effort selectors unavailable. Exact-read 100
-  authored PRs found no safe actionable repair before outreach. Crawler strict
-  JSON returned no candidates.
-- Fresh PR: https://github.com/swarmclawai/agent-skills-lint/pull/3 accepts
-  common OpenClaw metadata keys for `claw` skills with a TweetClaw-shaped
-  fixture. Repo MIT, duplicate-clean, fork parent verified, checks passed, PR
-  open, ready, and mergeable.
-- OpenClaw docs/npm, TweetClaw public links, target links, memory, platform
-  fitness, and full checks passed except the known nested OpenClaw audit
-  blocker. ClawHub route stayed HTTP 200 but stale at `1.6.26`.
+- 2026-06-16 03:34 UTC: model/effort selectors unavailable. Exact-read 100
+  authored PRs found no actionable repair before outreach; crawler strict JSON
+  returned no candidates.
+- Fresh PR: https://github.com/Qredence/skill-fleet/pull/80 fixes API docs
+  that still referenced stale `/api/v2` and chat schema contracts. Repo
+  Apache-2.0, duplicate-clean, fork parent verified, target hooks and links
+  passed, bot feedback was repaired, and Semgrep passed on the repaired head.
+- OpenClaw docs/npm and TweetClaw public links stayed current. ClawHub route
+  stayed HTTP 200 but stale at `1.6.26`. Known nested OpenClaw npm audit
+  advisories remain upstream.
 
 ## Reporting Checklist
 
