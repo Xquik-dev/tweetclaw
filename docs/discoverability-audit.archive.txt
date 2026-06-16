@@ -9025,6 +9025,91 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-16 14:27 UTC Heartbeat
+
+- Runtime and model note: this Codex desktop runtime did not expose controls to
+  select GPT-5.5 or extra-high reasoning effort. The run continued with the
+  available model and recorded the limitation here and in compact memory.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran the
+  internal GitHub opportunity crawler with research proxy and focused skill,
+  OpenClaw, MCP, Claude, social media, and X/Twitter queries. The crawler
+  completed with JSON output and returned 0 repositories. GitHub code-search
+  fallback then surfaced skill and OpenClaw-adjacent candidates for screening.
+- TweetClaw repo monitoring: `Xquik-dev/tweetclaw` had no open issues and no
+  open PRs. The worktree was clean on `master` at start.
+- Authored PR monitoring: exact readbacks were collected for 100 open PRs by
+  `kriptoburak`. Seven were non-clean or unknown: `modest-curator478/claude-skills#1`,
+  `yaacovcorcos/papiskill#1`, `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1`,
+  `modu-ai/cowork-plugins#5`, `ArshdeepGrover/ai-tools-manager#169`,
+  `heilcheng/awesome-agent-skills#290`, and `Drhir2460/agentskills-mcp#1`.
+  No actionable maintainer request, review-thread fix, DCO/CLA blocker,
+  conflict, or generated-file drift was found. Blockers were review queues,
+  owner-side Vercel authorization, branch protection, or GitHub unknown merge
+  state without comments or checks.
+- Fresh candidate screening: repository search returned no new matches for
+  `social media mcp skill`, `content marketing claude skill`,
+  `tweet analytics mcp`, or `brand monitoring claude skill`. Code-search lanes
+  covered `source` plus `Twitter` in `SKILL.md`, OpenClaw social media skills,
+  X/Twitter source README matches, and tweet analytics skills. `Affitor/affiliate-skills`
+  was duplicate-blocked by prior PR 23. `bcharleson/openclaw-macmini-setup-guide`
+  and `HeyVincent-ai/agent-skills` were blocked by absent license metadata.
+  `bidewio/better-openclaw` was AGPL-3.0 and target-native but held for a larger
+  future OpenClaw stack lane. Archive history kept `mturac/everything-openai-codex`
+  blocked by target-owned prior Xquik/vendor-marketing history. `Bin-Huang/x-analytics-cli`
+  was selected because it is Apache-2.0 licensed, not archived, not a fork,
+  issue-enabled, duplicate-clean across compact audit, archive, target content,
+  open and closed PRs, and open and closed issues, and its packaged skill already
+  targets OpenClaw and read-only X API analytics.
+- External PR opened: created and verified the correctly parented fork
+  `kriptoburak/x-analytics-cli`, branch `codex/tweetclaw-boundary-guidance`,
+  commit `8cc4e66`, and opened
+  https://github.com/Bin-Huang/x-analytics-cli/pull/1. The PR updates
+  `skills/x-analytics-cli/SKILL.md` with a scope boundary that keeps
+  `x-analytics-cli` responsible for read-only X API search, counts, profile
+  lookup, timelines, and engagement metrics; points OpenClaw users to a
+  separately configured TweetClaw tool only for jobs the CLI does not implement
+  such as tweet or reply posting, direct messages, media handling, follower
+  export, and tweet monitoring; and fixes a stale X docs fields link by replacing
+  it with current fields and expansions pages. Readback reported the PR open,
+  mergeable, clean, no comments, no reviews, and no checks configured.
+- Target validation for PR 1: passed `git diff --check` and
+  `npx --yes markdown-link-check skills/x-analytics-cli/SKILL.md --quiet`.
+  The link check caught the pre-existing broken `https://docs.x.com/x-api/fields`
+  URL, which the PR fixes. A diff-only public-hygiene scan found no em dash,
+  credential literals, private implementation details, restricted source names,
+  private pricing mechanics, or unsupported claims introduced by the PR. NHS
+  badge was not added because the target has no reader-useful badge area for a
+  companion tool.
+- Official OpenClaw checks: `llms.txt`, `/cli/plugins`,
+  `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata still reports OpenClaw latest `2026.6.6` and beta
+  `2026.6.8-beta.2`. Published TweetClaw remains `1.6.31`; local source remains
+  `1.6.32`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. ClawHub and OpenClaw Directory TweetClaw routes
+  returned HTTP 200. The ClawHub page still exposes stale `1.6.26` metadata, so
+  npm remains canonical until owner-scope publishing is fixed.
+- TweetClaw validation: `npm run build` and
+  `npm run check-openclaw-platform-fitness` passed. `npm audit --audit-level=moderate --omit=dev`
+  still reports nested OpenClaw host advisories in `hono`, `protobufjs`, and
+  `tar`; `npm audit fix --dry-run --omit=dev` did not provide a safe root fix
+  and force would downgrade OpenClaw to `0.0.1`, so this remains an upstream host
+  dependency blocker. The dry-run did not alter tracked files, and final
+  `npm run check:all` passed with 11 test files, 168 tests, and 100% coverage.
+- Prompt self-improvement: no automation prompt edit was useful. Durable lesson:
+  for tool-specific skill repos, a narrow scope-boundary patch plus repair of a
+  pre-existing stale official docs link is often more target-native than adding
+  broad listing copy. Keep TweetClaw framed as an optional configured OpenClaw
+  companion for unsupported actions, not as a replacement for the target tool.
+  Markdown memory measured `15312/15360`; persisted prompt bytes remained
+  `14530`, and automation TOML bytes remained `14872`.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 14:19 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not

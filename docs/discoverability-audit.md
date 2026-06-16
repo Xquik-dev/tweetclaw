@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 14:19 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 14:27 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 14:19 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 14:27 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,19 +196,20 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 14:19 UTC: model/effort selectors unavailable. Crawler returned 0
+- 2026-06-16 14:27 UTC: model/effort selectors unavailable. Crawler returned 0
   repos. TweetClaw had no open PRs/issues. Readback of 100 authored PRs found no
   safely repairable maintainer request; blockers were review queues, branch
-  protection, or owner-side Vercel authorization.
-- Fresh PR: https://github.com/celeryhq/simplified-social-media-skills/pull/1
-  adds optional TweetClaw/OpenClaw public X/Twitter source-context guidance and
-  fixes a dead README demo media URL. Readback: open, clean, mergeable, head
-  `49b295a`, no checks configured.
-- Checks: target link check passed; OpenClaw docs/npm current at `2026.6.6` with
-  current permission route `/plugins/plugin-permission-requests`; TweetClaw
-  links, build, and platform fitness passed. Known npm audit blocker remains
-  nested OpenClaw `protobufjs`/`tar`; dry-run did not clear it and force would
-  downgrade OpenClaw. Prompt bytes `14530`; automation TOML `14872`.
+  protection, owner-side Vercel authorization, or GitHub unknown merge state.
+- Fresh PR: https://github.com/Bin-Huang/x-analytics-cli/pull/1 adds a packaged
+  skill boundary that keeps `x-analytics-cli` on read-only X API analytics,
+  points OpenClaw users to configured TweetClaw only for unsupported write,
+  media, DM, follower export, or monitoring jobs, and fixes a stale X docs link.
+  Readback: open, clean, mergeable, no checks configured.
+- Checks: target link check passed; OpenClaw docs/npm current at `2026.6.6`;
+  TweetClaw links and `npm run check:all` passed. Known npm audit blocker
+  remains nested OpenClaw `hono`/`protobufjs`/`tar`; dry-run did not provide a
+  safe root fix and force would downgrade OpenClaw. Prompt bytes `14530`;
+  automation TOML `14872`.
 
 ## Reporting Checklist
 
