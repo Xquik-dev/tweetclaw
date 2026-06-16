@@ -12598,3 +12598,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   priority, duplicate and fork rules, official OpenClaw checks, broken-link
   checks, validation gates, badge rule, Context7 exclusion, secret handling,
   commit/push requirement, Markdown cap, and this self-improvement rule.
+
+## 2026-06-16 03:02 UTC - OpenClaw metadata lint support
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in research-proxy JSON mode with
+  focused `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X, evidence, registry, validator, framework, library,
+  and package-tooling queries. The crawler returned strict JSON with
+  `opportunities: []`; proxy logs contained only credential-free refresh
+  status.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 68 clean, 23 unstable, 9 blocked, 0 drafts, 20
+  comments, 9 reviews, and 5 failing check contexts. Focused readbacks found no
+  current maintainer request, DCO, CLA, conflict, generated-file drift, or safe
+  current-head CI repair. Current failures were target-owned authorization
+  blockers, stale bot reviews, or informational comments.
+- Fresh candidate discovery and duplicate gates: crawler output returned no
+  candidates, so targeted screening covered skill, validator, marketplace,
+  registry, framework, library, package-tooling, OpenClaw, MCP, Codex, Claude,
+  and social-media lanes. Duplicate or prior-history blockers included
+  `blacktwist/social-media-skills`, `tang-vu/social-posting-skills`,
+  `AISA-skills/social-media-skills`, `Aditya923-c/xpoz-agent-skills`,
+  `creatorcrawl/creatorcrawl-skill`, `elbis330/social-media-scraper-skill`,
+  `zuocharles/openclaw-social-media-skill`,
+  `nowork-studio/openclaw-social-media-skills`,
+  `ununununium/openclaw-social-media-skills`, `Rollandcodes/BizAI`,
+  `fwfutures/skills`, `coreline-ai/agent_skills_marketplace`,
+  `swissmarley/SkillsForAgents`, `MARUCIE/openclaw-foundry`, `haxlys/skills`,
+  and `Pratiyush/skill-sdk`. New duplicate-clean targets screened included
+  `harnessworks/harness-agent-skills-marketplace`,
+  `narrative-io/narrative-skills-marketplace`,
+  `gitstq/SkillForge-Marketplace`, `bjester/shinyskills`,
+  `ronaldtebrake/agent-skills-validator`, `ollieb89/agent-skill-validator`,
+  `swarmclawai/agent-skills-lint`, and `motiful/skill-forge`.
+- Selected target: `swarmclawai/agent-skills-lint` is an MIT, active,
+  non-fork, duplicate-clean validator repo. Its README says OpenClaw has richer
+  `version` and `metadata` frontmatter, but the `claw` flavor only accepted a
+  short key set. That made common OpenClaw skill keys such as `homepage`,
+  `read_when`, and `license` warn as unknown. The useful target-native fix was
+  validator support plus a realistic OpenClaw fixture.
+- New external PR: opened
+  https://github.com/swarmclawai/agent-skills-lint/pull/3 from correctly
+  parented fork `kriptoburak/agent-skills-lint`, branch
+  `codex/openclaw-metadata-keys`, commit `6acde72`. The PR updates
+  `src/flavors.ts`, adds `tests/fixtures/claw/tweetclaw/SKILL.md`, and extends
+  `tests/lint.test.ts` so common OpenClaw metadata keys are accepted. No NHS
+  badge was added because the target badge area serves package health only.
+- Target validation for `swarmclawai/agent-skills-lint#3`: passed
+  `pnpm test`, `pnpm run typecheck`, `pnpm run build`, `git diff --check`,
+  target diff dash and sensitive-pattern scans, `markdown-link-check` for the
+  added TweetClaw fixture, direct HTTP 200 for `https://xquik.com`, and direct
+  HTTP 200 for the new PR. Target README link check found only the pre-existing
+  npm package-page 403 for `https://www.npmjs.com/package/@swarmclawai/agent-skills-lint`.
+  PR readback showed open, ready, `MERGEABLE`, no comments, no reviews, no
+  configured checks, 3 changed files, 35 additions, and 1 deletion.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source
+  remains `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and
+  still rendered stale TweetClaw `1.6.26`, while the old `clawhub.openclaw.ai`
+  probe did not resolve and is not a current source link.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. Direct checks returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, xquik.com,
+  docs.xquik.com, NHS badge and site, OpenClaw docs, and the new PR. The npm
+  web page returned expected bot-protection 403 while registry metadata worked.
+  The target diff, PR body, and TweetClaw memory diff were checked for
+  confidential wording, credentials, unsupported claims, stale metadata, and
+  dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, and `npm run check:all` passed
+  after audit updates. `npm audit --audit-level=moderate` remains blocked by
+  nested `openclaw@2026.6.6` advisories for `protobufjs` and `tar`; no
+  dependency files changed. Changed TweetClaw files are
+  `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the validator lesson:
+  validator and lint repos can accept TweetClaw-shaped fixtures when the edit
+  fixes target-native OpenClaw support and avoids marketing-only placement.
+  Preserve model/effort wording, same-thread quiet autonomy, crawler-first
+  discovery, mandatory PR submission, aggressive skill-repo coverage, fresh
+  target discovery, PR repair priority, duplicate and fork rules, official
+  OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
