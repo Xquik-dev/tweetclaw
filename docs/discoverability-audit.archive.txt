@@ -11917,3 +11917,101 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   checks, validation gates, badge rule, explicit target exclusion, secret
   handling, commit/push requirement, Markdown cap, and this self-improvement
   rule.
+
+2026-06-16 00:23 UTC heartbeat run
+
+- Runtime note: current automation runtime did not expose GPT-5.5 or
+  extra-high reasoning selectors, so the run continued under the available
+  model and effort settings. This limitation was recorded for audit and final
+  heartbeat reporting.
+- TweetClaw repo state started clean on `master`. `Xquik-dev/tweetclaw` and
+  `Xquik-dev/xquik` had no open GitHub issues at session start.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with focused `SKILL.md`, OpenClaw, MCP,
+  Twitter/X, social, validator, and package-tooling queries. The first pass
+  refreshed the proxy list and returned strict JSON with an empty opportunities
+  array. A second pass for adjacent MCP and source-evidence lanes returned
+  `rabden/X-twitter-social-manager-skill` and
+  `expropriationhoorayhenry64/social-media-scraper-skill`; both remained
+  blocked by missing GitHub-detected license metadata, and the second also has
+  issues disabled. No credential values were printed.
+- PR monitoring: exact-read 100 open PRs authored by `kriptoburak` after
+  crawler-first monitoring. Summary was 69 `CLEAN`, 24 `UNSTABLE`, 6
+  `BLOCKED`, 1 `UNKNOWN`, 0 `DIRTY`, 0 `CONFLICTING`, 0 changes-requested, 12
+  with comments, 5 with reviews, and 1 with failing checks. `papiskill#1` has
+  only target-owned Vercel authorization plus a Gemini no-feedback review.
+  `Ultimate-Agent-Directory#84` has only a target-owned external Kilo review
+  failure. No DCO, CLA, maintainer-request, valid bot-review repair, generated
+  drift, or safe current-head CI repair blocked fresh outreach.
+- Fresh candidate screening: compact audit and archive searches blocked or held
+  prior-history or no-license OpenClaw Twitter skill targets including
+  `dissaozw/openclaw-skill-twitter`, `zhiyuanw0/openclaw-skill-twitter`,
+  `RAFOLIE/openclaw-skill-twitter-trending`,
+  `bussgrowwithlucky-crypto/openclaw-skill-twitter-poster`,
+  `96528025/openclaw-skill-twitter-digest`, `harrylabsj/twitter-thread-crafter`,
+  and `anamipit/twitter-x`. Additional targeted searches screened
+  `PHY041/claude-skill-twitter`, `rafaljanicki/x-twitter-mcp-server`,
+  `luminarylane/x-twitter-mcp-server`, `jetloga/twitterapi.io-mcp-server`,
+  `Abwor9658/social-media-skills`, `tweet-md/skill`, `heyjello/x-to-markdown`,
+  `AresChenAI/x-followback-audit`, `underdogYnino/social-growth-audit-skill`,
+  and `CentauriAgent/agent-social-skills`; all were duplicate-covered, prior
+  held, lower fit, no-license, or already represented by existing TweetClaw or
+  Xquik outreach.
+- Selected target: `hodoshia/social-media-fact-checker` was MIT licensed,
+  non-fork, not archived, issue-enabled, active on 2026-06-15, duplicate-clean
+  across compact audit, archive, target content, GitHub code search, and open
+  plus closed target PR and issue searches for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, xquik.com, OpenClaw, and variants. The target was a
+  strong native fit because social draft fact checking needs a safe way to
+  attach reviewed public X/Twitter evidence without treating engagement metrics
+  or discourse claims as primary proof.
+- New external PR: opened https://github.com/hodoshia/social-media-fact-checker/pull/1
+  from correctly parented fork `kriptoburak/social-media-fact-checker`, branch
+  `codex/x-twitter-evidence-packets`, commit
+  `4c121258dcf4b554930a60a560a88e9fe2d105be`. The PR adds X/Twitter evidence
+  packet guidance to `README.md` and `skills/social-fact-check/SKILL.md`,
+  naming TweetClaw as one optional source of reviewed public context while
+  preserving the target's own fact-checking authority. It requires canonical
+  post URLs, post IDs, handles, timestamps, captured text, query terms, and
+  capture time, and excludes private messages, non-public account data, cookies,
+  tokens, and account actions. No NHS badge was added because the target has no
+  badge area.
+- Target validation for `social-media-fact-checker#1`: passed `git diff
+  --check`, `npx -y markdown-link-check README.md`,
+  `npx -y markdown-link-check skills/social-fact-check/SKILL.md`, a SKILL
+  frontmatter sanity check, direct TweetClaw GitHub HTTP 200, and public-diff
+  hygiene scan. PR readback showed open, ready, `MERGEABLE`, `CLEAN`, head
+  `4c121258dcf4b554930a60a560a88e9fe2d105be`, no comments, no reviews, and no
+  checks configured.
+- Official OpenClaw docs and package metadata: fetched current official
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging`; all returned HTTP 200 and the
+  expected plugin, install, inspect, manifest, permission, publishing, skill,
+  and runtime wording. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.1`, ClawHub `0.21.0`, and published TweetClaw `1.6.31`; local
+  source remains `1.6.32`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflows docs, and packaged skill. Direct
+  checks returned HTTP 200 for current OpenClaw docs, ClawHub plugin route, and
+  TweetClaw GitHub. Npm registry metadata was verified with `npm view`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`.
+  `npm run check-memory-md-size` passed at `15008/15360`. `npm run check:all`
+  passed with 168 tests and 100% coverage. `npm audit --audit-level=moderate`
+  remains blocked by nested `openclaw@2026.6.6` advisories for `protobufjs` and
+  `tar`; no dependency files changed.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful.
+  Preserve source-evidence framing for fact-checking, scoring, publishing,
+  scheduling, analytics, voice-match, and control-layer targets; treat public
+  X/Twitter posts as context, not proof of consensus, causation, trend strength,
+  legal status, or market size. Preserve model/effort wording, same-thread
+  quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, official OpenClaw checks, broken-link checks, validation
+  gates, badge rule, explicit target exclusion, secret handling,
+  commit/push requirement, Markdown cap, and this self-improvement rule.
