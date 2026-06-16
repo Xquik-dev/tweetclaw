@@ -12581,6 +12581,9 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check:all` passed with 168 tests and 100% coverage. `npm audit
   --audit-level=moderate` remains blocked by nested `openclaw@2026.6.6`
   advisories for `protobufjs` and `tar`; no dependency files changed.
+  Changed TweetClaw files are `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`;
+  audit docs were committed and pushed to `master`.
 - Prompt self-improvement: no persisted automation prompt edit was useful, so
   persisted prompt bytes were unchanged. Preserve the lesson that upstream
   maintainer policy blocks `rampstackco/claude-skills` and derived RampStack
