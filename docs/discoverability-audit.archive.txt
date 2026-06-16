@@ -12878,6 +12878,128 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
 
+## 2026-06-16 04:20 UTC - Skill Generator third-party API example
+
+- Runtime and scope: the heartbeat requested GPT-5.5 with extra-high reasoning,
+  but this runtime did not expose model or effort selectors, so the run
+  continued under the available same-thread Codex runtime and recorded the
+  limitation. Scope stayed on TweetClaw discoverability; Xquik was used only for
+  the internal crawler. The Xquik working tree had unrelated local changes and
+  was left untouched.
+- PR monitoring and repair gate: read the GitHub triage, PR-comment, and CI
+  repair skill instructions for this run. Authored open PR search returned 100
+  open `kriptoburak` PRs. Exact `gh pr view` readbacks succeeded for all 100:
+  0 errors, 0 drafts, 0 dirty/conflicting PRs, 7 blocked review gates, 26
+  unstable states, 9 comment-bearing PRs, 5 review-bearing PRs, and 4 PRs with
+  non-success external status contexts. Comment and review readbacks showed
+  target-owned Vercel authorization on `ArshdeepGrover/ai-tools-manager#169`,
+  `heilcheng/awesome-agent-skills#290`, `modu-ai/cowork-plugins#5`, and
+  `yaacovcorcos/papiskill#1`; already-addressed or informational bot notes on
+  `Walliiee/openclaw-skills#2`, `diaz3618/argus-mcp-catalog#1`,
+  `wangzhongmin/awesome-mcp-servers#2`, `stone16/wingman-x#21`, and
+  `Sukumar-Elley/awesome-mcp-servers#1`; and review-only gates on
+  `AgriciDaniel/claude-ads#45`, `Pnwcomputers/ULTIMATE-CYBERSECURITY-MASTER-GUIDE#8`,
+  `Flash-Brew-Digital/validate-skill#2`, `agent-ecosystem/skill-validator#80`,
+  `bobmatnyc/claude-mpm-skills#26`, `docker/mcp-registry#3949`, and
+  `raphabot/awesome-cybersecurity-agentic-ai#43`.
+- Repair decision: `Qredence/skill-fleet#80` had fresh Gemini inline comments,
+  so it was cloned and inspected at head `c19a2b8`. The comments claimed
+  `SendMessageResponse` still contained `message_id` and `context`, but the PR
+  head already changed `src/skill_fleet/api/schemas/conversational.py` and the
+  live `/api/v1/chat` route classes to use `response`, `reasoning`,
+  `suggested_actions`, `session_id`, and `metadata`; the history response also
+  intentionally has no `metadata` field on the PR head. The bot comments were
+  invalid against current source, so no repair commit or duplicate comment was
+  made.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with research proxy JSON output, bounded
+  request and proxy warmup timeouts, and query lanes for `SKILL.md`,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, social media, Twitter/X,
+  source evidence, brand monitoring, skill registries, validators, and examples.
+  The crawler printed only credential-free proxy refresh metadata and strict
+  JSON with `opportunities: []`.
+- Fresh candidate screening and duplicate gates: after crawler output returned
+  no candidates, targeted GitHub searches covered social-skill repos,
+  OpenClaw/Twitter skills, MCP registries, skill validators, skill generators,
+  package managers, and skill registries. Compact audit, archive, target
+  metadata, target content, open and closed PRs/issues, and local clone checks
+  were searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Twitter/X,
+  SKILL.md, social source evidence, follower export, media, direct messages,
+  monitors, webhooks, giveaway, MCP, validators, registries, and tooling
+  variants. Duplicate or prior-history blockers included
+  `blacktwist/social-media-skills`, `elbis330/social-media-scraper-skill`,
+  `AISA-skills/social-media-skills`, `Aditya923-c/xpoz-agent-skills`,
+  `creatorcrawl/creatorcrawl-skill`, `tang-vu/social-posting-skills`,
+  `luna-prompts/skillnote`, `sentenz/skills`, `framerslab/agentos-skills`,
+  `majiayu000/claude-skill-registry`, `JSONbored/awesome-claude`,
+  `avivsinai/skills-marketplace`, `jnMetaCode/skillet`,
+  `XMTLYL/skills-catcher`, `Jignesh-Ponamwar/skills-mcp`, `nklisch/skilltap`,
+  and `Tyler-Reagan/skills-bank`. Missing-license lanes included
+  `liangdabiao/tikhub_api_skill`, `rabden/X-twitter-social-manager-skill`,
+  `tiendatne2004/tikhub_api_skill`, `wopanda/global-social-search`, and
+  several registry mirrors. `mattsfraser/skill-generator` was selected because
+  it is Apache-2.0, active, non-fork, non-archived, issue-enabled,
+  duplicate-clean across target content plus open and closed PRs/issues, and
+  already ships reviewable example skill folders where a third-party API
+  boundary example is target-native.
+- New external PR: opened https://github.com/mattsfraser/skill-generator/pull/1
+  from correctly parented fork `kriptoburak/skill-generator`, branch
+  `codex/tweetclaw-third-party-example`, commit
+  `215cb44337c8a72a2d4215c92836733c6bd844f1`. The PR adds
+  `examples/third-party-api-skill/SKILL.md` and
+  `examples/third-party-api-skill/references/source-packets.md`, updates the
+  README example index and use cases, updates the review checklist, and notes in
+  `NOTICE.md` that no TweetClaw files are copied. TweetClaw is framed only as an
+  optional public X/Twitter source-packet tool that must already be installed,
+  configured, and approved outside the skill. The example keeps posting,
+  replying, media upload, direct messages, monitor setup, webhooks, and giveaway
+  actions outside the example unless separately reviewed. No NHS badge was added
+  because the target README has no useful badge strip.
+- Target validation and hygiene: `git diff --check`, a frontmatter parse check
+  for all example `SKILL.md` files, and `npx --yes markdown-link-check README.md
+  NOTICE.md references/review-checklist.md examples/third-party-api-skill/SKILL.md
+  examples/third-party-api-skill/references/source-packets.md --quiet` passed.
+  Direct HTTP checks returned 200 for TweetClaw GitHub, the new PR, and the fork
+  branch. The target diff and PR body were checked for secrets, private source
+  names, internal cost mechanics, unsupported claims, stale metadata, and
+  exposed credential values; matches were only the intended negative boundary
+  language about not storing raw cookies or API keys.
+- Official OpenClaw docs and package metadata: official routes `llms.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/building-plugins`, `/plugins/sdk-entrypoints`,
+  `/clawhub/publishing`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source
+  remains `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and
+  remains stale at TweetClaw `1.6.26`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. Direct checks returned HTTP 200 for current
+  OpenClaw docs, TweetClaw GitHub, npm registry metadata, canonical ClawHub,
+  OpenClaw Directory, the new Skill Generator PR, and the fork branch.
+- TweetClaw validation and memory: `git diff --check`,
+  `npm run check-openclaw-platform-fitness`, TweetClaw public Markdown link
+  checks, `npm run check-memory-md-size` at `15145/15360`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. Npm audit at
+  moderate level remained blocked by nested `openclaw@2026.6.6` advisories for
+  `protobufjs` and `tar`; no dependency files were changed.
+- Prompt self-improvement: no persisted automation prompt edit was useful.
+  Preserve this lesson: skill-generator and validator repos can accept
+  TweetClaw-shaped examples when the edit teaches reviewable third-party API
+  boundaries, source-packet fields, and approval gates, and does not present
+  TweetClaw as capability granted by the skill. Preserve the Qredence lesson:
+  bot review comments must be checked against current PR head and route-local
+  schemas before repair; stale base-schema assumptions are not repair blockers.
+  Preserve model/effort wording, same-thread quiet autonomy, crawler-first
+  discovery, mandatory PR submission, aggressive skill-repo coverage, fresh
+  target discovery, PR repair priority, duplicate and fork rules, official
+  OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
+
 ## 2026-06-16 04:02 UTC - Brand impersonation X source packets
 
 - Runtime note: this environment did not expose controls to select GPT-5.5 or
