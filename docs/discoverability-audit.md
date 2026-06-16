@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 20:00 UTC: latest
+- OpenClaw npm checked as of 2026-06-16 20:46 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
   llms, plugin CLI, manifest, permissions, tool plugins, SDK entrypoints,
-  ClawHub publishing, skills, install overrides, and debugging.
+  ClawHub publishing, skills, plugin install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 20:00 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 20:46 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,18 +194,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 20:25 UTC: model/effort selectors unavailable. Crawler returned
+- 2026-06-16 20:46 UTC: model/effort selectors unavailable. Crawler returned
   strict JSON with 0 opportunities. TweetClaw had no PRs/issues; focused
-  authored/audit readbacks found no safely repairable blocker. Pinkpixel review
-  feedback is outdated after the prior branch fix.
-- Fresh PR: https://github.com/cookiy-ai/user-research-skill/pull/53 adds
-  public social source-evidence guidance for research plans, screeners,
-  interviews, surveys, and synthesis. Readback: open, mergeable, review
-  required, no comments, reviews, or checks.
-- Checks: target whitespace and Markdown links, duplicate gates, fork-parent
+  authored/audit readbacks found only stale review states or non-actionable
+  bot comments, so no repair blocked fresh outreach.
+- Fresh PR: https://github.com/genli-ai/market-research-skills/pull/1 adds
+  public social provenance rules to the analyst-research source taxonomy and
+  Chinese mirrors. Readback: open, mergeable, no comments, reviews, or checks.
+- Checks: target whitespace, packaging, duplicate gates, fork-parent
   verification, OpenClaw docs, package metadata, TweetClaw Markdown links,
   platform fitness, public probes, memory cap, and `npm run check:all` passed.
-  Npm audit still reports nested OpenClaw `protobufjs`/`tar` advisories.
+  Target link check found pre-existing IMF and SEC 403s; npm audit still reports
+  nested OpenClaw `protobufjs`/`tar` advisories.
 
 ## Reporting Checklist
 

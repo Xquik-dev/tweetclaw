@@ -10855,6 +10855,101 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-16 20:46 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-evidence, validator, and skill-catalog
+  queries. The crawler returned strict JSON with zero opportunities. Proxy
+  metadata only was observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. Focused
+  readbacks covered recent authored and audit-tracked PRs including
+  `cookiy-ai/user-research-skill#53`,
+  `pinkpixel-dev/skills-collection-1#3`, `Qredence/skill-fleet#80`,
+  `nikships/skills-registry#45`, `Jamkris/everything-gemini-code#91`, and
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`. The changes-requested states were stale or
+  already resolved, and no maintainer comment, review thread, CI failure,
+  conflict, DCO, CLA, or generated-file drift required repair before fresh
+  outreach.
+- Fresh target screening: after crawler returned zero, exact GitHub searches
+  screened user-research and market-research skill lanes. `genli-ai/market-research-skills`,
+  `berenshtein/market-research-skills`, `PJharwal/market-research-skill`, and
+  `recursive-systems/market-research` were fresh in compact/archive memory and
+  MIT licensed. `arokclawdbot/market-research`, `irinasmoke/user-research-skills`,
+  and `chelseajz/user-research-skill` lacked a license. `genli-ai/market-research-skills`
+  was selected because it is active, non-fork, MIT licensed, bilingual, and has
+  an analyst source taxonomy where public social evidence improves target
+  discipline.
+- Duplicate and policy gates: compact audit, release memory, archives, target
+  content, and open/closed target PRs/issues had no TweetClaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, OpenClaw, or
+  x-twitter-scraper duplicate for `genli-ai/market-research-skills`. The repo is
+  public, not archived, not a fork, MIT licensed, and accepts docs changes via
+  normal PR workflow.
+- Fresh PR submitted: https://github.com/genli-ai/market-research-skills/pull/1
+  from correctly parented fork `kriptoburak/market-research-skills`, branch
+  `codex/add-public-social-provenance`, commit
+  `f128e152e22e13b7b78d3c5b282cca6d4c6ac1ac`. The PR updates
+  `workflow_light`, `workflow_medium`, and `workflow_heavy` plus Chinese mirrors
+  so public X/Twitter, LinkedIn, Substack, and community posts are treated as
+  lead-generation and sentiment texture, not primary evidence. It records query,
+  capture date, URL or post ID, author handle, and retrieval tool, and frames
+  TweetClaw only as an optional public X/Twitter capture tool while the target
+  remains responsible for verification and argumentation.
+- PR readback: `genli-ai/market-research-skills#1` is open, mergeable, has no
+  comments, reviews, or check runs, and touches only the 6 intended workflow
+  files.
+- Target validation: `git diff --check` passed. `./scripts/pack.sh analyst-research`
+  generated the expected ignored package artifact. `npx --yes markdown-link-check`
+  over the edited English workflow files reported two pre-existing target-owned
+  automated-checker 403s for `https://www.imf.org/publications` and
+  `https://www.sec.gov/edgar`; the new TweetClaw GitHub link returned HTTP 200
+  via direct curl. No generated artifact was staged.
+- Badge rule: the target does not have a reader-useful badge area in the edited
+  surfaces, so no NHS Agentic Readiness badge was added.
+- Official OpenClaw and package checks: official docs returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/skills`,
+  `/plugins/install-overrides`, and `/help/debugging`. The old
+  `/cli/install-overrides` route now returns 404, while the docs index points to
+  `/plugins/install-overrides`; future runs should use the current route. Npm
+  metadata returned OpenClaw latest `2026.6.8`, beta `2026.6.8-beta.2`,
+  `clawhub@0.22.0`, and published TweetClaw `1.6.31`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  code of conduct, and agent registry steps passed Markdown link checking.
+  Direct probes returned HTTP 200 for TweetClaw GitHub, canonical ClawHub route,
+  OpenClaw Directory, xquik.com, docs.xquik.com, and the new external PR. npmjs
+  returned HTTP 403 to curl, but registry metadata was healthy through
+  `npm view @xquik/tweetclaw`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check:all` passed typecheck, lint, cpd, knip, suppression check, dash
+  check, memory cap, skill frontmatter, version checks, build, platform fitness,
+  package artifact, and 168 tests with 100% coverage. `npm audit --audit-level=moderate --omit=dev`
+  still reports 4 moderate nested OpenClaw advisories for `protobufjs` and `tar`;
+  force fix would be unsafe because it would install `openclaw@0.0.1`.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  market-research skills are a good fit when TweetClaw is framed as optional
+  public social capture and the target keeps verification, weighting, and
+  argument ownership. No prompt candidate was saved, so prompt byte size was not
+  applicable.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 20:25 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
