@@ -10929,8 +10929,11 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
   when a user account has an existing fork name for a different upstream, use a
   distinct fork name and verify parent before pushing.
+- Prompt byte check: automation TOML measured `14872` bytes; decoded prompt
+  measured `14530` bytes. Both remained under the 15 KiB persisted prompt cap.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+- TweetClaw commit pushed: `d0a7aecc43a50bbc915bc312560b56c48c73b638`.
 
 ## 2026-06-16 17:55 UTC heartbeat
 
