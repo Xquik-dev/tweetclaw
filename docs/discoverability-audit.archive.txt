@@ -9024,6 +9024,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   TweetClaw/OpenClaw a fallback path, not a required runtime.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-16 15:05 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
@@ -14419,5 +14420,107 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   when a target-wide validator has pre-existing drift, validate the new files
   directly, run remaining target checks, record the baseline blocker in the PR,
   and avoid generated catalog churn unless the target requires it.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-16 15:26 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`, no Context7 work was done, and no
+  Browser, Chrome, GUI, dev server, production SSH, destructive git action, or
+  secret read was used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-evidence, and skill-catalog queries. The
+  crawler returned strict JSON with zero opportunities. Proxy metadata only was
+  observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found target-owned Vercel authorization failures on
+  several PRs, non-actionable positive bot notes, and no merge conflicts or DCO
+  or CLA blockers. `MauricioPerera/agent-skills-pack#2` had an outdated Gemini
+  thread whose suggested README wording was already present. `Qredence/skill-fleet#80`
+  had 2 Gemini comments that were invalid against the current PR head schema, so
+  no repair was safe or needed before new outreach.
+- Fresh screening and blockers: archive and target duplicate checks plus exact
+  metadata screened skill and social-source lanes including
+  `LeoYeAI/openclaw-marketing-skills`, `majiayu000/claude-skill-registry`,
+  `nirholas/XActions`, `refly-ai/refly-skills`,
+  `modbender/skill-library-mcp`, `xdevplatform/xurl`, `affaan-m/ECC`,
+  `OpenLinkSoftware/ai-agent-skills`,
+  `SunflowersLwtech/github-repo-to-x-threads`,
+  `wshuyi/x-article-publisher-skill`,
+  `jefflinshu/release-calendar-skill`, `grapeot/typefully-twitter-skill`,
+  `TheMattBerman/x-algo-skill`, `Hao0321/claude-skill-social-post`,
+  `jnkindi/x-post-generator-skill`, `theexperiencecompany/gaia`,
+  `DegenApeDev/AlleyBot`, `enuno/moltbot-philosopher`, and
+  `Demerzels-lab/elsamultiskillagent`. Blockers were prior TweetClaw history,
+  no license metadata, no public license file, direct-competitor or thin fit, or
+  lower fit than a fresh licensed target. Never claim exhaustion across GitHub.
+- Selected target and duplicate gates: `AliceLJY/digital-clone-skill` is public,
+  MIT licensed, not a fork, not archived, issue-enabled, and recently active.
+  Target open and closed PRs/issues, repository content, compact audit, and
+  archive had no TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw URL,
+  npm URL, ClawHub URL, Xquik, or x-twitter-scraper duplicate. The target has a
+  natural Mentor Mode Social Fragments lane where X/Twitter source packets help
+  evidence quality without taking over cloning, scoring, drafting, or publishing.
+- Fresh PR submitted: https://github.com/AliceLJY/digital-clone-skill/pull/1
+  from correctly parented fork `kriptoburak/digital-clone-skill`, branch
+  `codex/tweetclaw-social-fragments`, commit `e022579`. The PR adds
+  public/consented X/Twitter source-packet guidance to README and `SKILL.md`,
+  frames TweetClaw as an optional OpenClaw or npm collection tool, keeps Digital
+  Clone responsible for evidence grading and verification, and removes the
+  pre-existing stale `content-publisher` link after the public repo returned
+  404 and no replacement appeared under the owner account. Readback: open,
+  ready, clean, mergeable, zero comments, zero reviews, and zero check runs.
+- Target validation: passed `git diff --check`,
+  `npx --yes markdown-link-check README.md SKILL.md --quiet`, `SKILL.md`
+  frontmatter fence check, TweetClaw GitHub URL probe, npm registry metadata for
+  `@xquik/tweetclaw@1.6.31`, OpenClaw docs check for explicit `npm:`,
+  `npm-pack:`, plugin update, and runtime inspect guidance, PR body readback,
+  PR diff readback, and added-diff public-hygiene scan. The only sensitive-word
+  scan hits were intentional privacy boundaries that mention DMs and cookies as
+  material not to ingest.
+- Badge rule: the target README has badges, but the area describes the skill's
+  license and Claude Code identity. An xquik.com readiness badge would not help
+  readers evaluate this skill, so no badge was added.
+- Official OpenClaw and package checks: current official docs returned HTTP 200
+  for `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/plugins/manifest`, `/plugins/plugin-permission-requests`,
+  `/plugins/tool-plugins`, `/plugins/sdk-entrypoints`, `/clawhub/publishing`,
+  and `/help/debugging`. CLI plugin docs still support explicit `npm:`,
+  `npm-pack:`, plugin install/update, and `openclaw plugins inspect <id>
+  --runtime --json`. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.2`, modified `2026-06-16T01:38:56.845Z`; `clawhub` remained
+  `0.22.0`; published TweetClaw remained `1.6.31`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub route, OpenClaw Directory,
+  xquik.com, docs.xquik.com, and the new PR. The handled target link check
+  passed after removing its pre-existing stale `content-publisher` link.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.6`.
+  `npm audit --audit-level=moderate --omit=dev` now reports nested OpenClaw
+  high advisories for `hono` and `protobufjs` plus a moderate `tar` advisory.
+  `npm audit fix --package-lock-only --dry-run` made no package-lock changes
+  and still reported the same nested OpenClaw tree; the forced path would
+  install invalid `openclaw@0.0.1` for `tar`, so this remains an upstream host
+  dependency blocker rather than a TweetClaw package edit.
+- Memory and prompt: compact audit was updated and details moved here.
+  `npm run check-memory-md-size` passed at 14957/15360 bytes. Automation TOML
+  still measured 14872 bytes, with prompt text at 14530 bytes, under the 15 KiB
+  prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  persona-clone and digital-mentor skill targets can accept TweetClaw only as a
+  public or consented source-packet collector when the target keeps authority
+  over evidence grading, refinement, negative-space analysis, and verification.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.

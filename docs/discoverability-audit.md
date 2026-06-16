@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 15:05 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 15:26 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 15:05 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 15:26 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,9 +74,8 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-16 found nested OpenClaw shrinkwrap advisories for
-  `protobufjs` and `tar`; root fixes would force an invalid OpenClaw downgrade.
-  Treat as an upstream host blocker until OpenClaw refreshes stable.
+- Npm audit on 2026-06-16 found nested OpenClaw advisories for `hono`,
+  `protobufjs`, and `tar`. Treat as upstream until OpenClaw refreshes stable.
 
 ## GitHub-First Rule
 
@@ -195,17 +194,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 15:05 UTC: model/effort selectors unavailable. Crawler returned 0
-  repos; TweetClaw had no PRs/issues. 100-PR readback found only target-owned
-  Vercel auth blockers and unstable owner checks, with no safe repair.
-- Fresh PR: https://github.com/BashhScriptKid/moltbook_cli_bash/pull/1 fixes
-  placeholder Moltbook skill homepage/raw install URLs and adds research-input
-  notes that keep Moltbook actions in Moltbook CLI while using TweetClaw only
-  for X/Twitter evidence. Readback: open, ready, mergeable, no checks/comments.
-- Checks: target diff, bash syntax, frontmatter, link, and URL checks passed.
-  OpenClaw docs/npm current at `2026.6.6`; TweetClaw links, build, platform
-  fitness, and `npm run check:all` passed. Known audit blocker remains nested
-  OpenClaw `hono`/`protobufjs`/`tar`. Prompt bytes `14530`; TOML `14872`.
+- 2026-06-16 15:26 UTC: model/effort selectors unavailable. Crawler returned 0
+  repos; TweetClaw had no PRs/issues. 100 authored PR readbacks found only
+  target-owned Vercel auth failures, non-actionable bot notes, and invalid or
+  outdated review comments.
+- Fresh PR: https://github.com/AliceLJY/digital-clone-skill/pull/1 adds
+  public/consented X/Twitter source-packet guidance for Mentor Mode and removes
+  one stale target-owned `content-publisher` link. Readback: open, ready,
+  mergeable, no checks/comments.
+- Checks: target diff/frontmatter/link checks, TweetClaw links, official
+  OpenClaw docs, npm metadata, and platform fitness passed. `npm audit` remains
+  blocked by nested OpenClaw `hono`/`protobufjs`/`tar`; dry-run made no fix.
+  Prompt bytes `14530`; TOML `14872`.
 
 ## Reporting Checklist
 
