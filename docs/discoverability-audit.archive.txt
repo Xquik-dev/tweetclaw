@@ -12877,3 +12877,112 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   checks, broken-link checks, validation gates, badge rule, Context7 exclusion,
   secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+## 2026-06-16 04:02 UTC - Brand impersonation X source packets
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` in research-proxy JSON mode with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, skill-registry, validator, framework, library, docs,
+  examples, and package-tooling queries. The crawler returned strict JSON with
+  `opportunities: []`; proxy logs contained only credential-free route refresh
+  status.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Initial summary was 25 unstable, 7 blocked, 0 dirty, 0 drafts,
+  17 with comments, 8 with reviews, 5 with non-success status contexts, and 1
+  read error. The read error was retried exactly for
+  `docker/mcp-registry#3949` and returned open, ready, `BLOCKED` by review
+  requirement, no comments, no reviews, and no checks. Attention readbacks found
+  no current maintainer request, DCO, CLA, conflict, generated-file drift, dirty
+  merge state, or safe current-head CI repair. Non-actionable signals were old
+  already-addressed bot comments, target-owned Vercel authorization failures,
+  review-required gates, branch protection, informational comments, and no-check
+  unstable states.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, targeted GitHub code and repo searches after crawler-first,
+  exact metadata, target content, local clones, fork metadata, and open plus
+  closed target PRs/issues were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, xquik.com, OpenClaw, Twitter/X, SKILL.md, social
+  listening, brand monitoring, impersonation, public source packets, MCP,
+  validator, catalog, and package-tooling variants. Prior or duplicate history
+  blocked `rohunvora/x-research-skill`, `ythx-101/x-tweet-fetcher`,
+  `zuocharles/openclaw-social-media-skill`, `OpenMinis/MinisSkills`,
+  `nexscope-ai/eCommerce-Skills`, `OpenClaudia/openclaudia-skills`,
+  `runesleo/x-reader`, `kangarooking/x-skills`, `crabwise-ai/crabwalk`,
+  `BlackBlazeXXX/claude-skills-marketing`, and
+  `siminpeng-create/Google-Ads-NKW-Analyzer`. `gtmagents/gtm-agents` was newly
+  rechecked but duplicate-blocked by existing open `kriptoburak` PR 100 for a
+  TweetClaw social automation skill. `mk-knight23/AGENTS-COLLECTION` lacked
+  detected license metadata. `a5c-ai/babysitter` was MIT and active but held as
+  a larger orchestration target after a narrower licensed brand-monitoring skill
+  surfaced.
+- Selected target: `mukul975/Anthropic-Cybersecurity-Skills` is Apache-2.0,
+  active, non-archived, non-fork, issue-enabled, and accepts PR contributions
+  under Apache-2.0. Target searches found no TweetClaw, Xquik,
+  x-twitter-scraper, or `@xquik/tweetclaw` duplicate. The
+  `performing-brand-monitoring-for-impersonation` skill already documents
+  social impersonation monitoring and Twitter/X API prerequisites, so optional
+  OpenClaw/TweetClaw source-packet guidance is target-native when kept to
+  reviewed public evidence collection.
+- External PR: opened `mukul975/Anthropic-Cybersecurity-Skills#80` at
+  https://github.com/mukul975/Anthropic-Cybersecurity-Skills/pull/80 from the
+  correctly parented fork `kriptoburak/Anthropic-Cybersecurity-Skills`, branch
+  `codex/tweetclaw-brand-source-packets`, commit
+  `06f94930366e1febf10945f3fe44c720cd71dbfb`. The PR adds optional
+  TweetClaw/OpenClaw source-packet guidance to
+  `skills/performing-brand-monitoring-for-impersonation/SKILL.md`, keeps
+  TweetClaw limited to public X/Twitter collection for reviewed evidence, keeps
+  risk triage and takedown decisions inside the target skill, repairs the
+  stale README NIST AI RMF link to the current official NIST page, and adds the
+  xquik.com NHS Agentic Readiness badge to the existing README badge strip.
+- Target validation and readback: target validation passed `git diff --check`,
+  the repository `tools/validate-skill.py` check for
+  `performing-brand-monitoring-for-impersonation`, and Markdown link checking
+  for README plus the touched skill. The first link check found the
+  pre-existing stale `https://airc.nist.gov/AI_RMF` README URL, which was
+  repaired to `https://www.nist.gov/itl/ai-risk-management-framework` after
+  checking current official NIST search results. Direct checks returned HTTP
+  200 for the NHS page, NHS badge SVG, TweetClaw GitHub, new PR, fork branch,
+  and npm metadata for published TweetClaw `1.6.31`. The target diff and PR
+  body were checked for credential, cookie, unsupported-claim, private-source,
+  internal-cost, and stale-metadata wording; only the intended public boundary
+  language about not passing raw cookies or credentials matched.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/building-plugins`, `/plugins/sdk-entrypoints`,
+  `/clawhub/publishing`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`,
+  ClawHub CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source
+  remains `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and
+  still rendered stale TweetClaw `1.6.26`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. Direct checks returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClaw
+  Directory, current OpenClaw docs, the new PR, and the fork branch. The target
+  diff, PR body, and TweetClaw memory diff were checked for confidential
+  wording, credentials, unsupported claims, stale metadata, and dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  before audit edits (`14898/15360`), `npm run check-openclaw-platform-fitness`,
+  and `npm run check:all` passed with 168 tests and 100% coverage. `npm audit`
+  at moderate level remains blocked by nested `openclaw@2026.6.6` advisories
+  for `protobufjs` and `tar`; `npm audit fix --force` would install an invalid
+  `openclaw@0.0.1` downgrade, so no dependency files were changed.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the brand-monitoring lesson:
+  cybersecurity monitoring skills are appropriate TweetClaw targets only when
+  TweetClaw is framed as optional public source evidence and the target keeps
+  detection, risk triage, takedown, and authorization boundaries. Preserve the
+  NIST-link lesson: fix stale public target links discovered by touched-file
+  link checks when the current official replacement is clear. Preserve
+  model/effort wording, same-thread quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill-repo coverage, fresh target
+  discovery, PR repair priority, duplicate and fork rules, official OpenClaw
+  checks, broken-link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
