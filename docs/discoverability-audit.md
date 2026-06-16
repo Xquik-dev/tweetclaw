@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 19:36 UTC: latest
+- OpenClaw npm checked as of 2026-06-16 20:00 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
   llms, plugin CLI, manifest, permissions, tool plugins, SDK entrypoints,
   ClawHub publishing, skills, install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 19:36 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 20:00 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,21 +194,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 19:24 UTC: model/effort selectors unavailable. Crawler returned
-  strict JSON with 0 opportunities. TweetClaw had no PRs/issues; 100 authored
-  PR readbacks found no safely repairable maintainer, review, CI, DCO, CLA,
-  conflict, or generated-file blocker.
-- Fresh PR: https://github.com/thu-vu92/social-media-agent/pull/2 documents how
-  to paste reviewed X/Twitter source notes into the existing query field and
-  fixes a pre-existing localhost README link-check failure. Readback: open,
-  mergeable, clean, no checks.
-- Checks: target whitespace, Python compile, target markdown links, duplicate
-  gates, OpenClaw docs, npm metadata, TweetClaw Markdown links, platform
-  fitness, `npm run check:all`, Dependabot readback, memory cap, and public
-  probes passed. Known
-  blockers: nested OpenClaw `protobufjs`/`tar`; obsolete
-  `openclaw.ai/directory/tweetclaw` probe 404 while canonical OpenClawDir route
-  is 200.
+- 2026-06-16 19:45 UTC: model/effort selectors unavailable. Crawler returned
+  strict JSON with 0 opportunities. TweetClaw had no PRs/issues; 39 focused
+  authored/audit PR readbacks found no safely repairable maintainer, review,
+  CI, DCO, CLA, conflict, or generated-file blocker. Vercel failures were
+  target-owner authorization gates.
+- Fresh PR: https://github.com/stian-a-johansen/skills/pull/1 fixes MIT license
+  metadata in `x.com/SKILL.md` and adds an optional TweetClaw/OpenClaw
+  source-pack handoff without replacing the target X API v2 list reader.
+  Readback: open, mergeable, no comments, no reviews, no checks.
+- Checks: target whitespace, target markdown links, duplicate gates, fork-parent
+  verification, OpenClaw docs, npm metadata, TweetClaw Markdown links, platform
+  fitness, Dependabot readback, public probes, audit dry-run, and
+  `npm run check:all` passed. Known blocker: nested OpenClaw `protobufjs`/`tar`
+  advisories remain upstream.
 
 ## Reporting Checklist
 
