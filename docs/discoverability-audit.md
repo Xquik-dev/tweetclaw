@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 16:20 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 16:41 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 16:20 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 16:41 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -194,17 +194,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 16:20 UTC: model/effort selectors unavailable. Crawler returned 0;
-  TweetClaw had no PRs/issues. 100 authored PR readbacks found no actionable
-  maintainer requests; target-owned Vercel authorization failures remain.
-- Fresh PR: https://github.com/Abdallah-707/Social-Media-AI-Agent/pull/1 adds
-  optional X/Twitter source-packet docs to a MIT n8n workflow, fixes 2 stale
-  setup links, and frames TweetClaw as optional extractor. Readback: open,
-  clean, mergeable, no checks/comments.
-- Maintenance: OpenClaw latest moved to `2026.6.8`; TweetClaw source metadata,
-  lockfile, README, and setup docs now target `2026.6.8`. `check:all`, links,
-  public probes, and platform fitness passed. Audit remains blocked by nested
-  OpenClaw `protobufjs`/`tar`; force would downgrade OpenClaw to `0.0.1`.
+- 2026-06-16 16:41 UTC: model/effort selectors unavailable. Crawler returned 0;
+  TweetClaw had no PRs/issues. Repaired `Qredence/skill-fleet#80` bot feedback
+  with `3349aeb` and comment `4721162472`; Semgrep was queued on readback.
+- Fresh PR: https://github.com/adarshpheonix2810/Twitter-Ai-Agent/pull/1 adds
+  optional X/Twitter source-context guidance to a MIT Gemini/MCP posting agent
+  and fixes repo link casing. Readback: open, clean, mergeable, no checks/comments.
+- Checks: target diff/link checks, TweetClaw links, official OpenClaw docs, npm
+  metadata, public probes, and platform fitness passed. Audit and Dependabot
+  still show nested OpenClaw `protobufjs`/`tar`; force would downgrade OpenClaw.
 
 ## Reporting Checklist
 
