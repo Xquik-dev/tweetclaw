@@ -13603,3 +13603,117 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   author IDs, timestamps, query windows, and capture notes. Keep verification,
   source tiering, confidence labels, and final findings inside the target.
   Automation TOML measured 14872 bytes, with prompt text at 14530 bytes.
+
+## 2026-06-16 08:38 UTC heartbeat
+
+- Runtime limitation: the current Codex runtime exposed no selector for GPT-5.5
+  or extra-high reasoning effort. The run recorded the limitation and continued.
+- PR monitoring and repair gate: TweetClaw started clean on `master`, with no
+  open issues or PRs in `Xquik-dev/tweetclaw`. The internal GitHub opportunity
+  crawler ran first from `/Users/burak/Developer/xquik` in managed
+  research-proxy JSON mode across SKILL.md, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, social media, Twitter/X, tweet scraper, source-evidence, and
+  skill-registry lanes; it returned strict JSON with zero opportunities and no
+  credential values printed. Authored open PR readbacks found no maintainer
+  request, review comment, CI failure, DCO, CLA, or generated drift blocking
+  fresh outreach. GraphQL `gh pr view` reads had transient TLS timeouts, so
+  exact REST readbacks were used. `ccccchuck/social-media-publishing-flow-skill`
+  #1, `robertnowell/deep-research` #1, `modest-curator478/claude-skills` #1,
+  `slayerlux/n8n-llm-workflows` #1, `Drhir2460/agentskills-mcp` #1, and
+  `vikynofebriputra-creator/Orkas-Awesome-AgentSkills` #1 were clean or had no
+  actionable feedback.
+- Repair: `loaded-napierianlogarithm458/awesome-openclaw-skills-zh#1` was
+  conflict-repaired from correctly parented fork
+  `kriptoburak/loaded-awesome-openclaw-skills-zh`. Shallow ancestry was deepened
+  before merging `upstream/main`; the only conflict was the README Twitter/X
+  table, resolved by keeping both upstream `x-tweet-fetcher` and the TweetClaw
+  row. Validation passed conflict-marker scan, `git diff` whitespace validation,
+  Markdown link check for README, direct HTTP 200 for canonical TweetClaw
+  GitHub, and an added-line public-safety scan. Repair commit
+  `a297b158d69ceffc8f49ebae4b999bb5005d1bc8` was pushed to
+  `codex/add-tweetclaw-twitter-entry`; final readback showed the PR open, ready,
+  mergeable, clean, and head `a297b15`.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, web-index results, exact metadata, target content, local
+  clones, fork metadata, and open plus closed target PRs/issues were checked for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, xquik.com, OpenClaw, Twitter/X,
+  SKILL.md, social media, source-packets, follower context, public replies,
+  media, direct messages, monitors, webhooks, giveaway, MCP, catalog, validator,
+  framework, library, and package-tooling variants. Authenticated GitHub code
+  search hit API rate limits after crawler-first discovery, so broad
+  authenticated searching stopped for the run and discovery continued with
+  web-index leads, exact REST lists, clones, and target metadata. Duplicate or
+  prior-history blockers covered `beggarticksarthurtatum121/reddit-skills`,
+  `ddeleon82/anything-to-skill`, `blacktwist/social-media-skills`,
+  `coreyhaines31/marketingskills`, `VoltAgent/awesome-agent-skills`,
+  `ComposioHQ/awesome-claude-skills`, `heilcheng/awesome-agent-skills`,
+  `JackyST0/awesome-agent-skills`, `gmh5225/awesome-skills`,
+  `jonathimer/devmarketing-skills`, `rockscy/solo-skills`,
+  `Rushik-Ghuntala/claude-code-skills`, `jamditis/claude-skills-journalism`,
+  `yamz8/x-thread-skill`, and `rohitg00/skillkit`. Missing-license or
+  lower-fit blockers included `gabrielkoerich/skills`,
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter`, `hoodini/ai-agents-skills`,
+  `inference-sh/skills`, `anysiteio/agent-skills`, `xdevplatform/xurl`,
+  `6551Team/opentwitter-mcp`, and direct first-party X/Twitter tool repos.
+  `ZhanlinCui/Agent-Skills-Hunter` was fresh and MIT licensed, but exact target
+  PR list showed open PR #3 already adding an Xquik social-data skill, so it was
+  duplicate-blocked. `softaworks/agent-toolkit` was selected because it is MIT
+  licensed, active, non-fork, non-archived, issue-enabled, duplicate-clean
+  across target content plus open and closed PRs/issues, and its utility skill
+  catalog plus viral-tweet command benefits from a target-native, source-packet
+  boundary before writing or launch workflows.
+- New external PR: created and verified fork `kriptoburak/agent-toolkit` with
+  parent `softaworks/agent-toolkit`, pushed branch
+  `codex/x-twitter-source-packets`, and opened
+  https://github.com/softaworks/agent-toolkit/pull/38. The PR adds
+  `skills/x-twitter-source-packets/SKILL.md` and README, registers the skill in
+  the root README, adds the Claude plugin marketplace entry, and rebuilds
+  `dist/plugins/x-twitter-source-packets`. The skill converts user-approved
+  public X/Twitter material into traceable evidence packets with URLs, tweet
+  IDs, author IDs, timestamps, visible metrics, context notes, limits, and
+  handoff rules. TweetClaw appears only as an optional OpenClaw source-collection
+  path pinned to `npm:@xquik/tweetclaw@1.6.31`; posting, replies, DMs, media
+  upload, monitor creation, webhook creation, scheduling, scoring, and account
+  changes stay outside the workflow unless separately approved. No NHS badge was
+  added because the target has no useful badge area.
+- Target validation and public hygiene: target `python3` JSON validation for
+  `.claude-plugin/marketplace.json`, plugin build, dry-run build, whitespace
+  validation, Markdown link checks for root README and the new skill files, and
+  added-line public-safety scan all passed. PR readback showed #38 open, ready,
+  mergeable, `unstable` only because no check runs were configured, with zero
+  comments, zero reviews, zero check runs, and head `1989365`. The PR body and
+  changed files contained no credential values, private implementation details,
+  unsupported claims, or stale public metadata.
+- Official OpenClaw and TweetClaw checks: official `llms.txt`, `/cli/plugins`,
+  manifest, permission requests, tool plugins, SDK entrypoints, ClawHub
+  publishing, and debugging routes all returned HTTP 200. Npm metadata returned
+  OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, and published TweetClaw
+  latest `1.6.31`; local source remains `1.6.32` and OpenClaw install metadata
+  remains pinned to `@xquik/tweetclaw@1.6.31`. Scoped and unscoped ClawHub
+  TweetClaw routes returned HTTP 200, and OpenClaw Directory canonical
+  `plugins/tweetclaw-m2h8cr` returned HTTP 200. The npm web page returned its
+  known probe-only 403 while registry metadata worked; the old singular
+  OpenClawDir probe returned 404 and is not a source-link regression.
+- TweetClaw validation: Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. `npm run check-openclaw-platform-fitness`
+  passed for local TweetClaw `1.6.32` targeting OpenClaw `2026.6.6`.
+  Package audit still reports nested `openclaw@2026.6.6` `protobufjs` and
+  `tar` advisories; the suggested forced fix would install invalid
+  `openclaw@0.0.1`, so this remains an upstream host dependency blocker.
+- Final TweetClaw changed files were `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Prompt self-improvement: no
+  persisted automation prompt edit was useful because the current prompt already
+  preserves model/effort wording, same-thread automation notes, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate and fork rules, official OpenClaw checks, broken-link checks,
+  validation gates, badge rule, Context7 exclusion, secret handling, cadence,
+  thread binding, commit/push requirement, Markdown cap, and self-improvement.
+  Durable lesson: broad utility skill catalogs can accept TweetClaw-adjacent
+  value when the contribution is a neutral source-packet skill that improves
+  evidence quality while keeping writing, scoring, publishing, account changes,
+  monitors, and webhooks in separate explicit approval flows. Automation TOML
+  measured 14872 bytes, with prompt text at 14530 bytes.

@@ -196,17 +196,21 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 06:45 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates. Exact-read 100 authored PRs found no safe actionable repair.
-  Current useful heads include market-intelligence-skills #1, digital-marketing
-  #7, and awesome-openclaw-skills-zh #1, all mergeable when checked.
-- Fresh PR: https://github.com/robertnowell/deep-research/pull/1 adds a public
-  social-evidence protocol and TweetClaw as an optional X/Twitter source-packet
-  collection example. Deep Research keeps source tiering, confidence labels,
-  verification, and report synthesis.
-- OpenClaw docs/npm, ClawHub route, OpenClaw Directory, TweetClaw links, and
-  target links stayed current. ClawHub remains stale at `1.6.26`; nested
-  OpenClaw audit advisories remain upstream.
+- 2026-06-16 08:38 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates; later authenticated code search hit GitHub rate limits, so the run
+  switched to web-index leads, exact REST lists, clones, and archive checks.
+- Repair: https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
+  was conflict-repaired and now reads open, ready, mergeable, clean, head
+  `a297b15`.
+- Fresh PR: https://github.com/softaworks/agent-toolkit/pull/38 adds
+  `x-twitter-source-packets`, README and marketplace registration, and rebuilt
+  dist files. Readback: open, ready, mergeable, no comments/reviews/checks, head
+  `1989365`.
+- Key blockers: `ZhanlinCui/Agent-Skills-Hunter` already has open Xquik PR #3;
+  other obvious skill/catalog targets were duplicate, no-license, lower-fit, or
+  prior history. OpenClaw docs/npm, ClawHub, OpenClaw Directory, TweetClaw links,
+  and target links stayed current. Npm web still returns probe-only 403; singular
+  OpenClawDir probe returns 404; nested OpenClaw advisories remain upstream.
 
 ## Reporting Checklist
 
