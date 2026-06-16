@@ -9024,6 +9024,102 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   TweetClaw/OpenClaw a fallback path, not a required runtime.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+## 2026-06-16 15:05 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`, no Context7 work was done, and no
+  Browser, Chrome, GUI, dev server, production SSH, destructive git action, or
+  secret read was used.
+- Starting state: `/Users/burak/Developer/tweetclaw` started clean and in sync
+  on `master`. `Xquik-dev/tweetclaw` had no open issues or PRs. Compact memory
+  measured 15213/15360 bytes before this update.
+- Crawler-first discovery: ran the internal Xquik GitHub opportunity crawler
+  from `/Users/burak/Developer/xquik` with research proxy, JSON output, focused
+  skill/OpenClaw query packs, bounded request timeouts, and strict JSON parsing.
+  The crawler returned zero opportunities. Follow-up GitHub searches were
+  targeted after the crawler pass.
+- PR monitoring: read back 100 open `kriptoburak` PRs exactly. No dirty heads,
+  conflicts, requested changes, maintainer requests, DCO or CLA blockers, or
+  repairable CI failures were found. Current actionable-looking statuses were
+  target-owned Vercel authorization failures or unstable owner-side checks on
+  `pockebot/openpocket#117`, `yaacovcorcos/papiskill#1`,
+  `modu-ai/cowork-plugins#5`, `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290`.
+- Fresh screening: duplicate or existing-outreach blockers covered
+  `kohoj/skills`, `MSApps-Mobile/claude-plugins`,
+  `blacktwist/social-media-skills`, `DbgKinggg/tweetskill`,
+  `sickn33/antigravity-awesome-skills`, `clawdbrunner/openclaw-xai-search`,
+  `Varnan-Tech/opendirectory`, `rrrrrredy/x-twitter-scraper`,
+  `rrrrrredy/all-net-search-read`, `tang-vu/social-posting-skills`,
+  `AISA-skills/social-media-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `elbis330/social-media-scraper-skill`, and
+  `AlexBloch-IA/twitter-account-operations`. No-license blockers covered
+  `sigitholic/starclaw`, `mk-knight23/AGENTS-COLLECTION`,
+  `react-tokyo/reacttokyo-fes-vibecording-race`,
+  `FPXszk/Oh-MY-TradingView`, `MidnightV1/Claude-Code-Feishu`,
+  `Noor-ul-ain001/ai-employee-hackathon-00`, and
+  `AmmarSafdari/ai-employee`. `danbirker-svg/hermes-hooks` was held because an
+  existing same-target X/Twitter automation PR is already open. `bradautomates`
+  `head-of-content` was held as lower fit because direct TweetClaw placement
+  would be thin.
+- Selected target: `BashhScriptKid/moltbook_cli_bash` is MIT licensed, public,
+  non-archived, non-fork, issue-enabled, default branch `main`, and
+  duplicate-clean across compact audit, archive, target content, open/closed
+  PRs, and open/closed issues for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw URLs, npm URL, ClawHub, Xquik, and
+  x-twitter-scraper variants. The skill file had real broken placeholder
+  homepage and raw install URLs.
+- Fresh PR submitted: https://github.com/BashhScriptKid/moltbook_cli_bash/pull/1
+  from correctly parented fork `kriptoburak/moltbook_cli_bash`, branch
+  `codex/fix-install-source-notes`, commit `0f218d1`. The PR points the skill
+  homepage and raw install commands at the real repository and adds a
+  `Research Inputs For Posts` section. The new guidance keeps Moltbook CLI
+  responsible for posts, link posts, comments, votes, follows, profile updates,
+  and submolt moderation while treating TweetClaw only as optional X/Twitter
+  source evidence for tweets, replies, followers, media, monitoring, and
+  giveaway draw context. Readback: open, ready, mergeable, no reviews, no
+  comments, and no check runs configured.
+- Target validation: `git diff --check`, `bash -n moltbook_cli.sh`,
+  `npx --yes markdown-link-check moltbook_cli_skill.md --quiet`, frontmatter
+  sanity parsing, direct URL checks for the target repository, raw script,
+  TweetClaw GitHub, and Moltbook homepage all passed. The public-hygiene scan
+  found no secret values, sensitive implementation or pricing details,
+  unsupported claims, or stale public metadata introduced by the PR.
+- Official OpenClaw and package checks: official `llms.txt`, `/cli/plugins`,
+  `/plugins/manage-plugins`, manifest, permission requests, tool plugins, SDK
+  entrypoints, ClawHub publishing, skill format, and debugging routes returned
+  HTTP 200. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.2`, and published TweetClaw `1.6.31`; local source remains
+  `1.6.32`.
+- Broken-link checks: TweetClaw README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, compact release memory, and compact audit passed
+  Markdown link checking. Direct checks returned 200 for TweetClaw GitHub, npm
+  registry metadata, canonical ClawHub plugin route, OpenClaw Directory listing,
+  xquik.com, and the official OpenClaw docs listed above.
+- TweetClaw validation: `npm run build`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-memory-md-size`, `git diff --check`, and final
+  `npm run check:all` passed after the audit update. Omit-dev npm audit still
+  reports nested OpenClaw advisories for `hono`, `protobufjs`, and `tar`; the
+  suggested forced fix would downgrade OpenClaw to an invalid `0.0.1`, so this
+  remains an upstream host dependency blocker.
+- Badge rule: no NHS Agentic Readiness badge was added because the handled
+  target had no badge area.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, same-thread quiet
+  autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh repo/framework/library discovery, PR repair
+  priority, duplicate/fork rules, official OpenClaw checks, link checks,
+  validation gates, badge rule, Context7 exclusion, secret handling, cadence,
+  thread binding, commit/push requirement, Markdown cap, and self-improvement.
+  Durable lesson: for skill repos with broken placeholder install links, make
+  the link repair the primary target-native value and keep TweetClaw framed as
+  optional source evidence instead of adding a marketing-only mention.
+- Memory and prompt: prompt text measured 14530 bytes and automation TOML
+  measured 14872 bytes. Compact memory stayed under the 15 KiB combined
+  Markdown cap after replacing the latest-run entry.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
 
 ## 2026-06-16 14:44 UTC heartbeat
 

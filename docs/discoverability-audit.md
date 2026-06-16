@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 14:27 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 15:05 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 14:27 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 15:05 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -195,16 +195,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 14:44 UTC: model/effort selectors unavailable. Crawler returned 0
-  repos; TweetClaw had no PRs/issues. 100-PR readback found 1 conflict; repaired
-  https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
-  at `83ddd5d`, final clean/mergeable.
-- Fresh PR: https://github.com/pockebot/openpocket/pull/117 adds a
-  Data-Heavy Workflows boundary to `x-twitter-play`, keeping visible UI actions
-  in OpenPocket while routing bulk search, follower export, user lookup, media,
-  monitoring, webhooks, giveaway draws, and broad DM inspection to tools such as
-  TweetClaw. Readback: open, mergeable, blocked by owner-side Vercel auth.
-- Checks: target diff, frontmatter, TweetClaw URL, and link checks passed.
+- 2026-06-16 15:05 UTC: model/effort selectors unavailable. Crawler returned 0
+  repos; TweetClaw had no PRs/issues. 100-PR readback found only target-owned
+  Vercel auth blockers and unstable owner checks, with no safe repair.
+- Fresh PR: https://github.com/BashhScriptKid/moltbook_cli_bash/pull/1 fixes
+  placeholder Moltbook skill homepage/raw install URLs and adds research-input
+  notes that keep Moltbook actions in Moltbook CLI while using TweetClaw only
+  for X/Twitter evidence. Readback: open, ready, mergeable, no checks/comments.
+- Checks: target diff, bash syntax, frontmatter, link, and URL checks passed.
   OpenClaw docs/npm current at `2026.6.6`; TweetClaw links, build, platform
   fitness, and `npm run check:all` passed. Known audit blocker remains nested
   OpenClaw `hono`/`protobufjs`/`tar`. Prompt bytes `14530`; TOML `14872`.
