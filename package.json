@@ -23,17 +23,17 @@
       "./dist/index.js"
     ],
     "compat": {
-      "pluginApi": ">=2026.6.6",
-      "minGatewayVersion": "2026.6.6"
+      "pluginApi": ">=2026.6.8",
+      "minGatewayVersion": "2026.6.8"
     },
     "build": {
-      "openclawVersion": "2026.6.6",
-      "pluginSdkVersion": "2026.6.6"
+      "openclawVersion": "2026.6.8",
+      "pluginSdkVersion": "2026.6.8"
     },
     "install": {
       "defaultChoice": "npm",
       "npmSpec": "@xquik/tweetclaw@1.6.32",
-      "minHostVersion": ">=2026.6.6"
+      "minHostVersion": ">=2026.6.8"
     }
   },
   "files": [
@@ -90,7 +90,7 @@
   },
   "peerDependencies": {
     "mppx": ">=0.1.0",
-    "openclaw": ">=2026.6.6",
+    "openclaw": ">=2026.6.8",
     "viem": ">=2.0.0"
   },
   "peerDependenciesMeta": {

@@ -38,7 +38,7 @@ the archive, before any release or ClawHub decision.
 
 ## OpenClaw Release Fitness
 
-- Current source metadata targets OpenClaw `2026.6.6`.
+- Current source metadata targets OpenClaw `2026.6.8`.
 - Required metadata fields:
   `openclaw.compat.pluginApi`, `openclaw.compat.minGatewayVersion`,
   `openclaw.build.openclawVersion`, `openclaw.build.pluginSdkVersion`,
@@ -46,14 +46,14 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- Npm audit on 2026-06-16 reports nested `openclaw@2026.6.6` advisories for
+- Npm audit on 2026-06-16 reports nested `openclaw@2026.6.8` advisories for
   `protobufjs` and `tar`; root overrides do not rewrite the host shrinkwrap.
   Rerun audit after each OpenClaw lockfile refresh.
 
 ## ClawHub State
 
 - ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 15:47 UTC, but keep npm canonical until current scoped package
+  on 2026-06-16 16:20 UTC, but keep npm canonical until current scoped package
   publishing succeeds.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`

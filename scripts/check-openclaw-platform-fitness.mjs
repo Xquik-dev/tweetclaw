@@ -5,7 +5,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const openclawBaseline = "2026.6.6";
+const openclawBaseline = "2026.6.8";
 const openclawRange = `>=${openclawBaseline}`;
 const errors = [];
 

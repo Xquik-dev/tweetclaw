@@ -40,7 +40,7 @@ openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
 
 OpenClaw keeps pinned records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
 
-Current source metadata targets OpenClaw `2026.6.6` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
+Current source metadata targets OpenClaw `2026.6.8` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
 If your OpenClaw install runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle
 mutators are disabled. Install or update TweetClaw through your Nix OpenClaw

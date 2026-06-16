@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 15:47 UTC: latest
-  `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
+- OpenClaw docs/npm checked as of 2026-06-16 16:20 UTC: latest
+  `2026.6.8`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 15:47 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 16:20 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -62,7 +62,7 @@ archive, before any outreach or duplicate decision.
 
 ## Current OpenClaw Fitness
 
-- TweetClaw source targets OpenClaw `2026.6.6`.
+- TweetClaw source targets OpenClaw `2026.6.8`.
 - Compatibility, build, install, host peer, and lockfile metadata are aligned.
 - `npm run check-openclaw-platform-fitness` is required after build for any
   OpenClaw metadata, manifest, runtime, approval, docs, packaged-skill, or
@@ -74,8 +74,8 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-16 found nested OpenClaw advisories for `hono`,
-  `protobufjs`, and `tar`. Treat as upstream until OpenClaw refreshes stable.
+- Npm audit on 2026-06-16 found nested OpenClaw advisories for `protobufjs`
+  and `tar`. Treat as upstream until OpenClaw refreshes stable.
 
 ## GitHub-First Rule
 
@@ -194,18 +194,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 15:47 UTC: model/effort selectors unavailable. Crawler returned 0
-  repos; TweetClaw had no PRs/issues. Authored PR readbacks found
-  `modu-ai/cowork-plugins#5` conflicted; repaired and pushed `f2c40d2`, now
-  mergeable with only target-owned Vercel authorization failing.
-- Fresh PR: https://github.com/kushalsamani/social-media-ai-agent/pull/1 adds
-  optional X/Twitter source-packet support and docs to a MIT CrewAI workflow,
-  with TweetClaw as optional extractor. Readback: open, clean, mergeable, no
-  checks/comments.
-- Checks: target Python compile/diff/link checks, TweetClaw links, official
-  OpenClaw docs, npm metadata, and platform fitness passed. `npm audit` remains
-  blocked by nested OpenClaw `hono`/`protobufjs`/`tar`; dry-run made no fix.
-  Prompt unchanged; automation TOML remains under cap.
+- 2026-06-16 16:20 UTC: model/effort selectors unavailable. Crawler returned 0;
+  TweetClaw had no PRs/issues. 100 authored PR readbacks found no actionable
+  maintainer requests; target-owned Vercel authorization failures remain.
+- Fresh PR: https://github.com/Abdallah-707/Social-Media-AI-Agent/pull/1 adds
+  optional X/Twitter source-packet docs to a MIT n8n workflow, fixes 2 stale
+  setup links, and frames TweetClaw as optional extractor. Readback: open,
+  clean, mergeable, no checks/comments.
+- Maintenance: OpenClaw latest moved to `2026.6.8`; TweetClaw source metadata,
+  lockfile, README, and setup docs now target `2026.6.8`. `check:all`, links,
+  public probes, and platform fitness passed. Audit remains blocked by nested
+  OpenClaw `protobufjs`/`tar`; force would downgrade OpenClaw to `0.0.1`.
 
 ## Reporting Checklist
 
