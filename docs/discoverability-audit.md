@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 04:51 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 05:29 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 04:51 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 05:29 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,19 +196,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 04:51 UTC: model/effort selectors unavailable. Crawler strict JSON
-  first returned no candidates, then a skill-registry pass found 6 targets.
-  Exact-read 100 authored open PRs found no safe repair blocker; target-owned
-  Vercel gates, addressed bot notes, and Glama badge routing remain blockers.
-- Fresh PR: https://github.com/MauricioPerera/agent-skills-pack/pull/2
-  documents domain-specific API skill wrappers with TweetClaw as an X/Twitter
-  source-evidence example and refreshes stale `llms.txt` `v2.2.0` links after
-  duplicate, license, fork, link, target-owned npm-403, Gemini repair, and PR
-  readback gates.
-- OpenClaw docs/npm, ClawHub route, OpenClaw Directory, and TweetClaw links
-  stayed current. ClawHub page remains stale at `1.6.26`; nested OpenClaw audit
-  advisories remain upstream. Target and TweetClaw checks passed except the
-  target's pre-existing npm 403.
+- 2026-06-16 05:29 UTC: model/effort selectors unavailable. Crawler-first
+  discovery returned no fresh candidates. Exact-read 100 authored open PRs
+  found `modu-ai/cowork-plugins#5` conflicting; repaired it with upstream main,
+  head `7e225c8`, now mergeable with only target-owned Vercel auth failing.
+- Fresh PR: https://github.com/anysearch-ai/anysearch-skill/pull/19 adds a
+  `social_media` vertical-domain source handoff and positions TweetClaw as an
+  optional OpenClaw X/Twitter evidence follow-up after duplicate, license, fork,
+  link, generator, and PR readback gates.
+- OpenClaw docs/npm, ClawHub route, OpenClaw Directory, TweetClaw links, and
+  new target links stayed current. `npm run check:all` passed. ClawHub remains
+  stale at `1.6.26`; npm web page bot-protects with 403 while registry OK;
+  nested OpenClaw audit advisories remain upstream.
 
 ## Reporting Checklist
 

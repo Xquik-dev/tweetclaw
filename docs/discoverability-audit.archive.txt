@@ -13277,3 +13277,90 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and fork rules, official OpenClaw checks, broken-link checks, validation
   gates, badge rule, Context7 exclusion, secret handling, commit/push
   requirement, Markdown cap, and this self-improvement rule.
+
+## 2026-06-16 05:29 UTC - AnySearch social-source handoff and cowork repair
+
+- Runtime and scope: the heartbeat runtime still did not expose GPT-5.5 or
+  extra-high reasoning selectors. The run continued under the available
+  runtime, with the limitation recorded here and in the heartbeat outcome.
+  Context7, Browser, Chrome, GUI repo inspection, dev servers, production SSH,
+  secret exposure, destructive git, and unrelated Xquik changes were avoided.
+- Crawler-first monitoring and repair: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with research proxy JSON output for SKILL.md,
+  OpenClaw, MCP, Codex, Claude, social-media, Twitter/X, and registry lanes.
+  Both focused passes returned 0 opportunities and printed only proxy health
+  metadata. Exact readback covered 100 open PRs by `kriptoburak`: 8 blocked, 1
+  dirty, 25 unstable, 9 with comments, 6 with reviews, and 5 with non-success
+  checks. `modu-ai/cowork-plugins#5` was the only actionable repair because it
+  was conflicting.
+- External repair: verified `modu-ai/cowork-plugins` is non-fork, active, and
+  custom NC-ND licensed, with `CONTRIBUTING.md` explicitly accepting plugin PRs.
+  Verified fork `kriptoburak/cowork-plugins-modu-xquik` has the correct parent.
+  Merged upstream main into `feature/moai-xquik`, resolved conflicts in
+  `.claude-plugin/marketplace.json` and `README.md`, kept upstream `2.21.0`,
+  carried `moai-xquik`, and reconciled totals to 29 plugins and 178 skills.
+  Commit `7e225c8` was pushed; PR readback shows `MERGEABLE`, open, non-draft,
+  with only target-owned Vercel authorization failure remaining.
+- Repair validation and links: `jq` parsed marketplace and plugin JSON, plugin
+  count was 29, SKILL.md count was 178, conflict-marker scans were clean,
+  `npm test` passed, git whitespace checks passed, Xquik plugin docs link check
+  passed, Xquik docs returned HTTP 200, and unauthenticated Xquik MCP returned
+  expected HTTP 401. The target README link check reports pre-existing
+  target-owned dead or blocked links including `claude.ai` 403, one Gemini docs
+  404, old release tag 404, MCP/API endpoints, Korean public sites, and ISO 403;
+  the repair introduced no dead links.
+- Fresh discovery and duplicate gates: after the repair, targeted GitHub search
+  screened maintained skill and registry repos because the crawler returned no
+  candidates. Prior history blocked `VoltAgent/awesome-agent-skills`,
+  `github/awesome-copilot`, `GetBindu/awesome-claude-code-and-skills`,
+  `addyosmani/agent-skills`, `iflytek/skillhub`, and other handled lanes.
+  `anysearch-ai/anysearch-skill` was selected because it is Apache-2.0,
+  active, non-fork, OpenClaw-tagged, duplicate-clean across compact memory,
+  archive, target content, open and closed PRs, and issues, and its docs list a
+  `social_media` vertical domain without a concrete social source workflow.
+- New external PR: created and verified fork `kriptoburak/anysearch-skill` with
+  parent `anysearch-ai/anysearch-skill`, pushed branch
+  `codex/social-source-handoff`, and opened
+  https://github.com/anysearch-ai/anysearch-skill/pull/19. The docs-only PR
+  updates `README.md`, `SKILL.md`, and `scripts/shared/doc_spec.md` with a
+  target-native `social_media` vertical-domain example, keeps AnySearch as the
+  broad public discovery and extraction layer, and positions TweetClaw as an
+  optional OpenClaw X/Twitter evidence follow-up for exact tweets, replies,
+  profile lookup, follower export, media URLs, monitors, webhooks, and approved
+  post or reply workflows.
+- AnySearch validation and public hygiene: `python3 scripts/generate.py` check
+  mode passed for all generated CLIs, `jq` parsed `constants.json`, Markdown
+  link check passed for README, SKILL, and shared doc spec, the Python CLI `doc`
+  output included the new social-media scenario, and git whitespace checks
+  passed. The Python doc command emitted a local LibreSSL warning from urllib3
+  but exited 0. Diff and PR body review found no credentials, private source
+  names, internal cost mechanics, unsupported claims, or stale public metadata.
+  PR readback shows open, non-draft, mergeable, no configured checks, and no
+  comments or reviews.
+- Official OpenClaw and TweetClaw checks: current official routes `llms.txt`,
+  `/cli/plugins`, manifest, permission requests, tool plugins, SDK entrypoints,
+  ClawHub publishing, and debugging returned HTTP 200. Npm metadata returned
+  OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, and published TweetClaw
+  latest `1.6.31`; local source remains `1.6.32`. ClawHub canonical route,
+  OpenClaw Directory listing, TweetClaw GitHub, TweetClaw issues, npm registry
+  metadata, and docs.xquik.com returned HTTP 200. The npm web page still
+  returns bot-protection HTTP 403, while registry metadata is OK. Xquik MCP
+  unauthenticated root returned expected HTTP 401.
+- TweetClaw validation: Markdown link checks passed for README, OpenClaw setup
+  docs, agent workflows docs, packaged skill, compact release notes, and
+  compact audit. OpenClaw platform fitness passed. `npm run check:all` passed
+  with 168 tests and 100% coverage. Moderate-level `npm audit` remains blocked
+  by nested OpenClaw `protobufjs` and `tar` advisories; forced fix would install
+  invalid `openclaw@0.0.1`, so no package files changed. Memory size passed at
+  15160/15360 bytes. Automation TOML measured 14872 bytes. Final TweetClaw
+  commit and push are recorded by git history.
+- Prompt self-improvement: no persisted automation prompt edit was useful. Keep
+  the AnySearch lesson: for broad search skills with vertical domains, add
+  target-native source-discovery examples and keep TweetClaw as an optional,
+  approval-gated, account-scoped evidence handoff rather than a replacement for
+  the target's search layer. Preserve model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill coverage,
+  fresh target discovery, PR repair priority, duplicate and fork rules, official
+  OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
