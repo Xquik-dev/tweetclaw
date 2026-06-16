@@ -10855,6 +10855,94 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-16 17:29 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-evidence, tweet-scraper, and skill-catalog
+  queries. The crawler returned strict JSON with zero opportunities. Proxy
+  metadata only was observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found 13 flagged PRs. Existing target-owned Vercel
+  authorization failures, prior CodeRabbit/Sourcery/Gemini notes, and prior
+  repairs on `understudy-ai/understudy#24`, `Qredence/skill-fleet#80`,
+  `MauricioPerera/agent-skills-pack#2`, `Walliiee/openclaw-skills#2`, and
+  related outreach PRs required no new safe repair before fresh outreach.
+- Fresh target screening: after crawler output was empty, exact GitHub searches
+  screened AI Twitter agent, social skill, Twitter MCP, and awesome tweet lanes.
+  Duplicate or held leads included `Panniantong/Agent-Reach`,
+  `mvanhorn/last30days-skill`, `ythx-101/x-tweet-fetcher`, and prior
+  twitter-agent lanes. `SoCloseSociety/MiloAgent` was fresh enough for full
+  screening: MIT, non-fork, active, not archived, no compact/archive duplicate
+  blocker beyond a prior held-candidate note, and no open or closed target PRs
+  or issues for TweetClaw, Xquik, x-twitter-scraper, OpenClaw, or ClawHub terms.
+- Fresh PR submitted: https://github.com/SoCloseSociety/MiloAgent/pull/1 from
+  correctly parented fork `kriptoburak/MiloAgent`, branch
+  `codex/tweetclaw-source-context`, commit `17b0678`. The README-only PR adds
+  optional X/Twitter source-context guidance that treats TweetClaw packets as
+  evidence before MiloAgent scoring, drafting, validation, scheduling,
+  publishing, and analytics, and adds the xquik.com NHS Agentic Readiness badge
+  to the existing README badge strip. Readback: open, ready, `MERGEABLE`,
+  `CLEAN`, no comments, no reviews, and no checks configured.
+- Target validation: `git diff --check` passed, `npx --yes
+  markdown-link-check README.md --quiet` passed, and direct checks returned HTTP
+  200 for Not Human Search page, Not Human Search badge, TweetClaw GitHub,
+  target repo, target PR, and fork branch. Added-line public-hygiene and
+  sensitive-string scans found no credentials, private implementation details,
+  restricted provider/source names, internal cost mechanics, or unsupported
+  claims. The PR body was read back with real newlines and only the validated
+  links and checks.
+- Official OpenClaw and package checks: npm metadata returned OpenClaw latest
+  `2026.6.8`, beta `2026.6.8-beta.2`, modified
+  `2026-06-16T16:27:41.883Z`; `clawhub` remained `0.22.0`; published TweetClaw
+  remained `1.6.31`; source TweetClaw remained `1.6.32`. `developers.openclaw.com`
+  still failed DNS and `openclaw.com/llms.txt` returned server or access errors,
+  so the official package-linked `openclaw/openclaw` repo was used as fallback.
+  The repo was pushed at `2026-06-16T17:37:45Z` and docs were read for CLI
+  plugin install/update/inspect, manifests, permission requests, tool plugins,
+  SDK entrypoints, install overrides, ClawHub publishing, skills, ClawHub CLI,
+  and debugging. Current docs still support explicit `npm:` specs,
+  `runtimeExtensions`, npm-pack proof, plugin lifecycle tracing, ClawHub
+  installs, and plugin approval prompts.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact
+  audit passed Markdown link checking. Direct source-backed probes returned HTTP
+  200 for TweetClaw GitHub and GitHub API metadata, npm registry metadata,
+  canonical ClawHub route, OpenClaw Directory, xquik.com, dashboard.xquik.com,
+  docs.xquik.com API overview and billing guide, Skills.sh TweetClaw and
+  x-twitter-scraper pages and badge, Not Human Search page and badge, Smithery
+  page and badge, DeepWiki, Apify x-tweet-scraper, Apify x-follower-scraper,
+  OpenClaw repo, the new PR, and its correctly parented fork branch. The npm
+  package webpage returned expected 403 bot protection; a probe-only stale docs
+  `introduction` path returned 404 but is not source-backed.
+- TweetClaw validation: `npm run build` passed, `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`, and `npm run check-memory-md-size` reported
+  `14802/15360` bytes. Final `npm run check:all` passed with 168 tests and 100%
+  coverage. `npm audit --audit-level=moderate --omit=dev` still reports 4
+  moderate nested OpenClaw advisories for `protobufjs` and `tar`; GitHub
+  Dependabot reports the matching three open alerts 28-30. `npm audit fix
+  --force` remains unsafe because it would downgrade OpenClaw.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  active growth-agent repos with X/Twitter prompts can accept TweetClaw as
+  optional evidence context when the target keeps its own scoring, validation,
+  publishing, scheduling, and analytics authority. Persisted automation TOML is
+  14872 bytes and decoded prompt text is 14530 bytes.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
 ## 2026-06-16 17:01 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
