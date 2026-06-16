@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 01:34 UTC: latest
-  `2026.6.6`, beta `2026.6.8-beta.1`; current docs keep plugin install,
+- OpenClaw docs/npm checked as of 2026-06-16 01:55 UTC: latest
+  `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 01:34 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 01:55 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,14 +196,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 01:34 UTC: model/effort selectors unavailable. Crawler strict JSON
+- 2026-06-16 01:55 UTC: model/effort selectors unavailable. Crawler strict JSON
   returned no candidates after proxy refresh. Exact-read 100 authored PRs found
-  no safe repair; target-owned Vercel auth, policy, and review gates remain.
-- New PR: https://github.com/BlackBlazeXXX/claude-skills-marketing/pull/1
-  adds sourced Twitter/X guardrails to marketing social-post and calendar
-  skills, keeps TweetClaw optional, and fixes README anchors. Repo MIT,
+  no safe repair; review-gate blocks had no actionable maintainer requests.
+- New PR: https://github.com/AgriciDaniel/claude-ads/pull/45 adds X/Twitter
+  organic competitor-signal guidance to Claude Ads, documents optional
+  TweetClaw setup for source packets, and keeps audit work read-only. Repo MIT,
   duplicate-clean, fork parent verified, docs validation passed; PR is open,
-  mergeable, and clean.
+  ready, mergeable, and review-gated.
 - OpenClaw docs/npm and public links checked. ClawHub route stayed HTTP 200 but
   stale at `1.6.26`. TweetClaw links, memory, `check:all`, and platform fitness
   passed. Known nested OpenClaw audit and npm auth blockers remain.

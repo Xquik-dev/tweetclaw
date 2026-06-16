@@ -12300,3 +12300,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   rules, official OpenClaw checks, broken-link checks, validation gates, badge
   rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
   cap, and this self-improvement rule.
+
+## 2026-06-16 01:55 UTC - Claude Ads competitor-signal PR
+
+- Runtime note: this environment did not expose controls to select GPT-5.5 or
+  extra-high reasoning effort. The run continued and recorded the limitation.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` with research-proxy JSON output,
+  bounded request and warmup timeouts, and focused `SKILL.md`, OpenClaw, MCP,
+  Codex, Claude, agent, social media, Twitter/X, evidence, registry, validator,
+  framework, library, and package-tooling lanes. The crawler returned strict
+  JSON with `opportunities: []`; proxy logs contained only credential-free
+  refresh status.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 69 `CLEAN`, 24 `UNSTABLE`, 7 `BLOCKED`, 0 drafts,
+  21 comments, 9 reviews, and 0 failing checks. `MylesMCook/mcook-skills#11`
+  had only prior addressed bot feedback and a later clean Pullfrog review. The
+  recent `BlackBlazeXXX/claude-skills-marketing#1`,
+  `urikkkk/nimble-social-feeds#1`, and `crabwise-ai/crabwalk#67` readbacks
+  stayed open, ready, and clean. Review-gated list, registry, and skill PRs had
+  no actionable maintainer request, DCO, CLA, conflict, generated-file drift, or
+  current-head CI repair.
+- Fresh candidate discovery and duplicate gates: after crawler-first discovery
+  returned no candidates, targeted searches screened OpenClaw Twitter skills,
+  social media skill repos, social listening repos, source-evidence skill repos,
+  and current high-reach Claude skill repos. `RAFOLIE/openclaw-skill-twitter-trending`,
+  `bussgrowwithlucky-crypto/openclaw-skill-twitter-poster`,
+  `harrylabsj/twitter-thread-crafter`, and `anamipit/twitter-x` remained
+  no-license or prior-history blockers. `cporter202/social-media-scraping-apis`
+  remained no-license and low-fit for a new PR. `AgriciDaniel/claude-seo` was
+  duplicate-clean but less directly aligned with TweetClaw than paid-ad
+  competitor intelligence. `AgriciDaniel/claude-ads` was MIT licensed, active,
+  not archived, not a fork, issue-enabled, duplicate-clean across compact audit,
+  archive, target content, and target open or closed PRs/issues, and had native
+  `/ads competitor` plus MCP integration surfaces for a target-native change.
+- Selected target: `AgriciDaniel/claude-ads` is a Claude Code paid advertising
+  audit skill. The contribution adds X/Twitter public posts and replies as
+  supplemental competitor intelligence, records how to capture author, URL,
+  timestamp, query, and visible engagement metrics, and positions TweetClaw as
+  an optional OpenClaw and MCP-compatible source for organic social evidence.
+  It explicitly keeps findings as market evidence, not paid-platform spend,
+  targeting, or attribution data, and keeps audit work read-only unless the user
+  asks for a reviewed post or reply workflow.
+- New external PR: opened https://github.com/AgriciDaniel/claude-ads/pull/45
+  from correctly parented fork `kriptoburak/claude-ads`, branch
+  `codex/twitter-organic-signals`, commit
+  `417ff5a42cf3a46be516ec06fa1b3473f32a571d`. The PR updates
+  `skills/ads-competitor/SKILL.md` and `ads/references/mcp-integration.md`.
+  No NHS badge was added because the target badge area serves host support,
+  release, CI, license, and community status; an xquik.com readiness badge would
+  not help readers evaluate the paid-ads skill.
+- Target validation for `AgriciDaniel/claude-ads#45`: passed `git diff --check`,
+  `python3 -m pytest tests/audit/test_check_coverage.py -q`, line-count checks
+  for the changed skill and reference file, public-diff hygiene review, direct
+  HTTP 200 for TweetClaw GitHub, OpenClaw docs, and the new PR, and npm package
+  validation with `npm view @xquik/tweetclaw version --silent`. The npmjs page
+  returned expected bot-protection 403 to curl, so the package was validated via
+  registry metadata instead. PR readback showed open, ready, `MERGEABLE`,
+  review-gated, no comments, no reviews, no checks configured, 2 changed files,
+  and 31 additions.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.2`, ClawHub
+  CLI package `0.22.0`, and published TweetClaw `1.6.31`; local source remains
+  `1.6.32`. The canonical ClawHub plugin route returned HTTP 200 and still
+  rendered stale TweetClaw `1.6.26`, so npm remains canonical until publishing
+  is fixed.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, and
+  `skills/tweetclaw/SKILL.md`. Direct checks returned HTTP 200 for the canonical
+  ClawHub plugin route, OpenClaw Directory listing, TweetClaw GitHub, and the
+  new Claude Ads PR. The added target diffs and TweetClaw memory diff were
+  checked for confidential wording, credentials, unsupported claims, stale
+  metadata, and dash hygiene.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`15084/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit
+  --audit-level=moderate` remains blocked by nested `openclaw@2026.6.6`
+  advisories for `protobufjs` and `tar`; no dependency files changed. Changed
+  TweetClaw files are `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no persisted automation prompt edit was useful, so
+  persisted prompt bytes were unchanged. Preserve the Claude Ads lesson:
+  high-reach marketing and ad-audit skill repos can accept TweetClaw placement
+  when it improves competitor evidence quality, states read-only audit limits,
+  and leaves spend, targeting, attribution, drafting, and posting decisions to
+  the target skill. Preserve model/effort wording, same-thread quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh target discovery, PR repair priority, duplicate and fork
+  rules, official OpenClaw checks, broken-link checks, validation gates, badge
+  rule, Context7 exclusion, secret handling, commit/push requirement, Markdown
+  cap, and this self-improvement rule.
