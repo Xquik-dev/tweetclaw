@@ -196,21 +196,18 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 08:38 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates; later authenticated code search hit GitHub rate limits, so the run
-  switched to web-index leads, exact REST lists, clones, and archive checks.
-- Repair: https://github.com/loaded-napierianlogarithm458/awesome-openclaw-skills-zh/pull/1
-  was conflict-repaired and now reads open, ready, mergeable, clean, head
-  `a297b15`.
-- Fresh PR: https://github.com/softaworks/agent-toolkit/pull/38 adds
-  `x-twitter-source-packets`, README and marketplace registration, and rebuilt
-  dist files. Readback: open, ready, mergeable, no comments/reviews/checks, head
-  `1989365`.
-- Key blockers: `ZhanlinCui/Agent-Skills-Hunter` already has open Xquik PR #3;
-  other obvious skill/catalog targets were duplicate, no-license, lower-fit, or
-  prior history. OpenClaw docs/npm, ClawHub, OpenClaw Directory, TweetClaw links,
-  and target links stayed current. Npm web still returns probe-only 403; singular
-  OpenClawDir probe returns 404; nested OpenClaw advisories remain upstream.
+- 2026-06-16 10:18 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates. Repaired conflict, maintainer, or bot requests on 9 open PRs;
+  clean readbacks confirmed repaired conflict PRs mergeable. Maintainer-auth
+  Vercel failures on `modu-ai/cowork-plugins#5` and `yaacovcorcos/papiskill#1`
+  remain external boundaries.
+- Fresh PR: https://github.com/tilomitra/release-kit-claude-skills/pull/1 adds
+  optional TweetClaw public X/Twitter source context for the announce skill.
+  Readback: open, ready, clean, mergeable, head `6e82d82`.
+- Checks: OpenClaw docs/npm current at `2026.6.6`; TweetClaw registry latest
+  `1.6.31`, source `1.6.32`; ClawHub/OpenClawDir links 200; markdown links,
+  platform fitness, and `npm run check:all` passed. Known npm audit blocker is
+  nested OpenClaw `protobufjs`/`tar`; npm web page still returns expected 403.
 
 ## Reporting Checklist
 

@@ -13717,3 +13717,108 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   evidence quality while keeping writing, scoring, publishing, account changes,
   monitors, and webhooks in separate explicit approval flows. Automation TOML
   measured 14872 bytes, with prompt text at 14530 bytes.
+
+## 2026-06-16 10:18 UTC heartbeat
+
+- Runtime limitation: the current Codex desktop runtime did not expose GPT-5.5
+  or extra-high reasoning selectors, so this run continued with the available
+  runtime and recorded the limitation.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`,
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, source-evidence, and skill-catalog queries returned strict JSON
+  with zero opportunities. Proxy metadata only was observed; no credential
+  values were printed or stored.
+- PR monitoring: TweetClaw had no open issues or PRs. A targeted `gh search prs`
+  pass for open `kriptoburak` PRs produced exact readbacks for 43 in-scope PRs.
+  Actionable items were 7 conflict-dirty PRs, 1 maintainer request, and 1 valid
+  bot review nit. No new outreach was opened before repairable items were
+  handled.
+- Repair, weak-fox/openclaw-offline-seed#1:
+  https://github.com/weak-fox/openclaw-offline-seed/pull/1 was updated after
+  maintainer feedback to seed installable npm plugin projects instead of only
+  generated plugin-skill metadata. Commit `85519a1` was pushed to
+  `kriptoburak/openclaw-offline-seed` branch
+  `codex/tweetclaw-plugin-skills-seed`; comment
+  https://github.com/weak-fox/openclaw-offline-seed/pull/1#issuecomment-4717553609
+  recorded validation. Readback: open, ready, mergeable, `unstable` only because
+  no check runs are configured, head `85519a1`.
+- Conflict repairs: resolved upstream README conflicts and pushed repair
+  commits for
+  https://github.com/Sensiblehorizonmatahari4990/awesome-claude-code-skills/pull/1
+  (`c2e47e8`),
+  https://github.com/warlockoussama/twitter-cli/pull/1 (`9cdddaa`),
+  https://github.com/Garenaof2462/browser-ops/pull/1 (`8016fdf`),
+  https://github.com/AyoubKezzoula/hermes-autonomous-server/pull/1 (`fd35e3b`),
+  https://github.com/jamald33n/tweetsave-mcp/pull/2 (`2109f2c`),
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1 (`44bc91f`),
+  and https://github.com/Correia-jpv/fucking-awesome-ai-tools/pull/17
+  (`b543d46`). Follow-up comments were posted on each PR. Later readbacks for
+  those repaired PRs were open, ready, clean, and mergeable with no actionable
+  comments, reviews, or check failures.
+- Bot review repair: https://github.com/indranilbanerjee/digital-marketing-pro/pull/7
+  had one actionable bot wording nit. Commit `6b6513d` changed the prose to use
+  "installed TweetClaw collection helper" and was pushed to
+  `codex/x-twitter-sov-source-evidence`; comment
+  https://github.com/indranilbanerjee/digital-marketing-pro/pull/7#issuecomment-4717696018
+  recorded the fix. The PR was mergeable before the wording fix and had a
+  successful check run.
+- External blocker readbacks: `modu-ai/cowork-plugins#5` and
+  `yaacovcorcos/papiskill#1` still had failing Vercel checks caused by
+  maintainer-side authorization, not code in the PR branches.
+  `diaz3618/argus-mcp-catalog#1` had positive bot walkthrough comments only, and
+  `ondrej-svec/heart-of-gold-toolkit#1` had no actionable external request
+  after filtering.
+- Fresh target discovery and duplicate checks: audit/archive search plus exact
+  repository metadata screened `tilomitra/release-kit-claude-skills`, which had
+  prior discovery history but no submission or blocker. The repository is
+  public, non-archived, non-fork, MIT licensed, default branch `main`, and issues
+  are enabled. Target open and closed PRs/issues and repository content had no
+  TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw URL, npm URL, ClawHub
+  URL, Xquik, or x-twitter-scraper duplicate.
+- Fresh PR submitted: https://github.com/tilomitra/release-kit-claude-skills/pull/1
+  adds an optional "Gather public X/Twitter source context" section to
+  `announce/SKILL.md`. The edit frames TweetClaw as a public evidence source
+  only, requires public URLs or post IDs, collection date, short excerpt, and
+  confidence notes, and explicitly keeps drafting, scheduling, publishing,
+  replying, direct messages, and account changes out of scope for the announce
+  skill. Fork owner was `kriptoburak`, branch
+  `codex/tweetclaw-release-source-context`, head commit `6e82d82`. PR readback:
+  open, ready, clean, mergeable, zero comments, zero reviews, and zero check
+  runs.
+- Fresh target validation: target `git diff --check`, changed-line public
+  hygiene and dash scan, `npx --yes markdown-link-check announce/SKILL.md
+  README.md --quiet`, and direct TweetClaw URL probe passed. The contribution
+  introduced no private implementation details, restricted provider names,
+  internal cost mechanics, secret values, unsupported claims, or stale public
+  metadata.
+- Broken-link and public-surface checks: official OpenClaw `llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, and `/help/debugging` all
+  returned HTTP 200. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.2`, and TweetClaw published latest `1.6.31`; source remains
+  `1.6.32`. TweetClaw GitHub, npm registry metadata, scoped and unscoped
+  ClawHub pages, OpenClaw Directory canonical listing, xquik.com, and
+  dashboard.xquik.com were reachable. The npm web package page still returned
+  its known bot-protection 403.
+- TweetClaw validation: `npx --yes markdown-link-check README.md
+  docs/openclaw-setup.md docs/agent-workflows.md skills/tweetclaw/SKILL.md
+  docs/clawpack-release.md docs/discoverability-audit.md --quiet`,
+  `npm run check-openclaw-platform-fitness`, `git diff --check`, and
+  `npm run check:all` passed. `npm audit --audit-level=moderate --omit=dev`
+  still reports nested OpenClaw host advisories for `protobufjs` and `tar`; the
+  suggested forced fix would install invalid `openclaw@0.0.1`, so this remains
+  an upstream host blocker.
+- Memory and prompt: compact audit was updated and detailed history moved here.
+  `npm run check-memory-md-size` passed after compaction. Automation TOML
+  measured 14872 bytes, with prompt text at 14530 bytes, under the 15 KiB prompt
+  cap.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, same-thread automation
+  notes, quiet autonomy, crawler-first discovery, mandatory per-run PR
+  submission, aggressive skill-repo coverage, fresh repo/framework/library
+  discovery, PR repair priority, duplicate and fork rules, official OpenClaw
+  checks, link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap, and
+  the self-improvement rule.
