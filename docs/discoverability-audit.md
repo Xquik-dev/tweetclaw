@@ -49,13 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-16 17:39 UTC: latest
-  `2026.6.8`, beta `2026.6.8-beta.2`; `developers.openclaw.com` failed DNS, so
-  package-linked `openclaw/openclaw` main docs were checked for plugins,
-  manifest, permission requests, tool plugins, SDK entrypoints, ClawHub
-  publishing, and debugging.
+- OpenClaw npm checked as of 2026-06-16 18:05 UTC: latest
+  `2026.6.8`, beta `2026.6.8-beta.2`; `developers.openclaw.com` failed DNS and
+  `openclaw.com/llms.txt` returned HTTP 500, so `docs.openclaw.ai` plus exact
+  `openclaw/openclaw` GitHub docs were checked for plugins, manifest,
+  permission requests, tool plugins, bundles, SDK entrypoints, ClawHub,
+  skills, install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 17:43 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 18:07 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -195,15 +196,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-16 17:29 UTC: model/effort selectors unavailable. Crawler returned 0;
-  TweetClaw had no PRs/issues and no existing outreach PR needed repair.
-- Fresh PR: https://github.com/SoCloseSociety/MiloAgent/pull/1 adds optional
-  TweetClaw source-context guidance and the xquik.com NHS badge. Readback:
-  open, mergeable, clean, no checks/comments/reviews.
-- Checks: target diffs, direct links, TweetClaw links, OpenClaw repo-doc
-  fallback, npm metadata, public probes, build, check:all, and platform fitness
-  passed. Audit and Dependabot still show nested OpenClaw `protobufjs`/`tar`;
-  force downgrades.
+- 2026-06-16 17:55 UTC: model/effort selectors unavailable. Crawler returned 0;
+  TweetClaw had no PRs/issues, and no existing outreach PR needed repair.
+- Fresh PR: https://github.com/Prem95/socialautonomies/pull/2 adds optional
+  TweetClaw source-context guidance to an existing X automation library section
+  and corrects package repository metadata. Readback: open, mergeable, with
+  GitGuardian success.
+- Checks: target diffs, target package JSON, direct new links, TweetClaw
+  Markdown links, OpenClaw docs and repo-doc fallback, npm metadata, public
+  probes, build, platform fitness, and memory size passed. Known blockers:
+  nested OpenClaw `protobufjs`/`tar`, npm page curl 403, Glama curl timeout.
 
 ## Reporting Checklist
 
