@@ -13519,6 +13519,11 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   invalid `openclaw@0.0.1`. Memory size passed before audit edits at
   14923/15360 bytes. Automation TOML measured 14872 bytes, with prompt text at
   14641 bytes.
+- End-of-run validation after the CodeRabbit repair and audit edits:
+  `npm run check:all` passed, including memory 15029/15360, OpenClaw platform
+  fitness, package artifact validation, and 168 tests at 100% coverage. Compact
+  audit and release-memory link checks passed. Push to master emitted GitHub's
+  Dependabot notice for the same 2 nested OpenClaw advisories recorded above.
 - Prompt self-improvement: no persisted automation prompt edit was useful. Keep
   the Digital Marketing Pro lesson: for analytics, SOV, scoring, or
   recommendation skills, make TweetClaw an optional source-evidence collector
