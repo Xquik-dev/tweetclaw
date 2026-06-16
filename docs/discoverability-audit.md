@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw docs/npm checked as of 2026-06-16 06:25 UTC: latest
+- OpenClaw docs/npm checked as of 2026-06-16 13:28 UTC: latest
   `2026.6.6`, beta `2026.6.8-beta.2`; current docs keep plugin install,
   inspect, update, source selection, npm pinning, and runtime JSON inspection on
   `/cli/plugins`, not separate deep command pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-16 06:25 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-16 13:28 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,14 +196,14 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - Earlier outreach and repair details are archived.
-- 2026-06-16 10:18 UTC: model/effort selectors unavailable. Crawler returned no
-  candidates. Repaired conflict, maintainer, or bot requests on 9 open PRs;
-  clean readbacks confirmed repaired conflict PRs mergeable. Maintainer-auth
-  Vercel failures on `modu-ai/cowork-plugins#5` and `yaacovcorcos/papiskill#1`
-  remain external boundaries.
-- Fresh PR: https://github.com/tilomitra/release-kit-claude-skills/pull/1 adds
-  optional TweetClaw public X/Twitter source context for the announce skill.
-  Readback: open, ready, clean, mergeable, head `6e82d82`.
+- 2026-06-16 13:28 UTC: model/effort selectors unavailable. Crawler returned no
+  candidates. Repaired 7 conflict-dirty open PRs and posted validation
+  readbacks; maintainer-auth Vercel failures on `modu-ai/cowork-plugins#5` and
+  `yaacovcorcos/papiskill#1` remain external boundaries.
+- Fresh PR: https://github.com/Claude-Code-Community-Ireland/claude-code-resources/pull/3
+  adds a Claude Code X/Twitter source-evidence skill with TweetClaw as an
+  optional source tool. Readback: open, ready, mergeable, head `b947a49`, no
+  checks reported yet.
 - Checks: OpenClaw docs/npm current at `2026.6.6`; TweetClaw registry latest
   `1.6.31`, source `1.6.32`; ClawHub/OpenClawDir links 200; markdown links,
   platform fitness, and `npm run check:all` passed. Known npm audit blocker is
