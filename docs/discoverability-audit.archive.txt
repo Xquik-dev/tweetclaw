@@ -10855,6 +10855,94 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-16 21:28 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, secret read, or destructive git action was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, source-evidence, prospect-research,
+  market-research, skill-registry, and validator queries. The crawler returned
+  strict JSON with zero opportunities. Proxy metadata only was observed; no
+  credential values were printed or stored.
+- PR monitoring and repair gate: `Xquik-dev/tweetclaw` had no open issues or
+  PRs. Exact readbacks checked authored/audit PRs including
+  `GTMify/aigtm#14`, `pinkpixel-dev/skills-collection-1#3`,
+  `Qredence/skill-fleet#80`, `modu-ai/cowork-plugins#5`,
+  `Jamkris/everything-gemini-code#91`, `nikships/skills-registry#45`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`, and
+  `i-am-bee/beeai-framework#1456`. Stale or target-owned blockers were left
+  untouched. BeeAI had an actionable maintainer Ruff `I001` request, then a DCO
+  blocker after the first repair commit.
+- PR repair: repaired `i-am-bee/beeai-framework#1456` on the correctly parented
+  fork `kriptoburak/beeai-framework`, branch `codex/add-xquik-tool-examples`.
+  Commit `b89a613` sorts and formats
+  `python/examples/tools/custom/xquik.py`; it was amended with sign-off and
+  pushed with force-with-lease. Validation passed `uvx ruff check --fix`,
+  `uvx ruff format`, `python3 -m compileall -q`, Pyrefly with Pydantic 2,
+  `git diff --check`, and a scoped public-hygiene scan. Comment posted:
+  https://github.com/i-am-bee/beeai-framework/pull/1456#issuecomment-4723826234
+  Readback: DCO and labeler green, mergeable, behind upstream.
+- Fresh target screening: after crawler returned zero, GitHub searches screened
+  market-research and Claude skill lanes. `birne-sk/claude-skills` lacked a
+  license. `TABARC-Code/-B2B-B2C-audience-strategist-and-market-researcher-Claude-Skill`
+  was fresh to the archive, MIT licensed, non-fork, duplicate-clean across
+  compact audit, archive, target content, and open/closed PRs/issues, and had a
+  narrow audience-research fit.
+- Fresh PR submitted: https://github.com/TABARC-Code/-B2B-B2C-audience-strategist-and-market-researcher-Claude-Skill/pull/1
+  from correctly parented fork
+  `kriptoburak/-B2B-B2C-audience-strategist-and-market-researcher-Claude-Skill`,
+  branch `codex/x-twitter-audience-evidence`, commit `a04482a`. The PR adds a
+  public X/Twitter audience evidence packet workflow to the packaged skill,
+  keeps persona updates source-located and confidence-marked, links TweetClaw
+  only as optional public collection help, and fixes three pre-existing broken
+  README related-skill links. Readback: open, clean, mergeable, zero comments,
+  zero reviews, and zero check runs. No NHS badge was added because the target
+  has no useful badge area.
+- Target validation: `npx --yes markdown-link-check README.md --quiet`,
+  `unzip -tq audience-profiles.skill`, `git diff --check`, direct HTTP 200
+  checks for the TweetClaw and target repo links, and public-hygiene scans
+  passed. The three broken related-skill links were pre-existing and fixed.
+- Official OpenClaw and package checks: official `llms.txt`, `/cli/plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/help/debugging`,
+  canonical `/plugins/plugin-permission-requests`, and
+  `/plugins/sdk-entrypoints` were present in the docs index. Direct probes
+  returned HTTP 200 for the main docs pages and HTTP 404 for old direct
+  `/cli/plugins/install`, `/cli/plugins/update`, `/cli/plugins/inspect`, and
+  `/plugins/permission-requests` paths. Npm metadata returned OpenClaw latest
+  `2026.6.8`, beta `2026.6.8-beta.2`, ClawHub `0.22.0`, and published
+  TweetClaw `1.6.31`; source remains `1.6.32`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  code of conduct, and AgentRegistry steps passed Markdown link checking.
+  Direct probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  canonical ClawHub, OpenClaw Directory, the repaired BeeAI PR, and the new
+  TABARC-Code PR. ClawHub still renders stale TweetClaw `1.6.26`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm run check:all`
+  passed typecheck, lint, cpd, knip, suppression check, dash check, memory cap,
+  skill frontmatter, version checks, build, platform fitness, package artifact,
+  and 168 tests with 100% coverage.
+- Audit blocker: `npm audit --audit-level=moderate --omit=dev` still reports 4
+  moderate nested OpenClaw advisories for `protobufjs` and `tar`; this remains
+  an upstream OpenClaw dependency blocker.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, cadence, thread
+  binding, commit/push requirement, Markdown cap, and self-improvement. Durable
+  lesson: persona and audience-research skills can accept TweetClaw when it is
+  limited to optional public evidence collection, each source keeps URL and
+  timestamp context, and the target controls persona updates.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-16 21:07 UTC heartbeat:
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
   exposed in this Codex desktop runtime, so the run recorded that limitation and
