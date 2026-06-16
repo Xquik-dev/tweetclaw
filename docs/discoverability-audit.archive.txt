@@ -13194,3 +13194,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   checks, broken-link checks, validation gates, badge rule, Context7 exclusion,
   secret handling, commit/push requirement, Markdown cap, and this
   self-improvement rule.
+
+## 2026-06-16 04:51 UTC Run
+
+- Runtime and scope: the heartbeat runtime still did not expose GPT-5.5 or
+  extra-high reasoning selectors. The run continued under the available runtime,
+  with the limitation recorded here and in the heartbeat outcome. Context7,
+  Browser, Chrome, GUI inspection, dev servers, secret exposure, destructive
+  git, and unrelated Xquik dirty files were avoided.
+- PR monitoring and repair gate: started with crawler-first coverage from
+  `/Users/burak/Developer/xquik`. The first strict JSON skill pass returned no
+  opportunities. Exact readback covered 100 open PRs authored by `kriptoburak`
+  with 0 readback errors. Ten PRs had comments, reviews, or non-success check
+  signals. Current actionable repair was not found: Vercel failures on
+  `yaacovcorcos/papiskill#1`, `modu-ai/cowork-plugins#5`,
+  `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290` remain target-owned authorization gates;
+  Qredence, Walliiee, wangzhongmin, diaz3618, Sukumar-Elley, and stone16
+  signals were stale bot notes, already-addressed suggestions, target policy
+  notes, skipped welcome checks, or no-action reviews.
+- Fresh discovery: a second crawler pass for agent skill registries returned
+  `AmariahAK/atlarix-skills`, `adriancappe/AITorrent`,
+  `MauricioPerera/agent-skills-pack`, `Undermybelt/mcp-skill-hub`,
+  `beggarticksarthurtatum121/reddit-skills`, and
+  `mickpletcher/GitHub-Spec-Tutorial`. `AmariahAK/atlarix-skills` and
+  `beggarticksarthurtatum121/reddit-skills` were duplicate-blocked by existing
+  TweetClaw PRs. `adriancappe/AITorrent` lacked license metadata and a default
+  branch. `Undermybelt/mcp-skill-hub` was duplicate-blocked by open PR 1.
+  `mickpletcher/GitHub-Spec-Tutorial` was MIT and clean but lower fit than the
+  validated skill-pack lane. `MauricioPerera/agent-skills-pack` was MIT,
+  non-fork, active, issue-enabled, PR-enabled, duplicate-clean across compact
+  memory, archive, target content, issues, and PRs, and already documents
+  credential-isolated domain-specific skills as an expected authoring pattern.
+- External PR: created and verified the correctly parented
+  `kriptoburak/agent-skills-pack` fork, then opened
+  https://github.com/MauricioPerera/agent-skills-pack/pull/2 from branch
+  `codex/domain-api-skill-pattern`, commit
+  `52ed9ed30d2003d72c880cff1332e121e7536483`. The docs-only PR adds a
+  target-native README pattern for domain-specific CLI/API wrappers, keeps
+  secrets in runtime env or delegated CLIs, constrains network and side-effect
+  wording, uses `@xquik/tweetclaw` as a concrete X/Twitter source-evidence
+  example for scrape tweets, search tweets, follower export, and media-download
+  workflows, and refreshes stale `llms.txt` pack links from `v1.0.0` to
+  `v2.2.0`. It does not change the validated 7-skill corpus, generated
+  `skills-index.json`, or benchmark truth file.
+- Target validation and public hygiene: external target validation passed git
+  whitespace check, direct HTTP 200 checks for the new TweetClaw GitHub link,
+  sampled `v2.2.0` jsDelivr skill links, `skills-index.json`, PR page, and fork
+  branch, plus npm metadata readback for published TweetClaw `1.6.31`.
+  Markdown link check for README and `llms.txt` found only the target's
+  pre-existing npm 403 on `@rckflr/agent-skills-cli`; the PR introduced no dead
+  links. The diff and PR body were checked for credentials, private source
+  names, internal cost mechanics, unsupported claims, and stale public metadata.
+  No NHS badge was added because this docs pattern is not a badge-area surface.
+- Official OpenClaw and TweetClaw checks: current official OpenClaw docs routes
+  `llms.txt`, plugin install/update/inspect, manifest, permission requests, tool
+  plugins, SDK entrypoints, ClawHub publishing, and debugging all returned HTTP
+  200. Npm metadata returned OpenClaw latest `2026.6.6`, beta
+  `2026.6.8-beta.2`, ClawHub `0.22.0`, and published TweetClaw `1.6.31`; local
+  source remains `1.6.32`. `Xquik-dev/tweetclaw` had no open PRs or issues.
+  ClawHub canonical route and OpenClaw Directory route returned HTTP 200, but
+  ClawHub still renders stale TweetClaw `1.6.26`.
+- TweetClaw validation: TweetClaw Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.md`. `npm run check-openclaw-platform-fitness`
+  passed against OpenClaw `2026.6.6`. `npm audit` at moderate level remains
+  blocked by nested OpenClaw `protobufjs` and `tar` advisories; forced audit
+  fix would downgrade OpenClaw to an invalid `0.0.1`, so no package files were
+  changed. Prompt bytes measured 14,530 and automation TOML 14,872.
+- Prompt self-improvement: no persisted automation prompt edit was useful. Keep
+  the skill-pack lesson: when a skill-pack has generated indexes and benchmark
+  truth, prefer docs-only pattern placement unless the full generated and
+  benchmark maintenance path is safe. Preserve model/effort wording, same-thread
+  quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh target discovery, PR repair priority, duplicate
+  and fork rules, official OpenClaw checks, broken-link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, commit/push
+  requirement, Markdown cap, and this self-improvement rule.
