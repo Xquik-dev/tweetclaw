@@ -12015,3 +12015,104 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and fork rules, official OpenClaw checks, broken-link checks, validation
   gates, badge rule, explicit target exclusion, secret handling,
   commit/push requirement, Markdown cap, and this self-improvement rule.
+
+2026-06-16 00:54 UTC heartbeat run
+- Runtime limitation: this runtime did not expose model or reasoning-effort
+  selection, so GPT-5.5 and extra-high effort could not be selected here. The
+  run continued under the available model.
+- Crawler-first monitoring and discovery: ran the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` with research-proxy JSON output,
+  bounded timeouts, and focused PR-monitoring, `SKILL.md`, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, agent, social media, Twitter/X, evidence,
+  registry, validator, framework, library, and package-tooling lanes. The
+  crawler returned strict JSON with `opportunities: []`; proxy output contained
+  route refresh only and no credential values.
+- PR monitoring and repair gate: exact-read 100 open PRs authored by
+  `kriptoburak`. Summary was 70 `CLEAN`, 23 `UNSTABLE`, 7 `BLOCKED`, 0 `DIRTY`,
+  0 `CONFLICTING`, 0 changes-requested, 12 with comments, 5 with reviews, and 4
+  with failing checks. `yaacovcorcos/papiskill#1`, `modu-ai/cowork-plugins#5`,
+  `ArshdeepGrover/ai-tools-manager#169`, and
+  `heilcheng/awesome-agent-skills#290` have Vercel authorization failures owned
+  by target maintainers. `github/awesome-copilot#2001` has a contributor
+  reputation soft gate owned by target policy. `Sukumar-Elley/awesome-mcp-servers#1`
+  still depends on Glama listing availability. `Walliiee/openclaw-skills#2`,
+  `wangzhongmin/awesome-mcp-servers#2`, and `MylesMCook/mcook-skills#11` already
+  have their bot feedback addressed. No DCO, CLA, merge conflict,
+  generated-file drift, maintainer-request, valid bot-review repair, or safe
+  current-head CI repair blocked fresh outreach.
+- Fresh candidate discovery and duplicate gates: after crawler-first discovery
+  returned no candidates, targeted repo search found direct Twitter/OpenClaw
+  skill leads including `adminlove520/openclaw-twitter-skill`,
+  `weijiaxing/twitter-skill`, and `fa0311/twitter_api_safe_relay_skills`, all
+  blocked by existing TweetClaw or Xquik PR history. Corrected GitHub code
+  search syntax found `ericosiu/ai-marketing-skills`, `rohunvora/x-research-skill`,
+  `ythx-101/x-tweet-fetcher`, `crabwise-ai/crabwalk`,
+  `JJenglert1/writing-style-hack`, `Iploop/proxyclaw`, and
+  `hubo1989/hyper-agent-browser`. Broad authenticated code search then hit the
+  GitHub API rate limit, so broad authenticated search stopped for the run and
+  only exact-repo metadata, target content, clone scans, open and closed target
+  PRs/issues, and archive checks were used afterward. Eric Siu, Rohun Vora, and
+  ythx were duplicate or license blocked; JJenglert lacked detected license
+  metadata; Iploop and Hyper Agent Browser were lower target fit. `crabwise-ai/crabwalk`
+  was MIT licensed, not archived, not a fork, issue-enabled, duplicate-clean
+  across compact audit, archive, target content, and target PR/issue lists, and
+  had a native monitoring surface for OpenClaw tool-call traces.
+- Selected target: `crabwise-ai/crabwalk` is a real-time companion monitor for
+  OpenClaw agents. The target-native contribution documents how Crabwalk users
+  can inspect `tool_call` and `tool_result` nodes while an OpenClaw agent uses
+  TweetClaw or another X/Twitter plugin. TweetClaw remains optional read-only
+  source context, while drafting, replying, posting, media upload, direct
+  messages, monitors, webhooks, giveaways, and other account-changing actions
+  stay behind the agent approval flow.
+- New external PR: opened https://github.com/crabwise-ai/crabwalk/pull/67 from
+  correctly parented fork `kriptoburak/crabwalk`, branch
+  `codex/tweetclaw-workflow-monitoring`, commit
+  `d71352eb1ddafecfe8884d04162d4dfbe3e3c915`. The PR updates `README.md` and
+  `public/skill.md`; it also replaces a pre-existing dead placeholder release
+  tag URL in the touched skill file with the live releases page. No NHS badge
+  was added because the target has no badge area.
+- Target validation for `crabwise-ai/crabwalk#67`: passed `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`,
+  `npx --yes markdown-link-check public/skill.md --quiet`, direct TweetClaw
+  GitHub HTTP 200, direct new PR HTTP 200, and public-diff hygiene scan for
+  confidential implementation wording, unsafe secrets, unsupported claims, and
+  stale metadata. PR readback
+  showed open, ready, `MERGEABLE`, `CLEAN`, head
+  `d71352eb1ddafecfe8884d04162d4dfbe3e3c915`, no comments, no reviews, no
+  checks configured, and changed files `README.md` plus `public/skill.md`.
+- Official OpenClaw docs and package metadata: current official routes
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+  `/clawhub/skill-format`, `/clawhub/publishing`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, and `/help/debugging` all returned HTTP 200. Npm
+  metadata returned OpenClaw latest `2026.6.6`, beta `2026.6.8-beta.1`, ClawHub
+  `0.21.0`, and published TweetClaw `1.6.31`; local source remains `1.6.32`.
+  The noncanonical `clawhub.openclaw.ai` host did not resolve, but the canonical
+  `clawhub.ai/plugins/@xquik/tweetclaw` route returned HTTP 200 and remains
+  stale at `1.6.26`.
+- Broken-link and public hygiene: TweetClaw Markdown link checks passed for
+  README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`, and
+  `skills/tweetclaw/SKILL.md`. Direct checks returned HTTP 200 for the
+  canonical ClawHub plugin route, OpenClaw Directory listing, npm registry
+  download metadata, the current OpenClaw docs route, TweetClaw GitHub, and the
+  new Crabwalk PR. The npm web page returned expected Cloudflare challenge 403
+  while registry metadata was reachable.
+- TweetClaw validation: `git diff --check`, `npm run check-memory-md-size`
+  (`15114/15360`), `npm run check-openclaw-platform-fitness`, and
+  `npm run check:all` passed with 168 tests and 100% coverage. `npm audit
+  --audit-level=moderate` remains blocked by nested `openclaw@2026.6.6`
+  advisories for `protobufjs` and `tar`; no dependency files changed. Changed
+  TweetClaw files are `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: because broad GitHub code search hit rate limits,
+  preserve the existing rule to stop broad authenticated GitHub search for that
+  run and continue with crawler output, exact repo lists, clone scans, API tree
+  reads, and target metadata. Preserve source-evidence framing for monitors and
+  control surfaces: Crabwalk-style observability can reveal where source
+  collection ends and approvals begin, but it is not itself an approval system.
+  Preserve model/effort wording, same-thread quiet autonomy, crawler-first
+  discovery, mandatory PR submission, aggressive skill-repo coverage, fresh
+  target discovery, PR repair priority, duplicate and fork rules, official
+  OpenClaw checks, broken-link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap, and this
+  self-improvement rule.
