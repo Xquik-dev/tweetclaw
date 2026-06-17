@@ -102,6 +102,100 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-17 17:46 UTC Heartbeat
+
+- Runtime and scope: requested GPT-5.5 plus extra-high reasoning effort, but
+  this runtime exposed no model or effort selector. Continued under current
+  Codex runtime. No Context7 work, Browser, Chrome, GUI automation, dev server,
+  server access, destructive git action, or sensitive value read was used.
+- Initial checks: `/Users/burak/Developer/tweetclaw` was clean on `master`
+  before changes. `gh issue list` for `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` returned no open issues.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` for broad outreach
+  and a focused skill query covering `SKILL.md`, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social-media, Twitter/X, tweet scraper, follower export,
+  direct messages, giveaways, registries, examples, validators, frameworks, and
+  package-tooling. Broad output returned 25 known catalog and registry repos;
+  focused skill output returned 0. Proxy logs printed no sensitive values.
+- PR monitoring and repair priority: exact readbacks covered 100 open
+  `kriptoburak` PRs. Summary: 82 clean, 13 unstable, 5 with comments, 4 blocked,
+  1 draft, 1 dirty, and 0 failing current checks. Comment-bearing PRs were
+  known non-actionable bot or status cases. The dirty PR was
+  `inorilzy/mcp-twitter-server#1`.
+- Repair completed: cloned the correctly parented fork
+  `kriptoburak/mcp-twitter-server-inorilzy`, merged upstream `main` into
+  `codex/add-xquik-search-backend`, and resolved the README conflict by keeping
+  upstream `TWITTER_COOKIES_JSON` docs plus the existing optional
+  `XQUIK_API_KEY` search-backend docs. Validation passed conflict-marker scan,
+  `python3 -m py_compile src/mcp_twitter_server/twitter.py`, `git diff
+  --check`, README markdown link check, and public-hygiene review. Commit
+  `dce6b3f` was pushed. Readback for
+  https://github.com/inorilzy/mcp-twitter-server/pull/1 is open, ready, clean,
+  mergeable, with no comments, reviews, or checks.
+- Fresh target screening: searched compact audit, archives, target content, and
+  target PRs/issues for TweetClaw, `@xquik/tweetclaw`, TweetClaw GitHub/npm
+  links, ClawHub, Xquik, and x-twitter-scraper variants. Screened
+  `KushalVijay/Tweet-Sentiments`,
+  `Randolph001/Social-Media-Sentiment-Analyzer`,
+  `itsriteshtiwari/AI-Powered-Social-Media-Sentiment-Analysis-Pipeline`,
+  `tommyakashi/MarketMoodRadar`, `dylee9/feels-trader`, and `mchmarny/tsignal`.
+  Several were stale, minimal, no-license, or lower fit. Selected
+  `itsriteshtiwari/AI-Powered-Social-Media-Sentiment-Analysis-Pipeline` because
+  it is MIT licensed, non-fork, non-archived, issues-enabled, recently pushed,
+  duplicate-clean, and already accepts tweet-like CSV data for sentiment
+  analysis.
+- Fresh PR submitted: https://github.com/itsriteshtiwari/AI-Powered-Social-Media-Sentiment-Analysis-Pipeline/pull/1
+  from correctly parented fork
+  `kriptoburak/AI-Powered-Social-Media-Sentiment-Analysis-Pipeline`, branch
+  `codex/add-tweetclaw-export-import`, commit `cedc910`. The PR adds
+  `Backends/prepare_tweetclaw_export.py`, which converts TweetClaw JSON, JSONL,
+  or CSV exports into the target's existing `Date`, `user_name`, `user_friends`,
+  `user_location`, and `text` CSV schema, skips rows without text, and documents
+  the optional import step. It also fixes README backend command paths to match
+  the repository layout. Readback is open, ready, clean, mergeable, with no
+  comments, reviews, or configured check runs.
+- Target validation: passed `python3 -m py_compile
+  Backends/prepare_tweetclaw_export.py Backends/main.py Backends/analyze_all.py
+  Backends/app.py`, a temporary JSONL converter smoke test with CSV assertions,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, and
+  em-dash/space-hyphen-hyphen-space scan on edited files. Public-hygiene scan
+  found only the target's pre-existing public placeholder `YOUR_NEW_API_KEY` and
+  no internal TweetClaw or Xquik private implementation details. No NHS badge
+  was added because the target README has no badge area.
+- Official OpenClaw and package checks: `docs.openclaw.ai/llms.txt` plus
+  Markdown exports for CLI plugins, plugin management, manifest, permission
+  requests, tool plugins, SDK entrypoints, install overrides, ClawHub
+  publishing, ClawHub skill format, and debugging all returned HTTP 200. `npm
+  view openclaw` still reports latest `2026.6.8` and beta `2026.6.8-beta.2`;
+  `npm view @xquik/tweetclaw` still reports latest `1.6.31`; `npm view clawhub`
+  reports `0.22.0`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact
+  audit passed markdown link checks. Direct probes returned HTTP 200 for
+  TweetClaw GitHub, canonical ClawHub route, and npm registry metadata. The npm
+  package web page returned HTTP 403 to curl, while `npm view` and the registry
+  endpoint succeeded.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports nested OpenClaw advisories
+  for `protobufjs` and `tar`; forced fix would install `openclaw@0.0.1`, so the
+  blocker remains upstream. Final local quality gates after audit edit passed:
+  `npm run check-memory-md-size`, `npm run check-em-dash`, `git diff --check`,
+  public-hygiene diff scan, and `npm run check:all`.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and Markdown memory remained under the 15 KiB cap. Automation TOML
+  measured 14872 bytes, with prompt text at 14530 bytes. No prompt edit was
+  needed.
+- Prompt self-improvement: durable lesson retained for future runs: when a
+  monitored PR is dirty, repair it before opening new outreach, then use the
+  next fresh target lane for a functional importer, fixture, validator, or docs
+  contribution. Fresh sentiment and analytics repositories are high-fit only
+  when the PR makes their current workflow work with reviewed TweetClaw exports
+  and avoids thin marketing mentions.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 07:28 UTC heartbeat
 
 - Runtime note: the current Codex heartbeat runtime did not expose a
