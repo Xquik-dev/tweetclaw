@@ -196,11 +196,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 18:07 UTC: model/effort selectors unavailable. Crawler monitoring
+- 2026-06-17 18:24 UTC: model/effort selectors unavailable. Crawler monitoring
   found 25 known catalog candidates and focused skill coverage returned 0; 100
   PR readbacks found no conflicts, failing checks, or actionable comments.
-- Fresh PR: https://github.com/wsaqaf/mecodify/pull/7 adds a TweetClaw export
-  converter for Mecodify CSV uploads and fixes 2 stale README links.
+- Fresh PR: https://github.com/enigmatronix13/X-Tweet-Scraper/pull/1 adds a
+  TweetClaw export converter for the target's existing `keyword,user,text,time`
+  CSV workflow.
 - Checks: target compile, converter smoke, README links, diff check, public
   hygiene, OpenClaw docs/package metadata, TweetClaw public link checks, and
   `check-openclaw-platform-fitness` passed. Full details are archived. npm audit
