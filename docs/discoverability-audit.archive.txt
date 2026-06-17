@@ -17967,3 +17967,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `## 2026-06-17 06:33 UTC Heartbeat`. The compact latest slot points to
   https://github.com/MayankUnbot/CreatorRPM/pull/1, with validation, link
   checks, prompt bytes, and nested OpenClaw audit status recorded there.
+
+## 2026-06-17 07:03 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` for authored PRs
+  and for `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, tweet-scraper, validator, examples, framework,
+  package-tooling, and skill-catalog lanes. Both strict JSON outputs returned 0
+  opportunities. Proxy-refresh logs printed no credential values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` had no
+  open issues. Exact readbacks covered 100 open `kriptoburak` PRs plus
+  `Qredence/skill-fleet#80`. No current PR had a repairable maintainer request,
+  unresolved actionable review, conflict, DCO/CLA blocker, current-head CI
+  failure, or generated-file drift. Current comments on
+  `TheMattBerman/attribution-dashboard-public#3` and
+  `MichaelvanLaar/cc-content#3` were non-actionable. Previous bot findings on
+  `2233admin/crypto-market-research-skill#1`,
+  `pinkpixel-dev/skills-collection-1#3`,
+  `understudy-ai/understudy#24`, and `Qredence/skill-fleet#80` already had
+  repair commits or follow-up comments.
+- Fresh candidate screening: searched compact audit, archive, target PRs, target
+  issues, and target content for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, npm, GitHub, and ClawHub variants. `samber/cc-skills` was
+  fresh and MIT but policy-blocked for this run because its local instructions
+  reject AI slop and require a specific description-optimization loop before
+  new skills. Twitter MCP and OpenClaw skill candidates were duplicate,
+  no-license, or lower fit. `wade56754/x-data-warroom` was selected because it
+  is MIT licensed, non-fork, non-archived, duplicate-clean, and a self-hosted
+  X/Twitter analytics dashboard that benefits from local JSON imports.
+- Fresh PR submitted: https://github.com/wade56754/x-data-warroom/pull/1 from
+  correctly parented fork `kriptoburak/x-data-warroom`, branch
+  `codex/import-tweetclaw-export`, commit `7d04545`. The PR adds
+  `scripts/import_tweetclaw_export.py`, which imports JSON arrays or wrapped
+  TweetClaw/Xquik export shapes into the existing growth tracker JSON file,
+  deduplicates samples by timestamp, preserves existing labels by default,
+  computes latest and delta fields, and optionally upserts to Supabase through
+  the target's existing DB helper. README documents dry-run, local merge, and
+  optional DB write commands. Readback: open, ready, clean, zero comments, zero
+  reviews, and no configured check runs.
+- Target validation: passed `python3 -m py_compile
+  scripts/import_tweetclaw_export.py`, `python3 -m compileall scripts web
+  migrations`, `git diff --check`, `npx --yes markdown-link-check README.md
+  --quiet`, a temp TweetClaw-style dry-run/write smoke test, and an existing
+  x-data-warroom object-shape smoke test. Public-hygiene scan found only the
+  target's pre-existing public dependency names and intended TweetClaw/Xquik
+  importer references. No NHS badge was added because the README has no badge
+  area.
+- Official OpenClaw and package checks: current `docs.openclaw.ai/llms.txt`
+  returned the current docs index, and `llms-full.txt` included current plugin
+  SDK, plugin install/update/inspect, manifest, permission, lifecycle, ClawHub,
+  skill, and debugging references. No TweetClaw OpenClaw metadata was changed.
+- Broken-link and public-surface checks: the handled target README link check
+  passed. TweetClaw README, OpenClaw setup docs, agent workflow docs, packaged
+  skill, compact release memory, and compact audit link checks passed. Direct
+  probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  canonical ClawHub route, OpenClaw Directory, xquik.com, docs.xquik.com, and
+  the new external PR. The npm package web page returned HTTP 403 to curl, while
+  `npm view @xquik/tweetclaw` succeeded.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. Package dry run
+  produced `xquik-tweetclaw-1.6.32.tgz`. `npm audit --audit-level=moderate
+  --omit=dev` still reports nested OpenClaw advisories for `protobufjs` and
+  `tar`; dry-run package-lock fix made no changes. Final `npm run check:all`
+  passed with 11 test files, 168 tests, and 100% coverage.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and `npm run check-memory-md-size` passed at 15115/15360 bytes
+  after compaction. Automation TOML measured 14872 bytes, with prompt text at
+  14530 bytes, under the 15 KiB prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  skill repos with explicit human-only or description-loop requirements are
+  policy-blocked unless maintainers request the change; small analytics apps are
+  a high-fit lane when the contribution adds real import or validation utility
+  and frames TweetClaw only as an optional source.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.

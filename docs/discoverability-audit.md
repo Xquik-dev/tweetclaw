@@ -196,16 +196,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 06:33 UTC: model/effort selectors unavailable. Crawler-first
-  discovery returned 0 opportunities; exact PR readbacks found no repairable
-  maintainer request. Qredence's current head already restored the requested
-  history metadata.
-- Fresh PR: https://github.com/MayankUnbot/CreatorRPM/pull/1 adds optional
-  local X/Twitter JSON import, empty raw files for omitted platforms, and an
-  X-only example. TweetClaw is linked only as one optional exporter.
-- Checks: target Python compile/local X pipeline/link check/public hygiene,
-  OpenClaw docs and packages, TweetClaw link checks, package dry run, and
-  fitness passed. npm audit still reports nested OpenClaw advisories.
+- 2026-06-17 07:03 UTC: model/effort selectors unavailable. Crawler-first
+  authored-PR and skill/opportunity passes returned 0 opportunities; 101 exact
+  PR readbacks found no repairable maintainer request, CI failure, conflict,
+  DCO/CLA blocker, or unresolved current bot finding.
+- Fresh PR: https://github.com/wade56754/x-data-warroom/pull/1 adds a
+  dependency-free TweetClaw/Xquik JSON importer for local growth data and
+  optional Supabase upserts. TweetClaw is framed only as one optional export
+  source for the dashboard.
+- Checks: target Python compile/compileall, diff check, README link check,
+  temp import smoke tests, public hygiene, OpenClaw docs, TweetClaw public link
+  checks, package dry run, fitness, and full `check:all` passed. npm audit
+  still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 
