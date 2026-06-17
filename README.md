@@ -1,6 +1,6 @@
 # TweetClaw
 
-[![npm](https://img.shields.io/npm/v/@xquik/tweetclaw)](https://registry.npmjs.org/@xquik%2ftweetclaw)
+[![npm](https://img.shields.io/npm/v/@xquik%2Ftweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![npm downloads](https://img.shields.io/npm/dm/@xquik/tweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/Xquik-dev/tweetclaw.svg)
