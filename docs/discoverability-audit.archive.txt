@@ -9396,8 +9396,10 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   for high `protobufjs` and moderate `tar`; `npm audit fix --dry-run --omit=dev`
   did not clear them, and the forced fix path would install invalid
   `openclaw@0.0.1`, so this remains an upstream host dependency blocker.
-- Prompt self-improvement: no saved automation prompt edit was useful because
-  the current prompt already preserves model/effort wording, quiet autonomy,
+- Prompt self-improvement: automation TOML measured 14872 bytes, with prompt
+  text at 14570 bytes, under the 15 KiB prompt cap. No saved automation prompt
+  edit was useful because the current prompt already preserves model/effort
+  wording, quiet autonomy,
   crawler-first discovery, mandatory PR submission, aggressive skill-repo
   coverage, fresh repo/framework/library discovery, PR repair priority,
   duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
