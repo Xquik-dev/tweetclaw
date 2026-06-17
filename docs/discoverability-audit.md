@@ -196,15 +196,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 19:47 UTC: model/effort selectors unavailable. Crawler monitoring
+- 2026-06-17 19:57 UTC: model/effort selectors unavailable. Crawler monitoring
   found known catalog and skill candidates; 100 PR readbacks found no
   actionable current-head repair.
-- Fresh PR: https://github.com/ShubhamGajjar/Twitter-Sentiment-Analysis/pull/1
-  adds a TweetClaw CSV/JSON/JSONL converter for the notebook's `Tweets` input,
-  from verified fork `kriptoburak/Twitter-Sentiment-Analysis`.
-- Checks: target compile, CSV/JSON/JSONL smokes, README link check, diff and
-  public-hygiene scans, OpenClaw docs, package metadata, TweetClaw links, and
-  platform fitness passed.
+- Fresh PR: https://github.com/mhmdwldn/twitter-crawler/pull/1 adds missing
+  output drivers and a TweetClaw JSON/JSONL/CSV export normalizer for the
+  crawler's `Tweet` schema, from verified fork `kriptoburak/twitter-crawler`.
+- Checks: target pytest, compile, README link check, diff and public-hygiene
+  scans, OpenClaw docs, package metadata, TweetClaw links, and platform fitness
+  passed. ClawHub npm now reports `0.22.0`.
   npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist

@@ -2,6 +2,95 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-17 19:57 UTC heartbeat
+
+- Runtime note: GPT-5.5 and extra-high reasoning selectors were not exposed in
+  this runtime, so the limitation was recorded and the run continued. No
+  Browser, Chrome, GUI, Context7, dev server, production SSH, destructive git
+  action, or protected-value read was used.
+- Crawler-first discovery and monitoring: used the internal GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` in managed research-proxy JSON
+  mode for broad outreach lanes and focused `SKILL.md`, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, agent, social-media, Twitter/X, registry,
+  catalog, validator, package-tooling, and plugin-ecosystem lanes. Broad output
+  returned 25 mostly known candidates. Focused skill output returned
+  `0xNyk/xint`, `AnselLIU0520/x-automated-operations-skill`,
+  `ashemag/reddit-crosspost`, `dorukardahan/twitterapi-io-skill`,
+  `lancelin111/crawl4ai-skill`, `minilozio/x-research-but-cheaper`,
+  `mvanhorn/clawdbot-skill-search-x`, `mvanhorn/last30days-skill`,
+  `nashsu/autocli-skill`, and `rohunvora/x-research-skill`. Proxy logs printed
+  route metadata only and no protected values.
+- Existing PR repair gate: `Xquik-dev/xquik` and `Xquik-dev/tweetclaw` had no
+  open issues. Exact readbacks covered 100 open `kriptoburak` PRs. Summary:
+  3 drafts, 0 dirty, 3 review-required or target-blocked PRs, 0 failing checks,
+  7 PRs with comments or reviews, and 0 current-head actionable repairs.
+  GraphQL review-thread checks across commented PRs found zero unresolved
+  current-head review threads.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, exact metadata, target content, local clones, fork metadata,
+  and open plus closed target PRs/issues were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, xquik.com, OpenClaw, Twitter/X, skill, catalog, source
+  evidence, sentiment analysis, tweet ingestion, JSON, JSONL, CSV, and variants.
+  Known crawler lanes were duplicate, prior-history, no-license, broad-list, or
+  lower-fit blocked. Fresh active MIT candidates screened included
+  `mhmdwldn/twitter-crawler`, `StephanAkkerman/fintwit-bot`,
+  `jerhadf/tweet-archiver`, `Chulong-Li/Real-time-Sentiment-Tracking-on-Twitter-for-Brand-Improvement-and-Trend-Recognition`,
+  `shirosaidev/stocksight`, and `engali94/Twitter-Account-Analyzer`.
+- Selected target: `mhmdwldn/twitter-crawler` was MIT licensed, active in June
+  2026, non-fork, non-archived, issue-enabled, fresh in the audit, duplicate
+  clean across compact audit, archive, target content, open and closed target
+  PRs, and open and closed target issues. The repo is an async tweet ingestion
+  pipeline with file, Kafka, Elasticsearch, and stdout destinations in docs and
+  tests, but the output-driver package was missing from the checked tree. A
+  TweetClaw export normalizer is a target-native fit because it lets offline
+  TweetClaw search exports enter the same `Tweet` schema without changing the
+  target's mirror scraping, Kafka, Elasticsearch, or alerting behavior.
+- Fresh PR submitted: https://github.com/mhmdwldn/twitter-crawler/pull/1 from
+  correctly parented fork `kriptoburak/twitter-crawler`, branch
+  `codex/tweetclaw-export-normalizer`, commit
+  `e81f4e90e58e38915a5658a1c5cacdad936518a3`. The PR is draft per the GitHub
+  publish workflow default, open, mergeable, and had no comments, reviews, or
+  checks at readback. It restores the missing `helpers.output` package,
+  implements std, file, Kafka, and Elasticsearch drivers, adds
+  `library.tweetclaw_import` for TweetClaw JSON, JSONL, and CSV exports, adds
+  tests for wrapped JSON, JSONL, CSV, and missing-ID behavior, and documents the
+  optional TweetClaw import path in the README. No NHS badge was added because
+  the target badge area is runtime/package health only.
+- Target validation: passed full target pytest with 68 tests and 4 existing
+  Pydantic settings warnings, Python compileall for controllers, exception,
+  helpers, library, and tests, README Markdown link check, `git diff` whitespace
+  check, punctuation scan, and staged public-hygiene scan. The only staged
+  hygiene hits were generic Elasticsearch basic-auth field references with no
+  values, inherited from the target's existing configuration model.
+- Official OpenClaw and package checks: required `docs.openclaw.ai` pages
+  returned HTTP 200 for llms, plugin CLI, plugin management, manifest,
+  permission requests, tool plugins, SDK entrypoints, install overrides,
+  ClawHub publishing, ClawHub skill format, and debugging. Package metadata
+  returned OpenClaw `2026.6.8` latest, published TweetClaw `1.6.31`, and
+  ClawHub `0.22.0`. TweetClaw OpenClaw metadata did not change.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact audit, and compact release memory
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, TweetClaw npm registry metadata, OpenClaw registry metadata, ClawHub
+  registry metadata, the new external PR, the canonical ClawHub TweetClaw page,
+  and the OpenClaw Directory TweetClaw page.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit` still
+  reports nested OpenClaw advisories for `protobufjs` and `tar`; forced fix
+  would install `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, compact Markdown memory stayed under the 15 KiB cap, and
+  automation TOML size was measured at 14872 bytes under the 15 KiB prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson: for ingestion-pipeline targets, a strong TweetClaw placement is an
+  optional export normalizer plus tests that restore or preserve the target's
+  native pipeline paths. Record target-owned pre-existing hygiene hits
+  separately from contributed values so future runs do not overreact to generic
+  configuration field names.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 19:47 UTC heartbeat
 
 - Runtime note: GPT-5.5 and extra-high reasoning selectors were not exposed in
