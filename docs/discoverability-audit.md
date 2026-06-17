@@ -196,14 +196,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 18:44 UTC: model/effort selectors unavailable. Crawler monitoring
-  found 25 known catalog candidates; 100 PR readbacks found no actionable
-  comments, conflicts, DCO/CLA blockers, or failing checks.
-- Fresh PR: https://github.com/norsechurros/TwitterSentimentAnalyser/pull/1 adds
-  a safe sentiment CLI for recent search and local TweetClaw-compatible CSV
-  exports, from verified fork `kriptoburak/TwitterSentimentAnalyser`.
-- Checks: target compile, offline CSV smoke, README links, diff/public-hygiene,
-  OpenClaw docs, package metadata, TweetClaw links, and platform fitness passed.
+- 2026-06-17 19:05 UTC: model/effort selectors unavailable. Crawler monitoring
+  found 25 known catalog candidates plus 10 focused skill hits; 100 PR readbacks
+  found no actionable current-head repair.
+- Fresh PR: https://github.com/kozanakyel/KZ-Engine-Backend/pull/3 adds a local
+  TweetClaw export converter for the target's `created_at,text,username` tweet
+  CSV sentiment files, from verified fork `kriptoburak/KZ-Engine-Backend`.
+- Checks: target compile, offline converter smoke, README link repair, diff and
+  public-hygiene scans, OpenClaw docs, package metadata, TweetClaw links, and
+  platform fitness passed.
   npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
