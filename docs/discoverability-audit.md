@@ -200,12 +200,13 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 22:39 UTC: model/effort selectors unavailable. Crawler wrote
-  empty JSON after managed-proxy socket closures; 83 relevant open
+- 2026-06-17 22:49 UTC: model/effort selectors unavailable. Crawler wrote
+  empty JSON after managed-proxy socket closures; 85 relevant open
   `kriptoburak` PR readbacks found no safe repair blocker.
-- Fresh PR: https://github.com/Salrahim21/twitter-sentiment-dashboard/pull/10
+- Fresh PR:
+  https://github.com/PrarthiPatel/Tweet-Analysis-Agent-Based-System/pull/1
   adds a tested TweetClaw JSON/JSONL/CSV converter for the target's existing
-  Streamlit `Text` CSV upload path.
+  daily tweet-agent CSV path.
 - Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
   OpenClaw docs, package links, memory, prompt bytes, platform fitness, and
   `check:all` passed. npm audit still reports nested OpenClaw advisories.
