@@ -2,6 +2,105 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-17 22:39 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI automation, dev server, production SSH, destructive git action, or secret
+  read was used. The xquik worktree remained read-only except for the approved
+  crawler command.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with managed research-proxy JSON output across
+  `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social-media, Twitter/X, tweet-scraper, CSV/JSON import, analytics,
+  sentiment, awesome-list, OpenClaw plugin catalog, and validator lanes. The
+  managed proxy returned socket closures, quarantined endpoints, opened a short
+  US pool outage circuit, and wrote valid empty JSON. No crawler credential
+  values were printed.
+- PR monitoring and repairs: exact readbacks covered 100 open `kriptoburak`
+  PRs, with 83 relevant and 4 comment-bearing. Newest relevant PRs included
+  `pallsmoris/awesome-agent-skills#1`,
+  `lidge-jun/mcp-ref#1`,
+  `abdulqadir7391/Twitter-Sentiment-Analysis-using-BERT#1`,
+  `6missedcalls/awesome-agent-skills#3`,
+  `JusticeKAE/twitter-sentiment-analysis-streamlit#1`,
+  `JayLZhou/Awesome-Agent-Skills#9`,
+  `MCPStar/Awesome-Official-MCP-Servers#7`,
+  `itgoyo/awesome-agent-skills#8`, and
+  `rajput-7351/sentiment-analyzer-ml-pipeline-host-on-streamlit#1`. The new
+  `pallsmoris#1` head was open, ready, mergeable, clean, and comment-free.
+  `lidge-jun#1` had no reported checks and no comments, with GitHub reporting
+  an `UNSTABLE` merge state but no actionable failure. `6missedcalls#3`
+  remained blocked by target-side review policy only. Comment-bearing
+  `enigmatronix13#1`, `Amitro123#3`, `TheMattBerman#3`, and
+  `MichaelvanLaar#3` remained non-actionable or already followed up. No
+  maintainer request, current-head bot finding, CI failure, conflict, DCO/CLA
+  blocker, or generated-file drift needed repair before fresh outreach.
+- Fresh candidate screening: searched compact audit, archive, target content,
+  target PRs, and target issues for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, npm, GitHub, ClawHub, and variants. Crawler returned no
+  candidates, so targeted GitHub repo searches covered recent tweet sentiment
+  dashboards, tweet CSV upload workflows, Twitter/X scraper CSV outputs, and
+  converter lanes. `agrawal-rohit/tweet-sense` was archive-known from an older
+  missing-license-only blocker, so it was not used as the fresh repo for this
+  run. `mohul2004/Sentiment_Analysis_of_Tweet` cloned as an empty repository.
+  `Salrahim21/twitter-sentiment-dashboard` was selected: public, non-fork,
+  recently pushed, no detected license metadata, no explicit policy blocking
+  direct edits, duplicate-clean across target content plus open and closed
+  PRs/issues, and target-native because the Streamlit app already accepts a CSV
+  upload with a `Text` column.
+- Fresh PR submitted:
+  https://github.com/Salrahim21/twitter-sentiment-dashboard/pull/10 from
+  correctly parented fork `kriptoburak/twitter-sentiment-dashboard`, branch
+  `codex/import-tweetclaw-text-csv`, commit `28a130a`. The PR adds
+  `scripts/tweetclaw_to_text_csv.py`, a dependency-free converter from
+  TweetClaw JSON, JSONL, or CSV exports into the dashboard's required `Text`
+  CSV shape, and documents the conversion command plus the existing Streamlit
+  upload flow. Readback: open, ready, clean, mergeable, zero comments, zero
+  reviews, and zero checks.
+- Target validation: passed `python3 -m py_compile
+  scripts/tweetclaw_to_text_csv.py`, JSON/JSONL/wrapped JSONL/CSV converter
+  smoke tests, `npx --yes markdown-link-check README.md --quiet`,
+  `git diff --check`, and public-hygiene scans. The helper keeps TweetClaw as an
+  optional source-data preparation step and does not change the target model,
+  scoring, UI, scheduling, publishing, analytics, or control decisions. No NHS
+  badge was added because the README has no badge area.
+- Official OpenClaw and package checks: current OpenClaw docs routes returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `cli/plugins`,
+  `plugins/manage-plugins`, `plugins/plugin-permission-requests`, manifest,
+  tool plugins, SDK entrypoints, SDK runtime, install overrides, ClawHub
+  publishing, ClawHub skill format, and debugging. No TweetClaw OpenClaw
+  metadata was changed. Npm metadata remained `@xquik/tweetclaw@1.6.31`,
+  OpenClaw latest `2026.6.8`, OpenClaw beta `2026.6.8-beta.2`, and ClawHub
+  `0.22.0`.
+- Broken-link and public-surface checks: direct probes returned HTTP 200 for
+  the new external PR, npm registry metadata, canonical ClawHub route, and
+  OpenClaw Directory. TweetClaw README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, compact audit, and release memory passed Markdown link
+  checking.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed, and
+  final `npm run check:all` passed. `npm audit --audit-level=moderate
+  --omit=dev` still reports nested OpenClaw advisories for `protobufjs` and
+  `tar`; force remains unsafe because it would downgrade OpenClaw.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and `npm run check-memory-md-size` stayed under the 15 KiB cap.
+  Automation TOML measured 15029 bytes, with prompt text at 14687 bytes, under
+  the 15 KiB prompt cap and containing the corrected missing-license rule.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, cadence, thread
+  binding, commit/push requirement, Markdown cap, and self-improvement. Durable
+  lesson persisted: recently pushed Streamlit tweet dashboards with a single
+  required text column are high-fit targets for small TweetClaw export
+  converters because the edit helps users bring data without changing target
+  modeling or authority.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 22:29 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not

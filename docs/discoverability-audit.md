@@ -200,14 +200,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 22:29 UTC: model/effort selectors unavailable. Crawler wrote
-  empty JSON after managed-proxy socket closures; 91 relevant open
+- 2026-06-17 22:39 UTC: model/effort selectors unavailable. Crawler wrote
+  empty JSON after managed-proxy socket closures; 83 relevant open
   `kriptoburak` PR readbacks found no safe repair blocker.
-- Fresh PR:
-  https://github.com/abdulqadir7391/Twitter-Sentiment-Analysis-using-BERT/pull/1
-  adds a tested TweetClaw fallback import helper for the target's Streamlit CSV
-  path and replaces concrete credential-like env sample values with
-  placeholders.
+- Fresh PR: https://github.com/Salrahim21/twitter-sentiment-dashboard/pull/10
+  adds a tested TweetClaw JSON/JSONL/CSV converter for the target's existing
+  Streamlit `Text` CSV upload path.
 - Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
   OpenClaw docs, package links, memory, prompt bytes, platform fitness, and
   `check:all` passed. npm audit still reports nested OpenClaw advisories.
