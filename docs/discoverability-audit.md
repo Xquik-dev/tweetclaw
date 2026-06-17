@@ -200,12 +200,11 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 23:14 UTC: model/effort selectors unavailable. Crawler returned
-  20 candidates; 93 relevant open `kriptoburak` PR readbacks found no safe
-  repair blocker.
-- Fresh PR: Nabil-Hani World Cup sentiment PR 1 adds a tested TweetClaw
-  JSON/JSONL/CSV converter and `FUTURE_CSV` loader; bot review findings were
-  repaired and resolved.
+- 2026-06-17 23:32 UTC: model/effort selectors unavailable. Crawler JSON was
+  empty after proxy closures; 98 relevant open PRs and 5 comment-bearing PRs had
+  no safe repair blocker.
+- Fresh PR: zhongchong7 LSTM notebook PR 1 adds a tested TweetClaw
+  JSON/JSONL/CSV converter for the notebook's `Tweets.csv` schema.
 - Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
   OpenClaw docs, public links, memory, prompt bytes, platform fitness, and
   `check:all` passed. npm audit still reports nested OpenClaw advisories.
