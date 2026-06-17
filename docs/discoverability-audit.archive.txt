@@ -161,21 +161,28 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Fresh PR submitted: https://github.com/Nabil-Hani/worldcup-sentiment/pull/1
   from verified fork `kriptoburak/worldcup-sentiment`, parent
   `Nabil-Hani/worldcup-sentiment`, branch
-  `codex/import-tweetclaw-worldcup-csv`, commit `df15e69`. The PR adds
+  `codex/import-tweetclaw-worldcup-csv`, commits `df15e69` and `8f8da71`. The
+  PR adds
   `scripts/tweetclaw_to_worldcup_csv.py`, a standard-library converter from
   TweetClaw JSON, JSONL, wrapped JSON, and CSV exports into the simulator's
   `text,true_label` CSV shape; maps common sentiment fields to `Positive`,
   `Neutral`, or `Negative`; defaults missing sentiment to `Neutral`; adds
-  `PAST_CSV` and `FUTURE_CSV` environment overrides; and documents the import
+  TweetClaw-specific text aliases including `tweetText`, `tweet_text`,
+  `replyText`, and `reply_text`; adds `PAST_CSV` and `FUTURE_CSV` environment
+  overrides with `.env` loading before the path reads; and documents the import
   command without changing the dashboard model, scoring, UI, or stream
-  behavior. Readback: open, ready, clean, zero comments, zero reviews, and no
-  configured check runs.
+  behavior. Readback after repair: open, ready, clean, one repair comment,
+  Codex bot review commented, 2 review threads resolved, and no configured
+  check runs.
 - Target validation: passed `python3 -m py_compile app/config/settings.py
   scripts/tweetclaw_to_worldcup_csv.py`, JSON/JSONL/CSV converter smoke tests
   with output assertions, `git diff --check`, `npx --yes markdown-link-check
   README.md --quiet`, and a direct HTTP 200 check for the TweetClaw link.
-  Public-hygiene scan found no secrets, private implementation detail, internal
-  cost mechanics, unsupported claims, or restricted provider names.
+  After the Codex bot review, repair validation passed a TweetClaw field-alias
+  conversion smoke test, a `.env` CSV override smoke test, compile, diff check,
+  README link check, and direct TweetClaw link probe. Public-hygiene scan found
+  no secrets, private implementation detail, internal cost mechanics,
+  unsupported claims, or restricted provider names.
 - Official OpenClaw and package checks: current official docs returned HTTP 200
   for `llms.txt`, `llms-full.txt`, CLI plugin docs, plugin management, manifest,
   plugin permission requests, tool plugins, SDK entrypoints, SDK runtime,

@@ -204,7 +204,8 @@ archive, before any outreach or duplicate decision.
   20 candidates; 93 relevant open `kriptoburak` PR readbacks found no safe
   repair blocker.
 - Fresh PR: Nabil-Hani World Cup sentiment PR 1 adds a tested TweetClaw
-  JSON/JSONL/CSV converter and `FUTURE_CSV` loader for the simulator schema.
+  JSON/JSONL/CSV converter and `FUTURE_CSV` loader; bot review findings were
+  repaired and resolved.
 - Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
   OpenClaw docs, public links, memory, prompt bytes, platform fitness, and
   `check:all` passed. npm audit still reports nested OpenClaw advisories.
