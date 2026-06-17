@@ -196,19 +196,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 07:28 UTC: model/effort selectors unavailable. Crawler-first
-  authored-PR and skill/opportunity passes returned 0 opportunities; 101 exact
-  PR readbacks found no repairable maintainer request, CI failure, conflict,
-  DCO/CLA blocker, or unresolved current bot finding.
-- Fresh PR: https://github.com/Amitro123/Social-Pulse/pull/3 adds a
-  tested `TweetClawExportCollector` that imports reviewed TweetClaw JSON exports
-  into Social Pulse `RawItem` objects for the existing sentiment pipeline; bot
-  review feedback was repaired on head `f4c388a`.
-- Checks: target focused pytest, full pytest with documented dev test deps in a
-  throwaway venv, diff check, collector README link check, public hygiene,
-  OpenClaw docs/package metadata, TweetClaw public link checks, package dry run,
-  fitness, and full `check:all` passed. npm audit still reports nested OpenClaw
-  advisories.
+- 2026-06-17 07:58 UTC: model/effort selectors unavailable. Crawler monitoring
+  returned 25 broad catalog candidates and the skill pass returned 0; 100 exact
+  PR readbacks found one repair gate, `funkatorium/x-mcp#1`, repaired to clean
+  head `f037b32`.
+- Fresh PR: https://github.com/sanjay-ks23/Social-Media-ETL-Pipeline/pull/1
+  adds a TweetClaw JSON export importer, sample fixture, and README flow that
+  converts reviewed X/Twitter exports into the target's existing `metadata.csv`
+  ETL schema.
+- Checks: target compile, sample import smoke, CSV assertions, diff check,
+  README link check, public hygiene, OpenClaw docs/package metadata, TweetClaw
+  public link checks, and full `check:all` passed. npm audit still reports
+  nested OpenClaw advisories.
 
 ## Reporting Checklist
 
