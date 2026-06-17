@@ -79,6 +79,107 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-17 21:28 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI automation, dev server, production SSH, destructive git action, or secret
+  read was used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --json --output /tmp/tweetclaw-crawl-2128.json
+  --research-proxy` with focused skill, OpenClaw, tweet scraper, CSV, JSON,
+  sentiment, archive, and converter queries. The managed proxy returned socket
+  closures, quarantined endpoints, opened a short US pool outage circuit, and
+  wrote valid empty JSON. No crawler credential values were printed.
+- PR monitoring and repairs: `Xquik-dev/tweetclaw` had no open PRs. Exact
+  readbacks covered 100 open `kriptoburak` PRs, with 97 relevant and 5
+  comment-bearing. The newest 12 relevant PRs were open and mergeable or known
+  draft; recent ready PRs were clean. `Abdullah-Essam21/Twitter-Web-Scraping-
+  Data-Processing-#1`, `writingmate/awesome-mcp-servers#4`,
+  `awesome-ai-tools/curated-mcp-servers#16`,
+  `get-proofpilot/claude-skills-catalog#1`,
+  `mctrinh/awesome-mcp-servers#71`,
+  `GetStream/ai-agent-tools-catalog#11`,
+  `xiaosong8584/awesome-mcp-servers#2`, and the three social-media-skills PRs
+  had no comments, reviews, or checks requiring action. The CodeRabbit nit on
+  `enigmatronix13/X-Tweet-Scraper#1` was checked through the live fork branch;
+  the converter already catches JSON and JSONL parse errors and GitHub returned
+  no unresolved review threads, so no repair commit was needed. Older bot
+  comments on `Amitro123/Social-Pulse#3`, `TheMattBerman/attribution-dashboard-
+  public#3`, `MichaelvanLaar/cc-content#3`, and
+  `2233admin/crypto-market-research-skill#1` were non-actionable or already
+  followed up.
+- Fresh candidate screening: searched compact audit, archive, target content,
+  target PRs, and target issues for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, npm, GitHub, ClawHub, and variants. Initial fallback search
+  returned already-screened or duplicate lanes:
+  `Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-`,
+  `Altug-Altug/tweet-scraper-tool-circleboom-alternative`, and
+  `srushtikandagal/-TwitterScraper`. Fresh screened repos included
+  `ms5050/deci-l3-data-wrangling`, `Moniquefrancielly/web-scraping-playwright`,
+  `alexandreeberhardt/TwitterScrapper`,
+  `Priyanshu2735/Hashtag-Fetcher-Use-Python-to-fetch-trending-hashtags-using-
+  social-media-APIs`, and `JorUrie/Data-Analysis`. `alexandreeberhardt` was
+  deferred because the repo includes a large committed tweet dataset that made
+  quick target hygiene noisy; `ms5050` and `JorUrie` were lower fit for this
+  run than direct scraper/export tools.
+- Fresh PR submitted:
+  https://github.com/Priyanshu2735/Hashtag-Fetcher-Use-Python-to-fetch-trending-hashtags-using-social-media-APIs/pull/1
+  from correctly parented fork `kriptoburak/Hashtag-Fetcher-Use-Python-to-
+  fetch-trending-hashtags-using-social-media-APIs`, branch
+  `codex/import-tweetclaw-hashtags`, commit `80f72cc`. Target was MIT licensed,
+  non-fork, non-archived, duplicate-clean, and had no PR or issue history. The
+  PR adds optional `--input` support for TweetClaw JSON, JSONL, and CSV exports,
+  extracts hashtags from tweet text, `hashtags`, and `entities.hashtags`, keeps
+  the live Twitter API path, lazily imports `requests`, writes the existing
+  `Hashtag` CSV column, and documents API plus local export commands. Readback:
+  open, ready, clean, mergeable, zero comments, zero reviews, and zero checks.
+- Additional PR submitted:
+  https://github.com/Moniquefrancielly/web-scraping-playwright/pull/1 from
+  correctly parented fork `kriptoburak/web-scraping-playwright`, branch
+  `codex/import-tweetclaw-relatorio`, commit `0427ce0`. Target is non-fork,
+  non-archived, duplicate-clean, has no PR or issue history, and has no license
+  metadata; missing license metadata was noted but not treated as a blocker
+  under the corrected user rule. The PR closes the README install command fence
+  and adds `tweetclaw_to_relatorio.py`, a dependency-free converter from
+  TweetClaw JSON, JSONL, or CSV exports into the target's
+  `autor,descricao,data,curtidas,reposts` CSV shape. Readback: open, ready,
+  clean, mergeable, zero comments, zero reviews, and zero checks.
+- Target validation: Priyanshu target passed `python3 -m py_compile "Hashtag
+  Fetcher"`, JSON/JSONL/CSV offline smoke tests, README link check, `git diff
+  --check`, and public-hygiene scan. Moniquefrancielly target passed
+  `python3 -m py_compile tweetclaw_to_relatorio.py`, JSON/JSONL/CSV converter
+  smoke tests, README link check, `git diff --check`, and public-hygiene scan.
+  No NHS badge was added because neither handled README has a badge area.
+- Official OpenClaw and package checks: current OpenClaw docs were rechecked via
+  docs routes and platform fitness. No TweetClaw OpenClaw metadata was changed.
+  `npm run check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`.
+- Broken-link and public-surface checks: handled target README link checks
+  passed. Direct probes returned HTTP 200 for both new PRs and TweetClaw GitHub.
+  The npm web page returned HTTP 403 to curl, so the npm registry endpoint was
+  used as canonical package metadata and returned HTTP 200. Canonical ClawHub
+  and OpenClaw Directory routes remained reachable. TweetClaw public Markdown
+  link checks passed.
+- TweetClaw validation: `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, and `npm run check:all` passed.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  advisories for `protobufjs` and `tar`; force remains unsafe because it would
+  downgrade OpenClaw.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and `npm run check-memory-md-size` passed at `15302/15360` bytes.
+  Automation TOML measured `15029` bytes, with prompt text at `14727` bytes.
+  The automation prompt already includes the corrected missing-license rule; no
+  prompt edit was useful.
+- Prompt self-improvement: durable lesson persisted - use xquik crawler
+  `--json --output <path>` for strict JSON, and treat the npm registry endpoint
+  as canonical when the npm website blocks curl. Missing license metadata alone
+  remains non-blocking; explicit maintainer policy, duplicate history, unsafe
+  edits, out-of-scope changes, and bad validation paths remain blockers.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 license gate correction
 
 - User clarified that missing license metadata should not block direct PRs.

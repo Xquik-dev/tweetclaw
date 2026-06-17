@@ -134,8 +134,8 @@ archive, before any outreach or duplicate decision.
   and package-registry lanes.
 - Run the crawler from `/Users/burak/Developer/xquik` with:
   `bun run github:crawl --use-research-proxy`
-- For JSON use:
-  `bun run github:crawl --use-research-proxy --format json`
+- For strict JSON use:
+  `bun run github:crawl --use-research-proxy --json --output <path>`
 - Use focused crawler query sets for authored PRs, audit-tracked PRs, TweetClaw,
   OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs.
 - Skill-repo query inventory lives in the archive; include `SKILL.md`,
@@ -200,17 +200,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 21:06 UTC: model/effort selectors unavailable. Crawler-first pass
-  hit a short research-proxy outage; 100 open `kriptoburak` PR readbacks found
-  no current-head repair blocker.
-- Fresh PR: https://github.com/Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-/pull/1
-  adds an offline TweetClaw JSON/JSONL/CSV importer to the target's processed
-  tweet CSV schema. The target has no license metadata; this was noted but was
-  not treated as a PR blocker under the corrected rule.
-- Checks: target compile, sample conversion, README link check, diff and hygiene
-  scans, fork parent, PR readback, OpenClaw docs, package metadata, TweetClaw
-  links, memory `15210/15360`, prompt `14687` bytes, and platform fitness
-  passed. npm audit still reports nested OpenClaw advisories.
+- 2026-06-17 21:28 UTC: model/effort selectors unavailable. Crawler wrote
+  empty JSON after proxy socket closures; 100 open `kriptoburak` PR readbacks
+  found no safe repair blocker.
+- Fresh PRs:
+  https://github.com/Priyanshu2735/Hashtag-Fetcher-Use-Python-to-fetch-trending-hashtags-using-social-media-APIs/pull/1
+  and https://github.com/Moniquefrancielly/web-scraping-playwright/pull/1 add
+  tested TweetClaw export import helpers. Missing license metadata on the second
+  target was noted and was not a blocker.
+- Checks: target compile/smoke tests, link checks, hygiene scans, fork parents,
+  PR readbacks, OpenClaw docs, package metadata, memory, prompt bytes, platform
+  fitness, and `check:all` passed. npm audit still reports nested OpenClaw
+  advisories.
 
 ## Reporting Checklist
 
