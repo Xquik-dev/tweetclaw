@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-17 05:04 UTC: latest
+- OpenClaw npm checked as of 2026-06-17 06:01 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
   llms, plugin CLI, plugin management, manifest, permissions, agent tools,
   building plugins, install overrides, ClawHub publishing and skill format, and
   help debugging. Old `openclaw.ai` shortcut routes now return 404; use
   canonical `docs.openclaw.ai` pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-17 05:04 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-17 06:01 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,18 +196,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 05:40 UTC: model/effort selectors unavailable. Crawler returned 0
-  opportunities. All 100 open outreach PRs were read back; no repairable
-  maintainer request, conflict, or current-head CI failure blocked outreach.
-- Fresh PR: https://github.com/realnaka/crypto-social-radar/pull/1 adds an
-  optional local X/Twitter source-packet input, example JSON, README guidance,
-  and SKILL.md usage docs while the target keeps filtering, topic
-  classification, price/news comparison, reporting, and Feishu delivery.
-- Checks: target Python compile, source-packet smoke, JSON validation,
-  README/SKILL link check with one target-owned protected signup URL ignored,
-  URL probes, public hygiene, OpenClaw docs/packages, package dry run, and
-  TweetClaw public-surface checks passed. npm audit still reports nested
-  OpenClaw advisories.
+- 2026-06-17 06:01 UTC: model/effort selectors unavailable. Crawler-first
+  discovery returned 0 opportunities and a narrower proxy pass hit a short
+  managed-proxy outage. Exact REST readbacks of recent in-scope open PRs found
+  no repairable maintainer request, conflict, requested change, or current-head
+  CI failure.
+- Fresh PR: https://github.com/bhavikapoor07-ux/Twitter-Sentiment-Analyzer/pull/1
+  adds CSV batch tweet sentiment analysis, sample input, and README input
+  guidance. The target keeps model inference, toxicity checks, sarcasm checks,
+  UI, and result export; TweetClaw is linked only as one optional dataset source.
+- Checks: target Python compile, whitespace, sample CSV parse, target README
+  link check with two pre-existing target-owned failures, URL probes, public
+  hygiene, OpenClaw docs/packages, package dry run, and TweetClaw public-surface
+  checks passed. npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 

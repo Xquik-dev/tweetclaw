@@ -17759,3 +17759,126 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   when the target keeps final approval and posting authority.
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
+## 2026-06-17 05:40 UTC heartbeat
+
+- Rollover from the compact latest slot: model/effort selectors were
+  unavailable. The crawler returned 0 opportunities. All 100 open outreach PRs
+  were read back; no repairable maintainer request, conflict, or current-head CI
+  failure blocked outreach.
+- Fresh PR submitted: https://github.com/realnaka/crypto-social-radar/pull/1
+  added an optional local X/Twitter source-packet input, example JSON, README
+  guidance, and SKILL.md usage docs while the target kept filtering, topic
+  classification, price/news comparison, reporting, and Feishu delivery.
+- Validation summary: target Python compile, source-packet smoke, JSON
+  validation, README/SKILL link check with one target-owned protected signup URL
+  ignored, URL probes, public hygiene, OpenClaw docs and packages, package dry
+  run, and TweetClaw public-surface checks passed. npm audit still reported
+  nested OpenClaw advisories.
+
+## 2026-06-17 06:01 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused
+  authored-PR, `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude,
+  agent, social-media, Twitter/X, source-evidence, tweet-scraper, validator,
+  package-tooling, examples, framework, and skill-catalog queries. Initial
+  strict JSON files returned 0 opportunities. Narrower tweet-scraper and Twitter
+  MCP passes also returned 0 opportunities after several managed-proxy socket
+  failures and a short US proxy pool outage circuit. Proxy metadata only was
+  observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` issue checks found
+  no open issues when reachable. GitHub CLI GraphQL readbacks hit TLS handshake
+  timeouts, while raw GitHub HTTPS was healthy, so the run used authenticated
+  REST through `curl` and Node without printing token values. Recent in-scope
+  authored PRs plus audit-tracked outreach PRs were read back exactly.
+  `bhavikapoor07-ux/Twitter-Sentiment-Analyzer#1`,
+  `realnaka/crypto-social-radar#1`, `priyanshuj-ai/smstack#1`,
+  `coreyhaines31/marketingskills#374`,
+  `TheMattBerman/attribution-dashboard-public#3`,
+  `ChristianLera/X-sentiment-analyzer#1`,
+  `superamped/ai-marketing-skills#2`,
+  `blacktwist/social-media-skills#3`,
+  `abbasi8586/fuseiq-templates#1`, `PHY041/claude-skill-twitter#3`,
+  `thevrus/pubcraft#1`, `OKHP3/skillz#1`,
+  `agentii-ai/twitter-init-kit#1`, `pop123-ux/agent-security-skills#1`,
+  `vosslab/vosslab-skills#2`, `adam-doco/Twitter-AI-agent#1`,
+  `Quigleybits/custom_claude_skills#1`,
+  `vr-rashmiranjan/twitter_ai_agents#1`,
+  `micwan88/agent-harness-template#1`, `claudadotfun/clauda#1`,
+  `lfortin/skills#1`, and `MichaelvanLaar/cc-content#3` had no repairable
+  maintainer request, conflict, requested changes, or current-head CI failure.
+  Bot comments on `TheMattBerman/attribution-dashboard-public#3` and
+  `MichaelvanLaar/cc-content#3` were non-actionable.
+- Fresh candidate screening: after crawler-first discovery, targeted repository
+  searches screened Twitter sentiment analyzers, tweet-scraper dashboards,
+  social-media agents, Twitter MCP servers, and Claude skill repos.
+  Duplicate or prior-history blockers included
+  `AutomateLab-tech/content-distribution-mcp` with open PRs #2, #3, and #5,
+  `bm-github/owasp-social-osint-agent#9`, and `ranaroussi/xpal#1`. No-license
+  or lower-fit candidates included `VEDICWARRIOR/Social-Media-Emotion-And-Sentiment-Trend-Analyzer-Twitter-IBM-NLU-`,
+  `AliManan-ai/Crypto-Tweet-Sentiment-Analyzer-Twitter-Data-Mining-Market-Sentiment-Insights`,
+  `Pritam41/Financial-tweet-analyzer`,
+  `expropriationhoorayhenry64/social-media-scraper-skill`,
+  `WilliamAlexYT/x-research-skill`, and
+  `piao0123/x-post-project`. `Jason-chen-taiwan/claude-skills` was MIT and
+  duplicate-clean but lower fit because it is direct browser scheduling.
+  `bhavikapoor07-ux/Twitter-Sentiment-Analyzer` was selected because it is MIT
+  licensed, non-fork, non-archived, recently pushed, duplicate-clean across
+  compact audit, archive, target content, and open/closed PRs/issues, and its
+  Streamlit tweet analyzer benefits from reproducible CSV batch input.
+- Fresh PR submitted: https://github.com/bhavikapoor07-ux/Twitter-Sentiment-Analyzer/pull/1
+  from correctly parented fork `kriptoburak/Twitter-Sentiment-Analyzer`, branch
+  `codex/add-batch-csv-analysis`, commit `e62aaee`. The PR adds a Streamlit
+  Batch CSV Analysis page for any CSV with a `tweet` column, analyzes up to 100
+  rows, skips toxic rows while continuing the batch, exports results as CSV,
+  adds `examples/tweet-sentiment-input.csv`, and documents the input format.
+  TweetClaw is linked only as one optional X/Twitter dataset source; the target
+  keeps model inference, toxicity checks, sarcasm checks, UI, and result export.
+  Readback: open, ready, clean, zero comments, zero reviews, zero check runs,
+  combined status pending with no statuses.
+- Target validation: passed `python3 -m py_compile app.py`, `git diff --check`,
+  sample CSV parse validation, direct HTTP 200 for the TweetClaw link, and
+  public-hygiene scanning. README Markdown link checking reported only two
+  pre-existing target-owned failures: the Streamlit app URL returned status 0
+  from the checker and LinkedIn returned 999. No NHS badge was added because the
+  target README has no useful badge area.
+- Official OpenClaw and package checks: current official docs returned HTTP 200
+  for `llms.txt`, CLI plugin docs, plugin management, manifest, permission
+  requests, agent tools, building plugins, install overrides, ClawHub
+  publishing, ClawHub skill format, and debugging. Npm metadata returned
+  OpenClaw latest `2026.6.8`, beta `2026.6.8-beta.2`; `clawhub` remained
+  `0.22.0`; published TweetClaw remained `1.6.31`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  passed Markdown link checking. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, canonical ClawHub route, OpenClaw Directory, xquik.com,
+  docs.xquik.com, and the new external PR.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. Package dry run
+  produced `xquik-tweetclaw-1.6.32.tgz` with 57 files, size 67613 bytes, and
+  unpacked size 344158 bytes. `npm audit --audit-level=moderate --omit=dev`
+  still reports 4 moderate nested OpenClaw advisories for `protobufjs` and
+  `tar`; dry-run package-lock fix made no changes and force remains unsafe
+  because it would install `openclaw@0.0.1`.
+- Memory and prompt: compact audit and release notes were updated, the previous
+  compact latest run was preserved here, and `npm run check-memory-md-size`
+  passed at 15251/15360 bytes. Automation TOML measured 14872 bytes, with prompt
+  text at 14530 bytes, under the 15 KiB prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  tweet sentiment apps are a high-fit lane when the contribution adds real batch
+  CSV ingestion and frames TweetClaw as one optional dataset source rather than
+  altering the target's model or scoring authority.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
