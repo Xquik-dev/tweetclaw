@@ -93,6 +93,90 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-17 19:26 UTC heartbeat archive
+
+- Runtime model and effort selection: this runtime did not expose GPT-5.5 or
+  extra-high effort selectors to the agent. The limitation was recorded and the
+  run continued.
+- Crawler-first discovery and PR monitoring: ran the internal crawler from
+  `/Users/burak/Developer/xquik` in managed research-proxy JSON mode for broad
+  outreach lanes and focused `SKILL.md`, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, agent, social-media, Twitter/X, skill-registry, and catalog
+  lanes. Broad output returned 25 mostly known catalog candidates, and the
+  focused pass returned 10 skill candidates including `0xNyk/xint`,
+  `dorukardahan/twitterapi-io-skill`, `mvanhorn/last30days-skill`,
+  `minilozio/x-research-but-cheaper`, `rohunvora/x-research-skill`,
+  `nashsu/autocli-skill`, `ashemag/reddit-crosspost`,
+  `lancelin111/crawl4ai-skill`, `mvanhorn/clawdbot-skill-search-x`, and
+  `AnselLIU0520/x-automated-operations-skill`. Proxy logs printed no access
+  values.
+- Existing PR repair gate: `Xquik-dev/xquik` and `Xquik-dev/tweetclaw` had no
+  open issues. Exact readbacks covered 100 open `kriptoburak` PRs. GraphQL
+  review-thread checks across commented PRs found zero unresolved current-head
+  review threads. No existing PR had a repairable maintainer request, conflict,
+  DCO/CLA blocker, failing current-head check, valid bot finding, or generated
+  drift blocking fresh outreach.
+- Fresh candidate screening and duplicate gates: compact audit, archive, target
+  content, target PRs, target issues, exact metadata, local clones, and fork
+  metadata were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  xquik.com, OpenClaw, Twitter/X, skill, catalog, source evidence, sentiment
+  analysis, CSV import, and variants. Known crawler lanes were duplicate,
+  prior-history, no-license, broad-list, or lower-fit blocked. Recent sentiment
+  candidates included `avs-abhishek123/Twitter-Sentimental-Analysis`,
+  `adithn875/social-media-sentiment-analyzer`,
+  `oussamabenalisst/Analyse-de-Sentiments-Twitter`,
+  `NVDHelloWorld/SocialMediaAnalysis`, and `Amankrah/twitter-streamer`.
+  `adithn875/social-media-sentiment-analyzer` was MIT licensed, active enough,
+  and duplicate-clean, but was blocked because a useful hygiene fix would show a
+  target-owned credential-like bearer value in the public PR diff. No value was
+  repeated in public text. `oussamabenalisst/Analyse-de-Sentiments-Twitter` was
+  selected because it is MIT licensed, non-fork, non-archived, issue-enabled,
+  fresh in the audit, duplicate-clean across content plus target PRs/issues, and
+  its notebook already consumes `project_twitter_data.csv` where a TweetClaw
+  export converter is directly target-native.
+- Fresh PR submitted: https://github.com/oussamabenalisst/Analyse-de-Sentiments-Twitter/pull/1
+  from verified fork `kriptoburak/Analyse-de-Sentiments-Twitter`, branch
+  `codex/tweetclaw-export-converter`, commit
+  `9e811f8b01aa63fced65b8d4de07b6bd4433912a`. The PR is draft per the GitHub
+  publish skill default, open, mergeable, and has no comments, reviews, or
+  checks at readback. It adds `scripts/tweetclaw_to_project_csv.py`, a
+  standard-library converter from TweetClaw CSV, JSON, or JSONL exports into the
+  target's `tweet_text,retweet_count,reply_count` notebook input format, and
+  README usage notes in the target's existing French documentation style.
+- Target validation: passed `python3 -m py_compile` for the converter, JSON
+  smoke conversion, JSONL smoke conversion, CSV smoke conversion,
+  `npx markdown-link-check README.md`, `git diff --check`, punctuation scan, and
+  added-line public-hygiene scan. No NHS badge was added because the README does
+  not have a badge area.
+- Official OpenClaw and package checks: required `docs.openclaw.ai` pages
+  returned HTTP 200 for llms, plugin CLI, plugin management, manifest,
+  permission requests, tool plugins, SDK entrypoints, install overrides,
+  ClawHub publishing, ClawHub skill format, and debugging. `npm view openclaw`
+  showed latest `2026.6.8`; `npm view @xquik/tweetclaw` showed latest
+  `1.6.31`; `npm view clawhub` showed `0.22.0`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, and compact audit
+  link checks passed. Direct probes returned HTTP 200 for TweetClaw GitHub,
+  TweetClaw npm registry metadata, OpenClaw registry metadata, ClawHub registry
+  metadata, and the new external PR.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit` still
+  reports nested OpenClaw advisories for `protobufjs` and `tar`; forced fix
+  would install `openclaw@0.0.1`, so no package mutation was made. Final
+  `npm run check:all` passed with 11 test files, 168 tests, and 100% coverage.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and memory size plus final checks were rerun after edits.
+  Automation TOML measured 14872 bytes, with prompt text at 14530 bytes, under
+  the 15 KiB prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson: when a target-native hygiene fix would expose a target-owned
+  credential-like value in a public PR diff, treat that repo as blocked for PR
+  outreach and switch to a clean candidate; record the blocker without repeating
+  the value.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 18:24 UTC heartbeat
 
 - Runtime note: the current Codex heartbeat runtime did not expose a GPT-5.5 model selector or extra-high reasoning selector. The run continued under the available runtime and recorded the limitation. No GUI automation, dev server, production host access, destructive git action, or secret read was used.
