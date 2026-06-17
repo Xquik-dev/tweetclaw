@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-17 04:47 UTC: latest
+- OpenClaw npm checked as of 2026-06-17 05:04 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
-  llms, plugin CLI, current plugin manifest, permissions, tool plugins, SDK
-  entrypoints, ClawHub publishing and skill format, plugin management, and help
-  debugging. Old shortcut routes now return 404; use canonical `/plugins/...`
-  and `/help/...` paths.
+  llms, plugin CLI, plugin management, manifest, permissions, agent tools,
+  building plugins, install overrides, ClawHub publishing and skill format, and
+  help debugging. Old `openclaw.ai` shortcut routes now return 404; use
+  canonical `docs.openclaw.ai` pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-17 04:47 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-17 05:04 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -196,17 +196,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 04:47 UTC: model/effort selectors unavailable. Crawler returned 0
+- 2026-06-17 05:04 UTC: model/effort selectors unavailable. Crawler returned 0
   opportunities. All 100 open outreach PRs were read back; no repairable
-  maintainer request, conflict, or CI failure blocked outreach.
-- Fresh PR: https://github.com/abbasi8586/fuseiq-templates/pull/1 adds
-  optional source-packet loading, sample JSON, and TweetClaw/OpenClaw
-  evidence-only guidance to the FuseIQ Twitter sentiment template. Readback:
-  open, mergeable, ready, no checks configured.
-- Checks: target compile, stub smoke with mock and packet inputs, JSON, links,
-  URL probes, public hygiene, OpenClaw docs/packages, package dry run, and
-  TweetClaw `check:all` passed. `ruff` and `black` were absent locally; npm
-  audit still reports nested OpenClaw advisories.
+  maintainer request, conflict, or current-head CI failure blocked outreach.
+- Fresh PR: https://github.com/ChristianLera/X-sentiment-analyzer/pull/1 fixes
+  the `requirements.txt` install path and adds a CSV source-packet example for
+  the app's Spanish sentiment-analysis CSV flow. Readback: open, clean, ready,
+  no checks configured.
+- Checks: target Python compile, CSV smoke, README link check, URL probes,
+  public hygiene, OpenClaw docs/packages, package dry run, and TweetClaw
+  `check:all` passed. npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 
