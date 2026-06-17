@@ -46,7 +46,7 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- Npm audit on 2026-06-17 06:01 UTC reports nested `openclaw@2026.6.8`
+- Npm audit on 2026-06-17 06:50 UTC reports nested `openclaw@2026.6.8`
   advisories for
   `protobufjs` and `tar`; root overrides do not rewrite the host shrinkwrap.
   Rerun audit after each OpenClaw lockfile refresh.
@@ -54,7 +54,7 @@ the archive, before any release or ClawHub decision.
 ## ClawHub State
 
 - ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-17 06:01 UTC, but keep npm canonical until current scoped package
+  on 2026-06-17 06:51 UTC, but keep npm canonical until current scoped package
   publishing succeeds.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`
