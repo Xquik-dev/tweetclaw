@@ -196,13 +196,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 05:04 UTC: model/effort selectors unavailable. Crawler returned 0
+- 2026-06-17 05:24 UTC: model/effort selectors unavailable. Crawler returned 0
   opportunities. All 100 open outreach PRs were read back; no repairable
   maintainer request, conflict, or current-head CI failure blocked outreach.
-- Fresh PR: https://github.com/ChristianLera/X-sentiment-analyzer/pull/1 fixes
-  the `requirements.txt` install path and adds a CSV source-packet example for
-  the app's Spanish sentiment-analysis CSV flow. Readback: open, clean, ready,
-  no checks configured.
+  Broad authenticated GitHub repo search then hit rate limits, so discovery
+  continued through web-indexed candidates and exact-repo metadata.
+- Fresh PR: https://github.com/TheMattBerman/attribution-dashboard-public/pull/3
+  adds an X/Twitter mentions sample CSV and README guidance for importing
+  reviewed source evidence through the dashboard's existing CSV path. Readback:
+  open and ready; CodeRabbit is still pending with no actionable finding.
 - Checks: target Python compile, CSV smoke, README link check, URL probes,
   public hygiene, OpenClaw docs/packages, package dry run, and TweetClaw
   `check:all` passed. npm audit still reports nested OpenClaw advisories.
