@@ -196,18 +196,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 07:03 UTC: model/effort selectors unavailable. Crawler-first
+- 2026-06-17 07:28 UTC: model/effort selectors unavailable. Crawler-first
   authored-PR and skill/opportunity passes returned 0 opportunities; 101 exact
   PR readbacks found no repairable maintainer request, CI failure, conflict,
   DCO/CLA blocker, or unresolved current bot finding.
-- Fresh PR: https://github.com/wade56754/x-data-warroom/pull/1 adds a
-  dependency-free TweetClaw/Xquik JSON importer for local growth data and
-  optional Supabase upserts. TweetClaw is framed only as one optional export
-  source for the dashboard.
-- Checks: target Python compile/compileall, diff check, README link check,
-  temp import smoke tests, public hygiene, OpenClaw docs, TweetClaw public link
-  checks, package dry run, fitness, and full `check:all` passed. npm audit
-  still reports nested OpenClaw advisories.
+- Fresh PR: https://github.com/Amitro123/Social-Pulse/pull/3 adds a
+  tested `TweetClawExportCollector` that imports reviewed TweetClaw JSON exports
+  into Social Pulse `RawItem` objects for the existing sentiment pipeline; bot
+  review feedback was repaired on head `e123a4c`.
+- Checks: target focused pytest, full pytest with documented dev test deps in a
+  throwaway venv, diff check, collector README link check, public hygiene,
+  OpenClaw docs/package metadata, TweetClaw public link checks, package dry run,
+  fitness, and full `check:all` passed. npm audit still reports nested OpenClaw
+  advisories.
 
 ## Reporting Checklist
 
