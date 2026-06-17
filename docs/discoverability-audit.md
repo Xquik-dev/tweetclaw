@@ -196,16 +196,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 19:57 UTC: model/effort selectors unavailable. Crawler monitoring
-  found known catalog and skill candidates; 100 PR readbacks found no
-  actionable current-head repair.
-- Fresh PR: https://github.com/mhmdwldn/twitter-crawler/pull/1 adds missing
-  output drivers and a TweetClaw JSON/JSONL/CSV export normalizer for the
-  crawler's `Tweet` schema, from verified fork `kriptoburak/twitter-crawler`.
-- Checks: target pytest, compile, README link check, diff and public-hygiene
-  scans, OpenClaw docs, package metadata, TweetClaw links, and platform fitness
-  passed. ClawHub npm now reports `0.22.0`.
-  npm audit still reports nested OpenClaw advisories.
+- 2026-06-17 20:16 UTC: model/effort selectors unavailable. Crawler monitoring,
+  focused skill coverage, and 100 PR readbacks found no current-head repair
+  before fresh outreach.
+- Fresh PR: https://github.com/hamzafarooq/claude-code-starter/pull/8 adds an
+  optional X/Twitter source-packet step to the `trend-spotter` skill, with
+  TweetClaw limited to already approved OpenClaw source context and no account
+  actions.
+- Checks: target diff, link check, npm pack dry run, fork parent, PR readback,
+  public-hygiene scans, OpenClaw docs, package metadata, TweetClaw links,
+  `npm run check:all`, memory `14968/15360`, prompt `14530` bytes, and
+  platform fitness passed. Audit commit pushed to master. npm audit still
+  reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 
