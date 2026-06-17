@@ -113,8 +113,11 @@ archive, before any outreach or duplicate decision.
   catalog, docs, validator, or tooling placement.
 - Issue-only work may supplement a run but does not satisfy the PR mandate while
   any eligible GitHub PR target remains. Use issue-only only after every safe PR
-  path is duplicate, unlicensed, policy-blocked, unsafe, out of scope, or
+  path is duplicate, policy-blocked, unsafe, out of scope, or
   maintainer-inappropriate.
+- Missing license metadata is not a direct-PR blocker. Read license and
+  contribution terms when present, respect explicit no-contribution policies,
+  and keep contributions original, target-native, and easy to review.
 - Every run must aggressively find new maintained repositories or websites
   before routine maintenance.
 - Never claim all unsubmitted GitHub skill repositories are exhausted. Treat
@@ -123,7 +126,7 @@ archive, before any outreach or duplicate decision.
   routine maintenance, with screened lanes, repos, duplicate results, blockers,
   and the next unscreened lane recorded.
 - Do not stop after the first clean skill target; advance multiple safe
-  duplicate-clean, licensed, target-native submissions when validation time
+  duplicate-clean, target-native submissions when validation time
   allows, otherwise record exact blockers.
 - Use crawler-first GitHub, OpenClaw, ClawHub, MCP, npm, marketplace, fork,
   web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog,

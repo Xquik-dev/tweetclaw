@@ -2,6 +2,18 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-17 license gate correction
+
+- User clarified that missing license metadata should not block direct PRs.
+  Future outreach must not treat an absent repo license as ineligible by itself.
+  Continue duplicate, fork, explicit maintainer-policy, safety, validation, and
+  target-fit gates. Read license and contribution metadata when present, respect
+  explicit no-contribution or no-PR policies, avoid copying target-owned code
+  into TweetClaw, and keep external contributions original, target-native, and
+  easy for maintainers to review. Use issue-only paths for disabled PRs,
+  required design approval, explicit target policy blocks, unsafe or out-of-scope
+  edits, duplicates, or missing validation paths.
+
 ## 2026-06-17 20:45 UTC heartbeat
 
 - Runtime note: GPT-5.5 and extra-high reasoning selectors were not exposed in
