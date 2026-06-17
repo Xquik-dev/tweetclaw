@@ -196,15 +196,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 03:27 UTC: model/effort selectors unavailable. Crawler returned 0
+- 2026-06-17 03:48 UTC: model/effort selectors unavailable. Crawler returned 0
   opportunities. TweetClaw had no PRs/issues. Readback of 100 open outreach PRs
   found no repairable maintainer request, CI failure, conflict, or review
-  finding; bot notes and target-owned deploy authorization remained
+  finding; bot notes and target-owned deploy authorization stayed
   non-actionable.
-- Fresh PR: https://github.com/claudadotfun/clauda/pull/1 updates a Twitter
-  reply bot README so setup keys, project name, and technical details match the
-  code, then adds optional source-packet review with TweetClaw as source-only
-  context. Readback: open, clean, mergeable, ready, README only.
+- Fresh PR: https://github.com/vr-rashmiranjan/twitter_ai_agents/pull/1 expands
+  a placeholder README with setup, env vars, run commands, validation, and
+  optional TweetClaw source-packet context before publishing. Readback: open,
+  clean, mergeable, ready, README only.
 - Checks: target tests, target links, public hygiene, OpenClaw docs/packages,
   public URL probes, and TweetClaw `check:all` passed. npm audit still reports
   nested OpenClaw advisories.
