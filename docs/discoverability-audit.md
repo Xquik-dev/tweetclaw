@@ -196,19 +196,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 03:09 UTC: model/effort selectors unavailable. Crawler returned 0
+- 2026-06-17 03:27 UTC: model/effort selectors unavailable. Crawler returned 0
   opportunities. TweetClaw had no PRs/issues. Readback of 100 open outreach PRs
   found no repairable maintainer request, CI failure, conflict, or review
-  finding; bot notes, review-required gates, and Vercel authorization remained
-  non-actionable or target-owned.
-- Fresh PR: https://github.com/pippinlovesdot/dot-automation/pull/2 adds
-  reviewed source-packet guidance to an autonomous Twitter agent framework,
-  keeps TweetClaw as optional context before posting or replies, and adds the
-  xquik.com NHS badge to the existing badge area. Readback: open, clean, ready,
-  README and architecture docs only, no comments, reviews, or checks.
-- Checks: target validation, target links, public hygiene, TweetClaw markdown
-  links, OpenClaw docs/packages, public URL probes, and `check:all` passed. npm
-  audit still reports nested OpenClaw advisories.
+  finding; bot notes and target-owned deploy authorization remained
+  non-actionable.
+- Fresh PR: https://github.com/claudadotfun/clauda/pull/1 updates a Twitter
+  reply bot README so setup keys, project name, and technical details match the
+  code, then adds optional source-packet review with TweetClaw as source-only
+  context. Readback: open, clean, mergeable, ready, README only.
+- Checks: target tests, target links, public hygiene, OpenClaw docs/packages,
+  public URL probes, and TweetClaw `check:all` passed. npm audit still reports
+  nested OpenClaw advisories.
 
 ## Reporting Checklist
 

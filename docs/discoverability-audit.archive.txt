@@ -10857,6 +10857,85 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-17 03:27 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` for authored PR
+  monitoring and for `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex,
+  Claude, agent, social-media, Twitter/X, source-evidence, tweet-scraper,
+  validator, catalog, examples, framework, and package-tooling lanes. Both
+  crawler passes returned strict JSON with zero opportunities. Proxy metadata
+  only was observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. A readback of
+  100 open `kriptoburak` PRs found no actionable maintainer request, requested
+  changes, CI failure, conflict, DCO, CLA, or generated-file drift. Noted
+  non-actionable items: MatterAI and CodeRabbit summaries, already-addressed
+  Gemini/CodeRabbit comments on earlier PRs, target-owned Vercel authorization
+  on `pockebot/openpocket#117`, and existing review-required gates. The open
+  list also included `lfortin/skills#1`, open and comment-free, which should be
+  monitored in later readbacks.
+- Fresh target screening: compact audit and archive checks blocked repeating
+  `pippinlovesdot/dot-automation`, `Lakshit-Gupta/X-Twitter_AI_Agent`,
+  `justFiveDev/Solana-Twitter-AI-Agent`, and `RoshanDev/skills`. The fresh
+  candidate `claudadotfun/clauda` was screened because it is a Twitter reply bot
+  with clear source-context value. Metadata: Apache-2.0, not a fork, not
+  archived, default branch `main`, issues enabled, pushed `2026-01-25`, and no
+  duplicate TweetClaw, Xquik, x-twitter-scraper, OpenClaw, npm, or ClawHub
+  history in compact memory, archive, target PRs, or target issues.
+- Fresh PR submitted: https://github.com/claudadotfun/clauda/pull/1 from
+  correctly parented fork `kriptoburak/clauda`, branch
+  `codex/update-source-context-docs`, commit `efa723a`. The PR updates
+  `README.md` so project naming, setup keys, and technical details match
+  `bot.py` and `config.py`, and adds an optional source packet review step for
+  high-risk replies with TweetClaw as source-only OpenClaw context. Clauda keeps
+  reply decisions and posting credentials. No NHS badge was added because the
+  target has no badge area.
+- Target validation: `python3 -m py_compile bot.py config.py test_bot.py`,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, and
+  `/tmp/tc-clauda-venv/bin/python -m unittest test_bot -v` passed. The unit run
+  installed target requirements in `/tmp/tc-clauda-venv`, ran 59 tests, and left
+  no dependency artifacts in the repo. Public-hygiene scan of added README lines
+  found no secrets, forbidden private details, or unsupported claims.
+- Fresh PR readback: `claudadotfun/clauda#1` is open, clean, mergeable, ready,
+  comments-free, review-free, and check-free. Changed files: README only, 24
+  additions, 13 deletions.
+- Official OpenClaw and package checks: docs returned HTTP 200 for `llms.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. Npm metadata returned OpenClaw latest `2026.6.8`, beta
+  `2026.6.8-beta.2`, modified `2026-06-16T16:27:41.883Z`; published TweetClaw
+  remains `1.6.31`, source `1.6.32` unpublished.
+- Broken-link and public-surface checks: direct probes returned HTTP 200 for
+  ClawHub canonical route, OpenClaw Directory, TweetClaw GitHub, npm registry
+  metadata, xquik.com, docs.xquik.com API overview, and
+  `claudadotfun/clauda#1`. Target README links passed markdown-link-check.
+- TweetClaw validation before memory edits:
+  `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; forced audit fix remains
+  unsafe because it would install `openclaw@0.0.1`.
+- Final TweetClaw validation after memory edits: `npm run check-memory-md-size`,
+  markdown-link-check for public docs, `git diff --check`, public-hygiene diff
+  scan, and `npm run check:all` passed. `check:all` included 168 tests and 100%
+  coverage.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Persisted TOML
+  measured 14,872 bytes and the prompt string measured 14,530 bytes.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
 ## 2026-06-17 03:09 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
