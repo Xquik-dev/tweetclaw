@@ -110,7 +110,7 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Fresh PR submitted: https://github.com/Amitro123/Social-Pulse/pull/3 from the
   correctly parented fork `kriptoburak/Social-Pulse`, branch
   `codex/add-tweetclaw-export-collector`, initial commit `f935875` plus review
-  repair commit `e123a4c`. The PR adds
+  repair commits `e123a4c` and `f4c388a`. The PR adds
   `src/collectors/tweetclaw_export.py`, `src/collectors/README.md`, and
   `tests/test_tweetclaw_export_collector.py`. It imports TweetClaw JSON arrays
   and common wrapped shapes into existing `RawItem` objects, filters by reviewed
@@ -121,17 +121,19 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   instead of rewriting them to current time, keeping author resolution consistent
   for URL and author fields, logging expected import failures while continuing,
   and asserting `RawItem` outputs plus invalid/duplicate-record behavior in
-  tests. A concise repair note was posted on the PR. Final readback showed open,
-  ready, `MERGEABLE`, `UNSTABLE` only because CodeRabbit's new review was
-  pending/rate-limited on the repaired head, old bot comments tied to `f935875`,
-  no maintainer reviews, and 3 changed files.
+  tests. A follow-up repair added explicit return annotations for the new
+  constructor and tests after Qodo flagged the target rule. Concise repair notes
+  were posted on the PR. Final readback showed open, ready, `MERGEABLE`,
+  `CLEAN`, CodeRabbit successful, no maintainer reviews, and 3 changed files.
 - Target validation: passed `git diff --check`,
   `.venv/bin/python -m pytest -q tests/test_tweetclaw_export_collector.py
   tests/test_collectors.py` with 5 tests, `npx --yes markdown-link-check
   src/collectors/README.md --quiet`, public-hygiene scan of changed files, and
   full `.venv/bin/python -m pytest -q` with 32 tests after installing target
   API README's validation-only dev dependencies `httpx` and `pytest-asyncio` in
-  a throwaway venv. The first full-suite attempt exposed the target-owned
+  a throwaway venv. The `f4c388a` type-hint repair also passed focused tests,
+  full pytest, diff check, and the collector README link check. The first
+  full-suite attempt exposed the target-owned
   missing `httpx` dependency in `requirements.txt`; no dependency files were
   changed. No NHS badge was added because the target has no badge area.
 - Official OpenClaw and package checks: current `docs.openclaw.ai/llms.txt`,

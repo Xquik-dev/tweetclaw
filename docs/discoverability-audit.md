@@ -203,7 +203,7 @@ archive, before any outreach or duplicate decision.
 - Fresh PR: https://github.com/Amitro123/Social-Pulse/pull/3 adds a
   tested `TweetClawExportCollector` that imports reviewed TweetClaw JSON exports
   into Social Pulse `RawItem` objects for the existing sentiment pipeline; bot
-  review feedback was repaired on head `e123a4c`.
+  review feedback was repaired on head `f4c388a`.
 - Checks: target focused pytest, full pytest with documented dev test deps in a
   throwaway venv, diff check, collector README link check, public hygiene,
   OpenClaw docs/package metadata, TweetClaw public link checks, package dry run,
