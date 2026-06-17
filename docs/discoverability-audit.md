@@ -196,18 +196,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 20:16 UTC: model/effort selectors unavailable. Crawler monitoring,
-  focused skill coverage, and 100 PR readbacks found no current-head repair
-  before fresh outreach.
-- Fresh PR: https://github.com/hamzafarooq/claude-code-starter/pull/8 adds an
-  optional X/Twitter source-packet step to the `trend-spotter` skill, with
-  TweetClaw limited to already approved OpenClaw source context and no account
-  actions.
-- Checks: target diff, link check, npm pack dry run, fork parent, PR readback,
-  public-hygiene scans, OpenClaw docs, package metadata, TweetClaw links,
-  `npm run check:all`, memory `14968/15360`, prompt `14530` bytes, and
-  platform fitness passed. Audit commit pushed to master. npm audit still
-  reports nested OpenClaw advisories.
+- 2026-06-17 20:45 UTC: model/effort selectors unavailable. Crawler monitoring,
+  focused skill coverage, targeted MIT fallback, and 100 PR readbacks found no
+  current-head repair before outreach.
+- Fresh PR: https://github.com/snamiki1212/tweet2csv/pull/2 adds TweetClaw JSON
+  source support to the existing archive-to-CSV converter with a config switch,
+  sample export, and normalized CSV/JSON output.
+- Checks: target typecheck, sample conversion, README link check, diff and
+  hygiene scans, fork parent, PR readback, OpenClaw docs, package metadata,
+  TweetClaw links, memory `15012/15360`, prompt `14530` bytes, and platform
+  fitness passed. npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 
