@@ -196,18 +196,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 05:24 UTC: model/effort selectors unavailable. Crawler returned 0
+- 2026-06-17 05:40 UTC: model/effort selectors unavailable. Crawler returned 0
   opportunities. All 100 open outreach PRs were read back; no repairable
   maintainer request, conflict, or current-head CI failure blocked outreach.
-  Broad authenticated GitHub repo search then hit rate limits, so discovery
-  continued through web-indexed candidates and exact-repo metadata.
-- Fresh PR: https://github.com/TheMattBerman/attribution-dashboard-public/pull/3
-  adds an X/Twitter mentions sample CSV and README guidance for importing
-  reviewed source evidence through the dashboard's existing CSV path. Readback:
-  open and ready; CodeRabbit is still pending with no actionable finding.
-- Checks: target Python compile, CSV smoke, README link check, URL probes,
-  public hygiene, OpenClaw docs/packages, package dry run, and TweetClaw
-  `check:all` passed. npm audit still reports nested OpenClaw advisories.
+- Fresh PR: https://github.com/realnaka/crypto-social-radar/pull/1 adds an
+  optional local X/Twitter source-packet input, example JSON, README guidance,
+  and SKILL.md usage docs while the target keeps filtering, topic
+  classification, price/news comparison, reporting, and Feishu delivery.
+- Checks: target Python compile, source-packet smoke, JSON validation,
+  README/SKILL link check with one target-owned protected signup URL ignored,
+  URL probes, public hygiene, OpenClaw docs/packages, package dry run, and
+  TweetClaw public-surface checks passed. npm audit still reports nested
+  OpenClaw advisories.
 
 ## Reporting Checklist
 
