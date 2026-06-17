@@ -10855,6 +10855,86 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-17 00:57 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran focused `/Users/burak/Developer/xquik`
+  GitHub opportunity crawler passes for open PR monitoring and skill, MCP,
+  OpenClaw, Codex, Claude, social agent, Twitter/X, package-tooling, validator,
+  catalog, and source-review lanes. Both passes returned strict JSON with zero
+  opportunities. Proxy metadata only was observed; no credential values were
+  printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. Exact
+  readback of 100 open `kriptoburak` outreach PRs found no repairable
+  maintainer comment, review request, CI failure, DCO, CLA, conflict, generated
+  artifact drift, or outstanding valid bot-review finding. Remaining blockers
+  were target-owned review gates, target-owned deploy authorization, or already
+  addressed bot summaries.
+- Fresh target screening: after crawler returned zero, exact repo searches and
+  archive checks screened Twitter agent, Twitter MCP, social agent skill, tweet
+  scraper agent, package-tooling, and validator lanes. Duplicate-blocked repos
+  included `MunhoLau/twitter-mcp-secure`, `YoppaV/twitter-mcp`,
+  `zhuyansen/onchain-alpha-radar`, `touchmeangel/twitter-mcp-server`, and
+  `rafaljanicki/x-twitter-mcp-server`. `GuilhermeMori/twitter-agent` was
+  duplicate-clean but lower fit for this run because the README surface is broad
+  and less focused. `sweetmental1122/twitter_agent` was fresh in compact and
+  archive memory, MIT licensed, non-fork, not archived, issue-enabled, and
+  duplicate-clean across target content plus open and closed PRs/issues.
+- Fresh PR submitted: https://github.com/sweetmental1122/twitter_agent/pull/1
+  from correctly parented fork `kriptoburak/twitter_agent`, branch
+  `codex/update-readme-source-review`, commit `79821e3`. The README-only PR
+  replaces stale raw-ZIP setup links with current repository setup commands,
+  changes the badge area to source and xquik.com NHS Agentic Readiness badges,
+  fixes the contact repository link, and adds optional TweetClaw source-review
+  guidance before the target agent writes or deploys content. Final wording,
+  confirmation, scheduling, posting, and deployment remain inside the target
+  project. Readback: open, ready, clean, zero comments, zero reviews, zero
+  check runs, 53 additions, and 17 deletions.
+- Target validation: target README passed `git diff` whitespace checking,
+  markdown-link-check, direct HTTP checks for the target repo, badges, OpenClaw
+  docs, and the TweetClaw npm package, plus public-hygiene scanning for secrets,
+  unsupported claims, restricted source names, and private cost mechanics.
+  `npm ci` completed with ignored lifecycle scripts and no audit. README
+  Prettier check passed. Target-wide `npm run check` still fails on 8
+  pre-existing formatting issues outside the README:
+  `.vscode/settings.json`, `package-lock.json`, `package.json`, `src/app.tsx`,
+  `src/components/tweet-display/TweetDisplay.tsx`, `src/tools.ts`,
+  `src/twitter-api.ts`, and `wrangler.jsonc`.
+- Official OpenClaw and package checks: official docs returned HTTP 200 for
+  `llms.txt`, CLI plugin install/update/inspect docs, plugin management,
+  manifest, permission requests, tool plugins, SDK entrypoints/runtime, ClawHub
+  publishing, ClawHub skill format, and debugging. Npm metadata returned
+  OpenClaw latest `2026.6.8`, beta `2026.6.8-beta.2`, modified
+  `2026-06-16T16:27:41.883Z`; `clawhub` remained `0.22.0`; published
+  TweetClaw remained `1.6.31`; local source remained `1.6.32`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  Code of Conduct, and registry steps passed Markdown link checking. Direct
+  probes returned HTTP 200 for TweetClaw GitHub, canonical ClawHub route,
+  OpenClaw Directory, xquik.com, docs.xquik.com, and the new
+  `sweetmental1122/twitter_agent#1` PR.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit` still
+  reports moderate nested OpenClaw advisories for `protobufjs` and `tar`;
+  forced audit fix remains unsafe because it would downgrade OpenClaw.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  Cloudflare Twitter-agent READMEs with stale zip download flows can be good
+  docs targets when the contribution first fixes native setup and only adds
+  TweetClaw as optional source review. Public external examples should pin
+  `@xquik/tweetclaw@1.6.31` until npm latest advances.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
 ## 2026-06-17 00:29 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
