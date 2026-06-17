@@ -2,6 +2,100 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-17 21:49 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI automation, dev server, production SSH, destructive git action, or secret
+  read was used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --json --output /tmp/tweetclaw-crawl-2149.json
+  --research-proxy` with focused `SKILL.md`, `.agents/skills`, OpenClaw,
+  Twitter/X skill, tweet-scraper, CSV/JSON import, analytics, sentiment,
+  archive-converter, and validator queries. The managed proxy returned socket
+  closures, quarantined endpoints, opened a short US pool outage circuit, and
+  wrote valid empty JSON. No crawler credential values were printed.
+- PR monitoring and repairs: `Xquik-dev/tweetclaw` had no open PRs. Exact
+  readbacks covered 100 open `kriptoburak` PRs, with 97 relevant and 4
+  comment-bearing. Newest relevant PRs included
+  `mcp-finder/awesome-mcp-servers#5`,
+  `kodustech/awesome-agent-skills#39`,
+  `agentskillexchange/skills#9`,
+  `Moniquefrancielly/web-scraping-playwright#1`,
+  `Priyanshu2735/Hashtag-Fetcher-Use-Python-to-fetch-trending-hashtags-using-
+  social-media-APIs#1`, `writingmate/awesome-mcp-servers#4`,
+  `Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-#1`,
+  `awesome-ai-tools/curated-mcp-servers#16`,
+  `get-proofpilot/claude-skills-catalog#1`,
+  `mctrinh/awesome-mcp-servers#71`, and
+  `GetStream/ai-agent-tools-catalog#11`; all were open and mergeable or known
+  draft, with no new maintainer request, current-head CI failure, conflict, DCO,
+  CLA, generated-file drift, or actionable review. `agentskillexchange/skills#9`
+  checks `security-scan` and `validate` were both successful. Older bot comments
+  on `enigmatronix13/X-Tweet-Scraper#1`,
+  `Amitro123/Social-Pulse#3`,
+  `TheMattBerman/attribution-dashboard-public#3`, and
+  `MichaelvanLaar/cc-content#3` remained non-actionable or already followed up;
+  the current `enigmatronix13` branch already handles JSON and JSONL parse
+  errors.
+- Fresh candidate screening: searched compact audit, archive, target content,
+  target PRs, and target issues for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, npm, GitHub, ClawHub, and variants. Crawler returned no
+  candidates, so targeted GitHub repo searches covered active tweet sentiment,
+  Streamlit CSV, analytics dashboard, and tweet CSV validator lanes. Previously
+  archived or corrected-policy lanes included
+  `ankit-sharma2005/twitter-sentiment-analysis`, which earlier runs had blocked
+  only for missing license metadata; missing license metadata is no longer a
+  blocker, but the run still preferred new unarchived candidates to satisfy the
+  fresh-target rule. Fresh screened repos included
+  `poulmayuri/NLP-Sentiment-Analysis-US-Election` (repo only exposes a zip
+  artifact, poor review path), `paridhi-pandey/covid-tweet-sentiment` (good
+  CSV upload fit, deferred), and
+  `rajput-7351/sentiment-analyzer-ml-pipeline-host-on-streamlit` (selected).
+- Fresh PR submitted:
+  https://github.com/rajput-7351/sentiment-analyzer-ml-pipeline-host-on-streamlit/pull/1
+  from correctly parented fork
+  `kriptoburak/sentiment-analyzer-ml-pipeline-host-on-streamlit`, branch
+  `codex/import-tweetclaw-bulk-csv`, commits `556b511` and `076e6f8`. Target is
+  non-fork, non-archived, duplicate-clean, has no PR or issue history, and its
+  README states MIT license. The PR adds
+  `scripts/tweetclaw_to_bulk_csv.py`, a dependency-free converter from
+  TweetClaw JSON, JSONL, or CSV exports into the app's required one-column
+  `text` CSV format for the Bulk CSV Analysis tab, documents the command, and
+  changes one touched license line from U+2014 to ASCII `-`. Readback: open,
+  ready, clean, mergeable, zero comments, zero reviews, and zero checks.
+- Target validation: passed `python3 -m py_compile
+  scripts/tweetclaw_to_bulk_csv.py`, JSON/JSONL/CSV converter smoke tests,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, and
+  public-hygiene scans. No NHS badge was added because the README has no badge
+  area.
+- Official OpenClaw and package checks: current OpenClaw docs routes returned
+  HTTP 200 for `llms.txt`, `cli/plugins`, `plugins/manage-plugins`,
+  `plugins/plugin-permission-requests`, manifest, tool plugins, SDK entrypoints,
+  SDK runtime, install overrides, ClawHub publishing, ClawHub skill format, and
+  debugging. No TweetClaw OpenClaw metadata was changed.
+- Broken-link and public-surface checks: handled target README link check
+  passed. Direct probes returned HTTP 200 for the new PR, the two prior run PRs,
+  npm registry metadata, canonical ClawHub route, and OpenClaw Directory.
+  TweetClaw README, OpenClaw setup docs, agent workflow docs, packaged skill,
+  compact audit, and release memory passed Markdown link checking.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed, and
+  final `npm run check:all` passed with 11 test files, 168 tests, and 100%
+  coverage. `npm audit --audit-level=moderate --omit=dev` still reports nested
+  OpenClaw advisories for `protobufjs` and `tar`; force remains unsafe because
+  it would downgrade OpenClaw.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and `npm run check-memory-md-size` stayed under the 15 KiB cap.
+  Automation TOML remained under 15 KiB and already includes the corrected
+  missing-license rule, so no prompt edit was useful.
+- Prompt self-improvement: durable lesson persisted - after missing-license
+  correction, do not treat archived "no-license blocker" notes as permanent
+  safety blocks; however, still prefer fresh unarchived targets each run when
+  available, and keep the exact reason for any revisited target explicit.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 21:06 UTC heartbeat
 
 - Runtime note: GPT-5.5 and extra-high reasoning selectors were not exposed in
