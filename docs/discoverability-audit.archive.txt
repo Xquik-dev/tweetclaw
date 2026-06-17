@@ -118,6 +118,103 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-17 18:44 UTC heartbeat
+
+- Runtime: GPT-5.5 and extra-high reasoning controls were not exposed in this
+  runtime, so the limitation was recorded and the run continued. No Browser,
+  Chrome, GUI, Context7, dev server, production SSH, destructive git action, or
+  secret read was used.
+- Crawler-first monitoring and discovery: reused this run's internal crawler
+  output from `/Users/burak/Developer/xquik` with research proxy JSON. Broad
+  monitoring returned 25 known catalog, MCP, registry, and skill-directory
+  candidates including `punkpeye/awesome-mcp-servers`, `iflytek/skillhub`,
+  `GoPlusSecurity/agentguard`, `agentregistry-dev/agentregistry`,
+  `hashgraph-online/registry-broker-skills`, `tech-leads-club/agent-skills`,
+  `homeassistant-ai/ha-mcp`, `cosmicstack-labs/mercury-agent-skills`, and
+  related repeated lanes. Focused skill coverage returned 0 candidates. Proxy
+  output printed no protected values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` had no
+  open issues. Exact readbacks covered 100 open `kriptoburak` PRs. No PR had a
+  repairable maintainer request, unresolved current-head review request, merge
+  conflict, DCO/CLA blocker, generated-file drift, or failing configured check.
+  Old bot comments on `2233admin/crypto-market-research-skill#1`,
+  `Amitro123/Social-Pulse#3`, `pinkpixel-dev/skills-collection-1#3`, and
+  `enigmatronix13/X-Tweet-Scraper#1` had already been repaired or were
+  rate-limit/no-feedback states. `vincentkoc/dotskills#20` remains draft, and
+  several PRs remain review-required or target-owned blocked without safe
+  repair work.
+- Fresh candidate screening: compact audit, archive, exact repo metadata,
+  target content, target PRs, and target issues were checked for TweetClaw,
+  `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub,
+  Xquik, x-twitter-scraper, OpenClaw, and variants. Repeated crawler lanes such
+  as `tech-leads-club/agent-skills`, `hashgraph-online/registry-broker-skills`,
+  `cosmicstack-labs/mercury-agent-skills`, `agentregistry-dev/agentregistry`,
+  `iflytek/skillhub`, and broad MCP lists were prior-history, broad-list,
+  duplicate, policy, or lower-fit blocked. Fresh targeted searches found
+  no-license OpenClaw Twitter skill repos including
+  `RAFOLIE/openclaw-skill-twitter-trending`,
+  `bussgrowwithlucky-crypto/openclaw-skill-twitter-poster`,
+  `harrylabsj/twitter-thread-crafter`, and `anamipit/twitter-x`. Social and
+  sentiment candidates included `norsechurros/TwitterSentimentAnalyser`,
+  `Amankrah/twitter-streamer`, `Avisav24/Indian_Election_Predictor_V2`, and
+  stale or prior-history alternatives.
+- Selected target: `norsechurros/TwitterSentimentAnalyser` was MIT licensed,
+  non-fork, non-archived, issue-enabled, pushed in 2024, duplicate-clean across
+  compact audit, archive, target content, PRs, and issues, and had a README that
+  referenced a missing `sentiment_analysis.py`. The repository also had
+  sensitive credential-like literals in an existing script; values were treated
+  as compromised and were not repeated. The contribution avoided touching those
+  lines so the public PR diff did not reprint them, while moving the documented
+  workflow to environment-based credentials and local CSV input.
+- Fresh PR submitted: https://github.com/norsechurros/TwitterSentimentAnalyser/pull/1
+  from correctly parented fork `kriptoburak/TwitterSentimentAnalyser`, branch
+  `codex/add-safe-csv-sentiment-cli`, commit `0cd7eb9`. The PR adds
+  `sentiment_analysis.py`, `requirements.txt`, `.env.example`, `.gitignore`,
+  and README docs. The CLI fetches recent tweets with `TWITTER_BEARER_TOKEN` or
+  analyzes existing CSV files with `text`, `tweet_text`, `full_text`, `content`,
+  or `body` columns, then writes `created_at`, `text`, and `sentiment`. README
+  documents TweetClaw-compatible CSV exports as an optional reviewed source. PR
+  readback: open, ready, mergeable, zero comments, zero reviews, and no
+  configured checks.
+- Target validation: passed `python3 -m py_compile sentiment_analysis.py`,
+  `/tmp/tc-twitter-env/bin/python -m py_compile sentiment_analysis.py`,
+  offline CSV smoke through `/tmp/tc-twitter-env/bin/python -W ignore::Warning
+  sentiment_analysis.py --input-csv /tmp/tc-sentiment-input.csv --output
+  /tmp/tc-sentiment-output.csv`, `npx --yes markdown-link-check README.md
+  --quiet`, `git diff --cached --check`, direct link probes for target and PR,
+  and added-diff public hygiene scans. No NHS badge was added because the README
+  has no badge area.
+- Official OpenClaw and package checks: fetched current official docs from
+  `docs.openclaw.ai` for llms, CLI plugins, plugin management, manifest,
+  permission requests, tool plugins, SDK entrypoints, install overrides,
+  ClawHub publishing, skill format, and debugging, all HTTP 200. `npm view`
+  reported `openclaw@2026.6.8` latest, `@xquik/tweetclaw@1.6.31` latest on
+  npm, and `clawhub@0.22.0`. Local source remains `@xquik/tweetclaw@1.6.32`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact audit, and compact release memory
+  passed `markdown-link-check`. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry package metadata, OpenClaw registry metadata, ClawHub
+  registry metadata, and the new PR. npm package web pages returned HTTP 403 to
+  curl as expected bot protection, while registry and `npm view` succeeded.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports nested OpenClaw advisories
+  for `protobufjs` and `tar`; forced fix would downgrade OpenClaw to `0.0.1`.
+- Memory and prompt: compact audit was updated, this archive received the full
+  run record, and prompt bytes were measured at 14872 bytes for the automation
+  TOML and 14530 bytes for the prompt text, under the 15 KiB prompt cap.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  current guidance already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, skill-repo coverage, fresh
+  target discovery, PR repair priority, duplicate/fork rules, OpenClaw docs,
+  link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap, and
+  self-improvement. Durable lesson: when a target has credential-like literals
+  already in public history, do not repeat values in logs, PR bodies, or diffs;
+  prefer additive safe-entrypoint contributions plus a maintainer-safe note.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 18:07 UTC Heartbeat
 
 - Runtime and scope: requested GPT-5.5 plus extra-high reasoning effort, but
