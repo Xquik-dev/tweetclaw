@@ -10935,6 +10935,9 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   measured 14,872 bytes and the prompt string measured 14,530 bytes.
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+- TweetClaw push status: audit changes were committed and pushed to `master`
+  after final validation. Initial pushed audit commit: `0147336`
+  `Record 0327 discoverability heartbeat`.
 
 ## 2026-06-17 03:09 UTC heartbeat
 
