@@ -49,12 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-17 06:48 UTC: latest
-  `2026.6.8`, beta `2026.6.8-beta.2`; `docs.openclaw.ai` returned HTTP 200 for
-  llms, plugin CLI, plugin management, manifest, permissions, agent tools,
-  building plugins, install overrides, ClawHub publishing and skill format, and
-  help debugging. Old `openclaw.ai` shortcut routes now return 404; use
-  canonical `docs.openclaw.ai` pages.
+- OpenClaw npm checked as of 2026-06-17 21:16 UTC: latest
+  `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
+  `cli/plugins`, `plugins/manage-plugins`,
+  `plugins/plugin-permission-requests`, manifest, SDK/runtime, install
+  overrides, ClawHub publishing and skill format, and debugging. Old
+  `plugins/cli`, `plugins/plugin-management`, and `plugins/permission-requests`
+  routes now return 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
   on 2026-06-17 06:51 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
@@ -199,16 +200,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-17 20:45 UTC: model/effort selectors unavailable. Crawler monitoring,
-  focused skill coverage, targeted MIT fallback, and 100 PR readbacks found no
-  current-head repair before outreach.
-- Fresh PR: https://github.com/snamiki1212/tweet2csv/pull/2 adds TweetClaw JSON
-  source support to the existing archive-to-CSV converter with a config switch,
-  sample export, and normalized CSV/JSON output.
-- Checks: target typecheck, sample conversion, README link check, diff and
-  hygiene scans, fork parent, PR readback, OpenClaw docs, package metadata,
-  TweetClaw links, memory `15012/15360`, prompt `14530` bytes, and platform
-  fitness passed. npm audit still reports nested OpenClaw advisories.
+- 2026-06-17 21:06 UTC: model/effort selectors unavailable. Crawler-first pass
+  hit a short research-proxy outage; 100 open `kriptoburak` PR readbacks found
+  no current-head repair blocker.
+- Fresh PR: https://github.com/Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-/pull/1
+  adds an offline TweetClaw JSON/JSONL/CSV importer to the target's processed
+  tweet CSV schema. The target has no license metadata; this was noted but was
+  not treated as a PR blocker under the corrected rule.
+- Checks: target compile, sample conversion, README link check, diff and hygiene
+  scans, fork parent, PR readback, OpenClaw docs, package metadata, TweetClaw
+  links, memory `15210/15360`, prompt `14687` bytes, and platform fitness
+  passed. npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 

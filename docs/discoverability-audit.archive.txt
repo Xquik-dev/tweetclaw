@@ -2,6 +2,83 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-17 21:06 UTC heartbeat
+
+- Runtime note: GPT-5.5 and extra-high reasoning selectors were not exposed in
+  this runtime, so the limitation was recorded and the run continued. No
+  Browser, Chrome, GUI, Context7, dev server, production SSH, destructive git
+  action, protected-value read, or broad authenticated search was used.
+- Existing PR repair gate: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored-PR readback covered the newest 100 open `kriptoburak` PRs; 97 were
+  relevant to TweetClaw, Xquik, OpenClaw, MCP, skills, social media, or
+  X/Twitter. Comment-bearing readbacks covered
+  `enigmatronix13/X-Tweet-Scraper#1`, `Amitro123/Social-Pulse#3`,
+  `TheMattBerman/attribution-dashboard-public#3`,
+  `MichaelvanLaar/cc-content#3`, and
+  `2233admin/crypto-market-research-skill#1`. Current heads were clean or
+  already answered; the only concrete X-Tweet-Scraper malformed-JSON finding
+  had already been fixed in later commits. No maintainer request, current-head
+  bot finding, CI failure, conflict, DCO/CLA blocker, or generated-file drift
+  needed repair before fresh outreach.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with research-proxy JSON output and focused
+  skill, OpenClaw, MCP, tweet-scraper, CSV, JSON, and sentiment query lanes.
+  The managed network path hit repeated connection-closed failures, quarantined the
+  small US pool, opened a short outage circuit, and wrote an empty opportunities
+  file. The run continued with exact repo metadata, compact and archive searches,
+  target content scans, open and closed PR/issue lists, and local clones.
+- Fresh candidate screening: searched recent scraper/export and sentiment lanes.
+  `Altug-Altug/tweet-scraper-tool-circleboom-alternative`,
+  `Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-`,
+  `srushtikandagal/-TwitterScraper`,
+  `chidupudi/twitter-sentiment-with-csv`, and
+  `Vishesh-Patel-data/twitter_sentiment_using_csv_data` had no compact or
+  archive history. `Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-`
+  was selected because it is public, non-fork, non-archived, active in 2026,
+  issues-enabled, duplicate-clean across target content plus open and closed
+  PRs/issues, and already has a processed CSV/JSON pipeline where a saved
+  TweetClaw export importer is target-native. Missing license metadata was
+  recorded but not treated as a direct-PR blocker under the corrected rule.
+- Fresh PR submitted: https://github.com/Abdullah-Essam21/Twitter-Web-Scraping-Data-Processing-/pull/1
+  from correctly parented fork
+  `kriptoburak/Twitter-Web-Scraping-Data-Processing-`, branch
+  `codex/import-tweetclaw-export`, commit `ed86467`. The PR is ready, open,
+  mergeable, clean, and had no comments, reviews, or checks at readback. It adds
+  `legacy/tweetclaw_export_to_pipeline.py`, maps TweetClaw JSON, JSONL, and CSV
+  exports into the target's processed tweet CSV schema, adds a small sample
+  export, and documents the offline import path without changing scraping.
+- Target validation: passed `python3 -m py_compile
+  legacy/tweetclaw_export_to_pipeline.py`, sample conversion to CSV and JSON,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, added
+  line punctuation and sensitive-term scans, fork-parent verification, PR body
+  readback, changed-file readback, and direct PR and fork-branch URL probes.
+  No NHS badge was added because the target README has no badge area.
+- Official OpenClaw and package checks: `llms.txt` showed current replacements
+  for moved plugin docs. HTTP 200 checks passed for `cli/plugins`,
+  `plugins/manage-plugins`, `plugins/plugin-permission-requests`, manifest, tool
+  plugins, SDK entrypoints/runtime, install overrides, ClawHub publishing,
+  ClawHub skill format, and debugging. Old `plugins/cli`,
+  `plugins/plugin-management`, and `plugins/permission-requests` returned 404.
+  Package metadata returned OpenClaw `2026.6.8` latest, OpenClaw beta
+  `2026.6.8-beta.2`, published TweetClaw `1.6.31`, and ClawHub `0.22.0`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact audit, compact release memory,
+  TweetClaw GitHub, npm registry metadata, ClawHub TweetClaw, OpenClaw Directory
+  TweetClaw, the new PR, and the external fork branch all passed link or direct
+  HTTP checks.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness` and
+  `npm run check-memory-md-size` passed. `npm audit --audit-level=moderate
+  --omit=dev` still reports nested OpenClaw advisories for `protobufjs` and
+  `tar`; forced fix would downgrade OpenClaw to `0.0.1`, so this remains an
+  upstream OpenClaw blocker.
+- Prompt self-improvement: no automation prompt edit was needed. Durable lesson:
+  when OpenClaw docs routes drift, read `llms.txt` first and switch checks to
+  current canonical routes instead of recording old shortcut paths as stable.
+  Automation TOML measured 15029 bytes and decoded prompt text measured
+  14687 bytes.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 license gate correction
 
 - User clarified that missing license metadata should not block direct PRs.
