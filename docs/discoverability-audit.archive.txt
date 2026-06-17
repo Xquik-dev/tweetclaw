@@ -10855,6 +10855,90 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
 
+## 2026-06-17 00:29 UTC heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --use-research-proxy --format json` with focused open
+  PR and skill-repository queries covering `SKILL.md`, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, agent, social-media, Twitter/X, source evidence,
+  tweet scraper, package tooling, validator, catalog, and generated skill lanes.
+  Both crawler passes returned strict JSON with zero opportunities. Proxy
+  metadata only was observed; no credential values were printed or stored.
+- PR monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs. Exact readback
+  of 100 open `kriptoburak` PRs found no repairable maintainer comment, review
+  request, CI failure, conflict, DCO, or CLA blocker. Existing bot comments on
+  prior outreach PRs were already addressed or non-actionable. The known
+  `pockebot/openpocket#117` blocker remains target-owned Vercel authorization.
+- Fresh target screening: after crawler returned zero, exact GitHub searches
+  screened Twitter agent, tweet agent, social media AI agent, and Twitter MCP
+  lanes. `GenAIwithMS/twitter-mcp` was blocked by prior merged Xquik history.
+  `arvindrk/twitter-agent` was blocked by existing related PR `#13`.
+  `connect2jc/twitter-agent-pipeline` was fresh, MIT-licensed, non-fork, not
+  archived, issues-enabled, and duplicate-clean across compact audit, archive,
+  target content, and open or closed target PRs/issues for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, and variants.
+- Fresh PR submitted: https://github.com/connect2jc/twitter-agent-pipeline/pull/1
+  from correctly parented fork `kriptoburak/twitter-agent-pipeline`, branch
+  `codex/openclaw-source-review`. The PR fixes a pre-existing stale OpenClaw
+  docs link and adds optional TweetClaw source-review guidance for reviewed
+  X/Twitter context before changing searches or queueing replies. The target
+  remains responsible for scoring, reply text, queue spacing, and final posting.
+  Public install wording uses published `openclaw plugins install
+  npm:@xquik/tweetclaw@1.6.31` until npm latest advances. Commits pushed:
+  `7d72a21`, `9a77923`, and final correction `9226a61`. Final readback: open,
+  ready, merge state clean, README-only, no comments, no reviews, and no checks.
+- Target validation: baseline `npx --yes markdown-link-check README.md --quiet`
+  found one pre-existing target-owned 404 for
+  `https://github.com/connect2jc/openclaw-config`; the PR replaces it with
+  `https://docs.openclaw.ai/`. Final target checks passed `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`,
+  `python3 -m py_compile twitter_engage.py rnet_twitter.py`,
+  direct 200 checks for TweetClaw GitHub, TweetClaw npm registry metadata, and
+  OpenClaw docs, `npm view @xquik/tweetclaw@1.6.31 version --json`, and a
+  public-hygiene diff scan.
+- Badge rule: no NHS Agentic Readiness badge was added because the handled
+  target README has no reader-useful badge area.
+- Official OpenClaw and package checks: official docs returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-entrypoints`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. Canonical ClawHub, OpenClaw Directory, TweetClaw
+  GitHub, TweetClaw npm registry, xquik.com, docs.xquik.com, and the new PR all
+  returned HTTP 200. Npm metadata returned OpenClaw latest `2026.6.8`, beta
+  `2026.6.8-beta.2`, modified `2026-06-16T16:27:41.883Z`; `clawhub` remained
+  `0.22.0`; published TweetClaw remained `1.6.31`; local source remains
+  `1.6.32`.
+- Broken-link and public-surface checks: TweetClaw README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact release memory, compact audit,
+  Code of Conduct, and AgentRegistry steps passed Markdown link checking.
+- TweetClaw validation before final audit commit: `npm run
+  check-openclaw-platform-fitness` passed for local `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. `npm audit --audit-level=moderate --omit=dev`
+  still reports 4 moderate nested OpenClaw advisories for `protobufjs` and
+  `tar`; force remains unsafe because it would install `openclaw@0.0.1`, so
+  this remains an upstream OpenClaw package blocker. `npm run check:all` passed
+  typecheck, lint, cpd, knip, suppression check, dash check, memory cap, skill
+  frontmatter, version checks, build, platform fitness, package artifact, and
+  168 tests with 100% coverage.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, cadence, thread
+  binding, commit/push requirement, Markdown cap, and self-improvement. Durable
+  lesson: autonomous posting pipelines can accept TweetClaw when it is framed as
+  optional reviewed source context and the target keeps scoring, queueing, and
+  final posting authority; external public examples must pin
+  `@xquik/tweetclaw@1.6.31` until npm latest advances.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
 ## 2026-06-16 23:29 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
