@@ -55,9 +55,9 @@ archive, before any outreach or duplicate decision.
   `plugins/plugin-permission-requests`, manifest, tool plugins,
   `plugins/sdk-entrypoints`, `plugins/sdk-runtime`,
   `plugins/install-overrides`, ClawHub publishing and skill format,
-  `help/debugging`, and gateway troubleshooting. Old `sdk/entrypoints`,
-  `sdk/runtime`, `cli/install-overrides`, and root `debugging` probes now
-  return 404.
+  `help/debugging`, `help/troubleshooting`, and `gateway/troubleshooting`. Old
+  `sdk/entrypoints`, `sdk/runtime`, `cli/install-overrides`, root
+  `debugging`, and `help/gateway-troubleshooting` probes now return 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
   on 2026-06-17 06:51 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
@@ -202,16 +202,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 05:40 UTC: selector limits recorded. Crawler JSON was empty after
-  proxy outage; TweetClaw repo had no open issues or PRs, and 120 authored PRs
-  were listed.
-- PR repairs: merged `mameshivaa/x-archive-rag#13` moved OpenClaw setup out of
-  bundled MCPB docs with commit `ce6d2a2`; `agentskillexchange/skills#9` fixed
-  a maintainer-reported install path with commit `157ce7f4e`.
-- Fresh PR: `Muteeb001-dev/Tweet-sentiment-classifier#1` adds a stdlib
-  TweetClaw export prep utility; target compile/script/link/diff/hygiene,
-  OpenClaw docs, public links, memory cap, and platform fitness passed. npm
-  audit still reports nested OpenClaw advisories.
+- 2026-06-18 06:01 UTC: selector limits recorded. Crawler JSON was empty;
+  TweetClaw had no open issues or PRs, and 120 authored PRs were listed.
+- PR repairs: `Flamechargerr/twitter_sentiment#1` was already fixed by
+  `05e9aea`; `AtomiCloud/claude-skill-marketplace#2` received `1fb0b93` to
+  move Hermes Tweet into Automation and pin `v0.1.6`.
+- Fresh PR: `dominichubble/investor-sentiment-dashboard#24` adds a stdlib
+  TweetClaw-to-`stock_tweets.csv` converter. Target checks passed; GitGuardian
+  passed; deploy/CI awaits maintainer approval. OpenClaw docs, links, memory,
+  and platform fitness passed; npm audit still reports nested OpenClaw
+  advisories.
 
 ## Reporting Checklist
 
