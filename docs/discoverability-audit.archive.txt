@@ -20119,3 +20119,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target responsible for scoring, dashboarding, and live-stream choices.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-18 00:00 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used. The `/Users/burak/Developer/xquik` tree still had unrelated local work
+  and was used only for the required crawler command.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --json --output /tmp/tweetclaw-crawl-0000.json
+  --limit 90 --search-pages 1 --per-query-limit 12 --concurrency 8
+  --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --research-proxy
+  --session-id tweetclaw-0000` with SKILL.md, agent skills, OpenClaw, MCP,
+  Codex, Claude, social/Twitter-X, sentiment dashboard, validator, examples,
+  and awesome-list queries. Strict JSON was valid and contained 0 opportunities.
+  Proxy endpoint failures and outage-circuit logs printed no credential values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned 100 open PRs, 99 relevant in-scope PRs, and 6
+  comment-bearing PRs. Exact readbacks covered 26 recent and comment-bearing PRs
+  with `gh pr view`, `gh pr checks`, and GraphQL review threads. No unresolved
+  current-head review thread, failing check, conflict, DCO/CLA blocker,
+  generated-file drift, or maintainer request required a content change.
+  `zyniverse-hq/skills-registry#67` remains target-side review-required and
+  `Pnwcomputers/ULTIMATE-CYBERSECURITY-MASTER-GUIDE#8` remains target-side
+  blocked, with no repairable feedback in the readback.
+- Fresh candidate screening: compact audit, archive, target content, open and
+  closed PRs, and open and closed issues were searched for TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub, npm, ClawHub, Xquik, and
+  x-twitter-scraper variants. `KhushiKansal/Sentiment_Analysis_WebApp` and
+  `Ukpejehonour/SoftGrowTech_Twitter_Sentiment_Analysis` had prior archive
+  mentions; missing license metadata was recorded but not treated as a direct
+  PR blocker. `NirgalFromMars/disaster-tweets-classification` was fresh but
+  skipped because its Kaggle training labels and Tableau workflow make a
+  TweetClaw converter unsafe without a target-owned labeling decision.
+  `PBrindha25/Social_Media_Performance_Dashboard` was fresh, public, non-fork,
+  non-archived, policy-clean, duplicate-clean, and had a clear CSV upload
+  contract.
+- Fresh PR submitted: https://github.com/PBrindha25/Social_Media_Performance_Dashboard/pull/1
+  from correctly parented fork `kriptoburak/Social_Media_Performance_Dashboard`,
+  branch `codex/add-tweetclaw-converter`, commit `0ca089c`. The PR adds a
+  README with the dashboard schema and run command, plus
+  `scripts/tweetclaw_to_dashboard_csv.py`. The converter accepts TweetClaw JSON,
+  JSONL, or CSV exports and maps tweet views, likes, comments, shares, reach,
+  impressions, post id, and posted time into the target's existing upload CSV
+  columns. It leaves dashboard behavior and scoring decisions unchanged.
+- Target validation: passed `python3 -m py_compile
+  scripts/tweetclaw_to_dashboard_csv.py social_media_dashboard.py`,
+  `git diff --check`, `npx --yes markdown-link-check README.md --quiet`, and a
+  smoke test with schema assertions against `/tmp/tweetclaw-dashboard-0000.csv`.
+  Public-hygiene scan of changed target files found no secrets, private
+  implementation details, private vendor names, cost details, em dashes, or
+  double-hyphen separators. No NHS badge was added because the target had no
+  badge area.
+- New PR readback: PR 1 is open, ready, and CLEAN. GraphQL reported no review
+  threads. `gh pr view` showed zero comments and zero reviews. `gh pr checks`
+  reported no configured checks for the branch.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, canonical
+  ClawHub TweetClaw listing, OpenClaw Directory listing, and the new external
+  PR. `npm view @xquik/tweetclaw version` returned `1.6.31`;
+  `npm view openclaw dist-tags --json` returned latest `2026.6.8`, beta
+  `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub version`
+  returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  Markdown link check passed for README, OpenClaw setup docs, agent workflow
+  docs, packaged skill, compact audit, and compact release memory.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; force would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15251/15360 bytes. Automation TOML
+  measured 15029 bytes and already contains the missing-license-is-not-a-blocker
+  rule.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  multi-platform social dashboards are a good TweetClaw lane when the change
+  produces the target's existing upload schema and leaves charting/scoring
+  behavior untouched.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
