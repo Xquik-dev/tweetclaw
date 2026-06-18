@@ -20725,3 +20725,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   TweetClaw evidence collection.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-18 01:35 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. The GitHub comment skill's elevated-network note could not be
+  followed because this runtime rejects sandbox override parameters; normal
+  networked `gh` reads were used. TweetClaw stayed on `master`; no Context7
+  work, Browser, Chrome, GUI, dev server, production SSH, destructive git
+  action, or private-value read was used. The `/Users/burak/Developer/xquik`
+  tree had unrelated local work and was used only for the required crawler
+  command.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with focused Codex plugin skill, social media,
+  Twitter-X, MCP server, workflow SDK, SKILL.md, `.agents/skills`, dashboard,
+  validator, and awesome-list queries. Strict JSON was valid and contained 0
+  opportunities. Proxy endpoint failures and outage-circuit logs printed no
+  private values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned 100 open PRs. Exact readbacks covered 47 current
+  TweetClaw, Xquik, OpenClaw, skill, social, Gumloop, workflow, and
+  comment-bearing PRs with `gh pr view`, `gh pr checks`, and GraphQL review
+  threads. No unresolved current-head review thread, failing check, conflict,
+  DCO/CLA blocker, generated-file drift, or maintainer request required a
+  content change. Comment-bearing items were deploy previews, bot summaries,
+  prior responses, target-side review waits, or Codex usage-limit notices.
+- Fresh target discovery and blockers: targeted metadata searches found active
+  MCP catalogs and tweet sentiment projects after crawler output was empty.
+  `punkpeye/awesome-mcp-servers` was skipped because the archive records prior
+  duplicate-blocking Xquik MCP history and TweetClaw is not a standalone MCP
+  server. `Sushmitha-93/Tweet-Sentiment-Analysis-StreamLit` and
+  `TheKing79/tweet_sentiment_analysis_streamlit` were older and had weaker
+  maintenance signals. `Zainaazar/Tweets-Sentiment-Analysis-Streamlit-project`
+  was public, non-fork, non-archived, pushed in 2025, duplicate-clean across
+  compact audit, archive, target content, and target open and closed PRs and
+  issues. GitHub reported no license metadata; missing license metadata alone
+  did not block the direct PR.
+- Fresh PR submitted:
+  https://github.com/Zainaazar/Tweets-Sentiment-Analysis-Streamlit-project/pull/1
+  from correctly parented fork
+  `kriptoburak/Tweets-Sentiment-Analysis-Streamlit-project`, branch
+  `codex/add-tweetclaw-export-helper`, commit `6cfa0ad`. The PR adds a README
+  for the existing Streamlit tweet sentiment app plus
+  `scripts/tweetclaw_to_texts.py`, a standard-library helper that extracts one
+  tweet text value per line from TweetClaw JSON, JSONL, or CSV exports. It keeps
+  the existing app responsible for sentiment prediction and uses TweetClaw only
+  as optional source-text preparation.
+- Target validation: `python3 -m py_compile scripts/tweetclaw_to_texts.py`
+  passed. JSON and CSV smoke conversions wrote expected text lines and de-duped
+  repeated values. `npx --yes markdown-link-check README.md --quiet` passed.
+  `git diff --cached --check` passed and public-hygiene scan found no issues.
+  No NHS badge was added because the repo had no badge area.
+- New PR readback: PR 1 is open, ready, and clean. GraphQL reported no review
+  threads. `gh pr view` showed zero comments and zero reviews. `gh pr checks`
+  reported no configured checks for the branch.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the new external PR. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15157/15360 bytes. Automation TOML still
+  measured 15029 bytes in the prior run.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, credential handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  tweet sentiment Streamlit projects with no README can be useful placements
+  when the PR adds clear setup docs plus a small source-text converter and does
+  not change model scoring.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
