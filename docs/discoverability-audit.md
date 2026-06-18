@@ -202,13 +202,13 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 04:55 UTC: selector limits recorded. Crawler JSON was valid but
-  empty after managed-proxy outage; 40 recent authored PRs plus TweetClaw state had no
-  actionable current feedback.
-- Fresh PR: `Flamechargerr/twitter_sentiment#1` adds optional
-  `TweetClawExportSource` for JSON, JSONL, NDJSON, and CSV exports, documents
-  usage, and fixes stale README links plus target lint/format drift.
-- Checks: target pytest/ruff/link/diff/hygiene, fork parent, PR readback,
+- 2026-06-18 05:21 UTC: selector limits recorded. Crawler JSON was empty after
+  proxy outage; 120 authored PRs were listed and TweetClaw repo had no open
+  issues or PRs.
+- PR repair: `Flamechargerr/twitter_sentiment#1` fixed 3 CodeRabbit threads
+  with commit `05e9aea`; target pytest/ruff/link/diff/hygiene passed.
+- Fresh PR: `surajsjain/social-media-analytics-app#27` fixes a dead README
+  docs link and adds TweetClaw export workflow notes; docs link/diff/hygiene,
   OpenClaw docs, public links, memory cap, and platform fitness passed. npm
   audit still reports nested OpenClaw advisories.
 
