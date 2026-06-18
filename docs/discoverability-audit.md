@@ -202,15 +202,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 09:11 UTC: selector limits recorded. Crawler JSON was empty after
+- 2026-06-18 09:37 UTC: selector limits recorded. Crawler JSON was empty after
   proxy socket closures; TweetClaw had no open issues/PRs, and 120 authored PRs
   were listed.
-- Repair pass: top/commented PRs had no unresolved threads. Vercel owner-auth
-  and stale-bot states were non-actionable.
-- Fresh PR: `sidv11/twitter-sentiment-analysis#1` adds a tested TweetClaw
-  export to `Twitter_Data.csv` converter via a correctly parented renamed fork.
-  OpenClaw docs, links, memory, and fitness passed; npm audit still reports
-  nested OpenClaw advisories.
+- Repair pass: `Flamechargerr/twitter_sentiment#1` was conflict-repaired at
+  `e915720`; CodeRabbit passed and no unresolved threads remain.
+- Fresh PR: `lindy-dev/x-automation-skills-scripts#1` adds a tested TweetClaw
+  export digest formatter and fixes a brittle X Developer Portal link. OpenClaw
+  docs, links, memory, and fitness passed; npm audit still reports nested
+  OpenClaw advisories.
 
 ## Reporting Checklist
 
