@@ -49,13 +49,15 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-17 21:16 UTC: latest
+- OpenClaw npm checked as of 2026-06-18 00:31 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
   `cli/plugins`, `plugins/manage-plugins`,
-  `plugins/plugin-permission-requests`, manifest, SDK/runtime, install
-  overrides, ClawHub publishing and skill format, and debugging. Old
-  `plugins/cli`, `plugins/plugin-management`, and `plugins/permission-requests`
-  routes now return 404.
+  `plugins/plugin-permission-requests`, manifest, tool plugins,
+  `plugins/sdk-entrypoints`, `plugins/sdk-runtime`,
+  `plugins/install-overrides`, ClawHub publishing and skill format,
+  `help/debugging`, and gateway troubleshooting. Old `sdk/entrypoints`,
+  `sdk/runtime`, `cli/install-overrides`, and root `debugging` probes now
+  return 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
   on 2026-06-17 06:51 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
@@ -200,11 +202,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 00:10 UTC: model/effort selectors unavailable. Crawler JSON was
-  empty after proxy closures; 100 relevant open PRs and 6 comment-bearing PRs
-  were read back. No repairable current-head blocker was found.
-- Fresh PR: `kotapadusirisha/social_media_engagement#1` adds a TweetClaw JSON,
-  JSONL, and CSV converter for the target's Power BI engagement schema.
+- 2026-06-18 00:21 UTC: model/effort selectors unavailable. Crawler JSON was
+  empty after proxy outage; 44 recent or comment-bearing PRs were read back and
+  no repairable blocker was found.
+- Fresh PR: `paridhi-pandey/covid-tweet-sentiment-app#1` adds a TweetClaw
+  JSON, JSONL, and CSV converter for the app's `tweet` upload column, fixes the
+  clone URL, and removes a stale Streamlit demo link.
 - Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
   OpenClaw docs, public links, memory, and platform fitness passed. npm audit
   still reports nested OpenClaw advisories.
