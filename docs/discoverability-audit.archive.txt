@@ -21267,3 +21267,91 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   not change model scoring.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-18 03:17 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. The GitHub comment skill's elevated-network note could not be
+  followed because this runtime rejects sandbox override parameters; normal
+  networked `gh` reads were used. TweetClaw stayed on `master`; no Context7
+  work, Browser, Chrome, GUI, dev server, production SSH, destructive git
+  action, or private-value read was used. The `/Users/burak/Developer/xquik`
+  tree had unrelated local work and was used only for the required crawler
+  command.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with focused SKILL.md, `.agents/skills`,
+  OpenClaw plugin, MCP skill, Codex skill, Claude skill, social media skill,
+  Twitter-X skill, awesome-list, validator, tweet analytics, and sentiment
+  project queries. Strict JSON was valid and contained 0 opportunities. Managed
+  proxy socket closure and outage-circuit logs printed no private values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned open TweetClaw, Xquik, OpenClaw, skill, social,
+  Gumloop, and sentiment PRs. Exact readbacks covered 25 recent authored PRs
+  with `gh pr view`, `gh pr checks`, and GraphQL review threads. No unresolved
+  current-head review thread, failing check, conflict, DCO/CLA blocker,
+  generated-file drift, or maintainer request required a content change.
+  Review-required states were target-side gates, target-owned bot comments, or
+  usage-limit notices. `gumloop-py#11` still has one unresolved thread, but
+  GraphQL marked it outdated.
+- Fresh target discovery and blockers: crawler output was empty, so targeted
+  GitHub code metadata searches covered SKILL.md, TweetClaw, x-twitter-scraper,
+  tweet sentiment CSV, and social-agent lanes. Known duplicate content blocked
+  repos already carrying TweetClaw or x-twitter-scraper mentions. Fresh screened
+  repos not found in compact audit or archive included
+  `DucklingGod/Cryptopulse`, `Typhlosion123/Meme-Coin`,
+  `KomatiBhavaniSankar/Twitter-Sentiment-Investing-Strategy`, and
+  `Tatheer-Za-ra/SentiScope-AI-Project`. `Tatheer-Za-ra/SentiScope-AI-Project`
+  was public, non-fork, non-archived, pushed on 2026-06-01, issues-enabled,
+  duplicate-clean across compact audit, archive, target content, and target open
+  and closed PRs and issues. GitHub reported no license metadata; missing
+  license metadata alone did not block the direct PR.
+- Fresh PR submitted:
+  https://github.com/Tatheer-Za-ra/SentiScope-AI-Project/pull/1 from correctly
+  parented fork `kriptoburak/SentiScope-AI-Project`, branch
+  `codex/add-tweetclaw-sentiscope-converter`, commit `2abec81`. The PR adds
+  `scripts/tweetclaw_to_sentiscope_csv.py`, a standard-library converter for
+  labeled TweetClaw JSON, JSONL, and CSV exports, plus README usage notes. It
+  writes the target's expected `clean_text,category` format and keeps SentiScope
+  responsible for sentiment training and scoring.
+- Target validation: initial compile caught Python 3.10-only union annotations
+  under Python 3.9.6, so the script was adjusted to Python 3.9-compatible typing
+  before submission. `python3 -m py_compile
+  scripts/tweetclaw_to_sentiscope_csv.py` passed. JSON, JSONL, and CSV smoke
+  conversions each wrote 3 expected rows. `npx --yes markdown-link-check
+  README.md --quiet` passed. `git diff --check` and staged public-hygiene scans
+  passed. No NHS badge was added because the repo had no badge area.
+- New PR readback: PR 1 is open, ready, and `mergeStateStatus: CLEAN`.
+  GraphQL reported no review threads. `gh pr view` showed zero comments and
+  zero reviews. `gh pr checks` reported no configured checks for the branch.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the new external PR. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15257/15360 bytes. Automation TOML
+  measured 15029 bytes.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, credential handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  labeled tweet sentiment projects are good placements when a converter targets
+  the exact training CSV schema, validates against the target's local Python
+  version, and keeps TweetClaw limited to evidence collection.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
