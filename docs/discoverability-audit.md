@@ -210,8 +210,8 @@ archive, before any outreach or duplicate decision.
   README autolink.
 - Checks: target compile/sample conversion/link/diff/hygiene, fork parent,
   PR readback,
-  OpenClaw docs, public links, memory, and platform fitness passed. npm audit
-  still reports nested OpenClaw advisories.
+  OpenClaw docs, public links, memory 15224/15360, audit push, and platform
+  fitness passed. npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 
