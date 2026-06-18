@@ -100,6 +100,93 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-18 04:20 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. The GitHub comment skill's elevated-network note could not be
+  followed because this runtime rejects sandbox override parameters; normal
+  networked `gh` reads were used. TweetClaw stayed on `master`; no Context7
+  work, Browser, Chrome, GUI, dev server, production SSH, destructive git
+  action, or private-value read was used. The `/Users/burak/Developer/xquik`
+  tree had unrelated local work and was used only for the required crawler
+  command.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with focused SKILL.md, `.agents/skills`,
+  OpenClaw plugin, MCP skill, Codex skill, Claude skill, social media skill,
+  Twitter-X skill, tweet analytics, notebook CSV, agent registry, scraper
+  example, and plugin manifest queries. Strict JSON was valid and contained 0
+  opportunities. Managed proxy socket closures, endpoint quarantines, and an
+  outage circuit printed no private values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned open TweetClaw, Xquik, OpenClaw, skill, social,
+  Gumloop, plugin, directory, and sentiment PRs. Exact readbacks covered 35
+  recent authored PRs with `gh pr view`, `gh pr checks`, and GraphQL review
+  threads. No unresolved current-head review thread, failing check, conflict,
+  DCO/CLA blocker, generated-file drift, or maintainer request required a
+  content change. `NatrocTeam/Natroc-Plugins#1` had no comments, reviews,
+  threads, or checks; `moshehbenavraham/Ultimate-Agent-Directory#86` had a
+  Kilo no-issues review and an in-progress Kilo check; review-required Gumloop
+  states remained target gates with no current actionable threads.
+- Fresh target discovery and blockers: crawler output was empty, so exact
+  candidate metadata continued from crawler-adjacent repo lanes. Live search
+  lanes for tweet sentiment, Streamlit analytics, and agent skills returned no
+  usable candidates. `kambojipranav/Twitter_Tweets_Analysis` was not found in
+  compact audit or archive, was public, non-fork, non-archived, pushed on
+  2025-06-29, issues-enabled, and duplicate-clean across target open and closed
+  PRs and issues. Target content had no existing TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub mention. GitHub reported no license
+  metadata; missing license metadata alone did not block the direct PR.
+- Fresh PR submitted:
+  https://github.com/kambojipranav/Twitter_Tweets_Analysis/pull/1 from
+  correctly parented fork `kriptoburak/Twitter_Tweets_Analysis`, branch
+  `codex/add-tweetclaw-twitter-training-converter`, commit `97ffad2`. The PR
+  fixes the README's accidental fenced-block rendering, corrects the clone and
+  notebook launch commands, documents the notebook's headerless
+  `Tweet index,Entity,Sentiment,Tweet` CSV contract, and adds
+  `scripts/tweetclaw_to_twitter_training.py`, a standard-library converter for
+  labeled TweetClaw JSON, JSONL, NDJSON, and CSV exports.
+- Target validation: `python3 -m py_compile
+  scripts/tweetclaw_to_twitter_training.py` passed. JSON, JSONL, and CSV smoke
+  conversions each wrote 3 expected rows with Positive, Negative, Neutral, and
+  Irrelevant labels. `npx --yes markdown-link-check README.md --quiet` passed.
+  `git diff --check` and public-hygiene scans passed. No NHS badge was added
+  because the repo had no badge area.
+- New PR readback: PR 1 is open, ready, and `mergeStateStatus: CLEAN`.
+  GraphQL reported no review threads. `gh pr view` showed zero comments and
+  zero reviews. `gh pr checks` reported no configured checks for the branch.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the new external PR. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15213/15360 bytes. Automation TOML
+  measured 15029 bytes in the previous run.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, credential handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  when a tweet-analysis notebook reads headerless CSV files and assigns columns
+  later, document that implicit contract and add a converter that writes
+  headerless rows instead of changing notebook logic.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-18 03:07 UTC Heartbeat
 
 - Runtime: model and reasoning-effort selectors were not exposed in this

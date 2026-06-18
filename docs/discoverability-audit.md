@@ -202,11 +202,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 03:37 UTC: model/effort and elevated-network selectors
-  unavailable. Crawler JSON was empty after proxy outage; 28 recent authored PRs
+- 2026-06-18 04:20 UTC: model/effort and elevated-network selectors
+  unavailable. Crawler JSON was empty after proxy outage; 35 recent authored PRs
   plus TweetClaw repo state had no actionable current feedback.
-- Fresh PR: `absolo08/Sentiment-Analysis-NLP#1` adds README setup notes and a
-  TweetClaw `twitt30k.csv` converter for labeled public tweet exports.
+- Fresh PR: `kambojipranav/Twitter_Tweets_Analysis#1` fixes README rendering
+  and adds a TweetClaw converter for the notebook's headerless
+  `Tweet index,Entity,Sentiment,Tweet` rows.
 - Checks: target compile/JSON-JSONL-CSV smoke/link/diff/hygiene, fork parent,
   PR readback, OpenClaw docs, public links, memory cap, and platform fitness
   passed. npm audit still reports nested OpenClaw advisories.
