@@ -85,7 +85,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   so no package mutation was made.
 - Memory and prompt: compact audit was updated and this archive received the
   full run record. Pre-edit memory was 15248/15360 bytes. Automation TOML
-  measured 15029 bytes.
+  measured 15029 bytes. Post-edit memory was 15263/15360 bytes. TweetClaw audit
+  commit `c8af70f` was pushed to `master` after final validation.
 - Prompt self-improvement: no saved automation prompt edit was useful because
   the current prompt already preserves model/effort wording, quiet autonomy,
   crawler-first discovery, mandatory PR submission, aggressive skill-repo

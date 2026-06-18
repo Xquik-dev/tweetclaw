@@ -209,8 +209,9 @@ archive, before any outreach or duplicate decision.
   standard-library TweetClaw export-to-status-URL helper for the existing
   stdin batch fetcher.
 - Checks: target compile/sample conversion/link/diff/hygiene, fork parent,
-  PR readback, OpenClaw docs, public links, memory 15248/15360, and platform
-  fitness passed. npm audit still reports nested OpenClaw advisories.
+  PR readback, OpenClaw docs, public links, memory 15263/15360, and platform
+  fitness passed. Audit commit `c8af70f` pushed. npm audit still reports nested
+  OpenClaw advisories.
 
 ## Reporting Checklist
 
