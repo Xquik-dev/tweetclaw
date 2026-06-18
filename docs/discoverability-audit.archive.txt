@@ -20569,7 +20569,8 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `results`, or a single root record. Validation reran: README Python sample
   parsed with `ast.parse`, markdown link check passed, `git diff --check`
   passed, and public-hygiene scan passed. Follow-up readback showed only
-  target-side review gating and an outdated Greptile thread on the old commit.
+  target-side review gating, an outdated Greptile thread on the old commit, and
+  an updated Greptile top-level summary marking the latest commit safe to merge.
 - Crawler-first discovery: ran `/Users/burak/Developer/xquik`
   `bun run github:crawl --json --output /tmp/tweetclaw-crawl-0114.json
   --limit 120 --search-pages 1 --per-query-limit 12 --concurrency 8
