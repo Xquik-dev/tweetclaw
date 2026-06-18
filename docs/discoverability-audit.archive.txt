@@ -100,6 +100,119 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-18 05:40 UTC heartbeat run
+
+- Runtime selector note: the automation requested GPT-5.5 with extra-high
+  reasoning effort, but this Codex runtime did not expose model or effort
+  selectors to the agent. The GitHub comment-handling skill asks for elevated
+  network access on `gh`, but the approval policy cannot request elevated
+  permissions, so the run used normal networked `gh` and recorded the
+  limitation.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with JSON output, `--research-proxy`,
+  `tweetclaw-0540`, bounded request timeouts, no proxy warmup, and focused
+  skill, OpenClaw, MCP, Claude, Codex, Twitter/X, sentiment, analytics,
+  plugin-registry, social-listening, and CSV-import lanes. The heartbeat
+  wording still names `--use-research-proxy`, but the current Xquik crawler CLI
+  uses `--research-proxy`; the working flag was used. Strict JSON had one
+  top-level key and zero opportunities. Managed proxy socket failures,
+  endpoint quarantines, and an outage circuit printed no credential values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored open PR search listed 120 current `kriptoburak` PRs. Exact readbacks
+  covered the newest 18 plus flagged comments and checks. `mameshivaa/
+  x-archive-rag#13` had maintainer-requested changes. `agentskillexchange/
+  skills#9` had an actionable maintainer comment. Other inspected comments
+  were CI intro text, successful bot review text, already-resolved CodeRabbit
+  feedback, no checks, or no review threads.
+- Existing PR repair: `mameshivaa/x-archive-rag#13` failed target release
+  verification because `docs/mcp.md` is included in the generated MCPB bundle,
+  so the OpenClaw docs addition changed the bundle hash without updating
+  `server.json`. Commit `ce6d2a2` moved the OpenClaw setup from bundled
+  `docs/mcp.md` into non-bundled `llms-install.md` and changed the exact
+  TweetClaw install command to include `--pin`. Target validation passed with
+  `/Users/burak/.local/bin/python3.11`: `make verify`, including 42 unit tests,
+  smoke commands, `scripts/build_mcpb.py`, and `scripts/verify_release.py`.
+  `npx --yes markdown-link-check llms-install.md --quiet`,
+  `npx --yes markdown-link-check docs/mcp.md --quiet`, `git diff --check`, and
+  a changed-diff public-hygiene scan passed. Running the same verification with
+  Apple Python 3.9 failed before the repair proof because the target requires
+  Python 3.11 or newer. Final PR readback showed the PR approved, merged, and
+  green across Python 3.11, 3.12, 3.13, and 3.14 CI jobs.
+- Existing PR repair: `agentskillexchange/skills#9` had a maintainer comment
+  pointing out that the manual install command used
+  `skills/skills/hermes-tweet`. Commit `157ce7f4e` changed it to
+  `skills/hermes-tweet`. Validation confirmed the real directory exists, the
+  duplicated path does not, `npx --yes markdown-link-check
+  skills/hermes-tweet/SKILL.md --quiet` passed, `git diff --check` passed, and
+  a changed-diff public-hygiene scan passed. PR readback showed the PR open,
+  ready, mergeable, no review threads, and target `validate` plus
+  `security-scan` checks succeeded after the push.
+- Fresh discovery and duplicate checks: after repairs, GitHub searches were
+  broadened only because crawler output was empty. Search lanes covered
+  Twitter sentiment analysis, Twitter analytics, tweet sentiment, and
+  Twitter-related skill repos. Archive memory had prior history for
+  `Azeem1027/Twitter-sentiment-analysis`, `funnaz/x-account-growth-coach`,
+  `humanrouter/x-research-skill`, and several direct X skill repos.
+  `arthurkatcher/x-search-via-hermes` was duplicate-blocked by open PR 1.
+  Exact PR and issue duplicate searches found no TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, or Hermes history for
+  `Muteeb001-dev/Tweet-sentiment-classifier`,
+  `LukeSantossz/tweet-sentiment-analysis`,
+  `Azeem1027/Twitter-sentiment-analysis`,
+  `funnaz/x-account-growth-coach`, or `humanrouter/x-research-skill`.
+- Selected target: `Muteeb001-dev/Tweet-sentiment-classifier` is public,
+  non-fork, non-archived, issue-enabled, pushed shortly before the run, and
+  duplicate-clean. No license metadata was detected, which does not block a
+  direct PR under the current heartbeat rule. The repo compares TF-IDF plus
+  Logistic Regression against DistilBERT on Sentiment140, includes a Streamlit
+  demo, and already has a cleaning pipeline for noisy tweets. It had no
+  contribution policy or root agent instructions. The target-native lane was a
+  small optional preprocessing utility that converts TweetClaw exports into
+  the same `clean_text` shape without adding live credentials or API-dependent
+  code.
+- Fresh PR submitted:
+  https://github.com/Muteeb001-dev/Tweet-sentiment-classifier/pull/1 from the
+  correctly parented fork `kriptoburak/Tweet-sentiment-classifier`, branch
+  `codex/add-tweetclaw-export-prep`, commit `d7f392c`. The PR adds
+  `tweetclaw_prep.py`, a stdlib-only converter for TweetClaw JSON, JSONL,
+  NDJSON, and CSV exports, preserves tweet metadata, writes `clean_text`, and
+  documents that unlabeled rows are for inference, manual labeling, or error
+  analysis rather than direct training.
+- Target validation for PR 1: `python3 -m py_compile tweetclaw_prep.py
+  data_prep.py`, `python3 tweetclaw_prep.py` against a synthetic TweetClaw
+  JSONL sample, `npx --yes markdown-link-check README.md --quiet`,
+  `git diff --check`, and a changed-diff public-hygiene scan passed. PR
+  readback showed the PR open, ready, mergeable, based on `main`, no comments,
+  no reviews, no review threads, and no configured checks.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, current manage-plugin docs,
+  plugin manifest docs, tool plugin docs, plugin permission requests, canonical
+  ClawHub TweetClaw listing, OpenClaw Directory listing, new external PRs,
+  canonical TweetClaw GitHub, and the npm registry metadata URL. Older CLI deep
+  links for plugin install, plugin inspect, MCP add, MCP doctor, and platform
+  permissions returned 404; current `llms.txt`, `llms-full.txt`, and
+  `plugins/manage-plugins` contain the relevant `plugins install`, `--pin`,
+  runtime inspection, `mcp add`, and `mcp doctor --probe` wording used for the
+  x-archive-rag repair.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit --audit-level=moderate --omit=dev` still
+  reports 4 moderate nested OpenClaw advisories for `protobufjs` and `tar`;
+  force would install `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit Markdown memory was 15231/15360 bytes. No saved
+  prompt edit was useful; the prompt lesson was recorded here instead.
+- Prompt self-improvement: inspect non-thread PR comments with human or
+  contributor authors, not only review decisions and review threads. For repos
+  with release artifacts and registry hashes, do not put outreach docs into
+  bundled files unless the PR intentionally updates and verifies the generated
+  artifact hash. For sentiment repos, prefer stdlib export prep or docs that
+  can validate without installing heavy ML dependencies.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-18 04:20 UTC Heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
