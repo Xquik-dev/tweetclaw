@@ -20508,12 +20508,17 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Target validation: README Python sample parsed with `ast.parse`;
   `npx --yes markdown-link-check README.md --quiet` passed; `git diff --check`
   passed; public-hygiene scan passed. No NHS badge was added because the README
-  has no badge area.
+  has no badge area. A valid Greptile finding reported silent empty-list output
+  for dict-shaped exports without `tweets`; this was fixed in follow-up commit
+  `e4fc645` by supporting `tweets`, `data`, `results`, or a single root record,
+  with the same validation rerun.
 - New PR readback: PR 11 is open and ready. GitHub reports
   `mergeStateStatus: BLOCKED` with `reviewDecision: REVIEW_REQUIRED`, which is
   target-side review gating. GraphQL reported no review threads. `gh pr checks`
-  reported no configured checks for the branch. The only PR comment was a Codex
-  usage-limit notice, not a maintainer change request.
+  reported no configured checks for the branch. After the follow-up push,
+  GraphQL showed Greptile's review thread as unresolved but outdated on the old
+  commit. Remaining comments are bot notices, not current maintainer change
+  requests.
 - Official OpenClaw and package checks: direct probes returned HTTP 200 for
   `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
   plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,

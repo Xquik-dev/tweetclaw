@@ -207,7 +207,8 @@ archive, before any outreach or duplicate decision.
   blocker remained.
 - Fresh PR: `gumloop/gumloop-py#11` adds a README recipe for passing TweetClaw
   JSON export text into a Gumloop flow input list.
-- Checks: target sample parse/link/hygiene, fork parent, PR readback,
+- Checks: target sample parse/link/hygiene, Greptile repair, fork parent,
+  PR readback,
   OpenClaw docs, public links, memory, and platform fitness passed. npm audit
   still reports nested OpenClaw advisories.
 
