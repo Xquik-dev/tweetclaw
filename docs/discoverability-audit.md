@@ -202,16 +202,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 02:33 UTC: model/effort and elevated-network selectors
+- 2026-06-18 02:55 UTC: model/effort and elevated-network selectors
   unavailable. Crawler JSON was empty after proxy outage; 20 recent authored PRs
   plus TweetClaw repo state had no actionable current feedback.
-- Fresh PR: `kjx-talesofai/claude-skill-media-fetcher#1` adds a
-  standard-library TweetClaw export-to-status-URL helper for the existing
-  stdin batch fetcher.
-- Checks: target compile/sample conversion/link/diff/hygiene, fork parent,
-  PR readback, OpenClaw docs, public links, memory 15263/15360, and platform
-  fitness passed. Audit commit `c8af70f` pushed. npm audit still reports nested
-  OpenClaw advisories.
+- Fresh PR: `xuxinmaxen/agentic-commerce-news#1` adds optional TweetClaw
+  X/Twitter source-packet guidance and a sample public source packet for the
+  existing commerce-news Skill workflow.
+- Checks: target JSON/link/diff/hygiene, fork parent, PR readback, OpenClaw
+  docs, public links, memory cap, and platform fitness passed. npm audit still
+  reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 

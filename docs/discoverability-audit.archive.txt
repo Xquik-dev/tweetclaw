@@ -100,6 +100,87 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-18 02:55 UTC Heartbeat
+
+- Runtime: model and reasoning-effort selectors were not exposed in this
+  runtime, so GPT-5.5 plus extra-high effort could not be selected directly.
+  GitHub elevated-network guidance from the skill could not be used because the
+  runtime rejects sandbox overrides; normal local CLI and network access were
+  available.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with focused skill, OpenClaw, MCP, Twitter/X,
+  tweet sentiment, media downloader, validator, and social-tool queries. The
+  managed proxy produced socket-closure and endpoint-quarantine logs, and the
+  final strict JSON parsed as zero repositories. No credential values were
+  printed, stored, or committed.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Exact readbacks for the 20 newest open `kriptoburak` PRs found no actionable
+  maintainer comments, review threads, CI failures, conflicts, DCO or CLA
+  blockers, or generated-file drift. Non-actionable items were target-owned
+  missing CI secrets, usage-limit comments, CodeRabbit or Qodo no-issue
+  summaries, and outdated Greptile feedback on an older Gumloop PR.
+- Fresh screening and blockers: `oksummer/x-downloader`,
+  `woosal1337/media-mcp`, `d-wwei/superb-publisher`,
+  `rajput-7351/sentiment-analyzer-ml-pipeline-host-on-streamlit`,
+  `paridhi-pandey/covid-tweet-sentiment-app`, `Owlseer-AI/Social-ops`,
+  `Aditya923-c/xpoz-agent-skills`, and `elbis330/social-media-scraper-skill`
+  were duplicate or prior-history blocked. `HardBrick21/Omni-X` had prior
+  archive history. `vishnuke/TweetSenti-Multilingual-Sentiment-Analyzer` was
+  notebook-only with a weak validation path. `huangserva/servasyy_skills` and
+  `JNHFlow21/ocl-social-fetcher` lacked license metadata or had prior duplicate
+  history.
+- Fresh PR submitted:
+  https://github.com/xuxinmaxen/agentic-commerce-news/pull/1 from correctly
+  parented fork `kriptoburak/agentic-commerce-news`, branch
+  `codex/add-x-source-packet-example`, commit `11207e2`. The target is public,
+  non-fork, non-archived, MIT-0 licensed, duplicate-clean across compact audit,
+  archive, target content, open and closed PRs, and open and closed issues. The
+  PR updates `README.md` and `SKILL.md`, and adds
+  `examples/x-twitter-source-packet.json`.
+- Target value: the commerce-news Skill can accept compact TweetClaw
+  X/Twitter source packets as optional seed evidence while retaining its own
+  7-day recency, credible endorsement, source-link, classification, and briefing
+  checks. The example limits content to public post URLs, authors, timestamps,
+  visible metrics, text excerpts, and collection notes, and explicitly excludes
+  credentials, private messages, raw exports, and session material.
+- Target validation: `python3 -m json.tool` passed for the example packet.
+  `npx --yes markdown-link-check README.md --quiet`, SKILL frontmatter check,
+  `git diff --check`, and added-line public-hygiene scan all passed. No NHS
+  badge was added because the repo had no useful badge area.
+- New PR readback: PR 1 is open, ready, and clean. `gh pr view` reported zero
+  comments and zero reviews, GraphQL reported no review threads, and
+  `gh pr checks` reported no configured checks.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  OpenClaw llms exports, CLI plugin docs, manage plugins, permission requests,
+  manifest, tool plugins, SDK entrypoints/runtime, install overrides, ClawHub
+  publishing, skill format, debugging, gateway troubleshooting, canonical
+  ClawHub TweetClaw listing, OpenClaw Directory listing, and the new external
+  PR. `npm view @xquik/tweetclaw version` returned `1.6.31`; `npm view
+  openclaw dist-tags` returned latest `2026.6.8`, beta `2026.6.8-beta.2`, and
+  alpha `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: pre-edit compact memory was 15263/15360 bytes; after the
+  compact update it was 15231/15360 bytes. Automation TOML measured 15029 bytes.
+  No saved prompt edit was useful because the current prompt already preserves
+  model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation
+  gates, badge rule, Context7 exclusion, credential handling, cadence, thread
+  binding, commit/push requirement, Markdown cap, and self-improvement.
+- Prompt self-improvement lesson: news, briefing, and commerce-monitoring skills
+  are good TweetClaw placements when TweetClaw remains compact source evidence
+  and the target keeps ownership of recency, endorsement, classification,
+  summary, and publication decisions.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 23:04 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
