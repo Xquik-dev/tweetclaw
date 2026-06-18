@@ -2,6 +2,103 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-18 02:33 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. The GitHub comment skill's elevated-network note could not be
+  followed because sandbox override parameters are rejected in this runtime;
+  normal networked `gh` reads were used. TweetClaw stayed on `master`; no
+  Context7 work, Browser, Chrome, GUI automation, dev server, production SSH,
+  destructive git action, or private-value read was used. The
+  `/Users/burak/Developer/xquik` tree had unrelated local Apify/preflight work
+  and was used only for the required crawler command.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with managed research-proxy JSON output,
+  bounded request timeouts, and focused `SKILL.md`, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social/Twitter-X, tweet sentiment, FastAPI, Streamlit,
+  dataset-validator, scraper-benchmark, and awesome-list queries. Strict JSON
+  was valid and contained 0 opportunities. Proxy endpoint failures,
+  quarantines, and outage-circuit logs printed no private values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned 100 open PRs. Exact readbacks covered the 20
+  newest authored PRs with `gh pr view`, `gh pr checks`, and GraphQL review
+  threads. New top items included
+  `CHENJIAMIAN/awesome-chatgpt-prompts-zh-CN#1`,
+  `diksha1829/twitter-sentiment-analysis-flask#1`,
+  `PlexPt/awesome-chatgpt-prompts-zh#556`,
+  `sudabg/awesome-agent-tools#2`, and `LichAmnesia/GPT-Prompt-Hub#4`.
+  Comment-bearing PRs contained usage-limit notices, no-feedback bot summaries,
+  a missing review-secret note on a target bot, target-side review-required
+  gates, or the known outdated Greptile thread on `gumloop-py#11`. GraphQL
+  reported no current unresolved review threads. No current-head maintainer
+  request, failing check, conflict, DCO/CLA blocker, generated-file drift, or
+  valid bot issue required repair before fresh outreach.
+- Fresh target discovery and blockers: targeted GitHub metadata searches after
+  crawler-first covered Claude/social media skills, TweetClaw-adjacent media
+  fetchers, FastAPI tweet sentiment projects, Flask upload apps, and Streamlit
+  analytics dashboards. Existing duplicate or prior-history blockers included
+  `blacktwist/social-media-skills`, `tang-vu/social-posting-skills`,
+  `aimerge-studio/bip-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `rabden/X-twitter-social-manager-skill`,
+  `AINightCoder/claude-code-social-skills`, `shensi8312/blogburst-claude-skill`,
+  and `abdulqadir7391/Twitter-Sentiment-Analysis-using-BERT`.
+  `kottarivaibhav/Sentiment_Analysis` and
+  `likith06/Sentiment-Analysis-` were recorded as lower-priority fallback
+  Flask upload candidates. `kjx-talesofai/claude-skill-media-fetcher` was
+  selected because it is MIT licensed, public, non-fork, non-archived, pushed
+  on 2026-06-17, issue-enabled, duplicate-clean across compact audit, archive,
+  target content, and open plus closed target PRs/issues, and its existing
+  `scripts/fetch.py --stdin` batch path benefits from a TweetClaw export URL
+  extractor without changing any media fetcher.
+- Fresh PR submitted:
+  https://github.com/kjx-talesofai/claude-skill-media-fetcher/pull/1 from
+  correctly parented fork `kriptoburak/claude-skill-media-fetcher`, branch
+  `codex/import-tweetclaw-status-urls`, commit `1575b8b`. The PR adds
+  `scripts/tweetclaw_urls.py`, a standard-library helper that extracts
+  canonical `https://x.com/i/web/status/<id>` URLs from TweetClaw JSON arrays,
+  common JSON wrappers, JSONL, and CSV exports, then documents piping those URLs
+  to the existing media fetcher's stdin batch mode. The current Douyin,
+  Xiaohongshu, and Twitter/X fetchers remain unchanged. No NHS badge was added
+  because the target README has no badge area.
+- Target validation: `python3 -m py_compile scripts/tweetclaw_urls.py` passed.
+  JSON, JSONL, and CSV TweetClaw-shaped samples produced the expected canonical
+  status URLs and de-duplicated repeated status IDs. `npx --yes
+  markdown-link-check README.md --quiet`, `git diff --check`, and added-line
+  public-hygiene scans passed. PR readback showed the PR open, ready, clean,
+  zero comments, zero reviews, no review threads, and no reported checks.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the new external PR. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15248/15360 bytes. Automation TOML
+  measured 15029 bytes.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, credential handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  media-fetcher skills with stdin URL batch mode are strong targets when the PR
+  contributes a dependency-free TweetClaw export-to-URL adapter rather than
+  changing the fetcher or adding account automation.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 23:04 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not

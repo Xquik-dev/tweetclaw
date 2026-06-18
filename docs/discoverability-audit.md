@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-18 02:13 UTC: latest
+- OpenClaw npm checked as of 2026-06-18 02:33 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
   `cli/plugins`, `plugins/manage-plugins`,
   `plugins/plugin-permission-requests`, manifest, tool plugins,
@@ -202,15 +202,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 02:13 UTC: model/effort and elevated-network selectors
+- 2026-06-18 02:33 UTC: model/effort and elevated-network selectors
   unavailable. Crawler JSON was empty after proxy outage; 20 recent authored PRs
   plus TweetClaw repo state had no actionable current feedback.
-- Fresh PR: `diksha1829/twitter-sentiment-analysis-flask#1` adds a
-  standard-library TweetClaw export-to-upload CSV helper and fixes a localhost
-  README autolink.
+- Fresh PR: `kjx-talesofai/claude-skill-media-fetcher#1` adds a
+  standard-library TweetClaw export-to-status-URL helper for the existing
+  stdin batch fetcher.
 - Checks: target compile/sample conversion/link/diff/hygiene, fork parent,
-  PR readback,
-  OpenClaw docs, public links, memory 15224/15360, audit push, and platform
+  PR readback, OpenClaw docs, public links, memory 15248/15360, and platform
   fitness passed. npm audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
