@@ -202,15 +202,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 04:37 UTC: model/effort and elevated-network selectors
-  unavailable. Crawler JSON was empty after proxy outage; 45 recent authored PRs
-  plus TweetClaw repo state had no actionable current feedback.
+- 2026-06-18 04:37 UTC: selector limits recorded. Crawler JSON was empty after
+  proxy outage; 45 recent authored PRs plus TweetClaw repo state had no
+  actionable current feedback.
 - Fresh PR: `Sujalshah46/Project_89_Twitter-Sentiment-Analysis---NLP#1` adds
   README setup docs and a TweetClaw converter for the notebook's
-  `id,label,tweet` hate-speech CSV rows.
-- Checks: target compile/JSON-JSONL-CSV smoke/link/diff/hygiene, fork parent,
-  PR readback, OpenClaw docs, public links, memory cap, and platform fitness
-  passed. npm audit still reports nested OpenClaw advisories.
+  `id,label,tweet` hate-speech CSV rows; commit `2cdc9da` accepts boolean
+  `hate_speech` labels and resolved the bot review thread.
+- Checks: target compile/smoke/link/diff/hygiene, fork parent, PR readback,
+  OpenClaw docs, public links, memory cap, and platform fitness passed. npm
+  audit still reports nested OpenClaw advisories.
 
 ## Reporting Checklist
 

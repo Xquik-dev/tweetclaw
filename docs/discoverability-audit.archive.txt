@@ -21590,9 +21590,15 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   rejected as expected. `npx --yes markdown-link-check README.md --quiet`
   passed. `git diff --check` and public-hygiene scans passed. No NHS badge was
   added because the repo had no badge area.
-- New PR readback: PR 1 is open, ready, and `mergeStateStatus: CLEAN`.
-  GraphQL reported no review threads. `gh pr view` showed zero comments and
-  zero reviews. `gh pr checks` reported no configured checks for the branch.
+- New PR readback and repair: PR 1 opened clean, with no initial review
+  threads, comments, reviews, or configured checks. After TweetClaw audit commit
+  `06704c9`, an automated Codex review requested boolean `hate_speech` label
+  support. Commit `2cdc9da` accepted `true` and `false` labels, documented that
+  input shape, and passed `py_compile`, a boolean-label smoke conversion,
+  README link check, `git diff --check`, and public-hygiene scan. The branch was
+  pushed to the correctly parented `kriptoburak` fork, and review thread
+  `PRRT_kwDOS5x7p86KbTUi` was resolved. `gh pr checks` still reported no
+  configured checks for the branch.
 - Official OpenClaw and package checks: direct probes returned HTTP 200 for
   `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
   plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
