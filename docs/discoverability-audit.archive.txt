@@ -106,6 +106,95 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-18 01:57 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. The GitHub comment skill's elevated-network note could not be
+  followed because this runtime rejects sandbox override parameters; normal
+  networked `gh` reads were used. TweetClaw stayed on `master`; no Context7
+  work, Browser, Chrome, GUI, dev server, production SSH, destructive git
+  action, or private-value read was used. The `/Users/burak/Developer/xquik`
+  tree had unrelated local work and was used only for the required crawler
+  command.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with focused Twitter data visualization, tweet
+  sentiment dashboard, social media analytics Streamlit, agent skill, Codex
+  plugin, OpenClaw skill, MCP, validator, dataset example, scraper benchmark,
+  and awesome-list queries. Strict JSON was valid and contained 0 opportunities.
+  Proxy endpoint failures and outage-circuit logs printed no private values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned 100 open PRs. Exact readbacks covered 50 current
+  TweetClaw, Xquik, OpenClaw, skill, social, Gumloop, dashboard, and
+  comment-bearing PRs with `gh pr view`, `gh pr checks`, and GraphQL review
+  threads. No unresolved current-head review thread, failing check, conflict,
+  DCO/CLA blocker, generated-file drift, or maintainer request required a
+  content change. Comment-bearing items were deploy previews, bot summaries,
+  prior responses, target-side review waits, or Codex usage-limit notices.
+- Fresh target discovery and blockers: compact audit, archive, target content,
+  open and closed PRs, and open and closed issues were searched for TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub, npm, ClawHub, Xquik, and
+  x-twitter-scraper variants. `ayeshareemas/social-media-analytics` was
+  public, non-fork, non-archived, MIT-licensed, recently pushed, and
+  duplicate-clean, but its README and local analytics module needed broader
+  repair than the selected target. `ChichiFr/Twitter-Keyword-Frequency-analyzer`
+  was public, non-fork, non-archived, MIT-licensed, and duplicate-clean, but a
+  notebook analyzer was lower fit for a small PR. The selected dashboard repo
+  was public, non-fork, non-archived, MIT-licensed, recently pushed,
+  duplicate-clean, and already accepted uploaded analytics CSVs with `Platform`,
+  `Followers`, `Likes`, and `Comments` columns. Its README had a malformed
+  `streamlit run dashboard.py#...` command and no import workflow.
+- Fresh PR submitted:
+  https://github.com/theruninandasiri/Social-Media-Analytics-Dashboard/pull/1
+  from correctly parented fork
+  `kriptoburak/Social-Media-Analytics-Dashboard`, branch
+  `codex/add-tweetclaw-dashboard-import`, commit `bb9bfa0`. The PR fixes the
+  README setup command to use the existing `app.py` entrypoint and adds
+  `scripts/tweetclaw_to_dashboard_csv.py`, a standard-library helper that
+  converts TweetClaw JSON, JSONL, or CSV exports into the dashboard upload
+  schema. It groups rows by platform by default and supports author grouping
+  for account comparison.
+- Target validation: Python compile check passed for
+  `scripts/tweetclaw_to_dashboard_csv.py`. A TweetClaw-shaped JSON sample
+  converted to expected `Platform,Followers,Likes,Comments` CSV output for both
+  platform and author grouping. `npx --yes markdown-link-check README.md
+  --quiet` passed. `git diff --check` passed and public-hygiene scan found no
+  issues. No NHS badge was added because the existing badges describe target
+  runtime technologies, not a broad reader-facing badge area.
+- New PR readback: PR 1 is open, ready, and clean. GraphQL reported no review
+  threads. `gh pr view` showed zero comments and zero reviews. `gh pr checks`
+  reported no configured checks for the branch.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, and OpenClaw Directory
+  listing. `npm view @xquik/tweetclaw version` returned `1.6.31`; `npm view
+  openclaw dist-tags` returned latest `2026.6.8`, beta `2026.6.8-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15179/15360 bytes. Automation TOML
+  measured 15029 bytes.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, credential handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  social analytics dashboards with existing upload schemas are good placements
+  when a PR adds a converter that maps TweetClaw exports into the target's
+  native columns and leaves target analytics decisions unchanged.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-17 23:14 UTC heartbeat
 
 - Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
