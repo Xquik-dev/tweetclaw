@@ -20644,3 +20644,84 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   checks over truthiness chains so empty but intentional arrays remain intact.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-18 01:25 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. The GitHub comment skill's elevated-network note could not be
+  followed because this runtime rejects sandbox override parameters; normal
+  networked `gh` reads were used. TweetClaw stayed on `master`; no Context7
+  work, Browser, Chrome, GUI, dev server, production SSH, destructive git
+  action, or private-value read was used. The `/Users/burak/Developer/xquik`
+  tree had unrelated local work and was used only for the required crawler
+  command.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with focused MCP registry, agent tools,
+  workflow SDK, SKILL.md, OpenClaw, social/Twitter-X, dashboard, validator, and
+  awesome-list queries. Strict JSON was valid and contained 0 opportunities.
+  Proxy endpoint failures and outage-circuit logs printed no credential values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned 100 open PRs. Exact readbacks covered 45 current
+  TweetClaw, Xquik, OpenClaw, skill, social, Gumloop, and comment-bearing PRs
+  with `gh pr view`, `gh pr checks`, and GraphQL review threads. No unresolved
+  current-head review thread, failing check, conflict, DCO/CLA blocker,
+  generated-file drift, or maintainer request required a content change.
+  Comment-bearing items were deploy previews, bot summaries, prior responses,
+  target-side review waits, or Codex usage-limit notices. `gumloop-py#11`
+  remained safe after the prior Greptile repair; `gumloop-js#7` had no current
+  action.
+- Fresh target screening: compact audit, archive, target content, open and
+  closed PRs, and open and closed issues were searched for TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub, npm, ClawHub, Xquik, and
+  x-twitter-scraper variants. `gumloop/gumloop-plugin` was duplicate-clean,
+  public, non-fork, non-archived, MIT-licensed, recently pushed, and its
+  packaged `skills/gumloop/SKILL.md` already guides hosted MCP usage for Codex,
+  Cursor, and Claude Code. `gumloop/test_repo` was a test placeholder and
+  lower fit; Gumloop forks remained lower fit than the first-party plugin repo.
+- Fresh PR submitted: https://github.com/gumloop/gumloop-plugin/pull/2 from
+  correctly parented fork `kriptoburak/gumloop-plugin`, branch
+  `codex/add-tweetclaw-gumloop-input-guidance`, commit `c890983`. The PR adds a
+  skill input-preparation section that tells agents to accept user-provided
+  TweetClaw JSON or CSV exports for X/Twitter evidence, normalize present fields
+  such as post text, reply text, IDs, timestamps, permalinks, and media URLs,
+  and keep source evidence separate from Gumloop sentiment, scoring, approval,
+  and scheduling decisions.
+- Target validation: `npx markdown-link-check README.md
+  skills/gumloop/SKILL.md` passed; `git diff --check` passed; public-hygiene
+  scan passed. No NHS badge was added because the README has no badge area.
+- New PR readback: PR 2 is open and ready. GitHub reports
+  `mergeStateStatus: BLOCKED` with `reviewDecision: REVIEW_REQUIRED`, which is
+  target-side review gating. GraphQL reported no review threads. `gh pr checks`
+  reported no configured checks for the branch. The only PR comment was a Codex
+  usage-limit notice, not a maintainer change request.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the new external PR. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15163/15360 bytes.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, credential handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  first-party plugin skill repos are strong placements when the edit improves
+  agent input handling and keeps target workflow decisions separate from
+  TweetClaw evidence collection.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.

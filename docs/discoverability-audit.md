@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-18 01:20 UTC: latest
+- OpenClaw npm checked as of 2026-06-18 01:35 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
   `cli/plugins`, `plugins/manage-plugins`,
   `plugins/plugin-permission-requests`, manifest, tool plugins,
@@ -79,7 +79,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-17 found nested OpenClaw advisories for `protobufjs`
+- Npm audit on 2026-06-18 found nested OpenClaw advisories for `protobufjs`
   and `tar`. Treat as upstream until OpenClaw refreshes stable.
 
 ## GitHub-First Rule
@@ -202,12 +202,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 01:14 UTC: model/effort selectors unavailable. Repaired
-  `gumloop/gumloop-py#11` Greptile feedback; crawler JSON was empty after proxy
-  outage; 41 authored PRs were read back.
-- Fresh PR: `gumloop/gumloop-js#7` adds a TypeScript README recipe for passing
-  TweetClaw JSON export text into a Gumloop flow input list.
-- Checks: target build/sample parse/link/hygiene, fork parent, PR readback,
+- 2026-06-18 01:25 UTC: model/effort and elevated-network selectors
+  unavailable. Crawler JSON was empty after proxy outage; 45 authored PRs were
+  read back with no actionable current feedback.
+- Fresh PR: `gumloop/gumloop-plugin#2` adds skill guidance for passing
+  user-provided TweetClaw JSON or CSV exports into Gumloop flow inputs.
+- Checks: target link/diff/hygiene, fork parent, PR readback,
   OpenClaw docs, public links, memory, and platform fitness passed. npm audit
   still reports nested OpenClaw advisories.
 
