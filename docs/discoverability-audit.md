@@ -200,11 +200,11 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 00:00 UTC: model/effort selectors unavailable. Crawler JSON was
-  empty after proxy closures; 99 relevant open PRs and 6 comment-bearing PRs
+- 2026-06-18 00:10 UTC: model/effort selectors unavailable. Crawler JSON was
+  empty after proxy closures; 100 relevant open PRs and 6 comment-bearing PRs
   were read back. No repairable current-head blocker was found.
-- Fresh PR: `PBrindha25/Social_Media_Performance_Dashboard#1` adds a README and
-  TweetClaw JSON, JSONL, and CSV converter for the dashboard upload schema.
+- Fresh PR: `kotapadusirisha/social_media_engagement#1` adds a TweetClaw JSON,
+  JSONL, and CSV converter for the target's Power BI engagement schema.
 - Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
   OpenClaw docs, public links, memory, and platform fitness passed. npm audit
   still reports nested OpenClaw advisories.
