@@ -20381,3 +20381,83 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   touched docs, and leaves model behavior unchanged.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-18 00:41 UTC Heartbeat
+
+- Runtime and scope: GPT-5.5 and extra-high reasoning-effort selectors were not
+  exposed in this Codex desktop runtime, so the run recorded that limitation and
+  continued. TweetClaw stayed on `master`; no Context7 work, Browser, Chrome,
+  GUI, dev server, production SSH, destructive git action, or secret read was
+  used. The `/Users/burak/Developer/xquik` tree had unrelated local work and
+  was used only for the required crawler command.
+- Crawler-first discovery: ran `/Users/burak/Developer/xquik`
+  `bun run github:crawl --json --output /tmp/tweetclaw-crawl-0041.json
+  --limit 90 --search-pages 1 --per-query-limit 12 --concurrency 8
+  --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --research-proxy
+  --session-id tweetclaw-0041` with SKILL.md, agent skills, OpenClaw, MCP,
+  Codex, Claude, social/Twitter-X, sentiment dashboard, validator, examples,
+  and awesome-list queries. Strict JSON was valid and contained 0 opportunities.
+  Proxy endpoint failures and outage-circuit logs printed no credential values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored PR search returned 100 open PRs and 95 in-scope PRs. Exact readbacks
+  covered 49 recent, comment-bearing, and known-blocker PRs with `gh pr view`,
+  `gh pr checks`, and GraphQL review threads. Eight PRs had comments, target
+  review states, or bot notes. `kody-w/rapp-store-archive#1` had an unresolved
+  Hermes version thread, but GraphQL marked it outdated and the current PR head
+  already contains `version: 0.1.6`, matching the upstream Hermes skill. Other
+  findings were target-side review waits, deploy-preview notes, prior bot
+  summaries, or no-actionable-comments reviews.
+- Fresh candidate screening: compact audit, archive, target content, open and
+  closed PRs, and open and closed issues were searched for TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub, npm, ClawHub, Xquik, and
+  x-twitter-scraper variants. `iher9812/TFM-IMF-` was fresh, public, non-fork,
+  non-archived, policy-clean, duplicate-clean, and has an existing Streamlit CSV
+  upload flow with selectable text columns. Missing license metadata was
+  recorded but not treated as a direct-PR blocker.
+- Fresh PR submitted: https://github.com/iher9812/TFM-IMF-/pull/1 from
+  correctly parented fork `kriptoburak/TFM-IMF-`, branch
+  `codex/import-tweetclaw-tfm-csv`, commit `444c9f1`. The PR adds
+  `TFMapp/scripts/tweetclaw_to_tfm_csv.py` and documents converting TweetClaw
+  JSON, JSONL, wrapped JSON, or CSV exports into the app's existing `text`,
+  `tweet_id`, `author`, `published_at`, and `source` CSV shape without changing
+  BERT model, chart, or result-export behavior.
+- Target validation: passed `python3 -m py_compile TFMapp/app.py
+  TFMapp/utils_nlp.py TFMapp/scripts/tweetclaw_to_tfm_csv.py`, JSONL converter
+  smoke test with schema assertions, `npx --yes markdown-link-check
+  TFMapp/README.md --quiet`, `git diff --check`, and public-hygiene scans. No
+  NHS badge was added because the README has no badge area.
+- New PR readback: PR 1 is open, ready, and CLEAN. GraphQL reported no review
+  threads. `gh pr view` showed zero comments and zero reviews. `gh pr checks`
+  reported no configured checks for the branch.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging, gateway
+  troubleshooting, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the new external PR. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags --json` returned latest
+  `2026.6.8`, beta `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link check passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm audit --audit-level=moderate --omit=dev` still
+  reports 4 moderate nested OpenClaw advisories for `protobufjs` and `tar`;
+  force would install `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit memory was 15227/15360 bytes. Automation TOML
+  measured 15029 bytes and already contains the missing-license-is-not-a-blocker
+  rule.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort wording, quiet autonomy,
+  crawler-first discovery, mandatory PR submission, aggressive skill-repo
+  coverage, fresh repo/framework/library discovery, PR repair priority,
+  duplicate/fork rules, official OpenClaw checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, and self-improvement. Durable lesson:
+  Streamlit sentiment apps with arbitrary text-column CSV upload are good
+  TweetClaw placements when the PR writes a small adapter, documents the exact
+  column selection, and leaves model behavior unchanged.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
