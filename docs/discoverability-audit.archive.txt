@@ -100,6 +100,122 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-18 06:50 UTC heartbeat run
+
+- Runtime selector note: the automation requested GPT-5.5 with extra-high
+  reasoning effort, but this Codex runtime did not expose model or effort
+  selectors to the agent. The GitHub comment-handling skill asks for elevated
+  network access on `gh`, but the approval policy cannot request elevated
+  permissions, so the run used normal networked `gh` and recorded the
+  limitation.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with `bun run github:crawl --json --output
+  /tmp/tweetclaw-crawl-0650.json --research-proxy --session-id
+  tweetclaw-0650 --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0`
+  across SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude,
+  social/Twitter-X, awesome skill list, registry, validator, examples,
+  dashboard, sentiment, plugin-ecosystem, framework, library, and package
+  tooling lanes. The strict JSON output had one top-level key and zero
+  opportunities. Managed proxy socket closures, endpoint quarantines, and an
+  outage circuit printed no credential values. Current Xquik uses
+  `--research-proxy`; the persisted heartbeat text still names the stale
+  `--use-research-proxy` flag.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored open PR search listed 120 current `kriptoburak` PRs. Exact readbacks
+  covered the newest 30 open outreach PRs, including `jorgemuza/claude-plugins#1`,
+  `stainedhead/shared-plugins#1`, `nocoo/xray#117`, `rylena/awesome-openclaw#5`,
+  `biggora/claude-plugins-registry#2`,
+  `ingpoc/claude-code-plugins-marketplace#4`,
+  `sunyataAI/awesome-ai-skills#1`,
+  `dominichubble/investor-sentiment-dashboard#24`,
+  `AtomiCloud/claude-skill-marketplace#2`,
+  `avinashshrimal/bharatmcp#1`, `claude-office-skills/skills#6`,
+  `agentskillexchange/skills#9`, `MaryCampoTR/claude-skills-library#6`, and
+  `Muteeb001-dev/Tweet-sentiment-classifier#1`.
+- Existing PR repair: `agentskillexchange/skills#9` had a maintainer comment
+  requesting the manual install command change from
+  `cp -R skills/skills/hermes-tweet ~/.agent-skills/hermes-tweet` to
+  `cp -R skills/hermes-tweet ~/.agent-skills/hermes-tweet`. The current PR head
+  already contained commit `157ce7f` titled `Fix Hermes Tweet manual install
+  path`, local clone search found no `skills/skills/hermes-tweet` occurrence,
+  and GitHub readback showed `security-scan` and `validate` successful. No extra
+  repair commit or duplicate comment was needed. `dominichubble#24` and
+  `avinashshrimal/bharatmcp#1` still only need target-owner Vercel authorization;
+  stale CodeRabbit comments on AtomiCloud and Flamechargerr were from older
+  heads and current checks were green.
+- Fresh discovery and duplicate checks: after repair clearance, targeted GitHub
+  searches covered recent SKILL.md repos, Twitter/X social skills, tweet
+  sentiment Streamlit apps, CSV dashboards, x-twitter-scraper examples, social
+  listening, and package/tooling lanes. Archive memory blocked or deprioritized
+  `Muteeb001-dev/Tweet-sentiment-classifier` by existing open PR 1,
+  `JusticeKAE/twitter-sentiment-analysis-streamlit` by prior PR 1,
+  `paridhi-pandey/covid-tweet-sentiment-app` by prior PR 1, and older
+  no-license screens such as `ankit-sharma2005/twitter-sentiment-analysis`.
+  Fresh `neelparate/Twitter-Sentiment-Analysis` was not present in compact or
+  archive memory. Exact target PR and issue searches found no TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, or Hermes history.
+- Selected target: `neelparate/Twitter-Sentiment-Analysis` is public, non-fork,
+  non-archived, issue-enabled, recently pushed on 2026-06-17, and has no license
+  metadata. Missing license metadata no longer blocks a direct PR. The repo has
+  a Streamlit single-tweet app, a notebook trained on a `text` column, and no
+  README or dependency manifest, so a README plus optional TweetClaw export text
+  extractor is target-native without changing model scoring, dashboard behavior,
+  thresholds, labels, credentials, or runtime dependencies. A same-name
+  `kriptoburak/Twitter-Sentiment-Analysis` fork existed but belonged to a
+  different parent network, so it was not used. A correctly parented renamed
+  fork `kriptoburak/neelparate-twitter-sentiment-analysis` was created and
+  verified before push.
+- Fresh PR submitted:
+  https://github.com/neelparate/Twitter-Sentiment-Analysis/pull/1 from branch
+  `codex/add-tweetclaw-export-helper`, commit `3493df0`. The PR adds
+  `README.md` with setup, model artifact expectations, run instructions,
+  TweetClaw export usage, and validation, plus `scripts/tweetclaw_to_text.py`.
+  The helper uses only Python standard-library modules and extracts one tweet
+  text value per line from TweetClaw JSON, JSONL, NDJSON, or CSV exports while
+  deduplicating exact text values. No NHS badge was added because the target has
+  no badge area.
+- Target validation for PR 1: `python3 -m py_compile app.py
+  scripts/tweetclaw_to_text.py`; smoke conversions for `/tmp/tweetclaw-sample-0650.json`,
+  `/tmp/tweetclaw-sample-0650.jsonl`, and `/tmp/tweetclaw-sample-0650.csv` each
+  wrote 2 tweet texts; `npx --yes markdown-link-check README.md --quiet`;
+  `git diff --check`; and a changed-file public-hygiene scan passed. PR
+  readback showed the PR open, ready, `MERGEABLE`, no comments, no reviews, and
+  no configured checks. This `gh pr diff` version did not accept path filters,
+  so a full PR diff readback was used.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging,
+  troubleshooting, gateway troubleshooting, canonical ClawHub TweetClaw listing,
+  OpenClaw Directory listing, canonical TweetClaw GitHub, and the new external
+  PR. The npm website page returned HTTP 403 to curl, but npm registry metadata
+  was reachable and `npm view @xquik/tweetclaw version` returned `1.6.31`;
+  `npm view openclaw dist-tags` returned latest `2026.6.8`, beta
+  `2026.6.8-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub version`
+  returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-em-dash` and `git diff --check`
+  passed. `npm run check:all` passed with 168 tests and 100% coverage.
+  `npm audit --audit-level=moderate --omit=dev` still reports 4 moderate nested
+  OpenClaw advisories for `protobufjs` and `tar`; force would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit Markdown memory was 15234/15360 bytes; post-edit
+  Markdown memory was 15319/15360 bytes. The saved automation prompt stayed at
+  the previously measured 15029 bytes; no saved prompt edit was useful.
+- Prompt self-improvement: when a same-name `kriptoburak` fork exists but has a
+  different parent, do not reuse it. Create a renamed fork, verify the parent
+  metadata, and record the fork-network conflict. For lightweight sentiment
+  Streamlit repos without README or manifests, prefer README setup plus
+  dependency-free export extraction over unvalidated UI changes when model
+  artifacts are absent.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-18 06:22 UTC heartbeat run
 
 - Runtime selector note: the automation requested GPT-5.5 with extra-high
