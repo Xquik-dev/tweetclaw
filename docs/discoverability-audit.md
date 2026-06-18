@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-18 00:50 UTC: latest
+- OpenClaw npm checked as of 2026-06-18 01:10 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
   `cli/plugins`, `plugins/manage-plugins`,
   `plugins/plugin-permission-requests`, manifest, tool plugins,
@@ -202,13 +202,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 00:41 UTC: model/effort selectors unavailable. Crawler JSON was
-  empty after proxy outage; 49 recent/comment-bearing PRs were read back. One
-  Hermes review thread was stale after an already-pushed fix; no repairable
+- 2026-06-18 01:04 UTC: model/effort selectors unavailable. Crawler JSON was
+  empty after proxy outage; 38 authored PRs were read back and no repairable
   blocker remained.
-- Fresh PR: `iher9812/TFM-IMF-#1` adds a TweetClaw JSON, JSONL, and CSV
-  converter for the app's `text` upload column.
-- Checks: target compile/smoke/link/hygiene, fork parent, PR readback,
+- Fresh PR: `gumloop/gumloop-py#11` adds a README recipe for passing TweetClaw
+  JSON export text into a Gumloop flow input list.
+- Checks: target sample parse/link/hygiene, fork parent, PR readback,
   OpenClaw docs, public links, memory, and platform fitness passed. npm audit
   still reports nested OpenClaw advisories.
 
