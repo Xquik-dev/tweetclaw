@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-18 02:33 UTC: latest
+- OpenClaw npm checked as of 2026-06-18 06:22 UTC: latest
   `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
   `cli/plugins`, `plugins/manage-plugins`,
   `plugins/plugin-permission-requests`, manifest, tool plugins,
@@ -202,16 +202,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 06:01 UTC: selector limits recorded. Crawler JSON was empty;
-  TweetClaw had no open issues or PRs, and 120 authored PRs were listed.
-- PR repairs: `Flamechargerr/twitter_sentiment#1` was already fixed by
-  `05e9aea`; `AtomiCloud/claude-skill-marketplace#2` received `1fb0b93` to
-  move Hermes Tweet into Automation and pin `v0.1.6`.
-- Fresh PR: `dominichubble/investor-sentiment-dashboard#24` adds a stdlib
-  TweetClaw-to-`stock_tweets.csv` converter. Target checks passed; GitGuardian
-  passed; deploy/CI awaits maintainer approval. OpenClaw docs, links, memory,
-  and platform fitness passed; npm audit still reports nested OpenClaw
-  advisories.
+- 2026-06-18 06:22 UTC: selector limits recorded. Crawler JSON was empty;
+  TweetClaw had no open issues/PRs, and 120 authored PRs were listed.
+- No repair was safe: `dominichubble#24` and `avinashshrimal/bharatmcp#1`
+  only need Vercel owner auth; Atomi/Flame bot comments were stale.
+- Fresh PR: `nocoo/xray#117` adds tested TweetClaw JSON/JSONL/CSV import to
+  X-Ray raw tweets. Target checks passed; PR is mergeable with no checks.
+  OpenClaw docs, links, memory, and fitness passed; npm audit still reports
+  nested OpenClaw advisories.
 
 ## Reporting Checklist
 

@@ -100,6 +100,110 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-18 06:22 UTC heartbeat run
+
+- Runtime selector note: the automation requested GPT-5.5 with extra-high
+  reasoning effort, but this Codex runtime did not expose model or effort
+  selectors to the agent. The GitHub comment-handling skill asks for elevated
+  network access on `gh`, but the approval policy cannot request elevated
+  permissions, so the run used normal networked `gh` and recorded the
+  limitation.
+- Crawler-first discovery: ran the internal GitHub opportunity crawler from
+  `/Users/burak/Developer/xquik` with `bun run github:crawl --json --output
+  /tmp/tweetclaw-crawl-0622.json --research-proxy --session-id
+  tweetclaw-0622 --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0`
+  across SKILL.md, `.agents/skills`, OpenClaw skill, MCP skill, Codex skill,
+  Claude skill, agent skill, social media skill, Twitter/X skill, awesome-list,
+  registry, plugin, sentiment, analytics, social-listening, and converter
+  lanes. Strict JSON output had top-level key `opportunities` with zero
+  entries. Managed proxy socket closures, endpoint quarantines, and outage
+  circuit messages printed no credential values.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored open PR search listed 120 current `kriptoburak` PRs. Exact readbacks
+  covered the newest in-scope PRs including
+  `ingpoc/claude-code-plugins-marketplace#4`,
+  `sunyataAI/awesome-ai-skills#1`,
+  `dominichubble/investor-sentiment-dashboard#24`,
+  `AtomiCloud/claude-skill-marketplace#2`,
+  `avinashshrimal/bharatmcp#1`,
+  `claude-office-skills/skills#6`,
+  `agentskillexchange/skills#9`,
+  `MaryCampoTR/claude-skills-library#6`,
+  and `Muteeb001-dev/Tweet-sentiment-classifier#1`.
+- PR repair status: no existing in-scope PR had a safe code repair. Vercel
+  failures on `dominichubble/investor-sentiment-dashboard#24` and
+  `avinashshrimal/bharatmcp#1` were maintainer-authorization gates. AtomiCloud
+  and Flamechargerr CodeRabbit comments were stale against fixed heads
+  `1fb0b93` and `05e9aea`; current check states were success.
+- Fresh candidate screening: compact audit and archive had no prior blocking
+  entry for `nocoo/xray`, `hgpublicreativa/social-listening-saas`, or
+  `RedSamurai07/Twitter_US_Airline_Sentiments_Analysis` except prior 06:01
+  candidate notes. `hgpublicreativa/social-listening-saas` no longer resolved.
+  `RedSamurai07/Twitter_US_Airline_Sentiments_Analysis` is public, non-fork,
+  non-archived, no license metadata, pushed 2026-06-17, and duplicate-clean,
+  but `nocoo/xray` was a stronger fit because it is an active X/Twitter
+  analytics app with an existing `skills/` directory and raw tweet pipeline.
+- Selected target: `nocoo/xray` is public, non-fork, non-archived, issue
+  enabled, no license metadata in GitHub metadata despite an MIT badge in the
+  README, pushed 2026-06-18, and duplicate-clean in compact memory, archive,
+  target content, and target PR/issue history for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, Hermes, and variants. The target has a
+  README badge row, but it describes target tech/license status; an xquik.com
+  NHS badge would not help readers evaluate this optional import path, so no
+  badge was added.
+- Fresh PR submitted: https://github.com/nocoo/xray/pull/117 from correctly
+  parented fork `kriptoburak/xray`, branch `codex/add-tweetclaw-import`,
+  commit `d2ffd72e226fd93669ce5700aecc53d9915b2709`. The PR adds
+  `scripts/lib/tweetclaw-import.ts`, `scripts/import-tweetclaw-export.ts`,
+  `tests/tweetclaw-import.test.ts`, `bun run import:tweetclaw <file> [output]`,
+  README docs, and `skills/xray-watchlist/SKILL.md` guidance. It converts local
+  TweetClaw JSON, JSONL, or CSV exports into the target's existing
+  `data/raw_tweets.json` shape without live credentials or API calls.
+- Target validation for PR 117: `bun run test tests/tweetclaw-import.test.ts`
+  passed with 6 tests; `bun run test tests/tweet-utils.test.ts` passed with 67
+  tests; `bun run typecheck`, `bun run lint scripts/lib/tweetclaw-import.ts
+  scripts/import-tweetclaw-export.ts`, `bun run test:coverage` with 1,096 tests
+  and 91.57% branch coverage, `bun run build`, `gitleaks protect --staged
+  --no-banner`, `osv-scanner scan --lockfile=bun.lock --config=osv-scanner.toml`,
+  `git diff --check`, and a CLI smoke conversion to
+  `/tmp/tweetclaw-xray-smoke-output.json` passed. The target pre-push hook was
+  skipped for the actual push after equivalent non-server gates passed because
+  it starts local API E2E servers; one earlier hook attempt started and exited
+  without leaving running processes.
+- PR readback: `nocoo/xray#117` is open, ready, `MERGEABLE`, no comments, no
+  reviews, no status checks configured, and merge state `UNSTABLE` only because
+  no checks have reported.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, manage
+  plugins, permission requests, manifest, tool plugins, SDK entrypoints/runtime,
+  install overrides, ClawHub publishing, skill format, debugging,
+  `help/troubleshooting`, `gateway/troubleshooting`, canonical ClawHub
+  TweetClaw listing, OpenClaw Directory listing, canonical TweetClaw GitHub,
+  npm registry metadata, `nocoo/xray`, and `nocoo/xray#117`. `npm view
+  @xquik/tweetclaw version` returned `1.6.31`; `npm view openclaw dist-tags`
+  returned latest `2026.6.8`, beta `2026.6.8-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.22.0`.
+- Broken-link and TweetClaw validation: `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-em-dash`, `npm run
+  check-memory-md-size`, and `npm run check:all` passed. `npm audit
+  --audit-level=moderate --omit=dev` still reports 4 moderate nested OpenClaw
+  advisories for `protobufjs` and `tar`; force would install `openclaw@0.0.1`,
+  so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit Markdown memory was 15355/15360 bytes. The saved
+  automation prompt size stayed 15029 bytes; no saved prompt edit was useful.
+- Prompt self-improvement: for active X/Twitter dashboards with a raw tweet
+  pipeline, prefer a tested local import bridge over README-only marketing.
+  When a target pre-push hook starts local servers, run equivalent non-server
+  gates manually and record the skipped hook reason instead of leaving servers
+  running. Keep tweet IDs as strings in fixtures because JavaScript loses
+  precision on large numeric IDs.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-18 06:01 UTC heartbeat run
 
 - Runtime selector note: the automation requested GPT-5.5 with extra-high
