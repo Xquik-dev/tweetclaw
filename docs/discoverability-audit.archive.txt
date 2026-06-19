@@ -100,6 +100,120 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-19 11:24 UTC Heartbeat Run
+
+- Runtime limits: the current Codex runtime did not expose GPT-5.5 or
+  extra-high reasoning selectors, so the run continued with that limitation
+  recorded. The GitHub comment skill asks for elevated network tool mode, but
+  this runtime rejects sandbox overrides under approval policy `never`; normal
+  networked `gh` commands were used instead.
+- Existing TweetClaw issue/PR sweep: `Xquik-dev/tweetclaw` had no open GitHub
+  issues and no open GitHub PRs. GitHub CLI auth was active as `kriptoburak`;
+  API rate limits were healthy before outreach.
+- Existing outreach PR readbacks: exact `gh pr view` checks covered
+  `patidarpuja/twitter-airline-sentiment-nlp#1`,
+  `hassan-ali786/sentiment-analyzer#1`, `bogdanbaciu21/skills#4`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`,
+  `agentscope-ai/agentscope-samples#126`,
+  `jeremylongshore/claude-code-plugins-plus-skills#865`,
+  `universal-tool-calling-protocol/python-utcp#90`,
+  `AtomiCloud/claude-skill-marketplace#2`, `rohitg00/skillkit#138`,
+  `dominichubble/investor-sentiment-dashboard#24`,
+  `avinashshrimal/bharatmcp#1`, `Flamechargerr/twitter_sentiment#1`,
+  `lindy-dev/x-automation-skills-scripts#1`,
+  `sidv11/twitter-sentiment-analysis#1`, `piao0123/x-post-project#1`,
+  `Correia-jpv/fucking-awesome-ai-tools#17`, and
+  `newpath-tech/tweet-sentiment-simple#4`. All were open and mergeable. No
+  safely actionable maintainer comments, conflicts, DCO, CLA signer blockers,
+  generated-file drift, or check failures were found.
+- Thread-aware review readbacks: current unresolved review threads were zero for
+  `Flamechargerr/twitter_sentiment#1`,
+  `universal-tool-calling-protocol/python-utcp#90`,
+  `jeremylongshore/claude-code-plugins-plus-skills#865`,
+  `AtomiCloud/claude-skill-marketplace#2`, `rohitg00/skillkit#138`,
+  `dominichubble/investor-sentiment-dashboard#24`, and
+  `avinashshrimal/bharatmcp#1`.
+- Mandatory Xquik crawler discovery: ran from `/Users/burak/Developer/xquik`
+  with strict JSON output:
+  `timeout 180 bun run github:crawl --json --output /tmp/tweetclaw-crawl-20260619-1124.json --research-proxy --session-id tweetclaw-20260619-1124 --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 1000 --search-pages 2 --per-query-limit 16 --concurrency 16 --query 'SKILL.md twitter automation openclaw' --query '.agents/skills social media twitter' --query 'Claude skill twitter analytics' --query 'Codex skill social media' --query 'MCP server twitter analytics python' --query 'twitter sentiment dashboard streamlit import csv' --query 'tweet sentiment flask csv' --query 'tweet analytics dashboard python csv' --query 'twitter scraper example fastapi' --query 'agent tool registry social media' --query 'plugin marketplace x twitter' --query 'awesome twitter automation agents' --query 'tweet monitor webhook mcp' --query 'social listening ai agent github' --query 'brand monitoring twitter sentiment'`.
+  The output file was valid JSON with an empty `opportunities` array. Stderr
+  showed managed proxy socket closures, endpoint quarantines, and proxy pool
+  outage circuit opening; no credential values were printed. Fallback discovery
+  continued after recording this blocker.
+- Fresh target screening: fallback searches covered active Twitter/X sentiment
+  Streamlit dashboards, tweet sentiment apps, Flask CSV lanes, social listening,
+  brand monitoring, MCP sentiment, and agent-tool registry lanes. Archive gates
+  blocked or de-prioritized known candidates including
+  `ankit-sharma2005/twitter-sentiment-analysis`,
+  `neelparate/Twitter-Sentiment-Analysis`,
+  `Azeem1027/Twitter-sentiment-analysis`,
+  `Muteeb001-dev/Tweet-sentiment-classifier`,
+  `mamboyepez17/trendscope`, `diksha1829/twitter-sentiment-analysis-flask`,
+  `Ukpejehonour/SoftGrowTech_Twitter_Sentiment_Analysis`,
+  `varun0852/Twitter-Sentiment-Analytics-Dashboard`, and
+  `nithi2516/twitter_sentiment_analysis`. Fresh screens included
+  `ZeEshAn-boot/Tweeter-X-Sentimental-Analysis-`,
+  `Alok-0601/Tweet_Verdict_Classifier`,
+  `Nsj-Aziz/Twitter-Sentiment-Analysis-System`, and
+  `jhondados/ai-social-listening-platform`.
+- Selected target policy and duplicate gates:
+  `ZeEshAn-boot/Tweeter-X-Sentimental-Analysis-` was public, non-fork,
+  non-archived, issue-enabled, active on 2026-06-17, and had no detected GitHub
+  license metadata even though its README says MIT. Target tree scans plus open
+  and closed PR/issue searches found no existing TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, TweetClaw npm URL, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub content or history. No explicit
+  contribution policy blocked a direct PR.
+- Fresh PR submitted:
+  https://github.com/ZeEshAn-boot/Tweeter-X-Sentimental-Analysis-/pull/1 from
+  correctly parented fork `kriptoburak/Tweeter-X-Sentimental-Analysis-`, branch
+  `codex/add-tweetclaw-dataset-import`, commit `ee4af47`. The PR adds
+  `scripts/prepare_tweetclaw_dataset.py` to convert reviewed TweetClaw JSON,
+  JSONL, or CSV exports into the Sentiment140-style `tweets.csv` columns used by
+  the app user lookup mode; updates `app.py` to load generated UTF-8
+  `tweets.csv` before the legacy Latin-1 `tweeter-dataset.zip`; adds
+  `examples/tweetclaw_export.jsonl`; adds the missing `requirements.txt`; and
+  replaces the placeholder clone URL.
+- Fresh PR validation: `python3 -m py_compile app.py
+  scripts/prepare_tweetclaw_dataset.py` passed. Fixture conversion passed with
+  `python3 scripts/prepare_tweetclaw_dataset.py
+  examples/tweetclaw_export.jsonl --output
+  /tmp/zeeshan-conversion-output/tweets.csv`, producing two normalized rows.
+  A stdlib CSV assertion verified the generated rows and users. `git diff
+  --check` passed. `npx --yes markdown-link-check ReadMe.md` passed for the new
+  TweetClaw link and reported only the pre-existing author LinkedIn profile as
+  HTTP 999; that target-owned blocker was separated in the PR body. PR readback
+  showed open, `MERGEABLE`, no configured checks, no reviews, no comments, and
+  the corrected body containing the intended backticked paths.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/debugging`, `/gateway`, the canonical ClawHub TweetClaw route,
+  OpenClaw Directory, and the npm registry package route all returned HTTP 200.
+  `npm view @xquik/tweetclaw version` returned `1.6.31` while local package
+  metadata remains `1.6.32`; OpenClaw dist-tags were `latest: 2026.6.8`,
+  `beta: 2026.6.9-beta.1`, and `alpha: 2026.5.19-alpha.1`; ClawHub version was
+  `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  advisories for `protobufjs`, `tar`, and high-severity `undici`; the force fix
+  path would downgrade OpenClaw to `0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit Markdown memory was 14903/15360 bytes. The saved
+  automation TOML measured 14634 bytes with roughly 14509 prompt bytes and
+  already contained the stronger Xquik crawler rule, so no prompt edit was
+  needed.
+- Prompt self-improvement: when creating PRs with Markdown code spans, use
+  `--body-file` or a quoted heredoc instead of inline double-quoted shell
+  strings. Inline backticks were interpreted locally during the first PR create
+  call in this run; the PR body was immediately corrected with `gh pr edit
+  --body-file`.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-19 11:11 UTC Heartbeat Run
 
 - Runtime limits: the current Codex runtime did not expose GPT-5.5 or
