@@ -100,6 +100,109 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-19 10:54 UTC heartbeat
+
+- Runtime selector audit: this heartbeat did not expose a callable model or
+  reasoning-effort selector, so GPT-5.5 and extra-high effort could not be set
+  explicitly. The GitHub comment-handling skill asks for elevated network
+  permissions for some `gh` commands, but this runtime rejects sandbox
+  permission overrides. Work continued with ordinary networked `gh`, curl,
+  npm, git, and the crawler.
+- PR and issue monitoring: `Xquik-dev/tweetclaw` had no open issues and no
+  open PRs. Exact readbacks covered `hassan-ali786/sentiment-analyzer#1`,
+  `bogdanbaciu21/skills#4`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`,
+  `agentscope-ai/agentscope-samples#126`,
+  `jeremylongshore/claude-code-plugins-plus-skills#865`,
+  `universal-tool-calling-protocol/python-utcp#90`,
+  `AtomiCloud/claude-skill-marketplace#2`, `rohitg00/skillkit#138`,
+  `dominichubble/investor-sentiment-dashboard#24`,
+  `avinashshrimal/bharatmcp#1`, `Flamechargerr/twitter_sentiment#1`,
+  `lindy-dev/x-automation-skills-scripts#1`, and
+  `sidv11/twitter-sentiment-analysis#1`. `hassan-ali786#1`,
+  `bogdanbaciu21#4`, and `Akash-yadav87#1` were clean and mergeable.
+  `agentscope-ai#126` was mergeable but blocked by target policy, and its
+  CLAassistant comment said all committers have signed the CLA. No CLA blocker
+  needed user signature. `jeremylongshore#865` and `python-utcp#90` remained
+  review-required with no current unresolved thread requiring a safe patch.
+  `AtomiCloud#2` and `Flamechargerr#1` had stale bot review summaries, but
+  thread-aware readbacks showed 0 current unresolved threads.
+- Crawler-first discovery: ran the internal GitHub crawler from Xquik with
+  strict JSON output, current `--research-proxy` flag, stable session
+  `tweetclaw-20260619-1054`, bounded request and proxy warmup timeouts, 700
+  result limit, 1 search page, 14 per-query limit, and 16 concurrency across
+  SKILL.md, `.agents/skills`, OpenClaw skill, MCP skill, Codex skill, Claude
+  skill, Twitter/X skill, awesome skill lists, Twitter sentiment, analytics,
+  dashboard, dataset, package-tooling, agent registry, and x-twitter-scraper
+  lanes. Strict JSON parsing found `{ "opportunities": [] }`. Stderr showed
+  managed proxy socket closures, endpoint quarantines, and outage circuit
+  opening, with no credential values.
+- Fresh discovery and duplicate checks: archive search found prior screened or
+  submitted sentiment lanes including `bandawalanaman`,
+  `nithi2516`, `varun0852`, and related Twitter sentiment repos. Fresh exact
+  metadata screened `patidarpuja/twitter-airline-sentiment-nlp`,
+  `meSreeratriB74/Sentiment-Analysis`, and `bandawalanaman/
+  Twitter-Sentiment-Analysis`. The selected fresh target
+  `patidarpuja/twitter-airline-sentiment-nlp` was public, non-fork,
+  non-archived, issue-enabled, recently active on 2026-06-11, and had no
+  license file metadata. Missing license metadata was not treated as a direct
+  PR blocker. Target content had no contribution policy or duplicate mention.
+  Exact target issue and PR searches found no TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub history.
+- Fresh PR submitted:
+  https://github.com/patidarpuja/twitter-airline-sentiment-nlp/pull/1 from
+  correctly parented fork
+  `kriptoburak/twitter-airline-sentiment-nlp`, branch
+  `codex/add-tweetclaw-airline-csv`, commit `64fec3a`. The PR adds
+  dependency-free `scripts/tweetclaw_to_airline_csv.py` for converting
+  reviewed TweetClaw JSON, JSONL, NDJSON, and CSV exports into the repo's
+  existing airline sentiment columns, documents the optional flow in README,
+  and fixes the pre-existing placeholder LinkedIn link that failed link
+  validation. PR readback showed open, ready, `MERGEABLE`, `CLEAN`, no comments,
+  no reviews, and no configured checks.
+- Fresh PR validation: target validation passed `python3 -m py_compile
+  scripts/tweetclaw_to_airline_csv.py`, JSONL and CSV fixture conversion
+  assertions, `npx --yes markdown-link-check README.md --quiet`,
+  `git diff --check`, and public wording scans. The script skips unlabeled
+  rows unless `--default-sentiment` is explicitly provided, preserves the
+  target's sentiment label mapping, and writes the exact `train.csv`/`test.csv`
+  schema. No NHS badge was added because the README badge area is target app
+  and stack metadata rather than a useful Xquik site readiness surface.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `llms-full.txt`, `/cli/plugins`,
+  `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  canonical ClawHub TweetClaw listing, OpenClaw Directory listing, and npm
+  registry metadata. Older guessed direct probes for `/debugging` and
+  `/troubleshooting/gateway` returned 404; current `llms.txt` maps debugging to
+  `/help/debugging` and Gateway runbook material to `/gateway`. `npm view
+  @xquik/tweetclaw version` returned `1.6.31`; local package metadata remains
+  `1.6.32`. OpenClaw dist-tags were `latest: 2026.6.8`,
+  `beta: 2026.6.9-beta.1`, and `alpha: 2026.5.19-alpha.1`; ClawHub version was
+  `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports nested OpenClaw advisories
+  for `protobufjs`, `tar`, and high-severity `undici`; the force path would
+  install `openclaw@0.0.1`, so no package mutation was made.
+- Full TweetClaw gate: `npm run check:all` passed with typecheck, lint,
+  duplicate check, knip, suppression check, dash check, memory check, skill
+  frontmatter, version check, build, OpenClaw fitness, package artifact, and
+  168 tests at 100% coverage.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Markdown memory stayed under the 15 KiB cap after compaction
+  and `npm run check-memory-md-size` passed. No automation prompt edit was made.
+- Prompt self-improvement: use `/help/debugging` and `/gateway` when direct
+  OpenClaw debugging or Gateway probes are needed; `/debugging` and
+  `/troubleshooting/gateway` are stale direct paths. Continue reporting CLA
+  status from exact PR comments and thread-aware readbacks rather than treating
+  review-required or owner-auth gates as signature blockers.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-19 10:30 UTC heartbeat
 
 - Runtime selector audit: this heartbeat did not expose a callable model or
