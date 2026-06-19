@@ -49,15 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-18 06:22 UTC: latest
-  `2026.6.8`, beta `2026.6.8-beta.2`. Current 200 docs include llms,
-  `cli/plugins`, `plugins/manage-plugins`,
-  `plugins/plugin-permission-requests`, manifest, tool plugins,
-  `plugins/sdk-entrypoints`, `plugins/sdk-runtime`,
-  `plugins/install-overrides`, ClawHub publishing and skill format,
-  `help/debugging`, `help/troubleshooting`, and `gateway/troubleshooting`. Old
-  `sdk/entrypoints`, `sdk/runtime`, `cli/install-overrides`, root
-  `debugging`, and `help/gateway-troubleshooting` probes now return 404.
+- OpenClaw npm checked as of 2026-06-19 10:30 UTC: latest `2026.6.8`,
+  beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
+  llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
+  fixes, manifest/tool plugins/install overrides, and debugging.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
   on 2026-06-17 06:51 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
@@ -79,8 +74,8 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-18 found nested OpenClaw advisories for `protobufjs`
-  and `tar`. Treat as upstream until OpenClaw refreshes stable.
+- Npm audit on 2026-06-19 found nested OpenClaw advisories for `protobufjs`,
+  `tar`, and `undici`; the unsafe force path downgrades to `openclaw@0.0.1`.
 
 ## GitHub-First Rule
 
@@ -202,15 +197,13 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-19 10:08 UTC: selector limits recorded; crawler JSON was empty after
-  proxy outage; TweetClaw had no open issues/PRs; 180 authored PRs were listed,
-  and 60 were read back.
-- PR triage: no safe in-scope repair. `AtomiCloud#2` bot notes were stale, and
-  Vercel failures remained owner-auth gates.
-- Fresh PR: `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1` adds TweetClaw
-  export upload/import support and fixes a README placeholder link. OpenClaw
-  docs, links, memory, fitness, and `check:all` passed; npm audit still reports
-  nested OpenClaw `protobufjs`, `tar`, and `undici`.
+- 2026-06-19 10:30 UTC: selector limits recorded; crawler JSON empty after
+  proxy outage; TweetClaw had no open issues/PRs; 81 tracked PRs read back.
+- PR triage: repaired dirty `bogdanbaciu21/skills#4` to clean/mergeable; CLA
+  sweep found no signer action.
+- Fresh PR: `hassan-ali786/sentiment-analyzer#1` adds a TweetClaw training CSV
+  converter. OpenClaw docs, links, memory, fitness, and `check:all` passed; npm
+  audit reports nested OpenClaw `protobufjs`, `tar`, and high `undici`.
 
 ## Reporting Checklist
 

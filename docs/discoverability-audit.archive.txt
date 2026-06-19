@@ -100,6 +100,114 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-19 10:30 UTC heartbeat
+
+- Runtime selector audit: this heartbeat did not expose a callable model or
+  reasoning-effort selector, so GPT-5.5 and extra-high effort could not be set
+  explicitly. The GitHub skill was read. Work continued with the active runtime
+  and ordinary network access.
+- Crawler-first discovery: ran the internal GitHub crawler from Xquik with
+  strict JSON output, current `--research-proxy` flag, stable session
+  `tweetclaw-20260619-1030`, bounded request timeout, proxy warmup skipped,
+  600 result limit, 1 search page, 12 per-query limit, and 16 concurrency across
+  SKILL.md, `.agents/skills`, OpenClaw plugin and skill, MCP Twitter skill,
+  Codex skill, Claude skill, awesome skill lists, Twitter sentiment, analytics,
+  dashboard, dataset, package-tooling, agent registry, and x-twitter-scraper
+  example lanes. Strict JSON parsing found `{ "opportunities": [] }`. Stderr
+  showed managed proxy socket closures, endpoint quarantines, and outage
+  circuit opening, with no credential values.
+- TweetClaw issue and PR monitoring: `Xquik-dev/tweetclaw` had no open issues
+  and no open PRs. Existing authored PR search hit a GitHub secondary limit
+  earlier in the same session, so this run used the saved 180-PR snapshot plus
+  the newest known PR. Exact readbacks covered 81 tracked open PRs and found no
+  errors.
+- PR repair pass: `bogdanbaciu21/skills#4` was the actionable in-scope blocker:
+  open, ready, `DIRTY` and `CONFLICTING`, with no checks, comments, or reviews.
+  Cloned the correctly parented `kriptoburak/skills-bogdanbaciu21` fork, merged
+  upstream `main`, resolved the README table conflict by keeping upstream
+  `format-html` bundle rows and reapplying the `x-signal-research` row once,
+  then pushed merge repair commit `ca168a6` to `codex/add-x-signal-research`.
+  Validation passed conflict-marker scan, `git diff --check`, public Xquik docs
+  and source-skill link probes, and public wording scan on the handled
+  README/SKILL content. Final PR readback showed open, ready, `MERGEABLE`,
+  `CLEAN`, no checks, and no reviews. Posted a concise repair comment:
+  https://github.com/bogdanbaciu21/skills/pull/4#issuecomment-4750771946
+- CLA blocker check requested by user: saved tracked-PR readbacks had no
+  failing CLA/DCO status rows. Targeted readbacks for CLA-mentioned PRs showed
+  `agentscope-ai/agentscope-samples#126`, `automatisch/automatisch#2709`, and
+  `archestra-ai/website#491` all had CLAassistant comments or `license/cla`
+  checks saying all committers have signed. No user signature action was found.
+- Other PR blockers: `rohitg00/skillkit#138`,
+  `dominichubble/investor-sentiment-dashboard#24`, and
+  `avinashshrimal/bharatmcp#1` remained Vercel owner-authorization gates.
+  `universal-tool-calling-protocol/python-utcp#90` remained review-gated with
+  Cubic checks passing and prior comments addressed. `AtomiCloud#2` visible bot
+  notes were stale or already handled.
+- Fresh target discovery: crawler output was empty, so screening continued with
+  exact metadata, archived backlog, sparse/blobless clones, and local target
+  scans. `Technicaladvisor01/Sentipulse` was public, MIT, non-fork, active, and
+  duplicate-clean, but blocked as a PR target because the clone contained only
+  README and LICENSE, so a TweetClaw PR would be scaffold-heavy rather than
+  target-native. `hassan-ali786/sentiment-analyzer` was public, MIT, non-fork,
+  active on 2026-06-18, and had no prior archive history. Initial exact PR and
+  issue duplicate searches found no TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  Xquik, or x-twitter-scraper history before GitHub issue/PR search hit a hard
+  rate-limit. Broad authenticated searching stopped immediately after that.
+  Target content scans found no TweetClaw, Xquik, x-twitter-scraper, OpenClaw,
+  or ClawHub mentions, and no contribution policy blockers.
+- Fresh PR submitted:
+  https://github.com/hassan-ali786/sentiment-analyzer/pull/1 from correctly
+  parented fork `kriptoburak/sentiment-analyzer`, branch
+  `codex/add-tweetclaw-training-data`, commit `a67c14b`. The PR adds
+  dependency-free `scripts/tweetclaw_to_training_csv.py` for TweetClaw JSON,
+  JSONL, NDJSON, and CSV exports, writing the target's existing
+  `review,sentiment` training CSV shape. It also documents how to review labels
+  before training with Twitter data. PR readback showed open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, and no configured checks.
+- Target validation for the fresh PR: `python3 -m py_compile
+  scripts/tweetclaw_to_training_csv.py` passed. JSONL, JSON, and CSV fixture
+  conversions passed with assertions. `git diff --check` passed. Public wording
+  scan on the changed README/script content found no private implementation
+  details, restricted provider names, internal cost mechanics, secret values,
+  unsupported claims, or stale metadata. Full target README link check reported
+  two pre-existing target-owned blockers: the Streamlit demo returned status 0
+  and the localhost example is not externally reachable. The new section added
+  no links.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`, and `/help/debugging`
+  returned HTTP 200. `npm view @xquik/tweetclaw version` returned `1.6.31`;
+  local package metadata remains `1.6.32`. OpenClaw dist-tags were
+  `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`; ClawHub version was `0.22.0`; npm registry
+  metadata returned HTTP 200.
+- Broken-link and TweetClaw validation: Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check:all` passed with typecheck, lint, duplicate check, knip,
+  suppression check, dash check, memory check, skill frontmatter, version check,
+  build, OpenClaw fitness, package artifact, and 168 tests at 100% coverage.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` reports nested
+  OpenClaw advisories for `protobufjs`, `tar`, and `undici`, including two
+  high-severity `undici` advisories. `openclaw@2026.6.9-beta.1` updates
+  `tar` to `7.5.16` and `undici` to `8.5.0`, but stable latest remains
+  `2026.6.8`, `protobufjs` remains `8.5.0`, and the audit force path would
+  install `openclaw@0.0.1`. No package mutation was made during outreach.
+- Dependency metadata: `npm outdated --json` showed dev-tool updates available
+  for TypeScript/ESLint/Vitest/knip/jscpd families and missing wanted
+  resolutions for `mppx` and `viem`; these were recorded only because this
+  heartbeat focused on PR repair and discoverability outreach.
+- Prompt self-improvement: when a user asks for CLA blockers during the
+  heartbeat workflow, include a targeted CLA/DCO pass in PR monitoring and
+  record whether any signer action is required. Stop broad authenticated issue
+  and PR search immediately on hard GitHub search limits, but continue exact
+  clones, local target scans, and core API writes when core quota remains.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-18 06:50 UTC heartbeat run
 
 - Runtime selector note: the automation requested GPT-5.5 with extra-high
