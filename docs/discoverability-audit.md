@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-19 10:54 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-19 11:11 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, and `/help/debugging`.
@@ -82,9 +82,8 @@ archive, before any outreach or duplicate decision.
 - Before routine maintenance, check open PRs created by `kriptoburak` and
   audit-tracked relevant PRs for TweetClaw, Xquik, OpenClaw, ClawHub, MCP,
   X/Twitter automation, agent tools, skill catalogs, examples, and outreach.
-- Use the internal GitHub crawler first for broad PR, issue, repo, code, and
-  outreach-candidate discovery. Avoid broad authenticated GitHub searches when
-  crawler output or read-only metadata can find candidates.
+- Always use the internal Xquik GitHub crawler first to find new submission
+  targets before fallback metadata, clone, archive, or web-index lanes.
 - Use GitHub CLI/API only for narrow known-repo/PR readbacks: state,
   mergeability, checks, reviews, comments, maintainer requests, conflicts, DCO,
   CLA, target blockers, and body verification.
@@ -197,15 +196,13 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-19 10:54 UTC: selector limits recorded; crawler JSON empty after
-  proxy outage; TweetClaw had no open issues/PRs; tracked PRs read back.
-- PR triage: thread-aware review readbacks found no unresolved current threads;
-  CLA sweep found no signer action. `agentscope-ai/agentscope-samples#126`
-  says all committers signed.
-- Fresh PR: `patidarpuja/twitter-airline-sentiment-nlp#1` adds a dependency-free
-  TweetClaw airline sentiment CSV converter and fixes a placeholder README
-  link. OpenClaw docs, links, memory, fitness, and `check:all` passed; npm
-  audit reports nested OpenClaw `protobufjs`, `tar`, and high `undici`.
+- 2026-06-19 11:11 UTC: selector limits recorded; Xquik crawler strict JSON was
+  empty after proxy outage; TweetClaw had no open issues/PRs; tracked PRs read
+  back with no actionable repairs, unresolved threads, or CLA signer action.
+- Fresh PR: `newpath-tech/tweet-sentiment-simple#4` adds a dependency-free
+  TweetClaw export converter, sample JSONL, and target placeholder link fixes.
+  OpenClaw docs, links, memory, fitness, and external PR validation passed; npm
+  audit still reports nested OpenClaw `protobufjs`, `tar`, and high `undici`.
 
 ## Reporting Checklist
 
