@@ -202,15 +202,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-18 09:37 UTC: selector limits recorded. Crawler JSON was empty after
-  proxy socket closures; TweetClaw had no open issues/PRs, and 120 authored PRs
+- 2026-06-19 09:48 UTC: selector limits recorded. Crawler JSON was empty after
+  proxy socket closures; TweetClaw had no open issues/PRs, and 160 authored PRs
   were listed.
-- Repair pass: `Flamechargerr/twitter_sentiment#1` was conflict-repaired at
-  `e915720`; CodeRabbit passed and no unresolved threads remain.
-- Fresh PR: `lindy-dev/x-automation-skills-scripts#1` adds a tested TweetClaw
-  export digest formatter and fixes a brittle X Developer Portal link. OpenClaw
-  docs, links, memory, and fitness passed; npm audit still reports nested
-  OpenClaw advisories.
+- Repair pass: `Correia-jpv/fucking-awesome-ai-tools#17` was conflict-repaired
+  at `da8b6dc`; `claude-code-plugins-plus-skills#865` source frontmatter was
+  fixed in `Xquik-dev/x-twitter-scraper@3ab22fb`.
+- Fresh PR: `piao0123/x-post-project#1` adds optional TweetClaw source-packet
+  guidance. OpenClaw docs, links, memory, fitness, and `check:all` passed; npm
+  audit reports nested OpenClaw `protobufjs`, `tar`, and `undici` advisories.
 
 ## Reporting Checklist
 

@@ -22490,3 +22490,125 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   pre-existing blocker or replace with an equivalent stable canonical route.
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+2026-06-19 09:48 UTC heartbeat
+
+- Runtime selector audit: this heartbeat did not expose a callable model or
+  reasoning-effort selector, so GPT-5.5 and extra-high effort could not be set
+  explicitly. The GitHub comment-handling skill asks for elevated network
+  permissions for some `gh` commands, but this runtime rejects sandbox
+  permission overrides. Work continued with ordinary networked `gh`, curl, npm,
+  and git commands.
+- Crawler-first discovery: ran the internal GitHub crawler from Xquik with JSON
+  output, research proxy, stable session `tweetclaw-20260619-0948`, bounded
+  request and proxy warmup timeouts, 600 result limit, 1 search page,
+  12 per-query limit, and 16 concurrency across SKILL.md, `.agents/skills`,
+  OpenClaw plugin and skill, MCP Twitter skill, Codex skill, Claude skill,
+  awesome skill lists, Twitter sentiment, analytics, dashboard, dataset,
+  package-tooling, agent registry, and x-twitter-scraper example lanes. Strict
+  JSON parsing found `{ "opportunities": [] }`. Stderr showed managed proxy
+  socket closures, quarantines, and outage classification, with no credential
+  values.
+- TweetClaw issue and PR monitoring: `Xquik-dev/tweetclaw` had no open issues
+  and no open PRs. Authored PR discovery listed 160 open `kriptoburak` PRs.
+  Exact readbacks covered the newest 50, including `python-utcp#90`,
+  `claude-code-plugins-plus-skills#865`, `intentkit#986`, `OpenPersona#1`,
+  `lindy-dev/x-automation-skills-scripts#1`,
+  `Flamechargerr/twitter_sentiment#1`, `rohitg00/skillkit#138`, and
+  `Correia-jpv/fucking-awesome-ai-tools#17`.
+- Existing PR repair triage: `Correia-jpv/fucking-awesome-ai-tools#17` was
+  `CONFLICTING` and `DIRTY`, with no checks and no maintainer comments. The
+  fork `kriptoburak/fucking-awesome-ai-tools` correctly pointed to
+  `Correia-jpv/fucking-awesome-ai-tools`; upstream was MIT licensed.
+  `rohitg00/skillkit#138`, `dominichubble/investor-sentiment-dashboard#24`,
+  and `avinashshrimal/bharatmcp#1` still need target-owner Vercel
+  authorization. `Flamechargerr/twitter_sentiment#1` had a passing CodeRabbit
+  state after prior repair. `python-utcp#90` had successful Cubic status after
+  follow-up commits, with review-required as a target approval gate.
+- PR repair action: cloned `kriptoburak/fucking-awesome-ai-tools`, merged
+  upstream `main`, resolved the generated README conflict by taking upstream
+  README and reapplying only the Xquik marketing row, kept the existing
+  `marketing.md` Xquik row, and pushed merge commit `da8b6dc` to
+  `codex/add-xquik-social-media-tool`. Validation passed conflict-marker
+  scan, `git diff --check upstream/main -- README.md marketing.md
+  .github/FUNDING.yml`, direct checks for `https://docs.xquik.com` and
+  `https://docs.xquik.com/api-reference/overview`, and changed-diff
+  public-hygiene scan. Final readback showed PR 17 `MERGEABLE` and `CLEAN`; a
+  repair comment was posted at
+  https://github.com/Correia-jpv/fucking-awesome-ai-tools/pull/17#issuecomment-4750497824.
+- Source skill repair: `jeremylongshore/claude-code-plugins-plus-skills#865`
+  had an owner request to fix `skills/x-twitter-scraper/SKILL.md` frontmatter
+  in the upstream source. `/Users/burak/Developer/x-twitter-scraper` was clean
+  on `master`. Commit `3ab22fb` promoted `version` and `author` to top level,
+  added `allowed-tools: WebFetch`, added tags, and kept OpenClaw plus security
+  details under `metadata`. Validation passed `node scripts/check-versions.mjs`,
+  a frontmatter presence check, `git diff --check`, and raw GitHub readback on
+  `master`. The source commit was pushed to `Xquik-dev/x-twitter-scraper`, and
+  the marketplace PR was updated at
+  https://github.com/jeremylongshore/claude-code-plugins-plus-skills/pull/865#issuecomment-4750509219.
+- Fresh discovery and duplicate checks: after crawler output was empty,
+  targeted GitHub searches covered recent X/Twitter skill repos, social
+  context skills, video/media skills, X posting skills, agent registries, MCP
+  directories, and package/tooling lanes. Duplicate or prior-history blockers
+  included `mvanhorn/last30days-skill`, `Mrpixelraf/follow-investors`,
+  `zyipeng/video-downloader`, and `Hidden-Leaf-Networks/x-skill`.
+  `cbzehner/skill-twitter-digest` was archived and ineligible. `piao0123/
+  x-post-project` was public, non-fork, non-archived, issue-enabled, had no
+  detected license metadata, had no target PR or issue history for TweetClaw,
+  tweetclaw, Xquik, x-twitter-scraper, or `@xquik/tweetclaw`, and target file
+  scans found no duplicate mention.
+- Fresh PR submitted:
+  https://github.com/piao0123/x-post-project/pull/1 from correctly parented
+  fork `kriptoburak/x-post-project`, branch
+  `codex/add-tweetclaw-source-packet`, commit `e359ea8`. The PR adds optional
+  TweetClaw/OpenClaw source-packet guidance to `README.md`, root `SKILL.md`,
+  and `x-post-workflow/SKILL.md`. TweetClaw is limited to reviewed public
+  X/Twitter source collection with public URL, author, text summary, capture
+  time, media hints, and query terms; API keys, cookies, DMs, draft approvals,
+  automatic publishing authorization, and account-operation instructions are
+  explicitly excluded. The target keeps drafting, scheduling, images,
+  publishing, and final confirmation.
+- Fresh PR validation: `git diff --check` passed. Direct link check for
+  `https://docs.xquik.com` returned the canonical redirect to
+  `/api-reference/overview`. Added-line public-hygiene scan found no private
+  implementation details, restricted provider names, internal cost mechanics,
+  secret values, unsupported claims, or stale metadata. PR readback showed open,
+  ready, `MERGEABLE`, `CLEAN`, no comments, no reviews, and no configured
+  checks.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`, and `/help/debugging`
+  returned HTTP 200. `npm view @xquik/tweetclaw version` returned `1.6.31`;
+  local package metadata remains `1.6.32`. OpenClaw dist-tags were
+  `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`; ClawHub version was `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check-em-dash` passed. `npm run check:all` passed with typecheck,
+  lint, duplicate check, knip, suppression check, dash check, memory check,
+  skill frontmatter, version check, build, OpenClaw fitness, package artifact,
+  and 168 tests at 100% coverage.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` reports nested
+  OpenClaw advisories for `protobufjs`, `tar`, and `undici`, including new
+  high-severity `undici` findings. The force path would install
+  `openclaw@0.0.1`, so no package mutation was made during outreach. `npm ls`
+  also shows local nested OpenClaw packages already outside some declared
+  nested ranges, so widening overrides needs a dedicated package-maintenance
+  pass rather than a drive-by audit edit.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit Markdown memory was 15262/15360 bytes. The saved
+  automation prompt measured 15029 bytes, and no prompt edit was needed.
+- Prompt self-improvement: source-skill registry PRs can depend on files in
+  separate source repositories; when a maintainer reports frontmatter or package
+  source issues, repair the canonical source repo and post raw readback rather
+  than changing a generated registry entry. Missing target license metadata
+  alone does not block direct docs PRs, but the contribution should stay
+  markdown-only and avoid adding executable code to unlicensed repos.
+- Changed files outside TweetClaw: `/Users/burak/Developer/x-twitter-scraper/
+  skills/x-twitter-scraper/SKILL.md` was committed and pushed at `3ab22fb`.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
