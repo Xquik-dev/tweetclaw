@@ -199,10 +199,11 @@ archive, before any outreach or duplicate decision.
 - 2026-06-19 11:44 UTC: selector limits recorded; Xquik crawler strict JSON was
   empty after proxy outage; TweetClaw had no open issues/PRs; tracked PRs read
   back with no actionable repairs, unresolved threads, or CLA signer action.
-- Fresh PR: `pranavv1210/Social-Sentiment-Analysis#1` adds a TweetClaw export
-  prep helper, fixture, and README recipe for the dashboard CSV shape. OpenClaw
-  docs, links, memory, fitness, and external PR validation passed; npm audit
-  still reports nested OpenClaw `protobufjs`, `tar`, and high `undici`.
+- Fresh PR: `pranavv1210/Social-Sentiment-Analysis#1` adds and repairs a
+  TweetClaw export prep helper, fixture, and README recipe for the dashboard CSV
+  shape. OpenClaw docs, links, memory, fitness, and external PR validation
+  passed; npm audit still reports nested OpenClaw `protobufjs`, `tar`, and high
+  `undici`.
 
 ## Reporting Checklist
 
