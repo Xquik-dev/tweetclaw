@@ -135,9 +135,9 @@ archive, before any outreach or duplicate decision.
   web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog,
   and package-registry lanes.
 - Run the crawler from `/Users/burak/Developer/xquik` with:
-  `bun run github:crawl --use-research-proxy`
+  `bun run github:crawl --research-proxy`
 - For strict JSON use:
-  `bun run github:crawl --use-research-proxy --json --output <path>`
+  `bun run github:crawl --json --output <path> --research-proxy`
 - Use focused crawler query sets for authored PRs, audit-tracked PRs, TweetClaw,
   OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs.
 - Skill-repo query inventory lives in the archive; include `SKILL.md`,
@@ -202,15 +202,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-19 09:48 UTC: selector limits recorded. Crawler JSON was empty after
-  proxy socket closures; TweetClaw had no open issues/PRs, and 160 authored PRs
-  were listed.
-- Repair pass: `Correia-jpv/fucking-awesome-ai-tools#17` was conflict-repaired
-  at `da8b6dc`; `claude-code-plugins-plus-skills#865` source frontmatter was
-  fixed in `Xquik-dev/x-twitter-scraper@3ab22fb`.
-- Fresh PR: `piao0123/x-post-project#1` adds optional TweetClaw source-packet
-  guidance. OpenClaw docs, links, memory, fitness, and `check:all` passed; npm
-  audit reports nested OpenClaw `protobufjs`, `tar`, and `undici` advisories.
+- 2026-06-19 10:08 UTC: selector limits recorded; crawler JSON was empty after
+  proxy outage; TweetClaw had no open issues/PRs; 180 authored PRs were listed,
+  and 60 were read back.
+- PR triage: no safe in-scope repair. `AtomiCloud#2` bot notes were stale, and
+  Vercel failures remained owner-auth gates.
+- Fresh PR: `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1` adds TweetClaw
+  export upload/import support and fixes a README placeholder link. OpenClaw
+  docs, links, memory, fitness, and `check:all` passed; npm audit still reports
+  nested OpenClaw `protobufjs`, `tar`, and `undici`.
 
 ## Reporting Checklist
 
