@@ -2,6 +2,87 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-19 12:05 UTC Heartbeat Run
+
+- Runtime limits: the current Codex runtime did not expose GPT-5.5 or
+  extra-high reasoning selectors, so the run continued with that limitation
+  recorded. The GitHub comment skill asks for elevated network tool mode, but
+  this runtime rejects sandbox overrides under approval policy `never`; normal
+  networked `gh` commands were used instead.
+- Existing TweetClaw issue/PR sweep: `Xquik-dev/tweetclaw` had no open GitHub
+  issues and no open GitHub PRs. TweetClaw started clean on `master` at
+  `e392224`.
+- Existing outreach PR readbacks: exact reads covered the latest relevant open
+  TweetClaw, Xquik, OpenClaw, MCP, and social-skill PRs. Selected thread-aware
+  reads for `pranavv1210/Social-Sentiment-Analysis#1`,
+  `VipinMI2024/awesome-mcp-servers#1`,
+  `enescingoz/awesome-n8n-templates#138`,
+  `agentscope-ai/agentscope-samples#126`,
+  `yusufkaraaslan/Skill_Seekers#413`,
+  `universal-tool-calling-protocol/python-utcp#90`,
+  `Flamechargerr/twitter_sentiment#1`, and
+  `jeremylongshore/claude-code-plugins-plus-skills#865` found no unresolved
+  review threads or safely actionable maintainer request. No conflict, DCO,
+  generated-file drift, failing check, or CLA signer blocker was found.
+- CLA blocker readback requested by the user: open PR search for CLA terms
+  found `agentscope-ai/agentscope-samples#126`,
+  `automatisch/automatisch#2709`, and `archestra-ai/website#491`; all three
+  showed signed CLA status or `license/cla` success. No CLA signature action is
+  currently needed.
+- Crawler-first discovery: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output:
+  `timeout 180 bun run github:crawl --json --output /tmp/tweetclaw-crawl-20260619-1205.json --research-proxy --session-id tweetclaw-20260619-1205 --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 1000 --search-pages 2 --per-query-limit 16 --concurrency 16` plus focused skill, TweetClaw, OpenClaw, MCP, agent-tool, tweet-sentiment, Streamlit, social-listening, dashboard, FastAPI, webhook, and X API query strings. The JSON was valid and empty. Managed-proxy socket closures, endpoint quarantines, and outage-circuit logs printed no private values.
+- Fresh target screening: `dounyazhd/sentiment-streamlit` was public,
+  non-fork, non-archived, issue-enabled, default branch `main`, pushed on
+  2026-04-11, and had no license metadata. It had no contribution-policy
+  blocker. Compact audit, archive, target content, and target open plus closed
+  PRs/issues were duplicate-clean for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub and npm URLs, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, and variants.
+- Fresh PR submitted: https://github.com/dounyazhd/sentiment-streamlit/pull/1
+  from correctly parented fork `kriptoburak/sentiment-streamlit`, branch
+  `codex/add-tweetclaw-export-helper`, commit `70dff9f`. The PR adds
+  `scripts/prepare_tweetclaw_export.py`, `examples/tweetclaw_export.jsonl`, and
+  a README recipe. The stdlib helper converts TweetClaw CSV, JSON, or JSONL
+  exports into `data/processed/nettoyage.csv` with the columns expected by the
+  existing VADER rebuild script. The PR also removes a stale Streamlit app URL
+  that loops through auth redirects and fails README link checks. No NHS badge
+  was added because the target README has no badge area.
+- Target validation: `python3 -m py_compile scripts/prepare_tweetclaw_export.py scripts/run_processing_fallback.py`
+  passed. JSONL fixture conversion passed with CSV assertions for row count,
+  cleaned text, UTC date normalization, and nested author mapping.
+  `npx --yes markdown-link-check README.md`, `git diff --check`, and public
+  hygiene scans passed. Full `scripts/run_processing_fallback.py` execution was
+  not run because it would rewrite tracked result fixtures.
+- New PR readback: PR #1 was open, ready for review, mergeable, and clean, with
+  no comments, reviews, or status checks yet.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, CLI skill
+  docs, CLI update docs, ClawHub publishing, skill format, validation fixes,
+  debugging, gateway, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the npm registry package. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`. Local source remains `@xquik/tweetclaw@1.6.32`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports nested OpenClaw advisories
+  for `protobufjs`, `tar`, and high `undici`; force would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Automation TOML measured 14634 bytes and the rough persisted
+  prompt body measured 14509 bytes; no prompt edit was needed because the saved
+  prompt already contains the stricter crawler-first requirement.
+- Prompt self-improvement: when `markdown-link-check` flags a pre-existing
+  README link in a handled target, verify it separately and repair the public
+  surface when the stale link is clear and the fix stays target-native. Keep
+  user-visible CLA answers separate from CLA comments that are already signed,
+  and record no-action signer states explicitly.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-19 11:44 UTC Heartbeat Run
 
 - Runtime limits: the current Codex runtime did not expose GPT-5.5 or
