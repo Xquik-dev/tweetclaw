@@ -81,6 +81,101 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-19 12:40 UTC heartbeat
+
+- Runtime selector audit: this heartbeat did not expose a callable model or
+  reasoning-effort selector, so GPT-5.5 and extra-high effort could not be set
+  explicitly. The GitHub comment-handling skill asks for elevated network
+  permissions for some `gh` commands, but this runtime rejects sandbox
+  permission overrides under approval policy `never`. Work continued with
+  ordinary networked `gh`, curl, npm, git, and the Xquik crawler.
+- PR and issue monitoring: TweetClaw local `master` started clean at commit
+  `b4506d2`. `Xquik-dev/tweetclaw` had no open issues and no open PRs. Authored
+  PR discovery listed open `kriptoburak` PRs, then exact readbacks covered the
+  newest 35 plus tracked PRs. `yuqi-yuki/Streamlit_sentiment_analysis#1`,
+  `dounyazhd/sentiment-streamlit#1`, and
+  `Lolarok/mcp-directory#1` were open, mergeable, clean, and had no comments,
+  reviews, or checks requiring action.
+- Existing PR repair triage: thread-aware GraphQL reads for comment-bearing PRs
+  including `pranavv1210/Social-Sentiment-Analysis#1`,
+  `VipinMI2024/awesome-mcp-servers#1`,
+  `enescingoz/awesome-n8n-templates#138`,
+  `agentscope-ai/agentscope-samples#126`,
+  `universal-tool-calling-protocol/python-utcp#90`,
+  `rohitg00/skillkit#138`, and
+  `dominichubble/investor-sentiment-dashboard#24` found zero unresolved review
+  threads. The remaining bad checks on `rohitg00/skillkit#138` and
+  `dominichubble/investor-sentiment-dashboard#24` were target-owned Vercel
+  authorization failures. No CLA or DCO signer action was found.
+- Crawler-first discovery: ran the internal GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  stable session `tweetclaw-20260619-1240`, bounded request timeout, skipped
+  proxy warmup, 1000 result limit, 2 search pages, 16 per-query limit, and 16
+  concurrency across skill, OpenClaw, MCP, Twitter/X, sentiment, dashboard,
+  agent-registry, and package-tooling lanes. Strict JSON parsing found
+  `{ "opportunities": [] }`. Stderr showed managed proxy socket closures,
+  quarantines, and outage circuit opening, with no credential values.
+- Fresh discovery and duplicate checks: after crawler output was empty,
+  fallback archive screening selected
+  `samuel-olaleye/streamlit-tweet-sentiment-app` from the Streamlit sentiment
+  lane. The repo was public, non-fork, non-archived, issue-enabled, default
+  branch `main`, last pushed 2025-06-06, and had no license metadata. Target PR
+  and issue searches plus target file scans found no history for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub,
+  Xquik, x-twitter-scraper, OpenClaw, or OpenClaw Directory variants. No
+  contribution policy blocker was found.
+- Fresh PR submitted:
+  https://github.com/samuel-olaleye/streamlit-tweet-sentiment-app/pull/1 from
+  correctly parented fork `kriptoburak/streamlit-tweet-sentiment-app`, branch
+  `codex/add-tweetclaw-batch-helper`, commit `ddbbe8b`. The PR adds
+  `scripts/prepare_tweetclaw_batch.py`, `examples/tweetclaw_export.jsonl`, and
+  README guidance that converts TweetClaw CSV, JSON, or JSONL exports into the
+  target app's required batch-upload CSV with `text`, `tweet_id`, `created_at`,
+  `username`, and `query` columns. It also removes the pre-existing stale
+  Streamlit Cloud URL because the checked route loops through auth redirects and
+  fails link checks.
+- Fresh PR validation: target validation passed `python3 -m py_compile
+  scripts/prepare_tweetclaw_batch.py app.py clean.py`, a sample JSONL-to-CSV
+  conversion with assertions for row count, text, tweet_id, created_at,
+  username, and query, `npx --yes markdown-link-check README.md`, and
+  `git diff --check`. Public-hygiene scan found no private implementation
+  details, restricted provider names, internal cost mechanics, secret values,
+  unsupported claims, or stale public metadata introduced by the PR. PR
+  readback showed open, ready, `MERGEABLE`, `CLEAN`, no comments, no reviews,
+  and no configured checks.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/debugging`, `/gateway`, the canonical ClawHub TweetClaw route,
+  OpenClaw Directory, and the npm registry document all returned HTTP 200.
+  `npm view @xquik/tweetclaw version` returned `1.6.31`; local package metadata
+  remains `1.6.32`. OpenClaw dist-tags were `latest: 2026.6.8`,
+  `beta: 2026.6.9-beta.1`, and `alpha: 2026.5.19-alpha.1`; ClawHub version was
+  `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check-memory-md-size` passed before the audit edit at
+  14920/15360 bytes.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` still reports
+  nested OpenClaw advisories for `protobufjs`, `tar`, and `undici`, including
+  high-severity `undici` findings. The force path would install
+  `openclaw@0.0.1`, so no package mutation was made during outreach.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. The saved automation TOML was 14634 bytes and the extracted
+  prompt measured 14292 bytes before any prompt edit; no prompt edit was
+  needed.
+- Prompt self-improvement: for Streamlit batch-upload targets, a converter that
+  produces the target app's existing required `text` column plus harmless
+  metadata is more reviewable than changing prediction logic. Do not touch
+  malformed or UTF-16-looking dependency files in target repos unless the
+  contribution requires it. If a live demo link routes into auth redirects or
+  stale deployment placeholders, remove or replace that target-owned link in the
+  same PR after recording it as pre-existing.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-19 12:05 UTC Heartbeat Run
 
 - Runtime limits: the current Codex runtime did not expose GPT-5.5 or
