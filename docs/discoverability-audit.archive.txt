@@ -107,6 +107,11 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   threads. The remaining bad checks on `rohitg00/skillkit#138` and
   `dominichubble/investor-sentiment-dashboard#24` were target-owned Vercel
   authorization failures. No CLA or DCO signer action was found.
+- CLA keyword sweep: a final broad `gh search prs` pass for CLA, DCO,
+  Contributor License Agreement, and EasyCLA across open `kriptoburak` PRs hit
+  a GitHub secondary search rate limit. Per crawler-first rules, broad
+  authenticated searching stopped for this run; exact readbacks above remained
+  the current checked set.
 - Crawler-first discovery: ran the internal GitHub crawler from
   `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
   stable session `tweetclaw-20260619-1240`, bounded request timeout, skipped

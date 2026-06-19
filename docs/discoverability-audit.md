@@ -197,8 +197,8 @@ archive, before any outreach or duplicate decision.
 ## Latest Validated Run
 
 - 2026-06-19 12:40 UTC: selector limits recorded; Xquik crawler strict JSON was
-  empty after proxy outage; authored and audit-tracked PRs read back with no
-  actionable repair, unresolved thread, or CLA signer action.
+  empty after proxy outage; newest authored and audit-tracked PRs read back with
+  no actionable repair, unresolved thread, or CLA signer action.
 - Fresh PR: `samuel-olaleye/streamlit-tweet-sentiment-app#1` adds a stdlib
   TweetClaw CSV/JSON/JSONL batch helper, sample export, README recipe, and
   removes a stale Streamlit link. OpenClaw docs, links, memory, fitness, and
