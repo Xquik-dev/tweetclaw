@@ -2,6 +2,95 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 16:33 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `8dbeecb`. Compact Markdown
+  memory started at 15186/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes. The Xquik workspace had unrelated
+  `docs/feature-roadmap.md` edits and was left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  session `tweetclaw-20260620-1633`, bounded request timeout, proxy warmup
+  disabled, 420 limit, 1 search page, 10 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, `.agents/skills`,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill, awesome-list,
+  registry, generated-catalog, fork, package-tooling, validator, examples,
+  docs, social-agent, sentiment-dashboard, x-twitter-scraper, and web-index
+  skill queries. Strict JSON parsing found 0 opportunities. Stderr showed
+  proxy socket closures, endpoint quarantines, and outage-circuit logs with no
+  sensitive values.
+- PR inventory: TweetClaw had no open issues and no open PRs by REST readback.
+  Authored open-PR search used persisted partial output and found 1340 unique
+  URLs across focused lanes; the same-day bucket found 125 URLs, while
+  TweetClaw, Xquik, OpenClaw, MCP, skill, Twitter, and social partitions were
+  capped, so broad inventory remains incomplete. A bug in the first exact-read
+  map overwrote query tags and exact-read only 26 same-day or tracked PRs. The
+  corrected 125-PR exact-read attempt exceeded the heartbeat bound and was
+  stopped, so the run continued with the completed exact subset, tracked PR
+  reads, crawler output, target clones, and archive searches.
+- PR repair decisions: the 26 exact-read subset showed 19 clean, 6 unstable,
+  and 1 blocked merge states; 12 PRs had comments, 4 had reviews, and 3 had
+  review comments. `bogdanbaciu21/skills#4` remained open, clean, and
+  mergeable with only historical failed policy output. `vaibhav4046/mcp-marketplace#1`
+  remained open and mergeable, unstable only because target-owned Vercel still
+  requires authorization. `jaiminbabariya7/real_time_sentiment_analysis#1`,
+  `dataprojectswithMJ/streamlit-twitter-scraper#1`, and
+  `Ali-ops-p/Marketing-Data-Pipeline-Project#1` had no current comments,
+  reviews, check failures, conflicts, DCO, CLA, generated-file drift, or valid
+  bot findings needing repair.
+- Fresh discovery and duplicate checks: crawler output was empty, so fallback
+  screening used exact repo metadata from prior candidate lanes plus compact
+  and archive duplicate searches, target PR and issue lists, clone plus `rg`,
+  and license metadata. Fresh candidates included
+  `anirban-analytics/airline-sentiment-analysis`,
+  `BhaveshN1015/Sentiment_Radar`, and
+  `krishna-s-r/sentiment-dashboard`. The selected target
+  `anirban-analytics/airline-sentiment-analysis` was MIT licensed, public,
+  non-fork, non-archived, issue-enabled, recently pushed, had no PRs or
+  issues, and target content scans found no TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub duplicate.
+- Fresh PR submitted:
+  https://github.com/anirban-analytics/airline-sentiment-analysis/pull/1 from
+  correctly parented fork `kriptoburak/airline-sentiment-analysis`, branch
+  `codex/add-tweetclaw-airline-import`, commit `281188e`. The PR adds a
+  dependency-free TweetClaw JSON, JSONL, NDJSON, and CSV converter that writes
+  the same staging columns as `data/cleaned_airline_sentiment.csv`, plus
+  unittest coverage and README usage. It keeps imported posts `unlabeled` by
+  default until analysts review or score them and does not suggest write-like
+  actions.
+- Target validation for the new PR: Python compilation, unittest discovery,
+  CLI smoke conversion from a TweetClaw JSONL row, Black check at line length
+  100, README link check, and `git diff` whitespace check passed. Added-line
+  scans found no sensitive or restricted wording.
+- New PR readback: REST showed `#1` open, ready, mergeable `true`,
+  `mergeable_state: clean`, head `281188ee757313fafba8795c5eefe0b265c5ec42`,
+  0 comments, 0 reviews, 0 review comments, no check runs, and no commit
+  status contexts.
+- OpenClaw and public hygiene: official docs probes returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, CLI plugin/skill/update, ClawHub publishing,
+  skill format, plugin validation fixes, plugin manifest, tool plugins,
+  plugin permission requests, install overrides, dependency resolution, SDK
+  runtime, and `/help/debugging`. ClawHub `@xquik/tweetclaw`, OpenClaw
+  Directory, the new PR, and npm registry metadata returned HTTP 200.
+- Package and TweetClaw validation: `npm view @xquik/tweetclaw version
+  openclaw.install` returned published `1.6.31` with npm default install.
+  `npm view openclaw dist-tags` returned latest `2026.6.8`, beta
+  `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`; `npm view clawhub version`
+  returned `0.22.0`. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npx markdown-link-check` passed for README, OpenClaw setup, agent
+  workflows, packaged skill, compact audit, and compact release memory.
+  `npm audit` still reported 5 nested OpenClaw advisories for `protobufjs`,
+  `tar`, and `undici`; force would install `openclaw@0.0.1`, so no package
+  mutation was made.
+- Prompt self-improvement: broad PR-search maps must preserve all query tags
+  per URL instead of overwriting earlier tags. Large exact-read jobs should
+  persist per-PR partial output incrementally or use bounded GraphQL batches,
+  so a timeout still leaves durable exact-read evidence.
+
 ## 2026-06-20 16:22 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
