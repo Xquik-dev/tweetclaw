@@ -2,6 +2,101 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 20:18 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `6925c31`. Compact Markdown
+  memory started at 15290/15360 bytes, and the persisted automation prompt
+  measured 11980 bytes. The Xquik crawler workspace had unrelated
+  `docs/feature-roadmap.md` edits and was left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` in strict JSON research-proxy mode with output
+  `/tmp/tweetclaw-heartbeat-20260620-2018/crawl.json`, session
+  `tweetclaw-20260620-2018`, bounded request timeout, proxy warmup disabled,
+  360 limit, 1 search page, 10 per-query limit, 8 concurrency, and focused
+  authored-PR, TweetClaw, OpenClaw, MCP, SKILL.md, `.agents/skills`, Claude,
+  Codex, social media, Twitter/X, x-twitter-scraper, ClawHub, npm,
+  package-tooling, validator, registry, fork, generated-catalog, awesome-list,
+  and web-index query packs. The crawler wrote valid JSON with 0 opportunities
+  after managed proxy socket and outage logs. No crawler credential values were
+  printed or stored.
+- PR inventory and repair triage: TweetClaw had 0 open issues and 0 open PRs.
+  Same-day authored `gh search` returned 147 open PRs. GraphQL exact readbacks
+  covered 148 open PRs with 0 read errors after richer status-rollup GraphQL
+  hit GitHub resource limits. Merge states were 113 clean, 25 unstable, and 10
+  blocked; 43 PRs had comments and 15 had reviews. Broad partitions for
+  TweetClaw, Xquik, OpenClaw, MCP, skill, Twitter, social, and Hermes each
+  capped at 300; `xsearch` returned 1 and `Klavis` returned 0. Broad inventory
+  remains partial because capped partitions were not exhaustively split.
+- Repair decisions: no current maintainer request, review comment, conflict,
+  DCO, CLA, generated-file drift, or safely fixable current-head CI failure
+  blocked fresh outreach. `weiflycc-cmd/awesome-copilot#19` remains blocked by
+  the target bot requesting branch `staged`, which does not exist on the target
+  repo. `Hashi-Ai-Dev/openclaw-clawdoc#6` was already fixed at current head
+  `7c6fd14`. Failure-like checks on `xboomz0428/claude-skill-social-post#1`,
+  `agent-gigmole/agentoolrank#1`, `readtheskill/readtheskill#11`,
+  `readtheskill/readtheskill#12`, `davila7/claude-code-templates#642`,
+  `ComeOnOliver/skillshub#71`, and
+  `vaibhav4046/mcp-marketplace#1` were Vercel authorization or target-owned
+  workflow/security gates with no safe fork-side repair.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`, CLI
+  plugin/skill/update, ClawHub publishing, ClawHub skill format, plugin
+  validation fixes, plugin manifest, tool plugins, install overrides, plugin
+  testing, debugging, canonical ClawHub TweetClaw route, OpenClaw Directory,
+  and npm registry routes returned HTTP 200. ClawHub page content still showed
+  `1.6.26`. `npm view @xquik/tweetclaw` returned `1.6.31` with install spec
+  `@xquik/tweetclaw@1.6.31` and min host `>=2026.5.4`. OpenClaw dist-tags were
+  `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and `alpha:
+  2026.5.19-alpha.1`; ClawHub version was `0.22.0`.
+- Fresh discovery and duplicate checks: crawler output was empty, so fallback
+  GitHub metadata searches covered awesome agent skills, Claude skill
+  registries, MCP/Twitter directories, and Twitter sentiment Streamlit lanes.
+  Prior history blocked or lowered fit for known awesome-list and registry
+  targets including VoltAgent, heilcheng, skillmatic, JackyST0, philipbankier,
+  majiayu000, and le-diegz lanes. The selected target
+  `ishandutta2007/Awesome-Agent-Skills` was public, non-fork, non-archived,
+  MIT-licensed, active on 2026-06-19, and built for coding-agent skill
+  distribution. Exact target open and closed PR and issue searches found no
+  history for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub. Target content scans found no
+  duplicate mention and no contribution policy blocker.
+- Fresh PR submitted:
+  https://github.com/ishandutta2007/Awesome-Agent-Skills/pull/3 from correctly
+  parented fork `kriptoburak/Awesome-Agent-Skills-3`, branch
+  `codex/add-openclaw-setup`, commit `6e5bfae`. The PR adds an OpenClaw setup
+  guide for installing individual `SKILL.md` folders, links it from the README,
+  repairs broken README links to personas and checklist docs, fixes the
+  meta-skill validator exemption, and fills required validation sections in the
+  eval and MCP skills. Exact readback showed open, ready, mergeable, blocked,
+  no checks, no comments, and no reviews.
+- Fresh PR validation: target validation passed `node tooling/validate-skills.js`,
+  `node tooling/validate-commands.js`, `npx --yes markdown-link-check README.md
+  docs/openclaw-setup.md --quiet`, and `git diff --check`. The initial README
+  link check found 7 pre-existing dead local links, all fixed in the PR. Public
+  hygiene scan of the introduced diff found no TweetClaw duplicate text, secret
+  pattern, private implementation detail, restricted-origin language, private
+  pricing mechanics, or unsupported claim.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check-em-dash` passed. `npm run check:all` passed with typecheck,
+  lint, duplicate check, knip, suppression check, dash check, memory check,
+  skill frontmatter, version check, build, OpenClaw fitness, package artifact,
+  and 168 tests at 100% coverage.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Prompt size remained 11980 bytes and no prompt edit was
+  needed. TweetClaw changed files were `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`; the verified audit commit was
+  pushed to `master` after this record.
+- Prompt self-improvement: when a target's CI validator fails before the new
+  change, prefer repairing the target-owned validator or docs drift in the same
+  PR if the fix is small and directly related to the integration surface. For
+  multi-skill repositories, an OpenClaw setup guide is more target-native than a
+  single TweetClaw mention unless the repo is a public catalog.
+
 ## 2026-06-20 19:57 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
