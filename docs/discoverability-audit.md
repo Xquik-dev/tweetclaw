@@ -49,10 +49,11 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 01:54 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 02:58 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
-  fixes, manifest/tool plugins/install overrides, and `/help/debugging`.
+  fixes, manifest/tool plugins/install overrides, plugin permission requests,
+  dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
   on 2026-06-17 06:51 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
@@ -196,16 +197,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 02:26 UTC: selector limits recorded. Xquik crawler PR/fresh JSON
-  was valid but empty after US proxy failures. Created-date partitions plus a
-  daily capped-June split found 1790 authored open PRs; batched GraphQL
-  exact-read all 1790 with 0 errors. Scoped 1785, attention 406, dirty-like
-  405, failing/error checks 49, changes-requested 1, review-required 75. No
-  unsigned CLA/DCO blocker. Repaired `bogdanbaciu21/skills#4` with required
-  issue #27, plus `reall8164/wechat-openclaw-plugin#1` and
-  `Aqmar777/openclaw-competitive-intel#1` to mergeable clean heads. Fresh
-  target `greekr4/viruagent-cli` was MIT, active, issue-enabled, and
-  duplicate-clean; outreach was held because dirty PR backlog remains. OpenClaw
+- 2026-06-20 02:36 UTC: selector limits recorded. Xquik crawler PR/fresh JSON
+  was valid but empty after US proxy socket failures, and broad authenticated
+  June PR search hit HTTP 403 rate limit; used prior full inventory plus
+  fallback partitions. Exact-read 1790 known PRs with 1 missing-repo error
+  (`xbot-my/agent-skills-registry#1`). Scoped 1785, attention 403, dirty-like
+  400, failing/error checks 50, changes-requested 1, review-required 75.
+  Repaired `AbdNour627/awesome-openclaw-configs#1` and
+  `Aditya923-c/xpoz-agent-skills#1` to mergeable clean heads. Fresh target
+  `Convodotwtf/voice-ai-twitter-spaces` was MIT, active, duplicate-clean, and
+  X Spaces relevant; outreach was held because repair backlog remains. OpenClaw
   docs, links, memory, and fitness passed; npm audit still reports nested
   OpenClaw advisories with unsafe force downgrade.
 

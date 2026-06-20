@@ -146,6 +146,104 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-20 02:36 UTC heartbeat
+
+- Runtime selector: this Codex heartbeat surface did not expose model or
+  reasoning-effort selection controls, so GPT-5.5 and extra-high effort could
+  not be selected directly. The limitation was recorded and the run continued.
+- Crawler-first PR monitoring and fresh-target discovery: ran the Xquik GitHub
+  crawler from `/Users/burak/Developer/xquik` with strict JSON output,
+  `--research-proxy`, session `tweetclaw-20260620-0236-prs`, bounded request
+  and proxy warmup timeouts, 1000 result limit, 2 search pages, 16 per-query
+  limit, and 16 concurrency across authored open PRs, TweetClaw, OpenClaw,
+  ClawHub, MCP, SKILL.md, `.agents/skills`, social/Twitter-X skills, awesome
+  lists, registries, and x-twitter-scraper lanes. Strict JSON parsed and
+  contained zero opportunities. Stderr showed managed US proxy socket closures,
+  endpoint quarantines, and proxy outage circuit behavior without credential
+  values.
+- Complete PR inventory attempt: broad authored open PR partitioning succeeded
+  for 696 current partition results, then the June partition
+  `created:2026-06-01..2026-06-21` hit GitHub HTTP 403 rate limit at
+  2026-06-20 02:38:22 UTC, request id
+  `BBAE:251E9F:2CCC63E:2AD73F9:6A35FD1E`. Broad authenticated searching
+  stopped for the run per rule. The fallback merged this partial inventory with
+  the prior full inventory and exact-read 1790 known PR URLs.
+- Exact readback and triage: batched GraphQL readback plus one-by-one retry
+  produced exact data for 1789 known PRs and 1 missing-repo read error for
+  `xbot-my/agent-skills-registry#1`. The known inventory was scoped to 1785
+  PRs, with 403 attention candidates, 400 dirty-like PRs, 50 failing/error check
+  candidates, 1 changes-requested PR, 75 review-required PRs, and 4 CLA/DCO
+  text hits. No unsigned CLA or DCO blocker was found in the exact-read sample.
+  Because the broad partition was rate-limited, this run records known-inventory
+  coverage rather than claiming all in-scope PRs across GitHub were checked.
+- PR repair: repaired
+  https://github.com/AbdNour627/awesome-openclaw-configs/pull/1 from correctly
+  parented fork `kriptoburak/awesome-openclaw-configs`, branch
+  `codex/add-tweetclaw-x-config`, merge commit `3815c2a`. The repair merged
+  current upstream main, resolved the README conflict, kept canonical repo and
+  docs links, preserved the TweetClaw X monitor config, kept the existing badge
+  block, and removed conflict markers. Target validation passed
+  `git diff --check`, exact conflict-marker scan, JSON5 parsing for 21 config files,
+  `npx --yes markdown-link-check README.md README_EN.md CONTRIBUTING.md
+  --quiet`, and a public-hygiene diff scan. Readback became `MERGEABLE`,
+  `CLEAN`, no reviews, and no configured checks.
+- PR repair: repaired
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 from correctly
+  parented fork `kriptoburak/xpoz-agent-skills`, branch
+  `codex/add-tweetclaw-openclaw-resource`, merge commit `c70fe3c`. The repair
+  merged current upstream main, resolved the README Quick Links conflict,
+  preserved the TweetClaw OpenClaw resource note, and kept the GitHub Repository
+  quick link pointed at the repository instead of the ZIP artifact. Target
+  validation passed `git diff --check`, exact conflict-marker scan,
+  `npx --yes markdown-link-check README.md --quiet`, and public-hygiene diff
+  scan. Readback became `MERGEABLE`, `CLEAN`, no reviews, and no configured
+  checks.
+- Fresh target screening: exact-repo crawler mode for
+  `Convodotwtf/voice-ai-twitter-spaces` returned zero opportunities after proxy
+  socket failures. Fallback exact metadata showed the repo is public,
+  non-archived, non-fork, MIT-licensed, default branch `main`, and recently
+  pushed enough for screening. Compact/archive duplicate search, target open
+  and closed PRs/issues, tree reads, and local clone scans found no TweetClaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, or ClawHub history.
+  The target is X Spaces relevant, but new outreach was held because actionable
+  dirty PR repair backlog remains.
+- Official OpenClaw and package checks: current `docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, CLI plugin/skill/update docs, plugin manifest, manage
+  plugins, tool plugins, install overrides, plugin permission requests at the
+  current `plugins/plugin-permission-requests` slug, dependency resolution,
+  ClawHub publishing, ClawHub skill format, ClawHub plugin validation fixes, and
+  help debugging returned HTTP 200. The stale remembered
+  `/plugins/permission-requests` slug returned 404 and was replaced with the
+  current slug from `llms.txt`. `npm view openclaw dist-tags` returned latest
+  `2026.6.8`, beta `2026.6.9-beta.1`, and alpha `2026.5.19-alpha.1`.
+  `npm view @xquik/tweetclaw` returned published latest `1.6.31`; local source
+  remains `1.6.32`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  advisories for `protobufjs`, `tar`, and `undici`, including high-severity
+  `undici` findings. The force path would install `openclaw@0.0.1`, so no
+  package mutation was made during outreach.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. `npm run check-memory-md-size` passed at 15278/15360 bytes.
+  `npm run check:all` passed with typecheck, lint, duplicate check, knip,
+  suppression check, dash check, memory check, skill frontmatter, version check,
+  build, OpenClaw fitness, package artifact, and 168 tests at 100% coverage.
+  The saved automation prompt measured 11980 bytes and the TOML measured
+  12314 bytes, so no prompt compaction was needed.
+- Prompt self-improvement: durable prompt rules already include complete
+  open-PR inventory, crawler-first monitoring, crawler-first fresh discovery,
+  repair-before-outreach priority, explicit handling for rate-limited broad
+  GitHub searches, duplicate/fork checks, OpenClaw docs checks, link checks,
+  credential safety, Markdown cap, and commit/push requirements. Durable lesson
+  from this run: when broad authored PR search rate-limits mid-partition, merge
+  prior full inventory with current partial partitions and exact-read known URLs
+  while recording that this is not a complete uncapped GitHub inventory.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-20 02:26 UTC heartbeat
 
 - Runtime and selector note: the same-thread heartbeat runtime still did not
