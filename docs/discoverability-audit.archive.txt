@@ -2,6 +2,92 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 10:45 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `818b57c`. Compact Markdown
+  memory started at 15096/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  session `tweetclaw-20260620-1024`, bounded request timeout, proxy warmup
+  disabled, 260 limit, 1 search page, 10 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, `.agents/skills`,
+  social/Twitter-X skill, awesome-list, registry, MCP, OpenClaw package-tooling,
+  and x-twitter-scraper queries. Strict `jq` parsing found 0 opportunities.
+  Stderr showed proxy socket closures, endpoint quarantines, and outage-circuit
+  logs with no credential values.
+- Complete PR inventory: TweetClaw had no open issues and no open PRs. Broad
+  authored-open PR search used created-date partitions for June 2026, months
+  January-May 2026, 2025, 2024, and 2008-2023. The first June bucket hit the
+  1000-result cap, so it was split into 4 smaller June buckets; no split bucket
+  hit the cap. The final inventory had 1831 unique open PR URLs. Parallel exact
+  `gh pr view` readback covered all 1831 with 0 errors.
+- PR repair triage: exact-read counts were 230 PRs with non-self comments, 7
+  with changes-requested reviews, 10 with bad checks, and 407 dirty-like rows.
+  `agent-gigmole/agentoolrank#1` had only target-owned Vercel authorization.
+  `mhmdwldn/twitter-crawler#1` was a real TweetClaw-related conflict, MIT
+  licensed, with a correctly parented fork.
+- PR repair: repaired https://github.com/mhmdwldn/twitter-crawler/pull/1 by
+  merging upstream `main`, keeping both the TweetClaw import README section and
+  the upstream Elasticsearch version note, committing `49b15b2`, and pushing
+  to `kriptoburak:codex/tweetclaw-export-normalizer`. Validation passed with
+  Python 3.11: `pytest tests/ -q` (68 passed), `compileall`, `git diff --check`,
+  and `markdown-link-check README.md`. A repair comment was posted at
+  https://github.com/mhmdwldn/twitter-crawler/pull/1#issuecomment-4757367596.
+  Final readback was open, `MERGEABLE`, `CLEAN`, no reviews, and no checks.
+- Fresh discovery and duplicate checks: fallback GitHub searches covered
+  Twitter sentiment, tweet dashboard, and Claude/social skill lanes after the
+  crawler returned empty. `Wobbly1212/twitter-sentiment-analysis` was selected:
+  public, non-fork, non-archived, issue-enabled, MIT licensed, pushed
+  2026-06-20, and duplicate-clean across compact audit, archive, exact target
+  PRs/issues, and local content scans for TweetClaw, Xquik, x-twitter-scraper,
+  OpenClaw, ClawHub, npm URL, and GitHub URL variants.
+- Fresh PR submitted:
+  https://github.com/Wobbly1212/twitter-sentiment-analysis/pull/2 from
+  correctly parented fork `kriptoburak/twitter-sentiment-analysis-1`, branch
+  `codex/add-tweetclaw-sentiment140-converter`, commit `86ec5ea`. The PR adds
+  `src/tweetclaw_to_sentiment140.py` and README guidance that converts
+  human-reviewed TweetClaw JSON, JSONL, NDJSON, and CSV exports with sentiment
+  labels into the target's existing Sentiment140 6-column CSV shape, preserving
+  tweet IDs, dates, usernames, and text while skipping neutral, unlabeled, and
+  empty rows.
+- Fresh target validation: `python3.11 -m py_compile
+  src/sentiment_pipeline.py src/tweetclaw_to_sentiment140.py`, JSONL fixture
+  conversion assertion, CSV fixture conversion assertion, `git diff --check`,
+  `markdown-link-check README.md`, duplicate scans, and public-hygiene diff
+  scans passed. PR readback showed open, `MERGEABLE`, `CLEAN`, 119 additions,
+  1 deletion, no comments, no reviews, and no checks.
+- Official OpenClaw and package checks: HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/clawhub/plugin-validation-fixes`, `/help/testing-updates-plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/plugins/plugin-permission-requests`, `/plugins/dependency-resolution`, and
+  `/help/debugging`. ClawHub canonical TweetClaw route, OpenClaw Directory,
+  TweetClaw GitHub, Xquik docs, registry npm metadata, the repaired PR, and the
+  new PR URL returned HTTP 200. `npm view @xquik/tweetclaw version` returned
+  `1.6.31`; local source remains `1.6.32`. OpenClaw dist-tags were latest
+  `2026.6.8`, beta `2026.6.9-beta.1`, and alpha `2026.5.19-alpha.1`; ClawHub
+  was `0.22.0`.
+- Broken-link, package security, and TweetClaw validation: Markdown link checks
+  passed for README, OpenClaw setup docs, agent workflow docs, packaged skill,
+  compact audit, and compact release memory. `npm run
+  check-openclaw-platform-fitness` passed for local `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.8`. `npm audit --audit-level=moderate --omit=dev`
+  still reports the known nested OpenClaw `protobufjs`, `tar`, and `undici`
+  advisories; the available force fix would install `openclaw@0.0.1`, so no
+  package mutation was made.
+- Prompt self-improvement: full authored-open inventory can still fit within
+  normal GitHub limits when partitioned by created date; if a month bucket hits
+  1000 results, split it before exact readbacks. For sentiment-analysis targets,
+  prefer human-labeled TweetClaw export conversion into the target's native
+  dataset schema instead of adding live API access.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 10:15 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
