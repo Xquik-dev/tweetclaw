@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 00:04 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 01:54 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, and `/help/debugging`.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-20 found nested OpenClaw advisories for `protobufjs`,
+- Npm audit on 2026-06-20 found 5 nested OpenClaw advisories for `protobufjs`,
   `tar`, and `undici`; the unsafe force path downgrades to `openclaw@0.0.1`.
 
 ## GitHub-First Rule
@@ -196,14 +196,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 01:19 UTC: selector limits recorded. Xquik crawler strict JSON was
-  valid but empty after proxy outage. Partitioned authored-open PR search
-  resolved the 1000 cap into 1788 core exact readbacks; CLA/DCO searches found
-  none. Repaired `vaibhav4046/mcp-marketplace#1` and
-  `RoshanDev/skills#1` to mergeable heads. Fresh registry candidates were
-  screened but new outreach was held because dirty/failing PR repair backlog
-  remains. OpenClaw docs, links, memory, and fitness passed; npm audit is
-  unchanged.
+- 2026-06-20 01:54 UTC: selector limits recorded. Xquik crawler PR and fresh
+  discovery JSON were valid but empty after proxy outage. Partitioned
+  authored-open PR search resolved the 1000 cap into 1789 exact readbacks; no
+  CLA/DCO blockers were found. Repaired `warlockoussama/twitter-cli#1` and
+  `vikynofebriputra-creator/Orkas-Awesome-AgentSkills#1` to mergeable clean
+  heads. Fresh target `phdargen/xoninAgent` was screened as duplicate-clean but
+  new outreach was held because dirty PR repair backlog remains. OpenClaw docs,
+  links, memory, and fitness passed; npm audit still reports nested OpenClaw
+  advisories with unsafe force downgrade.
 
 ## Reporting Checklist
 

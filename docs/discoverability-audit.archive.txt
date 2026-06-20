@@ -146,6 +146,123 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-20 01:54 UTC heartbeat
+
+- Runtime selector audit: this heartbeat runtime did not expose a callable model
+  or reasoning-effort selector, so GPT-5.5 and extra-high effort could not be
+  selected explicitly. Work continued with the available runtime. The GitHub
+  PR repair skills were read; their elevated-network and approval pauses are
+  not available under this runtime, so ordinary authenticated `gh`, git, npm,
+  curl, and crawler commands were used.
+- Crawler-first PR monitoring: ran
+  `timeout 210 bun run github:crawl --json --output /tmp/tweetclaw-pr-crawl-20260620-0134.json --research-proxy --session-id tweetclaw-20260620-0134-prs --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 1000 --search-pages 2 --per-query-limit 16 --concurrency 16` with authored PR, TweetClaw, Xquik, OpenClaw, MCP, ClawHub,
+  SKILL.md, Twitter/X, social, and registry queries. Strict JSON parse
+  succeeded with `{ "opportunities": [] }`, 26 bytes. A smaller retry wrote
+  `/tmp/tweetclaw-pr-crawl-20260620-0134-small.json`, also valid empty JSON.
+  Both stderr streams showed managed proxy socket closures, endpoint
+  quarantines, and US proxy outage circuit opening; no crawler credential
+  values were printed.
+- Complete PR inventory: `Xquik-dev/tweetclaw` had no open issues or PRs.
+  Authored open PR search found oldest updated PR on 2025-05-20 and newest
+  updated PR `PatrickJS/awesome-cursorrules#317` at
+  2026-06-20T01:34:22Z. Monthly partitions from 2025-05 through 2026-06 were
+  written to `/tmp/tweetclaw-open-pr-partitions-20260620-0134.json`; June 2026
+  capped at 1000 and was split by day, with all daily buckets uncapped. Final
+  partition count was 34, unique open authored PR count was 1789, and no
+  partition errors occurred.
+- Exact PR readbacks: a first sequential exact-read pass was stopped after it
+  proved too slow. Batched GraphQL alias reads then exact-read all 1789 PRs in
+  179 batches with zero errors and wrote
+  `/tmp/tweetclaw-pr-core-exact-20260620-0134.jsonl` plus
+  `/tmp/tweetclaw-pr-core-exact-summary-20260620-0134.json`. Scoped filtering
+  found 1770 in-scope or adjacent PRs, 408 attention rows, 45 dirty/conflicting
+  rows, 45 failure/error check rollups, 1 changes-requested row, 75 review
+  required rows, and 0 pending rollups. Attention rows were saved to
+  `/tmp/tweetclaw-attention-prs-20260620-0134.jsonl`.
+- CLA, DCO, reviews, and checks: exact CLA/DCO/title/body searches for open
+  authored PRs found no unsigned CLA, DCO, or license-agreement blockers. The
+  only changes-requested PR was `Hashi-Ai-Dev/openclaw-clawdoc#6`; exact
+  readback showed the maintainer's vendor-neutral request was already handled
+  in commit `f54f185`, review threads were empty, and the remaining review
+  state is stale. Failing-check search returned 45 current failures; several
+  are target-owned authorization or external check states, while dirty PRs
+  remain the repair queue.
+- PR repair: `warlockoussama/twitter-cli#1` was conflict-dirty, README-only,
+  with no maintainer comments requiring new code. Verified fork
+  `kriptoburak/twitter-cli` points to parent `warlockoussama/twitter-cli`.
+  Fetched branch `codex/update-readme-command-scope`, merged upstream `main`,
+  resolved the identical final README download-link conflict by keeping one
+  canonical link, validated `git diff --check`, exact conflict-marker scan, and
+  `npx --yes markdown-link-check README.md --quiet`, then pushed merge commit
+  `5f1855c6b50fc85d33b22609a83cabf67587184c`. Final PR readback showed open,
+  `MERGEABLE`, `CLEAN`, no reviews, and no checks.
+- PR repair: `vikynofebriputra-creator/Orkas-Awesome-AgentSkills#1` was
+  conflict-dirty. Verified fork `kriptoburak/Orkas-Awesome-AgentSkills-1`
+  points to parent `vikynofebriputra-creator/Orkas-Awesome-AgentSkills`.
+  Fetched branch `codex/add-xquik-social-data-source`, merged upstream `main`,
+  resolved the README download-link conflicts by keeping the target's current
+  raw ZIP links, left the Xquik social-data skill files untouched, and accepted
+  the upstream ZIP artifact added by the target. Validation passed
+  `git diff --check`, conflict-marker scan, `python3 -m py_compile` for the
+  changed skill scripts, `npx --yes markdown-link-check README.md --quiet`, and
+  diff hygiene review. The hygiene scan found only intended public
+  `XQUIK_API_KEY` setup references; an "internal timeout" phrase was unchanged
+  target-owned context. Pushed merge commit
+  `a52b398f247756cf9c1bfe8d107cad585195319c`. Final PR readback showed open,
+  `MERGEABLE`, `CLEAN`, no reviews, and no checks.
+- Fresh discovery: ran
+  `timeout 180 bun run github:crawl --json --output /tmp/tweetclaw-fresh-crawl-20260620-0134.json --research-proxy --session-id tweetclaw-20260620-0134-fresh --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 600 --search-pages 1 --per-query-limit 12 --concurrency 12` across SKILL.md, `.agents/skills`, OpenClaw skill, MCP Twitter/X, Claude skill, awesome skill, and social registry queries. Strict JSON parse succeeded with 0 opportunities after the same proxy outage pattern.
+- Fresh candidate screening: fallback repo searches found many handled or
+  duplicate-covered targets, including `VoltAgent/awesome-openclaw-skills`,
+  `mengjian-github/openclaw101`, `hesamsheikh/awesome-openclaw-usecases`,
+  `harrylabsj/social-media-batch-kit`, `bigsky77/twitter-agent`, and
+  `JameWade/twitter-agent`. Fresh target `phdargen/xoninAgent` was not present
+  in compact or archive memory, is public, non-fork, non-archived, issues
+  enabled, updated 2026-04-28, and has Apache-2.0 text in `LICENSE.md` despite
+  GitHub reporting "Other". Open and closed PR/issue searches for TweetClaw and
+  Xquik were empty, and a bounded clone plus `rg` found no TweetClaw, Xquik,
+  x-twitter-scraper, ClawHub, or OpenClaw duplicate content. Target fit is
+  possible as an optional source-evidence or X API context lane for a
+  blockchain activity Twitter agent, but no new PR was opened because repairable
+  dirty PR backlog still exists and must be handled before outreach.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/plugins/manifest`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, and `/help/debugging` returned HTTP 200.
+  `llms.txt` still exposes plugin, manifest, approval, ClawHub, skill,
+  install, update, and debugging docs. `npm view openclaw dist-tags version`
+  returned latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw version dist-tags
+  openclaw.install --json` returned latest `1.6.31`; source remains `1.6.32`.
+  Canonical ClawHub, OpenClaw Directory, TweetClaw GitHub, npm registry,
+  docs.xquik.com, and docs API overview probes returned expected 200 or
+  canonical redirect statuses.
+- Broken links and validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory using a temporary config that ignored the hard-scope
+  docs host and mailto links. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still fails from nested
+  OpenClaw advisories: `protobufjs` moderate, `tar` moderate through
+  `@openclaw/fs-safe`, and `undici` high, now totaling 5 vulnerabilities.
+  The force path would install `openclaw@0.0.1`, so no package mutation was
+  made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Pre-edit Markdown memory was 14879/15360 bytes. Saved
+  automation prompt measured 11980 bytes and automation TOML 12314 bytes, so no
+  prompt compaction was needed.
+- Prompt self-improvement: keep the complete PR inventory batched GraphQL alias
+  pattern for large authored-PR sets; it avoids the 1000-result cap and is much
+  faster than one PR per `gh` call. When fresh discovery repeatedly returns
+  handled targets, record the first genuinely new screened repo even if repairs
+  block outreach, and keep the next run focused on the remaining dirty PR queue.
+- Changed external PR branches: `kriptoburak/twitter-cli` branch
+  `codex/update-readme-command-scope` to `5f1855c`; and
+  `kriptoburak/Orkas-Awesome-AgentSkills-1` branch
+  `codex/add-xquik-social-data-source` to `a52b398`.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 01:19 UTC heartbeat
 
 - Runtime selector audit: this Codex heartbeat runtime did not expose controls
