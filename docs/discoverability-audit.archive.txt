@@ -109,6 +109,9 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   coverage and keeps TweetClaw as source evidence or approval-gated context.
 - Changed TweetClaw files: `docs/discoverability-audit.md`,
   `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+  TweetClaw audit changes were committed and pushed to `master`; Git history is
+  authoritative for the exact commit. The push readback reported 6 GitHub
+  default-branch Dependabot alerts: 2 high and 4 moderate.
 
 ## 2026-06-20 21:49 UTC heartbeat
 
