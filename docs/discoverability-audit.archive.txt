@@ -233,6 +233,107 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-20 04:27 UTC heartbeat
+
+- Runtime selector audit: this runtime did not expose a callable model or
+  reasoning-effort selector, so GPT-5.5 and extra-high effort could not be set
+  explicitly. Work continued with local shell, networked GitHub CLI/API, curl,
+  npm, git, and the Xquik crawler.
+- Crawler-first PR monitoring and discovery: ran from
+  `/Users/burak/Developer/xquik` with strict JSON output:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260620-0427/pr-fresh-crawl.json --research-proxy --session-id tweetclaw-20260620-0427-prs --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 1000 --search-pages 2 --per-query-limit 16 --concurrency 16 --query 'author:kriptoburak is:pr is:open tweetclaw openclaw' --query 'author:kriptoburak is:pr is:open MCP ClawHub clawhub' --query 'author:kriptoburak is:pr is:open SKILL.md .agents/skills skills' --query 'author:kriptoburak is:pr is:open twitter X tweet social' --query 'TweetClaw @xquik/tweetclaw x-twitter-scraper openclaw plugin skill' --query 'SKILL.md twitter X tweet social agent skill registry'`.
+  The final JSON parsed as `{ "opportunities": [] }`; stderr showed managed
+  network egress socket closures, endpoint quarantines, and an outage circuit
+  without credential values.
+- Complete PR inventory: combined current-day authored PR search, compact
+  audit, archives, and the prior complete known-open inventory into 2017 unique
+  PR URLs. Exact `gh pr view` readback succeeded for 1988 PRs and REST fallback
+  confirmed the remaining 29 archive URLs as 404/deleted/private blockers.
+  Inventory analysis found 1803 open PRs, 1802 in-scope open PRs, 353 attention
+  candidates, 1 requested-changes PR, 155 dirty/conflict candidates, 49 failing
+  check candidates, and a noisy 140 DCO/CLA keyword candidates. GitHub rate
+  limits after the run remained usable: core 4268, GraphQL 2640, search 30.
+- Existing PR repair: selected `Hashi-Ai-Dev/openclaw-clawdoc#6`, the only
+  explicit requested-changes PR. Verified fork owner and parent:
+  `kriptoburak/openclaw-clawdoc` is a fork of
+  `Hashi-Ai-Dev/openclaw-clawdoc` with push permission. Rebasing
+  `codex/tweetclaw-plugin-tool-visibility` on upstream `master` moved the head
+  to `7c6fd1442e0548ecfa7e4fcba404e7e0373add0f`; diff remained limited to
+  `TROUBLESHOOTING.md` and `skills/openclaw-plugins/SKILL.md`, with no
+  TweetClaw/Xquik mentions. Validation passed target scripts
+  `python3 scripts/validate_repo.py`, `python3 scripts/safety_scanner.py`,
+  `git diff --check`, conflict-marker scan, markdown link check for edited
+  files, and public-hygiene scan. Pushed with `--force-with-lease` and posted
+  maintainer-facing validation comment
+  https://github.com/Hashi-Ai-Dev/openclaw-clawdoc/pull/6#issuecomment-4756469218.
+  Readback showed open, ready, mergeable, and blocked only by review.
+- Fresh target discovery: after crawler output was valid-empty, fallback
+  metadata and web-index lanes screened
+  `OWASP/www-project-agentic-skills-top-10`. It was public, non-fork,
+  non-archived, issue-enabled, forkable, and had license metadata
+  `NOASSERTION` with a visible CC BY-SA 4.0 license file. Compact and archive
+  memory had no prior entry for this repo. Target content plus open and closed
+  PR/issue reads found no TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub duplicate. Existing target PR #31
+  added NVIDIA SkillSpector while leaving dead placeholder scanner references,
+  so a target-native stale-link/docs repair was appropriate.
+- Fresh PR submitted:
+  https://github.com/OWASP/www-project-agentic-skills-top-10/pull/34 from
+  correctly parented fork `kriptoburak/www-project-agentic-skills-top-10`,
+  branch `codex/fix-stale-scanner-links`, commit
+  `ad0a1db86536a657d92aa5faa3692954cd2bb8af`. The PR updates stale OWASP
+  project and Agentic Applications links, removes unpublished
+  `@owasp/ast10-scanner` install/CI/pre-commit examples, maps scanner guidance
+  to the already documented NVIDIA SkillSpector path, replaces a disabled
+  Discussions link with repository issues, and removes dead
+  `OWASP/ast10-scanner` and ClawHub security resource bullets.
+- Fresh PR validation: `bash validate.sh` passed with Jekyll skipped because it
+  is not installed locally. `npx --yes markdown-link-check
+  skill-scanner-integration.md community-contribution.md proposal.md --quiet`
+  passed. Direct probes verified the new OWASP project page, GenAI OWASP
+  resource, SkillSpector repository, GitHub Actions links, and repository issue
+  link. `npm view @owasp/ast10-scanner version --json` returned npm 404 and
+  `gh api repos/OWASP/ast10-scanner` returned GitHub 404, supporting the
+  unpublished-placeholder change. `git diff --check` and public-hygiene scans
+  passed. A full README/index link sweep still reports pre-existing target
+  mailto, LinkedIn, and root-relative local-clone link-check failures not
+  introduced by the PR. PR readback showed open, ready, mergeable, unstable
+  because no checks are configured, with no comments or reviews.
+- Official OpenClaw and public surface checks: official docs returned HTTP 200
+  for `llms.txt`, `llms-full.txt`, CLI plugin/skill/update docs, ClawHub
+  publishing/skill-format/validation-fix docs, testing updates, manifest, tool
+  plugins, install overrides, and debugging. ClawHub TweetClaw and OpenClaw
+  Directory routes returned HTTP 200. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; local package metadata remains `1.6.32`. OpenClaw
+  dist-tags stayed `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`.
+- TweetClaw validation and broken links: `npm run
+  check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. Markdown link
+  checks passed for README, OpenClaw setup docs, agent workflow docs, packaged
+  skill, compact audit, and compact release memory. `npm run check:all` passed
+  with typecheck, lint, duplicate check, knip, suppression check, dash check,
+  memory check, skill frontmatter, version check, build, OpenClaw fitness,
+  package artifact, and 168 tests at 100% coverage. `Xquik-dev/tweetclaw` had
+  no open issues or open PRs.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` still reports
+  nested OpenClaw advisories for `protobufjs`, `tar`, and `undici`, including
+  high-severity `undici` findings. The available force path would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: pre-edit Markdown memory was 15096/15360 bytes and
+  post-edit memory was 15034/15360 bytes. The saved automation prompt measured
+  11980 bytes, so no prompt edit was needed. The compact latest-run block was
+  refreshed and this archive received the full run record.
+- Prompt self-improvement: the complete PR inventory rule is necessary and
+  effective, but exact readbacks can surface stale archive URLs. Keep recording
+  REST 404 blockers separately from active PRs, and prioritize explicit
+  requested-changes PRs before classifier-noisy DCO/CLA or dirty-branch
+  candidates. For security-skill docs targets, replacing dead placeholder tool
+  commands with already documented live tools is a useful target-native path
+  even when TweetClaw is not mentioned.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 03:54 UTC heartbeat
 
 - Model and effort: this runtime exposed no model or reasoning-effort selector,

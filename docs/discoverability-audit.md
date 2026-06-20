@@ -197,15 +197,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 03:54 UTC: selector limits recorded. Crawler JSON was valid but
-  empty after managed-proxy socket closures. GitHub search hit 403 on May
-  partitions, so broad search stopped; prior inventory plus REST fallbacks
-  exact-read 1795 known open PRs with 0 final read errors. Repaired
-  maintainer-requested `frostmute/claw2manus#15` rebase and fetcher feedback;
-  head `01a10a1`, clean, REST comment posted. Opened fresh package-metadata PR
-  `agidesigner/five-step-method-skill#1`; head `a08f7bb`, clean, no checks.
-  TweetClaw OpenClaw fitness, link checks, and memory checks passed; npm audit
-  still reports nested OpenClaw advisories with an unsafe force downgrade path.
+- 2026-06-20 04:27 UTC: selector limits recorded. Crawler JSON was valid-empty
+  after proxy socket closures. Inventory exact-read 1988 of 2017 known/audit
+  PR URLs; 29 archive URLs were REST 404 blockers and 1802 open PRs were
+  in-scope. Repaired `Hashi-Ai-Dev/openclaw-clawdoc#6` by rebasing and posting
+  validation, head `7c6fd14`, mergeable but review-blocked. Opened fresh docs
+  PR `OWASP/www-project-agentic-skills-top-10#34`; head `ad0a1db`, mergeable,
+  no checks. TweetClaw OpenClaw fitness, link checks, and memory checks passed;
+  npm audit still reports nested OpenClaw advisories with an unsafe force path.
 
 ## Reporting Checklist
 
