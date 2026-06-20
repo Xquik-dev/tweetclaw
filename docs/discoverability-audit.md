@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 09:17 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 09:33 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, plugin permission requests,
   dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 09:17 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 09:33 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -197,16 +197,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 09:18 UTC: runtime model/effort selector unavailable. Crawler
-  strict JSON was valid-empty after proxy socket closures and an outage
-  circuit. Exact readbacks covered 10 tracked outreach PRs; no maintainer
-  repair was actionable. Fresh screening selected
-  `XX441/openclaw-skills-directory`, duplicate-clean and policy-clean with no
-  license metadata. Opened `XX441/openclaw-skills-directory#1` from
-  `kriptoburak/openclaw-skills-directory-1` to add a TweetClaw Skill and
-  catalog entries. Target JSON, link, diff, duplicate, and public-hygiene
-  checks passed. TweetClaw public links, OpenClaw fitness, and memory checks
-  passed. Source is `1.6.32`; npm latest is `1.6.31`.
+- 2026-06-20 09:33 UTC: runtime model/effort selector unavailable. Crawler JSON
+  was valid-empty with proxy outage logs. Exact readbacks covered tracked PRs
+  and recent updated authored PRs; repaired conflict in
+  `Correia-jpv/fucking-awesome-ai-tools#17` with `7313313`, now mergeable.
+  Opened duplicate-clean, policy-clean TweetClaw skill-doc PR
+  `EvoLinkAI/awesome-openclaw-skills-for-real-work#1`; target links,
+  assertions, diff, and public hygiene passed. TweetClaw links, OpenClaw docs
+  and fitness, and memory checks passed. Source `1.6.32`; npm latest `1.6.31`.
 
 ## Reporting Checklist
 

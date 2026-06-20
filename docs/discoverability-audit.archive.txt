@@ -624,6 +624,89 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   endpoints, and prefer README-only repairs that make the target's primary
   public surface pass.
 
+## 2026-06-20 09:21 UTC heartbeat
+
+- Runtime/model: GPT-5.5 and extra-high effort selection were unavailable in
+  this runtime, so the limitation was recorded and work continued.
+- Crawler-first coverage: ran Xquik `bun run github:crawl` with strict JSON
+  output to `/tmp/tweetclaw-heartbeat-20260620-0921/crawl.json`, managed
+  research proxy, stable session `tweetclaw-20260620-0921`, bounded request
+  timeout, no proxy warmup, 140 limit, 1 search page, 8 per-query limit,
+  concurrency 8, and focused authored-PR, TweetClaw/OpenClaw, SKILL.md,
+  `.agents/skills`, MCP/Codex/Claude, social/Twitter-X skill, awesome-list,
+  catalog, and x-twitter-scraper queries. Strict JSON parsed as
+  `{ count: 0 }`. Stderr showed proxy socket closures, endpoint quarantine, and
+  proxy outage circuit, with no credential values.
+- PR inventory: exact readbacks covered 10 tracked outreach PRs
+  (`kintzhao/anySkills#1`, `readtheskill/readtheskill#11`,
+  `JCheungX/agent-bazaar#1`, `Felo-Inc/felo-skills#100`,
+  `ttmouse/skills#1`, `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`,
+  `OpenMinis/MinisSkills#66`, `LeoYeAI/openclaw-master-skills#4`, and
+  `XX441/openclaw-skills-directory#1`) plus 7 recently updated authored PRs
+  from the narrow updated-open partition. No broad all-authored inventory was
+  claimed in this short run.
+- Repair: `Correia-jpv/fucking-awesome-ai-tools#17` had a merge conflict and no
+  maintainer comment or review blocker. The existing fork branch
+  `codex/add-xquik-social-media-tool` was merged with upstream `main`, keeping
+  upstream README stat updates and preserving the Xquik row. Pushed commit
+  `7313313` (`Merge upstream main into Xquik listing`) to
+  `kriptoburak/fucking-awesome-ai-tools`. Validation passed conflict-marker
+  scan, `git diff --check`, direct `docs.xquik.com` and API docs HTTP 200
+  checks, and public-hygiene grep. Exact readback after recalculation showed the
+  PR open, `MERGEABLE`, with no reviews or checks. Full target-wide
+  `markdown-link-check` still failed on pre-existing README and marketing links
+  unrelated to the Xquik rows.
+- Fresh discovery: duplicate or target-fit blockers were recorded for prior
+  OpenClaw skill-list lanes including `RichardFeynmanClaw/mcpskills.dev`,
+  `DAMediaCo/openclaw-skills-directory`, `ysqander/clawguard`,
+  `VoltAgent/awesome-openclaw-skills`, generated or empty catalogs, and
+  personal-only skill repos. `LiveRock/open-claw-skill-Security-Sentinel` was
+  duplicate-clean but weak target fit for TweetClaw because it is a single
+  Python security skill.
+- Fresh target selection: `EvoLinkAI/awesome-openclaw-skills-for-real-work` was
+  new in the audit/archive, public, non-fork, non-archived, issue-enabled, and
+  duplicate-clean across compact audit, archive, target content, open/closed
+  PRs, and open/closed issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub, npm, ClawHub, Xquik, and x-twitter-scraper variants. GitHub
+  license metadata was absent, but README states CC0 and invites PRs with a
+  working ClawHub link and per-skill docs, so missing metadata did not block a
+  direct PR.
+- Fresh PR submitted:
+  https://github.com/EvoLinkAI/awesome-openclaw-skills-for-real-work/pull/1 from
+  verified fork `kriptoburak/awesome-openclaw-skills-for-real-work`, branch
+  `codex/add-tweetclaw-workflow-skill`, commit `795700e`. The PR updates the
+  README total count and Content Creator Pack and Browser & Automation tables,
+  fixes the existing Dev Tools TOC anchor, and adds `skills/tweetclaw.md` with
+  ClawHub install guidance, GitHub and npm references, usage examples,
+  requirements, safety notes, and related skills.
+- External PR validation: `npx --yes markdown-link-check README.md
+  skills/tweetclaw.md --quiet`, catalog assertions, `git diff --check`,
+  added-diff public-hygiene grep, and direct HTTP checks for ClawHub TweetClaw
+  and GitHub TweetClaw passed. Exact PR readback showed
+  `EvoLinkAI/awesome-openclaw-skills-for-real-work#1` open, mergeable, with 0
+  comments, 0 reviews, and 0 checks.
+- TweetClaw public hygiene: official OpenClaw docs and listing URLs returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, CLI plugin/skill/update docs,
+  ClawHub publishing and skill-format docs, validation fixes, manifest docs,
+  permission requests, tool plugins, SDK/runtime-adjacent install overrides,
+  and debugging docs. `clawhub.ai/plugins/@xquik/tweetclaw` and
+  `openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. Markdown link
+  checks passed for README, setup docs, workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed. `npm view @xquik/tweetclaw version` still returned `1.6.31`, and
+  OpenClaw dist-tags remained latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`.
+- TweetClaw repository check: open GitHub issues and open GitHub PRs for
+  `Xquik-dev/tweetclaw` both returned empty lists.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Prompt bytes were 12314 for
+  `/Users/burak/.codex/automations/improve-tweetclaw-openclaw-integration/automation.toml`.
+- Prompt self-improvement: for English-only skill catalogs, prefer one concise
+  index row plus a target-native per-skill documentation file. When repairing a
+  conflict PR in a noisy catalog, record target-wide pre-existing link failures
+  separately from contribution-introduced links.
+
 ## 2026-06-20 06:09 UTC Follow-Up
 
 - Runtime model and effort selector: unavailable in this Codex runtime, so this
@@ -24798,8 +24881,8 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   README and reapplying only the Xquik marketing row, kept the existing
   `marketing.md` Xquik row, and pushed merge commit `da8b6dc` to
   `codex/add-xquik-social-media-tool`. Validation passed conflict-marker
-  scan, `git diff --check upstream/main -- README.md marketing.md
-  .github/FUNDING.yml`, direct checks for `https://docs.xquik.com` and
+  scan, `git diff --check upstream/main` for README.md, marketing.md, and
+  `.github/FUNDING.yml`, direct checks for `https://docs.xquik.com` and
   `https://docs.xquik.com/api-reference/overview`, and changed-diff
   public-hygiene scan. Final readback showed PR 17 `MERGEABLE` and `CLEAN`; a
   repair comment was posted at
