@@ -2,6 +2,89 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 10:15 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `9108659`. Compact Markdown
+  memory started at 15018/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  session `tweetclaw-20260620-1003`, bounded request timeout, proxy warmup
+  disabled, 220 limit, 1 search page, 10 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, `.agents/skills`,
+  social/Twitter-X skill, awesome-list, registry, OpenClaw package-tooling, and
+  x-twitter-scraper queries. Strict `jq` parsing found 0 opportunities. Stderr
+  showed proxy socket closures, endpoint quarantines, and outage-circuit logs
+  with no credential values.
+- PR inventory and repair triage: TweetClaw had no open issues and no open PRs.
+  Same-day authored-open search found 79 open `kriptoburak` PRs, not capped at
+  200. Exact readbacks covered the current tracked set, including
+  `blacktwist/social-media-skills#4`,
+  `majiayu000/claude-skill-registry-core#222`,
+  `EvoLinkAI/awesome-openclaw-skills-for-real-work#1`, `nitekeeper/agora#10`,
+  and `hojinzs/my-agent-skills#1`. BlackTwist, Majiayu, and EvoLinkAI were
+  open, mergeable, clean, and comment-free or self-comment only. Majiayu checks
+  were all successful. Nitekeeper was mergeable but target-blocked, likely by
+  branch protection. Hojinzs had a Codex review wrapper without actionable
+  suggestions. No maintainer comment, CI failure, conflict, DCO/CLA, generated
+  drift, or valid bot finding was safe to repair before new outreach.
+- Fresh discovery and duplicate checks: crawler output was empty, so fallback
+  GitHub metadata searches covered social media skill, Twitter skill, X/Twitter
+  skill, OpenClaw skill, agent skill, and skill-registry lanes. Broad GitHub
+  search hit an authenticated API rate limit during duplicate screening at
+  2026-06-20 10:06 UTC, so broad search stopped for the run. Screening
+  continued with compact audit, archive, exact target PR and issue lists, and
+  clone scans. `michaellady/claude-social-media-skills` had only a prior
+  missing-license blocker in the archive; current rules say missing license
+  metadata alone does not block a direct docs PR. Exact target PR and issue
+  lists were empty, and local content scans found no TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, npm URL, or GitHub URL duplicate.
+- Fresh PR submitted:
+  https://github.com/michaellady/claude-social-media-skills/pull/1 from
+  correctly parented fork `kriptoburak/claude-social-media-skills`, branch
+  `codex/add-tweetclaw-source-packets`, commit `eef20de`. The docs-only PR adds
+  optional TweetClaw CSV/JSON export packets as X/Twitter source evidence for
+  the `/flywheel` skill and README while explicitly denying posting, replies,
+  direct messages, scheduling, media uploads, webhooks, monitors, and account
+  changes. Upstream is active, non-fork, issue-enabled, and has no GitHub
+  license metadata.
+- Fresh target validation: `git diff --check`,
+  `npx --yes markdown-link-check README.md flywheel/SKILL.md --quiet`, focused
+  duplicate scans, and public-hygiene diff scans passed. PR readback showed
+  open, ready, `MERGEABLE`, `CLEAN`, 9 additions, 0 deletions, no comments, no
+  reviews, and no checks.
+- Official OpenClaw and package checks: HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/clawhub/plugin-validation-fixes`, `/help/testing-updates-plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/plugins/plugin-permission-requests`, `/plugins/dependency-resolution`, and
+  `/help/debugging`. ClawHub canonical TweetClaw route, OpenClaw Directory,
+  TweetClaw GitHub, Xquik docs, registry npm metadata, and the new PR URL
+  returned HTTP 200; the npmjs package page returned 403 to the raw curl probe,
+  so registry metadata was used as the npm public check. `npm view
+  @xquik/tweetclaw version` returned `1.6.31`; local source remains
+  `1.6.32`. OpenClaw dist-tags were latest `2026.6.8`, beta
+  `2026.6.9-beta.1`, and alpha `2026.5.19-alpha.1`; ClawHub was `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. Final
+  `npm run check:all` passed with typecheck, lint, duplicate check, knip,
+  suppression check, dash check, memory check, skill frontmatter, version check,
+  build, OpenClaw fitness, package artifact, and 168 tests at 100% coverage.
+- Prompt self-improvement: when broad authenticated GitHub search rate-limits
+  mid-duplicate-screening, stop broad search and continue with exact target PR
+  and issue lists, clone scans, archive URLs, and crawler output. Missing
+  license metadata is not a direct PR blocker, but unlicensed targets should
+  receive small docs-only contributions that do not add executable code or
+  broaden runtime authority.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 03:33 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model

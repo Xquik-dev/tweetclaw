@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 09:55 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 10:15 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, plugin permission requests,
   dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 09:55 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 10:15 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -197,15 +197,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 09:55 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 8 skill and social opportunities with proxy outage logs. Exact
-  readbacks covered tracked PRs and recent updated authored PRs; repaired
-  `majiayu000/claude-skill-registry-core#222` into an append-only TweetClaw
-  source, now mergeable with checks green. Opened duplicate-clean
-  `blacktwist/social-media-skills#4` for TweetClaw export guidance; target
-  links, skill validation, diff, and public hygiene passed. TweetClaw links,
-  OpenClaw fitness, and memory checks passed. Source `1.6.32`; npm latest
-  `1.6.31`.
+- 2026-06-20 10:15 UTC: runtime model/effort selector unavailable. Crawler JSON
+  was valid-empty after proxy outage logs. Same-day authored PR partition found
+  79 open PRs and exact readbacks covered the current tracked set; no safe
+  repair was actionable. GitHub search rate-limited during broad duplicate
+  screening, so fallback used exact repo PRs/issues, clone scans, and archives.
+  Opened duplicate-clean `michaellady/claude-social-media-skills#1` for
+  optional TweetClaw X/Twitter source packets. Target diff, links, public
+  hygiene, TweetClaw links, OpenClaw fitness, memory, and check:all passed.
 
 ## Reporting Checklist
 
