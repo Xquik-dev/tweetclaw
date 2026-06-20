@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 19:24 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 19:34 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI plugin/skill/update, ClawHub publish
   and skill docs, plugin manifest, permissions, SDK, install, dependency, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 19:24 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 19:34 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -117,19 +117,15 @@ archive, before any outreach or duplicate decision.
 - Missing license metadata is not a direct-PR blocker. Read license and
   contribution terms when present, respect explicit no-contribution policies,
   and keep contributions original, target-native, and easy to review.
-- Every run must aggressively find new maintained repositories or websites
-  before routine maintenance.
-- Never claim all unsubmitted GitHub skill repositories are exhausted. Treat
-  coverage as ongoing and evidence-bounded.
-- Every run must include a crawler-first skill-repository coverage pass before
-  routine maintenance, with screened lanes, repos, duplicate results, blockers,
-  and the next unscreened lane recorded.
-- Do not stop after the first clean skill target; advance multiple safe
-  duplicate-clean, target-native submissions when validation time
-  allows, otherwise record exact blockers.
+- Find new maintained repositories or websites before maintenance.
+- Treat skill-repo coverage as ongoing and evidence-bounded; never claim all
+  unsubmitted GitHub skill repos are exhausted.
+- Include crawler-first skill-repo coverage each run and record screened lanes,
+  duplicate results, blockers, and next unscreened lanes.
+- Do not stop after the first clean skill target when validation time allows.
 - Use crawler-first GitHub, OpenClaw, ClawHub, MCP, npm, marketplace, fork,
-  web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog,
-  and package-registry lanes.
+  web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog, and
+  package-registry lanes.
 - Run the crawler from `/Users/burak/Developer/xquik` with:
   `bun run github:crawl --research-proxy`
 - For strict JSON use:
@@ -143,10 +139,9 @@ archive, before any outreach or duplicate decision.
 - Do not print, store, or commit crawler credential values.
 - If crawler output stalls after proxy-refresh logs, kill only owned crawler
   PIDs, record the blocker, and rerun smaller focused batches.
-- If GitHub API, code, issue, or PR search hits API or secondary rate limits,
-  stop broad authenticated GitHub searching for that run and continue with
-  crawler output, exact-repo REST lists, clone plus `rg`, archive downloads,
-  sparse/blobless clones, API tree reads for exact repos, and target metadata.
+- On GitHub API or secondary rate limits, stop broad authenticated search for
+  that run and continue with crawler output, exact-repo REST lists, clone plus
+  `rg`, archive downloads, sparse/blobless clones, API tree reads, and metadata.
 
 ## Duplicate And Fork Rules
 
@@ -198,17 +193,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 19:13 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 0 opportunities after proxy outage logs. TweetClaw had 0 open issues
-  or PRs. Same-day authored exact-read covered 140 PRs with 0 errors; broad
-  TweetClaw, Xquik, OpenClaw, MCP, skill, Twitter, social, and Hermes
-  partitions still capped at 300, so inventory remains partial. Repaired
-  `netresearch/claude-code-marketplace#73`; DCO and Sonar now pass, with stale
-  unresolved review threads only. Opened `hymhub/skill-indexer#4` in `dc6a463`
-  with docs showing `@xquik/tweetclaw` as a real convention-layout
-  `skills/<name>/SKILL.md` package. Target lint, typecheck, tests, build,
-  touched-file Prettier, link check, live TweetClaw dry-run, memory, and
-  check:all passed; full target format still has pre-existing unrelated drift.
+- 2026-06-20 19:34 UTC: runtime model/effort selector unavailable. Crawler JSON
+  returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
+  issues or PRs. Same-day authored exact-read covered 142 PRs with 0 errors:
+  107 clean, 24 unstable, 10 blocked, and 1 unknown; broad lane partitions still
+  capped at 300 except `xsearch` 1 and `Klavis` 0. No safe repair blocker was
+  found; `davila7/claude-code-templates#642` remains target-owned. Official
+  OpenClaw, ClawHub, OpenClaw Directory, and npm routes returned HTTP 200; npm
+  latest remains `1.6.31`, OpenClaw latest `2026.6.8`, and `clawhub` `0.22.0`.
+  Fresh screens rejected existing-history skill and Twitter-MCP targets; opened
+  https://github.com/s48401203a/skills-catalog/pull/1 from correctly parented
+  `kriptoburak/skills-catalog`, commit `e21141d`, adding a bilingual TweetClaw
+  Integration card and updating the card count. Exact readback showed open,
+  ready, mergeable, clean, no checks, comments, or reviews. Target HTML parse,
+  36-card count, whitespace, hygiene, TweetClaw memory, OpenClaw fitness, link
+  checks, and check:all passed.
 
 ## Reporting Checklist
 
