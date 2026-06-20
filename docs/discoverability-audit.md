@@ -193,23 +193,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 20:18 UTC: runtime model/effort selector unavailable. Xquik had
-  unrelated roadmap edits left untouched. Crawler JSON returned 0 opportunities
-  after managed proxy outage logs. TweetClaw had 0 open issues or PRs.
-  Authored exact-read covered 148 PRs with 0 GraphQL read errors: 113
-  clean, 25 unstable, and 10 blocked; broad lane partitions capped at 300 except
-  `xsearch` 1 and `Klavis` 0. No actionable maintainer comment, conflict,
-  DCO/CLA, generated drift, or safely repairable CI failure was found; 7
-  failure-like checks were target-owned. Official OpenClaw, ClawHub, OpenClaw
-  Directory, and npm routes returned HTTP 200; npm latest remains `1.6.31`,
-  OpenClaw latest `2026.6.8`, and `clawhub` `0.22.0`. Fresh screens selected
-  MIT-licensed `ishandutta2007/Awesome-Agent-Skills`; opened
-  https://github.com/ishandutta2007/Awesome-Agent-Skills/pull/3 from parented
-  `kriptoburak/Awesome-Agent-Skills-3`, commit `6e5bfae`, adding OpenClaw setup
-  docs, fixing README links, and making skill validation pass. Exact readback
-  showed open, ready, mergeable, blocked, no checks, comments, or reviews.
-  Target validators, link checks, hygiene, TweetClaw memory, OpenClaw fitness,
-  and check:all passed.
+- 2026-06-20 20:39 UTC: runtime model/effort selector unavailable. Crawler JSON
+  returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
+  issues or PRs. Authored exact-read covered 150 same-day open PRs with 0
+  GraphQL read errors: 114 clean, 25 unstable, 11 blocked; broad lanes still
+  capped at 300 except `xsearch` 1 and `Klavis` 0. No current-head maintainer
+  request, conflict, DCO/CLA, generated drift, or safely repairable
+  target-owned CI failure was found. Official OpenClaw/docs, ClawHub, Directory,
+  and npm returned HTTP 200; versions stayed `1.6.31`, `2026.6.8`, and
+  `clawhub` `0.22.0`. Fresh screen selected
+  MIT-licensed `mohitagw15856/pm-claude-skills`; duplicate scans were clean, the
+  same-name fork had the wrong parent, and verified
+  `kriptoburak/mohitagw-pm-claude-skills` was used. Opened
+  https://github.com/mohitagw15856/pm-claude-skills/pull/67, commit `6c75a34`,
+  adding read-only TweetClaw evidence intake to `social-media-audit` plus
+  generated export sync. Readback: open, ready, mergeable, unstable, no checks,
+  comments, or reviews. Target checks, edited-skill links, TweetClaw links,
+  memory, OpenClaw fitness, dash check, and check:all passed.
 
 ## Reporting Checklist
 
