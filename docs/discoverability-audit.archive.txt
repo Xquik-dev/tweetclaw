@@ -2,6 +2,93 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 03:33 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued and
+  recorded that limitation.
+- Start state: TweetClaw `master` was clean at `4188b76`.
+- Crawler-first PR and fresh discovery: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  stable session `tweetclaw-20260620-0333-prs`, bounded request/proxy warmup
+  timeouts, limit 1000, 2 search pages, 16 per-query, and 16 concurrency across
+  authored PR, TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`,
+  social, Twitter/X, catalog, and registry lanes. Output
+  `/tmp/tweetclaw-heartbeat-20260620-0333/pr-fresh-crawl.json` parsed as
+  strict JSON with zero opportunities. Logs showed US proxy socket closures,
+  endpoint quarantines, and an outage circuit, with no credential values.
+- Complete PR inventory: broad authored-open search was split by daily June
+  buckets, monthly 2026 buckets, yearly 2025 through 2022 buckets, and a
+  2008-2021 bucket to avoid GitHub's 1000-result cap. The first script hit an
+  invalid 2026-02-29 date and was rerun with 2026-02-28. Final partitions
+  discovered 1793 unique open PRs authored by `kriptoburak`; no partition hit
+  the 1000 cap. Parallel exact `gh pr view` readback covered 1789 PRs, then
+  sequential retry covered the 4 transient failures, for 1793 exact reads and 0
+  final errors. Exact data was stored under
+  `/tmp/tweetclaw-heartbeat-20260620-0333/pr-exact-gh.jsonl`.
+- PR triage counts before repair: 1792 scoped PRs, 1358 attention rows, 391
+  dirty-like rows, 48 failure/error check rows, 0 pending check rows, 7
+  changes-requested rows, and 75 review-required rows. A strict DCO/CLA text
+  scan found 31 possible hits for follow-up review, but no safe account-flow
+  blocker was repaired in this run.
+- Repair gate decisions: `maddhruv/absolute#5` appeared dirty with a Vercel
+  authorization failure, but the archive already records it as unsafe because
+  upstream redesigned the repo into a single Absolute workflow skill and the
+  old TweetClaw skill no longer target-fits. `Rodert/awesome-mcp#11` was
+  selected because it is a recurring Apache-2.0 generated-catalog conflict with
+  no maintainer comments, no reviews, and no checks, and the correctly
+  parented fork is `kriptoburak/rodert-awesome-mcp`.
+- PR repair: repaired https://github.com/Rodert/awesome-mcp/pull/11 from branch
+  `codex/add-xquik-awesome-mcp`. The repair merged upstream `main`, kept
+  upstream generated data at 4899 projects, appended one refreshed
+  `Xquik-dev/x-twitter-scraper` record with current GitHub metadata, regenerated
+  README and localized docs with `python3 scripts/generate_markdown.py`,
+  normalized generated Markdown trailing whitespace, committed
+  `5fea1f0 Refresh Xquik MCP catalog entry`, and pushed to the existing fork
+  branch. No new PR comment was posted.
+- Rodert validation: passed conflict-marker scan, JSON total equals project
+  length, one Xquik entry check, `docs/data/projects.json` parity check,
+  `git diff --cached --check`, `npm ci --ignore-scripts --no-audit --no-fund`,
+  `npm run build` with only the target's large-chunk warning, direct HTTP 200
+  checks for Xquik source, MCP docs, target license, and target contribution
+  docs, and focused added-line secret/public-hygiene scan. Final PR readback:
+  open, ready, head `5fea1f005ffc07199decfeffdc909ca61a73ba58`,
+  `MERGEABLE`, `CLEAN`, 9 files, 5 prior self comments, no reviews, and no
+  checks.
+- Fresh target screening: fallback `gh search repos 'twitter mcp'` found recent
+  Twitter/X MCP repos after crawler output was empty. Archive screening showed
+  most were already seen. `zzhuxiaojun-glitch/twitter_mcp_tang` was new in the
+  audit/archive, public, non-fork, non-archived, issue-enabled, pushed
+  2026-04-06, and duplicate-clean across open/closed PRs, issues, and local
+  content scans for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, and ClawHub. Exact-repo crawler JSON for this
+  repo was valid but empty after proxy socket failures. The repo has no GitHub
+  license metadata, but nested `twitter-mcp/LICENSE` is MIT and the package
+  metadata points to `twikit-mcp`. Outreach was held because dirty PR backlog
+  remains and the target appears copied from `tangivis/twitter-mcp`, so
+  ownership and target-fit need more review.
+- Official OpenClaw and package checks: HTTP 200 for `llms.txt`,
+  `llms-full.txt`, CLI plugin/skill/update docs, manifest, manage-plugins,
+  tool-plugins, install-overrides, plugin permission requests, dependency
+  resolution, ClawHub publishing, ClawHub skill format, ClawHub validation
+  fixes, and debugging docs. `npm view openclaw dist-tags --json` returned
+  latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`.
+  `npm view @xquik/tweetclaw version dist-tags --json` returned npm latest
+  `1.6.31`; local source remains `1.6.32`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory after rerunning with a real temp config file. `npm run
+  check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports nested OpenClaw advisories
+  for `protobufjs`, `tar`, and `undici`; the force path would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: pre-edit compact Markdown memory was 15192/15360 bytes.
+  The saved automation TOML measured 12314 bytes. No prompt edit was useful;
+  this run reinforced the existing complete-PR-inventory and crawler-first
+  rules. Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 00:04 UTC Heartbeat Run
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model

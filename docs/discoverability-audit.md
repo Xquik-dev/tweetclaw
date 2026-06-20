@@ -197,17 +197,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 03:02 UTC: selector limits recorded. Xquik crawler PR/fresh JSON
-  was valid but empty after US proxy socket failures. Created-date partitions
-  avoided the 1000 cap and found 1792 authored open PRs; exact-read all 1792
-  with 0 errors. Scoped 1786, attention 161, dirty-like 37, failing/error
-  checks 50, changes-requested 7, review-required 75, CLA/DCO text hits 4.
-  Repaired `jamald33n/tweetsave-mcp#2` to a mergeable clean head. Fresh target
-  `PayAINetwork/client-twitter-api-access` was active, duplicate-clean, and
-  X/Eliza relevant but has no detected license metadata; outreach was held
-  because dirty PR backlog remains. OpenClaw docs, links, memory, and fitness
-  passed; npm audit still reports nested OpenClaw advisories with unsafe force
-  downgrade.
+- 2026-06-20 03:33 UTC: selector limits recorded. Crawler PR/fresh and
+  exact-repo JSON were valid but empty after US proxy socket failures.
+  Created-date partitions avoided the 1000 cap and found 1793 authored open
+  PRs; exact `gh pr view` reads covered all 1793 with 0
+  final errors. Scoped 1792, with 391 dirty-like rows before repair, 48
+  failure/error check rows, 7 changes-requested rows, and 75 review-required
+  rows. Repaired recurring generated-catalog conflict
+  `Rodert/awesome-mcp#11`; final readback is open, ready, head `5fea1f0`,
+  `MERGEABLE`, and `CLEAN`. Fresh target
+  `zzhuxiaojun-glitch/twitter_mcp_tang` was duplicate-clean and nested-MIT,
+  but outreach was held because dirty PR backlog remains and target ownership
+  needs more review. OpenClaw docs, package metadata, links, memory, and
+  fitness passed; npm audit still reports nested OpenClaw advisories with an
+  unsafe force downgrade path.
 
 ## Reporting Checklist
 
