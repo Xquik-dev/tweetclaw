@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 16:01 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 16:22 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, plugin permission requests at
   `/plugins/plugin-permission-requests`, SDK runtime at
   `/plugins/sdk-runtime`, dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 16:01 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 16:22 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -199,17 +199,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 16:01 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 10 low-fit opportunities after proxy outage logs. TweetClaw had no
-  open issues or PRs. Same-day authored search exact-read 119 PRs; GraphQL
-  quota was 0, so broad authenticated search stopped. Repaired
-  `bogdanbaciu21/skills#4` by confirming its linked issue body and rerunning a
-  green policy check, and repaired `vaibhav4046/mcp-marketplace#1` conflict in
-  `df1062b` with only target Vercel authorization left. Opened
-  `jaiminbabariya7/real_time_sentiment_analysis#1` in `4c4fc26` with
-  TweetClaw export to Pub/Sub event ingestion. Target validation, TweetClaw
-  links, OpenClaw fitness, memory, and check:all passed; nested OpenClaw audit
-  advisories remain.
+- 2026-06-20 16:22 UTC: runtime model/effort selector unavailable. Crawler JSON
+  returned 0 opportunities after proxy outage logs. TweetClaw had no open
+  issues or PRs. Authored search hit a GitHub search rate limit while paging an
+  OpenClaw partition, so broad authenticated search stopped. Audit-tracked PRs
+  were exact-read; no current maintainer request, conflict, or valid bot
+  finding needed repair. Opened
+  `Ali-ops-p/Marketing-Data-Pipeline-Project#1` in `d7b7e94` with a TweetClaw
+  review CSV import helper for the target sentiment pipeline. Target
+  validation, TweetClaw links, OpenClaw fitness, memory, and check:all passed;
+  nested OpenClaw audit advisories remain.
 
 ## Reporting Checklist
 
