@@ -196,15 +196,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 01:54 UTC: selector limits recorded. Xquik crawler PR and fresh
-  discovery JSON were valid but empty after proxy outage. Partitioned
-  authored-open PR search resolved the 1000 cap into 1789 exact readbacks; no
-  CLA/DCO blockers were found. Repaired `warlockoussama/twitter-cli#1` and
-  `vikynofebriputra-creator/Orkas-Awesome-AgentSkills#1` to mergeable clean
-  heads. Fresh target `phdargen/xoninAgent` was screened as duplicate-clean but
-  new outreach was held because dirty PR repair backlog remains. OpenClaw docs,
-  links, memory, and fitness passed; npm audit still reports nested OpenClaw
-  advisories with unsafe force downgrade.
+- 2026-06-20 02:26 UTC: selector limits recorded. Xquik crawler PR/fresh JSON
+  was valid but empty after US proxy failures. Created-date partitions plus a
+  daily capped-June split found 1790 authored open PRs; batched GraphQL
+  exact-read all 1790 with 0 errors. Scoped 1785, attention 406, dirty-like
+  405, failing/error checks 49, changes-requested 1, review-required 75. No
+  unsigned CLA/DCO blocker. Repaired `bogdanbaciu21/skills#4` with required
+  issue #27, plus `reall8164/wechat-openclaw-plugin#1` and
+  `Aqmar777/openclaw-competitive-intel#1` to mergeable clean heads. Fresh
+  target `greekr4/viruagent-cli` was MIT, active, issue-enabled, and
+  duplicate-clean; outreach was held because dirty PR backlog remains. OpenClaw
+  docs, links, memory, and fitness passed; npm audit still reports nested
+  OpenClaw advisories with unsafe force downgrade.
 
 ## Reporting Checklist
 

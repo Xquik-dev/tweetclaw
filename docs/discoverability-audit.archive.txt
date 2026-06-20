@@ -146,6 +146,131 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-20 02:26 UTC heartbeat
+
+- Runtime and selector note: the same-thread heartbeat runtime still did not
+  expose a selectable GPT-5.5 model or extra-high reasoning-effort control, so
+  the limitation was recorded and the run continued under the available
+  runtime.
+- Crawler-first PR and discovery coverage: ran the Xquik GitHub opportunity
+  crawler from `/Users/burak/Developer/xquik` with strict JSON output,
+  `--research-proxy`, stable sessions `tweetclaw-20260620-0207-prs` and
+  `tweetclaw-20260620-0207-prs-retry`, bounded request/proxy warmup timeouts,
+  focused authored-PR, TweetClaw/OpenClaw/MCP/ClawHub, SKILL.md,
+  `.agents/skills`, Twitter/X, social, and agent-skill query packs. Both JSON
+  outputs parsed successfully as `{ "opportunities": [] }`, while stderr showed
+  US proxy socket closures, endpoint quarantines, and outage-circuit behavior
+  without credential values. Per crawler rule, the run continued with exact
+  GitHub metadata, PR lists, clone plus `rg`, and archive-backed checks.
+- Complete PR inventory: built authored-open PR inventory with GitHub search
+  created-date partitions. The June bucket hit the 1000-result cap and was
+  split into daily buckets; no daily bucket was capped. The resulting inventory
+  contained 1790 unique open PRs by `kriptoburak`. Batched GraphQL exact
+  readbacks covered all 1790 PRs with 0 batch errors, reading state,
+  mergeability, base/head, fork parent, commits, recent comments, recent
+  reviews, status rollups, and check contexts. Scoped relevance count was 1785.
+  Attention queue count was 406, including 405 dirty-like states, 49 PRs with
+  failure/error/cancelled check signals, 1 changes-requested PR, and 75
+  review-required PRs. Merge-state buckets were BEHIND 8, BLOCKED 111, CLEAN
+  1380, DIRTY 42, UNKNOWN 1, and UNSTABLE 243.
+- CLA/DCO audit: broad `gh search issues` for open authored PRs with CLA, DCO,
+  license agreement, and Developer Certificate terms returned no hits. Exact
+  readback text found 4 possible CLA/DCO mentions:
+  `agentscope-ai/agentscope-samples#126`,
+  `archestra-ai/website#491`, `automatisch/automatisch#2709`, and
+  `block/agent-skills#33`. Direct PR reads showed the first 3 CLA Assistant
+  comments say all committers signed; `archestra-ai/website#491` has
+  `license/cla` success; `automatisch/automatisch#2709` has `license/cla`
+  success; `block/agent-skills#33` has a successful DCO Check and the remaining
+  blocker is a two-human-approval policy. No CLA/DCO signature action is needed
+  from the user.
+- Repair 1, `bogdanbaciu21/skills#4`: exact readback showed the X signal
+  research skill PR was BEHIND with no checks. Verified fork
+  `kriptoburak/skills-bogdanbaciu21` is correctly parented to
+  `bogdanbaciu21/skills`, read target MIT license metadata, and merged upstream
+  `main` into `codex/add-x-signal-research`. Validation passed
+  `git diff --check`, conflict-marker scan, `python3
+  .githooks/skill_secret_scan.py README.md x-signal-research/SKILL.md`,
+  `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests/test_skillopt_pilot.py`,
+  and `npx --yes markdown-link-check README.md x-signal-research/SKILL.md
+  --quiet`. The push exposed a new target policy bot requiring a linked issue.
+  The bot-referenced `bin/work_issue.py` was not present in the checkout, so a
+  duplicate issue search was run and GitHub issue
+  https://github.com/bogdanbaciu21/skills/issues/27 was opened via GitHub API.
+  The PR body was updated with `Fixes #27`. Final readback showed
+  https://github.com/bogdanbaciu21/skills/pull/4 is open, MERGEABLE, CLEAN,
+  and the check-issue rerun succeeded; the bot changes-requested review was
+  dismissed by the target workflow. Pushed merge commit
+  `74b62c09fb48394319c2e27bfdcca23443c567fe`.
+- Repair 2, `reall8164/wechat-openclaw-plugin#1`: exact readback showed a
+  DIRTY README conflict on correctly parented fork
+  `kriptoburak/wechat-openclaw-plugin`. Merged upstream `main` into
+  `codex/add-tweetclaw-workflow`, resolved the README by keeping the GitHub
+  repository support link, preserving the TweetClaw companion workflow, using
+  the canonical `openclaw plugins install @xquik/tweetclaw` command, and
+  retaining the target download badge. Validation passed `git diff --check`,
+  `git diff --check upstream/main...HEAD`, package and OpenClaw manifest JSON
+  parse, `node --check` for target JS/TS entry files, `npx --yes
+  markdown-link-check README.md --quiet`, and `npm install --package-lock=false
+  --ignore-scripts --no-audit --no-fund` with no tracked artifacts. Final
+  readback showed https://github.com/reall8164/wechat-openclaw-plugin/pull/1 is
+  open, MERGEABLE, CLEAN, no reviews, and no checks. Pushed merge commit
+  `21ddba548557e8f7a172c173c5ef6283501ee2ea`.
+- Repair 3, `Aqmar777/openclaw-competitive-intel#1`: exact readback showed a
+  DIRTY README conflict on correctly parented fork
+  `kriptoburak/openclaw-competitive-intel`. Merged upstream `main` into
+  `codex/tweetclaw-x-source`, resolved conflict markers by keeping the existing
+  NHS badge row and one final download badge. Validation passed
+  `git diff --cached --check`, `git diff --check upstream/main...HEAD`,
+  conflict-marker scan, `python3 -m py_compile skills/*.py
+  tests/test_tweetclaw_fetcher.py`, `python3 -m unittest
+  tests/test_tweetclaw_fetcher.py`, `bash -n install.sh`, `npx --yes
+  markdown-link-check README.md SKILL.md docs/tweetclaw-x-source.md --quiet`,
+  and a missing-key smoke test that returned the expected `XQUIK_API_KEY` setup
+  error. Final readback showed
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1 is open,
+  MERGEABLE, CLEAN, no reviews, and no checks. Pushed merge commit
+  `94530ad1267086ec9f1e362dd606a875c665158f`.
+- Fresh discovery screening: after crawler outage, fallback repo search covered
+  active Twitter/X AI-agent and MCP lanes. `Lakshit-Gupta/X-Twitter_AI_Agent`,
+  `fluyeporlaweb/mcp-x-intelligence`, `BlockRunAI/blockrun-mcp`,
+  `0xNyk/xint`, `ryanmac/agent-twitter-client-mcp`, and
+  `bm-github/owasp-social-osint-agent` were blocked by archive history or
+  existing open PRs. Fresh target `greekr4/viruagent-cli` was screened:
+  MIT, non-fork, non-archived, issue-enabled, active enough, JavaScript CLI for
+  blog plus social automation with X/Twitter support, and no target PR, issue,
+  archive, or content duplicates for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub. README, README.ko, package metadata,
+  license, docs, and skill directories were inspected. It is a possible future
+  PR lane for optional OpenClaw/TweetClaw source or approval-boundary guidance,
+  but no new outreach was opened because dirty in-scope PR repair backlog
+  remains.
+- Official OpenClaw and package checks: current docs returned HTTP 200 for
+  llms, llms-full, CLI plugins, CLI skills, CLI update, ClawHub publishing,
+  ClawHub skill format, plugin validation fixes, manifest, tool plugins,
+  install overrides, and debugging. `npm view openclaw` returned latest
+  `2026.6.8`, beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`.
+  `npm view @xquik/tweetclaw` returned latest `1.6.31` and OpenClaw install
+  metadata with npm spec `@xquik/tweetclaw@1.6.31`, default choice `npm`, and
+  min host `>=2026.5.4`. `clawhub` latest remained `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflows, packaged skill, compact audit, and
+  compact release memory with expected Context7 and mailto ignores.
+  `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  advisories in `protobufjs`, `tar`, and `undici`; the force path would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Prompt self-improvement: keep the complete PR inventory rule explicit because
+  the authored-open set is now larger than one GitHub search page and requires
+  created-date partitioning plus daily split for capped buckets. Treat
+  target-introduced workflow gates, such as required linked issues, as repair
+  work before new outreach when they are safe and target-native. If a bot
+  references a helper script missing from the repo, use exact duplicate checks
+  and the standard GitHub API path instead of fabricating the missing helper.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-20 01:54 UTC heartbeat
 
 - Runtime selector audit: this heartbeat runtime did not expose a callable model
