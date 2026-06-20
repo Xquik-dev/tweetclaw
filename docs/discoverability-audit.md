@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 21:49 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 22:26 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI plugin/skill/update, ClawHub publish
   and skill docs, plugin manifest, tool-plugin, install override, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 21:49 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 22:26 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -193,22 +193,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 21:49 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
-  issues or PRs. Authored same-day partitions returned 158 updated open PRs, 2
-  changes-requested hits, and 50 failure-lane hits; exact union readbacks covered
-  200 PRs with 0 errors, 198 mergeable, 2 conflicting, 2 changes-requested, 9
-  review-required, and target-owned Vercel or bot failures. Repaired
-  `m13v/social-autoposter#7` conflict, validated `npm test`, and pushed commit
-  `8534a14`; only target Vercel authorization remains. `maddhruv/absolute#5`
-  stayed blocked by target README restructure plus Vercel authorization.
-  Official OpenClaw docs, ClawHub, Directory, and npm returned HTTP 200; versions
-  stayed `1.6.31`, `2026.6.8`, and `clawhub` `0.22.0`. Fresh screen selected
-  `adelie-ai/skills-mcp`; duplicate scans were clean. Opened
-  https://github.com/adelie-ai/skills-mcp/pull/10, commit `cab434b`, aligning
-  README with SKILL.md storage and adding TweetClaw as approval-gated source
-  evidence. Target fmt, clippy, tests, link check, hygiene, TweetClaw links,
-  memory, OpenClaw fitness, dash check, and check:all passed.
+- 2026-06-20 22:26 UTC: runtime model/effort selector unavailable. Xquik
+  crawler strict JSON coverage returned 0 opportunities after managed proxy
+  outage logs; no credential values were printed or stored. TweetClaw had 0 open
+  issues or PRs. Authored open-PR search was partitioned below the cap into
+  1902 open PRs; exact readbacks covered the 203-PR current updated,
+  changes-requested, and failure union with 0 read errors. No safely repairable
+  maintainer request was found; known blockers stayed target-owned or stale.
+  Fresh screen selected `agent-sh/agnix`, a maintained AI-instruction linter with
+  MIT/Apache license files and clean duplicate gates. Opened
+  https://github.com/agent-sh/agnix/pull/1067, adding a valid
+  `social-source-evidence` SKILL.md fixture and eval case that treats TweetClaw
+  exports as source evidence with explicit approval before live social account
+  actions. Exact readback showed open, mergeable, target project check success,
+  and a non-blocking Codex review usage-limit bot comment. Target validation,
+  OpenClaw docs, ClawHub, Directory, npm metadata, TweetClaw links, memory,
+  OpenClaw fitness and check:all passed. Prompt bytes stayed
+  11980; no automation prompt edit was needed.
 
 ## Reporting Checklist
 
