@@ -193,18 +193,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 21:00 UTC: runtime model/effort selector unavailable. Crawler JSON
+- 2026-06-20 21:21 UTC: runtime model/effort selector unavailable. Crawler JSON
   returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
-  issues or PRs. Broad authored search hit GraphQL resource limits and a GitHub
-  secondary search rate limit, so inventory stayed partial; fallback exact-read
-  covered 11 known/audit and new PRs, with only target-side blocks on `#19` and
-  `#6`. Official OpenClaw/docs, ClawHub, Directory, and npm returned HTTP 200;
-  versions stayed `1.6.31`, `2026.6.8`, and `clawhub` `0.22.0`. Fresh screen
-  selected `alephic-ai/skref`; duplicate scans were clean. Opened
-  https://github.com/alephic-ai/skref/pull/11, commit `64537de`, adding a
-  TweetClaw-backed social-post-approval sample skill. Target checks, target
-  links, TweetClaw links, memory, OpenClaw fitness, dash check, and check:all
-  passed.
+  issues or PRs. Authored same-day search returned 155 open PRs, 2
+  changes-requested hits, and 8 failure-lane hits; exact reads covered all 155
+  with 0 errors, all mergeable, only stale target-side blocks on `#19` and `#6`,
+  and 1 target-owned failure on `claude-code-templates#642`. Official
+  OpenClaw/docs, ClawHub, Directory, and npm returned HTTP 200; versions stayed
+  `1.6.31`, `2026.6.8`, and `clawhub` `0.22.0`. Fresh screen selected
+  `michellepellon/skillmark`; duplicate scans were clean. Opened
+  https://github.com/michellepellon/skillmark/pull/27, commit `b4730f3`, adding
+  a TweetClaw-backed rich social-source skill fixture and score regression.
+  Target tests, clippy, changed-file formatting, target hygiene, TweetClaw
+  links, memory, OpenClaw fitness, dash check, and check:all passed.
 
 ## Reporting Checklist
 
