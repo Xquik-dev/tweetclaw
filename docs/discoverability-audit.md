@@ -197,18 +197,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 02:36 UTC: selector limits recorded. Xquik crawler PR/fresh JSON
-  was valid but empty after US proxy socket failures, and broad authenticated
-  June PR search hit HTTP 403 rate limit; used prior full inventory plus
-  fallback partitions. Exact-read 1790 known PRs with 1 missing-repo error
-  (`xbot-my/agent-skills-registry#1`). Scoped 1785, attention 403, dirty-like
-  400, failing/error checks 50, changes-requested 1, review-required 75.
-  Repaired `AbdNour627/awesome-openclaw-configs#1` and
-  `Aditya923-c/xpoz-agent-skills#1` to mergeable clean heads. Fresh target
-  `Convodotwtf/voice-ai-twitter-spaces` was MIT, active, duplicate-clean, and
-  X Spaces relevant; outreach was held because repair backlog remains. OpenClaw
-  docs, links, memory, and fitness passed; npm audit still reports nested
-  OpenClaw advisories with unsafe force downgrade.
+- 2026-06-20 03:02 UTC: selector limits recorded. Xquik crawler PR/fresh JSON
+  was valid but empty after US proxy socket failures. Created-date partitions
+  avoided the 1000 cap and found 1792 authored open PRs; exact-read all 1792
+  with 0 errors. Scoped 1786, attention 161, dirty-like 37, failing/error
+  checks 50, changes-requested 7, review-required 75, CLA/DCO text hits 4.
+  Repaired `jamald33n/tweetsave-mcp#2` to a mergeable clean head. Fresh target
+  `PayAINetwork/client-twitter-api-access` was active, duplicate-clean, and
+  X/Eliza relevant but has no detected license metadata; outreach was held
+  because dirty PR backlog remains. OpenClaw docs, links, memory, and fitness
+  passed; npm audit still reports nested OpenClaw advisories with unsafe force
+  downgrade.
 
 ## Reporting Checklist
 

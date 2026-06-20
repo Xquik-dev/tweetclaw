@@ -146,6 +146,78 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-20 03:02 UTC heartbeat
+
+- Runtime selector: this Codex heartbeat surface still did not expose model or
+  reasoning-effort controls, so GPT-5.5 and extra-high effort could not be
+  selected directly. The limitation was recorded and the run continued.
+- Crawler-first coverage: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  session `tweetclaw-20260620-0302-prs`, bounded request and proxy warmup
+  timeouts, 1000 result limit, 2 search pages, 16 per-query limit, and 16
+  concurrency across authored open PR, TweetClaw, OpenClaw, ClawHub, MCP,
+  SKILL.md, `.agents/skills`, social/Twitter-X skill, awesome-list, registry,
+  and x-twitter-scraper lanes. Strict JSON parsed and contained zero
+  opportunities. Managed US proxy socket failures, endpoint quarantines, and an
+  outage circuit were recorded without credential values.
+- Complete PR inventory: the initial June authored-open PR search returned the
+  GitHub 1000 cap, so the run split into daily June partitions plus older
+  monthly and yearly created-date buckets. No split bucket hit 1000. Combined
+  inventory contained 1792 unique open PR URLs by `kriptoburak`. Batched
+  GraphQL exact-read all 1792 with 0 errors, reading mergeability, merge state,
+  base/head refs, commits, check-rollup state, comments, reviews, files, and
+  fork metadata.
+- PR triage counts: scoped 1786 PRs; attention 161; dirty-like 37; failing or
+  error check candidates 50; changes-requested 7; review-required 75; CLA/DCO
+  text hits 4. The dirty queue began with `jamald33n/tweetsave-mcp#2`,
+  `maxvaega/awesome-skills#4`, `minhnv0807/ai-business-skills#20`,
+  `JosiahSiegel/claude-plugin-marketplace#18`, and
+  `antstudiocz/ant-marketplace#38`.
+- PR repair: repaired https://github.com/jamald33n/tweetsave-mcp/pull/2 from
+  correctly parented fork `kriptoburak/tweetsave-mcp-jamald33n`, branch
+  `codex/tweetclaw-openclaw-companion`, merge commit `6b3a52e`. The repair
+  merged current upstream main, resolved README conflicts, kept the working
+  npm/npx setup and TweetClaw/OpenClaw handoff, repaired support links to the
+  canonical target repo and issues pages, and dropped malformed raw-ZIP badge
+  and support substitutions. Target validation passed `git diff --check`,
+  exact conflict-marker scan, `npx --yes markdown-link-check README.md
+  --quiet`, ZIP tests for both checked-in archives, `npm ci --ignore-scripts
+  --no-audit --no-fund`, `npm run build`, and public-hygiene diff scan. Final
+  readback was `MERGEABLE`, `CLEAN`, with no configured checks or reviews.
+- Fresh target screening: crawler exact-repo mode for
+  `PayAINetwork/client-twitter-api-access` returned zero opportunities after
+  proxy socket failures. Fallback GitHub metadata showed the repo is public,
+  non-archived, non-fork, default branch `main`, and active enough for
+  screening, but license metadata is absent. Target open and closed PR/issue
+  searches plus local clone scans found no TweetClaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, OpenClaw, or ClawHub history. The repo is a
+  Twitter/X Eliza client with post generation, mentions, search and Spaces
+  placeholders, and optional approval workflow; new outreach was held because
+  dirty PR repair backlog remains.
+- Official OpenClaw and package checks: current `docs.openclaw.ai` llms exports,
+  CLI plugin/skill/update docs, plugin manifest, manage plugins, tool plugins,
+  install overrides, plugin permission requests, dependency resolution, ClawHub
+  publishing, ClawHub skill format, ClawHub plugin validation fixes, and help
+  debugging returned HTTP 200. `npm view openclaw dist-tags` returned latest
+  `2026.6.8`, beta `2026.6.9-beta.1`, and alpha `2026.5.19-alpha.1`.
+  `npm view @xquik/tweetclaw` returned published latest `1.6.31`; local source
+  remains `1.6.32`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm audit --audit-level=moderate --omit=dev` still reports nested OpenClaw
+  advisories for `protobufjs`, `tar`, and `undici`, including high-severity
+  `undici` findings. The force path would install `openclaw@0.0.1`, so no
+  dependency mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. The saved automation prompt measured 11980 bytes and the
+  TOML measured 12314 bytes, so no prompt compaction was needed. Durable lesson:
+  created-date partitions can avoid the GitHub 1000 cap for current authored
+  PR inventory; keep daily June buckets when the full June query caps.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 02:36 UTC heartbeat
 
 - Runtime selector: this Codex heartbeat surface did not expose model or
