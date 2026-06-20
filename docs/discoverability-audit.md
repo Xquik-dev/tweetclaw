@@ -197,16 +197,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 09:00 UTC: runtime model/effort selector unavailable. Crawler
+- 2026-06-20 09:09 UTC: runtime model/effort selector unavailable. Crawler
   strict JSON was valid-empty after proxy socket closures. Exact readbacks
-  covered 8 open outreach PRs; no maintainer repair was actionable. Fresh
-  fallback screening selected `readtheskill/readtheskill`, which was
-  duplicate-clean, MIT, policy-clean, and fork-parent verified. Opened
-  `readtheskill/readtheskill#11` from `kriptoburak/readtheskill` to add the
-  TweetClaw social skill listing plus local fallback Skill file. Target lint,
-  build, structure, link, and security checks passed; target Vercel is blocked
-  only by owner authorization. TweetClaw public links, OpenClaw fitness, and
-  memory checks passed. Source is `1.6.32`; npm latest is `1.6.31`.
+  covered 9 open outreach PRs; no maintainer repair was actionable. Fresh
+  screening selected `kintzhao/anySkills`, duplicate-clean and policy-clean.
+  Opened `kintzhao/anySkills#1` from `kriptoburak/anySkills` to add TweetClaw
+  as an OpenClaw ecosystem submodule and repair a stale OpenClaw archive URL.
+  Target link, count, submodule, and diff checks passed. TweetClaw public
+  links, OpenClaw fitness, and memory checks passed. Source is `1.6.32`; npm
+  latest is `1.6.31`.
 
 ## Reporting Checklist
 
