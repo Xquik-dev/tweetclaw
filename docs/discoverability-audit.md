@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 02:58 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 09:00 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, plugin permission requests,
   dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-17 06:51 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 09:00 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -197,15 +197,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 08:51 UTC: runtime model/effort selector unavailable. Crawler
-  strict JSON was valid-empty after proxy socket closures and outage circuit.
-  Exact PR readbacks found current outreach unchanged and no repair action.
-  Fresh fallback screening covered `readtheskill/readtheskill` and
-  `JCheungX/agent-bazaar`; AgentBazaar passed duplicate, policy, and
-  fork-parent gates. Opened `JCheungX/agent-bazaar#1` from
-  `kriptoburak/agent-bazaar` to fix README dead links for missing screenshots
-  and a stale Colosseum project URL. Public links, Markdown links, memory size,
-  and OpenClaw fitness passed. Source is `1.6.32`; npm latest is `1.6.31`.
+- 2026-06-20 09:00 UTC: runtime model/effort selector unavailable. Crawler
+  strict JSON was valid-empty after proxy socket closures. Exact readbacks
+  covered 8 open outreach PRs; no maintainer repair was actionable. Fresh
+  fallback screening selected `readtheskill/readtheskill`, which was
+  duplicate-clean, MIT, policy-clean, and fork-parent verified. Opened
+  `readtheskill/readtheskill#11` from `kriptoburak/readtheskill` to add the
+  TweetClaw social skill listing plus local fallback Skill file. Target lint,
+  build, structure, link, and security checks passed; target Vercel is blocked
+  only by owner authorization. TweetClaw public links, OpenClaw fitness, and
+  memory checks passed. Source is `1.6.32`; npm latest is `1.6.31`.
 
 ## Reporting Checklist
 
