@@ -292,6 +292,64 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   use `gh repo fork --fork-name <unique-name>` and re-read REST parent/source
   before branch push.
 
+## 2026-06-20 08:35 UTC heartbeat
+
+- Runtime/model: GPT-5.5 and extra-high effort selection were unavailable in
+  this runtime, so the limitation was recorded and work continued.
+- Crawler-first coverage: ran Xquik `bun run github:crawl --json --output
+  /tmp/tweetclaw-heartbeat-20260620-0831/crawl.json --research-proxy` with
+  stable session `tweetclaw-20260620-0831`, bounded request timeout, no proxy
+  warmup, 140 limit, 1 search page, 8 per-query limit, concurrency 8, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, agent/social/Twitter-X
+  skill, MCP/Codex/Claude, awesome-skill, and x-twitter-scraper queries.
+  Strict `jq` parse found `{ count: 0 }`. Stderr showed proxy socket closures,
+  endpoint quarantine, and proxy outage circuit, with no credential values.
+- PR inventory exact readbacks: `ttmouse/skills#1` remains open, mergeable,
+  `CLEAN`, 0 checks, 0 comments, 0 reviews; `Hashi-Ai-Dev/openclaw-clawdoc#6`
+  remains open, mergeable, `BLOCKED`, `CHANGES_REQUESTED`, 0 checks, 4
+  comments, 2 reviews; `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`
+  remains open, mergeable, `CLEAN`, 0 comments, 0 reviews, 0 checks;
+  `OpenMinis/MinisSkills#66` remains open, mergeable, `BLOCKED`,
+  review-required, 0 checks, 0 comments, 0 reviews; and
+  `LeoYeAI/openclaw-master-skills#4` remains open, mergeable, `CLEAN`, 1
+  comment, 0 reviews, 0 checks. No actionable maintainer comment, CI failure,
+  conflict, DCO/CLA, or generated drift was found.
+- Fresh discovery: bounded `gh search code` across `Twitter`, `X API`, and
+  tweet/agent-skill terms found fresh skill/catalog lanes. `Felo-Inc/felo-skills`,
+  `readtheskill/readtheskill`, and `JCheungX/agent-bazaar` were screened as
+  public, non-fork, non-archived, and duplicate-clean for TweetClaw, Xquik,
+  x-twitter-scraper, npm, and ClawHub terms across content plus open/closed PRs
+  and issues. `Felo-Inc/felo-skills` had the best target fit because it has
+  active X/Twitter skills and explicit contribution guidance.
+- Target-specific finding: `Felo-Inc/felo-skills` current X search skill pointed
+  webpage-extraction users to `felo-web-extract`, while the repo exposes
+  `felo-web-fetch`; repo search showed `felo-web-extract` only in changelog
+  history and the stale X-search guidance, and prior upstream PR history showed
+  closed `#12` for `felo-web-extract` plus merged `#13` for `felo-web-fetch`.
+- Fresh PR submitted: https://github.com/Felo-Inc/felo-skills/pull/100 from
+  verified fork `kriptoburak/felo-skills`, branch
+  `codex/fix-x-search-web-fetch-reference`, commit `b093083`. The PR changes
+  one line in `felo-x-search/SKILL.md` from `felo-web-extract` to
+  `felo-web-fetch` and leaves historical changelog entries unchanged. TweetClaw
+  was not mentioned because the target-fit value was a native skill-doc repair.
+- External PR validation: `git diff --check` and
+  `npx --yes markdown-link-check felo-x-search/SKILL.md --quiet` passed. Exact
+  PR readback showed `Felo-Inc/felo-skills#100` open, mergeable, `CLEAN`, 1
+  commit, 0 comments, 0 reviews, and 0 checks.
+- TweetClaw public hygiene: official OpenClaw docs and listing URLs returned
+  HTTP 200 for `llms.txt`, CLI plugin docs, manifest docs, ClawHub TweetClaw,
+  and OpenClaw Directory. Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, compact audit, and compact release memory.
+  `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm view @xquik/tweetclaw version` still returned `1.6.31`; OpenClaw
+  dist-tags remained latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`.
+- Prompt self-improvement: use target PR history to distinguish stale historical
+  names from current live docs before editing. Leave changelog history alone
+  when the live skill guidance is the only stale pointer.
+
 ## 2026-06-20 06:09 UTC Follow-Up
 
 - Runtime model and effort selector: unavailable in this Codex runtime, so this

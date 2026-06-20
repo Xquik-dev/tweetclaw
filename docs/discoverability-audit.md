@@ -197,15 +197,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 08:21 UTC: runtime model/effort selector unavailable. Crawler
+- 2026-06-20 08:35 UTC: runtime model/effort selector unavailable. Crawler
   strict JSON was valid-empty after proxy socket closures and outage circuit.
-  Exact PR readbacks found OpenClaw-clawdoc `#6` still review-blocked,
-  Real-Time-Twitter-Sentiment-Engine `#1` still clean/open, and OpenMinis
-  `#66` duplicate-blocking that lane. Fallback code search screened
-  `ttmouse/skills`; duplicate, policy, fork-parent, and target-fit gates passed.
-  Opened `ttmouse/skills#1` from `kriptoburak/ttmouse-skills` to fix stale
-  Twitter workflow doc references. Public links, Markdown links, memory size,
-  and OpenClaw fitness passed. Source is `1.6.32`; npm latest is `1.6.31`.
+  Exact readbacks found OpenClaw-clawdoc `#6` still review-blocked, the
+  sentiment and OpenMinis PRs unchanged, `ttmouse/skills#1` still clean/open,
+  and LeoYeAI `#4` still clean/open. Fallback code search screened fresh skill
+  lanes and opened `Felo-Inc/felo-skills#100` from verified fork
+  `kriptoburak/felo-skills` to fix the stale X-search `felo-web-extract`
+  reference to `felo-web-fetch`. Public links, Markdown links, memory size, and
+  OpenClaw fitness passed. Source is `1.6.32`; npm latest is `1.6.31`.
 
 ## Reporting Checklist
 
