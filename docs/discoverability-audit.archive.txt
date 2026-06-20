@@ -350,6 +350,67 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   names from current live docs before editing. Leave changelog history alone
   when the live skill guidance is the only stale pointer.
 
+## 2026-06-20 08:51 UTC heartbeat
+
+- Runtime/model: GPT-5.5 and extra-high effort selection were unavailable in
+  this runtime, so the limitation was recorded and work continued.
+- Crawler-first coverage: ran Xquik `bun run github:crawl --json --output
+  /tmp/tweetclaw-heartbeat-20260620-0847/crawl.json --research-proxy` with
+  stable session `tweetclaw-20260620-0847`, bounded request timeout, no proxy
+  warmup, 150 limit, 1 search page, 8 per-query limit, concurrency 8, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, agent/social/Twitter-X
+  skill, MCP/Codex/Claude, awesome-skill, and x-twitter-scraper queries.
+  Strict `jq` parse found `{ count: 0 }`. Stderr showed proxy socket closures,
+  endpoint quarantine, and proxy outage circuit, with no credential values.
+- PR inventory exact readbacks: `Felo-Inc/felo-skills#100` remains open,
+  mergeable, `CLEAN`, 0 checks, 0 comments, 0 reviews; `ttmouse/skills#1`
+  remains open, mergeable, `CLEAN`, 0 checks, 0 comments, 0 reviews;
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` remains open, mergeable, `BLOCKED`,
+  `CHANGES_REQUESTED`, 0 checks, 4 comments, 2 reviews;
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1` remains open,
+  mergeable, `CLEAN`, 0 comments, 0 reviews, 0 checks;
+  `OpenMinis/MinisSkills#66` remains open, mergeable, `BLOCKED`,
+  review-required, 0 checks, 0 comments, 0 reviews; and
+  `LeoYeAI/openclaw-master-skills#4` remains open, mergeable, `CLEAN`, 1
+  comment, 0 reviews, 0 checks. No actionable maintainer comment, CI failure,
+  conflict, DCO/CLA, or generated drift was found.
+- Fresh discovery: broad `gh search code` terms for social-media and
+  Twitter/agent/skill returned empty, so the run continued with fresh
+  prior-surfaced candidates. `readtheskill/readtheskill` and
+  `JCheungX/agent-bazaar` were screened as public, non-fork, non-archived, and
+  duplicate-clean for TweetClaw, Xquik, x-twitter-scraper, npm, and ClawHub
+  terms across content plus open/closed PRs and issues.
+- Target-specific finding: `readtheskill/readtheskill` link check showed
+  expected localhost/dev and live-site 402 blockers, so no PR was opened there.
+  `JCheungX/agent-bazaar` README link check found links to missing
+  `docs/screenshots/*.png` files and a dead
+  `https://colosseum.com/projects/agentbazaar` URL. Exact issue and PR searches
+  for screenshots, Colosseum, and that project URL found no duplicate fix.
+- Fresh PR submitted: https://github.com/JCheungX/agent-bazaar/pull/1 from
+  verified fork `kriptoburak/agent-bazaar`, branch
+  `codex/fix-readme-dead-links`, commit `557e7a3`. The PR replaces missing
+  screenshot image links with a short note and changes the dead project URL to
+  the live Colosseum homepage. TweetClaw was not mentioned because the value was
+  a native README hygiene fix.
+- External PR validation: `git diff --check` and
+  `npx --yes markdown-link-check README.md --quiet` passed. Exact PR readback
+  showed `JCheungX/agent-bazaar#1` open, mergeable, `CLEAN`, 1 commit, 0
+  comments, 0 reviews, and 0 checks.
+- TweetClaw public hygiene: official OpenClaw docs and listing URLs returned
+  HTTP 200 for `llms.txt`, CLI plugin docs, manifest docs, ClawHub TweetClaw,
+  and OpenClaw Directory. Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, compact audit, and compact release memory.
+  `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm view @xquik/tweetclaw version` still returned `1.6.31`; OpenClaw
+  dist-tags remained latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`.
+- Prompt self-improvement: when a candidate has many dead links, isolate links
+  introduced by missing repo artifacts from expected localhost or external API
+  endpoints, and prefer README-only repairs that make the target's primary
+  public surface pass.
+
 ## 2026-06-20 06:09 UTC Follow-Up
 
 - Runtime model and effort selector: unavailable in this Codex runtime, so this

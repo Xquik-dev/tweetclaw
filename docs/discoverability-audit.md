@@ -197,15 +197,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 08:35 UTC: runtime model/effort selector unavailable. Crawler
+- 2026-06-20 08:51 UTC: runtime model/effort selector unavailable. Crawler
   strict JSON was valid-empty after proxy socket closures and outage circuit.
-  Exact readbacks found OpenClaw-clawdoc `#6` still review-blocked, the
-  sentiment and OpenMinis PRs unchanged, `ttmouse/skills#1` still clean/open,
-  and LeoYeAI `#4` still clean/open. Fallback code search screened fresh skill
-  lanes and opened `Felo-Inc/felo-skills#100` from verified fork
-  `kriptoburak/felo-skills` to fix the stale X-search `felo-web-extract`
-  reference to `felo-web-fetch`. Public links, Markdown links, memory size, and
-  OpenClaw fitness passed. Source is `1.6.32`; npm latest is `1.6.31`.
+  Exact PR readbacks found current outreach unchanged and no repair action.
+  Fresh fallback screening covered `readtheskill/readtheskill` and
+  `JCheungX/agent-bazaar`; AgentBazaar passed duplicate, policy, and
+  fork-parent gates. Opened `JCheungX/agent-bazaar#1` from
+  `kriptoburak/agent-bazaar` to fix README dead links for missing screenshots
+  and a stale Colosseum project URL. Public links, Markdown links, memory size,
+  and OpenClaw fitness passed. Source is `1.6.32`; npm latest is `1.6.31`.
 
 ## Reporting Checklist
 
