@@ -2,6 +2,114 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 16:01 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `01b74ed`. Compact Markdown
+  memory started at 15200/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes. The Xquik workspace had unrelated
+  `docs/feature-roadmap.md` edits and was left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  session `tweetclaw-20260620-1601`, bounded request timeout, proxy warmup
+  disabled, 420 limit, 1 search page, 10 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, `.agents/skills`,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill, awesome-list,
+  registry, generated-catalog, fork, package-tooling, validator, examples,
+  docs, social-agent, sentiment-dashboard, x-twitter-scraper, and web-index
+  skill queries. Strict JSON parsing found 10 opportunities. All 10 were
+  skipped as low-fit, stale, irrelevant, or lacking a clear target-native
+  placement path. Stderr showed proxy socket closures, endpoint quarantines,
+  and outage-circuit logs with no sensitive values.
+- PR inventory: TweetClaw had no open issues and no open PRs by REST readback.
+  GitHub rate limits were core 3927/5000, search 30/30, and GraphQL 0/5000, so
+  broad GraphQL readback was blocked. Same-day authored open PR search returned
+  119 URLs across two REST pages and exact-read all 119 by REST for state,
+  mergeability, base/head, comments, reviews, review comments, check runs, and
+  commit statuses with 0 read errors. Merge-state counts were 88 clean, 22
+  unstable, 7 blocked, 1 dirty, and 1 unknown. The sweep saw 40 comment PRs, 14
+  review PRs, 9 inline-review-comment PRs, 3 PRs with failing check runs, and 8
+  PRs with non-success commit statuses. Because GraphQL quota was exhausted,
+  broad authenticated GitHub search stopped per the rate-limit rule and the run
+  continued with crawler output, exact REST reads, target clones, and archive
+  searches.
+- PR repair: `bogdanbaciu21/skills#4` had stale `check-issue` failure history.
+  Exact readback showed the PR body already linked `Fixes #27`, but an issue
+  was accidentally opened before that was noticed. Issue
+  `bogdanbaciu21/skills#28` was immediately marked duplicate and closed, the PR
+  body was restored to only `Fixes #27`, and current `check-issue` runs then
+  passed. Self-improvement: read PR body and existing related issues before
+  creating a policy-link issue for bot checks.
+- PR repair: `vaibhav4046/mcp-marketplace#1` was dirty. The branch was cloned,
+  full history was fetched after the shallow merge reported unrelated history,
+  and `data/servers.json` was resolved by keeping upstream generated timestamp,
+  setting `totalCount` to 801, and retaining the one Xquik server entry.
+  Validation passed with `jq` count checks, conflict-marker scan,
+  `git diff --check`, Xquik repo/docs link probes, `npm ci`,
+  `npm run typecheck`, and `npm run build`. Commit `df1062b` was pushed to the
+  correctly parented `kriptoburak` fork, and
+  https://github.com/vaibhav4046/mcp-marketplace/pull/1#issuecomment-4758918626
+  recorded the repair. Final PR readback was open, ready, mergeable, and
+  unstable only because target-owned Vercel authorization remained.
+- Fresh discovery and duplicate checks: crawler results were low-fit, so
+  fallback GitHub metadata searches covered active tweet sentiment dashboards,
+  social-media analytics, Streamlit, Pub/Sub, package tooling, and skill
+  lanes. Compact and archive searches found prior history for several
+  sentiment-dashboard repos but no prior TweetClaw history for
+  `jaiminbabariya7/real_time_sentiment_analysis`. REST metadata showed the
+  target was MIT licensed, public, non-fork, non-archived, recently pushed,
+  and had no PRs or issues. Clone plus `rg` found no TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub duplicate. No contribution policy
+  file blocked a PR.
+- Fresh PR submitted:
+  https://github.com/jaiminbabariya7/real_time_sentiment_analysis/pull/1 from
+  correctly parented fork `kriptoburak/real_time_sentiment_analysis`, branch
+  `codex/add-tweetclaw-pubsub-events`, commit `4c4fc26`. The PR adds a
+  standard-library TweetClaw JSON, JSONL, NDJSON, and CSV export converter, a
+  small Pub/Sub message text extractor for Dataflow, tests, and README usage.
+  It keeps TweetClaw as a reviewed data source for analytics and does not
+  suggest write-like actions.
+- Target validation for the new PR: `python3 -m py_compile
+  code/message_events.py code/tweetclaw_pubsub_events.py code/dataflow_main.py`,
+  `python3 -m unittest discover tests`, `python3 -m pytest tests -q`, CLI
+  smoke conversion, `npx --yes markdown-link-check README.md --quiet`, and
+  `git diff --check` passed. `python3 -m flake8` was unavailable locally, and
+  Black already wanted to reformat pre-existing files including
+  `code/pubsub_publisher.py`, so those were recorded in the PR body instead of
+  hidden.
+- New PR readback: REST showed `#1` open, ready, mergeable `true`,
+  `mergeable_state: clean`, head `4c4fc26294031bc743659f99753a0a1ff710d481`,
+  0 comments, 0 reviews, 0 review comments, no check runs, and no commit
+  statuses.
+- OpenClaw and public hygiene: official docs probes returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, CLI plugin/skill/update, ClawHub publishing,
+  skill format, plugin validation fixes, plugin manifest, tool plugins,
+  install overrides, dependency resolution, plugin permission requests at the
+  current `/plugins/plugin-permission-requests` route, SDK runtime at
+  `/plugins/sdk-runtime`, OpenClaw agent runtime, and `/help/debugging`. The
+  old `/plugins/permission-requests` and `/sdk/runtime` probes returned 404,
+  so future runs should use the current llms-indexed routes. ClawHub
+  `@xquik/tweetclaw`, OpenClaw Directory, the new PR, and npm registry metadata
+  returned HTTP 200.
+- Package and TweetClaw validation: `npm view @xquik/tweetclaw version
+  openclaw.install` returned published `1.6.31` with npm default install.
+  `npm view openclaw dist-tags` returned latest `2026.6.8`, beta
+  `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`; `npm view clawhub version`
+  returned `0.22.0`. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npx --yes markdown-link-check` passed for README, OpenClaw setup, agent
+  workflows, packaged skill, compact audit, and compact release memory.
+  `npm audit --audit-level=moderate --omit=dev` still reported 5 nested
+  OpenClaw advisories for `protobufjs`, `tar`, and `undici`; force would
+  install `openclaw@0.0.1`, so no package mutation was made.
+- Prompt self-improvement: when GraphQL quota is exhausted, create external PRs
+  and exact-read them through REST. For shallow target clones, fetch full
+  history before treating unrelated-history merge output as final. For current
+  OpenClaw docs, prefer the llms-indexed `/plugins/plugin-permission-requests`
+  and `/plugins/sdk-runtime` routes over stale probes.
+
 ## 2026-06-20 15:30 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model

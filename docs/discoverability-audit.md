@@ -49,13 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 15:30 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 16:01 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
-  fixes, manifest/tool plugins/install overrides, plugin permission requests,
-  dependency resolution, and `/help/debugging`.
+  fixes, manifest/tool plugins/install overrides, plugin permission requests at
+  `/plugins/plugin-permission-requests`, SDK runtime at
+  `/plugins/sdk-runtime`, dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 15:30 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 16:01 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -76,8 +77,8 @@ archive, before any outreach or duplicate decision.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
 - Npm audit on 2026-06-20 found 5 nested OpenClaw vulnerabilities for
-  `protobufjs`, `tar`, and `undici`; Dependabot reports 6 matching alerts. The
-  unsafe force path downgrades to `openclaw@0.0.1`.
+  `protobufjs`, `tar`, and `undici`. The unsafe force path downgrades to
+  `openclaw@0.0.1`.
 
 ## GitHub-First Rule
 
@@ -198,16 +199,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 15:30 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 0 opportunities after proxy outage logs. Same-day authored search
-  exact-read 79 PRs; broader date partitions found 1858 unique open authored
-  PRs but GraphQL quota blocked full exact-read, so broad authenticated search
-  stopped. Known repair blockers were target-owned comment-permission and
-  Vercel authorization failures. Opened
-  `dataprojectswithMJ/streamlit-twitter-scraper#1` in `f45d380` with
-  TweetClaw export upload support, mixed-field JSON/JSONL/CSV normalization,
-  and a stale Streamlit link repair. Target validation, TweetClaw links,
-  OpenClaw fitness, memory, and check:all passed; known nested OpenClaw audit
+- 2026-06-20 16:01 UTC: runtime model/effort selector unavailable. Crawler JSON
+  returned 10 low-fit opportunities after proxy outage logs. TweetClaw had no
+  open issues or PRs. Same-day authored search exact-read 119 PRs; GraphQL
+  quota was 0, so broad authenticated search stopped. Repaired
+  `bogdanbaciu21/skills#4` by confirming its linked issue body and rerunning a
+  green policy check, and repaired `vaibhav4046/mcp-marketplace#1` conflict in
+  `df1062b` with only target Vercel authorization left. Opened
+  `jaiminbabariya7/real_time_sentiment_analysis#1` in `4c4fc26` with
+  TweetClaw export to Pub/Sub event ingestion. Target validation, TweetClaw
+  links, OpenClaw fitness, memory, and check:all passed; nested OpenClaw audit
   advisories remain.
 
 ## Reporting Checklist
