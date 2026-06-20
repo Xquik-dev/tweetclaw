@@ -196,14 +196,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 00:04 UTC: selector limits recorded; Xquik crawler strict JSON was
-  empty after proxy outage; captured 1000 authored open PRs were exact-read with
-  0 per-PR errors, no unsigned CLA/DCO blocker, and GitHub search capped at
-  1000. Repaired `gliptak/kitfind#10` and safely updated
-  `Jamkris/everything-gemini-code#91`; fresh PR
-  `omarshobaki-png/arabic-tweet-sentiment-classification#1` adds a labeled
-  TweetClaw export converter. OpenClaw docs, links, memory, fitness, and target
-  validations passed; npm audit is unchanged.
+- 2026-06-20 01:19 UTC: selector limits recorded. Xquik crawler strict JSON was
+  valid but empty after proxy outage. Partitioned authored-open PR search
+  resolved the 1000 cap into 1788 core exact readbacks; CLA/DCO searches found
+  none. Repaired `vaibhav4046/mcp-marketplace#1` and
+  `RoshanDev/skills#1` to mergeable heads. Fresh registry candidates were
+  screened but new outreach was held because dirty/failing PR repair backlog
+  remains. OpenClaw docs, links, memory, and fitness passed; npm audit is
+  unchanged.
 
 ## Reporting Checklist
 

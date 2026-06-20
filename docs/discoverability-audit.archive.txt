@@ -146,6 +146,109 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-20 01:19 UTC heartbeat
+
+- Runtime selector audit: this Codex heartbeat runtime did not expose controls
+  to select GPT-5.5 or extra-high reasoning effort. Recorded limitation and
+  continued.
+- Crawler-first PR monitoring: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output to
+  `/tmp/tweetclaw-pr-crawl-20260620-0052.json`, stable session
+  `tweetclaw-20260620-0052-prs`, bounded request and proxy warmup timeouts, 1000
+  limit, 2 search pages, 16 per-query limit, 16 concurrency, research proxy, and
+  focused authored PR, TweetClaw, Xquik, OpenClaw, MCP, ClawHub, SKILL.md,
+  social/Twitter-X skill, and x-twitter-scraper query lanes. Strict JSON was
+  valid but empty: `{ "opportunities": [] }`. Stderr showed repeated managed
+  proxy socket closures, endpoint quarantines, and US proxy outage circuit
+  opening. No credential values were printed or stored.
+- Complete PR inventory: broad `gh search prs` started from the oldest open
+  authored PR update (`2025-05-20`) and newest current update, then partitioned
+  authored open PR search by month. June 2026 hit the 1000 cap and was split by
+  day. Result: 34 partition records, 1788 unique open authored PR URLs, no
+  partition command errors, and no daily partition cap. Artifacts:
+  `/tmp/tweetclaw-open-pr-partitions-20260620-0052.json` and
+  `/tmp/tweetclaw-audit-pr-urls-20260620-0052.txt`.
+- Exact readbacks: rich GraphQL exact readbacks exceeded GitHub resource limits
+  on large partitions, so the run retried core exact GraphQL fields with smaller
+  pages. All failed partitions recovered with zero retry errors. One missing PR,
+  `huanxherta/agent-skills#1`, was exact-read directly by URL. Final core exact
+  inventory count matched search count: 1788 open PRs. Artifacts:
+  `/tmp/tweetclaw-pr-core-exact-20260620-0052.jsonl`,
+  `/tmp/tweetclaw-pr-core-summary-20260620-0052.json`, and
+  `/tmp/tweetclaw-pr-core-retry-summary-20260620-0052.json`.
+- Actionable signal search: failure checks 44; pending checks returned 1000 and
+  was treated as capped for non-actionable pending state; review changes
+  requested 1; review required 73; CLA/DCO title/body 0; CLA/DCO comments 0;
+  maintainer keyword comments 0. Attention artifact:
+  `/tmp/tweetclaw-attention-prs-20260620-0052.jsonl` with 1123 broad
+  attention rows, many of which are review-required or pending-only rather than
+  directly repairable. No unsigned CLA or DCO blocker was found.
+- Deep repair readbacks: `Hashi-Ai-Dev/openclaw-clawdoc#6` still reports an old
+  changes-requested review, but the follow-up commit already removed the
+  vendor-specific install/config example and added the requested
+  operator-review note. It is behind but not conflicting. No new code action was
+  needed.
+- Repair 1: `vaibhav4046/mcp-marketplace#1` was dirty and Vercel-failing. Cloned
+  the correctly parented `kriptoburak/mcp-marketplace` fork, rebased
+  `codex/add-xquik-mcp-marketplace` onto upstream `main`, resolved the generated
+  `data/servers.json` conflict by preserving upstream `generatedAt`, setting
+  `totalCount` to 801, and keeping exactly one `xquik` entry. Validation passed:
+  JSON parse, `totalCount == servers.length`, one Xquik slug, no conflict
+  markers, diff whitespace, diff-only public-hygiene scan, `npm ci`,
+  `npm run typecheck`, `npm run build`, and link probes for Xquik docs/repo plus
+  expected unauthenticated 401 on the MCP endpoint. Force-with-lease pushed
+  `cd7b91ec96591e10064f53a053c954ec6ee50a22`. Readback: open, mergeable,
+  `UNSTABLE` only because Vercel authorization remains target-owned.
+- Repair 2: `RoshanDev/skills#1` was dirty with no comments, reviews, or checks.
+  Cloned the correctly parented `kriptoburak/skills-xquik-outreach` fork,
+  rebased `codex/add-xquik-source-research-skill` onto upstream `main`, resolved
+  the README directory tree conflict by keeping upstream directories plus
+  `xquik-source-research`, and left the new skill file intact. Validation
+  passed: no conflict markers, README markdown links, diff whitespace, and
+  diff-only public-hygiene scan. Force-with-lease pushed
+  `f16a54b29af4a5434564ef1f00ae01c8af20225d`. GitHub recalculation readback:
+  open, `MERGEABLE`, `CLEAN`, no review decision, no checks.
+- Fresh discovery: ran the Xquik crawler again for SKILL.md, OpenClaw skill,
+  MCP Twitter/X registry, awesome skill, and x-twitter-scraper lanes with strict
+  JSON output to `/tmp/tweetclaw-fresh-crawl-20260620-0052.json`. It hit the
+  same managed proxy outage and returned valid empty JSON. Fallback GitHub repo
+  metadata searches screened `majiayu000/claude-skill-registry`,
+  `le-diegz/claude-skills-registry`, and
+  `manabuozato/claude-skills-registry-ja`. All three were duplicate-blocked by
+  prior archive history or existing authored Xquik/x-twitter-scraper PRs. No new
+  PR was opened because the inventory still has dirty/failing in-scope PRs that
+  should be repaired before fresh outreach.
+- Official OpenClaw and package checks: `openclaw` npm dist-tags remained
+  `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`. `@xquik/tweetclaw` npm latest remained `1.6.31`.
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, and `/help/debugging` returned
+  HTTP 200. The llms exports still include plugin install/update/inspect,
+  manifest, tool permission, ClawHub, skill, approval, and debugging coverage
+  relevant to TweetClaw.
+- Broken-link and TweetClaw validation before audit edit: Markdown link checks
+  passed for README, OpenClaw setup docs, and agent workflow docs.
+  `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. Memory check was
+  14898/15360 bytes before this edit.
+- Final TweetClaw validation: after audit edits, `npm run check-memory-md-size`
+  passed at 14879/15360 bytes, markdown link checks passed for compact audit and
+  release memory, `git diff --check` passed, and `npm run check:all` passed with
+  typecheck, lint, duplicate check, knip, suppression check, dash check, memory
+  check, skill frontmatter, version check, build, OpenClaw fitness, package
+  artifact, and 168 tests at 100% coverage. `npm audit
+  --audit-level=moderate --omit=dev` still reports the known nested OpenClaw
+  `protobufjs`, `tar`, and `undici` advisories; no package mutation was made
+  because the force path downgrades OpenClaw.
+- Prompt self-improvement: the persistent automation prompt had already been
+  updated before this heartbeat to require complete in-scope open-PR inventory,
+  crawler-backed discovery, partitioning beyond GitHub's 1000-result cap, exact
+  readbacks, and repair priority. This run confirmed that exact readbacks must
+  fall back from rich GraphQL to smaller-page core GraphQL plus per-PR direct
+  reads when GitHub resource limits or 502s appear. Persisted automation prompt
+  size was 11980 bytes and automation TOML size was 12314 bytes.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-19 12:26 UTC Heartbeat Run
 
 - Runtime limits: the current Codex runtime did not expose GPT-5.5 or
