@@ -373,6 +373,79 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-20 09:18 UTC heartbeat
+
+- Runtime selector audit: this heartbeat did not expose a callable model or
+  reasoning-effort selector, so GPT-5.5 and extra-high effort could not be set
+  explicitly. Work continued with ordinary networked crawler, GitHub CLI, curl,
+  npm, git, and static validation.
+- Crawler-first coverage: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  session `tweetclaw-20260620-0911`, bounded request timeout, zero proxy
+  warmup, 120 limit, 1 search page, 8 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, MCP/Codex/Claude/social
+  skill, catalog, and x-twitter-scraper queries. Strict JSON parsing found
+  0 opportunities. Stderr showed managed proxy socket closures, endpoint
+  quarantines, and an outage circuit, with no credential values printed.
+- Open PR inventory and repair triage: exact readbacks covered
+  `kintzhao/anySkills#1`, `readtheskill/readtheskill#11`,
+  `JCheungX/agent-bazaar#1`, `Felo-Inc/felo-skills#100`,
+  `ttmouse/skills#1`, `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`,
+  `OpenMinis/MinisSkills#66`, `LeoYeAI/openclaw-master-skills#4`, and the new
+  `XX441/openclaw-skills-directory#1`. ClawDoc #6 still showed stale requested
+  changes after the vendor-neutral update. readtheskill #11 remained blocked
+  only by target-owner Vercel authorization. The other tracked PRs were open,
+  mergeable, clean, review-required, or waiting for maintainer review with no
+  actionable repair. Broad authored partitioning was not completed in this
+  short run, so this is a tracked outreach readback, not a claim of exhaustive
+  all-authored PR coverage.
+- Fresh discovery and duplicate checks: fallback metadata and target-tree
+  screening selected `XX441/openclaw-skills-directory`. The repo was public,
+  non-fork, non-archived, issue-enabled, on default branch `main`, and had no
+  license metadata. Target open and closed PR/issue searches, compact audit,
+  archive, and content scans found no TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, ClawHub, or OpenClaw duplicate. No relevant contribution
+  policy blocker was found. `kriptoburak/openclaw-skills-directory-1` was
+  fork-parent verified before pushing.
+- Fresh PR submitted:
+  https://github.com/XX441/openclaw-skills-directory/pull/1 from
+  `kriptoburak/openclaw-skills-directory-1`, branch
+  `codex/add-tweetclaw-skill`, commit
+  `3ae3af52b7972d0a9f9b365739d892dc7c5500cd`. The PR adds
+  `tweetclaw/SKILL.md`, registers TweetClaw in `catalog.json`, and adds the
+  README skills-table row under Marketing. The Skill points to the GitHub repo,
+  ClawHub route, canonical npm install form, and approval-gated X/Twitter
+  safety rules.
+- Fresh PR validation: target validation passed `python3 -m json.tool`
+  for `catalog.json`, catalog and README consistency assertions, markdown link
+  checking for README plus the new Skill file, `git diff` whitespace checks,
+  duplicate recheck, and added-diff public-hygiene plus dash scans. PR readback
+  showed open, `MERGEABLE`, 1 commit, no comments, no reviews, and no checks.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`, and `/help/debugging`
+  returned HTTP 200. The canonical ClawHub TweetClaw route and OpenClaw
+  Directory route returned HTTP 200. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; local package metadata remains `1.6.32`. OpenClaw
+  dist-tags remained `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `Xquik-dev/tweetclaw` had no open issues or PRs.
+- Prompt self-improvement: for OpenClaw skill directories with explicit
+  catalog JSON plus README rows, validate both structured entry fields and the
+  visible row so future submissions do not drift between catalog and index.
+  Missing license metadata alone remains acceptable for direct docs/catalog PRs
+  when the change is original, small, and target-native.
+- Prompt byte size: saved automation TOML measured 12314 bytes. Changed
+  TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 08:21 UTC heartbeat
 
 - Runtime/model: GPT-5.5 and extra-high effort selection were unavailable in
