@@ -233,6 +233,65 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-20 08:21 UTC heartbeat
+
+- Runtime/model: GPT-5.5 and extra-high effort selection were unavailable in
+  this runtime, so the limitation was recorded and work continued.
+- Crawler-first coverage: ran Xquik `bun run github:crawl --json --output
+  /tmp/tweetclaw-heartbeat-20260620-0810/crawl.json --research-proxy` with
+  stable session `tweetclaw-20260620-0810`, bounded request timeout, no proxy
+  warmup, 160 limit, 1 search page, 8 per-query limit, concurrency 8, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, agent/social/Twitter-X
+  skill, MCP/Codex/Claude, and awesome-skill queries. Strict `jq` parse found
+  `{ count: 0 }`. Stderr showed proxy socket closures, endpoint quarantine, and
+  proxy outage circuit, with no credential values.
+- PR inventory exact readbacks: `Hashi-Ai-Dev/openclaw-clawdoc#6` remains open,
+  mergeable, `BLOCKED`, `CHANGES_REQUESTED`, 0 checks, 4 comments, 2 reviews;
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1` remains open,
+  mergeable, `CLEAN`, 0 comments, 0 reviews, 0 checks; newly discovered
+  `OpenMinis/MinisSkills#66` remains open, mergeable, `BLOCKED`,
+  review-required, no checks/comments/reviews. No actionable maintainer comment,
+  CI failure, conflict, DCO/CLA, or generated drift was found.
+- Fallback discovery: GitHub REST exact repo read for `Xquik-dev/tweetclaw`
+  worked, but REST search fallback returned HTTP 404 through the CLI route, so
+  broad REST retries stopped. Bounded `gh search repos` found no skill/plugin
+  repo hits. Bounded `gh search code` over `SKILL.md`, social media, OpenClaw,
+  TweetClaw, and Twitter terms found maintained skill lanes including
+  `OpenMinis/MinisSkills`, `LeoYeAI/openclaw-master-skills`, and
+  `ttmouse/skills`.
+- Duplicate and target screens: `OpenMinis/MinisSkills` was blocked by existing
+  open TweetClaw PR `#66`. `LeoYeAI/openclaw-master-skills` was blocked by
+  existing `x-twitter-scraper` PR `#4` and TweetClaw issue `#38`.
+  `ttmouse/skills` was public, non-fork, non-archived, recently enough for the
+  lane, duplicate-clean across target content plus open/closed PRs and issues,
+  and had no contribution-policy blocker. README states Apache 2.0 examples,
+  though GitHub license metadata was absent.
+- Fresh PR submitted: https://github.com/ttmouse/skills/pull/1 from verified
+  fork `kriptoburak/ttmouse-skills`, branch `codex/fix-twitter-workflow-docs`,
+  commit `38b982e`. The PR fixes `twitter-workflow/skill.md` by changing stale
+  `rok-generator.js` to existing `grok-generator.js`, and correcting a malformed
+  `cat /   /Users/...` path. TweetClaw was not mentioned because the target-fit
+  value was a native docs repair.
+- External PR validation: `git diff --check` and
+  `npx --yes markdown-link-check twitter-workflow/skill.md --quiet` passed.
+  Exact PR readback showed `ttmouse/skills#1` open, mergeable, `CLEAN`, 1
+  commit, 0 comments, 0 reviews, and 0 checks.
+- TweetClaw public hygiene: official OpenClaw docs and listing URLs returned
+  HTTP 200 for `llms.txt`, CLI plugin docs, manifest docs, ClawHub TweetClaw,
+  and OpenClaw Directory. Markdown link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `skills/tweetclaw/SKILL.md`, compact audit, and compact release memory.
+  `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm view @xquik/tweetclaw version` still returned `1.6.31`; OpenClaw
+  dist-tags remained latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`.
+- Memory and self-improvement: pre-commit memory check passed at
+  `14930/15360` before this note. Durable lesson: when `kriptoburak/<name>`
+  already exists, verify its fork parent before pushing; if it points elsewhere,
+  use `gh repo fork --fork-name <unique-name>` and re-read REST parent/source
+  before branch push.
+
 ## 2026-06-20 06:09 UTC Follow-Up
 
 - Runtime model and effort selector: unavailable in this Codex runtime, so this

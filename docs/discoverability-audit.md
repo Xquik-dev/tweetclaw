@@ -197,13 +197,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 06:09 UTC: selector limits recorded. Follow-up crawler JSON was
-  valid-empty after proxy socket closures. Exact readbacks found
-  `OWASP/www-project-agentic-skills-top-10#34` merged at 05:35 UTC with
-  `e5cfe14`; `Hashi-Ai-Dev/openclaw-clawdoc#6` remains mergeable but blocked by
-  the old changes-requested review after the vendor-neutral repair; and
-  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1` remains open, clean,
-  mergeable, with no comments, reviews, or checks. No new user action needed.
+- 2026-06-20 08:21 UTC: runtime model/effort selector unavailable. Crawler
+  strict JSON was valid-empty after proxy socket closures and outage circuit.
+  Exact PR readbacks found OpenClaw-clawdoc `#6` still review-blocked,
+  Real-Time-Twitter-Sentiment-Engine `#1` still clean/open, and OpenMinis
+  `#66` duplicate-blocking that lane. Fallback code search screened
+  `ttmouse/skills`; duplicate, policy, fork-parent, and target-fit gates passed.
+  Opened `ttmouse/skills#1` from `kriptoburak/ttmouse-skills` to fix stale
+  Twitter workflow doc references. Public links, Markdown links, memory size,
+  and OpenClaw fitness passed. Source is `1.6.32`; npm latest is `1.6.31`.
 
 ## Reporting Checklist
 
