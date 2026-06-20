@@ -2,6 +2,80 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 18:23 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `ef9ae32`. Compact Markdown
+  memory started at 15127/15360 bytes. Xquik crawler workspace changes were
+  unrelated and left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` in strict JSON research-proxy mode with output
+  `/tmp/tweetclaw-heartbeat-20260620-1823/crawl.json`, session
+  `tweetclaw-20260620-1823`, bounded request timeout, 360 limit, 1 search page,
+  10 per-query limit, 8 concurrency, and focused authored-PR, TweetClaw,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, Claude, Codex, social media,
+  Twitter/X, sentiment-dashboard, x-twitter-scraper, package-tooling, validator,
+  registry, and web-index query packs. The crawler wrote valid JSON with 0
+  opportunities after socket-close, endpoint-quarantine, and proxy outage logs.
+- PR inventory and repair triage: TweetClaw had 0 open issues and 0 open PRs.
+  Same-day authored search returned 133 open PRs. Exact REST readbacks covered
+  all 133 with PR metadata, mergeability, comments, reviews, review comments,
+  and check runs, with 0 read errors. Merge states were 103 clean, 22 unstable,
+  and 8 blocked. Check summaries were 122 with no checks, 10 terminal
+  non-failing, and 1 failure-like. Broad focused partitions for TweetClaw,
+  Xquik, OpenClaw, MCP, skill, Twitter, and social each capped at 300; `xsearch`
+  returned 1 uncapped hit. GitHub search rate remained available. The only
+  failure-like tracked checks were `davila7/claude-code-templates#642` Security
+  Audit and SkillSpector comment steps, both failing on target workflow 403
+  comment-permission writes; the changed SkillSpector report itself passed, so
+  no branch repair was safe or useful.
+- Fresh discovery and duplicate checks: crawler output was empty, so fallback
+  repo searches covered recent Twitter sentiment apps, Streamlit dashboards,
+  SKILL.md, `.agents/skills`, Claude/Codex social skills, OpenClaw social
+  skills, agent-skill registries, and X/Twitter research tools. Archive
+  duplicate search blocked already-covered candidates including
+  `blacktwist/social-media-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `rabden/X-twitter-social-manager-skill`, `AISA-skills/social-media-skills`,
+  `robinbril/social-context`, and `shensi8312/blogburst-openclaw-skill`.
+  `labyla/x-search` was selected because it is active, non-fork, non-archived,
+  issue-enabled, duplicate-clean across target content plus open and closed
+  PR/issue state, and directly fits an agent-ready X/Twitter CLI with root
+  `SKILL.md`. GitHub reports no license metadata, but current policy says
+  missing license metadata alone does not block a direct PR.
+- External PR submitted: https://github.com/labyla/x-search/pull/1 from
+  correctly parented `kriptoburak/x-search` fork branch
+  `codex/add-tweetclaw-source-packets`, commit `ad04816`. The PR updates
+  `README.md` and `SKILL.md` with optional OpenClaw/TweetClaw source-packet
+  companion guidance while preserving `xsearch` as the local cookie-session CLI,
+  keeping credentials separate, using `explore` before live calls, and requiring
+  explicit approval for TweetClaw write-like, private, paid, recurring,
+  monitor, webhook, extraction, or account-scoped calls. Exact PR readback was
+  open, ready, mergeable, `unstable`, 1 commit, 2 changed files, 0 comments,
+  0 reviews, 0 review comments, and 0 check runs. The PR URL returned HTTP 200.
+- Target validation and hygiene: target `npx markdown-link-check README.md
+  SKILL.md --quiet`, `go test ./internal/cli`, `go build ./cmd/xsearch`, and
+  `git diff --check` passed. Full target `go test ./...` still failed on an
+  existing live Twitter/X root-package path with HTTP 403, unrelated to the
+  docs-only change. Added-line hygiene found no secrets, private implementation
+  detail, private source references, unsupported claims, or stale metadata.
+- OpenClaw and public hygiene: official docs probes returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, CLI plugin/skill/update, ClawHub publishing,
+  ClawHub skill format, plugin validation fixes, plugin manifest, tool plugins,
+  install overrides, and debugging. ClawHub `@xquik/tweetclaw`, OpenClaw
+  Directory, and TweetClaw npm registry returned HTTP 200. `npm view
+  @xquik/tweetclaw` still showed published `1.6.31`; OpenClaw dist-tags
+  remained latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`; ClawHub remained `0.22.0`.
+- TweetClaw validation and persistence: compact audit was updated with the new
+  run, archive notes were prepended, and prompt self-improvement kept the
+  existing no-license-direct-PR policy and target-owned CI blocker handling.
+  `npm run check-memory-md-size`, `git diff --check`, `npm run check-em-dash`,
+  public markdown link checks, and `npm run check:all` passed before commit.
+  Final compact Markdown memory was 15234/15360 bytes, and the automation TOML
+  measured 12314 bytes. Audit updates were committed and pushed to `master`.
+
 ## 2026-06-20 17:28 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
