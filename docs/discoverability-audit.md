@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 20:18 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 21:30 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI plugin/skill/update, ClawHub publish
   and skill docs, plugin manifest, tool-plugin, install override, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 20:18 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 21:30 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -193,19 +193,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 21:21 UTC: runtime model/effort selector unavailable. Crawler JSON
+- 2026-06-20 21:30 UTC: runtime model/effort selector unavailable. Crawler JSON
   returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
-  issues or PRs. Authored same-day search returned 155 open PRs, 2
-  changes-requested hits, and 8 failure-lane hits; exact reads covered all 155
+  issues or PRs. Authored same-day search returned 156 open PRs, 2
+  changes-requested hits, and 8 failure-lane hits; exact reads covered all 156
   with 0 errors, all mergeable, only stale target-side blocks on `#19` and `#6`,
   and 1 target-owned failure on `claude-code-templates#642`. Official
   OpenClaw/docs, ClawHub, Directory, and npm returned HTTP 200; versions stayed
   `1.6.31`, `2026.6.8`, and `clawhub` `0.22.0`. Fresh screen selected
-  `michellepellon/skillmark`; duplicate scans were clean. Opened
-  https://github.com/michellepellon/skillmark/pull/27, commit `b4730f3`, adding
-  a TweetClaw-backed rich social-source skill fixture and score regression.
-  Target tests, clippy, changed-file formatting, target hygiene, TweetClaw
-  links, memory, OpenClaw fitness, dash check, and check:all passed.
+  `JNZader/repoforge`; duplicate scans were clean. Opened
+  https://github.com/JNZader/repoforge/pull/2, commit `26fa8b8`, adding a
+  TweetClaw-backed social-source skill fixture and JSON score regression.
+  Target ruff and pytest score lane, target hygiene, TweetClaw links, memory,
+  OpenClaw fitness, dash check, and check:all passed.
 
 ## Reporting Checklist
 
