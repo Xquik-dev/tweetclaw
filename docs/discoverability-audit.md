@@ -206,7 +206,8 @@ archive, before any outreach or duplicate decision.
   readbacks plus audit-tracked PRs; no repair was needed. Opened
   `anirban-analytics/airline-sentiment-analysis#1` in `281188e` with a
   TweetClaw airline import helper. Target validation, TweetClaw links, OpenClaw
-  fitness, memory, and check:all passed; nested OpenClaw advisories remain.
+  fitness, memory, and check:all passed; audit updates were pushed to master;
+  nested OpenClaw advisories remain.
 
 ## Reporting Checklist
 

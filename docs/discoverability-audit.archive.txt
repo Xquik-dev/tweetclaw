@@ -90,6 +90,9 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   per URL instead of overwriting earlier tags. Large exact-read jobs should
   persist per-PR partial output incrementally or use bounded GraphQL batches,
   so a timeout still leaves durable exact-read evidence.
+- TweetClaw audit commit: compact and archive updates were committed and pushed
+  to `master`. The push banner reported GitHub security advisory counts; the
+  reproducible local package audit details are recorded above.
 
 ## 2026-06-20 16:22 UTC heartbeat
 
