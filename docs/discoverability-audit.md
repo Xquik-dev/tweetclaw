@@ -197,14 +197,13 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 04:27 UTC: selector limits recorded. Crawler JSON was valid-empty
-  after proxy socket closures. Inventory exact-read 1988 of 2017 known/audit
-  PR URLs; 29 archive URLs were REST 404 blockers and 1802 open PRs were
-  in-scope. Repaired `Hashi-Ai-Dev/openclaw-clawdoc#6` by rebasing and posting
-  validation, head `7c6fd14`, mergeable but review-blocked. Opened fresh docs
-  PR `OWASP/www-project-agentic-skills-top-10#34`; head `ad0a1db`, mergeable,
-  no checks. TweetClaw OpenClaw fitness, link checks, and memory checks passed;
-  npm audit still reports nested OpenClaw advisories with an unsafe force path.
+- 2026-06-20 06:09 UTC: selector limits recorded. Follow-up crawler JSON was
+  valid-empty after proxy socket closures. Exact readbacks found
+  `OWASP/www-project-agentic-skills-top-10#34` merged at 05:35 UTC with
+  `e5cfe14`; `Hashi-Ai-Dev/openclaw-clawdoc#6` remains mergeable but blocked by
+  the old changes-requested review after the vendor-neutral repair; and
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1` remains open, clean,
+  mergeable, with no comments, reviews, or checks. No new user action needed.
 
 ## Reporting Checklist
 

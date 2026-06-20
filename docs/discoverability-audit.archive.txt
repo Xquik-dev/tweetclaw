@@ -233,6 +233,32 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-20 06:09 UTC Follow-Up
+
+- Runtime model and effort selector: unavailable in this Codex runtime, so this
+  follow-up used the available model and recorded the limitation here and in the
+  heartbeat outcome.
+- Crawler-first coverage: ran Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  bounded request and proxy warmup timeouts, 120 result limit, 1 search page, 8
+  per-query limit, and 8 concurrency across authored open PR, SKILL.md,
+  social/Twitter-X skill, registry, TweetClaw, OpenClaw plugin, and skill lanes.
+  JSON parsed successfully with 0 opportunities; stderr showed proxy socket
+  closures, endpoint quarantine, and the US outage circuit, with no credential
+  values.
+- Exact PR readbacks: `OWASP/www-project-agentic-skills-top-10#34` is merged at
+  2026-06-20 05:35 UTC with merge commit `e5cfe14`.
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` remains open, mergeable, and blocked only by
+  the old changes-requested review after the vendor-neutral repair and
+  validation comment. `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`
+  remains open, clean, mergeable, with no comments, reviews, or checks.
+- Maintenance decision: no duplicate follow-up comment was posted and no fresh
+  PR was opened during this queued heartbeat follow-up because the previous full
+  run's new PR had already merged and no new actionable maintainer, bot, CI,
+  DCO, CLA, conflict, or generated-file issue appeared in the exact readbacks.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-20 04:27 UTC heartbeat
 
 - Runtime selector audit: this runtime did not expose a callable model or
