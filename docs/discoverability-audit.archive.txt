@@ -96,7 +96,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   remains `1.6.32`. OpenClaw dist-tags were `latest: 2026.6.8`,
   `beta: 2026.6.9-beta.1`, and `alpha: 2026.5.19-alpha.1`; ClawHub version
   was `0.22.0`. Npm audit still reported 5 known nested OpenClaw advisories:
-  3 moderate, 2 high, and 0 critical.
+  3 moderate, 2 high, and 0 critical. GitHub push readback reported 6 default
+  branch alerts: 4 moderate and 2 high.
 - Broken-link and TweetClaw validation: Markdown link checks passed for
   README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
   audit, and compact release memory. `npm run check-openclaw-platform-fitness`
