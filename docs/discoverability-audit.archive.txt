@@ -2,6 +2,93 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 18:44 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `630d433`. Compact Markdown
+  memory started at 15234/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes. The Xquik crawler workspace had unrelated
+  `docs/feature-roadmap.md` edits and was left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` in strict JSON research-proxy mode with output
+  `/tmp/tweetclaw-heartbeat-20260620-1844/crawl.json`, session
+  `tweetclaw-20260620-1844`, bounded request timeout, proxy warmup disabled,
+  360 limit, 1 search page, 10 per-query limit, 8 concurrency, and focused
+  authored-PR, TweetClaw, OpenClaw, MCP, SKILL.md, `.agents/skills`, Claude,
+  Codex, social media, Twitter/X, sentiment-dashboard, x-twitter-scraper,
+  package-tooling, validator, registry, and web-index query packs. The crawler
+  wrote valid JSON with 0 opportunities after socket-close, endpoint-quarantine,
+  and proxy outage logs.
+- PR inventory and repair triage: TweetClaw had 0 open issues and 0 open PRs.
+  Same-day authored search returned 137 open PRs. Exact REST readbacks covered
+  all 137 with PR metadata, mergeability, comments, reviews, review comments,
+  and check runs, with 0 read errors. Merge states were 105 clean, 23 unstable,
+  and 9 blocked. Check summaries were 126 with no checks, 10 terminal
+  non-failing, and 1 failure-like. Broad focused partitions for TweetClaw,
+  Xquik, OpenClaw, MCP, skill, Twitter, social, and Hermes each capped at 300;
+  `xsearch` returned 1 uncapped hit and `Klavis` returned 0. GitHub search rate
+  remained available, but broad inventory remains partial because capped
+  partitions were not exhaustively split. Reviewed current comments on
+  `Klavis-AI/klavis#1668`, `foxck016077/awesome-apify-actors#1`, and
+  `public-api-lists/public-api-lists#517`; each was CLA, bot walkthrough, or
+  link-check status with no branch repair needed. The only failure-like tracked
+  checks were still `davila7/claude-code-templates#642` target workflow
+  comment-permission failures, while the changed SkillSpector report passed.
+- Fresh discovery and duplicate checks: crawler output was empty, so fallback
+  repo searches covered recent SKILL.md directories, `.agents/skills`, Claude
+  and Codex skills, OpenClaw skills, agent-skill registries, package tooling,
+  MCP catalogs, Twitter/X sentiment dashboards, and X/Twitter CSV import lanes.
+  Archive duplicate search blocked `agentskillexchange/skills`,
+  `philipbankier/awesome-agent-skills`, `mattsfraser/skill-generator`, and
+  other already-covered skill surfaces. `mareasw/ontoskills` remained lower fit
+  with an open security issue. Fresh metadata screens kept `hymhub/skill-indexer`,
+  `luna-prompts/skillnote`, `sentenz/skills`, and `jnMetaCode/skillet` as
+  future package-tooling or registry backups.
+- Selected target: `reaatech/agents-md-kit` was active, MIT licensed,
+  non-fork, non-archived, issue-enabled, and directly fit validator and example
+  coverage for durable `AGENTS.md` and `SKILL.md` artifacts. Read README,
+  AGENTS.md, CONTRIBUTING, schema reference, workflow, examples command, MCP
+  examples tool, package metadata, license metadata, target content, open and
+  closed PRs, and open and closed issues. Duplicate gates were clean across
+  compact audit, archive, target content, target PRs, and target issues for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, and variants.
+- External PR submitted: https://github.com/reaatech/agents-md-kit/pull/51 from
+  correctly parented `kriptoburak/agents-md-kit` fork branch
+  `codex/add-social-listening-example`, commit `b2f7a25`. The PR adds
+  `examples/social-listening` with AGENTS.md, 3 skill files, and a package
+  workspace importer. The example models TweetClaw as a bounded X/Twitter
+  context adapter for source packets, approval-gated publishing, and
+  user-created monitor event triage. Exact PR readback was open, ready,
+  mergeable, `UNSTABLE`, 1 commit, 0 comments, 0 reviews, and 0 check runs.
+- Target validation and hygiene: target validation passed `pnpm install
+  --frozen-lockfile`, `pnpm exec turbo run build`, `node packages/cli/dist/cli.js
+  lint examples/social-listening`, `node packages/cli/dist/cli.js lint
+  examples/`, `pnpm run typecheck`, `pnpm run lint`, `pnpm test`,
+  `npx --yes markdown-link-check` on the new example files, and `git diff
+  --check`. The first new-link check found npmjs package-page bot protection
+  returning 403, so the example link was changed to the TweetClaw GitHub URL and
+  the link check passed. Public-hygiene scans found no secrets, private
+  implementation detail, private source wording, private billing mechanics,
+  em dash, or stale metadata in added files.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`, CLI
+  plugin/skill/update, ClawHub publishing, ClawHub skill format, plugin
+  validation fixes, plugin manifest, tool plugins, install overrides, debugging,
+  ClawHub `@xquik/tweetclaw`, OpenClaw Directory, and TweetClaw npm registry
+  returned HTTP 200. `npm view @xquik/tweetclaw` still showed published
+  `1.6.31`; OpenClaw dist-tags remained latest `2026.6.8`, beta
+  `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`; ClawHub remained `0.22.0`.
+- TweetClaw validation and persistence: compact audit was updated with the new
+  run, archive notes were prepended, and prompt self-improvement kept the
+  crawler-first, no-license-direct-PR, and target-owned CI handling rules
+  unchanged. `npm run check-memory-md-size`, `git diff --check`,
+  `npm run check-em-dash`, public markdown link checks, and `npm run check:all`
+  passed before commit. Final compact Markdown memory stayed under the 15 KiB
+  cap, and the automation TOML stayed at 12314 bytes. Audit updates were
+  committed and pushed to `master`.
+
 ## 2026-06-20 18:23 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model

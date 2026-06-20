@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 18:23 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 19:00 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI plugin/skill/update, ClawHub publish
   and skill docs, plugin manifest, permissions, SDK, install, dependency, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 18:23 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 19:00 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -198,18 +198,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 18:23 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 0 opportunities after proxy outage logs. TweetClaw had no open
-  issues or PRs. Same-day authored exact-read covered 133 PRs with no read
-  errors; broad TweetClaw, Xquik, OpenClaw, MCP, skill, Twitter, and social
-  partitions still capped at 300, so inventory remains partial. The only
-  failure-like tracked checks were target-owned comment-permission failures on
-  `davila7/claude-code-templates#642`, with the changed SkillSpector scan
-  passing. Opened `labyla/x-search#1` in `ad04816` with optional
-  OpenClaw/TweetClaw source-packet guidance for the agent-ready X/Twitter CLI.
-  Target docs links, deterministic Go checks, TweetClaw links, memory, and
-  check:all passed; audit updates were pushed to master; nested OpenClaw
-  advisories remain.
+- 2026-06-20 18:44 UTC: runtime model/effort selector unavailable. Crawler JSON
+  returned 0 opportunities after proxy outage logs. TweetClaw had 0 open issues
+  or PRs. Same-day authored exact-read covered 137 PRs with 0 errors; broad
+  TweetClaw, Xquik, OpenClaw, MCP, skill, Twitter, social, and Hermes
+  partitions still capped at 300, so inventory remains partial. Repair triage
+  found no actionable maintainer comments or valid failing checks; the known
+  `davila7/claude-code-templates#642` failures remain target-owned
+  comment-permission failures. Opened `reaatech/agents-md-kit#51` in `b2f7a25`
+  with a TweetClaw social-listening example for bounded source packets,
+  approval-gated publishing, and user-created monitor-event triage. Target
+  build, tests, typecheck, lint, example lint, link check, TweetClaw links,
+  memory, and check:all passed; audit updates were pushed to master; nested
+  OpenClaw advisories remain.
 
 ## Reporting Checklist
 
