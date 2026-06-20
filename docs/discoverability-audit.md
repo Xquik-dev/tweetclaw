@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 19:34 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 19:57 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI plugin/skill/update, ClawHub publish
-  and skill docs, plugin manifest, permissions, SDK, install, dependency, and
+  and skill docs, plugin manifest, tool-plugin, install override, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 19:34 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 19:57 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -193,21 +193,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 19:34 UTC: runtime model/effort selector unavailable. Crawler JSON
-  returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
-  issues or PRs. Same-day authored exact-read covered 142 PRs with 0 errors:
-  107 clean, 24 unstable, 10 blocked, and 1 unknown; broad lane partitions still
-  capped at 300 except `xsearch` 1 and `Klavis` 0. No safe repair blocker was
-  found; `davila7/claude-code-templates#642` remains target-owned. Official
-  OpenClaw, ClawHub, OpenClaw Directory, and npm routes returned HTTP 200; npm
-  latest remains `1.6.31`, OpenClaw latest `2026.6.8`, and `clawhub` `0.22.0`.
-  Fresh screens rejected existing-history skill and Twitter-MCP targets; opened
-  https://github.com/s48401203a/skills-catalog/pull/1 from correctly parented
-  `kriptoburak/skills-catalog`, commit `e21141d`, adding a bilingual TweetClaw
-  Integration card and updating the card count. Exact readback showed open,
-  ready, mergeable, clean, no checks, comments, or reviews. Target HTML parse,
-  36-card count, whitespace, hygiene, TweetClaw memory, OpenClaw fitness, link
-  checks, and check:all passed.
+- 2026-06-20 19:57 UTC: runtime model/effort selector unavailable. Xquik had an
+  unrelated modified roadmap file left untouched. Crawler JSON returned 0
+  opportunities after managed proxy outage logs. TweetClaw had 0 open issues or
+  PRs. Same-day authored exact-read covered 145 PRs with 0 errors: 110 clean,
+  25 unstable, and 10 blocked; broad lane partitions capped at 300 except
+  `Klavis` 0. No actionable maintainer comment, conflict, DCO/CLA, generated
+  drift, or safely repairable CI failure was found. Official OpenClaw, ClawHub,
+  OpenClaw Directory, and npm routes returned HTTP 200; npm latest remains
+  `1.6.31`, OpenClaw latest `2026.6.8`, and `clawhub` `0.22.0`. Fresh screens
+  rejected generated or personal skill catalogs; opened
+  https://github.com/Fengsh0923/skillctl/pull/1 from correctly parented
+  `kriptoburak/skillctl`, commit `ae98c99`, documenting Codex, `.agents`, and
+  OpenClaw runtime skill roots without thin product marketing. Exact readback
+  showed open, ready, mergeable, no checks, comments, or reviews. Target
+  whitespace, hygiene, Python 3.11 pytest, TweetClaw memory, OpenClaw fitness,
+  link checks, and check:all passed.
 
 ## Reporting Checklist
 
