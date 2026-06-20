@@ -233,6 +233,114 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-20 03:54 UTC heartbeat
+
+- Model and effort: this runtime exposed no model or reasoning-effort selector,
+  so GPT-5.5 and extra-high effort could not be selected. Limitation recorded
+  here and in the heartbeat outcome.
+- Complete PR inventory: crawler-first monitoring ran from
+  `/Users/burak/Developer/xquik` with:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260620-0354/pr-fresh-crawl.json --research-proxy --session-id tweetclaw-20260620-0354-prs --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 1000 --search-pages 2 --per-query-limit 16 --concurrency 16` plus focused queries for authored PRs, OpenClaw, MCP, ClawHub, SKILL.md, skills dirs, Twitter/X, social, TweetClaw, Xquik, and x-twitter-scraper. The JSON parsed as an empty opportunities array after managed-proxy socket closures and endpoint quarantine logs.
+- Authored PR partitions: June 2026 created-date buckets succeeded, then the May
+  partition hit GitHub search HTTP 403 rate limit. Broad authenticated search
+  stopped for the run. The run continued with the prior complete authored-open
+  inventory, exact PR URLs, REST reads, and crawler output. Combined known open
+  inventory contained 1795 PR URLs.
+- Exact readbacks: 1793 PRs were read with `gh pr view` fields for state,
+  mergeability, base/head, commits, comments, reviews, checks, files, labels,
+  and timestamps. Two transient GraphQL failures were read by exact REST
+  fallback, producing 1795 total exact readbacks with 0 final read errors.
+  GitHub GraphQL quota was then exhausted, so subsequent comments and PR create
+  operations used REST.
+- Inventory signals after classifier cleanup: scoped 1795 of 1795; attention
+  168; dirty/conflict 40; failure/error checks 48; changes requested 7; DCO/CLA
+  4; generated drift 4. Top stale or already-handled lanes included
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`, `wshobson/agents#582`,
+  `Jamkris/everything-gemini-code#91`,
+  `anup4khandelwal/awesome-codex-skills#6`, and `jjfantini/humblSKILLS#110`.
+  `frostmute/claw2manus#15` had a current maintainer request and was selected
+  for repair.
+- PR repair: for `https://github.com/frostmute/claw2manus/pull/15`, the fork
+  `kriptoburak/claw2manus` was verified as a fork of `frostmute/claw2manus`.
+  Branch `codex/fetch-nested-github-skills` was rebased on current upstream
+  `main`, conflicts in `claw2manus/fetcher.py` and `tests/test_fetcher.py` were
+  resolved, raw/blob GitHub skill fetching was preserved, request timeouts were
+  kept, and failed GitHub URL fetches now return immediately instead of falling
+  through to author/name lookup.
+- PR repair validation: `python3 -m pytest tests/test_fetcher.py -q`,
+  `python3 -m py_compile claw2manus/*.py tests/*.py`, full
+  `python3 -m pytest -q`, `git diff --check`, conflict-marker scan,
+  `npx --yes markdown-link-check README.md --quiet`, public-hygiene diff scan,
+  and a live raw GitHub TweetClaw SKILL.md fetch smoke test passed. Head
+  `01a10a1` was force-with-lease pushed. REST readback showed open, ready,
+  mergeable true, clean, 3 changed files, 1 commit, and no check runs. REST
+  comment posted:
+  https://github.com/frostmute/claw2manus/pull/15#issuecomment-4756385341.
+- Fresh discovery: crawler output was empty, so fallback web-index metadata and
+  exact repo REST reads screened skill and social automation candidates. Prior
+  duplicate/history blocked `rohunvora/x-research-skill`,
+  `dorukardahan/twitterapi-io-skill`, `PHY041/claude-skill-twitter`,
+  `kohoj/skills`, `yamz8/x-thread-skill`, `mrsahilbeniwal/social-campaigns`,
+  `wshuyi/x-article-publisher-skill`, `reymerekar7/rm-skills`,
+  `benmillerat/openclaw-x-bookmark-archiver`, `bosshuman/openclaw-x`,
+  `indranilbanerjee/digital-marketing-pro`, and related lanes.
+- Fresh target: `agidesigner/five-step-method-skill` was new to compact audit
+  and archive, non-fork, unarchived, MIT, issues enabled, and had no target PR
+  or issue history. Target content scans found no TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw-submission, or ClawHub duplicate. The repo already
+  had a badge area, but the existing badges were package/project health, so no
+  NHS badge was added.
+- Fresh PR submitted:
+  https://github.com/agidesigner/five-step-method-skill/pull/1 from correctly
+  parented fork `kriptoburak/five-step-method-skill`, branch
+  `codex/fix-skill-json-install-path`, commit `a08f7bb`. The PR aligns
+  `skill.json` with package version `1.0.1`, points the Claude Code install
+  command at the `skills/five-step-method` path that is included in the npm
+  package, and adds an OpenClaw install command for the existing OpenClaw skill
+  source.
+- Fresh PR validation: `node --check bin/install.js`, JSON parse and manifest
+  version assertions, `npm pack --dry-run --json`, `git diff --check`, and
+  public-hygiene diff scan passed. The package tarball contains
+  `skills/five-step-method/SKILL.md` but not `.claude/skills/...`, matching the
+  manifest repair. README link checking reported the pre-existing npmjs.com
+  Cloudflare 403 challenge; the PR did not add or change README links. REST
+  readback showed open, ready, mergeable true, clean, 1 changed file, 1 commit,
+  and no check runs.
+- Official OpenClaw and package checks: current `docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/clawhub/plugin-validation-fixes`, `/help/testing-updates-plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  and `/help/debugging` all returned HTTP 200. Canonical ClawHub TweetClaw route
+  returned HTTP 200; the probed OpenClaw directory route returned HTTP 404.
+  `npm view @xquik/tweetclaw version` returned `1.6.31` while local remains
+  `1.6.32`; `npm view openclaw dist-tags --json` returned latest `2026.6.8`,
+  beta `2026.6.9-beta.1`, and alpha `2026.5.19-alpha.1`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. Full
+  `npm run check:all` passed with typecheck, lint, duplicate check, knip,
+  suppression check, dash check, memory check, skill frontmatter, version
+  check, build, OpenClaw fitness, package artifact, and 168 tests at 100%
+  coverage.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` still reports
+  nested OpenClaw advisories for `protobufjs`, `tar`, and `undici`, including
+  high-severity `undici` findings. The force path would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Persisted automation prompt measured 11980 bytes, under the
+  15360-byte cap. The current persisted automation already contains the
+  complete-PR-inventory rule requested by the user, so no prompt edit was
+  needed.
+- Prompt self-improvement: keep using prior complete inventory files and exact
+  REST readbacks when broad GitHub search hits a rate limit. When GraphQL quota
+  is exhausted, use REST for comments, PR creation, and exact PR readbacks
+  instead of delaying repairs. For packaged skill repos, compare `package.json`
+  `files` with manifest install paths before opening PRs.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 03:02 UTC heartbeat
 
 - Runtime selector: this Codex heartbeat surface still did not expose model or

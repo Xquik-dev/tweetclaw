@@ -197,20 +197,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 03:33 UTC: selector limits recorded. Crawler PR/fresh and
-  exact-repo JSON were valid but empty after US proxy socket failures.
-  Created-date partitions avoided the 1000 cap and found 1793 authored open
-  PRs; exact `gh pr view` reads covered all 1793 with 0
-  final errors. Scoped 1792, with 391 dirty-like rows before repair, 48
-  failure/error check rows, 7 changes-requested rows, and 75 review-required
-  rows. Repaired recurring generated-catalog conflict
-  `Rodert/awesome-mcp#11`; final readback is open, ready, head `5fea1f0`,
-  `MERGEABLE`, and `CLEAN`. Fresh target
-  `zzhuxiaojun-glitch/twitter_mcp_tang` was duplicate-clean and nested-MIT,
-  but outreach was held because dirty PR backlog remains and target ownership
-  needs more review. OpenClaw docs, package metadata, links, memory, and
-  fitness passed; npm audit still reports nested OpenClaw advisories with an
-  unsafe force downgrade path.
+- 2026-06-20 03:54 UTC: selector limits recorded. Crawler JSON was valid but
+  empty after managed-proxy socket closures. GitHub search hit 403 on May
+  partitions, so broad search stopped; prior inventory plus REST fallbacks
+  exact-read 1795 known open PRs with 0 final read errors. Repaired
+  maintainer-requested `frostmute/claw2manus#15` rebase and fetcher feedback;
+  head `01a10a1`, clean, REST comment posted. Opened fresh package-metadata PR
+  `agidesigner/five-step-method-skill#1`; head `a08f7bb`, clean, no checks.
+  TweetClaw OpenClaw fitness, link checks, and memory checks passed; npm audit
+  still reports nested OpenClaw advisories with an unsafe force downgrade path.
 
 ## Reporting Checklist
 
