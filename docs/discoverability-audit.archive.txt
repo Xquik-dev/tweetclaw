@@ -2,6 +2,116 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 23:14 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `b62ac7c`. Compact Markdown
+  memory started at 15357/15360 bytes, and the persisted automation prompt was
+  measured at 11980 bytes. The Xquik crawler workspace had unrelated
+  `docs/feature-roadmap.md` edits and was left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` in strict JSON research-proxy mode with output
+  `/tmp/tweetclaw-heartbeat-20260620-2314/crawl.json`, session
+  `tweetclaw-20260620-2314`, bounded request timeout, proxy warmup disabled,
+  420 limit, 1 search page, 10 per-query limit, 8 concurrency, and focused
+  authored-PR, TweetClaw, OpenClaw, MCP, SKILL.md, `.agents/skills`, Claude,
+  Codex, social media, Twitter/X, x-twitter-scraper, ClawHub, npm,
+  package-tooling, validator, registry, fork, generated-catalog, awesome-list,
+  GitHub Action, and web-index query packs. The crawler wrote valid JSON with 0
+  opportunities after managed proxy socket and outage logs. No crawler
+  credential values were stored.
+- PR inventory and repair triage: TweetClaw had 0 open issues and 0 open PRs.
+  Audit memory contained 1116 historical PR URLs, but this run did not claim
+  full exact readback of every archived URL. GitHub GraphQL was rate-limited
+  with 0 remaining, so broad GraphQL search and unresolved-thread reads were
+  skipped. REST search decomposed authored open PRs under cap: 146 open PRs
+  from 2026-06-01 through 2026-06-07, 526 from 2026-06-08 through 2026-06-14,
+  385 from 2026-06-15 through 2026-06-18, 157 since 2026-06-19, 592 in May,
+  and 101 before May, for 1907 open authored PRs. Exact REST readbacks covered
+  the updated-since-2026-06-20, changes-requested, and failing-check union: 208
+  PRs with 0 errors, 206 mergeable true, 1 mergeable false, 1 mergeable null, 2
+  conflict or unknown states, 4 stale changes-requested review states, 5
+  approved review states, 161 issue comments, 38 review rows, and 89 check or
+  status rows.
+- Repair decisions: no safely repairable maintainer request was found before
+  outreach. `weiflycc-cmd/awesome-copilot#19` remained blocked by a bot request
+  to retarget a non-exposed `staged` branch, with a prior comment already
+  posted. `Hashi-Ai-Dev/openclaw-clawdoc#6` remained a stale
+  changes-requested state after the vendor-neutral fix and revalidation.
+  `crewAIInc/crewAI#5784` and `marktantongco/ai-agent-skills#1` had stale
+  bot changes-requested states followed by approved or no-action validation,
+  with remaining blockers in target-owned Vercel or check state. Other
+  non-success lanes were target-owned CI, bot, authorization, or maintainer
+  gates.
+- Fresh discovery and duplicate gates: after crawler output was empty, fallback
+  GitHub REST repo searches covered fresh SKILL.md validator, security scanner,
+  skill CLI, skill manifest, agent-skill, package-tooling, registry, and
+  generated catalog lanes. Context7-specific candidates were skipped by hard
+  scope. `Teycir/SkillsGuard` was selected as a fresh skill security scanner:
+  public, non-fork, non-archived, PR-enabled, issue-enabled, no existing PRs or
+  issues, no repository license metadata but package and README license text
+  declared MIT, and `SECURITY.md` only blocked public vulnerability reports.
+  The contribution was a benign fixture, not a vulnerability report. Archive,
+  target content, target open and closed PRs, and target open and closed issues
+  were duplicate-clean for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and
+  ClawHub.
+- External PR: opened https://github.com/Teycir/SkillsGuard/pull/1 from verified
+  fork `kriptoburak/SkillsGuard`, parent `Teycir/SkillsGuard`, branch
+  `codex/tweetclaw-safe-skill-fixture`, commit `0a73647`. The PR adds a safe
+  TweetClaw source-skill fixture to the fixture integration suite and marks it
+  expected-clean so SkillsGuard catches false positives for social-source
+  SKILL.md metadata using public registry and repository links. REST readback
+  showed open, ready, mergeable, maintainer-editable, 1 commit, 2 changed files,
+  20 additions, no deletions, no comments, no reviews, no review comments, and
+  GitGuardian completed successfully.
+- Target validation and hygiene: `npm ci` installed 3 packages with 0
+  vulnerabilities. `npm run build && npm run build:test && node
+  testskills/run-tests.js` passed. Full `npm test` passed with 112 unit tests
+  and all fixture scans. `git diff --check` passed. `npx --yes
+  markdown-link-check testskills/tweetclaw-source-skill/SKILL.md --quiet`
+  passed after replacing the npmjs package page, which link-check returned 403,
+  with the public npm registry metadata URL. Added-line hygiene found no
+  secrets, private implementation details, restricted provider or source names,
+  internal cost mechanics, unsupported claims, em dashes, or double-hyphen
+  separators. No NHS badge was added because no handled badge area needed one.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/help/debugging`, and `/help/testing-updates-plugins` returned HTTP 200.
+  The canonical ClawHub TweetClaw route, OpenClaw Directory route, and npm
+  registry route returned HTTP 200. `npm view @xquik/tweetclaw` returned
+  `1.6.31` with matching OpenClaw install metadata; local package metadata
+  remains `1.6.32`. OpenClaw dist-tags were `latest: 2026.6.8`,
+  `beta: 2026.6.9-beta.1`, and `alpha: 2026.5.19-alpha.1`; ClawHub version
+  was `0.22.0`. Npm audit still reported 5 known nested OpenClaw advisories:
+  3 moderate, 2 high, and 0 critical.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm run
+  check-em-dash` passed, and final `npm run check:all` passed.
+- Memory and prompt: compact audit, compact release memory, and this archive
+  were updated. Compact Markdown memory remained under cap. Prompt
+  self-improvement did not require a saved automation prompt edit; the current
+  prompt already preserves runtime limitation reporting, quiet autonomy,
+  crawler-first discovery, mandatory PR wording, aggressive skill-repo coverage,
+  fresh discovery, repair priority, duplicate and fork rules, official OpenClaw
+  checks, link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, thread binding, commit/push requirement, Markdown cap, prompt cap,
+  and self-improvement. Durable lessons: when GraphQL is rate-limited but core
+  REST is healthy, use REST search date partitions for counts and bounded
+  concurrent REST readbacks for high-signal PR repair triage; npmjs package
+  pages may return 403 to automated link checkers, so use registry metadata URLs
+  in machine-checked fixtures.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+  TweetClaw audit commit and push are recorded by the run outcome and Git
+  history.
+
 ## 2026-06-20 22:57 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
