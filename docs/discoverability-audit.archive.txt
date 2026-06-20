@@ -9,8 +9,9 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   that limitation recorded.
 - Start state: TweetClaw `master` was clean at `aaf5418`. Compact Markdown
   memory started at 15076/15360 bytes, and the persisted automation TOML
-  measured 12314 bytes. The Xquik workspace had unrelated
-  `docs/feature-roadmap.md` edits, which were left untouched.
+  measured 12314 bytes. The Xquik workspace had unrelated local edits, and
+  final readback showed additional actor URL and schema edits; all were left
+  untouched.
 - Crawler-first coverage: ran the Xquik crawler from
   `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
   session `tweetclaw-20260620-1443`, bounded request timeout, proxy warmup
