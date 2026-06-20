@@ -2,6 +2,100 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 19:13 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `d9a9baa`. Compact Markdown
+  memory started at 15326/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes. The Xquik crawler workspace had unrelated local edits
+  and was left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` in strict JSON research-proxy mode with output
+  `/tmp/tweetclaw-heartbeat-20260620-1913/crawl.json`, session
+  `tweetclaw-20260620-1913`, bounded request timeout, proxy warmup disabled,
+  360 limit, 1 search page, 10 per-query limit, 8 concurrency, and focused
+  authored-PR, TweetClaw, OpenClaw, MCP, SKILL.md, `.agents/skills`, Claude,
+  Codex, social media, Twitter/X, sentiment-dashboard, x-twitter-scraper,
+  package-tooling, validator, registry, and web-index query packs. The crawler
+  wrote valid JSON with 0 opportunities after managed proxy socket and outage
+  logs. Repo-mode coverage for `hymhub/skill-indexer` also wrote valid JSON
+  with 0 opportunities after the same proxy blocker.
+- PR inventory and repair triage: TweetClaw had 0 open issues and 0 open PRs.
+  Same-day authored search returned 140 open PRs. Exact REST readbacks covered
+  all 140 with 0 read errors. Merge states were 106 clean, 24 unstable, and 10
+  blocked. Broad focused partitions for TweetClaw, Xquik, OpenClaw, MCP, skill,
+  Twitter, social, and Hermes each capped at 300; `xsearch` returned 1 uncapped
+  hit and `Klavis` returned 0. Broad inventory remains partial because capped
+  partitions were not exhaustively split. The only failure-like tracked checks
+  were `davila7/claude-code-templates#642` target workflow comment-permission
+  failures, while branch-local evidence stayed already reviewed.
+- Actionable repair: `netresearch/claude-code-marketplace#73` had review
+  comments asking for active-problem marketplace wording and correct
+  productivity-group placement. Read target AGENTS instructions and the GitHub
+  comment-repair skill. Updated marketplace JSON, README, German descriptions,
+  display names, and site groups in the PR head fork. Target validation passed
+  whitespace, `./scripts/validate.sh`, site build, SEO check, hreflang check,
+  and public-hygiene scans. Target-owned blockers were an existing README link
+  returning 404, an unrelated `typo3-site-conformance` orphan, and pre-existing
+  npm audit findings. Final PR readback showed the branch includes repair commit
+  `1f2f03c`; current head `d3ed764`; DCO, SonarCloud, and SonarCloud Code
+  Analysis success; open, ready, mergeable, review-blocked, 1 comment, 1 review,
+  and 5 stale unresolved review threads against fixed files.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`, CLI
+  plugin/skill/update, ClawHub publishing, ClawHub skill format, plugin
+  validation fixes, plugin manifest, tool plugins, install overrides, debugging,
+  ClawHub `@xquik/tweetclaw`, OpenClaw Directory, and TweetClaw npm registry
+  returned HTTP 200. `npm view @xquik/tweetclaw` still showed published
+  `1.6.31` with npm-first install metadata; source remains `1.6.32`.
+  OpenClaw dist-tags stayed latest `2026.6.8`, beta `2026.6.9-beta.1`, alpha
+  `2026.5.19-alpha.1`; `clawhub` stayed `0.22.0`.
+- Fresh discovery and duplicate checks: compact audit, archive, crawler output,
+  target metadata, target content, target PRs, and target issues were checked
+  for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, xquik.com, OpenClaw, and variants.
+  `luna-prompts/skillnote` remained duplicate-blocked by open PR 72,
+  `sentenz/skills` by prior x-twitter-scraper PR 46, and `jnMetaCode/skillet`
+  by prior PR 1 plus later repair history. `hymhub/skill-indexer` was MIT
+  licensed, active, not archived, not a fork, issue-enabled, PR-enabled, and
+  duplicate-clean across exact target title scans and local content.
+- Selected target: `hymhub/skill-indexer` was selected because it indexes npm
+  dependency skills and validates convention-layout `skills/<name>/SKILL.md`
+  directories. Read README, CONTRIBUTING, consumer docs, example project,
+  authoring docs, package metadata, license metadata, PR template, changeset
+  folder, target PRs, target issues, and target content. The contribution adds a
+  consumer docs example and example-project note showing `@xquik/tweetclaw` as
+  a real published convention source, plus a patch changeset.
+- External PR submitted: https://github.com/hymhub/skill-indexer/pull/4 from
+  correctly parented `kriptoburak/skill-indexer` fork branch
+  `codex/add-tweetclaw-convention-example`, commit `dc6a463`. Exact PR readback
+  showed open, ready, mergeable, `UNSTABLE`, 1 commit, 0 comments, 0 reviews, 3
+  changed files, and no check runs yet.
+- Target validation and hygiene: target validation passed `npm run lint`,
+  `npm run typecheck`, `npm run test`, `npm run build`, touched-file Prettier,
+  changed-file Markdown link checks, whitespace checks, and public-hygiene scans.
+  A fresh temp consumer project installed the published TweetClaw package and
+  the locally built `skill-indexer` CLI confirmed `tweetclaw` as a convention
+  source and planned a Codex dry-run install. Full `npm run format:check` still
+  failed on 7 pre-existing files outside the PR, and target `npm install`
+  reported pre-existing audit findings.
+- TweetClaw validation and public hygiene: README, OpenClaw setup docs,
+  workflow docs, packaged skill docs, compact audit, and release memory link
+  checks passed after the audit update. `npm run check-memory-md-size`,
+  `git diff --check`, `npm run check-em-dash`, public-hygiene diff scan, and
+  `npm run check:all` passed before the TweetClaw audit commit.
+- Prompt self-improvement: no saved automation prompt edit was useful because
+  the current prompt already preserves model/effort limitation reporting, quiet
+  autonomy, crawler-first discovery, mandatory per-run PR wording, aggressive
+  skill-repo coverage, PR repair priority, duplicate and fork rules, official
+  OpenClaw checks, link checks, validation gates, badge rule, Context7
+  exclusion, credential rules, cadence, thread binding, commit/push requirement,
+  Markdown cap, and self-improvement. Durable lesson: `hymhub/skill-indexer` is
+  now used and must be duplicate-blocked for future TweetClaw skill-indexer docs
+  submissions; convention-layout package-tooling examples are target-native when
+  the target scanner actually discovers and validates the published skill.
+
 ## 2026-06-20 18:44 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
