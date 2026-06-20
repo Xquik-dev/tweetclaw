@@ -193,23 +193,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 20:39 UTC: runtime model/effort selector unavailable. Crawler JSON
+- 2026-06-20 21:00 UTC: runtime model/effort selector unavailable. Crawler JSON
   returned 0 opportunities after managed proxy outage logs. TweetClaw had 0 open
-  issues or PRs. Authored exact-read covered 150 same-day open PRs with 0
-  GraphQL read errors: 114 clean, 25 unstable, 11 blocked; broad lanes still
-  capped at 300 except `xsearch` 1 and `Klavis` 0. No current-head maintainer
-  request, conflict, DCO/CLA, generated drift, or safely repairable
-  target-owned CI failure was found. Official OpenClaw/docs, ClawHub, Directory,
-  and npm returned HTTP 200; versions stayed `1.6.31`, `2026.6.8`, and
-  `clawhub` `0.22.0`. Fresh screen selected
-  MIT-licensed `mohitagw15856/pm-claude-skills`; duplicate scans were clean, the
-  same-name fork had the wrong parent, and verified
-  `kriptoburak/mohitagw-pm-claude-skills` was used. Opened
-  https://github.com/mohitagw15856/pm-claude-skills/pull/67, commit `6c75a34`,
-  adding read-only TweetClaw evidence intake to `social-media-audit` plus
-  generated export sync. Readback: open, ready, mergeable, unstable, no checks,
-  comments, or reviews. Target checks, edited-skill links, TweetClaw links,
-  memory, OpenClaw fitness, dash check, and check:all passed.
+  issues or PRs. Broad authored search hit GraphQL resource limits and a GitHub
+  secondary search rate limit, so inventory stayed partial; fallback exact-read
+  covered 11 known/audit and new PRs, with only target-side blocks on `#19` and
+  `#6`. Official OpenClaw/docs, ClawHub, Directory, and npm returned HTTP 200;
+  versions stayed `1.6.31`, `2026.6.8`, and `clawhub` `0.22.0`. Fresh screen
+  selected `alephic-ai/skref`; duplicate scans were clean. Opened
+  https://github.com/alephic-ai/skref/pull/11, commit `64537de`, adding a
+  TweetClaw-backed social-post-approval sample skill. Target checks, target
+  links, TweetClaw links, memory, OpenClaw fitness, dash check, and check:all
+  passed.
 
 ## Reporting Checklist
 
