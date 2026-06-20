@@ -2,6 +2,119 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 14:43 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `aaf5418`. Compact Markdown
+  memory started at 15076/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes. The Xquik workspace had unrelated
+  `docs/feature-roadmap.md` edits, which were left untouched.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  session `tweetclaw-20260620-1443`, bounded request timeout, proxy warmup
+  disabled, 360 limit, 1 search page, 10 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, `.agents/skills`,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill, awesome-list,
+  registry, generated-catalog, fork, package-tooling, validator, examples,
+  docs, sentiment-dashboard, x-twitter-scraper, and web-index skill queries.
+  Strict JSON parsing found 0 opportunities. Stderr showed proxy socket
+  closures, endpoint quarantines, and outage-circuit logs with no credential
+  values.
+- PR inventory: TweetClaw had no open issues and no open PRs by REST readback.
+  Same-day authored open search saved 73 PRs without hitting the 100-result
+  page cap. Broad archive exact readback was not claimed complete this run.
+  REST exact readbacks for the 73 same-day PRs covered PR state, mergeability,
+  comments, reviews, commit statuses, and check runs with 73 successes and 0
+  errors. Merge-state counts were 56 clean, 14 unstable, and 3 blocked, with
+  16 comment PRs, 6 review PRs, 2 failing check runs, and 6 non-success commit
+  statuses.
+- PR repair triage: the newest PRs
+  `Caeser-Zhang/hermes-skills#2`,
+  `h000susie/twitter-sentiment-analysis#1`, and
+  `ava-agent/promotion-agent#1` had no comments, reviews, or checks needing
+  action. Existing review and bot comments on
+  `MauricioPerera/agent-skills#1`, `hojinzs/my-agent-skills#1`, and
+  `PatrickJS/awesome-cursorrules#317` remained already repaired and
+  commented. `weiflycc-cmd/awesome-copilot#19` still lacks the requested
+  `staged` base branch. Vercel owner authorization statuses remained
+  target-owned on multiple PRs. The only failing checks were
+  `davila7/claude-code-templates#642` Security Audit and SkillSpector runs,
+  already read back as target-owned comment-permission failures after
+  successful scans.
+- Fresh discovery and duplicate checks: crawler output had no eligible target,
+  so fallback metadata searches covered active Twitter sentiment Streamlit
+  projects, tweet sentiment CSV/JSON import lanes, agent skill repos,
+  OpenClaw registries, validators, examples, and package tooling. Archive
+  memory already blocked or tracked
+  `varun0852/Twitter-Sentiment-Analytics-Dashboard`,
+  `aravind08033/sentimentiq-dashboard`,
+  `Wassbdr/twitter-sentiment-analysis`, `Technicaladvisor01/Sentipulse`,
+  `sahasrareddy656-lgtm/Twitter-Sentiment-Analysis-NLP`,
+  `Azeem1027/Twitter-sentiment-analysis`,
+  `ankitjha2621/twitter-sentiment-analysis`,
+  `bandawalanaman/Twitter-Sentiment-Analysis`,
+  `DARAads/twitter-sentiment-analysis`, `nithi2516/twitter_sentiment_analysis`,
+  `Douglas88/openclaw-plugins`, and `pagoda111king/super-sop-node-radar`.
+  `maulnite/MenfessScope` was not selected because its tracked files were
+  empty. The selected target
+  `aleenaahmed21/Twitter-Sentiment-Data-Warehouse` was public, active on
+  2026-06-02, non-fork, non-archived, issue-enabled, default branch `main`,
+  and had no detected license metadata. Missing license metadata did not block
+  a direct PR under the current policy. Target open and closed PR and issue
+  lists were empty. Local content scans found no TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, or ClawHub
+  references. The personal fork
+  `kriptoburak/Twitter-Sentiment-Data-Warehouse` was REST-verified as
+  correctly parented to `aleenaahmed21/Twitter-Sentiment-Data-Warehouse`.
+- Fresh PR submitted:
+  https://github.com/aleenaahmed21/Twitter-Sentiment-Data-Warehouse/pull/1
+  from correctly parented fork branch
+  `codex/add-tweetclaw-warehouse-import`, commit `dd8b354`. The PR adds
+  TweetClaw JSON, JSONL, and NDJSON import support to `load_duckdb.py`,
+  normalizes reviewed exports into the target's existing Sentiment140 staging
+  columns, preserves large valid tweet IDs within DuckDB BIGINT range, and
+  documents accepted fields plus local loading commands in the README.
+- Fresh PR validation: target validation passed `python -m py_compile
+  load_duckdb.py dashboard.py`, TweetClaw JSONL fixture load into a temp
+  DuckDB file with assertions for preserved tweet IDs and sentiments,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`,
+  added-line dash scan, and public-hygiene scan. PR readback showed open,
+  ready, mergeable, maintainer edits enabled, no comments, no reviews, no
+  configured checks, 2 changed files, 185 additions, and 10 deletions.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/plugins/plugin-permission-requests`, `/plugins/dependency-resolution`, and
+  `/help/debugging` returned HTTP 200. The canonical ClawHub TweetClaw route
+  and OpenClaw Directory route returned HTTP 200.
+  `npm view @xquik/tweetclaw version` returned `1.6.31`; local package
+  metadata remains `1.6.32`.
+  OpenClaw dist-tags were `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`; ClawHub version was `0.22.0`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check:all` passed after the audit update.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` still reports
+  5 nested OpenClaw advisories for `protobufjs`, `tar`, and `undici`,
+  including high-severity `undici` findings. The force path would install
+  `openclaw@0.0.1`, so no package mutation was made during outreach.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Final Markdown memory measured 15090/15360 bytes, and the
+  saved automation prompt measured 12314 bytes.
+- Prompt self-improvement: for DuckDB or warehouse targets, prefer adapting
+  TweetClaw exports into the target's existing staging schema and fact-table
+  path instead of adding a parallel database or dashboard. Preserve large tweet
+  IDs as integers only when they fit the target database range; otherwise use a
+  deterministic local row fallback.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 13:24 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
