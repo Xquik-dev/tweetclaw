@@ -54,12 +54,17 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   labels into the target's existing Sentiment140 6-column CSV shape, preserving
   tweet IDs, dates, usernames, and text while skipping neutral, unlabeled, and
   empty rows.
-- Fresh target validation: `python3.11 -m py_compile
-  src/sentiment_pipeline.py src/tweetclaw_to_sentiment140.py`, JSONL fixture
-  conversion assertion, CSV fixture conversion assertion, `git diff --check`,
-  `markdown-link-check README.md`, duplicate scans, and public-hygiene diff
-  scans passed. PR readback showed open, `MERGEABLE`, `CLEAN`, 119 additions,
-  1 deletion, no comments, no reviews, and no checks.
+- Fresh target validation and repair: initial validation passed `python3.11 -m
+  py_compile src/sentiment_pipeline.py src/tweetclaw_to_sentiment140.py`, JSONL
+  fixture conversion assertion, CSV fixture conversion assertion, `git diff
+  --check`, `markdown-link-check README.md`, duplicate scans, and
+  public-hygiene diff scans. Sourcery then suggested streaming input reads, BOM
+  handling, and output parent-directory creation. Commit `c2b091b` addressed
+  those comments, added a BOM JSON array plus nested-output validation, and was
+  pushed to the PR branch. A follow-up comment was posted at
+  https://github.com/Wobbly1212/twitter-sentiment-analysis/pull/2#issuecomment-4757393634.
+  Final PR readback showed open, `MERGEABLE`, `CLEAN`, Sourcery success on the
+  updated commit, and no unresolved target-owned checks.
 - Official OpenClaw and package checks: HTTP 200 for `llms.txt`,
   `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
   `/clawhub/publishing`, `/clawhub/skill-format`,
