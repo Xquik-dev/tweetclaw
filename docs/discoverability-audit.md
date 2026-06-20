@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 11:09 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 11:35 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, plugin permission requests,
   dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 11:09 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 11:35 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -198,16 +198,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 11:09 UTC: runtime model/effort selector unavailable. Crawler JSON
-  was valid-empty after proxy outage logs; broad authenticated search hit a
-  secondary rate limit, so archive and exact-repo readbacks continued. Archive
-  inventory had 1086 tracked PR URLs, 1057 exact reads, 29 read failures, and
-  869 open PRs. Repaired `Rodert/awesome-mcp#11` to mergeable clean with
-  commit `66da22e`. Opened duplicate-clean
-  `priyadarshinig15/Twitter-Sentiment-Classification#1` with commit `dcaa5b4`
-  for a reviewed TweetClaw export-to-training-CSV converter. Target validation,
-  TweetClaw links, OpenClaw fitness, package-security readback, memory, and
-  check:all passed; known nested OpenClaw audit advisories remain.
+- 2026-06-20 11:35 UTC: runtime model/effort selector unavailable. Crawler JSON
+  was valid-empty after proxy outage logs. Same-day authored search found 59
+  open PRs; REST exact readbacks covered all 59, while GraphQL exact reads for
+  1281 archive-backed URLs were rate-limited. No safe repair was pending.
+  Opened duplicate-clean `xboomz0428/claude-skill-social-post#1` with commit
+  `094f79f` for optional TweetClaw X/Twitter source-packet guidance. Target
+  validation, TweetClaw links, OpenClaw fitness, package-security readback,
+  memory, and check:all passed; known nested OpenClaw audit advisories remain.
 
 ## Reporting Checklist
 
