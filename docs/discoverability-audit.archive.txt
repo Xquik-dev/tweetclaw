@@ -710,6 +710,96 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   conflict PR in a noisy catalog, record target-wide pre-existing link failures
   separately from contribution-introduced links.
 
+## 2026-06-20 09:42 UTC heartbeat
+
+- Runtime/model: GPT-5.5 and extra-high effort selection were unavailable in
+  this runtime, so the limitation was recorded and work continued.
+- Crawler-first coverage: ran the Xquik GitHub opportunity crawler with strict
+  JSON output, managed research proxy, stable session
+  `tweetclaw-20260620-0942`, bounded timeouts, focused authored PR, TweetClaw,
+  OpenClaw, SKILL.md, `.agents/skills`, social/Twitter-X skill, awesome-list,
+  catalog, and x-twitter-scraper queries. JSON parsed with 8 opportunities:
+  `blacktwist/social-media-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `liangdabiao/tikhub_api_skill`, `rabden/X-twitter-social-manager-skill`,
+  `tang-vu/social-posting-skills`, `elbis330/social-media-scraper-skill`,
+  `tiendatne2004/tikhub_api_skill`, and `AISA-skills/social-media-skills`.
+  Stderr showed proxy socket closures, endpoint quarantine, and proxy outage
+  circuit, with no credential values.
+- PR inventory: exact readbacks covered tracked outreach PRs plus the narrow
+  recently updated authored-open partition. Clean or waiting PRs included
+  `kintzhao/anySkills#1`, `JCheungX/agent-bazaar#1`,
+  `Felo-Inc/felo-skills#100`, `ttmouse/skills#1`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Engine#1`,
+  `LeoYeAI/openclaw-master-skills#4`,
+  `XX441/openclaw-skills-directory#1`,
+  `EvoLinkAI/awesome-openclaw-skills-for-real-work#1`,
+  `Correia-jpv/fucking-awesome-ai-tools#17`, and
+  `sickn33/antigravity-awesome-skills#728`. `readtheskill/readtheskill#11`
+  and `#12` still have target-owned Vercel authorization failures.
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` remains stale changes-requested after the
+  prior vendor-neutral repair. `OpenMinis/MinisSkills#66` remains
+  review-required. No broad all-authored inventory completion was claimed in
+  this short run.
+- PR repair: `majiayu000/claude-skill-registry-core#222` failed the target
+  `community-intake-guard` because the branch edited an existing
+  `x-twitter-scraper` row instead of preserving the list and appending. Read
+  README, CONTRIBUTING, MIT license, validation scripts, and
+  `sources/community.json`; duplicate checks across compact audit, archive,
+  target content, open and closed target PRs/issues, and TweetClaw metadata were
+  clean for a distinct TweetClaw community entry. The repair restored the
+  existing row, appended a `tweetclaw` source pointing at
+  `Xquik-dev/tweetclaw` and `skills/tweetclaw`, committed
+  `07232d46a46375bfec25fa729afa049019168612`, pushed to the existing personal
+  fork branch, reopened the PR, and posted a concise repair note. Validation
+  passed JSON formatting, community intake diff guard, source validation,
+  focused pytest, `git diff --check`, and public-hygiene scan. Final readback:
+  open, `MERGEABLE`, `CLEAN`, with `community-intake-guard`,
+  `validate-sources`, and `metadata-compliance` green.
+- Fresh target selection: `blacktwist/social-media-skills` was crawler-surfaced,
+  MIT licensed, public, non-fork, non-archived, issue-enabled, active enough,
+  and duplicate-clean across compact audit, archive, target content, and target
+  open plus closed PRs/issues for TweetClaw, package, GitHub, ClawHub, Xquik,
+  x-twitter-scraper, and variants. Read AGENTS, README, validation script,
+  tools registry, and representative skill files. The contribution fit because
+  its performance analyzer already accepts external evidence and can treat a
+  TweetClaw CSV or JSON export as user-provided data, without turning TweetClaw
+  into an automatic API path.
+- Fresh PR submitted:
+  https://github.com/blacktwist/social-media-skills/pull/4 from verified fork
+  `kriptoburak/blacktwist-social-media-skills`, branch
+  `codex/add-tweetclaw-export-guidance`, commit
+  `ece805ef617c4bcbc1ff91896978d0d3deea3cbf`. The PR updates
+  `skills/performance-analyzer-sms/SKILL.md`, `tools/REGISTRY.md`, and README
+  guidance to accept optional TweetClaw CSV or JSON exports as manual analysis
+  input while BlackTwist keeps analytics authority and no external API call is
+  implied.
+- External PR validation: `./validate-skills.sh`, markdown link checks for
+  README, registry, and edited skill file, `git diff --check`, and
+  public-hygiene scan passed. Exact PR readback showed #4 open, `MERGEABLE`,
+  `CLEAN`, 3 files, 0 comments, 0 reviews, and 0 checks.
+- TweetClaw public hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  full llms, CLI plugin/skill/update docs, ClawHub publishing, skill format,
+  validation fixes, manifest docs, tool plugins, install overrides, current
+  plugin permission requests, and debugging. The stale
+  `/plugins/permission-requests` slug returned 404; current
+  `/plugins/plugin-permission-requests` returned 200. ClawHub TweetClaw and
+  OpenClaw Directory routes returned HTTP 200. `npm view @xquik/tweetclaw`
+  still returned `1.6.31`; OpenClaw dist-tags remained latest `2026.6.8`,
+  beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`.
+- TweetClaw validation: open GitHub issues and PRs for `Xquik-dev/tweetclaw`
+  were empty. Markdown link checks passed for README, OpenClaw setup docs,
+  agent workflow docs, packaged skill, compact audit, and compact release
+  memory. `npm run check-openclaw-platform-fitness` passed. Compact Markdown
+  memory checked at 15018/15360 bytes after the compact update, and prompt bytes
+  were 12314 for the saved automation TOML.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: for registries with append-only community guards,
+  preserve existing source rows and append a distinct TweetClaw source or hold
+  the change. For social skill collections with a primary provider, frame
+  TweetClaw as a user-provided export or source-evidence fallback, not an
+  automatic API route.
+
 ## 2026-06-20 06:09 UTC Follow-Up
 
 - Runtime model and effort selector: unavailable in this Codex runtime, so this
