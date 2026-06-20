@@ -75,8 +75,9 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-20 found 5 nested OpenClaw advisories for `protobufjs`,
-  `tar`, and `undici`; the unsafe force path downgrades to `openclaw@0.0.1`.
+- Npm audit on 2026-06-20 found 5 nested OpenClaw vulnerabilities for
+  `protobufjs`, `tar`, and `undici`; Dependabot reports 6 matching alerts. The
+  unsafe force path downgrades to `openclaw@0.0.1`.
 
 ## GitHub-First Rule
 
@@ -204,7 +205,8 @@ archive, before any outreach or duplicate decision.
   screening, so fallback used exact repo PRs/issues, clone scans, and archives.
   Opened duplicate-clean `michaellady/claude-social-media-skills#1` for
   optional TweetClaw X/Twitter source packets. Target diff, links, public
-  hygiene, TweetClaw links, OpenClaw fitness, memory, and check:all passed.
+  hygiene, TweetClaw links, OpenClaw fitness, package-security readback,
+  memory, and check:all passed.
 
 ## Reporting Checklist
 

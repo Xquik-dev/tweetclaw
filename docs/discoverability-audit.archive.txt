@@ -76,6 +76,12 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   `npm run check:all` passed with typecheck, lint, duplicate check, knip,
   suppression check, dash check, memory check, skill frontmatter, version check,
   build, OpenClaw fitness, package artifact, and 168 tests at 100% coverage.
+- Package security readback: the push warning maps to known nested OpenClaw
+  dependency advisories. `npm audit --audit-level=moderate --omit=dev` reports
+  5 vulnerable entries for `protobufjs`, `tar`, and `undici`; Dependabot
+  readback shows 6 open runtime alerts on `package-lock.json` for the same
+  packages. The available force fix would install `openclaw@0.0.1`, so no
+  package mutation was made during this outreach run.
 - Prompt self-improvement: when broad authenticated GitHub search rate-limits
   mid-duplicate-screening, stop broad search and continue with exact target PR
   and issue lists, clone scans, archive URLs, and crawler output. Missing
