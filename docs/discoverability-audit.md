@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-19 12:40 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 00:04 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, and `/help/debugging`.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-19 found nested OpenClaw advisories for `protobufjs`,
+- Npm audit on 2026-06-20 found nested OpenClaw advisories for `protobufjs`,
   `tar`, and `undici`; the unsafe force path downgrades to `openclaw@0.0.1`.
 
 ## GitHub-First Rule
@@ -196,14 +196,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-19 12:40 UTC: selector limits recorded; Xquik crawler strict JSON was
-  empty after proxy outage; newest authored and audit-tracked PRs read back with
-  no actionable repair, unresolved thread, or CLA signer action.
-- Fresh PR: `samuel-olaleye/streamlit-tweet-sentiment-app#1` adds a stdlib
-  TweetClaw CSV/JSON/JSONL batch helper, sample export, README recipe, and
-  removes a stale Streamlit link. OpenClaw docs, links, memory, fitness, and
-  external PR validation passed; npm audit still reports nested OpenClaw
-  `protobufjs`, `tar`, and high `undici`.
+- 2026-06-20 00:04 UTC: selector limits recorded; Xquik crawler strict JSON was
+  empty after proxy outage; captured 1000 authored open PRs were exact-read with
+  0 per-PR errors, no unsigned CLA/DCO blocker, and GitHub search capped at
+  1000. Repaired `gliptak/kitfind#10` and safely updated
+  `Jamkris/everything-gemini-code#91`; fresh PR
+  `omarshobaki-png/arabic-tweet-sentiment-classification#1` adds a labeled
+  TweetClaw export converter. OpenClaw docs, links, memory, fitness, and target
+  validations passed; npm audit is unchanged.
 
 ## Reporting Checklist
 

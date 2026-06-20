@@ -2,6 +2,150 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 00:04 UTC Heartbeat Run
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded. The GitHub comment skill requests elevated network
+  mode for some `gh` commands, but approval policy `never` rejects sandbox
+  overrides; ordinary networked `gh`, git, curl, npm, node, and crawler commands
+  were used instead.
+- Start state: TweetClaw `master` was clean at `c5eeef8`. `npm run
+  check-memory-md-size` started at 14923/15360 bytes for compact Markdown
+  memory.
+- Full PR monitoring: broad GraphQL inventory attempts for all authored open PRs
+  returned GitHub HTTP 502, so the run fell back to `gh search prs --author
+  kriptoburak --state open --limit 1000`. GitHub returned exactly 1000 open PRs,
+  which hits the search cap; later enriched search hit a GitHub API rate limit
+  on page 3, so broad authenticated search stopped for the run. Exact `gh pr
+  view` readbacks then covered all 1000 captured PRs with 0 per-PR errors.
+  Current counts from the exact set: 345 attention candidates, 226 filtered
+  attention records, 93 action-candidate records, 156 PRs with comments, 81
+  with reviews, 65 blocked, 171 unstable, 41 review-required, and 24 with bad
+  checks. Because the search cap was hit, future runs should date-split or
+  otherwise segment authored open PR inventory instead of assuming 1000 is the
+  complete global set.
+- CLA/DCO audit: explicit CLA/DCO searches in the exact-read set found no
+  unsigned blocker. `agentscope-ai/agentscope-samples#126` was the only explicit
+  CLAassistant hit and its comment says all committers have signed the CLA.
+  Earlier noisy keyword matches were false positives from words like "sign",
+  "source evidence", and bot template text.
+- Existing PR repair 1: `gliptak/kitfind#10` had an owner comment asking
+  `@kriptoburak` to rebase/resolve conflict and a failed build. The failed job
+  log showed the build, validation, mypy, JS tests, and template syntax had
+  passed, then the target-owned preview deploy failed with a `github-actions`
+  push permission error. Upstream had since fixed CI permissions, so the branch
+  was rebased onto `gliptak/main`, the `kitfind.toml` conflict was resolved by
+  keeping both the upstream `EveryInc/compound-engineering-plugin` entry and
+  the Xquik entry, and the branch was force-pushed with lease to
+  `kriptoburak:codex/add-xquik-source` at `d2ad85b`. Local validation passed:
+  `uv run tools/build.py`, `uv run python tools/validate.py --all`,
+  `uv sync --all-extras`, `uv run mypy tools/build.py tools/validate.py`,
+  `node --test tools/tests/search.test.mjs`, `uv run python tools/validate.py
+  --html`, `npx --yes markdown-link-check README.md`, and `git diff --check`.
+  PR comment posted:
+  https://github.com/gliptak/kitfind/pull/10#issuecomment-4755714058.
+  Readback after push: open, mergeable, head `d2ad85b`; merge status was clean
+  immediately after push and later recalculated as unstable while checks had not
+  yet appeared.
+- Existing PR repair 2: `Jamkris/everything-gemini-code#91` had an unresolved
+  CodeRabbit changes-requested review asking to update the OpenClaw install
+  command to canonical npm syntax and package `@xquik/tweetclaw@1.6.32`.
+  `npm view @xquik/tweetclaw version` and dist-tags showed the current
+  published latest is still `1.6.31`; updating public docs to `1.6.32` would
+  point users at an unpublished package. Current OpenClaw docs confirm explicit
+  `npm:` and npm-only `--pin`, so the PR branch was updated from
+  `openclaw plugins install npm:@xquik/tweetclaw@1.6.31` to
+  `openclaw plugins install npm:@xquik/tweetclaw@1.6.31 --pin`, committed as
+  `6c754fa`, and pushed to
+  `kriptoburak:codex/add-tweetclaw-openclaw-x-api-guidance`. Validation passed:
+  `npm view @xquik/tweetclaw version`, `npm view @xquik/tweetclaw dist-tags
+  --json`, current OpenClaw plugin-doc readback, `git diff --check`, and
+  `npx --yes markdown-link-check skills/x-api/SKILL.md`. PR comment posted:
+  https://github.com/Jamkris/everything-gemini-code/pull/91#issuecomment-4755723159.
+  Final readback: open, mergeable, head `6c754fa`; CodeRabbit, GitGuardian,
+  and Cubic succeeded, and CodeRabbit added an approval. GitHub still reports
+  `BLOCKED` pending branch-protection recalculation or maintainer review.
+- Existing PR triage notes: `pranavv1210/Social-Sentiment-Analysis#1` had stale
+  resolved/outdated review threads and current passing security checks.
+  `universal-tool-calling-protocol/python-utcp#90` had prior Cubic feedback
+  already addressed and current Cubic success. `anup4khandelwal/awesome-codex-
+  skills#6` is approved after earlier security/doc fixes. `jeremylongshore/
+  claude-code-plugins-plus-skills#865` has all checks green and a maintainer
+  frontmatter request already addressed in the upstream Xquik source, with a
+  comment posted in the prior run; it now waits for maintainer re-review. Many
+  remaining non-success checks are target-owned Vercel authorization gates.
+  Backlog items still worth later exact repair triage include dirty/conflict
+  branches such as `RoshanDev/skills#1`, `jayteealao/agent-skills#3`,
+  `warlockoussama/twitter-cli#1`, `jimmc414/claude-code-plugin-marketplace#3`,
+  `antstudiocz/ant-marketplace#38`, and bot-review candidates such as
+  `anup4khandelwal/awesome-codex-skills#6` after maintainer follow-up.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output, research proxy, stable session `tweetclaw-20260620-0004`, 12s
+  request timeout, proxy warmup disabled, 1000 limit, 2 search pages, 16 per
+  query, 16 concurrency, and focused SKILL.md, `.agents/skills`, OpenClaw,
+  MCP, Codex/Claude skill, Twitter/X, tweet sentiment, Streamlit, dashboard,
+  FastAPI, webhook, package-tooling, and dataset-import query packs. Managed
+  proxy socket closures, endpoint quarantines, and outage-circuit logs printed
+  no private values. Strict JSON was valid and empty:
+  `{"opportunities":[]}`. Xquik working tree remained clean.
+- Fresh target screening: fallback public GitHub repo search found
+  `omarshobaki-png/arabic-tweet-sentiment-classification`, a public,
+  non-fork, non-archived, issue-enabled Python repo on `main`, pushed
+  2026-06-19, with no license metadata and no contribution-policy blocker.
+  Compact audit, archive, target content, and target open plus closed PRs/issues
+  were duplicate-clean for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw
+  GitHub and npm URLs, ClawHub, Xquik, x-twitter-scraper, OpenClaw, and variants.
+- Fresh PR submitted:
+  https://github.com/omarshobaki-png/arabic-tweet-sentiment-classification/pull/1
+  from correctly parented fork
+  `kriptoburak/arabic-tweet-sentiment-classification`, branch
+  `codex/add-tweetclaw-labeled-export-helper`, commit `9cb1b0c`. The PR adds
+  `scripts/prepare_tweetclaw_labeled_export.py`,
+  `examples/tweetclaw_labeled_export.jsonl`, and README guidance for converting
+  human-labeled TweetClaw CSV/JSON/JSONL/NDJSON exports into the target
+  `text<TAB>label` TSV format. The helper only converts labeled rows, supports
+  common TweetClaw text and label aliases, normalizes `NEUTRAL` to the target's
+  `OBJ`, and never guesses labels. No NHS badge was added because the target
+  README has no badge area.
+- Fresh target validation: `python3 -m py_compile
+  scripts/prepare_tweetclaw_labeled_export.py features.py preprocess.py`
+  passed. Fixture conversion to `/tmp/arabic-tweetclaw-input.txt` passed with
+  TSV assertions for row count, POS/NEG/OBJ labels, and Arabic text retention.
+  `npx --yes markdown-link-check README.md`, `git diff --check`, and public
+  hygiene scans passed. PR readback was open, ready, mergeable, clean, and had
+  no comments, reviews, or checks.
+- Official OpenClaw and package checks: direct probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugin docs, CLI skill
+  docs, CLI update docs, ClawHub publishing, skill format, validation fixes,
+  debugging, gateway, canonical ClawHub TweetClaw listing, OpenClaw Directory
+  listing, and the npm registry package. `npm view @xquik/tweetclaw version`
+  returned `1.6.31`; `npm view openclaw dist-tags` returned latest `2026.6.8`,
+  beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`; `npm view clawhub
+  version` returned `0.22.0`. Local source remains `@xquik/tweetclaw@1.6.32`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`. `npm audit
+  --audit-level=moderate --omit=dev` still reports nested OpenClaw advisories
+  for `protobufjs`, `tar`, and high `undici`; force would install
+  `openclaw@0.0.1`, so no package mutation was made.
+- Final TweetClaw gate: `npm run check:all` passed, including typecheck, lint,
+  duplication, knip, suppression and dash checks, memory size, skill
+  frontmatter, version checks, build, OpenClaw fitness, package artifact, and
+  coverage. Vitest reported 11 files, 168 tests, and 100% statements, branches,
+  functions, and lines.
+- Prompt and memory self-improvement: user explicitly reiterated that every
+  heartbeat must check all in-scope PRs, including potentially more than 100
+  PRs. Future runs should do crawler-first discovery, then full captured open
+  PR inventory and exact readbacks before new outreach. If a single GitHub
+  search hits the 1000-result cap, split by update date, creation date, or other
+  stable partitions and record the cap rather than treating the first 1000 as
+  exhaustive. Repair explicit maintainer and bot blockers before opening fresh
+  PRs; keep target-owned gates such as Vercel authorization separate.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-19 12:26 UTC Heartbeat Run
 
 - Runtime limits: the current Codex runtime did not expose GPT-5.5 or
