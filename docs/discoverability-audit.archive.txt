@@ -2,6 +2,111 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-20 12:14 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
+  selector or extra-high reasoning-effort selector, so the run continued with
+  that limitation recorded.
+- Start state: TweetClaw `master` was clean at `b9f1f76`. Compact Markdown
+  memory started at 15246/15360 bytes, and the persisted automation TOML
+  measured 12314 bytes.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, `--research-proxy`,
+  session `tweetclaw-20260620-1200`, bounded request timeout, proxy warmup
+  disabled, 260 limit, 1 search page, 10 per-query limit, 8 concurrency, and
+  focused authored-PR, TweetClaw/OpenClaw, SKILL.md, `.agents/skills`,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill, awesome-list,
+  registry, generated-catalog, fork, package-tooling, docs, x-twitter-scraper,
+  and web-index skill queries. Strict JSON parsing found 10 opportunities, all
+  skip-only because they were off-target, stale, archived, lacked a clear
+  submission path, or had failed document fetches. Stderr showed proxy socket
+  closures, endpoint quarantines, and an outage-circuit log with no credential
+  values.
+- PR inventory: TweetClaw had no open issues and no open PRs by REST readback.
+  Same-day authored open search saved 63 PRs without hitting the 100-result
+  page cap; an earlier preliminary read showed 64 and was treated as a
+  search-readback fluctuation. Archive extraction found 1090 tracked PR URLs,
+  for 1138 combined unique archive plus same-day URLs. Broad archive exact
+  readback was not claimed complete this run. REST exact readbacks for the 63
+  same-day PRs covered PR state, mergeability, comments, reviews, commit
+  statuses, and check runs with 63 successes and 0 errors. Merge-state counts
+  were 45 clean, 14 unstable, 3 blocked, and 1 unknown, with 21 comments, 9
+  reviews, and 2 failing check runs.
+- PR repair triage: `MauricioPerera/agent-skills#1`,
+  `hojinzs/my-agent-skills#1`, and
+  `PatrickJS/awesome-cursorrules#317` had prior bot or maintainer comments that
+  were already repaired in current heads. `weiflycc-cmd/awesome-copilot#19`
+  still has a base-branch review blocker and no observed `staged` branch.
+  `tinyhumansai/skill-registry#2` and `davila7/claude-code-templates#642` had
+  no TweetClaw code repair to make.
+- Failing-check triage: the only failing check runs were on
+  `davila7/claude-code-templates#642`. GitHub Actions readback showed both
+  SkillSpector and Security Audit completed their scans successfully, but each
+  failed only when trying to comment on the PR with `Resource not accessible by
+  integration` 403. This is a target-owned workflow credential permission blocker,
+  not a branch-content repair.
+- Fresh discovery and duplicate checks: selected
+  `vrindu34/Financial-Market-Prediction-Using-Social-Media-Sentiment-and-Graph-Intelligence-agentic-ai-`
+  from the active backlog after crawler output had no eligible target. Metadata
+  showed public, active, non-fork, non-archived, issue-enabled, default branch
+  `main`, and no detected license metadata. Target open and closed PR and issue
+  lists were empty. Local content scans and duplicate searches found no
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper,
+  OpenClaw, or ClawHub references. The personal fork
+  `kriptoburak/Financial-Market-Prediction-Using-Social-Media-Sentiment-and-Graph-Intelligence-agentic-ai-`
+  was REST-verified as correctly parented to the upstream repo.
+- Fresh PR submitted:
+  https://github.com/vrindu34/Financial-Market-Prediction-Using-Social-Media-Sentiment-and-Graph-Intelligence-agentic-ai-/pull/1
+  from correctly parented fork branch `codex/import-tweetclaw-twitter-cache`,
+  commit `f44d1c3`. The PR makes `appp.py` prefer a local
+  `twitter_processed.csv` when present while keeping the hosted Hugging Face
+  sentiment cache as fallback, adds `scripts/tweetclaw_to_twitter_processed.py`
+  for TweetClaw JSON, JSONL, and CSV export normalization, adds a small JSONL
+  fixture, documents the workflow, and replaces an inaccessible Streamlit demo
+  URL with local run guidance.
+- Fresh PR validation: target validation passed `git diff --check`,
+  `python3 -m py_compile appp.py preprocess.py scripts/tweetclaw_to_twitter_processed.py`,
+  `python3 scripts/tweetclaw_to_twitter_processed.py examples/tweetclaw_export.jsonl --stock RELIANCE --output /tmp/tweetclaw-heartbeat-20260620-1200/twitter_processed.csv`,
+  and `npx --yes markdown-link-check README.md --quiet`. The initial target
+  link check found the pre-existing Streamlit demo URL looping to login, and
+  the PR replaced it with plain local run guidance. Added-line dash and
+  public-hygiene scans found no added em dash, secret, private implementation
+  detail, private provider/source name, private pricing mechanic, unsupported
+  claim, or stale metadata. PR readback showed open, ready, `mergeable` true,
+  `mergeable_state` clean, no comments, no reviews, and no configured checks.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/plugins/plugin-permission-requests`, `/plugins/dependency-resolution`, and
+  `/help/debugging` returned HTTP 200. The canonical ClawHub TweetClaw route,
+  OpenClaw Directory route, GitHub repo, Xquik docs, and new PR URL also
+  returned HTTP 200. `npm view @xquik/tweetclaw version` returned `1.6.31`;
+  local package metadata remains `1.6.32`. OpenClaw dist-tags were
+  `latest: 2026.6.8`, `beta: 2026.6.9-beta.1`, and
+  `alpha: 2026.5.19-alpha.1`.
+- Broken-link and TweetClaw validation: Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  `npm run check:all` passed after the audit update.
+- Package audit: `npm audit --audit-level=moderate --omit=dev` still reports
+  nested OpenClaw advisories for `protobufjs`, `tar`, and `undici`, including
+  high-severity `undici` findings. The force path would install
+  `openclaw@0.0.1`, so no package mutation was made during outreach.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. Final Markdown memory was 15197/15360 bytes before commit,
+  and the saved automation prompt measured 12314 bytes.
+- Prompt self-improvement: target README link checks can expose pre-existing
+  hosted demo URLs that require owner access; when a PR already touches the
+  README, prefer replacing such links with local run guidance if it is useful
+  and does not widen scope. For same-day PR inventory, record exact saved
+  search counts and treat preliminary count mismatches as search-readback
+  fluctuations.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 ## 2026-06-20 11:56 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model

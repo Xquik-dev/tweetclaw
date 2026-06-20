@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 11:56 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 12:14 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Current 200 docs include
   llms, CLI plugin/skill/update, ClawHub publishing/skill-format/validation
   fixes, manifest/tool plugins/install overrides, plugin permission requests,
   dependency resolution, and `/help/debugging`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 11:56 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 12:14 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -198,17 +198,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 11:56 UTC: runtime model/effort selector unavailable. Crawler JSON
-  found 10 skip-only off-target or stale repos after proxy outage logs.
-  Same-day authored search found 61 open PRs before outreach; REST exact
-  readbacks covered all 61, while GraphQL and broad archive exact reads for
-  1136 combined known PR URLs were rate-limited. Repaired
-  `hojinzs/my-agent-skills#1` in `70e98f9` for read-only Hermes Tweet routing.
-  Opened duplicate-clean `isaacrowntree/claude-social-skills#1` in `efb1483`
-  with optional X/Twitter source-packet guidance for social-post. Post-outreach
-  same-day search found 63 PRs and exact-read the 2 new PRs. Target validation,
-  TweetClaw links, OpenClaw fitness, memory, and check:all passed; known nested
-  OpenClaw audit advisories remain.
+- 2026-06-20 12:14 UTC: runtime model/effort selector unavailable. Crawler JSON
+  found 10 skip-only repos after proxy outage logs. Same-day authored search
+  exact-read 63 PRs by REST; archive extraction found 1090 tracked PR URLs, so
+  broad inventory remains evidence-bounded. Existing failures were
+  target-owned 403 comment-permission checks on
+  `davila7/claude-code-templates#642`. Opened
+  `vrindu34/Financial-Market-Prediction-Using-Social-Media-Sentiment-and-Graph-Intelligence-agentic-ai-#1`
+  in `f44d1c3` with a TweetClaw export importer, local Twitter cache fallback,
+  and README link repair. Target validation, TweetClaw links, OpenClaw fitness,
+  memory, and check:all passed; known nested OpenClaw audit advisories remain.
 
 ## Reporting Checklist
 
