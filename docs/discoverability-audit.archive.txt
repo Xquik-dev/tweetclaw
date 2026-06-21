@@ -31527,3 +31527,99 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Prompt self-improvement: keep
   `jawond/bird` duplicate-blocked after PR 1; for fresh CLI targets, prefer
   tested safety or dry-run write boundaries over thin catalog mentions.
+
+## 2026-06-21 23:43 UTC heartbeat
+
+- Runtime note: the model and effort selector was unavailable, so GPT-5.5 and
+  extra-high effort could not be selected. The run continued under the
+  available runtime and recorded this limitation here and in compact memory.
+- Crawler-first discovery from `/Users/burak/Developer/xquik` used strict JSON
+  with managed research proxy, bounded request and warmup timeouts, 6 focused
+  query packs, limit 220, search pages 2, per-query limit 10, concurrency 12,
+  and session `tweetclaw-20260621-232016`. The crawler returned valid JSON with
+  0 opportunities. No crawler auth values were printed or persisted.
+- Complete PR inventory was attempted but blocked before completion by repeated
+  GitHub GraphQL HTTP 502 responses on authored-open partitions and a GitHub
+  secondary rate limit on search. This run therefore does not claim a complete
+  inventory. Exact readbacks covered 15 audit-known open PRs:
+  `Aditya923-c/xpoz-agent-skills#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `jamald33n/tweetsave-mcp#2`, `maddhruv/absolute#5`,
+  `reall8164/wechat-openclaw-plugin#1`, `vaibhav4046/mcp-marketplace#1`,
+  `weiflycc-cmd/awesome-copilot#19`, `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `EthanAlgoX/MarketBot#8`, `cognis-digital/skills#2`,
+  `davila7/claude-code-templates#634`, `joyboy257/hermes-link#1`,
+  `moshehbenavraham/Ultimate-Agent-Directory#84`, `paytience/FindAPIs#3`, and
+  `jawond/bird#1`.
+- Repair priority: `Hashi-Ai-Dev/openclaw-clawdoc#6` was actionable because the
+  branch was behind after earlier review feedback. The verified fork
+  `kriptoburak/openclaw-clawdoc` parented to `Hashi-Ai-Dev/openclaw-clawdoc`.
+  Merged upstream `master` into
+  `codex/tweetclaw-plugin-tool-visibility`, producing merge commit `1e0f1de`,
+  then pushed to the fork. Validation passed `python3 scripts/validate_repo.py`,
+  `python3 scripts/safety_scanner.py`, `git diff --check`, and markdown link
+  checks for `TROUBLESHOOTING.md` and `skills/openclaw-plugins/SKILL.md`.
+  Post-repair readback: open, `MERGEABLE`, not behind, stale
+  `CHANGES_REQUESTED`, no checks, no unresolved actionable maintainer comment.
+- Fresh target `Flash-Brew-Digital/build-skill` was duplicate-clean, MIT
+  licensed, not archived, not a fork, and had no TweetClaw or Xquik PR/issue
+  history. Added a generated-skill contributing template, root README catalog
+  coverage, a CLI test, and one required style fix in existing `src/index.ts`.
+  Validation passed `pnpm install --frozen-lockfile`, `pnpm build`,
+  `pnpm test`, `pnpm type-check`, `pnpm check`, markdown link check for
+  `template/.github/CONTRIBUTING.md`, and `git diff --check`. Branch
+  `codex/add-template-contributing-guide` was pushed to verified fork
+  `kriptoburak/build-skill` at commit `570cdb3`, but GitHub blocked PR creation
+  through GraphQL `CreatePullRequest` permission and REST 404 despite a valid
+  compare. The branch is left pushed for a future retry.
+- Fresh target `danielgwilson/image-skill-cli` was skipped because it has both
+  `SKILL.md` and `skill.md`, which collide on case-insensitive macOS paths and
+  look like intentional public contract fixtures. Fresh target
+  `DevinChen2014/socialdatax-skills` was skipped after duplicate-clean screen
+  because package validation depends on missing generated sibling fixtures and
+  package metadata churn would be unrelated to TweetClaw outreach.
+- Fresh target `tmchow/agent-skills` was duplicate-clean for TweetClaw,
+  `@xquik/tweetclaw`, GitHub, npm, ClawHub, Xquik, and x-twitter-scraper
+  variants. Target policy and license were acceptable. The existing
+  `kriptoburak/agent-skills` fork parented to another upstream, so a separate
+  correct fork `kriptoburak/tmchow-agent-skills` was verified against parent
+  `tmchow/agent-skills`.
+- Opened https://github.com/tmchow/agent-skills/pull/55 from branch
+  `codex/add-tweetclaw-skill`, commit `fd1f4ac`. The PR adds
+  `tweetclaw/SKILL.md`, `tweetclaw/README.md`, and a root README catalog row.
+  It keeps the skill scanner-safe with no executable files, no environment
+  frontmatter, no non-public details, and no pricing claims.
+  Validation passed Ruby YAML frontmatter parsing,
+  `npx -y skills add . --list --full-depth`, markdown link checks for the new
+  files and root README, `git diff --check`, and NVIDIA SkillSpector no-LLM
+  scan. Readback: open, ready, `MERGEABLE`, `CLEAN`, 1 commit, 3 changed files,
+  no checks, comments, or reviews.
+- Official OpenClaw docs were rechecked before OpenClaw and packaged-skill
+  wording: `https://docs.openclaw.ai/llms.txt` returned 94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;
+  `https://docs.openclaw.ai/llms-full.txt` returned 6666783 bytes with sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`. Sampled
+  CLI plugin, skill, update, and ClawHub skill-format routes returned HTTP 200,
+  and `npx -y skills --help` exposed `--skill`.
+- NVIDIA Skills best-practice source was fetched from
+  `https://docs.nvidia.com/skills/`, returning 443406 bytes with sha256
+  `09cdd276ddc1e658dda6940ceb9fd70ead3e2e2087f5455bea660553186aaf0d`. The
+  in-repo TweetClaw skill passed SkillSpector v2.2.3 no-LLM scan at
+  2026-06-21 23:42 UTC with score `0/100`, severity LOW, recommendation SAFE,
+  no issues, and no executable scripts.
+- TweetClaw package and public hygiene checks passed:
+  `npm run check-skill-frontmatter`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm audit --audit-level=moderate --json`
+  with 0 vulnerabilities, public route probes for ClawHub, OpenClawDir, GitHub,
+  and docs.xquik.com, public Markdown link checks, `npm run check-memory-md-size`,
+  and final `npm run check:all` with 11 test files, 168 tests, and 100%
+  coverage.
+- Prompt and memory: compact Markdown memory measured 15358/15360 bytes before
+  the final audit append and was rechecked before commit. Persisted automation
+  prompt measured 12314 bytes. Prompt self-improvement: continue recording exact
+  platform blockers when broad PR search hits 502 or secondary rate limits, and
+  prefer a pushed alternate eligible PR rather than ending on a single blocked
+  fresh target.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `skills/tweetclaw/skillspector-report.md`. Untracked empty file `0` was
+  observed in the TweetClaw workspace and left untouched as unrelated state.
