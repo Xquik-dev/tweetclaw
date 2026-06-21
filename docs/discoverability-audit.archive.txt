@@ -30888,3 +30888,121 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   treated as source breakage. For skill lifecycle tools, a vetting case that
   demonstrates provenance, release evidence, and unsigned-status handling is a
   better target-native TweetClaw placement than a generic listing.
+
+## 2026-06-21 20:27 UTC heartbeat
+
+- Runtime note: the automation requested GPT-5.5 with extra-high reasoning, but
+  this runtime exposes no model or effort selector. The run continued and this
+  limitation was recorded.
+- Worktree start: TweetClaw was on `master` at `fd7dccb` and clean. Xquik was on
+  `master` at `17c1b43d` with unrelated user change `docs/feature-roadmap.md`,
+  left untouched. No Browser, Chrome, GUI automation, dev server, production
+  SSH, secret read, Context7 work, or destructive git action was used.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 180
+  limit, 2 search pages, 6 per query, concurrency 12, and session
+  `tweetclaw-20260621-2016`. Query pack covered authored open PRs, TweetClaw,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, skills dirs, OpenClaw/MCP/Codex/
+  Claude/agent/social/Twitter-X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, NVIDIA Skills, SkillSpector,
+  and source-evidence lanes. Output parsed as valid JSON with 6 opportunities:
+  `creatorcrawl/creatorcrawl-skill`, `blacktwist/social-media-skills`,
+  `elbis330/social-media-scraper-skill`, `Aditya923-c/xpoz-agent-skills`,
+  `rabden/X-twitter-social-manager-skill`, and `AISA-skills/social-media-skills`;
+  all were duplicate or prior-history blocked for fresh TweetClaw submission.
+  Proxy logs exposed no credential values.
+- PR inventory: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` open issue lists
+  were empty. Broad authored open PR search was attempted by created-date
+  partitions. Two early commands were malformed by zsh quoting, then GitHub
+  secondary rate limits stopped broad authenticated search. Partial counts
+  before the limit were `2026-05-01..2026-05-10`: 74,
+  `2026-05-11..2026-05-20`: 381, and `2026-05-21..2026-05-31`: 137. Complete
+  inventory was not claimed. Continued with crawler output, compact and archive
+  URLs, exact repository reads, fork metadata, and target PR lists.
+- Exact PR readbacks: exact-read 16 tracked open PRs for state, draft state,
+  mergeability, base, head, commits, comments, reviews, checks, conflicts, and
+  changed files. Covered `a28939876-max/skill-hunter-company#1`,
+  `ASMN-96/ai-agents-skills-toolkit#88`, `Mercer8964/source-check-skill#1`,
+  `alexxyjiang/custom-claude-skills#1`, `dennisle-lts/claude_skills#1`,
+  `NebulaLumino/ai-agent-skills-registry#1`,
+  `Shiven0504/claude-skills-collection#1`, `jdrhyne/agent-skills#26`,
+  `doITmagic/ai-agent-skills#1`, `harrylabsj/twitter-thread-crafter#1`,
+  `BrikerMan/skilless.ai#6`, `reall8164/wechat-openclaw-plugin#1`,
+  `BankrBot/skills#236`, `Panniantong/Agent-Reach#260`,
+  `clawdbot-ai/awesome-openclaw-skills-zh#26`, and
+  `Aditya923-c/xpoz-agent-skills#1`. No current maintainer request, DCO, CLA,
+  generated drift, conflict, or valid bot finding required repair.
+- Additional crawler discovery: a second strict JSON crawler run with fresh
+  `skill-lineage`, `world-aid`, SkillSpector, source-provenance, and social
+  publishing queries returned 0 opportunities after repeated socket-closed proxy
+  failures and a managed-proxy outage circuit. This was recorded as a crawler
+  blocker, not exhaustion.
+- Fresh candidate screening: exact metadata and local clone review covered
+  `a28939876-max/skill-lineage`, `a28939876-max/world-aid`,
+  `a28939876-max/world-intro`, and nonexistent `a28939876-max/skill-fusion`.
+  Compact audit, archive, target content, target open and closed PRs, and target
+  open and closed issues were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, Twitter/X, social publishing, and variants.
+  `skill-lineage` was duplicate-clean but not target-fit because it evaluates
+  derivative skill families and TweetClaw is not a derivative-family example.
+  `world-aid` was selected because it is public, MIT-licensed, non-fork,
+  non-archived, issue-enabled, recently active, duplicate-clean, and
+  target-native for find-vet-install cases.
+- Fresh PR submitted: https://github.com/a28939876-max/world-aid/pull/1 from
+  `kriptoburak:codex/add-tweetclaw-social-case`, commit
+  `f61736e01ea9886d2932501e0a3bf4f8c215d523`. Fork
+  `kriptoburak/world-aid` was created and read back as correctly parented to
+  `a28939876-max/world-aid`. The PR adds
+  `cases/06-the-social-post-guardrail.md`, updates English and Chinese README
+  case counts and tables, and uses TweetClaw as a social-account workflow
+  example where approval gates, credential boundaries, cost ceilings, and
+  release evidence matter more than raw browser control.
+- Target validation for `world-aid#1`: passed `python3 -m py_compile
+  scripts/*.py`, `npx --yes markdown-link-check README.md README.zh-CN.md
+  cases/06-the-social-post-guardrail.md --quiet`, and `git diff --check`.
+  Added-line sensitive-term review found only intended generic boundary terms
+  such as account credentials, dashboard, API key, signing key, and TweetClaw
+  release evidence, with no values or private details. Final PR readback showed
+  open, ready, `MERGEABLE`, `CLEAN`, 1 commit, 3 files, 69 additions,
+  4 deletions, no comments, no reviews, no check-runs, and no status contexts.
+- NVIDIA Skills user request: read the `skill-creator` guidance and rechecked
+  current NVIDIA Skills docs at `https://docs.nvidia.com/skills`, trust
+  pipeline, scanning, signing, skill cards, release checklist, and advanced
+  install pages. Current docs still call for narrow purpose, activation context,
+  declared capabilities, SkillSpector report, skill card, Tier-3 eval fixture,
+  benchmark report, `skill.oms.sig` for signed releases, verification
+  instructions, and honest unsigned-status handling. TweetClaw contains
+  `SKILL.md`, `skill-card.md`, `skillspector-report.md`, `evals/evals.json`, and
+  `BENCHMARK.md`; no signature file exists, so unsigned release wording remains
+  correct. The live SkillSpector v2.2.3 scan at 20:27 UTC returned score
+  `0/100`, severity LOW, recommendation SAFE, 5 non-executable components, and
+  no issues; `skills/tweetclaw/skillspector-report.md` was updated to that scan
+  timestamp.
+- Official OpenClaw and package checks: HTTP 200 for current OpenClaw
+  `llms.txt`, `llms-full.txt`, CLI plugins, CLI skills, CLI update, ClawHub
+  publishing, ClawHub skill format, manifest, tool plugins, install overrides,
+  debugging, testing updates, ClawHub TweetClaw, and OpenClawDir TweetClaw
+  routes. Old probes `plugins/permission-requests`, `sdk/runtime`, and
+  `sdk/entrypoints` returned 404, but the docs index maps them to current
+  `plugins/plugin-permission-requests`, `plugins/sdk-runtime`, and
+  `plugins/sdk-entrypoints`, all HTTP 200. `npm view @xquik/tweetclaw` returned
+  latest `1.6.31`; source remains `1.6.32`. `npm view openclaw` returned latest
+  `2026.6.9`, beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; `npm view
+  clawhub` returned `0.22.0`. `npm audit --audit-level=moderate --json` found
+  0 vulnerabilities.
+- TweetClaw validation before commit: passed `npm run check-skill-frontmatter`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `uvx --from git+https://github.com/NVIDIA/SkillSpector.git skillspector scan
+  skills/tweetclaw --no-llm`, `npx --yes markdown-link-check README.md
+  docs/openclaw-setup.md docs/agent-workflows.md skills/tweetclaw/SKILL.md
+  skills/tweetclaw/skill-card.md skills/tweetclaw/BENCHMARK.md
+  skills/tweetclaw/skillspector-report.md docs/discoverability-audit.md
+  docs/clawpack-release.md --quiet`, and target validation for the handled
+  external PR. Final `npm run check:all` ran after audit updates.
+- Prompt self-improvement: prompt text was unchanged; last measured prompt byte
+  size remains 11980. Durable lessons: for OpenClaw docs probes, use `llms.txt`
+  as the route index before treating older paths as blockers. For `world-aid`
+  style find-vet-install repos, a concrete guardrail case is the right placement
+  shape for TweetClaw; avoid generic "pairs well with" listings when a real
+  case format exists.

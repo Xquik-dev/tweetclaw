@@ -49,10 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 19:36 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 20:22 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
-  returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
-  debugging pages.
+  returned HTTP 200, including llms, CLI, ClawHub, plugin, plugin permission,
+  SDK runtime and entrypoint, testing, and debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
   on 2026-06-21 19:35 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 19:32 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 20:22 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,19 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 20:07 UTC: model/effort selector unavailable. Crawler strict JSON
-  returned 6 candidates; all were duplicate or prior-history blocked. Authored
-  PR inventory was partitioned by created date; pre-May buckets were exact, May
-  and June stayed capped, so no complete inventory claim was made. Exact REST
-  readbacks covered 15 tracked PRs. Repaired
-  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 by merging upstream
-  and clearing the README conflict, then opened fresh ready PR
-  https://github.com/a28939876-max/skill-hunter-company/pull/1 for a
-  target-native social-publishing vetting case that uses TweetClaw as public
-  provenance and release-evidence example. NVIDIA Skills docs, SkillSpector,
-  current OpenClaw docs, public links, npm metadata, npm audit, package artifact,
-  and fitness checks passed or had recorded expected blockers. Full details
-  archived.
+- 2026-06-21 20:27 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 6 candidates; all were duplicate or prior-history blocked. Broad
+  authored search hit GitHub secondary limits after partial May partitions, so
+  no complete inventory claim was made. Exact readbacks covered 16 tracked PRs
+  with no actionable repair. A second focused crawler batch returned 0 results
+  after managed-proxy socket failures and an outage circuit. Fresh screening
+  found `a28939876-max/skill-lineage` duplicate-clean but not target-fit for
+  TweetClaw, then opened ready PR
+  https://github.com/a28939876-max/world-aid/pull/1 from a correctly parented
+  `kriptoburak/world-aid` fork. The PR adds a target-native social-publishing
+  guardrail case in English and Chinese, using TweetClaw as approval-gated
+  OpenClaw evidence. NVIDIA Skills docs and SkillSpector were rechecked for the
+  user-requested skill-file posture; the packaged scan summary now records the
+  20:27 UTC clean scan. Current OpenClaw docs, public links, npm metadata, npm
+  audit, package artifact, and fitness checks passed, with old probe routes
+  mapped to current `/plugins/*` replacements. Full details archived.
 
 ## Reporting Checklist
 
