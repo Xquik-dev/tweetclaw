@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 00:12 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-21 00:33 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 00:12 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 00:33 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-20 found 5 nested OpenClaw vulnerabilities for
+- Npm audit on 2026-06-21 found 5 nested OpenClaw vulnerabilities for
   `protobufjs`, `tar`, and `undici`. The unsafe force path downgrades to
   `openclaw@0.0.1`.
 
@@ -192,23 +192,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 00:12 UTC: runtime model/effort selector unavailable. Xquik
-  crawler strict JSON coverage returned 0 opportunities after managed proxy
-  outage logs; no credential values were stored. TweetClaw had 0 open issues or
-  PRs. Authored PR search found 554 lane-matched PRs before GitHub search rate
-  limits; 80 newest exact readbacks found 80 mergeable PRs, 1 stale
-  changes-requested state, 1 target-owned CI/comment-permission failure, and no
-  safe repair. Fresh screen selected `cgallic/kai-cmo-harness`, MIT licensed by
-  file, active, forkable, and duplicate-clean by archive, target content, PR and
-  issue lists, and clone scan. Opened
-  https://github.com/cgallic/kai-cmo-harness/pull/24 with an approval-gated
-  TweetClaw X source-packet path for Kai brand-pulse runs; PR readback showed
-  open, ready, mergeable, 1 changed file, 37 additions, 1 deletion, a repaired
-  Codex bot P2 on approved X collection paths, and only target-owned Vercel
-  authorization pending. Target link, banned-word, diff, and brand-pulse tests
-  passed. OpenClaw routes, ClawHub, Directory, npm metadata, memory, fitness,
-  link checks, and check:all passed. `opencodex.directory` DNS still failed.
-  Npm audit found 5 nested OpenClaw advisories. Prompt bytes stayed 11980.
+- 2026-06-21 00:33 UTC: runtime model/effort selector unavailable. Xquik
+  crawler strict JSON returned 3 opportunities, all prior-blocked or duplicate:
+  `rabden/X-twitter-social-manager-skill`,
+  `elbis330/social-media-scraper-skill`, and
+  `AISA-skills/social-media-skills`. TweetClaw had 0 open issues or PRs.
+  Authored open-PR search capped at 200; newest 100 exact readbacks found 99
+  mergeable PRs, 1 conflict, 6 external failing checks, and 0 requested changes.
+  Repaired `mohitagw15856/pm-claude-skills#67` by merging upstream,
+  regenerating exports, validating skillcheck/build/link/check, pushing
+  `1db151e`, and commenting. Fresh screen selected
+  `ujaan-chatterjee/sentiment-twitter-dashboard`, MIT and duplicate-clean.
+  Opened https://github.com/ujaan-chatterjee/sentiment-twitter-dashboard/pull/1
+  with a stdlib TweetClaw importer, sample export, and README command fixes;
+  readback showed open, ready, mergeable, maintainer-editable, and no checks
+  configured. OpenClaw routes, ClawHub, Directory, npm metadata, memory,
+  fitness, link checks, and check:all passed. Old skill/debug/testing docs paths
+  moved to `clawhub/skill-format` and `help/*` routes. `opencodex.directory`
+  DNS still failed. Npm audit found 5 nested OpenClaw advisories. Prompt bytes
+  stayed 11980.
 
 ## Reporting Checklist
 
