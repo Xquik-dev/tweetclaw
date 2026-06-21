@@ -1011,6 +1011,134 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-21 02:12 UTC heartbeat
+
+- Runtime limits: this runtime did not expose a callable GPT-5.5 or
+  extra-high reasoning selector, so the limitation was recorded and work
+  continued. GitHub repository, PR-comment, CI, and publish workflow skills had
+  been read for this thread before GitHub work.
+- Worktree scope: TweetClaw started clean on `master` at `d6255ca`. Xquik was
+  on `master` at `17c1b43d` with unrelated user change
+  `docs/feature-roadmap.md`; it was left untouched. No Browser, Chrome, GUI
+  automation, dev server, production SSH, secret read, Context7 work, or
+  destructive git action was used.
+- Crawler-first discovery: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  stable session `tweetclaw-20260621-0212`, bounded request and warmup
+  timeouts, 80-result limit, 2 search pages, 6 per-query limit, and focused
+  query coverage for authored PRs, SKILL.md, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, social media, Twitter/X, awesome lists, registries, forks,
+  generated catalogs, analytics, sentiment, and package/tooling lanes. Proxy
+  warmup succeeded and JSON parsed as an object with 12 opportunities:
+  `ComposioHQ/awesome-claude-skills`, `travisvn/awesome-claude-skills`,
+  `BehiSecc/awesome-claude-skills`, `Prat011/awesome-llm-skills`,
+  `maxbogo/awesome-ai-tools-for-ui`, `ruvnet/RuView`,
+  `karanb192/awesome-claude-skills`,
+  `helloianneo/awesome-claude-code-skills`,
+  `hesreallyhim/awesome-claude-code`, `bergside/awesome-design-skills`,
+  `fleurytian/awesome-claude-skills`, and `Panmax/awesome-nuwa`.
+- PR inventory: `Xquik-dev/tweetclaw` had 0 open issues and 0 open PRs.
+  `Xquik-dev/xquik` had 0 open issues. Authored open PR search returned 200
+  rows and remained capped, so full inventory completion was not claimed.
+  Exact readbacks covered the newest 120 open authored PRs with 0 terminal
+  readback errors: 120 open, 120 mergeable, 94 clean, 19 unstable, 7 blocked,
+  6 review-required approval gates, and 19 PRs with comments. Thread-aware
+  GraphQL covered the newest 60 PRs and found 1 actionable current-head review
+  thread.
+- PR repair: `stevenflanagan1/social-ai-team#3` was open, mergeable, and had a
+  Codex review thread on `skills/social-media-manager/SKILL.md` noting that the
+  mixed-platform Route F treated Hermes Tweet, Blotato, and manual publishing
+  as mutually exclusive, so an X plus LinkedIn/Threads request could publish X
+  through Hermes and skip the remaining platforms. The correctly parented
+  `kriptoburak/social-ai-team` fork was cloned on branch
+  `codex/add-hermes-tweet-skill`. Commit `f96ae6d` split the publishing
+  decision by platform, routed Hermes Tweet only to `outputs/x/`, and returned
+  to `/publisher` for LinkedIn/Threads outputs when Blotato is selected.
+  Validation passed `git diff --check`, `bash -n install.sh`, route assertions
+  for the split Hermes/Blotato path, and a public-hygiene scan. The branch was
+  pushed, the PR comment at
+  https://github.com/stevenflanagan1/social-ai-team/pull/3#issuecomment-4760647988
+  was corrected in place, and final readback showed open, ready, mergeable,
+  clean, maintainer-editable, head `f96ae6d`, and no configured checks.
+- Fresh discovery and duplicate gates: compact audit, archive, crawler output,
+  target metadata, target content, target PRs, target issues, and fork metadata
+  were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, ClawHub,
+  Twitter/X, sentiment, CSV, skill, catalog, and plugin variants. Crawler
+  catalog candidates were blocked by existing TweetClaw/Xquik history or
+  target policy noted in prior archive entries, including
+  `ComposioHQ/awesome-claude-skills`, `travisvn/awesome-claude-skills`,
+  `BehiSecc/awesome-claude-skills`, `Prat011/awesome-llm-skills`,
+  `karanb192/awesome-claude-skills`,
+  `helloianneo/awesome-claude-code-skills`, `hesreallyhim/awesome-claude-code`,
+  and `fleurytian/awesome-claude-skills`. `bergside/awesome-design-skills`
+  remained lower fit for TweetClaw. Fallback search screened recent tweet
+  sentiment projects; prior archive hits blocked `vishnuke`,
+  `Somenpradhan`, `adithn875`, `rajput`, and `ishanmitra` lanes.
+  `chris73006/PRODIGY_DS_04` was selected because it was archive-clean,
+  duplicate-clean across target PRs, issues, and content, public, non-fork,
+  non-archived, issue-enabled, recently pushed, and already consumes tweet
+  CSV data through `sentiment_analysis.py`. Missing license metadata was
+  recorded but did not block a direct, target-native helper and README PR.
+- Fresh PR submitted: https://github.com/chris73006/PRODIGY_DS_04/pull/1 from
+  correctly parented fork `kriptoburak/PRODIGY_DS_04`, branch
+  `codex/add-tweetclaw-csv-converter`, commit `058844a`. The PR adds
+  `tweetclaw_to_test_csv.py`, a dependency-free converter for TweetClaw JSON,
+  JSONL, NDJSON, and CSV exports into the target's `id,tweet` CSV shape. It
+  accepts common tweet-text and ID aliases, handles wrapped JSON arrays under
+  common result keys, skips blank tweet text, de-duplicates repeated text,
+  creates parent directories, and refuses accidental output replacement unless
+  overwrite is requested. README changes fix existing setup code fences, add
+  concrete backend and Streamlit run commands, document the converter, and
+  explain how to write a separate output file to preserve the bundled
+  `test.csv`.
+- Fresh PR validation: target validation passed
+  `python3 -m py_compile tweetclaw_to_test_csv.py sentiment_analysis.py app.py`,
+  JSONL conversion smoke test with duplicate de-duplication, wrapped JSON
+  conversion smoke test, CSV conversion smoke test, overwrite-refusal smoke
+  test, `git diff --check`, `npx --yes markdown-link-check README.md
+  --quiet`, and public diff scan for private implementation details,
+  restricted provider names, internal cost mechanics, secret values,
+  unsupported claims, and stale metadata. PR readback showed open, ready,
+  `MERGEABLE`, `CLEAN`, maintainer-editable, no comments, no reviews, and no
+  configured checks.
+- Official OpenClaw and package checks: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`, and `/help/debugging`
+  returned HTTP 200. The canonical ClawHub TweetClaw route and OpenClaw
+  Directory route returned HTTP 200. `npm view openclaw dist-tags` returned
+  latest `2026.6.9`, beta `2026.6.9-beta.1`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.22.0`; `npm view
+  @xquik/tweetclaw version` returned `1.6.31`, while local source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities.
+- Broken-link and TweetClaw validation: Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, compact audit, and
+  compact release memory. `npm run check-openclaw-platform-fitness` passed for
+  local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.9`. `npm run
+  check-memory-md-size` passed with compact Markdown memory at 15149/15360
+  bytes after the compact audit update.
+- Memory and prompt: compact audit was updated and this archive received the
+  full run record. The saved automation prompt was not edited and stayed at the
+  prior measured 11980 bytes.
+- Prompt self-improvement: when writing GitHub PR comments or issue comments
+  that contain backticks, write the body to a file or pass a safely quoted
+  variable to `gh`/REST. Inline double-quoted shell bodies can trigger zsh
+  command substitution, strip Markdown snippets, and require a corrected
+  comment edit. Keep CSV dataset contributions target-native by mapping exactly
+  to the target's existing column contract, refusing overwrite by default, and
+  documenting label semantics without thin marketing.
+- Changed files outside TweetClaw:
+  `/tmp/tweetclaw-heartbeat-20260621-0212/social-ai-team/skills/social-media-manager/SKILL.md`
+  was committed to the external fork and pushed at `f96ae6d`;
+  `/tmp/tweetclaw-heartbeat-20260621-0212/PRODIGY_DS_04/README.md` and
+  `tweetclaw_to_test_csv.py` were committed to the external fork and pushed at
+  `058844a`.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+
 2026-06-21 01:51 UTC heartbeat
 
 - Runtime limits: this runtime did not expose a callable GPT-5.5 or
