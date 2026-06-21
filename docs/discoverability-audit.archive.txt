@@ -1383,7 +1383,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   conflict-marker scan, and `npx --yes markdown-link-check
   skills/social-signal-research/SKILL.md README.md --quiet`. The PR was
   commented at https://github.com/agent-packs/registry/pull/3#issuecomment-4760923066.
-  Final readback showed open, ready, clean, mergeable, no checks, and head
+  Final readback showed open, ready, mergeable with GitHub `UNSTABLE` state,
+  no checks, and head
   `d455834b07e9b205f1fd7a219a206eae2bc7eada`.
 - Fresh discovery and duplicate checks: crawler candidates were already recorded
   or internal, so fallback metadata search covered current Streamlit, tweet

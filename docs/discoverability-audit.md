@@ -197,7 +197,8 @@ archive, before any outreach or duplicate decision.
   readback was stopped at 250. Requested-change triage found only stale or
   target-blocked reviews, and failed-check triage found Vercel fork auth gates.
   Repaired `agent-packs/registry#3` by resolving the generated index conflict,
-  pushing `d455834`, and commenting validation; readback is clean and mergeable.
+  pushing `d455834`, and commenting validation; readback is mergeable with
+  GitHub `UNSTABLE` state and no checks.
   Fresh MIT target `gpk2544/Social_Media_Sentiment_Analyzer` opened
   https://github.com/gpk2544/Social_Media_Sentiment_Analyzer/pull/1 with a
   TweetClaw JSON, JSONL, NDJSON, or CSV converter for the app's `post_text`
