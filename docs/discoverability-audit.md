@@ -190,18 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 21:40 UTC: model/effort selector unavailable. Crawler covered PR,
-  skill, social/X, registry, validator, and SkillSpector lanes; 6 known targets
-  were duplicate-blocked, and a fresh crawl hit a proxy outage with 1 skip.
-  Broad authenticated search hit a GitHub secondary rate limit, so exact
-  readbacks used saved authored results and covered 297 current PR URLs. No safe
-  repair was needed; blockers were target-owned reviews, policy checks, or
-  already-fixed bot state. Fresh unauthenticated discovery opened ready PR
-  https://github.com/Wibinah/tweet-sentiment-analyzer/pull/1 from verified fork
-  `kriptoburak/wibinah-tweet-sentiment-analyzer`, adding a tested TweetClaw
-  export upload path. NVIDIA Skills, SkillSpector, OpenClaw canonical docs,
-  public links, npm metadata, audit, package artifact, and fitness checks
-  passed. Full details archived.
+- 2026-06-21 22:08 UTC: model/effort selector unavailable. Crawler covered PR,
+  skill, social/X, OpenClaw/MCP, registry, validator, and SkillSpector lanes; 3
+  candidates were duplicate-known. Authored-open inventory used GraphQL user PR
+  pagination to avoid the search cap and found 2055 open PRs; exact `gh pr
+  view` readbacks covered the newest 50 plus review/failure partitions. Repaired
+  4 current README conflicts to clean/mergeable state:
+  `warlockoussama/twitter-cli#1`, `jamald33n/tweetsave-mcp#2`,
+  `Aqmar777/openclaw-competitive-intel#1`, and
+  `AbdNour627/awesome-openclaw-configs#1`. Remaining changes-requested or
+  failing-check blockers were maintainer base-branch review state or
+  Vercel/Netlify fork-deploy authorization. Fresh discovery opened ready PR
+  https://github.com/sarvesh1714/Twitter-Account-Analysis-with-Personality-Insights/pull/1
+  from verified fork, adding tested TweetClaw export analysis. NVIDIA Skills,
+  SkillSpector, OpenClaw canonical docs, public links, npm metadata, audit,
+  package artifact, and fitness checks passed. Full details archived.
 
 ## Reporting Checklist
 
