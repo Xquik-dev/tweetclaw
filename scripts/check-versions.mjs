@@ -77,6 +77,12 @@ if (packageJson.openclaw?.runtimeExtensions?.[0] !== "./dist/index.js") {
 if (!packageJson.files?.includes("dist/")) {
   drifts.push("  package.json: files missing dist/");
 }
+if (!packageJson.files?.includes("skills/tweetclaw/")) {
+  drifts.push("  package.json: files must include the complete TweetClaw skill directory");
+}
+if (packageJson.files?.includes("skills/tweetclaw/SKILL.md")) {
+  drifts.push("  package.json: files must not package only SKILL.md without release evidence");
+}
 if (packageJson.scripts?.["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.mjs") {
   drifts.push("  package.json: check-skill-frontmatter must validate packaged skill metadata");
 }

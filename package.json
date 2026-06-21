@@ -39,7 +39,7 @@
   "files": [
     "dist/",
     "src/",
-    "skills/tweetclaw/SKILL.md",
+    "skills/tweetclaw/",
     "openclaw.plugin.json"
   ],
   "keywords": [

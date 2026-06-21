@@ -30342,3 +30342,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Broken-link and TweetClaw validation: final validation passed `npx --yes markdown-link-check README.md docs/openclaw-setup.md docs/agent-workflows.md skills/tweetclaw/SKILL.md docs/discoverability-audit.md docs/clawpack-release.md --quiet`, `uvx --from git+https://github.com/NVIDIA/SkillSpector.git skillspector scan skills/tweetclaw --no-llm`, `npm run check-package-artifact`, `git diff --check`, changed-diff sensitive-term scan, and `npm run check:all` with 168 tests and 100% coverage.
 - Memory and prompt self-improvement: compact Markdown memory stayed under the 15 KiB cap by replacing the latest-run block and moving this full record to the archive. Automation prompt measured 11980 bytes. Future skill edits should preserve explicit capabilities, trust profile, catalog-restricted parameter validation, blocked operation families, and SkillSpector static scans. `BrikerMan/skilless.ai#6` is now duplicate-blocked for license and README anchor repairs unless maintainers ask for follow-up.
 - Changed TweetClaw files: `skills/tweetclaw/SKILL.md`, `docs/discoverability-audit.md`, `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
+- 2026-06-21 18:09 UTC heartbeat:
+  model/effort selector unavailable, so GPT-5.5 plus extra-high reasoning could
+  not be selected. TweetClaw started clean on `master` at `049498d`; Xquik had
+  unrelated `docs/feature-roadmap.md` changes and was left untouched. No
+  Browser, Chrome, GUI automation, dev server, production SSH, secret read, or
+  destructive git action was used.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 180
+  limit, 2 search pages, 6 per query, concurrency 12, and session
+  `tweetclaw-20260621-1809`. Query pack covered authored open PRs, TweetClaw,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, skill dirs, Claude, Codex,
+  OpenClaw, social, Twitter-X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, social listening, sentiment
+  dashboards, Twitter CSV import, and OpenClaw package-tooling lanes. Output
+  parsed as valid JSON with 40 opportunities including
+  `SamurAIGPT/Generative-Media-Skills`, `freddy-schuetz/n8n-claw`,
+  `blacktwist/social-media-skills`, `hyperfx-ai/marketing-skills`,
+  `skainguyen1412/social-media-research-skill`, `BrikerMan/skilless.ai`,
+  `publora/skills`, `rabden/X-twitter-social-manager-skill`, and sentiment
+  dashboard lanes. Proxy logs contained no credential values.
+- PR inventory and repair: checked TweetClaw and Xquik open issues, both empty.
+  Authored PR search completed 12 uncapped updated-date partitions and found
+  2027 open PRs. REST exact-read covered all 2027 with 0 errors:
+  mergeability states were 1572 clean, 278 unstable, 123 blocked, 35 dirty, 12
+  unknown, and 7 behind; 378 had comments or review comments. Exact sampled
+  comments, reviews, and check rollups for the 24 newest risky/commented
+  in-scope PRs. Repaired `reall8164/wechat-openclaw-plugin#1` from correctly
+  parented fork `kriptoburak/wechat-openclaw-plugin` by merging upstream main,
+  resolving README support and TweetClaw workflow conflicts, updating the
+  install selector to `npm:@xquik/tweetclaw`, validating conflict scan, `git
+  diff --check`, JSON manifest parses, README markdown-link-check, and
+  public-hygiene scans, then pushing `72e72d6`. Readback showed the PR open,
+  clean, no checks, no reviews, and validation comment
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4762879003.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, fallback repo search, exact target metadata, target content,
+  fork metadata, and open plus closed target PRs/issues were checked for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, xquik.com, OpenClaw, Twitter/X,
+  SKILL.md, skill registries, source material, social writing, sentiment
+  dashboards, CSV workflows, and variants. Duplicate or prior-history blockers
+  included `blacktwist/social-media-skills`, `hyperfx-ai/marketing-skills`,
+  `skainguyen1412/social-media-research-skill`,
+  `ankit-sharma2005/twitter-sentiment-analysis`, `whoisdhana/x-monitor`,
+  `Mrpixelraf/follow-investors`, and `0xNyk/xint`.
+  `Marcel98717/openclaw-power-skills` was rejected as a one-line README plus
+  binary ZIP, not a safe reviewable skill contribution target.
+  `harrylabsj/twitter-thread-crafter` was selected because it is public,
+  non-fork, non-archived, duplicate-clean in target content and PR history, and
+  target-native for optional source-material guidance while preserving its
+  no-code, no-action thread-writing scope. Missing license metadata was recorded
+  and did not block the direct PR.
+- Fresh PR submitted: https://github.com/harrylabsj/twitter-thread-crafter/pull/1
+  from correctly parented fork `kriptoburak/twitter-thread-crafter`, branch
+  `codex/tweetclaw-source-material`, commit `6bd1f0f`. The PR updates README
+  and SKILL so TweetClaw can be used before the writing skill to collect a
+  reviewed public X/Twitter source packet, while the target skill still does
+  not browse, call APIs, post, schedule, or handle credentials. Validation
+  passed `git diff --check`, SKILL frontmatter smoke check, `python3 -m
+  json.tool skill.json`, `npx --yes markdown-link-check README.md SKILL.md
+  --quiet`, changed-diff public-hygiene scan, fork-parent readback, PR body
+  readback, and final PR readback. Final PR state: open, ready, clean,
+  2 changed files, no comments, no reviews, and no checks configured.
+- NVIDIA Skills follow-up: checked current NVIDIA docs at
+  `https://docs.nvidia.com/skills`, `skills.md`, llms exports, trust pipeline,
+  scanning, signing, skill card, release checklist, and advanced install pages.
+  Packaged TweetClaw skill release evidence now includes `skill-card.md`,
+  `skillspector-report.md`, `evals/evals.json`, and `BENCHMARK.md` under
+  `skills/tweetclaw/`. `package.json` now packages `skills/tweetclaw/`, and
+  `scripts/check-package-artifact.mjs` plus `scripts/check-versions.mjs`
+  require the complete release-evidence directory instead of only SKILL.md.
+  SkillSpector v2.2.3 on the five-file directory returned score `0/100`,
+  severity LOW, recommendation SAFE, no findings, and no executable scripts.
+- OpenClaw and release hygiene: current OpenClaw docs were rechecked through
+  live `llms.txt` and canonical pages for CLI plugins, CLI skills, plugin
+  management, permission requests, manifest, tool plugins, SDK runtime,
+  install overrides, ClawHub publishing and plugin validation fixes, testing,
+  and debugging. OpenClaw npm metadata remains latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; ClawHub npm version is
+  `0.22.0`; published TweetClaw npm latest remains `1.6.31`; ClawHub and
+  OpenClawDir TweetClaw pages returned HTTP 200.
+- Broken-link and validation results before commit: passed TweetClaw public
+  Markdown link check for README, OpenClaw setup, agent workflows, SKILL,
+  skill card, benchmark, SkillSpector summary, compact audit, and compact
+  release memory; target PR links returned HTTP 200; `python3 -m json.tool`
+  passed for `skills/tweetclaw/evals/evals.json`; `npm audit
+  --audit-level=moderate --json` reported 0 vulnerabilities; `npm run
+  check-skill-frontmatter`, `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact` passed. Prompt size measured 11980 bytes.

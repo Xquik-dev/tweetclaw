@@ -407,5 +407,6 @@ Before broadly sharing a new skill release or claiming verified status:
 2. Run `npm run check-skill-frontmatter`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, and `npm run check:all`.
 3. Scan the complete skill directory with SkillSpector when available, for example `skillspector scan skills/tweetclaw --format markdown --output skillspector-report.md`.
 4. Resolve critical and high findings, or record formal acceptance before release.
-5. Keep release evidence tied to the exact package version: source commit, scan report or CI link, package artifact, and any evaluation or benchmark record.
+5. Keep `skill-card.md`, `skillspector-report.md`, `evals/evals.json`, and `BENCHMARK.md` tied to the exact package version.
 6. Sign the exact reviewed skill directory with a detached `skill.oms.sig` before publishing a signed skill artifact, and verify the signature before announcing availability.
+7. Do not claim NVIDIA-verified or signed status unless the scan, skill card, benchmark record, and signature verification are current for the released directory.
