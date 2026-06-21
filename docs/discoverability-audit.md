@@ -197,7 +197,7 @@ archive, before any outreach or duplicate decision.
   failed status rollups, 336 with comments, 176 with reviews, and 141 with
   review threads. Repaired `StephanAkkerman/fintwit-bot#740` so Xquik augments
   the normal timeline and pushed head `4f22cca`; readback stayed mergeable with
-  target checks pending/in-progress. Fresh screening duplicate-blocked handled
+  Snyk success and neutral Mergify queue status. Fresh screening duplicate-blocked handled
   social-skill and sentiment lanes, then opened
   https://github.com/Mharis-code/videoanalyzer/pull/1 for optional TweetClaw X
   video source context; target validation passed diff-check, `py_compile`, link
