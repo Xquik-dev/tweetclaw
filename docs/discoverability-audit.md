@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 02:54 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 03:15 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 02:54 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 03:15 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 02:54 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 03:15 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 02:54 UTC: runtime model/effort selector unavailable. Xquik
-  crawler strict JSON returned 12 repeated skill/catalog candidates, all prior
-  duplicate, policy, or lower-fit lanes. TweetClaw had 0 open issues and 0 open
-  PRs; Xquik had 0 open issues and an unrelated roadmap edit left untouched.
-  Authored open PR search returned 200 capped; all 200 exact-read PRs were open
-  and mergeable, with 156 clean, 32 unstable, 12 blocked, 1 stale
-  changes-requested, 52 comments, and 0 read errors. GraphQL thread scan over
-  96 recent, commented, reviewed, or blocked PRs found no unresolved
-  current-head threads after repairing
-  `Championer-ai/championeer-urbanpulse2#1`: pushed pagination commit
-  `024f2f2` and commented validation. Fresh eligible no-license target
-  `malavikap-596/Social-Media-Sentiment-Analysis-Dashboard` opened
-  https://github.com/malavikap-596/Social-Media-Sentiment-Analysis-Dashboard/pull/1
-  adding a TweetClaw export-to-dashboard CSV converter and README image-path
-  fixes; readback is open, ready, mergeable, clean, and no checks. OpenClaw
-  routes returned HTTP 200; links, `check:all`, fitness, npm audit, and memory
-  checks passed; prompt bytes stayed unchanged at 11980.
+- 2026-06-21 03:15 UTC: runtime model/effort selector unavailable. Xquik
+  crawler strict JSON returned 62 skill, MCP, catalog, social, and sentiment
+  opportunities. Authored open PR partitioning found 1944 URLs; exact GraphQL
+  readback succeeded for 925, then hit rate limit on 1019, so no complete
+  inventory claim was made. Repaired
+  `JosiahSiegel/claude-plugin-marketplace#18` by resolving the marketplace JSON
+  conflict, pushing `8a98e65`, validating the Xquik plugin, and commenting the
+  repair; REST readback is open, mergeable, and target-unstable only. Fresh
+  eligible no-license target `paridhi-pandey/covid-tweet-sentiment` opened
+  https://github.com/paridhi-pandey/covid-tweet-sentiment/pull/1 with a
+  TweetClaw JSON, JSONL, or CSV export converter for the app's existing `tweet`
+  CSV upload; readback is open, ready, mergeable, and clean. OpenClaw routes,
+  ClawHub, OpenClaw Directory, links, fitness, and npm audit passed; Xquik had
+  only an unrelated roadmap edit left untouched; prompt bytes stayed unchanged
+  at 11980.
 
 ## Reporting Checklist
 
