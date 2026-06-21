@@ -206,11 +206,11 @@ archive, before any outreach or duplicate decision.
   Opened https://github.com/ujaan-chatterjee/sentiment-twitter-dashboard/pull/1
   with a stdlib TweetClaw importer, sample export, and README command fixes;
   readback showed open, ready, mergeable, maintainer-editable, and no checks
-  configured. OpenClaw routes, ClawHub, Directory, npm metadata, memory,
-  fitness, link checks, and check:all passed. Old skill/debug/testing docs paths
+  configured. OpenClaw routes, package metadata, memory, fitness, links, and
+  check:all passed. Old skill/debug/testing docs paths
   moved to `clawhub/skill-format` and `help/*` routes. `opencodex.directory`
-  DNS still failed. Npm audit found 5 nested OpenClaw advisories. Prompt bytes
-  stayed 11980.
+  DNS still failed. Npm audit found 5 vulnerable packages; Dependabot had 6
+  alerts. Prompt bytes stayed 11980.
 
 ## Reporting Checklist
 

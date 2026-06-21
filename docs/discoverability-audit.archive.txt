@@ -87,11 +87,12 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   audit, and compact release memory. `npm run check-openclaw-platform-fitness`,
   `npm run check-memory-md-size`, `npm run check-em-dash`, `git diff --check`,
   and `npm run check:all` passed after the audit updates. `npm audit
-  --audit-level=moderate --json` still reported 5 nested OpenClaw advisories
-  across `@openclaw/fs-safe`, `openclaw`, `protobufjs`, `tar`, and `undici`;
-  the unsafe force path still downgraded to `openclaw@0.0.1`, so no package
-  mutation was made.
-- Memory and prompt: compact Markdown memory ended at 15345/15360 bytes, under
+  --audit-level=moderate --json` still reported 5 vulnerable OpenClaw-tree
+  package entries across `@openclaw/fs-safe`, `openclaw`, `protobufjs`, `tar`,
+  and `undici`; GitHub Dependabot readback after push showed 6 open advisories
+  for `undici`, `tar`, and `protobufjs` in `package-lock.json`. The unsafe force
+  path still downgraded to `openclaw@0.0.1`, so no package mutation was made.
+- Memory and prompt: compact Markdown memory ended at 15341/15360 bytes, under
   the 15 KiB cap. The saved automation prompt measured 11980 bytes, and no
   prompt edit was needed.
 - Prompt self-improvement: keep OpenClaw doc-route checks keyed from llms
