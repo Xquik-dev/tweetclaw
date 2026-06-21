@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 09:25 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 09:46 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 09:25 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 09:46 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 09:25 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 09:46 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,24 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 09:25 UTC: model/effort selector unavailable. Crawler strict JSON
-  returned 18 PR, skill, OpenClaw, social, Twitter/X, and sentiment-dashboard
-  candidates. Broad `gh search` PR partitioning hit GraphQL quota exhaustion at
-  run start, so full inventory was not claimed. Continued with crawler output,
-  compact/archive URLs, REST issue probes, REST exact PR readbacks, and local
-  clones. REST readbacks confirmed known blockers on
-  `weiflycc-cmd/awesome-copilot#19`, `Hashi-Ai-Dev/openclaw-clawdoc#6`, and
-  `maddhruv/absolute#5`, and clean current heads for `paoloanzn/x-cli#3`,
-  `Vayu-143/social-media-sentiment-dashboard#1`, and
-  `challakishore-dev/social-media-sentiment-dashboard#1`. Fresh screening
-  selected duplicate-clean
-  `sumedhagowda-commits/Social-Media-Sentiment-Analysis-Dashboard` and opened
-  https://github.com/sumedhagowda-commits/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+- 2026-06-21 09:46 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 22 skill, OpenClaw, social, Twitter/X, and sentiment-dashboard
+  candidates. Authored PR partitioning exact-read 1362 URLs across 11 updated
+  windows, then GitHub returned HTTP 403 on the `<2026-06-01` search page, so
+  full inventory was not claimed. REST readbacks checked 13 known actionable or
+  recent PRs: expected blockers remain `awesome-copilot#19`,
+  `openclaw-clawdoc#6`, and `absolute#5`; recent outreach heads remain clean.
+  Fresh screening selected duplicate-clean
+  `sanskritika2409/AI-Social-Media-Sentiment-Dashboard` and opened
+  https://github.com/sanskritika2409/AI-Social-Media-Sentiment-Dashboard/pull/1
   through REST. Validation passed Python compile, JSON/JSONL/CSV converter
-  smoke tests, target README link check, diff checks, fork-parent and PR
-  readbacks, OpenClaw route checks, ClawHub/OpenClawDir checks, npm audit,
-  fitness, and TweetClaw public Markdown link checks. Prompt TOML bytes: 12314.
-  Full details are archived.
+  smokes, target README link check, diff checks, fork-parent and PR readbacks,
+  OpenClaw route checks, ClawHub/OpenClawDir checks, npm audit, fitness, and
+  TweetClaw public Markdown link checks. Prompt TOML bytes: 12314. Full details
+  are archived.
 
 ## Reporting Checklist
 
