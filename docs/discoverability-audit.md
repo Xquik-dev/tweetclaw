@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 23:52 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-21 00:12 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 23:52 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 00:12 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -192,24 +192,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 23:52 UTC: runtime model/effort selector unavailable. Xquik
+- 2026-06-21 00:12 UTC: runtime model/effort selector unavailable. Xquik
   crawler strict JSON coverage returned 0 opportunities after managed proxy
   outage logs; no credential values were stored. TweetClaw had 0 open issues or
-  PRs. Broad authenticated PR search hit GitHub rate limits, so exact readback
-  continued from audit URLs and known PRs: 30 open PRs, 30 mergeable, 4 stale
-  changes-requested lanes, 2 approved lanes, and no safe maintainer repair.
-  Fresh screen selected `harrypham2000/skill-audit`, active, forkable, and
-  duplicate-clean by archive, target content, PR and issue lists, and clone
-  scan. Opened https://github.com/harrypham2000/skill-audit/pull/32 with a
-  TweetClaw public social-source audit regression test; PR readback showed
-  open, ready, mergeable, maintainer-editable, 1 changed file, 53 additions,
-  and both Socket checks passing. Target first test
-  failed only before dependency install; after install, `npm test`, build, diff
-  check, test-file link check, and public hygiene passed. OpenClaw routes,
-  ClawHub, Directory, npm metadata, memory, fitness, link checks, and check:all
-  passed. `opencodex.directory` DNS still failed. Npm audit found 5 nested
-  OpenClaw advisories; GitHub push reported 6. Audit push completed; prompt
-  bytes 11980.
+  PRs. Authored PR search found 554 lane-matched PRs before GitHub search rate
+  limits; 80 newest exact readbacks found 80 mergeable PRs, 1 stale
+  changes-requested state, 1 target-owned CI/comment-permission failure, and no
+  safe repair. Fresh screen selected `cgallic/kai-cmo-harness`, MIT licensed by
+  file, active, forkable, and duplicate-clean by archive, target content, PR and
+  issue lists, and clone scan. Opened
+  https://github.com/cgallic/kai-cmo-harness/pull/24 with an approval-gated
+  TweetClaw X source-packet path for Kai brand-pulse runs; PR readback showed
+  open, ready, mergeable, 1 changed file, 34 additions, 1 deletion, and only
+  target-owned Vercel authorization pending. Target link, banned-word, diff, and
+  brand-pulse tests passed. OpenClaw routes, ClawHub, Directory, npm metadata,
+  memory, fitness, link checks, and check:all passed. `opencodex.directory` DNS
+  still failed. Npm audit found 5 nested OpenClaw advisories. Prompt bytes
+  stayed 11980.
 
 ## Reporting Checklist
 
