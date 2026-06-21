@@ -31006,3 +31006,110 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   style find-vet-install repos, a concrete guardrail case is the right placement
   shape for TweetClaw; avoid generic "pairs well with" listings when a real
   case format exists.
+
+## 2026-06-21 20:45 UTC heartbeat
+
+- Runtime note: requested GPT-5.5 plus extra-high reasoning could not be
+  selected in this runtime, so the run continued with that limitation recorded.
+  TweetClaw started on `master` at `5550663` and clean. Xquik stayed on
+  `master` at `17c1b43d` with unrelated user edit
+  `docs/feature-roadmap.md` left untouched. No Browser, Chrome, GUI automation,
+  dev server, production SSH, secret read, Context7 work, or destructive git
+  action was used. Open issue lists for `Xquik-dev/tweetclaw` and
+  `Xquik-dev/xquik` were empty.
+- Crawler-first coverage: ran strict JSON Xquik crawler with research proxy,
+  bounded request and proxy warmup timeouts, 180 limit, 2 search pages, 6 per
+  query, concurrency 12, and session `tweetclaw-20260621-2037`. Query coverage
+  included authored PRs, TweetClaw, OpenClaw, MCP, SKILL.md, `.agents/skills`,
+  skills directories, Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X
+  skills, awesome lists, registries, forks, generated catalogs, validators,
+  package tooling, NVIDIA Skills, SkillSpector, and source-evidence lanes.
+  Output parsed as valid JSON with 6 duplicate or prior-history blocked
+  opportunities: `creatorcrawl/creatorcrawl-skill`,
+  `blacktwist/social-media-skills`, `elbis330/social-media-scraper-skill`,
+  `Aditya923-c/xpoz-agent-skills`, `rabden/X-twitter-social-manager-skill`, and
+  `AISA-skills/social-media-skills`. A second strict JSON crawler run with fresh
+  source-evidence and skill-card queries returned 0 opportunities. Proxy logs
+  exposed no credential values.
+- PR inventory and repair: exact-read 17 tracked open PRs for state, draft
+  state, mergeability, base, head, commits, comments, reviews, files, and checks
+  where available. Only `Aditya923-c/xpoz-agent-skills#1` needed action: it was
+  conflicting on `README.md`. Repaired the correctly parented
+  `kriptoburak/xpoz-agent-skills` fork by merging upstream `main`, resolving the
+  Quick Links conflict so the download link points at the ZIP and the GitHub
+  Repository link points at the repository page, and pushing commit `d9c0fcf`.
+  Validation passed conflict-marker scan, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Repair comment:
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4763236565.
+  Final readback showed open, ready, `MERGEABLE`, and `CLEAN`.
+- NVIDIA Skills user request: read `skill-creator` guidance and rechecked
+  current NVIDIA Skills docs at `https://docs.nvidia.com/skills`, trust
+  pipeline, scanning, signing, skill cards, release checklist, and advanced
+  install pages. TweetClaw still contains `SKILL.md`, `skill-card.md`,
+  `skillspector-report.md`, `evals/evals.json`, and `BENCHMARK.md`; no
+  signature file exists, so unsigned release wording remains correct. `npm run
+  check-skill-frontmatter` passed. Live SkillSpector v2.2.3 scan at 20:44 UTC
+  returned score `0/100`, severity LOW, recommendation SAFE, 5 non-executable
+  components, and no issues; `skillspector-report.md` now records that
+  timestamp.
+- Fresh discovery and duplicate gates: fallback GitHub searches after crawler
+  exhaustion covered active Streamlit Twitter/X sentiment dashboards, X/Twitter
+  social analytics projects, skill-card/eval skill repos, and CSV/JSON import
+  lanes. Existing kriptoburak PRs duplicate-blocked
+  `TLindenIII/Social-Media-Topic-Modeling`,
+  `VaishnaviDayanand/Twibuzz-Real-Time-Social-Media-Analytics-Dashboard`,
+  `Mahima07-mai/Sentiment-Analysis-twitter`, and
+  `Manpreet29/Twitter-Sentiment-Analysis`. Prior history blocked
+  `PBrindha25/Social_Media_Performance_Dashboard` and
+  `sidv11/twitter-sentiment-analysis`; `rounakdey2003/Social-Sentiments`
+  remained lower-fit for a small direct PR. `ashutosh-a11yy/twitter-sentiment-analysis`
+  was selected because it is public, non-fork, non-archived, issue-enabled,
+  active, duplicate-clean across compact audit, archive, target content, and
+  open/closed PRs/issues, and its Streamlit Dataset page already loads tweet
+  rows while lacking a reviewed export import path. GitHub reports no license
+  metadata; missing license metadata did not block the direct PR. Custom fork
+  `kriptoburak/ashutosh-twitter-sentiment-analysis` was created because the
+  default fork name belonged to another parent, then read back as correctly
+  parented.
+- Fresh PR submitted:
+  https://github.com/ashutosh-a11yy/twitter-sentiment-analysis/pull/1 from
+  branch `codex/add-tweetclaw-export-import`, commit `0b9f8fd`. The PR adds
+  `tweetclaw_import.py`, supports TweetClaw CSV, JSON, JSONL, and NDJSON export
+  normalization, adds a Dataset-page uploader that predicts imported tweet
+  sentiment with the existing model, and documents a local reviewed-export
+  workflow without asking the app to handle raw social account credentials.
+- Fresh PR validation: passed `python3 -m py_compile app.py
+  tweetclaw_import.py`, `uv run --with pandas` fixture checks for JSON, JSONL,
+  CSV, duplicate-row, nested-author, and empty-export cases,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, and
+  added-diff public-hygiene scan. Final PR readback showed open, ready,
+  `MERGEABLE`, `CLEAN`, 1 commit, 3 changed files, no comments, no reviews, and
+  no configured checks.
+- Official OpenClaw and package checks: current OpenClaw docs for llms exports,
+  CLI plugins/skills/update, ClawHub publishing/skill format, manifest, tool
+  plugins, install overrides, plugin permission requests, SDK runtime, SDK
+  entrypoints, and debugging returned HTTP 200. Current TweetClaw surfaces
+  `clawhub.ai/plugins/@xquik/tweetclaw` and
+  `openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. Stale probes
+  `clawhub.openclaw.ai`, `clawhub.ai/plugins/xquik/tweetclaw`, and
+  `openclaw.ai/directory/xquik-tweetclaw` failed or returned 404 and were not
+  treated as source-link breakage. npm latest remains `@xquik/tweetclaw@1.6.31`;
+  source remains `1.6.32`. OpenClaw dist-tags were latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` returned `0.22.0`.
+  `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` and
+  `npm run check-package-artifact` passed.
+- Broken-link and TweetClaw validation: passed `npx --yes markdown-link-check`
+  for README, OpenClaw setup docs, agent workflow docs, packaged skill, skill
+  card, benchmark, SkillSpector report, compact audit, and compact release
+  memory. `npm run check-memory-md-size`, `git diff --check`, changed-diff
+  public-hygiene scan, and final `npm run check:all` passed after audit updates.
+- Prompt self-improvement: prompt text was unchanged; automation TOML measured
+  12314 bytes. Durable lessons: when the default fork name belongs to a
+  different parent, create and verify a custom-name fork before pushing. For
+  Streamlit sentiment dashboards with fixed datasets, a Dataset-page import path
+  plus reusable TweetClaw export normalizer is safer than changing training data
+  or claiming live API integration.
+- Changed TweetClaw files: `skills/tweetclaw/skillspector-report.md`,
+  `docs/discoverability-audit.md`, `docs/clawpack-release.md`, and
+  `docs/discoverability-audit.archive.txt`.
