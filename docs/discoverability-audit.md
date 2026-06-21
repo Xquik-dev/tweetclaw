@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 06:23 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 07:34 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 06:23 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 07:34 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 06:23 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 07:34 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,21 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 06:23 UTC: model/effort selector unavailable. Xquik crawler strict
-  JSON returned 35 skill, agent, social, and sentiment candidates; all were
-  prior-history or blocked. Partitioned authored-PR search had no caps or
-  errors, and GraphQL exact-read 1968 open authored PRs: 31 conflicts, 4 unknown
-  mergeability, 2 stale changes-requested, 55 failed status rollups, 333 with
-  comments, 174 with reviews, and 139 with review threads. Repaired
-  `antstudiocz/ant-marketplace#38` to mergeable by rebasing the plugin and
-  marketplace manifests. Fresh screening duplicate-blocked handled OpenClaw
-  Twitter and validator lanes, then opened
-  https://github.com/nord342/openclaw-skill-tester/pull/1 to fix nested
-  OpenClaw metadata parsing and `envVars` reporting with unittest,
-  `py_compile`, TweetClaw skill smoke, diff-check, and clean PR readback.
-  OpenClaw routes, ClawHub, OpenClaw Directory, npm metadata, npm audit, links,
-  memory cap, and fitness passed. Prompt bytes: 11980. Full details are
-  archived.
+- 2026-06-21 07:34 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 39 PR, skill, OpenClaw, social, and sentiment candidates. Partitioned
+  authored-PR search had no caps/errors; GraphQL exact-read 1972 open authored
+  PRs: 30 conflicts, 8 unknown mergeability, 2 stale changes-requested, 56
+  failed status rollups, 336 with comments, 176 with reviews, and 141 with
+  review threads. Repaired `StephanAkkerman/fintwit-bot#740` so Xquik augments
+  the normal timeline and pushed head `4f22cca`; readback stayed mergeable with
+  target checks pending/in-progress. Fresh screening duplicate-blocked handled
+  social-skill and sentiment lanes, then opened
+  https://github.com/Mharis-code/videoanalyzer/pull/1 for optional TweetClaw X
+  video source context; target validation passed diff-check, `py_compile`, link
+  check, hygiene scan, and clean PR readback. OpenClaw routes, ClawHub,
+  OpenClaw Directory, npm metadata, npm audit, and fitness passed. Markdown link
+  check found only GitHub release-page HTTP 500 while `gh release view` succeeded.
+  Prompt bytes: 11980. Full details are archived.
 
 ## Reporting Checklist
 
