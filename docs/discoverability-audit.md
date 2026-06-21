@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 10:07 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 10:28 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 10:07 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 10:28 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 10:07 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 10:28 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,21 +190,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 10:07 UTC: model/effort selector unavailable. Crawler strict JSON
+- 2026-06-21 10:28 UTC: model/effort selector unavailable. Crawler strict JSON
   returned 22 skill, OpenClaw, social, Twitter/X, and sentiment-dashboard
-  candidates. Authored PR partitioning found 1997 unique open URLs across all
-  updated windows with no capped partition. REST readbacks checked 14 known
-  actionable or recent PRs; expected blockers remain `awesome-copilot#19`,
-  `openclaw-clawdoc#6`, and `absolute#5`; recent outreach heads remain clean.
-  `paoloanzn/x-cli#3` bot comments are stale against current head and
-  `go test ./...` passed. Fresh screening selected duplicate-clean
-  `sap301204/social-media-sentiment-analysis-dashboard` and opened
-  https://github.com/sap301204/social-media-sentiment-analysis-dashboard/pull/1
-  through REST. Validation passed Python compile, JSON/JSONL/CSV converter
-  smokes, target README link check, diff checks, fork-parent and PR readbacks,
-  OpenClaw route checks, ClawHub/OpenClawDir checks, npm audit, fitness, and
-  TweetClaw public Markdown link checks. Prompt TOML bytes: 12314. Full details
-  are archived.
+  candidates. Authored PR partitioning found 1996 unique open PRs with complete
+  lightweight GraphQL readback; status-rollup GraphQL hit resource limits.
+  Repaired `warlockoussama/twitter-cli#1` conflict and `mbelinky/x-mcp-server#6`
+  review feedback; 34 conflict backlog PRs remain tracked. Fresh duplicate-clean
+  target `HitainKakkar/HK_US-Aviation-Industry-analysis` got
+  https://github.com/HitainKakkar/HK_US-Aviation-Industry-analysis/pull/1.
+  OpenClaw, ClawHub, npm audit, fitness, TweetClaw Markdown link checks, and
+  target validations passed. Prompt TOML bytes: 12314. Full details archived.
 
 ## Reporting Checklist
 
