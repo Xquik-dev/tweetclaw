@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-20 23:35 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-20 23:52 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-20 23:35 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-20 23:52 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -192,22 +192,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-20 23:35 UTC: runtime model/effort selector unavailable. Xquik
+- 2026-06-20 23:52 UTC: runtime model/effort selector unavailable. Xquik
   crawler strict JSON coverage returned 0 opportunities after managed proxy
   outage logs; no credential values were stored. TweetClaw had 0 open issues or
-  PRs. Authored open-PR partitions found 1909 open PRs; exact readbacks covered
-  the 210-PR updated, changes-requested, and failing union with 0 read errors.
-  No safely repairable maintainer request was found. Fresh screen selected
-  `SiriusKainos/Cobweb`, AGPL-3.0, active, forkable, and duplicate-clean by
-  archive, target content, PR and issue lists, and clone scan. Opened
-  https://github.com/SiriusKainos/Cobweb/pull/1 with a TweetClaw
-  source-evidence parser fixture; PR readback showed open, ready, mergeable,
-  review-blocked, maintainer-editable, 3 changed files, 65 additions, no
-  comments, no reviews, and no checks. Target install, typecheck, tests, diff
-  check, fixture link check, and public hygiene passed. OpenClaw docs/routes,
+  PRs. Broad authenticated PR search hit GitHub rate limits, so exact readback
+  continued from audit URLs and known PRs: 30 open PRs, 30 mergeable, 4 stale
+  changes-requested lanes, 2 approved lanes, and no safe maintainer repair.
+  Fresh screen selected `harrypham2000/skill-audit`, active, forkable, and
+  duplicate-clean by archive, target content, PR and issue lists, and clone
+  scan. Opened https://github.com/harrypham2000/skill-audit/pull/32 with a
+  TweetClaw public social-source audit regression test; PR readback showed
+  open, ready, mergeable, maintainer-editable, 1 changed file, 53 additions,
+  and both Socket checks passing. Target first test
+  failed only before dependency install; after install, `npm test`, build, diff
+  check, test-file link check, and public hygiene passed. OpenClaw docs/routes,
   ClawHub, OpenClaw Directory, npm metadata, memory, fitness, link checks, and
-  check:all passed. `opencodex.directory` DNS failed as a supplemental route.
-  Npm audit still found 5 nested OpenClaw advisories. Prompt bytes stayed 11980.
+  check:all passed. `opencodex.directory` DNS still failed. Npm audit still
+  found 5 nested OpenClaw advisories. Prompt bytes stayed 11980.
 
 ## Reporting Checklist
 
