@@ -190,21 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 22:08 UTC: model/effort selector unavailable. Crawler covered PR,
-  skill, social/X, OpenClaw/MCP, registry, validator, and SkillSpector lanes; 3
-  candidates were duplicate-known. Authored-open inventory used GraphQL user PR
-  pagination to avoid the search cap and found 2055 open PRs; exact `gh pr
-  view` readbacks covered the newest 50 plus review/failure partitions. Repaired
-  4 current README conflicts to clean/mergeable state:
-  `warlockoussama/twitter-cli#1`, `jamald33n/tweetsave-mcp#2`,
-  `Aqmar777/openclaw-competitive-intel#1`, and
-  `AbdNour627/awesome-openclaw-configs#1`. Remaining changes-requested or
-  failing-check blockers were maintainer base-branch review state or
-  Vercel/Netlify fork-deploy authorization. Fresh discovery opened ready PR
-  https://github.com/sarvesh1714/Twitter-Account-Analysis-with-Personality-Insights/pull/1
-  from verified fork, adding tested TweetClaw export analysis. NVIDIA Skills,
-  SkillSpector, OpenClaw canonical docs, public links, npm metadata, audit,
-  package artifact, and fitness checks passed. Full details archived.
+- 2026-06-21 22:35 UTC: model/effort selector unavailable. Crawler covered PR,
+  skill, social/X, OpenClaw/MCP, registry, validator, SkillSpector, and
+  sentiment-dashboard lanes with 0 opportunities. GraphQL-authored open PR
+  pagination found 2061 open PRs; exact readbacks covered 88 newest,
+  changes-requested, failing-check, commented, and unknown-mergeability PRs.
+  No new code repair was needed: changes-requested blockers were stale or
+  target-branch policy, bot findings on checked PRs were already fixed, and
+  fork-deploy checks remained target-owned. Fresh fallback screening selected
+  https://github.com/AdityaBajpai2/Twitter-Airline-and-Spam-Mail-Detection-App
+  and opened ready PR
+  https://github.com/AdityaBajpai2/Twitter-Airline-and-Spam-Mail-Detection-App/pull/1
+  from verified fork with a TweetClaw export batch sentiment importer. NVIDIA
+  Skills docs, SkillSpector, OpenClaw canonical exports, public links, npm
+  metadata, audit, package artifact, fitness, and full `check:all` passed. Full
+  details archived.
 
 ## Reporting Checklist
 
