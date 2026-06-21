@@ -190,20 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 20:45 UTC: model/effort selector unavailable. Crawler strict JSON
-  runs covered PR and skill/social lanes; the first returned 6 duplicate or
-  prior-history candidates and the second returned 0. Exact readbacks covered
-  17 tracked PRs; `Aditya923-c/xpoz-agent-skills#1` was dirty, repaired in
-  commit `d9c0fcf`, commented, and read back mergeable clean. Fresh fallback
-  screening opened ready PR
-  https://github.com/ashutosh-a11yy/twitter-sentiment-analysis/pull/1 from
-  correctly parented custom fork `kriptoburak/ashutosh-twitter-sentiment-analysis`;
-  it adds a target-native TweetClaw export normalizer, Dataset-page uploader,
-  README workflow, and fixture validation. NVIDIA Skills docs, `skill-creator`,
-  and SkillSpector were rechecked for the user-requested skill-file posture; the
-  packaged scan summary records the 20:44 UTC clean scan. Current OpenClaw docs,
-  public links, npm metadata, npm audit, package artifact, and fitness checks
-  passed. Full details archived.
+- 2026-06-21 21:18 UTC: model/effort selector unavailable. Strict JSON crawler
+  covered PR, SKILL.md, `.agents/skills`, OpenClaw/MCP/Codex/Claude/social/X
+  skill, registry, fork, SkillSpector, and catalog lanes; 6 returned targets were
+  duplicate or prior-history blocked. Exact readbacks covered 18 tracked PRs.
+  Repaired `reall8164/wechat-openclaw-plugin#1` conflict in commit `c6f1a04`,
+  commented, and read back mergeable clean. Fresh fallback screening selected
+  MIT, non-fork, duplicate-clean `Ratnesh-181998/Twitter-NER-System`; opened
+  ready PR https://github.com/Ratnesh-181998/Twitter-NER-System/pull/1 from
+  verified fork `kriptoburak/Twitter-NER-System`, adding a tested TweetClaw
+  JSON, JSONL, and CSV import path for the Streamlit analyzer. NVIDIA Skills
+  docs and SkillSpector were rechecked; the packaged scan summary records the
+  21:17 UTC clean scan. OpenClaw canonical docs, public links, npm metadata,
+  audit, package artifact, and fitness checks passed except old moved doc routes
+  returned 404 before current `/plugins/*` and `/help/debugging` routes passed.
+  Full details archived.
 
 ## Reporting Checklist
 

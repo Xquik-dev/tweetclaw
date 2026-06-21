@@ -31113,3 +31113,78 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Changed TweetClaw files: `skills/tweetclaw/skillspector-report.md`,
   `docs/discoverability-audit.md`, `docs/clawpack-release.md`, and
   `docs/discoverability-audit.archive.txt`.
+
+## 2026-06-21 21:18 UTC heartbeat
+
+- Runtime note: model and reasoning-effort selection were unavailable in this
+  Codex runtime, so GPT-5.5 and extra-high effort could not be selected.
+- Repo orientation: TweetClaw started clean on `master` at `78da4d6`. Xquik was
+  left with unrelated user change `docs/feature-roadmap.md` untouched. Open
+  issue lists for `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+- Crawler-first discovery: ran Xquik crawler strict JSON with research proxy,
+  bounded timeouts, 180 limit, 2 pages, 6 per query, concurrency 12, and run id
+  `tweetclaw-20260621-2106`. Query pack covered authored PRs, TweetClaw,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, skills directories, Claude, Codex,
+  OpenClaw/MCP/agent/social/Twitter-X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, NVIDIA Skills, SkillSpector,
+  and source-evidence lanes. Output parsed as valid JSON with 6 duplicate or
+  prior-history candidates: `creatorcrawl/creatorcrawl-skill`,
+  `blacktwist/social-media-skills`, `elbis330/social-media-scraper-skill`,
+  `Aditya923-c/xpoz-agent-skills`, `rabden/X-twitter-social-manager-skill`, and
+  `AISA-skills/social-media-skills`. Proxy logs exposed no sensitive values.
+- PR inventory: exact-read 18 tracked open PRs for state, draft state,
+  mergeability, base/head, commits, comments, reviews, files, and checks when
+  available. Only `reall8164/wechat-openclaw-plugin#1` needed action. It was
+  conflicting on `README.md`; merged upstream `main`, preserved the target's
+  GitHub support link and TweetClaw optional X/Twitter workflow section, pushed
+  commit `c6f1a04`, and commented:
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4763300404.
+  Validation passed conflict-marker scan, `git diff --check`, JSON manifest
+  parsing, and `npx markdown-link-check README.md --quiet`. Final readback
+  showed open, ready, `MERGEABLE`, and `CLEAN`.
+- Fresh discovery: fallback searches screened active Twitter/X sentiment and
+  social analytics projects after crawler duplicates. Prior-history or
+  duplicate gates blocked earlier sentiment/dashboard targets including
+  `sidv11/twitter-sentiment-analysis`, `Wassbdr/twitter-sentiment-analysis`,
+  `Azeem1027/Twitter-sentiment-analysis`,
+  `JusticeKAE/twitter-sentiment-analysis-streamlit`,
+  `PBrindha25/Social_Media_Performance_Dashboard`,
+  `ashutosh-a11yy/twitter-sentiment-analysis`, and similar handled lanes.
+  `Ratnesh-181998/Twitter-NER-System` was selected because it is public, MIT,
+  non-fork, non-archived, issue-enabled, active enough, duplicate-clean across
+  compact audit, archive, target content, and open/closed PRs/issues, and its
+  contribution guide explicitly welcomes export functionality and batch
+  processing.
+- Fresh PR submitted:
+  https://github.com/Ratnesh-181998/Twitter-NER-System/pull/1 from verified fork
+  `kriptoburak/Twitter-NER-System`, branch `codex/add-tweetclaw-import`, commit
+  `26a7f8e`. The PR adds a dependency-free TweetClaw JSON, JSONL, and CSV import
+  helper, lets the Streamlit Analyze tab select imported tweet rows for NER, and
+  adds stdlib unittest coverage. Validation passed
+  `python3 -m unittest tests/test_tweetclaw_import.py`,
+  `python3 -m py_compile streamlit_deploy/tweetclaw_import.py
+  streamlit_deploy/app.py tests/test_tweetclaw_import.py`, `git diff --check`,
+  staged-diff public-hygiene scan, and final PR readback: open, ready,
+  `MERGEABLE`, `CLEAN`, 1 commit, 3 changed files, no comments, no reviews, no
+  configured checks.
+- Official docs and public package checks: current OpenClaw llms exports,
+  canonical plugin install-overrides, manifest, permission requests, SDK
+  runtime, architecture, ClawHub publishing, skill format, help/debugging,
+  ClawHub listing, and OpenClawDir listing returned HTTP 200. Old routes under
+  `cli/plugins/install`, `cli/plugins/update`, `cli/plugins/inspect`,
+  `plugin-creation/*`, `tool-plugins`, `plugin-sdk/runtime`,
+  `cli/install-overrides`, and `/debugging` returned 404 before the current
+  llms index resolved the live routes. npm latest remains
+  `@xquik/tweetclaw@1.6.31`; source remains `1.6.32`. OpenClaw latest remains
+  `2026.6.9`; `clawhub` is `0.22.0`. `npm audit --audit-level=moderate --json`
+  found 0 vulnerabilities. `npm run check-openclaw-platform-fitness` and
+  `npm run check-package-artifact` passed.
+- NVIDIA Skills posture: `https://docs.nvidia.com/skills/` fetched
+  successfully. `npm run check-skill-frontmatter` passed. SkillSpector v2.2.3
+  scan at 21:17 UTC returned score `0/100`, severity LOW, recommendation SAFE,
+  5 non-executable components, and no issues; `skillspector-report.md` records
+  the new timestamp.
+- End-of-run validation: broken-link scan, `npm run check-memory-md-size`,
+  `git diff --check`, changed-diff public-hygiene scan, and final
+  `npm run check:all` passed. Automation prompt text remained unchanged;
+  automation TOML measured 12314 bytes.
