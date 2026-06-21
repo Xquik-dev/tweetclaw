@@ -190,21 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 11:55 UTC: model/effort selector unavailable. Crawler strict JSON
-  returned 30 skill, OpenClaw, social, Twitter/X, MCP, package-tooling, and
-  sentiment candidates. Authored open PR search was fully partitioned at 2008
-  unique URLs with no capped bucket. REST exact-read covered all 2008 PRs after
-  GraphQL status-rollup reads hit 502 or resource limits; status-rollup detail
-  was exact-read for 560 only. Repaired
-  `Aqmar777/openclaw-competitive-intel#1`, restoring clean mergeability and
-  commenting validation. Owner policy on
-  `mohitagw15856/pm-claude-skills#67` now blocks product-specific TweetClaw
-  placement. Fresh target `ankit-sharma2005/twitter-sentiment-analysis` got
-  https://github.com/ankit-sharma2005/twitter-sentiment-analysis/pull/1 for
-  batch CSV input guidance, real clone URL, and optional reviewed TweetClaw
-  source text import. OpenClaw, ClawHub, npm audit, target checks, TweetClaw
-  links, fitness, and `check:all` passed. Prompt TOML bytes: 12314. TweetClaw
-  audit changes were pushed to `master`. Full details archived.
+- 2026-06-21 15:13 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 40 skill, OpenClaw, MCP, package-tooling, social, Twitter/X, and
+  sentiment candidates. Authored open PR inventory was fully partitioned at 2009
+  unique URLs with no capped bucket; GraphQL exact-read covered all 2009 for
+  mergeability, reviews, checks, comments, commits, and branch metadata. Repaired
+  `jamald33n/tweetsave-mcp#2` to `CLEAN` and commented validation. Fresh target
+  `M1325-source/Sentiment-Analysis` got
+  https://github.com/M1325-source/Sentiment-Analysis/pull/1 for a TweetClaw
+  export-to-CSV converter, sample export, and CSV Studio docs. Official OpenClaw
+  docs moved some old routes to `/help/debugging`,
+  `/help/testing-updates-plugins`, and `/clawhub/plugin-validation-fixes`;
+  current docs, ClawHub, npm audit, target checks, TweetClaw links, and fitness
+  passed. Prompt TOML bytes: 12314. Full details archived.
 
 ## Reporting Checklist
 
