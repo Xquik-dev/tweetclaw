@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 11:01 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 11:22 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 11:01 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 11:22 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 11:01 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 11:22 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,17 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 11:01 UTC: model/effort selector unavailable. Crawler strict JSON
+- 2026-06-21 11:22 UTC: model/effort selector unavailable. Crawler strict JSON
   returned 30 skill, OpenClaw, social, Twitter/X, MCP, and sentiment-dashboard
-  candidates. Authored PR partitioning found 2002 unique open PRs with no capped
-  buckets; lightweight GraphQL exact readback covered 360 before GitHub returned
-  a non-JSON platform response, then 39 recent/actionable PRs were REST-read.
-  `paoloanzn/x-cli#3` review items were already fixed and `go test ./...`
-  passed; older `staged`, stale-review, Vercel, and dirty blockers remain
-  tracked. Fresh target `ReneHdzGtz/social-listening-report` got
-  https://github.com/ReneHdzGtz/social-listening-report/pull/1. OpenClaw,
-  ClawHub, npm audit, fitness, TweetClaw links, target links, and `check:all`
-  passed. Prompt TOML bytes: 12314. Full details archived.
+  candidates. Authored PR search partitioning reached 847 unique open PRs before
+  GraphQL quota exhaustion, so full inventory was not claimed; 39 recent or
+  known PRs were REST-read exactly. Repaired
+  `reall8164/wechat-openclaw-plugin#1` by merging upstream `main`, resolving
+  README conflicts, and restoring clean mergeability. Fresh target
+  `aaaronmiller/create-viral-content` got
+  https://github.com/aaaronmiller/create-viral-content/pull/3 for TweetClaw
+  source-evidence guidance plus 2 broken-link removals. OpenClaw, ClawHub, npm
+  audit, target checks, TweetClaw links, fitness, and `check:all` passed. Prompt
+  TOML bytes: 12314. Full details archived.
 
 ## Reporting Checklist
 
