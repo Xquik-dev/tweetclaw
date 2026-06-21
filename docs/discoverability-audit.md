@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 12:18 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 15:45 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 12:18 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 15:45 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 12:18 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 15:45 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,18 +190,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 15:13 UTC: model/effort selector unavailable. Crawler strict JSON
+- 2026-06-21 15:45 UTC: model/effort selector unavailable. Crawler strict JSON
   returned 40 skill, OpenClaw, MCP, package-tooling, social, Twitter/X, and
-  sentiment candidates. Authored open PR inventory was fully partitioned at 2009
-  unique URLs with no capped bucket; GraphQL exact-read covered all 2009 for
-  mergeability, reviews, checks, comments, commits, and branch metadata. Repaired
-  `jamald33n/tweetsave-mcp#2` to `CLEAN` and commented validation. Fresh target
-  `M1325-source/Sentiment-Analysis` got
-  https://github.com/M1325-source/Sentiment-Analysis/pull/1 for a TweetClaw
-  export-to-CSV converter, sample export, and CSV Studio docs. Official OpenClaw
-  docs moved some old routes to `/help/debugging`,
-  `/help/testing-updates-plugins`, and `/clawhub/plugin-validation-fixes`;
-  current docs, ClawHub, npm audit, target checks, TweetClaw links, and fitness
+  sentiment candidates. Broad authenticated PR search hit GitHub secondary rate
+  limit `BA99:162385:41EB57E:3E72081:6A380797`, so complete inventory was not
+  claimed; known/audit direct GraphQL readback covered 2043 of 2243 PR URLs.
+  Repaired `warlockoussama/twitter-cli#1` to `CLEAN` and commented validation.
+  Fresh target `Hans-Gonzalez-Barker/multi_platform_analysis_dashboard` got
+  https://github.com/Hans-Gonzalez-Barker/multi_platform_analysis_dashboard/pull/1
+  for optional TweetClaw upload support in the Streamlit dashboard. Official
+  OpenClaw docs, ClawHub, npm audit, target checks, TweetClaw links, and fitness
   passed. Prompt TOML bytes: 12314. Full details archived.
 
 ## Reporting Checklist
