@@ -79,10 +79,12 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - TweetClaw validation and persistence: updated compact audit and ClawPack
   memory plus this archive. `npm run check-memory-md-size`,
   `npm run check-openclaw-platform-fitness`, `npm run check-em-dash`,
-  public-surface `markdown-link-check`, and `npm run check:all` passed. Changed
-  TweetClaw files were `docs/discoverability-audit.md`,
+  public-surface `markdown-link-check`, and `npm run check:all` passed before
+  commit. Changed TweetClaw files were `docs/discoverability-audit.md`,
   `docs/clawpack-release.md`, and `docs/discoverability-audit.archive.txt`.
-  Prompt self-improvement kept the persisted prompt unchanged at 11980 bytes.
+  Pushed TweetClaw audit commits; GitHub reported 6 default-branch
+  vulnerabilities, matching the unresolved nested OpenClaw advisory lane. Prompt
+  self-improvement kept the persisted prompt unchanged at 11980 bytes.
 
 ## 2026-06-20 23:35 UTC heartbeat
 

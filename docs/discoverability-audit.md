@@ -205,10 +205,11 @@ archive, before any outreach or duplicate decision.
   open, ready, mergeable, maintainer-editable, 1 changed file, 53 additions,
   and both Socket checks passing. Target first test
   failed only before dependency install; after install, `npm test`, build, diff
-  check, test-file link check, and public hygiene passed. OpenClaw docs/routes,
-  ClawHub, OpenClaw Directory, npm metadata, memory, fitness, link checks, and
-  check:all passed. `opencodex.directory` DNS still failed. Npm audit still
-  found 5 nested OpenClaw advisories. Prompt bytes stayed 11980.
+  check, test-file link check, and public hygiene passed. OpenClaw routes,
+  ClawHub, Directory, npm metadata, memory, fitness, link checks, and check:all
+  passed. `opencodex.directory` DNS still failed. Npm audit found 5 nested
+  OpenClaw advisories; GitHub push reported 6. Audit push completed; prompt
+  bytes 11980.
 
 ## Reporting Checklist
 
