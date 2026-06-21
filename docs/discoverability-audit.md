@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 05:12 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 05:47 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 05:12 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 05:47 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 05:12 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 05:47 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,21 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 04:52 UTC: runtime model/effort selector unavailable. Xquik
-  crawler strict JSON returned 35 skill, agent, social, and sentiment
-  opportunities. Broad authored-PR search hit GitHub secondary search limits,
-  so inventory used the prior complete URL set, audit/archive PR URLs, crawler
-  repos, and direct GraphQL reads. Exact readback covered 1950 PRs with 0
-  errors: 1949 open, 34 dirty, 2 changes-requested, and 89 repair candidates.
-  Repaired `minhnv0807/ai-business-skills#20` by merging upstream, preserving
-  the TweetClaw evidence-packet diff, pushing `009c97e`, and commenting
-  validation; readback is mergeable with GitHub `UNSTABLE` state and no checks.
-  Fresh target `tejaswini26102004/Sentiment-analysis-on-user-provided-text-and-CSV-file`
-  opened https://github.com/tejaswini26102004/Sentiment-analysis-on-user-provided-text-and-CSV-file/pull/1
-  with a TweetClaw JSON, JSONL, NDJSON, or CSV converter for the notebook's
-  `tweets` upload. OpenClaw routes, ClawHub, OpenClaw Directory, links, fitness,
-  npm audit, memory check, and `check:all` passed. Xquik had only an unrelated
-  roadmap edit left untouched; prompt bytes measured 12012.
+- 2026-06-21 05:47 UTC: model/effort selector unavailable. Xquik crawler strict
+  JSON returned 35 skill, agent, social, and sentiment candidates; all were
+  prior-history or blocked, so fallback discovery screened 9 exact-fresh repos.
+  Partitioned authored-PR search had no caps or errors: 1960 open PRs exact-read
+  by GraphQL, plus 231 audit URLs exact-read by `gh pr view` where possible.
+  Current open authored set: 33 conflicts, 2 stale changes-requested, 55 failed
+  status rollups, 331 with comments, 171 with reviews, 137 with review threads.
+  Repaired `kouko/monkey-skills#396` to mergeable by rebasing and preserving the
+  target's new marketplace entries. Opened fresh PR
+  https://github.com/11Anupam/Sentiment-analysis-machine/pull/1 for an optional
+  Xquik or TweetClaw CSV mention source. OpenClaw routes, ClawHub, OpenClaw
+  Directory, npm metadata, npm audit, links, memory cap, fitness, and
+  `check:all` passed. Prompt bytes: 11980. Full details are archived.
 
 ## Reporting Checklist
 
