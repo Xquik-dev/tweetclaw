@@ -190,19 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 19:22 UTC: model/effort selector unavailable. Crawler strict JSON
-  returned 11 skill-governance candidates. Authored PR inventory was partitioned
-  by created date; pre-May buckets were exact, May and June buckets stayed
-  capped, so no complete inventory claim was made. Exact REST readbacks covered
-  14 tracked PRs before outreach and new
-  https://github.com/ASMN-96/ai-agents-skills-toolkit/pull/88 after creation;
-  no repairs were available. Fresh ready PR #88 adds TweetClaw as a reviewed
-  reference-only source record for OpenClaw plugin packaging, social-action
-  approval gates, credential boundaries, and NVIDIA Skills release hygiene.
-  CodeRabbit approved with no review comments at final readback.
-  NVIDIA Skills docs, SkillSpector, current OpenClaw docs, ClawHub, OpenClawDir,
-  npm metadata, npm audit, target validators, package artifact, and fitness
-  checks passed or had recorded expected blockers. Full details archived.
+- 2026-06-21 20:07 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 6 candidates; all were duplicate or prior-history blocked. Authored
+  PR inventory was partitioned by created date; pre-May buckets were exact, May
+  and June stayed capped, so no complete inventory claim was made. Exact REST
+  readbacks covered 15 tracked PRs. Repaired
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 by merging upstream
+  and clearing the README conflict, then opened fresh ready PR
+  https://github.com/a28939876-max/skill-hunter-company/pull/1 for a
+  target-native social-publishing vetting case that uses TweetClaw as public
+  provenance and release-evidence example. NVIDIA Skills docs, SkillSpector,
+  current OpenClaw docs, public links, npm metadata, npm audit, package artifact,
+  and fitness checks passed or had recorded expected blockers. Full details
+  archived.
 
 ## Reporting Checklist
 

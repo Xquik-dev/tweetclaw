@@ -30759,3 +30759,132 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   raw external skill activation. Future audit entries must record capped broad
   search partitions separately from exact REST readbacks and avoid complete
   inventory claims while any capped bucket remains unresolved.
+
+## 2026-06-21 20:07 UTC heartbeat
+
+- Runtime note: the automation requested GPT-5.5 with extra-high reasoning, but
+  this runtime exposes no model or effort selector. The run continued and this
+  limitation was recorded.
+- Worktree start: TweetClaw was on `master` at `96ee0aa` and clean. Xquik was
+  on `master` at `17c1b43d` with unrelated user change
+  `docs/feature-roadmap.md`, left untouched.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 160
+  limit, 2 search pages, 6 per query, concurrency 12, and session
+  `tweetclaw-20260621-1955`. Query pack covered authored PRs, TweetClaw,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, skills dirs, Claude, Codex,
+  OpenClaw, agent, social, Twitter-X skills, awesome lists, registries, forks,
+  generated catalogs, package tooling, source evidence, NVIDIA Skills, and
+  SkillSpector lanes. Output parsed as valid JSON with 6 opportunities:
+  `creatorcrawl/creatorcrawl-skill`, `blacktwist/social-media-skills`,
+  `elbis330/social-media-scraper-skill`, `Aditya923-c/xpoz-agent-skills`,
+  `rabden/X-twitter-social-manager-skill`, and
+  `AISA-skills/social-media-skills`; all were duplicate or prior-history
+  blocked for fresh TweetClaw submission. Proxy logs exposed no credential
+  values.
+- PR inventory: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` open issue lists
+  were empty. Broad authored open PR search was partitioned by created windows:
+  `<2026-04-01` returned 64 exact, `2026-04-01..2026-04-30` returned 37 exact,
+  `2026-05-01..2026-05-31` returned 592 with a 100-result page cap, and
+  `2026-06-01..2026-06-21` returned 1349 with a 100-result page cap. Complete
+  inventory was not claimed because May and June stayed capped. Continued with
+  crawler output, compact and archive URLs, exact repository reads, fork
+  metadata, and target PR lists.
+- Exact PR readbacks: exact-read 15 tracked open PRs for state, draft state,
+  mergeability, base, head, commits, comments, reviews, review comments, checks,
+  conflicts, and changed files. Clean or no-action PRs included
+  `ASMN-96/ai-agents-skills-toolkit#88`,
+  `Mercer8964/source-check-skill#1`,
+  `alexxyjiang/custom-claude-skills#1`, `dennisle-lts/claude_skills#1`,
+  `NebulaLumino/ai-agent-skills-registry#1`,
+  `Shiven0504/claude-skills-collection#1`,
+  `jdrhyne/agent-skills#26`, `doITmagic/ai-agent-skills#1`,
+  `harrylabsj/twitter-thread-crafter#1`, `BrikerMan/skilless.ai#6`,
+  `reall8164/wechat-openclaw-plugin#1`, `BankrBot/skills#236`,
+  `Panniantong/Agent-Reach#260`, and
+  `clawdbot-ai/awesome-openclaw-skills-zh#26`. No current maintainer request,
+  DCO, CLA, generated drift, or valid bot finding required repair on those PRs.
+- PR repair: `Aditya923-c/xpoz-agent-skills#1` was dirty and conflict-blocked.
+  Verified fork `kriptoburak/xpoz-agent-skills` is correctly parented to
+  `Aditya923-c/xpoz-agent-skills`, merged upstream `main`, resolved the README
+  Quick Links conflict by keeping the ZIP download link and repository link,
+  validated with conflict-marker scan, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`, then pushed merge commit
+  `aeb8c6f`. Commented repair status at
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4763129119.
+  Final readback showed open, ready, `MERGEABLE`, `CLEAN`, head
+  `aeb8c6fc5d90c36eca13b1ac05db1f59aba33a8f`, no reviews, no review comments,
+  no check-runs, and no status contexts.
+- Fresh candidate screening: fallback GitHub discovery after the crawler found
+  registry/source-governance candidates. Archive duplicate or prior-history
+  blockers included `zocomputer/skills`, `skilluse/skilluse`,
+  `ComeOnOliver/skillshub`, `jo-inc/safe-skill-search`,
+  `tinyhumansai/skill-registry`, `Jignesh-Ponamwar/skills-mcp`,
+  `nitzzzu/openclaw-skills-explorer`, and related skill-registry lanes.
+  `a28939876-max/skill-hunter-company` was selected because it is public,
+  MIT-licensed, non-fork, non-archived, issue-enabled, recently active, and
+  target-native for skill sourcing, vetting, placement, SkillSpector, and
+  release-evidence review.
+- Duplicate gates for `a28939876-max/skill-hunter-company`: target content and
+  open/closed PR plus issue searches found no TweetClaw, tweetclaw, Xquik,
+  xquik, `@xquik/tweetclaw`, x-twitter-scraper, TweetClaw GitHub URL, npm URL,
+  ClawHub, or OpenClaw history. Fork `kriptoburak/skill-hunter-company` was
+  created and read back as correctly parented to
+  `a28939876-max/skill-hunter-company`.
+- Fresh PR submitted: https://github.com/a28939876-max/skill-hunter-company/pull/1
+  from `kriptoburak:codex/add-tweetclaw-vetting-case`, commit
+  `07f251b01ab4a6d15a35070bf3e397ce4e91dbeb`. The PR adds
+  `cases/03-vet-a-social-publishing-skill.md` and README links in both English
+  and Chinese. The case uses TweetClaw as a public due-diligence example for
+  social publishing skills, emphasizing provenance, narrow capability fit,
+  approval posture, release evidence, and honest unsigned status rather than a
+  thin catalog mention.
+- Target validation for `skill-hunter-company#1`: passed
+  `python3 -m py_compile firm.py ensure_firm.py promo/render_cards.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md
+  README.zh-CN.md cases/03-vet-a-social-publishing-skill.md --quiet`. Added-line
+  sensitive-term scan found only existing target token guidance and the intended
+  credential-extraction refusal boundary, with no values or private details.
+  Final PR readback showed open, ready, `MERGEABLE`, `CLEAN`, 1 commit, 3 files,
+  53 additions, 0 deletions, no comments, no reviews, no review comments, no
+  check-runs, and no status contexts.
+- NVIDIA Skills user request: read the `skill-creator` guidance and rechecked
+  current NVIDIA Skills docs at `https://docs.nvidia.com/skills`, `llms.txt`,
+  `llms-full.txt`, trust pipeline, scanning, signing, skill cards, release
+  checklist, and advanced install pages. Current docs still call for narrow
+  purpose, activation context, declared capabilities, SkillSpector report,
+  skill card, Tier-3 eval fixture, benchmark report, `skill.oms.sig` for signed
+  releases, verification instructions, and honest unsigned-status handling.
+  TweetClaw contains `SKILL.md`, `skill-card.md`, `skillspector-report.md`,
+  `evals/evals.json`, and `BENCHMARK.md`; no signature file exists, so unsigned
+  release wording remains correct.
+- Official OpenClaw and package checks: HTTP 200 for current OpenClaw llms
+  exports, CLI plugin docs, plugin management, manifest, building plugins,
+  permission requests, SDK runtime, SDK entrypoints, ClawHub pages, community
+  plugins, and SDK migration. Public current README URLs returned HTTP 200 for
+  Skills.sh, Smithery, DeepWiki, ClawHub, OpenClawDir, and GitHub setup docs.
+  The stale probe paths `skills.sh/xquik/tweetclaw` and
+  `smithery.ai/server/@xquik/tweetclaw` returned 404, but they are not current
+  source links. `npm view @xquik/tweetclaw` returned latest `1.6.31` with
+  install metadata `@xquik/tweetclaw@1.6.31`; source remains `1.6.32`.
+  `npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.1`, and
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`.
+  `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+- TweetClaw validation before commit: passed `npm run check-skill-frontmatter`,
+  `uvx --from git+https://github.com/NVIDIA/SkillSpector.git skillspector scan
+  skills/tweetclaw --no-llm` with SkillSpector v2.2.3, score `0/100`, severity
+  LOW, recommendation SAFE, 5 non-executable components, and no issues,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md
+  docs/agent-workflows.md skills/tweetclaw/SKILL.md
+  skills/tweetclaw/skill-card.md skills/tweetclaw/BENCHMARK.md
+  skills/tweetclaw/skillspector-report.md docs/discoverability-audit.md
+  docs/clawpack-release.md --quiet`, and `git diff --check`. The SkillSpector
+  summary timestamp was refreshed to the 20:07 UTC scan. Final
+  `npm run check:all` passed with 168 tests and 100% coverage.
+- Prompt self-improvement: prompt text was unchanged; last measured prompt byte
+  size remains 11980. Durable lessons: prefer exact current source URLs when
+  probing public directory links; stale probe paths should be recorded but not
+  treated as source breakage. For skill lifecycle tools, a vetting case that
+  demonstrates provenance, release evidence, and unsigned-status handling is a
+  better target-native TweetClaw placement than a generic listing.
