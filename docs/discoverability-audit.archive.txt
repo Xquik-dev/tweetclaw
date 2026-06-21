@@ -47,14 +47,17 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   evidence with citation and approval gates.
 - External PR: opened https://github.com/cgallic/kai-cmo-harness/pull/24 from
   verified fork `kriptoburak/kai-cmo-harness`, parent `cgallic/kai-cmo-harness`,
-  branch `codex/add-tweetclaw-brand-pulse-source`, commit `e740bb1`. The PR
-  adds an optional approval-gated TweetClaw X/Twitter source-packet path to
+  branch `codex/add-tweetclaw-brand-pulse-source`, commits `e740bb1` and
+  `b02b7d9`. The PR adds an optional approval-gated TweetClaw X/Twitter source-packet path to
   `harness/skills/kai-brand-pulse/SKILL.md`, keeps TweetClaw as collection only,
-  keeps Kai responsible for citation cleanup and analysis, and requires separate
-  explicit approval for posts, replies, DMs, media uploads, monitors, webhooks,
-  and giveaway draws. Readback showed open, ready, mergeable, 1 changed file,
-  34 additions, 1 deletion, 1 Vercel authorization comment, no reviews, and only
-  target-owned Vercel authorization failing.
+  requires social-automation rule clearance plus approved X API, developer-policy,
+  authorization, and retention constraints, keeps Kai responsible for citation
+  cleanup and analysis, and requires separate explicit approval for posts,
+  replies, DMs, media uploads, monitors, webhooks, and giveaway draws. A Codex
+  bot P2 review comment on approved X collection paths was repaired in
+  `b02b7d9`, and a PR comment recorded the repair. Readback showed open, ready,
+  mergeable, 1 changed file, 37 additions, 1 deletion, a stale commented review,
+  and only target-owned Vercel authorization failing.
 - Target validation and public hygiene: read target `AGENTS.md`, README,
   CONTRIBUTING, MIT license, skill file, and X channel/source references.
   Validation passed `git diff --check`,

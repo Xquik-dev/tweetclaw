@@ -203,12 +203,12 @@ archive, before any outreach or duplicate decision.
   issue lists, and clone scan. Opened
   https://github.com/cgallic/kai-cmo-harness/pull/24 with an approval-gated
   TweetClaw X source-packet path for Kai brand-pulse runs; PR readback showed
-  open, ready, mergeable, 1 changed file, 34 additions, 1 deletion, and only
-  target-owned Vercel authorization pending. Target link, banned-word, diff, and
-  brand-pulse tests passed. OpenClaw routes, ClawHub, Directory, npm metadata,
-  memory, fitness, link checks, and check:all passed. `opencodex.directory` DNS
-  still failed. Npm audit found 5 nested OpenClaw advisories. Prompt bytes
-  stayed 11980.
+  open, ready, mergeable, 1 changed file, 37 additions, 1 deletion, a repaired
+  Codex bot P2 on approved X collection paths, and only target-owned Vercel
+  authorization pending. Target link, banned-word, diff, and brand-pulse tests
+  passed. OpenClaw routes, ClawHub, Directory, npm metadata, memory, fitness,
+  link checks, and check:all passed. `opencodex.directory` DNS still failed.
+  Npm audit found 5 nested OpenClaw advisories. Prompt bytes stayed 11980.
 
 ## Reporting Checklist
 
