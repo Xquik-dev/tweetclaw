@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 02:12 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 02:33 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 02:12 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 02:33 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -191,23 +191,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 02:12 UTC: runtime model/effort selector unavailable. Xquik
-  crawler strict JSON returned 12 skill/catalog candidates already covered by
-  prior duplicate or policy notes. TweetClaw had 0 open issues and 0 open PRs;
-  Xquik had 0 open issues and an unrelated roadmap edit left untouched.
-  Authored open PR search returned 200 capped; newest 120 exact readbacks found
-  120 open and mergeable PRs, 94 clean, 19 unstable, 7 blocked, 6 review
-  required, and 0 read errors. Thread-aware GraphQL found 1 actionable
-  current-head review thread, repaired in
-  https://github.com/stevenflanagan1/social-ai-team/pull/3 with commit
-  `f96ae6d`; readback is open, ready, mergeable, clean, and commented. Fresh
-  duplicate-clean target `chris73006/PRODIGY_DS_04` opened
-  https://github.com/chris73006/PRODIGY_DS_04/pull/1 from a verified
-  `kriptoburak` fork. It adds a TweetClaw JSON, JSONL, NDJSON, and CSV to
-  `id,tweet` converter plus README setup fixes; readback is open, ready,
-  mergeable, clean, maintainer-editable, and no checks. OpenClaw routes returned
-  HTTP 200; links, `check:all`, fitness, and npm audit passed; prompt bytes
-  stayed unchanged at 11980.
+- 2026-06-21 02:33 UTC: runtime model/effort selector unavailable. Xquik
+  crawler strict JSON returned the same 12 skill/catalog candidates, all
+  prior duplicate, policy, or lower-fit lanes. TweetClaw had 0 open issues and
+  0 open PRs; Xquik had 0 open issues and an unrelated roadmap edit left
+  untouched. Authored open PR search returned 200 capped; newest 120 exact
+  readbacks found 120 open and mergeable PRs, 95 clean, 18 unstable, 7 blocked,
+  6 review required, 18 comment-bearing PRs, and 0 read errors. Thread-aware
+  GraphQL over the recent/commented slice found no unresolved current-head
+  review threads. Fresh duplicate-clean target
+  `SaiRam-0319/social-media-sentiment-analysis` opened
+  https://github.com/SaiRam-0319/social-media-sentiment-analysis/pull/1 from a
+  verified custom `kriptoburak` fork after the default fork name pointed at a
+  different upstream. It adds CSV upload support for common text columns and a
+  README with optional TweetClaw export guidance; readback is open, ready,
+  mergeable, clean, maintainer-editable, and no checks. OpenClaw routes
+  returned HTTP 200; links, `check:all`, fitness, and npm audit passed; prompt
+  bytes stayed unchanged at 11980.
 
 ## Reporting Checklist
 
