@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 08:12 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 08:46 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 08:12 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 08:46 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 08:12 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 08:46 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,21 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 08:12 UTC: model/effort selector unavailable. Crawler strict JSON
-  returned 21 PR, skill, OpenClaw, social, and Twitter/X candidates. Partitioned
-  open-authored PR search returned 1976 unique PRs with no caps; bounded exact
-  readbacks covered 60 actionable URLs. Known `awesome-copilot#19` and
-  `openclaw-clawdoc#6` stale-review blockers remain unchanged; `hermes-link#1`
-  is blocked by external Kilo credits, and `maddhruv/absolute#5` remains unsafe
-  after upstream target redesign. Fresh screening duplicate-blocked handled
-  skill and catalog repos, then opened
-  https://github.com/zhayujie/CowAgent/pull/2912 adding a native TweetClaw skill
-  for read-first X/Twitter evidence and approval-gated OpenClaw/TweetClaw
-  workflows. CowAgent validation passed quick skill validation, loader
-  discovery, diff-check, link check, fork-parent readback, and clean PR
-  readback. OpenClaw routes, ClawHub, OpenClaw Directory, npm metadata, npm
-  audit, fitness, and public Markdown link checks passed. Prompt bytes: 11980.
-  Full details are archived.
+- 2026-06-21 08:46 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 21 PR, skill, OpenClaw, social, Twitter/X, and sentiment-dashboard
+  candidates. Partitioned open-authored PR search returned 1980 unique PRs with
+  no caps, but full GraphQL exact readback hit GitHub resource limits; bounded
+  exact readback covered 138 actionable URLs. Repaired
+  https://github.com/paoloanzn/x-cli/pull/3 after current CodeRabbit and Codex
+  bot findings, ending at head `564495a` with clean merge state and CodeRabbit
+  success. Fresh screening duplicate-blocked prior TweetClaw/Xquik targets, then
+  opened https://github.com/anaghavs09/twitter-sentiment-dashboard/pull/1 with a
+  CSV Upload workflow for reviewed tweet exports. Validation passed Go tests and
+  build for `x-cli`, Python compile and CSV smoke for the dashboard, diff checks,
+  link checks, fork-parent readbacks, and clean PR readbacks. OpenClaw routes,
+  ClawHub, OpenClaw Directory, npm metadata, npm audit, fitness, and public
+  Markdown link checks passed. Prompt tail bytes: 12180. Full details are
+  archived.
 
 ## Reporting Checklist
 
