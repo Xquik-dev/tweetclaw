@@ -190,21 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 21:18 UTC: model/effort selector unavailable. Strict JSON crawler
-  covered PR, SKILL.md, `.agents/skills`, OpenClaw/MCP/Codex/Claude/social/X
-  skill, registry, fork, SkillSpector, and catalog lanes; 6 returned targets were
-  duplicate or prior-history blocked. Exact readbacks covered 18 tracked PRs.
-  Repaired `reall8164/wechat-openclaw-plugin#1` conflict in commit `c6f1a04`,
-  commented, and read back mergeable clean. Fresh fallback screening selected
-  MIT, non-fork, duplicate-clean `Ratnesh-181998/Twitter-NER-System`; opened
-  ready PR https://github.com/Ratnesh-181998/Twitter-NER-System/pull/1 from
-  verified fork `kriptoburak/Twitter-NER-System`, adding a tested TweetClaw
-  JSON, JSONL, and CSV import path for the Streamlit analyzer. NVIDIA Skills
-  docs and SkillSpector were rechecked; the packaged scan summary records the
-  21:17 UTC clean scan. OpenClaw canonical docs, public links, npm metadata,
-  audit, package artifact, and fitness checks passed except old moved doc routes
-  returned 404 before current `/plugins/*` and `/help/debugging` routes passed.
-  Full details archived.
+- 2026-06-21 21:40 UTC: model/effort selector unavailable. Crawler covered PR,
+  skill, social/X, registry, validator, and SkillSpector lanes; 6 known targets
+  were duplicate-blocked, and a fresh crawl hit a proxy outage with 1 skip.
+  Broad authenticated search hit a GitHub secondary rate limit, so exact
+  readbacks used saved authored results and covered 297 current PR URLs. No safe
+  repair was needed; blockers were target-owned reviews, policy checks, or
+  already-fixed bot state. Fresh unauthenticated discovery opened ready PR
+  https://github.com/Wibinah/tweet-sentiment-analyzer/pull/1 from verified fork
+  `kriptoburak/wibinah-tweet-sentiment-analyzer`, adding a tested TweetClaw
+  export upload path. NVIDIA Skills, SkillSpector, OpenClaw canonical docs,
+  public links, npm metadata, audit, package artifact, and fitness checks
+  passed. Full details archived.
 
 ## Reporting Checklist
 
