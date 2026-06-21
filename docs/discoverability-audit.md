@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 04:05 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 04:44 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 04:05 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 04:44 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 04:05 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 04:44 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,21 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 03:47 UTC: runtime model/effort selector unavailable. Xquik
+- 2026-06-21 04:18 UTC: runtime model/effort selector unavailable. Xquik
   crawler strict JSON returned 62 skill, MCP, catalog, social, and sentiment
-  opportunities. Authored open PR partitioning found 1948 open PRs with no
-  capped buckets, and exact REST readback succeeded for all 1948. A stale
-  review on `iMMerSiveTechs/nemurium-marketplace#1` was already resolved.
-  Repaired `mukul975/Anthropic-Cybersecurity-Skills#80` by resolving the
-  upstream framework README conflict, pushing `b6c3eee`, and commenting the
-  repair; readback is open and mergeable. Fresh MIT target
-  `vishnuke/TweetSenti-Multilingual-Sentiment-Analyzer` opened
-  https://github.com/vishnuke/TweetSenti-Multilingual-Sentiment-Analyzer/pull/1
-  with a TweetClaw JSON, JSONL, NDJSON, or CSV converter for the notebook's
-  existing `text,language` upload. OpenClaw routes, ClawHub, OpenClaw Directory,
-  links, fitness, npm audit, memory check, and `check:all` passed. TweetClaw
-  audit docs were committed and pushed to `master`. Xquik had only an unrelated
-  roadmap edit left untouched; prompt bytes stayed unchanged at 11980.
+  opportunities. Authored PR partitions found 1950 open PRs with no capped
+  buckets; GraphQL exact readback succeeded for all 1950 after a stalled REST
+  readback was stopped at 250. Requested-change triage found only stale or
+  target-blocked reviews, and failed-check triage found Vercel fork auth gates.
+  Repaired `agent-packs/registry#3` by resolving the generated index conflict,
+  pushing `d455834`, and commenting validation; readback is clean and mergeable.
+  Fresh MIT target `gpk2544/Social_Media_Sentiment_Analyzer` opened
+  https://github.com/gpk2544/Social_Media_Sentiment_Analyzer/pull/1 with a
+  TweetClaw JSON, JSONL, NDJSON, or CSV converter for the app's `post_text`
+  upload. OpenClaw routes, ClawHub, OpenClaw Directory, links, fitness, npm
+  audit, memory check, and `check:all` passed. TweetClaw audit docs were
+  committed and pushed to `master`. Xquik had only an unrelated roadmap edit
+  left untouched; prompt bytes stayed unchanged at 11980.
 
 ## Reporting Checklist
 
