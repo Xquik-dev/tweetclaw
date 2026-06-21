@@ -31592,7 +31592,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npx -y skills add . --list --full-depth`, markdown link checks for the new
   files and root README, `git diff --check`, and NVIDIA SkillSpector no-LLM
   scan. Readback: open, ready, `MERGEABLE`, `CLEAN`, 1 commit, 3 changed files,
-  no checks, comments, or reviews.
+  no checks or reviews, and 1 non-actionable Stage bot comment.
 - Official OpenClaw docs were rechecked before OpenClaw and packaged-skill
   wording: `https://docs.openclaw.ai/llms.txt` returned 94373 bytes with sha256
   `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;

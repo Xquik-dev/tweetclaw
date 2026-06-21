@@ -203,7 +203,8 @@ archive, before any outreach or duplicate decision.
   GitHub blocked PR creation despite a valid compare.
 - Opened https://github.com/tmchow/agent-skills/pull/55 from verified fork
   `kriptoburak/tmchow-agent-skills`, branch `codex/add-tweetclaw-skill`,
-  commit `fd1f4ac`; readback open, ready, `MERGEABLE`, `CLEAN`.
+  commit `fd1f4ac`; readback open, ready, `MERGEABLE`, `CLEAN`, with 1
+  non-actionable Stage bot comment.
 - OpenClaw docs/routes, ClawHub, OpenClawDir, npm metadata/audit, NVIDIA Skills
   docs, SkillSpector, public links, artifact, platform fitness, and
   `check:all` passed. NVIDIA docs sha256:
