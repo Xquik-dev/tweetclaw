@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 00:33 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-21 00:58 UTC: latest `2026.6.8`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 00:33 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 00:58 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -192,25 +192,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 00:33 UTC: runtime model/effort selector unavailable. Xquik
-  crawler strict JSON returned 3 opportunities, all prior-blocked or duplicate:
-  `rabden/X-twitter-social-manager-skill`,
-  `elbis330/social-media-scraper-skill`, and
-  `AISA-skills/social-media-skills`. TweetClaw had 0 open issues or PRs.
-  Authored open-PR search capped at 200; newest 100 exact readbacks found 99
-  mergeable PRs, 1 conflict, 6 external failing checks, and 0 requested changes.
-  Repaired `mohitagw15856/pm-claude-skills#67` by merging upstream,
-  regenerating exports, validating skillcheck/build/link/check, pushing
-  `1db151e`, and commenting. Fresh screen selected
-  `ujaan-chatterjee/sentiment-twitter-dashboard`, MIT and duplicate-clean.
-  Opened https://github.com/ujaan-chatterjee/sentiment-twitter-dashboard/pull/1
-  with a stdlib TweetClaw importer, sample export, and README command fixes;
-  readback showed open, ready, mergeable, maintainer-editable, and no checks
-  configured. OpenClaw routes, package metadata, memory, fitness, links, and
-  check:all passed. Old skill/debug/testing docs paths
-  moved to `clawhub/skill-format` and `help/*` routes. `opencodex.directory`
-  DNS still failed. Npm audit found 5 vulnerable packages; Dependabot had 6
-  alerts. Prompt bytes stayed 11980.
+- 2026-06-21 00:58 UTC: runtime model/effort selector unavailable. Xquik
+  crawler broad/small strict JSON returned empty after research-proxy outage
+  logs; fallback metadata and clones were used. TweetClaw had 0 open issues or
+  PRs. Authored open PR search returned 200 capped; newest 120 exact readbacks
+  were open/mergeable with 9 external failing checks, 0 conflicts, and 0
+  requested changes. Repaired
+  https://github.com/dominichubble/investor-sentiment-dashboard/pull/25 with
+  Xquik cursor pagination, pushed `323fba8`, commented, and read back
+  mergeable with GitGuardian green and target-owned Vercel auth. Fresh
+  discovery screened skill catalogs, X/Twitter MCP, sentiment, analytics, and
+  social dashboards; prior targets were duplicate-blocked. Opened
+  https://github.com/tibor-ai/cypherpulse/pull/1 from a correct fork; it adds a
+  dependency-free TweetClaw export importer and CLI. Readback showed open,
+  ready, mergeable, maintainer-editable, and no configured checks.
+  OpenClaw routes, package metadata, memory, fitness, links, and check:all
+  passed. Npm audit still found 5 OpenClaw-chain vulnerable packages and 6
+  Dependabot alerts. Prompt bytes: 11980.
 
 ## Reporting Checklist
 

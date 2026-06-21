@@ -1011,6 +1011,131 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+## 2026-06-21 00:58 UTC Heartbeat
+
+- Runtime limitation: no runtime control was available for GPT-5.5 or
+  extra-high reasoning selection, so the limitation was recorded and work
+  continued.
+- Worktree scope: TweetClaw started clean on `master` at `d18ef80`. Xquik was
+  on `master` at `17c1b43` with unrelated user change
+  `docs/feature-roadmap.md`; it was left untouched. No Browser, Chrome, GUI
+  automation, dev server, production SSH, secret read, Context7 work, or
+  destructive git action was used.
+- Crawler-first coverage: ran broad and smaller internal Xquik GitHub crawler
+  passes with strict JSON output, research proxy, stable heartbeat session IDs,
+  bounded request and proxy warmup timeouts, focused query packs, and coverage
+  for authored PRs, issues, repos, code, SKILL.md, `.agents/skills`, skills
+  directories, OpenClaw, MCP, Codex, Claude, social media, Twitter/X, awesome
+  lists, registries, forks, generated catalogs, web-index surfaced skill repos,
+  TweetClaw, ClawHub, x-twitter-scraper, and package-tooling lanes. Both output
+  files parsed as valid JSON objects with empty `opportunities`; stderr showed
+  managed proxy outage behavior without credential values. Fallback discovery
+  used exact GitHub reads, REST metadata, target PR and issue searches, code
+  search, local clones, and archive searches.
+- PR inventory and repair gate: TweetClaw had no open issues or PRs. Audit and
+  archive URL extraction found 1121 unique historical PR URLs. Authored open PR
+  search returned 200 rows and remained capped, so this run did not claim full
+  inventory completion. Exact readbacks covered the newest 120 open authored
+  PRs with 0 readback errors: 120 open, 120 mergeable, 0 conflicts, 0 requested
+  changes, 9 external failing checks, 0 pending checks, and 96 with no checks.
+  Thread-aware GraphQL covered 45 recent commented PRs and found one current
+  unresolved bot thread.
+- Review triage: `frankxai/awesome-hermes-agents#1`,
+  `Dev-GOM/claude-code-marketplace#154`, and `Amitro123/Social-Pulse#4` were
+  exact-read and already fixed on their current heads. The actionable item was
+  `dominichubble/investor-sentiment-dashboard#25`, where a bot review flagged
+  Xquik search requests above the 200-result page size without cursor follow-up.
+- PR repair: cloned the correctly parented `kriptoburak` fork branch
+  `codex/add-xquik-ingest-backend`, verified MIT target metadata, and patched
+  `backend/app/pipelines/ingest_twitter.py` plus
+  `backend/tests/pipelines/test_ingest_twitter.py`. The repair caps each Xquik
+  search page at 200 results, follows `next_cursor` or `nextCursor` while
+  `has_next_page` or `hasNextPage` is true, de-dupes tweet IDs, preserves empty
+  max-result behavior, and tests first-page limit 200 plus second-page
+  remaining limit 50. Validation passed Python compile, `git diff --check`, and
+  `PYTHONPATH=backend python3 -m pytest backend/tests/pipelines/test_ingest_twitter.py -q`
+  with 48 tests passing. Pushed commit `323fba8`, commented validation at
+  https://github.com/dominichubble/investor-sentiment-dashboard/pull/25#issuecomment-4760504033,
+  and read back open, ready, mergeable, maintainer-editable, GitGuardian
+  success, and target-owned Vercel authorization failure only. The old review
+  thread became outdated.
+- Fresh discovery and duplicate gates: after crawler outage, fallback searches
+  covered current awesome Claude skill catalogs, X/Twitter MCP servers,
+  SKILL.md social content paths, TweetClaw mentions, Twitter sentiment projects,
+  Twitter analytics dashboards, social media analytics dashboards, and X
+  analytics repos. Duplicate or prior-history blockers included
+  `Chat2AnyLLM/awesome-claude-skills`, `ishandutta2007/Awesome-Claude-Skills`,
+  `ranbot-ai/awesome-skills`, `luminarylane/x-twitter-mcp-server`,
+  `rafaljanicki/x-twitter-mcp-server`, `Mann1988/awesome-claude-skills`,
+  `hawkongz/awesome-claude-skills`, `Rollandcodes/BizAI`,
+  `Wobbly1212/twitter-sentiment-analysis`, and other already covered or
+  lower-fit skill/social lanes. `joevstaas/awesome-claude-skills` was
+  duplicate-clean and MIT, but held as too ocean-data-specific for a useful
+  TweetClaw contribution.
+- Fresh target: selected `tibor-ai/cypherpulse` because it is MIT licensed,
+  active enough, issue-enabled, not archived, not a fork, and is a real
+  X/Twitter analytics dashboard with local SQLite tables and CLI workflows. The
+  compact audit, archive, target content, target open and closed PRs, target
+  issues, and clone scans found no TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, xquik.com, or variant history. No contribution policy blocker was
+  present.
+- Fresh PR submitted: opened
+  https://github.com/tibor-ai/cypherpulse/pull/1 from correctly parented fork
+  `kriptoburak/cypherpulse`, branch `codex/add-tweetclaw-import`, commit
+  `78c7f5f`. The PR adds `cypherpulse/tweetclaw_import.py` and a
+  `cypherpulse import-tweetclaw <path>` CLI command. The importer handles JSON,
+  JSONL, NDJSON, and CSV exports, maps common TweetClaw-style fields, parses
+  tweet IDs from `x.com` or `twitter.com` status URLs, infers reply post type,
+  writes into existing `tweet_performance` and `tweet_snapshots` tables, and
+  preserves existing rows with insert-or-ignore semantics.
+- Fresh PR validation: target validation passed Python compile for the changed
+  files, Python compile for all package and script Python files, CLI help
+  smoke, `git diff --check`, no added em dash or spaced double-hyphen patterns
+  in touched files, public-hygiene scan on the patch, and JSON, JSONL, and CSV
+  import smoke tests against a temporary SQLite database. The smoke test also
+  verified duplicate import preservation, URL ID extraction, reply detection,
+  and no stack trace for a missing file. PR readback showed open, ready,
+  mergeable, maintainer-editable, changed files `cypherpulse/cli.py` and
+  `cypherpulse/tweetclaw_import.py`, no comments, no reviews, no review
+  threads, and no configured checks.
+- Official OpenClaw and package checks: `docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/clawhub/plugin-validation-fixes`, `/help/testing-updates-plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  and `/help/debugging` returned HTTP 200. The canonical ClawHub TweetClaw
+  route and OpenClaw Directory route returned HTTP 200. `npm view
+  @xquik/tweetclaw version` returned `1.6.31`; local package metadata remains
+  `1.6.32`. OpenClaw dist-tags were latest `2026.6.8`, beta
+  `2026.6.9-beta.1`, and alpha `2026.5.19-alpha.1`; ClawHub CLI version was
+  `0.22.0`.
+- Broken links, fitness, and package audit: Markdown link checks passed for
+  README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.8`.
+  Full `npm run check:all` passed with typecheck, lint, duplicate check, knip,
+  suppression and dash checks, memory check at 15234/15360 bytes, skill
+  frontmatter, version check, build, OpenClaw fitness, package artifact, and
+  168 tests at 100% coverage. Npm audit at moderate level still reports 5
+  vulnerable OpenClaw-chain
+  packages: `@openclaw/fs-safe`, `openclaw`, `protobufjs`, `tar`, and `undici`.
+  Dependabot has 6 open alerts for `protobufjs`, `tar`, and `undici`. Npm audit
+  fix dry-run changed 0 packages, so no package mutation was made.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+- Prompt and self-improvement: compact memory and archive were updated. Saved
+  automation prompt size remained 11980 bytes, and no prompt rewrite was useful
+  because the current prompt already preserves model/effort wording, quiet
+  autonomy, crawler-first discovery, mandatory PR submission, skill-repo
+  coverage, fresh discovery, complete PR inventory and repair priority,
+  duplicate/fork rules, OpenClaw docs checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, prompt cap, and self-improvement.
+  Durable lesson: X/Twitter analytics dashboards with existing local database
+  schemas are strong TweetClaw targets when the contribution imports reviewed
+  exports into the target's native tables rather than redirecting live API flow.
+
 ## 2026-06-20 21:00 UTC heartbeat
 
 - Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model
