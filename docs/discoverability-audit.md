@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 00:58 UTC: latest `2026.6.8`,
+- OpenClaw npm checked as of 2026-06-21 01:29 UTC: latest `2026.6.9`,
   beta `2026.6.9-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 00:58 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 01:29 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -62,7 +62,7 @@ archive, before any outreach or duplicate decision.
 
 ## Current OpenClaw Fitness
 
-- TweetClaw source targets OpenClaw `2026.6.8`.
+- TweetClaw source targets OpenClaw `2026.6.9`.
 - Compatibility, build, install, host peer, and lockfile metadata are aligned.
 - `npm run check-openclaw-platform-fitness` is required after build for any
   OpenClaw metadata, manifest, runtime, approval, docs, packaged-skill, or
@@ -74,9 +74,8 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 found 5 nested OpenClaw vulnerabilities for
-  `protobufjs`, `tar`, and `undici`. The unsafe force path downgrades to
-  `openclaw@0.0.1`.
+- Npm audit on 2026-06-21 found 0 vulnerabilities after the OpenClaw `2026.6.9`
+  lockfile refresh.
 
 ## GitHub-First Rule
 
@@ -192,23 +191,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 00:58 UTC: runtime model/effort selector unavailable. Xquik
-  crawler broad/small strict JSON returned empty after research-proxy outage
-  logs; fallback metadata and clones were used. TweetClaw had 0 open issues or
-  PRs. Authored open PR search returned 200 capped; newest 120 exact readbacks
-  were open/mergeable with 9 external failing checks, 0 conflicts, and 0
-  requested changes. Repaired
-  https://github.com/dominichubble/investor-sentiment-dashboard/pull/25 with
-  Xquik cursor pagination, pushed `323fba8`, commented, and read back
-  mergeable with GitGuardian green and target-owned Vercel auth. Fresh
-  discovery screened skill catalogs, X/Twitter MCP, sentiment, analytics, and
-  social dashboards; prior targets were duplicate-blocked. Opened
-  https://github.com/tibor-ai/cypherpulse/pull/1 from a correct fork; it adds a
-  dependency-free TweetClaw export importer and CLI. Readback showed open,
-  ready, mergeable, maintainer-editable, and no configured checks.
-  OpenClaw routes, package metadata, memory, fitness, links, and check:all
-  passed. Npm audit still found 5 OpenClaw-chain vulnerable packages and 6
-  Dependabot alerts. Prompt bytes: 11980.
+- 2026-06-21 01:29 UTC: runtime model/effort selector unavailable. Xquik
+  crawler strict JSON returned 12 skill/catalog candidates. TweetClaw and
+  Xquik had 0 open issues; authored open PR search returned 200 capped, newest
+  120 exact readbacks found 120 open/mergeable PRs, 7 Vercel/account failing
+  checks, 0 conflicts, and 0 requested changes. Thread-aware GraphQL found one
+  actionable current-head review; repaired
+  https://github.com/ghazafm/twitter-sentiment-analysis/pull/6 with safe output
+  paths and overwrite refusal, pushed `6ceb4bb`, commented, and read back
+  mergeable with GitGuardian green. Fresh discovery opened
+  https://github.com/sanjana-malyala/Sentimental-analysis/pull/1 from a correct
+  fork; it adds a TweetClaw export converter, README, and optional input/output
+  flags. Readback showed open, ready, mergeable, maintainer-editable, and no
+  checks. OpenClaw routes returned HTTP 200, source metadata and lockfile moved
+  to `2026.6.9`, links and fitness passed, npm audit found 0 vulnerabilities,
+  and prompt bytes stayed 11980.
 
 ## Reporting Checklist
 

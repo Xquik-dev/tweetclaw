@@ -1011,6 +1011,117 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Changed TweetClaw files: `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
 
+2026-06-21 01:29 UTC heartbeat
+
+- Runtime limits: this runtime did not expose a callable GPT-5.5 or
+  extra-high reasoning selector, so the limitation was recorded and work
+  continued. GitHub, PR-comment, CI, and publish skills were read before
+  GitHub work.
+- Worktree scope: TweetClaw started clean on `master` at `191c40e`. Xquik was
+  on `master` at `17c1b43d` with unrelated user change
+  `docs/feature-roadmap.md`; it was left untouched. No Browser, Chrome, GUI
+  automation, dev server, production SSH, secret read, Context7 work, or
+  destructive git action was used.
+- Crawler-first discovery: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  stable session `tweetclaw-20260621-0129`, bounded request and warmup
+  timeouts, 80-result limit, 2 search pages, 6 per-query limit, and focused
+  query coverage for authored PRs, SKILL.md, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, social media, Twitter/X, awesome lists, registries, forks,
+  generated catalogs, analytics, sentiment, and package/tooling lanes. Proxy
+  warmup succeeded and the JSON parsed as an object with 12 opportunities:
+  `ComposioHQ/awesome-claude-skills`, `travisvn/awesome-claude-skills`,
+  `BehiSecc/awesome-claude-skills`, `Prat011/awesome-llm-skills`,
+  `maxbogo/awesome-ai-tools-for-ui`, `ruvnet/RuView`,
+  `karanb192/awesome-claude-skills`,
+  `helloianneo/awesome-claude-code-skills`,
+  `hesreallyhim/awesome-claude-code`, `bergside/awesome-design-skills`,
+  `fleurytian/awesome-claude-skills`, and `Panmax/awesome-nuwa`.
+- PR inventory: `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` had 0 open
+  issues. TweetClaw had 0 open PRs. Authored open PR search returned 200 rows
+  and remained capped, so full inventory completion was not claimed. Exact
+  readbacks covered the newest 120 open authored PRs with 0 terminal readback
+  errors: 120 open, 120 mergeable, 0 conflicts, 0 requested changes, 7
+  failing checks, 0 pending checks, and 97 with no checks. All failing checks
+  were target-owned Vercel authorization or blocked-account gates.
+- Review-thread repair: thread-aware GraphQL covered 45 recent PRs and found
+  one actionable current-head review thread on
+  `ghazafm/twitter-sentiment-analysis#6`. The bot noted that the README
+  example wrote to tracked `scraping/tweets-data/ganjar.csv`. The correctly
+  parented `kriptoburak/twitter-sentiment-analysis-4` fork was cloned on
+  branch `codex/add-xquik-fetcher`; target metadata was MIT, non-fork,
+  non-archived, and issue-enabled. Commit `6ceb4bb` changed the README example
+  to `scraping/tweets-data/ganjar-xquik.csv`, added `--overwrite`, refused
+  accidental output replacement, and creates missing output directories.
+  Validation passed `python3 -m py_compile scraping/xquik_fetch.py`, overwrite
+  refusal against the tracked CSV, a mocked successful CSV write, `git diff
+  --check`, and public diff scan. The branch was pushed, validation was
+  commented at
+  https://github.com/ghazafm/twitter-sentiment-analysis/pull/6#issuecomment-4760564633,
+  and final readback showed open, ready, mergeable, maintainer-editable,
+  GitGuardian success, and head `6ceb4bb`.
+- Fresh discovery and duplicate gates: crawler catalog candidates were screened
+  against compact memory, archive, target PRs, target issues, and target terms.
+  Duplicate or policy blockers included existing TweetClaw/Xquik history on
+  `ComposioHQ/awesome-claude-skills`, `travisvn/awesome-claude-skills`,
+  `BehiSecc/awesome-claude-skills`, `Prat011/awesome-llm-skills`,
+  `karanb192/awesome-claude-skills`,
+  `helloianneo/awesome-claude-code-skills`, `hesreallyhim/awesome-claude-code`,
+  and `fleurytian/awesome-claude-skills`; `bergside/awesome-design-skills` was
+  still lower fit. Fallback repo search screened recent CSV sentiment projects.
+  `Ukpejehonour/SoftGrowTech_Twitter_Sentiment_Analysis` had prior archive
+  history. `sanjana-malyala/Sentimental-analysis` was selected because it was
+  archive-clean, duplicate-clean across target PRs/issues/content, public,
+  non-fork, non-archived, issue-enabled, recently pushed, and already consumes
+  a single `tweet` CSV column.
+- Fresh PR submitted: opened
+  https://github.com/sanjana-malyala/Sentimental-analysis/pull/1 from correctly
+  parented fork `kriptoburak/Sentimental-analysis`, branch
+  `codex/add-tweetclaw-csv-converter`, commit `f66df70`. The PR adds a
+  dependency-free `tweetclaw_to_sample_csv.py` converter for TweetClaw JSON,
+  JSONL, NDJSON, and CSV exports, de-dupes repeated text, writes the target's
+  existing `tweet` column format, refuses overwrite without `--overwrite`, adds
+  optional `main.py --input` and `--output` flags, and documents the workflow in
+  the previously empty README.
+- Fresh PR validation: target validation passed Python compile for `main.py`
+  and the converter, converter smoke tests for JSON, JSONL, CSV, de-duplication,
+  nested output directory creation, and overwrite refusal, README
+  `markdown-link-check`, `git diff --check`, em dash/double-hyphen scan, and
+  public diff scan. PR readback showed open, ready, mergeable, clean,
+  maintainer-editable, 3 changed files, no comments, no reviews, and no
+  configured checks.
+- Official OpenClaw and package checks: `docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/clawhub/plugin-validation-fixes`, `/help/testing-updates-plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/help/debugging`, the canonical ClawHub TweetClaw page, and the OpenClaw
+  Directory page returned HTTP 200. `npm view openclaw dist-tags` returned
+  latest `2026.6.9`, beta `2026.6.9-beta.1`, and alpha
+  `2026.5.19-alpha.1`; ClawHub CLI version remained `0.22.0`; npm latest for
+  `@xquik/tweetclaw` remained `1.6.31`.
+- TweetClaw maintenance: source metadata, OpenClaw host peer, fitness baseline,
+  setup docs, README, and lockfile were refreshed from OpenClaw `2026.6.8` to
+  `2026.6.9`. `npm install --package-lock-only --ignore-scripts` refreshed the
+  lockfile, and `npm install --ignore-scripts` updated local `node_modules`.
+  `npm ls openclaw --depth=0` now shows `openclaw@2026.6.9`. Npm audit changed
+  from 5 OpenClaw-chain vulnerabilities to 0 vulnerabilities.
+- Link checks and validation before archive write: Markdown link checks passed
+  for README, OpenClaw setup docs, agent workflow docs, packaged skill, compact
+  audit, and compact release memory. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.9`.
+- Prompt and self-improvement: compact audit and release memory were updated,
+  and this archive received the full run record. Saved automation prompt size
+  remained 11980 bytes, so no prompt rewrite was useful. Durable lesson:
+  when OpenClaw publishes a stable patch that updates nested vulnerable host
+  dependencies, refresh package metadata, docs, the fitness baseline, lockfile,
+  and installed modules together before final validation.
+- Changed TweetClaw files before final checks: `README.md`,
+  `docs/openclaw-setup.md`, `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`,
+  `package.json`, `package-lock.json`, and
+  `scripts/check-openclaw-platform-fitness.mjs`.
+
 ## 2026-06-21 00:58 UTC Heartbeat
 
 - Runtime limitation: no runtime control was available for GPT-5.5 or

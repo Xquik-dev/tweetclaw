@@ -20,8 +20,8 @@ the archive, before any release or ClawHub decision.
 
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished.
-- Release gate is blocked by nested OpenClaw audit advisories until the host
-  package refreshes.
+- Release gate is clear of npm audit advisories after the OpenClaw `2026.6.9`
+  lockfile refresh, but npm publish auth and ClawHub owner scope remain blocked.
 - Local npm publish auth blocked on 2026-06-07: `npm whoami` returned E401.
   Do not claim npm `1.6.32` until publish succeeds.
 - Published: 2026-05-14 20:04 UTC
@@ -38,7 +38,7 @@ the archive, before any release or ClawHub decision.
 
 ## OpenClaw Release Fitness
 
-- Current source metadata targets OpenClaw `2026.6.8`.
+- Current source metadata targets OpenClaw `2026.6.9`.
 - Required metadata fields:
   `openclaw.compat.pluginApi`, `openclaw.compat.minGatewayVersion`,
   `openclaw.build.openclawVersion`, `openclaw.build.pluginSdkVersion`,
@@ -46,15 +46,13 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- Npm audit on 2026-06-21 00:58 UTC reports nested `openclaw@2026.6.8`
-  advisories for
-  `protobufjs`, `tar`, and `undici`; root overrides do not rewrite the host
-  shrinkwrap. Rerun audit after each OpenClaw lockfile refresh.
+- Npm audit on 2026-06-21 01:29 UTC reports 0 vulnerabilities after refreshing
+  OpenClaw to `2026.6.9`. Rerun audit after each OpenClaw lockfile refresh.
 
 ## ClawHub State
 
 - ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 00:58 UTC, but keep npm canonical until current scoped package
+  on 2026-06-21 01:29 UTC, but keep npm canonical until current scoped package
   publishing succeeds.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`
