@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 18:26 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 18:55 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 18:26 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 18:55 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 17:56 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 18:55 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,21 +190,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 18:09 UTC: model/effort selector unavailable. Crawler strict JSON
-  returned 40 skill, OpenClaw, MCP, package-tooling, social, Twitter/X, and
-  sentiment candidates. Authored PR inventory completed 12 uncapped
-  updated-date partitions with 2027 open PRs; REST exact-read covered all 2027
-  with 0 errors, then 24 newest risky/commented PRs had comments, reviews, and
-  checks sampled. Repaired recurring conflict on
-  https://github.com/reall8164/wechat-openclaw-plugin/pull/1 to head `72e72d6`
-  and read back clean. Fresh PR:
-  https://github.com/harrylabsj/twitter-thread-crafter/pull/1 adds optional
-  TweetClaw source-material guidance for a no-action X thread-writing skill.
-  User-requested NVIDIA Skills follow-up packaged `skill-card.md`,
-  `skillspector-report.md`, `evals/evals.json`, and `BENCHMARK.md`; package
-  artifact gate now requires them. NVIDIA docs, OpenClaw docs, ClawHub, npm
-  audit, links, SkillSpector (`0/100`, LOW, SAFE), and fitness passed. Full
-  details archived.
+- 2026-06-21 18:40 UTC: model/effort selector unavailable. Crawler strict JSON
+  returned 35 skill, OpenClaw, MCP, registry, social, and Twitter/X candidates.
+  Broad authenticated GitHub search hit resource and rate limits, so the run
+  stopped broad search and continued through crawler output, archive URLs, and
+  exact repo PR reads. Exact readbacks covered current tracked PRs for
+  `reall8164/wechat-openclaw-plugin#1`, `harrylabsj/twitter-thread-crafter#1`,
+  and `BrikerMan/skilless.ai#6`; the first two were clean, and the skilless.ai
+  Gemini anchor suggestion had already been fixed, then received validation
+  comment https://github.com/BrikerMan/skilless.ai/pull/6#issuecomment-4762951905.
+  Fresh draft PR https://github.com/jdrhyne/agent-skills/pull/26 adds a
+  target-native TweetClaw skill and generated README entry, following the
+  target AGENTS draft-PR workflow. OpenClaw docs, ClawHub, npm metadata, npm
+  audit, target validation, target links, package artifact, and fitness passed.
+  Full details archived.
 
 ## Reporting Checklist
 
