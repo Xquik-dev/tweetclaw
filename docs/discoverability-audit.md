@@ -190,21 +190,27 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 22:35 UTC: model/effort selector unavailable. Crawler covered PR,
-  skill, social/X, OpenClaw/MCP, registry, validator, SkillSpector, and
-  sentiment-dashboard lanes with 0 opportunities. GraphQL-authored open PR
-  pagination found 2061 open PRs; exact readbacks covered 88 newest,
-  changes-requested, failing-check, commented, and unknown-mergeability PRs.
-  No new code repair was needed: changes-requested blockers were stale or
-  target-branch policy, bot findings on checked PRs were already fixed, and
-  fork-deploy checks remained target-owned. Fresh fallback screening selected
-  https://github.com/AdityaBajpai2/Twitter-Airline-and-Spam-Mail-Detection-App
-  and opened ready PR
-  https://github.com/AdityaBajpai2/Twitter-Airline-and-Spam-Mail-Detection-App/pull/1
-  from verified fork with a TweetClaw export batch sentiment importer. NVIDIA
-  Skills docs, SkillSpector, OpenClaw canonical exports, public links, npm
-  metadata, audit, package artifact, fitness, and full `check:all` passed. Full
-  details archived.
+- 2026-06-21 23:09 UTC: model/effort selector unavailable. Crawler-first
+  strict JSON covered PR, skill, OpenClaw/MCP, registry, validator,
+  package-tooling, social/X, and sentiment lanes with 0 opportunities.
+  GraphQL authored-open pagination found 2066 PRs; exact readbacks covered 176
+  newest, changes-requested, failing-check, and commented PRs.
+- Repaired 6 actionable conflicts; all re-read `MERGEABLE`:
+  `Aditya923-c/xpoz-agent-skills#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `jamald33n/tweetsave-mcp#2`, `maddhruv/absolute#5`,
+  `reall8164/wechat-openclaw-plugin#1`, and
+  `vaibhav4046/mcp-marketplace#1`. Remaining failing checks are target-owned
+  workflow, app-permission, deploy, or third-party review-account gates.
+- Opened fresh PR https://github.com/jawond/bird/pull/1 from verified fork
+  `kriptoburak/bird`, branch `codex/add-dry-run-review`, commit `1310446`.
+  It adds tested `--dry-run` review mode for tweet/reply writes plus an
+  optional TweetClaw OpenClaw handoff. Readback: open, ready, `MERGEABLE`,
+  `CLEAN`, 1 commit, 3 files, no checks, comments, or reviews.
+- OpenClaw docs, ClawHub, OpenClawDir, npm metadata, npm audit, NVIDIA Skills
+  docs, SkillSpector, public links, artifact, platform fitness, and full
+  `check:all` passed. NVIDIA docs sha256:
+  `09cdd276ddc1e658dda6940ceb9fd70ead3e2e2087f5455bea660553186aaf0d`.
+  SkillSpector v2.2.3: `0/100`, LOW, SAFE, no issues.
 
 ## Reporting Checklist
 

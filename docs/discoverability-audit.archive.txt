@@ -31430,3 +31430,100 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   existing TweetClaw import PRs. When fallback candidate files use CRLF,
   prefer validation-clean LF over preserving CRLF if `git diff --check` flags
   added carriage returns.
+
+## 2026-06-21 23:09 UTC heartbeat
+
+- Runtime note: requested GPT-5.5 plus extra-high reasoning selection was not
+  available in this runtime, so the limitation was recorded and the run
+  continued.
+- Start state: TweetClaw was clean on `master` at `df895de`. Xquik was on
+  `master` with unrelated user change `docs/feature-roadmap.md`, left
+  untouched. Open issue lists for `Xquik-dev/tweetclaw` and `Xquik-dev/xquik`
+  were empty. GitHub rate readback showed remaining API budget for core,
+  search, and GraphQL work.
+- Crawler-first coverage: ran the Xquik strict JSON crawler from
+  `/Users/burak/Developer/xquik` with research proxy, bounded request and proxy
+  warmup timeouts, 180 limit, 2 pages, 8 per query, concurrency 12, and run id
+  `tweetclaw-20260621-224851`. Query pack covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skill directories, Codex,
+  Claude, social/Twitter-X skills, awesome lists, registries, validators,
+  forks, generated catalogs, SkillSpector, package tooling, social analytics,
+  and sentiment dashboards. Output parsed as valid JSON with 0 opportunities.
+  No crawler auth values were printed.
+- PR inventory: GraphQL `user.pullRequests` pagination found 2066 open authored
+  PRs without relying on the search cap. Search partitions found 2 current
+  changes-requested PRs, 54 failing-check PRs, and 100 commented PRs. Exact
+  `gh pr view` readbacks covered 176 unique PRs from newest 40 plus flagged
+  partitions with 0 read errors.
+- PR repairs: resolved and pushed 6 current conflicts, all on existing
+  `kriptoburak` fork branches. Final readbacks are `MERGEABLE`:
+  `Aditya923-c/xpoz-agent-skills#1` at `adcb628`,
+  `Aqmar777/openclaw-competitive-intel#1` at `2e29dff`,
+  `jamald33n/tweetsave-mcp#2` at `b1862ca`,
+  `maddhruv/absolute#5` at `68397a9`,
+  `reall8164/wechat-openclaw-plugin#1` at `8c505d4`, and
+  `vaibhav4046/mcp-marketplace#1` at `5df817f`. Validation included conflict
+  marker scans, `git diff --check`, README link checks, target Python tests for
+  competitive-intel, TweetSave `npm run build`, MCP registry JSON parse,
+  `totalCount == servers.length`, and one `xquik` registry entry.
+- Remaining PR blockers: `weiflycc-cmd/awesome-copilot#19` still requests
+  target branch `staged`, but the repo exposes only `main`.
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` still carries stale changes-requested state
+  after the vendor-neutral revision. Failing checks inspected in exact logs were
+  target-owned or account-owned gates: missing app signing config in
+  `EthanAlgoX/MarketBot#8`, target labeler config shape in
+  `cognis-digital/skills#2`, GitHub comment permissions in
+  `davila7/claude-code-templates#634`, third-party review account credits in
+  `joyboy257/hermes-link#1`, inaccessible third-party review output in
+  `moshehbenavraham/Ultimate-Agent-Directory#84`, and target package export
+  breakage in `paytience/FindAPIs#3`.
+- Fresh target screening: fallback searches after crawler output screened
+  Streamlit sentiment apps and Twitter/X CLI lanes. Duplicate/prior-history
+  blocks included `ankit-sharma2005/twitter-sentiment-analysis` with open PR
+  `#1`, `public-clis/twitter-cli` with open PR `#67`, and archive-known
+  sentiment-dashboard targets. `jawond/bird` was selected because it is public,
+  MIT licensed, non-fork, non-archived, recently pushed, PR-enabled, absent from
+  compact and archive memory, and duplicate-clean across target content and all
+  target PRs. Issues are disabled and were recorded as a target policy state.
+- Fresh PR submitted: https://github.com/jawond/bird/pull/1 from correctly
+  parented fork `kriptoburak/bird`, branch `codex/add-dry-run-review`, commit
+  `1310446`. The PR adds a global `--dry-run` option for `tweet` and `reply`,
+  prints a JSON write payload before local auth or media access, tests tweet
+  and reply dry-run output, and documents an optional TweetClaw/OpenClaw handoff
+  for reviewed research and approval-gated X/Twitter writes. Readback is open,
+  ready, `MERGEABLE`, `CLEAN`, 1 commit, 3 changed files, no checks, comments,
+  or reviews.
+- Fresh PR validation: passed `pnpm test`, `pnpm run build`,
+  changed-file `pnpm exec biome check README.md src/index.ts tests/cli.test.ts`,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Full `pnpm run lint` was attempted and blocked by pre-existing unmodified
+  target issues in the existing Sweetistics client and target state and
+  Twitter client tests; this is recorded in the PR body.
+- Official docs and package state: OpenClaw `llms.txt` sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`, 94373
+  bytes. OpenClaw `llms-full.txt` sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`, 6666783
+  bytes. Required OpenClaw plugin, manifest, permission, SDK entrypoint,
+  install override, ClawHub, skill-format, and debugging routes were present in
+  docs exports; sampled canonical docs, ClawHub TweetClaw, and OpenClawDir
+  TweetClaw routes returned HTTP 200. npm latest remains
+  `@xquik/tweetclaw@1.6.31`; source remains `1.6.32`; OpenClaw latest remains
+  `2026.6.9`; beta remains `2026.6.10-beta.1`; `clawhub` remains `0.22.0`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+- NVIDIA Skills posture: `https://docs.nvidia.com/skills/` fetched
+  successfully with sha256
+  `09cdd276ddc1e658dda6940ceb9fd70ead3e2e2087f5455bea660553186aaf0d` and
+  443406 bytes. SkillSpector v2.2.3 scan at 2026-06-21 23:08 UTC returned
+  score `0/100`, severity LOW, recommendation SAFE, 5 non-executable
+  components, no issues, and no executable scripts.
+- TweetClaw validation: passed `npm run check-skill-frontmatter`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  public Markdown link scan, `npm run check-memory-md-size`, SkillSpector, and
+  final `npm run check:all` with 11 test files, 168 tests, and 100% coverage.
+  Compact Markdown memory measured 15358/15360 bytes after compaction. Prompt
+  TOML size remained 12314 bytes.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `skills/tweetclaw/skillspector-report.md`. Prompt self-improvement: keep
+  `jawond/bird` duplicate-blocked after PR 1; for fresh CLI targets, prefer
+  tested safety or dry-run write boundaries over thin catalog mentions.
