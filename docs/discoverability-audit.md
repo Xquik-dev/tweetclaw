@@ -198,7 +198,8 @@ archive, before any outreach or duplicate decision.
   unknown mergeability, 2 stale changes-requested, 55 failed status rollups, 332
   with comments, 172 with reviews, 138 with review threads. Repaired
   `HerbertGao/claude-skills#1` to mergeable by rebasing and preserving the
-  target's new marketplace entry. Opened fresh PR
+  target's new marketplace entry, then removed CodeRabbit's volatile surface
+  counts nitpick. Opened fresh PR
   https://github.com/vivhere/social-media-sentiment-dashboard-sect/pull/1 to
   turn a Markdown-only Streamlit prototype into a runnable CSV-upload dashboard
   compatible with reviewed Xquik or TweetClaw exports. OpenClaw routes, ClawHub,
