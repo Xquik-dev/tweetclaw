@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 09:11 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-21 09:20 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, testing, and
   debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 09:11 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-21 09:20 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 09:11 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-21 09:20 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 09:11 UTC: model/effort selector unavailable. Crawler strict JSON
+- 2026-06-21 09:20 UTC: model/effort selector unavailable. Crawler strict JSON
   returned 22 PR, skill, OpenClaw, social, Twitter/X, and sentiment-dashboard
-  candidates. Partitioned open-authored PR search returned 1985 unique PRs with
-  no caps. Bounded exact readback covered 143 actionable URLs; full exact
-  readback was not claimed because prior broad GraphQL inventory hit GitHub
-  resource limits. Changes-requested and dirty PRs had no safe current repair:
-  `weiflycc-cmd/awesome-copilot#19`, `Hashi-Ai-Dev/openclaw-clawdoc#6`, and
-  `maddhruv/absolute#5`. Current-head `paoloanzn/x-cli#3` was revalidated as
-  already repaired at `564495a`. Fresh screening duplicate-blocked prior
-  sentiment targets, selected fresh `Vayu-143/social-media-sentiment-dashboard`,
-  and opened https://github.com/Vayu-143/social-media-sentiment-dashboard/pull/1
-  with a TweetClaw export converter, fixture, README import guidance, and a
-  dead demo-link cleanup. Validation passed Python compile, JSON/JSONL/CSV
-  converter smoke tests, target README link check, diff checks, fork-parent
-  readback, clean PR readback, OpenClaw route checks, ClawHub/OpenClawDir
-  checks, npm audit, fitness, and TweetClaw public Markdown link checks. Prompt
-  TOML bytes: 12314; prompt tail bytes: 12180. Full details are archived.
+  candidates. Broad `gh search` PR partitioning hit GitHub secondary limits and
+  GraphQL quota was exhausted, so full inventory was not claimed. Continued with
+  crawler output, archive URLs, REST exact reads, and local clones. REST
+  readbacks confirmed known blockers on `weiflycc-cmd/awesome-copilot#19`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`, and `maddhruv/absolute#5`, and clean
+  current heads for `paoloanzn/x-cli#3` and `Vayu-143/social-media-sentiment-dashboard#1`.
+  Fresh screening selected duplicate-clean
+  `challakishore-dev/social-media-sentiment-dashboard` and opened
+  https://github.com/challakishore-dev/social-media-sentiment-dashboard/pull/1
+  through REST after `gh pr create` hit GraphQL exhaustion. Validation passed
+  Python compile, JSON/JSONL/CSV converter smoke tests, diff checks, REST
+  fork-parent and PR readbacks, OpenClaw route checks, ClawHub/OpenClawDir
+  checks, npm audit, fitness, and TweetClaw public Markdown link checks. Target
+  README link check only failed on a pre-existing LinkedIn HTTP 999 bot block.
+  Prompt TOML bytes: 12314. Full details are archived.
 
 ## Reporting Checklist
 
