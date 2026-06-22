@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-22 04:34 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-22 04:57 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200 for llms, CLI, ClawHub, plugin, permission, SDK runtime,
   skill format, publishing, and debugging pages. Install-overrides route
   returned HTTP 404 and needs route discovery before citing.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 04:34 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 04:57 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 04:34 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 04:57 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +191,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 04:34 UTC: model/effort selector unavailable. Crawler JSON covered
-  PRs plus skill/OpenClaw/MCP/social lanes; 1 crawler opportunity was
-  duplicate-blocked.
-- GraphQL counted 2105 open authored PRs. Exact readbacks covered 66 current
+- 2026-06-22 04:57 UTC: model/effort selector unavailable. Crawler JSON covered
+  PRs plus skill/OpenClaw/MCP/social/catalog/tooling lanes; 1 crawler
+  opportunity was duplicate-blocked and repo-mode fallback returned 0 after
+  socket closures.
+- GraphQL counted 2106 open authored PRs. Exact readbacks covered 67 current
   PRs with no conflicts. `flc1125/skills#120` is target-owned Vercel-blocked;
   the bot timestamp suggestion is already fixed on current head.
-- Opened https://github.com/pluglabai/thinkly-openclaw-plugin/pull/4 from
-  verified fork `kriptoburak/thinkly-openclaw-plugin`, branch
-  `codex/refresh-openclaw-build-metadata`, commit `77309d6`; readback open,
-  ready, clean, `MERGEABLE`.
-- Target validation passed JSON parse, README link check, diff check,
-  conflict-marker scan, duplicate gates, and public-hygiene scan. TweetClaw
-  OpenClaw docs, links, npm metadata/audit, SkillSpector, fitness, artifact,
-  skill frontmatter, versions, memory, and `check:all` passed.
+- Opened https://github.com/0xelitesystem/claude-skills-validator/pull/1 from
+  verified fork `kriptoburak/claude-skills-validator`, branch
+  `codex/add-tool-skill-example`, commit `55dd110`; readback open, ready,
+  clean, `MERGEABLE`.
+- Target validation passed Node VM example checks, README link check, diff
+  check, duplicate gates, and public-hygiene scan. TweetClaw OpenClaw docs,
+  links, npm metadata/audit, SkillSpector, fitness, artifact, skill frontmatter,
+  versions, memory, and `check:all` passed.
 
 ## Reporting Checklist
 
