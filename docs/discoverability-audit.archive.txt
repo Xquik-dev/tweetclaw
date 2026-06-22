@@ -34999,3 +34999,94 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   when Markdown link checkers disagree with generated heading slugs for emoji or
   punctuation-heavy headings, prefer an explicit stable HTML anchor over
   guessing the rendered slug.
+2026-06-22 17:42 UTC heartbeat - skill-manager install command PR
+
+- Runtime note: model and reasoning-effort selector unavailable, so GPT-5.5 and
+  extra-high reasoning could not be selected. Continued under the available
+  same-thread Codex runtime. No Browser, Chrome, GUI automation, dev server,
+  production SSH, secret read, Context7 work, or destructive git action was
+  used. TweetClaw started on `master` with only untracked `0`; Xquik had an
+  unrelated `docs/feature-roadmap.md` change that was ignored.
+- Crawler-first coverage: ran `/Users/burak/Developer/xquik` session
+  `tweetclaw-20260622-174222` with strict JSON, research proxy, bounded
+  request and proxy warmup timeouts, 6 focused query packs covering SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, awesome lists, registries, validators, forks, package tooling,
+  TweetClaw, Xquik, and x-twitter-scraper, plus exact repo probes for
+  `skill-tools/skill-tools`, `vaibhav4046/mcp-marketplace`,
+  `motiful/skill-forge`, `pradeepmouli/skillit`,
+  `feiyueyun/skill-interop-tools`, `machina-sports/sports-skills`,
+  `iamfourh2e/rust-skill`, `harrypham2000/skill-audit`, and
+  `rsoffer/linus-level-skill`. Output parsed as valid JSON and produced 9
+  already-covered opportunities.
+- PR inventory and repairs: exact-read 11 open tracked PRs:
+  `rsoffer/linus-level-skill#1`, `iamfourh2e/rust-skill#1`,
+  `harrypham2000/skill-audit#32`, `machina-sports/sports-skills#82`,
+  `feiyueyun/skill-interop-tools#2`, `pradeepmouli/skillit#84`,
+  `skill-tools/skill-tools#15`, `vaibhav4046/mcp-marketplace#1`,
+  `motiful/skill-forge#1`, `Hashi-Ai-Dev/openclaw-clawdoc#6`, and
+  `weiflycc-cmd/awesome-copilot#19`. All were open and mergeable. Socket checks
+  on `skill-audit#32` were success; `mcp-marketplace#1` still waits on Vercel
+  team authorization; `awesome-copilot#19` remains target-branch-policy blocked
+  because no `staged` branch exists. Thread-aware GraphQL for
+  `openclaw-clawdoc#6` showed no unresolved review threads; the branch diff
+  contains the requested third-party safety note and no TweetClaw/Xquik terms.
+  No current-head maintainer request, review-thread action, CI failure,
+  conflict, DCO/CLA blocker, generated drift, or valid bot finding was safely
+  repairable.
+- Inventory blocker: lane searches for Xquik, OpenClaw, TweetClaw,
+  x-twitter-scraper, and skill each returned 100, so broad exact inventory is
+  not claimed. A later GitHub authenticated search call returned HTTP 403 API
+  rate-limit exceeded for search. Stopped broad authenticated search and
+  continued with crawler output, exact-repo PR/issue lists, clones, static
+  content searches, and direct metadata.
+- Fresh screening: fallback repo search before the 403 found
+  `MaenAbabneh/skills-agent`, `sjmgarnier/skill-manager`,
+  `tinelee123/you-asked-me-before`, `idimsh/tdds-business-skills`,
+  `long-dn/odoo-git-guideline-skills`, and `ralyodio/agent-skills` fresh in
+  compact/archive memory. Exact metadata showed the screened repos were public,
+  non-fork, non-archived, and issue-enabled with no GitHub license metadata.
+  Exact PR/issue lists for `sjmgarnier/skill-manager`,
+  `tinelee123/you-asked-me-before`, `ralyodio/agent-skills`, and
+  `MaenAbabneh/skills-agent` had no TweetClaw, Xquik, x-twitter-scraper,
+  OpenClaw, or ClawHub history. Clone content scans found no TweetClaw/Xquik
+  duplicates in the selected target. No target AGENTS files were present.
+- Selected target: `sjmgarnier/skill-manager` README quick install omitted the
+  `--agent` flag even though its SKILL install flow maps detected platforms to
+  `gh skill install --agent`. Patched only `README.md` to use
+  `gh skill install sjmgarnier/skill-manager skill-manager --agent codex
+  --scope user` and added a supported-agent substitution note. This is
+  target-native and does not mention TweetClaw.
+- External PR opened: https://github.com/sjmgarnier/skill-manager/pull/1 from
+  verified fork `kriptoburak/skill-manager`, parent and source
+  `sjmgarnier/skill-manager`, branch `codex/clarify-install-agent`, commit
+  `cabe18873fa8e24366d5c545ed7aafbcd57e71e9`. Final readback: open, ready,
+  mergeable, clean, 1 changed file, no comments, no reviews, no checks.
+- Target validation: `npx --yes markdown-link-check README.md
+  skills/skill-manager/SKILL.md --quiet`, shell syntax for packaged scripts,
+  `git diff --check`, and added-line sensitive-term and dash scans passed. Bats
+  was unavailable locally, so the test suite was left unchanged and no test-pass
+  claim was made.
+- TweetClaw public hygiene: official OpenClaw llms exports, CLI plugin docs,
+  manifest, permission requests, tool plugins, SDK runtime, ClawHub publishing
+  and skill-format docs, install overrides, creating-skills, and debugging
+  returned HTTP 200. Legacy `https://docs.openclaw.ai/plugins/plugin-validation-
+  fixes` returned HTTP 404, and nearby guessed replacement routes were also
+  404; `llms-full.txt` did not expose a replacement route. `npm view openclaw`
+  returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`;
+  `npm view @xquik/tweetclaw` returned latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link checks: TweetClaw Markdown links passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Direct probes
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, both ClawHub
+  routes, OpenClawDir, the new skill-manager PR, and the prior linus-level PR.
+  npmjs web UI returned the expected Cloudflare 403.
+- Prompt self-improvement: no prompt file was edited, so no persisted prompt
+  candidate was saved. Durable lesson recorded: after GitHub search 403, stop
+  broad authenticated search and continue with crawler output, exact repo
+  PR/issue lists, clones, API metadata, and direct link probes. The new
+  `sjmgarnier/skill-manager#1` README install-agent wording lane is now
+  duplicate-blocked unless maintainers ask for follow-up.
