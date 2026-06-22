@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 11:55 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 12:25 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
   ClawHub publishing, skill format, plugin manifest, permission requests, tool
   plugins, Codex harness runtime, install overrides, and debugging routes
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 11:55 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 12:25 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 11:55 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 12:25 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,22 +191,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 11:55 UTC: model/effort selector unavailable. Crawler-first skill,
-  OpenClaw, MCP, agent, social, Twitter/X, catalog, validator, fork, and package
-  tooling pass used session `tweetclaw-20260622-114347` and returned empty
-  strict JSON.
-- Authored-PR inventory exact-read 126 current-day and priority PRs after
-  retrying 2 transient read errors. Repaired
-  https://github.com/jamald33n/tweetsave-mcp/pull/2 conflict with commit
-  `dcc42d6`; readback open, `MERGEABLE`, and `CLEAN`. Broad inventory is not
-  complete this run because local temp output hit a write-space blocker.
-- Opened https://github.com/greggdonovan/agent-skills-lint/pull/14 from
-  verified fork `kriptoburak/agent-skills-lint-greggdonovan`, branch
-  `codex/validate-allowed-tools-arrays`, commit `fadde3a`; readback open,
-  `MERGEABLE`, and `UNSTABLE`.
+- 2026-06-22 12:25 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-120451` parsed as strict JSON but returned no
+  opportunities. Exact-read 129 open current-day and priority PRs.
+- Repaired 4 open PRs: minicoursegenerator/skills-for-course-creators#4,
+  Aditya923-c/xpoz-agent-skills#1, reall8164/wechat-openclaw-plugin#1, and
+  AgentDock/AgentDock#353. Remaining blockers are target-owned Vercel auth and
+  unrelated target-wide typecheck drift; CodeRabbit re-review passed.
+- Opened https://github.com/j0yen/skill-manifest/pull/1 from verified fork
+  `kriptoburak/skill-manifest`, branch
+  `codex/restore-readme-acceptance-text`, commit `163b195`; readback open and
+  `MERGEABLE`.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
-  selected links, memory, agent-skills-lint tests, OpenClaw fitness, and
-  `check:all`.
+  selected links, memory, OpenClaw fitness, and `check:all`.
 
 ## Reporting Checklist
 

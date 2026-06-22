@@ -31729,6 +31729,110 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 12:25 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-120451` covered SKILL.md,
+  `.agents/skills`, skill directories, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X, awesome-list, registry, validator, fork, catalog, and
+  package-tooling lanes. Output parsed as JSON but contained 0 opportunities and
+  no query metadata.
+- PR inventory method: compact audit, archives, crawler output, current-day
+  authored PR search, priority URLs, fork branch metadata, exact GitHub REST and
+  GraphQL reads, and target repo reads. Exact-read 129 open current-day and
+  priority PRs with no read errors. Broad inventory is evidence-bounded to this
+  partition set, not a claim that every in-scope PR across GitHub was exhausted.
+- Inventory repairs and blockers: conflicts were found in
+  Aditya923-c/xpoz-agent-skills#1 and reall8164/wechat-openclaw-plugin#1.
+  Failing checks were AgentDock/AgentDock#353, rohitg00/skillkit#139, and
+  flc1125/skills#120; Vercel failures are target-owner authorization blockers.
+  `rohitg00/skillkit#139` and `rahulvramesh/skills#1` already had current fork
+  heads that addressed the valid bot comments. `StephanAkkerman/fintwit-bot#740`
+  had a branch-content mismatch blocker, so no unsafe rewrite was attempted.
+- Repaired https://github.com/minicoursegenerator/skills-for-course-creators/pull/4
+  from verified fork `kriptoburak/skills-for-course-creators`, branch
+  `codex/add-xquik-course-skill`, commit `38adf92`. Removed the pinned
+  `skills@1.5.3` install command from `catalog.yml`, `catalog.json`, and
+  `llms-full.txt` as requested by maintainer `eren-commits`. Validation passed
+  JSON parse, YAML parse, stale-pin search, and `git diff --check`; README link
+  check still reports the pre-existing `https://skills.minicoursegenerator.com/`
+  connection issue. Posted readback comment
+  https://github.com/minicoursegenerator/skills-for-course-creators/pull/4#issuecomment-4768240729.
+- Repaired https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 from verified
+  fork `kriptoburak/xpoz-agent-skills`, branch
+  `codex/add-tweetclaw-openclaw-resource`, commit `7993117`. Merged upstream
+  `main`, resolved README conflict by keeping the repository link and TweetClaw
+  OpenClaw resource entry, then validated conflict markers, `git diff --check`,
+  and README links. Readback is open and `MERGEABLE`; comment
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4768240739.
+- Repaired https://github.com/reall8164/wechat-openclaw-plugin/pull/1 from
+  verified fork `kriptoburak/wechat-openclaw-plugin`, branch
+  `codex/add-tweetclaw-workflow`, commit `f78f48d`. Merged upstream `main`,
+  resolved README conflict by keeping the repository support link and optional
+  TweetClaw workflow section, then validated conflict markers,
+  `git diff --check`, and README links. Readback is open and `MERGEABLE`;
+  comment
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4768240753.
+- Repaired https://github.com/AgentDock/AgentDock/pull/353 from verified fork
+  `kriptoburak/AgentDock`, branch `codex/add-xquik-node`, commit `fd950d6`.
+  Addressed valid bot findings by removing caller-controlled API key and base
+  URL input, using server-side `XQUIK_API_KEY`, fixing the endpoint, adding a
+  15 second request timeout, handling non-JSON error bodies, encoding profile
+  URLs, and guarding invalid timestamps. Validation passed package install with
+  lifecycle scripts disabled, Prettier, `git diff --check`, and targeted ESLint.
+  `pnpm run typecheck` still fails on target-wide missing optional dependencies
+  and generated template imports outside this node. Readback is open and
+  `MERGEABLE`; Vercel remains target-owner authorization and CodeRabbit
+  re-review passed with no actionable comments. Comment
+  https://github.com/AgentDock/AgentDock/pull/353#issuecomment-4768240761.
+- Fresh target discovery screened `j0yen/skill-manifest` after duplicate checks
+  against compact audit, archives, target content, target PRs, and target
+  issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL,
+  npm URL, ClawHub listing, Xquik, x-twitter-scraper, and variants. Target is
+  not a fork, Apache-2.0 by GitHub metadata, `MIT OR Apache-2.0` by Cargo
+  metadata, active, and target-native for a README repair. Existing README AC3
+  and AC5 bullets were truncated.
+- Opened https://github.com/j0yen/skill-manifest/pull/1 from verified fork
+  `kriptoburak/skill-manifest` parented to `j0yen/skill-manifest`, branch
+  `codex/restore-readme-acceptance-text`, commit `163b195`. The patch restores
+  the truncated AC3 JSON output text and AC5 missing-name error id/path text.
+  Readback is open and `MERGEABLE`. Validation passed `cargo test`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  `cargo fmt -- --check` reports pre-existing Rust and test formatting drift
+  outside the README-only change, so those files were left untouched.
+- Official OpenClaw docs and package checks at 2026-06-22 12:25 UTC:
+  `llms.txt` returned 94608 bytes with sha256
+  `ba95dbbfbf8968511f5ed98001f0b3b88582c797690fdcef586af1ea5b24f248`;
+  `llms-full.txt` returned 6692046 bytes with sha256
+  `653f2f8f257ed040d759e6f091780b5e63b389e310dc7862ec67269afebc7526`.
+  CLI plugins, manage plugins, manifest, permission requests, tool plugins,
+  Codex harness runtime, SDK runtime, install overrides, ClawHub publishing,
+  ClawHub skill format, plugin validation fixes, creating skills, and debugging
+  routes returned HTTP 200. `clawhub.ai/plugins/@xquik/tweetclaw`,
+  `openclawdir.com/plugins/tweetclaw-m2h8cr`, all repaired PR URLs, and the new
+  j0yen PR URL returned HTTP 200. OpenClaw npm tags were latest `2026.6.9`,
+  beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained
+  `0.22.0`; TweetClaw npm latest remained `1.6.31` with npm canonical install
+  metadata; source remained `1.6.32`; npm audit found 0 vulnerabilities.
+- TweetClaw public hygiene passed selected Markdown link checks for README,
+  OpenClaw setup, agent workflows, compact audit, and compact release notes.
+  `npm run check-openclaw-platform-fitness` passed for source `1.6.32` targeting
+  OpenClaw `2026.6.9`. `npm run check-memory-md-size` passed before and after
+  compaction.
+- Prompt and memory: compact Markdown memory stayed below 15 KiB. Persisted
+  automation TOML measured 12314 bytes, so no prompt edit was needed. Prompt
+  self-improvement: after cloning or merging a target, always set `workdir` to
+  the intended clone before inspection; also prefer `headRepository.name` plus
+  `gh repo view <fork> --json parent` because fork names often differ from the
+  upstream repository name.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 11:55 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
