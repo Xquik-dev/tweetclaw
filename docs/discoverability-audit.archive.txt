@@ -31729,6 +31729,116 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 03:39 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Initial state: TweetClaw was on `master` at
+  `7f2731d6fa787d3ea1d4c9c74a764fa922598e24` with only unrelated untracked
+  file `0`. Xquik was on `master` at
+  `17c1b43d9002303446d5cfee9d22fb5f5b0c030f` with unrelated modified
+  `docs/feature-roadmap.md`. Both were preserved. Open issue lists for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` returned empty.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-032453` covered authored open PRs,
+  TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills
+  directories, Codex, Claude, OpenClaw/MCP/agent/social/Twitter-X skills,
+  awesome lists, registries, forks, generated catalogs, validators, examples,
+  plugin ecosystems, package tooling, and social/Twitter automation lanes. The
+  crawler output parsed as JSON with one `opportunities` key and 0
+  opportunities. No crawler credential values were printed or stored.
+- PR inventory method: compact audit, archive URLs, crawler output, fork branch
+  metadata, target repo open PR lists, known open PR URLs, current authored PR
+  search, and exact REST/GraphQL reads. Lightweight GraphQL inventoried 2099
+  open authored PRs with newest update `2026-06-22T03:23:52Z`. A stale archive
+  URL sweep began by mistake, produced 1212 candidate URLs and 150 exact reads,
+  then was stopped before wasting more quota. The bounded current and key sweep
+  exact-read 56 open PRs: 51 `MERGEABLE`, 4 `UNKNOWN`, 1 `CONFLICTING`, 55
+  with no checks, and 1 with a target-owned failure. Broad all-open exact
+  readback remains bounded by cost and stale-history volume, not claimed
+  complete.
+- Repair priority: `https://github.com/jamald33n/tweetsave-mcp/pull/2` was
+  conflicting. Verified fork `kriptoburak/tweetsave-mcp-jamald33n` is parented
+  to `jamald33n/tweetsave-mcp`. Merged upstream `main`, resolved the README
+  conflict by keeping the TweetSave MCP tool docs, valid GitHub issue/support
+  links, and TweetClaw companion docs while dropping malformed raw ZIP support
+  text. Commit `ea0b44c6f8d23bad3ef7e996583b1faedb57fc43` was pushed to
+  `codex/tweetclaw-openclaw-companion`. Commented with validation at
+  `https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4764450000`.
+  Final readback: open, ready, `MERGEABLE`, no configured checks, no reviews.
+- Repair validation passed conflict-marker and malformed raw ZIP scans,
+  `git diff` whitespace check, README markdown-link-check, integrity tests for
+  both shipped ZIP files, `npm ci` with scripts/audit/fund disabled, TypeScript
+  build, and changed-diff public-hygiene scan.
+- Fresh discovery screened OpenClaw skill registry search results. Duplicate or
+  prior-history blockers: `VoltAgent/awesome-openclaw-skills` had closed
+  TweetClaw PR #436 and open related PR #493; `laozishudao3/openclaw-skill-
+  registry` and `Charpup/openclaw-skill-indexer` had prior archive history.
+  Fresh validator/tooling lanes from the rolling backlog included
+  `TheStack-ai/pulser`, `Frank-debug666/agent-skill-security-auditor`, and
+  `bird-chinese-community/BIRD.skills`.
+- New target: `TheStack-ai/pulser` is MIT licensed, active, not a fork, and
+  describes itself as a `SKILL.md` linter for Claude Code. Duplicate checks
+  across compact audit, archive, target content, target PRs, and target issues
+  found no TweetClaw, `@xquik/tweetclaw`, TweetClaw URL, npm URL, ClawHub
+  listing, Xquik, x-twitter-scraper, or variant history. Exact issue readback
+  for #2 requested `starts-with` and `ends-with` eval assertions. Target PR
+  search found no duplicate.
+- Opened `https://github.com/TheStack-ai/pulser/pull/7` from verified fork
+  `kriptoburak/pulser` parented to `TheStack-ai/pulser`, branch
+  `codex/add-eval-boundary-assertions`, commit
+  `2ba92bd709a49e9e35ad8f040f8320cbf2ef0b8e`. The patch adds assertion type
+  definitions, assertion runner branches, and English, Korean, and design-spec
+  docs for the new keys. Readback: open, ready, `MERGEABLE`, no comments,
+  reviews, or configured checks.
+- Pulser validation passed `pnpm install` with frozen lockfile, `pnpm lint`,
+  `pnpm build`, `git diff` whitespace check, duplicate checks, and
+  public-hygiene scan. README markdown link check found only npmjs.com web UI
+  HTTP 403; registry checks remain canonical. The target package postinstall
+  created a local `~/.claude/skills/pulser/` validation side effect, which was
+  removed after confirming it contained only the generated `SKILL.md`.
+- Official OpenClaw docs recheck before TweetClaw maintenance: llms, full llms,
+  CLI plugins, plugin manifest, permission requests, tool plugins, SDK runtime,
+  SDK entrypoints, manage plugins, install overrides, building plugins, SDK
+  testing, SDK subpaths, ClawHub publishing, ClawHub validation fixes, ClawHub
+  skill format, ClawHub quickstart, tools creating skills, and debugging routes
+  all returned HTTP 200. `llms.txt` returned 94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`.
+  `llms-full.txt` returned 6666783 bytes with sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`.
+  OpenClaw npm tags remained latest `2026.6.9`, beta `2026.6.10-beta.1`, alpha
+  `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, registry metadata is reachable, `npm audit` returned 0
+  vulnerabilities, selected public Markdown links passed, and GitHub, release,
+  docs.xquik.com, canonical ClawHub, stale ClawHub, canonical OpenClawDir, new
+  Pulser PR, and TweetSave repair PR routes returned HTTP 200. npmjs web UI
+  returned 403 to curl, so npm registry metadata remains canonical. Guessed
+  routes `clawhub.openclaw.ai/plugins/tweetclaw` and
+  `openclawdir.com/package/xquik-tweetclaw` failed and should not be used.
+- TweetClaw SkillSpector v2.2.3 no-LLM scan at 2026-06-22 03:38 UTC reported
+  score `0/100`, LOW severity, SAFE recommendation, no issues, and no
+  executable scripts.
+- TweetClaw validation before final check passed `npm run typecheck`, `npm run
+  lint`, `npm run check-openclaw-platform-fitness`, `npm run
+  check-package-artifact`, `npm run check-skill-frontmatter`, and `npm run
+  check-versions`. Final validation passed `npm run check:all`: typecheck,
+  lint, CPD, Knip, suppression check, dash check, memory size, skill
+  frontmatter, version parity, build, OpenClaw platform fitness, package
+  artifact check, and coverage with 11 test files, 168 tests, and 100%
+  coverage.
+- Prompt and memory: compact Markdown memory and persisted automation TOML were
+  measured before commit. Automation TOML measured 12314 bytes. No prompt edit
+  was needed. Prompt self-improvement: stale archive URLs are useful for
+  duplicate memory but must not drive all-open exact readback unless bounded by
+  recency or known-open evidence; do current/key exact reads first, then sample
+  old archive URLs only when a concrete repair signal appears.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
+  untouched as unrelated state.
+
 ## 2026-06-22 03:19 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
