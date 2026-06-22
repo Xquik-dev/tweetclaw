@@ -31729,6 +31729,86 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 14:09 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-133421` covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills directories,
+  Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, validators, package tooling, social automation, and
+  Twitter/X lanes. Output parsed as strict JSON with 0 opportunities.
+- Complete PR inventory: `gh search prs --author kriptoburak --state open` was
+  partitioned by updated windows with no capped bucket: `>=2026-06-22` 134,
+  `2026-06-21` 183, `2026-06-20` 143, `2026-06-19` 26, `2026-06-18` 70,
+  `2026-06-17` 116, `2026-06-16` 92, `2026-06-15` 95, `2026-06-14` 143,
+  `2026-06-13` 144, `2026-06-12` 96, `2026-06-01..2026-06-11` 283, and
+  `<2026-06-01` 626. Unique open authored PRs: 2151.
+- Exact readbacks: GraphQL exact-read all 2151 PRs after retrying three
+  transient 502/504 chunks as smaller batches. Merge states were 1641 clean,
+  302 unstable, 128 blocked, 33 dirty, 43 unknown, and 4 behind. Mergeability
+  was 2075 mergeable, 33 conflicting, and 43 unknown. Review decisions were
+  2050 none, 89 review required, 10 approved, and 2 changes requested. Status
+  rollups were 1889 none, 201 success, 59 failure, and 2 pending.
+- Repair gate: repaired https://github.com/antstudiocz/ant-marketplace/pull/37
+  from verified fork `kriptoburak/ant-marketplace`, parent
+  `antstudiocz/ant-marketplace`, branch `codex/add-hermes-tweet-skill`.
+  Merged upstream `master`, resolved plugin metadata conflicts by keeping the
+  Hermes Tweet `9.1.0` update and the schema-safe marketplace shape, pushed
+  commit `2a64cc9`, and commented at
+  https://github.com/antstudiocz/ant-marketplace/pull/37#issuecomment-4769131590.
+  Validation passed `git diff --check`, JSON manifest parsing, `claude plugin
+  validate .`, `claude plugin validate ./plugins/ant`, README/docs/skill
+  markdown link checks, and public-safety diff scan. Readback became open,
+  ready, `MERGEABLE`, `CLEAN`, with no checks configured.
+- Remaining PR backlog: dirty, stale changes-requested, and failing-check rows
+  were recorded in `/tmp/tweetclaw-heartbeat-20260622-133421/pr-action-queue.json`.
+  Known remaining blockers include target-owned Vercel authorization, required
+  review queues, stale review state after prior replies, or conflicts deferred
+  behind the repaired newest actionable PR.
+- Fresh fallback discovery after empty crawler output screened skill validator
+  and package-tooling repos. Previously handled or duplicate-blocked repos
+  included `sno-ai/mda`, `harrypham2000/skill-audit`, `reaatech/agents-md-kit`,
+  `himself65/skill-lint`, and `Flash-Brew-Digital/validate-skill`.
+  `studiomeyer-io/skilldoctor` was selected because it is MIT licensed, active,
+  non-fork, issue-enabled, duplicate-clean across compact audit, archive, target
+  content, target PRs, and target issues, and had a target-native README package
+  import bug.
+- Opened https://github.com/studiomeyer-io/skilldoctor/pull/3 from verified
+  fork `kriptoburak/skilldoctor`, parent `studiomeyer-io/skilldoctor`, branch
+  `codex/fix-readme-library-import`, commit `ddebb1f`. The patch changes the
+  Library API example import from the unscoped `skilldoctor` name to the
+  published `@studiomeyer-io/skilldoctor` package. Target validation passed
+  `npm ci`, `npm test` with 12 files and 262 tests, `npm run build`, `npm run
+  typecheck`, `git diff --check`, and public-safety diff scan. README
+  markdown-link-check hit the pre-existing npm package-page HTTP 403 bot
+  protection. PR readback: open, ready, `MERGEABLE`, `UNSTABLE`, no comments,
+  reviews, or check rollups yet.
+- Official OpenClaw docs and package checks at 2026-06-22 14:09 UTC:
+  15 current docs and llms routes returned HTTP 200, including llms exports,
+  CLI plugins, manage plugins, manifest, permission requests, tool plugins,
+  Codex harness runtime, SDK runtime, install overrides, ClawHub publishing,
+  skill format, plugin validation fixes, creating skills, and debugging.
+  OpenClaw npm tags were latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `clawhub` was `0.22.0`.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, `npm audit --audit-level=moderate --json` returned 0
+  vulnerabilities, `npm run check-openclaw-platform-fitness` passed, selected
+  public Markdown links passed, ClawHub `@xquik/tweetclaw` and OpenClaw
+  Directory routes returned HTTP 200, ClawHub still exposes `1.6.26`, and final
+  `npm run check:all` passed with 11 test files, 168 tests, and 100% coverage.
+- Prompt and memory: compact Markdown memory measured 14662/15360 after this
+  edit. Persisted automation TOML measured 12314 bytes. No prompt edit was
+  needed. Prompt self-improvement: when GraphQL exact-read chunks hit 502/504,
+  retry only missing PRs in smaller chunks and record both initial errors and
+  retry closure.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 12:31 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high

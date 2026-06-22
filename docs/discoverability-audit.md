@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 12:31 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 14:09 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
   ClawHub publishing, skill format, plugin manifest, permission requests, tool
   plugins, Codex harness runtime, install overrides, and debugging routes
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 12:31 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 14:09 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 12:31 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 14:09 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,18 +191,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 12:31 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-123148` parsed as strict JSON but returned no
-  opportunities. Exact-read 131 open current-day PRs.
-- Repaired dirty/conflicting PRs: warlockoussama/twitter-cli#1,
-  Aqmar777/openclaw-competitive-intel#1, and
-  AbdNour627/awesome-openclaw-configs#1. Addressed HCYT/agent-cookbook#4
-  review feedback, confirmed 3 bot nits already satisfied, and answered
-  NipunaRanasinghe/awesome-ai-agents#126 maintainer framing.
-- Opened https://github.com/severith-ai/skill-md-validator/pull/1 from verified
-  fork `kriptoburak/skill-md-validator`, branch
-  `codex/fix-repository-metadata`, commit `36d6952`; readback open and
-  `MERGEABLE`.
+- 2026-06-22 14:09 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-133421` parsed as strict JSON but returned no
+  opportunities. Partitioned authored-open PR inventory exact-read all 2151 PRs.
+- Repaired antstudiocz/ant-marketplace#37 by merging upstream `master`;
+  readback became open, ready, `MERGEABLE`, and `CLEAN`.
+- Opened https://github.com/studiomeyer-io/skilldoctor/pull/3 from verified
+  fork `kriptoburak/skilldoctor`, branch `codex/fix-readme-library-import`,
+  commit `ddebb1f`; readback open and `MERGEABLE`.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
   selected links, memory, OpenClaw fitness, and `check:all`.
 
