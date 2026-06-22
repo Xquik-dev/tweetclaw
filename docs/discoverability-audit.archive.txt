@@ -34506,3 +34506,106 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
+
+## 2026-06-22 15:45 UTC heartbeat
+
+- Runtime and starting state: the same-thread runtime still did not expose a
+  GPT-5.5 selector or extra-high reasoning-effort selector, so the run
+  continued under the available model and recorded the limitation. Approval
+  policy did not permit sandbox overrides. TweetClaw `master` started at
+  `0e9b67f`, in sync with `origin/master`, with only unrelated untracked path
+  `0` left untouched. Xquik had unrelated `docs/feature-roadmap.md` changes
+  left untouched. Persisted automation TOML measured 12314 bytes.
+- Crawler-first coverage: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded timeouts, focused query packs for open PRs, SKILL.md, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, awesome lists,
+  registries, forks, generated catalogs, validators, framework, and
+  package-tooling lanes, plus `--repo motiful/skill-forge`. The JSON artifact
+  parsed and returned 1 opportunity: `motiful/skill-forge`, already
+  duplicate-blocked by the open PR from the previous run. No crawler credential
+  values were printed or stored.
+- PR inventory and repair gate: partitioned authored-open PR search by updated
+  windows found 2152 unique open PRs with no capped bucket. A broad GraphQL
+  exact-read with status contexts was stopped after only partial progress
+  because GitHub responses were too slow. A lighter GraphQL exact-read also
+  stalled, and a paginated GraphQL search-node retry then exhausted the GraphQL
+  rate bucket; complete broad exact-read is therefore not claimed for this run.
+  The run continued as required with crawler output, REST search, exact REST
+  reads, fork metadata, archive history, and target repo inspection.
+- REST repair triage found 2 requested-changes PRs, 56 failing-check PRs, and
+  127 current pending-check PRs. Exact REST readbacks confirmed
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` still has stale already-addressed
+  vendor-neutral review state, and `weiflycc-cmd/awesome-copilot#19` is still
+  blocked by a target bot requesting base branch `staged`, which the repo does
+  not expose. The 56 failing-check PRs were exact-read for pull state, head,
+  status, and check runs; 45 were unstable, 7 blocked, and 4 dirty. Current-day
+  failures were target-owned Vercel/status-context failures.
+- Repair action: `vaibhav4046/mcp-marketplace#1` was dirty and in scope. The
+  fork `kriptoburak/mcp-marketplace` was verified as fork `true`, parent
+  `vaibhav4046/mcp-marketplace`. A scratch clone of branch
+  `codex/add-xquik-mcp-marketplace` merged current upstream `main`, resolved
+  the generated `data/servers.json` conflict by preserving the Xquik entry on
+  the current upstream registry, set `totalCount` to the actual server count,
+  and pushed commit `725e302a4a50702102c650eecbb9e03dd2b85f76`.
+- Repair validation: `jq -e '.totalCount == (.servers | length)'`, one `xquik`
+  slug check, `git diff --check`, direct HTTP checks for Xquik docs and GitHub
+  repo, and a public-hygiene diff scan passed. Target `npm run typecheck` was
+  blocked because dependencies were not installed in the scratch clone. Final
+  PR readback showed `vaibhav4046/mcp-marketplace#1` open, ready, mergeable, and
+  conflict-free at `725e302`, with only target-owned Vercel authorization still
+  failing.
+- Fresh discovery and duplicate gates: after the crawler candidate was
+  duplicate-blocked, fallback search screened skill and validator/package
+  tooling lanes. Prior history blocked `agent-sh/agnix`, `sno-ai/mda`,
+  `himself65/skill-lint`, `Flash-Brew-Digital/validate-skill`,
+  `nord342/openclaw-skill-tester`, Skill Forge, and several OpenClaw validators.
+  `skill-tools/skill-tools` was selected because it is Apache-2.0, non-fork,
+  non-archived, issue-enabled, default branch `pre-release`, duplicate-clean
+  for TweetClaw/Xquik target content and PR/issue search, and had a concrete
+  target-native package metadata issue.
+- External PR: opened `skill-tools/skill-tools#15` at
+  https://github.com/skill-tools/skill-tools/pull/15 from correctly parented
+  fork `kriptoburak/skill-tools`, branch `codex/fix-package-homepages`, commit
+  `d922a204d4539245fb5f05700f589fd515ba8fd3`. The PR updates package homepage
+  links in `packages/core`, `packages/contracts`, `packages/gen`,
+  `packages/router`, and `packages/skill-tools` from broken `tree/main` URLs to
+  the live `tree/pre-release` URLs. The contribution is target-native and does
+  not mention TweetClaw.
+- Target validation and public hygiene: `jq -e .` passed on all package
+  manifests, `git diff --check` passed, all 5 updated package homepage URLs
+  returned HTTP 200, the previous `tree/main` package URLs returned HTTP 404,
+  and an added-line sensitive-string scan found no issue. Final PR readback
+  showed the PR open, ready, base `pre-release`, head
+  `codex/fix-package-homepages`, 5 changed files, 5 additions, 5 deletions, no
+  comments, no reviews, mergeable, and pending/no reported checks.
+- Official OpenClaw and package recheck: current OpenClaw docs returned HTTP
+  200 for `llms.txt`, `llms-full.txt`, CLI plugins, manage plugins, manifest,
+  permission requests, tool plugins, Codex harness runtime, SDK runtime,
+  install overrides, ClawHub publishing, ClawHub skill format, plugin validation
+  fixes, creating skills, and debugging. `npm view openclaw` returned latest
+  `2026.6.9` and beta `2026.6.10-beta.2`; `npm view clawhub` returned
+  `0.22.0`; `npm view @xquik/tweetclaw` returned published `1.6.31` while local
+  source remains `1.6.32`.
+- TweetClaw public hygiene and validation: `npm audit --audit-level=moderate`
+  returned 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed
+  and confirmed local TweetClaw targets OpenClaw `2026.6.9`. Markdown link
+  checks passed for README, OpenClaw setup docs, agent workflow docs, compact
+  audit, and clawpack release memory. Direct URL checks returned 200 for
+  TweetClaw GitHub, TweetClaw GitHub issues API, npm registry metadata, current
+  ClawHub page, OpenClawDir page, repaired `vaibhav4046/mcp-marketplace#1`, new
+  `skill-tools/skill-tools#15`, and the correctly parented fork branch.
+- Prompt self-improvement: no saved automation prompt edit was useful. The
+  prompt already preserves model/effort wording, quiet autonomy, crawler-first
+  discovery, mandatory PR submission, aggressive skill-repo coverage, fresh
+  discovery, complete inventory and repair priority, duplicate/fork rules,
+  OpenClaw docs checks, link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, cadence, thread binding, commit/push requirement,
+  Markdown cap, prompt cap, and self-improvement.
+- Durable lessons: `skill-tools/skill-tools#15` is now duplicate-blocked for
+  package-homepage repair unless maintainers ask for follow-up. For monorepos
+  whose default branch is not `main`, package homepage metadata can silently rot
+  even when README links work; prefer direct HTTP proof for package metadata
+  links before opening a small target-native PR. When broad GraphQL inventory
+  exhausts rate limits, record the blocker explicitly and continue with REST
+  repair lanes and exact target reads without claiming complete exact coverage.

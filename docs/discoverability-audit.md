@@ -191,21 +191,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 15:05 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-142454` parsed as strict JSON but returned no
-  opportunities.
-- Authored-open PR inventory partitioned search found 2151 open PRs with no
-  capped bucket. Wide GraphQL exact read hit HTTP 502, then narrow GraphQL
-  exact-read all 2151: 1659 clean, 311 unstable, 132 blocked, 39 dirty,
-  4 behind, 6 unknown; 40 conflicting; 2 changes-requested; 89
-  review-required.
-- Detailed read of 46 current-day non-clean PRs found no failed check rollups.
-  Chat2AnyLLM/awesome-mcp-servers#1 was closed after the maintainer integrated
-  the entry directly. Remaining changes-requested items are stale review state
-  or blocked by a missing target branch.
-- Opened https://github.com/motiful/skill-forge/pull/1 from verified fork
-  `kriptoburak/skill-forge`, branch `codex/fix-skill-forge-links`, commit
-  `3cf29fa`; readback open, `MERGEABLE`, and `CLEAN`.
+- 2026-06-22 15:45 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-151929` returned 1 opportunity, `motiful/skill-forge`,
+  duplicate-blocked by the open PR from the prior run.
+- Authored-open PR search partitions found 2152 open PRs with no capped bucket.
+  Broad GraphQL exact-read was stopped after API slowness and rate exhaustion,
+  so full exact-read is not claimed. REST repair triage exact-read 2
+  changes-requested PRs and 56 failing-check PRs.
+- Repaired `vaibhav4046/mcp-marketplace#1` generated-registry conflict from the
+  correctly parented fork; pushed `725e302`. Readback is mergeable and
+  conflict-free, with only target-owned Vercel authorization still failing.
+- Opened https://github.com/skill-tools/skill-tools/pull/15 from verified fork
+  `kriptoburak/skill-tools`, branch `codex/fix-package-homepages`, commit
+  `d922a20`; readback open, `MERGEABLE`, and pending checks.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, OpenClawDir,
   npm audit, selected links, memory, OpenClaw fitness, and `check:all`.
 
