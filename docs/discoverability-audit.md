@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 09:00 UTC: latest `2026.6.9`, beta
-  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
-  ClawHub publishing, plugin manifest, tool plugins, and debugging routes
-  returned HTTP 200; permission requests, SDK runtime, and skill format routes
-  must be rediscovered before citing.
+- OpenClaw npm checked 2026-06-22 09:39 UTC: latest `2026.6.9`, beta
+  `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
+  ClawHub publishing, skill format, plugin manifest, permission requests, tool
+  plugins, SDK runtime, install overrides, and debugging routes returned HTTP
+  200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 09:04 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 09:38 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 09:05 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 09:38 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,23 +191,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 09:05 UTC: model/effort selector unavailable. Crawler-first skill,
+- 2026-06-22 09:39 UTC: model/effort selector unavailable. Crawler-first skill,
   OpenClaw, MCP, agent, social, Twitter/X, catalog, validator, fork, and package
-  tooling passes returned empty strict JSON, then a smaller pass hit a
-  managed-proxy outage circuit. Fallback screening used archive, exact GitHub
-  metadata, target metadata, and clone lanes.
+  tooling pass returned empty strict JSON. Fallback screening used archive,
+  exact GitHub metadata, target metadata, and clone lanes.
 - Authored-PR inventory used 13 updated-date partitions with no caps and found
-  2129 unique open PR URLs. Targeted exact readbacks covered 12 current,
-  recent, or audit-known PRs; no actionable maintainer comments, failing checks,
+  2130 unique open PR URLs. Exact readbacks covered 8 current, recent, or
+  audit-known PRs; no actionable maintainer comments, failing checks,
   conflicts, DCO/CLA blockers, generated drift, or bot findings were found. Do
   not treat this as complete exact inventory for all broad open PRs.
-- Opened https://github.com/slowmist/openclaw-security-practice-guide/pull/22
-  from verified fork `kriptoburak/openclaw-security-practice-guide`, branch
-  `codex/add-social-plugin-risk-check`, commit `ccceb55`; readback open, ready,
-  clean, and `MERGEABLE`.
+- Opened https://github.com/aliksir/skill-memo/pull/5 from verified fork
+  `kriptoburak/skill-memo`, branch `codex/detect-codex-skills`, commit
+  `9d2573d`; readback open, ready, `MERGEABLE`, and unstable only because no
+  status checks were present yet.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
-  selected public links, markdown links, SkillSpector 0/100 SAFE, fitness,
-  artifact, frontmatter, versions, memory, and `check:all`.
+  markdown links, SkillSpector 0/100 SAFE, fitness, artifact, frontmatter,
+  versions, memory, target tests, and `check:all`.
 
 ## Reporting Checklist
 
