@@ -34609,3 +34609,82 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   links before opening a small target-native PR. When broad GraphQL inventory
   exhausts rate limits, record the blocker explicitly and continue with REST
   repair lanes and exact target reads without claiming complete exact coverage.
+
+2026-06-22 16:14 UTC heartbeat - skillit contributor-guide PR
+
+- Runtime note: model and reasoning-effort selector unavailable; this run
+  continued under the available Codex runtime. Persisted automation prompt size
+  was 12314 bytes.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded timeouts, 5 focused queries spanning SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, social, Twitter/X,
+  awesome lists, registries, forks, generated catalogs, validators, package
+  tooling, and exact repo probes for `skill-tools/skill-tools`,
+  `vaibhav4046/mcp-marketplace`, and `motiful/skill-forge`.
+- Initial crawler result: 3 opportunities, all already covered by open PRs:
+  `skill-tools/skill-tools`, `motiful/skill-forge`,
+  `vaibhav4046/mcp-marketplace`. The fresh package-tooling rerun returned 0
+  opportunities after proxy socket failures and a short endpoint-circuit outage.
+  No crawler credentials were printed or stored.
+- Broad open-PR inventory: GraphQL search-node exact inventory stalled and was
+  interrupted. REST search partitions parsed 379 unique open PR rows from
+  completed partitions. Successful buckets were 2026-06-19 (26), 2026-06-18
+  (70), 2026-06-16 (92), 2026-06-15 (95), and 2026-06-12 (96). Other buckets had
+  concatenated JSON parse failures. The `<2026-06-01` partition then hit a
+  GitHub secondary rate limit, so broad authenticated search stopped. Complete
+  all-in-scope exact inventory is not claimed for this run.
+- Exact PR readbacks: `skill-tools/skill-tools#15` open, mergeable, unstable,
+  no comments or reviews; `vaibhav4046/mcp-marketplace#1` open, mergeable,
+  unstable only due target-owned Vercel authorization; `motiful/skill-forge#1`
+  open, mergeable, clean; `Hashi-Ai-Dev/openclaw-clawdoc#6` open, mergeable,
+  blocked by stale already-addressed changes-requested state;
+  `weiflycc-cmd/awesome-copilot#19` open, mergeable, clean but still blocked by
+  a target bot asking for base branch `staged`, which the repo does not expose.
+- Fresh candidate screening: archive fallback selected `pradeepmouli/skillit`
+  after previous candidates were duplicate-blocked or lower fit. Target metadata
+  showed MIT license, non-fork, non-archived, default branch `develop`, active
+  same-day push, and issues enabled. Target PR/issue lists and content search
+  found no TweetClaw, Xquik, x-twitter-scraper, `@xquik/tweetclaw`, or ClawHub
+  duplicate.
+- Target-native issue found in `pradeepmouli/skillit`: `CONTRIBUTING.md`
+  advertised stale Node 20 and pnpm 10.6 prerequisites despite package engines
+  requiring Node 22 and pnpm 11, linked to missing `AGENTS.md`, described only
+  the old 3-package layout, pointed PRs at `master` even though the default branch
+  is `develop`, and included a Discussions URL returning 404.
+- External PR opened: https://github.com/pradeepmouli/skillit/pull/84 from
+  correctly parented fork `kriptoburak/skillit`, branch
+  `codex/fix-contributing-guide`, commit
+  `9d7bf2ccb558b8940b837f7f3f4b841b62defcf7`. The PR updates only
+  `CONTRIBUTING.md` and does not mention TweetClaw.
+- Target validation for Skillit: `npx --yes markdown-link-check CONTRIBUTING.md
+  --quiet` passed after replacing the dead Discussions URL; `git diff --check`
+  passed; stale-reference scan found no remaining `AGENTS.md`, Node 20, pnpm
+  10.6, Discussions, or `master` PR-target guidance in `CONTRIBUTING.md`. Final
+  PR readback showed open, `MERGEABLE`, `BLOCKED` by branch protection or checks,
+  no comments, no reviews, and no status checks reported yet.
+- Official OpenClaw recheck: `llms.txt`, `llms-full.txt`, CLI plugins,
+  `tools/plugin`, manage plugins, building plugins, manifest, tool plugins,
+  Codex harness runtime, SDK runtime, install overrides, ClawHub publishing,
+  ClawHub skill format, plugin validation fixes, creating skills, and debugging
+  returned HTTP 200. The old `/plugins/permission-requests` path now returns
+  404; current docs index points to `/plugins/plugin-permission-requests`, which
+  returned HTTP 200 in HTML and Markdown forms.
+- Package checks: `npm view openclaw` returned latest `2026.6.9`, beta
+  `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+  `0.22.0`; `npm view @xquik/tweetclaw` returned published `1.6.31` with older
+  OpenClaw `2026.5.4` metadata while local source remains `1.6.32` targeting
+  OpenClaw `2026.6.9`.
+- TweetClaw hygiene and validation: `npm audit --audit-level=moderate --json`
+  returned 0 vulnerabilities; `npm run check-openclaw-platform-fitness` passed;
+  Markdown link check passed for README, OpenClaw setup docs, agent workflow
+  docs, compact audit, and clawpack release memory; direct URL checks returned
+  HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub current and stale
+  routes, OpenClawDir, Skills.sh, Smithery, DeepWiki, NHS badge page, new
+  Skillit PR, prior Skill Tools PR, mcp-marketplace PR, Skill Forge PR, ClawDoc
+  PR, awesome-copilot PR, and current OpenClaw permission-request docs.
+- Prompt self-improvement: no automation prompt edit was useful. Durable
+  lesson: OpenClaw renamed the plugin permission-request docs route to
+  `/plugins/plugin-permission-requests`; future compatibility checks should use
+  the llms export to discover renamed docs paths instead of treating the old
+  route as authoritative. Skillit is now duplicate-blocked for this contributor
+  guide fix unless maintainers ask for follow-up.

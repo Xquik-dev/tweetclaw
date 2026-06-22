@@ -49,13 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 15:05 UTC: latest `2026.6.9`, beta
-  `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
-  ClawHub publishing, skill format, plugin manifest, permission requests, tool
-  plugins, Codex harness runtime, install overrides, and debugging routes
-  returned HTTP 200.
+- OpenClaw npm checked 2026-06-22 16:12 UTC: latest `2026.6.9`, beta
+  `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Required docs and Markdown
+  exports returned HTTP 200; current permission docs route is
+  `/plugins/plugin-permission-requests`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 15:05 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 16:13 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 15:05 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 16:12 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,21 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 15:45 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-151929` returned 1 opportunity, `motiful/skill-forge`,
-  duplicate-blocked by the open PR from the prior run.
-- Authored-open PR search partitions found 2152 open PRs with no capped bucket.
-  Broad GraphQL exact-read was stopped after API slowness and rate exhaustion,
-  so full exact-read is not claimed. REST repair triage exact-read 2
-  changes-requested PRs and 56 failing-check PRs.
-- Repaired `vaibhav4046/mcp-marketplace#1` generated-registry conflict from the
-  correctly parented fork; pushed `725e302`. Readback is mergeable and
-  conflict-free, with only target-owned Vercel authorization still failing.
-- Opened https://github.com/skill-tools/skill-tools/pull/15 from verified fork
-  `kriptoburak/skill-tools`, branch `codex/fix-package-homepages`, commit
-  `d922a20`; readback open, `MERGEABLE`, and pending checks.
-- TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, OpenClawDir,
-  npm audit, selected links, memory, OpenClaw fitness, and `check:all`.
+- 2026-06-22 16:14 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-155559` covered required skill, OpenClaw, MCP, social,
+  validator, catalog, and package-tooling lanes; it returned 3 already-covered
+  repos, and a fresh rerun returned 0 after proxy/endpoint circuit failures.
+- Open PR inventory used crawler, archive, REST partitions, exact PR reads, fork
+  metadata, and target inspection. REST parsed 379 unique open PR rows before
+  parse failures and GitHub secondary rate limiting; broad exact inventory is
+  not claimed. Six known PRs were exact-read; no new repair was safe.
+- Opened https://github.com/pradeepmouli/skillit/pull/84 from verified fork
+  `kriptoburak/skillit`, branch `codex/fix-contributing-guide`, commit
+  `9d7bf2c`. The target-native docs fix updates contributor prerequisites,
+  removes broken `AGENTS.md` references, refreshes package structure, points
+  PRs at `develop`, and replaces a dead Discussions link. Validation:
+  `markdown-link-check CONTRIBUTING.md` and `git diff --check`.
+- TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub and
+  OpenClawDir routes, npm audit, package metadata, Markdown links, selected
+  direct URLs, OpenClaw fitness, memory cap, and `check:all`.
 
 ## Reporting Checklist
 
