@@ -49,12 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 06:14 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 07:45 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
-  ClawHub, `/plugins/*`, SDK runtime, skill format, publishing, and debugging
-  routes returned HTTP 200; old `/tools/plugin/*` and related paths now 404.
+  ClawHub publishing, plugin manifest, tool plugins, and debugging routes
+  returned HTTP 200; permission requests, SDK runtime, and skill format routes
+  returned HTTP 404, so rediscover before citing.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 06:14 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 07:45 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,21 +191,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 07:15 UTC: model/effort selector unavailable. Crawler JSON covered
-  PRs plus skill/OpenClaw/MCP/social/catalog/tooling lanes; its only
-  opportunity, `elbis330/social-media-scraper-skill`, was duplicate-blocked by
-  existing open PR 2.
+- 2026-06-22 07:55 UTC: model/effort selector unavailable. Crawler JSON returned
+  120 skill/OpenClaw/MCP/social/catalog/tooling opportunities; fresh candidate
+  screening and duplicate outcomes are archived.
 - Complete authored-PR inventory used 13 updated-date partitions with no caps.
-  Exact readbacks covered 2116 open PRs with 0 errors; status retry recovered
-  350/350 lighter reads. Snapshot had 33 dirty, 57 failing, and 2 changes-
-  requested PRs before repair; remaining backlog is archived.
-- Repaired conflicts on `Aqmar777/openclaw-competitive-intel#1` (`13b9646`),
-  `Aditya923-c/xpoz-agent-skills#1` (`665682e`), and
-  `AbdNour627/awesome-openclaw-configs#1` (`4efcee5`); all read back clean and
-  `MERGEABLE`.
-- Opened https://github.com/polarbearlin/publish-content-multichannel/pull/1
-  from verified fork `kriptoburak/publish-content-multichannel`, branch
-  `codex/tweetclaw-x-source-context`, commit `41a6028`; readback open, ready,
+  Exact readbacks covered 2121 open PRs with 0 errors. Snapshot had 32 dirty, 57
+  failing, and 2 changes-requested PRs before repair.
+- Repaired `reall8164/wechat-openclaw-plugin#1` recurring README conflict and
+  pushed `d465980`; readback open, ready, clean, `MERGEABLE`.
+- Opened https://github.com/zhaoyan996rongjie-ship-it/x-account-ops-skill/pull/1
+  from verified fork `kriptoburak/x-account-ops-skill`, branch
+  `codex/add-tweetclaw-openclaw-path`, commit `557f9f4`; readback open, ready,
   clean, `MERGEABLE`.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
   selected links, SkillSpector 0/100 SAFE, fitness, artifact, frontmatter,
