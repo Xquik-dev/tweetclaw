@@ -190,18 +190,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 16:57 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-165715` covered required PR and skill lanes, found 6
-  already-covered repos, and exact-read 8 known PRs plus `skill-audit#32` and
-  the new PR. Lane searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper,
-  and skill each hit the 100-result cap, so broad exact inventory is not
-  claimed. No safe repair was available.
-- Opened https://github.com/iamfourh2e/rust-skill/pull/1 from verified fork
-  `kriptoburak/rust-skill`, branch `codex/fix-install-links`, commit
-  `b207aa2`. The target-native docs fix replaces placeholder install URLs with
-  real repo paths and removes a dead `LICENSE` badge link. Validation: target
-  Markdown links, direct changed URL probes, `git diff --check`, and added-line
-  scans.
+- 2026-06-22 17:19 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-171927` covered required PR and skill lanes, found 8
+  already-covered repos, and exact-read 10 tracked PRs plus the new PR. Lane
+  searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper, and skill each hit
+  the 100-result cap, so broad exact inventory is not claimed. No safe repair
+  was available.
+- Opened https://github.com/rsoffer/linus-level-skill/pull/1 from verified fork
+  `kriptoburak/linus-level-skill`, branch `codex/fix-install-prompt-anchor`,
+  commit `ef9a55e`. The target-native docs fix adds a stable README anchor for
+  the install-prompts badge. Validation: target Markdown links,
+  `git diff --check`, and added-line scans.
 - TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub routes,
   canonical OpenClawDir route, npm audit, package metadata, Markdown links,
   selected direct URLs, OpenClaw fitness, and memory cap. npmjs web UI returned
