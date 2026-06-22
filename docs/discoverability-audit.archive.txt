@@ -31623,3 +31623,108 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
   `skills/tweetclaw/skillspector-report.md`. Untracked empty file `0` was
   observed in the TweetClaw workspace and left untouched as unrelated state.
+
+## 2026-06-22 00:40 UTC heartbeat
+
+- Runtime note: model and effort selection was unavailable, so GPT-5.5 and
+  extra-high effort could not be selected. The run continued under the
+  available runtime and recorded the limitation here, compact memory, and the
+  heartbeat outcome.
+- Crawler-first discovery from `/Users/burak/Developer/xquik` used strict JSON
+  with managed research proxy, bounded request and warmup timeouts, 6 focused
+  query packs, limit 220, search pages 2, per-query limit 10, concurrency 12,
+  and session `tweetclaw-20260622-002946`. The crawler returned valid JSON with
+  0 opportunities. No crawler credential values were printed or persisted.
+- PR inventory was broader than the prior run but not complete because broad
+  authored PR search returned a capped 200. Exact readbacks covered 22 open PRs:
+  `Aditya923-c/xpoz-agent-skills#1`,
+  `AlejandroVelezGuillermo/registry#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `ColdTimesAreGood/openclaw-setup#1`,
+  `Drhir2460/agentskills-mcp#1`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `Nzettodess/Awesome-Agent-Skills#2`, `Toyoclara233/registry#1`,
+  `beggarticksarthurtatum121/reddit-skills#1`,
+  `hmzainjamil/claude-code-plugins-marketplace#1`,
+  `jamald33n/tweetsave-mcp#2`, `jawond/bird#1`, `kh0pper/crow#99`,
+  `lophophorawilliamsiigregorynazianzen31/openclaw-paired-skill#1`,
+  `maddhruv/absolute#5`, `mahaishu/n8n-CyberSecurity-Workflows#2`,
+  `reall8164/wechat-openclaw-plugin#1`, `synaptiai/synapti-marketplace#129`,
+  `tesserix/agentic-registry#38`, `tmchow/agent-skills#55`,
+  `vaibhav4046/mcp-marketplace#1`, and
+  `vikynofebriputra-creator/Orkas-Awesome-AgentSkills#1`.
+- Repair priority found no actionable maintainer comments, unresolved review
+  repairs, CI failures owned by our branches, conflicts, DCO/CLA blockers,
+  generated-file drift, or valid bot findings. Noted blockers were target-owned
+  Vercel auth, GitGuardian success-only checks, stale review state, or
+  non-actionable prior self-comments.
+- `Flash-Brew-Digital/build-skill` was retried from already-pushed branch
+  `codex/add-template-contributing-guide` at commit `570cdb3`. Duplicate check
+  stayed clean, the fork was valid, and compare remained valid, but GitHub again
+  rejected PR creation with `CreatePullRequest` permission denied. Keep this as
+  a platform blocker, not a target-fit blocker.
+- Fresh discovery screened OpenClaw skill registry lanes and duplicate-blocked
+  `VoltAgent/awesome-openclaw-skills`,
+  `laozishudao3/openclaw-skill-registry`, and
+  `Charpup/openclaw-skill-indexer` due prior or open TweetClaw/Xquik history.
+  `xdelin/openclaw-skills-registry` remained lower fit from prior archive
+  state. Fresh OpenClaw/plugin lanes included
+  `justserpapi/justserpapi-openclaw-websearch` and `rasimme/FlowBoard`.
+- `justserpapi/justserpapi-openclaw-websearch` was MIT licensed, active, not a
+  fork, not archived, OpenClaw-native, and duplicate-clean for TweetClaw,
+  `@xquik/tweetclaw`, GitHub, npm, ClawHub, Xquik, and x-twitter-scraper
+  variants. The concrete target-native issue was `vitest.config.ts` using local
+  absolute paths under `/Users/tianxingzhou/...`, which breaks tests off the
+  maintainer machine. Target policy had no explicit contribution blocker.
+- Opened https://github.com/justserpapi/justserpapi-openclaw-websearch/pull/1
+  from verified fork `kriptoburak/justserpapi-openclaw-websearch` parented to
+  `justserpapi/justserpapi-openclaw-websearch`, branch
+  `codex/portable-vitest-aliases`, commit `99d8951`. The PR replaces absolute
+  Vitest aliases with `fileURLToPath(new URL(..., import.meta.url))` paths and
+  refreshes the lockfile so Vitest 3.2.6 clears the previous critical direct
+  Vitest audit advisory. Readback: open, ready, `MERGEABLE`, no comments,
+  reviews, or checks yet.
+- Target validation passed `npm ci --omit=peer`, `npm test`,
+  `npm run typecheck`, `npm pack --dry-run`, `git diff --check`, fork-parent
+  verification, duplicate PR/issue searches, and public PR body readback.
+  `npm audit --omit=peer --json` now reports 1 low esbuild dev-server advisory
+  through the current Vite toolchain, down from 1 moderate, 1 high, and 1
+  critical before lockfile refresh.
+- Official OpenClaw docs were rechecked before OpenClaw and skill wording:
+  `https://docs.openclaw.ai/llms.txt` returned 94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;
+  `https://docs.openclaw.ai/llms-full.txt` returned 6666783 bytes with sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`.
+  Sampled CLI plugin, skill, ClawHub skill-format, plugin manifest, plugin
+  permission, update-testing, and debugging routes returned HTTP 200. OpenClaw
+  npm latest remained `2026.6.9`, beta `2026.6.10-beta.1`, and alpha
+  `2026.5.19-alpha.1`.
+- NVIDIA Skills docs were fetched from `https://docs.nvidia.com/skills/`,
+  returning 443406 bytes with sha256
+  `09cdd276ddc1e658dda6940ceb9fd70ead3e2e2087f5455bea660553186aaf0d`. The
+  in-repo TweetClaw skill passed SkillSpector v2.2.3 no-LLM scan at
+  2026-06-22 00:40 UTC with score `0/100`, severity LOW, recommendation SAFE,
+  no issues, and no executable scripts.
+- TweetClaw public hygiene passed: npm latest is still `1.6.31`, source remains
+  `1.6.32`, `npm audit --audit-level=moderate --json` returned 0
+  vulnerabilities, `npm run check-openclaw-platform-fitness` passed, selected
+  public links for GitHub, release, setup docs, registry npm, docs.xquik.com
+  guides, ClawHub, OpenClawDir, skills.sh, NHS badge, Smithery, SkillSpector,
+  NVIDIA Skills, JustSerpAPI, and the new PR returned HTTP 200. npmjs web UI
+  returned 403 to curl, so registry npm was used as canonical machine check.
+  Context7 links were not inspected because the current hard scope excludes
+  Context7 work.
+- Final TweetClaw validation passed `npm run check:all`: typecheck, lint, CPD,
+  Knip, suppression check, dash check, memory size, skill frontmatter, version
+  parity, build, OpenClaw platform fitness, package artifact check, and coverage
+  with 11 test files, 168 tests, and 100% coverage.
+- Prompt and memory: compact Markdown memory measured 15288/15360 bytes after
+  compact edits. Persisted automation TOML measured 12314 bytes. No prompt edit
+  was made. Prompt self-improvement: keep recording exact capped PR inventory
+  counts, treat crawler-empty runs as valid only after strict JSON parse, and
+  prefer target-native test or dependency hardening PRs when catalog placement
+  lanes are duplicate-blocked.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
+  untouched as unrelated state.

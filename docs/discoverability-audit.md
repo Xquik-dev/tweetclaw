@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-21 23:43 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-22 00:40 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
   returned HTTP 200, including llms, CLI, ClawHub, plugin, plugin permission,
   SDK runtime and entrypoint, testing, and debugging pages.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-21 23:43 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 00:40 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-21 23:43 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 00:40 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,24 +190,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-21 23:43 UTC: model/effort selector unavailable. Crawler-first
-  strict JSON found 0 opportunities. Broad PR GraphQL hit repeated 502 and
-  GitHub search hit secondary rate limit; exact readback covered 15 audit-known
-  open PRs, so inventory is not complete.
-- Repaired `Hashi-Ai-Dev/openclaw-clawdoc#6`; readback: open, `MERGEABLE`, not
-  behind, stale `CHANGES_REQUESTED`, no checks. Remaining blockers were
-  target-owned app, label, deploy, workflow, or review-account gates.
-- Fresh lanes screened: `Flash-Brew-Digital/build-skill`,
-  `danielgwilson/image-skill-cli`, `DevinChen2014/socialdatax-skills`, and
-  `tmchow/agent-skills`. The validated `build-skill` branch remains pushed but
-  GitHub blocked PR creation despite a valid compare.
-- Opened https://github.com/tmchow/agent-skills/pull/55 from verified fork
-  `kriptoburak/tmchow-agent-skills`, branch `codex/add-tweetclaw-skill`,
-  commit `fd1f4ac`; readback open, ready, `MERGEABLE`, `CLEAN`, with 1
-  non-actionable Stage bot comment.
+- 2026-06-22 00:40 UTC: model/effort selector unavailable. Crawler-first strict
+  JSON found 0 opportunities. Broad authored PR search returned a capped 200;
+  exact readback covered 22 open PRs. No actionable maintainer comments, CI
+  failures, conflicts, DCO/CLA blockers, or bot findings needed repair.
+- `Flash-Brew-Digital/build-skill` remained a platform blocker:
+  `CreatePullRequest` permission denied from a valid fork branch. Fresh lanes
+  screened included OpenClaw skill registries, `justserpapi` OpenClaw web
+  search, and FlowBoard.
+- Opened https://github.com/justserpapi/justserpapi-openclaw-websearch/pull/1
+  from verified fork `kriptoburak/justserpapi-openclaw-websearch`, branch
+  `codex/portable-vitest-aliases`, commit `99d8951`; readback open, ready,
+  `MERGEABLE`, no comments, reviews, or checks yet.
+- Target validation passed `npm test`, `npm run typecheck`, `npm pack
+  --dry-run`, `git diff --check`; npm audit now has only 1 low esbuild
+  dev-server advisory after clearing the critical Vitest finding.
 - OpenClaw docs/routes, ClawHub, OpenClawDir, npm metadata/audit, NVIDIA Skills
-  docs, SkillSpector, public links, artifact, platform fitness, and
-  `check:all` passed. NVIDIA docs sha256:
+  docs, SkillSpector, public links, platform fitness, memory, and `check:all`
+  passed.
+  NVIDIA docs sha256:
   `09cdd276ddc1e658dda6940ceb9fd70ead3e2e2087f5455bea660553186aaf0d`;
   TweetClaw SkillSpector v2.2.3: `0/100`, LOW, SAFE, no issues.
 
