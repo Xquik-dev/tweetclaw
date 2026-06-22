@@ -31729,6 +31729,132 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 02:52 UTC Heartbeat
+
+- Runtime limitation: the heartbeat runtime did not expose GPT-5.5 or
+  extra-high reasoning-effort selection, so the run recorded the limitation and
+  continued under the available model and effort controls.
+- Repo orientation: TweetClaw started on `master` at
+  `63458d9a28f81aff5519fb31fbce36163492a915` with only pre-existing untracked
+  file `0`. Xquik stayed on `master` at
+  `17c1b43d9002303446d5cfee9d22fb5f5b0c030f` with unrelated dirty
+  `docs/feature-roadmap.md`. Both unrelated states were preserved.
+- Xquik issue check: `gh issue list -R Xquik-dev/xquik` returned no open
+  issues.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with
+  research proxy, bounded 12000 ms request timeout, 45000 ms proxy warmup,
+  limit 180, search pages 2, per-query limit 10, concurrency 12, and session
+  `tweetclaw-20260622-023347`. Query coverage included authored open PRs,
+  TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills dirs,
+  Codex, Claude, social media, Twitter/X, awesome lists, registries, validators,
+  forks, generated catalogs, plugin examples, and package tooling. The strict
+  JSON output was valid with 0 opportunities.
+- Complete PR inventory: GraphQL `viewer.pullRequests` returned HTTP 502, so
+  fallback GitHub search used `--author kriptoburak --state open --updated
+  >=2026-06-22` and found 48 current updated open PRs. Exact REST readbacks
+  covered each PR for state, mergeability, base, head, comments, reviews,
+  combined status, and check runs. After repairs and the new validator PR, final
+  exact readback covered 49 PRs: 40 clean, 6 unstable, 2 blocked, 1 unknown;
+  statuses were 48 pending and 1 target-owned failure. The only failure was
+  `flc1125/skills#120` Vercel authorization required, which is target-owned.
+  No unresolved maintainer comment, DCO/CLA blocker, generated drift, dirty
+  conflict, or valid bot finding remained actionable after repairs.
+- PR repairs: `warlockoussama/twitter-cli#1` was dirty. Merged upstream `main`,
+  resolved the README conflict by keeping a single valid download link, passed
+  `git diff --check`, conflict-marker scan, and README link check, committed
+  `fff20b4`, pushed branch `codex/update-readme-command-scope`, and posted
+  follow-up comment
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4764233710.
+  Final readback: open, ready, head `fff20b48dffd8887d14edc465e3dd609cb16fca3`,
+  mergeable `true`, `clean`, no checks.
+- PR repairs: `jamald33n/tweetsave-mcp#2` was dirty. Merged upstream `main`,
+  resolved the README conflict around support/download links while preserving
+  target package docs and the TweetClaw companion section, passed `git diff
+  --check`, conflict-marker scan, README link check, `npm install
+  --package-lock=false --ignore-scripts --no-audit --no-fund`, and `npm run
+  build`, committed `b7fff94`, pushed branch
+  `codex/tweetclaw-openclaw-companion` to the correctly parented
+  `kriptoburak/tweetsave-mcp-jamald33n` fork, and posted follow-up comment
+  https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4764237226.
+  Final readback: open, ready, head `b7fff94fbd1a100743ab74173bd08e207d8aa936`,
+  `clean`, no checks.
+- PR repairs: `reall8164/wechat-openclaw-plugin#1` was dirty. Merged upstream
+  `main`, resolved the README conflict by keeping the canonical GitHub support
+  link, the existing TweetClaw optional workflow section, and one download
+  badge, passed `git diff --check`, conflict-marker scan, and README link
+  check, committed `f2a2dac`, pushed branch `codex/add-tweetclaw-workflow`, and
+  posted follow-up comment
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4764240505.
+  Final readback: open, ready, head `f2a2dacbe71b29cb22e8a1ca886002d3cad6541d`,
+  mergeable `true`, `clean`, no checks.
+- Fresh candidate screening: fallback GitHub repo searches covered Twitter/X
+  MCP servers, agent skills, OpenClaw skill catalogs, skill validators, and
+  package tooling after crawler JSON returned 0. Duplicate or prior-history
+  blockers included `pepicrft/openclaw-plugin-social`,
+  `YoppaV/twitter-mcp`, `Miles0sage/twitter-mcp`,
+  `0xGval/twitter-X-mcp-server`, `RyanKramer/shippost-mcp`,
+  `TerminalSkills/skills`, `himself65/skill-lint`,
+  `michellepellon/skillmark`, `alephic-ai/skref`,
+  `VoltAgent/awesome-openclaw-skills`, `LeoYeAI/openclaw-master-skills`, and
+  `sharbelxyz/x-bookmarks`. `migmcc/agent-skill-quality-gate` was selected
+  because it is MIT licensed, active, non-fork, issue-enabled, has no open or
+  closed PRs or issues, has no target-content duplicate for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, Twitter/X, or social terms, and its README asks
+  for safety deny-list patterns with tests.
+- New external PR: opened
+  https://github.com/migmcc/agent-skill-quality-gate/pull/1 from verified fork
+  `kriptoburak/agent-skill-quality-gate`, parent
+  `migmcc/agent-skill-quality-gate`, branch
+  `codex/detect-dotenv-skill-risk`, commit `bdf75ca`. The PR adds a
+  deterministic shell-risk pattern for instructions that dump dotenv secret
+  files such as `cat .env.local`, plus a focused regression test. TweetClaw was
+  not mentioned because a validator-native safety fix was stronger than a thin
+  product placement.
+- New target validation: passed `python3 -m pytest -q` with 34 tests, `git diff
+  --check`, conflict-marker scan, and `npx --yes markdown-link-check README.md
+  SECURITY.md --quiet`. PR readback after creation: open, not draft, head
+  `bdf75ca5c93d63b39507dc27c4f92704e539b20c`, mergeable `true`,
+  `mergeable_state` `unstable`, 0 comments, 0 reviews, 0 status checks, and 0
+  check runs.
+- Official OpenClaw docs recheck: `llms.txt` returned 94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;
+  `llms-full.txt` returned 6666783 bytes with sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`.
+  CLI plugins, plugin manifest, tool plugins, SDK runtime, SDK entrypoints,
+  ClawHub publishing, plugin validation fixes, creating skills, plugin
+  permission requests, help debugging, manage plugins, install overrides,
+  building plugins, SDK testing, SDK subpaths, ClawHub skill format, and ClawHub
+  quickstart returned HTTP 200. Old direct paths
+  `/plugins/permission-requests` and `/debugging` returned 404 and were recorded
+  as stale routes superseded by `/plugins/plugin-permission-requests` and
+  `/help/debugging`.
+- TweetClaw package and public hygiene: `npm view @xquik/tweetclaw` returned
+  latest `1.6.31` with install metadata for `@xquik/tweetclaw@1.6.31`;
+  source remains `1.6.32`. `npm view openclaw` returned latest `2026.6.9`,
+  beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. `npm view clawhub`
+  returned latest `0.22.0`. `npm audit --audit-level=moderate --json` returned
+  0 vulnerabilities. GitHub, release, ClawHub TweetClaw, and OpenClawDir routes
+  returned HTTP 200; npmjs web UI returned expected 403 to curl, so registry
+  metadata remains canonical. Selected Markdown links passed across README,
+  OpenClaw setup docs, agent workflows, compact release and audit docs, packaged
+  skill docs, benchmark, SkillSpector summary, and AgentRegistry steps.
+- TweetClaw validation before commit: SkillSpector v2.2.3 no-LLM scan at
+  2026-06-22 02:48 UTC reported score `0/100`, LOW severity, SAFE
+  recommendation, no findings, and no executable scripts. Passed
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npm run check-skill-frontmatter`, `npm run check-versions`, and
+  `npm run check-memory-md-size` before audit edit. Final `npm run check:all`
+  passed after audit edit.
+- Memory and prompt self-improvement: compact Markdown memory was under cap
+  before edit at 15220/15360 bytes and was rechecked after edit before commit.
+  Persisted automation TOML measured 12314 bytes, so no prompt edit was needed.
+  Durable lesson: avoid `path` as a zsh shell variable in inventory loops
+  because it can clobber command lookup; use neutral names such as `pr_path`.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and
+  `skills/tweetclaw/skillspector-report.md`. Pre-existing untracked file `0`
+  remains untouched.
+
 ## 2026-06-22 02:25 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high

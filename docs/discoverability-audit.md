@@ -190,25 +190,27 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 02:25 UTC: model/effort selector unavailable. Xquik crawler JSON
+- 2026-06-22 02:52 UTC: model/effort selector unavailable. Xquik crawler JSON
   covered PR, skill, OpenClaw/MCP/ClawHub, social, Twitter/X, registry,
   validator, plugin, and package-tooling lanes; final JSON had 0 opportunities.
-  GitHub search and broad GraphQL reads hit platform limits, so exact readback
-  was narrowed to 44 newest/key PRs. Details are archived.
+  GraphQL viewer inventory returned HTTP 502, so fallback search plus exact
+  REST readbacks covered 49 open/key PRs with comments, reviews, status, and
+  check runs. Final summary: 40 clean, 6 unstable, 2 blocked, 1 unknown.
 - Repaired conflict drift on
-  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 and
-  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1. Both final
-  readbacks are open, ready, `MERGEABLE`, `CLEAN`.
-- Fresh target `13rac1/openclaw-plugin-claude-code` was Apache-2.0, active,
-  non-fork, OpenClaw-native, duplicate-clean, and policy-clean. Opened
-  https://github.com/13rac1/openclaw-plugin-claude-code/pull/6 from verified
-  fork `kriptoburak/openclaw-plugin-claude-code`, branch
-  `codex/refresh-agent-sdk-billing-note`, commit `c2162b7`; readback open,
-  ready, `MERGEABLE`, `UNSTABLE`, no checks yet.
-- Target validation passed `npm ci`, `npm run check`, diff check, and source
-  link verification; README link check only hit a pre-existing npm web 403.
-  TweetClaw links, npm metadata/audit, SkillSpector, fitness, artifact,
-  skill frontmatter, versions, memory, and `check:all` passed.
+  https://github.com/warlockoussama/twitter-cli/pull/1,
+  https://github.com/jamald33n/tweetsave-mcp/pull/2, and
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1. Final readbacks
+  are open, ready, `MERGEABLE`, `CLEAN`.
+- Fresh target `migmcc/agent-skill-quality-gate` was MIT, active, non-fork,
+  validator-native, duplicate-clean, and policy-clean. Opened
+  https://github.com/migmcc/agent-skill-quality-gate/pull/1 from verified fork
+  `kriptoburak/agent-skill-quality-gate`, branch
+  `codex/detect-dotenv-skill-risk`, commit `bdf75ca`; readback open, ready,
+  `MERGEABLE`, `UNSTABLE`, no checks yet.
+- Target validation passed `python3 -m pytest -q`, diff check, conflict scan,
+  and README plus SECURITY link checks. OpenClaw docs, TweetClaw links, npm
+  metadata/audit, SkillSpector, fitness, artifact, skill frontmatter, versions,
+  memory, and `check:all` passed.
 
 ## Reporting Checklist
 
