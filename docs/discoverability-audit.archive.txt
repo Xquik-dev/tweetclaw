@@ -35550,6 +35550,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 22:52 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-225252`, JSON output, research proxy, bounded request and
+  proxy warmup timeouts, 6 focused query packs, and 12 exact repositories. It
+  returned 11 candidates: `punkpeye/awesome-mcp-servers`,
+  `modelcontextprotocol/servers`, `github/awesome-copilot`,
+  `openai/openai-agents-python`, `appcypher/awesome-mcp-servers`,
+  `cloudflare/agents`, `VoltAgent/awesome-claude-code-subagents`,
+  `punkpeye/awesome-mcp-clients`, `hesreallyhim/awesome-claude-code`,
+  `modelcontextprotocol/registry`, and `docker/mcp-registry`. A smaller second
+  focused crawler pass returned valid empty JSON after a short research-proxy
+  pool outage with endpoint quarantines; no credential values were printed.
+- Broad authored open PR search returned 1000 results and was capped. Updated
+  date counts in that capped set were: 2026-06-22: 165, 2026-06-21: 173,
+  2026-06-20: 127, 2026-06-19: 25, 2026-06-18: 68, 2026-06-17: 117,
+  2026-06-16: 91, 2026-06-15: 92, 2026-06-14: 135, and 2026-06-13: 7.
+  Exact-read covered 85 recent or tracked PR URLs with 0 errors. Complete
+  all-time in-scope PR inventory was not claimed because the broad authored
+  search remained capped.
+- Repair scan found no safe action. Hermes failures were out of scope.
+  `AgentDock/AgentDock#353`, `forjd/startup-ideation-skills#1`,
+  `NipunaRanasinghe/awesome-ai-agents#126`, and `jayteealao/agent-skills#3`
+  had no current unresolved review-thread blocker or already had prior
+  maintainer feedback addressed. Vercel failures remained target-owned.
+- Fresh target screening started with crawler candidates. `openai/openai-agents-python`
+  was active, MIT, and policy-readable, but no narrow safe docs fix was found.
+  `cloudflare/agents` remained policy-blocked because docs repairs must be
+  ported through the Cloudflare docs workflow. `modelcontextprotocol/servers`
+  and several MCP registry or awesome-list lanes were blocked by existing
+  OpenClaw, Xquik, or TweetClaw history. Fallback code search covered
+  `SKILL.md`, `.agents/skills`, social media, Twitter/X, OpenClaw, Claude, MCP,
+  and skill-registry terms; duplicate or prior-history blockers included
+  `ClementJanssens/clix`, `rohunvora/x-research-skill`,
+  `adminlove520/openclaw-twitter-skill`, `LeoYeAI/openclaw-master-skills`, and
+  `ahmadawais/typefully-cli`.
+- Selected target: `gitroomhq/postiz-docs` was active, MIT licensed, non-fork,
+  and duplicate-clean for TweetClaw/Xquik target PRs and issues. Prior Postiz
+  TweetClaw companion wording remains blocked by the Postiz contribution gate,
+  so this run only made a target-owned docs repair with no TweetClaw or Xquik
+  copy. The target has no repo-level contribution instructions in the clone.
+- Opened https://github.com/gitroomhq/postiz-docs/pull/227 from verified fork
+  `kriptoburak/postiz-docs`, parent/source `gitroomhq/postiz-docs`, branch
+  `codex/fix-architecture-anchor-links`, commit
+  `2354eda83b02e3dc0a4977f3fb22bcaea48a5d0e`. The PR fixes the architecture
+  list link for SQL Database and adds short Redis, SQL Database, and Storage
+  sections so existing same-file anchors resolve. Readback found 1 commit,
+  1 file, 0 reviews, 0 review comments, `MERGEABLE`, and `UNSTABLE` only
+  because the Postiz contribution checker closed the PR pending contributor
+  approval. CLA passed; contribution decision was `ACTION_REQUIRED`.
+- Target validation passed: `npx --yes markdown-link-check --quiet
+  howitworks.mdx`, `git diff --check`, `docs.json` JSON parse, changed-diff
+  public-hygiene scan, target content duplicate scan, and target PR/issue
+  duplicate searches. A broad local-link sweep in Postiz docs reported many
+  pre-existing root-relative Mintlify routes as HTTP 400 under the generic
+  checker; only the same-file anchors in `howitworks.mdx` were touched and then
+  passed focused validation.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link checks passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes
+  with Context7 excluded by hard scope. Direct probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, canonical
+  OpenClawDir `https://openclawdir.com/plugins/tweetclaw-m2h8cr`, the new
+  Postiz PR, and the correctly parented fork branch. The obsolete
+  `openclaw.ai/directory/tweetclaw` probe returned 404 and is not source-backed.
+  Blacksmith `actionlint` passed, and the latest `Refresh Context7 Docs`
+  workflow readback on commit `9e04d04` succeeded.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  avoid Postiz organization targets for autonomous PR lanes until contributor
+  approval is granted, unless the work is a small target-owned repair and the
+  expected contribution-checker closure is recorded as a maintainer gate.
+  Persisted automation prompt unchanged; prompt bytes: 12180/15360, TOML bytes:
+  12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  Blacksmith `actionlint`, and `git diff --check`.
+
 2026-06-22 22:10 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
