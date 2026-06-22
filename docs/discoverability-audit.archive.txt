@@ -35597,10 +35597,13 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `codex/fix-architecture-anchor-links`, commit
   `2354eda83b02e3dc0a4977f3fb22bcaea48a5d0e`. The PR fixes the architecture
   list link for SQL Database and adds short Redis, SQL Database, and Storage
-  sections so existing same-file anchors resolve. Readback found 1 commit,
+  sections so existing same-file anchors resolve. Final readback found 1 commit,
   1 file, 0 reviews, 0 review comments, `MERGEABLE`, and `UNSTABLE` only
   because the Postiz contribution checker closed the PR pending contributor
-  approval. CLA passed; contribution decision was `ACTION_REQUIRED`.
+  approval. Comments were the contribution-gate notice, a CodeRabbit walkthrough
+  whose status succeeded after noting the PR was closed, and a Snyk 0-issue
+  pass. Checks were contribution decision `ACTION_REQUIRED`, contribution CLA
+  `SUCCESS`, CodeRabbit `SUCCESS`, and Snyk `SUCCESS`.
 - Target validation passed: `npx --yes markdown-link-check --quiet
   howitworks.mdx`, `git diff --check`, `docs.json` JSON parse, changed-diff
   public-hygiene scan, target content duplicate scan, and target PR/issue
