@@ -31729,6 +31729,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 09:05 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-085519` covered authored PR, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills directories,
+  Codex, Claude, OpenClaw/MCP/agent/social/Twitter-X skill, awesome-list,
+  registry, fork, generated-catalog, validator, package-tooling, and example
+  lanes. The first output parsed as JSON and returned 0 opportunities. A smaller
+  retry hit managed-proxy socket failures and opened the US proxy outage
+  circuit; no credential values were printed or stored.
+- PR inventory method: compact audit, archive URLs, crawler output, broad
+  authored open-PR date partitions, fork metadata, exact known-PR readbacks,
+  target repo reads, and GitHub metadata. Authenticated search used 13
+  updated-date partitions with no caps and found 2129 unique open PR URLs:
+  100 on 2026-06-22, 188 on 2026-06-21, 146 on 2026-06-20, 26 on
+  2026-06-19, 70 on 2026-06-18, 116 on 2026-06-17, 93 on 2026-06-16, 95 on
+  2026-06-15, 145 on 2026-06-14, 144 on 2026-06-13, 96 on 2026-06-12, 283 from
+  2026-06-01 through 2026-06-11, and 627 before 2026-06-01.
+- Exact readbacks covered 12 current, recent, and audit-known PRs, including
+  `eli-l/okf-builder#1`, `warlockoussama/twitter-cli#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and 9 newest authored PRs. No actionable
+  maintainer comments, unresolved review repairs, CI failures owned by our
+  branches, conflicts, DCO/CLA blockers, generated-file drift, or valid bot
+  findings were found. Broad PR inventory was partition-complete but not exact
+  for all 2129 PR URLs.
+- Fresh discovery screened `slowmist/openclaw-security-practice-guide`. Target
+  is MIT licensed, active, not a fork, OpenClaw-native, and duplicate-clean for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, and variants across compact audit,
+  archive, target content, target PRs, and target issues.
+- Opened https://github.com/slowmist/openclaw-security-practice-guide/pull/22
+  from verified fork `kriptoburak/openclaw-security-practice-guide` parented to
+  `slowmist/openclaw-security-practice-guide`, branch
+  `codex/add-social-plugin-risk-check`, commit
+  `ccceb557c1396e9a8bc6cb58ff203a4484bf53bf`. The patch adds bilingual v2.8
+  guidance separating passive public evidence collection from high-risk
+  social-account actions such as posting, replies, DMs, monitor changes, and
+  webhooks, with a required human approval pause. Readback: open, ready,
+  `MERGEABLE`, no comments, reviews, or checks.
+- Target validation passed `git diff` whitespace checking, added-line public
+  hygiene scan, added-line dash scan, and markdown link checks for both edited
+  v2.8 documents.
+- Official OpenClaw docs and packages were rechecked before OpenClaw and skill
+  wording: `https://docs.openclaw.ai/llms.txt` returned HTTP 200, 94584 bytes,
+  sha256 `ba95dbbfbf8968511f5ed98001f0b3b88582c797690fdcef586af1ea5b24f248`;
+  CLI plugins, plugin manifest, tool plugins, ClawHub publishing, and debugging
+  routes returned HTTP 200. OpenClaw npm tags remained latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, npm audit returned 0 vulnerabilities, `npm run
+  check-openclaw-platform-fitness` passed after an initial transient concurrent
+  npm-run miss, package artifact, skill frontmatter, and version checks passed,
+  selected public Markdown links passed, and GitHub, registry metadata, ClawHub,
+  OpenClawDir, and the new target PR routes returned HTTP 200. npmjs web UI
+  returned 403 to curl, so registry metadata and `npm view` remain the canonical
+  package checks.
+- TweetClaw SkillSpector v2.2.3 no-LLM scan at 2026-06-22 09:05 UTC reported
+  score `0/100`, LOW severity, SAFE recommendation, no issues, and no
+  executable scripts.
+- Final TweetClaw validation passed `npm run check:all`: typecheck, lint, CPD,
+  Knip, suppression check, dash check, memory size, skill frontmatter, version
+  parity, build, OpenClaw platform fitness, package artifact check, and coverage
+  with 11 test files, 168 tests, and 100% coverage.
+- Prompt and memory: compact Markdown memory measured after compaction before
+  commit. No prompt edit was needed, so no candidate prompt bytes were saved.
+  Prompt self-improvement: keep recording that broad authored-PR partitions may
+  be partition-complete while exact readbacks remain bounded to current,
+  recent, audit-known, or newly actionable PRs.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+  Untracked file `0` remains untouched as unrelated state.
+
 ## 2026-06-22 08:45 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
