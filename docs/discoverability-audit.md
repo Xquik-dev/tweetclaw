@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-22 05:47 UTC: latest `2026.6.9`,
-  beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
-  returned HTTP 200 for llms, CLI, ClawHub, plugin, permission, SDK runtime,
-  skill format, publishing, and debugging pages.
+- OpenClaw npm checked 2026-06-22 06:14 UTC: latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
+  ClawHub, `/plugins/*`, SDK runtime, skill format, publishing, and debugging
+  routes returned HTTP 200; old `/tools/plugin/*` and related paths now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 05:47 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 06:14 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 05:47 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 06:17 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 05:47 UTC: model/effort selector unavailable. Crawler JSON covered
-  PRs plus skill/OpenClaw/MCP/social/catalog/tooling lanes; 1 crawler
-  opportunity was duplicate-blocked and repo-mode fallback returned 0 after
-  socket closures.
-- GraphQL counted 2108 open authored PRs. Exact readbacks covered 69 current
-  PRs with no conflicts or failing checks. Lane counts were recorded, but broad
-  authenticated search then hit GitHub secondary 403, so this run does not claim
-  complete in-scope PR exhaustion.
-- Opened https://github.com/onlyking1984/codex-skills-marketplace/pull/1 from
-  verified fork `kriptoburak/codex-skills-marketplace`, branch
-  `codex/add-tweetclaw-plugin`, commit `36e8dc0`; readback open, ready, clean,
-  `MERGEABLE`.
-- Target validation passed plugin manifest validation, JSON checks, README and
-  skill link checks, direct URL checks, diff check, duplicate gates, and
-  public-hygiene scan. TweetClaw OpenClaw docs, links, npm metadata/audit,
-  SkillSpector, fitness, artifact, skill frontmatter, versions, memory, and
-  `check:all` passed.
+- 2026-06-22 06:29 UTC: model/effort selector unavailable. Crawler JSON covered
+  PRs plus skill/OpenClaw/MCP/social/catalog/tooling lanes; its only
+  opportunity, `elbis330/social-media-scraper-skill`, was duplicate-blocked by
+  existing open PR 2.
+- PR inventory used crawler output, memory, current search, keyword partitions,
+  exact readbacks, REST fallback, fork metadata, and target lists. GraphQL
+  counted 2112 open authored PRs. Exact readbacks covered 607 partitioned PRs,
+  then GraphQL exhausted with 4 failures, so no complete exhaustion claim.
+- Repaired conflicts on `jamald33n/tweetsave-mcp#2` (`4cd8c5a`, clean) and
+  `warlockoussama/twitter-cli#1` (`7f2d81a`, REST clean). Earlier Hermes bot
+  findings were already fixed. Remaining conflict/check backlog is archived.
+- Opened https://github.com/ubgb/awesome-openclaw-skills/pull/1 from verified
+  fork `kriptoburak/ubgb-awesome-openclaw-skills`, branch
+  `codex/add-tweetclaw-openclaw-skill`, commit `cd54998`; readback open,
+  ready, clean, `MERGEABLE`.
+- TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
+  selected links, SkillSpector 0/100 SAFE, fitness, artifact, frontmatter,
+  versions, memory, and `check:all`.
 
 ## Reporting Checklist
 
