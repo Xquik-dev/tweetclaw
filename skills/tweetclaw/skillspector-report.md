@@ -10,7 +10,7 @@ Command:
 uvx --from git+https://github.com/NVIDIA/SkillSpector.git skillspector scan skills/tweetclaw --no-llm
 ```
 
-Latest recorded scan: 2026-06-22 01:22 UTC.
+Latest recorded scan: 2026-06-22 01:59 UTC.
 
 Latest recorded result: score `0/100`, severity `LOW`, recommendation `SAFE`.
 
