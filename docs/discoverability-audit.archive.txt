@@ -35467,3 +35467,85 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `git diff --check`. Markdown memory size: 15149/15360 bytes. Persisted
   automation prompt unchanged; prompt bytes: 11980/15360, TOML bytes: 12314.
   TweetClaw commit and push are recorded in the run outcome.
+
+2026-06-22 19:44 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-193057`, JSON output, research proxy, bounded timeouts,
+  8 focused query packs, and 13 exact repos. It returned 13 candidates:
+  `pradeepmouli/skillit`, `PIsberg/skill3`, `skill-tools/skill-tools`,
+  `machina-sports/sports-skills`, `feiyueyun/skill-interop-tools`,
+  `harrypham2000/skill-audit`, `motiful/skill-forge`, `JNZader/md-evals`,
+  `vaibhav4046/mcp-marketplace`, `bagalobsta/skill-validator`,
+  `BeardedChop/clawvet`, `janaka/easyrunner-skills`, and
+  `sjmgarnier/skill-manager`.
+- PR inventory exact-read 16 tracked open PRs:
+  `sjmgarnier/skill-manager#1`, `rsoffer/linus-level-skill#1`,
+  `iamfourh2e/rust-skill#1`, `harrypham2000/skill-audit#32`,
+  `machina-sports/sports-skills#82`, `feiyueyun/skill-interop-tools#2`,
+  `pradeepmouli/skillit#84`, `skill-tools/skill-tools#15`,
+  `vaibhav4046/mcp-marketplace#1`, `motiful/skill-forge#1`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `weiflycc-cmd/awesome-copilot#19`,
+  `lansijian/nankesong_S2_Rokidglasses_datasets#1`,
+  `aktsmm/vscode-agent-skill-ninja#9`,
+  `agenticsrclab/clawhub-agent-artifact-scaffolder#1`, and
+  `PIsberg/skill3#1`. Fifteen read as mergeable; `skill3#1` read back open and
+  clean after mergeability settled. Broad authored PR lanes for TweetClaw,
+  OpenClaw, ClawHub, MCP, skill, x-twitter-scraper, Xquik, Twitter automation,
+  and social media still hit 100-result caps, so GitHub-wide exact inventory is
+  not claimed.
+- Existing PR repair scan found no safe action. `mcp-marketplace#1` still had a
+  target-owned Vercel authorization failure. `openclaw-clawdoc#6` and
+  `awesome-copilot#19` had change-request labels in flat reads, but thread-aware
+  GraphQL returned 0 unresolved review threads. Other check-bearing tracked PRs
+  had no actionable maintainer request.
+- Fresh target screening covered `bagalobsta/skill-validator`,
+  `BeardedChop/clawvet`, `JNZader/md-evals`, and
+  `janaka/easyrunner-skills`. Duplicate PR/issue checks for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, Xquik, and x-twitter-scraper were clean on the
+  handled target. `BeardedChop/clawvet` was selected because it had a
+  target-native OpenClaw skill scanner bug that blocked real fixture detection
+  on macOS/BSD grep.
+- Opened https://github.com/BeardedChop/clawvet/pull/6 from verified fork
+  `kriptoburak/clawvet` with parent/source `BeardedChop/clawvet`, branch
+  `codex/fix-portable-fixture-scan`, commit
+  `697df7573268437eeca84cb4fec9f4b43f5e6960`. The PR replaces PCRE-only grep
+  paths with extended regex, removes nounset-sensitive associative shell-pattern
+  keys, adds `tests/clawvet/run-fixtures.sh`, and runs the fixture test in CI.
+  Exact PR readback: open, mergeable, 1 commit, 3 files, 0 comments, 0 reviews,
+  and 0 configured checks.
+- Target validation passed: `bash tests/clawvet/run-fixtures.sh`;
+  `bash tools/claw-vet.sh tests/clawvet/malicious-skill.md` exited 2 with
+  critical findings; `bash -n tools/claw-vet.sh`;
+  `bash -n tests/clawvet/run-fixtures.sh`; `git diff --check`; and changed-file
+  secret/scope scan.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. Legacy
+  `https://docs.openclaw.ai/plugins/plugin-validation-fixes` returned 404.
+  `npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes with
+  Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  canonical ClawHub route, OpenClawDir route, TweetClaw GitHub repo, and the new
+  ClawVet PR. The npmjs web UI returned HTTP 403 to curl, while npm registry
+  metadata checks succeeded.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  prefer small target-native CI fixture runners for validator/scanner repos when
+  they expose portability bugs; verify fork parent/source before pushing; and
+  use the current OpenClaw `/clawhub/plugin-validation-fixes` checklist URL.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.

@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 19:19 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 19:44 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
-  exports returned HTTP 200; legacy `/plugins/plugin-validation-fixes` now
-  returns 404.
+  exports returned HTTP 200; current validation checklist is
+  `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 19:19 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 19:44 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 19:19 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 19:44 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,24 +190,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 19:19 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-190851` covered required PR, skill, OpenClaw, MCP, Codex,
-  Claude, agent, social, Twitter/X, awesome-list, registry, validator, fork, and
-  package-tooling lanes, found 13 candidates, and exact-read 15 tracked PRs.
+- 2026-06-22 19:44 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-193057` covered PR, skill, OpenClaw, MCP, Codex, Claude,
+  agent, social, Twitter/X, awesome-list, registry, validator, fork, and
+  package-tooling lanes, found 13 candidates, and exact-read 16 tracked PRs.
   Broad authored PR lanes still hit 100-result caps, so GitHub-wide exact
   inventory is not claimed. No safe tracked-PR repair was available.
-- Opened https://github.com/PIsberg/skill3/pull/1 from verified fork
-  `kriptoburak/skill3`, branch `codex/tweetclaw-scoped-package-test`, commit
-  `35b60fb`. The target-native change adds `SkillMdPostProcessor` coverage for
-  scoped npm package topics, proving sanitized skill names while preserving the
-  real `npm install @xquik/tweetclaw` body command. Validation:
-  `git diff --check`; Gradle tests were attempted but blocked because this
-  machine has no Java runtime.
-- TweetClaw hygiene passed: OpenClaw llms/core docs/npm, ClawHub routes,
-  canonical OpenClawDir route, npm audit, package metadata, Markdown links,
-  selected direct URLs, OpenClaw fitness, and memory cap. Legacy OpenClaw
-  `/plugins/plugin-validation-fixes` still returns 404. Context7 direct checks
-  were skipped per hard scope.
+- Opened https://github.com/BeardedChop/clawvet/pull/6 from verified fork
+  `kriptoburak/clawvet`, branch `codex/fix-portable-fixture-scan`, commit
+  `697df75`. The target-native change fixes BSD/macOS scanner portability, adds
+  fixture exit-code coverage, and wires it into CI. Validation:
+  `bash tests/clawvet/run-fixtures.sh`;
+  `bash tools/claw-vet.sh tests/clawvet/malicious-skill.md`; `bash -n`;
+  `git diff --check`.
+- TweetClaw hygiene passed: OpenClaw llms/core docs/npm, current ClawHub
+  route, canonical OpenClawDir route, npm audit, package metadata, Markdown
+  links, OpenClaw fitness, and memory cap. Current OpenClaw checklist is
+  `/clawhub/plugin-validation-fixes`; legacy `/plugins/...` returns 404.
+  Context7 direct checks were skipped per hard scope.
 
 ## Reporting Checklist
 
