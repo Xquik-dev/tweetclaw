@@ -31729,6 +31729,68 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 11:31 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-112246` covered SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter-X, awesome-list, registry, fork, generated-catalog, validator,
+  package-tooling, and integration lanes. The crawler output parsed as JSON and
+  returned 0 opportunities.
+- PR inventory method: compact audit and archive memory, crawler output,
+  authored open PRs updated since 2026-06-22, priority audit URLs, fork
+  metadata, and exact GitHub readbacks. The exact-read set contained 124 current
+  day and priority audit-known open PRs. One GitHub GraphQL 502 on
+  `ArabAgentSkills/Skills#1` was retried successfully. No actionable
+  conflicts, maintainer-requested fixes, owned failing checks, DCO/CLA blockers,
+  generated-file drift, or valid bot findings were found. Broad inventory is
+  not complete this run.
+- Fresh screening and duplicate gates: `mahitoh/skillci` was not present in the
+  compact audit or archive, is MIT licensed, active, not a fork, issue-enabled,
+  and duplicate-clean across target content plus open and closed target PRs and
+  issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL,
+  npm URL, ClawHub, Xquik, x-twitter-scraper, OpenClaw, Codex, social media,
+  and Twitter variants.
+- External PR opened: https://github.com/mahitoh/skillci/pull/1 from verified
+  fork `kriptoburak/skillci` parented to `mahitoh/skillci`, branch
+  `codex/detect-remote-command-substitution`, commit `9582413`. The patch adds
+  `audit/remote-command-substitution` to flag `bash -c "$(curl ...)"` and
+  `bash <(curl ...)` skill attack shapes, plus malicious fixture and test
+  coverage. Readback: open, `MERGEABLE`, `UNSTABLE`, no comments, reviews, or
+  checks yet.
+- Target validation: baseline `npm test` first failed only because dependencies
+  were absent in the fresh clone. After lockfile install, `npm test`,
+  `npm run typecheck`, `npm run build`, `git diff --check`, and public-hygiene
+  diff scan passed. `npm ci` reported two moderate target-owned advisories that
+  were unrelated to this PR and not changed.
+- Official OpenClaw docs and package checks: `llms.txt` returned 94584 bytes and
+  `llms-full.txt` returned 6684294 bytes. Canonical routes rediscovered from
+  `llms.txt` returned HTTP 200 for CLI plugins, manage plugins, manifest,
+  plugin permission requests, tool plugins, Codex harness runtime, ClawHub
+  publishing, creating skills, install overrides, debugging, and plugin
+  validation fixes. Initial guessed per-subcommand routes returned 404 and were
+  not treated as docs failures after canonical rediscovery. OpenClaw npm tags
+  remained latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`; TweetClaw npm latest
+  remained `1.6.31` while source remains `1.6.32`.
+- TweetClaw hygiene passed: ClawHub, OpenClaw Directory, TweetClaw GitHub,
+  selected Markdown link checks, npm audit with 0 vulnerabilities,
+  `npm run check-openclaw-platform-fitness`, and memory size. npmjs web UI
+  returned HTTP 403 to CLI fetch, so `npm view` remains the canonical registry
+  check.
+- Prompt and memory: compact Markdown memory was kept under cap after edits.
+  Persisted automation TOML measured 12314 bytes. Prompt self-improvement: for
+  OpenClaw docs checks, rediscover canonical routes from current `llms.txt`
+  before probing detailed paths; old guessed route names can 404 even when the
+  current documentation surface is healthy.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 10:58 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high

@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 11:18 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 11:31 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
   ClawHub publishing, skill format, plugin manifest, permission requests, tool
-  plugins, SDK runtime, install overrides, and debugging routes returned HTTP
-  200.
+  plugins, Codex harness runtime, install overrides, and debugging routes
+  returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 11:18 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 11:31 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 11:18 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 11:31 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,21 +191,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 11:18 UTC: model/effort selector unavailable. Crawler-first skill,
+- 2026-06-22 11:31 UTC: model/effort selector unavailable. Crawler-first skill,
   OpenClaw, MCP, agent, social, Twitter/X, catalog, validator, fork, and package
-  tooling pass used session `tweetclaw-20260622-111222` and returned empty
+  tooling pass used session `tweetclaw-20260622-112246` and returned empty
   strict JSON.
-- Authored-PR inventory exact-read 121 current-day and priority audit-known
-  PRs. All were open; 119 were `MERGEABLE`, 2 `UNKNOWN`; no actionable
-  conflicts, maintainer-requested fixes, owned failing checks, DCO/CLA blockers,
-  or generated-file drift were found. Broad inventory is not complete this run.
-- Opened https://github.com/lov-alt/skill-distill/pull/1 from verified fork
-  `kriptoburak/skill-distill`, branch `codex/fix-github-repo-links`, commit
-  `052c3e6`; readback open, ready,
-  `MERGEABLE`, and `CLEAN`.
+- Authored-PR inventory exact-read 124 current-day and priority audit-known
+  PRs after retrying one transient GitHub 502. No actionable conflicts,
+  maintainer-requested fixes, owned failing checks, DCO/CLA blockers, or
+  generated-file drift were found. Broad inventory is not complete this run.
+- Opened https://github.com/mahitoh/skillci/pull/1 from verified fork
+  `kriptoburak/skillci`, branch `codex/detect-remote-command-substitution`,
+  commit `9582413`; readback open, `MERGEABLE`, and `UNSTABLE` with no
+  comments, reviews, or checks yet.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
-  selected Markdown links, public URL probes, memory, skill-distill tests,
-  and `check:all`.
+  selected Markdown links, public URL probes, memory, skillci tests, OpenClaw
+  fitness, and `check:all`.
 
 ## Reporting Checklist
 
