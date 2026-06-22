@@ -31729,6 +31729,114 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 12:31 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-123148` covered SKILL.md,
+  `.agents/skills`, skill directories, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X, awesome-list, registry, validator, fork, catalog,
+  OpenClaw/MCP/plugin, and package-tooling lanes. Output parsed as JSON but
+  contained 0 opportunities and no query metadata.
+- PR inventory method: compact audit, archives, crawler output, current-day
+  authored open-PR search, fork branch metadata, target repo reads, exact
+  GitHub REST and GraphQL reads, and priority known PR URLs. Exact-read 131
+  open PRs with no read errors. Conflicts were found in
+  warlockoussama/twitter-cli#1, Aqmar777/openclaw-competitive-intel#1, and
+  AbdNour627/awesome-openclaw-configs#1. Target-owned blockers remained
+  Vercel authorization on AgentDock/AgentDock#353, rohitg00/skillkit#139, and
+  flc1125/skills#120, plus target review/protection states on older PRs.
+- Repaired https://github.com/warlockoussama/twitter-cli/pull/1 from verified
+  fork `kriptoburak/twitter-cli`, branch `codex/update-readme-command-scope`,
+  commit `d4ce226`. Merged upstream `main` after deepening the shallow clone,
+  resolved the README conflict by keeping one canonical download link, then
+  validated conflict markers, `git diff --check`, README links, and public
+  hygiene. Commented repair at
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4768357827.
+  Final readback is open, ready, `MERGEABLE`, and clean with no checks.
+- Repaired https://github.com/Aqmar777/openclaw-competitive-intel/pull/1 from
+  verified fork `kriptoburak/openclaw-competitive-intel`, branch
+  `codex/tweetclaw-x-source`, commit `0d52cc9`. Merged upstream `main` after
+  deepening the shallow clone, resolved README conflict by keeping the
+  TweetClaw X source section, NHS badge, and one canonical download badge, then
+  validated conflict markers, `git diff --check`, Python compile, unit tests,
+  `bash -n install.sh`, Markdown links, and public hygiene. Commented repair at
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4768357846.
+  Final readback is open, ready, `MERGEABLE`, and clean with no checks.
+- Repaired https://github.com/AbdNour627/awesome-openclaw-configs/pull/1 from
+  verified fork `kriptoburak/awesome-openclaw-configs`, branch
+  `codex/add-tweetclaw-x-config`, commit `cacff4e`. Merged upstream `main`
+  after deepening the shallow clone, resolved the TweetClaw README row
+  conflict, and repaired a pre-existing broken language anchor by linking the
+  English README file directly. Validation passed conflict-marker scan,
+  `git diff --check`, Markdown links for README, English README, and
+  contribution docs, plus public hygiene. Commented repair at
+  https://github.com/AbdNour627/awesome-openclaw-configs/pull/1#issuecomment-4768357808.
+  Final readback is open, ready, `MERGEABLE`, and clean with no checks.
+- Review and comment repairs: HCYT/agent-cookbook#4 was updated on branch
+  `codex/add-hermes-tweet-approval-loop`, commit `c23fb87`, translating the
+  remaining Traditional Chinese README prompt-template and example-task blocks.
+  Validation passed `git diff --check`, Markdown links, and public hygiene;
+  comment
+  https://github.com/HCYT/agent-cookbook/pull/4#issuecomment-4768376980.
+  flc1125/skills#120, tunajam/packs-registry#1, and Jylhis/skills#67 were
+  exact-read and already satisfied their valid bot suggestions, so comments
+  recorded the current-head evidence without extra commits.
+  NipunaRanasinghe/awesome-ai-agents#126 maintainer framing was answered at
+  https://github.com/NipunaRanasinghe/awesome-ai-agents/pull/126#issuecomment-4768378852.
+- Fresh discovery screened `severith-ai/skill-md-validator` after duplicate
+  checks against compact audit, archives, target content, open and closed PRs,
+  and open and closed issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, and
+  variants. Target is public, non-fork, non-archived, MIT licensed, active, and
+  target-native for package and skill metadata repair. `harrypham2000/skill-audit`
+  was duplicate-blocked by prior outreach history.
+- Opened https://github.com/severith-ai/skill-md-validator/pull/1 from verified
+  fork `kriptoburak/skill-md-validator` parented to
+  `severith-ai/skill-md-validator`, branch `codex/fix-repository-metadata`,
+  commit `36d6952`. The patch updates stale `severith/skill-md-validator`
+  package and skill homepage/repository URLs to the active
+  `severith-ai/skill-md-validator` repo. Validation passed `npm ci
+  --ignore-scripts`, `npm run build`, `node dist/index.js ./skill.md`,
+  `git diff --check`, README markdown link check, and direct GitHub URL checks.
+  Target-owned `npm audit` advisories remain through `gray-matter` and
+  `js-yaml`, with only a semver-major fix, so the metadata-only PR recorded the
+  advisory without widening scope. Final readback is open, ready, `MERGEABLE`,
+  clean, with no comments, reviews, or checks.
+- Official OpenClaw docs and package checks at 2026-06-22 12:31 UTC:
+  `llms.txt` returned 94608 bytes with sha256
+  `ba95dbbfbf8968511f5ed98001f0b3b88582c797690fdcef586af1ea5b24f248`;
+  `llms-full.txt` returned 6692046 bytes with sha256
+  `653f2f8f257ed040d759e6f091780b5e63b389e310dc7862ec67269afebc7526`.
+  CLI plugins, manage plugins, manifest, permission requests, tool plugins,
+  Codex harness runtime, SDK runtime, install overrides, ClawHub publishing,
+  ClawHub skill format, plugin validation fixes, creating skills, and debugging
+  routes returned HTTP 200. `clawhub.ai/plugins/@xquik/tweetclaw`,
+  `openclawdir.com/plugins/tweetclaw-m2h8cr`, repaired PR URLs, and the new
+  skill-md-validator PR URL returned HTTP 200. OpenClaw npm tags were latest
+  `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  remained `0.22.0`; TweetClaw npm latest remained `1.6.31` with npm canonical
+  install metadata targeting OpenClaw `2026.5.4`; source remained `1.6.32`
+  targeting OpenClaw `2026.6.9`; npm audit found 0 vulnerabilities.
+- TweetClaw public hygiene passed selected Markdown link checks for README,
+  OpenClaw setup, agent workflows, compact audit, and compact release notes.
+  `npm run check-openclaw-platform-fitness` passed for source `1.6.32` targeting
+  OpenClaw `2026.6.9`. External repair clones were clean after push. Final
+  validation passed `npm run check-memory-md-size`, `git diff --check`,
+  public-hygiene diff scan, and `npm run check:all`.
+- Prompt and memory: compact Markdown memory stayed below 15 KiB. Persisted
+  automation TOML measured 12314 bytes, so no prompt edit was needed. Prompt
+  self-improvement: for long-running fork PR repairs, deepen shallow clones
+  before merging upstream to avoid false unrelated-history blockers; stale
+  package and skill repository-owner metadata is a useful target-native
+  validator and package-tooling lane when duplicate-clean.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 12:25 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
