@@ -202,7 +202,8 @@ archive, before any outreach or duplicate decision.
   `kriptoburak/awesome-copilot`, branch
   `codex/add-tweetclaw-openclaw-routing`, commit `fed84dc`, adding TweetClaw
   OpenClaw routing to the existing Xquik skill and fixing a target skill
-  validator frontmatter issue. Target CI checks passed.
+  validator frontmatter issue. Target CI checks passed; bot comments were soft
+  review advisories plus a contributor-reputation review note.
 - TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir,
   npm audit, Markdown links with Context7 skipped by scope, OpenClaw fitness,
   Blacksmith workflow readback, memory cap, and `npm run check:all`. Full
