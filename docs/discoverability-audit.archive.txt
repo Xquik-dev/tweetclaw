@@ -35701,6 +35701,84 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 20:58 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-205858`, JSON output, research proxy, bounded timeouts,
+  6 focused query packs, and 10 exact repos. It returned 6 candidates:
+  `punkpeye/awesome-mcp-servers`, `modelcontextprotocol/servers`,
+  `GLips/Figma-Context-MCP`, `microsoft/agent-framework`,
+  `kyrolabs/awesome-agents`, and `e2b-dev/awesome-ai-agents`.
+- PR inventory used compact and archive URLs, crawler coverage, authored open PR
+  search, target repo reads, and exact PR readbacks. Authored open PR search
+  returned 1000 results and hit the GitHub cap. Created-date partitions found
+  133 PRs for 2026-06-22, 167 for 2026-06-21, 128 for 2026-06-20, 23 for
+  2026-06-19, and 1000 for `<2026-06-19`, which remained capped. Exact-read
+  scope this run was the 60 most recent authored PRs plus handled target PRs, so
+  complete all-time inventory was not claimed. Five Hermes PRs had failing
+  checks but are owned by the separate Hermes automation and stayed out of
+  scope for this TweetClaw run.
+- Repair priority found one maintainer-actionable request on
+  https://github.com/NipunaRanasinghe/awesome-ai-agents/pull/126. The
+  maintainer accepted the agent-callable data/action-layer framing and asked for
+  tighter one-line wording. The existing `kriptoburak/awesome-ai-agents` fork
+  points at another upstream, so the PR branch was pushed through the verified
+  fork `kriptoburak/NipunaRanasinghe-awesome-ai-agents-xquik`, commit
+  `cfb26fce3b4bfbf79704e7cdb22f1cc7b882859c`. Validation passed:
+  `git diff --check`, direct probes for the Xquik GitHub and badge URLs, and
+  post-push exact readback. Local `npx --yes awesome-lint` confirmed table
+  alignment after repair but still reported its local repository-context check;
+  the PR readback was open, mergeable, and GitGuardian passed.
+- Fresh target screening skipped `punkpeye/awesome-mcp-servers` because open,
+  closed, and merged Xquik history already exists; skipped
+  `modelcontextprotocol/servers` because open/closed OpenClaw MCP submissions
+  already cover the lane; skipped `microsoft/agent-framework` because prior
+  Xquik issue/PR history exists; skipped `kyrolabs/awesome-agents` because
+  multiple prior TweetClaw/Xquik PRs closed unmerged without maintainer request;
+  and skipped `e2b-dev/awesome-ai-agents` because an open Xquik PR already
+  exists. `GLips/Figma-Context-MCP` was active, non-archived, non-fork,
+  MIT-licensed, duplicate-clean for TweetClaw/Xquik/OpenClaw terms, and had
+  target-native MCP server registry metadata drift.
+- Opened https://github.com/GLips/Figma-Context-MCP/pull/401 from verified fork
+  `kriptoburak/Figma-Context-MCP` with parent/source `GLips/Figma-Context-MCP`,
+  branch `codex/sync-server-json-version`, commit
+  `c8697f8fa0d7c441a2adad1f212260ce705c6ffa`. The PR syncs `server.json`
+  top-level and package entry versions from stale `0.6.4` to current package
+  version `0.13.2`. Validation passed: JSON parse of `server.json`; `pnpm
+  install --frozen-lockfile`; `pnpm lint`; `pnpm type-check`; `pnpm test`;
+  and `git diff --check`. Exact PR readback: open, mergeable, ready for review,
+  maintainer edits enabled, 1 commit, 0 comments, 0 reviews, and no checks
+  configured yet.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes with
+  Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  TweetClaw GitHub repo, npm registry metadata, canonical ClawHub route,
+  OpenClawDir route, repaired awesome-ai-agents PR, and new Figma MCP PR. The
+  npmjs web UI returned HTTP 403 to curl, while registry metadata remained
+  available.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  when a popular target has stale registry metadata, prefer a small
+  target-native metadata sync with full target checks over thin placement.
+  Persisted automation prompt unchanged; prompt bytes: 11980/15360, TOML bytes:
+  12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  and `git diff --check`.
+
 2026-06-22 20:12 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
