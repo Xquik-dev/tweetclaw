@@ -490,3 +490,19 @@ install updates, and current
 `https://docs.openclaw.ai/plugins/plugin-validation-fixes` returned 404.
 The npmjs package web UI returned HTTP 403 to curl, while npm registry metadata
 checks succeeded.
+
+No npm or ClawHub publish was attempted during the 2026-06-22 20:12 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit` returned 0 vulnerabilities at 2026-06-22 20:12 UTC, and
+`npm run check-openclaw-platform-fitness` passed. ClawHub
+`https://clawhub.ai/plugins/@xquik/tweetclaw` remained HTTP 200 and still
+exposes `1.6.26`, so npm remains canonical until current scoped package
+ownership is fixed. Official OpenClaw docs returned HTTP 200 for llms,
+llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+install updates, and current
+`https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. npm registry
+metadata checks succeeded.
