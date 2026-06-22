@@ -35550,6 +35550,100 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 23:44 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-232428`, strict JSON output, research proxy, bounded
+  timeouts, 6 focused query packs, and 12 exact repos. It returned 9 candidates:
+  `github/awesome-copilot`, `openai/openai-agents-python`,
+  `appcypher/awesome-mcp-servers`, `cloudflare/agents`,
+  `VoltAgent/awesome-claude-code-subagents`,
+  `punkpeye/awesome-mcp-clients`, `hesreallyhim/awesome-claude-code`,
+  `modelcontextprotocol/registry`, and `docker/mcp-registry`.
+- PR inventory used compact and archive URLs, crawler-backed target coverage,
+  fork/target metadata, and authored open PR search. Broad authored search hit
+  GitHub's 1000-result cap. Created-day buckets among the capped set were
+  2026-06-13: 6, 2026-06-14: 149, 2026-06-15: 95, 2026-06-16: 100,
+  2026-06-17: 116, 2026-06-18: 70, 2026-06-19: 23, 2026-06-20: 128,
+  2026-06-21: 167, and 2026-06-22: 146. Exact readback covered 129 recent or
+  tracked URLs with 0 errors: 127 open, 1 merged, and 1 closed. Complete
+  all-time inventory was not claimed.
+- Repair scan found no safe immediate edits. The only current
+  `CHANGES_REQUESTED` PR was `forjd/startup-ideation-skills#1`; thread-aware
+  GraphQL found 0 unresolved review threads and later bot approval. Three
+  Vercel failures remained target-owned on `AgentDock/AgentDock#353`,
+  `flc1125/skills#120`, and `rohitg00/skillkit#139`. Five PRs had merge
+  conflicts from upstream churn and were left untouched this run:
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `jamald33n/tweetsave-mcp#2`,
+  `reall8164/wechat-openclaw-plugin#1`, and `warlockoussama/twitter-cli#1`.
+- Fresh target screening selected `github/awesome-copilot`: active,
+  non-archived, non-fork, MIT, contribution policy requires PRs against
+  `staged`, generated docs via `npm run build`, and validators
+  `npm run skill:validate` plus `npm run plugin:validate`. Duplicate checks
+  found no TweetClaw PR, issue, or content history. The repo already had an
+  Xquik `x-twitter-scraper` skill, so the target-native path was to extend that
+  skill with TweetClaw/OpenClaw routing instead of adding a separate entry.
+- Opened https://github.com/github/awesome-copilot/pull/2095 from verified fork
+  `kriptoburak/awesome-copilot`, parent `github/awesome-copilot`, branch
+  `codex/add-tweetclaw-openclaw-routing`, commit
+  `fed84dcdabcf4b36b2d43f69b668cdf15d60ca20`, base `staged`. The PR adds
+  TweetClaw OpenClaw routing to the Xquik skill, uses npm registry metadata for
+  a link-checkable package source, and fixes an unrelated
+  `aws-cloudwatch-investigation` frontmatter name that blocked target skill
+  validation. Exact PR readback: open, mergeable, ready, review required, 1
+  commit, 0 comments, 0 reviews. Target checks passed: check-line-endings,
+  check-target, codespell, label-pr, PR risk scan, skill-check,
+  validate-readme, and contributor reputation check.
+- Target validation passed: `npm ci`, `npm run build`,
+  `npm run skill:validate`, `npm run plugin:validate`, `git diff --check`,
+  `npx --yes markdown-link-check --quiet skills/x-twitter-scraper/SKILL.md`,
+  and direct URL probes for Xquik docs, Xquik OpenAPI, TweetClaw GitHub, and
+  npm registry metadata. `bash eng/fix-line-endings.sh` exited 0 but printed
+  macOS BSD sed warnings across repository files, so changed files were verified
+  with `git diff --check`. `npm ci` and `npm audit` showed 5 pre-existing
+  target advisories; dependency metadata was not changed.
+- TweetClaw hygiene: current official OpenClaw docs returned HTTP 200 for
+  llms, llms-full, `/cli/plugins`, `/cli/skills`, `/tools/plugin`,
+  `/tools/exec-approvals`, `/tools/skills`, `/tools/skill-workshop`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/building-plugins`,
+  `/plugins/architecture`, `/plugins/compatibility`,
+  `/plugins/dependency-resolution`, `/gateway/sandbox-vs-tool-policy-vs-elevated`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`,
+  `/install/updating`, and `/clawhub/plugin-validation-fixes`. Older deep
+  paths `/cli/plugin-install`, `/cli/plugin-update`, `/cli/plugin-inspect`,
+  `/plugins/permission-requests`, `/sdk/runtime`, `/skills/format`,
+  `/cli/install-overrides`, and `/debugging` now return 404, so future checks
+  should use the consolidated routes above. `npm view openclaw` returned latest
+  `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  returned `0.22.0`; published TweetClaw remained `1.6.31` while source is
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities,
+  and `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, registry steps, packaged skill files, compact audit, and
+  compact release notes with Context7 markdown skipped by hard scope. Direct
+  probes returned HTTP 200 for the TweetClaw GitHub repo, npm registry metadata,
+  canonical ClawHub route, OpenClawDir route, current OpenClaw docs, and the
+  new Awesome Copilot PR. The npmjs package page returned HTTP 403 to curl,
+  while markdown-link-check and registry metadata remained usable.
+- Blacksmith posture: workflow files use
+  `blacksmith-2vcpu-ubuntu-2404`; the latest pre-commit `Refresh Context7 Docs`
+  run `27990523662` on commit `8652b3d` completed successfully on a Blacksmith
+  runner with only the expected Context7 rate-limit warning.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  when npmjs blocks link-check probes with HTTP 403, prefer npm registry
+  metadata URLs in target skill source checks while keeping human-facing npm
+  links on owned public surfaces.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link checks
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+
 2026-06-22 22:52 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
