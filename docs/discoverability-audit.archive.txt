@@ -35550,6 +35550,82 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 20:27 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-201701`, JSON output, research proxy, bounded timeouts,
+  5 focused query packs, and 12 exact repos. It returned 8 candidates:
+  `sarveshtalele/mcp-skills-registry`, `swarmclawai/agent-skills-lint`,
+  `JNZader/md-evals`, `KEINOS/skillmd-frontmatter-validator`,
+  `Mingdao007/codex-skill-registry-public`, `readtheskill/readtheskill`,
+  `severith-ai/skill-md-validator`, and `janaka/easyrunner-skills`.
+- PR inventory exact-read 18 tracked open PRs, adding
+  `bagalobsta/skill-validator#1` to the prior tracked set. Eighteen were open
+  and 17 read as mergeable. Review-decision reads still showed
+  `REVIEW_REQUIRED` for `machina-sports/sports-skills#82` and
+  `CHANGES_REQUESTED` for `Hashi-Ai-Dev/openclaw-clawdoc#6` and
+  `weiflycc-cmd/awesome-copilot#19`. Thread-aware GraphQL returned 0 unresolved
+  review threads for the two change-request PRs checked.
+- Existing PR repair scan found no safe action. `harrypham2000/skill-audit#32`,
+  `weiflycc-cmd/awesome-copilot#19`, and
+  `aktsmm/vscode-agent-skill-ninja#9` checks passed or skipped normally.
+  `vaibhav4046/mcp-marketplace#1` still had only the target-owned Vercel team
+  authorization failure. Broad authenticated authored search hit GitHub
+  secondary rate limit HTTP 403, request ID
+  `BBA3:1D69BC:1F69ECE:1DB58B6:6A3998B3`, so broad authenticated search stopped
+  for this run while crawler output, exact repo reads, and clone checks
+  continued.
+- Fresh screening selected `sarveshtalele/mcp-skills-registry`: active,
+  non-archived, non-fork, MIT license in repo metadata, no explicit blocking
+  maintainer policy, and viewer had read-only upstream permissions. Duplicate
+  checks found prior merged Xquik-only PR
+  `sarveshtalele/mcp-skills-registry#10`, so the new contribution avoided
+  TweetClaw placement or marketing and stayed target-native. Prior
+  `severith-ai/skill-md-validator` history blocked a repeat PR there.
+- Opened https://github.com/sarveshtalele/mcp-skills-registry/pull/11 from
+  verified fork `kriptoburak/sarveshtalele-mcp-skills-registry-xquik` with
+  parent/source `sarveshtalele/mcp-skills-registry`, branch
+  `codex/reject-unsafe-upload-members`, commit
+  `d98ec5c391b8b9908a7c01b8a3044924001d1e0f`. The PR rejects traversal or
+  absolute ZIP member names and symlink entries before skill or agent upload
+  processing, closing a gap between the documented upload safety contract and
+  accepted member metadata. Exact PR readback: open, mergeable, ready for
+  review, maintainer edits enabled, 1 commit, 0 comments, 0 reviews. Target CI
+  passed for Python 3.10, 3.11, and 3.12.
+- Target validation passed: `.venv/bin/python -m pytest` with 68 tests,
+  `.venv/bin/ruff check`, `.venv/bin/black --check .`, `git diff --check`, and
+  changed-file review. The local `.venv` stayed ignored and untracked.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` and `npm run check:all` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes with
+  Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  canonical ClawHub route, OpenClawDir route, TweetClaw GitHub repo, npm
+  registry metadata, and the new PR. The npmjs package web UI returned HTTP 403
+  to curl while registry metadata succeeded. Noncanonical
+  `clawhub.openclaw.ai/plugin/xquik-tweetclaw` failed DNS resolution and
+  `openclaw.ai/plugins/xquik-tweetclaw` returned 404.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  prior Xquik-only history in a target blocks thin TweetClaw placement but does
+  not block a distinct target-native maintenance PR when duplicate checks are
+  clean for the actual change.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+
 2026-06-22 20:12 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
