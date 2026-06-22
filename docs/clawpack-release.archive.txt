@@ -100,3 +100,14 @@ After publishing, inspect ClawHub and confirm:
 `@xquik/tweetclaw@1.6.30` was published to npm while correcting the stale TweetClaw ClawHub links reported from the SwarmClaw docs review. ClawPack dry-run succeeded with sha256 `3e8fd0b3ba52d7c6c269302a5e6394ae8b2fd2c8231d39`, npm integrity `sha512-2Ek/3b4fxvMgnq11KJKHgEI3l9UsNiubyJWeTbj+6S2wjLdAnka+iz5kCfYXb+yPnmJtUYUuaFxGtMU3bf74Sw==`, and npm shasum `00a0370998ea143dc1da092160d3406c88d91315`, but ClawHub publish failed because the existing package owner record and `@xquik` package scope disagree. npm version `1.6.30` is now deprecated with the message that `1.6.31` supersedes it because install metadata uses npm while ClawHub owner migration is blocked.
 
 `@xquik/tweetclaw@1.6.31` superseded `1.6.30` the same day. npm shasum is `c878edab8c3cd1344aa81757ac450385377bb43f`; npm integrity is `sha512-4Nr536Z+8yZQYDdp9avKLC5K8TEcN0yB5dskYf0y87prZdxwmyTY6iVpFceHgh9/iEDt5ncYdCT75B9o6rDo9A==`; source commit is `9a645f87b01f4c8440429394c83a2ca4e09fcb9a`. Lightweight tag `v1.6.31` points at that commit, and GitHub release https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.31 is current. The release removes `openclaw.install.clawhubSpec`, sets `defaultChoice` to `npm`, pins `npmSpec` to `@xquik/tweetclaw@1.6.31`, and updates the npm README to say the ClawHub plugin page is useful for browsing while npm is the canonical install source.
+
+## 2026-06-22 Maintenance Evidence
+
+No npm or ClawHub publish was attempted. npm latest remains
+`@xquik/tweetclaw@1.6.31`, source remains `1.6.32`, and local npm auth is still
+not trusted for publishing. OpenClaw npm tags remained latest `2026.6.9`, beta
+`2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate` returned 0 vulnerabilities at 2026-06-22
+01:18 UTC. ClawHub `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP
+200 at 2026-06-22 01:21 UTC but still must stay non-canonical until current
+scoped package ownership is fixed.

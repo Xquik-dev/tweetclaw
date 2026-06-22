@@ -31729,6 +31729,98 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 01:24 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-011149` covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills directories,
+  Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, validators, social/Twitter automation, plugin, package
+  tooling, and ClawHub lanes. The command used bounded request timeout 12000 ms,
+  proxy warmup timeout 45000 ms, limit 260, search pages 2, per-query limit 10,
+  concurrency 12, and research proxy. The output parsed as JSON and returned 0
+  opportunities, 0 repositories, 0 issues, and 0 pull requests.
+- PR inventory method: compact audit, archive URLs, crawler output, fork
+  metadata, target repo open-PR lists, and exact known-PR readbacks. Broad
+  fallback search was kept narrow because the previous run hit GitHub secondary
+  search limits. Exact readback covered 16 open PRs:
+  `rasimme/FlowBoard#5`, `justserpapi/justserpapi-openclaw-websearch#1`,
+  `tmchow/agent-skills#55`, `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `vaibhav4046/mcp-marketplace#1`, `kh0pper/crow#99`, `jawond/bird#1`,
+  `tesserix/agentic-registry#38`, `Simplex-june29108/saas-api-skills#1`,
+  `slayerlux/n8n-llm-workflows#1`, `choucrifahed/agent-plugins#20`,
+  `Mann1988/awesome-claude-skills#1`,
+  `xbim08/awesome-claude-code-plugins#1`,
+  `mahaishu/n8n-CyberSecurity-Workflows#2`, `Toyoclara233/registry#1`, and
+  `AlejandroVelezGuillermo/registry#1`.
+- PR repair priority: no actionable maintainer comments, unresolved review
+  repairs, CI failures owned by our branches, conflicts, DCO/CLA blockers,
+  generated-file drift, or valid bot findings were found. Remaining blockers
+  were target-owned Vercel authorization, target branch protection, stale
+  review state, or non-actionable prior comments.
+- Fresh discovery screened `liner-engineering/openclaw-liner-search`. Target is
+  MIT licensed, active, not a fork, OpenClaw-native, and duplicate-clean for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, and variants across compact audit,
+  archive, target content, target PRs, and target issues. Existing OpenClaw
+  package metadata uses `@liner/openclaw-liner-search`; the repository
+  description has a separate `@lienr` typo that this file-only PR did not touch.
+- The target pre-check found a stale provider docs URL
+  `https://docs.openclaw.ai/tools/liner-search` returning 404 and npm audit
+  findings from older OpenClaw and Vitest development dependencies. Official
+  OpenClaw docs were rechecked before the change:
+  `https://docs.openclaw.ai/llms.txt` returned 94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;
+  `https://docs.openclaw.ai/llms-full.txt` returned 6666783 bytes with sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`.
+  CLI plugins, ClawHub publishing and skill format, plugin manifest, permission
+  requests, tool plugins, SDK runtime, install overrides, testing updates,
+  debugging, and `https://docs.openclaw.ai/tools/plugin` returned HTTP 200.
+- Opened https://github.com/liner-engineering/openclaw-liner-search/pull/1 from
+  verified fork `kriptoburak/openclaw-liner-search` parented to
+  `liner-engineering/openclaw-liner-search`, branch
+  `codex/refresh-openclaw-dev-deps`, commit
+  `1955db67adf4e744386c703fc37d025d1b90e84a`. The patch updates OpenClaw build
+  and min gateway metadata to `2026.6.9`, bumps the OpenClaw dev dependency to
+  `^2026.6.9`, bumps Vitest to `^4.1.9`, refreshes `package-lock.json`,
+  replaces the stale docs URL with `https://docs.openclaw.ai/tools/plugin`, and
+  adds a portable `OpenClawPluginDefinition` annotation after the upgraded SDK
+  exposed a TS2742 inferred-type portability error.
+- Target validation passed `npm test`, `npm run typecheck`, `npm run build`,
+  `npm audit --audit-level=moderate`, README markdown link check, and
+  `git diff --check`. Target audit after the dependency refresh reported 0
+  vulnerabilities. PR readback: open, ready, `MERGEABLE`, `BLOCKED` by target
+  protection, no comments, no reviews, and no checks yet.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, OpenClaw npm tags remain latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`, `clawhub` remains `0.22.0`,
+  `npm audit --audit-level=moderate --json` returned 0 vulnerabilities,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npm run check-skill-frontmatter`, and `npm run check-versions` passed, and
+  selected public Markdown links passed. GitHub, release, ClawHub, OpenClawDir,
+  skills.sh, OpenClaw plugin docs, and new Liner PR routes returned HTTP 200 or
+  expected redirect.
+- TweetClaw SkillSpector v2.2.3 no-LLM scan at 2026-06-22 01:22 UTC reported
+  score `0/100`, LOW severity, SAFE recommendation, no issues, and no
+  executable scripts.
+- Final TweetClaw validation passed `npm run check:all`: typecheck, lint, CPD,
+  Knip, suppression check, dash check, memory size, skill frontmatter, version
+  parity, build, OpenClaw platform fitness, package artifact check, and coverage
+  with 11 test files, 168 tests, and 100% coverage.
+- Prompt and memory: compact Markdown memory measured after compaction before
+  commit. Persisted automation TOML measured 12314 bytes. No prompt edit was
+  needed. Prompt self-improvement: target-native maintenance PRs against
+  OpenClaw ecosystem plugins are valid outreach when they repair real current
+  platform drift such as broken docs URLs, vulnerable dev dependencies, or SDK
+  declaration portability issues.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
+  untouched as unrelated state.
+
 ## 2026-06-22 01:02 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
