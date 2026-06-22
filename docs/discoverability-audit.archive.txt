@@ -35550,6 +35550,87 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 22:10 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-221057`, JSON output, research proxy, bounded request and
+  proxy warmup timeouts, 6 focused query packs, and 10 exact repositories. It
+  returned 9 candidates: `punkpeye/awesome-mcp-servers`,
+  `github/awesome-copilot`, `openai/openai-agents-python`,
+  `ComposioHQ/awesome-codex-skills`, `appcypher/awesome-mcp-servers`,
+  `cloudflare/agents`, `punkpeye/awesome-mcp-clients`,
+  `modelcontextprotocol/registry`, and `docker/mcp-registry`.
+- Broad authored open PR search returned 1000 results and was capped. Updated
+  date partitions returned: 2026-06-22: 141, 2026-06-21: 167, 2026-06-20: 128,
+  2026-06-19: 23, 2026-06-18: 70, 2026-06-17: 116, 2026-06-16: 100,
+  2026-06-15: 95, 2026-06-14: 149, 2026-06-13: 147, and before 2026-06-13:
+  1000 capped. Exact-read covered 70 recent or tracked PR URLs with 0 errors.
+  Complete all-time in-scope PR inventory was not claimed because of the capped
+  broad and older-date buckets.
+- Repair scan found no safe action. `modelcontextprotocol/registry#1387` was
+  open, mergeable, review-required, with both target CI jobs passing and no
+  comments or reviews. `NipunaRanasinghe/awesome-ai-agents#126` already had
+  maintainer wording feedback addressed by commit `cfb26fc`. `Drhir2460`
+  `agentskills-mcp#1`, `PIsberg/skill3#1`, and
+  `Simplex-june29108/saas-api-skills#1` were mergeable with no comments,
+  reviews, or checks. `Shuvo-code-dev/Bulz#14` still had only target-owned
+  Vercel team authorization. Hermes PR failures were out of TweetClaw scope.
+- Fresh target screening selected `punkpeye/awesome-mcp-clients`: active,
+  non-fork, MIT license, default branch `main`, no duplicate TweetClaw, Xquik,
+  or x-twitter-scraper PR/issue/content hits. Contribution guidance allows
+  README additions and corrections. Duplicate-blocked or policy-blocked lanes
+  included `punkpeye/awesome-mcp-servers`, `appcypher/awesome-mcp-servers`,
+  `github/awesome-copilot`, `ComposioHQ/awesome-codex-skills`,
+  `docker/mcp-registry`, `modelcontextprotocol/registry`, and
+  `cloudflare/agents`.
+- Target local-link validation found 4 README local dead links before the fix:
+  a badge-derived H1 self-link, uppercase `AstrBot` and `LangBot` anchors, and
+  a Tiles Notebook screenshot path pointing at a missing file. Opened
+  https://github.com/punkpeye/awesome-mcp-clients/pull/226 from verified fork
+  `kriptoburak/awesome-mcp-clients`, parent/source
+  `punkpeye/awesome-mcp-clients`, branch `codex/fix-readme-local-links`, commit
+  `97d83ecf0550575ad55072413209f6ca46d9896a`. The PR replaces the fragile H1
+  self-link with plain TOC text, fixes the two anchors, and points the
+  screenshot at `screenshots/tiles.run/tiles-notebook.png`. Exact readback:
+  open, ready, mergeable, 1 commit, 0 comments, 0 reviews, and no checks
+  reported.
+- Target validation passed: focused `markdown-link-check` on README with
+  external URLs ignored, `git diff --check`, and changed-line public-scope scan.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Blacksmith validation: `actionlint` passed for
+  `.github/workflows/context7-refresh.yml` and `.github/workflows/publish.yml`
+  with `.github/actionlint.yaml` allowing `blacksmith-2vcpu-ubuntu-2404`.
+  GitHub run readback showed `Refresh Context7 Docs` succeeded on commit
+  `6cd7e96` from 2026-06-22T22:05:50Z to 22:06:07Z, confirming the repo-enabled
+  Blacksmith runner lane worked.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes
+  with Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  TweetClaw GitHub repo, npm registry metadata, canonical ClawHub route,
+  OpenClawDir route, `modelcontextprotocol/registry#1387`, and
+  `punkpeye/awesome-mcp-clients#226`.
+- Prompt self-improvement: no prompt file was edited. Durable lessons recorded:
+  badge-bearing heading anchors can be checker-fragile, so remove fragile
+  self-links or use plain TOC text instead of guessing; custom Blacksmith runner
+  labels require local `actionlint` label configuration. Persisted automation
+  prompt unchanged; prompt bytes: 12180/15360, TOML bytes: 12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  Blacksmith `actionlint`, and `git diff --check`.
+
 2026-06-22 21:40 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
