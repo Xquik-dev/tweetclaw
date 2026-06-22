@@ -31729,6 +31729,125 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 05:47 UTC Heartbeat
+
+- Runtime and starting state: this Codex Desktop heartbeat did not expose a
+  GPT-5.5 or extra-high reasoning selector, so the limitation was recorded and
+  the run continued under the available runtime. TweetClaw `master` started
+  clean and in sync with origin except for the pre-existing untracked file `0`.
+  Xquik `master` still had unrelated `docs/feature-roadmap.md` changes that
+  were not touched.
+- Crawler-first discovery: strict JSON crawler session
+  `tweetclaw-20260622-053047` ran from `/Users/burak/Developer/xquik` with
+  research proxy, bounded request and proxy warmup timeouts, 8 focused query
+  packs, limit 140, search pages 2, per-query limit 8, and concurrency 12. It
+  covered authored PRs, TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md,
+  `.agents/skills`, skills dirs, Claude, Codex, OpenClaw/MCP/agent/social and
+  Twitter-X skills, awesome lists, registries, forks, validators, tooling, and
+  social automation lanes. Output parsed as JSON with 1 opportunity:
+  `elbis330/social-media-scraper-skill`, duplicate-blocked by existing open PR
+  #2. Repo-mode crawler for that target returned 0 opportunities after socket
+  closures; exact GitHub fallback read PR #2 successfully.
+- PR inventory method: compact audit, archives, crawler output, repo-mode
+  crawler, GitHub issue lists, exact repo reads, fork metadata, current authored
+  PR search, audit URL extraction, and lane count partitions were used. GitHub
+  issue lists for `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+  GraphQL counted 2108 open authored PRs globally. Exact readbacks covered the
+  69 current authored PRs updated on 2026-06-22 with 0 read errors: 65
+  mergeable, 4 unknown; 51 clean, 11 unstable, 3 blocked, 4 unknown; 10 with
+  comments or reviews; 0 failing checks; 0 conflicts. `flc1125/skills#120`
+  still has target-owned Vercel authorization and the Gemini timestamp
+  suggestion is already fixed on current head. Other reviewed comments were old
+  owner or bot notes already addressed, target-owned, or non-actionable.
+- Inventory blocker: lane GraphQL counts were recorded for TweetClaw, OpenClaw,
+  ClawHub, MCP, skill, skills, Xquik, x-twitter-scraper, Twitter, social,
+  agent, catalog, validator, package, and plugin. Broad lane list searches then
+  hit GitHub secondary HTTP 403, so broad authenticated search stopped as
+  required. This run must not claim all in-scope open PRs were fully checked;
+  exact reads continued only for current and target-specific repositories.
+- Fresh screening: `intertwine/dspy-agent-skills` was held as too DSPy-specific;
+  `swarmclawai/agent-skills-lint`, `0xelitesystem/claude-skills-validator`,
+  `zhaoxinyi02/ClawPanel-Plugins`, `kouko/monkey-skills`,
+  `atilaahmettaner/skills-plane`, `antstudiocz/ant-marketplace`,
+  `epologee/laicluse-agent-fieldkit`, and `nextlevelbuilder/skillx` were
+  duplicate-blocked by existing TweetClaw, Xquik, or Hermes PR history.
+  `leinatorX/codex-skills-marketplace` was held as a mirror/source-sync risk.
+  `existential-birds/beagle` was Apache-2.0 and duplicate-clean but held because
+  a social plugin entry would be lower fit than its code-review, docs, testing,
+  architecture, and git workflow marketplace scope. Larger Codex, Claude,
+  OpenClaw, and agent-skill searches found many prior-history or generated-list
+  blockers, including `VoltAgent/awesome-openclaw-skills`,
+  `ComposioHQ/awesome-codex-skills`, `ComposioHQ/awesome-claude-skills`,
+  `open-agent-craft/awesome-agent-skills`, `scienceaix/agentskills`,
+  `futantan/agent-skills.md`, `LeorickCoder/awesome-codex-skills`,
+  `Mann1988/awesome-claude-skills`, `ranbot-ai/awesome-skills`,
+  `ishandutta2007/Awesome-Claude-Skills`, and `20perline/skills`.
+- Selected target: `onlyking1984/codex-skills-marketplace` was selected after
+  reading README, CONTRIBUTING, marketplace JSON, existing plugin manifests and
+  skills, repository metadata, target content, and all target PRs and issues.
+  It is non-archived, non-fork, issue-enabled, PR-enabled, duplicate-clean for
+  TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, and variants. Missing license
+  metadata did not block the PR because README says MIT and CONTRIBUTING invites
+  community plugins. The target was a native fit because it has a repo-local
+  Codex plugin marketplace with `.codex-plugin/plugin.json`,
+  `.agents/plugins/marketplace.json`, and `skills/SKILL.md` patterns.
+- External PR: opened
+  https://github.com/onlyking1984/codex-skills-marketplace/pull/1 from verified
+  fork `kriptoburak/codex-skills-marketplace` parented to
+  `onlyking1984/codex-skills-marketplace`, branch
+  `codex/add-tweetclaw-plugin`, commit
+  `36e8dc0915a24c5012b2d17e0ee6d9cdffc66daa`. The PR adds a `tweetclaw` plugin
+  manifest and focused Codex skill for OpenClaw X/Twitter workflows, appends the
+  marketplace entry, adds the README row, and fixes the README install examples
+  to point at the current repository instead of the source repo it was cloned
+  from. Readback showed open, ready, `MERGEABLE`, `CLEAN`, 4 changed files, 111
+  additions, 8 deletions, no comments, no reviews, and no checks.
+- Target validation and public hygiene passed: local plugin-creator manifest
+  validation, JSON and marketplace sanity checks, TweetClaw skill frontmatter
+  check, `npx --yes markdown-link-check README.md
+  plugins/tweetclaw/skills/SKILL.md --quiet`, `git diff --check`, direct URL
+  checks for TweetClaw GitHub, npm registry metadata, ClawHub, and the target
+  repo, added-diff secret and private-detail scan, and PR diff/readback checks.
+  No NHS badge was added because the target README has no useful badge area for
+  a single plugin.
+- Official OpenClaw and TweetClaw hygiene: OpenClaw docs returned HTTP 200 for
+  llms, CLI plugins, plugin manifest, permission requests, tool plugins, SDK
+  runtime, ClawHub publishing, skill format, and debugging. `llms.txt` was
+  94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`.
+  OpenClaw npm tags remained latest `2026.6.9`, beta `2026.6.10-beta.1`, alpha
+  `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`. TweetClaw npm latest
+  remained `1.6.31`, source remained `1.6.32`, and ClawHub route returned HTTP
+  200 while still exposing `1.6.26`, so npm remains canonical until owner-scope
+  publishing is fixed.
+- TweetClaw validation before audit commit: `npm audit --audit-level=moderate
+  --json` returned 0 vulnerabilities; selected public Markdown links passed for
+  README, OpenClaw setup docs, agent workflows docs, packaged skill, compact
+  audit, and compact release memory; `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-skill-frontmatter`, and
+  `npm run check-versions` passed. SkillSpector v2.2.3 no-LLM scan at
+  2026-06-22 05:47 UTC returned score `0/100`, LOW, SAFE, no findings, and no
+  executable scripts; `skills/tweetclaw/skillspector-report.md` records the new
+  timestamp. Final `npm run check:all` passed after the audit edits.
+- Prompt and memory: compact Markdown memory measured 15007 bytes before final
+  validation, below the 15 KiB cap. Persisted automation TOML measured 12314
+  bytes. No saved prompt edit was useful because the prompt already preserves
+  model/effort wording, quiet autonomy, crawler-first discovery, mandatory PR
+  submission, aggressive skill-repo coverage, fresh discovery, complete PR
+  inventory and repair priority, duplicate and fork rules, official OpenClaw
+  checks, link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap, and
+  self-improvement. Durable lesson: when `gh search prs` receives a query as one
+  quoted shell argument, `gh` can turn qualifiers into a quoted author value;
+  prefer explicit unquoted qualifier arguments or GraphQL counts, and stop broad
+  list search immediately after secondary 403.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`,
+  `docs/clawpack-release.archive.txt`, and
+  `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
+  untouched as unrelated state.
+
 ## 2026-06-22 04:57 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
