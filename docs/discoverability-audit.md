@@ -190,19 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 16:25 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-161659` covered required PR and skill-repo lanes, found 4
-  already-covered repos, and exact-read 6 known PRs. Lane PR search found 988
-  unique authored URLs, but 13 lanes were capped, so broad exact inventory is
-  not claimed. No safe repair was available.
-- Opened https://github.com/feiyueyun/skill-interop-tools/pull/2 from verified
-  fork `kriptoburak/skill-interop-tools`, branch `codex/fix-doc-links`, commit
-  `2e104a2`. The target-native docs fix replaces stale Agent Skills, A2A, and
-  ClawHub links plus a missing CONTRIBUTING link. Validation: target link check,
-  `go test ./...`, and `git diff --check`.
-- TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub and
-  OpenClawDir routes, npm audit, package metadata, Markdown links, selected
-  direct URLs, OpenClaw fitness, memory cap, and `check:all`.
+- 2026-06-22 16:27 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-162724` covered required PR and skill-repo lanes, found 5
+  already-covered repos, and exact-read 7 known PRs plus the new PR. Lane PR
+  searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper, and skill each hit
+  the 100-result cap, so broad exact inventory is not claimed. No safe repair
+  was available.
+- Opened https://github.com/machina-sports/sports-skills/pull/82 from verified
+  fork `kriptoburak/sports-skills`, branch `codex/use-https-docs-url`, commit
+  `f6e3504`. The target-native fix switches Machina docs handoff metadata from
+  redirecting HTTP to HTTPS and updates focused assertions. Validation: focused
+  pytest passed 18 tests, target `git diff --check`, direct HTTPS probe, and
+  added-line scans.
+- TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub route,
+  canonical OpenClawDir route, npm audit, package metadata, Markdown links,
+  selected direct URLs, OpenClaw fitness, and memory cap. npmjs web UI returned
+  a Cloudflare 403, but npm registry metadata returned HTTP 200.
 
 ## Reporting Checklist
 

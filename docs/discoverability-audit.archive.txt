@@ -34757,3 +34757,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   link repair unless maintainers ask for follow-up. For skill-format converter
   targets, check canonical standards links directly because standard ownership
   and redirects are changing quickly.
+
+2026-06-22 16:27 UTC heartbeat - sports-skills HTTPS docs URL PR
+
+- Runtime note: model and reasoning-effort selector unavailable; continued under
+  the available Codex runtime. Persisted automation prompt was not edited; prior
+  measured prompt size remained 12314 bytes.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded timeouts, 6 focused queries covering SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, awesome lists, registries, forks, generated catalogs, validators,
+  package tooling, and exact repo probes for `skill-tools/skill-tools`,
+  `vaibhav4046/mcp-marketplace`, `motiful/skill-forge`,
+  `pradeepmouli/skillit`, and `feiyueyun/skill-interop-tools`.
+- Crawler result: 5 opportunities, all already covered by open PRs:
+  `pradeepmouli/skillit`, `skill-tools/skill-tools`,
+  `feiyueyun/skill-interop-tools`, `motiful/skill-forge`, and
+  `vaibhav4046/mcp-marketplace`.
+- PR inventory and repair gate: exact readbacks covered
+  `feiyueyun/skill-interop-tools#2`, `pradeepmouli/skillit#84`,
+  `skill-tools/skill-tools#15`, `vaibhav4046/mcp-marketplace#1`,
+  `motiful/skill-forge#1`, `Hashi-Ai-Dev/openclaw-clawdoc#6`, and
+  `weiflycc-cmd/awesome-copilot#19`. No current-head maintainer request, CI
+  failure, conflict, DCO, CLA, generated-file drift, or valid bot finding was
+  safely repairable. Remaining blockers are target-owned authorization, stale
+  already-addressed review state, no-check or branch-protection states, or a
+  target bot asking for an unavailable base branch.
+- Lane searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper, and skill
+  each returned the first 100 results, so those partitions are capped and broad
+  exact inventory is not claimed.
+- Fresh screening: `v1k22/skillhub-registry` was fresh in compact/archive but
+  target PR search found existing open Xquik and Hermes PRs from `kriptoburak`,
+  so it is duplicate-blocked. `FrancyJGLisboa/agent-skill-creator`,
+  `mxyhi/ok-skills`, `davepoon/buildwithclaude`, `agent-sh/agnix`,
+  `TerminalSkills/skills`, `tmchow/agent-skills`, `soimy/openclaw-channel-
+  dingtalk`, and `win4r/openclaw-a2a-gateway` remained blocked by prior history
+  or maintainer policy. `machina-sports/sports-skills` was MIT licensed,
+  non-fork, non-archived, active, issue-enabled, and duplicate-clean for
+  TweetClaw/Xquik terms across compact audit, archive, target content, target
+  PRs, and target issues.
+- Target-native issue found in `machina-sports/sports-skills`: premium handoff
+  metadata used `http://docs.machina.gg/`, which redirects to
+  `https://docs.machina.gg/`. The HTTPS route returned 200 after redirect to the
+  docs introduction page.
+- External PR opened: https://github.com/machina-sports/sports-skills/pull/82
+  from correctly parented fork `kriptoburak/sports-skills`, branch
+  `codex/use-https-docs-url`, commit
+  `f6e350490fcdeaceb4a60592cb3b6cc5f771a98f`. The PR changes only
+  `src/sports_skills/_premium.py` and `tests/test_premium.py` and does not
+  mention TweetClaw.
+- Target validation for sports-skills: focused premium pytest passed 18 tests
+  using the local source tree with feedparser and pytest only. Target
+  `git diff --check`, direct HTTPS probe, and added-line secret and dash scans
+  passed. Target README link check found pre-existing environment or rate-limit
+  blockers for Discord and Kalshi, with no contribution-introduced broken link.
+  The target dev-extra resolver is pre-existing blocked because the project
+  supports Python 3.9 while `nflreadpy` requires Python 3.10 or newer.
+- Final PR readback for sports-skills PR 82 showed open, ready, mergeable,
+  blocked by branch protection or checks, no comments, no reviews, and no status
+  checks reported.
+- Official OpenClaw recheck: llms exports, CLI plugin docs, plugin tools,
+  manage plugins, building plugins, manifest, plugin permission requests, tool
+  plugins, Codex harness runtime, SDK runtime, install overrides, ClawHub
+  publishing, ClawHub skill format, plugin validation fixes, creating skills,
+  and debugging returned HTTP 200.
+- Package and public hygiene checks: `npm view openclaw` returned latest
+  `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published `1.6.31` while local source remains `1.6.32`; `npm audit` found 0
+  vulnerabilities; `npm run check-openclaw-platform-fitness` passed; TweetClaw
+  Markdown link checks passed; canonical OpenClawDir route
+  `openclawdir.com/plugins/tweetclaw-m2h8cr` returned 200; stale
+  OpenClawDir package probe returned 404 and is not a source-link regression;
+  npmjs web UI returned a Cloudflare 403 while registry metadata returned 200.
+- Prompt self-improvement: no automation prompt edit was useful. Durable lesson:
+  `v1k22/skillhub-registry` is duplicate-blocked by existing Xquik and Hermes
+  PRs. For adjacent skill repos where TweetClaw placement is not target-native,
+  prefer small verified public hygiene fixes and record the non-placement reason
+  instead of forcing a thin listing.
