@@ -35779,6 +35779,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
   and `git diff --check`.
 
+2026-06-22 21:19 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-211957`, JSON output, research proxy, bounded timeouts,
+  6 focused query packs, and 10 exact repos. It returned 9 candidates:
+  `punkpeye/awesome-mcp-servers`, `modelcontextprotocol/servers`,
+  `GLips/Figma-Context-MCP`, `microsoft/agent-framework`,
+  `kyrolabs/awesome-agents`, `stacklok/toolhive`,
+  `NipunaRanasinghe/awesome-ai-agents`, `e2b-dev/awesome-ai-agents`, and
+  `docker/mcp-registry`.
+- PR inventory used compact and archive URLs, crawler coverage, authored open PR
+  search, target repo reads, and exact PR readbacks. Broad authored search
+  returned 1000 results and hit the GitHub cap. Created-date partitions found
+  138 PRs for 2026-06-22, 167 for 2026-06-21, 128 for 2026-06-20, 23 for
+  2026-06-19, 70 for 2026-06-18, 116 for 2026-06-17, 100 for 2026-06-16, 95
+  for 2026-06-15, 149 for 2026-06-14, 147 for 2026-06-13, and 1000 for
+  `<2026-06-13`, which remained capped. Exact-read scope was the 60 most recent
+  authored PRs plus handled target PRs, with 0 read failures, so complete
+  all-time inventory was not claimed.
+- Repair priority found no new branch-actionable maintainer request, review
+  comment, CI failure, conflict, DCO, CLA, generated-file drift, or valid bot
+  finding that blocked outreach. `NipunaRanasinghe/awesome-ai-agents#126` was
+  already repaired by the prior run; `devonjones/devon-claude-skills#35` had a
+  bot review on the initial commit, already addressed by later commit
+  `fce10db`. `Shuvo-code-dev/Bulz#14` remained target-owned Vercel
+  authorization. Hermes PR failures in `Xquik-dev/hermes-tweet#490` through
+  `#495` are owned by the Hermes automation and stayed out of scope.
+- Fresh screening skipped `punkpeye/awesome-mcp-servers`,
+  `modelcontextprotocol/servers`, `GLips/Figma-Context-MCP`,
+  `microsoft/agent-framework`, `kyrolabs/awesome-agents`,
+  `NipunaRanasinghe/awesome-ai-agents`, `e2b-dev/awesome-ai-agents`, and
+  `docker/mcp-registry` because audit history or open PRs already cover their
+  TweetClaw, Xquik, MCP, or list lanes. `stacklok/toolhive` was active,
+  non-archived, non-fork, Apache-2.0 licensed, and duplicate-clean across
+  compact memory, archive memory, target content, open and closed PRs, and open
+  and closed issues for TweetClaw, Xquik, x-twitter-scraper, OpenClaw, and
+  ClawHub terms.
+- Selected target: `stacklok/toolhive` had a target-owned CONTRIBUTING defect:
+  the security vulnerability process link pointed at `SECURITY.MD`, which
+  returned HTTP 404 on both GitHub and raw.githubusercontent.com, while the real
+  `SECURITY.md` path returned HTTP 200. The same pull request process section
+  rendered the DCO requirement as `- -All commits` because of an extra hyphen.
+  ToolHive's policy asks contributors to create an issue before PRs, so
+  https://github.com/stacklok/toolhive/issues/5586 was opened after duplicate
+  issue and PR searches returned no matches.
+- Opened https://github.com/stacklok/toolhive/pull/5587 from verified fork
+  `kriptoburak/toolhive` with parent/source `stacklok/toolhive`, branch
+  `codex/fix-contributing-guide-link`, signed-off commit
+  `923eab3400600ae0d7ba82e1b15d8eebe2bec75c`. The PR fixes only
+  `CONTRIBUTING.md`, references issue #5586, and changes 2 insertions and 2
+  deletions. Validation passed: `git diff --check`, changed-line public-scope
+  scan, GitHub link probe for `SECURITY.md` returning HTTP 200, and raw
+  `SECURITY.md` probe returning HTTP 200. Exact PR readback: open, mergeable,
+  review-required, ready, 0 comments, 0 reviews, and no checks configured yet.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes with
+  Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  TweetClaw GitHub repo, npm registry metadata, canonical ClawHub route,
+  OpenClawDir route, Nipuna PR, Figma MCP PR, ToolHive issue, and ToolHive PR.
+  The npmjs web UI returned HTTP 403 to curl, while registry metadata remained
+  available.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  when a target's contribution policy asks for an issue first, create a narrow
+  issue before the PR and reference it from the PR body; this satisfies target
+  policy without using issue-only work as the run's outreach result. Persisted
+  automation prompt unchanged; prompt bytes: 11980/15360, TOML bytes: 12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit`, and `git diff --check`.
+
 2026-06-22 20:12 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
