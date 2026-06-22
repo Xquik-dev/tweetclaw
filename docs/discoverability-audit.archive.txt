@@ -35550,6 +35550,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 21:40 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-214058`, JSON output, research proxy, bounded request and
+  proxy warmup timeouts, 6 focused query packs, and exact-repo coverage for
+  ToolHive, MCP registries, skill catalogs, OpenClaw-related targets, Cloudflare
+  Agents, OpenAI Agents Python, and GitHub Copilot skill lanes. Strict JSON
+  parsing succeeded. It returned 7 candidates: `github/awesome-copilot`,
+  `openai/openai-agents-python`, `ComposioHQ/awesome-codex-skills`,
+  `cloudflare/agents`, `stacklok/toolhive`, `modelcontextprotocol/registry`,
+  and `docker/mcp-registry`.
+- PR inventory used compact and archive URLs, crawler target repos, a capped
+  authenticated authored-open search, dated partitions, and exact `gh pr view`
+  readbacks. The broad authored search returned 1000 open PRs and remains capped.
+  Partition counts were: 2026-06-22 139, 2026-06-21 167, 2026-06-20 128,
+  2026-06-19 23, 2026-06-18 70, 2026-06-17 116, 2026-06-16 100, 2026-06-15 95,
+  2026-06-14 149, 2026-06-13 147, and `<2026-06-13` 1000 capped. Complete
+  all-time PR inventory was not claimed.
+- Exact-read 70 recent or audit-tracked PRs with 0 read failures. For each read,
+  checked state, mergeability, base/head, commits, comments, reviews, checks,
+  files, conflicts through mergeability, and maintainer or bot findings. No safe
+  repair was required. Prior Nipuna, devonjones, rune-hub, forjd, jayteealao,
+  and similar comments were already addressed or approved; Shuvo Vercel auth and
+  Hermes failures remain target-owned or out of scope for this TweetClaw run.
+- Candidate screening: `github/awesome-copilot`, `stacklok/toolhive`,
+  `docker/mcp-registry`, and `ComposioHQ/awesome-codex-skills` were blocked by
+  existing TweetClaw/Xquik history or adjacent open PR history. `cloudflare/agents`
+  had a clean, useful `docs/agent-class.md` anchor fix, and focused link checks
+  passed in the temp clone, but its repo instructions require the change to be
+  ported to `cloudflare/cloudflare-docs`; the companion docs skill says never
+  commit or push automatically, so that lane was policy-blocked for the mandatory
+  no-question heartbeat PR.
+- Fresh eligible target selected: `modelcontextprotocol/registry`, active,
+  non-fork, license transition noted in `LICENSE`, no duplicate TweetClaw/Xquik
+  PR or issue hits, and contribution docs permit code/docs contributions while
+  warning not to submit registry entries to `data/seed.json`. Target content had
+  no TweetClaw/Xquik/OpenClaw duplicate content. Existing `kriptoburak/registry`
+  was a fork of `SkillsCatalog/registry`, so a distinct verified fork was needed.
+- Opened https://github.com/modelcontextprotocol/registry/pull/1387 from verified
+  fork `kriptoburak/registry-2`, parent `modelcontextprotocol/registry`, branch
+  `codex/fix-reference-doc-links`, commit
+  `c37f65542378bd8124c60958e43442f65f9e724a`. The PR fixes broken relative docs
+  links in `docs/contributing/add-package-registry.md` and the reference README
+  FAQ link. Exact readback: open, mergeable, ready for review, 1 commit, 2 files,
+  no comments or reviews; both `Build, Lint, and Validate` and `Tests` passed
+  at readback.
+- Target validation passed: focused `markdown-link-check` on changed docs with
+  only Discord and localhost examples ignored, `git diff --check`, and added-line
+  scan for secrets, private keys, restricted provider/source names, internal-cost
+  wording, em dash, and double-hyphen. `make check` was not run because the change
+  is docs-only and target `make check` starts Docker/PostgreSQL integration tests;
+  CI is covering target gates.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and `clawhub/plugin-validation-fixes`. OpenClaw npm tags
+  remain latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `clawhub` npm remains `0.22.0`; `@xquik/tweetclaw`
+  published latest remains `1.6.31` while source remains `1.6.32`.
+  `npm audit --audit-level=moderate --json` found 0 vulnerabilities and
+  `npm run check-openclaw-platform-fitness` passed.
+- User-requested runner migration: changed `.github/workflows/publish.yml` and
+  `.github/workflows/context7-refresh.yml` from `ubuntu-latest` to
+  `blacksmith-2vcpu-ubuntu-2404`, then added `.github/actionlint.yaml` so
+  actionlint recognizes the custom Blacksmith runner label. This changed runner
+  selection only; no Context7 refresh behavior, npm publish behavior, secrets,
+  or permissions changed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes with
+  Context7 ignored by hard scope. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, ClawHub, OpenClawDir, Skills.sh, DeepWiki,
+  Smithery, ToolHive PR #5587, and MCP Registry PR #1387. npmjs web UI returned
+  HTTP 403 to curl as before. The obsolete `clawhub.openclaw.ai` host failed DNS
+  and is not canonical. ClawHub still serves stale `1.6.26` copy, so npm remains
+  canonical until owner-scope publishing is fixed.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  when a high-fit target has a companion-docs rule that says never commit or push
+  automatically, treat that lane as policy-blocked for quiet heartbeat PRs and
+  switch to another eligible target instead of asking during the run.
+- TweetClaw changes: updated `.github/actionlint.yaml`,
+  `.github/workflows/context7-refresh.yml`, `.github/workflows/publish.yml`,
+  `docs/discoverability-audit.md`, `docs/clawpack-release.md`,
+  `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, `npx --yes actionlint`
+  on both workflows, Markdown link check with Context7 excluded, direct public URL
+  probes, `npm run check-memory-md-size`, `npm run check-openclaw-platform-fitness`,
+  `npm audit --audit-level=moderate`, and `git diff --check`. Persisted
+  automation prompt unchanged; prompt bytes: 12180/15360, TOML bytes: 12314.
+
 2026-06-22 20:37 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.

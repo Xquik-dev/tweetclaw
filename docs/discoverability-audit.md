@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 21:19 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 21:40 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200; current validation checklist is
   `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 21:19 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 21:40 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 21:19 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 21:40 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 21:19 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-211957` covered PR, skill, OpenClaw, MCP, Codex, Claude,
-  agent, social, Twitter/X, awesome-list, registry, validator, fork, and
-  package-tooling lanes, found 9 candidates, and exact-read 60 recent or
-  audit-tracked authored PRs with 0 failures. Broad authored search hit the
-  1000-result cap; `<2026-06-13` remains capped, so a complete all-time PR
-  inventory was not claimed.
-- No new repair was required. Prior Nipuna and devonjones fixes were confirmed;
-  Shuvo Vercel auth and Hermes failures remain target-owned or out of scope.
-  Opened https://github.com/stacklok/toolhive/pull/5587 from verified fork
-  `kriptoburak/toolhive`, branch `codex/fix-contributing-guide-link`, commit
-  `923eab3`, after policy issue https://github.com/stacklok/toolhive/issues/5586.
-- TweetClaw hygiene passed: OpenClaw docs/npm, current ClawHub route,
-  OpenClawDir, npm audit, package metadata, Markdown links, OpenClaw fitness,
-  memory cap, and `npm run check:all`. Full inventory, candidate, duplicate,
-  validation, prompt-byte, and public-link details are in the archive. Context7
-  was skipped.
+- 2026-06-22 21:40 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-214058` covered PR, skill, OpenClaw, MCP, Codex, Claude,
+  social/Twitter-X, registry, validator, fork, and package-tooling lanes; found
+  7 candidates; exact-read 70 recent or tracked authored PRs with 0 failures.
+  Broad authored search hit the 1000-result cap, so complete all-time inventory
+  was not claimed.
+- No new repair was required. Opened
+  https://github.com/modelcontextprotocol/registry/pull/1387 from verified fork
+  `kriptoburak/registry-2`, branch `codex/fix-reference-doc-links`, commit
+  `c37f655`, to fix target docs links. Both target CI jobs passed at readback.
+- TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub/OpenClawDir, npm audit,
+  package metadata, Markdown links, OpenClaw fitness, memory cap, `actionlint`,
+  and `npm run check:all`. User-requested workflows now use Blacksmith runners.
+  Full inventory, validation, prompt-byte, and public-link details are archived.
 
 ## Reporting Checklist
 

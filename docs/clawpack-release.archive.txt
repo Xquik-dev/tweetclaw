@@ -507,6 +507,29 @@ install updates, and current
 `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. npm registry
 metadata checks succeeded; the npmjs web UI returned HTTP 403 to curl.
 
+No npm or ClawHub publish was attempted during the 2026-06-22 21:40 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate --json` returned 0 vulnerabilities at
+2026-06-22 21:40 UTC, and `npm run check-openclaw-platform-fitness` passed.
+Official OpenClaw docs returned HTTP 200 for llms, llms-full, plugin, skills,
+Skill Workshop, exec approvals, permission modes, install updates, and current
+`https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. ClawHub
+`https://clawhub.ai/plugins/@xquik/tweetclaw` and OpenClawDir
+`https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200, but
+ClawHub still exposes stale `1.6.26`, so npm remains canonical until current
+scoped package ownership is fixed. npm registry metadata checks succeeded; the
+npmjs web UI returned HTTP 403 to curl as before.
+
+After user confirmation that Blacksmith was enabled for the repo, the npm
+publish workflow runner changed from `ubuntu-latest` to
+`blacksmith-2vcpu-ubuntu-2404`. The publish job permissions, npm provenance
+path, release tag guard, and secret names were unchanged. `actionlint` passed
+after adding the custom runner label to `.github/actionlint.yaml`.
+
 No npm or ClawHub publish was attempted during the 2026-06-22 20:12 UTC
 heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
 `1.6.32`, and local npm auth is still not trusted for publishing. Source
