@@ -31729,6 +31729,125 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 03:19 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Starting state: TweetClaw was on `master` at
+  `8a9637a4e086b26bbadf576e589cb1a2c1be152f` with pre-existing untracked file
+  `0`. Xquik crawler repo was on `master` at
+  `17c1b43d9002303446d5cfee9d22fb5f5b0c030f` with unrelated dirty
+  `docs/feature-roadmap.md`; it was preserved.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-030349` covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills directories,
+  Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, validators, social/Twitter automation, OpenClaw plugin
+  examples, and package-tooling lanes. The command used bounded request and
+  proxy warmup timeouts, limit 180, search pages 2, per-query limit 10,
+  concurrency 12, and research proxy. The crawler output parsed as JSON and
+  returned 0 opportunities.
+- PR inventory method: compact audit, archive URLs, crawler output, fork
+  metadata, exact known-PR readbacks, target repo reads, and authored open PR
+  partitions. Lightweight GraphQL pagination over `viewer.pullRequests` read
+  2096 open authored PRs across 21 pages, updated from
+  `2026-06-21T17:01:46Z` back to `2026-06-14T01:06:23Z`, avoiding the GitHub
+  search 1000-result cap. A richer GraphQL status-rollup pass first hit a
+  schema mismatch, then HTTP 502 after correction, so it was recorded as a
+  platform blocker and the run used exact REST fallback.
+- Exact current/key readbacks covered 53 PRs from `updated:>=2026-06-22` plus
+  audit-known PRs. Mergeability summary was 44 clean, 7 unstable, and 2
+  blocked. Combined status summary was 52 pending and 1 failure. No actionable
+  maintainer comments, unresolved review repairs, CI failures owned by our
+  branches, conflicts, DCO/CLA blockers, generated-file drift, or valid bot
+  findings required repair. `flc1125/skills#120` still has a target-owned
+  Vercel auth failure and a previously addressed Gemini timestamp comment.
+- Fresh discovery screened skill, validator, registry, and package-tooling
+  targets after crawler output was empty. Duplicate or prior-history blockers
+  included `harrypham2000/skill-audit`, `zuocharles/openclaw-social-media-skill`,
+  `nowork-studio/openclaw-social-media-skills`,
+  `ununununium/openclaw-social-media-skills`, and
+  `framerslab/agentos-skills-registry`. Fresh candidates included
+  `Cydiar/skill-guard`, `TheStack-ai/pulser`,
+  `Frank-debug666/agent-skill-security-auditor`, and
+  `bird-chinese-community/BIRD.skills`.
+- Selected target: `Cydiar/skill-guard` was MIT licensed, public, non-fork,
+  non-archived, issue-enabled, default branch `master`, and duplicate-clean for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, and variants across compact audit,
+  archive memory, target content, target PRs, target issues, and fork metadata.
+  The target had no prior PRs or issues and no contribution policy blocker.
+- Fresh PR submitted: https://github.com/Cydiar/skill-guard/pull/1 from
+  verified fork `kriptoburak/skill-guard` parented to `Cydiar/skill-guard`,
+  branch `codex/developer-credential-store-rule`, commit `a2aa56e`. The patch
+  expands existing DE-07 in `scripts/rules.yaml` from only `credentials.json`
+  to also detect common developer credential stores: `.npmrc`, `.pypirc`,
+  `.netrc`, `.git-credentials`, and `.docker/config.json`. It keeps the rule
+  count unchanged and uses lookahead guards so `.npmrc.example`,
+  `.npmrc-local`, `.git-credentials.bak`, and `.docker/config.json.bak` do not
+  match that rule.
+- Target validation and hygiene: passed `python3 -m compileall scripts app
+  skill`, a disposable SkillGuard fixture scan that produced 5 credential-store
+  findings for the new paths, regex checks for positive and negative examples,
+  `git diff --check`, conflict-marker scan, target duplicate PR and issue
+  checks, fork-parent readback, and PR readback. Final PR readback showed open,
+  ready, `MERGEABLE`, no comments, no reviews, and no configured checks. No NHS
+  badge was added because the handled target surface was a rules file.
+- Official OpenClaw docs were rechecked before TweetClaw maintenance. HTTP 200
+  was returned for `llms.txt`, `llms-full.txt`, CLI plugins, plugin manifest,
+  plugin permission requests, tool plugins, SDK runtime, SDK entrypoints,
+  plugin management, install overrides, building plugins, SDK testing, SDK
+  subpaths, ClawHub publishing, ClawHub plugin-validation fixes, ClawHub skill
+  format, ClawHub quickstart, creating skills, and debugging. Key readbacks:
+  `llms.txt` 94373 bytes sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;
+  `llms-full.txt` 6666783 bytes sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` with published install metadata targeting OpenClaw `2026.5.4`;
+  source remains `1.6.32` targeting OpenClaw `2026.6.9`. `npm view openclaw`
+  returned latest `2026.6.9`, beta `2026.6.10-beta.1`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`;
+  `npm audit --audit-level=moderate --json` returned 0 vulnerabilities.
+- Link results: direct probes returned HTTP 200 for TweetClaw GitHub, latest
+  release, ClawHub plugin page, OpenClawDir page, npm registry metadata, and
+  docs.xquik.com. The npmjs web package page returned expected automated-probe
+  HTTP 403, so registry metadata remains canonical. Markdown link check for
+  TweetClaw public surfaces reported status 0 for the two NHS URLs in README,
+  but direct curl returned HTTP 200 for both
+  `https://nothumansearch.ai/site/xquik.com` and
+  `https://nothumansearch.ai/badge/xquik.com.svg`, so no broken link was
+  confirmed.
+- TweetClaw validation before audit commit: SkillSpector v2.2.3 no-LLM scan at
+  2026-06-22 03:19 UTC reported score `0/100`, LOW severity, SAFE
+  recommendation, 5 non-executable components, no issues, and no executable
+  scripts. `npm run check-openclaw-platform-fitness`, `npm run
+  check-package-artifact`, `npm run check-skill-frontmatter`, and `npm run
+  check-versions` passed. A parallel npm invocation transiently reported a
+  missing script, then the same gates passed when rerun directly.
+- Final TweetClaw validation passed `npm run check:all`: typecheck, lint, CPD,
+  Knip, suppression check, dash check, memory size, skill frontmatter, version
+  parity, build, OpenClaw platform fitness, package artifact check, and coverage
+  with 11 test files, 168 tests, and 100% coverage.
+- Prompt and memory: compact Markdown memory was re-compacted and checked before
+  commit. Persisted automation TOML measured 12314 bytes. No prompt edit was
+  useful because the current prompt already preserves model/effort wording,
+  quiet autonomy, crawler-first discovery, mandatory PR submission, aggressive
+  skill-repo coverage, fresh discovery, complete PR inventory and repair
+  priority, duplicate/fork rules, OpenClaw docs checks, link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, cadence, thread
+  binding, commit/push requirement, Markdown cap, prompt cap, and
+  self-improvement.
+- Prompt self-improvement: durable lesson reinforced that validator and scanner
+  projects are high-fit outreach targets when the contribution improves the
+  target's native detection quality without adding TweetClaw marketing text.
+  Prefer extending existing rule IDs when it avoids advertised rule-count drift.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and
+  `skills/tweetclaw/skillspector-report.md`. Pre-existing untracked file `0`
+  remains untouched as unrelated state.
+
 ## 2026-06-22 02:52 UTC Heartbeat
 
 - Runtime limitation: the heartbeat runtime did not expose GPT-5.5 or
