@@ -35631,6 +35631,91 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
   Blacksmith `actionlint`, and `git diff --check`.
 
+2026-06-22 22:31 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-223156`, JSON output, research proxy, bounded request and
+  proxy warmup timeouts, 6 focused query packs, and 12 exact repositories. It
+  returned 11 candidates: `punkpeye/awesome-mcp-servers`,
+  `modelcontextprotocol/servers`, `github/awesome-copilot`,
+  `openai/openai-agents-python`, `appcypher/awesome-mcp-servers`,
+  `cloudflare/agents`, `VoltAgent/awesome-claude-code-subagents`,
+  `punkpeye/awesome-mcp-clients`, `hesreallyhim/awesome-claude-code`,
+  `modelcontextprotocol/registry`, and `docker/mcp-registry`.
+- Broad authored open PR search returned 1000 results and was capped. Updated
+  date counts in that capped set were: 2026-06-22: 163, 2026-06-21: 173,
+  2026-06-20: 127, 2026-06-19: 25, 2026-06-18: 68, 2026-06-17: 117,
+  2026-06-16: 91, 2026-06-15: 92, 2026-06-14: 135, and 2026-06-13: 9.
+  Exact-read covered 80 recent or tracked PR URLs with 0 errors. GraphQL hit
+  the authenticated rate limit after two thread-aware reads, so complete
+  all-time inventory was not claimed and later screening used REST, clone, and
+  crawler data.
+- Repair scan: `AgentDock/AgentDock#353` had older Mesa and CodeRabbit review
+  signals, but the latest branch already includes commit `fd950d61` hardening
+  endpoint and API-key handling, request timeouts, invalid JSON handling, and
+  timestamp/profile URL formatting. Thread-aware read found 9 threads with 0
+  current unresolved threads. `forjd/startup-ideation-skills#1` had 1 thread
+  with 0 current unresolved threads. `NipunaRanasinghe/awesome-ai-agents#126`
+  could not be thread-read after the GraphQL cap, but flat readback showed the
+  maintainer wording concern already answered and addressed by the later commit
+  recorded in the prior run. Remaining Vercel failures were target-owner
+  authorization only.
+- Fresh target screening selected `VoltAgent/awesome-claude-code-subagents`:
+  active, non-fork, MIT license, issues enabled, default branch `main`, no
+  compact or archive TweetClaw duplicate block, and no target content hits for
+  TweetClaw, Xquik, x-twitter-scraper, npm, or ClawHub variants. The target's
+  contribution guide allows README fixes, and category/plugin version bump
+  rules do not apply to the root README. `hesreallyhim/awesome-claude-code` was
+  blocked by existing archive policy and account restrictions; multiple MCP and
+  registry candidates were duplicate or adjacent-history blocked.
+- Target validation found the root README intro typo `AI assitants`. Opened
+  https://github.com/VoltAgent/awesome-claude-code-subagents/pull/291 from
+  verified fork `kriptoburak/voltagent-awesome-claude-code-subagents`, parent
+  `VoltAgent/awesome-claude-code-subagents`, branch
+  `codex/fix-readme-assistants-typo`, commit
+  `c6d0a14d5f4d0ef41f1529ce309567ebd9bd6000`. The PR fixes the typo and
+  trailing whitespace on touched README lines. REST exact readback: open, ready,
+  mergeable, clean mergeable state, 1 commit, 1 file, 0 comments, 0 reviews, and
+  no check-runs or statuses reported.
+- Target validation passed: focused `markdown-link-check` on README with
+  external URLs ignored, `git diff --check`, and changed-line public-scope scan.
+  A full external README link check separately showed the Discord shortlink path
+  timing out after redirecting to `https://discord.gg/MbNak8g2ED`; because the
+  direct Discord invite also timed out from this environment, no URL change was
+  made for that unrelated external-link issue.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Blacksmith validation: `actionlint` passed for
+  `.github/workflows/context7-refresh.yml` and `.github/workflows/publish.yml`.
+  GitHub run readback showed `Refresh Context7 Docs` succeeded on commit
+  `046188a` from 2026-06-22T22:24:47Z to 22:25:00Z.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes
+  with Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  TweetClaw GitHub repo, npm registry metadata, canonical ClawHub route,
+  OpenClawDir route, `punkpeye/awesome-mcp-clients#226`, and
+  `VoltAgent/awesome-claude-code-subagents#291`.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  when GraphQL rate-limits during inventory, stop thread-aware/broad GraphQL for
+  that run and continue with REST metadata, clone-based content checks, crawler
+  output, and REST PR creation. Persisted automation prompt unchanged; prompt
+  bytes: 12180/15360, TOML bytes: 12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  Blacksmith `actionlint`, and `git diff --check`.
+
 2026-06-22 21:40 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
