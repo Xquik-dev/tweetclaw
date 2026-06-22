@@ -31729,6 +31729,76 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 11:55 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort controls. Limitation recorded here and in the heartbeat outcome; the
+  run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-114347` covered SKILL.md, `.agents/skills`,
+  skills directories, OpenClaw, MCP, Codex, Claude, agent, social media,
+  Twitter/X, awesome-list, registry, fork, generated catalog, validator, docs,
+  and package-tooling lanes. The crawler parsed as JSON and returned 0
+  opportunities.
+- PR inventory method: compact audit, archives, crawler output, current-day
+  authored open PR search, priority audit-known PRs, exact `gh pr view`
+  readbacks, fork metadata, and target repo reads. Exact readbacks covered 126
+  current-day and priority PRs. The first local NDJSON loop wrote 124 rows, then
+  hit `write /dev/stdout: no space left on device`; the 2 missing readbacks were
+  retried cleanly. Broad all-open inventory remains incomplete this run.
+- Repair priority: `jamald33n/tweetsave-mcp#2` was open, dirty, and conflicting.
+  Fork `kriptoburak/tweetsave-mcp-jamald33n` was verified as parented to
+  `jamald33n/tweetsave-mcp`. README conflict was resolved by preserving valid
+  npm/npx setup, support links, and TweetClaw/OpenClaw handoff while removing
+  malformed raw-ZIP links. Validation passed conflict-marker scan,
+  `git diff --cached --check`, malformed raw-ZIP scan, markdown link check,
+  package ZIP tests, `npm ci`, `npm run build`, `npm pack --dry-run`, npm
+  metadata checks, and public-hygiene diff scan. Pushed repair commit
+  `dcc42d61d4e723bc5a5f52da7610a28a4555e7ed`; readback is open, mergeable,
+  clean, with no comments, reviews, or checks requiring action. No duplicate
+  repair comment was posted.
+- Fresh target: `greggdonovan/agent-skills-lint` was newly screened. MIT
+  licensed, not archived, not a fork, issues enabled, Rust project, and
+  duplicate-clean in compact audit, archives, target content, open and closed
+  PRs, and open and closed issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, and
+  variants.
+- Opened https://github.com/greggdonovan/agent-skills-lint/pull/14 from verified
+  fork `kriptoburak/agent-skills-lint-greggdonovan`, branch
+  `codex/validate-allowed-tools-arrays`, commit
+  `fadde3a3e25ae96025e9955279b6c9995ab9c8b1`. The patch validates array-form
+  `allowed-tools` entries for empty, comma-delimited, and unbalanced tool specs
+  like string-form entries, with changelog coverage. Validation passed
+  `cargo fmt`, `cargo fmt -- --check`, `cargo clippy -- -D warnings`,
+  `cargo test`, `bash README.md`, `git diff --check`, and diff hygiene scan.
+  Readback is open, mergeable, unstable, with no comments, reviews, or checks
+  yet.
+- Official OpenClaw and package checks: OpenClaw docs routes returned HTTP 200
+  for llms, llms-full, CLI plugin install/update/inspect docs, manage plugins,
+  manifest, permission requests, tool plugins, Codex harness runtime, ClawHub
+  publishing, skill format, install overrides, debugging, and plugin validation
+  fixes. OpenClaw npm tags were latest `2026.6.9`, beta `2026.6.10-beta.2`,
+  alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`;
+  `@xquik/tweetclaw` latest remained `1.6.31`; source remained `1.6.32`.
+  `npm audit --audit-level=moderate --json` returned 0 vulnerabilities.
+  ClawHub and OpenClaw Directory routes remained HTTP 200; ClawHub still exposes
+  `1.6.26`, so npm remains canonical until owner-scope publishing is fixed.
+- Public hygiene and links: README, OpenClaw setup docs, agent workflows,
+  compact audit/release docs, handled PR URLs, package metadata, ClawHub, npm,
+  GitHub, and OpenClaw docs were link-checked or URL-probed. Public-hygiene diff
+  scans found no secrets, private implementation details, restricted provider or
+  source names, internal cost mechanics, unsupported claims, or stale metadata.
+- Prompt and memory: compact Markdown memory measured before and after edits.
+  Persisted automation TOML measured 12314 bytes, under the 15 KiB prompt cap.
+  No prompt edit was needed. Prompt self-improvement: when exact-read inventory
+  writes large NDJSON in a tight local disk environment, stream summarized
+  results or clean old owned `/tmp/tweetclaw-heartbeat-*` artifacts before broad
+  output; retry transient exact-read failures before counting blockers.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 11:31 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
