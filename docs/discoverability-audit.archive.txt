@@ -35178,3 +35178,98 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check-memory-md-size`, and `git diff --check`. Markdown memory size:
   15046/15360 bytes. Persisted automation prompt unchanged; prompt bytes:
   11980/15360. Final TweetClaw commit and push are recorded in the run outcome.
+2026-06-22 18:24 UTC heartbeat - Agent Skills Ninja README link PR
+
+- Runtime note: model and reasoning-effort selector unavailable, so GPT-5.5 and
+  extra-high reasoning could not be selected. Continued under the available
+  same-thread Codex runtime. No Browser, Chrome, GUI automation, dev server,
+  production SSH, Socket token read, secret read, Context7 work, or destructive
+  git action was used. TweetClaw started on `master` with only untracked `0`.
+  Xquik had an unrelated `docs/feature-roadmap.md` change that was ignored.
+- Crawler-first coverage: ran `/Users/burak/Developer/xquik` session
+  `tweetclaw-20260622-182430` with strict JSON, research proxy, bounded
+  request and proxy warmup timeouts, 6 focused query packs covering SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, awesome lists, registries, validators, forks, package tooling,
+  TweetClaw, Xquik, and x-twitter-scraper, plus exact repo probes for
+  `skill-tools/skill-tools`, `vaibhav4046/mcp-marketplace`,
+  `motiful/skill-forge`, `pradeepmouli/skillit`,
+  `feiyueyun/skill-interop-tools`, `machina-sports/sports-skills`,
+  `iamfourh2e/rust-skill`, `harrypham2000/skill-audit`,
+  `rsoffer/linus-level-skill`, `sjmgarnier/skill-manager`, and
+  `lansijian/nankesong_S2_Rokidglasses_datasets`. Output parsed as valid JSON
+  and produced 11 already-covered opportunities.
+- PR inventory and repairs: exact-read 13 tracked PRs:
+  `sjmgarnier/skill-manager#1`, `rsoffer/linus-level-skill#1`,
+  `iamfourh2e/rust-skill#1`, `harrypham2000/skill-audit#32`,
+  `machina-sports/sports-skills#82`, `feiyueyun/skill-interop-tools#2`,
+  `pradeepmouli/skillit#84`, `skill-tools/skill-tools#15`,
+  `vaibhav4046/mcp-marketplace#1`, `motiful/skill-forge#1`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `weiflycc-cmd/awesome-copilot#19`, and
+  `lansijian/nankesong_S2_Rokidglasses_datasets#1`. All were open and
+  mergeable. `skill-audit#32` Socket checks were success;
+  `mcp-marketplace#1` still waits on target-owned Vercel authorization;
+  `awesome-copilot#19` remains target-branch-policy blocked because the target
+  exposes no `staged` branch. Thread-aware GraphQL for `openclaw-clawdoc#6` and
+  `awesome-copilot#19` showed 0 review threads. No current-head maintainer
+  request, unresolved review-thread action, CI failure, conflict, DCO/CLA
+  blocker, generated drift, or valid bot finding was safely repairable.
+- Inventory blocker: broad authored PR searches for TweetClaw, OpenClaw,
+  ClawHub, MCP, skill, agent tools, x-twitter-scraper, Xquik, Twitter
+  automation, social media, and catalog/validator/package tooling still hit the
+  100-result cap in multiple lanes, so GitHub-wide exact inventory is not
+  claimed. Continued with crawler output, audit-tracked URLs, exact-repo PR
+  lists, thread-aware GraphQL for review-gated PRs, and direct metadata.
+- Fresh screening: fallback repo searches covered agent-skills, Claude-skill,
+  MCP-skill, and skill-validator lanes. Duplicate gates searched the compact
+  audit, archive, target PRs, target issues, and local clones for TweetClaw,
+  `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub,
+  Xquik, x-twitter-scraper, OpenClaw, and variants. `TerminalSkills/skills`,
+  `sentenz/skills`, `migmcc/agent-skill-quality-gate`, and
+  `michellepellon/skillmark` were blocked by prior history.
+  `PollyGlot/google-play-cli-skills`, `moatazhamada/ai-omni-skills`,
+  `RiriXt1/skillcheck`, and `no-problem-dev/swift-agent-skills` were screened
+  duplicate-clean but had no better immediate target-native patch than the
+  selected link-repair lane.
+- Selected target: `aktsmm/vscode-agent-skill-ninja` was public, non-fork,
+  non-archived, issue-enabled, duplicate-clean across exact PR/issue lists and
+  clone content, and had a root `LICENSE` with CC BY-NC-SA 4.0 terms plus
+  supplementary restrictions. The target's AGENTS.md was read before editing.
+  Target-owned broken links were present in README navigation anchors,
+  `README_ja.md` navigation anchors, AGENTS.md's `.github/skills/README.md`
+  reference, and changelog release links for tags that do not exist.
+- External PR opened: https://github.com/aktsmm/vscode-agent-skill-ninja/pull/9
+  from verified fork `kriptoburak/vscode-agent-skill-ninja`, parent and source
+  `aktsmm/vscode-agent-skill-ninja`, branch `codex/fix-readme-links`, commit
+  `46bff4e65648edca9285d2c9c75ae96cc23f0673`. Final readback after creation:
+  open, ready, mergeable, 4 changed files, no comments, no reviews, and
+  GitGuardian success.
+- Target validation: all target Markdown links passed with
+  `find . -maxdepth 4 ... | xargs -0 npx --yes markdown-link-check --quiet`,
+  `git diff --check` passed, and added-line sensitive-term and dash scans
+  passed.
+- TweetClaw public hygiene: official OpenClaw llms exports, CLI plugin docs,
+  manifest, permission requests, tool plugins, SDK runtime, ClawHub publishing
+  and skill-format docs, install overrides, creating-skills, and debugging
+  returned HTTP 200. Legacy `https://docs.openclaw.ai/plugins/plugin-validation-
+  fixes` returned HTTP 404. `npm view openclaw` returned latest `2026.6.9`,
+  beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub`
+  returned `0.22.0`; `npm view @xquik/tweetclaw` returned latest `1.6.31`
+  while source remains `1.6.32`. `npm audit --audit-level=moderate --json`
+  found 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+- Broken-link checks: TweetClaw Markdown links passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Direct probes
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, both ClawHub
+  routes, OpenClawDir, the new Agent Skills Ninja PR, and the prior Rokid PR.
+  npmjs web UI returned the expected Cloudflare 403.
+- Prompt self-improvement: no prompt file was edited, so no persisted prompt
+  candidate was saved. Durable lesson recorded: Agent Skills Ninja README link,
+  AGENTS link, missing release-tag, and Japanese license wording lanes are now
+  duplicate-blocked unless maintainers ask for follow-up.
+- TweetClaw audit changes: updated only `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`; untracked `0` remained untouched.
+  `npm run check:all` passed, including 168 tests and 100% coverage. Markdown
+  memory size: 15020/15360 bytes. Persisted automation prompt unchanged; prompt
+  bytes: 11980/15360.
