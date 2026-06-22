@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 20:27 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 20:37 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200; current validation checklist is
   `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 20:27 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 20:37 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 20:27 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 20:37 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,22 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 20:27 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-201701` covered PR, skill, OpenClaw, MCP, Codex, Claude,
+- 2026-06-22 20:37 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-203756` covered PR, skill, OpenClaw, MCP, Codex, Claude,
   agent, social, Twitter/X, awesome-list, registry, validator, fork, and
-  package-tooling lanes, found 8 candidates, and exact-read 18 tracked PRs.
-  Broad authenticated authored search hit a GitHub secondary rate limit; exact
-  repo/API reads continued. No safe tracked-PR repair was available.
-- Opened https://github.com/sarveshtalele/mcp-skills-registry/pull/11 from the
-  verified `kriptoburak` fork, branch `codex/reject-unsafe-upload-members`,
-  commit `d98ec5c`. The target-native change rejects traversal, absolute-path,
-  and symlink ZIP members before skill or agent upload processing. Validation:
-  `.venv/bin/python -m pytest`; `.venv/bin/ruff check`;
-  `.venv/bin/black --check .`; CI passed for Python 3.10, 3.11, and 3.12.
+  package-tooling lanes, found 9 candidates, and exact-read 30 recent authored
+  PRs. Broad authored search hit the 1000-result cap, with the `<2026-06-20`
+  partition still capped, so a complete all-time PR inventory was not claimed.
+- Repaired https://github.com/devonjones/devon-claude-skills/pull/35 for Gemini
+  feedback by adding explicit Xquik skill negative-use boundaries. Opened
+  https://github.com/JNZader/md-evals/pull/1 from verified fork
+  `kriptoburak/md-evals`, branch `codex/require-section-headings`, commit
+  `75f2269`, to require required skill sections as Markdown headings.
 - TweetClaw hygiene passed: OpenClaw docs/npm, current ClawHub route,
   OpenClawDir, npm audit, package metadata, Markdown links, OpenClaw fitness,
-  memory cap, and `npm run check:all`. Noncanonical `clawhub.openclaw.ai` and
-  `openclaw.ai/plugins/...` probes failed as expected. Context7 was skipped.
+  memory cap, and `npm run check:all`. Full candidate, duplicate, validation,
+  prompt-byte, and public-link details are in the archive. Context7 was skipped.
 
 ## Reporting Checklist
 

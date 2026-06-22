@@ -35550,6 +35550,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-22 20:37 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260622-203756`, JSON output, research proxy, bounded timeouts,
+  6 focused query packs, 10 exact repos, and strict parser validation of output.
+  It returned 9 candidates: `punkpeye/awesome-mcp-servers`,
+  `microsoft/agent-framework`, `swarmclawai/agent-skills-lint`,
+  `JNZader/md-evals`, `KEINOS/skillmd-frontmatter-validator`,
+  `Mingdao007/codex-skill-registry-public`, `readtheskill/readtheskill`,
+  `janaka/easyrunner-skills`, and `VRSEN/agency-swarm-lab`.
+- PR inventory used compact and archive URLs, crawler coverage, authored open PR
+  search, target repo reads, and exact PR readbacks. Authored open PR search
+  returned 1000 results and hit the GitHub cap. Created-date partitions found
+  130 PRs for 2026-06-22, 167 for 2026-06-21, 128 for 2026-06-20, and 1000
+  for `<2026-06-20`, which remained capped. Exact-read scope this run was the
+  30 most recent authored PRs plus handled target PRs, so complete all-time
+  inventory was not claimed.
+- Repair priority found actionable Gemini feedback on
+  https://github.com/devonjones/devon-claude-skills/pull/35. The PR branch was
+  checked out through the verified `kriptoburak` fork, then updated with commit
+  `fce10dbfa4ec685aabed638bcc5e3874e27e8fa0` to add a "When Not To Use"
+  section that blocks Xquik skill use for writes, private data, login flows,
+  unauthenticated searches, and policy review substitution. Validation passed:
+  `git diff --check`, `npx --yes markdown-link-check
+  plugins/xquik-public-research/skills/xquik-public-research/SKILL.md --quiet`,
+  and JSON parsing of marketplace/plugin manifests. Exact PR readback after
+  push: open, mergeable, 2 commits, 0 comments, Gemini review still COMMENTED
+  on the previous commit, and no checks configured.
+- Fresh target screening skipped `swarmclawai/agent-skills-lint` because
+  `swarmclawai/agent-skills-lint#3` already exists, skipped
+  `KEINOS/skillmd-frontmatter-validator` because
+  `KEINOS/skillmd-frontmatter-validator#1` already exists, and skipped
+  `readtheskill/readtheskill` because open TweetClaw/Hermes listing PRs already
+  exist. `JNZader/md-evals` was active, non-archived, non-fork, MIT-licensed,
+  had no TweetClaw/Xquik/OpenClaw duplicate PRs or issues, and had a
+  target-native validation bug in required skill section detection.
+- Opened https://github.com/JNZader/md-evals/pull/1 from verified fork
+  `kriptoburak/md-evals` with parent/source `JNZader/md-evals`, branch
+  `codex/require-section-headings`, commit
+  `75f2269a6b93af1a03d35057f4672faf5bc9d632`. The PR requires required
+  SKILL.md sections to appear as Markdown headings instead of matching prose
+  mentions, while preserving case-insensitive `#` through `######` support.
+  Validation passed: `uv run --frozen --extra dev pytest tests/test_linter.py`;
+  `uv run --frozen --extra dev ruff check md_evals/linter.py tests/test_linter.py`;
+  and `git diff --check`. Exact PR readback: open, mergeable, ready for review,
+  1 commit, 0 comments, 0 reviews, and no checks configured.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, plugin, skills, Skill Workshop, exec approvals, permission modes,
+  install updates, and current
+  `https://docs.openclaw.ai/clawhub/plugin-validation-fixes`. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, packaged skill, compact audit, and compact release notes with
+  Context7 excluded by hard scope. Direct probes returned HTTP 200 for the
+  TweetClaw GitHub repo, npm registry metadata, canonical ClawHub route,
+  OpenClawDir route, repaired Devon PR, and new md-evals PR. The npmjs web UI
+  returned HTTP 403 to curl, while registry metadata remained available.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  when a required-section validator accepts prose mentions, prefer a
+  heading-aware target-native fix with regression coverage over a listing-only
+  TweetClaw mention. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link check
+  with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  and `git diff --check`.
+
 2026-06-22 20:27 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
