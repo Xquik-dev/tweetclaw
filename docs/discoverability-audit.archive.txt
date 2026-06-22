@@ -31729,6 +31729,94 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+2026-06-22 08:20 UTC heartbeat:
+- Runtime model and reasoning-effort selector was unavailable, so GPT-5.5 and
+  extra-high effort could not be selected in the runtime. Work continued under
+  the available model and this limitation was recorded.
+- Start state: TweetClaw was on `master` at
+  `0be17b464383994a89c5cc8df1636cc99aa7a0d9` with unrelated untracked file
+  `0` untouched. Xquik was on `master` at
+  `17c1b43d9002303446d5cfee9d22fb5f5b0c030f` with unrelated modified
+  `docs/feature-roadmap.md` untouched.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with strict
+  JSON output, research proxy, bounded request and proxy warmup timeouts, and
+  focused PR-review, `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex,
+  Claude, agent skill, social media, Twitter/X, awesome-list, registry,
+  validator, framework, package-tooling, and plugin-ecosystem lanes. The pass
+  returned 67 opportunities and proxy logs contained route refresh status only,
+  with no credential values.
+- Complete authored-PR search partitioning used updated-date windows:
+  `>=2026-06-22` 89, `2026-06-21` 189, `2026-06-20` 147, `2026-06-19` 26,
+  `2026-06-18` 70, `2026-06-17` 116, `2026-06-16` 93, `2026-06-15` 96,
+  `2026-06-14` 146, `2026-06-13` 144, `2026-06-12` 97,
+  `2026-06-01..2026-06-11` 283, and `<2026-06-01` 627, for 2123 unique open
+  PR URLs and no capped partitions.
+- Broad exact GraphQL readback was platform-blocked after partial reads by
+  repeated HTTP 502/504, one 401, and GraphQL resource-limit errors. The light
+  exact read completed 240 rows and the earlier wider attempt parsed 325 rows
+  before being stopped. This run must not be cited as complete exact inventory;
+  targeted exact PR reads were still used for repaired and submitted PRs.
+- Repair priority found `jamald33n/tweetsave-mcp#2` dirty. The branch
+  `codex/tweetclaw-openclaw-companion` on verified fork
+  `kriptoburak/tweetsave-mcp-jamald33n` was merged with upstream `main`, README
+  conflict was resolved, malformed raw ZIP support links were dropped, and the
+  TweetSave setup, MCP config, support links, and TweetClaw handoff docs were
+  kept. Validation passed conflict-marker and malformed-raw-ZIP scans,
+  `git diff --check`, README markdown link check, package JSON parse, both ZIP
+  integrity checks, `npm ci` with scripts, audit, and fund disabled,
+  `npm run build`, `npm pack` dry run JSON, npm metadata reads for
+  `tweetsave-mcp` and `@xquik/tweetclaw`, and changed-diff public-hygiene scan.
+  Commit `b3a9432d7654e68ea64603e19288a090790ce35c` was pushed and PR readback
+  was open, ready, clean, `MERGEABLE`, with no checks.
+- Fresh candidate screening used compact audit, archive, crawler output,
+  metadata, target content, target PRs, target issues, GitHub code search, and
+  local clone scans for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw URL,
+  npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and variants.
+  Previously known or duplicate candidates included `0xNyk/xint`,
+  `Xquik-dev/x-twitter-scraper`, `dorukardahan/twitterapi-io-skill`,
+  `jedi4ever/social-skills`, `JuneYaooo/awesome-ai-media-skills`,
+  `Xzeroone/bird-mcp`, `michaelx1993/grok-x-search-skill`,
+  `blacktwist/social-media-skills`, `hyperfx-ai/marketing-skills`,
+  `ndesv21/socialclaw`, and many direct-provider X/Twitter skill repos.
+  `Jiaranbb/content-reader` was fresh, active, not archived, not a fork, issues
+  enabled, no target PRs or issues, no TweetClaw/Xquik/x-twitter-scraper target
+  content, and licensed CC BY-NC 4.0.
+- Opened https://github.com/Jiaranbb/content-reader/pull/1 from verified fork
+  `kriptoburak/content-reader`, branch `codex/tweetclaw-read-source-option`,
+  commit `863e7716d021a84a0b385353e142f6abc27788f7`. The patch documents
+  TweetClaw as an optional OpenClaw structured read source for `twitter-reader`
+  while preserving browser-first extraction, original URL retention, explicit
+  approval for paid/private/account-scoped or MPP calls, and bans on writes,
+  monitors, bulk collection, and media file download from that skill.
+  Validation passed `git diff --check`, changed-diff public-hygiene scan, and
+  markdown link checks for the edited target docs. PR readback was open, ready,
+  clean, `MERGEABLE`, with no checks.
+- Official OpenClaw docs were rechecked before public OpenClaw/TweetClaw
+  wording. `https://docs.openclaw.ai/llms.txt` returned sha256
+  `ba95dbbfbf8968511f5ed98001f0b3b88582c797690fdcef586af1ea5b24f248`.
+  CLI plugins, plugin manifest, tool plugins, ClawHub publishing, and debugging
+  routes returned HTTP 200; permission requests, SDK runtime, and skill format
+  routes returned HTTP 404. OpenClaw npm tags remained latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+- TweetClaw public hygiene passed: `npm audit --audit-level=moderate --json`
+  returned 0 vulnerabilities, npm metadata reported published `1.6.31` while
+  source remained `1.6.32`, canonical ClawHub route
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 and still
+  exposed `1.6.26`, old ClawHub route still resolved, GitHub and external PR
+  URLs returned HTTP 200, markdown link checks for README, setup, workflow,
+  packaged skill, compact audit, release notes, and code of conduct passed,
+  npmjs web UI returned HTTP 403 to curl while registry metadata returned HTTP
+  200, and the noncanonical `clawhub.openclaw.ai` host did not resolve.
+- TweetClaw SkillSpector v2.2.3 no-LLM scan at 2026-06-22 08:16 UTC reported
+  score `0/100`, LOW severity, SAFE recommendation, no issues, and no
+  executable scripts. OpenClaw fitness, package artifact, skill frontmatter, and
+  version parity checks passed.
+- Prompt and memory: compact Markdown memory measured 15097/15360 bytes.
+  Persisted automation TOML measured 12314 bytes. No prompt edit was needed.
+  Prompt self-improvement: if broad exact GraphQL reads repeatedly hit platform
+  errors, record partial coverage immediately, switch to targeted exact reads
+  for actionable PRs, and avoid claiming complete exact inventory.
+
 ## 2026-06-22 07:55 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
