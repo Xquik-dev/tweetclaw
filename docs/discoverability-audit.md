@@ -190,19 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 16:27 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-162724` covered required PR and skill-repo lanes, found 5
-  already-covered repos, and exact-read 7 known PRs plus the new PR. Lane PR
-  searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper, and skill each hit
-  the 100-result cap, so broad exact inventory is not claimed. No safe repair
-  was available.
-- Opened https://github.com/machina-sports/sports-skills/pull/82 from verified
-  fork `kriptoburak/sports-skills`, branch `codex/use-https-docs-url`, commit
-  `f6e3504`. The target-native fix switches Machina docs handoff metadata from
-  redirecting HTTP to HTTPS and updates focused assertions. Validation: focused
-  pytest passed 18 tests, target `git diff --check`, direct HTTPS probe, and
-  added-line scans.
-- TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub route,
+- 2026-06-22 16:57 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-165715` covered required PR and skill lanes, found 6
+  already-covered repos, and exact-read 8 known PRs plus `skill-audit#32` and
+  the new PR. Lane searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper,
+  and skill each hit the 100-result cap, so broad exact inventory is not
+  claimed. No safe repair was available.
+- Opened https://github.com/iamfourh2e/rust-skill/pull/1 from verified fork
+  `kriptoburak/rust-skill`, branch `codex/fix-install-links`, commit
+  `b207aa2`. The target-native docs fix replaces placeholder install URLs with
+  real repo paths and removes a dead `LICENSE` badge link. Validation: target
+  Markdown links, direct changed URL probes, `git diff --check`, and added-line
+  scans.
+- TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub routes,
   canonical OpenClawDir route, npm audit, package metadata, Markdown links,
   selected direct URLs, OpenClaw fitness, and memory cap. npmjs web UI returned
   a Cloudflare 403, but npm registry metadata returned HTTP 200.

@@ -34835,3 +34835,87 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   PRs. For adjacent skill repos where TweetClaw placement is not target-native,
   prefer small verified public hygiene fixes and record the non-placement reason
   instead of forcing a thin listing.
+
+2026-06-22 16:57 UTC heartbeat - rust-skill install link docs PR
+
+- Runtime note: model and reasoning-effort selector unavailable; continued under
+  the available Codex runtime. Persisted automation prompt was not edited; prior
+  measured prompt size remained 12314 bytes.
+- Initial state: TweetClaw was on `master` matching `origin/master` with only
+  the pre-existing untracked `0` file. Xquik stayed on the working checkout with
+  its unrelated local changes untouched.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded timeouts, 6 focused queries covering SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, awesome lists, registries, forks, generated catalogs, validators,
+  package tooling, and exact repo probes for `skill-tools/skill-tools`,
+  `vaibhav4046/mcp-marketplace`, `motiful/skill-forge`,
+  `pradeepmouli/skillit`, `feiyueyun/skill-interop-tools`, and
+  `machina-sports/sports-skills`.
+- Crawler result: 6 opportunities, all already covered by open PRs:
+  `pradeepmouli/skillit`, `skill-tools/skill-tools`,
+  `machina-sports/sports-skills`, `feiyueyun/skill-interop-tools`,
+  `motiful/skill-forge`, and `vaibhav4046/mcp-marketplace`.
+- PR inventory and repair gate: exact readbacks covered
+  `machina-sports/sports-skills#82`, `feiyueyun/skill-interop-tools#2`,
+  `pradeepmouli/skillit#84`, `skill-tools/skill-tools#15`,
+  `vaibhav4046/mcp-marketplace#1`, `motiful/skill-forge#1`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`, `weiflycc-cmd/awesome-copilot#19`,
+  discovered `harrypham2000/skill-audit#32`, and the new
+  `iamfourh2e/rust-skill#1`. No current-head maintainer request, CI failure,
+  conflict, DCO, CLA, generated-file drift, or valid bot finding was safely
+  repairable. Remaining blockers are target-owned authorization, stale
+  already-addressed review state, no-check or branch-protection states, an
+  unavailable requested base branch, or ordinary no-check states.
+- Lane searches for Xquik, OpenClaw, TweetClaw, x-twitter-scraper, and skill
+  each returned the first 100 results, so those partitions are capped and broad
+  exact inventory is not claimed.
+- Fresh screening and duplicate gates: compact audit, archive, crawler output,
+  target metadata, target content, and open plus closed PRs/issues were checked
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Twitter/X, skill, and
+  catalog variants where relevant. `harrypham2000/skill-audit` was
+  duplicate-blocked by open PR 32, `valtterimelkko/agent-workflow-skills` by
+  open PR 1, and `yaacovcorcos/papiskill` by open PR 1. `rsoffer/linus-level-
+  skill`, `FuQiang/brand-content-marketing-advisor`, and `iamfourh2e/rust-skill`
+  were fresh in compact and archive; `iamfourh2e/rust-skill` was selected for a
+  concrete docs repair.
+- Selected target: `iamfourh2e/rust-skill` is public, non-fork, non-archived,
+  active, issue-enabled, and missing license metadata. Missing license metadata
+  did not block the direct README repair. Target content and target PR/issue
+  searches found no TweetClaw, Xquik, x-twitter-scraper, OpenClaw, ClawHub,
+  Twitter/X, or related duplicate history. No TweetClaw mention was added.
+- Target-native issue found in `iamfourh2e/rust-skill`: README install examples
+  used `https://github.com/<your-username>/rust-skill/...` placeholders, and the
+  MIT badge linked to a missing local `LICENSE` file. The contribution replaced
+  install examples with `https://github.com/iamfourh2e/rust-skill/...` and
+  removed only the dead badge anchor without adding or changing license terms.
+- External PR opened: https://github.com/iamfourh2e/rust-skill/pull/1 from
+  correctly parented fork `kriptoburak/rust-skill`, branch
+  `codex/fix-install-links`, commit
+  `b207aa2e494ce15c7502c0c19584b6104a19f6bd`. The PR changes only `README.md`.
+- Target validation for rust-skill: `npx --yes markdown-link-check README.md
+  --quiet` passed after the fix, `git diff --check` passed, added-line secret
+  and dash scans passed, placeholder scan found no remaining `<your-username>`
+  values, and direct changed URL probes for the repository and 4 skill folders
+  returned HTTP 200.
+- Final PR readback for rust-skill PR 1 showed open, ready, mergeable, clean,
+  no comments, no reviews, no checks, and head commit `b207aa2`.
+- Official OpenClaw recheck: llms exports, CLI plugin docs, plugin tools,
+  manage plugins, building plugins, manifest, plugin permission requests, tool
+  plugins, Codex harness runtime, SDK runtime, install overrides, ClawHub
+  publishing, ClawHub skill format, plugin validation fixes, creating skills,
+  and debugging returned HTTP 200.
+- Package and public hygiene checks: `npm view openclaw` returned latest
+  `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published `1.6.31` while local source remains `1.6.32`; `npm audit` found 0
+  vulnerabilities; `npm run check-openclaw-platform-fitness` passed; TweetClaw
+  Markdown link checks passed; both checked ClawHub plugin routes, canonical
+  OpenClawDir route, TweetClaw GitHub, npm registry metadata, and handled PR
+  URLs returned HTTP 200. npmjs web UI returned a Cloudflare 403 while registry
+  metadata returned 200.
+- Prompt self-improvement: no automation prompt edit was useful. Durable lesson:
+  for fresh skill repos with no target-native TweetClaw lane, a narrow verified
+  install-link or broken-link repair is acceptable outreach when duplicate-clean
+  and validated, and the audit must state why no TweetClaw mention was added.
