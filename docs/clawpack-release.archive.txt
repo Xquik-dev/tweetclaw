@@ -312,3 +312,16 @@ ownership is fixed. Official OpenClaw docs returned HTTP 200 for llms, CLI
 plugins, manifest, permission requests, tool plugins, SDK runtime, ClawHub
 publishing, skill format, install overrides, and debugging. SkillSpector v2.2.3
 static scan returned `0/100`, LOW, SAFE, no issues.
+
+No npm or ClawHub publish was attempted during the 2026-06-22 10:58 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`. Published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. `npm audit` returned 0
+vulnerabilities at 2026-06-22 10:57 UTC. ClawHub
+`https://clawhub.ai/plugins/@xquik/tweetclaw` remained HTTP 200 and still
+exposed `1.6.26`, so npm remains canonical until current scoped package
+ownership is fixed. Official OpenClaw docs returned HTTP 200 for llms, CLI
+plugins, manifest, permission requests, tool plugins, SDK runtime, ClawHub
+publishing, skill format, install overrides, and debugging.

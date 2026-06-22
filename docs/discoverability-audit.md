@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 10:25 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 10:57 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
   ClawHub publishing, skill format, plugin manifest, permission requests, tool
   plugins, SDK runtime, install overrides, and debugging routes returned HTTP
   200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 10:25 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 10:57 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 10:25 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 10:57 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,22 +191,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 10:25 UTC: model/effort selector unavailable. Crawler-first skill,
+- 2026-06-22 10:58 UTC: model/effort selector unavailable. Crawler-first skill,
   OpenClaw, MCP, agent, social, Twitter/X, catalog, validator, fork, and package
-  tooling pass returned empty strict JSON.
-- Authored-PR inventory used 13 updated-date partitions with no caps and found
-  2132 unique open PR URLs. Exact readbacks covered 109 current-day and
-  audit-known PRs. Repaired 3 dirty README conflicts:
-  `awesome-openclaw-configs#1`, `openclaw-competitive-intel#1`, and
-  `fucking-awesome-ai-tools#17`; final readbacks were open, `MERGEABLE`, and
-  `CLEAN`.
-- Opened https://github.com/dataeclipse/skilldrift/pull/1 from verified fork
-  `kriptoburak/skilldrift`, branch `codex/add-drift-demo-example`, commit
-  `d6b0264`; readback open, ready, `MERGEABLE`, and unstable only because no
-  checks were present yet.
+  tooling pass used session `tweetclaw-20260622-104048` and returned empty
+  strict JSON.
+- Authored-PR inventory completed 11 updated-date buckets with 1227 raw entries,
+  then GitHub returned a 403 search rate limit on
+  `updated:2026-06-01..2026-06-11`. Exact readbacks covered 116 current-day and
+  audit-known PRs. Broad inventory is not complete this run.
+- Repaired https://github.com/reall8164/wechat-openclaw-plugin/pull/1 from
+  verified fork `kriptoburak/wechat-openclaw-plugin`, branch
+  `codex/add-tweetclaw-workflow`, commit `4655c3c`; final readback open,
+  `MERGEABLE`, and `CLEAN`.
+- Opened https://github.com/ModelBound/modelbound-mcp-server/pull/13 from
+  verified fork `kriptoburak/modelbound-mcp-server`, branch
+  `codex/add-codex-skill-adapter`, commit `1d4b8ae`; readback open, ready,
+  `MERGEABLE`, and unstable only because no checks were present yet.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
-  selected Markdown links, public URL probes, memory, target tests, and
-  `check:all`.
+  selected Markdown links, public URL probes, memory, ModelBound tests/build,
+  and `check:all`.
 
 ## Reporting Checklist
 

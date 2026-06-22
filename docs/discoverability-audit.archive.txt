@@ -31729,6 +31729,82 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 10:58 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-104048` covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills directories,
+  Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, validators, social/Twitter automation, and package-tooling
+  lanes. The crawler output parsed as JSON and returned 0 opportunities after
+  proxy refresh logs.
+- PR inventory method: compact audit, archives, crawler output, authored
+  updated-date search partitions, audit-known URLs, exact PR readbacks, fork
+  metadata, and target repo reads. Authenticated authored search completed 11
+  updated-date buckets with 1227 raw entries, then stopped on GitHub HTTP 403
+  search rate limit for `updated:2026-06-01..2026-06-11`. Core API remained
+  usable, so exact readbacks continued. Do not claim complete all-PR inventory
+  for this run.
+- Exact readbacks covered 116 open current-day and audit-known PRs. Aggregate:
+  116 open, 111 `MERGEABLE`, 4 `UNKNOWN`, 1 `CONFLICTING`; merge-state
+  statuses were 77 `CLEAN`, 25 `UNSTABLE`, 9 `BLOCKED`, 4 `UNKNOWN`, and
+  1 `DIRTY`. The actionable conflict was
+  `https://github.com/reall8164/wechat-openclaw-plugin/pull/1`; other review,
+  comment, or check signals were target-owned, stale, or non-actionable.
+- Repaired `reall8164/wechat-openclaw-plugin#1` from verified fork
+  `kriptoburak/wechat-openclaw-plugin`, branch `codex/add-tweetclaw-workflow`.
+  Merged upstream `main`, resolved the README support/download and optional
+  TweetClaw section conflict, validated conflict markers, package JSON,
+  `openclaw.plugin.json`, README links, npm metadata for `@xquik/tweetclaw`
+  and `@henryxiaoyang/wechat-access-unqclawed`, and public-hygiene scans.
+  Pushed commit `4655c3c` and updated the PR body current-head line without a
+  duplicate repair comment. Final readback: open, `MERGEABLE`, `CLEAN`, no
+  reviews or status checks.
+- Fresh discovery screened `ModelBound/modelbound-mcp-server` after the search
+  rate-limit blocker. Target is MIT licensed, active, non-fork, TypeScript, and
+  duplicate-clean for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, Codex, and
+  `.codex` across compact audit, archive, target content, target PRs, and
+  target issues. The target explicitly asks for new IDE adapters.
+- Opened `https://github.com/ModelBound/modelbound-mcp-server/pull/13` from
+  verified fork `kriptoburak/modelbound-mcp-server`, branch
+  `codex/add-codex-skill-adapter`, commit `1d4b8ae`. The patch adds a Codex
+  adapter for `.codex/skills/**/SKILL.md`, includes `.codex` in local CLI lint
+  traversal, documents Codex support, and removes a stale Smithery docs link.
+  Target validation passed `npm test`, `npm run build`, `git diff --check`,
+  `npm view modelbound-mcp version --json`, and
+  `npm view modelbound version --json`. README link check now reports only
+  npm.com Cloudflare 403s for existing package links, with registry metadata
+  confirming the packages. `npm audit` reports pre-existing lockfile advisories
+  in `gray-matter`/`js-yaml` and transitive `hono`/`esbuild`; dependency
+  updates were left out of the adapter PR. Readback: open, ready, `MERGEABLE`,
+  no comments or reviews, `UNSTABLE` only because no checks were present yet.
+- Official OpenClaw docs and surfaces were rechecked before final audit updates:
+  `llms.txt`, `llms-full.txt`, CLI plugins, plugin manifest, permission
+  requests, tool plugins, SDK runtime, ClawHub publishing, skill format,
+  install overrides, and debugging routes returned HTTP 200. OpenClaw npm tags
+  remained latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, `npm audit --audit-level=moderate --json` returned 0
+  vulnerabilities, selected Markdown links passed, GitHub/release/ClawHub/
+  OpenClawDir public probes returned HTTP 200, ClawHub still exposed `1.6.26`,
+  and npmjs web UI returned 403 to fetch while `npm view` remained canonical.
+- Final TweetClaw validation passed `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, and `npm run check:all`.
+  Persisted automation TOML measured 12314 bytes. No prompt edit was needed.
+  Prompt self-improvement: keep exact-repo fallback targets such as
+  ModelBound available when crawler returns empty JSON and GitHub search rate
+  limits; prefer adapter/tooling PRs over marketing placement for skill
+  ecosystem targets.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 09:46 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
