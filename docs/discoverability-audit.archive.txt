@@ -31805,6 +31805,71 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
   unrelated state.
 
+## 2026-06-22 11:10 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-110150` covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, skills directories,
+  Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, validators, social/Twitter automation, and package-tooling
+  lanes. The crawler output parsed as JSON and returned 0 opportunities after
+  proxy refresh logs.
+- PR inventory method: compact audit, archives, crawler output, current-day
+  authored open PR search, priority audit-known URLs, exact PR readbacks, target
+  repo PR/issues, fork metadata, and local clone inspection. Authenticated
+  current-day search returned 120 open PR URLs. Archive URL inventory contains
+  1196 historical PR URLs, but this run exact-read the current-day plus priority
+  subset only; do not claim complete all-PR inventory.
+- Exact readbacks covered 120 PRs. Aggregate: 120 open, 119 `MERGEABLE`, 1
+  `UNKNOWN`; merge-state statuses were 83 `CLEAN`, 27 `UNSTABLE`, 9 `BLOCKED`,
+  and 1 `UNKNOWN`. 19 had comments, 11 had reviews, and 13 had checks. No
+  actionable conflicts, maintainer-requested repairs, owned failing checks,
+  DCO/CLA blockers, generated-file drift, or valid bot findings were found.
+- Fresh discovery fallback used narrow repo searches after crawler-empty output.
+  `harrypham2000/skill-audit` was duplicate-blocked by existing open PR
+  `harrypham2000/skill-audit#32`. `Jetty0728/skillcheck` was fresh in compact
+  audit and archive, MIT licensed, active, non-fork, issue-enabled, and
+  duplicate-clean across target PRs/issues and cloned target content for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Codex, social media,
+  Twitter, and variants.
+- Fork safety: existing `kriptoburak/skillcheck` was parented to
+  `sx4im/skillcheck`, so it was not used. Created and verified
+  `kriptoburak/skillcheck-jetty0728` as a fork parented to
+  `Jetty0728/skillcheck`.
+- Opened `https://github.com/Jetty0728/skillcheck/pull/1` from verified fork
+  `kriptoburak/skillcheck-jetty0728`, branch
+  `codex/filter-recursive-skill-files`, commit `ae70ca6`. The patch filters
+  recursive support-directory listings to files only and adds a regression test
+  for nested `references/` and `examples/` directories so later metrics/security
+  scans do not try to read directories as files. Validation passed `npm test`,
+  `npm run lint`, `npm run build`, and `git diff --check`. Target `npm audit`
+  reported only a pre-existing low-severity transitive `esbuild` advisory.
+  Readback: open, ready, `MERGEABLE`, `CLEAN`, no comments, reviews, or checks.
+- Official OpenClaw docs and surfaces were rechecked: `llms.txt`,
+  `llms-full.txt`, CLI plugins, plugin manifest, permission requests, tool
+  plugins, SDK runtime, ClawHub publishing, skill format, install overrides, and
+  debugging routes returned HTTP 200. OpenClaw npm tags remained latest
+  `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, `npm audit --audit-level=moderate --json` returned 0
+  vulnerabilities, selected Markdown links passed, GitHub, ClawHub, OpenClawDir,
+  and Skillcheck PR public probes returned HTTP 200, and ClawHub still exposed
+  `1.6.26`.
+- Final TweetClaw validation passed `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, and `npm run check:all`.
+  Persisted automation TOML measured 12314 bytes. No prompt edit was needed.
+  Prompt self-improvement: when similarly named forks exist, verify parent
+  before push and use a renamed fork if needed rather than reusing a fork from a
+  different parent network.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 09:46 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
