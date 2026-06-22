@@ -31729,6 +31729,95 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 15:05 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output at `/tmp/tweetclaw-heartbeat-20260622-142454/crawl.json`,
+  research proxy enabled, bounded request and proxy warmup timeouts, session
+  `tweetclaw-20260622-142454`, and focused queries covering SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X, awesome-list, registry, validator, package-tooling,
+  plugin catalog, fork, and generated-catalog lanes. Output parsed as JSON and
+  returned 0 opportunities.
+- PR inventory: compact audit, archives, crawler output, current authored PR
+  partitions, exact GraphQL readbacks, target repo readbacks, and exact
+  priority REST reads were used. Authored open PR search was partitioned by
+  update windows and found 2151 unique open PRs with no capped bucket: 135 on
+  2026-06-22, 183 on 2026-06-21, 142 on 2026-06-20, 26 on 2026-06-19, 70 on
+  2026-06-18, 116 on 2026-06-17, 92 on 2026-06-16, 95 on 2026-06-15, 143 on
+  2026-06-14, 144 on 2026-06-13, 96 on 2026-06-12, 283 for
+  2026-06-01..2026-06-11, and 626 before 2026-06-01.
+- Exact readbacks: an initial wide GraphQL read hit HTTP 502 for 36 chunks and
+  produced 0 usable lite reads, so the run retried in narrow GraphQL batches.
+  Narrow exact-read succeeded for all 2151 PRs with 0 misses and 0 errors.
+  Merge states: 1659 clean, 311 unstable, 132 blocked, 39 dirty, 4 behind,
+  6 unknown. Mergeability: 2106 mergeable, 40 conflicting, 5 unknown. Review
+  decisions: 2 changes-requested, 89 review-required, 10 approved, 2050 none.
+- Repair gate: detailed readbacks covered 46 current-day non-clean PRs. Eight
+  had check rollups and none had failed checks. Six were review-required and
+  nine were blocked, with no actionable unresolved maintainer request found.
+  `Chat2AnyLLM/awesome-mcp-servers#1` was closed after the maintainer integrated
+  the Xquik entry directly and asked to avoid the stale generated artifacts.
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` remains stale changes-requested after the
+  requested vendor-neutral revision was already pushed. `weiflycc-cmd/
+  awesome-copilot#19` remains blocked because the requested `staged` base
+  branch is not exposed by GitHub.
+- Fresh discovery and duplicate gates: fallback search after empty crawler
+  screened fresh skill validator and tooling repos. Prior-history searches
+  blocked or deprioritized `ModelBound/modelbound-mcp-server`,
+  `swarmclawai/agent-skills-lint`, `intertwine/dspy-agent-skills`,
+  `harrypham2000/skill-audit`, `SiriusKainos/Cobweb`, and
+  `studiomeyer-io/skilldoctor`. `motiful/skill-forge` was active, root,
+  MIT-licensed, non-archived, non-forked, duplicate-clean for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub
+  listing, Xquik, x-twitter-scraper, and variants across compact audit,
+  archive, target content, all target PRs, and all target issues.
+- Target action: opened https://github.com/motiful/skill-forge/pull/1 from
+  verified fork `kriptoburak/skill-forge`, parent `motiful/skill-forge`,
+  branch `codex/fix-skill-forge-links`, commit `3cf29fa`. The patch fixed the
+  moved Gemini CLI extensions docs URL, made the rate-limited LobeHub
+  marketplace URL plain text for automation stability, corrected nested
+  Markdown skeleton fences and footer links, removed two fragile local anchor
+  links, and added the missing `Cross-References` section in skill
+  configuration docs. Readback: open, ready, `MERGEABLE`, `CLEAN`, no comments,
+  reviews, or checks.
+- Target validation: in `motiful/skill-forge`, `npx --yes markdown-link-check
+  README.md docs/*.md references/*.md --quiet` passed after initially finding
+  7 broken links or anchors. `git diff --check` passed. Added-line safety scan
+  found no TweetClaw, Xquik, credential value, private economics, or restricted-source
+  terms.
+- Official OpenClaw docs and package checks: llms, llms-full, CLI plugins,
+  manage plugins, manifest, permission requests, tool plugins, Codex harness
+  runtime, SDK runtime, ClawHub publishing, skill format, install overrides,
+  debugging, creating skills, and plugin validation fixes returned HTTP 200.
+  OpenClaw npm tags remained latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+- TweetClaw public hygiene: npm latest remains `@xquik/tweetclaw@1.6.31`;
+  source remains `1.6.32`. Published package metadata still exposes OpenClaw
+  install `npmSpec` `@xquik/tweetclaw@1.6.31` and compatibility
+  `>=2026.5.4`, while source targets `2026.6.9`. `npm audit
+  --audit-level=moderate --json` returned 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed. Selected TweetClaw
+  Markdown link checks passed. ClawHub route and OpenClawDir route returned
+  HTTP 200; npmjs web UI returned 403 checkpoint, so `npm view` remains
+  canonical for registry reads.
+- Prompt and memory: compact Markdown memory measured with
+  `npm run check-memory-md-size` before commit. Persisted automation TOML
+  measured 12314 bytes. No prompt edit was useful because current instructions
+  already preserve model/effort limits, quiet autonomy, crawler-first
+  discovery, mandatory PR, skill-repo coverage, fresh discovery, complete PR
+  inventory, repair priority, duplicate and fork rules, OpenClaw docs, link
+  checks, validation gates, badge rule, Context7 exclusion, credential handling,
+  cadence, thread binding, commit/push, Markdown cap, prompt cap, and
+  self-improvement.
+- Changed TweetClaw files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Untracked file `0` remains untouched as
+  unrelated state.
+
 ## 2026-06-22 14:09 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high

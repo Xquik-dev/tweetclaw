@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 14:09 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 15:05 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Current llms-indexed CLI,
   ClawHub publishing, skill format, plugin manifest, permission requests, tool
   plugins, Codex harness runtime, install overrides, and debugging routes
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 14:09 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 15:05 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 14:09 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 15:05 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,16 +191,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 14:09 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-133421` parsed as strict JSON but returned no
-  opportunities. Partitioned authored-open PR inventory exact-read all 2151 PRs.
-- Repaired antstudiocz/ant-marketplace#37 by merging upstream `master`;
-  readback became open, ready, `MERGEABLE`, and `CLEAN`.
-- Opened https://github.com/studiomeyer-io/skilldoctor/pull/3 from verified
-  fork `kriptoburak/skilldoctor`, branch `codex/fix-readme-library-import`,
-  commit `ddebb1f`; readback open and `MERGEABLE`.
-- TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
-  selected links, memory, OpenClaw fitness, and `check:all`.
+- 2026-06-22 15:05 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-142454` parsed as strict JSON but returned no
+  opportunities.
+- Authored-open PR inventory partitioned search found 2151 open PRs with no
+  capped bucket. Wide GraphQL exact read hit HTTP 502, then narrow GraphQL
+  exact-read all 2151: 1659 clean, 311 unstable, 132 blocked, 39 dirty,
+  4 behind, 6 unknown; 40 conflicting; 2 changes-requested; 89
+  review-required.
+- Detailed read of 46 current-day non-clean PRs found no failed check rollups.
+  Chat2AnyLLM/awesome-mcp-servers#1 was closed after the maintainer integrated
+  the entry directly. Remaining changes-requested items are stale review state
+  or blocked by a missing target branch.
+- Opened https://github.com/motiful/skill-forge/pull/1 from verified fork
+  `kriptoburak/skill-forge`, branch `codex/fix-skill-forge-links`, commit
+  `3cf29fa`; readback open, `MERGEABLE`, and `CLEAN`.
+- TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, OpenClawDir,
+  npm audit, selected links, memory, OpenClaw fitness, and `check:all`.
 
 ## Reporting Checklist
 
