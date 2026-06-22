@@ -31729,6 +31729,100 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 09:46 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-094649` covered SKILL.md, `.agents/skills`,
+  skills directories, OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X,
+  awesome-list, registry, fork, validator, package-tooling, plugin-catalog, and
+  TweetClaw placement lanes. Exact command:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260622-094649/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 30000 --limit 80 --search-pages 2 --per-query-limit 6 --concurrency 10 --session-id tweetclaw-20260622-094649` with 6 focused `--query` values. Output parsed as JSON and returned 0 opportunities.
+- PR inventory method: compact audit, archive URLs, crawler output, fork
+  metadata, authored open-PR search partitioned by updated date, and exact
+  GitHub readbacks. The 13 partitions returned 2132 unique open authored PR
+  URLs with no capped partition: 109 updated on or after 2026-06-22, 185 on
+  2026-06-21, 145 on 2026-06-20, 26 on 2026-06-19, 70 on 2026-06-18, 116 on
+  2026-06-17, 92 on 2026-06-16, 95 on 2026-06-15, 144 on 2026-06-14, 144 on
+  2026-06-13, 96 on 2026-06-12, 283 from 2026-06-01 through 2026-06-11, and
+  627 before 2026-06-01.
+- Exact readbacks covered 109 current-day and audit-known PRs. Aggregate:
+  109 open; merge-state counts BLOCKED 9, CLEAN 69, DIRTY 3, UNKNOWN 6,
+  UNSTABLE 22; mergeable counts CONFLICTING 3, MERGEABLE 100, UNKNOWN 6;
+  17 with comments, 8 with reviews, 10 with checks. Actionable repairs were the
+  3 dirty conflicts below. Remaining blocked or unstable items were target-owned
+  protection, Vercel authorization, stale review state, or no-check conditions.
+- PR repairs before outreach:
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aqmar777/openclaw-competitive-intel#1`, and
+  `Correia-jpv/fucking-awesome-ai-tools#17` were cloned from verified
+  `kriptoburak` forks, merged with current upstream `main`, and repaired by
+  keeping current upstream README content then reapplying only the small
+  existing TweetClaw or Xquik placement lines. Commits pushed:
+  `14a2bb7`, `054aa92`, and `7b3fa0c`. Final exact readbacks for all 3 were
+  open, `MERGEABLE`, and `CLEAN`.
+- Repair validation:
+  `awesome-openclaw-configs` passed conflict-marker scan, `git diff --check`,
+  JSON5 validation for `configs/automation/x-twitter-monitor-tweetclaw.json5`,
+  direct TweetClaw, npm registry, ClawHub, and NHS link probes, and
+  public-hygiene scan. `openclaw-competitive-intel` passed conflict-marker scan,
+  `git diff --check`, Python compile, TweetClaw fetcher unit tests, install
+  script syntax check, direct TweetClaw, registry, and docs links, and
+  public-hygiene scan. `fucking-awesome-ai-tools` passed conflict-marker scan,
+  `git diff --check`, direct Xquik docs link probe, and public-hygiene scan;
+  full catalog link checks remain noisy from pre-existing target-owned links.
+- Fresh discovery after crawler-first used archive search, fallback GitHub repo
+  searches, exact metadata, target content, and target issue and PR searches.
+  `dataeclipse/skilldrift` was fresh to compact and archive memory, MIT
+  licensed, active enough, non-fork, issue-enabled, duplicate-clean for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, social, Twitter/X, and
+  variants across compact audit, archive, target content, open and closed PRs,
+  and open and closed issues. Target-native fit: README advertised an
+  `examples/drift-demo` path for Cursor plus Claude or Codex skill drift; the
+  existing demo covered Cursor and Claude, so adding a Codex fixture improves
+  supported-surface coverage without a marketing mention.
+- Opened https://github.com/dataeclipse/skilldrift/pull/1 from verified fork
+  `kriptoburak/skilldrift` parented to `dataeclipse/skilldrift`, branch
+  `codex/add-drift-demo-example`, commit
+  `d6b0264f0dfb4877cfe995cd9c04bbb6b495fb08`. The patch adds
+  `examples/drift-demo/.codex/skills/api-style/SKILL.md` and a regression test
+  asserting the README demo detects drift across cursor, claude, and codex
+  surfaces. Readback: open, ready, `MERGEABLE`, `UNSTABLE` only because no
+  status checks were present, no comments, and no reviews.
+- Skilldrift validation passed
+  `uv run --extra dev --python /Users/burak/.local/bin/python3.11 pytest`,
+  `/Users/burak/.local/bin/python3.11 -m compileall -q skilldrift tests examples`,
+  `uv run --extra dev --python /Users/burak/.local/bin/python3.11 skilldrift diff examples/drift-demo`,
+  `git diff --check`, conflict-marker scan, and public-hygiene scan. `python3`
+  on the host is 3.9 and failed as expected because the project requires Python
+  3.11 `tomllib`; the validated path used Python 3.11.
+- Official OpenClaw docs recheck before TweetClaw maintenance: `llms.txt`,
+  `llms-full.txt`, CLI plugins, plugin manifest, permission requests, tool
+  plugins, SDK runtime, ClawHub publishing, ClawHub skill format, install
+  overrides, and debugging routes returned HTTP 200. OpenClaw npm tags remained
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`.
+- TweetClaw public hygiene passed: npm latest remains `1.6.31`, source remains
+  `1.6.32`, `npm audit --audit-level=moderate --json` returned 0
+  vulnerabilities, TweetClaw GitHub, release, npm registry metadata, ClawHub,
+  and OpenClawDir routes returned HTTP 200, and selected markdown-link-check
+  runs passed for README, OpenClaw setup, agent workflows, compact audit, and
+  compact release notes.
+- Final TweetClaw validation passed `npm run check:all`: typecheck, lint, CPD,
+  Knip, suppression check, dash check, memory size, skill frontmatter, version
+  parity, build, OpenClaw platform fitness, package artifact check, and coverage.
+- Prompt and memory: compact Markdown memory measured after compaction before
+  commit. No prompt edit was needed; prompt byte size unchanged. Prompt
+  self-improvement: when a README references an example path, inspect hidden
+  directories with `find` or `rg --hidden` before assuming files are absent,
+  because skill examples often live under hidden `.claude`, `.codex`, or
+  `.cursor` trees.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+  Untracked file `0` remains untouched as unrelated state.
+
 ## 2026-06-22 09:39 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
