@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 18:38 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-22 18:57 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200; legacy `/plugins/plugin-validation-fixes` now
   returns 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 18:38 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 18:57 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 18:38 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 18:57 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,17 +190,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 18:24 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-182430` covered required PR and skill lanes, found 11
-  already-covered repos, and exact-read 13 tracked PRs. Broad authored PR lane
-  searches still hit the 100-result cap, so GitHub-wide exact inventory is not
-  claimed. No safe tracked-PR repair was available.
-- Opened https://github.com/aktsmm/vscode-agent-skill-ninja/pull/9 from
-  verified fork `kriptoburak/vscode-agent-skill-ninja`, branch
-  `codex/fix-readme-links`, commit `46bff4e`. The target-native docs fix repairs
-  README navigation anchors, an AGENTS link, stale changelog release links, and
-  Japanese README license wording. Validation: target Markdown links,
-  `git diff --check`, and added-line scans.
+- 2026-06-22 18:57 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-184528` covered required PR, skill, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X, awesome-list, registry, validator, fork, and
+  package-tooling lanes, found 12 already-covered repos, and exact-read 14
+  tracked PRs. Broad authored PR lanes hit 100-result caps and then a GitHub
+  secondary search limit, so GitHub-wide exact inventory is not claimed. No safe
+  tracked-PR repair was available.
+- Opened https://github.com/agenticsrclab/clawhub-agent-artifact-scaffolder/pull/1
+  from verified fork `kriptoburak/clawhub-agent-artifact-scaffolder`, branch
+  `codex/tweetclaw-openclaw-starter-example`, commit `f263d38`. The
+  target-native change adds a TweetClaw OpenClaw plugin starter example and a
+  Node test for scoped package names, repository metadata, manifest tools, and
+  paid-execution boundaries. Validation: `npm test`, `git diff --check`, fork
+  parent readback, and PR readback.
 - TweetClaw hygiene passed: OpenClaw llms/core docs/npm, ClawHub routes,
   canonical OpenClawDir route, npm audit, package metadata, Markdown links,
   selected direct URLs, OpenClaw fitness, and memory cap. Legacy OpenClaw
