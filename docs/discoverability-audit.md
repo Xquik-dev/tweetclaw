@@ -190,21 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 06:29 UTC: model/effort selector unavailable. Crawler JSON covered
+- 2026-06-22 07:15 UTC: model/effort selector unavailable. Crawler JSON covered
   PRs plus skill/OpenClaw/MCP/social/catalog/tooling lanes; its only
   opportunity, `elbis330/social-media-scraper-skill`, was duplicate-blocked by
   existing open PR 2.
-- PR inventory used crawler output, memory, current search, keyword partitions,
-  exact readbacks, REST fallback, fork metadata, and target lists. GraphQL
-  counted 2112 open authored PRs. Exact readbacks covered 607 partitioned PRs,
-  then GraphQL exhausted with 4 failures, so no complete exhaustion claim.
-- Repaired conflicts on `jamald33n/tweetsave-mcp#2` (`4cd8c5a`, clean) and
-  `warlockoussama/twitter-cli#1` (`7f2d81a`, REST clean). Earlier Hermes bot
-  findings were already fixed. Remaining conflict/check backlog is archived.
-- Opened https://github.com/ubgb/awesome-openclaw-skills/pull/1 from verified
-  fork `kriptoburak/ubgb-awesome-openclaw-skills`, branch
-  `codex/add-tweetclaw-openclaw-skill`, commit `cd54998`; readback open,
-  ready, clean, `MERGEABLE`.
+- Complete authored-PR inventory used 13 updated-date partitions with no caps.
+  Exact readbacks covered 2116 open PRs with 0 errors; status retry recovered
+  350/350 lighter reads. Snapshot had 33 dirty, 57 failing, and 2 changes-
+  requested PRs before repair; remaining backlog is archived.
+- Repaired conflicts on `Aqmar777/openclaw-competitive-intel#1` (`13b9646`),
+  `Aditya923-c/xpoz-agent-skills#1` (`665682e`), and
+  `AbdNour627/awesome-openclaw-configs#1` (`4efcee5`); all read back clean and
+  `MERGEABLE`.
+- Opened https://github.com/polarbearlin/publish-content-multichannel/pull/1
+  from verified fork `kriptoburak/publish-content-multichannel`, branch
+  `codex/tweetclaw-x-source-context`, commit `41a6028`; readback open, ready,
+  clean, `MERGEABLE`.
 - TweetClaw hygiene passed: OpenClaw docs/npm, ClawHub route, npm audit,
   selected links, SkillSpector 0/100 SAFE, fitness, artifact, frontmatter,
   versions, memory, and `check:all`.
