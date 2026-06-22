@@ -31729,6 +31729,90 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 03:58 UTC Heartbeat
+
+- Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
+  effort selection controls. Limitation recorded here and in the heartbeat
+  outcome; the run continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260622-034451` used the managed research proxy
+  with bounded request and warmup timeouts. Query coverage included authored
+  open PRs, TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`,
+  skills directories, Claude, Codex, OpenClaw/MCP/agent/social/Twitter-X skills,
+  awesome lists, registries, forks, generated catalogs, validators, examples,
+  social/Twitter automation, plugin ecosystems, and package-tooling lanes. The
+  output parsed as JSON and returned 40 opportunities.
+- PR inventory method: compact audit, archive URLs, crawler output, fork
+  metadata, target repo reads, exact known-PR readbacks, and current authored
+  open-PR search. Lightweight GraphQL paginated 2101 open authored PRs. Bounded
+  exact readbacks covered 59 current PRs updated on 2026-06-22, with 51
+  `MERGEABLE`, 7 `UNKNOWN`, 1 `CONFLICTING`, 0 failing checks, and 0 pending
+  checks.
+- Actionable repair: `Aditya923-c/xpoz-agent-skills#1` was conflicting after
+  upstream README quick-link changes. Fork `kriptoburak/xpoz-agent-skills` was
+  verified as parented to `Aditya923-c/xpoz-agent-skills`; upstream `main` was
+  merged into branch `codex/add-tweetclaw-openclaw-resource`; the README
+  conflict was resolved by keeping the raw ZIP download link and repository
+  page link distinct. Validation passed conflict-marker scan, `git diff
+  --check`, README link check, and public-hygiene scan. Commit
+  `b3e1a71be9cdc2c092b12d46239d6a93f114712e` was pushed, and a repair comment
+  was posted at
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4764537225.
+  Final readback: open, ready, clean, `MERGEABLE`, no configured checks.
+- Fresh discovery and duplicate gates: `sickn33/antigravity-awesome-skills` was
+  duplicate-blocked by prior TweetClaw merged PRs and archive history.
+  `ckanthony/Chisel` and `philip1974/continuo-skills-manager-plugin` lacked
+  license metadata and were left for backlog. `0SxD/notebooklm-mcp-skill` is
+  MIT but weak TweetClaw fit. `e01n0/skillspec` was non-fork, active,
+  duplicate-clean across compact audit, archive, target content, target PRs,
+  and target issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, and variants.
+  Missing license metadata did not block a direct target-native docs PR.
+- External PR: opened https://github.com/e01n0/skillspec/pull/17 from verified
+  fork `kriptoburak/skillspec`, branch `codex/document-deploy-targets`, commit
+  `5846cf7786b3e885c316d2a94f2955d2fc40c132`. The patch documents already
+  implemented `cline` and `codex` deploy targets in the README. Validation
+  passed `cargo test`, clippy with denied warnings, `cargo fmt --check`, README
+  link check, `git diff --check`, duplicate gates, and public-hygiene scan.
+  Readback: open, ready, clean, `MERGEABLE`, no configured checks, comments, or
+  reviews.
+- Official OpenClaw and package checks: required OpenClaw docs and llms exports
+  returned HTTP 200. `llms.txt` was 94373 bytes with sha256
+  `504c7b60850d20d0664b434de2d34eef963e43622437bab2be4568ddce91e3b3`;
+  `llms-full.txt` was 6666783 bytes with sha256
+  `1717b3dfa81dcb7936eff00531d4ac6838f178138f1528622564719a6dc8825a`.
+  CLI plugins, manifest, permission requests, tool plugins, SDK runtime and
+  entrypoints, ClawHub publishing and skill format, install overrides,
+  plugin-validation fixes, and debugging routes returned HTTP 200. `npm view
+  @xquik/tweetclaw` returned latest `1.6.31` with published OpenClaw metadata
+  still at OpenClaw `2026.5.4`; source remains `1.6.32`. OpenClaw npm tags
+  remained latest `2026.6.9`, beta `2026.6.10-beta.1`, alpha
+  `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`; npm audit found 0
+  vulnerabilities.
+- Public hygiene: direct curl checks returned HTTP 200 for TweetClaw GitHub,
+  releases, registry npm metadata, ClawHub plugin route, stale owner route,
+  OpenClaw Directory, docs.xquik.com, the new skillspec PR, and repaired xpoz
+  PR. npmjs web UI returned 403 to curl, so registry metadata remains the
+  canonical package check. Selected Markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, packaged skill, and skill card.
+- TweetClaw validation before commit: passed `npm run
+  check-openclaw-platform-fitness`, `npm run check-package-artifact`, `npm run
+  check-skill-frontmatter`, and `npm run check-versions` after a transient
+  concurrent npm-run miss on the first parallel attempt. SkillSpector v2.2.3
+  no-LLM scan at 2026-06-22 03:54 UTC reported score `0/100`, LOW severity,
+  SAFE recommendation, no issues, and no executable scripts. Final
+  `npm run check:all` passed with 11 test files, 168 tests, and 100% coverage.
+- Prompt and self-improvement: persisted automation TOML measured 12314 bytes.
+  No prompt edit was needed. Durable lesson: when a target README omits deploy
+  targets already implemented and documented elsewhere, a docs-only PR can be
+  target-native and reviewable. Continue archive-first duplicate checks for
+  high-ranking crawler candidates, because top skill catalogs are often already
+  covered by prior TweetClaw PRs.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
+  untouched as unrelated state.
+
 ## 2026-06-22 03:39 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
