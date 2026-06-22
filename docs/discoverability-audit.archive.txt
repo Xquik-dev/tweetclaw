@@ -31814,7 +31814,8 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   Knip, suppression check, dash check, memory size, skill frontmatter, version
   parity, build, OpenClaw platform fitness, package artifact check, and coverage.
 - Prompt and memory: compact Markdown memory measured after compaction before
-  commit. No prompt edit was needed; prompt byte size unchanged. Prompt
+  commit. Persisted automation TOML measured 12314 bytes. No prompt edit was
+  needed; prompt byte size unchanged. Prompt
   self-improvement: when a README references an example path, inspect hidden
   directories with `find` or `rg --hidden` before assuming files are absent,
   because skill examples often live under hidden `.claude`, `.codex`, or
