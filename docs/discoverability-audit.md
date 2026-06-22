@@ -49,12 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked as of 2026-06-22 03:54 UTC: latest `2026.6.9`,
+- OpenClaw npm checked as of 2026-06-22 04:21 UTC: latest `2026.6.9`,
   beta `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`. Required docs and routes
-  returned HTTP 200, including llms, CLI, ClawHub, plugin, plugin permission,
-  SDK runtime and entrypoint, testing, and debugging pages.
+  returned HTTP 200 for llms, CLI, ClawHub, plugin, permission, SDK runtime,
+  skill format, publishing, and debugging pages. Install-overrides route
+  returned HTTP 404 and needs route discovery before citing.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 03:54 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-22 04:21 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 03:54 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-22 04:21 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +191,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 03:58 UTC: model/effort selector unavailable. Crawler JSON covered
+- 2026-06-22 04:21 UTC: model/effort selector unavailable. Crawler JSON covered
   authored PRs, TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`,
   skill dirs, agent/social/Twitter-X skills, awesome lists, registries, forks,
-  validators, examples, plugins, and package tooling; 40 opportunities parsed.
-- Lightweight GraphQL inventoried 2101 open authored PRs. Bounded readbacks
-  covered 59 current PRs; repaired
-  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 by resolving the
-  README conflict, pushing `b3e1a71`, and commenting. Readback is clean and
+  validators, examples, plugins, and package tooling; 1 opportunity was parsed
+  and duplicate-blocked.
+- GraphQL counted 2104 open authored PRs. Exact readbacks covered 63 current
+  PRs. Repaired 4 conflict-blocked PRs:
+  `warlockoussama/twitter-cli#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `AbdNour627/awesome-openclaw-configs#1`, and
+  `reall8164/wechat-openclaw-plugin#1`. All final readbacks are clean and
   `MERGEABLE`.
-- Opened https://github.com/e01n0/skillspec/pull/17 from verified fork
-  `kriptoburak/skillspec`, branch `codex/document-deploy-targets`, commit
-  `5846cf7`; readback open, ready, clean, `MERGEABLE`, no configured checks.
-- Target validation passed `cargo test`, clippy with denied warnings,
-  `cargo fmt --check`, diff check, duplicate gates, public-hygiene scan, and
-  README link check. TweetClaw OpenClaw docs, links, npm metadata/audit,
-  SkillSpector, fitness, artifact, skill frontmatter, versions, memory, and
-  `check:all` passed.
+- Opened https://github.com/NGO-A/native-memory-citations/pull/1 from verified
+  fork `kriptoburak/native-memory-citations`, branch
+  `codex/refresh-openclaw-build-host`, commit `e4ea9a6`; readback open, ready,
+  `MERGEABLE`, Snyk success, merge state `UNSTABLE`.
+- External validation passed tests, build, isolated HOME plugin build check,
+  diff check, duplicate gates, public-hygiene scan, and npm metadata check.
+  TweetClaw OpenClaw docs, links, npm metadata/audit, SkillSpector, fitness,
+  artifact, skill frontmatter, versions, memory, and `check:all` passed.
 
 ## Reporting Checklist
 

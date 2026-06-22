@@ -31729,6 +31729,134 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `skills/tweetclaw/skillspector-report.md`. Untracked file `0` remains
   untouched as unrelated state.
 
+## 2026-06-22 04:21 UTC heartbeat
+
+- Runtime and scope: heartbeat runtime did not expose a GPT-5.5 or extra-high
+  reasoning-effort selector, so the run continued under the available model.
+  Context7, Browser, Chrome, GUI automation, dev servers, production SSH, and
+  secrets were not used. TweetClaw started on `master` at
+  `7b8943d39409e05a0adc77cab37c5da2e1cec0df` with pre-existing untracked file
+  `0`, left untouched. Xquik had unrelated dirty
+  `docs/feature-roadmap.md`, left untouched.
+- Issue preflight: `gh issue list -R Xquik-dev/tweetclaw` and
+  `gh issue list -R Xquik-dev/xquik` both returned no open issues.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  Xquik crawler with research proxy, output
+  `/tmp/tweetclaw-heartbeat-20260622-040547/crawl.json`, request timeout
+  12000 ms, proxy warmup timeout 45000 ms, limit 140, 2 search pages, 10 per
+  query, concurrency 12, and session `tweetclaw-20260622-040547`. Query pack
+  covered authored open PRs, TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw/MCP/Codex/Claude/agent/social and
+  Twitter-X skills, awesome lists, registries, forks, generated catalogs,
+  plugin manifests, validators, examples, package tooling, and
+  x-twitter-scraper lanes. Output parsed as valid JSON with 1 opportunity,
+  `elbis330/social-media-scraper-skill`, blocked by prior duplicate history.
+  Proxy logs exposed no credential values.
+- Open PR inventory: GraphQL reported 2104 open authored PRs. Bounded exact
+  readback covered 63 PRs updated on 2026-06-22 or later with 54 mergeable, 5
+  unknown, 4 conflicting; merge-state summary was 42 clean, 3 blocked, 9
+  unstable, 5 unknown, 4 dirty. Only `flc1125/skills#120` had a failing
+  target-owned Vercel check. No pending checks or new maintainer-owner requests
+  required stopping.
+- Repair 1: `warlockoussama/twitter-cli#1` was repaired from the correctly
+  parented `kriptoburak/twitter-cli` fork branch
+  `codex/update-readme-command-scope`. After unshallowing the clone, merged
+  upstream main, resolved the duplicate README final-download-link conflict,
+  validated conflict-marker scan, `git diff --check`, README link check, and
+  changed-diff public-hygiene scan. Commit
+  `5d1b1e1b0ba38f58fda2ebbbbd02aee6cef41c33` was pushed and comment
+  `https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4764686293`
+  posted. Final readback: open, ready, clean, `MERGEABLE`, no checks.
+- Repair 2: `Aqmar777/openclaw-competitive-intel#1` was repaired from
+  `kriptoburak/openclaw-competitive-intel`, branch `codex/tweetclaw-x-source`.
+  Merged upstream main and resolved README conflicts while keeping the TweetClaw
+  X/Twitter source section, NHS badge, and one download badge. Validation
+  passed conflict-marker scan, `git diff --check`, Python compile, unit tests,
+  install script syntax, README plus docs link checks, and public-hygiene scan.
+  Commit `9f9a9c79ea170da970f15c709703fab4a04fc8c3` was pushed and comment
+  `https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4764692475`
+  posted. Final readback: open, ready, clean, `MERGEABLE`, no checks.
+- Repair 3: `AbdNour627/awesome-openclaw-configs#1` was repaired from
+  `kriptoburak/awesome-openclaw-configs`, branch `codex/add-tweetclaw-x-config`.
+  Merged upstream main and resolved README conflicts by keeping valid repository
+  badge, current OpenClaw examples, clone command, TweetClaw monitor config row,
+  and related project links while dropping malformed raw-ZIP substitutions.
+  Validation passed conflict-marker scan, `git diff --check`, JSON5 validation,
+  README/README_EN/CONTRIBUTING link checks, and public-hygiene scan. Commit
+  `e0ee1bbe74f567f10c7f511e3ad6e409481ed244` was pushed and comment
+  `https://github.com/AbdNour627/awesome-openclaw-configs/pull/1#issuecomment-4764704046`
+  posted. Final readback: open, ready, clean, `MERGEABLE`, no checks.
+- Repair 4: `reall8164/wechat-openclaw-plugin#1` was repaired from
+  `kriptoburak/wechat-openclaw-plugin`, branch `codex/add-tweetclaw-workflow`.
+  Merged upstream main and resolved README conflicts while keeping the GitHub
+  support link, the TweetClaw optional workflow section, and one download badge.
+  Validation passed conflict-marker scan, `git diff --check`, package and
+  OpenClaw manifest JSON parse, README link check, and public-hygiene scan.
+  Commit `e69e60d22a1bdc3259e9859980a79f0cda7c69fb` was pushed and comment
+  `https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4764711413`
+  posted. Final readback: open, ready, clean, `MERGEABLE`, no checks.
+- Fresh discovery and duplicate gates: fallback GitHub repo searches covered
+  agent skill, social media scraper skill, OpenClaw plugin, and agent skill
+  registry lanes. Duplicate or prior-history blockers included
+  `elbis330/social-media-scraper-skill`,
+  `expropriationhoorayhenry64/social-media-scraper-skill`,
+  `framerslab/agentos-skills-registry`, and `iflytek/skillhub`. Exact screening
+  selected `NGO-A/native-memory-citations` because it is public, non-fork,
+  non-archived, MIT licensed, issue-enabled, recently pushed, duplicate-clean
+  across compact audit, archive, target content, and target open/closed
+  PRs/issues, and target-native as an OpenClaw plugin pinned to
+  `openclaw@2026.6.8` while latest stable is `2026.6.9`.
+- Official OpenClaw docs check before target OpenClaw metadata work: HTTP 200
+  for `llms.txt`, CLI plugins, plugin manifest, permission requests, tool
+  plugins, SDK runtime, ClawHub publishing, ClawHub skill format, and debugging.
+  The previous install-overrides route returned HTTP 404 and must be rediscovered
+  before citing.
+- Fresh PR submitted: `https://github.com/NGO-A/native-memory-citations/pull/1`
+  from verified fork `kriptoburak/native-memory-citations`, branch
+  `codex/refresh-openclaw-build-host`, commit
+  `e4ea9a6e6ace508ec59c6d680a103f35e412f35b`. The PR refreshes only the pinned
+  OpenClaw dev/build host metadata and lockfile to `2026.6.9`, preserving the
+  existing runtime compatibility floor at `>=2026.6.8`. Validation passed
+  `npm test` with 89 tests, `npm run build`, isolated HOME OpenClaw plugin build
+  check, `git diff --check`, conflict-marker scan, duplicate gates, and
+  public-hygiene scan. README link check found the existing npm web package page
+  returning HTTP 403 to CLI/curl; `npm view @ngo-a/native-memory-citations`
+  verified registry metadata, so this was recorded as target-owned npm-web
+  access behavior. First plugin build check against the workstation HOME exposed
+  invalid local OpenClaw config and archived a legacy install index; the
+  isolated HOME rerun passed and no target code change was needed. PR readback:
+  open, ready, `MERGEABLE`, merge state `UNSTABLE`, Snyk success.
+- TweetClaw public hygiene: OpenClaw npm tags latest `2026.6.9`, beta
+  `2026.6.10-beta.1`, alpha `2026.5.19-alpha.1`; npm latest remains
+  `@xquik/tweetclaw@1.6.31` while source is `1.6.32`; npm audit returned 0
+  vulnerabilities; ClawHub plugin route and OpenClaw Directory route returned
+  HTTP 200. Selected public Markdown link checks passed for README, compact
+  audit, compact release notes, and packaged skill.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-skill-frontmatter`, and
+  `npm run check-versions` passed. The combined skill frontmatter plus version
+  command initially hit the recurring concurrent npm missing-script race, then
+  `npm run check-versions` passed alone. SkillSpector v2.2.3 no-LLM scan at
+  2026-06-22 04:21 UTC returned score `0/100`, LOW severity, SAFE
+  recommendation, no issues, and no executable scripts; report timestamp was
+  updated. Final `npm run check:all` passed with typecheck, lint, duplication,
+  Knip, suppression, dash, memory, skill frontmatter, versions, build, OpenClaw
+  fitness, package artifact, and coverage gates; 11 test files and 168 tests
+  passed with 100% coverage.
+- Prompt and self-improvement: compact Markdown memory was kept under the
+  15 KiB cap by replacing the previous latest-run block and archiving details.
+  Automation TOML measured 12314 bytes, so no prompt edit was needed. Durable
+  lessons: recurring repair branches can need unshallowing before upstream
+  merges because fork histories may otherwise look unrelated; OpenClaw target PRs
+  should refresh dev/build host pins without raising compatibility floors unless
+  target runtime behavior requires it; run plugin-build checks with isolated HOME
+  when validating third-party OpenClaw plugins to avoid local profile coupling.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`,
+  `docs/clawpack-release.archive.txt`, and
+  `skills/tweetclaw/skillspector-report.md`. Pre-existing untracked file `0`
+  remains untouched.
+
 ## 2026-06-22 03:58 UTC Heartbeat
 
 - Model and reasoning effort: runtime did not expose GPT-5.5 or extra-high
