@@ -190,20 +190,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 16:14 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-155559` covered required skill, OpenClaw, MCP, social,
-  validator, catalog, and package-tooling lanes; it returned 3 already-covered
-  repos, and a fresh rerun returned 0 after proxy/endpoint circuit failures.
-- Open PR inventory used crawler, archive, REST partitions, exact PR reads, fork
-  metadata, and target inspection. REST parsed 379 unique open PR rows before
-  parse failures and GitHub secondary rate limiting; broad exact inventory is
-  not claimed. Six known PRs were exact-read; no new repair was safe.
-- Opened https://github.com/pradeepmouli/skillit/pull/84 from verified fork
-  `kriptoburak/skillit`, branch `codex/fix-contributing-guide`, commit
-  `9d7bf2c`. The target-native docs fix updates contributor prerequisites,
-  removes broken `AGENTS.md` references, refreshes package structure, points
-  PRs at `develop`, and replaces a dead Discussions link. Validation:
-  `markdown-link-check CONTRIBUTING.md` and `git diff --check`.
+- 2026-06-22 16:25 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-161659` covered required PR and skill-repo lanes, found 4
+  already-covered repos, and exact-read 6 known PRs. Lane PR search found 988
+  unique authored URLs, but 13 lanes were capped, so broad exact inventory is
+  not claimed. No safe repair was available.
+- Opened https://github.com/feiyueyun/skill-interop-tools/pull/2 from verified
+  fork `kriptoburak/skill-interop-tools`, branch `codex/fix-doc-links`, commit
+  `2e104a2`. The target-native docs fix replaces stale Agent Skills, A2A, and
+  ClawHub links plus a missing CONTRIBUTING link. Validation: target link check,
+  `go test ./...`, and `git diff --check`.
 - TweetClaw hygiene passed: official OpenClaw docs/npm, ClawHub and
   OpenClawDir routes, npm audit, package metadata, Markdown links, selected
   direct URLs, OpenClaw fitness, memory cap, and `check:all`.

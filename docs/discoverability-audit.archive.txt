@@ -34688,3 +34688,72 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   the llms export to discover renamed docs paths instead of treating the old
   route as authoritative. Skillit is now duplicate-blocked for this contributor
   guide fix unless maintainers ask for follow-up.
+
+2026-06-22 16:25 UTC heartbeat - skill interop docs link PR
+
+- Runtime note: model and reasoning-effort selector unavailable; continued under
+  the available Codex runtime. Persisted automation prompt size remained 12314
+  bytes.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded timeouts, 6 focused queries covering SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, awesome lists, registries, forks, generated catalogs, validators,
+  package tooling, and exact repo probes for `skill-tools/skill-tools`,
+  `vaibhav4046/mcp-marketplace`, `motiful/skill-forge`, and
+  `pradeepmouli/skillit`.
+- Crawler result: 4 opportunities, all already covered by open PRs:
+  `pradeepmouli/skillit`, `skill-tools/skill-tools`, `motiful/skill-forge`, and
+  `vaibhav4046/mcp-marketplace`.
+- PR inventory: lane-partitioned authored-open search covered TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, MCP, SKILL.md, skill, agent, Twitter,
+  social, catalog, registry, validator, and package-tooling terms. It found 988
+  unique authored PR URLs. Thirteen broad lanes were capped at the first 100
+  results, and the literal `@xquik/tweetclaw` lane returned GitHub validation
+  422, so broad exact inventory is not claimed.
+- Exact PR readbacks: `pradeepmouli/skillit#84` open, mergeable, blocked with no
+  comments or checks; `skill-tools/skill-tools#15` open, mergeable, unstable
+  with no comments; `vaibhav4046/mcp-marketplace#1` open, mergeable, unstable
+  only due target-owned Vercel authorization; `motiful/skill-forge#1` open,
+  mergeable, clean; `Hashi-Ai-Dev/openclaw-clawdoc#6` open, mergeable, blocked
+  by stale already-addressed changes-requested state; `weiflycc-cmd/awesome-
+  copilot#19` open, mergeable, clean but still blocked by target bot requesting
+  unavailable base branch `staged`. No safe repair was available.
+- Fresh discovery fallback searched maintained SKILL.md and skill-tooling repos.
+  `migmcc/agent-skill-quality-gate` and `michellepellon/skillmark` were blocked
+  by prior history. `feiyueyun/skill-interop-tools` was selected because it is a
+  non-fork, non-archived, active BSD-3-Clause skill-format converter with issues
+  enabled and ClawHub relevance.
+- Duplicate and target policy checks for `feiyueyun/skill-interop-tools`: compact
+  audit and archive had no prior history; target PR/issue searches and clone
+  content scans found no TweetClaw, Xquik, x-twitter-scraper,
+  `@xquik/tweetclaw`, or duplicate broken-link thread. Target open issue #1 is
+  a design question about format normalization, not a duplicate.
+- Target-native issue found: README links used `github.com/anthropics/agent-
+  skills` which returned 404, `github.com/google/a2a` which redirects to
+  `a2aproject/A2A`, `clawhub.com` which redirects to `clawhub.ai`, and the root
+  README linked missing `CONTRIBUTING.md`.
+- External PR opened: https://github.com/feiyueyun/skill-interop-tools/pull/2
+  from correctly parented fork `kriptoburak/skill-interop-tools`, branch
+  `codex/fix-doc-links`, commit `2e104a261c3aea7be7763a972a6a2197a060b69d`. The
+  PR updates only README files and does not mention TweetClaw.
+- Target validation: `npx --yes markdown-link-check README.md
+  agent-skills/README.md a2a-card/README.md clawhub/README.md --quiet`, `go
+  test ./...`, and `git diff --check` passed. Final PR readback showed open,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, and no checks reported yet.
+- Official OpenClaw recheck: llms exports, CLI plugin docs, plugin tools,
+  manage plugins, building plugins, manifest, plugin permission requests, tool
+  plugins, Codex harness runtime, SDK runtime, install overrides, ClawHub
+  publishing, ClawHub skill format, plugin validation fixes, creating skills,
+  and debugging returned HTTP 200.
+- Package and link checks: `npm view openclaw` returned latest `2026.6.9`, beta
+  `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+  `0.22.0`; `npm view @xquik/tweetclaw` returned published `1.6.31` while local
+  source remains `1.6.32`; `npm audit --audit-level=moderate --json` returned 0
+  vulnerabilities; `npm run check-openclaw-platform-fitness` passed; TweetClaw
+  Markdown link checks and direct URL checks for core public surfaces plus known
+  PRs returned HTTP 200.
+- Prompt self-improvement: no automation prompt edit was useful. Durable lesson:
+  `feiyueyun/skill-interop-tools` is now duplicate-blocked for stale standard
+  link repair unless maintainers ask for follow-up. For skill-format converter
+  targets, check canonical standards links directly because standard ownership
+  and redirects are changing quickly.
