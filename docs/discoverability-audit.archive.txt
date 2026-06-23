@@ -507,6 +507,123 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+## 2026-06-23 20:04 UTC heartbeat
+
+- Runtime note: GPT-5.5 and extra-high reasoning effort selectors were not
+  exposed in this runtime, so the limitation was recorded and the run
+  continued. No Browser, Chrome, GUI, Context7, dev server, production SSH,
+  destructive git action, or protected-value read was used.
+- Start state: TweetClaw was on `master` with only pre-existing untracked file
+  `0`, left untouched. `Xquik-dev/tweetclaw` and the current Xquik checkout had
+  no open issues requiring this run.
+- Crawler-first discovery and monitoring: ran the internal Xquik GitHub
+  opportunity crawler from `/Users/burak/Developer/xquik` with strict JSON
+  output at `/tmp/tweetclaw-heartbeat-20260623-200433/crawl.json`, managed
+  research proxy, bounded request timeout 12000 ms, proxy warmup timeout 8000
+  ms, limit 120, search pages 2, per-query limit 10, concurrency 8, and session
+  `tweetclaw-20260623-200433`. Query coverage included open PR monitoring,
+  SKILL.md, `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent
+  and social Twitter/X skills, awesome lists, registries, forks, generated
+  catalogs, validators, docs, package tooling, and plugin ecosystems. Output
+  parsed as JSON with 23 opportunities; proxy logs contained route and target
+  fetch status only.
+- Complete PR inventory: compact audit had 1,244 tracked relevant PR URLs.
+  Authored open PR search was partitioned by updated windows: `>=2026-06-23`
+  154, `2026-06-22` 149, `2026-06-21` 176, `2026-06-20` 142, `2026-06-19` 26,
+  `2026-06-18` 70, `2026-06-17` 115, `2026-06-16` 90, `2026-06-15` 93,
+  `2026-06-14` 141, `2026-06-13` 144, `2026-06-12` 96,
+  `2026-06-01..2026-06-11` 278, and `<2026-06-01` 618. Total unique authored
+  open PRs were 2,292 with no 1,000-result caps or unresolved buckets.
+- Exact readbacks: REST exact-read covered all 2,292 PRs with 0 errors. Merge
+  states were 1,757 clean, 327 unstable, 138 blocked, 46 dirty, 17 unknown, and
+  7 behind; mergeability was 2,229 true, 46 false, and 17 null. Recent deep
+  readbacks covered 224 updated PRs. `rafsilva85/skillflow-linter#1` remained
+  open, ready, mergeable, clean, with head `a1f625b`, no comments, no reviews,
+  and no checks.
+- Repair: `Aditya923-c/xpoz-agent-skills#1` was the latest confirmed dirty
+  in-scope PR selected before fresh outreach. Verified fork
+  `kriptoburak/xpoz-agent-skills` was correctly parented to
+  `Aditya923-c/xpoz-agent-skills`. A scratch clone merged upstream `main` into
+  branch `codex/add-tweetclaw-openclaw-resource` and resolved the README quick
+  link conflict by preserving the ZIP download link and the repository link.
+  Validation passed conflict-marker scan, `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`, and public-hygiene scan.
+  Commit `9e09a505593ac86874fddf8b2f0043c7721132c9` was pushed and comment
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4783053159
+  was posted. Final exact readback: open, ready, `MERGEABLE`, `CLEAN`, no
+  reviews, no checks, head `9e09a50`.
+- Fresh candidate screening: compact audit, archive, crawler output, exact
+  metadata, target content, fork metadata, clone scans, and open plus closed
+  target PRs/issues were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, SKILL.md, `.agents/skills`, social publishing, guardrail, package
+  tooling, validator, registry, and catalog variants. Prior history or
+  duplicates blocked `sno-ai/mda`, `hashgraph-online/registry-broker-skills`,
+  `JuneYaooo/awesome-ai-media-skills`, `pagoda111king/super-sop-node-radar`,
+  `elbis330/social-media-scraper-skill`, `reaatech/agents-md-kit`,
+  `studiomeyer-io/skilldoctor`, `fchastanet/ai-linter`, `YoavLax/AgentEval`,
+  `nivkazdan/skills-agents-catalog`, `rj-yingjunjie/skill-catalog`, and
+  `ariesclark/skills` lanes. `nickyc1/social-publish-guardrails` was selected
+  because it is MIT licensed, non-fork, non-archived, issue-enabled,
+  duplicate-clean, and its draft-only approval-gated publishing workflow
+  benefits from a local TweetClaw export import that stays pending.
+- External PR: opened
+  https://github.com/nickyc1/social-publish-guardrails/pull/1 from verified
+  fork `kriptoburak/social-publish-guardrails`, parent
+  `nickyc1/social-publish-guardrails`, branch
+  `codex/add-tweetclaw-queue-import`, commit
+  `ffbb153718385a6e172fb7b8a38ef5bd1f47374d`. The PR adds
+  `scripts/00_tweetclaw_export_to_queue.py`, a local-only TweetClaw JSON export
+  converter that writes pending queue CSV rows; fixes all workflow script paths
+  from the stale `skills/social-media-scheduling-autopilot` folder to repo-local
+  `templates` and `data` paths; and documents the optional import in README,
+  SKILL, runbook, and checklist. Final readback: open, ready, mergeable, clean,
+  1 commit, 11 files, 195 additions, 18 deletions, 0 comments, 0 reviews, and
+  no configured checks.
+- Target validation for the new PR passed: `python3 -m py_compile scripts/*.py`,
+  `python3 scripts/00_tweetclaw_export_to_queue.py --output
+  data/tweetclaw_queue.csv`, `python3 scripts/01_ingest_queue.py
+  data/tweetclaw_queue.csv`, `python3 scripts/02_normalize_caption_attribution.py`,
+  `python3 scripts/03_prepare_schedule_with_approval_gate.py`, `python3
+  scripts/04_record_performance_to_sheet.py`, `python3
+  scripts/05_refresh_metrics_recurring.py`, default `python3
+  scripts/01_ingest_queue.py`, CSV assertions that TweetClaw rows remain
+  pending with blank approval fields, `npx --yes markdown-link-check README.md
+  SKILL.md runbook/RUNBOOK.md --quiet`, `git diff --check`, direct HTTP 200
+  probe for the TweetClaw GitHub URL, and added-file public-hygiene scan.
+  Generated `data` and `__pycache__` artifacts were removed before commit.
+- Official OpenClaw and package checks: current docs returned HTTP 200 for
+  llms, llms-full, CLI plugins, CLI skills, tools skills, creating skills,
+  permission modes, ClawHub skill format, ClawHub publishing, ClawHub plugin
+  validation fixes, debugging, and testing plugin updates. `npm view openclaw`
+  returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31`, MIT license, and the
+  GitHub repository while source remains `1.6.32`. `npm audit
+  --audit-level=moderate --json` found 0 vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed for OpenClaw `2026.6.9`.
+- Broken-link and public-surface checks: TweetClaw Markdown link check passed
+  for README, OpenClaw setup, agent workflows, registry steps, packaged skill
+  docs, compact audit, and compact release notes. Direct probes returned HTTP
+  200 for TweetClaw GitHub, npm registry metadata, canonical ClawHub,
+  OpenClawDir, `rafsilva85/skillflow-linter#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and
+  `nickyc1/social-publish-guardrails#1`.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: approval-gated social publishing skills are high-fit targets
+  when TweetClaw is an offline reviewed source import and every imported row
+  remains pending until the target's own approval contract passes. Do not
+  overwrite queue templates for source imports when a script can accept an input
+  path instead.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate
+  --json`, TweetClaw Markdown link checks, direct public URL probes, `git diff
+  --check`, and `npm run check:all`. Persisted automation prompt unchanged;
+  prompt bytes remained 11980/15360.
+
 ## 2026-06-21 04:52 UTC Heartbeat
 
 - Runtime model and effort selection: GPT-5.5 and extra-high reasoning could
