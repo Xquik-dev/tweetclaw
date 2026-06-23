@@ -36700,3 +36700,99 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
+
+## 2026-06-23 02:21 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-021058/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 140, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-021058`. Query coverage included TweetClaw, OpenClaw,
+  MCP, SKILL.md, `.agents/skills`, skill directories, Claude, Codex, social,
+  Twitter/X, awesome skill lists, skill registries, forks, generated catalogs,
+  validators, package tooling, and exact repo probes. Output parsed as valid
+  JSON with 138 opportunities.
+- PR inventory and repair gate: current-day authored open PR search returned 37
+  in-scope PRs and exact `gh pr view` readbacks succeeded for all 37. Counts:
+  37 open, 26 mergeable, 11 unknown merge state, 6 with comments, 1 with
+  reviews, 8 with checks, and 0 failure-like check conclusions. No DCO, CLA, or
+  generated-file blocker was found. `github/awesome-copilot#2095` had a direct
+  maintainer question about why the PR touched an AWS skill.
+- Repair: cloned verified fork branch `codex/add-tweetclaw-openclaw-routing`
+  for `github/awesome-copilot#2095`, read target `AGENTS.md`, and restored the
+  AWS CloudWatch skill row and frontmatter to upstream so the PR only changes
+  the Xquik/TweetClaw skill and README catalog row. Commit
+  `d9d8e13f7dd135216dbfaa610398d17f509a1c34` was pushed. Final PR readback:
+  open, mergeable, changed files reduced to `docs/README.skills.md` and
+  `skills/x-twitter-scraper/SKILL.md`, all checks success or skipped. A
+  maintainer reply was posted at
+  https://github.com/github/awesome-copilot/pull/2095#issuecomment-4775015790.
+- Repair validation: `npm ci` passed with pre-existing target advisories only;
+  `npm run build` passed; target `npm run skill:validate` failed only on the
+  restored upstream `aws-cloudwatch-investigation` display name while the
+  PR-local Skill Validator bot passed for `x-twitter-scraper`; `npx --yes
+  markdown-link-check --quiet skills/x-twitter-scraper/SKILL.md
+  docs/README.skills.md` passed; `git diff --check` passed. Target
+  `bash eng/fix-line-endings.sh` returned success but printed macOS `sed`
+  portability errors and left no changes.
+- Fresh screening: duplicate or prior-history blockers included
+  `lingxling/awesome-skills-cn#5`,
+  `AIPMAndy/awesome-openclaw-skills-CN#4`,
+  `libukai/awesome-agent-skills#17/#55`,
+  `OthmaneBlial/awesome-openclaw-examples#1`,
+  `codeaashu/awesome-openclaw-Skills#2`,
+  `LHL3341/awesome-claws#12`, `jensrot/awesome-openclaw#3`,
+  `creatorcrawl/creatorcrawl-skill#2`, `elementalsouls/Claude-OSINT#8`,
+  `skill-tools/skill-tools#15`, `michellepellon/skillmark#27`,
+  `reaatech/agents-md-kit#51`, `chigwell/skilldock.io#2`, and
+  `davepoon/buildwithclaude#147`.
+- Selected fresh target: `dongsheng123132/skill-multi-publisher` was active
+  enough, MIT licensed, non-fork, non-archived, issue-enabled, and
+  duplicate-clean across compact audit, archive, target content, and exact open
+  plus closed target PR and issue searches for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, and npm terms. The target advertised
+  npm support but README and packaged `SKILL.md` skipped the npm publish flow,
+  making a docs fix target-native package-tooling work without a TweetClaw
+  mention.
+- External PR: opened https://github.com/dongsheng123132/skill-multi-publisher/pull/1
+  from verified fork `kriptoburak/skill-multi-publisher`, branch
+  `codex/add-npm-publish-flow`, commit
+  `3057806cca9a8030d5c2da7455cf366d4fec598c`. It fixes the truncated README
+  intro and adds npm login, pack, publish, update, report, and checklist
+  guidance to both README and `SKILL.md`. Final readback: open, ready,
+  mergeable, 2 changed files, 49 additions, 8 deletions, 0 comments, 0 reviews,
+  and no configured checks.
+- Target validation for the new PR passed: `git diff --check`; `npx --yes
+  markdown-link-check --quiet README.md SKILL.md`; changed-file public and
+  secret scan. No TweetClaw, Xquik, internal provider, restricted source, cost,
+  or token content was introduced.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms, CLI
+  plugins, CLI skills, tools skills, ClawHub skill format, plugin manifest,
+  exec approvals, tool plugins, debugging, and ClawHub plugin validation fixes.
+  `npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README, OpenClaw
+  setup, agent workflows, registry steps, packaged skill docs, compact audit,
+  and compact release notes. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub, OpenClawDir,
+  `github/awesome-copilot#2095`, and the new `skill-multi-publisher#1`. The
+  npm web package page returned the known bare-fetch HTTP 403 while registry
+  metadata and `npm view` remained successful.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: when crawler candidates are mostly prior-history blocked,
+  compare the crawler output against the archive first, then prioritize
+  package-tooling or validator repos where a generic target-native fix helps the
+  ecosystem without forcing another TweetClaw listing.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link checks,
+  direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
