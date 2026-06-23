@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 02:21 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 02:33 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/skill-format`,
   `/help/debugging`, and `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-23 02:21 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-23 02:33 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 02:21 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 02:33 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,15 +191,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 02:21 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-021058` found 138 opportunities with required skill-repo
-  coverage. Current-day authored PR inventory exact-read 37 PRs.
-- Repair: `github/awesome-copilot#2095` was updated to remove an unrelated AWS
-  skill normalization; final readback is open, mergeable, and checks are
-  success or skipped.
-- Fresh PR: opened `dongsheng123132/skill-multi-publisher#1` from verified fork
-  `kriptoburak/skill-multi-publisher`. It documents the missing npm publish
-  path in both README and packaged `SKILL.md`.
+- 2026-06-23 02:33 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-023307` found 101 opportunities with required skill-repo
+  coverage. Current-day authored PR inventory exact-read 51 PRs.
+- Repairs: `warlockoussama/twitter-cli#1`, `jamald33n/tweetsave-mcp#2`, and
+  `AbdNour627/awesome-openclaw-configs#1` were conflict-repaired from verified
+  forks. Final readbacks are open and mergeable with no configured checks.
+- Fresh PR: opened `formulahendry/vscode-agent-skills#8` from verified fork
+  `kriptoburak/vscode-agent-skills`. It documents `singleSkill` sources with
+  the TweetClaw packaged skill path.
 - TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, npm audit,
   Markdown links, OpenClaw fitness, registry and public URL probes. Full details
   are archived.

@@ -36796,3 +36796,108 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
+
+## 2026-06-23 02:33 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-023307/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 130, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-023307`. Query coverage included SKILL.md,
+  `.agents/skills`, skill directories, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X skills, awesome lists, registries, forks, generated
+  catalogs, validators, package tooling, web-index skill repos, and exact repo
+  probes. Output parsed as valid JSON with 101 opportunities.
+- PR inventory and repair gate: current-day authored open PR search returned 51
+  in-scope PRs and exact `gh pr view` readbacks succeeded for all 51. Counts:
+  51 open, 42 mergeable, 3 conflicting, 6 unknown merge state, 12 with
+  comments, 1 with reviews, 8 with checks, and 0 failure-like check
+  conclusions. The conflicting PRs were repaired before fresh outreach.
+- Repair 1: `warlockoussama/twitter-cli#1` was repaired from verified fork
+  `kriptoburak/twitter-cli`, branch `codex/update-readme-command-scope`, commit
+  `3910aa2d76b79edc6b1a826879f317f4f260a9fa`. The README merge kept the
+  identical target link and removed conflict markers. Validation passed:
+  conflict-marker scan, `git diff --check`, `markdown-link-check README.md`,
+  and changed-line public-hygiene scan. Final readback: open, ready,
+  mergeable, 45 commits, 1 changed file, 9 comments, 0 reviews, and no
+  configured checks.
+- Repair 2: `jamald33n/tweetsave-mcp#2` was repaired from verified fork
+  `kriptoburak/tweetsave-mcp-jamald33n`, branch
+  `codex/tweetclaw-openclaw-companion`, commit
+  `18c2b585e1d81f1e2239be57d5e234d6c8f021e8`. The README merge kept the valid
+  npm/npx setup, MCP config, TweetClaw handoff, GitHub support links, and HTTP
+  server instructions while dropping malformed raw ZIP substitutions.
+  Validation passed: conflict-marker and malformed raw-link scan, `git diff
+  --check`, `markdown-link-check README.md`, `npm ci --ignore-scripts
+  --no-audit --no-fund`, `npm run build`, both tracked ZIP integrity checks,
+  `npm pack --dry-run --json`, and changed-line public-hygiene scan. Final
+  readback: open, ready, mergeable, 37 commits, 1 changed file, 9 comments, 0
+  reviews, and no configured checks.
+- Repair 3: `AbdNour627/awesome-openclaw-configs#1` was repaired from verified
+  fork `kriptoburak/awesome-openclaw-configs`, branch
+  `codex/add-tweetclaw-x-config`, commit
+  `0a17be56a0b26ae24328341b6d7150e80ad3d1b2`. The README merge retained the
+  TweetClaw related-project row and removed conflict markers. Validation
+  passed: anchored conflict-marker scan, `git diff --check`,
+  `markdown-link-check README.md README_EN.md CONTRIBUTING.md`, tracked ZIP
+  integrity check, `json5 -c` for the TweetClaw config with the generated JSON
+  artifact removed before commit, and changed-line public-hygiene scan. Final
+  readback: open, ready, mergeable, 27 commits, 4 changed files, 6 comments, 0
+  reviews, and no configured checks.
+- Fresh screening: compact audit, archive, crawler output, exact metadata,
+  target content, clone scans, and target open plus closed PR and issue searches
+  were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, SKILL.md,
+  skill registries, marketplace, validator, package-tooling, and variants.
+  `skill-tools/skill-tools` and `dongsheng123132/skill-multi-publisher` were
+  duplicate-blocked by existing PRs. Fresh eligible candidates included
+  `formulahendry/vscode-agent-skills`, `rajesh-gsn/skill-lint`, and
+  `freddo1503/claude-pre-commit`.
+- Selected fresh target: `formulahendry/vscode-agent-skills` was active, MIT
+  licensed, non-fork, non-archived, issue-enabled, and duplicate-clean across
+  target content plus exact PR and issue searches. The extension already
+  supports `singleSkill` sources in code and package schema, but README
+  documented only directory-style repositories, making a docs fix target-native
+  and useful for packaged skill repos.
+- External PR: opened https://github.com/formulahendry/vscode-agent-skills/pull/8
+  from verified fork `kriptoburak/vscode-agent-skills`, branch
+  `codex/document-single-skill-sources`, commit
+  `80dcd6a189a24578f58f165a6a2665a70cb6df2b`. It documents `singleSkill` for
+  repositories whose path points directly to one skill folder, using
+  `Xquik-dev/tweetclaw` `skills/tweetclaw` as a concrete OpenClaw packaged
+  skill example. Final readback: open, ready, mergeable, 1 commit, 1 file, 19
+  additions, 0 comments, 0 reviews, and no configured checks.
+- Target validation for the new PR passed: `npm ci`; `npm run check-types`;
+  `git diff --check`; changed-line public and secret scan; raw fetch of
+  `https://raw.githubusercontent.com/Xquik-dev/tweetclaw/master/skills/tweetclaw/SKILL.md`;
+  and `markdown-link-check README.md` with the pre-existing VS Code redirect
+  link ignored. `npm ci` reported pre-existing target dependency advisories, but
+  no dependency metadata was changed.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, exec approvals, permission
+  modes, ClawHub skill format, ClawHub plugin validation fixes, and debugging.
+  `npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README, OpenClaw
+  setup, agent workflows, registry steps, packaged skill docs, compact audit,
+  and compact release notes. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub, OpenClawDir, all 3 repaired
+  PRs, and the new `vscode-agent-skills#8` PR.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: when a target already implements a repository-source feature
+  but README omits an important source shape, prefer a focused docs PR that
+  documents the existing behavior with a real packaged-skill example rather than
+  adding a new default marketplace source.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link checks,
+  direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.

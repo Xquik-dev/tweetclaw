@@ -751,3 +751,19 @@ links, `github/awesome-copilot#2095`, and the new
 `dongsheng123132/skill-multi-publisher#1` PR probes succeeded. The npm web page
 returned HTTP 403 to bare fetch as before; npm registry metadata and `npm view`
 remained successful.
+
+No npm or ClawHub publish was attempted during the 2026-06-23 02:33 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate --json` returned 0 vulnerabilities, and
+`npm run check-openclaw-platform-fitness` passed. ClawHub
+`https://clawhub.ai/plugins/@xquik/tweetclaw` remained HTTP 200 and still
+exposes `1.6.26`, so npm remains canonical until current scoped package
+ownership is fixed. Official OpenClaw docs returned HTTP 200 for llms,
+llms-full, CLI plugins, CLI skills, tools skills, exec approvals, permission
+modes, ClawHub skill format, ClawHub plugin validation fixes, and debugging.
+TweetClaw GitHub, npm registry metadata, ClawHub, OpenClawDir, all 3 repaired
+PRs, and the new `formulahendry/vscode-agent-skills#8` PR probes succeeded.
