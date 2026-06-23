@@ -191,18 +191,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 02:33 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-023307` found 101 opportunities with required skill-repo
-  coverage. Current-day authored PR inventory exact-read 51 PRs.
-- Repairs: `warlockoussama/twitter-cli#1`, `jamald33n/tweetsave-mcp#2`, and
-  `AbdNour627/awesome-openclaw-configs#1` were conflict-repaired from verified
-  forks. Final readbacks are open and mergeable with no configured checks.
-- Fresh PR: opened `formulahendry/vscode-agent-skills#8` from verified fork
-  `kriptoburak/vscode-agent-skills`. It documents `singleSkill` sources with
-  the TweetClaw packaged skill path.
-- TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, npm audit,
-  Markdown links, OpenClaw fitness, registry and public URL probes. Full details
-  are archived.
+- 2026-06-23 02:54 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-025405` found 140 opportunities with required skill-repo
+  coverage. Authored PR search partitions found 2,216 unique open PRs; exact
+  readback covered the 59 current-day PRs. Broad relevance inventory remains
+  capped by volume and is archived as a blocker.
+- Repairs: conflict-repaired `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `rrrrrredy/all-net-search-read#1`, and
+  `reall8164/wechat-openclaw-plugin#1` from verified forks. Final readbacks are
+  open, clean, and mergeable with no configured checks.
+- Fresh PR: opened `rajesh-gsn/skill-lint#4` from verified fork
+  `kriptoburak/skill-lint-rajesh`. It adds a TweetClaw/OpenClaw SKILL.md
+  fixture and regression test for tool-specific frontmatter staying
+  informational.
+- TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir,
+  npm audit, Markdown links, OpenClaw fitness, and public URL probes. Full
+  details are archived.
 
 ## Reporting Checklist
 

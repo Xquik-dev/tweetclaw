@@ -767,3 +767,20 @@ llms-full, CLI plugins, CLI skills, tools skills, exec approvals, permission
 modes, ClawHub skill format, ClawHub plugin validation fixes, and debugging.
 TweetClaw GitHub, npm registry metadata, ClawHub, OpenClawDir, all 3 repaired
 PRs, and the new `formulahendry/vscode-agent-skills#8` PR probes succeeded.
+
+No npm or ClawHub publish was attempted during the 2026-06-23 02:54 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate --json` returned 0 vulnerabilities, and
+`npm run check-openclaw-platform-fitness` passed. The old
+`docs.openclaw.com` host did not resolve, so current official docs were
+checked at `docs.openclaw.ai`; llms, llms-full, CLI, tools, tools skills,
+creating skills, ClawHub, LLM task, and concepts models returned HTTP 200.
+ClawHub `https://clawhub.ai/plugins/@xquik/tweetclaw` and OpenClawDir
+`https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. TweetClaw
+Markdown link checks, npm registry metadata, four repaired PR URLs, and new
+`rajesh-gsn/skill-lint#4` PR probe succeeded. The old OpenClawDir package probe
+returned 404 and is not a current source-link regression.
