@@ -2,6 +2,103 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-23 04:05 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-040533/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 180, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-040533`. Query coverage included authored PRs, SKILL.md,
+  `.agents/skills`, `.codex/skills`, skills directories, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, and exact repo probes. Output
+  parsed as valid JSON with 85 opportunities. Proxy logs showed endpoint
+  refresh metadata only; no credential values were stored or committed.
+- PR inventory: corrected updated-time partitions found 2,227 unique open
+  authored PR URLs with no capped daily slices: 70 current-day, 156 on
+  2026-06-22, 177 on 2026-06-21, 142 on 2026-06-20, 26 on 2026-06-19, 70 on
+  2026-06-18, 116 on 2026-06-17, 92 on 2026-06-16, 93 on 2026-06-15, 142 on
+  2026-06-14, 144 on 2026-06-13, 96 on 2026-06-12, 280 on 2026-06-01 through
+  2026-06-11, and 623 before June. Exact readback covered the 70 current-day
+  PRs: 69 mergeable, 1 unknown mergeability, 58 clean, 9 unstable, 2 blocked,
+  1 unknown merge state, 14 with comments, 1 with reviews, 10 with checks, and
+  1 failing check. Complete exact inventory across all 2,227 partitioned PRs is
+  not claimed.
+- PR repair gate: the only failing current-day check was
+  `patty-png/claude-code-toolkit-app#5`, blocked by Vercel team authorization
+  rather than a code failure. Other flagged items were Netlify preview, Gemini
+  quota, CodeRabbit summary, already-answered `zhayujie/CowAgent#2912`, stale
+  self-repair comments, Codex usage-limit comments, review-required states, or
+  no-check unstable states. No actionable maintainer comment, review request,
+  DCO/CLA blocker, generated drift, or conflict required repair before fresh
+  outreach.
+- Fresh screening and duplicate gates: compact audit, archive, crawler output,
+  target metadata, target content, open and closed target PRs, open and closed
+  target issues, and local clone scans were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, Twitter/X, SKILL.md, `.agents/skills`,
+  `.codex/skills`, validators, package tooling, and variants. Duplicate or
+  prior-history blockers included `SamurAIGPT/awesome-openclaw`,
+  `sundial-org/awesome-openclaw-skills`, `skillmatic-ai/awesome-agent-skills`,
+  `BlockRunAI/awesome-OpenClaw-Money-Maker`, `EthanYolo01/Awesome-OpenClaw`,
+  `lingxling/awesome-skills-cn`, `docker/mcp-registry`, `agent-sh/agnix`,
+  `harrypham2000/skill-audit`, `contextosai/skills`,
+  `studiomeyer-io/skilldoctor`, `migmcc/agent-skill-quality-gate`, and
+  `mattsfraser/skill-generator`.
+- Selected fresh target: `DualNova/agent-skills` is MIT licensed, non-fork,
+  non-archived, issue-enabled, duplicate-clean across target content and target
+  PRs/issues, and target-native because it owns a validator and reference
+  examples for the `SKILL.md` standard. The contribution adds a
+  validator-covered `publish-social-update` example that models exact user
+  approval for social posting, uses TweetClaw as a concrete class of
+  approval-gated external tool, keeps credentials and connected-account details
+  server-side, and repairs the README feedback link from a 404 Discussions URL
+  to the active issues URL.
+- External PR: opened https://github.com/DualNova/agent-skills/pull/1 from
+  verified renamed fork `kriptoburak/agent-skills-dualnova`, parent
+  `DualNova/agent-skills`, branch `codex/add-social-approval-example`, commit
+  `4517913aa4c84e6360a4103b3b0e98fb6f3f46e7`. The default fork
+  `kriptoburak/agent-skills` was not used because it points to a different
+  parent. Final readback was open, ready, mergeable, unstable only because no
+  checks were configured yet, 1 commit, 3 changed files, 0 comments, and
+  0 reviews.
+- Target validation passed: `npm run lint`, `npm test` with 11 passing tests,
+  `npm run build`, `npx --yes markdown-link-check README.md
+  spec/examples/publish-social-update/SKILL.md --quiet`, and `git diff
+  --check`. `npm ci` reported 1 pre-existing low-severity target advisory; the
+  PR did not change dependencies. Added-line hygiene found no secret values,
+  private implementation details, private source names, private business
+  details, unsupported claims, or stale metadata introduced.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, creating skills, permission
+  modes, ClawHub skill format, ClawHub publishing, ClawHub plugin validation
+  fixes, debugging, and testing plugin updates. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, repository URL, and MIT license. Source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README,
+  OpenClaw setup, agent workflows, registry steps, packaged skill docs, compact
+  audit, and compact release notes. Direct probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClawDir,
+  `DualNova/agent-skills#1`, the correctly parented fork branch, and
+  `rubencu/openclaw-pr-workflow#1`.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: spec and validator repos are good targets when the edit adds
+  a validation-covered example or broken-link repair and keeps TweetClaw as an
+  approval-boundary example instead of a promotional listing.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included target checks, TweetClaw Markdown link
+  checks, direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+
 ## 2026-06-21 04:52 UTC Heartbeat
 
 - Runtime model and effort selection: GPT-5.5 and extra-high reasoning could
