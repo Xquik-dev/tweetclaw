@@ -801,3 +801,20 @@ ClawHub `https://clawhub.ai/plugins/@xquik/tweetclaw` and OpenClawDir
 Markdown link checks, npm registry metadata, new
 `freddo1503/claude-pre-commit#2`, `zhayujie/CowAgent#2912`, and
 `zhayujie/cow-skill-hub#3` probes succeeded.
+
+No npm or ClawHub publish was attempted during the 2026-06-23 03:44 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate --json` returned 0 vulnerabilities, and
+`npm run check-openclaw-platform-fitness` passed. Official OpenClaw docs
+returned HTTP 200 for llms, llms-full, CLI plugins, CLI skills, tools skills,
+creating skills, permission modes, ClawHub skill format, ClawHub publishing,
+ClawHub plugin validation fixes, debugging, and testing plugin updates.
+ClawHub `https://clawhub.ai/plugins/@xquik/tweetclaw` and OpenClawDir
+`https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. TweetClaw
+Markdown link checks, npm registry metadata, new
+`rubencu/openclaw-pr-workflow#1`, `freddo1503/claude-pre-commit#2`,
+`zhayujie/CowAgent#2912`, and `zhayujie/cow-skill-hub#3` probes succeeded.

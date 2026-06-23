@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 03:23 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 03:44 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/skill-format`,
   `/help/debugging`, and `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-23 03:23 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-23 03:44 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 03:23 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 03:44 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,17 +191,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 03:23 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-032331` found 140 opportunities with required skill-repo
-  coverage. Authored PR partitions exact-read 63 current-day PRs and then hit
-  GitHub API rate limit on the 2026-06-16 slice, so complete inventory is not
-  claimed.
-- Repairs: answered maintainer feedback on `zhayujie/CowAgent#2912` by linking
-  existing Cow Skill Hub PR `zhayujie/cow-skill-hub#3`; no failing checks or new
-  conflict repairs were found in current-day exact reads.
-- Fresh PR: opened `freddo1503/claude-pre-commit#2` from verified fork
-  `kriptoburak/claude-pre-commit`. It documents `.agents` and `.codex` skill
-  roots and adds TweetClaw path coverage to the skill-discovery tests.
+- 2026-06-23 03:44 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-034406` found 150 opportunities with required skill-repo
+  coverage. Authored PR search partitioned 2,224 unique open PRs without capped
+  daily slices; exact readback covered 67 current-day PRs, so complete exact
+  inventory is not claimed.
+- Repairs: no actionable maintainer comments, failing checks, DCO/CLA blockers,
+  generated drift, or conflicts were found in current-day exact reads.
+- Fresh PR: opened `rubencu/openclaw-pr-workflow#1` from verified fork
+  `kriptoburak/openclaw-pr-workflow`. It adds TweetClaw as an approval-gated
+  external OpenClaw plugin proof example in contributor PR guidance.
 - TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir,
   npm audit, Markdown links, OpenClaw fitness, and public URL probes. Full
   details are archived.

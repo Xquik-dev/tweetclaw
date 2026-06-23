@@ -36888,6 +36888,104 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+## 2026-06-23 03:44 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-034406/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 150, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-034406`. Query coverage included authored PRs, SKILL.md,
+  `.agents/skills`, `.codex/skills`, skills directories, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, web-index skill repos, and
+  exact repo probes. Output parsed as valid JSON with 150 opportunities; proxy
+  logs showed endpoint quarantine and a short US outage circuit only, with no
+  credential values.
+- PR inventory: a first authenticated partition attempt was stopped because a
+  malformed shell-expanded slice returned the 1000-result cap. Corrected
+  `--updated` partitions found 2,224 unique open authored PR URLs with no capped
+  daily slices: 67 current-day, 156 on 2026-06-22, 177 on 2026-06-21, 142 on
+  2026-06-20, 26 on 2026-06-19, 70 on 2026-06-18, 116 on 2026-06-17, 92 on
+  2026-06-16, 93 on 2026-06-15, 142 on 2026-06-14, 144 on 2026-06-13, 96 on
+  2026-06-12, 280 on 2026-06-01 through 2026-06-11, and 623 before June.
+  Exact readback covered the 67 current-day PRs: 66 mergeable, 1 unknown
+  mergeability, 55 clean, 8 unstable, 3 blocked, 1 unknown merge state, 14 with
+  comments, 1 with reviews, 10 with checks, and 0 failing checks. Complete
+  exact inventory across all 2,224 partitioned PRs is not claimed.
+- PR repair gate: flagged current-day comments and reviews were Netlify preview,
+  Gemini quota, CodeRabbit no-action summary, AGT reputation warnings,
+  already-answered `github/awesome-copilot#2095` maintainer question, already
+  answered `zhayujie/CowAgent#2912` Cow Skill Hub redirect, stale self-repair
+  comments, and old Codex usage-limit or review comments. No actionable
+  maintainer comment, review request, failing check, DCO/CLA blocker, generated
+  drift, or conflict required repair before fresh outreach.
+- Fresh screening and duplicate gates: compact audit, archive, crawler output,
+  target metadata, target content, open and closed target PRs, open and closed
+  target issues, and local clone scans were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, SKILL.md, `.agents/skills`, `.codex/skills`,
+  validators, package tooling, and variants. Prior-history or duplicate
+  blockers included `freddo1503/claude-pre-commit`, `zhayujie/CowAgent`,
+  `zhayujie/cow-skill-hub`, `formulahendry/vscode-agent-skills`,
+  `rajesh-gsn/skill-lint`, `github/awesome-copilot`, `publora/skills`,
+  `apify/awesome-skills`, and many earlier social-skill lanes. Fresh candidates
+  screened included `AshenNel/codex-openclaw-github-workflow`,
+  `rubencu/openclaw-pr-workflow`, `LongWeihan/openclaw-integration-skill`,
+  `bailylu/openclaw-remote-admin-skill`,
+  `JiangAgentLabs/openclaw-tailscale-remote-access`,
+  `Arthurescc/codex-skills-hub`, and
+  `zhe997833189-creator/agent-knowledge-hub`.
+- Selected fresh target: `rubencu/openclaw-pr-workflow` was MIT licensed,
+  non-fork, non-archived, issue-enabled, duplicate-clean across target content
+  and target PRs/issues, and target-native because it is contributor-safe
+  OpenClaw PR guidance with an existing real-behavior proof section for
+  external plugins. The contribution adds TweetClaw as a concrete
+  approval-gated external OpenClaw plugin example, tells contributors to record
+  package or repository source, install command, placeholder config variables,
+  and read/write boundary, and warns not to expose API keys, account
+  identifiers, private message content, or live credentials.
+- External PR: opened https://github.com/rubencu/openclaw-pr-workflow/pull/1
+  from verified fork `kriptoburak/openclaw-pr-workflow`, parent
+  `rubencu/openclaw-pr-workflow`, branch `codex/document-external-plugin-proof`,
+  commit `5abfde09dd90b96addde17b59cffaf62c2779095`. Final readback was open,
+  ready, mergeable, clean, 1 commit, 2 changed files, 0 comments, 0 reviews,
+  and no configured checks.
+- Target validation passed: `git diff --check` and `npx --yes
+  markdown-link-check README.md SKILL.md --quiet`. Added-line hygiene scan
+  found only the intended public TweetClaw/OpenClaw proof wording, with no
+  secret values, private source names, private business details, unsupported
+  claims, or stale metadata introduced.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, creating skills, permission
+  modes, ClawHub skill format, ClawHub publishing, ClawHub plugin validation
+  fixes, debugging, and testing plugin updates. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, repository URL, and MIT license. Source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README,
+  OpenClaw setup, agent workflows, registry steps, packaged skill docs, compact
+  audit, and compact release notes. Direct probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClawDir,
+  `rubencu/openclaw-pr-workflow#1`, `freddo1503/claude-pre-commit#2`,
+  `zhayujie/CowAgent#2912`, and `zhayujie/cow-skill-hub#3`.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: contributor workflow skill repos are good targets when the
+  edit improves proof/validation discipline for external OpenClaw plugins and
+  uses TweetClaw as a concrete approval-gated example without suggesting live
+  credential use.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link checks,
+  direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+
 ## 2026-06-23 03:23 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
