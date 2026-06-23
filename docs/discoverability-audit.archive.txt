@@ -32787,7 +32787,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   the truncated AC3 JSON output text and AC5 missing-name error id/path text.
   Readback is open and `MERGEABLE`. Validation passed `cargo test`,
   `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
-  `cargo fmt -- --check` reports pre-existing Rust and test formatting drift
+  cargo fmt check mode reports pre-existing Rust and test formatting drift
   outside the README-only change, so those files were left untouched.
 - Official OpenClaw docs and package checks at 2026-06-22 12:25 UTC:
   `llms.txt` returned 94608 bytes with sha256
@@ -32859,7 +32859,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `fadde3a3e25ae96025e9955279b6c9995ab9c8b1`. The patch validates array-form
   `allowed-tools` entries for empty, comma-delimited, and unbalanced tool specs
   like string-form entries, with changelog coverage. Validation passed
-  `cargo fmt`, `cargo fmt -- --check`, `cargo clippy -- -D warnings`,
+  `cargo fmt`, cargo fmt check mode, cargo clippy deny-warnings mode,
   `cargo test`, `bash README.md`, `git diff --check`, and diff hygiene scan.
   Readback is open, mergeable, unstable, with no comments, reviews, or checks
   yet.
@@ -38093,3 +38093,93 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   audit commit: only docs memory files modified plus pre-existing untracked
   `0`; GitHub rate limit remained healthy with core 4,976, GraphQL 3,566, and
   search 30 remaining.
+
+## 2026-06-23 21:39 UTC Heartbeat
+
+- Model and effort: runtime selector for GPT-5.5 extra-high was unavailable in
+  this Codex session, so the limitation was recorded and the run continued.
+- Starting state: TweetClaw `master` matched `origin/master`; pre-existing
+  untracked `0` was preserved. `Xquik-dev/xquik` and `Xquik-dev/tweetclaw`
+  issue lists were empty. Initial GitHub rate limit readback was core 4,955,
+  GraphQL 3,505, search 30.
+- Crawler-first coverage: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with JSON output, managed research proxy, bounded request and warmup
+  timeouts, 14 focused query lanes, repo mode for current monitored targets,
+  concurrency 8, session `tweetclaw-20260623-213940`, and no GitHub token.
+  Output parsed as 7 opportunities: `modelcontextprotocol/servers`,
+  `Arindam200/awesome-ai-apps`, `hashgraph-online/registry-broker-skills`,
+  `mc-nekoneko/x-mcp`, `public-clis/twitter-cli`,
+  `Aqmar777/openclaw-competitive-intel`, and
+  `informigados/x-archive-explorer`.
+- Authored PR inventory: monthly authored open PR search was attempted after
+  crawler output, but the first partition passed the query as one malformed
+  token and GitHub returned an invalid query. Follow-on broad search attempts
+  hit a GitHub secondary rate limit, so broad authenticated search stopped for
+  this run. No complete all-PR inventory claim was made. Fallback exact
+  readbacks used audit-tracked PR URLs and exact repo reads.
+- Exact PR readbacks covered 14 tracked PRs: `Arindam200/awesome-ai-apps#226`,
+  `mc-nekoneko/x-mcp#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `weiflycc-cmd/awesome-copilot#19`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `vaibhav4046/mcp-marketplace#1`, `jamald33n/tweetsave-mcp#2`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`,
+  `reall8164/wechat-openclaw-plugin#1`,
+  `informigados/x-archive-explorer#2`, `public-clis/twitter-cli#67`,
+  `warlockoussama/twitter-cli#1`, and `KooshaPari/PhenoMCPServers#36`.
+  Readback found `jamald33n/tweetsave-mcp#2`,
+  `vaibhav4046/mcp-marketplace#1`, and
+  `AbdNour627/awesome-openclaw-configs#1` conflicting. The Nebius video
+  blocker on `Arindam200/awesome-ai-apps#226` remains credential-bound.
+- Repair: verified fork `kriptoburak/tweetsave-mcp-jamald33n` is correctly
+  parented to `jamald33n/tweetsave-mcp`, merged upstream `main` into
+  `codex/tweetclaw-openclaw-companion`, resolved README conflicts by keeping
+  npm setup, MCP config, valid GitHub issue and project links, and TweetClaw
+  handoff docs while dropping malformed raw ZIP support text. Validation passed
+  conflict-marker scan, `git diff --check`, README markdown-link-check,
+  TypeScript build, both shipped ZIP integrity checks, npm metadata checks for
+  `tweetsave-mcp@1.0.3` and `@xquik/tweetclaw@1.6.31`, and public-hygiene
+  scan. Pushed `f3dfee9` and commented:
+  https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4783766591.
+  Final PR readback was open and `MERGEABLE`.
+- Fresh target screening: crawler output had only known lanes. Archive search
+  showed `Malti2/x-mcp-server` had no compact/archive duplicate block after
+  prior fallback screening. Exact repo metadata showed non-fork, non-archived,
+  issue-enabled, default branch `main`, no detected license metadata, and no
+  open or closed PRs/issues. Local clone found no TweetClaw, Xquik, OpenClaw,
+  ClawHub, or x-twitter-scraper duplicate content. Source exposed 7 tools while
+  README documented only `post_tweet`.
+- New PR: created verified fork `kriptoburak/malti2-x-mcp-server` because the
+  normal `kriptoburak/x-mcp-server` fork belongs to a different parent.
+  Branch `codex/document-mcp-tools-and-safety`, commit `cccd665`, opened
+  https://github.com/Malti2/x-mcp-server/pull/1. The PR documents the existing
+  read and write tools and adds credential and write-review safety notes plus
+  optional TweetClaw install guidance for OpenClaw users who need broader
+  approval-gated workflows beside this MCP server. Validation passed
+  `npm install --ignore-scripts --no-audit --no-fund`, `npm run build`,
+  README markdown-link-check, `git diff --check`, dash scan, and
+  public-hygiene scan. No generated package-lock was committed because the
+  target has no lockfile. PR readback was open, ready, `MERGEABLE`, no
+  comments, no reviews, no checks, README-only.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, plugin manage docs, manifest docs,
+  plugin permission requests, install overrides, plugin hooks, compatibility,
+  ClawHub publishing, ClawHub skill format, help debugging, install updating,
+  agent runtime architecture, gateway tool config, and tools docs. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` while source remains `1.6.32`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed. TweetClaw Markdown link
+  sweep passed for README, OpenClaw setup, agent workflows, registry steps,
+  skill docs, benchmark, skill card, skillspector report, and compact memory.
+  Direct probes returned HTTP 200 for TweetClaw GitHub, registry metadata,
+  ClawHub canonical route, OpenClawDir, `jamald33n/tweetsave-mcp#2`,
+  `Malti2/x-mcp-server#1`, and `mc-nekoneko/x-mcp#1`; npmjs web UI returned
+  403 while registry metadata remained reachable.
+- Prompt self-improvement: no automation prompt edit was needed. Durable lesson
+  added through compact/archive: stop broad authenticated search immediately on
+  GitHub secondary limits, continue with exact readbacks, and keep using
+  owner-prefixed fork names when the default personal fork belongs to another
+  parent. End state before TweetClaw audit commit: only audit memory files
+  modified plus pre-existing untracked `0`.
