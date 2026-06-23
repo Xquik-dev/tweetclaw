@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 05:08 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 19:06 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/skill-format`,
   `/help/debugging`, and `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-23 05:08 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-23 19:06 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 05:08 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 19:06 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,23 +191,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 05:08 UTC: model/effort selector unavailable. Heartbeat
-  automation was re-enabled as ACTIVE with the prompt preserved. Prompt bytes:
-  11,980. Crawler session `tweetclaw-20260623-enable-run` found 71
-  opportunities with required skill-repo coverage.
-- PR inventory: compact and archive memory contained 1,241 audit-tracked PR
-  URLs. Current-day authored search plus exact readbacks covered 9 priority PRs;
-  complete inventory is not claimed. `fchastanet/ai-linter#9` hit an exact-read
-  platform error.
-- Repairs: addressed `Arindam200/awesome-ai-apps#226` reviewer feedback by
-  replacing the docs-only TweetClaw note with an actual Nebius Streamlit social
-  campaign project. PR checks read back successful after commit `8ba8f83`.
-- Fresh PR: opened `YoavLax/AgentEval#1` from verified fork
-  `kriptoburak/AgentEval`. It adds a valid approval-gated social research skill
-  fixture and focused tests. PR readback was open, ready, mergeable, and clean.
-- TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir,
-  npm audit, Markdown links, OpenClaw fitness, and public URL probes. Full
-  details are archived.
+- 2026-06-23 19:06 UTC: model/effort selector unavailable. Prompt unchanged at
+  11,980 bytes. Crawler session `tweetclaw-20260623-190606` found 71
+  opportunities with required skill coverage.
+- PR inventory: memory had 1,242 PR URLs; partitioned authored open search found
+  2,289 unique PRs with no 1,000-result caps. REST exact-read covered 2,285; 4
+  exact reads failed by GitHub 504 or auth responses. Full details archived.
+- Repair: `Saminiscool/twitter-ai-agent#2` was dirty; merged upstream, resolved
+  README conflict, pushed `b2d838c`, commented, and read back clean/mergeable.
+- Fresh PR: opened `rafsilva85/skillflow-linter#1` from verified fork
+  `kriptoburak/skillflow-linter`. It fixes `--dir --json`, recognizes
+  OpenClaw/Codex/OpenCode skills, adds unittest coverage, and read back clean.
+- Hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir, npm audit,
+  Markdown links, OpenClaw fitness, and public URL probes. npm web HEAD returned
+  403, but registry metadata succeeded. Full details are archived.
 
 ## Reporting Checklist
 

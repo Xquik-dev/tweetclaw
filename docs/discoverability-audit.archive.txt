@@ -2,6 +2,121 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-23 19:06 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-190606/crawl.json` with
+  research proxy, bounded request and proxy warmup timeouts, limit 140, 2 search
+  pages, 12 per query, concurrency 8, and session
+  `tweetclaw-20260623-190606`. Query coverage included open PRs, issues, repos,
+  SKILL.md, `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude,
+  agent, social media, Twitter/X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, and exact repo probes.
+  Output parsed as valid JSON with 71 opportunities. Proxy logs showed endpoint
+  metadata only; no credential values were stored or committed.
+- Complete PR inventory method: compact and archive memory yielded 1,242
+  audit-tracked PR URLs. Authored open PR search was partitioned by updated date
+  windows and found 2,289 unique open PRs with no 1,000-result bucket cap:
+  `updated:>=2026-06-23` 151, `2026-06-22` 149, `2026-06-21` 176,
+  `2026-06-20` 142, `2026-06-19` 26, `2026-06-18` 70, `2026-06-17` 115,
+  `2026-06-16` 90, `2026-06-15` 93, `2026-06-14` 141, `2026-06-13` 144,
+  `2026-06-12` 96, `2026-06-01..2026-06-11` 278, and `updated:<2026-06-01`
+  618. Broad GraphQL readback was blocked by field drift
+  `CheckRun.workflowName` and 50-PR GraphQL chunks returned HTTP 502, so exact
+  readback used REST PR records.
+- Exact readback: REST readback covered 2,285 of 2,289 authored open PRs.
+  Four exact reads failed by GitHub platform response:
+  `rediumvex/social-media-caption-generator-claude#3` 504,
+  `macmenes/vantage#1` 504, `clawpod-app/awesome-openclaw-agent-packs#2` 401,
+  and `rylena/awesome-openclaw#2` 401. Readback summary: 2,285 open; mergeable
+  true 2,173, false 36, null 76; merge states clean 1,716, unstable 323,
+  blocked 130, dirty 36, behind 4, unknown 76; 409 had issue comments. Broad
+  inline review-thread state remains a GraphQL blocker for this run, so no claim
+  is made that every in-scope comment thread was resolved.
+- Repair before new outreach: selected dirty current PR
+  `Saminiscool/twitter-ai-agent#2` because it was relevant, authored by
+  `kriptoburak`, had no comments or reviews, and the fork was verified as
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik` with parent
+  `Saminiscool/twitter-ai-agent`. The target is public, non-archived, non-fork,
+  and MIT licensed. Merged upstream `main`, resolved the README conflict,
+  validated `rg` conflict-marker scan, `git diff --check`,
+  `npx --yes prettier@3.6.2 --check README.md`, and
+  `npx --yes markdown-link-check README.md --quiet`, then pushed commit
+  `b2d838cce8e7ceca60e215da0eda2fae54b26851`. Final PR readback showed open,
+  ready, mergeable, clean, 5 files, no reviews, and no checks. Repair comment:
+  `https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4782624820`.
+- Fresh screening: duplicate or policy gates blocked direct TweetClaw
+  submissions to `skillmatic-ai/awesome-agent-skills`,
+  `EthanYolo01/Awesome-OpenClaw`, `lingxling/awesome-skills-cn`,
+  `vincentkoc/awesome-openclaw`, `ZeroLu/awesome-openclaw`,
+  `clawpod-app/awesome-openclaw-agent-packs`, `agent-sh/agnix`,
+  `LHL3341/awesome-claws`, `ZeroPointRepo/awesome-hermes-skills`,
+  `OthmaneBlial/awesome-openclaw-examples`, `VoltAgent/awesome-openclaw-skills`,
+  `libukai/awesome-agent-skills`, `alvinreal/awesome-openclaw`,
+  `cogine-ai/awesome-openclaw-zh`, `Rito-w/awesome-openclaw-skills-zh`,
+  `mattsfraser/skill-generator`, and `coreline-ai/agent_skills_marketplace`.
+  `rdmgator12/awesome-claude-plugins` was policy-blocked because CONTRIBUTING
+  only accepts plugins publicly listed at `claude.com/plugins`.
+  `ksimback/hermes-ecosystem` was duplicate-clean but not a natural TweetClaw
+  target because its catalog already contains `Xquik-dev/hermes-tweet` and
+  requires Hermes-specific projects. `nivkazdan/skills-agents-catalog` was
+  duplicate-clean but explicitly routes contributions to upstream source repos.
+  `ariesclark/skills` looked owner-curated and low-fit for an external
+  TweetClaw entry.
+- Fresh PR: selected `rafsilva85/skillflow-linter`, an MIT-licensed validator
+  for `SKILL.md` and `AGENTS.md` files. It was active enough, public,
+  non-archived, non-fork, and duplicate-clean for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, and Codex search terms. Verified fork
+  `kriptoburak/skillflow-linter` has parent `rafsilva85/skillflow-linter`.
+  Opened `https://github.com/rafsilva85/skillflow-linter/pull/1` from branch
+  `codex/openclaw-platform-detection`, commit
+  `a1f625b4048725c351b607b92b774d7e396c908c`. The PR imports `json` so
+  `--dir --json` no longer raises `NameError`, recognizes OpenClaw, Codex, and
+  OpenCode in platform detection, and adds standard-library unittest coverage.
+  Final readback: open, ready, mergeable, clean, 1 commit, 2 files, 0 comments,
+  0 reviews, and no configured checks.
+- Target validation for the new PR passed: `python3 -m unittest -v`,
+  `python3 -m py_compile skillflow_linter.py test_skillflow_linter.py`,
+  `git diff --check`, and
+  `python3 skillflow_linter.py /Users/burak/Developer/tweetclaw/skills/tweetclaw/SKILL.md --json`.
+  The TweetClaw smoke scored 92 and detected OpenClaw. The existing TweetClaw
+  skill still gets warning `SF003` because the linter does not recognize its
+  current instruction headings as a usage section.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, creating skills, permission
+  modes, ClawHub skill format, ClawHub publishing, ClawHub plugin validation
+  fixes, debugging, and testing plugin updates. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, MIT license, and the GitHub repository URL while
+  source remains `1.6.32`. `npm audit --audit-level=moderate --json` found 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+- Broken-link and public URL posture: TweetClaw Markdown link check passed for
+  README, OpenClaw setup, agent workflows, registry steps, packaged skill docs,
+  benchmark, skill card, and skillspector report. Direct probes returned HTTP
+  200 for TweetClaw GitHub, `Saminiscool/twitter-ai-agent#2`, the repair
+  comment URL, `rafsilva85/skillflow-linter#1`, `Arindam200/awesome-ai-apps#226`,
+  `YoavLax/AgentEval#1`, ClawHub canonical route, and OpenClawDir. npm package
+  web HEAD returned 403, but npm registry metadata succeeded and was used as
+  authoritative. A stale manual probe to `YoavLax/AgentEval#110` returned 404
+  and is not a product or audit-surface blocker.
+- Public hygiene and secret scan: staged public text was inspected for secrets,
+  private implementation details, restricted provider/source names, internal
+  cost mechanics, unsupported claims, and stale metadata before comments and PR
+  bodies. No sensitive values were printed or committed.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: validator/package-tooling repos can be high-fit when they add
+  concrete platform recognition and test coverage for OpenClaw-style skills;
+  avoid forcing TweetClaw into owner-curated catalogs or generated aggregators
+  when the target contribution path points upstream.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Prompt bytes: 11,980/15,360. TweetClaw memory changes were committed on
+  `master` and pushed after validation.
+
 ## 2026-06-23 05:08 UTC Manual Reactivation Run
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
