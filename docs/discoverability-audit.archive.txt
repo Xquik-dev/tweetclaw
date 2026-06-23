@@ -35554,6 +35554,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+2026-06-23 02:02 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with command
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260623-014958/crawl.json --research-proxy --request-timeout-ms 12000 --proxy-warmup-timeout-ms 8000 --limit 150 --search-pages 2 --per-query-limit 15 --concurrency 8 --session-id tweetclaw-20260623-014958` plus focused query packs for TweetClaw,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, SKILL.md,
+  `.agents/skills`, skill directories, awesome lists, registries, forks,
+  generated catalogs, and package/plugin lanes. Strict JSON parse found 144
+  opportunities.
+- PR inventory used compact memory, archive memory, crawler output, authored
+  search partitions, target repo PR lists, fork metadata, exact REST/GraphQL
+  readbacks, and known PR URLs. The current-day authored search returned the
+  newest outreach PRs, including `evilbotnet/skills-marketplace#3`,
+  `vadym-shliachkov/twt#2`, `alexliuxiaoting/awesome-skills#1`,
+  `mturac/everything-openai-codex#19`, `numman-ali/n-skills#30`,
+  `hashgraph-online/awesome-ai-plugins#44`,
+  `buluslan/ecommerce-competitor-analyzer#3`,
+  `Think-Cube/Ecommerce-Awesome#8`, and the current Hermes PR set. The
+  2026-06-22 authored partition output was too large for a complete exact-read
+  claim in this run, so broad inventory remains capped.
+- Exact-read repairs found no actionable maintainer request, valid current-head
+  bot finding, conflict, DCO/CLA blocker, generated-file drift, or safely
+  fixable CI failure. `evilbotnet/skills-marketplace#3`,
+  `vadym-shliachkov/twt#2`, `alexliuxiaoting/awesome-skills#1`,
+  `mturac/everything-openai-codex#19`, `numman-ali/n-skills#30`,
+  `hashgraph-online/awesome-ai-plugins#44`,
+  `Think-Cube/Ecommerce-Awesome#8`, `github/awesome-copilot#2095`,
+  `rohitg00/skillkit#139`, and `AgentDock/AgentDock#353` were open and
+  mergeable. GraphQL review-thread reads showed `skillkit#139` had one resolved
+  prior thread and `AgentDock#353` had no current actionable unresolved repair
+  after the hardening commit; target-owned Vercel authorization failures were
+  not repairable from the branch.
+- Fresh screening used crawler-first skill coverage. `skillmatic-ai/awesome-agent-skills`
+  was duplicate-blocked by existing Xquik/x-twitter-scraper PR history and low
+  single-TweetClaw fit. `BadMenFinance/awesome-skill-md` was duplicate-blocked
+  by open `kriptoburak` PR #1. `JuneYaooo/awesome-ai-media-skills-cn` was active,
+  public, non-fork, non-archived, and duplicate-clean across compact memory,
+  archive memory, target content, open and closed PRs, and open and closed
+  issues for TweetClaw, tweetclaw, Xquik, x-twitter-scraper, OpenClaw, ClawHub,
+  npm, and GitHub URL variants. No license metadata was present, which did not
+  block a direct catalog PR.
+- Target validation before edit found dead existing links for
+  `Hommy-master/capcut-mate` and the missing `CONTRIBUTING.md` file. No
+  authoritative replacement repository was found for the dead CapCut Mate row.
+- Opened https://github.com/JuneYaooo/awesome-ai-media-skills-cn/pull/1 from
+  verified fork `kriptoburak/awesome-ai-media-skills-cn`, parent/source
+  `JuneYaooo/awesome-ai-media-skills-cn`, branch
+  `codex/add-tweetclaw-cn-media-skills`, commit
+  `3b725cdc7b7589ab046fbf7eba7b35de43984f9b`. The PR adds TweetClaw to the
+  Chinese social-media MCP server catalog, adds the missing contribution guide,
+  removes the dead CapCut Mate row, and normalizes existing dash separators in
+  the touched README. Exact PR readback after body edit: open, mergeable,
+  1 commit, 2 files, 0 comments, 0 reviews, and 0 configured checks.
+- Target validation passed: `git diff --check`, target content duplicate scan,
+  target open/closed PR and issue duplicate checks, changed-file
+  sensitive-wording and public-scope scan, and `npx --yes markdown-link-check --quiet README.md
+  llms.txt CONTRIBUTING.md`. Direct probes returned HTTP 200 for TweetClaw
+  GitHub, the TweetClaw GitHub stars badge, and the new PR.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms, CLI
+  plugins, CLI skills, skills, ClawHub skill format, plugin manifest, exec
+  approvals, tool plugins, debugging, and ClawHub plugin validation fixes.
+  `npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.22.0`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31` while source remains
+  `1.6.32`; `npm audit --audit-level=moderate --json` found 0 vulnerabilities;
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, AgentRegistry steps, packaged skill, skill card, benchmark,
+  Skillspector report, compact audit, and compact release notes. Direct probes
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub,
+  OpenClawDir, OpenClaw setup docs, and the new external PR. The npm web page
+  returned HTTP 403 to bare fetch as before; registry metadata and npm view were
+  successful.
+- Prompt self-improvement: no prompt file was edited. Durable lesson recorded:
+  for multilingual catalogs, target-native value can combine a useful plugin
+  entry with repaired existing broken links and a missing contribution file when
+  duplicate checks are clean.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included Markdown link checks, direct public URL
+  probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  `npm run check:all`, and `git diff --check`. Persisted automation prompt
+  unchanged; prompt bytes: 11980/15360, TOML bytes: 12314.
+
 ## 2026-06-23 01:23 UTC Heartbeat
 
 - Runtime model and effort selector remained unavailable; GPT-5.5 plus
