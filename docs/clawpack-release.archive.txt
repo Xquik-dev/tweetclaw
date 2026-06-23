@@ -914,3 +914,24 @@ ClawHub `https://clawhub.ai/plugins/@xquik/tweetclaw` and OpenClawDir
 `https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. TweetClaw
 Markdown link checks, npm registry metadata, new `DualNova/agent-skills#1`,
 and `rubencu/openclaw-pr-workflow#1` probes succeeded.
+
+No npm or ClawHub publish was attempted during the 2026-06-23 20:25 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate --json` returned 0 vulnerabilities, and
+`npm run check-openclaw-platform-fitness` passed. Official OpenClaw docs
+returned HTTP 200 for llms, llms-full, CLI plugins, CLI skills, tools skills,
+ClawHub skill format, ClawHub publishing, ClawHub plugin validation fixes,
+plugin manifest, tool plugins, plugin building, architecture, compatibility,
+dependency resolution, install updating, and debugging. Older checked deep
+routes for creating skills, exec approvals, and permission modes returned 404
+and should stay treated as stale probes. ClawHub
+`https://clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live HTTP 200
+page; OpenClawDir `https://openclawdir.com/plugins/tweetclaw-m2h8cr`, TweetClaw
+GitHub, npm registry metadata, Skills.sh, repaired
+`reall8164/wechat-openclaw-plugin#1`, and new
+`informigados/x-archive-explorer#2` probes succeeded. npmjs web UI returned 403
+to raw probe, while registry metadata was reachable and Markdown links passed.
