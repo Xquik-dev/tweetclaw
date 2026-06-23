@@ -2,6 +2,119 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-23 04:26 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-042635/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 180, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-042635`. Query coverage included authored PRs, SKILL.md,
+  `.agents/skills`, `.codex/skills`, skills directories, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, and exact repo probes. Output
+  parsed as valid JSON with 76 opportunities. Proxy logs showed endpoint
+  refresh metadata only; no credential values were stored or committed.
+- PR inventory: updated-time partitions found 2,232 unique open authored PR URLs
+  with no capped daily slices: 75 current-day, 156 on 2026-06-22, 177 on
+  2026-06-21, 142 on 2026-06-20, 26 on 2026-06-19, 70 on 2026-06-18, 116 on
+  2026-06-17, 92 on 2026-06-16, 93 on 2026-06-15, 142 on 2026-06-14, 144 on
+  2026-06-13, 96 on 2026-06-12, 280 on 2026-06-01 through 2026-06-11, and
+  623 before June. Exact readback covered the 75 current-day PRs: 75 open,
+  73 mergeable, 1 conflicting, 1 unknown mergeability, 60 clean, 11 unstable,
+  1 dirty, 2 blocked, 1 unknown merge state, 14 with comments, 1 with reviews,
+  11 with checks, 1 failing check, and 1 review-required state. Complete exact
+  inventory across all 2,232 partitioned PRs is not claimed.
+- PR repair gate: `imochen/agent-tools-hub#2` was conflicting and dirty. Exact
+  pre-repair readback showed head `kriptoburak:codex/add-xquik-tool` at
+  `79d3ef421e72db4ca6d20e4f662acb2df3ed8cb2`, base `main`, no comments,
+  reviews, or checks, and only `data/skills.json` changed. The target repo is
+  MIT licensed, non-fork, non-archived, default branch `main`, and the verified
+  fork `kriptoburak/agent-tools-hub` is a fork of `imochen/agent-tools-hub`.
+  After merging upstream `main`, conflict resolution preserved the upstream
+  Context7 entry unchanged, moved Xquik to the next featured slot `8`, and
+  pushed merge commit `9e01f93d6fd328eed547d90451966a8c820db263` to
+  `codex/add-xquik-tool`. PR body validation notes were updated. Exact
+  post-repair readback was open, ready, mergeable, unstable only because no
+  checks were configured, no comments, no reviews, and files still limited to
+  `data/skills.json`.
+- Other current-day PR flags did not require code repair: one Vercel failure
+  was target-owned authorization, one Netlify preview was target-owned, one
+  Gemini quota bot note was external, one CodeRabbit state had no actionable
+  change request, `zhayujie/CowAgent#2912` already had the requested redirect
+  reply, and the remaining flags were no-check unstable states, stale
+  self-comments, or Codex usage-limit comments.
+- Fresh screening and duplicate gates: compact audit, archives, crawler output,
+  target metadata, target content, open and closed target PRs, open and closed
+  target issues, and local clone scans were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, Twitter/X, SKILL.md, `.agents/skills`,
+  `.codex/skills`, validators, package tooling, and variants. Known duplicate
+  or blocked lanes included `software-ai-life/X-account-digest-skills`,
+  `devadio/post-skill`, `jorgehn98/jorgex-custom-tools`,
+  `pkobielak/social-superpowers-mcp`, and prior skill-list/catalog targets.
+  Fresh candidates screened included `fchastanet/ai-linter`,
+  `rooftop-Owl/skill-factory`, `DirectorGunner/AI-skill-drafting`,
+  `mareasw/ontoskills`, `voidleapcode/directory`, and
+  `theesfeld/claude-okf`.
+- Selected fresh target: `fchastanet/ai-linter` is MIT licensed, non-fork,
+  non-archived, default branch `master`, and duplicate-clean across target
+  content and target PRs/issues. The repository validates `SKILL.md` and
+  `AGENTS.md` files, auto-discovers skills under `.github/skills`, and already
+  contains example skill fixtures. The contribution adds
+  `.github/skills/social-publishing-approval/SKILL.md`, a target-native
+  fixture for approval-gated social publishing that uses TweetClaw as a
+  controlled publishing surface while keeping publish and schedule actions
+  behind explicit human approval.
+- External PR: opened https://github.com/fchastanet/ai-linter/pull/9 from
+  verified fork `kriptoburak/ai-linter`, parent `fchastanet/ai-linter`, branch
+  `codex/add-social-publishing-skill-example`, commit
+  `17f315fac52b686b17e4dbceaa5bbbc7a16f4871`. Final readback was open, ready,
+  mergeable, blocked only by review requirement, no checks posted yet,
+  1 commit, 1 added file, 0 comments, and 0 reviews.
+- Target validation passed: `.venv/bin/ai-linter --skills --max-warnings 23 .`
+  found the new skill, reported only the repository's existing 23 AGENTS example
+  warnings, and had 0 errors; `.venv/bin/python -m pytest
+  src/validators/skill_validator_test.py src/processors/process_skills_test.py
+  -q` passed 20 tests; `PATH="$PWD/.venv/bin:$PATH" make test` passed 223
+  tests; `git diff --check` passed. The first system `python3` attempt failed
+  because it was Python 3.9, below the target's `>=3.10` syntax, and the
+  supported Python 3.11 initially lacked dependencies, so a scratch venv was
+  created inside the clone. Generated venv, coverage, cache, and egg-info files
+  remained ignored and uncommitted.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, creating skills, permission
+  modes, ClawHub skill format, ClawHub publishing, ClawHub plugin validation
+  fixes, debugging, and testing plugin updates. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, repository URL, and MIT license. Source remains
+  `1.6.32` and unpublished. `npm audit --audit-level=moderate --json` reported
+  0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README,
+  OpenClaw setup, agent workflows, AgentRegistry steps, packaged skill,
+  benchmark, skill card, and skillspector report after correcting a stale local
+  filename in the command. External target link check passed for the new
+  `fchastanet/ai-linter` skill. Public URL probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClawDir,
+  `imochen/agent-tools-hub#2`, and `fchastanet/ai-linter#9`. The npmjs package
+  web page returned HTTP 403 from the probe path while registry metadata
+  returned HTTP 200, so registry metadata remains the reliable link check.
+- Public hygiene: reviewed diffs and PR bodies for secret exposure, restricted
+  provider/source names, private cost mechanics, unsupported claims, and stale
+  metadata. No public-surface issue was introduced. Context7 was not edited.
+- TweetClaw files changed: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Pre-existing untracked file `0` was left
+  untouched.
+- Prompt self-improvement: durable lesson recorded that validator targets are
+  good fits when TweetClaw appears only as approval-gated context in validated
+  fixtures, and that target auto-discovery paths should drive example placement.
+  No persisted automation prompt edit was made, so no prompt candidate bytes
+  were saved. Markdown memory size and full TweetClaw checks were run before the
+  commit.
+
 ## 2026-06-23 04:05 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
