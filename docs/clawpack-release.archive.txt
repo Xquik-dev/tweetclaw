@@ -698,3 +698,19 @@ exec approvals, skills, Skill Workshop, manifest, tool plugins, building
 plugins, compatibility, ClawHub publishing, ClawHub skill format, debugging,
 install updating, and `clawhub/plugin-validation-fixes`. TweetClaw GitHub, npm
 registry metadata, ClawHub, and the new external PR probes succeeded.
+
+No npm or ClawHub publish was attempted during the 2026-06-23 01:41 UTC
+heartbeat. npm latest remains `@xquik/tweetclaw@1.6.31`, source remains
+`1.6.32`, and local npm auth is still not trusted for publishing. Source
+metadata still targets OpenClaw `2026.6.9`; published npm metadata still
+targets OpenClaw `2026.5.4`. OpenClaw npm tags were latest `2026.6.9`, beta
+`2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` remained `0.22.0`.
+`npm audit --audit-level=moderate --json` returned 0 vulnerabilities, and
+`npm run check-openclaw-platform-fitness` passed. ClawHub
+`https://clawhub.ai/plugins/@xquik/tweetclaw` remained HTTP 200 and still
+exposes `1.6.26`, so npm remains canonical until current scoped package
+ownership is fixed. Official OpenClaw docs returned HTTP 200 for llms, CLI
+plugins, CLI skills, skills, ClawHub skill format, plugin manifest, exec
+approvals, tool plugins, and debugging routes. TweetClaw GitHub, npm registry
+metadata, ClawHub, target Markdown links, and the new
+`alexliuxiaoting/awesome-skills#1` PR probes succeeded.

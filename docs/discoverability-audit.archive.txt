@@ -36461,6 +36461,93 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   with Context7 excluded, direct public URL probes, `npm run check-memory-md-size`,
   `npm run check-openclaw-platform-fitness`, `npm audit`, and `git diff --check`.
 
+2026-06-23 01:41 UTC heartbeat:
+- Model and reasoning-effort selector remained unavailable in this runtime, so
+  the heartbeat continued under the active model and recorded the limitation.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260623-012853`, JSON output, research proxy, bounded timeouts,
+  13 focused query packs, and 7 exact repos. It returned 69 opportunities and
+  covered SKILL.md, `.agents/skills`, skills directories, OpenClaw, MCP, Codex,
+  Claude, agent, social media, Twitter/X, awesome lists, registries, forks,
+  generated catalogs, and web-index surfaced skill repos.
+- PR inventory used compact and archive URLs, crawler coverage, authored open
+  PR updated-date partitions, target repo reads, fork metadata, exact PR
+  readbacks, and thread-aware GraphQL where review-thread state mattered.
+  The `updated:>=2026-06-23` partition returned 24 authored open PRs. The
+  `updated:2026-06-22..2026-06-22` partition produced output too large for the
+  terminal view, so complete all-time inventory was not claimed. Exact-read PRs
+  included `hashgraph-online/awesome-ai-plugins#44`,
+  `mturac/everything-openai-codex#19`, `numman-ali/n-skills#30`,
+  `buluslan/ecommerce-competitor-analyzer#3`,
+  `Think-Cube/Ecommerce-Awesome#8`, `github/awesome-copilot#2095`,
+  `rohitg00/skillkit#139`, `AgentDock/AgentDock#353`,
+  `flc1125/skills#120`, and `gitroomhq/postiz-docs#227`.
+- Repair priority found no safe action. New PRs were open and mergeable or had
+  no target-actionable comments. `github/awesome-copilot#2095` had only
+  existing soft-gate risk and validator warnings. `skillkit#139` and
+  `AgentDock#353` had prior bot findings already fixed or outdated, with
+  thread-aware reads confirming no current code repair. Target-owned Vercel
+  authorization remained the only failing check on handled Vercel PRs.
+- Fresh screening skipped duplicate or prior-history lanes including
+  `blacktwist/social-media-skills`, `typefully/agent-skills`,
+  `hyperfx-ai/marketing-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `pagoda111king/super-sop-node-radar`,
+  `open-agent-craft/awesome-agent-skills`,
+  `philipbankier/awesome-agent-skills`, and `GPTtang/skill-atlas`.
+  `GPTtang/skill-atlas` already had open PR #2 from `kriptoburak`.
+  `citedy/citedy-seo-agent` stayed held as a broader product-specific lane.
+- Selected target: `alexliuxiaoting/awesome-skills` was active, non-archived,
+  non-fork, Apache-2.0 licensed, public, and duplicate-clean across compact
+  memory, archive memory, target content, open and closed target PRs, and open
+  and closed target issues for TweetClaw, tweetclaw, Xquik,
+  x-twitter-scraper, OpenClaw, and ClawHub terms. Contribution docs asked for
+  neutral one-sentence entries, supported agents, license information, and both
+  English and Simplified Chinese README updates when practical.
+- Existing `kriptoburak/awesome-skills` belonged to a different upstream
+  (`gmh5225/awesome-skills`), so a distinct fork was created and verified:
+  `kriptoburak/awesome-skills-alex` parent/source
+  `alexliuxiaoting/awesome-skills`. This kept fork ownership correct without
+  using `Xquik-dev`.
+- Opened https://github.com/alexliuxiaoting/awesome-skills/pull/1 from branch
+  `codex/add-tweetclaw-awesome-skills`, commit
+  `6a312904d2277a0232714e54e2f4e4dd2a1596ed`. The PR adds a neutral TweetClaw
+  entry to `README.md` and `README.zh-CN.md` under Domain Skill Packs. Exact
+  readback: open, mergeable, 1 commit, 0 comments, 0 reviews, and 0 configured
+  checks.
+- Target validation passed: `git diff --check`, changed-file public-scope scan,
+  `npx --yes markdown-link-check --quiet README.md README.zh-CN.md`, direct
+  duplicate checks against target content, open and closed PRs, and open and
+  closed issues, and HTTP 200 probes for the TweetClaw GitHub repo, npm
+  registry metadata, ClawHub route, OpenClaw docs, and target repo. PR body was
+  exact-read after creation and contained no private implementation details.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms, CLI
+  plugins, CLI skills, skills, ClawHub skill format, plugin manifest, exec
+  approvals, tool plugins, and debugging routes. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31` while source remains `1.6.32`; `npm audit` found
+  0 vulnerabilities; `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: Markdown link check passed for README, OpenClaw setup,
+  agent workflows, AgentRegistry steps, packaged skill, skill card, benchmark,
+  Skillspector report, compact audit, and compact release notes. Direct public
+  probes succeeded for the TweetClaw repo, npm registry metadata, ClawHub,
+  OpenClaw docs, and the new external PR.
+- Xquik session-start issue audit was attempted from the current Xquik context,
+  but `gh issue list` was redirected to an unrelated repository name and failed
+  repository resolution. The blocker was outside TweetClaw outreach scope and
+  no Xquik files were changed.
+- Prompt self-improvement: no prompt file was edited. Durable lesson reinforced:
+  if an existing fork name points to a different upstream, create and verify a
+  target-specific fork name before pushing. Persisted automation prompt
+  unchanged; prompt bytes: 11980/15360, TOML bytes: 12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included Markdown link checks, direct public URL
+  probes, `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
+  `npm run check:all`, and `git diff --check`.
+
 2026-06-22 20:12 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
   the heartbeat continued under the active model and recorded the limitation.
