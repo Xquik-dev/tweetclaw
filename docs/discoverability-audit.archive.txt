@@ -2,6 +2,102 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-23 05:08 UTC Manual Reactivation Run
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Automation state: re-enabled heartbeat automation
+  `improve-tweetclaw-openclaw-integration` as ACTIVE with the existing
+  same-thread prompt preserved. Prompt byte count before saving was 11,980,
+  below the 15 KiB prompt cap. No automation prompt file was deleted.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-enable-run/crawl.json`
+  with research proxy, bounded request and warmup timeouts, limit 120, 2 search
+  pages, 12 per query, concurrency 8, and session
+  `tweetclaw-20260623-enable-run`. Query coverage included open PRs, SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X skills, awesome lists, registries, forks, generated
+  catalogs, validators, package tooling, and exact repo probes. Output parsed as
+  valid JSON with 71 opportunities. Proxy logs showed endpoint metadata only; no
+  credential values were stored or committed.
+- PR inventory: compact audit and archives yielded 1,241 unique audit-tracked
+  PR URLs. Current-day authored search returned a long open-PR set but complete
+  broad inventory is not claimed. Exact readback covered 9 priority PRs:
+  `Arindam200/awesome-ai-apps#226`, `philipbankier/zernio-social-skill#1`,
+  `fchastanet/ai-linter#9`, `imochen/agent-tools-hub#2`,
+  `DualNova/agent-skills#1`, `patty-png/claude-code-toolkit-app#5`,
+  `dvelez3815/xbot-ai#1`, `fabston/TradingView-Webhook-Bot#180`, and
+  `devgabrielsborges/X-Bot#15`. `fchastanet/ai-linter#9` exact readback hit a
+  GitHub platform response parse error; other sampled PRs had no actionable
+  maintainer comments, review comments, conflicts, DCO/CLA blockers, generated
+  drift, or valid bot findings. Observed pending or failing checks were
+  target-owned authorization, no-check pending, or normal pending states.
+- Required repair: `Arindam200/awesome-ai-apps#226` had reviewer feedback asking
+  for an actual Nebius project instead of a docs-only placement. The existing
+  PR branch was updated before new outreach: removed the docs-only TweetClaw
+  note, added `simple_ai_agents/nebius_social_campaign_planner/` with Streamlit
+  app, README, `.env.example`, and `pyproject.toml`, pushed commit
+  `8ba8f839c644abaea4f7d1e259046328cd87a385`, updated the PR title and body,
+  and replied at
+  `https://github.com/Arindam200/awesome-ai-apps/pull/226#issuecomment-4781467450`.
+  Exact readback after repair showed PR open, ready, mergeable, checks success,
+  and files limited to the README plus the new Nebius project.
+- Fresh screening and duplicate gates: top crawler targets with prior TweetClaw
+  history were blocked from duplicate submissions, including
+  `SamurAIGPT/awesome-openclaw`, `sundial-org/awesome-openclaw-skills`,
+  `BlockRunAI/awesome-OpenClaw-Money-Maker`, `contextosai/skills`,
+  `migmcc/agent-skill-quality-gate`, `harrypham2000/skill-audit`,
+  `himself65/skill-lint`, and `studiomeyer-io/skilldoctor`. Selected
+  `YoavLax/AgentEval`: non-fork, non-archived, default branch `master`, MIT
+  license, recently pushed, no compact or archive TweetClaw history, no open PR
+  or issue duplicates for TweetClaw, Xquik, x-twitter-scraper, npm, GitHub, or
+  ClawHub variants, and a target-native validation lane for `SKILL.md` and
+  `agent.md` fixtures.
+- External PR: opened https://github.com/YoavLax/AgentEval/pull/1 from verified
+  fork `kriptoburak/AgentEval` branch `codex/add-social-research-fixture`,
+  commit `78240a390e59596a6793cf569a4b010b38db7527`. The contribution adds
+  `tests/fixtures/valid_social_research.md` and
+  `tests/test_social_research_fixture.py` so AgentEval validates a realistic
+  approval-gated social research skill that can collect X/Twitter context with
+  TweetClaw while keeping publishing and credential handling under explicit
+  user control. Fork readback confirmed `kriptoburak/AgentEval` is a fork of
+  `YoavLax/AgentEval`. PR readback showed open, ready, mergeable, clean, 0
+  comments, 0 reviews, 2 files changed, and head
+  `78240a390e59596a6793cf569a4b010b38db7527`.
+- Target validation: under Python 3.11 isolated `.venv`, installed target
+  dependencies and package, then passed `PYTHONPATH=src .venv/bin/python -m
+  pytest tests/test_social_research_fixture.py tests/test_frontmatter.py
+  tests/test_description.py tests/test_parser.py` with 54 tests, passed
+  `.venv/bin/skillcheck tests/fixtures/valid_social_research.md
+  --skip-dirname-check --quiet`, and passed `git diff --check`. A broader
+  pre-existing `tests/test_cli.py` run failed for target-owned CLI JSON/report
+  and version expectation drift, so it was not included in the PR validation
+  claim.
+- TweetClaw hygiene: official OpenClaw docs and Markdown exports returned HTTP
+  200 for llms, llms-full, CLI plugins, CLI skills, tool skills, creating
+  skills, permission modes, ClawHub skill format, ClawHub publishing, plugin
+  validation fixes, debugging, and testing plugin updates. `npm view openclaw`
+  reported latest `2026.6.9`, beta `2026.6.10-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` reported `0.22.0`;
+  `npm view @xquik/tweetclaw` reported latest `1.6.31`, MIT license, and the
+  GitHub repository URL. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `1.6.32` targeting OpenClaw `2026.6.9`.
+- Broken links and public URLs: TweetClaw Markdown link checks passed for
+  README, OpenClaw setup, agent workflows, AgentRegistry steps, packaged skill
+  docs, benchmark, skill card, and SkillSpector report. Direct public probes
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub,
+  OpenClawDir, `YoavLax/AgentEval#1`, `Arindam200/awesome-ai-apps#226`, and
+  `philipbankier/zernio-social-skill#1`.
+- Changed files: external target changed
+  `tests/fixtures/valid_social_research.md` and
+  `tests/test_social_research_fixture.py`; TweetClaw changed
+  `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Prompt self-improvement was captured in
+  archive memory without widening scope. Compact Markdown memory stayed under
+  the 15 KiB cap after `npm run check-memory-md-size`.
+
 ## 2026-06-23 04:47 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
