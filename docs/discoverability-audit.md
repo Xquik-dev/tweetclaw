@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-22 23:44 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 00:15 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/skill-format`,
   `/help/debugging`, and `/clawhub/plugin-validation-fixes`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-22 23:44 UTC, but latest ClawHub page remains `1.6.26` and
+  on 2026-06-23 00:15 UTC, but latest ClawHub page remains `1.6.26` and
   owner-scope publishing is blocked. Keep npm canonical until current package
   publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-22 23:44 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 00:15 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,23 +191,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-22 23:44 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260622-232428` found 9 skill, MCP, plugin, and catalog
-  candidates. Broad authored PR search again hit GitHub's 1000-result cap, so
-  complete all-time inventory was not claimed; exact-read 129 recent or tracked
-  PRs with 0 failures.
-- Repair scan found no safe immediate edits. Actionable current blockers were 3
-  target-owned Vercel failures and 5 merge conflicts from target churn. Opened
-  https://github.com/github/awesome-copilot/pull/2095 from verified fork
-  `kriptoburak/awesome-copilot`, branch
-  `codex/add-tweetclaw-openclaw-routing`, commit `fed84dc`, adding TweetClaw
-  OpenClaw routing to the existing Xquik skill and fixing a target skill
-  validator frontmatter issue. Target CI checks passed; bot comments were soft
-  review advisories plus a contributor-reputation review note.
-- TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir,
-  npm audit, Markdown links with Context7 skipped by scope, OpenClaw fitness,
-  Blacksmith workflow readback, memory cap, and `npm run check:all`. Full
-  inventory, blockers, prompt-byte, and public-link details are archived.
+- 2026-06-23 00:15 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260622-235559` found 9 skill, MCP, plugin, and catalog
+  candidates; focused skill crawler returned 0 after a proxy pool outage.
+  Broad authored PR search remained capped, so full all-time inventory was not
+  claimed. Exact-read tracked PRs found no safe repair.
+- Fresh PR lanes were blocked by duplicate history, maintainer policy, target
+  permission, or existing open adjacent submissions. Pushed an appcypher branch
+  for a useful Xquik MCP list entry, but PR creation was denied by both GitHub
+  CLI/API and the GitHub connector. Full blocker details are archived.
+- TweetClaw hygiene passed: current OpenClaw docs/npm, ClawHub, npm audit,
+  Markdown links with Context7 skipped by scope, OpenClaw fitness, public URL
+  probes, memory cap, and `npm run check:all`. Blacksmith readback follows
+  push.
 
 ## Reporting Checklist
 

@@ -35461,6 +35461,10 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - TweetClaw audit changes: updated `docs/discoverability-audit.md`,
   `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
   `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included Markdown link check with Context7 excluded,
+  direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  `npm run check:all`, and `git diff --check`.
   Final validation passed `npm run check:all`, Markdown link check with
   Context7 excluded by hard scope, direct public URL probes, `npm run
   check-memory-md-size`, `npm run check-openclaw-platform-fitness`, and
@@ -35549,6 +35553,93 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate`,
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
+
+## 2026-06-23 00:15 UTC Heartbeat
+
+- Runtime model and effort selector was unavailable; GPT-5.5 plus extra-high
+  reasoning could not be verified in runtime controls, so the limitation was
+  recorded and work continued.
+- Crawler-first monitoring and discovery used `/Users/burak/Developer/xquik`
+  with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260622-235559/crawl.json`, research proxy,
+  bounded request and warmup timeouts, focused query packs, and exact repo
+  inputs for open PRs, MCP, skills, OpenClaw, ClawHub, Codex, Claude, agent,
+  social media, Twitter-X, registry, validator, examples, docs, plugin
+  ecosystem, and package-tooling lanes. It returned 9 opportunities:
+  `openai/openai-agents-python`, `appcypher/awesome-mcp-servers`,
+  `cloudflare/agents`, `wong2/awesome-mcp-servers`,
+  `VoltAgent/awesome-claude-code-subagents`,
+  `punkpeye/awesome-mcp-clients`, `hesreallyhim/awesome-claude-code`,
+  `modelcontextprotocol/registry`, and `docker/mcp-registry`.
+- Broad authored open PR search still hit GitHub's 1000-result cap. Created-day
+  partitions found 1143 open authored PRs across 2026-06-13 through
+  2026-06-22, so all-time completeness was not claimed. Exact readbacks covered
+  recent or audit-tracked PRs including `github/awesome-copilot#2095`,
+  `punkpeye/awesome-mcp-clients#226`, `gitroomhq/postiz-docs#227`,
+  `forjd/startup-ideation-skills#1`, `AgentDock/AgentDock#353`,
+  `flc1125/skills#120`, `rohitg00/skillkit#139`, and the current conflict
+  backlog. No maintainer comment, review, DCO, CLA, check, or generated-file
+  repair was safe to apply; active blockers remained target-owned CI, target
+  churn conflicts, or review state.
+- GitHub issue search hit an authenticated rate limit during duplicate checks,
+  so broad authenticated search stopped for the run. Remaining screening used
+  crawler output, exact repo metadata, exact PR and issue lists, clones, local
+  `rg`, archive checks, and fork metadata.
+- Fresh candidate screening: `appcypher/awesome-mcp-servers` was active,
+  non-fork, public, PR-oriented by `CONTRIBUTING.md`, issue-disabled, and
+  duplicate-clean for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw
+  URL, npm URL, ClawHub, Xquik, x-twitter-scraper, and variants. License
+  metadata was absent, which did not block direct PR work.
+- External target edit: committed `813508a` on
+  `/tmp/tweetclaw-heartbeat-20260622-235559/appcypher-awesome-mcp-servers`,
+  branch `codex/add-xquik-mcp-server-20260622`, adding an alphabetized Xquik
+  entry to the Social Media MCP list. Validation passed with `git diff --check`,
+  focused HTTP 200 probes for the Xquik repository and icon URL, and a public
+  wording and secret scan. Full target README markdown-link-check stalled and
+  was killed, so only changed-link probes were trusted.
+- Fork rules were followed. The existing `kriptoburak/awesome-mcp-servers` fork
+  belonged to a different parent, so a distinct verified fork
+  `kriptoburak/awesome-mcp-servers-appcypher-xquik` was used. Push succeeded,
+  but PR creation failed through `gh pr create` with CreatePullRequest
+  permission denial, REST with HTTP 404, and the GitHub connector with
+  `Resource not accessible by integration`. Issues are disabled, so no
+  target-native issue path was available.
+- Other crawler-backed lanes were blocked: `wong2/awesome-mcp-servers` states
+  that PRs are not accepted and routes submissions to a website; `VoltAgent`
+  already has open SocialClaw and OpenClaw-adjacent submissions, so another
+  TweetClaw social entry would overlap; `hesreallyhim/awesome-claude-code`
+  reserves new resource additions for an issue template and bot flow;
+  `modelcontextprotocol/registry` and `docker/mcp-registry` have existing
+  Xquik/TweetClaw registry PR history; `punkpeye/awesome-mcp-clients` already
+  has an open tracked PR; `cloudflare/agents` and `openai/openai-agents-python`
+  were lower fit for a thin TweetClaw placement. A smaller focused skill crawler
+  returned 0 opportunities after managed proxy socket failures, endpoint
+  quarantines, and a proxy pool outage circuit.
+- TweetClaw hygiene: official OpenClaw docs at `https://docs.openclaw.ai`
+  returned HTTP 200 for llms, llms-full, CLI plugins, CLI skills, plugin tools,
+  exec approvals, skills, Skill Workshop, manifest, tool plugins, building
+  plugins, compatibility, ClawHub publishing, ClawHub skill format, debugging,
+  install updating, and `clawhub/plugin-validation-fixes`. `openclaw.com`
+  routes returned 500 or 403, so `docs.openclaw.ai` remains the canonical docs
+  host for automation checks.
+- Package and link checks: `npm view openclaw` returned latest `2026.6.9`,
+  beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub`
+  returned `0.22.0`; `npm view @xquik/tweetclaw` returned published latest
+  `1.6.31` while source remains `1.6.32`. `npm audit
+  --audit-level=moderate --json` found 0 vulnerabilities, and
+  `npm run check-openclaw-platform-fitness` passed. Markdown link check passed
+  for README, OpenClaw setup, agent workflows, packaged skill, compact audit,
+  and compact release notes with Context7 skipped by hard scope. Direct probes
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub, the
+  OpenClaw docs URLs used by the setup docs, and the pushed appcypher branch.
+- Prompt self-improvement: no automation prompt edit was needed. Durable lesson:
+  if a crawler target has explicit no-PR policy or target-side PR creation
+  denial, record the exact blocker and continue screening instead of forcing a
+  thin issue or duplicate PR. Persisted prompt unchanged at 11980/15360 bytes;
+  TOML bytes: 12314.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
 
 2026-06-22 23:44 UTC heartbeat:
 - Model and reasoning-effort selector remained unavailable in this runtime, so
