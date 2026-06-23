@@ -2,6 +2,90 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-23 04:47 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-044734/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 180, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-044734`. Query coverage included authored PRs, SKILL.md,
+  `.agents/skills`, `.codex/skills`, skills directories, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X skills, awesome lists, registries, forks,
+  generated catalogs, validators, package tooling, and exact repo probes. Output
+  parsed as valid JSON with 45 opportunities. Proxy logs showed endpoint
+  metadata only; no credential values were stored or committed.
+- PR inventory: compact audit and archives yielded 1,241 unique audit-tracked
+  PR URLs. Broad authenticated `gh search prs --author kriptoburak --state open`
+  partitions hit GitHub GraphQL rate limit at updated slice
+  `2026-06-16..2026-06-16`, so broad authenticated search stopped for the run
+  and complete PR inventory is not claimed. Fallback exact REST readback covered
+  9 priority PRs: `fchastanet/ai-linter#9`,
+  `imochen/agent-tools-hub#2`, `DualNova/agent-skills#1`,
+  `patty-png/claude-code-toolkit-app#5`, `rajesh-gsn/skill-lint#4`,
+  `hashgraph-online/awesome-ai-plugins#44`,
+  `Think-Cube/Ecommerce-Awesome#8`, `zhayujie/CowAgent#2912`, and
+  `github/awesome-copilot#2095`. `rubencu/openclaw-pr-workflow#1`,
+  `freddo1503/claude-pre-commit#2`, and `zhayujie/cow-skill-hub#3` exact REST
+  reads hit public REST rate limit after the priority reads.
+- PR repair gate: no actionable maintainer comments, review comments, CI
+  failures, conflicts, DCO/CLA blockers, generated-file drift, or valid bot
+  findings required repair. Exact readbacks showed `fchastanet/ai-linter#9`,
+  `imochen/agent-tools-hub#2`, and `DualNova/agent-skills#1` open and
+  mergeable with no comments, reviews, or checks; `patty-png/claude-code-toolkit-app#5`
+  had target-owned Vercel authorization failure; `rajesh-gsn/skill-lint#4` had
+  target-owned Netlify status; `hashgraph-online/awesome-ai-plugins#44` had a
+  Gemini quota bot note; `Think-Cube/Ecommerce-Awesome#8` had only a CodeRabbit
+  summary; `zhayujie/CowAgent#2912` already had the maintainer-requested
+  redirect to `cow-skill-hub#3`; `github/awesome-copilot#2095` was merged.
+  Thread-aware GraphQL was unavailable because the account was rate-limited.
+- Fresh screening and duplicate gates: selected crawler-surfaced
+  `philipbankier/zernio-social-skill`. Compact audit and archives showed prior
+  screening only and no TweetClaw submission; current instructions treat missing
+  license metadata as non-blocking. Local clone scans found no TweetClaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw plugin, ClawHub, npm,
+  or GitHub duplicate content beyond the target's own OpenClaw/Hermes and
+  Twitter/X publishing context. `git ls-remote` found no PR refs. Target
+  PR/issue REST duplicate checks hit public REST rate limit and were recorded as
+  a platform blocker for that lane. The target README says MIT, no LICENSE file
+  exists, no contribution or AGENTS file exists, default branch is `master`, and
+  the skill explicitly distinguishes drafts from immediate publishing.
+- External PR: opened https://github.com/philipbankier/zernio-social-skill/pull/1
+  from verified fork `kriptoburak/zernio-social-skill` branch
+  `codex/add-tweetclaw-research-context`, commit
+  `29b356244594b952f11cef51655a327046f1e027`. The contribution adds README and
+  SKILL guidance for optional TweetClaw X/Twitter research before Zernio social
+  drafts, preserving explicit approval before publish and keeping credentials
+  out of chat or post content. Fork verification used public page and
+  `git ls-remote` because GraphQL was rate-limited. PR readback: open, ready,
+  mergeable, clean, 0 comments, 0 reviews, 2 files changed, and pending checks.
+- Target validation: `git diff --check`, `python3 -m py_compile scripts/zernio.py`,
+  `npx --yes markdown-link-check README.md SKILL.md references/post-schema.md references/platform-quirks.md --quiet`,
+  and added-line public-hygiene scans passed.
+- TweetClaw hygiene: official OpenClaw docs and Markdown exports returned HTTP
+  200 for llms, llms-full, CLI plugins, CLI skills, tool skills, creating
+  skills, permission modes, ClawHub skill format, ClawHub publishing, plugin
+  validation fixes, debugging, and testing plugin updates. `npm view openclaw`
+  reported latest `2026.6.9`, beta `2026.6.10-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` reported `0.22.0`;
+  `npm view @xquik/tweetclaw` reported latest `1.6.31`, MIT license, and the
+  GitHub repository URL. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `1.6.32` targeting OpenClaw `2026.6.9`.
+- Broken links and public URLs: TweetClaw Markdown link checks passed for
+  README, OpenClaw setup, agent workflows, AgentRegistry steps, packaged skill
+  docs, benchmark, skill card, and SkillSpector report. Direct public probes
+  returned HTTP 200 for TweetClaw GitHub, npm registry metadata, ClawHub,
+  OpenClawDir, `zernio-social-skill#1`, `ai-linter#9`, and
+  `agent-tools-hub#2`.
+- Changed files: external target changed `README.md` and `SKILL.md`; TweetClaw
+  changed `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. No prompt edit was needed; prompt byte
+  measurement was not applicable. Compact Markdown memory stayed under the
+  15 KiB cap after `npm run check-memory-md-size`.
+
 ## 2026-06-23 04:26 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high

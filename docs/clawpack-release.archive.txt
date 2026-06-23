@@ -2,6 +2,23 @@
 
 TweetClaw should publish to ClawHub as a ClawPack npm-pack artifact, not the legacy ZIP path. OpenClaw prefers ClawPack metadata when ClawHub provides it, verifies the downloaded bytes and digest headers, and records npm integrity, shasum, tarball name, and ClawPack digest fields for future updates.
 
+## 2026-06-23 04:47 UTC Release Check
+
+No release or ClawHub publish was attempted. Official OpenClaw docs returned
+HTTP 200 for llms, llms-full, CLI plugins, CLI skills, tools skills, creating
+skills, permission modes, ClawHub skill format, ClawHub publishing, ClawHub
+plugin validation fixes, debugging, and testing plugin updates. `npm view
+openclaw` still reports latest `2026.6.9`, beta `2026.6.10-beta.2`, and alpha
+`2026.5.19-alpha.1`; `npm view clawhub` reports `0.22.0`; npm registry metadata
+for `@xquik/tweetclaw` still reports published latest `1.6.31`, MIT license,
+and the GitHub repository URL. Source remains `1.6.32` and unpublished.
+`npm audit --audit-level=moderate --json` reports 0 vulnerabilities.
+`npm run check-openclaw-platform-fitness` passed. ClawHub plugin route
+`https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 and redirected
+to `https://clawhub.ai/xquik/plugins/tweetclaw`, but the current scoped package
+is still not published there, so npm remains canonical and
+`openclaw.install.clawhubSpec` must stay absent.
+
 ## 2026-06-23 04:26 UTC Release Check
 
 No release or ClawHub publish was attempted. Official OpenClaw docs returned
