@@ -507,6 +507,93 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+## 2026-06-23 20:48 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-204834/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 90, 2 search pages,
+  8 per query, concurrency 8, and session `tweetclaw-20260623-204834`. Query
+  coverage included authored PR monitoring, SKILL.md, `.agents/skills`, skills
+  directories, OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X skills,
+  awesome lists, registries, forks, generated catalogs, validators, package
+  tooling, web-index skill repos, archive import lanes, and exact repo probes.
+  Output parsed as valid JSON with 7 opportunities: `Arindam200/awesome-ai-apps`,
+  `hashgraph-online/registry-broker-skills`,
+  `nickyc1/social-publish-guardrails`, `Aditya923-c/xpoz-agent-skills`,
+  `pagoda111king/super-sop-node-radar`, `reall8164/wechat-openclaw-plugin`, and
+  `informigados/x-archive-explorer`.
+- PR inventory: partitioned authored open search found 2,295 unique open PRs:
+  updated `>=2026-06-23` 160; `2026-06-22` 148; `2026-06-21` 176;
+  `2026-06-20` 142; `2026-06-19` 26; `2026-06-18` 70; `2026-06-17` 115;
+  `2026-06-16` 90; `2026-06-15` 93; `2026-06-14` 141; `2026-06-13` 144;
+  `2026-06-12` 95; `2026-06-01..2026-06-11` 278; `<2026-06-01` 617. No
+  search partition was capped.
+- Exact-read blocker: a sequential REST readback over all 2,295 PRs stalled and
+  was stopped; a bounded concurrent REST retry then received GitHub core REST
+  rate-limit responses for all rows. `gh api rate_limit` showed core remaining
+  0, search remaining 30, GraphQL remaining 2,936. Per rule, broad
+  authenticated REST reads stopped for the run. GraphQL exact readback covered
+  the 25 most recently updated PRs with 0 errors.
+- Recent PR readback found most recent PRs open and mergeable. Two recent
+  conflicts were visible: `warlockoussama/twitter-cli#1` and
+  `Aqmar777/openclaw-competitive-intel#1`. The newest conflict was repaired
+  before any fresh outreach.
+- Repair: `warlockoussama/twitter-cli#1` was conflicting. The fork
+  `kriptoburak/twitter-cli` was verified as a fork of
+  `warlockoussama/twitter-cli`; target was Apache-2.0, active, non-fork,
+  non-archived, and issues-disabled. Comments showed the recurring duplicate
+  README download-link conflict, with no new maintainer request. Merged
+  upstream `main`, resolved `README.md` by keeping one canonical download link,
+  pushed commit `a87e68e0845297c6661d5bf92d0f967ac41cab16`, and commented at
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4783408180.
+  Validation passed: conflict-marker scan, `git diff --check`,
+  `markdown-link-check README.md`, and changed-diff public/secret scan. Final
+  readback after a short wait: open, ready, mergeable, no configured checks.
+- Maintainer blocker: `Arindam200/awesome-ai-apps#226` still has a maintainer
+  request asking for a 10-15 second working video of the Nebius project. The PR
+  is open, mergeable, has CodeRabbit and GitGuardian success, and still has
+  review decision `CHANGES_REQUESTED` due that requested demo. Environment and
+  macOS Keychain checks found no Nebius API credential. Because making a
+  truthful "with Nebius" working video requires that credential, fresh outreach
+  was paused for credential-boundary notification rather than posting a
+  misleading demo or opening another PR.
+- Fresh-screen status: `hashgraph-online/registry-broker-skills` was
+  duplicate-blocked by existing open issue 16. `Arindam200/awesome-ai-apps` had
+  existing PR 226 and the maintainer demo request above. Previously handled
+  crawler repos `nickyc1/social-publish-guardrails`,
+  `Aditya923-c/xpoz-agent-skills`, `reall8164/wechat-openclaw-plugin`, and
+  `informigados/x-archive-explorer` were duplicate/history blocked for a new
+  TweetClaw submission this run.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, ClawHub skill format,
+  ClawHub publishing, ClawHub plugin validation fixes, plugin manifest, tool
+  plugins, install updating, and debugging. `npm view openclaw` returned latest
+  `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  clawhub` returned `0.23.0`; `npm view @xquik/tweetclaw` returned published
+  latest `1.6.31`, repository URL, and MIT license while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities,
+  and `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README,
+  OpenClaw setup, agent workflows, registry steps, packaged skill docs, compact
+  audit, and compact release notes. Direct probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, ClawHub canonical route after
+  redirect, OpenClawDir, repaired `warlockoussama/twitter-cli#1` comment,
+  `Arindam200/awesome-ai-apps#226`, and `informigados/x-archive-explorer#2`.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: when a maintainer requests a live model demo, verify
+  credential availability without printing secrets; if absent, pause new
+  outreach and notify rather than fabricating a demo.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link checks,
+  direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+
 ## 2026-06-23 20:04 UTC heartbeat
 
 - Runtime note: GPT-5.5 and extra-high reasoning effort selectors were not

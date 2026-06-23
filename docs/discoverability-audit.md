@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 20:25 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 20:48 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/*`, `/plugins/*`,
   `/help/debugging`, and `/install/updating`; older skills and gateway deep
   routes checked this run returned 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-23 20:25 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-23 20:48 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 20:25 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 20:48 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -192,22 +192,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 20:25 UTC: model/effort selector unavailable. Prompt unchanged at
-  11,980 bytes. Crawler session `tweetclaw-20260623-202530` found 7
-  opportunities with skill, OpenClaw, MCP, catalog, and package-tooling
-  coverage.
-- PR inventory: partitioned authored open search found 2,292 unique PRs.
-  GraphQL exact-read hit GitHub 502 after 12 reads; REST fallback exact-read
-  covered 2,291/2,292 with one target 504. Merge states included 1,762 clean,
-  332 unstable, 138 blocked, 48 dirty, 7 behind, and 4 unknown.
-- Repair: `reall8164/wechat-openclaw-plugin#1` was dirty; merged upstream,
-  resolved README support-link conflict, pushed `0fd3574`, commented, and read
-  back clean/mergeable.
-- Fresh PR: opened `informigados/x-archive-explorer#2` from verified fork
-  `kriptoburak/x-archive-explorer`. It adds TweetClaw JSON wrapper import
-  support plus docs and tests; final readback was open and mergeable.
+- 2026-06-23 20:48 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-204834` found 7 opportunities. Partitioned authored open
+  search found 2,295 PRs; REST core rate exhausted during exact-read, so recent
+  25 PRs used GraphQL exact readback.
+- Repair: `warlockoussama/twitter-cli#1` was conflicting; resolved README
+  download-link conflict, pushed `a87e68e`, commented, and read back mergeable.
+- Blocker: `Arindam200/awesome-ai-apps#226` has a maintainer request for a
+  10-15s Nebius working video. No Nebius API credential was present in env or
+  Keychain, so fresh outreach was paused for credential-boundary notification.
 - Hygiene passed: current OpenClaw docs/npm, ClawHub, OpenClawDir, npm audit,
-  Markdown links, OpenClaw fitness, target tests, and public URL probes. Full
+  Markdown links, OpenClaw fitness, target checks, and public URL probes. Full
   details are archived.
 
 ## Reporting Checklist
