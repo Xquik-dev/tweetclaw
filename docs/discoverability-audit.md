@@ -49,14 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 21:39 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 22:00 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/*`, `/plugins/*`,
-  `/help/debugging`, and `/install/updating`; older skills and gateway deep
-  routes checked this run returned 404.
+  `/help/debugging`, and `/install/updating`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-23 21:39 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-23 22:00 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -76,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 21:39 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 22:00 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -192,20 +191,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 21:39 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-213940` found 7 known-lane repos. Broad authored search
-  stopped after a malformed first partition triggered GitHub secondary
-  rate-limits; no complete all-PR claim. Targeted exact readback covered 14 PRs.
-- Repair: `jamald33n/tweetsave-mcp#2` was conflicting; merged upstream, kept
-  valid README, pushed `f3dfee9`, commented, and read back mergeable. Remaining
-  conflict backlog includes `vaibhav4046/mcp-marketplace#1` and
-  `AbdNour627/awesome-openclaw-configs#1`; `Arindam200/awesome-ai-apps#226`
-  still needs a 10-15s Nebius video without a local credential.
-- New PR: opened `Malti2/x-mcp-server#1` from verified fork
-  `kriptoburak/malti2-x-mcp-server`; readback is open and mergeable.
+- 2026-06-23 22:00 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-220036` found 8 known-lane repos. Authored open PR search
+  completed 18 monthly partitions plus 4 June splits: 2,304 unique, 2,278
+  in-scope, no unresolved caps or errors. Exact GraphQL readback covered all
+  2,278 after one HTTP 502 resume; backlog has 42 conflicts, 3 changes-requested
+  PRs, and 62 failed or pending checks.
+- Repair: `Saminiscool/twitter-ai-agent#2` was conflicting; merged upstream in
+  verified fork `kriptoburak/saminiscool-twitter-ai-agent-xquik`, pushed
+  `5309ff5`, commented, and read back open and mergeable.
+- New PR: `aali-1/twitter-mcp-server` was duplicate-blocked by existing PRs.
+  Opened `DefenderOfBasic/twitter-semantic-search#2` from verified fork
+  `kriptoburak/twitter-semantic-search`; readback is open and mergeable.
 - Hygiene: OpenClaw docs routes, platform fitness, npm audit, Markdown links,
   and direct public probes passed; npmjs web returned 403 while registry
-  metadata returned 200. Full details archived.
+  metadata returned 200. Prompt file was 12,314 bytes; no prompt edit needed.
+  Full details archived.
 
 ## Reporting Checklist
 

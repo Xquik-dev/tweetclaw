@@ -38183,3 +38183,85 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   owner-prefixed fork names when the default personal fork belongs to another
   parent. End state before TweetClaw audit commit: only audit memory files
   modified plus pre-existing untracked `0`.
+
+## 2026-06-23 22:00 UTC Heartbeat
+
+- Runtime limitation: GPT-5.5 and extra-high effort could not be selected in
+  this environment, so the run continued on the available model and recorded
+  the limitation.
+- Crawler-first coverage: ran Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with JSON output, managed research proxy,
+  bounded request and warmup timeouts, focused query lanes for open PRs,
+  issues, repos, code, SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter and X skill terms,
+  awesome lists, registries, forks, generated catalogs, and repo mode for
+  monitored targets. Session `tweetclaw-20260623-220036` parsed 8 known-lane
+  repos: `AbdNour627/awesome-openclaw-configs`, `Arindam200/awesome-ai-apps`,
+  `KooshaPari/PhenoMCPServers`, `Malti2/x-mcp-server`,
+  `hashgraph-online/registry-broker-skills`, `jamald33n/tweetsave-mcp`,
+  `modelcontextprotocol/servers`, and `vaibhav4046/mcp-marketplace`.
+- Complete open-PR inventory: authored open PR search was partitioned into 18
+  monthly buckets, then the capped June bucket was split into 4 uncapped
+  windows. The merged inventory found 2,304 unique open PRs, 2,278 in scope,
+  no unresolved caps, and no partition errors.
+- Exact readback: GraphQL exact-read covered all 2,278 in-scope PRs. First pass
+  stopped at offset 1,290 on HTTP 502 with healthy rate limits, then a lighter
+  resume read the remaining 988 PRs. Final counts: 2,278 read, 0 failures,
+  2,277 open, 1 merged, 2,223 mergeable, 42 conflicting, 13 unknown
+  mergeability, 3 changes requested, 61 failures, 1 pending check, and 0 resume
+  errors. Remaining actionable backlog includes conflicts, the existing
+  `Arindam200/awesome-ai-apps#226` credential-bound video request, and older
+  failed-check targets requiring target-specific follow-up.
+- Repair: `Saminiscool/twitter-ai-agent#2` was the freshest safe conflict.
+  Verified `kriptoburak/saminiscool-twitter-ai-agent-xquik` is forked from
+  `Saminiscool/twitter-ai-agent`, merged upstream `main` into
+  `codex/add-xquik-backend`, resolved README conflicts by keeping upstream
+  download/contact content and the optional Xquik backend section, validated
+  with `npm ci --ignore-scripts --no-audit --no-fund`, README
+  markdown-link-check, Biome lint, `npx tsc --noEmit`, targeted Vitest,
+  Prettier check, `git diff --check`, and public-hygiene scan. Pushed
+  `5309ff5`, commented at
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4783977771,
+  and read back the PR as open, `MERGEABLE`, head `5309ff5`, no checks.
+- Fresh discovery and duplicate gates: crawler results were known lanes, so
+  fallback GitHub search screened fresh Twitter MCP, skill, and tweet archive
+  repositories. `aali-1/twitter-mcp-server` was duplicate-blocked by existing
+  open PRs `#1` and `#2` plus archive history.
+  `DefenderOfBasic/twitter-semantic-search` was selected because it is MIT
+  licensed, non-fork, not archived, issue-enabled, duplicate-clean across
+  compact audit, archive, target content, PRs, and issues, and has a
+  target-native flat tweet export gap before local embedding.
+- New PR: created verified fork `kriptoburak/twitter-semantic-search`, branch
+  `codex/add-flat-tweet-export-converter`, commit `8c52ea4`, and opened
+  https://github.com/DefenderOfBasic/twitter-semantic-search/pull/2. The PR
+  adds `generate-embeddings/flat-tweets-to-archive-json.js`, exposes
+  `pnpm convert-flat-export`, marks the embedding package as ESM, and documents
+  how flat tweet JSON exports from TweetClaw or other X/Twitter collectors can
+  be normalized into the Community Archive combined JSON shape before
+  `pnpm local-embed`. Validation passed sample conversion, output shape check,
+  `node --check`, Prettier check, `git diff --check`, target README link check
+  with pre-existing Community Archive 403 and localhost example ignored, direct
+  TweetClaw link probe HTTP 200, and public-hygiene diff scan. PR readback was
+  open, ready, `MERGEABLE`, no comments, no reviews, no checks, head `8c52ea4`.
+- TweetClaw public hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, plugin management, manifest, permission
+  requests, install overrides, hooks, compatibility, ClawHub publishing,
+  ClawHub skill format, help debugging, install updating, agent runtime
+  architecture, gateway tool config, and tools. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.23.0`; published `@xquik/tweetclaw` remains
+  `1.6.31`, source remains `1.6.32`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities, `npm run check-openclaw-platform-fitness` passed,
+  compact memory was 15,086 bytes before this edit, and TweetClaw Markdown link
+  checks passed. Direct public probes returned HTTP 200 for TweetClaw GitHub,
+  npm registry metadata, ClawHub canonical route, OpenClawDir, repaired
+  `Saminiscool/twitter-ai-agent#2`, new
+  `DefenderOfBasic/twitter-semantic-search#2`, `Malti2/x-mcp-server#1`, and
+  `jamald33n/tweetsave-mcp#2`; npmjs web UI returned 403 while registry
+  metadata remained reachable.
+- Prompt self-improvement: no automation prompt edit was needed. Prompt file
+  size was 12,314 bytes. Durable lessons reinforced here: partition broad
+  authored PR inventory until no cap remains, resume exact GraphQL readbacks
+  after transient HTTP 502 before claiming completion, and treat flat tweet
+  archive/search projects as useful only when the contribution explains
+  conversion boundaries instead of claiming arbitrary export compatibility.
