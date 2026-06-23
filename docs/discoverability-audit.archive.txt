@@ -38372,3 +38372,113 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   a repair comment; fetch the new upstream tip, clear stale merge state only
   when the worktree is clean, push a fresh conflict repair, and re-read
   mergeability before recording success.
+
+2026-06-23 23:24 UTC heartbeat archive
+
+- Runtime limitation: GPT-5.5 and extra-high effort could not be selected in
+  this environment, so the run continued on the available model and recorded
+  the limitation. Starting state was TweetClaw `master...origin/master` with
+  only the pre-existing untracked `0`; Xquik still had the pre-existing
+  modified `docs/feature-roadmap.md`; `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` had no open GitHub issues.
+- Crawler-first coverage: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and proxy warmup timeouts, limit 200, 2 search pages,
+  per-query limit 12, concurrency 8, session `tweetclaw-20260623-232406`, 11
+  focused query lanes, and repo mode for monitored targets. Coverage included
+  open PRs/issues/repos/code, SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, awesome lists,
+  registries, forks, generated catalogs, web-index surfaced skill repos,
+  OpenClaw/ClawHub plugin lanes, and x-twitter-scraper variants. Output parsed
+  as valid JSON with 52 opportunities including `modelcontextprotocol/servers`,
+  `Arindam200/awesome-ai-apps`, `creatorcrawl/creatorcrawl-skill`,
+  `blacktwist/social-media-skills`, `Hakurei-git/xpost`,
+  `NachaFromMars/social-media-agent`, `NachaFromMars/social-media-scheduler`,
+  `NachaFromMars/upload-post`, `thalesholleben/x-publisher`,
+  `AbdNour627/awesome-openclaw-configs`, `vaibhav4046/mcp-marketplace`, and
+  `devhindo/x`. No crawler credentials were printed or stored.
+- Complete open-PR inventory: GraphQL search partitions covered pre-2025 plus
+  monthly 2025-01 through 2026-06 buckets. The June parent bucket was capped,
+  so it was resolved with 2026-06-01 through 2026-06-10, 2026-06-11 through
+  2026-06-20, and 2026-06-21 through 2026-06-30 child windows. Final normalized
+  inventory found 2,315 unique authored open PRs with no unresolved caps and no
+  partition errors. Initial exact-read attempts exposed GraphQL field drift
+  (`StatusContext.startedAt`) and array-variable passing mistakes; both were
+  corrected before any inventory claim.
+- Exact readback: batched GraphQL exact-read covered all 2,315 authored open PRs
+  with 0 failures. Counts were 2,315 open, 2,255 mergeable, 47 conflicting, 13
+  unknown mergeability, 3 changes-requested PRs, 96 review-required PRs, 11
+  approved PRs, 2,018 with no checks, 235 success, 61 failure, and 1 pending.
+  The changes-requested queue remained `Arindam200/awesome-ai-apps#226`
+  credential-bound on a requested Nebius video, `Hashi-Ai-Dev/openclaw-clawdoc#6`
+  with stale state after previous requested changes, and
+  `weiflycc-cmd/awesome-copilot#19` blocked by a target-requested `staged`
+  branch that still 404s. Freshest failed check `devhindo/x#75` was mergeable
+  but blocked by target Vercel team authorization; maintainer `devhindo` also
+  asked `kriptoburak` to check email, so final heartbeat notifies the user.
+  `KooshaPari/PhenoMCPServers#36` remained mergeable with the Kilo check queued;
+  previous Kilo findings were already fixed and commented by `kriptoburak`.
+- Repair: `reall8164/wechat-openclaw-plugin#1` was the freshest safe conflict.
+  Verified `kriptoburak/wechat-openclaw-plugin` is forked from
+  `reall8164/wechat-openclaw-plugin`, merged current upstream `main`, resolved
+  the README support-link and optional TweetClaw workflow conflicts, pushed
+  `bc62653` to `codex/add-tweetclaw-workflow`, and commented at
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4784521014.
+  Validation passed conflict-marker scan, `git diff --check`, package and
+  OpenClaw manifest JSON parse, README markdown-link-check, and public-hygiene
+  diff scan. Final readback was open, `MERGEABLE`, no checks, head `bc62653`.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, exact metadata, target content, local clone, fork metadata,
+  open and closed target PRs/issues, and author-history checks were used for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, SKILL.md, `.agents`,
+  skill, catalog, registry, social, Twitter/X, and source-evidence variants.
+  `NachaFromMars/social-media-agent` was selected because it is public,
+  Apache-2.0 licensed in repo, non-fork, non-archived, issue-enabled, recently
+  pushed, duplicate-clean across target content plus target PRs/issues, and its
+  OpenClaw browser posting workflow benefits from optional structured
+  X/Twitter source evidence while keeping draft review and browser actions in
+  the target skill. The existing `kriptoburak/social-media-agent` repository is
+  a fork of `langchain-ai/social-media-agent`; it is not a valid fork for this
+  target. Created and verified the correctly parented fork
+  `kriptoburak/social-media-agent-nachafrommars` before pushing.
+- New PR: opened https://github.com/NachaFromMars/social-media-agent/pull/1
+  from branch `codex/add-source-evidence-packets` on verified fork
+  `kriptoburak/social-media-agent-nachafrommars`, commit `f1ee74f`. The PR adds
+  optional X/Twitter source evidence packets to README and `SKILL.md`, names
+  TweetClaw as one possible exporter when installed or approved, keeps source
+  posts as context rather than copy, keeps credentials in source-tool config,
+  and routes visible browser actions through the target skill's normal review
+  flow. Validation passed `git diff --check`, conflict-marker scan, README,
+  SKILL, and template markdown-link-check, and public-hygiene diff scan. PR
+  readback was open, `MERGEABLE`, no reviews, no comments, no checks, head
+  `f1ee74f`.
+- TweetClaw public hygiene: official OpenClaw docs returned HTTP 200 for
+  llms.txt, llms-full.txt, CLI plugins, CLI skills, plugin management,
+  manifest, permission requests, install overrides, hooks, compatibility,
+  ClawHub publishing, ClawHub skill format, debugging, updating, agent runtime
+  architecture, gateway config tools, and tools. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` with MIT license, source remains
+  `1.6.32`, and install metadata still defaults to exact npm spec
+  `@xquik/tweetclaw@1.6.31`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness`
+  passed. TweetClaw markdown-link checks passed for README, OpenClaw setup,
+  agent workflows, registry steps, packaged skill docs, compact audit, and
+  compact release memory. Direct probes returned HTTP 200 for TweetClaw GitHub,
+  npm registry metadata, canonical ClawHub redirect, canonical OpenClawDir
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`, repaired
+  `reall8164/wechat-openclaw-plugin#1`, new
+  `NachaFromMars/social-media-agent#1`, `devhindo/x#75`, and
+  `KooshaPari/PhenoMCPServers#36`. A stale probe-only OpenClawDir path
+  `/plugin/tweetclaw` returned 404 and is not referenced by TweetClaw.
+  After the audit edits, `npm run check:all` passed with 168 tests and 100%
+  coverage.
+- Memory and prompt self-improvement: compact Markdown memory stayed under the
+  15 KiB cap by replacing only the latest-run block and moving this full record
+  to the archive. Prompt file size was 12,314 bytes and no automation prompt edit
+  was needed. Durable lessons: when a target fork name is already occupied under
+  `kriptoburak`, verify the fork parent before pushing and use an alternate fork
+  name if needed; stale probe-only directory routes should be distinguished from
+  canonical public-link regressions before recording broken-link results.
