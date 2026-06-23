@@ -37988,3 +37988,108 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
+## 2026-06-23 21:09 UTC Heartbeat
+
+- Runtime model/effort selector remained unavailable in this environment; the
+  run continued under the available heartbeat runtime and recorded the
+  limitation. TweetClaw started on `master...origin/master` with only the
+  pre-existing untracked `0` file. `gh issue list` for `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` returned no open issues.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with strict
+  JSON output at `/tmp/tweetclaw-heartbeat-20260623-210938/crawl.json`, session
+  `tweetclaw-20260623-210938`, research proxy, bounded timeouts, 14 query lanes,
+  and exact repo probes for current PR and skill/MCP targets. Output parsed as
+  valid JSON with 6 repos: `modelcontextprotocol/servers`,
+  `Arindam200/awesome-ai-apps`, `hashgraph-online/registry-broker-skills`,
+  `public-clis/twitter-cli`, `warlockoussama/twitter-cli`, and
+  `informigados/x-archive-explorer`.
+- Complete authored open PR search was partitioned by updated windows with no
+  capped bucket: `updated:>=2026-06-23` 162, `2026-06-22` 148,
+  `2026-06-21` 176, `2026-06-20` 142, `2026-06-19` 26, `2026-06-18` 70,
+  `2026-06-17` 115, `2026-06-16` 90, `2026-06-15` 93, `2026-06-14` 141,
+  `2026-06-13` 144, `2026-06-12` 95, `2026-06-01..2026-06-11` 278, and
+  `updated:<2026-06-01` 617. Unique open authored PRs: 2,297. Full all-PR
+  GraphQL exact-read attempts stalled twice under owned processes and were
+  interrupted; complete exact readback was not claimed. Fallback exact readback
+  covered 14 current or actionable PRs: `Arindam200/awesome-ai-apps#226`,
+  `warlockoussama/twitter-cli#1`, `informigados/x-archive-explorer#2`,
+  `public-clis/twitter-cli#67`, `reall8164/wechat-openclaw-plugin#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `vaibhav4046/mcp-marketplace#1`,
+  `KooshaPari/PhenoMCPServers#36`, `weiflycc-cmd/awesome-copilot#19`,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`, `maddhruv/absolute#5`, and
+  `jamald33n/tweetsave-mcp#2`.
+- Repair triage: `Arindam200/awesome-ai-apps#226` remains open, mergeable, and
+  changes-requested because the maintainer asked for a 10-15 second working
+  Nebius demo video; env and Keychain checks from the prior run found no
+  credential, so this remains user-actionable but was already notified.
+  `weiflycc-cmd/awesome-copilot#19` still has a bot request to retarget to
+  `staged`, but GitHub branch API returned 404 for `staged`; no safe base edit
+  was possible. `Hashi-Ai-Dev/openclaw-clawdoc#6` already has the requested
+  vendor-neutral revision plus a prior validation comment, so no duplicate
+  follow-up was posted.
+- PR repair: `Aqmar777/openclaw-competitive-intel#1` was conflicting. Verified
+  fork `kriptoburak/openclaw-competitive-intel` is correctly parented to
+  `Aqmar777/openclaw-competitive-intel`; target is MIT, active, non-fork, and
+  default branch `main`. Merged upstream `main` into
+  `codex/tweetclaw-x-source`, resolved the README-only badge/download conflict
+  by keeping the TweetClaw X/Twitter source section, NHS badge, and one
+  canonical download badge, then pushed commit `cffaaa1`. Validation passed
+  conflict-marker scan, `git diff --check`, Python compile for skills and tests,
+  `python3 -m unittest tests/test_tweetclaw_fetcher.py`, `bash -n install.sh`,
+  `npx --yes markdown-link-check README.md docs/tweetclaw-x-source.md --quiet`,
+  and changed-diff public hygiene scan. Repair comment:
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4783588050.
+  Final readback was open, ready, and `MERGEABLE` at head `cffaaa1`.
+- Fresh screening: fallback GitHub searches checked social-skill, Twitter/X
+  skill, archive, MCP, and approval-boundary lanes. Duplicate or prior-history
+  blockers included `eskobar95/guapo-agent-skills`,
+  `kennyzir/twitter-automation-local`, `cm-growth-hacking/agent-skills-twitter`,
+  `tang-vu/social-posting-skills`, `minilozio/tweet-composer-skill`,
+  `adminlove520/openclaw-twitter-skill`, `benminer/openclaw-twitter-skill`,
+  `rafaljanicki/x-twitter-mcp-server`, `luminarylane/x-twitter-mcp-server`,
+  `agenticledger/x-twitter-mcp-http`, `khajaphysist/x-mcp`,
+  `shubhamattri/x-mcp-server`, and `rockatoo22-droid/x-mcp`. `boobutler/boo-skills`
+  remained a previously screened lower-fit no-license lane. `Malti2/x-mcp-server`
+  and `mc-nekoneko/x-mcp` had no target PRs or issues and no compact/archive
+  duplicate block.
+- New external PR: selected `mc-nekoneko/x-mcp` because it is active, non-fork,
+  issue-enabled, has a skill plus bilingual install docs, no target PR/issue
+  history, no target content duplicate for TweetClaw/Xquik/OpenClaw terms, and
+  clear repo rules requiring read-only behavior and bilingual onboarding. The
+  normal `kriptoburak/x-mcp` fork belonged to another parent, so a new verified
+  fork `kriptoburak/mc-nekoneko-x-mcp` was created. Branch
+  `codex/add-approval-gated-companion-boundary`, commit `6dcc903`, opened
+  https://github.com/mc-nekoneko/x-mcp/pull/1. The PR adds English and Japanese
+  README/install-prompt guidance and skill guidance that account-scoped data or
+  write actions stay outside the read-only MCP and require explicit operator
+  approval; OpenClaw users may configure `@xquik/tweetclaw` as a separate
+  approval-gated companion. Validation passed `npm ci`, `npm run check`,
+  `npm run deploy:dry`, `git diff --check`, changed-diff public hygiene scan,
+  and direct health/discovery probes. `npm ci` reported 5 pre-existing target
+  advisories; `markdown-link-check` flags the MCP endpoint as 406 because it is
+  not a normal GET page. PR readback: open, ready, `MERGEABLE`, no comments,
+  no reviews, no checks configured, head `6dcc903`.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugin/skill docs, tool skills, ClawHub skill/publishing,
+  plugin validation fixes, manifest, tool plugins, debugging, and updating.
+  `npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` while source remains `1.6.32`. `npm audit
+  --audit-level=moderate --json` reported 0 vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed. TweetClaw Markdown link check passed
+  for README, setup/workflow docs, registry steps, skill docs, benchmark/card/
+  skillspector docs, and compact memory. Direct URL probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, ClawHub canonical redirect,
+  OpenClawDir, repaired `Aqmar777/openclaw-competitive-intel#1`, and new
+  `mc-nekoneko/x-mcp#1`.
+- Prompt self-improvement: no automation prompt edit was needed. Durable lesson
+  kept in compact/archive: if the normal personal fork name points to another
+  parent, create a distinct `kriptoburak/<owner>-<repo>` fork and verify parent
+  before pushing. GitHub GraphQL all-PR readback can stall when broad query
+  shapes include too much review/check data; use lower-cost exact fields first
+  and targeted detailed reads for actionable PRs. End state before TweetClaw
+  audit commit: only docs memory files modified plus pre-existing untracked
+  `0`; GitHub rate limit remained healthy with core 4,976, GraphQL 3,566, and
+  search 30 remaining.

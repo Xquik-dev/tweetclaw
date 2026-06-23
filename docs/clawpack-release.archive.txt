@@ -951,3 +951,17 @@ debugging. ClawHub `https://clawhub.ai/plugins/@xquik/tweetclaw` redirected to
 a live HTTP 200 page; OpenClawDir, TweetClaw GitHub, npm registry metadata,
 repaired `warlockoussama/twitter-cli#1`, `Arindam200/awesome-ai-apps#226`, and
 `informigados/x-archive-explorer#2` probes succeeded.
+## 2026-06-23 21:09 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after outreach and
+PR repair. Official docs returned HTTP 200 for llms exports, CLI plugin and
+skill docs, tool skills, ClawHub skill format and publishing docs, plugin
+validation fixes, manifest docs, tool plugins, debugging, and updating.
+`npm view openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, and
+alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+`@xquik/tweetclaw` remains `1.6.31` while source remains `1.6.32`.
+`npm audit --audit-level=moderate --json` reported 0 vulnerabilities and
+`npm run check-openclaw-platform-fitness` passed. ClawHub route
+`https://clawhub.ai/plugins/@xquik/tweetclaw` still redirects to the live
+canonical page. npm publish auth and ClawHub owner-scope blockers remain
+unchanged, so no release or ClawHub publish was attempted.
