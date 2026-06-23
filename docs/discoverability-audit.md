@@ -191,22 +191,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 22:00 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-220036` found 8 known-lane repos. Authored open PR search
-  completed 18 monthly partitions plus 4 June splits: 2,304 unique, 2,278
-  in-scope, no unresolved caps or errors. Exact GraphQL readback covered all
-  2,278 after one HTTP 502 resume; backlog has 42 conflicts, 3 changes-requested
-  PRs, and 62 failed or pending checks.
-- Repair: `Saminiscool/twitter-ai-agent#2` was conflicting; merged upstream in
-  verified fork `kriptoburak/saminiscool-twitter-ai-agent-xquik`, pushed
-  `5309ff5`, commented, and read back open and mergeable.
-- New PR: `aali-1/twitter-mcp-server` was duplicate-blocked by existing PRs.
-  Opened `DefenderOfBasic/twitter-semantic-search#2` from verified fork
-  `kriptoburak/twitter-semantic-search`; readback is open and mergeable.
-- Hygiene: OpenClaw docs routes, platform fitness, npm audit, Markdown links,
-  and direct public probes passed; npmjs web returned 403 while registry
-  metadata returned 200. Prompt file was 12,314 bytes; no prompt edit needed.
-  Full details archived.
+- 2026-06-23 22:42 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-224207` returned 52 opportunities across PR monitoring,
+  skill, OpenClaw, MCP, social, Twitter/X, registry, catalog, and repo lanes.
+  GraphQL authored-open inventory completed uncapped partitions: 2,310 unique,
+  all exact-read, 43 conflicts, 3 changes-requested PRs, 62 failed or pending
+  checks, and 0 read failures.
+- Repair: `AbdNour627/awesome-openclaw-configs#1` was conflicting after an
+  upstream force-update; merged current `main`, pushed `fe9b9e0`, commented, and
+  read back open and mergeable. `devhindo/x#75` has a target-owned Vercel
+  authorization blocker plus a maintainer request to check email.
+- New PR: opened `NachaFromMars/social-media-scheduler#1` from verified fork
+  `kriptoburak/social-media-scheduler`; readback is open and mergeable.
+- Hygiene: OpenClaw docs, platform fitness, npm audit, Markdown links, direct
+  public probes, memory check, and `npm run check:all` passed. Prompt file was
+  12,314 bytes; no prompt edit needed. Full details archived.
 
 ## Reporting Checklist
 
