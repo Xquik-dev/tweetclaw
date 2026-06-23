@@ -36888,6 +36888,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
   11980/15360, TOML bytes: 12314.
 
+## 2026-06-23 03:23 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output at `/tmp/tweetclaw-heartbeat-20260623-032331/crawl.json` with
+  research proxy, bounded request and warmup timeouts, limit 140, 2 search
+  pages, 15 per query, concurrency 8, and session
+  `tweetclaw-20260623-032331`. Query coverage included SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X skills, awesome lists, registries, forks, generated
+  catalogs, validators, package tooling, web-index skill repos, and exact repo
+  probes. Output parsed as valid JSON with 140 opportunities.
+- PR inventory: partitioned authored open PR search returned 750 unique PRs
+  across exact updated-date slices from 2026-06-23 through 2026-06-17, then hit
+  GitHub API rate limit on the 2026-06-16 slice. Broad authenticated search
+  stopped for the run, and complete inventory is not claimed. Current-day exact
+  readback covered 63 open PRs: 61 mergeable, 2 unknown mergeability, 51 clean,
+  7 unstable, 3 blocked, 2 unknown merge state, 14 with comments, 1 with
+  reviews, 9 with checks, and 0 failing checks.
+- PR repair gate: the only actionable maintainer request was
+  `zhayujie/CowAgent#2912`, where the owner requested Cow Skill Hub submission.
+  Exact readback found existing `zhayujie/cow-skill-hub#3` still open, clean,
+  and mergeable, so a public reply linked that Skill Hub PR and left the core
+  CowAgent PR for the maintainer to close. `github/awesome-copilot#2095`
+  already had the AWS-skill concern fixed in commit `d9d8e13`. Other current
+  comments were preview, stale repair, quota, or no-action bot comments.
+- Fresh screening and duplicate gates: compact audit, archive, crawler output,
+  target metadata, target content, open and closed target PRs, open and closed
+  target issues, and local clone scans were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, SKILL.md, `.agents/skills`, `.codex/skills`,
+  validators, package tooling, and variants. Prior-history or duplicate
+  blockers included `zhayujie/CowAgent`, `zhayujie/cow-skill-hub`,
+  `github/awesome-copilot`, `rajesh-gsn/skill-lint`, `skill-tools/skill-tools`,
+  `dongsheng123132/skill-multi-publisher`, `Prat011/awesome-llm-skills`,
+  `SamurAIGPT/awesome-openclaw`, `nexu-io/nexu`, `skillmatic-ai/awesome-agent-skills`,
+  and `mxyhi/ok-skills`.
+- Selected fresh target: `freddo1503/claude-pre-commit` was MIT licensed,
+  non-fork, non-archived, issue-enabled, duplicate-clean across target content
+  and target PRs/issues, and target-native because it validates SKILL.md files.
+  The contribution documents that discovery covers `.claude/skills`,
+  `.agents/skills`, `.codex/skills`, and packaged OpenClaw skill paths, adds
+  TweetClaw path coverage to discovery and skill-validator tests, and removes
+  one unused import in the touched discovery file.
+- External PR: opened https://github.com/freddo1503/claude-pre-commit/pull/2
+  from verified fork `kriptoburak/claude-pre-commit`, parent
+  `freddo1503/claude-pre-commit`, branch `codex/document-agent-skill-roots`,
+  commit `3b899a8c6ac746112a4bd58742a36653fbba2dca`. Final readback was open,
+  ready, mergeable, clean, 1 commit, 3 changed files, 0 comments, 0 reviews,
+  and GitGuardian success.
+- Target validation passed: `cargo test`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Cargo fmt check mode was
+  also sampled and failed on pre-existing formatting drift outside the final
+  contribution scope; no unrelated formatting changes were committed.
+- TweetClaw hygiene: official OpenClaw docs returned HTTP 200 for llms,
+  llms-full, CLI plugins, CLI skills, tools skills, creating skills, permission
+  modes, ClawHub skill format, ClawHub publishing, ClawHub plugin validation
+  fixes, debugging, and testing plugin updates. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.22.0`; `npm view @xquik/tweetclaw` returned
+  published latest `1.6.31`, repository URL, and MIT license. Source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed.
+- Broken-link posture: TweetClaw Markdown link check passed for README,
+  OpenClaw setup, agent workflows, registry steps, packaged skill docs, compact
+  audit, and compact release notes. Direct probes returned HTTP 200 for
+  TweetClaw GitHub, npm registry metadata, canonical ClawHub, OpenClawDir,
+  `freddo1503/claude-pre-commit#2`, `zhayujie/CowAgent#2912`, and
+  `zhayujie/cow-skill-hub#3`.
+- Prompt self-improvement: no saved automation prompt edit was useful. Durable
+  lesson recorded: when a maintainer redirects a core-repo skill PR to a skill
+  hub, first check whether a prior hub PR already covers the request, then reply
+  with that exact hub PR instead of creating duplicate submissions.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, `docs/discoverability-audit.archive.txt`, and
+  `docs/clawpack-release.archive.txt`; untracked `0` remained untouched.
+  Validation before commit included `npm run check:all`, Markdown link checks,
+  direct public URL probes, `npm run check-memory-md-size`, `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and `git diff --check`. Persisted automation prompt unchanged; prompt bytes:
+  11980/15360, TOML bytes: 12314.
+
 ## 2026-06-23 02:33 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
