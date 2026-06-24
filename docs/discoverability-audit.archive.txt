@@ -38704,3 +38704,112 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   remote skill sources are strong placement targets when TweetClaw's
   package-style `skills/` directory is directly useful; stale probe-only aliases
   should remain distinct from source-backed public link regressions.
+
+2026-06-24 01:15 UTC heartbeat archive
+
+- Runtime limitation: GPT-5.5 and extra-high effort could not be selected in
+  this environment, so the run continued on the available model and recorded
+  the limitation. Starting state was TweetClaw `master...origin/master` with
+  only the pre-existing untracked `0`; Xquik still had the pre-existing
+  modified `docs/feature-roadmap.md`. TweetClaw had no open issues by REST
+  after one GraphQL issue-list call returned a transient bad-credentials error;
+  Xquik had no open issues.
+- Crawler-first coverage: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and proxy warmup timeouts, limit 280, 2 search pages,
+  per-query limit 12, concurrency 8, session `tweetclaw-20260624-011505`, 10
+  focused query lanes, and repo mode for monitored targets. Coverage included
+  open PRs/issues/repos/code, SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, awesome lists,
+  registries, forks, generated catalogs, web-index surfaced skill repos,
+  plugin validators, package tooling, and x-twitter-scraper variants. Output
+  parsed as valid JSON with 22 opportunities including
+  `modelcontextprotocol/servers`, `Arindam200/awesome-ai-apps`,
+  `heilcheng/awesome-agent-skills`, `hashgraph-online/registry-broker-skills`,
+  `EthanYolo01/Awesome-OpenClaw`, `philipbankier/awesome-agent-skills`,
+  `vineetu/simple-host`, `vincentkoc/awesome-openclaw`,
+  `BuddhaYi/macos-cli`, `Kong/ai-marketplace`, `zeoyan/openclaw-a2a-p2p`,
+  and `devhindo/x`. Proxy logs contained endpoint counts only and no crawler
+  credentials.
+- Complete open-PR inventory: date-window GraphQL partitions completed with
+  2,328 unique authored open `kriptoburak` PRs, 0 capped partitions, and 0
+  partition errors. The first exact-read query exposed GitHub field drift for
+  `CheckRun.workflowName`; the second exact-read was too expensive and stopped
+  at 1,500 rows without writing a summary. The final lower-cost exact-read
+  persisted each batch and covered all 2,328 PRs with 0 failures. Counts were
+  2,328 open, 2,274 mergeable, 48 conflicting, 6 unknown mergeability, 3
+  changes-requested PRs, 95 review-required PRs, 11 approved PRs, 2,027 with no
+  checks, 239 success, 61 failure, and 1 pending. The changes-requested queue
+  remained `Arindam200/awesome-ai-apps#226` credential-bound on a requested
+  media asset, `Hashi-Ai-Dev/openclaw-clawdoc#6` with stale state after prior
+  requested changes, and `weiflycc-cmd/awesome-copilot#19` blocked by a
+  target-requested `staged` branch that still 404s.
+- Open PR blockers: `devhindo/x#75` read back open, ready, mergeable, and
+  blocked by target-owned Vercel team authorization. Owner `devhindo` still
+  asks `kriptoburak` to check email at
+  https://github.com/devhindo/x/pull/75#issuecomment-4783634155, so the
+  heartbeat notifies the user. `KooshaPari/PhenoMCPServers#36` read back open,
+  ready, mergeable, and still queued on the Kilo Code Review check after the
+  prior fixes and comment.
+- Repair: `reall8164/wechat-openclaw-plugin#1` was the freshest safe conflict.
+  Verified `kriptoburak/wechat-openclaw-plugin` is forked from
+  `reall8164/wechat-openclaw-plugin`, merged current upstream `main`, resolved
+  the recurring README support-link and TweetClaw section conflict, pushed
+  `4ce17e2` to `codex/add-tweetclaw-workflow`, and commented at
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4785102712.
+  Validation passed conflict-marker scan, `git diff` whitespace check,
+  package and OpenClaw manifest JSON parse, README markdown-link-check, and
+  public-hygiene diff scan. Final readback was open, `MERGEABLE`, no checks,
+  head `4ce17e2`.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, exact metadata, target content, local clone, fork metadata,
+  open and closed target PRs/issues, and author-history checks were used for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, SKILL.md, `.agents`,
+  skill, catalog, registry, social, Twitter/X, package-style skills, A2A peer
+  cards, and source-layout variants. `EthanYolo01/Awesome-OpenClaw`,
+  `vincentkoc/awesome-openclaw`, `BuddhaYi/macos-cli`,
+  `DaviddTech/ai-trading-agent`, and `marktantongco/ai-agent-skills` were
+  duplicate-blocked or prior-history lanes from the archive. `vineetu/simple-host`,
+  `Kong/ai-marketplace`, and `zeoyan/openclaw-a2a-p2p` were fresh, MIT
+  licensed, public, non-fork, non-archived, issue-enabled, and duplicate-clean
+  across target content plus target PRs/issues. `zeoyan/openclaw-a2a-p2p` was
+  selected because its OpenClaw Agent Card supports `agentCard.skills`, making
+  local capability hints a target-native docs improvement for TweetClaw without
+  putting credentials into peer-info.
+- New PR: opened https://github.com/zeoyan/openclaw-a2a-p2p/pull/3 from
+  verified fork `kriptoburak/openclaw-a2a-p2p`, branch
+  `codex/document-peer-skill-hints`, commit `53059c7`. The PR documents
+  `agentCard.skills`, adds a TweetClaw social-ops example, pins the public npm
+  install command to published `@xquik/tweetclaw@1.6.31`, and states that
+  credentials remain local while visible social actions still go through the
+  local OpenClaw approval flow. Validation passed `git diff` whitespace check,
+  package and OpenClaw manifest JSON parse, README and configuration
+  markdown-link-check, npm metadata readback for `@xquik/tweetclaw@1.6.31`,
+  and public-hygiene diff scan. PR readback was open, ready, `MERGEABLE`, no
+  comments, no reviews, no checks, head `53059c7`.
+- TweetClaw public hygiene: official OpenClaw docs on `docs.openclaw.ai`
+  returned HTTP 200 for llms exports, CLI plugins, CLI skills, CLI update,
+  plugin manifest, tool plugins, permission requests, install overrides, hooks,
+  compatibility, SDK runtime and entrypoints, ClawHub publishing, ClawHub skill
+  format, plugin validation fixes, debugging, testing updates/plugins, tools,
+  and plugin tools. `npm view openclaw` returned latest `2026.6.9`, beta
+  `2026.6.10-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub`
+  returned `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` with MIT
+  license while source remains `1.6.32`. Npm audit reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed. The first TweetClaw
+  markdown-link-check saw a transient Shields badge 408; immediate rerun
+  passed and direct Shields probe returned HTTP 200. Direct probes returned HTTP
+  200 for TweetClaw GitHub, GitHub issues API, npm registry metadata, canonical
+  ClawHub redirect, canonical OpenClawDir, `xquik.com`, `docs.xquik.com`,
+  `dashboard.xquik.com`, repaired `reall8164/wechat-openclaw-plugin#1`, new
+  `zeoyan/openclaw-a2a-p2p#3`, `devhindo/x#75`, and
+  `KooshaPari/PhenoMCPServers#36`.
+- Memory and prompt self-improvement: compact Markdown memory stayed under the
+  15 KiB cap by replacing only the latest-run block and moving this full record
+  to the archive. Prompt file size was 12,314 bytes and no automation prompt
+  edit was needed. Durable lessons: when GitHub exposes GraphQL field drift,
+  lower-cost exact-read queries with batch persistence are safer than large
+  all-fields reads; OpenClaw A2A Agent Card `skills` metadata is a useful
+  placement lane when the docs keep credentials local and preserve local
+  approval for visible social actions.
