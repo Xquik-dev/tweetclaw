@@ -38482,3 +38482,117 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `kriptoburak`, verify the fork parent before pushing and use an alternate fork
   name if needed; stale probe-only directory routes should be distinguished from
   canonical public-link regressions before recording broken-link results.
+
+2026-06-23 23:55 UTC heartbeat archive
+
+- Runtime limitation: GPT-5.5 and extra-high effort could not be selected in
+  this environment, so the run continued on the available model and recorded
+  the limitation. Starting state was TweetClaw `master...origin/master` with
+  only the pre-existing untracked `0`; Xquik still had the pre-existing
+  modified `docs/feature-roadmap.md`; `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` had no open GitHub issues.
+- Crawler-first coverage: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and proxy warmup timeouts, limit 220, 2 search pages,
+  per-query limit 12, concurrency 8, session `tweetclaw-20260623-235531`, 11
+  focused query lanes, and repo mode for monitored targets. Coverage included
+  open PRs/issues/repos/code, SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, awesome lists,
+  registries, forks, generated catalogs, web-index surfaced skill repos,
+  plugin validators, package tooling, and x-twitter-scraper variants. Output
+  parsed as valid JSON with 15 opportunities including
+  `modelcontextprotocol/servers`, `Arindam200/awesome-ai-apps`,
+  `hashgraph-online/registry-broker-skills`, `rabden/X-twitter-social-manager-skill`,
+  `expropriationhoorayhenry64/social-media-scraper-skill`,
+  `NachaFromMars/social-media-agent`, `leanstartpad/social-media-quotes`,
+  `reall8164/wechat-openclaw-plugin`, and `devhindo/x`. Proxy logs contained
+  endpoint counts only and no crawler credentials.
+- Complete open-PR inventory: GraphQL search partitions covered pre-2025 plus
+  monthly 2025-01 through 2026-05 and June windows. The initial June
+  2026-06-11 through 2026-06-20 and 2026-06-21 through 2026-06-30 windows hit
+  transient GitHub HTTP 502 responses, so they were split into
+  2026-06-11 through 2026-06-15, 2026-06-16 through 2026-06-20,
+  2026-06-21 through 2026-06-23, and 2026-06-24 through 2026-06-30. Final
+  normalized inventory found 2,318 unique authored open PRs, no unresolved
+  caps, and no partition errors.
+- Exact readback: first full exact-read process completed API calls but failed
+  local summary writing because the NDJSON stream was read before flush. It was
+  rerun with in-memory accumulation and atomic output. Exact-read covered all
+  2,318 authored open PRs with 0 failures. Counts were 2,318 open, 2,266
+  mergeable, 47 conflicting, 5 unknown mergeability, 3 changes-requested PRs,
+  96 review-required PRs, 11 approved PRs, 2,020 with no checks, 238 success,
+  59 failure, and 1 pending. The changes-requested queue remained
+  `Arindam200/awesome-ai-apps#226` credential-bound on a requested Nebius video,
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` with stale state after previous requested
+  changes, and `weiflycc-cmd/awesome-copilot#19` blocked by a target-requested
+  `staged` branch that still 404s. `devhindo/x#75` remained mergeable but
+  blocked by target Vercel team authorization; maintainer `devhindo` still asks
+  `kriptoburak` to check email. `KooshaPari/PhenoMCPServers#36` remained
+  mergeable with the Kilo check queued after previous fixes.
+- Repair: `Saminiscool/twitter-ai-agent#2` was the freshest safe conflict.
+  Verified the active head fork is `kriptoburak/saminiscool-twitter-ai-agent-xquik`
+  and that it is forked from `Saminiscool/twitter-ai-agent`; a different
+  `kriptoburak/Twitter-Ai-Agent` fork belongs to another parent and was not
+  used. Merged current upstream `main`, resolved the README install/contact
+  conflict while preserving the optional Xquik backend docs, pushed `b724042`
+  to `codex/add-xquik-backend`, and commented at
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4784745987.
+  Validation passed conflict-marker scan, `git diff --check`, README
+  markdown-link-check, Prettier on README plus touched TypeScript/test files,
+  focused Biome lint, `npx tsc --noEmit`, focused Vitest
+  `tests/twitter-api.test.ts`, and public-hygiene diff scan. Final readback was
+  open, `MERGEABLE`, no checks, head `b724042`.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, exact metadata, target content, local clone, fork metadata,
+  open and closed target PRs/issues, and author-history checks were used for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, SKILL.md, `.agents`,
+  skill, catalog, registry, social, Twitter/X, quote images, source evidence,
+  and variants. `hashgraph-online/registry-broker-skills` had prior issue 16,
+  `aaaronmiller/create-viral-content` was duplicate-blocked by PR 3, and
+  `rabden/X-twitter-social-manager-skill` plus
+  `expropriationhoorayhenry64/social-media-scraper-skill` were prior
+  no-license or duplicate-history lanes. `leanstartpad/social-media-quotes` was
+  selected because it is public, MIT licensed with separate OFL font license,
+  non-fork, non-archived, issue-enabled, duplicate-clean across target content
+  plus target PRs/issues, and target-native: its branded quote-image skill
+  targets X/Twitter but lacked quote-source permission guidance and had a README
+  releases link that failed outside GitHub-rendered relative context.
+- New PR: opened https://github.com/leanstartpad/social-media-quotes/pull/1
+  from verified fork `kriptoburak/social-media-quotes`, branch
+  `codex/add-x-source-quotes`, commit `f22173c`. The PR adds optional
+  X/Twitter quote source packet guidance to README and `SKILL.md`, names
+  TweetClaw as one possible OpenClaw exporter when installed, requires quote
+  text to be owned, approved, or credited, fixes the releases link to the
+  canonical repository URL, and clarifies the MIT license plus separate Rye font
+  OFL license. Validation passed `git diff --check`, conflict-marker scan,
+  README/SKILL/GITHUB_SETUP markdown-link-check, generator smoke test producing
+  a 1000x1000 JPEG in `/tmp`, and public-hygiene diff scan. PR readback was
+  open, `MERGEABLE`, no reviews, no comments, no checks, head `f22173c`.
+- TweetClaw public hygiene: official OpenClaw docs returned HTTP 200 for
+  llms.txt, llms-full.txt, CLI plugins, CLI skills, plugin management,
+  manifest, permission requests, install overrides, hooks, compatibility,
+  ClawHub publishing, ClawHub skill format, debugging, updating, agent runtime
+  architecture, gateway config tools, and tools. `npm view openclaw` returned
+  latest `2026.6.9`, beta `2026.6.10-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` with MIT license, source remains
+  `1.6.32`, and install metadata still defaults to exact npm spec
+  `@xquik/tweetclaw@1.6.31`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness`
+  passed. TweetClaw markdown-link checks passed for README, OpenClaw setup,
+  agent workflows, registry steps, packaged skill docs, compact audit, and
+  compact release memory. Direct probes returned HTTP 200 for TweetClaw GitHub,
+  npm registry metadata, canonical ClawHub redirect, canonical OpenClawDir,
+  repaired `Saminiscool/twitter-ai-agent#2`, new
+  `leanstartpad/social-media-quotes#1`, `devhindo/x#75`, and
+  `KooshaPari/PhenoMCPServers#36`. After the audit edits, `npm run check:all`
+  passed with 168 tests and 100% coverage.
+- Memory and prompt self-improvement: compact Markdown memory stayed under the
+  15 KiB cap by replacing only the latest-run block and moving this full record
+  to the archive. Prompt file size was 12,314 bytes and no automation prompt edit
+  was needed. Durable lessons: exact-read output should be accumulated in memory
+  or flushed before summary reads; quote-image skills need permission and credit
+  boundaries when source packets come from X/Twitter; when multiple similarly
+  named forks exist under `kriptoburak`, verify the active PR head fork parent
+  before pushing repairs.

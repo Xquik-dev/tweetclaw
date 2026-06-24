@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 23:24 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-23 23:55 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports returned HTTP 200. Current deep routes are consolidated under
   `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/*`, `/plugins/*`,
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 23:24 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-23 23:55 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +191,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 23:24 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-232406` returned 52 opportunities across PR monitoring,
-  skill, OpenClaw, MCP, social, Twitter/X, registry, catalog, and repo lanes.
-  GraphQL authored-open inventory completed uncapped partitions: 2,315 unique,
-  all exact-read, 47 conflicts, 3 changes-requested PRs, 62 failed or pending
-  checks, and 0 read failures.
-- Repair: `reall8164/wechat-openclaw-plugin#1` was the freshest safe conflict;
-  merged current `main`, pushed `bc62653`, commented, and read back open and
-  mergeable. `devhindo/x#75` still has a target-owned Vercel authorization
-  blocker plus a maintainer request to check email.
-- New PR: opened `NachaFromMars/social-media-agent#1` from verified fork
-  `kriptoburak/social-media-agent-nachafrommars`; readback is open and
-  mergeable. The default `kriptoburak/social-media-agent` fork name belongs to
-  an unrelated parent, so never push this target there.
+- 2026-06-23 23:55 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260623-235531` returned 15 focused opportunities. GraphQL
+  authored-open inventory completed uncapped partitions after 502 retries:
+  2,318 unique, all exact-read, 47 conflicts, 3 changes-requested PRs, 60 failed
+  or pending checks, and 0 read failures.
+- Repair: `Saminiscool/twitter-ai-agent#2` was the freshest safe conflict;
+  merged current `main`, pushed `b724042`, commented, and read back open and
+  mergeable. `devhindo/x#75` still has target-owned Vercel authorization plus a
+  maintainer request to check email.
+- New PR: opened `leanstartpad/social-media-quotes#1` from verified fork
+  `kriptoburak/social-media-quotes`; readback is open and mergeable.
 - Hygiene: OpenClaw docs, platform fitness, npm audit, Markdown links, direct
   public probes, memory check, and `npm run check:all` passed. Prompt file was
   12,314 bytes; no prompt edit needed. Full details archived.
