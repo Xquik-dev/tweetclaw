@@ -38596,3 +38596,111 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   boundaries when source packets come from X/Twitter; when multiple similarly
   named forks exist under `kriptoburak`, verify the active PR head fork parent
   before pushing repairs.
+
+2026-06-24 00:35 UTC heartbeat archive
+
+- Runtime limitation: GPT-5.5 and extra-high effort could not be selected in
+  this environment, so the run continued on the available model and recorded
+  the limitation. Starting state was TweetClaw `master...origin/master` with
+  only the pre-existing untracked `0`; Xquik still had the pre-existing
+  modified `docs/feature-roadmap.md`; `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` had no open GitHub issues.
+- Crawler-first coverage: ran the Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and proxy warmup timeouts, limit 260, 2 search pages,
+  per-query limit 12, concurrency 8, session `tweetclaw-20260624-003538`, 9
+  focused query lanes, and repo mode for monitored targets. Coverage included
+  open PRs/issues/repos/code, SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, awesome lists,
+  registries, forks, generated catalogs, web-index surfaced skill repos,
+  plugin validators, package tooling, and x-twitter-scraper variants. Output
+  parsed as valid JSON with 24 opportunities including
+  `modelcontextprotocol/servers`, `Arindam200/awesome-ai-apps`,
+  `heilcheng/awesome-agent-skills`, `hashgraph-online/registry-broker-skills`,
+  `philipbankier/awesome-agent-skills`, `LatentEvals/agent-setup`,
+  `HiAPIAI/hiapi-skills`, and `devhindo/x`. Proxy logs contained endpoint
+  counts only and no crawler credentials.
+- Complete open-PR inventory: the first local partition runner stalled before
+  useful output and was interrupted. The rerun used per-call timeouts and
+  progress logging. Date-window GraphQL partitions completed with 2,324 unique
+  authored open `kriptoburak` PRs, 0 capped partitions, and 0 partition errors.
+  Exact-read then covered all 2,324 PRs with 0 failures. Counts were 2,324 open,
+  2,275 mergeable, 47 conflicting, 2 unknown mergeability, 3
+  changes-requested PRs, 96 review-required PRs, 11 approved PRs, 2,025 with no
+  checks, 239 success, 59 failure, and 1 pending. The changes-requested queue
+  remained `Arindam200/awesome-ai-apps#226` credential-bound on a requested
+  Nebius video, `Hashi-Ai-Dev/openclaw-clawdoc#6` with stale state after
+  previous requested changes, and `weiflycc-cmd/awesome-copilot#19` blocked by
+  a target-requested `staged` branch that still 404s.
+- Open PR blockers: `devhindo/x#75` read back open, ready, mergeable, and
+  blocked by target-owned Vercel team authorization. Owner `devhindo` also asked
+  `kriptoburak` to check email at
+  https://github.com/devhindo/x/pull/75#issuecomment-4783634155, so the
+  heartbeat notifies the user. `KooshaPari/PhenoMCPServers#36` read back open,
+  ready, mergeable, and still queued on the Kilo Code Review check after the
+  prior fixes and comment.
+- Repair: `warlockoussama/twitter-cli#1` was the freshest safe conflict.
+  Verified `kriptoburak/twitter-cli` is forked from `warlockoussama/twitter-cli`,
+  merged current upstream `main`, resolved the duplicate README download-link
+  conflict, pushed `cc69448` to `codex/update-readme-command-scope`, and
+  commented at
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4784894136.
+  Validation passed conflict-marker scan, `git diff --check`, README
+  markdown-link-check, and public-hygiene diff scan. Final readback was open,
+  `MERGEABLE`, no checks, head `cc69448`.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, exact metadata, target content, local clone, fork metadata,
+  open and closed target PRs/issues, and author-history checks were used for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, SKILL.md, `.agents`,
+  skill, catalog, registry, social, Twitter/X, package-style skills, and
+  source-layout variants. `philipbankier/awesome-agent-skills` and
+  `heilcheng/awesome-agent-skills` were duplicate-blocked by prior TweetClaw or
+  x-twitter-scraper PRs. `opencue/cuecards` was duplicate-blocked by an open
+  author PR in the same lane. `HiAPIAI/hiapi-skills` was MIT and
+  duplicate-clean but vendor-owned image/video skill scope made it a weaker fit.
+  `LatentEvals/agent-setup` was selected because it is public, MIT licensed,
+  non-fork, non-archived, duplicate-clean, and target-native: its remote source
+  materialization handled `.agents/skills` and `.claude/skills` but not package
+  repositories exposing `skills/<name>/SKILL.md`, as TweetClaw does.
+- New PR: opened https://github.com/LatentEvals/agent-setup/pull/1 from
+  verified fork `kriptoburak/agent-setup`, branch
+  `codex/support-package-skills-source`, commit `b5c3759`. The PR adds fallback
+  package-style `skills/*` source copying only when `.agents` and `.claude`
+  source layouts are absent, preserves `.agents` as highest priority, documents
+  the accepted layouts, and adds regression tests for package-style copying and
+  source priority. Validation passed the focused `test/repo.test.ts` run,
+  `npm run typecheck`, full `npm test`, `npm run build`, `git diff --check`,
+  README markdown-link-check, and public-hygiene diff scan. The target lockfile
+  had pre-existing `npm ci` audit findings that were unrelated to the change.
+  PR readback was open, ready, `MERGEABLE`, no comments, no reviews, no checks,
+  head `b5c3759`.
+- TweetClaw public hygiene: `npm view openclaw` returned latest `2026.6.9`,
+  beta `2026.6.10-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub`
+  returned `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` with MIT
+  license, source remains `1.6.32`, and source install metadata defaults to
+  exact npm spec `@xquik/tweetclaw@1.6.32`. Npm audit reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness`
+  passed. Official OpenClaw docs are now reachable on `docs.openclaw.ai`; HTTP
+  200 checks passed for llms exports, CLI plugin/install/update pages, manifest,
+  permission requests, tool plugins, SDK runtime and entrypoints, ClawHub
+  publishing and skill format, install overrides, debugging, tools, and plugin
+  validation fixes. The older `docs.openclaw.com` host failed DNS and stale
+  retired paths returned 404; neither was source-backed in TweetClaw. Markdown
+  link checks passed for README, OpenClaw setup, agent workflows, registry
+  steps, packaged skill docs, and conduct docs. Direct probes returned HTTP 200
+  for TweetClaw GitHub, npm registry metadata, canonical ClawHub redirect,
+  canonical OpenClawDir, `xquik.com`, `docs.xquik.com`,
+  `dashboard.xquik.com`, repaired `warlockoussama/twitter-cli#1`, new
+  `LatentEvals/agent-setup#1`, `devhindo/x#75`, and
+  `KooshaPari/PhenoMCPServers#36`. Stale probe-only aliases
+  `skills.sh/tweetclaw`, `skills.sh/x-twitter-scraper`, and
+  `www.nothumansearch.com/dashboard/site/xquik.com` failed, while source-backed
+  Skills.sh and NHS links returned HTTP 200.
+- Memory and prompt self-improvement: compact Markdown memory stayed under the
+  15 KiB cap by replacing only the latest-run block and moving this full record
+  to the archive. Prompt file size was 12,314 bytes and no automation prompt
+  edit was needed. Durable lessons: package-tooling repos that materialize
+  remote skill sources are strong placement targets when TweetClaw's
+  package-style `skills/` directory is directly useful; stale probe-only aliases
+  should remain distinct from source-backed public link regressions.

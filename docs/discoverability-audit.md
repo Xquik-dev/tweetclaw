@@ -49,11 +49,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-23 23:55 UTC: latest `2026.6.9`, beta
+- OpenClaw npm checked 2026-06-24 00:35 UTC: latest `2026.6.9`, beta
   `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
-  exports returned HTTP 200. Current deep routes are consolidated under
-  `/cli/plugins`, `/cli/skills`, `/tools/*`, `/clawhub/*`, `/plugins/*`,
-  `/help/debugging`, and `/install/updating`.
+  exports on `docs.openclaw.ai` returned HTTP 200. Current deep routes are
+  under `/cli/*`, `/tools/*`, `/clawhub/*`, `/plugins/*`, and `/help/*`.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
   HTTP 200 page on 2026-06-23 22:00 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
@@ -75,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-23 23:55 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-24 00:35 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-23 23:55 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260623-235531` returned 15 focused opportunities. GraphQL
-  authored-open inventory completed uncapped partitions after 502 retries:
-  2,318 unique, all exact-read, 47 conflicts, 3 changes-requested PRs, 60 failed
-  or pending checks, and 0 read failures.
-- Repair: `Saminiscool/twitter-ai-agent#2` was the freshest safe conflict;
-  merged current `main`, pushed `b724042`, commented, and read back open and
-  mergeable. `devhindo/x#75` still has target-owned Vercel authorization plus a
-  maintainer request to check email.
-- New PR: opened `leanstartpad/social-media-quotes#1` from verified fork
-  `kriptoburak/social-media-quotes`; readback is open and mergeable.
-- Hygiene: OpenClaw docs, platform fitness, npm audit, Markdown links, direct
-  public probes, memory check, and `npm run check:all` passed. Prompt file was
-  12,314 bytes; no prompt edit needed. Full details archived.
+- 2026-06-24 00:35 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260624-003538` returned 24 focused opportunities. Authored-open
+  inventory completed uncapped date partitions after one stalled local run was
+  interrupted: 2,324 unique, all exact-read, 47 conflicts, 3 changes-requested
+  PRs, 59 failed checks, 1 pending check, and 0 read failures.
+- Repair: `warlockoussama/twitter-cli#1` was the freshest safe conflict; merged
+  current `main`, pushed `cc69448`, commented, and read back open and mergeable.
+  `devhindo/x#75` still has target-owned Vercel authorization plus a maintainer
+  request to check email, so this run notifies the user.
+- New PR: opened `LatentEvals/agent-setup#1` from verified fork
+  `kriptoburak/agent-setup`; it adds package-style `skills/*/SKILL.md` source
+  support and read back open and mergeable.
+- Hygiene: current OpenClaw docs on `docs.openclaw.ai`, platform fitness, npm
+  audit, Markdown links, direct public probes, memory check, and
+  `npm run check:all` passed. Prompt file was 12,314 bytes; no prompt edit
+  needed. Full details archived.
 
 ## Reporting Checklist
 
