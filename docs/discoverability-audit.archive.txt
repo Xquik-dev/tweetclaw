@@ -38813,3 +38813,92 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   all-fields reads; OpenClaw A2A Agent Card `skills` metadata is a useful
   placement lane when the docs keep credentials local and preserve local
   approval for visible social actions.
+
+## 2026-06-24 01:47 UTC Heartbeat
+
+- Starting state and limitation: model and effort selector unavailable in this
+  runtime, so the run continued and recorded the limitation. TweetClaw started
+  on `master...origin/master` with only the pre-existing untracked `0`. Xquik
+  still had the pre-existing modified `docs/feature-roadmap.md`. `gh issue list`
+  returned no open issues for `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with research proxy, bounded timeouts, strict
+  JSON output, focused OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X,
+  skill, awesome-list, registry, fork, generated-catalog, package-tooling, and
+  web-index query lanes, plus repo reads for known PR and candidate lanes.
+  Output parsed as valid JSON with 21 opportunities including
+  `modelcontextprotocol/servers`, `Arindam200/awesome-ai-apps`,
+  `heilcheng/awesome-agent-skills`, `hashgraph-online/registry-broker-skills`,
+  `philipbankier/awesome-agent-skills`, `vineetu/simple-host`,
+  `Kong/ai-marketplace`, `opencue/cuecards`, `HiAPIAI/hiapi-skills`,
+  `LatentEvals/agent-setup`, `marktantongco/ai-agent-skills`,
+  `Hashi-Ai-Dev/openclaw-clawdoc`, `zeoyan/openclaw-a2a-p2p`,
+  `KooshaPari/PhenoMCPServers`, `reall8164/wechat-openclaw-plugin`, and
+  `devhindo/x`. No crawler credentials were printed.
+- Complete open-PR inventory: date-window GraphQL partitions completed with
+  2,331 unique authored open `kriptoburak` PRs, 0 capped partitions, and 0
+  read failures. Exact-read counts were 2,331 open, 2,272 mergeable, 48
+  conflicting, 11 unknown mergeability, 3 changes-requested PRs, 95
+  review-required PRs, 11 approved PRs, 2,029 with no checks, 240 success, 61
+  failure, and 1 pending. Top actionable conflict was
+  `warlockoussama/twitter-cli#1`. Top failed check remained `devhindo/x#75`.
+- Open PR blockers: `devhindo/x#75` read back open, ready, mergeable, and
+  blocked by target-owned Vercel team authorization. Owner `devhindo` still
+  asks `kriptoburak` to check email at
+  https://github.com/devhindo/x/pull/75#issuecomment-4783634155, so the
+  heartbeat notifies the user. `KooshaPari/PhenoMCPServers#36` read back open,
+  ready, mergeable, and still queued on Kilo after prior fixes and comment.
+- Repair: `warlockoussama/twitter-cli#1` was repaired through verified fork
+  `kriptoburak/twitter-cli`. Merged current upstream `main`, resolved the
+  duplicate README download-link conflict, pushed `304f5c0` to
+  `codex/update-readme-command-scope`, and commented at
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4785229382.
+  Validation passed conflict-marker scan, `git diff --check`, README
+  markdown-link-check, and changed-diff public-hygiene scan. Final readback was
+  open, `MERGEABLE`, no checks, head `304f5c0`.
+- Fresh candidate screening and duplicate gates: compact audit, archive,
+  crawler output, target metadata, target content, local clones, fork metadata,
+  target PRs/issues, and author history were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, OpenClaw, SKILL.md, `.agents`, skill, catalog, registry,
+  social, Twitter/X, package tooling, static export, and Website Deploy
+  variants. `Kong/ai-marketplace` was duplicate-clean but policy-blocked
+  because its README limits pull requests to Kong employees during preview.
+  `opencue/cuecards` was duplicate-blocked by existing author PR history.
+  `vineetu/simple-host` was MIT licensed, public, non-fork, non-archived,
+  issue-enabled, and duplicate-clean.
+- New PR: opened https://github.com/vineetu/simple-host/pull/1 from verified
+  fork `kriptoburak/simple-host`, branch
+  `codex/add-static-export-report-pattern`, commit `0c5d441`. The PR updates
+  `simple-host-website/skills/website-deploy-builder/SKILL.md` with a
+  target-native static-report pattern for sanitized pre-generated exports,
+  including TweetClaw follower exports or X/Twitter search results as one
+  concrete source example. Validation passed `git diff --check`,
+  conflict-marker scan, markdown-link-check for the edited skill, duplicate
+  gates, and public-hygiene review. PR readback was open, ready, `MERGEABLE`,
+  no comments, no reviews, no checks, head `0c5d441`.
+- TweetClaw public hygiene: official OpenClaw docs returned HTTP 200 for llms
+  exports, CLI plugins, CLI skills, plugin management, manifest docs, plugin
+  permission requests, install overrides under `/plugins/install-overrides`,
+  tool plugins, SDK runtime, SDK entrypoints, ClawHub publishing, ClawHub skill
+  format, and help debugging. The old `/cli/install-overrides` route returned
+  404 and is treated as a retired route, not a TweetClaw breakage. `npm view
+  openclaw` returned latest `2026.6.9`, beta `2026.6.10-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` with MIT license while source remains
+  `1.6.32`. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed. TweetClaw
+  markdown-link checks passed for README, OpenClaw setup, agent workflows,
+  skill docs, benchmark, skill card, skillspector report, and compact memory.
+  Direct probes returned HTTP 200 for TweetClaw GitHub, GitHub issues API, npm
+  registry metadata, canonical ClawHub route, canonical OpenClawDir, `xquik.com`,
+  `docs.xquik.com`, repaired `warlockoussama/twitter-cli#1`, new
+  `vineetu/simple-host#1`, `KooshaPari/PhenoMCPServers#36`, and
+  `devhindo/x#75`.
+- Memory and prompt self-improvement: compact Markdown memory stayed under the
+  15 KiB cap by replacing the latest-run block and moving this full record to
+  the archive. Prompt file size was 12,314 bytes and no automation prompt edit
+  was needed. Durable lessons: Simple Host style targets are good fits for
+  sanitized static export guidance, but keep private refresh and authenticated
+  API calls outside Website Deploy unless the user supplies runtime keys; policy
+  gates must block tech-preview repos that explicitly restrict PRs to employees.
