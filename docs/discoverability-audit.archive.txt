@@ -39170,3 +39170,116 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   contribution keeps publishing approval-gated, separates draft creation from
   account actions, and documents credential storage outside chat/tool
   arguments.
+
+## 2026-06-28 16:03 UTC heartbeat
+
+- Runtime limitation: model and reasoning-effort selector was unavailable in
+  this local run, so the requested GPT-5.5 extra-high setting could not be
+  verified or selected.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260628-160349` from `/Users/burak/Developer/xquik` with strict
+  JSON output, research proxy, bounded request and proxy warmup timeouts, and
+  10 focused queries covering AI agent frameworks, LangChain, CrewAI,
+  PydanticAI, Agno, AutoGen, OpenAI Agents, SKILL.md, `.agents/skills`,
+  social media, and Twitter/X skills. Output parsed as valid JSON with 4
+  opportunities: `liranman90/MoneyPrinterV2`,
+  `Mursalin80/crewai_content_creation`,
+  `Sudhir878786/Prospect-Social-Profile-Summarizer`, and
+  `sdblepas/crewai-dev`. They were weak or low-fit, so REST fallback followed
+  after crawler-first coverage. No crawler credentials were printed.
+- PR inventory method and limits: compact and archive memory were searched
+  first. REST Search API fallback found 59 unique in-scope open authored PRs
+  across TweetClaw, Xquik, OpenClaw, skills, agent, Twitter, social, and MCP
+  lanes. Exact REST readbacks covered the 30 newest/current PRs with no failed
+  checks, 4 dirty/conflicting PRs, and no maintainer review requests in that
+  set. GitHub GraphQL remained rate-limited from the prior run with 0 remaining,
+  so this was not a complete uncapped inventory.
+- Repair gate: `MervinPraison/PraisonAI#2440` had bot review findings on the
+  Xquik tweet search example. Pushed commit `b88c2c8` to
+  `kriptoburak/PraisonAI`, adding PraisonAI tool availability for
+  `XQUIK_API_KEY`, blank-query rejection, `5.0` style limit parsing, internal
+  whitespace normalization, and alternate tweet fields such as nested
+  author/user records, `content`, `tweet_id`, and `tweetId`. Validation passed
+  Python 3.11 compile, focused helper assertions, and `git diff --check`.
+  Commented through REST because `gh pr comment` hit the GraphQL cap. Final
+  readback was open, mergeable, and head `b88c2c8`.
+- Repair gate: `reall8164/wechat-openclaw-plugin#1` had an unrelated-history
+  upstream force-update. Pushed commit `e7399ce` to
+  `kriptoburak/wechat-openclaw-plugin`, resolving the README conflict by
+  keeping the repository support link, one download badge, and the optional
+  TweetClaw X/Twitter workflow section. Validation passed conflict-marker scan,
+  `git diff --check`, package and OpenClaw manifest JSON parse, and README
+  markdown-link-check. Final readback was mergeable and clean.
+- Repair gate: `Aqmar777/openclaw-competitive-intel#1` had an unrelated-history
+  upstream force-update that would have dropped the TweetClaw source files.
+  Pushed commit `c7b90ca` to `kriptoburak/openclaw-competitive-intel`, preserving
+  the TweetClaw fetcher, docs, tests, install path, README source section, and
+  existing NHS badge while fixing the support link to the repository page.
+  Validation passed conflict-marker scan, `git diff --check`, Python compile,
+  TweetClaw fetcher unit tests, `bash -n install.sh`, and README/docs
+  markdown-link-check. Final readback was mergeable and clean.
+- Repair gate: `AbdNour627/awesome-openclaw-configs#1` had an unrelated-history
+  upstream force-update. Pushed commit `e292743` to
+  `kriptoburak/awesome-openclaw-configs`, preserving the TweetClaw automation
+  config row and related project links, keeping the existing badge area, and
+  removing upstream CDATA artifacts from `README_EN.md` and `CONTRIBUTING.md`.
+  Validation passed conflict-marker scan, `git diff --check`, JSON5 parsing for
+  `configs/automation/x-twitter-monitor-tweetclaw.json5`, and README,
+  README_EN, and CONTRIBUTING markdown-link-check. Final readback was mergeable
+  and clean.
+- Repair gate: `Aditya923-c/xpoz-agent-skills#1` had an unrelated-history
+  upstream force-update. Pushed commit `0e09851` to
+  `kriptoburak/xpoz-agent-skills`, preserving the skill-folder list, TweetClaw
+  OpenClaw resource note, ZIP download link, and repository quick link.
+  Validation passed conflict-marker scan, `git diff --check`, and README
+  markdown-link-check. Final readback was mergeable and clean.
+- Fresh target screening: framework-owned lanes checked included Agno,
+  LangChain, OpenAI Agents, AutoGen, and PydanticAI. Agno and LangChain were
+  blocked by existing Xquik/TweetClaw history; OpenAI Agents had prior archive
+  screening and remained lower-fit for thin placement. Smaller AI-framework and
+  social-agent candidates from REST search included
+  `praj2408/Smart-Marketing-Assistant-Crew-AI`,
+  `Mursalin80/crewai_content_creation`, and `Julie20240702/Global-Trend-Hunter`.
+  `praj2408/Smart-Marketing-Assistant-Crew-AI` was selected because it is a
+  CrewAI marketing-agent project with existing social research tools, no prior
+  TweetClaw/Xquik content, no matching target PRs/issues, no explicit policy
+  blocker, and no license metadata blocker for a direct PR.
+- New PR: opened https://github.com/praj2408/Smart-Marketing-Assistant-Crew-AI/pull/1
+  from verified fork `kriptoburak/Smart-Marketing-Assistant-Crew-AI`, branch
+  `codex/add-xquik-social-search`, commit `33aa642`. The PR adds optional
+  `search_x_posts` support to the existing CrewAI tool list using the Xquik API,
+  formats common tweet response shapes, documents `XQUIK_API_KEY`, and removes
+  a broken README `LICENSE` link because the repository has no license file.
+  Validation passed Python compile, focused helper assertions with stubbed
+  `exa_py` and `langchain.agents.tool`, `git diff --check`,
+  markdown-link-check for `readme.md`, and a common secret-pattern scan. PR
+  readback was open, mergeable, and had no comments or reviews.
+- OpenClaw and TweetClaw hygiene: official `docs.openclaw.ai` probes returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, CLI plugins, CLI skills, plugin
+  building docs, plugin manifest, tool plugins, ClawHub publishing, ClawHub
+  skill format, and skills. Older direct routes `/debugging`,
+  `/cli/plugins/install`, `/cli/plugins/update`, and `/cli/plugins/inspect`
+  returned 404 and were recorded as docs-route drift. `npm view openclaw`
+  returned `2026.6.10`, `npm view clawhub` returned `0.23.0`, and
+  `@xquik/tweetclaw` remains `1.6.31`. ClawHub canonical route redirected to
+  `https://clawhub.ai/xquik/plugins/tweetclaw` with HTTP 200, and npm registry
+  metadata returned HTTP 200.
+- Public-hygiene checks: target diffs and comments were inspected for secrets,
+  private implementation details, unsupported claims, internal cost mechanics,
+  stale metadata, and restricted source wording before push or comments. The
+  placeholder `XQUIK_API_KEY` appeared only as safe environment-variable setup
+  text. No NHS badge was added in the new CrewAI PR because the handled surface
+  had no useful badge area.
+- Memory and prompt self-improvement: compact Markdown memory was kept under
+  the 15 KiB cap by replacing the latest-run block and moving this full record
+  to the archive; `npm run check-memory-md-size` read back 15,248 of 15,360
+  bytes. Final TweetClaw validation passed `npm run check-openclaw-platform-fitness`,
+  `npm audit --audit-level=moderate --json` with 0 vulnerabilities, public
+  markdown-link-check for `README.md`, `docs/openclaw-setup.md`, and
+  `docs/discoverability-audit.md`, `git diff --check`, and `npm run check:all`
+  with 168 tests and 100 percent coverage. Automation TOML measured 12,314
+  bytes and decoded prompt content measured 11,980 bytes, so no prompt edit was
+  needed. Durable lesson: for AI-framework outreach, prefer optional source
+  tools that plug into an existing tool list and degrade cleanly without
+  credentials; avoid adding new dependencies unless target tests or package
+  policy make them safe.

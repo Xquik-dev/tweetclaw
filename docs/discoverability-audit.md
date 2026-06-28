@@ -190,24 +190,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 13:56 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-135634` returned 45 skill, MCP, X/Twitter, social, and
-  AI-framework opportunities. Audit mining found 1,258 tracked PR URLs; authored
-  search sampled 300 open PRs; exact readbacks covered 100 watch/current PRs.
-  GitHub GraphQL then rate-limited broader exact reads, so this was not an
-  uncapped inventory.
-- Repair gate: fixed conflicts/generated drift on `nastyabir/bestie-skills#8`
-  and `OKHP3/skillz#3`; both read back mergeable after pushes. Remaining failed
-  checks are target-owned Vercel authorization on `arvindrk/twitter-agent#16`
-  and `devhindo/x#75`; the latter still needs owner email follow-up.
-- New PR: `itsBrianCreates/CodeStory#1` adds a TweetClaw/OpenClaw
-  approval-gated publishing example for CodeStory X/Twitter drafts from verified
-  fork `kriptoburak/CodeStory`; read back open, ready, mergeable, clean, and no
-  checks/comments/reviews.
-- Hygiene: official OpenClaw docs and npm metadata were refreshed; OpenClaw
-  latest is `2026.6.10`, ClawHub CLI is `0.23.0`, TweetClaw npm latest remains
-  `1.6.31`, npm audit found 0 vulnerabilities, target links passed, and full
-  details are archived.
+- 2026-06-28 16:03 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-160349` returned 4 AI-framework/social candidates; REST
+  fallback found 59 unique in-scope open PRs and exact-read 30 newest/current
+  PRs before GraphQL remained capped at 0 remaining.
+- Repair gate: pushed/commented bot-feedback fixes on
+  `MervinPraison/PraisonAI#2440`, then resolved recurring force-update
+  conflicts on `reall8164/wechat-openclaw-plugin#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `AbdNour627/awesome-openclaw-configs#1`, and
+  `Aditya923-c/xpoz-agent-skills#1`; all 4 conflict PRs read back mergeable and
+  clean.
+- New PR: `praj2408/Smart-Marketing-Assistant-Crew-AI#1` adds an optional
+  CrewAI `search_x_posts` tool using Xquik for X trend research from verified
+  fork `kriptoburak/Smart-Marketing-Assistant-Crew-AI`; read back open,
+  mergeable, and no comments/reviews.
+- Hygiene: current OpenClaw docs and package metadata were refreshed; main docs
+  routes stayed 200 while old CLI subpaths now 404. OpenClaw latest is
+  `2026.6.10`, ClawHub CLI is `0.23.0`, TweetClaw npm latest remains `1.6.31`,
+  ClawHub and npm registry routes returned 200, and full details are archived.
 
 ## Reporting Checklist
 
