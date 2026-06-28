@@ -40240,3 +40240,95 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   TweetClaw-specific angle exists. For social lead-generation frameworks, prefer
   reviewed source-evidence docs that keep social post summaries separate from
   stored lead fields and route TweetClaw through an explicit approval step.
+
+## 2026-06-28 21:05 UTC Heartbeat
+
+- Model and runtime: requested GPT-5.5 with extra-high reasoning effort, but
+  this runtime did not expose model or effort selection. Continued and recorded
+  the limitation.
+- Initial state: TweetClaw was on `master...origin/master` with pre-existing
+  untracked file `0`, left untouched. Xquik had unrelated dirty files
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, left untouched. GitHub issue lists for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+- Crawler coverage: ran Xquik crawler session `tweetclaw-20260628-210547` from
+  `/Users/burak/Developer/xquik` with strict JSON output
+  `/tmp/tweetclaw-heartbeat-20260628-210547/crawl.json`, research proxy,
+  bounded request and proxy warmup timeouts, 100 limit, 1 search page, 8
+  per-query limit, concurrency 8, and queries for authored open PRs,
+  `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude,
+  agent, social, Twitter/X, awesome-skill, LangChain, LangGraph, CrewAI, Google
+  ADK, PydanticAI, AutoGen, Semantic Kernel, LlamaIndex, Haystack, and Mastra
+  lanes. Output contained 45 opportunities and parsed successfully.
+- Open PR inventory: compact and archive files were searched first. Known URLs,
+  crawler output, fork metadata, and authored open-PR discovery produced 183 PR
+  URLs. Broad authenticated `gh search prs` had 2 malformed-query errors, then
+  hit a GitHub secondary rate limit, so broad authenticated search was stopped
+  for this run. Exact `gh pr view` readback completed for 173 URLs: 149 open, 10
+  conflicts, 21 blocked or dirty states, 41 with comments, 21 with reviews, and
+  27 with checks. Twenty read attempts failed for 10 deleted, private, or
+  unresolved repositories, so this run does not claim exhaustive all-history
+  coverage.
+- Repair action: selected `AbdNour627/awesome-openclaw-configs#1` because the
+  target is a non-fork MIT repository, the kriptoburak fork parent was verified,
+  readback showed a README conflict, and no reviews, checks, DCO, CLA, or
+  maintainer-policy blocker blocked repair. Merged upstream `main` into
+  `codex/add-tweetclaw-x-config`, resolved the README conflict by preserving the
+  current upstream section plus the TweetClaw related-project row, and pushed
+  merge commit `aa430df5e5704502dbd727a2a6219f53d774bdc5`.
+- Repair validation: conflict-marker scan, `npx --yes json5
+  configs/automation/x-twitter-monitor-tweetclaw.json5`, README/README_EN/
+  CONTRIBUTING markdown-link-check, `git diff --check`, and changed-diff public
+  hygiene scan passed. Commented validation at
+  `https://github.com/AbdNour627/awesome-openclaw-configs/pull/1#issuecomment-4827414090`.
+  Final readback: open, mergeable, no reviews, no checks, 4 changed files.
+- Fresh screening: duplicate-blocked `blacktwist/social-media-skills`,
+  `typefully/agent-skills`, `skainguyen1412/social-media-research-skill`,
+  `ellieli0630/langgraph-mcp-agent-twitter`, and `publora/skills` because
+  target PR history already had TweetClaw, Xquik, or X/Twitter source-guidance
+  submissions. `janhvisoni804/Viral-Content-Agent` was fresh: public non-fork,
+  non-archived, default branch `main`, pushed 2026-06-24, no license metadata,
+  no prior PRs or issues, and no target/audit/archive duplicate hits for
+  TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, or
+  ClawHub variants. Missing license metadata was not treated as a direct-PR
+  blocker.
+- External PR: opened `https://github.com/janhvisoni804/Viral-Content-Agent/pull/1`
+  from fork `kriptoburak/Viral-Content-Agent`, branch
+  `codex/add-tweetclaw-source-context`, commit
+  `05bb345095d8762c5e49fe263ba925d1ecf195cf`. The PR adds README and skill
+  guidance for optional reviewed X/Twitter source context in a Google ADK
+  social-media agent. It frames TweetClaw as an optional source-review path for
+  searched tweets, replies, followers, audience notes, and hashtags, not as an
+  unattended publishing path.
+- Target validation: `git diff --check`, `python3 -m py_compile app/agent.py
+  app/agent_runtime_app.py app/app_utils/telemetry.py app/app_utils/typing.py`,
+  and `npx --yes markdown-link-check README.md --quiet` passed. Final PR
+  readback: open, mergeable, no reviews, no checks, 2 changed files.
+- Official OpenClaw and package checks: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.1`, and alpha `2026.5.19-alpha.1`; `npm
+  view clawhub` returned `0.23.0`; published `@xquik/tweetclaw` remains
+  `1.6.31` with MIT license and canonical GitHub repository. Route checks
+  returned 200 for `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/clawhub/troubleshooting`,
+  ClawHub TweetClaw, TweetClaw GitHub, and the npm registry API; 404 for
+  `openclaw.ai/llms-full.txt` and `/plugins/permissions`. `npm audit
+  --audit-level=moderate --json` reported 0 vulnerabilities.
+- TweetClaw validation and hygiene: markdown-link-check passed for `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Final gates
+  before commit: `npm run check-memory-md-size`, `git diff --check`,
+  changed-diff public-hygiene scan, and `npm run check:all`.
+- Prompt and memory: automation TOML measured 12,314 bytes and prompt measured
+  11,980 bytes; status stayed `ACTIVE`, cadence stayed
+  `FREQ=MINUTELY;INTERVAL=1`, and no prompt edit was needed. Compact Markdown
+  memory stayed under the 15 KiB cap after replacing the latest-run block and
+  moving details here.
+- Prompt self-improvement: avoid broad authenticated PR searches with loosely
+  quoted query strings; use small prevalidated GitHub search partitions and stop
+  as soon as malformed query or secondary-rate-limit signals appear. For Google
+  ADK social-media agents, prefer a skill-native source-context workflow that
+  keeps TweetClaw as reviewed evidence and explicitly avoids unattended
+  publishing.
