@@ -39799,3 +39799,83 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   gates rather than opening a duplicate. For repair triage, inspect
   changes-requested PRs before generic conflict queues, and distinguish stale
   review state from still-unaddressed maintainer asks.
+
+2026-06-28 19:00 UTC heartbeat
+- Runtime: GPT-5.5 / extra-high effort selector unavailable in this Codex
+  runtime; continued with available model and recorded limitation.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260628-190052/crawl.json --research-proxy`
+  using bounded request and proxy warmup timeouts, concurrency 8, session
+  `tweetclaw-20260628-190052`, and focused authored-PR, `SKILL.md`,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, Twitter/X, social, awesome,
+  FastMCP, LangGraph, CrewAI, and PydanticAI queries. The crawler returned 22
+  opportunities across submit-sdk, submit-skill, and open-issue lanes.
+- Open PR inventory: compact and archive history were searched first. Broad
+  authenticated authored-PR partitions used TweetClaw, OpenClaw, ClawHub,
+  Xquik, x-twitter-scraper, Twitter, X/Twitter, social media, agent tools,
+  skill, MCP, catalog, framework, validator, and package tooling terms.
+  `ClawHub` search hit a transient connection reset and succeeded on retry.
+  Search returned 889 unique open PR URLs. Exact `gh pr view` readbacks covered
+  889/889 with 0 errors: 888 still open, 142 with comments, 84 with reviews, 40
+  conflicts, 99 blocked/dirty/unknown merge states, 27 failing or action-needed
+  checks, and 229 blocker-like records after overinclusive filtering. No GitHub
+  cap or rate blocker remained. Stored readbacks in
+  `/tmp/tweetclaw-heartbeat-20260628-190052/pr-readbacks.jsonl`.
+- Repair triage: no safe maintainer-action repair remained. `Hashi-Ai-Dev/openclaw-clawdoc#6`
+  is open and mergeable but blocked only by stale changes-requested review state
+  after the prior `fc10dab` repair. `Arindam200/awesome-ai-apps#226` waits on a
+  maintainer-requested demo video. `weiflycc-cmd/awesome-copilot#19` remains
+  blocked because the maintainer-requested `staged` base branch is not exposed.
+  `Think-Cube/Ecommerce-Awesome#8` merged during this run.
+- Fresh candidate screening: crawler candidates included `xenarch-ai/xenarch-mcp`,
+  `jdidjhdh/hiveflow`, `jeffmichaeljohnson-tech/mcp-wp`, `senga07/xAgentic`,
+  and `Burnsedia/PydanticAI-Twitter-bot`. Duplicate and history checks blocked
+  `0xNyk/xint`, `0xNyk/xint-rs`, and `mvanhorn/last30days-skill`; `Xquik-dev/hermes-tweet`
+  was own-org, not an external target. `jdidjhdh/hiveflow` was selected because
+  it is a maintained multi-agent, HITL, LangGraph, MCP example framework with
+  MIT license text, permissive contribution docs, no TweetClaw/Xquik/OpenClaw
+  PR or issue history, and a safe local example-validation path.
+- External PR opened: `https://github.com/jdidjhdh/hiveflow/pull/22` from
+  `kriptoburak:codex/add-x-source-review-example`, commit
+  `2fb9947da1f1f4b551a81c8b1b83e8f27805cbf6`. The PR adds
+  `examples/17_x_twitter_source_review.py`, updates `examples/README.md`, and
+  registers it in `examples/run_smoke_tests.py`. It demonstrates mocked public
+  X/Twitter source evidence from a TweetClaw/OpenClaw source packet, human
+  review through HiveFlow HITL, and an approval-gated context handoff. Exact
+  readback: open, mergeable, unstable only because no status checks were
+  present, no comments, no reviews.
+- Target validation for HiveFlow: direct example execution passed with
+  `PYTHONPATH="$PWD/packages/core" /Users/burak/.local/bin/python3.11 examples/17_x_twitter_source_review.py`.
+  `python3 -m compileall -q examples/17_x_twitter_source_review.py examples/run_smoke_tests.py`,
+  `python3 -m ruff check examples/17_x_twitter_source_review.py examples/run_smoke_tests.py`,
+  `git diff --check`, and
+  `npx --yes markdown-link-check examples/README.md --quiet` passed. Full
+  `examples/run_smoke_tests.py` reached the new example but exited nonzero on
+  existing `examples/10_secure_blackboard.py` because optional local
+  dependency `cryptography` was not installed.
+- Official OpenClaw and package checks: current docs returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/plugins/install-overrides`,
+  and `/help/debugging`; 404 for `/cli/plugins/install`, `/cli/plugins/update`,
+  `/cli/plugins/inspect`, `/plugins/permission-requests`, and `/sdk/runtime`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.1`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31`, MIT, canonical GitHub repository.
+- TweetClaw validation and public hygiene: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md --quiet`
+  passed after the audit edit. Diff hygiene found no restricted credential,
+  provider, cost, or stale unsupported claim in changed public text.
+- Prompt and memory checks: automation TOML and prompt bytes remained under the
+  15 KiB prompt cap before final commit. Compact Markdown memory stayed under
+  15 KiB after compaction and `npm run check-memory-md-size` passed.
+- TweetClaw commit: compact audit and release memory were committed and pushed
+  to `master` after `npm run check:all` passed. Pre-existing untracked file `0`
+  was left untouched.
+- Prompt self-improvement: for AI-framework integration lanes, prefer examples
+  that teach source-evidence collection plus human approval rather than
+  autonomous posting. In target PR bodies, separate introduced validation from
+  pre-existing optional-dependency blockers so maintainers can review the new
+  files without conflating local environment gaps with contribution regressions.

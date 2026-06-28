@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-28 18:54 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-28 19:22 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports on `docs.openclaw.ai` returned HTTP 200. Current plugin docs are under
   `/cli/*`, `/clawhub/*`, and `/plugins/*`; older `/openclaw/*` deep links 404.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-28 18:55 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 19:22 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,19 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 18:32 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-183221` returned 22 skill, social, and AI-framework
-  candidates. Broad authored PR partitions found 890 open URLs; exact readback
-  covered 890/890 with 0 errors and no rate blocker.
-- Repair gate: 240 blocker signals remained after overinclusive search
-  filtering. Repaired `Hashi-Ai-Dev/openclaw-clawdoc#6` by merging upstream
-  `master`, keeping the vendor-neutral two-file docs diff, pushing `fc10dab`,
-  and posting validation. Readback: open, mergeable, blocked only by the old
-  changes-requested review.
-- New AI-framework PR lane: `kagenti/agent-examples#644` adds an Xquik FastMCP
-  example for the Kagenti platform. Exact target PR/issue duplicate checks found
-  no prior Xquik/TweetClaw history. Readback: open, mergeable, DCO success,
-  review required.
+- 2026-06-28 19:00 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-190052` returned 22 skill, MCP, and AI-framework
+  candidates. Authored PR partitions found 889 URLs; exact readback covered
+  889/889 with 0 errors and no rate blocker.
+- Repair gate: 229 blocker signals remained. No safe repair was available:
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` waits on stale review state after `fc10dab`,
+  `Arindam200/awesome-ai-apps#226` waits on maintainer video, and
+  `weiflycc-cmd/awesome-copilot#19` waits on an unexposed base branch.
+  `Think-Cube/Ecommerce-Awesome#8` merged during the run.
+- New AI-framework PR lane: `jdidjhdh/hiveflow#22` adds a HiveFlow X/Twitter
+  source review example with a mocked TweetClaw/OpenClaw source packet and
+  human approval gate. Target duplicate checks found no prior
+  TweetClaw/Xquik/OpenClaw issue history. Readback: open, mergeable, no checks.
 - Maintenance: OpenClaw docs and npm metadata are unchanged at latest
   `2026.6.10`; `@xquik/tweetclaw` remains published at `1.6.31`; npm audit
   remains clean. TweetClaw link checks, `check:all`, memory cap, prompt-size,
