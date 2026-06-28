@@ -2,6 +2,24 @@
 
 TweetClaw should publish to ClawHub as a ClawPack npm-pack artifact, not the legacy ZIP path. OpenClaw prefers ClawPack metadata when ClawHub provides it, verifies the downloaded bytes and digest headers, and records npm integrity, shasum, tarball name, and ClawPack digest fields for future updates.
 
+## 2026-06-28 23:12 UTC Release Check
+
+No npm release or ClawHub publish was attempted. Source remains
+`@xquik/tweetclaw@1.6.32`, while npm latest remains `1.6.31` with older
+OpenClaw metadata. `npm run check-openclaw-platform-fitness` passed for
+OpenClaw `2026.6.10`. `npm view openclaw` returned latest `2026.6.10`, beta
+`2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`. `npm view clawhub`
+returned `0.23.0`. Official OpenClaw route probes returned HTTP 200 for llms
+exports, CLI plugins, plugin manifest, plugin permission requests, tool
+plugins, install overrides, CLI skills, ClawHub publishing, ClawHub skill
+format, gateway config tools, help debugging, ClawHub TweetClaw, and OpenClaw
+Directory routes; old per-command plugin pages, `llms-full.txt`,
+`/plugins/permission-requests`, and `/sdk/runtime` remain 404.
+`npm audit --audit-level=moderate --json` reported 0 vulnerabilities. ClawHub
+still renders the TweetClaw page at version `1.6.26`, so npm remains canonical
+and `openclaw.install.clawhubSpec` must stay absent until owner-scope
+publishing is fixed.
+
 ## 2026-06-28 22:39 UTC Release Check
 
 No npm release or ClawHub publish was attempted. Source remains

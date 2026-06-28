@@ -2,6 +2,84 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-28 23:12 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260628-231220` used the research proxy with
+  bounded request and warmup timeouts, limit 180, one search page, 8 per query,
+  concurrency 8, and focused open-PR, skill-repo, OpenClaw, MCP, AI-framework,
+  CrewAI, LangGraph, AutoGen, Semantic Kernel, Haystack, Mastra, Vercel AI SDK,
+  OpenAI Agents SDK, Google ADK, and social/Twitter-X skill queries. Output
+  parsed as valid JSON with 50 opportunities and covered `SKILL.md`,
+  `.agents/skills`, skills directories, awesome lists, registries, forks, and
+  generated catalogs.
+- Complete PR inventory: compact and archive audit URLs yielded 1,278 unique
+  known PR URLs. REST exact readbacks covered 1,240, with 38 platform or access
+  errors. Relevant exact reads totaled 1,231: 1,006 open and 225 closed. Crawler
+  repo REST lists read 50 repos with 0 errors and found 31 current authored
+  open PRs. No claim is made that unresolved broad inline-review thread state
+  was fully exhausted beyond exact readbacks and targeted reviews.
+- Repair gate: `Aditya923-c/xpoz-agent-skills#1` and
+  `jamald33n/tweetsave-mcp#2` were dirty conflicts. Both forks were verified
+  under `kriptoburak`. The xpoz README conflict was resolved in favor of the
+  valid repository link and existing TweetClaw OpenClaw note, validated with
+  conflict-marker scan, `git diff --cached --check`, and
+  `markdown-link-check`, then pushed as `22e1bb2`; final readback was open and
+  clean. The tweetsave README conflict was resolved in favor of npm/npx setup,
+  MCP config, valid support links, and TweetClaw/OpenClaw handoff, validated
+  with conflict-marker scan, `git diff --cached --check`,
+  `markdown-link-check`, `npm install --ignore-scripts --no-audit --no-fund`,
+  `npm run build`, and ZIP integrity checks, then pushed as `46d1888`; final
+  readback was open and clean after GitHub recomputed mergeability.
+- Fresh candidate screening: `Hamid-AM/BlogTweet-AI` was selected from crawler
+  AI-framework results. It is a CrewAI content pipeline with Twitter posting,
+  no existing TweetClaw, Xquik, x-twitter-scraper, ClawHub, or OpenClaw
+  content, no target PRs or issues, not archived, not disabled, non-fork, and
+  no license metadata. Missing license metadata was treated as non-blocking for
+  a direct PR.
+- External PR: created verified fork `kriptoburak/BlogTweet-AI`, branch
+  `codex/add-tweetclaw-source-context`, commit
+  `4ed02e0da488c26378da93bade50b9c7440cb689`, and opened
+  https://github.com/Hamid-AM/BlogTweet-AI/pull/1 by REST. The PR adds optional
+  `TWEETCLAW_SOURCE_CONTEXT` loading, injects reviewed X/Twitter source notes
+  into the CrewAI research task as evidence only, documents setup, and keeps
+  final posting on the existing `TwitterPostTool`. Final readback: open,
+  mergeable true, mergeable_state `clean`, no comments, no reviews, no checks.
+- Target validation: for `BlogTweet-AI`, `git diff --check`,
+  `python3 -m py_compile` on touched Python entrypoints, YAML parse checks for
+  `tasks.yaml` and `agents.yaml`, and `npx --yes markdown-link-check README.md
+  --quiet` passed. Public hygiene scans found only target-owned placeholder
+  Twitter credential names, no real secrets or internal details.
+- Official OpenClaw and package checks: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.23.0`; published `@xquik/tweetclaw` remains
+  `1.6.31` while source remains `1.6.32`. Current route probes returned 200
+  for OpenClaw llms exports, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  `clawhub.ai/plugins/@xquik/tweetclaw`, the canonical ClawHub page, and
+  OpenClaw Directory. Expected 404s remained `llms-full.txt`, old per-command
+  plugin routes, `/plugins/permission-requests`, and `/sdk/runtime`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+- Link and public hygiene: markdown-link-check passed for TweetClaw `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, `docs/clawpack-release.md`, and edited
+  external content. Diffs and comments avoided secrets, private implementation
+  details, restricted provider/source names, internal cost mechanics,
+  unsupported claims, and stale metadata. No NHS badge was added.
+- Prompt and memory: prompt-size readback was 11,980 bytes with cap 15,360.
+  Compact Markdown memory was updated under the cap and full details were
+  archived here. No prompt edit was needed.
+- Prompt self-improvement: in CrewAI and similar content frameworks, prefer a
+  local reviewed-source context file over live posting or trend claims. Keep
+  TweetClaw as source evidence unless the target already has explicit approval
+  and validation boundaries for live actions.
+
 ## 2026-06-23 19:06 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
