@@ -39399,3 +39399,98 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   content measured 12,012 bytes, so no prompt edit was needed. Final changed
   TweetClaw files were `docs/discoverability-audit.md` and
   `docs/discoverability-audit.archive.txt`.
+
+2026-06-28 17:31 UTC heartbeat run:
+- Runtime and scope: requested GPT-5.5 and extra-high reasoning were not
+  selectable in this runtime, so the run continued with the available model.
+  No Context7 work, Browser or Chrome inspection, dev server, production SSH,
+  secret exposure, or destructive TweetClaw action was performed. Pre-existing
+  untracked TweetClaw file `0` was preserved.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler with research proxy, request timeout 12000 ms, proxy warmup timeout
+  30000 ms, limit 80, search pages 2, per-query limit 8, concurrency 8, session
+  `tweetclaw-20260628-170716`. Query pack covered authored open PRs for
+  TweetClaw, OpenClaw, Xquik, SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome skill lists,
+  AI-agent frameworks, CrewAI, LangGraph, PydanticAI, OpenAI Agents, and social
+  tool lanes. Output parsed as valid JSON with 14 opportunities:
+  `creatorcrawl/creatorcrawl-skill`, `blacktwist/social-media-skills`,
+  `BuddhaYi/macos-cli`, `elbis330/social-media-scraper-skill`,
+  `liangdabiao/tikhub_api_skill`, `beggarticksarthurtatum121/reddit-skills`,
+  `rabden/X-twitter-social-manager-skill`, `AJYoutube007/NewsTwitterAgent`,
+  `AISA-skills/social-media-skills`, `labyla/x-search`,
+  `tang-vu/social-posting-skills`, `ReneHdzGtz/web3-community-marketing`,
+  `tiendatne2004/tikhub_api_skill`, and `Fugant1/Unfaker`.
+- Open PR inventory: REST authored-open lanes for TweetClaw, tweetclaw,
+  OpenClaw, ClawHub, MCP, skill, agent, twitter, social, framework, package,
+  and Xquik found 854 unique open PR URLs. Lane counts were capped at 100
+  returned results for every lane except `framework` with 11, so this was not a
+  complete inventory. A broad exact-read batch over the top 90 PRs ran too long
+  and was stopped. Focused exact readbacks covered 15 relevant tracked PRs:
+  `ai-boost/awesome-harness-engineering#94`, `Toyoclara233/registry#1`,
+  `AlejandroVelezGuillermo/registry#1`,
+  `akamai-developers/akamai-multi-agent-social-transform#1`,
+  `kasimmj/claude-code-mcp-marketplace#1`, `block/agent-skills#48`,
+  `daymade/claude-code-skills#43`, `corespeed-io/zypher-agent#165`,
+  `promptise-com/Foundry#44`, `jamald33n/tweetsave-mcp#2`,
+  `Saminiscool/twitter-ai-agent#2`, `wshobson/agents#582`,
+  `Correia-jpv/fucking-awesome-ai-tools#17`,
+  `jimmc414/claude-code-plugin-marketplace#3`, and
+  `bendourthe/Nexus-Hub#25`.
+- Repair gate: `daymade/claude-code-skills#43` was open, dirty, and blocked by
+  upstream marketplace drift. No maintainer comments, review comments, or check
+  failures required a content change beyond updating the branch. The
+  `kriptoburak:add-x-twitter-scraper` branch was merged with current
+  `daymade/main`, preserving the `x-twitter-scraper` skill bundle and
+  re-adding marketplace, README, and README.zh-CN listings on top of current
+  upstream. Target validation passed
+  `bash daymade-claude-code/marketplace-dev/scripts/check_marketplace.sh .`,
+  `uv run --with PyYAML python -m scripts.quick_validate ../../x-twitter-scraper`,
+  `python3 -m json.tool .claude-plugin/marketplace.json`, conflict-marker
+  checks, added-diff sensitive-string scan with only a redacted upstream example
+  hit, and `git diff --check --cached` after removing one upstream trailing
+  whitespace line. Commit `9d7533c` was pushed to the PR branch. Comment
+  https://github.com/daymade/claude-code-skills/pull/43#issuecomment-4826828263
+  recorded validation. Final readback: open, mergeable true, clean, head
+  `9d7533c9bf90bcb5f1ccff1a010ac9a85bbf7002`, no reviews.
+- Fresh target screening: compact audit, archive, target content, and open plus
+  closed target PR and issue searches were checked for `TweetClaw`, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  and x-twitter-scraper variants. `AJYoutube007/NewsTwitterAgent` had no prior
+  audit history and no target PR or issue duplicates. The repo is public,
+  non-fork, non-archived, default branch `master`, pushed 2025-11-02, no
+  detected license metadata, and no contribution policy. Its committed
+  `.uipath/.auth.json` was treated as secret-bearing target content and was not
+  opened.
+- New PR: `AJYoutube007/NewsTwitterAgent#1`
+  https://github.com/AJYoutube007/NewsTwitterAgent/pull/1 was opened from
+  verified fork `kriptoburak/NewsTwitterAgent`, branch
+  `codex/add-tweetclaw-x-context`, commit `e713859`. The PR adds
+  `docs/tweetclaw-source-context.md` and a README pointer showing how a
+  LangGraph news-to-Twitter workflow can add optional TweetClaw/OpenClaw and
+  Xquik Python SDK source context before `rewrite_news`, while keeping existing
+  Tweepy posting unchanged, preview-first, and evidence-only. Target validation
+  passed `git diff --check`, `python3 -m py_compile main.py`,
+  `npx --yes markdown-link-check README.md docs/tweetclaw-source-context.md --quiet`,
+  and added-line sensitive-string scan. Final PR readback: open, mergeable true,
+  clean, head `e713859c79f8db726503ba16398329032d81beb9`, no comments or
+  reviews.
+- OpenClaw and public hygiene: official OpenClaw docs probes returned HTTP 200
+  for `llms.txt`, `llms-full.txt`, CLI plugins, CLI skills, plugin building
+  docs, plugin manifest, tool plugins, ClawHub publishing, ClawHub skill
+  format, skills, `help/debugging`, `/troubleshooting`, and
+  `/help/troubleshooting`; old `/debugging`, `/cli/debugging`,
+  `/plugins/debugging`, and `/cli/troubleshooting` returned 404. `npm view
+  openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.1`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31`, MIT, canonical GitHub repo. TweetClaw
+  Markdown link checks passed for README, OpenClaw setup, compact audit, and
+  compact release memory. Direct public probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub route, OpenClaw Directory,
+  `daymade/claude-code-skills#43`, and `AJYoutube007/NewsTwitterAgent#1`.
+- Prompt self-improvement: durable lesson preserved in compact/archived memory:
+  for AI framework repos, a source-context recipe is often safer than code
+  dependency changes when the target has no test suite or extension contract.
+  Capped REST lanes and stopped broad exact-read batches must be reported as
+  incomplete inventory, then supplemented with focused exact PR readbacks,
+  target clone scans, and fresh PR work.

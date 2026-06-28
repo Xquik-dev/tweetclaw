@@ -190,21 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 16:54 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-163452` returned 12 skill/framework candidates; REST
-  partitions found 136 unique in-scope open PRs and exact-read 70 recent or
-  pinned PRs before GraphQL remained capped at 0.
-- Repair gate: `warlockoussama/twitter-cli#1` was dirty after an upstream
-  force-update. Pushed `f42cabf`, commented, and read back open, mergeable, and
-  clean.
-- New PR: `akamai-developers/akamai-multi-agent-social-transform#1` from
-  verified fork `kriptoburak/akamai-multi-agent-social-transform`, branch
-  `codex/add-tweetclaw-source-context`, commit `114e5e2`, adds an optional
-  TweetClaw source-context README workflow and sample fixture for a CrewAI
-  X/LinkedIn transformer. Readback: open, mergeable, no comments or reviews.
-- Hygiene: OpenClaw docs and npm metadata refreshed; key docs stayed 200, old
-  subroutes 404, OpenClaw `2026.6.10`, ClawHub CLI `0.23.0`, TweetClaw npm
-  `1.6.31`. Duplicate-blocked candidates and validation details are archived.
+- 2026-06-28 17:31 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-170716` returned 14 skill/framework candidates. REST
+  authored-open lanes found 854 unique URLs, but every broad lane except
+  `framework` hit the 100-result cap, so PR inventory is intentionally recorded
+  as capped. Exact-read focused 15 tracked PRs.
+- Repair gate: `daymade/claude-code-skills#43` was dirty. Pushed `9d7533c`,
+  commented with validation, and read back open, mergeable, clean, with no
+  reviews.
+- New PR: `AJYoutube007/NewsTwitterAgent#1` from verified fork
+  `kriptoburak/NewsTwitterAgent`, branch `codex/add-tweetclaw-x-context`,
+  commit `e713859`, adds a LangGraph TweetClaw/Xquik source-context guide.
+  Readback: open, mergeable, clean, no comments or reviews.
+- Hygiene: OpenClaw docs and npm metadata refreshed; `help/debugging` is the
+  current debugging route, old `/debugging` is 404, OpenClaw `2026.6.10`,
+  ClawHub CLI `0.23.0`, TweetClaw npm `1.6.31`. Link checks and duplicate
+  details are archived.
 
 ## Reporting Checklist
 
