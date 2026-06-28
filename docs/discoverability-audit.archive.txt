@@ -40147,3 +40147,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   a target already creates social posts, wire TweetClaw as reviewed X/Twitter
   context for research and copy grounding rather than as a publishing or
   scheduling actor.
+
+## 2026-06-28 20:44 UTC heartbeat
+
+- Runtime limitation: the app runtime did not expose GPT-5.5 or explicit
+  reasoning-effort selection; continued with the available model and recorded
+  the limitation.
+- Initial state: TweetClaw started on `master...origin/master` with only the
+  pre-existing untracked file `0`, which was left untouched. Xquik had unrelated
+  user changes in `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`,
+  and `x-api-alternatives-2026-article.md`; they were left untouched. GitHub
+  issue lists for `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+- Crawler-first coverage: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with session `tweetclaw-20260628-204451`, research proxy, strict JSON output
+  `/tmp/tweetclaw-heartbeat-20260628-204451/crawl.json`, bounded timeouts, 100
+  limit, 1 search page, 8 per-query limit, concurrency 8, and queries for
+  authored open PRs plus `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw,
+  MCP, Codex, Claude, agent, social, Twitter/X, awesome-skill, LangChain,
+  LangGraph, CrewAI, Google ADK, PydanticAI, AutoGen, Semantic Kernel,
+  LlamaIndex, Haystack, and Agno lanes. Output contained 42 opportunities and
+  parsed successfully.
+- Complete PR inventory: compact audit plus archive URLs, crawler output,
+  focused authored open-PR GitHub Search partitions updated from 2026-06-28,
+  and known PR URLs produced 69 unique open in-scope PR URLs. Exact `gh pr view`
+  readback completed 69/69: 69 open, 3 conflicts, 9 blocked or dirty states,
+  20 PRs with comments, 5 with reviews, and 3 with failing checks. Audit URL
+  extraction found 1,273 historical PR URLs, so this run records exact coverage
+  for the current updated-window working set, not all historical in-scope PRs.
+- Repair action: selected `jamald33n/tweetsave-mcp#2` because readback showed a
+  one-file README conflict on a correctly parented `kriptoburak/tweetsave-mcp-jamald33n`
+  fork, non-fork target, MIT license, no reviews, no checks, and no DCO/CLA
+  blocker. A shallow upstream fetch first caused a false unrelated-history
+  merge refusal; a full upstream fetch fixed it. The real README conflict was
+  resolved by preserving valid npm/npx setup, GitHub support links, and the
+  existing TweetClaw/OpenClaw handoff while excluding malformed raw-ZIP links.
+  Pushed merge commit `389111aec9ad8774dc96b0ffab9f3078d74a29b1`.
+- Repair validation: conflict-marker scan, `git diff --check`, README
+  markdown-link-check, changed-diff public-hygiene scan, `npm install
+  --ignore-scripts --no-audit --no-fund`, `npm run build`, both bundled ZIP
+  integrity checks, `npm view tweetsave-mcp`, and `npm view @xquik/tweetclaw`
+  passed. The validation-only `package-lock.json` change was discarded. Final
+  readback: `https://github.com/jamald33n/tweetsave-mcp/pull/2` open,
+  mergeable, no reviews, no checks, 1 changed file, 11 comments. Validation
+  comment: `https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4827357886`.
+- Fresh screening: duplicate-blocked `mvanhorn/last30days-skill` due existing
+  Xquik/TweetClaw-adjacent PR and issue history. `Lonekaiser04/autostream-agent`
+  was a fresh LangGraph/RAG social-lead workflow target: public non-fork,
+  non-archived, default branch `main`, no license metadata beyond README MIT
+  text, no target PR or issue history for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, or ClawHub variants, and no existing target
+  content for those terms. Missing license metadata was not treated as a direct
+  PR blocker.
+- External PR: opened `https://github.com/Lonekaiser04/autostream-agent/pull/1`
+  from fork `kriptoburak/autostream-agent`, branch
+  `codex/add-tweetclaw-source-evidence`, commit
+  `5d7405a5e351270476914d50b1dc6027ed289bcf`. The PR adds
+  `docs/x-twitter-source-evidence.md` and a README pointer showing how the
+  LangGraph lead workflow can load reviewed X/Twitter source summaries while
+  keeping persisted lead fields sourced only from the active conversation. It
+  frames TweetClaw/OpenClaw as an optional approval-gated source path, not as a
+  replacement for the target workflow.
+- Target validation: `git diff --check`, `python3 -m py_compile agent.py rag.py
+  tools.py`, and `npx --yes markdown-link-check readme.md
+  docs/x-twitter-source-evidence.md --quiet` passed. `python -m py_compile`
+  was unavailable because the shell has no `python` binary. Changed-diff public
+  hygiene was clean; the only credential-shaped match was a repo-owned sample
+  credential placeholder outside the diff. Final PR readback:
+  open, mergeable, no reviews, no checks, 2 changed files.
+- Official OpenClaw and package checks: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.1`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` with MIT license and canonical GitHub
+  repository. Route checks returned 200 for `llms.txt`, `/cli/plugins`,
+  `/plugins/manifest`, `/clawhub/publishing`, ClawHub TweetClaw, TweetClaw
+  GitHub, and the npm registry API; 404 for `llms-full.txt` and
+  `/plugins/permissions`; the browser-facing npmjs package page returned 403 to
+  curl but `npm view` and registry metadata succeeded. `npm audit
+  --audit-level=moderate --json` reported 0 vulnerabilities.
+- TweetClaw validation and hygiene: markdown-link-check passed for `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Final gates
+  run before commit: `npm run check-memory-md-size`, `git diff --check`,
+  changed-diff public-hygiene scan, and `npm run check:all`.
+- Prompt and memory: automation TOML measured 12,314 bytes and prompt measured
+  11,980 bytes; status stayed `ACTIVE`, cadence stayed
+  `FREQ=MINUTELY;INTERVAL=1`, and no prompt edit was needed. Compact Markdown
+  memory stayed under the 15 KiB cap after replacing the latest-run block and
+  moving details here.
+- Prompt self-improvement: when the top crawler hit has existing Xquik or
+  TweetClaw history, treat it as a duplicate blocker even when a new
+  TweetClaw-specific angle exists. For social lead-generation frameworks, prefer
+  reviewed source-evidence docs that keep social post summaries separate from
+  stored lead fields and route TweetClaw through an explicit approval step.
