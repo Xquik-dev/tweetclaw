@@ -39879,3 +39879,90 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   autonomous posting. In target PR bodies, separate introduced validation from
   pre-existing optional-dependency blockers so maintainers can review the new
   files without conflating local environment gaps with contribution regressions.
+
+2026-06-28 19:30 UTC heartbeat
+- Runtime: GPT-5.5 / extra-high effort selector unavailable in this Codex
+  runtime; continued with available model and recorded limitation.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260628-193046/crawl.json --research-proxy`
+  using bounded request and proxy warmup timeouts, concurrency 8, session
+  `tweetclaw-20260628-193046`, and focused authored-PR, `SKILL.md`,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, Twitter/X, social, awesome,
+  AutoGen, Semantic Kernel, LlamaIndex, Agno, Google ADK, LangGraph, and
+  PydanticAI queries. The crawler returned 21 opportunities. Duplicate or prior
+  history blocked `0xNyk/xint`, `0xNyk/xint-rs`, `mvanhorn/last30days-skill`,
+  `blacktwist/social-media-skills`, `dorukardahan/twitterapi-io-skill`,
+  `ellieli0630/langgraph-mcp-agent-twitter`, and other archived lanes.
+  `Xquik-dev/hermes-tweet` was own-org. `liyupi/yupi-hot-monitor` and
+  `nashsu/autocli-skill` remained no-license blockers from archive history.
+- Open PR inventory: compact and archive history were searched first. Broad
+  authenticated authored-PR partitions used TweetClaw, OpenClaw, ClawHub,
+  Xquik, x-twitter-scraper, Twitter, X/Twitter, social media, agent tools,
+  skill, MCP, catalog, framework, validator, and package tooling terms. Search
+  returned 2,230 unique open PR URLs. Sequential `gh pr view` exact-read first
+  failed because this CLI exposes `headRepository`, not `repository`; the
+  corrected readback loop then completed 1,909 exact PR reads and hit GitHub
+  GraphQL rate exhaustion on 321 remaining URLs. Core REST quota remained
+  healthy, so broad authenticated GraphQL reads stopped for the run per policy.
+  Stored successful readbacks in
+  `/tmp/tweetclaw-heartbeat-20260628-193046/pr-readbacks.jsonl` and rate-limit
+  failures in `pr-read-errors.txt`.
+- Repair triage: top GraphQL blocker `Saminiscool/twitter-ai-agent#2` was
+  current-head clean by REST readback, so no repair was needed. `Hashi-Ai-Dev/openclaw-clawdoc#6`
+  remained open, mergeable, and blocked by stale changes-requested review state
+  after prior head `fc10dab`. `kagenti/agent-examples#644` remained open,
+  mergeable, and review-gated. `jdidjhdh/hiveflow#22` remained open and
+  mergeable, unstable only because no checks were reported. No current
+  maintainer comment, CI failure, DCO/CLA issue, generated drift, or valid bot
+  finding was safely repairable before fresh outreach.
+- Fresh AI-framework target: selected `frytegg/ask-starknet-bot` because the
+  crawler surfaced it as a LangGraph plus MCP monorepo with Telegram, X/Twitter,
+  and Discord bots; REST metadata showed public, non-fork, non-archived,
+  default branch `main`, recent enough push, PR-capable repo, and root
+  `package.json` license `MIT` even though GitHub license metadata and a
+  `LICENSE` file were absent. Exact REST target PR and issue duplicate checks
+  found no prior TweetClaw, Xquik, x-twitter-scraper, or OpenClaw history before
+  the PR. Target content scan found no existing TweetClaw/OpenClaw source
+  context.
+- External PR opened: `https://github.com/frytegg/ask-starknet-bot/pull/1` from
+  `kriptoburak:codex/add-approved-x-source-context`, commit
+  `f069b6c904ba45f87256fdf8c3d5ac637fa29e6b`. The PR adds an `Optional Source
+  Context` section to `packages/twitter-bot/README.md`, explaining that public
+  X/Twitter source collection and review stay outside the Twitter bot, the
+  approved source packet can be passed to the configured MCP server, and the bot
+  should only publish the normal reply to the original mention. TweetClaw/OpenClaw
+  is framed as a reviewed source-packet producer, not an autonomous publisher or
+  plugin installer. REST readback: open, mergeable, unstable only because no
+  checks were reported, 1 changed file, 0 comments, 0 review comments.
+- Target validation for `ask-starknet-bot`: `git diff --check`,
+  `npx --yes markdown-link-check README.md packages/twitter-bot/README.md packages/shared/README.md --quiet`,
+  and added-line public-hygiene scan for access material, provider details, and
+  internal cost wording passed. No dependency install was required for the
+  docs-only change.
+- Official OpenClaw and package checks: current docs returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/plugins/install-overrides`,
+  and `/help/debugging`; 404 for `/cli/plugins/install`, `/cli/plugins/update`,
+  `/cli/plugins/inspect`, `/plugins/permission-requests`, and `/sdk/runtime`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.1`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31`, MIT, canonical GitHub repository.
+  `clawhub.ai/plugins/@xquik/tweetclaw` redirected to live
+  `https://clawhub.ai/xquik/plugins/tweetclaw` with HTTP 200.
+- TweetClaw validation and public hygiene: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md --quiet`
+  passed after the audit edit. Diff hygiene found no restricted credential,
+  provider, cost, or stale unsupported claim in changed public text.
+- Prompt and memory checks: automation TOML measured 12,314 bytes, prompt
+  measured 11,980 bytes, status `ACTIVE`, and no prompt edit was needed.
+  Compact Markdown memory stayed under 15 KiB after compaction and
+  `npm run check-memory-md-size` passed. TweetClaw `npm run check:all` passed
+  before commit. Pre-existing untracked file `0` was left untouched.
+- Prompt self-improvement: broad `framework` and `MCP` authored-PR partitions
+  can explode the queue and exhaust GraphQL. Use updated windows, lane-specific
+  terms, REST pull reads, and crawler output before generic broad partitions,
+  and record partial exact-read counts plus rate blockers without claiming full
+  completion.
