@@ -40526,3 +40526,124 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   targets with existing source abstractions, prefer a local reviewed export
   adapter and tests over a catalog mention; keep TweetClaw as source evidence
   and leave live X writes behind explicit operator approval.
+
+## 2026-06-28 22:39 UTC Heartbeat
+
+- Runtime limitation: this environment did not expose GPT-5.5 or
+  reasoning-effort selection controls, so the run continued with the available
+  model and recorded the limitation.
+- Initial state: TweetClaw was on `master...origin/master` with only the
+  pre-existing untracked path `0`. Xquik had unrelated user changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, left untouched. `gh issue list` for
+  Xquik failed through GraphQL because the user GraphQL quota was already
+  exhausted. Exact REST issue lists for `Xquik-dev/tweetclaw` and
+  `Xquik-dev/xquik` returned empty arrays.
+- Crawler coverage: ran Xquik `bun run github:crawl --json --output
+  /tmp/tweetclaw-heartbeat-20260628-223946/crawl.json --research-proxy` with
+  bounded timeouts, concurrency 8, session `tweetclaw-20260628-223946`, and
+  focused authored-PR, SKILL.md, `.agents/skills`, skills dirs, OpenClaw, MCP,
+  Codex, Claude, agent/social/Twitter-X skill, awesome-list, registry,
+  LangGraph, CrewAI, AutoGen, Semantic Kernel, Haystack, Mastra, Vercel AI SDK,
+  OpenAI Agents SDK, and Google ADK queries. Strict JSON parsed successfully and
+  returned 50 opportunities. No GitHub tokens or crawler credentials were
+  printed.
+- PR inventory: compact audit plus archive URL extraction produced 1275 PR URL
+  lines, deduped to 1271 unique PRs. Exact REST readbacks covered 1233 PRs and
+  recorded 38 inaccessible, deleted, or otherwise errored exact reads. Crawler
+  repo REST list coverage read all 50 repositories and found 30 currently open
+  authored PRs from `kriptoburak` heads. Relevant exact-read summary from the
+  archive set: 1224 relevant authored reads, 1001 open, 223 closed; open
+  mergeability buckets were 793 clean, 119 unstable, 48 blocked, 35 dirty, 5
+  behind, and 1 unknown. GitHub GraphQL quota was 0 remaining, so broad
+  authenticated search and GraphQL PR tooling stopped for this run; exact REST,
+  clone, local `rg`, and archive lanes continued.
+- Repair triage: exact REST comments, reviews, and check runs were read for
+  recent dirty or blocked PRs including `Saminiscool/twitter-ai-agent#2`,
+  `denial-web/clawguard#1`, `Hashi-Ai-Dev/openclaw-clawdoc#6`,
+  `reall8164/wechat-openclaw-plugin#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `daymade/claude-code-skills#43`, `vaibhav4046/mcp-marketplace#1`,
+  `Burnsedia/PydanticAI-Twitter-bot#18`, and
+  `blacktwist/social-media-skills#5`. Current clean TweetClaw PRs stayed clean.
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` still has the requested vendor-neutral fix
+  but stale changes-requested review. Several old dirty PRs were recurring
+  target README or generated-file conflicts, while Vercel authorization, CLA,
+  DCO, and non-TweetClaw Hermes/Xquik work were target-side, user-boundary, or
+  out of this heartbeat scope.
+- Repair action: cloned the actual PR head for
+  `Saminiscool/twitter-ai-agent#2`, merged upstream `main`, resolved the
+  README-only conflict by keeping upstream download/contact wording once plus
+  the optional Xquik backend section, and pushed commit `6db42e8` to
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik`. Validation passed:
+  conflict-marker scan, `git diff --cached --check`, Prettier on README and
+  touched TypeScript/test files, focused Biome lint, `npx tsc --noEmit`,
+  `npx vitest run tests/twitter-api.test.ts`, and
+  `npx --yes markdown-link-check README.md --quiet`. `npm ci` reported
+  pre-existing target dependency audit findings. `gh pr comment` failed through
+  GraphQL quota, so the validation comment was posted through REST issue
+  comments. Final REST readback: head `6db42e8`, open, mergeable true,
+  mergeable_state `clean`.
+- Fresh candidate screening: crawler and archive duplicate gates screened
+  CrewAI, LangGraph, ADK, social-agent, OpenClaw skill, and x-skill repositories.
+  Prior or current PR history blocked many crawler hits. Fresh non-PR candidates
+  included `ALT-F1-OpenClaw/openclaw-skill-x-twitter`,
+  `Bravine-Kulei/social-agent`, `Hamid-AM/BlogTweet-AI`,
+  `bhargav-11/crewai_twitter_agent`, `cizz1/Twitter_Crewai`,
+  `nitindavegit/CREWAI-X-Agent`, `peige-guo/twitter_trend_agent`,
+  `win4r/x-post-skill`, and `yousifbigdata/twitter_agent_crewai`. Selected
+  `nitindavegit/CREWAI-X-Agent` because it is a CrewAI X/Twitter thread
+  generator with direct source-context fit, no target PRs or issues, no existing
+  TweetClaw, Xquik, x-twitter-scraper, ClawHub, or OpenClaw content, not
+  archived, not disabled, and no fork. GitHub reported no license metadata, and
+  this was treated as non-blocking for a direct PR as required.
+- External PR: created verified fork `kriptoburak/CREWAI-X-Agent` of
+  `nitindavegit/CREWAI-X-Agent`, branch
+  `codex/add-tweetclaw-source-context`, commit
+  `94bc1cc6d3abc22200a6149939c8deb9d69da683`, and opened
+  https://github.com/nitindavegit/CREWAI-X-Agent/pull/1 by REST. The PR adds
+  optional `TWEETCLAW_SOURCE_CONTEXT` loading, injects the reviewed X/Twitter
+  source packet into CrewAI discovery and thread-writing prompts as evidence
+  only, documents setup, and fixes the existing README license badge link to
+  point to the README license section because no `LICENSE` file exists. Final
+  readback: open, mergeable true, mergeable_state `unstable` because no checks
+  are configured, 2 changed files, 57 additions, 6 deletions, no comments, no
+  reviews, and no check runs.
+- Target validation: for `CREWAI-X-Agent`, `git diff --check`,
+  `python3 -m py_compile bytebrief_crew.py google_docs_tool.py main.py`, and
+  `npx --yes markdown-link-check README.md --quiet` passed. Changed-file public
+  hygiene scans found only pre-existing Google OAuth token file-name references
+  in `google_docs_tool.py`, not new secret material.
+- Official OpenClaw and package checks: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`; published
+  `@xquik/tweetclaw` remains `1.6.31` while source remains `1.6.32`. Current
+  route probes returned 200 for `openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  `clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `clawhub.ai/xquik/plugins/tweetclaw`. Expected 404s remained
+  `openclaw.ai/llms-full.txt`, `/cli/plugins/install`,
+  `/cli/plugins/update`, `/cli/plugins/inspect`, `/plugins/permission-requests`,
+  and `/sdk/runtime`. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities.
+- Link and public hygiene: markdown-link-check passed for TweetClaw `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, `docs/clawpack-release.md`, and the edited
+  external README. TweetClaw and external diffs and public comments avoided
+  secrets, private implementation details, restricted provider/source names,
+  internal cost mechanics, unsupported claims, and stale metadata. No NHS badge
+  was added because the handled AI-framework README badge row already identifies
+  the app itself and the optional TweetClaw source context did not need a badge.
+- Prompt and memory: prompt-size measurement was scheduled after compact memory
+  edits. Compact Markdown memory was updated under the cap and full details
+  were archived here. No prompt edit was needed.
+- Prompt self-improvement: for CrewAI and similar drafting frameworks, prefer
+  a local `TWEETCLAW_SOURCE_CONTEXT` or source-packet adapter that feeds
+  reviewed X/Twitter evidence into agent prompts while requiring independent
+  primary-source verification. Do not add live TweetClaw publishing or trend
+  claims unless the target already has explicit operator approval and validation
+  paths for those behaviors.
