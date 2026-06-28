@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-28 18:27 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-28 18:54 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports on `docs.openclaw.ai` returned HTTP 200. Current plugin docs are under
   `/cli/*`, `/clawhub/*`, and `/plugins/*`; older `/openclaw/*` deep links 404.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-28 18:27 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 18:55 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 18:11 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-181115` returned 19 skill, social, and AI-framework
-  candidates. Exact readback covered 11 known open PR URLs; broad authenticated
-  PR search hit a GitHub secondary limit, so no all-GitHub exhaustion claim.
-- Repair gate: `jimmc414/claude-code-plugin-marketplace#3` had a stale inline
-  install-name review plus dirty merge state. Merged upstream, regenerated the
-  catalog, pushed `70c148a`, and read back open, mergeable, clean.
-- New PR: `abhinavjagan/multi-agent-content-generation-workflow#1` from
-  verified fork `kriptoburak/multi-agent-content-generation-workflow`, branch
-  `codex/add-tweetclaw-source-workflow`, commit `917b309`. It documents
-  TweetClaw/OpenClaw as reviewed X/Twitter source intake for a LangGraph draft
-  agent without changing x-agent publishing boundaries. Readback: open,
-  mergeable, clean.
-- Maintenance: OpenClaw docs and npm metadata refreshed; source metadata,
-  lockfile, public docs, and the fitness gate now target OpenClaw `2026.6.10`.
-  Link checks, validation, duplicate details, and screened candidates are
-  archived.
+- 2026-06-28 18:32 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-183221` returned 22 skill, social, and AI-framework
+  candidates. Broad authored PR partitions found 890 open URLs; exact readback
+  covered 890/890 with 0 errors and no rate blocker.
+- Repair gate: 240 blocker signals remained after overinclusive search
+  filtering. Repaired `Hashi-Ai-Dev/openclaw-clawdoc#6` by merging upstream
+  `master`, keeping the vendor-neutral two-file docs diff, pushing `fc10dab`,
+  and posting validation. Readback: open, mergeable, blocked only by the old
+  changes-requested review.
+- New AI-framework PR lane: `kagenti/agent-examples#644` adds an Xquik FastMCP
+  example for the Kagenti platform. Exact target PR/issue duplicate checks found
+  no prior Xquik/TweetClaw history. Readback: open, mergeable, DCO success,
+  review required.
+- Maintenance: OpenClaw docs and npm metadata are unchanged at latest
+  `2026.6.10`; `@xquik/tweetclaw` remains published at `1.6.31`; npm audit
+  remains clean. TweetClaw link checks, `check:all`, memory cap, prompt-size,
+  and detailed candidate notes are archived.
 
 ## Reporting Checklist
 

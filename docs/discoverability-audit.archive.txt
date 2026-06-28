@@ -39705,3 +39705,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   docs recipe over runtime code changes. Link TweetClaw only as optional
   reviewed X/Twitter discovery and keep final publishing inside the target's
   existing user-controlled flow.
+
+## 2026-06-28 18:32 UTC heartbeat
+
+- Model/effort limitation: runtime did not expose GPT-5.5 or extra-high
+  reasoning selection. Continued with the available model.
+- Crawler-first discovery: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with session `tweetclaw-20260628-183221`, JSON output
+  `/tmp/tweetclaw-heartbeat-20260628-183221/crawl.json`, research proxy,
+  bounded timeouts, 70 limit, 1 search page, 7 per query, and concurrency 8.
+  Coverage included authored open PRs plus SKILL.md, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, social, Twitter/X, LangGraph, CrewAI,
+  PydanticAI, OpenAI Agents, AutoGen, Mastra, and awesome AI agent query lanes.
+  The crawler returned 22 opportunities. Top candidates were
+  `creatorcrawl/creatorcrawl-skill`, `blacktwist/social-media-skills`,
+  `BuddhaYi/macos-cli`, `elbis330/social-media-scraper-skill`,
+  `liangdabiao/tikhub_api_skill`, and
+  `ellieli0630/langgraph-mcp-agent-twitter`; many were duplicate, prior-screened,
+  no-license, direct-provider, or already-open PR lanes.
+- Open PR inventory: compact and archive history were searched first. Broad
+  authenticated authored-PR partitions used the terms TweetClaw, OpenClaw,
+  ClawHub, Xquik, x-twitter-scraper, Twitter, X/Twitter, social media, agent
+  tools, skill, MCP, catalog, framework, validator, and package tooling. Search
+  returned 890 unique open PR URLs. Exact `gh pr view` readbacks covered 890/890
+  with 0 errors. Signals found: 142 with comments, 84 with reviews, 32
+  conflicts, 113 blocked/dirty/unknown merge states, 27 failing or action-needed
+  checks, and 240 total blocker-like records after overinclusive filtering. No
+  GitHub cap or rate blocker remained for this readback set. Stored readbacks in
+  `/tmp/tweetclaw-heartbeat-20260628-183221/pr-readbacks.jsonl`.
+- Repair triage: inspected all 3 changes-requested PRs first. `weiflycc-cmd/awesome-copilot#19`
+  still targets `main`, but the maintainer-requested `staged` branch is not
+  exposed, and the prior comment already records that platform blocker.
+  `Arindam200/awesome-ai-apps#226` already replaced the original docs mention
+  with a real Nebius project and now waits on a maintainer-requested demo video,
+  which is outside this quiet heartbeat. `Hashi-Ai-Dev/openclaw-clawdoc#6` had
+  already removed TweetClaw-specific install guidance but was behind current
+  `master`, so it was repairable.
+- PR repair completed: cloned `kriptoburak/openclaw-clawdoc`, fetched upstream
+  `Hashi-Ai-Dev/openclaw-clawdoc`, merged upstream `master` into branch
+  `codex/tweetclaw-plugin-tool-visibility`, preserved only the intended
+  vendor-neutral two-file diff in `TROUBLESHOOTING.md` and
+  `skills/openclaw-plugins/SKILL.md`, and pushed commit `fc10dab`. Target
+  validation passed `python3 scripts/validate_repo.py`,
+  `python3 scripts/safety_scanner.py`, `git diff --check upstream/master..HEAD`,
+  isolated `npx --yes markdown-link-check TROUBLESHOOTING.md
+  skills/openclaw-plugins/SKILL.md --quiet`, and the vendor scan
+  `rg -n "TweetClaw|tweetclaw|@xquik/tweetclaw|Xquik|xquik" ...` with no
+  matches. Posted validation comment
+  https://github.com/Hashi-Ai-Dev/openclaw-clawdoc/pull/6#issuecomment-4827066339.
+  Final readback: open, mergeable, no checks, review blocked only by the older
+  changes-requested review.
+- Fresh AI-framework placement: exact-read
+  `https://github.com/kagenti/agent-examples/pull/644`, opened in this heartbeat
+  window from `kriptoburak:codex/add-xquik-mcp-tool`, commit
+  `0b431d0233e0def31fd68b4d370a708ed0ef8f3c`. Target metadata:
+  `kagenti/agent-examples` is public, non-archived, non-fork, issue-enabled,
+  default branch `main`, pushed 2026-06-26, description "Sample Agents and
+  Tools for Kagenti platform"; GitHub license metadata returned null. Exact
+  target all-state PR/issue duplicate checks found only this Xquik PR and no
+  prior TweetClaw/Xquik issue history. The PR adds a FastMCP Xquik example under
+  `mcp/xquik_tool` with README, Dockerfile, pyproject, startup smoke script,
+  uv lockfile, and read-only helpers for public X post search, public X user
+  search, and public X trends. Readback: open, mergeable, DCO success, review
+  required, no comments or reviews.
+- Official OpenClaw and package checks: current docs returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/plugins/install-overrides`,
+  and `/help/debugging`; 404 for `/cli/plugins/install`, `/cli/plugins/update`,
+  `/cli/plugins/inspect`, `/plugins/permission-requests`, and `/sdk/runtime`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.1`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31`, MIT, canonical GitHub repository.
+- TweetClaw validation and public hygiene: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md
+  docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md
+  --quiet` passed. The ClawDoc handled-content link check passed when run from
+  `/tmp`; the first attempt from the Xquik workspace failed before execution
+  because npm resolved a local override conflict. Final `npm run check:all`
+  passed typecheck, lint, cpd, knip, suppression scan, dash scan, memory-size
+  check at 15193/15360 bytes, skill frontmatter, version check, build,
+  OpenClaw platform fitness, package artifact check, and Vitest coverage with
+  11 files, 168 tests, and 100 percent coverage.
+- Prompt and memory checks before audit edit: automation TOML 12314 bytes,
+  prompt 11980 bytes, status ACTIVE. Compact Markdown size was 15201 bytes
+  before this edit; rerun `npm run check-memory-md-size` after compaction and
+  before commit.
+- Prompt self-improvement: in the AI-framework lane, prioritize already-active
+  example repositories that accept MCP/FastMCP tools. When a fresh PR already
+  exists for the heartbeat window, exact-read it and record target duplicate
+  gates rather than opening a duplicate. For repair triage, inspect
+  changes-requested PRs before generic conflict queues, and distinguish stale
+  review state from still-unaddressed maintainer asks.
