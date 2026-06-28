@@ -40332,3 +40332,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   ADK social-media agents, prefer a skill-native source-context workflow that
   keeps TweetClaw as reviewed evidence and explicitly avoids unattended
   publishing.
+
+## 2026-06-28 21:38 UTC Heartbeat
+
+- Runtime limitation: this environment did not expose GPT-5.5 or reasoning-effort
+  selection controls, so the run continued with the available model and recorded
+  the limitation.
+- Initial state: TweetClaw was on `master...origin/master` with only pre-existing
+  untracked path `0`. Xquik had unrelated user changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, left untouched. GitHub issue lists for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+- Crawler coverage: ran Xquik `bun run github:crawl --json --output
+  /tmp/tweetclaw-heartbeat-20260628-213817/crawl.json --research-proxy` with
+  focused authored-PR, SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude,
+  social, Twitter/X, Vercel AI SDK, OpenAI Agents SDK, LangGraph, CrewAI, Agno,
+  AutoGen, Semantic Kernel, Haystack, MCP, and awesome-list queries. Strict JSON
+  parsed successfully and returned 45 opportunities.
+- PR inventory: audit and archive URLs plus current authored PR partitions
+  produced 2328 unique PR URLs. GraphQL exact readbacks covered 1458 URLs and
+  870 URLs failed from inaccessible, deleted, private, or unresolved repos, so
+  coverage was not exhaustive. Exact-read status summary: 1279 open, 95
+  conflicts, 115 blocked/dirty/unknown, 409 with comments, 193 with reviews, 249
+  with checks, 65 review-required, and 9 changes-requested.
+- Repair triage: `KunanonJ/ai-skills-hub#18` was inspected and left blocked
+  because upstream intentionally pruned default branch content to 100 skills and
+  moved the larger corpus to archive branches. No push or comment was made.
+- Repair completed: `denial-web/clawguard#1` had a one-file conflict after
+  upstream moved validation docs under `docs/internal`. Merged upstream `main`,
+  moved the TweetClaw "Third-Party Package Compatibility Test" section into
+  `docs/internal/REAL_WORLD_VALIDATION.md`, preserved configurable `PACKAGE`,
+  visible `npm pack`, public-archive gap wording, and non-endorsement disclaimer,
+  pushed `3dd3a2e` and `bdffa58`, and commented at
+  https://github.com/denial-web/clawguard/pull/1#issuecomment-4827520146.
+  Validation: `git diff --check`, `npm ci`, `npm test` (469 passed), and
+  `npm run lint`. Final readback: open, no reviews or exposed checks,
+  mergeState `UNSTABLE`.
+- Fresh target: `blacktwist/social-media-skills` was discovered from crawler
+  skill-repo coverage. Target is non-fork, MIT, active enough for skill docs,
+  and duplicate checks against compact audit/archive, target content, open/closed
+  PRs, and open/closed issues found no TweetClaw, `@xquik/tweetclaw`, Xquik, or
+  x-twitter-scraper history. Existing `kriptoburak/social-media-skills` was the
+  wrong fork parent, so `kriptoburak/blacktwist-social-media-skills` was verified
+  as the correct fork of `blacktwist/social-media-skills`.
+- New PR: https://github.com/blacktwist/social-media-skills/pull/5 adds optional
+  TweetClaw/OpenClaw tool-registry docs to README and `tools/REGISTRY.md`. It
+  keeps BlackTwist as the primary publishing, scheduling, and analytics
+  integration, frames TweetClaw as optional reviewed Twitter/X source checks,
+  reply context, giveaway evidence, and approval-gated draft handoff, and states
+  write-like or account-scoped TweetClaw calls require OpenClaw approval.
+  Validation: `./validate-skills.sh`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md tools/REGISTRY.md --quiet`. Final
+  readback: open, mergeable, 2 files, no reviews or exposed checks, commit
+  `3fb3154`.
+- Official OpenClaw and package checks: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`; `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.23.0`; published `@xquik/tweetclaw` remains
+  `1.6.31` with older OpenClaw metadata while source remains `1.6.32`.
+  Official route probes returned HTTP 200 for llms exports, CLI plugin docs,
+  manifest docs, CLI skills, ClawHub publishing, ClawHub skill format, gateway
+  config tools, ClawHub troubleshooting, ClawHub TweetClaw, TweetClaw GitHub, and
+  npm registry metadata; expected 404s remained `openclaw.ai/llms-full.txt` and
+  `/plugins/permissions`. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities.
+- Link and public hygiene: markdown-link-check passed for TweetClaw `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`, plus the
+  edited blacktwist docs. Public diffs/comments avoided secrets, private
+  implementation details, restricted source names, internal cost mechanics,
+  unsupported claims, and stale metadata.
+- Prompt and memory: automation TOML measured 12,314 bytes and prompt measured
+  11,980 bytes. No prompt edit was needed. Compact Markdown memory was
+  refreshed and historical detail moved here.
+- Prompt self-improvement: when a target already has a primary publishing or
+  scheduling tool, add TweetClaw only as an optional OpenClaw reviewed-source or
+  approval-gated handoff path. Keep the target's primary tool primary and avoid
+  implying TweetClaw owns analytics, scheduling, or unattended publishing.

@@ -193,21 +193,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 21:05 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-210547` returned 45 skill, MCP, and AI-framework
-  candidates. PR inventory produced 183 URLs; broad authenticated search hit
-  malformed-query errors and a secondary rate limit, so exact readbacks covered
-  173 URLs, not an exhaustive all-history set.
-- Repair gate: `AbdNour627/awesome-openclaw-configs#1` was conflict-repaired
-  on branch `codex/add-tweetclaw-x-config`, pushed merge commit `aa430df`, and
-  is now open, mergeable, with no reviews or checks.
-- New Google ADK PR:
-  `janhvisoni804/Viral-Content-Agent#1` adds optional reviewed X/Twitter source
-  context guidance for a Google ADK social-media agent, with TweetClaw as an
-  optional source-review path. Final readback: open, mergeable, 2 files.
-- Maintenance: OpenClaw docs/package checks, npm audit, TweetClaw and target
-  link checks, memory cap, prompt-size, `check:all`, target validation, and
-  candidate details are archived.
+- 2026-06-28 21:38 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-213817` returned 45 skill/MCP/AI-framework candidates.
+  Inventory merged crawler, audit/archive URLs, and authored PR partitions into
+  2328 URLs; exact GraphQL readbacks covered 1458, with 870 inaccessible,
+  deleted, or private-repo errors, so all-history coverage is not exhaustive.
+- Repair gate: `denial-web/clawguard#1` was conflict-repaired after upstream
+  moved validation docs under `docs/internal`; pushed `3dd3a2e` and `bdffa58`,
+  commented with validation, and remains open with no reviews/checks.
+  `KunanonJ/ai-skills-hub#18` is blocked by target 100-skill/archive policy.
+- New skill-repo PR: `blacktwist/social-media-skills#5` adds optional
+  TweetClaw/OpenClaw tool-registry docs for reviewed Twitter/X source checks,
+  reply context, giveaway evidence, and approval-gated draft handoff. Final
+  readback: open, mergeable, 2 files, no reviews/checks.
+- Maintenance: OpenClaw, npm, ClawHub, link, audit, memory, prompt-size, and
+  target validation details are archived.
 
 ## Reporting Checklist
 
