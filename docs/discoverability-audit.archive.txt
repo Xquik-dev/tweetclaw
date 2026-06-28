@@ -2,6 +2,82 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-28 23:33 UTC Heartbeat
+
+- Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
+  reasoning selector. The run recorded the limitation and continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260628-233317` used the research proxy with
+  bounded request and warmup timeouts, limit 180, one search page, 8 per query,
+  concurrency 8, and focused open-PR, skill-repo, OpenClaw, MCP, PydanticAI,
+  LangChain, LlamaIndex, DSPy, Haystack, AutoGen, Semantic Kernel, Twitter/X
+  agent, and awesome skill queries. Output parsed as valid JSON with 46
+  opportunities across 46 repos and covered `SKILL.md`, `.agents/skills`,
+  skills directories, OpenClaw/MCP/social/Twitter-X skill repos, awesome lists,
+  registries, forks, and generated catalogs.
+- PR inventory: compact and archive audit yielded 1,277 known PR URLs. Focused
+  authenticated search found 543 unique PR URLs but high-volume buckets such as
+  TweetClaw, OpenClaw, ClawHub, MCP/Twitter, x-twitter-scraper, and skill
+  Twitter capped at the first 100 results. A broad authenticated exact-read
+  attempt hit GitHub HTTP 403 secondary/rate-limit responses for all 1,499
+  merged known/search URLs, so broad authenticated search stopped for this run.
+  Continued with unauthenticated exact repo REST lists for the 46 crawler repos:
+  31 authored open PRs, 0 repo errors. No claim is made that every in-scope PR
+  was fully exact-read this run because broad authenticated readback was
+  platform-blocked.
+- Repair gate: no new actionable maintainer comment, CI failure, DCO/CLA
+  blocker, generated drift, or conflict was found from the crawler-backed repo
+  list and available unauthenticated readbacks. Full thread-aware review
+  inspection was deferred because authenticated API reads were rate-limited.
+- Fresh target screening: `mayerg0/icebreaker-langchain` was selected from the
+  crawler LangChain lane. It is public, Apache-2.0 licensed, non-fork,
+  non-archived, not disabled, default branch `main`, no existing open or closed
+  PRs/issues by unauthenticated REST readback, and no target content for
+  TweetClaw, Xquik, x-twitter-scraper, ClawHub, or OpenClaw. Archive duplicate
+  search had no previous target history.
+- External PR: created verified fork `kriptoburak/icebreaker-langchain`, branch
+  `codex/add-tweetclaw-export-source`, commit
+  `dfcd51408d6b58677204cf22b05df96a1f5bcae1`, and opened
+  https://github.com/mayerg0/icebreaker-langchain/pull/1. The PR adds optional
+  `TWEETCLAW_TWEETS_JSON` support so the LangChain icebreaker app can use a
+  reviewed local TweetClaw JSON export as its tweet source while preserving the
+  existing Tweepy reader by default. It also lazy-loads Twitter API credentials
+  only when live API reads are needed. Final unauthenticated readback: open,
+  mergeable true, mergeable_state `unstable`, 2 files, no comments, no reviews,
+  GitGuardian Security Checks success.
+- Target validation: `git diff --check`, `python3 -m py_compile
+  third_parties/twitter.py ice_breaker.py chains/custom_chains.py
+  agents/twitter_lookup_agent.py`, a local TweetClaw export smoke test with a
+  stubbed Tweepy module, and `npx --yes markdown-link-check README.md --quiet`
+  passed. Public hygiene scans found only target-owned Twitter credential
+  environment variable names, no secret values or internal details.
+- Official OpenClaw and package checks: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.23.0`; published `@xquik/tweetclaw` remains
+  `1.6.31` while source remains `1.6.32`. Route probes returned 200 for
+  OpenClaw llms exports, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  ClawHub TweetClaw routes, and OpenClaw Directory. Expected 404s remained
+  `llms-full.txt` and `/sdk/runtime`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities.
+- Link and public hygiene: markdown-link-check passed for TweetClaw `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, `docs/clawpack-release.md`, and the edited
+  external README. Diffs and PR body avoided secrets, private implementation
+  details, restricted provider/source names, internal cost mechanics,
+  unsupported claims, and stale metadata. No NHS badge was added.
+- Prompt and memory: prompt-size readback was 11,980 bytes with cap 15,360.
+  Compact Markdown memory was updated under the cap and full details were
+  archived here. No prompt edit was needed.
+- Prompt self-improvement: for LangChain and older Twitter-reading examples,
+  prefer optional local TweetClaw JSON export wiring that bypasses import-time
+  credential requirements and preserves the original live reader by default.
+  Keep exported tweets as reviewed evidence for prompts, not autonomous posting.
+
 ## 2026-06-28 23:12 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
