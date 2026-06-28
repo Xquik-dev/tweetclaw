@@ -206,7 +206,8 @@ archive, before any outreach or duplicate decision.
 - New AI-framework PR: `nitindavegit/CREWAI-X-Agent#1` adds optional
   `TWEETCLAW_SOURCE_CONTEXT` loading, CrewAI prompt evidence wiring, README
   setup, and a broken README license-link repair. Final readback: open,
-  mergeable, no checks configured, 2 files, commit `94bc1cc`.
+  mergeable, no checks configured, 2 files, head `da79fc5` after bot review
+  hardening.
 - Maintenance: OpenClaw route probes, npm, ClawHub, audit, links, prompt-size,
   target validation, memory-size, and public-hygiene details are archived.
 
