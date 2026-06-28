@@ -20,7 +20,7 @@ the archive, before any release or ClawHub decision.
 
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished.
-- Release gate is clear of npm audit advisories after the OpenClaw `2026.6.9`
+- Release gate is clear of npm audit advisories after the OpenClaw `2026.6.10`
   lockfile refresh, but npm publish auth and ClawHub owner scope remain blocked.
 - Local npm publish auth blocked on 2026-06-07: `npm whoami` returned E401.
   Do not claim npm `1.6.32` until publish succeeds.
@@ -38,7 +38,7 @@ the archive, before any release or ClawHub decision.
 
 ## OpenClaw Release Fitness
 
-- Current source metadata targets OpenClaw `2026.6.9`.
+- Current source metadata targets OpenClaw `2026.6.10`.
 - Required metadata fields:
   `openclaw.compat.pluginApi`, `openclaw.compat.minGatewayVersion`,
   `openclaw.build.openclawVersion`, `openclaw.build.pluginSdkVersion`,
@@ -46,7 +46,7 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- Npm audit on 2026-06-28 18:04 UTC reports 0 vulnerabilities. Rerun audit
+- Npm audit on 2026-06-28 18:27 UTC reports 0 vulnerabilities. Rerun audit
   after each OpenClaw lockfile refresh.
 
 ## ClawHub State

@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-28 18:04 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-28 18:27 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports on `docs.openclaw.ai` returned HTTP 200. Current plugin docs are under
   `/cli/*`, `/clawhub/*`, and `/plugins/*`; older `/openclaw/*` deep links 404.
@@ -62,7 +62,7 @@ archive, before any outreach or duplicate decision.
 
 ## Current OpenClaw Fitness
 
-- TweetClaw source targets OpenClaw `2026.6.9`.
+- TweetClaw source targets OpenClaw `2026.6.10`.
 - Compatibility, build, install, host peer, and lockfile metadata are aligned.
 - `npm run check-openclaw-platform-fitness` is required after build for any
   OpenClaw metadata, manifest, runtime, approval, docs, packaged-skill, or
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-28 18:04 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 18:27 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 18:04 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-173951` returned 19 skill, MCP, AI-framework, and
-  Twitter/social candidates. Focused PR inventory exact-read 10 known open PR
-  URLs; no all-GitHub exhaustion claim.
-- Repair gate: `wshobson/agents#582` had an owner request to register Hermes
-  Tweet on Claude Code and Cursor. Pushed `74317cd`, merged upstream in
-  `117cff1`, fixed generated category drift in `1b0fae3`, and commented with
-  validation. Readback: open, mergeable, CodeRabbit success, no new action.
-- New PR: `ellieli0630/langgraph-mcp-agent-twitter#1` from verified fork
-  `kriptoburak/langgraph-mcp-agent-twitter`, branch
-  `codex/add-tweetclaw-context-guide`, commit `83091d7`. It fixes stale setup
-  docs and adds TweetClaw/OpenClaw read context before `PostToTwitter`.
-  Readback: open, mergeable, clean, no checks.
-- Hygiene: OpenClaw docs and npm metadata refreshed; `/help/debugging` remains
-  current, `/cli/plugins/install`, `/cli/plugins/update`, and
-  `/cli/plugins/inspect` are still 404. OpenClaw `2026.6.10`, ClawHub CLI
-  `0.23.0`, TweetClaw npm `1.6.31`. Link checks and duplicate details are
+- 2026-06-28 18:11 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-181115` returned 19 skill, social, and AI-framework
+  candidates. Exact readback covered 11 known open PR URLs; broad authenticated
+  PR search hit a GitHub secondary limit, so no all-GitHub exhaustion claim.
+- Repair gate: `jimmc414/claude-code-plugin-marketplace#3` had a stale inline
+  install-name review plus dirty merge state. Merged upstream, regenerated the
+  catalog, pushed `70c148a`, and read back open, mergeable, clean.
+- New PR: `abhinavjagan/multi-agent-content-generation-workflow#1` from
+  verified fork `kriptoburak/multi-agent-content-generation-workflow`, branch
+  `codex/add-tweetclaw-source-workflow`, commit `917b309`. It documents
+  TweetClaw/OpenClaw as reviewed X/Twitter source intake for a LangGraph draft
+  agent without changing x-agent publishing boundaries. Readback: open,
+  mergeable, clean.
+- Maintenance: OpenClaw docs and npm metadata refreshed; source metadata,
+  lockfile, public docs, and the fitness gate now target OpenClaw `2026.6.10`.
+  Link checks, validation, duplicate details, and screened candidates are
   archived.
 
 ## Reporting Checklist

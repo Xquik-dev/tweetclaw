@@ -39594,3 +39594,114 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   for the target's write client. For wshobson/agents-style generated registries,
   source category belongs in the per-plugin source manifest so generated Cursor
   and Codex marketplaces inherit it.
+
+## 2026-06-28 18:11 UTC heartbeat
+
+- Runtime limitation: model and reasoning-effort selector was unavailable in
+  this local run, so the requested GPT-5.5 extra-high setting could not be
+  verified or selected.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260628-181115` from `/Users/burak/Developer/xquik` with strict
+  JSON output, research proxy, bounded request and proxy warmup timeouts, and
+  focused queries covering authored TweetClaw/OpenClaw/Xquik PRs, SKILL.md,
+  `.agents/skills`, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills,
+  awesome lists, and AI-framework lanes for LangGraph, CrewAI, PydanticAI, and
+  OpenAI Agents. Output parsed as valid JSON with 19 opportunities:
+  `blacktwist/social-media-skills`, `BuddhaYi/macos-cli`,
+  `elbis330/social-media-scraper-skill`, `liangdabiao/tikhub_api_skill`,
+  `ellieli0630/langgraph-mcp-agent-twitter`, `beggarticksarthurtatum121/reddit-skills`,
+  `rabden/X-twitter-social-manager-skill`, `AJYoutube007/NewsTwitterAgent`,
+  `abhinavjagan/multi-agent-content-generation-workflow`,
+  `labyla/x-search`, `tang-vu/social-posting-skills`, `Emart29/contentflow`,
+  `ReneHdzGtz/web3-community-marketing`, `tiendatne2004/tikhub_api_skill`,
+  `liranman90/MoneyPrinterV2`, `Mursalin80/crewai_content_creation`,
+  `Fugant1/Unfaker`, `peige-guo/twitter_trend_agent`, and
+  `sdblepas/crewai-dev`. No crawler credentials were printed.
+- PR inventory method and limits: compact audit and archive were searched
+  first. GitHub repo issue and PR lists for `Xquik-dev/tweetclaw` returned no
+  open items. Known audit-tracked PR URLs and current crawler output produced
+  11 exact PR readbacks. Broad authenticated PR search partitions were stopped
+  after an initially malformed quoted query and then GitHub secondary rate
+  limit HTTP 403, so this was not a complete uncapped all-GitHub inventory.
+  Exact readbacks found `wshobson/agents#582`,
+  `ellieli0630/langgraph-mcp-agent-twitter#1`,
+  `daymade/claude-code-skills#43`, `AJYoutube007/NewsTwitterAgent#1`,
+  `akamai-developers/akamai-multi-agent-social-transform#1`,
+  `warlockoussama/twitter-cli#1`, `ai-boost/awesome-harness-engineering#94`,
+  `jamald33n/tweetsave-mcp#2`, `Saminiscool/twitter-ai-agent#2`,
+  `Correia-jpv/fucking-awesome-ai-tools#17`, and
+  `jimmc414/claude-code-plugin-marketplace#3` open. Clean or target-owned
+  states blocked repairs except the newest useful plugin-marketplace repair.
+- PR repair: `jimmc414/claude-code-plugin-marketplace#3` had a stale Codex
+  inline review about using the declared marketplace name, and the current
+  head was dirty/conflicting. The current branch already used
+  `hermes-tweet@community-claude-plugins`, so the stale comment required no
+  text change. Cloned the verified personal fork, fetched upstream `master`,
+  merged upstream into `codex/add-hermes-tweet-plugin`, regenerated
+  `catalog.json` with `tools/generate_catalog.py`, and pushed commit
+  `70c148a` to `kriptoburak/claude-code-plugin-marketplace`. Validation
+  passed JSON parsing for `.claude-plugin/marketplace.json` and `catalog.json`,
+  `python3.11 tools/validate.py hermes-tweet`, `python3.11 tools/validate.py
+  --all` with only 2 pre-existing unrelated warnings, `npx --yes
+  markdown-link-check plugins/hermes-tweet/README.md --quiet`, and
+  `git diff --check`. Final PR readback: open, ready for review, mergeable,
+  clean, no checks configured.
+- Fresh candidate screening and duplicate gates: `abhinavjagan/multi-agent-content-generation-workflow`
+  was selected because it is public, non-fork, non-archived, issue-enabled,
+  default branch `main`, pushed 2026-05-12, and is a LangGraph plus FastAPI
+  x-agent that drafts X posts locally with HITL approval and no automated
+  posting. License metadata was missing from GitHub but package metadata says
+  MIT, and missing license metadata alone did not block a direct docs PR.
+  Duplicate checks across compact audit, archive, target content, target open
+  and closed PRs/issues, and variants for TweetClaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, Twitter/X, and x-agent found no prior TweetClaw history. Prior or
+  lower-fit crawler hits were blocked by duplicate history, no-license
+  metadata, older screening, direct-provider shape, or weak target fit.
+- New PR: `abhinavjagan/multi-agent-content-generation-workflow#1`
+  https://github.com/abhinavjagan/multi-agent-content-generation-workflow/pull/1
+  opened from verified fork
+  `kriptoburak/multi-agent-content-generation-workflow`, branch
+  `codex/add-tweetclaw-source-workflow`, commit `917b309`. The PR adds an
+  X/Twitter source workflow to `docs/research.md` and links it from the README.
+  It frames TweetClaw as optional reviewed source discovery behind OpenClaw
+  approval, keeps x-agent free of X credentials, and preserves the target's
+  copy or X compose publishing boundary. Target validation passed
+  `git diff --check`, `npx --yes markdown-link-check docs/research.md --quiet`,
+  and `npx --yes markdown-link-check README.md docs/research.md --quiet` except
+  the pre-existing target README `http://localhost:8000` dead-link result.
+  Final PR readback: open, ready for review, mergeable, clean, no checks
+  configured, no comments or reviews.
+- OpenClaw and package maintenance: official OpenClaw docs probes returned HTTP
+  200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/plugins/install-overrides`,
+  and `/help/debugging`; `/cli/plugins/install`, `/cli/plugins/update`,
+  `/cli/plugins/inspect`, `/plugins/permission-requests`, and `/sdk/runtime`
+  returned 404 and were recorded as docs-route drift. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.1`, alpha
+  `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31` with MIT license and canonical GitHub
+  repo. Updated TweetClaw source metadata, docs, lockfile, installed
+  `node_modules/openclaw`, and the OpenClaw fitness gate from `2026.6.9` to
+  `2026.6.10`. `npm install --ignore-scripts` changed only the OpenClaw lock
+  entry and peer range.
+- Link, public hygiene, and validation: TweetClaw README and
+  `docs/openclaw-setup.md` link checks passed. External handled content link
+  checks passed for the abhinav research doc and the Hermes Tweet README.
+  Direct probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  canonical ClawHub route, `abhinavjagan/...#1`, and
+  `jimmc414/...#3`. Public diff scans found no secrets, private
+  implementation details, restricted provider names, internal cost mechanics,
+  unsupported claims, or stale metadata. Final TweetClaw validation passed
+  `npm run check:all`: typecheck, lint, cpd, knip, suppression scan, dash
+  scan, memory-size check at 15201/15360 bytes, skill frontmatter, version
+  check, build, OpenClaw platform fitness for `2026.6.10`, package artifact
+  check, and Vitest coverage with 11 files, 168 tests, and 100 percent
+  coverage. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities.
+- Prompt self-improvement: for LangGraph or CrewAI content agents that already
+  use HITL review and explicit no-posting boundaries, prefer a source-intake
+  docs recipe over runtime code changes. Link TweetClaw only as optional
+  reviewed X/Twitter discovery and keep final publishing inside the target's
+  existing user-controlled flow.
