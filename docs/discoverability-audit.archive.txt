@@ -39966,3 +39966,104 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   terms, REST pull reads, and crawler output before generic broad partitions,
   and record partial exact-read counts plus rate blockers without claiming full
   completion.
+
+2026-06-28 20:01 UTC heartbeat
+- Runtime and starting state: this same-thread Codex Desktop heartbeat still did
+  not expose a GPT-5.5 model selector or extra-high reasoning-effort selector,
+  so the run continued under the available runtime and recorded the limitation.
+  TweetClaw started on `master...origin/master` at `b45ec91` with only the
+  pre-existing untracked file `0`; it was left untouched. Xquik had unrelated
+  modified and untracked files and they were not touched.
+- Crawler-first discovery: ran the internal Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260628-200118/crawl.json`, research proxy,
+  bounded request and proxy warmup timeouts, concurrency 8, session
+  `tweetclaw-20260628-200118`, and focused authored-PR, `SKILL.md`,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, social, Twitter/X,
+  LangGraph, AutoGen, Semantic Kernel, LlamaIndex, CrewAI, Google ADK, and
+  PydanticAI queries. The crawler returned 22 opportunities; proxy output
+  contained route metadata only and no credential values.
+- Open PR inventory: compact and archive history were searched first. Updated
+  authenticated PR partitions used TweetClaw, OpenClaw, Xquik,
+  x-twitter-scraper, MCP, skill, and agent-tools terms plus audit-tracked PRs.
+  Inventory normalized 65 unique URLs and exact readbacks covered 65/65 with 0
+  errors: all 65 open, 115 comments, 10 reviews, 6 conflicts, 21
+  blocked/dirty/unknown states, 3 failing or action-needed checks, and 22
+  blocker-like records after filtering. No GitHub cap or rate blocker remained
+  for the completed updated-window inventory.
+- Repair action: `AbdNour627/awesome-openclaw-configs#1` was selected because
+  exact readback showed a README conflict on the correctly parented
+  `kriptoburak/awesome-openclaw-configs` branch, MIT license, non-fork target,
+  no reviews, no current maintainer request, no checks, and no DCO or CLA
+  blocker. The branch `codex/add-tweetclaw-x-config` merged current upstream
+  `main`, preserved the TweetClaw related-project row, and pushed merge commit
+  `9a9e7b837fcc570ae44f82946752ec98d43dd2e0`.
+- Repair validation and readback: target validation passed conflict-marker scan,
+  `git diff --check`, `npx --yes json5 configs/automation/x-twitter-monitor-tweetclaw.json5`,
+  and Markdown link checks for `README.md`, `README_EN.md`, and
+  `CONTRIBUTING.md`. A validation comment was posted at
+  `https://github.com/AbdNour627/awesome-openclaw-configs/pull/1#issuecomment-4827252969`.
+  Final readback showed the PR open, base `main`, head
+  `kriptoburak:codex/add-tweetclaw-x-config`, mergeable, clean, 4 changed
+  files, 10 comments, no reviews, no review comments, and no checks.
+- Fresh candidate screening: crawler and fallback candidates included
+  `Mursalin80/crewai_content_creation`,
+  `Burnsedia/PydanticAI-Twitter-bot`,
+  `eeshsingh123/content-generator-agents-using-google-adk`,
+  `ashemag/reddit-crosspost`, and
+  `ReneHdzGtz/web3-community-marketing`. Prior archive history, lower target
+  fit, own-org status, or direct social-skill duplicate gates blocked most
+  lanes. `eeshsingh123/content-generator-agents-using-google-adk` was selected
+  because it is a public Google ADK Streamlit workflow with Twitter-thread
+  generation, no target PR or issue history, no existing TweetClaw/Xquik/OpenClaw
+  content, forks enabled, and a safe Python syntax plus README link validation
+  path. GitHub reported no license metadata; missing license metadata alone was
+  not treated as a direct-PR blocker.
+- External PR: opened
+  `https://github.com/eeshsingh123/content-generator-agents-using-google-adk/pull/1`
+  from correctly parented fork
+  `kriptoburak/content-generator-agents-using-google-adk`, branch
+  `codex/add-reviewed-x-source-context`, commit
+  `2ba9c0d2cd546ac26713e3965b2a3e546eba8c0a`. The PR updates `workflow/workflow.py`
+  and `readme.md` to add an optional reviewed X/Twitter source-context box,
+  pass the context into the ADK run prompt as source evidence, and document
+  TweetClaw/OpenClaw as an optional approved public source-packet producer. The
+  workflow treats pasted context as evidence, not instructions, and excludes
+  credentials, cookies, API keys, session material, and private account-control
+  material. Final readback showed the PR open, base `main`, head
+  `kriptoburak:codex/add-reviewed-x-source-context`, mergeable, clean, 2 changed
+  files, no comments, no reviews, and no checks.
+- Target validation for the ADK PR: passed `python3 -m py_compile workflow/workflow.py`,
+  `git diff --check`, and `npx --yes markdown-link-check readme.md --quiet`.
+  Public-hygiene scan found only the intentionally defensive credential-exclusion
+  wording and no exposed values, restricted provider/source wording, internal
+  cost mechanics, unsupported claims, or stale metadata.
+- Official OpenClaw and package checks: current docs returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/plugins/install-overrides`,
+  and `/help/debugging`; 404 for `/cli/plugins/install`, `/cli/plugins/update`,
+  `/cli/plugins/inspect`, `/plugins/permission-requests`, and `/sdk/runtime`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.1`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+  `@xquik/tweetclaw` remains `1.6.31`, MIT, canonical GitHub repository, with
+  published OpenClaw metadata still pointing to the older `2026.5.4` runtime
+  while source targets `2026.6.10`. The canonical ClawHub route redirected to
+  `https://clawhub.ai/xquik/plugins/tweetclaw` with HTTP 200.
+- TweetClaw validation and public hygiene: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md --quiet`
+  passed before and after audit edits. Final `npm run check-memory-md-size`,
+  `git diff --check`, changed-diff public-hygiene scan, and `npm run check:all`
+  were run before the TweetClaw audit commit.
+- Prompt and memory checks: automation TOML measured 12,314 bytes, prompt
+  measured 11,980 bytes, status remained `ACTIVE`, cadence remained
+  `FREQ=MINUTELY;INTERVAL=1`, and no prompt edit was needed. Compact Markdown
+  memory stayed under the 15 KiB cap after replacing the latest-run block and
+  moving detail here.
+- Prompt self-improvement: for AI-framework repositories such as Google ADK,
+  prefer a small native input, fixture, or example path over README-only
+  placement when the target has an existing workflow surface. Keep TweetClaw as
+  reviewed source evidence, never as the owner of scoring, drafting, scheduling,
+  or publishing decisions.
