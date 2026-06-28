@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-28 21:05 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-28 22:07 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   route check: `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
   `/cli/plugins`, `/plugins/manifest`, `/cli/skills`, `/clawhub/publishing`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/troubleshooting` 200; `llms-full.txt` and `/plugins/permissions`
   404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-28 21:05 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-28 22:07 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-28 21:05 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 22:07 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -193,21 +193,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 21:38 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-213817` returned 45 skill/MCP/AI-framework candidates.
-  Inventory merged crawler, audit/archive URLs, and authored PR partitions into
-  2328 URLs; exact GraphQL readbacks covered 1458, with 870 inaccessible,
-  deleted, or private-repo errors, so all-history coverage is not exhaustive.
-- Repair gate: `denial-web/clawguard#1` was conflict-repaired after upstream
-  moved validation docs under `docs/internal`; pushed `3dd3a2e` and `bdffa58`,
-  commented with validation, and remains open with no reviews/checks.
-  `KunanonJ/ai-skills-hub#18` is blocked by target 100-skill/archive policy.
-- New skill-repo PR: `blacktwist/social-media-skills#5` adds optional
-  TweetClaw/OpenClaw tool-registry docs for reviewed Twitter/X source checks,
-  reply context, giveaway evidence, and approval-gated draft handoff. Final
-  readback: open, mergeable, 2 files, no reviews/checks.
-- Maintenance: OpenClaw, npm, ClawHub, link, audit, memory, prompt-size, and
-  target validation details are archived.
+- 2026-06-28 22:07 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-220720` returned 20 candidates. PR inventory produced
+  2086 unique URLs; 2047 exact readbacks found 1819 open PRs, 0 conflicts, 66
+  failed checks, 113 review-required, and 19 changes-requested.
+- Repair gate: no conflict repair was available. `openclaw-clawdoc#6` remains
+  blocked by a stale review after the vendor-neutral fix. Vercel, CLA, DCO, and
+  non-TweetClaw Hermes/Xquik signals were target-side, out-of-scope, or
+  user-boundary work. A GitHub search rate-limit signal stopped broad search;
+  exact REST, clone, and archive reads continued.
+- New AI-framework PR: `Burnsedia/PydanticAI-Twitter-bot#18` adds an optional
+  local `TweetClawExportFetcher`, `TWEETCLAW_EXPORT_PATH`, README setup, and
+  tests so PydanticAI research can ingest reviewed TweetClaw/OpenClaw JSON
+  exports without giving the bot live posting authority. Final readback: open,
+  mergeable, GitGuardian check passed, 9 files, commit `59f6101`.
+- Maintenance: OpenClaw, npm, ClawHub, audit, links, prompt-size, target
+  validation, memory-size, and public-hygiene details are archived.
 
 ## Reporting Checklist
 

@@ -40410,3 +40410,119 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   scheduling tool, add TweetClaw only as an optional OpenClaw reviewed-source or
   approval-gated handoff path. Keep the target's primary tool primary and avoid
   implying TweetClaw owns analytics, scheduling, or unattended publishing.
+
+## 2026-06-28 22:07 UTC Heartbeat
+
+- Runtime limitation: this environment did not expose GPT-5.5 or
+  reasoning-effort selection controls, so the run continued with the available
+  model and recorded the limitation.
+- Initial state: TweetClaw was on `master...origin/master` with only
+  pre-existing untracked path `0`. Xquik had unrelated user changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, left untouched. GitHub issue lists for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+- Crawler coverage: ran Xquik `bun run github:crawl --json --output
+  /tmp/tweetclaw-heartbeat-20260628-220720/crawl.json --research-proxy` with
+  bounded timeouts, concurrency 8, session `tweetclaw-20260628-220720`, and
+  focused authored-PR, SKILL.md, `.agents/skills`, skills dirs, OpenClaw, MCP,
+  Codex, Claude, agent/social/Twitter-X skill, awesome-list, registry,
+  PydanticAI, VoltAgent, Cloudflare Agents, LlamaIndex, Agno, BeeAI, MCP catalog,
+  and package-tooling queries. Strict JSON parsed successfully and returned 20
+  opportunities. One research-proxy endpoint was quarantined after repeated
+  failures; no credentials were printed.
+- Complete PR inventory: merged crawler output, compact audit, archive URLs,
+  and current authored-PR partitions for TweetClaw, OpenClaw, ClawHub, MCP,
+  skills, Xquik, x-twitter-scraper, X/Twitter automation, social media, agent
+  tools, catalogs, examples, validators, frameworks, libraries, registries,
+  package tooling, docs, and AI-framework lanes. Current search partitions
+  returned 2562 URL hits, deduped with archive/audit URLs to 2086 unique PR
+  URLs. Exact readbacks covered 2047 and 39 exact reads errored. Readback
+  summary: 1819 open, 0 conflicts, 334 blocked/dirty/unknown, 424 with comments,
+  224 with reviews, 309 with checks, 113 review-required, 19 changes-requested,
+  and 66 failed-check PRs. The first xargs readback file interleaved output and
+  was discarded; `/tmp/tweetclaw-heartbeat-20260628-220720/pr-readbacks-safe.jsonl`
+  is the valid exact-read artifact.
+- Repair triage: `Hashi-Ai-Dev/openclaw-clawdoc#6` has the maintainer-requested
+  vendor-neutral fix already pushed, no remaining TweetClaw-specific content,
+  no failing checks, and is blocked only by a stale changes-requested review.
+  `denial-web/clawguard#1` had no new maintainer comment, no exposed checks, and
+  remained mergeable after the previous repair. `ChrysKoum/skillguard-directory#1`
+  is blocked by target-owned Vercel authorization. `mezmo/aura#292` has CLA
+  Assistant and Jenkins blockers on an Xquik MCP PR; CLA signature is a
+  user/legal boundary and not TweetClaw-specific. `block/agent-skills#48` has a
+  DCO failure on a Hermes Tweet PR and was skipped as out-of-scope for this
+  TweetClaw heartbeat. Broad GitHub search later returned API rate-limit errors,
+  so broad authenticated search stopped and exact REST, clone, archive, and
+  local-content paths continued.
+- Fresh candidates screened: crawler surfaced `jedi4ever/social-skills`,
+  `0xNyk/xint-rs`, `checkra1neth/xbird-skill`,
+  `EwingYangs/x-user-skill-creator`, `win4r/x-post-skill`,
+  `rohunvora/x-research-skill`, and `Burnsedia/PydanticAI-Twitter-bot` as
+  no-current-PR candidates in the exact inventory. Existing PR duplicates
+  blocked `0xNyk/xint`, `blacktwist/social-media-skills`,
+  `mvanhorn/last30days-skill`, `KiKi-Builds/AI-Briefing-Skill`,
+  `geekjourneyx/jina-cli`, `Aditya923-c/xpoz-agent-skills`,
+  `beggarticksarthurtatum121/reddit-skills`, `reymerekar7/rm-skills`, and
+  `tonkotsuboy/x-impact-checker`. `Burnsedia/PydanticAI-Twitter-bot` was chosen
+  for the fresh AI-framework lane: non-fork, no license metadata, issues
+  enabled, default branch `master`, PydanticAI bot with DI-backed HN, Twitter,
+  and RSS sources. Target content, exact open/closed PR lists, exact open/closed
+  issue lists, and completed duplicate searches before rate-limit found no
+  TweetClaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, Xquik,
+  x-twitter-scraper, ClawHub, or OpenClaw history.
+- External PR: created verified fork `kriptoburak/PydanticAI-Twitter-bot` of
+  `Burnsedia/PydanticAI-Twitter-bot`, branch
+  `codex/add-tweetclaw-export-source`, commit
+  `59f610168b82cdeb39026fdd1d027c6f09948210`, and opened
+  https://github.com/Burnsedia/PydanticAI-Twitter-bot/pull/18 by REST after
+  `gh pr create` hit GraphQL rate limits. The PR adds
+  `src/sources/tweetclaw_fetcher.py`, `TWEETCLAW_EXPORT_PATH`, DI wiring,
+  research-agent aggregation, README setup, and tests so PydanticAI research can
+  ingest reviewed local TweetClaw/OpenClaw JSON exports without live TweetClaw
+  calls or unattended X writes. It also removes dead imports from touched files
+  that caused test/lint noise. Final readback: open, ready, mergeable true,
+  mergeable_state `clean`, 9 changed files, 188 additions, 14 deletions,
+  head `kriptoburak:codex/add-tweetclaw-export-source`, base `master`.
+  GitGuardian Security Checks completed successfully; issue comments were empty.
+- Target validation: `uv run --extra dev python -m pytest
+  tests/test_sources.py::test_tweetclaw_export_fetcher_reads_trends
+  tests/test_sources.py::test_tweetclaw_export_fetcher_extracts_tweet_hashtags
+  tests/test_config.py -q` passed. `uv run --with ruff ruff check
+  src/config.py src/sources/tweetclaw_fetcher.py src/di.py
+  src/agents/research_agent.py tests/conftest.py tests/test_sources.py
+  tests/test_agents.py` passed. `python3 -m compileall -q src tests`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`
+  passed. Baseline wider command `DATABASE_URL='sqlite+aiosqlite:///./test.db'
+  uv run --extra dev pytest tests/test_sources.py tests/test_agents.py
+  tests/test_config.py` still failed on existing target issues: Tweepy
+  `Client` has no `get_place_trends`, and current `pydantic-ai` rejects the
+  existing `Agent(..., result_type=...)` constructor use in `tweet_agent.py`.
+- Official OpenClaw and package checks: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`; `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.23.0`; published `@xquik/tweetclaw` remains
+  `1.6.31` with older OpenClaw metadata while source remains `1.6.32`.
+  Official route probes returned HTTP 200 for llms exports, CLI plugin docs,
+  manifest docs, CLI skills, ClawHub publishing, ClawHub skill format, gateway
+  config tools, ClawHub troubleshooting, ClawHub TweetClaw, TweetClaw GitHub,
+  and npm registry metadata; expected 404s remained `openclaw.ai/llms-full.txt`
+  and `/plugins/permissions`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities.
+- Link and public hygiene: markdown-link-check passed for TweetClaw `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`, plus the
+  edited external README. Target and TweetClaw diffs and the PR body avoided
+  secrets, private implementation details, restricted source names, internal
+  cost mechanics, unsupported claims, and stale metadata.
+- Prompt and memory: automation TOML measured 12,314 bytes and prompt measured
+  12,012 bytes. No prompt edit was needed. Compact Markdown memory was
+  refreshed and `npm run check-memory-md-size` passed at 15,330 of 15,360 bytes.
+- TweetClaw commit: compact audit and release memory plus archive updates were
+  committed and pushed to `master` after validation.
+- Prompt self-improvement: when GitHub search rate-limits during duplicate
+  checks, stop broad search immediately and finish with exact REST lists,
+  target clones, local content scans, and archive evidence. For AI-framework
+  targets with existing source abstractions, prefer a local reviewed export
+  adapter and tests over a catalog mention; keep TweetClaw as source evidence
+  and leave live X writes behind explicit operator approval.
