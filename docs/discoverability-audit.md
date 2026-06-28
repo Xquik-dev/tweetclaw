@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-28 15:58 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-28 18:04 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   exports on `docs.openclaw.ai` returned HTTP 200. Current plugin docs are under
   `/cli/*`, `/clawhub/*`, and `/plugins/*`; older `/openclaw/*` deep links 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-28 15:58 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-28 18:04 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-28 15:58 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 18:04 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,22 +190,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 17:31 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-170716` returned 14 skill/framework candidates. REST
-  authored-open lanes found 854 unique URLs, but every broad lane except
-  `framework` hit the 100-result cap, so PR inventory is intentionally recorded
-  as capped. Exact-read focused 15 tracked PRs.
-- Repair gate: `daymade/claude-code-skills#43` was dirty. Pushed `9d7533c`,
-  commented with validation, and read back open, mergeable, clean, with no
-  reviews.
-- New PR: `AJYoutube007/NewsTwitterAgent#1` from verified fork
-  `kriptoburak/NewsTwitterAgent`, branch `codex/add-tweetclaw-x-context`,
-  commit `e713859`, adds a LangGraph TweetClaw/Xquik source-context guide.
-  Readback: open, mergeable, clean, no comments or reviews.
-- Hygiene: OpenClaw docs and npm metadata refreshed; `help/debugging` is the
-  current debugging route, old `/debugging` is 404, OpenClaw `2026.6.10`,
-  ClawHub CLI `0.23.0`, TweetClaw npm `1.6.31`. Link checks and duplicate
-  details are archived.
+- 2026-06-28 18:04 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-173951` returned 19 skill, MCP, AI-framework, and
+  Twitter/social candidates. Focused PR inventory exact-read 10 known open PR
+  URLs; no all-GitHub exhaustion claim.
+- Repair gate: `wshobson/agents#582` had an owner request to register Hermes
+  Tweet on Claude Code and Cursor. Pushed `74317cd`, merged upstream in
+  `117cff1`, fixed generated category drift in `1b0fae3`, and commented with
+  validation. Readback: open, mergeable, CodeRabbit success, no new action.
+- New PR: `ellieli0630/langgraph-mcp-agent-twitter#1` from verified fork
+  `kriptoburak/langgraph-mcp-agent-twitter`, branch
+  `codex/add-tweetclaw-context-guide`, commit `83091d7`. It fixes stale setup
+  docs and adds TweetClaw/OpenClaw read context before `PostToTwitter`.
+  Readback: open, mergeable, clean, no checks.
+- Hygiene: OpenClaw docs and npm metadata refreshed; `/help/debugging` remains
+  current, `/cli/plugins/install`, `/cli/plugins/update`, and
+  `/cli/plugins/inspect` are still 404. OpenClaw `2026.6.10`, ClawHub CLI
+  `0.23.0`, TweetClaw npm `1.6.31`. Link checks and duplicate details are
+  archived.
 
 ## Reporting Checklist
 

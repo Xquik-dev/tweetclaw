@@ -39504,3 +39504,93 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   with 168 tests and 100 percent coverage. TweetClaw audit commit `765fa47`
   was pushed to `origin/master`; changed files were
   `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`.
+
+2026-06-28 18:04 UTC heartbeat - AI framework target and maintainer repair
+
+- Runtime limitation: model and reasoning-effort selector were not exposed in
+  this Codex runtime, so the requested GPT-5.5 and extra-high effort could not
+  be selected. Work continued under the available runtime.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260628-173951/crawl.json --research-proxy`
+  with bounded request and proxy warmup timeouts, limit 60, search-pages 1,
+  per-query-limit 6, concurrency 8, and session
+  `tweetclaw-20260628-173951`. Query pack covered authored open PRs,
+  TweetClaw, OpenClaw, Xquik, SKILL.md, `.agents/skills`, skill directories,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, AI-agent framework Twitter tools, LangGraph, CrewAI, PydanticAI,
+  OpenAI Agents, and social-tool examples. JSON parsed cleanly and returned 19
+  opportunities. Top candidates included `blacktwist/social-media-skills`,
+  `BuddhaYi/macos-cli`, `elbis330/social-media-scraper-skill`,
+  `liangdabiao/tikhub_api_skill`, and
+  `ellieli0630/langgraph-mcp-agent-twitter`.
+- PR inventory: saved known exact-read list covered 10 open relevant PR URLs:
+  `daymade/claude-code-skills#43`, `AJYoutube007/NewsTwitterAgent#1`,
+  `akamai-developers/akamai-multi-agent-social-transform#1`,
+  `warlockoussama/twitter-cli#1`, `ai-boost/awesome-harness-engineering#94`,
+  `jamald33n/tweetsave-mcp#2`, `Saminiscool/twitter-ai-agent#2`,
+  `wshobson/agents#582`,
+  `Correia-jpv/fucking-awesome-ai-tools#17`, and
+  `jimmc414/claude-code-plugin-marketplace#3`. The broad saved
+  `search-open-prs.json` artifact was empty, so this run does not claim a
+  complete all-authored-PR inventory.
+- Repair: `wshobson/agents#582` had an owner request to register Hermes Tweet
+  across Claude Code and Cursor and regenerate registries. Verified fork owner
+  `kriptoburak` and parent `wshobson/agents`, merged current upstream `main`,
+  added `.claude-plugin/marketplace.json`, regenerated Cursor artifacts with
+  `make generate-all`, reconciled totals to 89 plugins, 194 agents, 159 skills,
+  and 106 commands, and pushed `74317cd` plus merge `117cff1` to
+  `codex/add-hermes-tweet-plugin`. Validation passed `make generate-all`,
+  `make validate STRICT=1`, JSON parsing for Claude, Cursor, and Codex
+  marketplace files, registry pytest subset with 244 passed, `make garden`
+  with 0 errors and 10 pre-existing SKILL_OVER_CODEX_CAP warnings outside
+  Hermes Tweet, and `TERM=xterm-256color make test` with 443 passed and 5
+  skipped. Comment:
+  https://github.com/wshobson/agents/pull/582#issuecomment-4826915631.
+- Bot repair: CodeRabbit then reported valid generated category drift because
+  Cursor marketplace omitted the Hermes Tweet source category. Added
+  `category: "marketing"` to
+  `plugins/hermes-tweet/.claude-plugin/plugin.json`, reran `make generate-all`,
+  and pushed `1b0fae3`. Validation passed `git diff --check`, JSON parsing for
+  source and generated manifests, `make validate STRICT=1`, registry pytest
+  subset with 244 passed, `make garden` with the same 10 pre-existing warnings,
+  and `TERM=xterm-256color make test` with 443 passed and 5 skipped. Comment:
+  https://github.com/wshobson/agents/pull/582#issuecomment-4826936537. Final
+  readback after push: open, mergeable, CodeRabbit success, no new actionable
+  comments.
+- Fresh target screening:
+  `ellieli0630/langgraph-mcp-agent-twitter` was selected because it is a
+  LangGraph Twitter-agent workflow and matched the user's AI-framework
+  research direction. Repo is public, non-fork, non-archived, default branch
+  `main`, no license metadata, pushed 2025-02-27. Duplicate checks across the
+  compact audit, archive, target content, open and closed target PRs/issues,
+  and variant terms for TweetClaw, `@xquik/tweetclaw`, Xquik, npm, GitHub, and
+  ClawHub found no prior TweetClaw history.
+- New PR:
+  https://github.com/ellieli0630/langgraph-mcp-agent-twitter/pull/1 opened from
+  verified fork `kriptoburak/langgraph-mcp-agent-twitter`, branch
+  `codex/add-tweetclaw-context-guide`, commit `83091d7`. The PR updates stale
+  Python and install guidance to match `pyproject.toml`, replaces missing
+  Twitter test script references with `test_full_twitter_flow.py`, and adds an
+  optional TweetClaw/OpenClaw read-context step before `PostToTwitter` while
+  preserving the repo's existing `agent-twitter-client` posting path and human
+  approval. Target validation passed `git diff --check` and
+  `npx --yes markdown-link-check README.md README_TWITTER.md --quiet`. Final
+  PR readback: open, ready for review, mergeable, clean, no checks configured,
+  no comments or reviews.
+- OpenClaw and public hygiene: official OpenClaw docs probes returned HTTP 200
+  for `llms.txt`, `llms-full.txt`, CLI plugins, CLI skills, plugin building
+  docs, plugin manifest, tool plugins, plugin permission requests, install
+  overrides, ClawHub publishing, ClawHub skill format, and `help/debugging`.
+  `/cli/plugins/install`, `/cli/plugins/update`, and `/cli/plugins/inspect`
+  returned 404 and remain docs-route drift. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`; `npm view
+  clawhub` returned `0.23.0`; `npm view @xquik/tweetclaw` returned latest
+  `1.6.31`, MIT, canonical GitHub repo. Direct public probes returned HTTP 200
+  for TweetClaw GitHub, npm registry metadata, canonical ClawHub route, and
+  OpenClaw Directory.
+- Prompt self-improvement: for framework repos with an existing post node and
+  thin or stale tests, prefer a read-context recipe before the post node. Keep
+  TweetClaw framed as source context and approval evidence, not as a replacement
+  for the target's write client. For wshobson/agents-style generated registries,
+  source category belongs in the per-plugin source manifest so generated Cursor
+  and Codex marketplaces inherit it.
