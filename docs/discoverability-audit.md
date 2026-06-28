@@ -190,22 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-24 02:10 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260624-021035` returned 19 opportunities. Uncapped authored
-  inventory exact-read 2,337 open PRs: 49 conflicts, 3 changes-requested, 61
-  failed-check, 1 pending, 0 read failures.
-- Repair: `Aqmar777/openclaw-competitive-intel#1` README conflict fixed in
-  `f1fda22`, commented, and read back mergeable. `devhindo/x#75` still needs
-  target-owned Vercel authorization plus owner email follow-up, so notify.
-  `KooshaPari/PhenoMCPServers#36` remains Kilo-queued after prior fixes.
-- New PR: `branpurn/channel-x-dm#1` from verified fork
-  `kriptoburak/channel-x-dm` documents keeping TweetClaw outside the inbound DM
-  agent and passing only approved public X context into `x-dm`; read back open
-  and mergeable.
-- Hygiene: official OpenClaw docs, npm/clawhub metadata, platform fitness, npm
-  audit, Markdown links, direct public probes, memory check, and `npm run
-  check:all` passed. Prompt file stayed 12,314 bytes; no prompt edit needed.
-  Full details archived.
+- 2026-06-28 13:15 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-131553` returned 40 skill, MCP, X/Twitter, social, and
+  AI-framework opportunities. Audit mining found 1,257 tracked PR URLs; bounded
+  exact readbacks covered 80 current/watch PRs with 0 conflicts, 0 changes
+  requested, and 2 target-owned Vercel failures. This was not an uncapped
+  inventory.
+- Repair gate: no actionable maintainer code request, conflict, DCO/CLA blocker,
+  generated-file drift, or valid bot finding was found in the bounded readback.
+  `devhindo/x#75` still needs target Vercel authorization and owner email
+  follow-up.
+- New PR: `QwenLM/Qwen-Agent#909` adds an Xquik tweet search tool from verified
+  fork `kriptoburak/Qwen-Agent`; read back open, ready, mergeable, clean, no
+  checks, no comments, and duplicate-clean except for itself.
+- Hygiene: official OpenClaw docs returned HTTP 200, OpenClaw latest is
+  `2026.6.10`, npm latest for TweetClaw remains `1.6.31`, npm audit found 0
+  vulnerabilities, README and setup-doc links passed, and full details are
+  archived.
 
 ## Reporting Checklist
 

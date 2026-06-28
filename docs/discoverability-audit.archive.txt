@@ -39010,3 +39010,64 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   outside the inbound DM agent, private message content never leaves the
   channel workflow, and handoffs are limited to approved public handles, user
   IDs, tweet URLs, and short context notes.
+
+## 2026-06-28 13:15 UTC heartbeat
+
+- Runtime limitation: model and reasoning-effort selector was unavailable in
+  this local run, so the requested GPT-5.5 extra-high setting could not be
+  verified or selected.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260628-131553` from `/Users/burak/Developer/xquik` with strict
+  JSON output, research proxy, bounded timeouts, 7 focused queries covering
+  TweetClaw, OpenClaw, MCP, SKILL.md, `.agents/skills`, Twitter/X skills,
+  social media skills, and AI framework lanes. Output parsed as valid JSON with
+  40 opportunities. Top lanes included `0xNyk/xint`,
+  `dorukardahan/twitterapi-io-skill`, `blacktwist/social-media-skills`,
+  `0xNyk/xint-rs`, `mvanhorn/last30days-skill`, and other skill or catalog
+  targets. No crawler credentials were printed.
+- PR inventory method and limits: compact and archive memory were searched
+  first. Audit mining found 1,257 unique tracked PR URLs. Broad authored search
+  sampled the newest 300 open PRs by `kriptoburak`; exact readbacks covered a
+  bounded watch set of 80 current PRs plus known audit blockers. This was not a
+  complete uncapped inventory. Readbacks had 0 errors, 0 conflicts, 0
+  changes-requested, 21 non-clean merge states, and 2 failed checks.
+- Repair gate: no actionable conflict, review request, DCO/CLA blocker,
+  generated-file drift, or maintainer-requested code change was found in the
+  bounded readback. `arvindrk/twitter-agent#16` and `devhindo/x#75` failed only
+  target-owned Vercel authorization. `devhindo/x#75` still has owner
+  `devhindo` asking `kriptoburak` to check email at
+  https://github.com/devhindo/x/pull/75#issuecomment-4783634155.
+- Fresh AI-framework integration: current resumed automation window had already
+  opened https://github.com/QwenLM/Qwen-Agent/pull/909, titled "Add Xquik tweet
+  search tool", from verified fork `kriptoburak/Qwen-Agent`, branch
+  `codex/add-xquik-tweet-search-tool`, head
+  `2a7c45f3ab97b81bc34fc3376a41674f0e2942f5`. Target `QwenLM/Qwen-Agent` is
+  Apache-2.0, non-fork, non-archived, and high-fit for agent framework tool
+  integration. The PR read back open, ready, `MERGEABLE`, `CLEAN`, with no
+  checks, comments, or reviews.
+- Duplicate and policy checks: compact audit, archive, target open and closed
+  PRs, target issues, target metadata, fork metadata, and PR diff were checked
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, and Xquik tweet search.
+  The only target match was the fresh PR itself; issues were clean. Fork owner
+  and parent read back as `kriptoburak/Qwen-Agent` forked from
+  `QwenLM/Qwen-Agent`.
+- Target validation and hygiene: cloned the PR branch to `/tmp`, compiled
+  `qwen_agent/tools/xquik_tweet_search.py` and
+  `tests/tools/test_xquik_tweet_search.py`, checked conflict markers, reviewed
+  secret and public-hygiene terms, and ran `git diff --check` against fetched
+  base with a two-dot shallow-clone diff. Targeted pytest was attempted but
+  stopped at collection because target dependency `tiktoken` is not installed
+  locally. No live Xquik API key was used.
+- TweetClaw public hygiene: `npm view openclaw` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`; published
+  `@xquik/tweetclaw` remains `1.6.31`. Official OpenClaw docs probes returned
+  HTTP 200 for homepage, `llms.txt`, CLI plugin docs, manifest docs, ClawHub
+  publishing, and debugging. ClawHub canonical route returned HTTP 200. npm
+  package page returned HTTP 403 from the website, but npm registry metadata
+  worked through `npm view`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. Markdown link checks passed for `README.md` and
+  `docs/openclaw-setup.md`.
+- Memory and prompt self-improvement: compact Markdown memory was kept under
+  the 15 KiB cap by moving this full record to the archive and replacing the
+  compact latest-run block. No automation prompt edit was needed; prompt size
+  was measured separately before final reporting.
