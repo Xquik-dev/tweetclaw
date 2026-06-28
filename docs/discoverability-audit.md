@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-24 02:50 UTC: latest `2026.6.9`, beta
-  `2026.6.10-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
-  exports on `docs.openclaw.ai` returned HTTP 200. Current deep routes are
-  under `/cli/*`, `/tools/*`, `/clawhub/*`, `/plugins/*`, and `/help/*`.
+- OpenClaw npm checked 2026-06-28 15:58 UTC: latest `2026.6.10`, beta
+  `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
+  exports on `docs.openclaw.ai` returned HTTP 200. Current plugin docs are under
+  `/cli/*`, `/clawhub/*`, and `/plugins/*`; older `/openclaw/*` deep links 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-24 02:50 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-28 15:58 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-24 02:50 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 15:58 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 13:15 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-131553` returned 40 skill, MCP, X/Twitter, social, and
-  AI-framework opportunities. Audit mining found 1,257 tracked PR URLs; bounded
-  exact readbacks covered 80 current/watch PRs with 0 conflicts, 0 changes
-  requested, and 2 target-owned Vercel failures. This was not an uncapped
-  inventory.
-- Repair gate: no actionable maintainer code request, conflict, DCO/CLA blocker,
-  generated-file drift, or valid bot finding was found in the bounded readback.
-  `devhindo/x#75` still needs target Vercel authorization and owner email
-  follow-up.
-- New PR: `QwenLM/Qwen-Agent#909` adds an Xquik tweet search tool from verified
-  fork `kriptoburak/Qwen-Agent`; read back open, ready, mergeable, clean, no
-  checks, no comments, and duplicate-clean except for itself.
-- Hygiene: official OpenClaw docs returned HTTP 200, OpenClaw latest is
-  `2026.6.10`, npm latest for TweetClaw remains `1.6.31`, npm audit found 0
-  vulnerabilities, README and setup-doc links passed, and full details are
-  archived.
+- 2026-06-28 13:56 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-135634` returned 45 skill, MCP, X/Twitter, social, and
+  AI-framework opportunities. Audit mining found 1,258 tracked PR URLs; authored
+  search sampled 300 open PRs; exact readbacks covered 100 watch/current PRs.
+  GitHub GraphQL then rate-limited broader exact reads, so this was not an
+  uncapped inventory.
+- Repair gate: fixed conflicts/generated drift on `nastyabir/bestie-skills#8`
+  and `OKHP3/skillz#3`; both read back mergeable after pushes. Remaining failed
+  checks are target-owned Vercel authorization on `arvindrk/twitter-agent#16`
+  and `devhindo/x#75`; the latter still needs owner email follow-up.
+- New PR: `itsBrianCreates/CodeStory#1` adds a TweetClaw/OpenClaw
+  approval-gated publishing example for CodeStory X/Twitter drafts from verified
+  fork `kriptoburak/CodeStory`; read back open, ready, mergeable, clean, and no
+  checks/comments/reviews.
+- Hygiene: official OpenClaw docs and npm metadata were refreshed; OpenClaw
+  latest is `2026.6.10`, ClawHub CLI is `0.23.0`, TweetClaw npm latest remains
+  `1.6.31`, npm audit found 0 vulnerabilities, target links passed, and full
+  details are archived.
 
 ## Reporting Checklist
 

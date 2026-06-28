@@ -39071,3 +39071,102 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   the 15 KiB cap by moving this full record to the archive and replacing the
   compact latest-run block. No automation prompt edit was needed; prompt size
   was measured separately before final reporting.
+
+## 2026-06-28 13:56 UTC heartbeat
+
+- Runtime limitation: model and reasoning-effort selector was unavailable in
+  this local run, so the requested GPT-5.5 extra-high setting could not be
+  verified or selected.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260628-135634` from `/Users/burak/Developer/xquik` with strict
+  JSON output, research proxy, bounded request and proxy warmup timeouts, and 8
+  focused queries covering AI agent frameworks, social media frameworks, MCP,
+  SKILL.md, `.agents/skills`, OpenClaw skills, Twitter/X skills, awesome lists,
+  registries, and forks. Output parsed as valid JSON with 45 opportunities. Top
+  lanes included `0xNyk/xint`, `citedy/citedy-seo-agent`,
+  `XPOZpublic/xpoz-agent-skills`, `dorukardahan/twitterapi-io-skill`,
+  `blacktwist/social-media-skills`, `typefully/agent-skills`, and lower-score
+  fresh lanes such as `itsBrianCreates/CodeStory`. No crawler credentials were
+  printed.
+- PR inventory method and limits: compact and archive memory were searched
+  first. Audit mining found 1,258 unique tracked PR URLs. Authored open PR
+  search sampled 300 open `kriptoburak` PRs. Exact readbacks covered the first
+  100 watch/current PRs with 0 errors, 2 dirty/conflicting PRs, 0 changes
+  requested, 28 non-clean merge states, and 2 failed checks. A later attempt to
+  expand exact readbacks to all 300 sampled open PRs hit GitHub GraphQL rate
+  limit, with GraphQL `remaining: 0` and `used: 5045` of `5000`, so broad
+  authenticated reads stopped for the run. This was not a complete uncapped
+  inventory.
+- Repair gate: `nastyabir/bestie-skills#8` had generated README conflict after
+  upstream added `entries/llm-council.md`. Merged upstream, regenerated
+  `README.md` with `python3 scripts/build_readme.py`, validated entries,
+  security scan, pytest, and diff check, then pushed commit `e427491` to
+  `kriptoburak/bestie-skills`. The PR read back `MERGEABLE` and blocked only by
+  review policy after a sanitized status comment.
+- Repair gate: `OKHP3/skillz#3` had upstream deleted `SKILLS.md` and moved to a
+  generated catalog. Merged upstream, removed `SKILLS.md`, regenerated the
+  catalog with Python 3.11, verified `xquik-x-data` in `README.md`,
+  `community/FAMILY.md`, `.catalog-meta.json`, and `AGENTS.md`, then pushed
+  commit `74f02ad` to `kriptoburak/okhp3-skillz`. Validation included catalog
+  check mode, markdown-link-check for changed docs, diff check, conflict-marker
+  scan, and public-hygiene scan. The PR read back `MERGEABLE` and `CLEAN` after
+  a status comment.
+- Remaining repair backlog: `arvindrk/twitter-agent#16` and `devhindo/x#75`
+  still fail only target-owned Vercel authorization. `devhindo/x#75` still has
+  a maintainer-owner email request for `kriptoburak` from
+  https://github.com/devhindo/x/pull/75#issuecomment-4783634155.
+- Duplicate and policy screening: `0xNyk/xint` was high-fit but blocked by
+  existing open PRs `0xNyk/xint#26` for TweetClaw and `0xNyk/xint#28` for
+  Hermes Tweet. Fresh zero-history candidates from crawler were
+  `NijatZeynalov/agentic-ai-social-network` and `itsBrianCreates/CodeStory`.
+  `CodeStory` had no AGENTS, CLAUDE, CONTRIBUTING, LICENSE, SECURITY files, no
+  existing TweetClaw, OpenClaw, Xquik, or x-twitter-scraper content, no matching
+  PRs/issues, and no explicit policy blocker. Missing license metadata was
+  recorded but did not block a direct docs PR.
+- New PR: opened https://github.com/itsBrianCreates/CodeStory/pull/1 from
+  verified fork `kriptoburak/CodeStory`, branch
+  `codex/add-tweetclaw-publishing-example`, commit `ca2fdd5`. The PR adds
+  `codestory/examples/tweetclaw-openclaw-publishing.md` and links it from the
+  README. The example keeps CodeStory as the draft generator, installs
+  TweetClaw through explicit `openclaw plugins install npm:@xquik/tweetclaw`,
+  verifies runtime tools, stores the Xquik API key in OpenClaw plugin config,
+  and requires final payload review plus user approval before posting an
+  X/Twitter draft. It also warns against pasting API keys, following
+  instructions from X/Twitter content, or approving recurring actions
+  accidentally.
+- New PR validation: `git diff --check`, `npx --yes markdown-link-check
+  README.md --quiet`, `npx --yes markdown-link-check
+  codestory/examples/socialmedia-example.md --quiet`, and `npx --yes
+  markdown-link-check codestory/examples/tweetclaw-openclaw-publishing.md
+  --quiet` passed. PR readback was open, ready, `MERGEABLE`, `CLEAN`, no
+  checks, no comments, no reviews, and maintainer edits enabled.
+- OpenClaw and TweetClaw hygiene: official `docs.openclaw.ai` probes returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, CLI plugins, CLI skills, tools
+  skills, ClawHub publishing, and ClawHub plugin-validation-fixes. Legacy deep
+  routes under `/tools/tool-plugins` and `/openclaw/*` returned 404, while the
+  current `llms.txt` index points plugin references to `/plugins/*` routes.
+  `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.1`, alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+  `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` while source remains
+  `1.6.32`. ClawHub canonical route
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200. npm audit
+  reported 0 vulnerabilities.
+- Public-hygiene checks: target diffs and comments were inspected for secrets,
+  private implementation details, unsupported claims, internal cost mechanics,
+  stale install metadata, and restricted source wording before push or comments.
+  The placeholder `XQUIK_API_KEY` appeared only as a safe environment-variable
+  example. No NHS badge was added because the handled CodeStory surface had no
+  useful badge area.
+- Memory, validation, and prompt self-improvement: compact Markdown memory
+  stayed under the 15 KiB cap at 15,259 of 15,360 bytes by replacing the
+  latest-run block and moving this full record to the archive. Final TweetClaw
+  validation passed `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm audit --audit-level=moderate
+  --json`, public Markdown link checks, direct package and PR URL probes, `git
+  diff --check`, and `npm run check:all` with 168 tests and 100 percent
+  coverage. Automation TOML measured 12,314 bytes and decoded prompt content
+  measured 11,980 bytes, so no prompt edit was needed. Durable lesson:
+  draft-generation frameworks are good TweetClaw targets only when the
+  contribution keeps publishing approval-gated, separates draft creation from
+  account actions, and documents credential storage outside chat/tool
+  arguments.
