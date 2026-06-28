@@ -39283,3 +39283,119 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   tools that plug into an existing tool list and degrade cleanly without
   credentials; avoid adding new dependencies unless target tests or package
   policy make them safe.
+
+## 2026-06-28 16:54 UTC heartbeat
+
+- Runtime and starting state: model/effort selector for GPT-5.5 extra-high was
+  unavailable in this runtime, so the run continued and recorded the
+  limitation. TweetClaw started on `master...origin/master` with only the
+  pre-existing untracked `0`, which was preserved. GraphQL API rate limit
+  reported 0 remaining, so thread reads used REST, crawler output, fork
+  metadata, target issue and PR lists, and exact repo reads.
+- Crawler-first coverage: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and proxy warmup timeouts, limit 90, 2 search pages,
+  per-query limit 10, concurrency 8, session `tweetclaw-20260628-163452`, and
+  focused queries for authored open PRs, TweetClaw, OpenClaw, Xquik, AI-agent
+  frameworks, CrewAI, PydanticAI, OpenAI Agents, SKILL.md, `.agents/skills`,
+  social media skills, Twitter/X skills, and awesome agent lists. Output parsed
+  as valid JSON with 12 opportunities, including
+  `creatorcrawl/creatorcrawl-skill`, `blacktwist/social-media-skills`,
+  `BuddhaYi/macos-cli`, `elbis330/social-media-scraper-skill`,
+  `liangdabiao/tikhub_api_skill`, `beggarticksarthurtatum121/reddit-skills`,
+  `rabden/X-twitter-social-manager-skill`, `AISA-skills/social-media-skills`,
+  `labyla/x-search`, `tang-vu/social-posting-skills`,
+  `ReneHdzGtz/web3-community-marketing`, and
+  `tiendatne2004/tikhub_api_skill`. No crawler credential values were printed.
+- PR inventory and repair gate: REST partition searches over authored open PRs
+  for TweetClaw, Xquik, OpenClaw, ClawHub, MCP, skill, agent, Twitter, social,
+  framework, and package lanes found 136 unique in-scope open PRs. Exact REST
+  readbacks covered 70 recent, pinned, or audit-relevant PRs for state,
+  mergeability, base/head, comments, reviews, and checks. Target-owned blockers
+  included Vercel authorization gates, no-check unstable states, pending
+  aggregate statuses, review queues, or already-addressed bot findings. Dirty
+  actionable PRs included `warlockoussama/twitter-cli#1`,
+  `jamald33n/tweetsave-mcp#2`, `Saminiscool/twitter-ai-agent#2`,
+  `daymade/claude-code-skills#43`, `wshobson/agents#582`,
+  `Correia-jpv/fucking-awesome-ai-tools#17`,
+  `jimmc414/claude-code-plugin-marketplace#3`, and
+  `bendourthe/Nexus-Hub#25`; the newest useful repair was handled first.
+- PR repair: `warlockoussama/twitter-cli#1` was dirty after an upstream
+  force-update with unrelated history. Cloned the personal fork branch
+  `codex/update-readme-command-scope`, read target `AGENTS.md`, fetched upstream
+  `main`, merged with unrelated-history handling, and resolved the README
+  conflict by preserving command-scope clarification, the optional TweetClaw
+  companion note, and upstream download links. Validation passed conflict-marker
+  scan, `git diff --check`, `npx --yes markdown-link-check README.md --quiet`,
+  and changed README secret-pattern scan. Pushed commit `f42cabf` to
+  `kriptoburak/twitter-cli` and commented at
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4826741685.
+  Final REST readback reported open, mergeable, clean, head `f42cabf`, no review
+  comments.
+- Fresh candidate screening: crawler candidates were checked against compact
+  audit, archive, target metadata, target content, and open plus closed target
+  PRs/issues for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and
+  variants. `tang-vu/social-posting-skills` was duplicate-blocked by existing
+  PR 1 and repair history, `labyla/x-search` was blocked by prior PR 1,
+  `AISA-skills/social-media-skills` by existing issue 1, `BuddhaYi/macos-cli`
+  by prior weak-fit screening, TikHub/Rabden/Web3 lanes by no-license or
+  weaker direct-provider fit, and creatorcrawl/blacktwist/elbis330 by existing
+  history. Fallback REST repository searches covered CrewAI, PydanticAI,
+  LangGraph, and OpenAI Agents Twitter/X agent repos. The OpenAI Agents search
+  process was stopped after the new PR target was selected.
+- New PR: `akamai-developers/akamai-multi-agent-social-transform` was selected
+  because it is a public, non-fork, non-archived CrewAI and FastAPI example
+  that transforms long-form input into X and LinkedIn posts, exposes issues, has
+  no target TweetClaw/Xquik duplicate PR or issue, and accepts TXT/PDF source
+  plus X example files. Missing license metadata was recorded but did not block
+  the direct docs and fixture PR. A full clone stalled on media assets, so a
+  blobless sparse checkout was used. Verified fork
+  `kriptoburak/akamai-multi-agent-social-transform` has parent
+  `akamai-developers/akamai-multi-agent-social-transform`. Opened
+  https://github.com/akamai-developers/akamai-multi-agent-social-transform/pull/1
+  from branch `codex/add-tweetclaw-source-context`, commit `114e5e2`. The PR
+  adds `test-data/social-media-trends/tweetclaw_source_context.txt` and README
+  guidance for optional reviewed public X/Twitter source intake with TweetClaw
+  through OpenClaw, without runtime, deployment, auth, or publishing changes.
+  PR readback was open, mergeable, clean, no comments, no reviews, no review
+  comments, and pending aggregate status with no published statuses.
+- External validation and public hygiene: target validation passed
+  `git diff --check`, `python3 -m compileall -q app`,
+  README `markdown-link-check` with sparse screencast files and two pre-existing
+  Akamai TechDocs 403 responses ignored, fixture `markdown-link-check`, and
+  added-line secret-pattern scan. Target-owned README blockers were
+  `https://techdocs.akamai.com/cloud-computing/docs/gpu-compute-instances#availability`
+  and `https://techdocs.akamai.com/cloud-computing/docs/manage-personal-access-tokens`
+  returning 403 to the checker. The PR diff and body were inspected for secrets,
+  private implementation details, unsupported claims, internal cost mechanics,
+  restricted source wording, and stale metadata. No NHS badge was added because
+  no badge area was handled.
+- OpenClaw and TweetClaw hygiene: official `docs.openclaw.ai` probes returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, CLI plugins, CLI skills, plugin
+  building docs, plugin manifest, tool plugins, ClawHub publishing, ClawHub
+  skill format, and skills. Older direct routes `/debugging`,
+  `/cli/plugins/install`, `/cli/plugins/update`, and `/cli/plugins/inspect`
+  returned 404 and remain docs-route drift. `npm view openclaw` returned
+  `2026.6.10`, `npm view clawhub` returned `0.23.0`, and published
+  `@xquik/tweetclaw` remains `1.6.31` with MIT license and canonical GitHub
+  metadata.
+- Memory and prompt self-improvement: compact Markdown memory was reduced by
+  replacing the latest-run block and moving this full record into the archive.
+  Durable lesson: for AI-framework example repos, prefer sample input fixtures
+  and source-context docs when the target already accepts uploaded content; avoid
+  code dependencies unless the target has a tested extension point. GraphQL cap
+  should be recorded explicitly and should not stop REST exact readbacks,
+  crawler-backed discovery, clone scans, or fresh PR work.
+- Final TweetClaw validation: `npm run check-memory-md-size` reported 15,080 of
+  15,360 bytes for compact Markdown memory. `npm run check-openclaw-platform-fitness`
+  passed. `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  Markdown link checks passed for README, OpenClaw setup, compact audit, and
+  compact release memory. Direct public probes returned HTTP 200 for TweetClaw
+  GitHub, npm registry metadata, canonical ClawHub plugin route, OpenClaw
+  Directory listing, and the new Akamai PR. `git diff --check` and added-diff
+  secret-pattern scan passed. `npm run check:all` passed with 168 tests and
+  100 percent coverage. Automation TOML measured 12,314 bytes and decoded prompt
+  content measured 12,012 bytes, so no prompt edit was needed. Final changed
+  TweetClaw files were `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.

@@ -190,25 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 16:03 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-160349` returned 4 AI-framework/social candidates; REST
-  fallback found 59 unique in-scope open PRs and exact-read 30 newest/current
-  PRs before GraphQL remained capped at 0 remaining.
-- Repair gate: pushed/commented bot-feedback fixes on
-  `MervinPraison/PraisonAI#2440`, then resolved recurring force-update
-  conflicts on `reall8164/wechat-openclaw-plugin#1`,
-  `Aqmar777/openclaw-competitive-intel#1`,
-  `AbdNour627/awesome-openclaw-configs#1`, and
-  `Aditya923-c/xpoz-agent-skills#1`; all 4 conflict PRs read back mergeable and
+- 2026-06-28 16:54 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-163452` returned 12 skill/framework candidates; REST
+  partitions found 136 unique in-scope open PRs and exact-read 70 recent or
+  pinned PRs before GraphQL remained capped at 0.
+- Repair gate: `warlockoussama/twitter-cli#1` was dirty after an upstream
+  force-update. Pushed `f42cabf`, commented, and read back open, mergeable, and
   clean.
-- New PR: `praj2408/Smart-Marketing-Assistant-Crew-AI#1` adds an optional
-  CrewAI `search_x_posts` tool using Xquik for X trend research from verified
-  fork `kriptoburak/Smart-Marketing-Assistant-Crew-AI`; read back open,
-  mergeable, and no comments/reviews.
-- Hygiene: current OpenClaw docs and package metadata were refreshed; main docs
-  routes stayed 200 while old CLI subpaths now 404. OpenClaw latest is
-  `2026.6.10`, ClawHub CLI is `0.23.0`, TweetClaw npm latest remains `1.6.31`,
-  ClawHub and npm registry routes returned 200, and full details are archived.
+- New PR: `akamai-developers/akamai-multi-agent-social-transform#1` from
+  verified fork `kriptoburak/akamai-multi-agent-social-transform`, branch
+  `codex/add-tweetclaw-source-context`, commit `114e5e2`, adds an optional
+  TweetClaw source-context README workflow and sample fixture for a CrewAI
+  X/LinkedIn transformer. Readback: open, mergeable, no comments or reviews.
+- Hygiene: OpenClaw docs and npm metadata refreshed; key docs stayed 200, old
+  subroutes 404, OpenClaw `2026.6.10`, ClawHub CLI `0.23.0`, TweetClaw npm
+  `1.6.31`. Duplicate-blocked candidates and validation details are archived.
 
 ## Reporting Checklist
 
