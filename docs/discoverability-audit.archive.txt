@@ -2,6 +2,92 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-29 05:23 UTC Heartbeat
+
+- Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast mode
+  or explicit extra-high reasoning controls. Continued and recorded the
+  limitation.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260629-052327` from `/Users/burak/Developer/xquik` with strict
+  JSON output, managed research proxy, bounded timeouts, concurrency 8, and
+  focused authored-PR, TweetClaw/OpenClaw, `@xquik/tweetclaw`, SKILL.md,
+  `.agents/skills`, social-media skill, Twitter/X skill, awesome-list, MCP,
+  tweet workflow, social-media agent, Twitter Streamlit sentiment CSV, Twitter
+  dataset agent, and social-media agent queries. Strict JSON parsed successfully
+  with 29 opportunities and 0 crawler errors.
+- Xquik issue check: direct `gh issue list --repo Xquik-dev/xquik` returned no
+  open issues.
+- Complete PR inventory attempt: broad authored open-PR partitions completed
+  without unresolved cap or blocker across `updated:>=2026-06-29` (89),
+  `2026-06-28` (58), `2026-06-27` (1), `2026-06-26` (2), `2026-06-25` (3),
+  `2026-06-24` (20), `2026-06-22..2026-06-23` (250),
+  `2026-06-15..2026-06-21` (686), `2026-06-01..2026-06-14` (650),
+  `2026-05-01..2026-05-31` (549), `2026-04-01..2026-04-30` (52),
+  `2026-01-01..2026-03-31` (5), `2025-01-01..2025-12-31` (1), and
+  `updated:<2025-01-01` (0).
+- Exact PR readback: exact-repo REST lists covered 50 crawler and audit-tracked
+  repos. `allalongitwas/XActions` returned 404. The fallback found 43 authored
+  open PRs and exact-read all 43 with state, mergeability, base/head, commits,
+  comments, reviews, checks, conflicts, and bot findings where available.
+  Attention items were `Arindam200/awesome-ai-apps#226` with a maintainer
+  request for a 10-15 second working Nebius demo video, `DualNova/agent-skills#1`
+  and `geekjourneyx/jina-cli#6` with passing checks but `UNSTABLE` status,
+  `fchastanet/ai-linter#9` and `reymerekar7/rm-skills#1` review-required or
+  blocked but mergeable, `RanL703/TweetMCP#1` with only a Codex usage-limit bot
+  comment, and `minhnv0807/ai-business-skills#20` with only own comments.
+- Repair gate: `Arindam200/awesome-ai-apps#226` cannot be repaired with a code
+  patch because the remaining maintainer request asks for a working video of
+  the Nebius-backed project. Producing that artifact safely requires a valid
+  service credential and a visual artifact workflow. This is recorded as a
+  maintainer-request blocker and surfaced in the heartbeat outcome.
+- Fresh target screening: crawler-surfaced candidates included
+  `Shankar-behera/twitter-sentiment-analysis`,
+  `sabir-10/Sentiment-Analysis-Web-App`, and
+  `KhushiKansal/Sentiment_Analysis_WebApp`. All were duplicate-clean for
+  TweetClaw/Xquik/ClawHub target content, open/closed PRs, and open/closed
+  issues. `KhushiKansal/Sentiment_Analysis_WebApp` was selected because it is a
+  public, non-fork, non-archived Python/FastAPI/Streamlit app pushed in 2025,
+  already supports `/batch_predict` CSV uploads with a required `text` column,
+  and has no maintainer policy blocking contribution. Missing license metadata
+  was recorded but did not block a direct PR.
+- New external PR: opened
+  `https://github.com/KhushiKansal/Sentiment_Analysis_WebApp/pull/1` from
+  correctly parented fork `kriptoburak/Sentiment_Analysis_WebApp`, branch
+  `codex/add-tweetclaw-csv-converter`, commit
+  `6f2fd0c43579499aea883bcfb7c80214973797b2`. The PR adds README setup and
+  batch input docs, `tweetclaw_to_csv.py`, and
+  `tests/test_tweetclaw_to_csv.py` so TweetClaw JSON, JSONL, NDJSON, and CSV
+  exports can be converted into the app's batch sentiment CSV shape. Final
+  readback was open, ready, `MERGEABLE`, `CLEAN`, no comments, no reviews, and
+  no checks configured.
+- New PR validation: `python3 -m py_compile tweetclaw_to_csv.py
+  tests/test_tweetclaw_to_csv.py`, `python3 -m unittest
+  tests/test_tweetclaw_to_csv.py` with 5 tests, README markdown-link-check,
+  `git diff --check`, and changed-diff public hygiene scan passed.
+- TweetClaw maintenance: OpenClaw route probes with redirects returned HTTP 200
+  for `llms.txt`, `/cli/plugins`, `/plugins`, `/clawhub`, `/skills`, ClawHub
+  TweetClaw, and OpenClaw Directory. `llms-full.txt`, `/manifest`, `/config`,
+  and `/debugging` returned 404. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned latest `1.6.31`; `npm view clawhub` returned
+  `0.23.0`. ClawHub redirects to `https://clawhub.ai/xquik/plugins/tweetclaw`
+  and still exposes version `1.6.26`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness`,
+  `npm audit --audit-level=moderate`, README markdown-link-check, compact audit
+  markdown-link-check, and compact release markdown-link-check passed before
+  audit editing. Prompt payload stayed 12130 bytes. Final memory and full gates
+  are recorded in the committed diff for this heartbeat.
+- Public hygiene: changed external PR content and TweetClaw audit diffs were
+  scanned for secrets, credentials, restricted source/provider wording, private
+  implementation details, internal cost mechanics, unsupported claims, stale
+  metadata, and comparative cost claims. No secret exposure was found.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Pre-existing untracked path `0` was left
+  untouched.
+- TweetClaw audit commit: this heartbeat audit update was committed and pushed
+  to `master` after validation.
+
 ## 2026-06-29 05:13 UTC Heartbeat
 
 - Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast mode
