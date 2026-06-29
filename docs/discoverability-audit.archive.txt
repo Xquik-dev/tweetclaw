@@ -42905,8 +42905,12 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   context enrichment while preserving bookmark sync, SQLite state, unread
   reports, and the 6551 download flow; it also fixes `references/ops-checklist.md`
   to use the SKILL's 10 consecutive known tweet buffer and SQLite DB rows.
-  Final readback: open, ready, `MERGEABLE`, no comments, no reviews, no checks,
-  files `README.md`, `SKILL.md`, and `references/ops-checklist.md`.
+  Codex connector review then found two valid P2 issues: stale report-generator
+  command/read-state wording and an over-broad TweetClaw trigger. Follow-up
+  commit `f02294be03c9c457880c0a2da738af1aaf0556ff` fixed both findings,
+  reran validation, pushed to the same branch, and resolved both review
+  threads. Final readback: open, ready, `MERGEABLE`, one resolved bot review,
+  no checks, files `README.md`, `SKILL.md`, and `references/ops-checklist.md`.
 - Target validation and hygiene for
   `huatianwan/researchwang-bookmark-assistant#1`: `git diff --check`, README,
   SKILL, and ops-checklist markdown-link-check, edited-file dash scan, and

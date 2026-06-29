@@ -199,8 +199,9 @@ archive, before any outreach or duplicate decision.
   405 PRs with 0 errors. Repaired conflict on `Persistio/openclaw-persistio#2`,
   final readback open, ready, `MERGEABLE`, head `c698a8d`.
 - New PR: `huatianwan/researchwang-bookmark-assistant#1` adds optional
-  TweetClaw source-packet guidance and fixes checklist drift. Final readback
-  was open, ready, `MERGEABLE`, head `2bfedf5`.
+  TweetClaw source-packet guidance and fixes checklist drift. Bot review
+  findings were fixed and resolved; final readback was open, ready,
+  `MERGEABLE`, head `f02294b`.
 - Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
   prompt bytes, memory-size, and self-improvement details are archived.
 
