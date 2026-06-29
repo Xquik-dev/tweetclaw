@@ -45669,3 +45669,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   pushing. When crawler output is duplicate-heavy and a candidate is already
   archive-held as weak fit, use a narrow fallback search over adjacent
   source-evidence and social-skill lanes instead of forcing a low-value PR.
+2026-06-29 22:56 UTC heartbeat
+
+- Runtime selector note: Codex model, Fast mode, and extra-high reasoning
+  selectors were not exposed by this runtime, so the limitation was recorded and
+  work continued.
+- Repo state at start: TweetClaw on `master...origin/master` with pre-existing
+  untracked `0`; Xquik on `master...origin/master` with unrelated dirty
+  roadmap/article files left untouched. Open issues for `Xquik-dev/tweetclaw`
+  and `Xquik-dev/xquik` were empty.
+- Crawler-first discovery from `/Users/burak/Developer/xquik`: ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 220
+  limit, 1 search page, 8 per query, concurrency 8, session
+  `tweetclaw-20260629-225653`, and query packs covering authored PRs,
+  TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skill dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, source packets, and OpenClaw tweet
+  skills. Output parsed as valid JSON with 43 opportunities and 0 explicit
+  errors.
+- PR inventory: flag-based authored created-date partitions avoided the earlier
+  search-string parse issue and returned 2,468 unique open PR URLs with 0 capped
+  buckets. Crawler repo-mode PR lists covered 43 repos and found 33 authored
+  open PRs with 0 errors. Exact readbacks covered 171 current or tracked PRs
+  with 0 errors: CLEAN 112, UNSTABLE 31, DIRTY 8, BLOCKED 13, UNKNOWN 7;
+  checks NO_CHECKS 150, FAILING 8, SUCCESS 13; reviews blank 153,
+  REVIEW_REQUIRED 17, CHANGES_REQUESTED 1. No all-GitHub inventory claim is
+  made beyond the completed partitions and exact-read set.
+- Repair gate: selected `Aditya923-c/xpoz-agent-skills#1` because it was a
+  crawler-surfaced social skill PR with a current README conflict. Verified
+  fork `kriptoburak/xpoz-agent-skills` is correctly parented to
+  `Aditya923-c/xpoz-agent-skills`, merged upstream `main`, resolved the README
+  Quick Links conflict by keeping the GitHub Repository link pointed at the
+  repository page and leaving the TweetClaw/OpenClaw note unchanged, then
+  validated conflict-marker scan, `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`, and changed-diff
+  public-hygiene scan. Pushed `690885b`, posted
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4838128069,
+  and exact-read the PR as open, ready, CLEAN, MERGEABLE, no checks.
+- Fresh screening: `dhiraj-salian/buffer-api-skill` was active, non-fork, MIT
+  licensed, issue-enabled, and duplicate-clean across compact memory, archive,
+  target content, and open plus closed PRs/issues for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, and package variants. Contribution docs require
+  local tests and dependency-free changes; the docs-only source-evidence
+  handoff fit the repo's Buffer scheduling skill without making TweetClaw a
+  posting path.
+- Fork and duplicate guard: created and verified `kriptoburak/buffer-api-skill`
+  as correctly parented to `dhiraj-salian/buffer-api-skill`, added an explicit
+  `fork` remote before pushing, and kept upstream `origin` read-only for fetch.
+- New external PR: opened
+  https://github.com/dhiraj-salian/buffer-api-skill/pull/1 from branch
+  `codex/add-x-source-evidence-handoff`, commit `dd163a8`. The PR documents a
+  source-evidence handoff before Buffer-scheduled X/Twitter posts, keeps
+  TweetClaw optional and read-only as reviewed OpenClaw source-packet context,
+  leaves Buffer as the channel lookup, queueing, scheduling, and posting
+  workflow, and updates `CHANGELOG.md`.
+- New PR validation: passed `git diff --check`,
+  `python3 -m unittest discover -s tests -v` with 31 tests,
+  `npx --yes markdown-link-check README.md CHANGELOG.md --quiet`, added-line
+  ASCII scan, and public-hygiene diff scan. Full target link check over
+  README, SKILL, and CHANGELOG only failed on pre-existing
+  `https://api.buffer.com` in `SKILL.md` returning HTTP 400; this PR did not add
+  or modify that link. Readback: open, ready, MERGEABLE, UNSTABLE merge-state
+  status, head `dd163a838df558429e30c92cc9f25c5a028a497f`, no
+  checks/comments/reviews, maintainer can modify.
+- Official OpenClaw and package hygiene: `openclaw.dev` route checks timed out
+  from Node fetch, Python `urllib`, and curl for llms exports, CLI plugin and
+  skill docs, manifest, permission requests, tool plugins, SDK runtime, ClawHub
+  publishing and skill docs, install overrides, debugging, credential docs, and
+  runtime docs. Installed official `openclaw@2026.6.10` matched npm latest and
+  bundled the relevant docs paths, so those local package docs were used as
+  fallback evidence. No OpenClaw compatibility metadata, manifest shape,
+  approval behavior, release gate, public install docs, packaged skill
+  guidance, or TweetClaw wording changed. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31`; `npm view clawhub`
+  returned `0.23.0`. ClawHub TweetClaw routes, OpenClaw Directory, and npm
+  registry returned HTTP 200. `npm audit --audit-level=moderate`, `npm run
+  check-openclaw-platform-fitness`, and Markdown link checks passed.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, this archive, and release archive. Automation
+  prompt was not edited; automation TOML measured 12,432 bytes.
+- Self-improvement: use `gh search prs --author --state --created` flag
+  partitions instead of a single shell-quoted search string for broad authored
+  inventory. When target validation exposes a pre-existing endpoint-root link
+  failure, record it separately and validate touched docs independently. After
+  compaction or scratch-output loss, re-read fork parent and remotes before
+  pushing.
