@@ -1766,3 +1766,23 @@ ClawHub publish was attempted.
   `npm run check-openclaw-platform-fitness` passed for source targeting
   OpenClaw `2026.6.10`. Markdown link checks passed for README, OpenClaw setup
   docs, agent workflow docs, compact audit, and compact release memory.
+2026-06-29 20:48 UTC release hygiene refresh
+
+- Official OpenClaw docs routes on `openclaw.dev` timed out with curl code `000`
+  for `llms.txt`, CLI plugins, CLI skills, plugin manifest, plugin permission
+  requests, tool plugins, SDK runtime, ClawHub publishing, ClawHub skill format,
+  install overrides, debugging, CLI secrets, and gateway secrets. No OpenClaw
+  compatibility metadata, manifest shape, install metadata, approval behavior,
+  packaged skill guidance, or public install wording changed.
+- Registry metadata succeeded: `npm view openclaw` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published `1.6.31` while source remains `1.6.32`;
+  `npm view clawhub` returned `0.23.0`.
+- ClawHub TweetClaw route and canonical route returned HTTP 200, OpenClaw
+  Directory returned HTTP 200, and npm registry metadata returned HTTP 200.
+- `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed for source targeting
+  OpenClaw `2026.6.10`. Markdown link checks passed for README, OpenClaw setup
+  docs, agent workflow docs, compact audit, and compact release memory.
+- npm publish auth and ClawHub owner-scope blockers remain unchanged, so no npm
+  publish or ClawHub publish was attempted.

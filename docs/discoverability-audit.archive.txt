@@ -45248,3 +45248,85 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   insertion into an existing skill when it is more reviewable than adding a new
   standalone skill. Record GitHub search 401s as inventory blockers and do not
   claim a complete exact inventory when any partition fails.
+2026-06-29 20:48 UTC heartbeat
+
+- Runtime selector limitation: this local heartbeat surface did not expose
+  model, Fast speed, or extra-high effort controls, so the run continued with
+  the limitation recorded.
+- GitHub issues: `gh issue list` returned no open issues for
+  `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`. Xquik still had unrelated
+  pre-existing article/roadmap changes and TweetClaw still had pre-existing
+  untracked `0`; none were touched.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-204848/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 10000 --limit 240 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-204848` with focused query packs for authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  skill registries, forks, generated catalogs, source packets, social listening,
+  marketing skills, and web-index skill repos. Output parsed as valid JSON with
+  48 opportunities and no crawler errors.
+- Open PR inventory: partitioned authored PR search by created windows returned
+  2,459 unique open PR URLs and no search errors. Exact readbacks covered 80
+  latest or handled PRs, including state, mergeability, base/head, commits,
+  comments, reviews, files, and status rollups when available. No complete
+  all-GitHub inventory claim is made beyond those partitions and exact
+  readbacks. Remaining known target-owned blockers include old Vercel failures
+  on Hermes catalog PRs and `The-Swarm-Corporation/swarms-tools#56` maintainer
+  workflow checks.
+- Repair gate: `Saminiscool/twitter-ai-agent#2` was conflicting after upstream
+  moved. Verified fork `kriptoburak/saminiscool-twitter-ai-agent-xquik` is
+  parented to `Saminiscool/twitter-ai-agent`, merged upstream `main`, resolved
+  the README conflict as an ancestry-only merge, and pushed `af18ede` to
+  `codex/add-xquik-backend`. Validation passed conflict-marker scan,
+  `git diff --check`, Prettier check on touched files, Biome lint on touched
+  code/tests, README markdown link check, changed-diff public-safety scan,
+  `npx tsc --noEmit`, and `npm test -- tests/twitter-api.test.ts` after
+  `npm ci --ignore-scripts`. Target lockfile audit reported pre-existing
+  advisories only. Posted
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4836938330.
+  Final exact readback: open, ready, CLEAN, MERGEABLE, no checks.
+- Fresh target screening: crawler and archive review blocked or deprioritized
+  prior duplicate lanes including `harrrshall/tweetmark`,
+  `arthurkatcher/x-search-via-hermes`, `rabden/X-twitter-social-manager-skill`,
+  `devadio/post-skill`, and several already-submitted marketing-skill forks.
+  `ajmedick/claude-marketing-skills` had no compact/archive duplicate, is
+  non-forked, unarchived, default branch `main`, no license metadata, and
+  active public marketing skill content. Target content, open and closed PRs,
+  and open and closed issues were searched for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub/npm/ClawHub variants, Xquik,
+  x-twitter-scraper, and source-packet variants with no duplicates found.
+- New external PR: created verified fork
+  `kriptoburak/ajmedick-claude-marketing-skills`, parented to
+  `ajmedick/claude-marketing-skills`, branch `codex/social-source-evidence`,
+  commit `c6ca1a4`, and opened
+  https://github.com/ajmedick/claude-marketing-skills/pull/1. The PR adds
+  TweetClaw as an optional X/Twitter source-packet tool in the viral-content
+  reverse-engineering reference and adds source URL plus collection-note capture
+  for evidence-backed drafting. Validation passed `git diff --check`,
+  `npx --yes markdown-link-check social-content/references/reverse-engineering.md --quiet`, and changed-diff public-safety scan. Readback:
+  open, ready, CLEAN, MERGEABLE, no checks, comments, or reviews.
+- Official OpenClaw and package hygiene: current `openclaw.dev` docs route
+  probes timed out with curl code `000` for `llms.txt`, CLI plugins, CLI
+  skills, plugin manifest, plugin permission requests, tool plugins, SDK
+  runtime, ClawHub publishing, skill format, install overrides, debugging, CLI
+  secrets, and gateway secrets. No OpenClaw compatibility metadata or public
+  install wording changed. `npm view openclaw` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view
+  @xquik/tweetclaw` returned published `1.6.31` with older npm install metadata
+  while source remains `1.6.32`. `npm view clawhub` returned `0.23.0`. ClawHub
+  TweetClaw route, canonical ClawHub route, OpenClaw Directory, and npm registry
+  metadata returned HTTP 200. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+  Markdown link checks passed for README, `docs/openclaw-setup.md`,
+  `docs/agent-workflows.md`, compact audit, and compact release memory.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, this archive, and release archive. Compact memory
+  was reduced to `15006/15360` bytes by `npm run check-memory-md-size`.
+  Automation prompt was not edited; current automation TOML measured 12,432
+  bytes with `wc -c`.
+- Self-improvement: when a personal fork name already belongs to a different
+  parent network, create a parent-specific fork name and verify the parent
+  before pushing. For marketing-skill repos with minimal README and no package,
+  prefer one narrow evidence-source edit inside an existing reference over a
+  standalone skill. Keep docs-route timeouts as reachability blockers when npm
+  metadata and local OpenClaw fitness still pass and no compatibility wording is
+  being changed.
