@@ -49,17 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 02:05 UTC: latest `2026.6.10`, beta
-  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
-  route check: `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
-  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
-  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
-  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
-  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
-  `/agent-runtime-architecture`, `/concepts/agent`, `/concepts/agent-runtimes`,
-  and `/plugins/codex-harness-runtime` 200; `/sdk/runtime` 404.
+- OpenClaw npm checked 2026-06-29 02:52 UTC: latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core llms, `/cli/plugins`,
+  plugin, skill, ClawHub, config, help, agent/runtime, and Codex harness docs
+  were 200. `/cli/plugins` now covers install, update, and inspect; old
+  subroutes plus `/plugins/permission-requests` and `/sdk/runtime` 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 02:05 UTC, but latest ClawHub page remains
+  page on 2026-06-29 02:52 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -195,21 +191,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 02:05 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260629-020547` returned 21 opportunities across PR, skill,
-  OpenClaw, MCP, social, Twitter/X, awesome-list, and catalog lanes.
-- Complete PR inventory: partitions read 2,334 authored open rows, exact-read
-  all 2,286 lane matches with 0 final failures, and recorded 70 dirty or
-  unknown, 60 non-success check, and 405 comment or review rows.
-- Repair gate: `reall8164/wechat-openclaw-plugin#1` was merged with upstream
-  and README conflict-repaired at `3a9353b`; final readback was `MERGEABLE` and
+- 2026-06-29 02:52 UTC: model/effort selector unavailable. Xquik crawler
+  session `tweetclaw-20260629-025255` returned 21 opportunities across PR,
+  skill, OpenClaw, MCP, social, X, awesome-list, and catalog lanes.
+- Complete PR inventory: partitions read 2,340 authored open rows, exact-read
+  2,272 lane matches with 0 failures and no caps; backlog counts were 532
+  dirty or unknown, 60 non-success, and 398 comment or review rows.
+- Repair gate: `Saminiscool/twitter-ai-agent#2` was merged with upstream and
+  README conflict-repaired at `d62037a`; final readback was `MERGEABLE` and
   `CLEAN`.
-- New PR: `Sumayya-Samreen/Interactive-Twitter-Sentiment-Dashboard#1` adds a
-  standard-library TweetClaw export converter, documents mock-data use, and
-  fixes per-keyword CSV logging.
-- Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, target validation,
-  public hygiene, prompt bytes, memory-size, and self-improvement details are
-  archived.
+- New PR: `Putrabadiws/X-Sentiment-Analysis#1` adds local TweetClaw/OpenClaw
+  JSON, JSONL, NDJSON, and CSV import into existing `full_text` preprocessing,
+  preserves CSV uploads, fixes a stale README anchor, and passes 66 tests.
+- Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
+  prompt bytes, memory-size, and self-improvement details are archived.
 
 ## Reporting Checklist
 

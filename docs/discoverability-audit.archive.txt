@@ -41276,3 +41276,116 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   changing target-owned live search behavior. The complete PR inventory script
   must keep per-call timeouts so transient GitHub 502s cannot stall exact
   readbacks.
+
+## 2026-06-29 02:52 UTC Heartbeat
+
+- Runtime limitation: the heartbeat requested GPT-5.5 with extra-high reasoning
+  effort, but the runtime exposed no model or reasoning-effort selector. The run
+  continued under the available heartbeat runtime and recorded the limitation.
+- Starting state: TweetClaw `master` matched `origin/master` with only the
+  pre-existing untracked path `0`. `Xquik-dev/tweetclaw` had no open issues.
+- Crawler-first coverage: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output to
+  `/tmp/tweetclaw-heartbeat-20260629-025255/crawl.json`, research proxy,
+  request timeout 12000 ms, proxy warmup timeout 20000 ms, limit 260, one search
+  page, per-query limit 8, concurrency 8, and session
+  `tweetclaw-20260629-025255`. Query pack covered authored PR monitoring,
+  TweetClaw, OpenClaw, MCP, `SKILL.md`, `.agents/skills`, skill directories,
+  Codex, Claude, OpenClaw, social, Twitter/X skills, awesome lists, registries,
+  forks, generated catalogs, x-twitter-scraper, and sentiment dashboard lanes.
+  The crawler produced valid JSON with 21 opportunities; proxy logs contained
+  route metadata only and no credential values.
+- Complete PR inventory: initial `gh search prs` script requested unsupported
+  fields and was discarded. A one-by-one GraphQL script parsed the wrong output
+  path and was discarded after killing only owned PIDs. A batched script was
+  restarted after an apparent stall; final streaming batched GraphQL exact
+  readbacks wrote summary files under
+  `/tmp/tweetclaw-heartbeat-20260629-025255/`. Partitions were `>=2026-06-29`
+  70, `2026-06-28` 58, `2026-06-27` 1, `2026-06-26` 2, `2026-06-25` 3,
+  `2026-06-24` 20, `2026-06-22..2026-06-23` 249, `2026-06-15..2026-06-21`
+  684, `2026-06-01..2026-06-14` 648, `2026-01-01..2026-05-31` 604,
+  `2025-01-01..2025-12-31` 1, and `<2025-01-01` 0. No partition was capped.
+  The inventory discovered 2,340 unique authored open rows, exact-read all 2,272
+  lane matches, and had 0 final readback failures. Backlog counts were 532 dirty
+  or unknown, 60 non-success check rollups, 398 with comments or reviews, and
+  70 updated today.
+- Repair gate: selected `Saminiscool/twitter-ai-agent#2` because it was an
+  in-scope X/Twitter agent PR that exact-read as `CONFLICTING` and `DIRTY`, with
+  no maintainer comments, reviews, or checks. Verified the PR head fork
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik` is correctly parented to
+  `Saminiscool/twitter-ai-agent`, fetched complete fork and upstream history,
+  merged upstream `main`, resolved the README-only conflict, committed
+  `d62037a`, pushed to `codex/add-xquik-backend`, and posted repair comment
+  `https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4828648905`.
+  Validation passed conflict-marker scan, `git diff --check`, README
+  markdown-link-check, Prettier check on README plus touched TypeScript/test
+  files, focused Biome lint on touched TypeScript/test files, `npx tsc
+  --noEmit`, and `npx vitest run tests/twitter-api.test.ts`. `npm ci
+  --ignore-scripts` reported pre-existing dependency advisories, and
+  target-wide `npm run check` still reported pre-existing formatting drift in
+  unrelated files. Final readback was open, `MERGEABLE`, `CLEAN`, head
+  `d62037a392a1c18082b9af2879ed8d853138c302`, and no checks configured.
+- Fresh screening and duplicate gates: crawler candidates blocked by prior
+  TweetClaw or Xquik history included `mxyhi/ok-skills`, `0xNyk/xint`,
+  `blacktwist/social-media-skills`, `0xNyk/xint-rs`, `mvanhorn/last30days-skill`,
+  `liyupi/yupi-hot-monitor`, `tonkotsuboy/x-impact-checker`,
+  `rrrrrredy/x-twitter-scraper`, and generated skill catalogs. Fallback GitHub
+  repo searches then screened sentiment dashboards and skill repos. Compact
+  audit, archive, exact target metadata, target content, target open and closed
+  PRs, target open and closed issues, and fork metadata were checked for
+  TweetClaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, OpenClaw, Twitter/X, and variants. `Putrabadiws/X-Sentiment-Analysis`
+  was selected because it was public, non-fork, non-archived, active on
+  2026-06-25, issue-enabled, duplicate-clean, and target-native for importing
+  reviewed local TweetClaw/OpenClaw export files into its existing Indonesian X
+  sentiment preprocessing path. Missing license metadata did not block this
+  direct PR.
+- New external PR:
+  `https://github.com/Putrabadiws/X-Sentiment-Analysis/pull/1` from verified
+  fork `kriptoburak/X-Sentiment-Analysis`, branch
+  `codex/tweetclaw-export-import`, commit `38b2f76c7dbf1ea884aec09b9796c25b14a9c253`.
+  The PR adds `src/tweetclaw_import.py`, wires `.json`, `.jsonl`, `.ndjson`, and
+  `.csv` export loading into the existing Streamlit preprocessing upload path,
+  keeps ordinary CSV uploads backward-compatible, documents the no-crawl local
+  export workflow, and fixes a stale README self-anchor found by link checking.
+  Final readback was open, ready, `MERGEABLE`, `CLEAN`, no comments, no reviews,
+  and no checks configured.
+- Target validation for the new PR: isolated Python 3.11 venv installed
+  `requirements.txt` plus pytest. `.venv/bin/python -m pytest
+  tests/test_tweetclaw_import.py` passed with 4 tests; `.venv/bin/python -m
+  pytest` passed with 66 tests; `.venv/bin/python -m py_compile app.py
+  src/tweetclaw_import.py tests/test_tweetclaw_import.py` passed; `git diff
+  --check` passed; README markdown-link-check passed after the stale anchor fix;
+  conflict-marker and public-hygiene diff scans found no introduced secrets,
+  private implementation details, restricted provider or source names, cost
+  mechanics, unsupported claims, or stale metadata.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  `/agent-runtime-architecture`, `/concepts/agent`, `/concepts/agent-runtimes`,
+  `/plugins/codex-harness-runtime`, `clawhub.ai/plugins/@xquik/tweetclaw`,
+  OpenClaw Directory, TweetClaw GitHub, and npm registry metadata. Current 404s
+  were `/cli/plugins/install`, `/cli/plugins/update`, `/cli/plugins/inspect`,
+  `/plugins/permission-requests`, and `/sdk/runtime`. The official Markdown
+  export and `/cli/plugins` page show install, update, and inspect command
+  documentation under the single `/cli/plugins` route. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.23.0`; published
+  `@xquik/tweetclaw` remained `1.6.31` with older install metadata while source
+  remained `1.6.32`; ClawHub page still exposed `1.6.26`; `npm audit
+  --audit-level=moderate --json` reported 0 vulnerabilities; `npm run
+  check-openclaw-platform-fitness` passed.
+- TweetClaw validation and public hygiene: markdown-link-check passed for
+  `README.md`, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. `npm run
+  check-memory-md-size` passed at 15,074 of 15,360 bytes after compacting route
+  detail into this archive. `npm run check:all` passed with 168 tests and 100
+  percent coverage. Prompt bytes stayed 12,012.
+- Prompt self-improvement: when OpenClaw docs retire command-specific subroutes,
+  verify the unified CLI page or Markdown export before treating the 404 as a
+  compatibility blocker. For X sentiment Streamlit apps, prefer a small local
+  export importer that preserves the app's existing CSV upload path and avoids
+  adding live calls or new credentials.

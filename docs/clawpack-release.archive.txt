@@ -1035,6 +1035,33 @@ canonical page. npm publish auth and ClawHub owner-scope blockers remain
 unchanged, so no release or ClawHub publish was attempted. npmjs web UI returned
 403 to raw probe, while npm registry metadata returned HTTP 200.
 
+## 2026-06-29 02:52 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after complete PR
+inventory, one external PR repair, and one new external PR. Official route
+checks returned HTTP 200 for llms exports, `/cli/plugins`, plugin manifest,
+plugin permission requests, tool plugins, install overrides, skills, ClawHub
+publishing, ClawHub skill format, gateway config tools, help debugging, agent
+runtime architecture, concepts/agent, concepts/agent-runtimes, Codex harness
+runtime, the canonical ClawHub TweetClaw route, OpenClaw Directory, TweetClaw
+GitHub, and npm registry metadata. Current 404s were `/cli/plugins/install`,
+`/cli/plugins/update`, `/cli/plugins/inspect`, `/plugins/permission-requests`,
+and `/sdk/runtime`. The official Markdown export and `/cli/plugins` page now
+carry install, update, and inspect command documentation under the single
+plugins CLI route, so the command-specific 404s are route retirement, not a
+TweetClaw compatibility change.
+
+`npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and
+alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+`@xquik/tweetclaw` remains `1.6.31` while source remains `1.6.32`. Published npm
+install metadata still points at the older `>=2026.5.4` host floor, while source
+metadata targets OpenClaw `2026.6.10` for the unpublished source package.
+ClawHub route `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
+and still exposed version `1.6.26`. `npm audit --audit-level=moderate --json`
+reported 0 vulnerabilities and `npm run check-openclaw-platform-fitness`
+passed. npm publish auth and ClawHub owner-scope blockers remain unchanged, so
+no release or ClawHub publish was attempted.
+
 ## 2026-06-29 02:05 UTC Heartbeat Release Hygiene
 
 OpenClaw platform and release-adjacent checks were refreshed after complete PR
