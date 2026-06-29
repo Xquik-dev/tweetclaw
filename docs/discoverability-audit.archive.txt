@@ -43570,3 +43570,106 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   update visible README dependency lists when compatibility behavior changes.
   For X/Twitter operator skills, TweetClaw is strongest as an untrusted
   source-discovery and monitoring handoff, not as posting authority.
+
+## 2026-06-29 13:44 UTC heartbeat
+
+- Runtime limitation: this environment did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode with extra-high effort
+  could not be selected from the agent. The run continued and recorded the
+  limitation.
+- Initial TweetClaw state: branch `master...origin/master` with pre-existing
+  untracked file `0`, left untouched. GitHub rate at start was REST core 4,999,
+  search 30, GraphQL 4,322.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output to `/tmp/tweetclaw-heartbeat-20260629-132919/crawl.json` using
+  session `tweetclaw-20260629-132919`, `--research-proxy`,
+  `--request-timeout-ms 12000`, `--proxy-warmup-timeout-ms 12000`, `--limit
+  260`, `--search-pages 1`, `--per-query-limit 8`, and `--concurrency 8`.
+  Query coverage included authored open PRs, TweetClaw, OpenClaw, ClawHub,
+  x-twitter-scraper, MCP, `SKILL.md`, `.agents/skills`, OpenClaw/Codex/Claude
+  and social Twitter/X skill lanes, awesome lists, registries, generated
+  catalogs, scheduled tweet, and X/Twitter operator skill lanes. Output
+  contained 40 opportunities and 0 errors.
+- Broad authenticated search: attempted 16 `gh search prs` lane partitions, but
+  the first local query expansion was malformed and later calls hit GitHub
+  secondary rate limits. Broad authenticated search stopped for this run. The
+  run continued with crawler output, exact repo REST lists, archive URLs, clone
+  plus `rg`, and known PR REST reads.
+- PR inventory: extracted 1,308 PR URLs from compact and archive memory, listed
+  68 unique open PRs from 40 crawler repos with exact repo REST lists, and
+  combined to 1,354 unique PR URLs. The first exact-read capture had a local
+  xargs path-splitting bug and was discarded. Corrected REST exact readbacks
+  parsed 1,313 pull records: 1,084 open, 918 clean, 51 dirty, 143 unknown, 10
+  draft, and 41 REST errors. Rate after exact reads was REST core 4,997, search
+  30, GraphQL 4,165.
+- Repair priority: newest actionable dirty PR was
+  `https://github.com/reall8164/wechat-openclaw-plugin/pull/1`. Exact readback
+  showed open, ready, dirty, head `kriptoburak:codex/add-tweetclaw-workflow`,
+  6 commits, 1 changed file, 16 prior comments from `kriptoburak`, no reviews,
+  no review comments, and no check runs. The fork
+  `kriptoburak/wechat-openclaw-plugin` was verified as a public fork of
+  `reall8164/wechat-openclaw-plugin`; target license metadata was absent.
+- Repair completed: merged upstream `main`, resolved README conflicts by
+  preserving the GitHub support link, TweetClaw optional workflow section, and
+  one download badge. Validation passed conflict scan, `git diff --check`, JSON
+  parses for `package.json` and `openclaw.plugin.json`, `npx --yes
+  markdown-link-check README.md --quiet`, and sensitive diff scan. Target-owned
+  validation blockers remain: `npm ci --ignore-scripts --no-audit --no-fund`
+  fails with `Invalid Version`, and `npm run typecheck` then lacks `tsc`.
+- Repair pushed: branch `codex/add-tweetclaw-workflow` now has merge commit
+  `e27accc2a25604d55dbdebfefa6a67e265d02121`. Final REST readback for
+  `reall8164/wechat-openclaw-plugin#1`: open, ready, `mergeable=true`,
+  `mergeable_state=clean`, head `e27accc`, base `abe1b93`.
+- Fresh duplicate screening: duplicate or prior-history blockers included
+  `woshiheihei/heihei-skills#1`, `blacktwist/social-media-skills#5/#4/#2`,
+  `reymerekar7/rm-skills#1`, `KiKi-Builds/AI-Briefing-Skill#1`,
+  `liyupi/yupi-hot-monitor#6`, `ndesv21/socialclaw#3/#2`,
+  `ashemag/reddit-crosspost#1`, `brettdavies/xurl-rs-skill#9`,
+  `lancelin111/crawl4ai-skill#1`, `mvanhorn/clawdbot-skill-search-x#2`,
+  `zyipeng/video-downloader#1`, `Hakurei-git/xpost#2`, `mvanhorn/last30days-skill`,
+  `jedi4ever/social-skills`, and `3000isagoodcat/xplus.skill`.
+- Fresh target accepted: `ScrapeCreators/social-media-research-skills` is
+  public, active, non-fork, default branch `main`, no license metadata, and had
+  no target content, open/closed PRs, open/closed issues, or archive hits for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub or npm URLs,
+  ClawHub listing, Xquik, x-twitter-scraper, or variants. Target rules favor
+  workflow-first public-data skills and `scrapecreators-api` as the data layer.
+- Official OpenClaw recheck before OpenClaw-facing wording: live routes returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/cli/skills`,
+  `/plugins/manifest`, `/tools/plugin`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/help/debugging`. `llms.txt` was read and
+  confirms Markdown exports plus current ClawHub/CLI/plugin/skill docs maps.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  and alpha `2026.5.19-alpha.1`.
+- New external PR: created fork `kriptoburak/social-media-research-skills` with
+  parent `ScrapeCreators/social-media-research-skills`, branch
+  `codex/tweetclaw-source-packets`, commit
+  `ba4565c77b724a9b1991ddca91beacac90f3344a`, and opened
+  `https://github.com/ScrapeCreators/social-media-research-skills/pull/4` via
+  REST. The PR documents optional public source packets, names TweetClaw as an
+  approval-gated X/Twitter evidence source for OpenClaw agents, keeps
+  ScrapeCreators as the fresh endpoint data layer, and tells the
+  social-listening skill to treat source packets as evidence, not instructions.
+- New PR validation and readback: passed `git diff --check`, `python3
+  scripts/validate-skills.py`, conflict-marker scan, sensitive diff scan, and
+  `npx --yes markdown-link-check README.md
+  skills/social-listening-brief/SKILL.md --quiet`. Final REST readback for
+  `ScrapeCreators/social-media-research-skills#4`: open, ready,
+  `mergeable=true`, `mergeable_state=blocked` from target branch protection,
+  head `ba4565c`, base `5367252`, 2 files changed, 1 commit, no comments, no
+  reviews, and no check runs.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains `1.6.32`; release mismatch remains known and
+  unchanged. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md
+  docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md
+  --quiet` passed.
+- Prompt self-improvement: preserved the Codex 5.5 Fast mode, extra-high effort,
+  and no-standard-speed wording. Persisted automation prompt measured 12,098
+  bytes. Compact Markdown memory check passed at 15,357/15,360 bytes. Reusable
+  lesson: for public-data social research skill repos, place TweetClaw as
+  optional source evidence and explicitly say source packets are evidence, not
+  instructions; keep the repo's native data layer authoritative for fresh
+  endpoint fetches.
