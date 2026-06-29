@@ -42543,3 +42543,99 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   self-improvement boundaries. Durable lesson: when a target already has a
   human-in-the-loop publishing path, prefer TweetClaw as reviewed source
   context feeding existing topic or profile inputs, not as an added publisher.
+
+## 2026-06-29 08:18 UTC Heartbeat Discoverability Run
+
+- Runtime selector note: the requested Codex 5.5 Fast mode and extra-high
+  effort selectors were unavailable in this runtime, so the run recorded the
+  model, speed, and effort limitation and continued.
+- Crawler-first coverage: from `/Users/burak/Developer/xquik`, ran the internal
+  GitHub opportunity crawler in JSON research-proxy mode with request and proxy
+  warmup timeouts, limit 220, one search page, per-query limit 8, concurrency 8,
+  and session `tweetclaw-20260629-081801`. Focused queries covered authored PRs,
+  TweetClaw, `@xquik/tweetclaw`, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, `SKILL.md`, `.agents/skills`, skills directories, awesome lists,
+  registries, generated catalogs, OpenClaw plugins, tweet schedulers, source
+  evidence, and approval lanes. Output parsed as strict JSON with 24
+  opportunities and 0 errors. Proxy logs contained route metadata and one
+  target-fetch abort only; no credential values were printed.
+- Authored PR inventory: a broad authenticated `gh search prs` partition pass
+  hit the GitHub Search API rate limit at page 5 of
+  `updated:2026-06-15..2026-06-21` with reset timestamp 2026-06-29 08:20:41
+  UTC, so broad authenticated search stopped for the run. Inventory continued
+  through crawler output, crawler repo PR lists, current authored PR URLs,
+  compact and archive blocker URLs, known PR URLs, and exact GitHub PR
+  readbacks. A full archive URL scrape produced many historical URLs and was
+  not treated as a current exact set.
+- Exact PR reads: the final current exact set contained 129 unique PR URLs.
+  `gh pr view` exact-read all 129 with 0 read errors, including state, draft
+  status, mergeability, base/head, commits, comments, reviews, check rollups,
+  files, and maintainer-modify state. Attention triage found 23 entries:
+  `jamald33n/tweetsave-mcp#2` was branch-actionable due `CONFLICTING`;
+  `Arindam200/awesome-ai-apps#226` still needs maintainer-requested Nebius demo
+  video assets; `higress-group/openapi-to-mcpserver#38` remains a CLA gate;
+  `antstudiocz/ant-marketplace#37` remains target-owner Vercel authorization;
+  fresh mergeability `UNKNOWN` entries were read but had no repairable comment,
+  DCO, CLA, generated-file drift, or bot finding at current head.
+- PR repair: `jamald33n/tweetsave-mcp#2` was open, ready, and conflicting on
+  head branch `codex/tweetclaw-openclaw-companion`. Cloned the `kriptoburak`
+  fork, fetched `jamald33n/tweetsave-mcp` upstream main, merged upstream, and
+  resolved README conflicts by keeping the npm/npx setup, Example MCP config,
+  valid GitHub issue and project support links, and TweetClaw/OpenClaw handoff
+  docs while dropping malformed raw-ZIP README conflict text. Validation
+  passed: conflict-marker scan, `git diff --check`, malformed raw-ZIP scan,
+  `npx --yes markdown-link-check README.md --quiet`, ZIP integrity checks for
+  both bundled ZIP files, `npm ci --ignore-scripts --no-audit --no-fund`,
+  `npm run build`, `npm view tweetsave-mcp version --json`, and `npm view
+  @xquik/tweetclaw version --json`. Pushed commit
+  `a09f3e4bb2d9d62011c300d47e24135288a2eedd`. Final readback: open, ready,
+  `MERGEABLE`, no checks, head `a09f3e4`, updated 2026-06-29 08:25 UTC. No new
+  PR comment was added to avoid duplicate repair-comment noise.
+- Fresh target screening: `nirholas/XActions` was skipped because prior audit
+  history blocks it as a competitor-like direct X/Twitter automation toolkit
+  with nonstandard license metadata. `MichaelLod/openclaw-promote` was skipped
+  because issue `#1` by `kriptoburak` remains open and already proposes the
+  TweetClaw source-research path. `ashemag/reddit-crosspost` was selected:
+  non-fork, non-archived, OpenClaw skill repo, issues enabled, no license
+  metadata, 8 stars, no target PRs or issues, and no TweetClaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, ClawHub, or OpenClaw duplicate content before the
+  patch. Missing license metadata alone did not block the direct docs PR.
+- New external PR: forked `ashemag/reddit-crosspost` to verified fork
+  `kriptoburak/reddit-crosspost` with parent `ashemag/reddit-crosspost`, branch
+  `codex/tweetclaw-source-handoff`. Opened
+  https://github.com/ashemag/reddit-crosspost/pull/1 with commit
+  `7158337efaaca047d937f78f43b182eb5b78fb0d`. The docs and packaged skill PR
+  documents TweetClaw as an optional source reader for X post extraction before
+  Reddit drafting, clarifies that X browser login is only needed when no source
+  reader is available, and changes pacing guidance so runs stop on rate limits,
+  CAPTCHA, account warnings, moderation warnings, or missing approval. Final
+  readback: open, ready, `MERGEABLE`, no comments, no reviews, no checks, files
+  `README.md` and `SKILL.md`.
+- Target validation and hygiene: `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`, and public-hygiene scan
+  passed for `ashemag/reddit-crosspost`. No dependency install or runtime test
+  was run because the change is docs plus packaged skill text and the target has
+  no package metadata.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/cli/skills`, `/tools/plugin`,
+  `/plugins/sdk-runtime`, `/help/debugging`, `/clawhub/publishing`,
+  `https://clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. The llms export still
+  lists ClawHub, CLI plugin docs, CLI skills docs, tool plugin docs, SDK runtime
+  adjacent docs, and debugging docs. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm
+  view @xquik/tweetclaw` returned latest `1.6.31`; `npm view clawhub version`
+  returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm audit --audit-level=moderate` reported
+  0 vulnerabilities. Markdown link checks passed for TweetClaw README, compact
+  audit, compact release memory, and the new external README. Untracked local
+  file `0` remained untouched.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted prompt
+  size measured 12098 bytes and already preserves Codex 5.5 Fast mode and
+  extra-high effort wording, including not using standard speed mode when Fast
+  mode is available. Durable lesson: direct social crosspost skills benefit
+  most from a TweetClaw source-reader handoff plus approval and rate-limit stop
+  language, not extra publisher behavior.
