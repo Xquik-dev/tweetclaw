@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 19:10 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 20:27 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs routes timed
   out from local fetch and curl during this run; no compatibility wording was
   changed.
-- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 17:50 UTC after redirecting to
+- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
+  2026-06-29 20:27 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 19:10 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 20:27 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,24 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 19:56 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-195618` returned 48 opportunities and no explicit errors
-  across open-PR, TweetClaw, OpenClaw, skill, social, registry, fork, catalog,
-  and source-packet lanes.
-- Authored PR partitions found 2,455 open PRs across 8 created windows with no
-  1,000-result cap. Lane filter matched 2,409; exact readbacks covered the
-  latest 30 plus touched PRs, so this is not an all-GitHub exact-read claim.
-- Repair gate: advanced `evalops/mcp-openapi#30` through compile-cache and
-  OAuth2-flow fixes (`c33df15e`, `c6ba934d`, `6b2d0898`, `d8090613`) with
-  checks/tests/diff/safety scans. Final readback: open, MERGEABLE, Socket
-  success, Cursor and Devin pending. One validation comment was duplicated.
-- Fresh PR: opened https://github.com/jlindstrom21/claude-marketing-skills/pull/1
-  from verified `kriptoburak/claude-marketing-skills` fork with a
-  `public-social-proof-listening` skill that uses optional TweetClaw public
-  X/Twitter source packets. Readback: open, ready, CLEAN, no checks/comments.
-- OpenClaw docs routes timed out again; npm metadata, ClawHub/OpenClaw Directory,
-  `npm audit`, OpenClaw fitness, and Markdown link checks passed. Details,
-  backlog, and self-improvement are archived. Prompt was not edited.
+- 2026-06-29 20:27 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-202748` returned 48 opportunities with SKILL.md,
+  `.agents/skills`, OpenClaw/MCP/Codex/Claude/social/Twitter-X, awesome-list,
+  registry, fork, catalog, and source-packet lanes.
+- Authored PR partitions returned 2,316 unique open PRs; one broad partition hit
+  GitHub 401, so no complete all-GitHub inventory claim. Exact readbacks covered
+  61 latest/touched PRs.
+- Repair gate: pushed `b8bb04f` to `evalops/mcp-openapi#30` after Cursor's
+  OAuth2 grant finding. Final readback: open, MERGEABLE, Cursor/Devin/Socket
+  success, branch protection still BLOCKED.
+- Fresh PR: opened https://github.com/Pauesome/claude-marketing-skills/pull/1
+  from verified `kriptoburak/claude-marketing-skills-pauesome` fork. Readback:
+  open, ready, CLEAN, no checks/comments.
+- OpenClaw docs routes timed out; npm metadata, ClawHub/OpenClaw Directory,
+  `npm audit`, OpenClaw fitness, and Markdown link checks passed. Details and
+  self-improvement are archived. Prompt was not edited.
 
 ## Reporting Checklist
 

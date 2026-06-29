@@ -45160,3 +45160,91 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   platform-route blockers when npm registry and local fitness gates still pass;
   do not delay fresh PR work after a bounded docs-route timeout if no OpenClaw
   compatibility metadata is being changed.
+2026-06-29 20:27 UTC heartbeat
+
+- Runtime selector limitation: this local heartbeat surface did not expose
+  model, Fast speed, or extra-high effort controls, so the run continued with
+  the unavailable selector recorded.
+- GitHub issues: `gh issue list` returned no open issues for
+  `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`. Xquik still had unrelated
+  pre-existing changes in article/roadmap files and TweetClaw still had
+  pre-existing untracked `0`; none were touched.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-202748/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 10000 --limit 220 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-202748` with focused query packs for authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  skill registries, forks, generated catalogs, source packets, and web-index
+  skill repos. Output parsed as valid JSON with 48 opportunities and no
+  explicit crawler errors.
+- Open PR inventory: partitioned authored PR search by created windows returned
+  2,316 unique open PR URLs. One broad GitHub search partition returned
+  `401 Unauthorized`, so this run makes no complete all-GitHub exact-read
+  claim. Title lane filtering matched 2,002 in-scope PRs. Exact readbacks
+  covered 61 latest or handled PRs, including status, mergeability, checks,
+  comments, and reviews. Dirty/conflicting recent PRs included
+  `reall8164/wechat-openclaw-plugin#1`, `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and `jamald33n/tweetsave-mcp#2`.
+  Failing or pending target-owned checks included Vercel failures on old
+  Hermes catalog PRs. No new maintainer-actionable comments were found in the
+  exact-read set.
+- Repair gate: `evalops/mcp-openapi#30` was repaired again after Cursor's
+  OAuth2 grant finding on `d8090613`. Pushed `b8bb04f` on branch
+  `codex/add-xquik-openapi31-fixture`; the compiler now reads the OAuth
+  endpoint and scopes only from the OpenAPI OAuth2 client flow used by the
+  runtime's client grant, no longer borrowing authorization-code or
+  password OAuth endpoints. Bumped compile cache format to 7 and updated compiler
+  regression tests. Validation passed `npm run check`, `npm test`,
+  `git diff --check`, and changed-diff public-safety scans. Posted validation
+  comment https://github.com/evalops/mcp-openapi/pull/30#issuecomment-4836761769.
+  Final readback: open, ready, MERGEABLE, branch-protection BLOCKED, Cursor
+  Bugbot success, Devin Review success, Socket project and pull-request checks
+  success.
+- Fresh target screening: compact audit, archive, target content, and open plus
+  closed target PR/issue searches checked `Pauesome/claude-marketing-skills`
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub and npm
+  variants, ClawHub, Xquik, and x-twitter-scraper. Searches returned no
+  duplicate content, PRs, or issues. Target metadata: MIT license, non-fork,
+  default branch `main`, pushed 2026-05-04. Read target `README.md`,
+  `skills/competitor-teardown/SKILL.md`, file list, and recent git history.
+  The fit was target-native because the competitor teardown skill already
+  scores trust signals and social proof but lacked an optional public
+  X/Twitter evidence packet.
+- New external PR: created verified fork
+  `kriptoburak/claude-marketing-skills-pauesome`, parented to
+  `Pauesome/claude-marketing-skills`, branch
+  `codex/add-tweetclaw-social-evidence`, commit `82ebc17`, and opened
+  https://github.com/Pauesome/claude-marketing-skills/pull/1. The PR adds
+  optional `x_profile_url` or `x_handle` inputs and a bounded TweetClaw public
+  X/Twitter evidence-packet step to `skills/competitor-teardown/SKILL.md`, while
+  keeping WebFetch as the required path. Validation passed `git diff --check`,
+  `npx --yes markdown-link-check skills/competitor-teardown/SKILL.md --quiet`,
+  and changed-diff public-safety scan. Full README plus edited skill link check
+  found a pre-existing unreachable `https://docs.claude.com/claude-code/skills`
+  README link; the edited skill has no broken links. PR readback: open, ready,
+  CLEAN, MERGEABLE, no checks, comments, or reviews.
+- Official OpenClaw and package hygiene: current `openclaw.dev` docs route
+  probes timed out with curl code `000` for `llms.txt`, CLI plugins, CLI
+  skills, plugin manifest, plugin permission requests, tool plugins, SDK
+  runtime, ClawHub publishing, skill format, install overrides, debugging, and
+  auth-management docs routes. No OpenClaw compatibility metadata or public
+  install wording was changed. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`.
+  `npm view @xquik/tweetclaw` returned published `1.6.31` with npm install
+  metadata while source remains `1.6.32`. `npm view clawhub` returned `0.23.0`.
+  ClawHub TweetClaw route, canonical ClawHub route, OpenClaw Directory, and npm
+  registry metadata returned HTTP 200. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+  Markdown link checks passed for README, `docs/openclaw-setup.md`,
+  `docs/agent-workflows.md`, compact audit, and compact release memory.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, and this archive. The compact audit replaced the
+  latest-run block instead of growing it. Prompt was not edited, so no persisted
+  prompt byte measurement was needed.
+- Self-improvement: keep selected but unsubmitted fresh candidates in the
+  rolling backlog as eligible next-run lanes unless later duplicate checks block
+  them. For marketing-skill targets, prefer a narrow optional source-evidence
+  insertion into an existing skill when it is more reviewable than adding a new
+  standalone skill. Record GitHub search 401s as inventory blockers and do not
+  claim a complete exact inventory when any partition fails.
