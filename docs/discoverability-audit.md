@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 16:13 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 16:26 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs for llms, CLI
   plugins/skills, plugin manifest/tools/SDK, ClawHub, skill format, debugging,
   and `/plugins/install-overrides` returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 16:13 UTC after redirecting to
+  page on 2026-06-29 16:26 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 16:13 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 16:26 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 16:13 UTC: runtime selectors unavailable; TweetClaw started on
-  `master...origin/master` with pre-existing untracked path `0`, left untouched.
-- Crawler session `tweetclaw-20260629-155003` returned 37 opportunities, 37
-  repos, and 0 errors. Repo-mode rerun returned 3 opportunities.
-- PR inventory: archive/crawler/search produced 2,685 unique PR URLs; crawler
-  exact lists found 80 open PRs. REST readbacks covered 2,647 URLs: 2,417 open,
-  230 closed, 1,836 clean, 70 dirty, 18 unknown, 126 blocked, 358 unstable, 9
-  behind, and 38 errors. Capped partitions prevent a complete all-GitHub claim.
-- Repair: `jamald33n/tweetsave-mcp#2` merged upstream `main`, resolved README
-  conflict drift, removed malformed raw-ZIP links, passed build, link, ZIP,
-  npm metadata, and public-safety checks, posted validation, and read back open,
-  clean, head `0577f70`.
-- New PR: `Sethzy/marketing-second-brain-demo#1` adds a TweetClaw JSON importer
-  for raw X evidence plus docs. It reads back open, mergeable, unstable because
-  no checks are configured, head `a393b5a`.
-- TweetClaw npm audit, OpenClaw docs/npm recheck, OpenClaw fitness, public
-  links, duplicate screens, validation, and self-improvement details are
+- 2026-06-29 16:26 UTC: runtime selectors unavailable. GitHub CLI auth failed
+  from keyring with an invalid token, so authenticated search, fork, comment,
+  PR creation, and exact broad readbacks were blocked.
+- Crawler session `tweetclaw-20260629-162233` returned 29 opportunities and 0
+  errors. Public unauthenticated repo PR lists covered 29 crawler repos and 74
+  open PR rows; 10 exact PR readbacks succeeded before 403/429 rate limits.
+- Exact checked PRs were clean or non-actionable. Fresh screening rechecked
+  `MaxJiang103/x-spam-reply-shield` as no-license and
+  `alonw0/web-asset-generator` as MIT but lower-fit, matching archive blockers.
+- No new external PR could be opened because the GitHub credential boundary
+  blocked write access. TweetClaw npm audit, OpenClaw docs/npm recheck,
+  OpenClaw fitness, public links, validation, and self-improvement details are
   archived.
 
 ## Reporting Checklist

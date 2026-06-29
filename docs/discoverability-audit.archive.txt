@@ -44244,3 +44244,94 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   quota, continue with public unauthenticated metadata and clone verification
   instead of resuming broad authenticated search. Preserve the repo-mode crawler
   command by quoting each `--repo` argument or using an array-safe shell.
+
+## 2026-06-29 16:26 UTC Heartbeat
+
+- Runtime and start state: the current Codex runtime again did not expose Codex
+  5.5 Fast mode or extra-high reasoning selectors, so the run recorded that
+  limitation and continued. TweetClaw started on `master...origin/master` with
+  pre-existing untracked path `0`, left untouched. Compact memory was
+  `15328/15360` bytes. `$CODEX_HOME/automations/improve-tweetclaw-openclaw-integration/automation.toml`
+  was not present in this desktop context, so persisted prompt bytes could not
+  be measured from local automation storage.
+- Credential boundary: `gh auth status` reported the active `kriptoburak`
+  keyring token is invalid and recommended `gh auth login`. This blocked
+  authenticated GitHub search, fork creation, PR creation, review/comment
+  reads, comments, and exact broad readbacks. The run stopped broad
+  authenticated search immediately, continued with the internal crawler,
+  unauthenticated public REST, clone plus `rg`, archive memory, and package/doc
+  probes, and recorded this as a notification-worthy credential boundary.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output to `/tmp/tweetclaw-heartbeat-20260629-162233/crawl.json` with
+  research proxy, request timeout `10000`, proxy warmup timeout `10000`, limit
+  `120`, one search page, per-query limit `6`, concurrency `8`, session
+  `tweetclaw-20260629-162233`, and query packs for authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, OpenClaw/Codex/Claude
+  social and Twitter-X skills, awesome lists, registries, and source-packet
+  skill repos. Output parsed as valid JSON with 29 opportunities, 29 repos, and
+  0 errors. Proxy warmup printed endpoint counts and countries only, with no
+  credential values.
+- PR inventory under the credential blocker: compact and archive extraction
+  still found 1,314 historical PR URLs. Unauthenticated public REST first showed
+  core limit 59/60. Repo-level open PR lists for the 29 crawler repos found 74
+  open PR rows. Exact public PR readbacks succeeded for 10 PRs before API
+  errors reached 41 HTTP 403 rate-limit responses and 5 HTTP 429 responses.
+  Exact-checked PRs included `0xNyk/xint#28`, `0xNyk/xint#26`,
+  `3000isagoodcat/xplus.skill#1`, `arthurkatcher/x-search-via-hermes#1`,
+  `beggarticksarthurtatum121/reddit-skills#1`, and
+  `blacktwist/social-media-skills#5/#4/#3/#2/#1`; all successful exact reads
+  were clean or had no maintainer-actionable comments or reviews in the public
+  readback. This is not a complete all-GitHub claim because authenticated search
+  and most exact reads were blocked.
+- Repair gate: no safely repairable current-head conflict, CI failure, DCO/CLA
+  blocker, generated-file drift, valid bot finding, or maintainer comment was
+  reachable before public REST rate limits. Known newest checked PRs were clean
+  or duplicate-monitoring items. The previous repair
+  `jamald33n/tweetsave-mcp#2` remains recorded as clean from the prior heartbeat.
+- Fresh screening: crawler candidates were almost entirely duplicate-covered by
+  existing PRs or archive history: `0xNyk/xint`, `blacktwist/social-media-skills`,
+  `stevenflanagan1/social-ai-team`, `Hakurei-git/xpost`,
+  `elbis330/social-media-scraper-skill`, `mvanhorn/last30days-skill`,
+  `beggarticksarthurtatum121/reddit-skills`,
+  `rabden/X-twitter-social-manager-skill`, `3000isagoodcat/xplus.skill`,
+  `arthurkatcher/x-search-via-hermes`, `tang-vu/social-posting-skills`,
+  `rohunvora/x-research-skill`, `rediumvex/social-media-caption-generator-claude`,
+  `tonkotsuboy/x-impact-checker`, `lancelin111/crawl4ai-skill`,
+  `mvanhorn/clawdbot-skill-search-x`, `bradautomates/head-of-content`,
+  `brettdavies/xurl-rs-skill`, and related direct X/Twitter skill lanes. The
+  generated `costrict-plugins-repo/github-trending-tweetclaw` mirror was skipped
+  as not maintainer-appropriate.
+- Fresh clone checks: `MaxJiang103/x-spam-reply-shield` was recloned and
+  locally scanned after archive search. It has README, SKILL, agent YAML, and a
+  Chrome MV3 extension template for X/Twitter spam replies, but no license file
+  or license metadata was detected, matching prior no-license blockers.
+  `alonw0/web-asset-generator` was recloned and locally scanned. It is MIT
+  licensed, duplicate-clean for TweetClaw/Xquik terms, and has social image and
+  Twitter-card asset generation, but archive history and the current read both
+  show TweetClaw source packets are lower target fit than its actual favicon,
+  icon, PWA, and OG image workflow. No PR was opened because GitHub write access
+  was blocked and no newly screened eligible target-native PR lane could be
+  submitted safely.
+- Official OpenClaw recheck: live routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/plugins/install-overrides`, and `/help/debugging`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and
+  alpha `2026.5.19-alpha.1`. `npm view clawhub` returned `0.23.0`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest `1.6.31`
+  with published install npmSpec `@xquik/tweetclaw@1.6.31`, while source remains
+  unpublished `1.6.32`. ClawHub route redirected to
+  `clawhub.ai/xquik/plugins/tweetclaw`; OpenClaw Directory, npm registry
+  metadata, TweetClaw GitHub, and docs.xquik.com probes returned HTTP 200.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`. Markdown link
+  checks for TweetClaw README, OpenClaw setup docs, workflow docs, compact
+  audit, and compact release memory passed.
+- Prompt self-improvement: when GitHub CLI auth is invalid, treat the run as a
+  credential-boundary run, stop broad authenticated GitHub work, and conserve
+  public REST quota for crawler repo lists plus the newest known PR readbacks.
+  Keep direct X/Twitter UI-extension skills such as `MaxJiang103/x-spam-reply-shield`
+  blocked unless license metadata appears. Keep asset-generator repos lower fit
+  unless the target already asks for sourced social-card evidence or a
+  TweetClaw-specific fixture.
