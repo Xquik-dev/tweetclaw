@@ -45408,3 +45408,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target for policy, duplicate, and target-native fit instead of carrying the old
   blocker forward. For README-only skill repos, a useful PR should make the repo
   installable or operational, not merely add a tool mention.
+2026-06-29 21:30 UTC heartbeat
+
+- Runtime selector limitation: this local heartbeat surface did not expose
+  model, Fast speed, or extra-high effort controls, so the run continued with
+  the limitation recorded.
+- GitHub issues and worktrees: `gh issue list` returned no open issues for
+  `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`. Xquik still had unrelated
+  pre-existing article and roadmap changes. TweetClaw still had pre-existing
+  untracked `0`. None were touched.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 220
+  limit, 1 search page, 8 per query, concurrency 8, and session
+  `tweetclaw-20260629-213054`. Query pack covered authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, source packets, social listening,
+  marketing skills, and web-index skill repos. Output parsed as valid JSON with
+  48 opportunities and no crawler errors.
+- PR inventory: partitioned authored PR search by created windows found 1,043
+  unique open PR URLs before GitHub search returned authenticated API rate-limit
+  errors on later partitions. Per run rule, broad authenticated search stopped.
+  Core and GraphQL limits still allowed exact reads. Exact readbacks covered 60
+  latest PRs plus 10 known tracked PR URLs, 67 unique PRs total, with 0 read
+  errors. Latest slice merge states were CLEAN 44, BLOCKED 6, UNSTABLE 10.
+  Known tracked dirty conflicts included `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and `jamald33n/tweetsave-mcp#2`.
+- Repair gate: selected `warlockoussama/twitter-cli#1` as the simple
+  conflict-only repair. Verified `kriptoburak/twitter-cli` is a fork parented to
+  `warlockoussama/twitter-cli`, cloned the fork, checked out
+  `codex/update-readme-command-scope`, fetched upstream `main`, merged, and
+  resolved the README conflict by keeping one canonical download link plus the
+  existing command-scope clarification and TweetClaw companion note. Validation
+  passed `git diff --check`, conflict-marker scan,
+  `npx --yes markdown-link-check README.md --quiet`, and changed-diff
+  public-hygiene scan. Pushed `90ce977` and posted
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4837302461.
+  Final readback: open, ready, CLEAN, MERGEABLE, no checks.
+- Other PR monitoring: `The-Swarm-Corporation/swarms-tools#56` still had
+  failing maintainer label/welcome workflows, but both GitHub Actions job logs
+  returned `log not found`, matching the existing maintainer-workflow blocker.
+  Thread-aware GraphQL read for `evalops/mcp-openapi#30` showed unresolved
+  non-outdated Devin threads are informational comments about documented
+  behavior, test coupling, and cache semantics; current checks are successful.
+- Fresh candidate screening: first crawler pass had no unseen external repo
+  after archive duplicate gates; only `tweetclaw/humancode` and
+  `tweetclaw/microcompany` were unrecorded and were not external outreach
+  targets. A smaller crawler pass with session
+  `tweetclaw-20260629-213054-fresh` returned 11 opportunities despite proxy
+  fetch failures and 0 JSON errors. Unseen external leads were
+  `ProgramadorBrasil/antigravity-skills`, `bnbot-ai/bnbot`, and
+  `metachemist/Full-Time-Employee`.
+- Duplicate and target checks for `bnbot-ai/bnbot`: compact and archive memory
+  had no prior entry; target content had no TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, or x-twitter-scraper mention; target open and
+  closed PR and issue lists were empty. Repo is public, non-fork, non-archived,
+  issue-enabled, default branch `main`, package metadata license `MIT` while
+  GitHub license metadata is missing. No maintainer policy blocker was found.
+- New external PR: created verified fork `kriptoburak/bnbot`, parented to
+  `bnbot-ai/bnbot`, branch `codex/add-tweetclaw-source-evidence`, commit
+  `cf4569f`, and opened https://github.com/bnbot-ai/bnbot/pull/1. The PR adds a
+  narrow optional TweetClaw source-evidence section to `SKILL.md` that keeps
+  TweetClaw read-only during trend gathering, stores returned tweet URLs as
+  source material, and leaves publishing in the existing BNBot draft-mode flow
+  unless the user explicitly asks for direct posting. Validation passed
+  `git diff --check`, conflict-marker scan,
+  `npx --yes markdown-link-check SKILL.md --quiet`, and changed-diff
+  public-hygiene scan. Readback: open, ready, CLEAN, MERGEABLE, no checks,
+  comments, or reviews.
+- Official OpenClaw and package hygiene: current `openclaw.dev` docs route
+  probes timed out with curl code `000` for `llms.txt`, CLI plugins, CLI
+  skills, plugin manifest, plugin permission requests, tool plugins, SDK
+  runtime, ClawHub publishing, skill format, install overrides, debugging, CLI
+  secrets, and gateway secrets. No OpenClaw compatibility metadata or public
+  install wording changed in TweetClaw. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view
+  @xquik/tweetclaw` returned published `1.6.31` with older npm install metadata
+  while source remains `1.6.32`. `npm view clawhub` returned `0.23.0`. ClawHub
+  TweetClaw route, canonical ClawHub route, OpenClaw Directory, and npm registry
+  metadata returned HTTP 200. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness`,
+  Markdown link checks, and `npm run check-memory-md-size` passed before audit
+  edits.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, this archive, and release archive. Automation
+  prompt was not edited; current automation TOML measured 12,432 bytes with
+  `wc -c`.
+- Self-improvement: when crawler output is duplicate-heavy, run a second smaller
+  crawler pack over adjacent skill wording before falling back to authenticated
+  GitHub search. For social drafting skills, the safest useful TweetClaw
+  placement is read-only source evidence that preserves URLs and keeps posting
+  inside the target's existing draft or approval gate.
