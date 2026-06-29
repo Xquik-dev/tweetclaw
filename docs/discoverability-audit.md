@@ -200,8 +200,8 @@ archive, before any outreach or duplicate decision.
   1 stale missing, 205 open, 6 unresolved current threads, 7 failing-check PRs,
   and 8 dirty states.
 - Repaired `edwardtay/awesome-OSINT#1` with commercial API wording and
-  `evalops/mcp-openapi#30` with API-key wire-name preservation. `devon#35` and
-  `x-monitor#6` were already-addressed stale threads.
+  `evalops/mcp-openapi#30` with API-key and scoped OAuth auth fixes. `devon#35`
+  and `x-monitor#6` were already-addressed stale threads.
 - Fresh PR: opened https://github.com/Suresh-cs-q/claude-marketing-skills/pull/1
   from verified `kriptoburak/claude-marketing-skills-suresh-cs-q` fork with a
   social-listening skill that frames TweetClaw as optional X/Twitter source

@@ -45026,9 +45026,14 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `571b0b1319d7f72191ac279f2546064ca76ce96f`, pushed branch
   `codex/add-xquik-openapi31-fixture`, and commented validation at
   https://github.com/evalops/mcp-openapi/pull/30#issuecomment-4836227383.
+  A later Devin readback found OAuth2 client-credentials ignored `authScopes`
+  prefixes, so pushed follow-up commit
+  `162af2bcd5f89aae002ad0f21176b4d658ab3887` to pass the resolved env prefix
+  into the token lookup and key the token cache by prefix; commented validation
+  at https://github.com/evalops/mcp-openapi/pull/30#issuecomment-4836427349.
   Validation passed `npm ci`, `npm run check`, `npm test`, `git diff --check`,
-  and public-safety scan. Final readback: open, ready, merge state BLOCKED by
-  review/branch policy; checks were pending or passing.
+  and public-safety scans. Final readback: open, ready, merge state BLOCKED by
+  review/branch policy; Socket checks passed and Cursor/Devin were pending.
 - Repair no-ops: `devonjones/devon-claude-skills#35` already contained the
   Gemini-requested `When To Use` and `When Not To Use` sections. `ythx-101/x-monitor#6`
   still showed a stale bot thread from an old position after prior commit
