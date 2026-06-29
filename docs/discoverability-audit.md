@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 01:57 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 02:05 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   route check: `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
   `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
@@ -58,8 +58,8 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
   `/agent-runtime-architecture`, `/concepts/agent`, `/concepts/agent-runtimes`,
   and `/plugins/codex-harness-runtime` 200; `/sdk/runtime` 404.
-- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-29 01:57 UTC, but latest ClawHub page remains
+- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
+  page on 2026-06-29 02:05 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -79,7 +79,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 01:57 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 02:05 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -195,17 +195,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 01:57 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260629-013024` returned 54 repos; crawler repo mode found 62
-  open PR rows and 40 open authored PRs. Authored open search hit the
-  1000-result cap, then partitions read 2,337 rows and exact-read 2,240 lane
-  matches with 0 final read failures.
-- Repair gate: `warlockoussama/twitter-cli#1` was merged with upstream and
-  conflict-repaired at `2159b8a`; final readback was `MERGEABLE` and `CLEAN`.
-  Remaining dirty or failing open PRs were recorded as backlog, not cleared.
-- New PR: `liyupi/yupi-hot-monitor#6` adds a dependency-free
-  `import_tweetclaw.py` so the Hot Monitor Agent Skill can import reviewed
-  TweetClaw/OpenClaw X/Twitter JSON exports into its existing report schema.
+- 2026-06-29 02:05 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260629-020547` returned 21 opportunities across PR, skill,
+  OpenClaw, MCP, social, Twitter/X, awesome-list, and catalog lanes.
+- Complete PR inventory: partitions read 2,334 authored open rows, exact-read
+  all 2,286 lane matches with 0 final failures, and recorded 70 dirty or
+  unknown, 60 non-success check, and 405 comment or review rows.
+- Repair gate: `reall8164/wechat-openclaw-plugin#1` was merged with upstream
+  and README conflict-repaired at `3a9353b`; final readback was `MERGEABLE` and
+  `CLEAN`.
+- New PR: `Sumayya-Samreen/Interactive-Twitter-Sentiment-Dashboard#1` adds a
+  standard-library TweetClaw export converter, documents mock-data use, and
+  fixes per-keyword CSV logging.
 - Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, target validation,
   public hygiene, prompt bytes, memory-size, and self-improvement details are
   archived.
