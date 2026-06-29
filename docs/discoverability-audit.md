@@ -195,8 +195,8 @@ archive, before any outreach or duplicate decision.
   PR partitions found 2,463 open PR URLs; exact readbacks covered 60 latest or
   tracked PRs with 0 errors. No all-GitHub inventory claim is made.
 - Repair gate: fixed `Aqmar777/openclaw-competitive-intel#1` README conflict,
-  pushed `9e01790`, posted validation, and exact-read the PR as CLEAN and
-  MERGEABLE.
+  then repaired a later upstream force-update; pushed `86ab8a4`, posted
+  validation, and exact-read the PR as CLEAN and MERGEABLE.
 - Fresh PR: opened https://github.com/ProgramadorBrasil/antigravity-skills/pull/1
   from verified `kriptoburak/programadorbrasil-antigravity-skills`. Readback:
   open, ready, CLEAN, MERGEABLE, no checks/comments.

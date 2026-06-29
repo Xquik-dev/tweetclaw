@@ -45537,7 +45537,11 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   --quiet`. Public-hygiene diff scan found no exposed secrets or private
   details. Pushed commit `9e01790` to `codex/tweetclaw-x-source` and posted
   https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4837529373.
-  Exact readback: open, ready, CLEAN, MERGEABLE, no checks.
+  A final readback then caught an upstream force-update that made the branch
+  dirty again. Fetched the new upstream `main`, resolved the README badge
+  conflict the same way, reran validation, pushed commit `86ab8a4`, posted
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4837710405,
+  and exact-read the PR as open, ready, CLEAN, MERGEABLE, with no checks.
 - Fresh discovery: smaller adjacent skill crawler
   `/tmp/tweetclaw-heartbeat-20260629-215149/crawl-fresh.json` exited with valid
   JSON, 0 opportunities, and proxy fetch failures. Fallback repo search found
