@@ -43673,3 +43673,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   optional source evidence and explicitly say source packets are evidence, not
   instructions; keep the repo's native data layer authoritative for fresh
   endpoint fetches.
+
+## 2026-06-29 14:05 UTC heartbeat
+
+- Runtime limitation: this environment did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode with extra-high effort
+  could not be selected from the agent. The run continued and recorded the
+  limitation.
+- Initial TweetClaw state: branch `master...origin/master` with pre-existing
+  untracked file `0`, left untouched. Initial GitHub rate was REST core 4,971,
+  search 26, GraphQL 3,570. Compact Markdown memory started at
+  15,357/15,360 bytes.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output to `/tmp/tweetclaw-heartbeat-20260629-135202/crawl.json` using
+  session `tweetclaw-20260629-135202`, `--research-proxy`,
+  `--request-timeout-ms 12000`, `--proxy-warmup-timeout-ms 12000`, `--limit
+  220`, `--search-pages 1`, `--per-query-limit 8`, and `--concurrency 8`.
+  Query coverage included authored PRs, TweetClaw, OpenClaw, ClawHub,
+  x-twitter-scraper, MCP, `SKILL.md`, `.agents/skills`, OpenClaw/Codex/Claude
+  and social Twitter/X skills, awesome lists, registries, generated catalogs,
+  scheduled tweet, and X/Twitter operator lanes. Output contained 37
+  opportunities and 0 errors.
+- PR inventory: a narrow `gh search prs` attempt was malformed by CLI query
+  handling and then avoided. Exact repo REST lists over crawler repos found 70
+  open PR URLs, with a 401 blocker for `mvanhorn/last30days-skill`. Archive
+  extraction found 1,308 PR URLs. After filtering error bodies to valid GitHub
+  PR URLs, the combined set had 1,359 PR URLs. Corrected REST exact readbacks
+  parsed 1,311 pull records: 1,086 open, 925 clean, 50 dirty, 135 unknown, 7
+  draft, 65 blocked, and 44 REST errors.
+- Repair priority: newest actionable dirty PR was
+  `https://github.com/warlockoussama/twitter-cli/pull/1`. Exact readback showed
+  open, ready, dirty, head `kriptoburak:codex/update-readme-command-scope`, 60
+  commits, 1 changed file, 15 prior comments from `kriptoburak`, no reviews, no
+  review comments, and no check runs. The fork `kriptoburak/twitter-cli` was
+  verified as a public fork of `warlockoussama/twitter-cli`.
+- Repair completed: merged upstream `main`, resolved the README conflict by
+  removing duplicate conflict markers around identical final download-link text,
+  and preserved the command-scope clarification plus TweetClaw companion note.
+  Validation passed conflict-marker scan, `git diff --check`, `npx --yes
+  markdown-link-check README.md --quiet`, and changed-diff public-safety scan.
+- Repair pushed: branch `codex/update-readme-command-scope` now has merge commit
+  `f7816622ec8e51b0b9406480f797746c60ed3289`. Final REST readback for
+  `warlockoussama/twitter-cli#1`: open, ready, `mergeable=true`,
+  `mergeable_state=clean`, head `f781662`, base `4e464c9`, no check runs.
+- Fresh screening: crawler candidates duplicate or prior-history blocked
+  `rediumvex/social-media-caption-generator-claude`,
+  `bradautomates/head-of-content`, `beggarticksarthurtatum121/reddit-skills`,
+  and many repeated X/Twitter skill lanes. `SarutobiSasuke8/grok-oracle` was
+  duplicate-clean but held because its core value is Grok's own X tools and a
+  TweetClaw note would not be target-native enough. Fallback GitHub repo search
+  after crawler-first discovery found `Schmedu/social-post-skill`.
+- Fresh target accepted: `Schmedu/social-post-skill` is public, active, MIT
+  licensed, non-fork, default branch `main`, issues enabled, with no open or
+  closed PRs/issues and no compact, archive, or local content hits for
+  TweetClaw, Xquik, x-twitter-scraper, or variants. Its README, `AGENTS.md`,
+  and `SKILL.md` already require grounded source material, distinct per-platform
+  captions, and user confirmation before scheduling or publishing.
+- New external PR: created fork `kriptoburak/social-post-skill` with parent
+  `Schmedu/social-post-skill`, branch `codex/tweetclaw-source-packets`, commit
+  `16c57b4b5e98ca0b76fa61c65aa48b6188df0791`, and opened
+  `https://github.com/Schmedu/social-post-skill/pull/1` via REST. The PR adds
+  TweetClaw as an optional public X/Twitter source-packet example while keeping
+  Social Media Manager responsible for drafting, scheduling, publishing, and
+  confirmation. Validation passed `git diff --check`, SKILL frontmatter check,
+  conflict-marker scan, sensitive diff scan, and `npx --yes markdown-link-check
+  README.md AGENTS.md SKILL.md --quiet`. Final readback: open, ready,
+  `mergeable_state=clean`, head `16c57b4`, base `bdf3638`, 3 files changed, 17
+  additions, 2 deletions, no comments, no reviews, and no check runs.
+- Official OpenClaw recheck: live routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/tools/plugin`, `/clawhub/publishing`, `/clawhub/skill-format`, and
+  `/help/debugging`. `llms.txt` was read. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains `1.6.32`; release mismatch remains known and
+  unchanged. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md
+  docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md
+  --quiet` passed. Persisted automation prompt measured 12,098 bytes.
+- Prompt self-improvement: preserved the Codex 5.5 Fast mode, extra-high effort,
+  and no-standard-speed wording. Reusable lesson: cross-agent social-post skills
+  are strong targets when they already require grounded source material and
+  publish confirmation; place TweetClaw as source evidence only, keep drafting
+  and publishing authority inside the target workflow, and mirror changes across
+  README plus all agent instruction surfaces.

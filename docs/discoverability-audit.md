@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 13:44 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 14:05 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
   `docs.openclaw.ai`; llms, CLI plugins, `/plugins/*`, skills, ClawHub
   publishing, skill format, testing, runtime architecture, and help debugging
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 13:44 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 14:05 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -192,23 +192,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 13:44 UTC: runtime selectors unavailable.
-  Crawler session `tweetclaw-20260629-132919` returned 40 opportunities and 0
-  errors across authored PR, TweetClaw/OpenClaw/ClawHub, MCP, package-tooling,
-  skill, social/Twitter-X, awesome-list, registry, and generated-catalog lanes.
-- PR inventory: crawler, archive URLs, and repo REST lists produced 1,354
-  PR URLs; broad search hit secondary limits. Corrected REST readbacks
-  parsed 1,313 pulls: 1,084 open, 918 clean, 51 dirty, 143 unknown, 10 draft,
-  and 41 REST errors.
-- Repair: `reall8164/wechat-openclaw-plugin#1` merged upstream `main`, resolved
-  a README conflict, passed link/diff/json scans, and read back open, ready,
-  clean, head `e27accc`; target-owned blockers are archived.
-- New PR: `ScrapeCreators/social-media-research-skills#4` adds optional
-  TweetClaw public X/Twitter source-packet guidance after duplicate-free
-  screening. Validation/readback: open, ready, mergeable true, no
-  checks/comments/reviews, head `ba4565c`.
-- TweetClaw npm audit, OpenClaw fitness, public link checks, prompt bytes,
-  duplicate screens, target blockers, and self-improvement details are archived.
+- 2026-06-29 14:05 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260629-135202` returned 37 opportunities and 0 errors.
+- PR inventory: 1,359 crawler/archive PR URLs; REST readbacks parsed 1,311:
+  1,086 open, 925 clean, 50 dirty, 135 unknown, 7 draft, 44 errors.
+- Repair: `warlockoussama/twitter-cli#1` merged upstream `main`, passed README
+  link/diff/secret scans, and read back open, ready, clean, head `f781662`.
+- New PR: `Schmedu/social-post-skill#1` adds optional TweetClaw public
+  X/Twitter source-packet guidance to README, AGENTS, and SKILL; readback open,
+  ready, clean, no checks/comments/reviews, head `16c57b4`.
+- TweetClaw npm audit, OpenClaw fitness, public links, prompt bytes, duplicate
+  screens, and self-improvement details are archived.
 
 ## Reporting Checklist
 
