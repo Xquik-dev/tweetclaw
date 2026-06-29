@@ -41892,3 +41892,137 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   infinite loops unless a maintainer asks. For small Streamlit sentiment apps,
   a standard-library batch importer with injected predictor tests is a strong
   low-risk target-native TweetClaw export bridge.
+
+## 2026-06-29 05:44 UTC Heartbeat
+
+- Runtime limitation: the automation requested Codex 5.5 Fast mode with
+  extra-high reasoning effort. This runtime did not expose model, speed, or
+  effort selectors, so the limitation was recorded and the run continued.
+- Starting state: TweetClaw `master` matched `origin/master` with only the
+  pre-existing untracked path `0`. `Xquik-dev/xquik` issue list was empty when
+  read with explicit `--repo Xquik-dev/xquik`; the local Xquik `upstream` remote
+  pointed at an unrelated repository and was ignored.
+- Crawler-first discovery: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260629-054427/crawl.json`, research proxy,
+  12 s request and proxy warmup timeouts, limit 240, one search page,
+  per-query limit 8, concurrency 8, and session `tweetclaw-20260629-054427`.
+  Query pack covered authored PR monitoring, TweetClaw, OpenClaw, MCP,
+  `SKILL.md`, `.agents/skills`, skill dirs, OpenClaw/MCP/Codex/Claude/agent
+  and social/Twitter-X skill variants, awesome lists, registries, forks,
+  generated catalogs, x-twitter-scraper lanes, social agents, MCP servers, and
+  sentiment dashboard lanes. Output parsed as valid JSON with 29 opportunities
+  and 0 crawler errors.
+- Complete PR inventory: broad authored open-PR search was partitioned by
+  updated windows and did not hit a cap or rate-limit blocker. Partition counts
+  were 92 for `updated:>=2026-06-29`, 58 for `2026-06-28`, 1 for
+  `2026-06-27`, 2 for `2026-06-26`, 3 for `2026-06-25`, 20 for
+  `2026-06-24`, 250 for `2026-06-22..2026-06-23`, 686 for
+  `2026-06-15..2026-06-21`, 650 for `2026-06-01..2026-06-14`, 549 for
+  `2026-05-01..2026-05-31`, 52 for `2026-04-01..2026-04-30`, 5 for
+  `2026-01-01..2026-03-31`, 1 for `2025-01-01..2025-12-31`, and 0 for
+  `updated:<2025-01-01`.
+- Exact PR readbacks: built a 56-repo exact-read set from crawler output,
+  compact memory, archive tail, and known repair backlog. Repo REST open-PR
+  lists found 49 open authored PRs; exact PR views read all 49 with state,
+  mergeability, base/head, commits, comments, reviews, checks, and maintainer
+  modification state. `allalongitwas/XActions` returned 404 and was recorded as
+  inaccessible. Attention items included maintainer requests on
+  `denial-web/clawguard#1`, already-repaired requests on
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` and `bravian1/social-agent#4`, conflicts on
+  `Saminiscool/twitter-ai-agent#2` and `reall8164/wechat-openclaw-plugin#1`,
+  and the known `Arindam200/awesome-ai-apps#226` Nebius video blocker.
+- Repair: `Hashi-Ai-Dev/openclaw-clawdoc#6` already matched the maintainer's
+  vendor-neutral request. Readback showed the fix and maintainer-facing comments
+  were posted earlier, so no new change was made.
+- Repair: pushed `72bb535` to
+  `kriptoburak/clawguard:codex/add-tweetclaw-smoke-test` for
+  `denial-web/clawguard#1`. The docs now use `PACKAGE="@scope/package@version"`
+  as the default compatibility-test placeholder, keep TweetClaw only as a
+  commented replaceable example, keep `npm pack` visible, preserve the "public
+  archive" gap wording, and state the result is compatibility evidence only.
+  Posted maintainer response and affiliation confirmation at
+  https://github.com/denial-web/clawguard/pull/1#issuecomment-4829385462.
+  Validation: `git diff --check` and targeted doc grep passed. Readback:
+  open, ready, `MERGEABLE`, `UNSTABLE`, no checks configured.
+- Repair: `bravian1/social-agent#4` already contained the requested behavior
+  fix after maintainer review: `X_BACKEND=xquik` uses Xquik only when prepared
+  `--text` is present, AI-drafted posts fall through to browser-use, non-JSON
+  2xx responses are handled, `None` text falls through, and env keys were
+  sorted. No new change was made.
+- Repair: rebased `reall8164/wechat-openclaw-plugin#1` on current `main` and
+  pushed `893ba45` with a lease to the correctly parented fork
+  `kriptoburak/wechat-openclaw-plugin:codex/add-tweetclaw-workflow`. A first
+  PR note accidentally included the literal shell expression for the current
+  head; a correction with the actual head was posted at
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4829393031.
+  Validation: conflict-free rebase and `git diff --check`. Final readback:
+  open, ready, `MERGEABLE`, `CLEAN`, no checks configured.
+- Repair: rebased `Saminiscool/twitter-ai-agent#2` on current `main`. The first
+  push went to the wrong same-name fork, `kriptoburak/Twitter-Ai-Agent`, whose
+  parent is `adarshpheonix2810/Twitter-Ai-Agent`; this was corrected by pushing
+  `f5213ca` with an explicit lease to the actual parented PR fork,
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik`. Validation: changed-file
+  Prettier, Biome, TypeScript, and `npm test -- tests/twitter-api.test.ts`
+  passed after `npm ci`; full `npm run check` remained blocked by pre-existing
+  formatting warnings outside the PR diff. Final readback: open, ready,
+  `MERGEABLE`, `CLEAN`, no checks configured.
+- Fresh discovery and duplicate gates: current crawler candidates were compared
+  against compact memory and the archive. Only `shreyashxai/Intellipost.ai`
+  and `parsefal228/vzlom_o4ka` were fresh in crawler output; the phishing repo
+  was out of scope. `Intellipost.ai` was public, non-fork, non-archived,
+  issue-enabled, and duplicate-clean, but inspection found a hard-coded
+  API-key-like value in client code. A local patch was intentionally not pushed
+  because a public removal PR would repeat the credential in the diff. This was
+  recorded as a security-boundary screen; the value was not repeated in any
+  audit, comment, or commit.
+- Fallback discovery after crawler-first screening used GitHub repo search for
+  fresh social-agent and Twitter MCP targets. Previously seen or handled repos
+  included `harshdeepk585/twitter-bridge-mcp`,
+  `AutomateLab-tech/content-distribution-mcp`, `YoppaV/twitter-mcp`, and
+  `bm-github/owasp-social-osint-agent`. `SujayVivek/AgentY` was fresh in audit
+  memory, public, non-fork, non-archived, issue-enabled, missing license
+  metadata, and duplicate-clean across target open/closed PRs and issues for
+  TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, and
+  variants.
+- New external PR: opened https://github.com/SujayVivek/AgentY/pull/1 from
+  correctly parented fork `kriptoburak/AgentY`, branch
+  `codex/document-local-setup`, commit `5dae7fb`. The PR expands the empty
+  Getting Started section with clone, install, `.env` setup, required OpenAI,
+  Twitter/X, SMTP, and notification variables, run commands, validation
+  commands, and credential-handling guidance. Validation: `git diff --check`
+  and `npx --yes markdown-link-check README.md --quiet` passed; added-line
+  public-hygiene scans found no introduced secrets, private implementation
+  details, restricted provider/source names, internal cost mechanics, or
+  unsupported claims. Final readback: open, ready, `MERGEABLE`, `CLEAN`, with
+  GitGuardian Security Checks successful.
+- Official OpenClaw and package checks: route probes returned 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/cli/plugins`,
+  `docs.openclaw.ai/plugins`, `docs.openclaw.ai/clawhub`,
+  `docs.openclaw.ai/skills`, `clawhub.ai/plugins/@xquik/tweetclaw` redirecting
+  to `clawhub.ai/xquik/plugins/tweetclaw`, and OpenClaw Directory. Expected
+  current 404s remained `llms-full.txt`, `/manifest`, `/config`, and
+  `/debugging`. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub version`
+  returned `0.23.0`; published `@xquik/tweetclaw` remained `1.6.31`; ClawHub
+  page still exposed `1.6.26`. `npm run check-openclaw-platform-fitness` passed
+  for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+- TweetClaw public hygiene and memory: `npm audit --audit-level=moderate`
+  reported 0 vulnerabilities. Markdown link checks passed for README, compact
+  audit, and compact release memory. ClawHub page probe confirmed only `1.6.26`.
+  Persisted automation prompt field measured 12,130 bytes, below the 15 KiB
+  cap. `npm run check-memory-md-size` passed before and after compaction.
+- Prompt self-improvement: current automation already preserves Codex 5.5 Fast
+  mode and extra-high wording, quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill coverage, repair priority,
+  duplicate/fork rules, OpenClaw docs checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, prompt cap, and self-improvement. No
+  prompt edit was needed.
+- Durable lessons: when a public target contains an exposed credential, do not
+  open a public deletion PR if the diff would repeat the value. Record the
+  security-boundary screen without the value and choose a different safe PR
+  lane. For repeated fork-name collisions, always verify REST `parent.full_name`
+  immediately before pushing; GraphQL `headRepository` may be blank for some
+  old PRs, and same-name forks under `kriptoburak` can point at unrelated
+  parents.
