@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 17:26 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 17:50 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current `llms.txt` docs for
   CLI plugins/skills, plugin manifest/tools, ClawHub, gateway policy/secrets,
   agent runtime, debugging, and update testing returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 17:26 UTC after redirecting to
+  page on 2026-06-29 17:50 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 17:26 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 17:50 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,24 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 17:26 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-170535` returned 45 repos and 0 errors across PR,
-  TweetClaw, skill, OpenClaw/MCP/Codex/Claude, social/Twitter-X, list,
-  registry, and bookmark lanes.
-- PR inventory hit GitHub search HTTP 403 on June partitions after counting
-  1,330 authored open PRs through 2026-06-14; authenticated search then stopped.
-  Crawler repo PR lists plus known recent PRs produced 103 exact open reads and
-  33 action rows. A full audit-URL GraphQL batch stalled and
-  was interrupted. This is not a complete all-GitHub claim.
-- Repair gate: `XPOZpublic/xpoz-agent-skills#3` and
-  `Aditya923-c/xpoz-agent-skills#1` were merged upstream, validated,
-  commented, and read back clean.
-  `Hashi-Ai-Dev/openclaw-clawdoc#6` remains stale with no new actionable
-  comments.
-- Fresh screening duplicate-blocked several skill lanes, then opened
-  https://github.com/MohibShaikh/clawvet/pull/5 with a target-native benign
-  social-approval scanner fixture. Readback: open, ready, mergeable, CodeRabbit
-  success, no actionable comments, head `6e6e022`.
+- 2026-06-29 17:50 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-173707` returned 44 repos and 0 errors; fresh crawler
+  retry returned 0 repos after proxy socket failures.
+- Inventory hit GitHub search HTTP 403 on `2026-04-01..2026-05-31`, then used
+  crawler repo REST lists and known recent PRs: 103 exact open reads, 0 errors,
+  and 34 action rows. This is not a complete all-GitHub claim.
+- Repair gate: `hyperfx-ai/marketing-skills#2` was updated from BEHIND to a
+  pushed current-head repair, validated, and commented. Remaining BLOCKED state
+  has no checks or reviews exposed. Other dirty PRs are not kriptoburak heads.
+- Fresh screening opened https://github.com/bobosdaddy/claw-friends/pull/1 with
+  reviewed X/Twitter context guidance. Readback: open, ready, mergeable, CLEAN,
+  head `372bad0`.
 - TweetClaw npm audit, current OpenClaw docs/npm recheck, OpenClaw fitness,
   public link checks, validation, and self-improvement details are archived.
 
