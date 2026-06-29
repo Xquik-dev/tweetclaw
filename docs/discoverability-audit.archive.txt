@@ -41963,7 +41963,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   parent is `adarshpheonix2810/Twitter-Ai-Agent`; this was corrected by pushing
   `f5213ca` with an explicit lease to the actual parented PR fork,
   `kriptoburak/saminiscool-twitter-ai-agent-xquik`. Validation: changed-file
-  Prettier, Biome, TypeScript, and `npm test -- tests/twitter-api.test.ts`
+  Prettier, Biome, TypeScript, and targeted npm test for `tests/twitter-api.test.ts`
   passed after `npm ci`; full `npm run check` remained blocked by pre-existing
   formatting warnings outside the PR diff. Final readback: open, ready,
   `MERGEABLE`, `CLEAN`, no checks configured.
@@ -42639,3 +42639,98 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   mode is available. Durable lesson: direct social crosspost skills benefit
   most from a TweetClaw source-reader handoff plus approval and rate-limit stop
   language, not extra publisher behavior.
+
+## 2026-06-29 08:48 UTC Heartbeat
+
+- Runtime and safety: Codex 5.5 Fast mode, explicit speed selection, and
+  extra-high effort selection were not available in this runtime, so the
+  limitation was recorded and the run continued. TweetClaw stayed on `master`
+  with only the pre-existing untracked path `0`; no dev server, Browser,
+  Chrome, production SSH, secret read, Context7 work, or destructive command was
+  used. `Xquik-dev/xquik` open issue list was empty when checked.
+- Crawler-first coverage: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with session `tweetclaw-20260629-084827`, strict JSON output to
+  `/tmp/tweetclaw-heartbeat-20260629-084827/crawl.json`, research proxy,
+  12000 ms request and proxy warmup timeouts, limit 260, one search page,
+  per-query limit 8, and concurrency 8. Query pack covered authored PRs,
+  TweetClaw, `@xquik/tweetclaw`, OpenClaw, MCP, Codex, Claude, agent, social,
+  X/Twitter skills, `SKILL.md`, `.agents/skills`, skill dirs, awesome lists,
+  registries, generated catalogs, forks, and package-tooling lanes. Crawler
+  returned 30 opportunities and 0 errors.
+- PR inventory: broad authenticated authored-PR partitions completed without a
+  rate limit or 1000-result cap. Partition counts were 118 for 2026-06-29 or
+  newer, 56 for 2026-06-28, 1 for 2026-06-27, 2 for 2026-06-26, 3 for
+  2026-06-25, 20 for 2026-06-24, 250 for 2026-06-22..23, 685 for
+  2026-06-15..21, 650 for 2026-06-01..14, 549 for 2026-05, 52 for 2026-04,
+  5 for 2026-01..03, 1 for 2025, and 0 before 2025. Unique open authored PRs:
+  2392. Crawler repo-mode exact lists checked 30 crawler repos and found 21 open
+  authored PRs with 0 errors.
+- Exact PR reads: the complete URL union held 2668 PR URLs from authored
+  partitions, crawler repo mode, audit URLs, and known recent URLs. Rich
+  GraphQL exact reads were stopped after 140 reads because response size and
+  rate made the full set impractical for the run; core GraphQL chunks also
+  stalled. The fallback current exact set contained 138 PR URLs from crawler
+  output, current authored PRs, compact blockers, and known recent PRs. `gh pr
+  view` exact-read all 138 with 0 errors, including state, draft state,
+  mergeability, base/head, commits, comments, reviews, check rollups, files, and
+  maintainer-modify state. Attention triage found 27 entries.
+- Repair backlog: recurring conflicts were actionable on
+  `warlockoussama/twitter-cli#1`,
+  `reall8164/wechat-openclaw-plugin#1`,
+  `AbdNour627/awesome-openclaw-configs#1`, and
+  `Aqmar777/openclaw-competitive-intel#1`. Known non-branch blockers remained:
+  `Arindam200/awesome-ai-apps#226` needs maintainer-requested Nebius demo
+  video assets, `higress-group/openapi-to-mcpserver#38` is CLA-blocked, and
+  `antstudiocz/ant-marketplace#37` needs target-owner Vercel authorization.
+- PR repairs: merged current upstream `main` and resolved README conflicts for
+  all 4 actionable PRs. Pushed `610e973` to
+  `kriptoburak/twitter-cli:codex/update-readme-command-scope`, `ec42bed` to
+  `kriptoburak/wechat-openclaw-plugin:codex/add-tweetclaw-workflow`, `2d25ac0`
+  to `kriptoburak/awesome-openclaw-configs:codex/add-tweetclaw-x-config`, and
+  `4e772b9` to `kriptoburak/openclaw-competitive-intel:codex/tweetclaw-x-source`.
+  Final readbacks for all 4 PRs were open, ready, `MERGEABLE`, and checkless.
+  Validation included conflict-marker scans, `git diff --check`, target link
+  checks, target-specific JSON5 or Python checks, and public-hygiene diff scans.
+  No duplicate repair comments were posted.
+- Fresh target screening: `benmillerat/openclaw-x-bookmark-archiver` was
+  duplicate-blocked by existing `#1`. `huatianwan/researchwang-bookmark-assistant`,
+  `yongkangc/x-skill`, `ythx-101/x-monitor`, and `seph1709/x-twitter` had no
+  TweetClaw, Xquik, `@xquik/tweetclaw`, or x-twitter-scraper PR or issue hits.
+  `ythx-101/x-monitor` was selected as a direct fit because it is an OpenClaw
+  skill for X reply monitoring and question drafting, had no contribution
+  policy blocker, no license metadata, and a target-owned broken Camofox link.
+- New external PR: forked `ythx-101/x-monitor` to verified fork
+  `kriptoburak/x-monitor-ythx101` with parent `ythx-101/x-monitor`, branch
+  `codex/document-tweetclaw-input`. Opened
+  https://github.com/ythx-101/x-monitor/pull/6 with commit
+  `a88c9048d2103bbccf033b8350a8a502d8c78640`. The docs PR documents TweetClaw
+  as optional reviewed OpenClaw input for reply/search context when Camofox or
+  Nitter is unavailable, keeps x-monitor read-only, adds TweetClaw to companion
+  skills, and fixes the dead Camofox link to `jo-inc/camofox-browser`. Final
+  readback: open, ready, `MERGEABLE`, no comments, no reviews, no checks, files
+  `README.md` and `SKILL.md`.
+- Target validation and hygiene for `ythx-101/x-monitor#6`: `python3 -m
+  py_compile scripts/monitor.py scripts/version_check.py`, `git diff --check`,
+  README and SKILL markdown-link-check, dash hygiene scan, and public-hygiene
+  diff scan passed.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/cli/skills`, `/tools/plugin`,
+  `/plugins/sdk-runtime`, `/help/debugging`, `/clawhub/publishing`,
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned latest `1.6.31`;
+  `npm view clawhub version` returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm audit --audit-level=moderate` reported
+  0 vulnerabilities. Markdown link checks passed for TweetClaw README, compact
+  audit, compact release memory, and handled target content.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted prompt
+  measured 12098 bytes and already preserves Codex 5.5 Fast mode, extra-high
+  reasoning wording, and the instruction not to use standard speed mode when
+  Fast mode is available. Durable lesson: for reply-monitor skills, a useful
+  TweetClaw placement is optional reviewed input context plus read-only local
+  drafting, paired with broken-link repair when available.
