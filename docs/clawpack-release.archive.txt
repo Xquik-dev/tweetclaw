@@ -1227,6 +1227,25 @@ canonical page. npm publish auth and ClawHub owner-scope blockers remain
 unchanged, so no release or ClawHub publish was attempted. npmjs web UI returned
 403 to raw probe, while npm registry metadata returned HTTP 200.
 
+## 2026-06-29 12:15 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after complete PR
+inventory, one conflict repair, and one new external PR. Old deep docs routes
+`/plugin-system/*`, `/sdk/runtime`, and `/debugging` returned 404, but the
+current llms export exposed replacement routes. Official docs returned HTTP 200
+for llms exports, CLI plugin docs, plugin management, manifest docs, plugin
+permission requests, install overrides, hooks, dependency resolution, ClawHub
+publishing, ClawHub skill format, help debugging, update/plugin testing, and
+agent runtime architecture. `npm view openclaw` returned latest `2026.6.10`,
+beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub`
+returned `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` while source
+remains `1.6.32`. `npm audit --audit-level=moderate` reported 0 vulnerabilities
+and `npm run check-openclaw-platform-fitness` passed. ClawHub route
+`https://clawhub.ai/plugins/@xquik/tweetclaw` still redirects to the live
+canonical page. npm publish auth and ClawHub owner-scope blockers remain
+unchanged, so no release or ClawHub publish was attempted. The npmjs web UI
+returned 403 to raw curl, while npm registry metadata from `npm view` succeeded.
+
 ## 2026-06-29 07:05 UTC Heartbeat Release Hygiene
 
 OpenClaw platform and release-adjacent checks were refreshed after complete PR

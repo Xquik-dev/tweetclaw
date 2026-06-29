@@ -43250,3 +43250,107 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   mode when Fast mode is available. Durable lesson repeated: when a target name
   has multiple similarly named forks, verify fork parent immediately before
   pushing; GitHub may create suffixed forks such as `x-post-skill-1`.
+
+## 2026-06-29 12:15 UTC Heartbeat
+
+- Runtime limitation: this Codex runtime did not expose model, speed, or
+  reasoning-effort selectors, so the requested Codex 5.5 Fast mode and
+  extra-high effort could not be selected. The limitation was recorded here and
+  the run continued.
+- Crawler-first discovery: ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-121533/crawl.json --research-proxy --request-timeout-ms 12000 --proxy-warmup-timeout-ms 12000 --limit 300 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-121533`
+  from `/Users/burak/Developer/xquik` with focused PR, repo, code, SKILL.md,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, social, Twitter/X, awesome
+  list, registry, validator, package-tooling, fork, and generated-catalog query
+  coverage. Output contained 28 opportunities, 28 unique repos, and 0 crawler
+  errors. Proxy logs showed only endpoint counts and country distribution, with
+  no credential values.
+- PR inventory method: combined crawler repo open PR lists, partitioned authored
+  PR lane searches, compact audit URLs, archive URLs, and exact `gh pr view`
+  readbacks. Crawler repo lists found 22 authored open PRs. Lane search counts
+  were TweetClaw 100, OpenClaw 100, ClawHub 100, x-twitter-scraper 100, MCP
+  Twitter 1, SKILL.md Twitter 0, agent skills Twitter 0, social media agent 4,
+  package tooling OpenClaw 0, validator OpenClaw 0, OpenClaw Twitter skill 0,
+  Codex Twitter skill 0, TweetClaw source packet 23, X research skill 15,
+  OpenClaw plugin updated since 2026-06-01 79, TweetClaw updated since
+  2026-06-01 100, and x-twitter-scraper updated since 2026-06-01 100. Audit
+  archives contributed 1,304 unique PR URLs. Combined discovered URLs: 1,465.
+- Exact inventory result: exact reads succeeded for 1,427 URLs and failed for
+  38 repository-resolution blockers, all GraphQL repository-not-found cases.
+  Open PR readback found 1,197 open PRs, 1,143 mergeable, 44 conflicting, 10
+  unknown mergeability, 7 drafts, 2 changes-requested PRs, and 10 PRs with
+  failed, cancelled, action-required, neutral, or otherwise non-success checks.
+  Broad GitHub search lanes still hit the 100-result cap, so the run does not
+  claim exhaustive coverage of all in-scope GitHub PRs.
+- Actionable backlog triage: changes-requested `Hashi-Ai-Dev/openclaw-clawdoc#6`
+  had already been revised to the requested vendor-neutral wording but the old
+  review state remains. `Arindam200/awesome-ai-apps#226` is blocked on the
+  maintainer-requested 10 to 15 second working video with Nebius. Newest
+  concrete repair was `BiswaViraj/agent-skills#1`, a conflict-only PR with no
+  active comments, no checks, and a dismissed owner review.
+- PR repair completed: verified fork `kriptoburak/biswaviraj-agent-skills` is a
+  fork of `BiswaViraj/agent-skills`. Merged upstream `main` into branch
+  `codex/add-xquik-skill`, resolved the README table conflict by preserving
+  upstream's three-column "What's Inside" structure and adding the
+  `x-twitter-scraper` row and layout entry. Validation passed: conflict-marker
+  scan, `git diff --check`, cached diff check, and file-presence check for
+  `skills/x-twitter-scraper/SKILL.md`. Pushed commit
+  `2ac61b828ccbce2987d012022ad66681601dd5a3`. Final readback for
+  `https://github.com/BiswaViraj/agent-skills/pull/1`: open, ready,
+  `MERGEABLE`, no comments, dismissed owner review only, no checks.
+- Fresh candidate screening: crawler surfaced `ReneHdzGtz/web3-community-
+  marketing`, an OpenClaw SKILL.md repo for Discord, Telegram, and Twitter/X
+  Web3 community workflows. Archive history had previously held it only for
+  missing license metadata, which is no longer a direct-PR blocker under the
+  current rule. Target metadata: public, not archived, not a fork, default
+  branch `main`, no detected license metadata, pushed 2026-04-30. Duplicate
+  checks across compact audit, archive, target content, open and closed target
+  PRs, and open and closed target issues found no TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, or variant history.
+- New external PR: verified fork `kriptoburak/web3-community-marketing` with
+  parent `ReneHdzGtz/web3-community-marketing`, branch
+  `codex/add-x-twitter-evidence-packet`, commit
+  `383305bf5be3324862ab1edf5865643424197671`, opened
+  `https://github.com/ReneHdzGtz/web3-community-marketing/pull/1`. The PR
+  updates README and SKILL.md to add an optional, approval-gated X/Twitter
+  evidence packet for community growth and reporting. It keeps TweetClaw as a
+  pre-approved source option, requires handles/date ranges/approval scope,
+  requires account-owner approval for exports, avoids install instructions, and
+  treats imported posts and bios as untrusted source text.
+- New PR validation and readback: `git diff --check`, conflict-marker scan, and
+  `npx --yes markdown-link-check README.md --quiet` passed. Final readback:
+  open, ready, `MERGEABLE`, head `383305b`, no comments, no reviews, no checks,
+  files `README.md` and `SKILL.md`.
+- Official OpenClaw and package checks: first probes showed old deep docs routes
+  `/plugin-system/*`, `/sdk/runtime`, and `/debugging` now return 404. The
+  current llms export pointed to current routes, all of which returned HTTP 200:
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/manage-plugins`,
+  `/plugins/install-overrides`, `/plugins/hooks`, `/plugins/dependency-
+  resolution`, `/help/debugging`, `/agent-runtime-architecture`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, and
+  `/help/testing-updates-plugins`. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub version` returned `0.23.0`; `npm view @xquik/tweetclaw`
+  returned `1.6.31`, MIT, and the GitHub repository/homepage metadata.
+- TweetClaw public hygiene: README, `docs/openclaw-setup.md`,
+  `docs/agent-workflows.md`, compact audit, and compact release memory passed
+  `npx --yes markdown-link-check ... --quiet`. Direct probes returned HTTP 200
+  for TweetClaw GitHub, ClawHub canonical redirect, OpenClaw Directory, and
+  docs.xquik.com. The npmjs package web page returned HTTP 403 to raw curl, but
+  npm registry metadata from `npm view` succeeded and remains canonical for
+  package status. `npm audit --audit-level=moderate` reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+- TweetClaw memory and prompt checks: pre-edit `npm run check-memory-md-size`
+  reported automation memory Markdown at 15,083 of 15,360 bytes, so compact
+  audit edits were kept short and this full record went to the archive. The
+  saved automation prompt measured 12,432 bytes and already preserves Codex 5.5
+  Fast mode, extra-high effort, and the no-standard-speed wording.
+- Self-improvement: keep using the llms export to discover current official
+  OpenClaw route names before recording stale-route failures; docs moved from
+  older `/plugin-system/*` and `/sdk/runtime` routes to `/plugins/*` and
+  `/help/*`. Revisit old "missing license metadata" archive blockers when the
+  current run rules explicitly say missing license alone does not block direct
+  PRs.
