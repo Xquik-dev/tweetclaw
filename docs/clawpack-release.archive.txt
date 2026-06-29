@@ -1749,3 +1749,20 @@ canonical page, with npm as canonical install metadata. OpenClaw Directory route
 `https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. npm
 publish auth and ClawHub owner-scope blockers remain unchanged, so no release or
 ClawHub publish was attempted.
+2026-06-29 19:56 UTC release hygiene refresh
+
+- Official OpenClaw docs routes on `openclaw.dev` timed out for `llms.txt`,
+  `llms-full.txt`, CLI plugin docs, CLI skills, plugin manifest, tool plugins,
+  SDK runtime, ClawHub publishing, ClawHub skill format, install overrides, and
+  debugging. The bounded probe batch was stopped after repeated timeouts.
+- Registry metadata succeeded: `npm view openclaw` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published `1.6.31` while source remains `1.6.32`;
+  `npm view clawhub` returned `0.23.0`.
+- ClawHub TweetClaw route resolved to `https://clawhub.ai/xquik/plugins/tweetclaw`
+  with HTTP 200, and OpenClaw Directory returned HTTP 200. npm package web page
+  returned 403, but registry metadata was available.
+- `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed for source targeting
+  OpenClaw `2026.6.10`. Markdown link checks passed for README, OpenClaw setup
+  docs, agent workflow docs, compact audit, and compact release memory.

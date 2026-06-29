@@ -190,25 +190,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 19:10 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-191053` returned 49 opportunities and 0 errors; repo-mode
-  returned 1 row after managed-proxy socket failures.
-- Authored PR partitions found 2,451 open PRs across created windows without a
-  1,000-result cap. Full GraphQL exact-read stalled and was stopped, so this is
-  not a complete all-GitHub exact-read claim.
-- Focused exact-read covered 218 current-day and recent-audit URLs: 217 read,
-  1 stale missing, 205 open, 6 unresolved current threads, 7 failing-check PRs,
-  and 8 dirty states.
-- Repaired `edwardtay/awesome-OSINT#1` with commercial API wording and
-  `evalops/mcp-openapi#30` with API-key and scoped OAuth auth fixes. `devon#35`
-  and `x-monitor#6` were already-addressed stale threads.
-- Fresh PR: opened https://github.com/Suresh-cs-q/claude-marketing-skills/pull/1
-  from verified `kriptoburak/claude-marketing-skills-suresh-cs-q` fork with a
-  social-listening skill that frames TweetClaw as optional X/Twitter source
-  evidence. Readback: open, ready, CLEAN, no checks, comments, or reviews.
-- OpenClaw npm and fitness checks passed; official docs site timed out. Public
-  link checks, validation, prompt status, and self-improvement details are
-  archived. Prompt was not edited.
+- 2026-06-29 19:56 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-195618` returned 48 opportunities and no explicit errors
+  across open-PR, TweetClaw, OpenClaw, skill, social, registry, fork, catalog,
+  and source-packet lanes.
+- Authored PR partitions found 2,455 open PRs across 8 created windows with no
+  1,000-result cap. Lane filter matched 2,409; exact readbacks covered the
+  latest 30 plus touched PRs, so this is not an all-GitHub exact-read claim.
+- Repair gate: advanced `evalops/mcp-openapi#30` through compile-cache and
+  OAuth2-flow fixes (`c33df15e`, `c6ba934d`, `6b2d0898`, `d8090613`) with
+  checks/tests/diff/safety scans. Final readback: open, MERGEABLE, Socket
+  success, Cursor and Devin pending. One validation comment was duplicated.
+- Fresh PR: opened https://github.com/jlindstrom21/claude-marketing-skills/pull/1
+  from verified `kriptoburak/claude-marketing-skills` fork with a
+  `public-social-proof-listening` skill that uses optional TweetClaw public
+  X/Twitter source packets. Readback: open, ready, CLEAN, no checks/comments.
+- OpenClaw docs routes timed out again; npm metadata, ClawHub/OpenClaw Directory,
+  `npm audit`, OpenClaw fitness, and Markdown link checks passed. Details,
+  backlog, and self-improvement are archived. Prompt was not edited.
 
 ## Reporting Checklist
 

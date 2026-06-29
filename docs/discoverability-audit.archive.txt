@@ -45091,3 +45091,72 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   and verify the parent before pushing. For npm website links that return 403
   to markdown checkers, keep the package name in text and verify the package
   with `npm view` instead of adding a brittle docs link.
+2026-06-29 19:56 UTC heartbeat
+
+- Runtime selector limitation: this local heartbeat surface did not expose model,
+  Fast speed, or extra-high effort controls, so the run continued with the
+  unavailable selector recorded.
+- GitHub issues: `gh issue list` returned no open issues for `Xquik-dev/tweetclaw`
+  or `Xquik-dev/xquik`. Xquik worktree had unrelated pre-existing changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; they were not touched. TweetClaw had
+  pre-existing untracked `0`; it was not touched.
+- Crawler: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-195618/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 10000 --limit 220 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-195618` with query packs for authored PRs, TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw/MCP/Codex/Claude/social/Twitter-X skills, awesome lists, skill registries, forks, generated catalogs, and source-packet/web-index skill repos. Output parsed as valid JSON with 48 opportunities and no explicit errors.
+- Open PR inventory: authored open PR partitions by created window returned 2,455
+  unique PRs with counts 138, 48, 17, 832, 746, 576, 97, and 1, with no bucket
+  hitting the 1,000 cap. Lane filter matched 2,409 PRs. Recent exact readbacks
+  covered the latest 30 in-scope authored PRs plus touched PRs. This is not a
+  complete all-GitHub exact-read claim; remaining full-exact backlog is recorded
+  in `/tmp/tweetclaw-heartbeat-20260629-195618/in-scope-authored-prs.json`.
+- Repair gate: `evalops/mcp-openapi#30` was the current actionable repair lane.
+  Pushed `c33df15e` for compile-cache invalidation, `c6ba934d` for OAuth2 flow
+  metadata, `6b2d0898` for scopes-only flow skipping, and `d8090613` for
+  fallback OAuth2 scopes. Validated each repair with `npm run check`, `npm test`,
+  `git diff --check`, and changed-diff public-safety scans. Posted validation
+  comments. One validation comment for `c33df15e` was accidentally duplicated;
+  no further duplicate follow-up was posted. Final readback after `d8090613`:
+  PR open, ready, MERGEABLE, mergeStateStatus BLOCKED, Socket checks success,
+  Cursor and Devin pending.
+- Recent exact-read backlog: dirty/conflicting PRs included
+  `reall8164/wechat-openclaw-plugin#1`, `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and `jamald33n/tweetsave-mcp#2`.
+  `The-Swarm-Corporation/swarms-tools#56` had failing maintainer automation
+  checks named `label` and `Welcome`; `gh run view --log-failed` returned
+  `log not found`, so it was recorded as a maintainer-workflow blocker.
+- Fresh discovery: duplicate checks blocked prior or open lanes for
+  `Xzeroone/bird-mcp`, `jedi4ever/social-skills`,
+  `michaellady/claude-social-media-skills`, and `eskobar95/guapo-agent-skills`.
+  Fresh screened candidates included `twominutereports/marketing-skills`
+  (no license metadata), `jlindstrom21/claude-marketing-skills` (MIT), and
+  `Pauesome/claude-marketing-skills` (MIT). Selected
+  `jlindstrom21/claude-marketing-skills` because it was MIT, non-forked,
+  duplicate-clean across compact/archive/target content/PRs/issues, and had a
+  target-native Growth Channels section.
+- Fresh PR: created verified `kriptoburak/claude-marketing-skills` fork of
+  `jlindstrom21/claude-marketing-skills`, pushed branch
+  `codex/public-social-proof-listening`, and opened
+  https://github.com/jlindstrom21/claude-marketing-skills/pull/1. The PR adds a
+  self-contained `public-social-proof-listening` Claude skill for public
+  X/Twitter/social source-packet analysis and optional TweetClaw source packets.
+  Validation: skill count 42, `git diff --check`, duplicate scan, and
+  changed-diff public-safety scan. Exact readback: open, ready, CLEAN,
+  MERGEABLE, no checks, comments, or reviews.
+- Official OpenClaw/package hygiene: `openclaw.dev` route probes for `llms.txt`,
+  `llms-full.txt`, CLI plugin docs, CLI skills, manifest, tool plugins, SDK
+  runtime, ClawHub publishing, skill format, install overrides, and debugging
+  timed out; the batch was stopped after repeated bounded timeouts. Registry
+  metadata returned OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; published `@xquik/tweetclaw` remains `1.6.31` while
+  source is `1.6.32`; `clawhub` is `0.23.0`. ClawHub TweetClaw route and
+  OpenClaw Directory returned HTTP 200. npm package webpage returned 403, but
+  registry metadata succeeded. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+  Markdown link checks passed for README, OpenClaw setup docs, workflow docs,
+  compact audit, and compact release memory.
+- Prompt self-improvement: keep recording OpenClaw docs route timeouts as
+  platform-route blockers when npm registry and local fitness gates still pass;
+  do not delay fresh PR work after a bounded docs-route timeout if no OpenClaw
+  compatibility metadata is being changed.
