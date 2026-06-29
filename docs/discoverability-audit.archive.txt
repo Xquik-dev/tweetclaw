@@ -45330,3 +45330,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   standalone skill. Keep docs-route timeouts as reachability blockers when npm
   metadata and local OpenClaw fitness still pass and no compatibility wording is
   being changed.
+2026-06-29 21:09 UTC heartbeat
+
+- Runtime selector limitation: this local heartbeat surface did not expose
+  model, Fast speed, or extra-high effort controls, so the run continued with
+  the limitation recorded.
+- GitHub issues: `gh issue list` returned no open issues for
+  `Xquik-dev/tweetclaw` or `Xquik-dev/xquik`. Xquik still had unrelated
+  pre-existing article/roadmap changes and TweetClaw still had pre-existing
+  untracked `0`; none were touched.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-210950/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 10000 --limit 220 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-210950` with focused query packs for authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  skill registries, forks, generated catalogs, source packets, social listening,
+  marketing skills, and web-index skill repos. Output parsed as valid JSON with
+  48 opportunities and no crawler errors. Proxy logs contained refresh,
+  quarantine, and fetch-abort status only, with no credential values.
+- Open PR inventory: partitioned authored PR search by created windows returned
+  2,461 unique open PR URLs. The first attempt used unsupported `gh search prs`
+  fields and returned no rows; the rerun with supported fields completed with 8
+  partitions. Exact readbacks covered 60 latest or handled PRs, including state,
+  mergeability, base/head, commits, comments, reviews, files, and status
+  rollups when available. No complete all-GitHub inventory claim is made beyond
+  those partitions and exact readbacks.
+- Repair gate: `reall8164/wechat-openclaw-plugin#1` was conflicting again after
+  upstream README changes. Verified fork `kriptoburak/wechat-openclaw-plugin` is
+  parented to `reall8164/wechat-openclaw-plugin`, merged upstream `main`,
+  resolved the README conflict as an ancestry-only merge, and pushed `3ee1c5d`
+  to `codex/add-tweetclaw-workflow`. Validation passed conflict-marker scan,
+  `git diff --check`, `package.json` and `openclaw.plugin.json` JSON parse,
+  `npx --yes markdown-link-check README.md --quiet`, and changed-diff
+  public-safety scan. Posted
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4837125291.
+  Final exact readback: open, ready, CLEAN, MERGEABLE, no checks.
+- Fresh target screening: crawler and archive gates blocked duplicate or lower
+  fit lanes including `Lala0Land/openclaw-social-skills`,
+  `ashemag/reddit-crosspost`, `rediumvex/social-media-caption-generator-claude`,
+  `nowork-studio/openclaw-social-media-skills`, `ununununium/openclaw-social-media-skills`,
+  and `michaellady/claude-social-media-skills`. `marcthibodeau/Claude-Social-media-Skill`
+  had only prior no-license screening, no existing PRs, no duplicate content,
+  and no open or closed PR/issue hits for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, source evidence, or
+  source-packet variants.
+- New external PR: created verified fork
+  `kriptoburak/marcthibodeau-claude-social-media-skill`, parented to
+  `marcthibodeau/Claude-Social-media-Skill`, branch
+  `codex/add-trust-first-social-skill`, commit `195201b`, and opened
+  https://github.com/marcthibodeau/Claude-Social-media-Skill/pull/1. The PR
+  adds a self-contained `SKILL.md` for trust-first social strategy, source-backed
+  content pillars, sustainable cadence, and approval-gated draft workflows, with
+  TweetClaw framed only as an optional public X/Twitter source-packet input.
+  Validation passed `git diff --check`,
+  `npx --yes markdown-link-check README.md SKILL.md --quiet`, and changed-diff
+  public-safety scan. Readback: open, ready, CLEAN, MERGEABLE, no checks,
+  comments, or reviews.
+- Official OpenClaw and package hygiene: current `openclaw.dev` docs route
+  probes timed out with curl code `000` for `llms.txt`, CLI plugins, CLI
+  skills, plugin manifest, plugin permission requests, tool plugins, SDK
+  runtime, ClawHub publishing, skill format, install overrides, debugging, CLI
+  secrets, and gateway secrets. No OpenClaw compatibility metadata or public
+  install wording changed. `npm view openclaw` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view
+  @xquik/tweetclaw` returned published `1.6.31` with older npm install metadata
+  while source remains `1.6.32`. `npm view clawhub` returned `0.23.0`. ClawHub
+  TweetClaw route, canonical ClawHub route, OpenClaw Directory, and npm registry
+  metadata returned HTTP 200. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed.
+  Markdown link checks passed for README, `docs/openclaw-setup.md`,
+  `docs/agent-workflows.md`, compact audit, and compact release memory.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, this archive, and release archive. Automation
+  prompt was not edited; current automation TOML measured 12,432 bytes with
+  `wc -c`.
+- Self-improvement: when previous missing-license rules are superseded by the
+  current "missing license alone does not block direct PR" rule, rescreen the
+  target for policy, duplicate, and target-native fit instead of carrying the old
+  blocker forward. For README-only skill repos, a useful PR should make the repo
+  installable or operational, not merely add a tool mention.

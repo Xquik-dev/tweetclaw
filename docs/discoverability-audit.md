@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 20:48 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 21:09 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs routes timed
   out from local fetch and curl during this run; no compatibility wording was
   changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-29 20:48 UTC after redirecting to
+  2026-06-29 21:09 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,18 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 20:48 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-204848` returned 48 skill, OpenClaw, MCP, Claude,
+- 2026-06-29 21:09 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-210950` returned 48 skill, OpenClaw, MCP, Claude,
   social, X/Twitter, registry, fork, catalog, and source-packet opportunities.
-- Authored PR partitions found 2,459 unique open PR URLs. Exact readbacks covered
-  80 latest or handled PRs. No complete all-GitHub inventory claim is made
+- Authored PR partitions found 2,461 unique open PR URLs. Exact readbacks covered
+  60 latest or handled PRs. No complete all-GitHub inventory claim is made
   beyond the recorded partitions.
-- Repair gate: merged upstream into `Saminiscool/twitter-ai-agent#2`, pushed
-  `af18ede`, posted validation, and exact-read the PR as open, CLEAN, and
+- Repair gate: merged upstream into `reall8164/wechat-openclaw-plugin#1`, pushed
+  `3ee1c5d`, posted validation, and exact-read the PR as open, CLEAN,
   MERGEABLE.
-- Fresh PR: opened https://github.com/ajmedick/claude-marketing-skills/pull/1
-  from verified `kriptoburak/ajmedick-claude-marketing-skills`. Readback: open,
-  ready, CLEAN, MERGEABLE, no checks/comments.
+- Fresh PR: opened
+  https://github.com/marcthibodeau/Claude-Social-media-Skill/pull/1 from
+  verified `kriptoburak/marcthibodeau-claude-social-media-skill`. Readback:
+  open, ready, CLEAN, MERGEABLE, no checks/comments.
 - OpenClaw docs routes timed out; npm metadata, ClawHub/OpenClaw Directory,
   `npm audit`, OpenClaw fitness, and Markdown link checks passed. Detailed
   discovery, duplicate checks, validation, and self-improvement are archived.
