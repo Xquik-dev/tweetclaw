@@ -42827,3 +42827,107 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   the strongest TweetClaw placement is reviewed source context before final
   human-approved posting, plus target-native hygiene fixes such as missing
   license links when present.
+
+## 2026-06-29 09:50 UTC Heartbeat
+
+- Runtime and safety: Codex 5.5 Fast mode, explicit speed selection, and
+  extra-high effort selection were not available in this runtime, so the
+  limitation was recorded and the run continued. TweetClaw stayed on `master`
+  with only the pre-existing untracked path `0`; no dev server, Browser,
+  Chrome, production SSH, secret read, Context7 work, or destructive command was
+  used.
+- Crawler-first coverage: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with session `tweetclaw-20260629-095028`, strict JSON output to
+  `/tmp/tweetclaw-heartbeat-20260629-095028/crawl.json`, research proxy,
+  12000 ms request and proxy warmup timeouts, limit 280, one search page,
+  per-query limit 8, and concurrency 8. Query pack covered authored PRs,
+  TweetClaw, `@xquik/tweetclaw`, OpenClaw, MCP, Codex, Claude, agent, social,
+  X/Twitter skills, `SKILL.md`, `.agents/skills`, skill dirs, awesome lists,
+  registries, generated catalogs, forks, and package-tooling lanes. Crawler
+  returned 36 opportunities and 0 errors.
+- PR inventory: crawler repo mode checked 36 repos and found 24 open authored
+  PR rows with 0 errors. Audit URL scrape found 1299 historical PR URLs. Lane
+  search across TweetClaw, OpenClaw, ClawHub, MCP Twitter, SKILL.md Twitter,
+  x-twitter-scraper, agent skills Twitter, social media agent, package tooling
+  OpenClaw, and validator OpenClaw returned 405 rows and 402 unique PR URLs.
+  TweetClaw, OpenClaw, ClawHub, and x-twitter-scraper partitions each hit the
+  configured 100-result cap, so broad authored inventory remained capped.
+- Exact PR reads: exact current set contained 405 PR URLs from crawler repo
+  lists, lane search, compact memory, recent archive URLs, and known blockers.
+  `gh pr view` exact-read all 405 with 0 failures, including state, draft state,
+  mergeability, base/head, commits, comments, reviews, check rollups, files, and
+  maintainer-modify state. Triage found all 405 open, with 384 mergeable, 13
+  conflicting, and 8 unknown; 79 attention entries; 69 PRs with comments; 32
+  with reviews; and 57 with checks.
+- Repair priority: `anup4khandelwal/awesome-codex-skills#6` had an earlier
+  changes-requested review superseded by a later owner approval. Known
+  non-branch blockers remained `Arindam200/awesome-ai-apps#226` for
+  maintainer-requested demo video assets, `higress-group/openapi-to-mcpserver#38`
+  for CLA, and `antstudiocz/ant-marketplace#37` for target-owner Vercel
+  authorization. Remaining conflict backlog included older catalog or skill PRs
+  such as `BiswaViraj/agent-skills#1`, `Kilo-Org/kilo-marketplace#78`,
+  `KunanonJ/ai-skills-hub#18`, `YangsonHung/awesome-agent-skills#2`,
+  `Zita-Go/Skills-Atlas#44`, `daymade/claude-code-skills#43`,
+  `jesserobbins/skills#1`, `jjfantini/humblSKILLS#110`,
+  `jqueryscript/awesome-claude-code#425`, `n0an/skills#1`,
+  `seantunley/openclaw-social-pipeline#2`, and
+  `wx-chevalier/Awesome-Agent-Skills#3`.
+- PR repair completed: repaired `Persistio/openclaw-persistio#2` by merging
+  upstream `main` into `codex/add-tweetclaw-public-memory-workflow`, resolving
+  README against Persistio v2 docs, keeping TweetClaw as optional public
+  X/Twitter source context, changing the workflow to `memory_store`, switching
+  the npm link to registry metadata because npmjs web challenged automated
+  probes, converting an upstream-added scripts README em dash to ASCII, and
+  adding a portable `OpenClawPluginDefinition` entry annotation so declaration
+  emit succeeds. Pushed commit `c698a8d`. Validation: `npm install
+  --package-lock=false --ignore-scripts --no-audit --no-fund`, `npm run build`,
+  README markdown-link-check, `git diff --check`, conflict-marker scan,
+  added-line dash scan, and sensitive-pattern scan. Final readback: open, ready,
+  `MERGEABLE`, no comments, no reviews, no checks, files `README.md`,
+  `dist/index.d.ts`, `dist/index.js`, `scripts/README.md`, and `src/index.ts`.
+- Fresh target screening: duplicate checks blocked
+  `mvanhorn/clawdbot-skill-search-x` by existing PR #2, `mvanhorn/last30days-skill`
+  by multiple merged Xquik/TweetClaw history items, `blacktwist/social-media-skills`
+  by several open TweetClaw/Xquik PRs, `pourebadi/social-review-curator-agent`
+  by existing TweetClaw issue #1, and `rohunvora/x-research-skill` by existing
+  Xquik PR #8. `geekjourneyx/jina-cli` and `BuddhaYi/macos-cli` were not chosen
+  because TweetClaw fit was weaker or previously held. `huatianwan/researchwang-
+  bookmark-assistant` was selected after exact metadata, target content, open
+  and closed PRs/issues, and archive searches found no TweetClaw, Xquik,
+  `@xquik/tweetclaw`, x-twitter-scraper, ClawHub, or related duplicate history.
+- New external PR: forked `huatianwan/researchwang-bookmark-assistant` to
+  verified fork `kriptoburak/researchwang-bookmark-assistant` with parent
+  `huatianwan/researchwang-bookmark-assistant`, branch
+  `codex/add-tweetclaw-source-packet`. Opened
+  https://github.com/huatianwan/researchwang-bookmark-assistant/pull/1 with
+  commit `2bfedf5c69e2aff441713c49827d8c5b4217a19e`. The PR adds optional
+  TweetClaw source-packet guidance to README and SKILL for public X/Twitter
+  context enrichment while preserving bookmark sync, SQLite state, unread
+  reports, and the 6551 download flow; it also fixes `references/ops-checklist.md`
+  to use the SKILL's 10 consecutive known tweet buffer and SQLite DB rows.
+  Final readback: open, ready, `MERGEABLE`, no comments, no reviews, no checks,
+  files `README.md`, `SKILL.md`, and `references/ops-checklist.md`.
+- Target validation and hygiene for
+  `huatianwan/researchwang-bookmark-assistant#1`: `git diff --check`, README,
+  SKILL, and ops-checklist markdown-link-check, edited-file dash scan, and
+  added-line sensitive-pattern scan passed.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/cli/skills`, `/tools/plugin`,
+  `/plugins/sdk-runtime`, `/help/debugging`, `/clawhub/publishing`,
+  `https://clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned latest `1.6.31`;
+  `npm view clawhub version` returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm audit --audit-level=moderate` reported
+  0 vulnerabilities. Markdown link checks passed for TweetClaw README, compact
+  audit, compact release memory, and handled target content.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted prompt
+  measured 12432 bytes and already preserves Codex 5.5 Fast mode, extra-high
+  reasoning wording, and the instruction not to use standard speed mode when
+  Fast mode is available. Durable lesson: for bookmark-oriented X/Twitter skills,
+  TweetClaw should be framed as optional source-packet enrichment, not as a
+  replacement for the target's bookmark sync state machine.
