@@ -40980,3 +40980,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   already owns that workflow. After broad GitHub search rate-limits, keep exact
   crawler and archive reads, but record that inventory is incomplete when URL
   read failures or search caps remain.
+
+## 2026-06-29 01:18 UTC Heartbeat
+
+- Runtime limitation: no GPT-5.5 or reasoning-effort selector was available in
+  this runtime, so the requested GPT-5.5 extra-high setting could not be
+  verified or selected.
+- Crawler-first monitoring and discovery: ran the internal Xquik GitHub
+  opportunity crawler from `/Users/burak/Developer/xquik` with research-proxy
+  JSON output, bounded request and proxy warmup timeouts, and focused authored
+  PR, SKILL.md, `.agents/skills`, skills directory, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X, awesome-list, registry, AI-framework, and
+  package-tooling queries. Session `tweetclaw-20260629-005951` produced valid
+  JSON with 55 repos. Exact crawler repo PR-list reads found 77 open PR rows,
+  37 open authored PRs, and 0 repo-list failures.
+- PR inventory method and limits: searched compact audit, archive, crawler
+  output, and known PR URLs first. Exact readbacks covered the 37 crawler
+  authored PRs and 20 authored PRs updated on 2026-06-29. Broad authored search
+  for `updated:>=2026-06-29` returned 20 PRs without a cap. Full inventory is
+  not complete because older archive PR URLs were not all re-read this run.
+- Repair gate: exact readbacks found a live unresolved CodeRabbit thread on
+  `bravian1/social-agent#4`, a dirty `jamald33n/tweetsave-mcp#2`, and an
+  actionable CodeRabbit review on `harsha-iiiv/openapi-mcp-generator#74`.
+  Repaired all three before final maintenance. `higress-group/openapi-to-mcpserver#38`
+  stayed blocked by target CLA status; it is owner or platform gated.
+- `bravian1/social-agent#4`: pushed commit `bf85547` to
+  `kriptoburak/social-agent:codex/add-xquik-direct-x-backend`, sorting the
+  Xquik example env keys so `XQUIK_API_KEY` is above `X_BACKEND`. Validation
+  passed `git diff --check`, `python3 -m py_compile agents/x.py tests/test_x.py`,
+  and `uv run --with pytest pytest tests/test_x.py`. Final readback: open,
+  mergeable `CLEAN`, CodeRabbit success, no unresolved review threads.
+- `jamald33n/tweetsave-mcp#2`: merged upstream `main`, resolved the README
+  setup conflict by preserving npm/npx setup, MCP config, valid GitHub support
+  links, and the TweetClaw/OpenClaw handoff while excluding malformed raw-ZIP
+  links, then pushed `531c038` to
+  `kriptoburak/tweetsave-mcp-jamald33n:codex/tweetclaw-openclaw-companion`.
+  Validation passed conflict-marker and malformed raw-ZIP scan, `git diff`
+  check, README markdown-link-check, package JSON parse, `npm install` without
+  committed lockfile artifacts, `npm run build`, and both ZIP integrity checks.
+  Final readback: open, mergeable `CLEAN`, no checks configured.
+- `harsha-iiiv/openapi-mcp-generator#74`: pushed `d783085` to
+  `kriptoburak/openapi-mcp-generator:codex/add-xquik-read-api-fixture`, adding
+  generated-source assertions for OAuth bearer security, bearer-token env
+  lookup, and Authorization header wiring. Validation passed `git diff --check`,
+  `npm run format.check`, and `npm test`. Final readback: open, mergeable,
+  CodeRabbit success, no unresolved review threads.
+- Fresh discovery and duplicate gates: screened crawler candidates including
+  `bhargav-11/crewai_twitter_agent`, `cizz1/Twitter_Crewai`,
+  `yousifbigdata/twitter_agent_crewai`, and `peige-guo/twitter_trend_agent`.
+  Exact target content, open and closed PRs, open and closed issues, compact
+  audit, and archive checks found no TweetClaw, Xquik, OpenClaw, ClawHub,
+  npm-package, or x-twitter-scraper duplicate for `peige-guo/twitter_trend_agent`.
+  The repo is public, non-fork, non-archived, PR-enabled, issue-enabled, and
+  LangGraph/LangChain focused. GitHub reported no license metadata; missing
+  license metadata alone was not treated as a direct-PR blocker.
+- New external PR: opened
+  `https://github.com/peige-guo/twitter_trend_agent/pull/1` from verified fork
+  `kriptoburak/twitter_trend_agent`, branch
+  `codex/add-tweetclaw-source-file`, commit `3854b63`. The PR adds optional
+  `TWEETCLAW_SOURCE_FILE` support to load reviewed local TweetClaw JSON exports
+  into the existing X/Twitter document pipeline, normalizes common tweet export
+  fields, and documents offline source-context use for demos, tests, and
+  approval-gated analysis. Final readback: open, ready, mergeable `CLEAN`, no
+  comments, no reviews, no checks configured.
+- Target validation and link checks: `twitter_trend_agent` passed `git diff
+  --check`, Python compile for touched and app files, a source-file smoke test
+  with `uv run --with python-dotenv`, and README markdown-link-check. TweetSave
+  and TweetClaw README/doc link checks passed. Public hygiene scans found no
+  secrets, private implementation details, restricted provider/source names,
+  internal cost mechanics, unsupported claims, or stale metadata introduced by
+  the changed files or public comments.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  `clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `clawhub.ai/xquik/plugins/tweetclaw`; `/sdk/runtime` remained 404.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; published `@xquik/tweetclaw` remained `1.6.31`
+  while source remained `1.6.32`; `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities; `npm run check-openclaw-platform-fitness`
+  passed.
+- Final TweetClaw validation and memory: `npm run check-memory-md-size`
+  reported 15,206 of 15,360 bytes, prompt bytes measured from automation TOML
+  were 12,012, and `npm run check:all` passed with 168 tests and 100 percent
+  coverage. Compact audit and release memory were updated, with full details
+  preserved here.
+- Prompt self-improvement: for LangGraph, LangChain, CrewAI, and similar
+  analysis agents, prefer optional local source-file adapters that feed reviewed
+  TweetClaw JSON into existing retrieval or prompt context while preserving
+  target-owned live-fetch behavior and approval boundaries. When fixing bot
+  findings on adjacent Xquik/OpenAPI PRs, exact-read review threads after push
+  and record pending CLA blockers separately from actionable code repairs.

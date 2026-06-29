@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 00:52 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 01:18 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   route check: `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
   `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
   `/cli/skills`, `/clawhub/publishing`, `/clawhub/skill-format`,
   `/gateway/config-tools`, and `/help/debugging` 200; `/sdk/runtime` 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-29 00:52 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-29 01:18 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -192,23 +192,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 00:52 UTC: model/effort selector unavailable. Xquik crawler
-  session `tweetclaw-20260629-002450` returned 47 skill, OpenClaw, MCP,
-  AI-framework, and social-agent repos. Broad authenticated PR search hit a
-  GitHub search-rate 403, so inventory is not complete. Exact archive reads
-  attempted 1,281 PR URLs, read 1,243, failed on 38, and found 1,012 open
-  authored PRs.
-- Repair gate: pushed `bravian1/social-agent#4` commit `a10692a` for valid
-  CodeRabbit findings and `Saminiscool/twitter-ai-agent#2` commit `3b6cb1e` to
-  resolve a fresh conflict. Final readbacks: both PRs open, mergeable `CLEAN`;
-  social-agent CodeRabbit success.
-- New AI-framework PR: `tclxtianxiang-yu/twitter-writer#1` adds a Mastra
-  `tweetclaw-context` tool for optional local TweetClaw JSON exports and wires
-  it into the Twitter/X writing agent. Final readback: open, ready, mergeable
-  `CLEAN`, no checks reported, head `707c85e`.
+- 2026-06-29 01:18 UTC: model/effort selector unavailable. Xquik crawler
+  session `tweetclaw-20260629-005951` returned 55 repos; crawler exact repo PR
+  lists found 77 open PR rows and 37 open authored PRs. Broad authored search
+  was limited to PRs updated on 2026-06-29, so full inventory is not complete.
+- Repair gate: pushed `bravian1/social-agent#4` `bf85547` for the remaining
+  CodeRabbit dotenv-order thread, `jamald33n/tweetsave-mcp#2` `531c038` for a
+  README conflict, and `harsha-iiiv/openapi-mcp-generator#74` `d783085` for a
+  valid bearer-auth test review. Final readbacks were clean or checks-success;
+  `higress-group/openapi-to-mcpserver#38` remains CLA-owner blocked.
+- New PR: `peige-guo/twitter_trend_agent#1` adds optional
+  `TWEETCLAW_SOURCE_FILE` support so LangGraph retrieval can use reviewed local
+  TweetClaw JSON exports without live Twitter API calls during a run.
 - Maintenance: OpenClaw docs, npm, ClawHub, audit, links, target validation,
-  `check:all`, memory-size, public hygiene, and self-improvement details are
-  archived.
+  memory-size, public hygiene, and self-improvement details are archived.
 
 ## Reporting Checklist
 
