@@ -190,17 +190,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 22:56 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-225653` returned 43 opportunities and 0 errors. Authored
-  PR partitions found 2,468 unique open PR URLs with 0 capped buckets; crawler
-  repo mode found 33 PRs; exact reads covered 171 current/tracked PRs with 0
+- 2026-06-29 23:17 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-231753` returned 43 opportunities and 0 errors. Authored
+  PR partitions found 2,469 unique open PR URLs with 0 capped buckets; crawler
+  repo mode found 33 PRs; exact reads covered 196 current/tracked PRs with 0
   errors.
-- Repair gate: fixed `Aditya923-c/xpoz-agent-skills#1` README quick-link
-  conflict, pushed `690885b`, posted validation, and exact-read the PR as CLEAN
-  and MERGEABLE with no checks.
-- Fresh PR: opened https://github.com/dhiraj-salian/buffer-api-skill/pull/1
-  from verified `kriptoburak/buffer-api-skill`. Readback: open, ready,
-  MERGEABLE, UNSTABLE merge-state status, no checks/comments/reviews.
+- Repair gate: fixed `reall8164/wechat-openclaw-plugin#1` README conflict,
+  pushed `a5c9e9c`, posted validation, and exact-read the PR as CLEAN and
+  MERGEABLE with no checks.
+- Fresh PR: opened https://github.com/anho123456/x-post-research-skill/pull/1
+  from verified `kriptoburak/x-post-research-skill`. Readback: open, ready,
+  CLEAN, MERGEABLE, no checks/comments/reviews.
 - OpenClaw docs host timed out via Node, Python, and curl; installed official
   `openclaw@2026.6.10` docs matched npm latest and were used as fallback. npm
   metadata, ClawHub/OpenClaw Directory, registry, `npm audit`, OpenClaw fitness,

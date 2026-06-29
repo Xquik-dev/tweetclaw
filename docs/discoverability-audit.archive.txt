@@ -45755,3 +45755,90 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   failure, record it separately and validate touched docs independently. After
   compaction or scratch-output loss, re-read fork parent and remotes before
   pushing.
+2026-06-29 23:17 UTC heartbeat
+
+- Runtime selector note: Codex 5.5 Fast mode, no-standard-speed, and
+  extra-high reasoning controls were not exposed by this runtime, so the
+  limitation was recorded and work continued.
+- Repo state at start: TweetClaw on `master...origin/master` with pre-existing
+  untracked `0`, left untouched. Xquik on `master...origin/master` with
+  unrelated dirty roadmap/article files left untouched. Open issues for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik` were empty.
+- Crawler-first discovery from `/Users/burak/Developer/xquik`: ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 220
+  limit, 1 search page, 8 per query, concurrency 8, session
+  `tweetclaw-20260629-231753`, and query packs covering authored PRs,
+  TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skill dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, source packets, and OpenClaw tweet
+  skills. Output parsed as valid JSON with 43 opportunities and 0 errors.
+- PR inventory: flag-based authored created-date partitions returned 2,469
+  unique open PR URLs with 0 capped buckets. Crawler repo-mode PR lists covered
+  43 repos and found 33 authored open PRs with 0 errors. Exact readbacks covered
+  196 current or tracked PRs with 0 errors: CLEAN 132, UNSTABLE 42, DIRTY 3,
+  BLOCKED 17, UNKNOWN 2; checks NO_CHECKS 170, FAILING 6, SUCCESS 20; reviews
+  blank 188 and REVIEW_REQUIRED 8. No all-GitHub inventory claim is made beyond
+  the completed partitions and exact-read set.
+- Repair gate: selected `reall8164/wechat-openclaw-plugin#1` because exact
+  readback showed a current README conflict on a TweetClaw/OpenClaw PR. Verified
+  `kriptoburak/wechat-openclaw-plugin` as a public fork of
+  `reall8164/wechat-openclaw-plugin`, merged upstream `main`, and resolved the
+  README conflict by keeping the repository support link, preserving the
+  optional TweetClaw X/Twitter workflow section, and keeping one current
+  download badge. Validation passed conflict-marker scan, `git diff --check`,
+  package and OpenClaw manifest JSON parse, README link check, and changed-diff
+  public-hygiene scan. Pushed `a5c9e9c`, posted
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1#issuecomment-4838402943,
+  and exact-read the PR as open, ready, CLEAN, MERGEABLE, no checks.
+- Fresh screening and duplicate gates: crawler and fallback discovery covered
+  fresh skill repos and social-source lanes. Duplicate or prior-history gates
+  blocked `beggarticksarthurtatum121/reddit-skills`,
+  `indranilbanerjee/socialforge`, `0xNyk/xint`,
+  `blacktwist/social-media-skills`, `hyperfx-ai/marketing-skills`,
+  `zuocharles/openclaw-social-media-skill`, `Schmedu/social-post-skill`, and
+  `Hao0321/claude-skill-social-post`. `anho123456/x-post-research-skill` was
+  accepted because it is MIT licensed, non-fork, non-archived, issue-enabled,
+  duplicate-clean across compact memory, archive, target content, and target
+  PRs/issues, and its X/Twitter research workflow benefits from optional public
+  source packets while preserving the target's reading, verification, and
+  summary authority.
+- Fork and target policy checks: target root contained README, package metadata,
+  MIT license, packaged `skill/x-post-research/SKILL.md`, and no contribution
+  blocker. Created and verified `kriptoburak/x-post-research-skill` as correctly
+  parented to `anho123456/x-post-research-skill`; pushed branch
+  `codex/add-tweetclaw-source-packets`.
+- New external PR: opened
+  https://github.com/anho123456/x-post-research-skill/pull/1 from branch
+  `codex/add-tweetclaw-source-packets`, commit `d77427f`. The PR adds optional
+  OpenClaw/TweetClaw public X/Twitter source-packet guidance to README and the
+  packaged skill workflow, keeps TweetClaw read-only in this skill, and leaves
+  drafting, scheduling, publishing, and other write-like actions outside the
+  workflow. Validation passed `npm test`,
+  `npx --yes markdown-link-check README.md skill/x-post-research/SKILL.md
+  --quiet`, `git diff --check`, and changed-diff public-hygiene scan. Readback:
+  open, ready, CLEAN, MERGEABLE, head `d77427f`, 2 files changed, 24 additions,
+  5 deletions, no checks/comments/reviews, maintainer can modify.
+- Official OpenClaw and package hygiene: Node fetch probes for `openclaw.dev`
+  docs routes failed with `fetch failed`; Python `urllib` and curl also timed
+  out or returned HTTP `000` for llms exports, CLI plugin docs, manifest,
+  ClawHub publishing, and debugging. Installed official `openclaw@2026.6.10`
+  matched npm latest and bundled the relevant docs, so local package docs were
+  used as fallback evidence. No OpenClaw compatibility metadata, manifest shape,
+  install metadata, approval behavior, public install docs, packaged skill
+  guidance, or marketing wording changed. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31`; `npm view clawhub`
+  returned `0.23.0`. ClawHub TweetClaw route, canonical ClawHub route, OpenClaw
+  Directory, and npm registry metadata returned HTTP 200. `npm audit
+  --audit-level=moderate`, `npm run check-openclaw-platform-fitness`, Markdown
+  link checks, `npm run check-memory-md-size`, and `npm run check:all` passed.
+  The full check gate included 168 passing tests with 100 percent coverage.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, this archive, and release archive. Automation
+  prompt was not edited; automation TOML measured 12,432 bytes.
+- Self-improvement: when a crawler-surfaced target is found duplicate in the
+  archive after compaction, immediately rerun narrower duplicate checks on the
+  next fresh candidate instead of reusing the stale candidate list. For
+  X/Twitter research skills that already separate evidence from guidance, keep
+  TweetClaw as optional source-packet context only and explicitly block drafting,
+  scheduling, publishing, and write-like actions from the target skill.

@@ -1882,5 +1882,29 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   current scoped-package publishing succeeds.
 - Validation passed `npm audit --audit-level=moderate`, `npm run
   check-openclaw-platform-fitness`, Markdown link checks, and
+  `npm run check-memory-md-size`, plus `npm run check:all` with 168 passing
+  tests and 100 percent coverage. Release blockers remain npm publish auth and
+  ClawHub owner-scope validation only.
+2026-06-29 23:17 UTC heartbeat release hygiene
+
+- Runtime selectors were unavailable; work continued under the active runtime.
+- Official `openclaw.dev` route probes failed through Node fetch, Python
+  `urllib`, and curl for llms exports, CLI plugin docs, manifest, ClawHub
+  publishing, and debugging. The installed official `openclaw@2026.6.10`
+  package matched npm latest and bundled relevant CLI, plugin, SDK, ClawHub,
+  skill, permission, install-override, debugging, auth, and runtime docs,
+  so local package docs were used as fallback. No OpenClaw compatibility
+  metadata, manifest shape, install docs, approval behavior, or release wording
+  changed.
+- Package metadata: `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31`; `npm view clawhub`
+  returned `0.23.0`.
+- Public route checks: ClawHub plugin route, canonical ClawHub route, OpenClaw
+  Directory, and npm registry metadata returned HTTP 200. ClawHub still
+  redirects to `clawhub.ai/xquik/plugins/tweetclaw`; keep npm canonical until
+  current scoped-package publishing succeeds.
+- Validation passed `npm audit --audit-level=moderate`, `npm run
+  check-openclaw-platform-fitness`, Markdown link checks, and
   `npm run check-memory-md-size`. Release blockers remain npm publish auth and
   ClawHub owner-scope validation only.
