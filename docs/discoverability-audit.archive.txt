@@ -42504,11 +42504,15 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `3f6559dd92e0a2755eaa9336254c99d614fcb7ed`. The docs-only PR updates
   README to add an optional X source context section that installs TweetClaw via
   OpenClaw and tells users to paste reviewed summaries into PostPilot manual
-  topics, owner-profile topic lists, or `goldExemplars`. It keeps TweetClaw as
-  input context only; PostPilot remains the drafting engine and Telegram human
-  approval gate remains the publishing path. Final readback: open, ready,
-  `MERGEABLE`, GitGuardian Security Checks success, CodeRabbit success with no
-  actionable comments, head `3f6559d`.
+  topics or owner-profile topic lists. It keeps TweetClaw as input context
+  only; PostPilot remains the drafting engine and Telegram human approval gate
+  remains the publishing path. Initial Codex review correctly noted that
+  `goldExemplars` are style anchors, not source-context storage, so commit
+  `0051ac495561d02bf20ab59d4f683a8e2544759e` removed `goldExemplars` from the
+  source-context destination list and replied on the review thread. Final
+  readback: open, ready, `MERGEABLE`, GitGuardian Security Checks success,
+  CodeRabbit status success with incremental review rate-limited after the
+  follow-up commit, head `0051ac4`.
 - Target validation and hygiene: `git diff --check`,
   `npx --yes markdown-link-check README.md --quiet`, added-line public-hygiene
   scan, and target duplicate scans passed. `node_modules` was absent in the

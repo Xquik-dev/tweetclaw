@@ -201,8 +201,8 @@ archive, before any outreach or duplicate decision.
   ready, `MERGEABLE`, head `ee7ab1e`.
 - New PR: `lalit1517/PostPilot#38` documents TweetClaw as optional reviewed
   public X/Twitter context before PostPilot manual topics or owner-profile
-  inputs. Final readback was open, ready, `MERGEABLE`, GitGuardian success, and
-  CodeRabbit success with no actionable comments.
+  inputs. Final readback was open, ready, `MERGEABLE`, head `0051ac4`, and
+  GitGuardian success; Codex `goldExemplars` feedback was fixed and replied.
 - Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
   prompt bytes, memory-size, and self-improvement details are archived.
 
