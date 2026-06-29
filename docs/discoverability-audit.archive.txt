@@ -41389,3 +41389,115 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   compatibility blocker. For X sentiment Streamlit apps, prefer a small local
   export importer that preserves the app's existing CSV upload path and avoids
   adding live calls or new credentials.
+
+## 2026-06-29 04:00 UTC Heartbeat
+
+- Runtime and scope: the runtime exposed no GPT-5.5 or extra-high effort
+  selector, so the model/effort limitation was recorded and work continued.
+  Context7, browser/Chrome visual inspection, production SSH, secrets, and
+  destructive actions were not used. TweetClaw was on `master` with only the
+  pre-existing untracked `0`; GitHub auth was valid and
+  `Xquik-dev/tweetclaw` had no open issues.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-035034/crawl.json --research-proxy`
+  with bounded request timeout, proxy warmup, 12 focused query packs, session
+  `tweetclaw-20260629-035034`, limit 220, one search page, per-query limit 8,
+  and concurrency 8. The crawler returned 21 opportunities across skill,
+  directory, MCP, OpenClaw, social, X, awesome-list, and catalog lanes.
+  Coverage included `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw, MCP,
+  Codex/Claude/agent/social/Twitter-X skills, awesome lists, generated
+  catalogs, forks, and web-index surfaced skill repos.
+- PR inventory: broad authored-open partitions read 2,353 rows with no
+  1,000-result cap: `updated:>=2026-06-29` 76 before new actions, `2026-06-28`
+  58, `2026-06-27` 1, `2026-06-26` 2, `2026-06-25` 3, `2026-06-24` 20,
+  `2026-06-22..2026-06-23` 250, `2026-06-15..2026-06-21` 686,
+  `2026-06-01..2026-06-14` 650, `2026-01-01..2026-05-31` 606,
+  `2025-01-01..2025-12-31` 1, and older 0. Exact readback covered all PRs
+  updated today plus audit-tracked dirty PRs. It was not a complete all-lane
+  exact read after the 02:52 baseline, so no full-completion claim was made.
+- Repair gate: exact readbacks initially found no failed checks but showed
+  dirty or unknown TweetClaw/OpenClaw PRs. Four README-only recurring conflict
+  repairs were completed on correctly parented `kriptoburak` forks:
+  `Aditya923-c/xpoz-agent-skills#1` commit `644c2f5`, comment
+  `https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4828875157`;
+  `Aqmar777/openclaw-competitive-intel#1` commit `1783e71`, comment
+  `https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4828875160`;
+  `AbdNour627/awesome-openclaw-configs#1` commit `1e56b09`, comment
+  `https://github.com/AbdNour627/awesome-openclaw-configs/pull/1#issuecomment-4828875170`;
+  and `jamald33n/tweetsave-mcp#2` commit `1b1a7d8`, comment
+  `https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4828908981`.
+  Each PR read back clean and mergeable after its repair. Final exact readback
+  later showed `openclaw-competitive-intel#1`, `xpoz-agent-skills#1`, and
+  `awesome-openclaw-configs#1` dirty again from high-churn upstream README
+  drift; `tweetsave-mcp#2` remained clean and mergeable. This recurring churn is
+  backlog, not a user boundary.
+- Repair validation: `xpoz-agent-skills#1` passed conflict-marker scan,
+  `git diff --check`, README markdown-link-check, and changed-diff public
+  hygiene scan. `openclaw-competitive-intel#1` passed conflict-marker scan,
+  `git diff --check`, Python compile, `python3 -m unittest
+  tests/test_tweetclaw_fetcher.py`, install script syntax check,
+  markdown-link-check for README, SKILL, and docs, and changed-diff public
+  hygiene scan. `awesome-openclaw-configs#1` passed anchored conflict-marker
+  scan, `git diff --check`, JSON5 validation for the TweetClaw config, README,
+  README_EN, and CONTRIBUTING markdown-link-check, and changed-diff public
+  hygiene scan. `tweetsave-mcp#2` passed conflict-marker and malformed raw-ZIP
+  scans, `git diff --check`, README markdown-link-check, `npm install
+  --ignore-scripts --no-audit --no-fund` without committing lockfile artifacts,
+  `npm run build`, ZIP integrity checks for both shipped ZIPs, and
+  changed-file public hygiene scan.
+- Fresh target screening: crawler output and fallback repo metadata screened
+  skill/directory and X/Twitter sentiment targets. `ROV639/SkillHub` was
+  duplicate-blocked by earlier SkillHub history and an already-open authored PR.
+  `Putrabadiws/X-Sentiment-Analysis` was duplicate-blocked by the 02:52 run.
+  `confused-pandas/sentiment-analysis-app` and `techsavvyumer/tsa` were
+  duplicate-clean in compact audit and archive. `confused-pandas/sentiment-analysis-app`
+  was selected because it is public, non-fork, non-archived, issue and PR clean,
+  Python/Streamlit-based, and target-native for adding local tweet export batch
+  sentiment scoring. Missing license metadata did not block the direct PR.
+- New external PR: opened
+  `https://github.com/confused-pandas/sentiment-analysis-app/pull/1` from
+  correctly parented fork `kriptoburak/sentiment-analysis-app`, branch
+  `codex/tweetclaw-batch-import`, commit
+  `1dddde4091d087e45d0a7b263886ac7c849d07c8`. The PR adds
+  `app/batch_import.py`, `tests/test_batch_import.py`, fixes README setup code
+  fences, and documents batch analysis for reviewed local TweetClaw-style JSON,
+  JSONL, or CSV exports. Final readback was open, ready, `MERGEABLE`, `CLEAN`,
+  no comments, no reviews, and no checks configured.
+- New PR validation: `python3 -m py_compile app/batch_import.py
+  tests/test_batch_import.py`, `python3 -m unittest tests/test_batch_import.py`
+  with 3 tests, `git diff --check`, and README markdown-link-check passed.
+  Target open and closed PR/issue duplicate searches for TweetClaw, Xquik,
+  `@xquik/tweetclaw`, x-twitter-scraper, and ClawHub returned empty. Public
+  hygiene diff scans found no introduced secrets, private implementation
+  details, restricted provider/source names, internal cost mechanics,
+  unsupported claims, or stale metadata.
+- Official OpenClaw and package checks: docs probes returned 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins`,
+  `/plugins/manifest`, `/clawhub`, `/skills`, `/configuration`, and `/help`.
+  Current 404s were `/plugins/permission-requests`, `/agents/runtime`,
+  `/agent/runtime`, `/sdk/runtime`, `/codex-harness`, `/codex/harness`,
+  `/cli/plugins/install`, `/cli/plugins/update`, and `/cli/plugins/inspect`;
+  the unified `/cli/plugins` page remains the install/update/inspect source.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.23.0`;
+  published `@xquik/tweetclaw` remained `1.6.31` with older install metadata
+  while source remained `1.6.32`; ClawHub page returned 200 but still exposed
+  `1.6.26`; OpenClaw Directory, TweetClaw GitHub, and npm registry metadata all
+  returned 200. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities and `npm run check-openclaw-platform-fitness` passed.
+- TweetClaw public hygiene and memory: markdown-link-check passed for README,
+  compact audit, and compact release memory. `npm run check-memory-md-size`
+  passed at 15,074 of 15,360 bytes before updates. Persisted automation TOML
+  was 12,314 bytes and prompt field tail was 12,189 bytes, below the 15 KiB
+  prompt cap. No prompt edit was useful because current instructions already
+  preserve model/effort wording, quiet autonomy, crawler-first discovery,
+  mandatory PR submission, aggressive skill coverage, repair priority,
+  duplicate/fork rules, OpenClaw docs checks, link checks, validation gates,
+  badge rule, Context7 exclusion, secret handling, cadence, thread binding,
+  commit/push requirement, Markdown cap, prompt cap, and self-improvement.
+- Durable lessons: high-churn README-only outreach PRs may re-dirty after a
+  clean readback if the target force-updates generated README content; repair
+  once per run when safe, record clean readback and re-dirty backlog, then avoid
+  infinite loops unless a maintainer asks. For small Streamlit sentiment apps,
+  a standard-library batch importer with injected predictor tests is a strong
+  low-risk target-native TweetClaw export bridge.
