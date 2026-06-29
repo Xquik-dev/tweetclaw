@@ -49,13 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 15:10 UTC: latest `2026.6.10`, beta
-  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
-  `docs.openclaw.ai`; llms, CLI plugins, CLI skills, plugin manifest, tool
-  plugins, SDK runtime, ClawHub publishing, skill format, and help debugging
-  pages returned HTTP 200. `/install/overrides` returned 404.
+- OpenClaw npm checked 2026-06-29 15:18 UTC: latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs for llms, CLI
+  plugins/skills, plugin manifest/tools/SDK, ClawHub, skill format, debugging,
+  and `/plugins/install-overrides` returned HTTP 200; `/install/overrides` 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 15:10 UTC after redirecting to
+  page on 2026-06-29 15:18 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 15:10 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 15:18 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,18 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 15:10 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260629-145728` returned 41 opportunities and 0 errors.
-- PR inventory: 1,566 parseable PR URLs from compact/archive/crawler/search;
-  exact REST readbacks covered 1,526 PRs: 1,297 open, 999 clean, 45 dirty, 8
-  unknown, 7 draft, and 40 errors. Broad search had capped buckets, so no
-  complete all-GitHub claim.
-- Repair: `Aditya923-c/xpoz-agent-skills#1` merged upstream `main`, resolved
-  the README quick-link conflict, passed conflict, diff, link, and public
-  safety checks, and read back open, ready, mergeable, head `cf41db1`.
-- New PR: `kvalen-code/zxkol-skill#1` adds bilingual X/Twitter source-packet
-  handoff guidance, links TweetClaw as optional OpenClaw evidence, removes a
-  literal-key config note, and reads back open, ready, mergeable, head `d5ea2c0`.
+- 2026-06-29 15:18 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260629-151832` returned 37 opportunities and 0 errors; a fresh
+  skill-source batch returned 0 opportunities after proxy socket closures.
+- PR inventory: 2,114 parseable URLs from compact/archive/crawler/search; exact
+  REST readbacks covered 2,070 PRs: 1,840 open, 1,397 clean, 54 dirty, 17
+  unknown, 91 blocked, 273 unstable, 8 behind, and 44 errors. Broad search hit
+  capped and rate-limited buckets, so no complete all-GitHub claim.
+- Repair: `Saminiscool/twitter-ai-agent#2` merged upstream `main`, resolved a
+  README conflict, passed format, typecheck, test, link, and public-safety
+  checks, posted validation, and read back open, clean, head `67bcfa6`.
+- New PR: `ognjengt/founder-skills#1` adds x-writer source-evidence guardrails
+  for public X/Twitter evidence and reviewed TweetClaw/OpenClaw output. It reads
+  back open, clean, no checks, head `79cbbce`.
 - TweetClaw npm audit, OpenClaw docs/npm recheck, OpenClaw fitness, public links,
   prompt bytes, duplicate screens, validation, and self-improvement details are
   archived.

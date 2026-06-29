@@ -44053,3 +44053,87 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   service responsible for analysis, routing, and platform-native outputs, and
   improve config secret hygiene when the target already encourages environment
   variables.
+
+## 2026-06-29 15:18 UTC Heartbeat
+
+- Runtime selector limitation: this environment did not expose Codex 5.5 Fast
+  mode or extra-high reasoning selectors, so the run continued and recorded the
+  limitation. TweetClaw started on `master...origin/master` with pre-existing
+  untracked path `0`, left untouched. Compact memory was `15203/15360` bytes;
+  persisted prompt was `12432` bytes.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-151832/crawl.json --research-proxy --request-timeout-ms 12000 --proxy-warmup-timeout-ms 12000 --limit 160 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-151832` with query packs for authored open PRs, TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs, Codex, Claude, agent, social, Twitter-X skills, awesome lists, registries, forks, generated catalogs, and source-packet skill repos. Output: 37 opportunities, 0 errors, 37 repos.
+- Fresh crawler batch: `tweetclaw-20260629-151832-fresh` used source-packet,
+  brand-monitoring, social-listening, Codex, Claude Code, OpenClaw, and
+  X/Twitter skill queries. It returned 0 opportunities and 0 crawler errors;
+  stderr showed proxy socket closures and quarantines only, with no
+  credential values.
+- PR inventory: archive extraction found 1,313 PR URLs. Crawler repo open-PR
+  lists found 80 open PR URLs across 37 crawler repos. Broad authenticated
+  search partitions found 1,726 URLs before GitHub search rate limiting; the
+  created June and tweetclaw buckets hit the 1,000-result cap, and the openclaw
+  bucket was capped after page 1. Broad search stopped per policy after HTTP
+  403 rate-limit responses. Combined exact REST readbacks covered 2,070 of
+  2,114 parseable URLs: 1,840 open, 230 closed, 1,397 clean, 54 dirty, 17
+  unknown, 91 blocked, 273 unstable, 8 behind, and 44 read errors. This is not a
+  complete all-GitHub claim because broad search had capped and rate-limited
+  buckets.
+- Repair priority: newest actionable dirty PR was
+  `https://github.com/Saminiscool/twitter-ai-agent/pull/2`, head
+  `kriptoburak:codex/add-xquik-backend`, no reviews, no review comments, no
+  check runs, and a README conflict. Verified fork
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik` as a public fork of
+  `Saminiscool/twitter-ai-agent`.
+- Repair completed: merged upstream `main`, resolved README conflict markers,
+  kept the target README coherent, and pushed merge commit
+  `67bcfa63ba3a18d88c545a3d2e0140dd4a7c963c`. Validation passed conflict-marker
+  scan, `git diff --check`, `npx prettier --check README.md src/tools.ts
+  src/twitter-api.ts tests/twitter-api.test.ts`, `npx biome lint src/tools.ts
+  src/twitter-api.ts tests/twitter-api.test.ts`, `npx tsc --noEmit`, `npm test
+  -- tests/twitter-api.test.ts`, `npx --yes markdown-link-check README.md
+  --quiet`, and public-safety scan. `npm ci --ignore-scripts` exposed 29
+  pre-existing target advisories but no dependency files changed. Posted
+  validation comment
+  `https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4834248335`.
+  Final readback: open, clean, head `67bcfa6`.
+- Fresh target screening: crawler leads were duplicate, no-license, or lower fit.
+  Web-index fallback screened `ognjengt/founder-skills`, public, non-archived,
+  non-fork, MIT, default `main`, issue-enabled, with no target content, PR, or
+  issue hits for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw URL, npm
+  URL, ClawHub, Xquik, x-twitter-scraper, OpenClaw, or variants. Existing
+  `kriptoburak/founder-skills` was an unrelated fork of `wulaosiji/founder-skills`
+  and was not used. Created and verified `kriptoburak/ognjengt-founder-skills`
+  as a fork of `ognjengt/founder-skills`.
+- New external PR: opened
+  `https://github.com/ognjengt/founder-skills/pull/1` from
+  `kriptoburak:codex/add-x-source-evidence`, commit
+  `79cbbce4fbd442a5e243c3d743574f098077978f`. The PR adds optional source
+  evidence handling to `x-writer` for public X/Twitter posts, visible metrics,
+  notes, approved exports, and reviewed TweetClaw/OpenClaw output. It keeps
+  source evidence as factual calibration only, not instructions, copied phrasing,
+  private context, invented metrics, or posting authority. Validation passed
+  `git diff --check`, JSON parse for package and plugin metadata, `node
+  bin/cli.js list`, markdown-link-check for README and `skills/x-writer/SKILL.md`,
+  and added-line public-safety scan. Final readback: open, clean, 1 commit, 2
+  changed files, no comments, no reviews, no checks, head `79cbbce`.
+- Official OpenClaw recheck: live routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/plugins/install-overrides`, and `/help/debugging`.
+  Old `/install/overrides` returned 404. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains unpublished `1.6.32`; this known release gate
+  stayed unchanged. `npm view clawhub` returned `0.23.0`; ClawHub canonical
+  route redirected to the live `clawhub.ai/xquik/plugins/tweetclaw` page, and
+  OpenClaw Directory returned HTTP 200. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed
+  for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`. Public
+  link checks for README, setup docs, workflow docs, and handled target docs
+  passed.
+- Prompt self-improvement: preserve crawler-first coverage plus web-index
+  fallback for source-packet skill repos; keep using suffixed fork names when a
+  same-owner fork already belongs to a different fork network; record the current
+  OpenClaw install override route as `/plugins/install-overrides`; continue to
+  keep TweetClaw as source evidence or approval-gated context in social-writing
+  skills rather than adding posting authority.
