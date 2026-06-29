@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 14:05 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 14:26 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
   `docs.openclaw.ai`; llms, CLI plugins, `/plugins/*`, skills, ClawHub
   publishing, skill format, testing, runtime architecture, and help debugging
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 14:05 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 14:26 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -192,17 +192,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 14:05 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260629-135202` returned 37 opportunities and 0 errors.
-- PR inventory: 1,359 crawler/archive PR URLs; REST readbacks parsed 1,311:
-  1,086 open, 925 clean, 50 dirty, 135 unknown, 7 draft, 44 errors.
-- Repair: `warlockoussama/twitter-cli#1` merged upstream `main`, passed README
-  link/diff/secret scans, and read back open, ready, clean, head `f781662`.
-- New PR: `Schmedu/social-post-skill#1` adds optional TweetClaw public
-  X/Twitter source-packet guidance to README, AGENTS, and SKILL; readback open,
-  ready, clean, no checks/comments/reviews, head `16c57b4`.
-- TweetClaw npm audit, OpenClaw fitness, public links, prompt bytes, duplicate
-  screens, and self-improvement details are archived.
+- 2026-06-29 14:26 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260629-141302` returned 37 opportunities and 0 errors.
+- PR inventory: 1,481 parseable PR URLs from compact/archive/crawler/search;
+  exact REST readbacks covered 1,441 PRs: 1,214 open, 1,041 clean, 53 dirty,
+  136 unknown, 8 draft, and 40 errors. Broad search hit secondary 403 after
+  1,042 collected URLs, so exact-repo and archive lanes continued.
+- Repair: `Aqmar777/openclaw-competitive-intel#1` merged upstream `main`,
+  resolved the README conflict, passed conflict, diff, Python, unittest, and
+  shell checks, and read back open, ready, clean, head `b426064`.
+- New PR: `antongulin/bundle-social-api-skill#1` adds X/Twitter source-context
+  handoff guidance, fixes README local skill links and API docs links, passes
+  markdown links/diff/conflict checks, and reads back open, ready, mergeable,
+  head `30c9a69`.
+- TweetClaw npm audit, OpenClaw docs/npm recheck, OpenClaw fitness, public links,
+  prompt bytes, duplicate screens, and self-improvement details are archived.
 
 ## Reporting Checklist
 

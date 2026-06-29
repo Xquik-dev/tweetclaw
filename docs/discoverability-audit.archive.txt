@@ -43759,3 +43759,100 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   publish confirmation; place TweetClaw as source evidence only, keep drafting
   and publishing authority inside the target workflow, and mirror changes across
   README plus all agent instruction surfaces.
+
+## 2026-06-29 14:26 UTC heartbeat
+
+- Runtime limitation: this environment did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode with extra-high effort
+  could not be selected from the agent. The run continued and recorded the
+  limitation.
+- Initial TweetClaw state: branch `master...origin/master` with pre-existing
+  untracked file `0`, left untouched. Initial memory check passed at
+  14,976/15,360 bytes. Persisted automation prompt measured 12,098 bytes.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output to `/tmp/tweetclaw-heartbeat-20260629-141302/crawl.json` using
+  session `tweetclaw-20260629-141302`, `--research-proxy`,
+  `--request-timeout-ms 12000`, `--proxy-warmup-timeout-ms 12000`, `--limit
+  220`, `--search-pages 1`, `--per-query-limit 8`, and `--concurrency 8`.
+  Query coverage included authored open PRs, TweetClaw, OpenClaw, ClawHub,
+  MCP, x-twitter-scraper, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, web-index skill repos, and scheduled
+  tweet lanes. Output contained 37 opportunities and 0 crawler errors.
+- PR inventory: archive extraction found 1,309 PR URLs. Crawler repo open-PR
+  REST lists found 80 open PR URLs. Broad authenticated search collected 1,042
+  PR URLs, then hit GitHub search secondary HTTP 403, so broad search stopped
+  for the run and exact-repo/archive lanes continued. Combined filtering found
+  1,481 parseable GitHub PR URLs. Exact REST readbacks covered 1,441 PRs:
+  1,214 open, 1,041 clean, 53 dirty, 136 unknown, 8 draft, 67 blocked, and 40
+  errors. This is not a claim that every in-scope PR across GitHub was checked
+  because broad search hit the recorded secondary limit.
+- Repair priority: newest actionable dirty PR was
+  `https://github.com/Aqmar777/openclaw-competitive-intel/pull/1`. Exact
+  readback showed open, ready, dirty, head
+  `kriptoburak:codex/tweetclaw-x-source`, 48 commits, 6 changed files, 14 prior
+  comments from `kriptoburak`, no reviews, no review comments, and no check
+  runs. The fork `kriptoburak/openclaw-competitive-intel` was verified as a
+  public fork of `Aqmar777/openclaw-competitive-intel`.
+- Repair completed: merged upstream `main`, resolved the README conflict by
+  keeping the TweetClaw X/Twitter source section, the existing badge area, and
+  one final download badge. Validation passed conflict-marker scan, `git diff
+  --check`, `python3 -m py_compile skills/*.py tests/test_tweetclaw_fetcher.py`,
+  `python3 -m unittest tests/test_tweetclaw_fetcher.py`, and `bash -n
+  install.sh`. Pushed merge commit
+  `b42606446376f43ac1a3a06e8eae3383975d71ab` and posted validation comment
+  `https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4833617104`.
+  Final readback: open, ready, `mergeable=true`, `mergeable_state=clean`, head
+  `b426064`, no check runs.
+- Fresh screening: crawler candidates `blacktwist/social-media-skills` and
+  `creatorcrawl/creatorcrawl-skill` were duplicate-covered by prior PR/history;
+  `dorukardahan/twitterapi-io-skill` remained a known observed lane and was not
+  selected. Fallback after crawler-first discovery accepted
+  `antongulin/bundle-social-api-skill` because it is public, active, MIT
+  licensed, non-fork, default branch `main`, issue-enabled, and duplicate-clean
+  across compact audit, archive, target content, target open and closed
+  PRs/issues, and code search for TweetClaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, and variants. Missing fork was created as
+  `kriptoburak/bundle-social-api-skill`, verified parent
+  `antongulin/bundle-social-api-skill`.
+- New external PR: opened
+  `https://github.com/antongulin/bundle-social-api-skill/pull/1` from
+  `kriptoburak:codex/tweetclaw-source-packets`, commit
+  `30c9a6984394d4fa597310b27afe656552291605`. The PR adds X/Twitter
+  source-context handoff guidance for workflows that review public context
+  before creating Bundle.social posts, keeps Bundle.social as the system for
+  creating/scheduling/managing posts, and fixes README local skill links plus
+  API docs links discovered during validation.
+- New PR validation and readback: passed `git diff --check`, conflict-marker
+  scan, sensitive scan with only existing `<your-api-key>` placeholders, and
+  `npx --yes markdown-link-check README.md
+  skills/bundle-social-posts/SKILL.md --quiet`. Target README link check first
+  exposed existing blockers for root-relative skill paths and
+  `https://api.bundle.social`; the PR fixes those to local skill paths and
+  `https://api.bundle.social/swagger`. Final REST readback for
+  `antongulin/bundle-social-api-skill#1`: open, ready, `mergeable=true`,
+  `mergeable_state=unstable`, 1 commit, 2 changed files, 25 additions, 10
+  deletions, no comments, no reviews, no review comments, and no check runs.
+- Official OpenClaw recheck: live routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/tools/plugin`, `/clawhub/publishing`, `/clawhub/skill-format`, and
+  `/help/debugging`. `llms.txt` was read. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains `1.6.32`; release mismatch remains known and
+  unchanged. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md
+  docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md
+  --quiet` passed before audit edits.
+- Prompt self-improvement: preserved the Codex 5.5 Fast mode, extra-high effort,
+  no-standard-speed wording, crawler-first discovery, mandatory PR submission,
+  aggressive skill-repo coverage, complete PR repair priority, duplicate/fork
+  gates, OpenClaw docs checks, link checks, validation gates, Context7
+  exclusion, secret handling, commit/push requirement, memory caps, and quiet
+  final handling. Reusable lesson: for social-management API skill packs,
+  TweetClaw fits best as reviewed X/Twitter source context before final
+  Bundle.social post creation, scheduling, and approval. Fix target README link
+  hygiene when validation exposes existing local-path or API-doc URL blockers in
+  files already being edited.
