@@ -40920,8 +40920,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   tests/test_x.py`, and `uv run --with pytest pytest tests/test_x.py` passed.
   Commented validation:
   https://github.com/bravian1/social-agent/pull/4#issuecomment-4828055900.
-  Final readback: open, mergeable, head `a10692a`, CodeRabbit status pending
-  because the bot hit its review rate limit.
+  Final readback: open, mergeable `CLEAN`, head `a10692a`, CodeRabbit success.
 - Repair gate: `Saminiscool/twitter-ai-agent#2` was newly dirty after upstream
   README changes. Merged upstream `main` and resolved the README-only conflict
   in `3b6cb1e165b8bbfd827106878020b72540a1738b`, preserving the optional
@@ -40972,10 +40971,9 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   secrets, private implementation details, restricted provider/source names,
   internal cost mechanics, unsupported claims, and stale metadata. No NHS badge
   was added.
-- End-of-run gates before audit edit: compact Markdown memory measured
-  15149/15360 bytes; persisted automation prompt string measured 12013 escaped
-  bytes and the automation TOML measured 12314 bytes. No prompt edit was
-  needed.
+- End-of-run gates: compact Markdown memory measured 15289/15360 bytes after
+  audit edits; persisted automation prompt string measured 12013 escaped bytes
+  and the automation TOML measured 12314 bytes. No prompt edit was needed.
 - Prompt self-improvement: for Mastra and similar agent frameworks, prefer a
   small optional local-context tool that reads reviewed TweetClaw exports and
   leaves live publishing or trend fetching out of scope unless the target

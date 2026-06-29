@@ -200,8 +200,8 @@ archive, before any outreach or duplicate decision.
   authored PRs.
 - Repair gate: pushed `bravian1/social-agent#4` commit `a10692a` for valid
   CodeRabbit findings and `Saminiscool/twitter-ai-agent#2` commit `3b6cb1e` to
-  resolve a fresh conflict. Final readbacks: social-agent open, mergeable, bot
-  review rate-limited; twitter-ai-agent open and mergeable `CLEAN`.
+  resolve a fresh conflict. Final readbacks: both PRs open, mergeable `CLEAN`;
+  social-agent CodeRabbit success.
 - New AI-framework PR: `tclxtianxiang-yu/twitter-writer#1` adds a Mastra
   `tweetclaw-context` tool for optional local TweetClaw JSON exports and wires
   it into the Twitter/X writing agent. Final readback: open, ready, mergeable
