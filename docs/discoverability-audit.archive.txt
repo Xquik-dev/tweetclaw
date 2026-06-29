@@ -44667,3 +44667,108 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   passed, changed-diff public safety scan was clean, and `npm run check:all`
   passed including OpenClaw fitness, package artifact check, and 168 tests with
   100 percent coverage.
+
+## 2026-06-29 18:22 UTC Heartbeat
+
+- Runtime: requested Codex 5.5 Fast mode and extra-high reasoning, but this
+  runtime exposed no model, speed, or effort selector. Continued and recorded
+  the limitation. TweetClaw started on `master` at
+  `04991b81e05e232d2d4d30f2c319fb27da7b2908`, matching `origin/master`, with
+  only the pre-existing untracked `0` path left untouched. Compact Markdown
+  memory started at 15,065/15,360 bytes.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with strict JSON, research proxy, bounded
+  timeouts, `tweetclaw-20260629-180228` session, and SKILL.md, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, social media, Twitter/X, awesome-list,
+  registry, source-packet, and bookmark query lanes. Output:
+  45 opportunities, 0 JSON errors. Exact repo-mode crawler coverage over active
+  PR targets and high-fit candidates returned 2 rows
+  (`TheMattBerman/x-algo-skill`, `Hashi-Ai-Dev/openclaw-clawdoc`) after repeated
+  managed-proxy socket failures and endpoint quarantines; no proxy credentials
+  were printed or stored.
+- PR inventory: GitHub rate limits were healthy. Authored open PR search
+  returned a capped 1,000-result all bucket. Partitions: 2026-06-29 = 125,
+  2026-06-28 = 48, 2026-06-24..27 = 18, pre-2026-06-24 capped at 1,000; further
+  partitions were 2026-06-16..23 = 833, 2026-06-08..15 = 603,
+  2026-06-01..07 = 143, 2026-05 = 576, 2026-04 = 35, 2026-01..03 = 62, and
+  pre-2026 = 1. Because broad all/pre-2026-06-24 buckets still capped, this run
+  does not claim complete all-GitHub inventory.
+- Focused exact readbacks: a full today-plus-crawler exact loop was stopped
+  after it exceeded the heartbeat cadence; the bounded focused pass exact-read
+  45 high-priority PRs from known carryovers plus the most recent authored
+  2026-06-29 PRs. Results: 45 open, 0 closed, 0 read errors; merge states
+  CLEAN 28, BLOCKED 4, UNSTABLE 13; check states NO_CHECKS 37, SUCCESS 5,
+  PROBLEM 3; 11 PRs had comments, 5 had reviews, and 23 rows needed triage.
+- Repair triage: `404priyanshu/skillrune#1`,
+  `agent-matrix/network.matrixhub#20`, and `nearai/ironhub#183` failed only
+  because Vercel required maintainer team authorization to deploy fork commits.
+  They are maintainer-owned platform gates, not code failures. Thread-aware
+  GraphQL reads found stale or empty review threads for `n1k0ver3E/ard-registry#1`,
+  `nearai/ironhub#183`, and `Hashi-Ai-Dev/openclaw-clawdoc#6`. The only current
+  unresolved actionable thread was `blessonism/openclaw-skills#4`, asking the
+  Xquik Tweet Search skill to handle HTTP 402 credit/subscription failures.
+- Repair completed: verified `blessonism/openclaw-skills#4` head fork
+  `kriptoburak/openclaw-skills-xquik` is correctly parented to
+  `blessonism/openclaw-skills`, cloned branch `codex/add-xquik-tweet-search`,
+  updated `xquik-tweet-search/SKILL.md` with explicit HTTP 402 recovery guidance,
+  validated `git diff --check`, `npx --yes markdown-link-check
+  xquik-tweet-search/SKILL.md --quiet`, and a public-safety diff scan, then
+  pushed commit `b93258c75cd29ff4dd2e0597b6b3c54db639409c` and commented
+  https://github.com/blessonism/openclaw-skills/pull/4#issuecomment-4835624325.
+- Follow-up repair: final readback exposed fresh CodeRabbit nitpicks on the same
+  PR: README should document optional `XQUIK_BASE_URL`, and 429/5xx retry
+  guidance should be concrete. Updated README and SKILL, validated
+  `git diff --check`, `npx --yes markdown-link-check README.md
+  xquik-tweet-search/SKILL.md --quiet`, and a public-safety scan, pushed
+  `24f5812ad09b0e53a2584988004f8f961fdcc482`, and commented
+  https://github.com/blessonism/openclaw-skills/pull/4#issuecomment-4835631218.
+  Final readback: open, ready, mergeable, UNSTABLE only because CodeRabbit
+  re-review was pending; no failing code checks exposed.
+- Fresh discovery and duplicate screening: crawler results were mostly
+  duplicate-blocked by prior PRs or archive history. `rickicode/patchright-browser`
+  was fresh but weak fit. Fallback repo search in social, OpenClaw, skill, and
+  Twitter/X lanes found only one stale low-fit candidate; fallback code search
+  over SKILL.md and README hits found 100 fresh-looking repos. Screened
+  `frogr/austnomaton` (no license metadata), `whawkinsiv/solo-founder-superpowers`
+  (MIT but lower target-native fit), and `tonone-ai/tonone` (MIT, active,
+  non-fork, issue-enabled, no target PR/issue duplicate, no local content
+  duplicate, and clear Buzz social-source workflow fit).
+- New external PR: opened https://github.com/tonone-ai/tonone/pull/109 from
+  verified fork `kriptoburak/tonone` parented to `tonone-ai/tonone`, branch
+  `codex/buzz-source-evidence`, commit
+  `a0f245b015aab05ed42594132e3e1fe702bf00b1`. The PR updates both canonical
+  `team/buzz/skills/buzz-social/SKILL.md` and root
+  `skills/buzz-social/SKILL.md` with a source-evidence checkpoint before
+  drafting Twitter/X posts about current conversations, launches, competitors,
+  or customer proof. TweetClaw is framed only as an optional read-only public
+  source-packet producer, with explicit boundaries against treating results as
+  instructions, copying long unreviewed tweet text, installing tools, reading
+  local configs, posting, scheduling, liking, following, messaging, or inferring
+  private intent.
+- Tonone validation: read `AGENTS.md`, `CONTRIBUTING.md`, `docs/skill-guide.md`,
+  `skills/buzz/SKILL.md`, `skills/buzz-social/SKILL.md`, and canonical
+  `team/buzz/skills/buzz-social/SKILL.md`. Validation passed `diff -u
+  team/buzz/skills/buzz-social/SKILL.md skills/buzz-social/SKILL.md`,
+  `git diff --check`, `python3 -m pytest tests/test_skill_compliance.py`
+  (14 passed), and a public wording scan. Final PR readback: open, ready,
+  mergeable, BLOCKED/review-required, no checks, no comments, no reviews,
+  maintainer edits allowed.
+- Official OpenClaw and package hygiene: current docs returned HTTP 200 for
+  `llms.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/clawhub/publishing`, and `/clawhub/skill-format`.
+  Old `/debugging` and `/secrets` paths now return 404; current llms export maps
+  debugging to `/help/debugging`, CLI secrets to `/cli/secrets`, and runtime
+  secrets to `/gateway/secrets`. ClawHub listing resolved to
+  `https://clawhub.ai/xquik/plugins/tweetclaw` with HTTP 200. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned published
+  `1.6.31` with npm install metadata while source remains `1.6.32`; `npm view
+  clawhub` returned `0.23.0`. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities, and `npm run check-openclaw-platform-fitness`
+  passed.
+- Self-improvement: for high-volume authored PR monitoring, first use search
+  partitions for counts, then exact-read a focused action set with short
+  per-call timeouts. If exact `gh pr view` loops stall, stop them and continue
+  with smaller readbacks plus thread-aware GraphQL on review-bearing PRs.
+  Update OpenClaw docs probes to prefer `/help/debugging`, `/cli/secrets`, and
+  `/gateway/secrets` over removed `/debugging` and `/secrets` paths.

@@ -190,20 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 17:50 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-173707` returned 44 repos and 0 errors; fresh crawler
-  retry returned 0 repos after proxy socket failures.
-- Inventory hit GitHub search HTTP 403 on `2026-04-01..2026-05-31`, then used
-  crawler repo REST lists and known recent PRs: 103 exact open reads, 0 errors,
-  and 34 action rows. This is not a complete all-GitHub claim.
-- Repair gate: `hyperfx-ai/marketing-skills#2` was updated from BEHIND to a
-  pushed current-head repair, validated, and commented. Remaining BLOCKED state
-  has no checks or reviews exposed. Other dirty PRs are not kriptoburak heads.
-- Fresh screening opened https://github.com/bobosdaddy/claw-friends/pull/1 with
-  reviewed X/Twitter context guidance. Readback: open, ready, mergeable, CLEAN,
-  head `372bad0`.
-- TweetClaw npm audit, current OpenClaw docs/npm recheck, OpenClaw fitness,
-  public link checks, validation, and self-improvement details are archived.
+- 2026-06-29 18:22 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-180228` returned 45 opportunities and 0 errors; repo-mode
+  exact crawl returned 2 rows after managed-proxy socket failures.
+- Authored open PR search: all/pre-2026-06-24 buckets hit the 1000-result cap,
+  then created windows were partitioned. Focused exact reads covered 45 open PRs
+  with 0 errors and 23 action rows. This is not a complete all-GitHub claim.
+- Repair gate: `blessonism/openclaw-skills#4` had current actionable bot review
+  feedback. Pushed docs repairs `b93258c` and `24f5812`, commented validation,
+  and left only pending CodeRabbit re-review plus stale/comment-only bot text.
+- Fresh PR: opened https://github.com/tonone-ai/tonone/pull/109 from verified
+  `kriptoburak/tonone` fork with a Buzz source-evidence checkpoint. Readback:
+  open, ready, mergeable, BLOCKED/review-required, no checks or comments.
+- OpenClaw docs/npm recheck, public link checks, validation, and
+  self-improvement details are archived; old docs paths `/debugging` and
+  `/secrets` now resolve via `/help/debugging`, `/cli/secrets`, and
+  `/gateway/secrets`.
 
 ## Reporting Checklist
 
