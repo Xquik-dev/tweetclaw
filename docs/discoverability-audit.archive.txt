@@ -44335,3 +44335,103 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   blocked unless license metadata appears. Keep asset-generator repos lower fit
   unless the target already asks for sourced social-card evidence or a
   TweetClaw-specific fixture.
+
+## 2026-06-29 16:59 UTC Heartbeat
+
+- Runtime selector limitation: Codex model, Fast mode, and extra-high reasoning
+  controls were not exposed in this runtime. Continued and recorded the
+  limitation. `$CODEX_HOME/automations/improve-tweetclaw-openclaw-integration/automation.toml`
+  resolved to `/automations/...` and was missing, so persisted prompt bytes were
+  unavailable.
+- Start state: `/Users/burak/Developer/tweetclaw` was on `master` with only the
+  pre-existing untracked path `0`, left untouched. GitHub CLI auth for
+  `kriptoburak` was usable again.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler output to `/tmp/tweetclaw-heartbeat-20260629-163304/crawl.json` with
+  research proxy, request timeout `10000`, proxy warmup timeout `10000`, limit
+  `160`, one search page, per-query limit `8`, concurrency `8`, session
+  `tweetclaw-20260629-163304`, and query packs for authored PRs, TweetClaw,
+  OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`, OpenClaw/Codex/Claude
+  social and Twitter-X skills, awesome lists, registries, source packets, and
+  web-index surfaced skill repos. Output parsed as valid JSON with 37
+  opportunities, 37 repos, and 0 errors. Proxy logs printed endpoint counts and
+  countries only, with no credential values.
+- PR inventory: broad authenticated PR search hit GitHub HTTP 403 on partition
+  `created:2026-05-24..2026-06-11`, so broad authenticated search stopped for
+  this run. Fallback inventory used crawler repo open PR lists, audit/archive PR
+  URLs, and GraphQL exact readbacks. Crawler repo lists covered 37 repos and 81
+  open PR rows. Compact and archive extraction found 1,316 PR URLs. Inventory
+  produced 1,382 candidates, 782 exact readbacks, 600 exact errors, 648 exact
+  open PRs, and 134 exact closed PRs. Merge-state counts were BLOCKED 29,
+  CLEAN 520, UNSTABLE 72, UNKNOWN 5, DIRTY 19, and BEHIND 3. Review decisions
+  were NONE 624, REVIEW_REQUIRED 22, APPROVED 1, and CHANGES_REQUESTED 1. Check
+  states were NO_CHECKS 531, SUCCESS 97, and FAILURE 20. There were 107 PRs
+  with comments, 67 with reviews, and 117 possible action rows. This is not a
+  complete all-GitHub claim because the search partition was rate-limited and
+  many exact reads targeted missing, deleted, private, or unavailable repos.
+- Repair gate: `Hashi-Ai-Dev/openclaw-clawdoc#6` remained in stale
+  CHANGES_REQUESTED state, but thread-aware GraphQL showed zero review threads
+  and no actionable current-head maintainer comments. `anbanai/anbanwriter-openclaw#1`
+  was dirty, had no comments, reviews, or checks, and was repaired by cloning
+  `kriptoburak/anbanwriter-openclaw`, fetching upstream `main`, merging,
+  resolving the conflict in `src/hooks/handler.ts`, preserving upstream
+  delivery-summary wording, validating with npm install, lint, build, README
+  markdown link check, `git diff --check`, conflict-marker scan, and
+  public-safety scan. Pushed merge commit
+  `23840c14f196d91d847188e927ca05710b7fe99c` and posted
+  https://github.com/anbanai/anbanwriter-openclaw/pull/1#issuecomment-4834963303.
+  Exact readback after repair: open, ready, mergeable, no checks configured,
+  and no reviews.
+- Fresh screening: duplicate checks against compact audit, archives, target
+  content, target open and closed PRs, and target open and closed issues blocked
+  `dorukardahan/twitterapi-io-skill`, `creatorcrawl/creatorcrawl-skill`,
+  `ndesv21/socialclaw`, `hyperfx-ai/marketing-skills`,
+  `ashemag/reddit-crosspost`, and several older crawler-surfaced lanes.
+  Fresh duplicate-clean candidates included `SarutobiSasuke8/grok-oracle`,
+  `harrrshall/tweetmark`, and `stevenbroyer/pinchsocial-skill`.
+- New external PR: chose `harrrshall/tweetmark` because its offline local
+  bookmark workflow is a concrete fit for user-reviewed X/Twitter JSON, while a
+  direct TweetClaw install mention would violate its no-login and no-API-key
+  positioning. No license metadata was detected, but no maintainer policy
+  blocked a direct PR. Created fork `kriptoburak/tweetmark`, branch
+  `codex/external-x-json-import`, and opened
+  https://github.com/harrrshall/tweetmark/pull/1. The PR adds a stdlib
+  `.agents/skills/bookmarks/scripts/import_x_json.py` importer, README docs, and
+  packaged skill docs for importing reviewed X/Twitter JSON arrays or JSONL
+  into TweetMark raw capture rows. TweetClaw is mentioned only as one reviewed
+  source example.
+- TweetMark validation: `python3 -m py_compile` passed for the importer. A
+  two-row JSONL fixture passed dry-run mode and write mode. The full local
+  pipeline passed through import, `ingest.py`, `enrich.py` with mock engine,
+  `build_kb.py`, and `index.py`, producing 2 `INDEX.tsv` rows. README
+  markdown-link-check, `git diff --check`, conflict-marker scan, and staged
+  public-safety scans passed. Exact PR readback: open, ready, mergeable, head
+  `bcadda8c10580569bf90b7ceb72ab3a03cf05926`, no checks configured.
+- Official OpenClaw and release hygiene: `llms.txt` was read after old docs
+  routes returned 404 for `/plugins/permissions`, `/sdk/runtime`,
+  `/skills/format`, and `/install/overrides`. Current `llms.txt` routes returned
+  HTTP 200 for CLI plugins, CLI skills, plugin manifest, tool plugins, ClawHub
+  publishing, ClawHub skill format, ClawHub plugin validation fixes, gateway
+  tool policy, secrets, concepts agent, agent runtime architecture, debugging,
+  and update/plugin testing. `npm view openclaw` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`. `npm view clawhub`
+  returned `0.23.0`. Published `@xquik/tweetclaw` remains `1.6.31`; source
+  remains unpublished `1.6.32`. ClawHub route
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 and redirects
+  to the live canonical page. OpenClaw Directory canonical
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200, while
+  `https://openclaw.directory/` returned 403.
+- TweetClaw validation before memory edits: `npm audit --audit-level=moderate
+  --json` reported 0 vulnerabilities, `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`,
+  compact Markdown memory started at 14,983/15,360 bytes, and markdown link
+  checks passed for README, OpenClaw setup docs, workflow docs, compact audit,
+  and compact release memory.
+- After compact edits, `npm run check-memory-md-size` passed at
+  15,342/15,360 bytes and public markdown link checks still passed for README,
+  OpenClaw setup docs, workflow docs, compact audit, and compact release memory.
+- Prompt self-improvement: when old OpenClaw docs routes return 404, read
+  current `llms.txt` and verify replacements before classifying a platform
+  blocker. For local-first bookmark skill repos, prefer offline import bridges
+  from reviewed user-provided X/Twitter JSON over direct install instructions
+  when the target promises no login, no API keys, or no network calls.
