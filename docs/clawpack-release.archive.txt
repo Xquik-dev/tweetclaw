@@ -2,6 +2,25 @@
 
 TweetClaw should publish to ClawHub as a ClawPack npm-pack artifact, not the legacy ZIP path. OpenClaw prefers ClawPack metadata when ClawHub provides it, verifies the downloaded bytes and digest headers, and records npm integrity, shasum, tarball name, and ClawPack digest fields for future updates.
 
+## 2026-06-29 05:13 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after PR inventory
+and the new external SocialSimBench TweetClaw content-converter PR. Official
+route probes with redirects returned HTTP 200 for `llms.txt`, `/cli/plugins`,
+plugin docs, ClawHub docs, skills docs, ClawHub TweetClaw, and OpenClaw
+Directory. Current 404s were `llms-full.txt`, `/manifest`, `/config`, and
+`/debugging`; the unified `/cli/plugins` page remains the install, update, and
+inspect source. `npm view openclaw` returned latest `2026.6.10`, beta
+`2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+`0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` while source remains
+`1.6.32`. `npm audit --audit-level=moderate` reported 0 vulnerabilities and
+`npm run check-openclaw-platform-fitness` passed. ClawHub route
+`https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 after
+redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`, but still exposed
+`1.6.26`; OpenClaw Directory, TweetClaw GitHub, and npm registry metadata
+returned HTTP 200. npm publish auth and ClawHub owner-scope blockers remain
+unchanged, so no release or ClawHub publish was attempted.
+
 ## 2026-06-29 04:42 UTC Heartbeat Release Hygiene
 
 OpenClaw platform and release-adjacent checks were refreshed after PR inventory,

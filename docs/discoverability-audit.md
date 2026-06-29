@@ -31,8 +31,8 @@ archive, before any outreach or duplicate decision.
 - Preserve user changes.
 - Use GitHub CLI, GitHub API, repository metadata, static files, and public link
   checks for repo presentation reviews.
-- Runtime model and reasoning-effort selection may be unavailable. If so, report
-  that limitation and continue.
+- Runtime model, speed, and reasoning-effort selection may be unavailable. If
+  so, report that limitation and continue.
 
 ## Source Of Truth
 
@@ -49,15 +49,15 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 04:42 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 05:13 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core llms, `/cli/plugins`,
-  plugin, manifest, ClawHub, skill, config, and help routes were live. Old
-  command-specific subroutes plus permission, runtime, and Codex harness routes
-  404; `/cli/plugins` covers install, update, and inspect.
+  plugin, ClawHub, and skill routes were live. `llms-full.txt`, manifest,
+  config, debugging, old permission, runtime, and Codex harness routes 404;
+  `/cli/plugins` covers install, update, and inspect.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 04:42 UTC, but latest ClawHub page remains
-  `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
-  current package publishing is fixed.
+  page on 2026-06-29 05:13 UTC after redirecting to
+  `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
+  `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
   https://openclawdir.com/plugins/tweetclaw-m2h8cr
 
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 04:42 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 05:13 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,19 +191,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 04:42 UTC: model/effort selector unavailable. Xquik crawler
-  session `tweetclaw-20260629-044236` returned 25 PR, skill, social, X,
-  OpenClaw, MCP, agent, catalog, and Streamlit opportunities.
+- 2026-06-29 05:13 UTC: Codex 5.5 Fast mode and extra-high effort selectors
+  were unavailable. Xquik crawler session `tweetclaw-20260629-050237` returned
+  26 PR, skill, social, X, OpenClaw, MCP, agent, catalog, and Streamlit
+  opportunities.
 - PR inventory: authored open PR partitions read through
-  `updated:2026-06-15..2026-06-21`; GitHub API rate limits blocked older broad
-  buckets. Fallback exact repo reads covered 28 crawler and audit-tracked PRs.
-- Repair gate: conflict repairs pushed for `Aqmar777/openclaw-competitive-intel#1`,
-  `Aditya923-c/xpoz-agent-skills#1`, and
-  `AbdNour627/awesome-openclaw-configs#1`; all read back clean and mergeable.
-- New PR: `prakhar-189/Twitter-HateSpeech-NLP#1` adds tested TweetClaw export
-  batch review for local JSON, JSONL, NDJSON, and CSV tweet exports.
+  `updated:2026-06-22..2026-06-23`; the `2026-06-15..2026-06-21` bucket hit a
+  GitHub API rate limit. Fallback exact repo reads covered 32 crawler and
+  audit-tracked PRs. No failed checks, conflicts, actionable maintainer
+  comments, DCO/CLA blockers, generated drift, or repair work were found.
+- New PR: `LinklyLuck/social_simulation#1` adds a tested
+  `scripts.tweetclaw_export` converter for TweetClaw JSON, JSONL, NDJSON, and
+  CSV exports, README usage, and removal of a stale missing demo image link.
+  Final readback was open, ready, `MERGEABLE`, `CLEAN`, with no comments,
+  reviews, or checks.
 - Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
-  prompt bytes, memory-size, and self-improvement details are archived.
+  prompt bytes, memory-size, automation prompt update, and self-improvement
+  details are archived.
 
 ## Reporting Checklist
 

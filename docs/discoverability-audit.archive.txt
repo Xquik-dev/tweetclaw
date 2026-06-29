@@ -2,6 +2,100 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-29 05:13 UTC Heartbeat
+
+- Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast mode
+  or explicit extra-high reasoning controls. Continued and recorded the
+  limitation.
+- User-requested automation prompt update: preserved the existing heartbeat
+  schedule, target thread, quiet-autonomy rules, crawler-first discovery, repair
+  priority, mandatory PR rule, safety boundaries, commit/push requirement, and
+  self-improvement rule while changing the opening instruction to require Codex
+  5.5 Fast mode with extra-high reasoning and to avoid standard speed mode when
+  Fast mode is available. Readback prompt payload measured 12130 bytes, below
+  the 15 KiB prompt cap.
+- Xquik issue check: direct `gh issue list --repo Xquik-dev/xquik` returned no
+  open issues.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260629-050237` from `/Users/burak/Developer/xquik` with strict
+  JSON output, managed research proxy, bounded timeouts, concurrency 8, and
+  focused authored-PR, TweetClaw/OpenClaw, `@xquik/tweetclaw`, SKILL.md,
+  `.agents/skills`, social-media skill, Twitter/X skill, awesome-list, MCP,
+  tweet workflow, social-media agent, Twitter LLM Streamlit, toxicity Streamlit,
+  and Twitter scheduler queries. Strict JSON parsed successfully with 26
+  opportunities and 0 crawler errors. Coverage included PRs, skill repos, MCP
+  servers, OpenClaw lanes, X/Twitter automation repos, agent repos, and
+  Streamlit analysis repos.
+- Complete PR inventory attempt: broad authored open-PR partitions read
+  `updated:>=2026-06-29` (87), `2026-06-28` (58), `2026-06-27` (1),
+  `2026-06-26` (2), `2026-06-25` (3), `2026-06-24` (20), and
+  `2026-06-22..2026-06-23` (250). The `2026-06-15..2026-06-21` bucket hit a
+  GitHub API rate limit at 2026-06-29 05:04:46 UTC, so broad authenticated
+  search stopped and fallback exact reads continued.
+- Fallback exact PR readback: exact-repo REST lists covered 39 crawler and
+  audit-tracked repos. `allalongitwas/XActions` returned 404. The fallback found
+  32 authored open PRs and exact-read them with state, mergeability, base/head,
+  commits, comments, reviews, checks, conflicts, DCO/CLA-adjacent status, and
+  bot findings where available. Attention items were `reymerekar7/rm-skills#1`
+  with review required but clean mergeability, `RanL703/TweetMCP#1` with only a
+  Codex usage-limit bot comment, clean prior repair PRs with own comments, and
+  `Afstkla/openapi-to-mcp#17` review-required but not in the TweetClaw lane.
+  No failed checks, conflicts, actionable maintainer comments, DCO/CLA blockers,
+  generated-file drift, or valid bot repair findings were found.
+- Fresh target screening: crawler candidates included
+  `mmaazkhanhere/content-creation-agent`, `LinklyLuck/social_simulation`,
+  `bhavikapoor07-ux/Twitter-Sentiment-Analyzer`, and
+  `ayush-oswal/twitter-automation`. `content-creation-agent` and
+  `twitter-automation` were already screened in archive. `Twitter-Sentiment-Analyzer`
+  was duplicate-blocked by an existing open PR. `LinklyLuck/social_simulation`
+  was selected because it is MIT-licensed, public, non-fork, non-archived,
+  Python-based, issue-enabled, and target-native for local TweetClaw export
+  content rows in Twitter-mode social simulations. Compact and archive memory
+  plus target content, open/closed PRs, and open/closed issues had no TweetClaw,
+  Xquik, `@xquik/tweetclaw`, x-twitter-scraper, or ClawHub duplicate. No
+  maintainer policy blocked contribution.
+- New external PR: opened
+  `https://github.com/LinklyLuck/social_simulation/pull/1` from correctly
+  parented fork `kriptoburak/social_simulation`, branch
+  `codex/add-tweetclaw-content-converter`, commit
+  `165451feda0ecc6f039c2faf3262007546004b01`. The PR adds
+  `scripts.tweetclaw_export`, tests, README usage for TweetClaw JSON, JSONL,
+  NDJSON, and CSV exports, and removes a stale README image reference to missing
+  `docs/images/demo.gif`. Final readback was open, ready, `MERGEABLE`, `CLEAN`,
+  no comments, no reviews, no checks configured, and maintainer edits enabled.
+- New PR validation: `python3 -m py_compile scripts/tweetclaw_export.py
+  tests/test_tweetclaw_export.py`, `python3 -m unittest
+  tests/test_tweetclaw_export.py` with 6 tests, direct converter assertion,
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, and
+  changed-diff public hygiene scan all passed. The README link check initially
+  found the pre-existing missing demo image link; the PR removes it.
+- TweetClaw maintenance: OpenClaw route probes with redirects returned HTTP 200
+  for `llms.txt`, `/cli/plugins`, `/plugins`, `/clawhub`, `/skills`, ClawHub
+  TweetClaw, and OpenClaw Directory. `llms-full.txt`, `/manifest`, `/config`,
+  and `/debugging` returned 404. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned latest `1.6.31`; `npm view clawhub` returned
+  `0.23.0`. ClawHub now redirects to `https://clawhub.ai/xquik/plugins/tweetclaw`
+  and still exposes version `1.6.26`.
+- TweetClaw validation: `npm run check-openclaw-platform-fitness`,
+  `npm audit --audit-level=moderate`, `npm run check-memory-md-size`, README
+  markdown-link-check, compact audit markdown-link-check, and compact release
+  markdown-link-check passed before audit editing. Final full gates are recorded
+  in the committed diff for this heartbeat.
+- Public hygiene: changed external PR content and TweetClaw audit diffs were
+  scanned for secrets, credentials, restricted source/provider wording, private
+  implementation details, internal cost mechanics, unsupported claims, and stale
+  metadata. No secret exposure was found.
+- Prompt self-improvement: durable lesson added through the automation prompt
+  itself: preserve Codex 5.5 Fast mode plus extra-high reasoning wording and
+  record model/speed/effort limitation when selectors are unavailable.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Pre-existing untracked path `0` was left
+  untouched.
+- TweetClaw audit commit: this heartbeat audit update was committed and pushed
+  to `master` after validation.
+
 ## 2026-06-29 04:42 UTC Heartbeat
 
 - Model/effort limitation: the runtime did not expose GPT-5.5 or explicit
