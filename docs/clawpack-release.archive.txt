@@ -1826,3 +1826,15 @@ ClawHub publish was attempted.
   docs, agent workflow docs, compact audit, and compact release memory.
 - npm publish auth and ClawHub owner-scope blockers remain unchanged, so no npm
   publish or ClawHub publish was attempted.
+2026-06-29 21:51 UTC
+
+OpenClaw docs route probes failed locally through Node fetch, and `curl` was not
+available in the shell. No compatibility, install metadata, manifest shape,
+approval behavior, release-gate, public install doc, or packaged skill wording
+changed in TweetClaw. `npm view openclaw` returned latest `2026.6.10`, beta
+`2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw`
+returned published latest `1.6.31`; `npm view clawhub` returned `0.23.0`.
+ClawHub TweetClaw routes, OpenClaw Directory, and npm registry returned HTTP
+200. `npm audit --audit-level=moderate`, `npm run
+check-openclaw-platform-fitness`, Markdown link checks, and `npm run check:all`
+passed. `check:all` included 168 tests with 100 percent coverage.

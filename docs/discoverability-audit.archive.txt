@@ -45501,3 +45501,81 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   GitHub search. For social drafting skills, the safest useful TweetClaw
   placement is read-only source evidence that preserves URLs and keeps posting
   inside the target's existing draft or approval gate.
+2026-06-29 21:51 UTC heartbeat
+
+- Runtime selector note: Codex model, Fast mode, and extra-high reasoning
+  selectors were not exposed by this runtime, so the limitation was recorded and
+  work continued.
+- Repo state at start: TweetClaw on `master...origin/master` with pre-existing
+  untracked `0`; Xquik on `master...origin/master` with unrelated dirty
+  roadmap/article files left untouched. Open issues for `Xquik-dev/tweetclaw`
+  and `Xquik-dev/xquik` were empty.
+- Crawler-first discovery from `/Users/burak/Developer/xquik`: ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-215149/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 10000 --limit 220 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-215149`
+  with focused authored PR, TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`,
+  `.agents/skills`, skill-dir, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X,
+  awesome-list, registry, fork, generated-catalog, source-packet, and social
+  listening query packs. Output parsed as valid JSON with 48 opportunities and
+  0 explicit errors.
+- PR inventory: GitHub rate limit check before broad search showed core 4912,
+  GraphQL 2847, search 30. Eight authored created-date partitions produced
+  2,463 unique open PR URLs. Exact readbacks were run for 60 latest or tracked
+  PRs with 0 exact-read errors. Summary: merge states CLEAN 43, BLOCKED 5,
+  UNSTABLE 7, DIRTY 3, UNKNOWN 2; checks NO_CHECKS 51, OTHER 6, SUCCESS 2,
+  FAILING 1; review decisions blank 58 and REVIEW_REQUIRED 2. The scratch
+  corpus was retained, but no all-GitHub exact-read claim is made.
+- Repair gate: selected `Aqmar777/openclaw-competitive-intel#1` because it was
+  a current TweetClaw/OpenClaw conflict. Verified fork
+  `kriptoburak/openclaw-competitive-intel` is parented to
+  `Aqmar777/openclaw-competitive-intel`, merged upstream `main`, resolved the
+  README conflict by preserving the NHS badge, one download badge, and the
+  existing TweetClaw X/Twitter source section. Validation passed with
+  `git diff --check`, conflict-marker scan, `python3 -m py_compile
+  skills/*.py tests/test_tweetclaw_fetcher.py`, `python3 -m unittest
+  tests/test_tweetclaw_fetcher.py`, `bash -n install.sh`, and
+  `npx --yes markdown-link-check README.md SKILL.md docs/tweetclaw-x-source.md
+  --quiet`. Public-hygiene diff scan found no exposed secrets or private
+  details. Pushed commit `9e01790` to `codex/tweetclaw-x-source` and posted
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4837529373.
+  Exact readback: open, ready, CLEAN, MERGEABLE, no checks.
+- Fresh discovery: smaller adjacent skill crawler
+  `/tmp/tweetclaw-heartbeat-20260629-215149/crawl-fresh.json` exited with valid
+  JSON, 0 opportunities, and proxy fetch failures. Fallback repo search found
+  repeated or blocked leads. `eskobar95/guapo-agent-skills` was duplicate-blocked
+  by existing PR #1. Screened `ProgramadorBrasil/antigravity-skills` as a fresh
+  MIT, non-fork, non-archived skill catalog with no open or closed PRs/issues
+  and no target content hits for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  Xquik, or x-twitter-scraper. Archive only had an unscreened lead mention.
+  Created correctly parented fork
+  `kriptoburak/programadorbrasil-antigravity-skills`, added
+  `skills/tweetclaw-x-source/SKILL.md`, updated README count/catalog/category,
+  `.claude-plugin/plugin.json`, and converter metadata. Validation passed with
+  `git diff --check`, `python3 -m py_compile convert_skills.py`, a strict
+  YAML/catalog parser validating 53 skills, public-hygiene scan, and
+  `npx --yes markdown-link-check README.md skills/tweetclaw-x-source/SKILL.md
+  --quiet`. Pushed commit `3df9f6f` and opened
+  https://github.com/ProgramadorBrasil/antigravity-skills/pull/1. Readback:
+  open, ready, CLEAN, MERGEABLE, no checks/comments/reviews.
+- Official OpenClaw and package hygiene: `curl` was unavailable in this shell,
+  so bounded Node fetch probes were used. `openclaw.dev` docs routes failed
+  with `TypeError fetch failed` for `llms.txt`, `llms-full.txt`, CLI plugins,
+  CLI skills, plugin manifest, tool plugins, plugin SDK runtime, ClawHub
+  publishing, ClawHub skills, help debugging, CLI secrets, gateway secrets, and
+  gateway agent runtime before the owned sequential probe was stopped. No
+  OpenClaw compatibility metadata or TweetClaw public install wording changed.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned latest
+  `1.6.31`; `npm view clawhub` returned `0.23.0`. ClawHub TweetClaw route,
+  canonical ClawHub route, OpenClaw Directory, and npm registry returned HTTP
+  200. `npm audit --audit-level=moderate`, `npm run
+  check-openclaw-platform-fitness`, Markdown link checks, and `npm run
+  check:all` passed. `check:all` included 168 tests with 100 percent coverage.
+- Memory and prompt: `npm run check-memory-md-size` passed at 15001/15360 bytes
+  before compaction; automation prompt TOML measured 12432 bytes. Current run
+  compact state was shortened and this archive received the full detail.
+- Self-improvement: when `curl` is absent and OpenClaw docs fetch fails
+  repeatedly, use a bounded Node-fetch route batch, stop slow sequential probes
+  after enough route failures are recorded, and continue with npm, ClawHub,
+  directory, registry, and local OpenClaw fitness gates. Do not let docs-host
+  fetch failure block validated outreach when no OpenClaw compatibility wording
+  changed.
