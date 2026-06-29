@@ -43354,3 +43354,107 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `/help/*`. Revisit old "missing license metadata" archive blockers when the
   current run rules explicitly say missing license alone does not block direct
   PRs.
+
+## 2026-06-29 12:36 UTC Heartbeat
+
+- Runtime limitation: this Codex runtime did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode and extra-high effort could
+  not be selected by the agent. The run continued and recorded the limitation.
+- Initial state: TweetClaw `master` was clean relative to origin except the
+  pre-existing untracked `0`, which was preserved. GitHub CLI was authenticated
+  as `kriptoburak`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-123633/crawl.json --research-proxy`
+  with bounded request and proxy warmup timeouts, `limit=300`, `search-pages=1`,
+  `per-query-limit=8`, `concurrency=8`, and session
+  `tweetclaw-20260629-123633`. Focused query coverage included authored PRs,
+  TweetClaw, OpenClaw, ClawHub, MCP, `x-twitter-scraper`, SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw/MCP/Codex/Claude/agent/social
+  and Twitter/X skills, awesome lists, skill registries, generated catalogs,
+  forks, validators, package tooling, scheduled tweets, source packets, and X
+  research. Crawler output had 28 opportunities, 28 repos, and 0 errors.
+- PR inventory method: combined compact audit URLs, archive URLs, crawler repo
+  PR URLs, and 17 focused `gh search prs` lane partitions. Lane counts were
+  TweetClaw 100, OpenClaw 100, ClawHub 100, x-twitter-scraper 100, MCP-Twitter
+  1, social-media-agent 4, TweetClaw-source-packet 23, X-research-skill 15,
+  OpenClaw-plugin-recent 79, TweetClaw-recent 100, x-twitter-scraper-recent
+  100, and 0 for the remaining narrow skill/tooling lanes. Combined discovered
+  URLs: 1,466.
+- Exact inventory result: `gh pr view` exact reads succeeded for 672 URLs before
+  GitHub GraphQL rate limit exhausted. The successful readbacks found 573 open
+  PRs, 548 clean mergeability states, 24 conflicts, 1 unknown mergeability, 1
+  draft, 2 changes-requested PRs, and 8 non-success check states. Exact read
+  failures were 769 GraphQL rate-limit errors and 25 repository-not-found
+  blockers. `gh api rate_limit` showed GraphQL remaining 0 while REST core and
+  search remained available, so broad authenticated GraphQL search stopped for
+  this run. The inventory is not exhaustive.
+- Repair triage: newest actionable conflict was
+  `Saminiscool/twitter-ai-agent#2`. REST readback showed open, ready, dirty,
+  base `main`, head `kriptoburak:codex/add-xquik-backend`, 4 changed files, no
+  maintainer comments, no reviews, and no checks. Existing comments were prior
+  repair notes from `kriptoburak`.
+- Repair completed: verified `kriptoburak/saminiscool-twitter-ai-agent-xquik`
+  is a public fork of `Saminiscool/twitter-ai-agent`, target is MIT, and branch
+  `codex/add-xquik-backend` was repaired by merging upstream `main`. The only
+  conflict was `README.md`; markers were removed while preserving the current
+  target download/contact wording and the optional Xquik posting backend section.
+  Validation passed `git diff --check`,
+  `npx prettier --check README.md src/tools.ts src/twitter-api.ts tests/twitter-api.test.ts`,
+  `npx biome lint src/tools.ts src/twitter-api.ts tests/twitter-api.test.ts`,
+  `npx tsc --noEmit`, `npm test -- tests/twitter-api.test.ts`, and
+  `npx markdown-link-check README.md --quiet`. `npm ci` reported pre-existing
+  target dependency advisories. Pushed repair commit
+  `cc8357caf6dbfbf0131d69541b858d3e1d80e3b9`. Final REST readback:
+  `https://github.com/Saminiscool/twitter-ai-agent/pull/2` open, ready,
+  `mergeable_state=clean`, head `cc8357c`, no comments, no reviews, no checks.
+- Fresh target screening: audit/archive duplicate checks blocked or deprioritized
+  prior targets such as `AnantDhavale/cerone-openclaw-plugin` and
+  `sudokrang/aceforge`; `effectorHQ/openclaw-cli` is archived. Fresh target
+  `tspen/openclaw-twilio-sms-bridge` was public, active, not a fork, MIT,
+  default branch `master`, with no open or closed PRs/issues and no target
+  content for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL,
+  npm URL, ClawHub listing, Xquik, `x-twitter-scraper`, or variants. Target
+  README, SECURITY, package metadata, manifest, and tests were read.
+- Official OpenClaw recheck before OpenClaw-facing docs: `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`. Live route probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `llms-full.txt`, `/cli/plugins`,
+  `/plugins/manifest`, `/plugins`, `/tools/plugin`, `/clawhub/publishing`, and
+  `/help/debugging`. The live `llms.txt`, `/channels/sms.md`,
+  `/plugins/manifest.md`, and `/cli/approvals.md` exports were read for current
+  SMS, manifest, plugin, and approval guidance.
+- New external PR: created fork
+  `kriptoburak/openclaw-twilio-sms-bridge` with parent
+  `tspen/openclaw-twilio-sms-bridge`, branch
+  `codex/tweetclaw-sms-tool-safety`, commit
+  `3be60f454e9d3b557ebcab4572033bde35ad0733`, and opened
+  `https://github.com/tspen/openclaw-twilio-sms-bridge/pull/1` via REST because
+  GraphQL was exhausted. The PR updates README and SECURITY to document SMS
+  tool-plugin safety, recommends allowlist or pairing, stable `allowFrom`,
+  OpenClaw approval prompts for public-write tools, least-permission workspaces,
+  and uses `@xquik/tweetclaw` as a concrete approval-gated social posting
+  example.
+- New PR validation and readback: target `npm ci` completed with 1 existing
+  low-severity esbuild advisory. Validation passed `npm test`, `git diff --check`,
+  `npx --yes markdown-link-check README.md SECURITY.md --quiet`, and
+  `npm audit --audit-level=moderate --json`. Final REST readback for
+  `https://github.com/tspen/openclaw-twilio-sms-bridge/pull/1`: open, ready,
+  `mergeable_state=clean`, head `3be60f4`, base `master`, 2 files changed, 21
+  additions, no comments, no reviews, no checks.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains `1.6.32`; the release mismatch remains known and
+  unchanged. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md --quiet`
+  passed.
+- Memory and prompt checks: compact audit and release memory were updated; full
+  detail is archived here. The saved automation prompt measured 12,432 bytes and
+  already preserves Codex 5.5 Fast mode, extra-high effort, and no-standard-speed
+  wording.
+- Self-improvement: when GitHub GraphQL is exhausted, avoid `gh repo view` and
+  `gh pr view` because they also route through GraphQL. Use REST `gh api`
+  endpoints for known repos, forks, pull lists, issue lists, PR creation, and PR
+  exact readbacks until the GraphQL bucket resets. For SMS or chat-channel
+  plugins, TweetClaw placement is strongest as approval-gated tool-plugin safety
+  guidance rather than install marketing.

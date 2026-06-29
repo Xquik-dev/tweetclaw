@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 12:31 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 12:50 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
   `docs.openclaw.ai`; llms, CLI plugins, `/plugins/*`, skills, ClawHub
   publishing, skill format, testing, runtime architecture, and help debugging
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 12:31 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 12:50 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -192,16 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 12:15 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260629-121533` returned 28 opportunities with 0 errors.
-- PR inventory: 1,465 discovered URLs; exact reads 1,427; repo-resolution
-  blockers 38; open 1,197; mergeable 1,143; conflicts 44; unknown 10;
-  changes-requested 2; non-success checks 10. Broad lane caps remain.
-- Repair: `BiswaViraj/agent-skills#1` rebased to open, ready, `MERGEABLE`, head
-  `2ac61b8`.
-- New PR: `ReneHdzGtz/web3-community-marketing#1` adds an approval-gated
-  X/Twitter evidence packet; final readback open, ready, `MERGEABLE`, head
-  `383305b`.
+- 2026-06-29 12:36 UTC: runtime model, speed, and effort selectors unavailable.
+  Crawler session `tweetclaw-20260629-123633` returned 28 opportunities with 0
+  errors and covered authored PR plus skill, OpenClaw, MCP, Codex, Claude,
+  social, Twitter/X, awesome-list, catalog, validator, and tooling lanes.
+- PR inventory: 1,466 discovered URLs; exact reads 672 before GraphQL exhausted;
+  open 573; clean 548; conflicts 24; unknown 1; changes-requested 2;
+  non-success checks 8. GraphQL rate limit blocked 794 exact reads, so coverage
+  is not exhaustive.
+- Repair: `Saminiscool/twitter-ai-agent#2` merged upstream `main`, passed
+  target validation, and read back open, ready, clean, head `cc8357c`.
+- New PR: `tspen/openclaw-twilio-sms-bridge#1` adds SMS tool-plugin safety
+  guidance with TweetClaw as an approval-gated example; final readback open,
+  ready, clean, head `3be60f4`.
 - Maintenance checks, prompt bytes, and self-improvement details are archived.
 
 ## Reporting Checklist

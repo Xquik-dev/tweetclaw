@@ -46,7 +46,7 @@ the archive, before any release or ClawHub decision.
 - `npm run check-openclaw-platform-fitness` blocks stale package, manifest,
   runtime, setup-doc, workflow-doc, and packaged-skill drift before release-like
   validation.
-- Npm audit on 2026-06-29 12:05 UTC reports 0 vulnerabilities. Rerun audit
+- Npm audit on 2026-06-29 12:50 UTC reports 0 vulnerabilities. Rerun audit
   after each OpenClaw lockfile refresh.
 
 ## ClawHub State
