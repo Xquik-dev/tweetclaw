@@ -43957,3 +43957,99 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   place TweetClaw as optional reviewed X/Twitter source evidence, add native
   platform behavior, and fix target metadata mismatches discovered during the
   same validation pass.
+
+## 2026-06-29 15:10 UTC heartbeat
+
+- Runtime limitation: this environment did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode with extra-high effort
+  could not be selected from the agent. The run continued and recorded the
+  limitation.
+- Initial TweetClaw state: branch `master...origin/master` with pre-existing
+  untracked file `0`, left untouched. Initial memory check passed at
+  15,200/15,360 bytes. Persisted automation prompt measured 12,429 bytes.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output to `/tmp/tweetclaw-heartbeat-20260629-145728/crawl.json` using
+  session `tweetclaw-20260629-145728`, `--research-proxy`,
+  `--request-timeout-ms 12000`, `--proxy-warmup-timeout-ms 12000`, `--limit
+  180`, `--search-pages 1`, `--per-query-limit 8`, and `--concurrency 8`.
+  Query coverage included authored open PRs, TweetClaw, OpenClaw, ClawHub,
+  MCP, x-twitter-scraper, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, web-index skill repos, and social
+  media platform lanes. Output contained 41 opportunities and 0 crawler errors;
+  proxy stderr showed endpoint quarantines and fetch timeouts only, with no
+  credential values.
+- PR inventory: archive extraction found 1,312 PR URLs. Crawler repo open-PR
+  REST lists found 81 open PR URLs across 41 crawler repos. Broad authenticated
+  search partitions found 244 unique PR URLs; the authored-today and
+  x-twitter-scraper buckets were capped at 100 items each, so broad search was
+  not complete. Combined filtering found 1,566 parseable GitHub PR URLs.
+  Parallel exact REST readbacks covered 1,526 PRs: 1,297 open, 999 clean, 45
+  dirty, 8 unknown, 7 draft, 69 blocked, 171 unstable, 5 behind, and 40 errors.
+  This is not a claim that every in-scope PR across GitHub was checked because
+  broad search had capped buckets.
+- Repair priority: newest actionable dirty PR was
+  `https://github.com/Aditya923-c/xpoz-agent-skills/pull/1`. Exact readback
+  showed open, ready, conflicting, head
+  `kriptoburak:codex/add-tweetclaw-openclaw-resource`, 1 changed file, 19 prior
+  comments from `kriptoburak`, no reviews, no review comments, and no check
+  runs. The fork `kriptoburak/xpoz-agent-skills` was verified as a public fork
+  of `Aditya923-c/xpoz-agent-skills`.
+- Repair completed: merged upstream `main`, resolved the README Quick Links
+  conflict by keeping the download link pointed at the ZIP and the GitHub
+  Repository link pointed at the repository page, with the TweetClaw OpenClaw
+  resource note unchanged. Validation passed conflict-marker scan, `git diff
+  --check`, `npx --yes markdown-link-check README.md --quiet`, and changed-diff
+  public-safety scan. Pushed merge commit
+  `cf41db18493e6f5a6ca007fcf56f61323ea70552` and posted validation comment
+  `https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4834013210`.
+  Final readback: open, ready, `mergeable=MERGEABLE`, head `cf41db1`, no check
+  runs.
+- Fresh screening: crawler candidates `ndesv21/socialclaw`, `publora/skills`,
+  and `stevenflanagan1/social-ai-team` were duplicate-covered by prior
+  PR/history. `kvalen-code/zxkol-skill` was accepted because it is public,
+  active, MIT licensed, non-fork, default branch `main`, issue-enabled,
+  duplicate-clean across compact audit, archive, target content, target open
+  and closed PRs/issues, and code search for TweetClaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, OpenClaw, ClawHub, and variants. Missing fork was
+  created as `kriptoburak/zxkol-skill`, verified parent
+  `kvalen-code/zxkol-skill`.
+- New external PR: opened `https://github.com/kvalen-code/zxkol-skill/pull/1`
+  from `kriptoburak:codex/source-packet-guidance`, commit
+  `d5ea2c0ed1bfb5afdc34110887be645bf897336d`. The PR adds English and Chinese
+  source-packet handoff guidance for reviewed X/Twitter monitor or search
+  exports, keeps ZXKOL responsible for cross-platform lookup, route selection,
+  comment insight, and trend analysis, links TweetClaw as optional OpenClaw
+  X/Twitter evidence, and removes an `mcp.json` note that encouraged replacing
+  an environment variable with a literal API key.
+- New PR validation and readback: passed `python3 -m json.tool mcp.json`,
+  `git diff --check`, conflict-marker scan, markdown-link-check for
+  `README.md`, `README.zh-CN.md`, and `SKILL.md`, and changed-diff public-safety
+  scan. Final readback for `kvalen-code/zxkol-skill#1`: open, ready,
+  `mergeable=MERGEABLE`, 1 commit, 4 changed files, 32 additions, 1 deletion,
+  no comments, no reviews, and no check runs.
+- Official OpenClaw recheck: live routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/help/debugging`; `/install/overrides`
+  returned 404. `llms.txt` was read. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains `1.6.32`; release mismatch remains known and
+  unchanged. `npm view clawhub` returned `0.23.0`; ClawHub canonical route and
+  OpenClaw Directory returned HTTP 200. `npm audit --audit-level=moderate
+  --json` reported 0 vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npx --yes markdown-link-check README.md
+  docs/openclaw-setup.md docs/agent-workflows.md --quiet` passed before audit
+  edits.
+- Prompt self-improvement: preserved the Codex 5.5 Fast mode, extra-high effort,
+  no-standard-speed wording, crawler-first discovery, mandatory PR submission,
+  aggressive skill-repo coverage, complete PR repair priority, duplicate/fork
+  gates, OpenClaw docs checks, link checks, validation gates, Context7
+  exclusion, secret handling, commit/push requirement, memory caps, and quiet
+  final handling. Reusable lesson: hosted social-data MCP skill repos can accept
+  TweetClaw only as optional upstream X/Twitter evidence; keep the target
+  service responsible for analysis, routing, and platform-native outputs, and
+  improve config secret hygiene when the target already encourages environment
+  variables.
