@@ -40808,3 +40808,86 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   primary-source verification. Do not add live TweetClaw publishing or trend
   claims unless the target already has explicit operator approval and validation
   paths for those behaviors.
+
+## 2026-06-28 23:54 UTC Heartbeat
+
+- Runtime limitation: no GPT-5.5 or reasoning-effort selector was available in
+  this runtime, so the run continued on the available model and recorded the
+  limitation.
+- Crawler-first discovery: Xquik crawler session
+  `tweetclaw-20260628-235424` ran from `/Users/burak/Developer/xquik` with
+  focused authored-PR, SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex,
+  Claude, social, Twitter/X, awesome-list, registry, framework, and package
+  tooling queries. Strict JSON output was valid and returned 46 unique repos,
+  including `runesatsdev/solana-ai-agent`, `Burnsedia/PydanticAI-Twitter-bot`,
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter`, skill repos, MCP repos, and
+  Twitter/X agent integrations.
+- PR inventory: unauthenticated and authenticated exact repo PR reads first hit
+  GitHub HTTP 403 rate/secondary-limit responses, so broad API search was
+  paused as required. Later authenticated calls recovered enough to read target
+  duplicate checks and the authored-open-PR page. `gh search prs --author
+  kriptoburak --state open --limit 200` hit the 200-result cap, and all 200
+  discovered PRs were exact-read into temp JSONL for state, base/head,
+  mergeability, reviews, comments, checks, commits, and updated time. This is
+  not a complete inventory because the authored-open-PR search page was capped.
+- Repair gate: exact reads found an actionable maintainer comment on
+  `bravian1/social-agent#4`: `X_BACKEND=xquik` intercepted drafted post/reply
+  flows without `--text`, contrary to the README's browser-use default.
+  Repaired before new outreach by pushing commit `cbe0f7e` to
+  `kriptoburak/social-agent:codex/add-xquik-direct-x-backend`. The fix uses
+  Xquik only when prepared `--text` is present, lets AI-drafted flows fall
+  through to browser-use, runs the sync request with `asyncio.to_thread`, and
+  rejects non-HTTPS `XQUIK_BASE_URL`. Validation: `git diff --check` and
+  `uv run --with pytest pytest tests/test_x.py` passed. Posted repair comment:
+  https://github.com/bravian1/social-agent/pull/4#issuecomment-4827876037
+- Fresh target screening: `runesatsdev/solana-ai-agent` was selected as a fresh
+  AI-agent/framework integration target. It is a Solana social on-chain
+  intelligence agent with existing Twitter search in `src/services` and
+  contribution guidance that lists Social Intelligence Engine work as high
+  priority. GitHub metadata readback showed default branch `main`, not a fork,
+  pushed 2025-01-23, updated 2026-06-02, and no GitHub license metadata; local
+  `package.json` says ISC. Tree, PR, and issue duplicate checks found no
+  TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, or
+  ClawHub history.
+- External PR: created verified fork `kriptoburak/solana-ai-agent`, branch
+  `codex/add-tweetclaw-social-export`, commit
+  `680e8cc15691884c297cd85d76395122f3189c0e`, and opened
+  https://github.com/runesatsdev/solana-ai-agent/pull/1. The PR adds optional
+  `TWEETCLAW_TWEETS_JSON` loading before live Twitter search in
+  `TransactionViewer.getTwitterContent`, normalizes common TweetClaw export
+  shapes into the existing tweet result shape, caches the result, and documents
+  the optional local context setting. Final readback: open, ready, mergeable,
+  merge state `CLEAN`, no comments or reviews, GitGuardian success.
+- Target validation: `git diff --check` passed for the solana-agent target.
+  Prettier was not used as a target gate because both touched files were already
+  non-Prettier-clean at `HEAD`. A targeted TypeScript check was blocked by the
+  temporary clone having no installed dependencies or Node type definitions; no
+  target lockfiles or install artifacts were committed.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/cli/skills`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/config-tools`, `/help/debugging`,
+  `clawhub.ai/plugins/@xquik/tweetclaw`, and OpenClaw Directory. `/sdk/runtime`
+  remained 404. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+  `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` with older
+  `2026.5.4` OpenClaw metadata while source remains `1.6.32` targeting
+  `2026.6.10`.
+- TweetClaw validation and public hygiene: `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  and markdown-link-check for README, OpenClaw setup, agent workflows, compact
+  audit, and compact release memory passed. Diffs and comments were checked for
+  secrets, private implementation details, restricted provider/source names,
+  internal cost mechanics, unsupported claims, and stale metadata. No NHS badge
+  was added.
+- End-of-run gates: compact Markdown memory measured 15157/15360 bytes after
+  compaction; persisted automation prompt string measured 12013 escaped bytes
+  and the automation TOML measured 12314 bytes. `npm run check:all` passed with
+  168 tests and 100 percent coverage.
+- Prompt self-improvement: when integrating TweetClaw into AI frameworks with
+  existing social-intelligence paths, prefer optional reviewed local export
+  adapters such as `TWEETCLAW_TWEETS_JSON` that preserve the framework's live
+  default path and make TweetClaw source evidence optional. Always repair
+  maintainer comments before opening the next outreach PR, even when a fresh
+  target has already been screened.

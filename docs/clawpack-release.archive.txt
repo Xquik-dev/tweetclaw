@@ -1117,6 +1117,24 @@ ClawHub route `https://clawhub.ai/plugins/@xquik/tweetclaw` still redirects to
 the live canonical page, but owner-scope publishing remains blocked and npm
 publish auth is still not trusted. No npm or ClawHub publish was attempted.
 
+## 2026-06-28 23:54 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after an authored
+PR repair and a new external AI-agent integration PR. Official docs returned
+HTTP 200 for `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+`docs.openclaw.ai/llms-full.txt`, CLI plugin docs, manifest docs, CLI skills,
+ClawHub publishing, ClawHub skill format, gateway config tools, help debugging,
+the ClawHub TweetClaw route, and the OpenClaw Directory listing. `/sdk/runtime`
+remained 404.
+
+`npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and
+alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
+`@xquik/tweetclaw` remains `1.6.31` with older `2026.5.4` OpenClaw metadata
+while source remains `1.6.32` targeting `2026.6.10`. `npm run
+check-openclaw-platform-fitness` passed and `npm audit --audit-level=moderate
+--json` reported 0 vulnerabilities. ClawHub owner-scope and npm publish-auth
+blockers remain unchanged, so no npm or ClawHub publish was attempted.
+
 ## 2026-06-24 02:10 UTC Heartbeat Release Hygiene
 
 OpenClaw platform and release-adjacent checks were refreshed after complete PR

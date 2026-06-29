@@ -49,15 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-28 23:33 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-28 23:54 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   route check: `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
-  `/cli/plugins`, `/plugins/manifest`, `/cli/skills`, `/clawhub/publishing`,
-  `/clawhub/skill-format`, `/gateway/config-tools`, and `/help/debugging` 200;
-  old per-command plugin routes, `llms-full.txt`, permission aliases, and
-  `/sdk/runtime` 404.
+  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/cli/skills`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/config-tools`, and `/help/debugging` 200; `/sdk/runtime` 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-28 23:33 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-28 23:54 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -77,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-28 23:33 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-28 23:54 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -193,21 +192,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-28 23:33 UTC: model/effort selector unavailable. Crawler session
-  `tweetclaw-20260628-233317` returned 46 skill, OpenClaw, AI-framework, and
-  social-agent repos. Authenticated broad exact-read hit GitHub HTTP 403
-  secondary/rate limits, so the run stopped broad API search and used crawler
-  repo REST lists instead: 31 current authored open PRs, 0 repo errors.
-- Repair gate: no new actionable maintainer comment, conflict, CI, DCO/CLA, or
-  generated drift was found from crawler-backed repo lists and available
-  unauthenticated readbacks. Broad thread-aware review state remains blocked by
-  the GitHub API rate limit for this run.
-- New AI-framework PR: `mayerg0/icebreaker-langchain#1` adds optional
-  `TWEETCLAW_TWEETS_JSON` loading so LangChain prompts can use reviewed local
-  TweetClaw tweet exports while preserving the default Tweepy reader. Final
-  readback: open, mergeable unstable, GitGuardian success, head `dfcd514`.
-- Maintenance: OpenClaw route probes, npm, ClawHub, audit, links, prompt-size,
-  target validation, memory-size, and public-hygiene details are archived.
+- 2026-06-28 23:54 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260628-235424` returned 46 skill, OpenClaw, AI-framework, MCP,
+  and social-agent repos. Authenticated authored-open-PR search hit the
+  200-result cap; all 200 discovered PRs were exact-read, but inventory is not
+  complete because the broad search page was capped.
+- Repair gate: fixed actionable maintainer feedback on
+  `bravian1/social-agent#4` with commit `cbe0f7e`, keeping AI-drafted posts on
+  browser-use unless `--text` is provided, adding HTTPS validation, and
+  commenting validation on the PR.
+- New AI-framework PR: `runesatsdev/solana-ai-agent#1` adds optional
+  `TWEETCLAW_TWEETS_JSON` loading before live Twitter search, preserving the
+  default path. Final readback: open, mergeable `CLEAN`, GitGuardian success,
+  head `680e8cc`.
+- Maintenance: OpenClaw docs, npm, ClawHub, audit, links, target validation,
+  memory-size, public hygiene, and self-improvement details are archived.
 
 ## Reporting Checklist
 
