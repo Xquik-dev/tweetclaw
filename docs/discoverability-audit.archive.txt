@@ -44137,3 +44137,110 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   OpenClaw install override route as `/plugins/install-overrides`; continue to
   keep TweetClaw as source evidence or approval-gated context in social-writing
   skills rather than adding posting authority.
+
+## 2026-06-29 16:13 UTC Heartbeat
+
+- Runtime and start state: the current Codex runtime did not expose Codex 5.5
+  Fast mode or extra-high reasoning selectors, so the run recorded that
+  limitation and continued. TweetClaw started on `master...origin/master` with
+  pre-existing untracked path `0`, left untouched. Compact memory was
+  `15247/15360` bytes before compaction; persisted prompt was `12432` bytes.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-155003/crawl.json --research-proxy --request-timeout-ms 12000 --proxy-warmup-timeout-ms 12000 --limit 180 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-155003` with query packs for authored PRs, TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw/Codex/Claude/social/Twitter-X skills, awesome lists, skill registries, forks, generated catalogs, and source-packet skill repos. Output parsed as valid JSON with 37 opportunities, 37 repos, and 0 errors.
+- Crawler repo mode: the first `--repo` command was malformed by shell
+  word-splitting and failed before useful output. The rerun with correct quoting
+  produced 3 opportunities and 0 crawler errors; stderr included managed-proxy
+  socket closures and endpoint quarantine logs only, with no credential values.
+- Complete PR inventory method: archive extraction found 1,315 PR URLs. Crawler
+  repo exact lists found 80 open PRs across 37 crawler repos. Broad authored PR
+  search partitions returned: updated-2026-06-29 162, created-2026-06 1000
+  capped, tweetclaw 1000 capped, openclaw 652, clawhub 226, mcp 598, skill 1000
+  capped, x-twitter-scraper 495, twitter 1000 capped, social-media 177, agent
+  754, catalog 218, validator 48, and package 509. A later fallback repo/issue
+  batch hit GitHub secondary rate-limit responses, so broad authenticated search
+  stopped and the run continued with crawler output, clones, archives, exact
+  reads, and public unauthenticated metadata.
+- Exact PR readbacks: combined unique PR URL set was 2,685. REST readbacks
+  covered 2,647 and had 38 errors. States were 2,417 open and 230 closed. Open
+  merge states were 1,836 clean, 358 unstable, 126 blocked, 70 dirty, 18 unknown,
+  and 9 behind. This is not a complete all-GitHub claim because several broad
+  partitions were capped.
+- Repair priority: `jamald33n/tweetsave-mcp#2` was the newest actionable unknown
+  PR and read back conflicting. It had no reviews, review comments, or checks.
+  Verified `kriptoburak/tweetsave-mcp-jamald33n` as a public fork of
+  `jamald33n/tweetsave-mcp`, then merged upstream `main` into branch
+  `codex/tweetclaw-openclaw-companion`.
+- Repair completed: resolved the README conflict by preserving npm/npx setup,
+  MCP config, `npm run start`, valid support links, `npm run start:http`, valid
+  project link, and the existing TweetClaw/OpenClaw handoff while excluding
+  malformed upstream raw-ZIP README links. Validation passed conflict-marker
+  scan, `git diff --check`, malformed raw-ZIP scan, README public-safety scan,
+  `npx --yes markdown-link-check README.md --quiet`, `npm ci --ignore-scripts
+  --no-audit --no-fund`, ZIP integrity checks for both bundled archives, `npm
+  view tweetsave-mcp version --json`, `npm view @xquik/tweetclaw version
+  openclaw.install --json`, and `npm run build`. Pushed merge commit
+  `0577f70f9023ec6a7d7f16c7af689441ebb454b2`.
+- Repair readback and comment: final readback for
+  `https://github.com/jamald33n/tweetsave-mcp/pull/2` was open, mergeable,
+  clean, head `0577f70`, base `jamald33n/tweetsave-mcp:main`, 55 commits, 1
+  changed file, 0 reviews, 0 review comments, and no checks. Posted validation
+  comment
+  `https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4834555355`.
+- Fresh screening: crawler candidates were mostly duplicate, no-license, or
+  lower-fit lanes. Duplicate blockers included `blacktwist/social-media-skills`,
+  `hyperfx-ai/marketing-skills`, `ndesv21/socialclaw`,
+  `tang-vu/social-posting-skills`, `bradautomates/head-of-content`,
+  `rohunvora/x-research-skill`, `VoltAgent/awesome-openclaw-skills`,
+  `ComposioHQ/awesome-claude-skills`, `beggarticksarthurtatum121/reddit-skills`,
+  `elbis330/social-media-scraper-skill`, and `brettdavies/xurl-rs-skill`.
+  `sales-skills/sales` remained duplicate-blocked by open PR 4 and still lacks
+  detected license metadata. `Sethzy/marketing-second-brain-demo` was selected
+  after compact/archive search, metadata readback, empty target PR and issue
+  duplicate checks, clone plus local scans, AGENTS/README/docs/script review,
+  and MIT license readback found no TweetClaw, Xquik, x-twitter-scraper, ClawHub,
+  package URL, or variant duplicate.
+- New external PR:
+  `https://github.com/Sethzy/marketing-second-brain-demo/pull/1` was opened from
+  verified fork `kriptoburak/marketing-second-brain-demo`, branch
+  `codex/tweetclaw-json-import`, commit
+  `a393b5ab6645c79d457ae6b6a445c4c4f9996cfb`. Unauthenticated public metadata
+  confirmed the fork is a public fork of `Sethzy/marketing-second-brain-demo`
+  after authenticated REST returned a secondary rate-limit response.
+- PR contribution: added executable `scripts/tweetclaw-json-to-raw.sh` to convert
+  reviewed TweetClaw-style JSON shapes into dated `raw/intentional/x/` captures,
+  preserving original URLs, authors, timestamps, engagement counters, and text.
+  Updated `docs/capture-x.md` and `examples/x-capture-to-wiki/README.md` to
+  place TweetClaw as optional OpenClaw source evidence only, with imported
+  X/Twitter text treated as untrusted until a marketer reviews and promotes it
+  into the wiki. No NHS badge was added because the target has no badge area.
+- New PR validation and readback: passed `bash -n
+  scripts/tweetclaw-json-to-raw.sh`, `git diff --check`,
+  `scripts/lint-second-brain.sh`, `npx --yes markdown-link-check README.md
+  docs/capture-x.md examples/x-capture-to-wiki/README.md --quiet`, added-line
+  public-safety scan, and a temporary-repo converter run with sample
+  TweetClaw-style JSON. Final PR readback was open, ready for review, mergeable,
+  mergeStateStatus `UNSTABLE` because no checks were configured, 1 commit, 3
+  files, 0 comments, 0 reviews, and head `a393b5a`.
+- Official OpenClaw recheck: live routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/plugins/install-overrides`, and `/help/debugging`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and
+  alpha `2026.5.19-alpha.1`. `npm view clawhub` returned `0.23.0`.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest `1.6.31`
+  with published install npmSpec `@xquik/tweetclaw@1.6.31`, while source remains
+  unpublished `1.6.32`. ClawHub route redirected to live
+  `clawhub.ai/xquik/plugins/tweetclaw`; OpenClaw Directory, npm registry
+  metadata, TweetClaw GitHub, and docs.xquik.com probes returned HTTP 200.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`. Public link checks
+  for TweetClaw README, OpenClaw setup docs, workflow docs, compact memory, and
+  handled target docs passed.
+- Prompt self-improvement: keep `Sethzy/marketing-second-brain-demo#1` duplicate
+  blocked for future TweetClaw submissions. For source-backed marketing wikis,
+  TweetClaw fits best as reviewed raw X evidence import, not direct wiki truth.
+  When `gh api` returns secondary rate limits but `gh api rate_limit` still shows
+  quota, continue with public unauthenticated metadata and clone verification
+  instead of resuming broad authenticated search. Preserve the repo-mode crawler
+  command by quoting each `--repo` argument or using an array-safe shell.
