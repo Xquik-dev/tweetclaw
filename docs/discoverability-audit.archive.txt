@@ -45583,3 +45583,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   directory, registry, and local OpenClaw fitness gates. Do not let docs-host
   fetch failure block validated outreach when no OpenClaw compatibility wording
   changed.
+2026-06-29 22:25 UTC heartbeat
+
+- Runtime selector note: Codex model, Fast mode, and extra-high reasoning
+  selectors were not exposed by this runtime, so the limitation was recorded and
+  work continued.
+- Repo state at start: TweetClaw on `master...origin/master` with pre-existing
+  untracked `0`; Xquik on `master...origin/master` with unrelated dirty
+  roadmap/article files left untouched. Open issues for `Xquik-dev/tweetclaw`
+  and `Xquik-dev/xquik` were empty.
+- Crawler-first discovery from `/Users/burak/Developer/xquik`: ran strict JSON
+  crawler with research proxy, bounded request and proxy warmup timeouts, 220
+  limit, 1 search page, 8 per query, concurrency 8, session
+  `tweetclaw-20260629-222522`, and query packs covering authored PRs,
+  TweetClaw, OpenClaw, ClawHub, MCP, `SKILL.md`, `.agents/skills`, skill dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, source packets, and OpenClaw tweet
+  skills. Output parsed as valid JSON with 43 opportunities and 0 explicit
+  errors.
+- PR inventory: eight authored created-date partitions read 816 unique partial
+  URLs before GitHub API rate limit stopped broad authenticated search at
+  2026-06-29 22:27 UTC. The run continued with crawler output, exact repo PR
+  lists, known PR URLs, fork metadata, and exact reads. Crawler repo-mode PR
+  lists covered 43 repos and returned 33 authored open PRs with 0 errors. Exact
+  readbacks covered 91 current or tracked PRs with 0 errors: merge states CLEAN
+  55, UNKNOWN 10, DIRTY 8, BLOCKED 7, UNSTABLE 11; checks NO_CHECKS 83,
+  FAILING 4, SUCCESS 4; reviews blank 87, CHANGES_REQUESTED 1, REVIEW_REQUIRED
+  3. No all-GitHub inventory claim is made.
+- Repair gate: selected `jamald33n/tweetsave-mcp#2` because it was a current
+  X/Twitter MCP conflict. Verified fork `kriptoburak/tweetsave-mcp-jamald33n`
+  is correctly parented to `jamald33n/tweetsave-mcp`, merged upstream `main`,
+  resolved the README conflict by preserving valid npm/MCP/TweetClaw docs and
+  removing malformed raw ZIP links, then validated `git diff --check`, anchored
+  conflict-marker scan, `npm ci --ignore-scripts --no-audit --no-fund`,
+  `npm run build`, `unzip -t src/mcp_tweetsave_v2.6-alpha.4.zip`, and
+  `npx --yes markdown-link-check README.md --quiet`. Pushed `246f79f`, posted
+  https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4837823041,
+  and exact-read the PR as open, ready, CLEAN, MERGEABLE, no checks.
+- Fresh screening: crawler hits were mostly duplicate-blocked by existing
+  TweetClaw PRs or archive history. `alexclowe/awesome-copilot-cowork-plugins`
+  was blocked by merged PR 1. `rickicode/patchright-browser` was re-read as
+  fresh but weak-fit and previously held. A narrow fallback repo search over
+  social media, agent, skill, source-evidence, and marketing lanes found several
+  current MIT targets. `iamnickthegeek/social-media-skills` was selected because
+  it is MIT licensed, active, non-fork, issue-enabled, duplicate-clean across
+  compact memory, archive, target content, and open plus closed PRs/issues, and
+  its X/Twitter drafting skill benefits from a source-evidence checkpoint.
+- Fork and duplicate guard: an existing `kriptoburak/social-media-skills` fork
+  was parented to a different upstream, so it was not reused. Created and
+  verified `kriptoburak/iamnickthegeek-social-media-skills` as correctly
+  parented to `iamnickthegeek/social-media-skills`.
+- New external PR: opened
+  https://github.com/iamnickthegeek/social-media-skills/pull/1 from branch
+  `codex/add-tweetclaw-source-checkpoint`, commit `6297122`. The PR adds Step
+  1.5 to `x-twitter/SKILL.md` requiring approved public source URLs or notes
+  before writing current-event, market, launch, competitor, or customer-proof
+  claims; treats source text as evidence only; keeps TweetClaw as optional
+  read-only OpenClaw source-packet context; and leaves drafting, scoring, final
+  copy, and any publishing workflow with the target skill. It also updates
+  `references/CHANGELOG.md`.
+- New PR validation: passed `git diff --check`,
+  `npx --yes markdown-link-check x-twitter/SKILL.md references/CHANGELOG.md
+  --quiet`, and added-diff public-hygiene scan. Readback: open, ready,
+  MERGEABLE, CLEAN, head `6297122c49aa9c61116ad2b08c0ff1be38235edc`, 2 files,
+  32 additions, no checks/comments/reviews.
+- Official OpenClaw and package hygiene: `curl` was unavailable, so Node fetch
+  probes were used. A sequential docs route probe aborted repeatedly and was
+  stopped; a concurrent bounded probe returned `AbortError` for `llms.txt`,
+  `llms-full.txt`, CLI plugin and skill docs, manifest, permission requests,
+  tool plugins, SDK runtime, ClawHub publishing and skill docs, install
+  overrides, debugging, CLI secrets, gateway secrets, and gateway runtime. No
+  OpenClaw compatibility metadata or public install wording changed. `npm view
+  openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned latest `1.6.31`;
+  `npm view clawhub` returned `0.23.0`. ClawHub TweetClaw route, canonical
+  ClawHub route, OpenClaw Directory, and npm registry returned HTTP 200.
+  `npm audit --audit-level=moderate`, `npm run
+  check-openclaw-platform-fitness`, Markdown link checks, `npm run
+  check-memory-md-size`, and `npm run check:all` passed.
+- TweetClaw changed files: compact `docs/discoverability-audit.md`,
+  `docs/clawpack-release.md`, this archive, and release archive. Automation
+  prompt was not edited; current automation TOML measured 12,432 bytes.
+- Self-improvement: when a personal fork name collides with a fork of a
+  different upstream, create a distinct fork name and verify parent before
+  pushing. When crawler output is duplicate-heavy and a candidate is already
+  archive-held as weak fit, use a narrow fallback search over adjacent
+  source-evidence and social-skill lanes instead of forcing a low-value PR.

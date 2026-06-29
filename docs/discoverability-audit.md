@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 21:51 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 22:25 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs routes timed
   out or failed from local fetch during this run; no compatibility wording
   changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-29 21:51 UTC after redirecting to
+  2026-06-29 22:25 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 21:51 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 22:25 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,15 +190,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 21:51 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-215149` returned 48 opportunities and 0 errors. Authored
-  PR partitions found 2,463 open PR URLs; exact readbacks covered 60 latest or
+- 2026-06-29 22:25 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-222522` returned 43 opportunities and 0 errors. Authored
+  PR partitions found 816 partial URLs before GitHub API rate limit; 43
+  crawler repos yielded 33 authored PRs; exact readbacks covered 91 current or
   tracked PRs with 0 errors. No all-GitHub inventory claim is made.
-- Repair gate: fixed `Aqmar777/openclaw-competitive-intel#1` README conflict,
-  then repaired a later upstream force-update; pushed `86ab8a4`, posted
-  validation, and exact-read the PR as CLEAN and MERGEABLE.
-- Fresh PR: opened https://github.com/ProgramadorBrasil/antigravity-skills/pull/1
-  from verified `kriptoburak/programadorbrasil-antigravity-skills`. Readback:
+- Repair gate: fixed `jamald33n/tweetsave-mcp#2` README conflict, pushed
+  `246f79f`, posted validation, and exact-read the PR as CLEAN and MERGEABLE.
+- Fresh PR: opened https://github.com/iamnickthegeek/social-media-skills/pull/1
+  from verified `kriptoburak/iamnickthegeek-social-media-skills`. Readback:
   open, ready, CLEAN, MERGEABLE, no checks/comments.
 - OpenClaw docs routes failed locally; npm metadata, ClawHub/OpenClaw Directory,
   registry, `npm audit`, OpenClaw fitness, Markdown links, and `check:all`
