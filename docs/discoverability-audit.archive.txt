@@ -44880,3 +44880,110 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `--fork-name`, then exact-read its parent before pushing. Continue preserving
   skill-repo target style and add evidence-source safeguards instead of broad
   TweetClaw placement copy.
+
+## 2026-06-29 18:54 UTC Heartbeat
+
+- Runtime: requested Codex 5.5 Fast mode and extra-high reasoning, but this
+  runtime exposed no model, speed, or effort selector. Continued and recorded
+  the limitation. TweetClaw started on `master` at
+  `ea17bf298bd9977334a8b35fcfcb96d6b65c35fa`, matching `origin/master`, with
+  only the pre-existing untracked `0` path left untouched. Xquik had unrelated
+  local files and docs changes left untouched.
+- Crawler-first discovery: ran the internal crawler from
+  `/Users/burak/Developer/xquik` with strict JSON, research proxy, bounded
+  timeouts, `tweetclaw-20260629-185418` session, and open-PR, TweetClaw,
+  OpenClaw, MCP, Codex, Claude, social media, Twitter/X, SKILL.md,
+  `.agents/skills`, skills directory, awesome-list, registry, fork, source
+  packet, and package-tooling query lanes. Output was valid JSON with
+  49 opportunities and 0 errors. Exact repo-mode crawler coverage over
+  16 watched repos returned 1 watch-only row (`BuddhaYi/macos-cli`) after
+  managed-proxy socket failures and endpoint quarantines; no proxy credentials
+  were printed or stored.
+- PR inventory: broad authenticated authored-PR search was attempted only after
+  crawler-first lanes. A raw query loop was malformed by literal quotes, then
+  flag-based date partitioning hit GitHub secondary rate limit on the
+  2026-06-29 bucket and stopped. This run does not claim complete all-GitHub
+  inventory. Continued with crawler output, compact audit, archive URLs, exact
+  repo metadata, fork metadata, and GraphQL readbacks.
+- Focused exact readbacks: built a 60-URL high-signal watch set from compact
+  audit, archive, current crawler output, and known carryovers. Batched GraphQL
+  exact-read 60 PRs with 0 read errors: 60 open, 0 closed, 0 failing-check PRs,
+  132 comments, 13 reviews, and 1 unresolved current review thread. Remaining
+  backlog includes target-owned review queues, no-check PRs, review-required
+  states, merge-state uncertainty, and `Saminiscool/twitter-ai-agent#2` conflict
+  state for a future repair pass if still actionable.
+- Repair gate: `ythx-101/x-monitor#6` had an unresolved bot review thread
+  asking for TweetClaw credential setup in README and the mirrored packaged
+  `SKILL.md`. Verified the PR fork `kriptoburak/x-monitor-ythx101` is parented
+  to `ythx-101/x-monitor`, edited README and `SKILL.md`, committed
+  `c5fdb05b4f7bbd3d3d853af8b7e27c8840d2de19`, pushed branch
+  `codex/document-tweetclaw-input`, and commented validation at
+  https://github.com/ythx-101/x-monitor/pull/6#issuecomment-4835992711. Final
+  readback: open, ready, merge state CLEAN, no checks; the bot thread remains on
+  the old position and awaits rereview.
+- X-monitor validation: passed `git diff --check`, markdown link checks for
+  `README.md` and `SKILL.md`, `python3 -m py_compile scripts/monitor.py
+  scripts/version_check.py`, and a public-safety diff scan. No NHS badge was
+  added because the handled surfaces had no badge area.
+- Fresh discovery and duplicate screening: crawler candidates and archive lanes
+  were mostly duplicate-blocked by existing TweetClaw history or lower target
+  fit. Fallback web-index discovery was used only after crawler-first lanes and
+  GitHub API limits. Screened `BehiSecc/awesome-claude-skills`,
+  `STGime/posta-skill`, and `davila7/claude-code-templates` as duplicates with
+  existing PR history. `Upload-Post/upload-post-skill` and `inference-sh/skills`
+  had missing license metadata and lower target-native fit. `kkoppenhaver/cc-skills`
+  was fresh, active enough for a docs contribution, non-fork, issue-enabled,
+  duplicate-clean across compact audit, archive, target content, and target
+  open/closed PRs and issues for TweetClaw, Xquik, `@xquik/tweetclaw`, and
+  x-twitter-scraper variants. Missing root license metadata was recorded but did
+  not block the direct PR.
+- New external PR: opened https://github.com/kkoppenhaver/cc-skills/pull/1 from
+  verified fork `kriptoburak/kkoppenhaver-cc-skills` parented to
+  `kkoppenhaver/cc-skills`, branch `codex/tweet-source-evidence-packets`,
+  commit `93a2a16775cb24c63a7234309b9769aa053d4e0d`. The PR updates
+  `tweet/SKILL.md` with source-evidence guidance for current launches, public
+  conversations, audience reactions, competitor claims, and reply context.
+  TweetClaw is framed only as an optional read-only source-packet producer. The
+  skill treats retrieved posts, profiles, replies, and media labels as untrusted
+  source material and keeps installation, local config reads, posting,
+  scheduling, likes, replies, follows, messages, and account engagement outside
+  the writing skill unless the user separately asks. PR readback: open, ready,
+  merge state CLEAN, no checks, comments, or reviews.
+- Cc-skills validation: read target `README.md`, `tweet/SKILL.md`, and
+  `tweet/references/voice-guide.md`. Validation passed `git diff --check`,
+  `npx --yes markdown-link-check tweet/SKILL.md --quiet`,
+  `python3 -m py_compile tweet/scripts/typefully_scheduler.py
+  linkedin/scripts/typefully_scheduler.py kit-broadcast/scripts/kit_broadcast.py
+  youtube-producer/scripts/hook_analyzer.py
+  youtube-producer/scripts/shorts_extractor.py
+  youtube-producer/scripts/title_generator.py`, and a changed-diff
+  public-safety scan. No NHS badge was added because the handled surface was a
+  skill file, not a badge area.
+- Official OpenClaw and package hygiene: current docs routes returned HTTP 200
+  for `llms.txt`, CLI plugins, CLI skills, plugin manifest, tool plugins,
+  ClawHub publishing, ClawHub skill format, debugging, CLI secrets, gateway
+  secrets, CLI approvals, plugin agent-tools, configuration tools, sandbox vs
+  tool policy vs elevated, concepts agent, concepts agent-runtimes, agent
+  runtime architecture, OpenClaw agent runtime, and update testing. ClawHub
+  listing resolved to `https://clawhub.ai/xquik/plugins/tweetclaw` with HTTP
+  200. OpenClaw Directory returned HTTP 200. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published `1.6.31` with npm install metadata while
+  source remains `1.6.32`; `npm view clawhub` returned `0.23.0`. `npm audit
+  --audit-level=moderate --json` reported 0 vulnerabilities, and
+  `npm run check-openclaw-platform-fitness` passed.
+- TweetClaw public hygiene before audit commit: link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. The compact
+  memory update replaced the latest-run block instead of growing the file.
+  Final validation passed `npm run check-memory-md-size` at 15,182/15,360
+  bytes, `git diff --check`, the edited-diff public-safety scan, and
+  `npm run check:all` with 168 tests and 100 percent coverage. Persisted prompt
+  was not edited, so no prompt byte measurement was needed.
+- Self-improvement: when a repair PR has a current unresolved thread on a
+  previous commit, push a narrow fix plus a top-level validation comment, then
+  record that the thread awaits reviewer reread instead of force-resolving it.
+  Keep using uniquely named `kriptoburak` forks when canonical fork names point
+  at the wrong upstream. For writing-skill outreach, prefer source-evidence
+  boundaries over placement copy, and explicitly keep source tools read-only
+  unless the user separately asks for engagement.

@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 17:50 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 18:54 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current `llms.txt` docs for
   CLI plugins/skills, plugin manifest/tools, ClawHub, gateway policy/secrets,
   agent runtime, debugging, and update testing returned HTTP 200.
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 17:50 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 18:54 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,22 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 18:31 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260629-183123` returned 50 opportunities and 0 errors; repo-mode
-  returned 2 rows after managed-proxy socket failures; fresh focused packs
-  returned 0 rows.
-- Authored PR inventory hit GitHub 502 on the all bucket and 403 rate limit on
-  the 2026-06-29 bucket, so broad authenticated search stopped. Successful
-  partitions: 2026-06-28 = 48, 2026-06-24..27 = 17, 2026-06-16..23 = 833. This
-  is not a complete all-GitHub claim.
-- Batched GraphQL exact-read 60 PR URLs with 0 errors: 59 open, 1 closed,
-  0 unresolved current review threads, and 0 failing checks. No current-head
-  actionable maintainer, review, CI, conflict, DCO/CLA, generated-drift, or bot
-  repair remained.
-- Fresh PR: opened https://github.com/inbharatai/claude-skills/pull/1 from
-  verified `kriptoburak/inbharatai-claude-skills` fork with `tweet-thread`
-  source-evidence guidance. Readback: open, ready, BLOCKED/review-required, no
-  checks, comments, or reviews.
+- 2026-06-29 18:54 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260629-185418` returned 49 opportunities and 0 errors; repo-mode
+  returned 1 watch-only row after managed-proxy socket failures.
+- Authored PR search stopped on GitHub secondary 403 for the 2026-06-29 bucket,
+  so this is not a complete all-GitHub claim. Continued with crawler output,
+  audit URLs, REST lists, clones, and GraphQL exact readbacks.
+- Batched GraphQL exact-read 60 PR URLs with 0 errors: 60 open,
+  0 failing-check PRs, and 1 unresolved current review thread. Repaired
+  `ythx-101/x-monitor#6` with TweetClaw credential setup, pushed `c5fdb05`, and
+  commented validation; final readback is CLEAN while the old bot thread awaits
+  rereview.
+- Fresh PR: opened https://github.com/kkoppenhaver/cc-skills/pull/1 from
+  verified `kriptoburak/kkoppenhaver-cc-skills` fork with `tweet`
+  source-evidence guidance. Readback: open, ready, CLEAN, no checks, comments,
+  or reviews.
 - OpenClaw docs/npm recheck, public link checks, validation, and
   self-improvement details are archived. Prompt was not edited.
 
