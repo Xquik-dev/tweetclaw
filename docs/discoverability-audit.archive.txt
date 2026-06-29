@@ -44987,3 +44987,102 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   at the wrong upstream. For writing-skill outreach, prefer source-evidence
   boundaries over placement copy, and explicitly keep source tools read-only
   unless the user separately asks for engagement.
+
+2026-06-29 19:10 UTC heartbeat:
+- Runtime selector limitation: this environment did not expose Codex 5.5 Fast
+  mode or extra-high reasoning selectors. Continued and recorded the limitation.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-191053/crawl.json --research-proxy`
+  with focused open-PR, TweetClaw, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X, SKILL.md, `.agents/skills`, skills-directory, awesome-list,
+  registry, source-packet, and Typefully query lanes. Output was valid JSON with
+  49 opportunities and 0 errors. Repo-mode crawl over 16 exact repos produced 1
+  row after managed-proxy socket failures; no credentials were printed.
+- Open PR inventory: partitioned authored open PR search by created windows:
+  2026-06-29=134, 2026-06-28=48, 2026-06-24..27=17,
+  2026-06-16..23=832, 2026-06-01..15=746, 2026-05=576,
+  2026-01..04=97, before 2026=1. Total 2,451 open authored PRs without a
+  1,000-result cap. A broad GraphQL all-read hit stale audit repos, then an
+  authored-only broad read stalled and was stopped; no complete all-GitHub
+  exact-read claim was made.
+- Focused PR exact-read: 218 current-day and recent-audit PR URLs requested,
+  217 read, 1 stale missing (`mc-nekoneko/x-mcp#1`), 205 open, 12 closed,
+  40 comments, 26 reviews, 17 threads, 6 unresolved current threads,
+  7 failing-check PRs, 8 dirty states, 18 blocked states, and 115 clean states.
+- Repair: `edwardtay/awesome-OSINT#1` had an unresolved bot thread requesting
+  Xquik commercial API labeling. Verified fork
+  `kriptoburak/awesome-OSINT-edwardtay` parented to `edwardtay/awesome-OSINT`,
+  edited README only, committed
+  `379f283c6a6d135e8d0b055753871b68cf2ae51e`, pushed branch
+  `codex/add-xquik-socmint-edwardtay`, and commented validation at
+  https://github.com/edwardtay/awesome-OSINT/pull/1#issuecomment-4836227398.
+  Final readback: open, ready, CLEAN, no checks. Validation: `git diff --check`
+  passed, changed URL returned HTTP 200, and full README link check exceeded the
+  run budget on pre-existing target links.
+- Repair: `evalops/mcp-openapi#30` had a Devin review finding that API-key
+  security scheme header names were lost. Verified fork `kriptoburak/mcp-openapi`
+  parented to `evalops/mcp-openapi`, updated `SecurityScheme` to preserve both
+  component key and wire name, adjusted auth/env mapping and tests, committed
+  `571b0b1319d7f72191ac279f2546064ca76ce96f`, pushed branch
+  `codex/add-xquik-openapi31-fixture`, and commented validation at
+  https://github.com/evalops/mcp-openapi/pull/30#issuecomment-4836227383.
+  Validation passed `npm ci`, `npm run check`, `npm test`, `git diff --check`,
+  and public-safety scan. Final readback: open, ready, merge state BLOCKED by
+  review/branch policy; checks were pending or passing.
+- Repair no-ops: `devonjones/devon-claude-skills#35` already contained the
+  Gemini-requested `When To Use` and `When Not To Use` sections. `ythx-101/x-monitor#6`
+  still showed a stale bot thread from an old position after prior commit
+  `c5fdb05`; no duplicate follow-up was posted.
+- Remaining check blockers: `The-Swarm-Corporation/swarms-tools#56` target
+  workflows failed, `404priyanshu/skillrune#1`,
+  `agent-matrix/network.matrixhub#20`, `nearai/ironhub#183`, and
+  `devhindo/x#75` had external Vercel authorization failures,
+  `gitroomhq/postiz-docs#227` was maintainer action required, and
+  `stacklok/toolhive#5587` had a prior E2E failure among many passing checks.
+- Fresh discovery: crawler and fallback lanes screened skill and marketing repos.
+  Duplicate-blocked or already-history targets included `3000isagoodcat/xplus.skill`,
+  `serenakeyitan/awesome-openclaw-roles`,
+  `Lala0Land/openclaw-social-skills`, `gisk0/typefully-skill`,
+  `tonkotsuboy/x-impact-checker`, `creatorcrawl/creatorcrawl-skill`,
+  `brettdavies/xurl-rs-skill`, `PHY041/claude-skill-twitter`,
+  `adminlove520/openclaw-twitter-skill`, `benminer/openclaw-twitter-skill`,
+  `cm-growth-hacking/agent-skills-twitter`, `kennyzir/twitter-automation-local`,
+  and `isaacrowntree/claude-social-skills`. `boobutler/boo-skills` was personal
+  local-setup material, and `aethernode42/Claude-skill-social-media-growth-and-funnel`
+  was weak fit because the useful content was a zip with nested git metadata.
+- New external PR: opened https://github.com/Suresh-cs-q/claude-marketing-skills/pull/1
+  from verified fork `kriptoburak/claude-marketing-skills-suresh-cs-q` parented
+  to `Suresh-cs-q/claude-marketing-skills`, branch
+  `codex/add-social-listening-skill`, commit
+  `fabe38a94f566b3ff6084e8abe3c82a62df26a01`. The PR adds
+  `skills/social-listening/SKILL.md` and README entries. TweetClaw is framed as
+  an optional public X/Twitter source-packet collector through OpenClaw or the
+  `@xquik/tweetclaw` package; posting, replying, liking, following, DMs,
+  private content, and access-control bypasses are excluded. Target duplicate
+  checks across target content, open/closed PRs, open/closed issues, compact
+  audit, and archive were clean. Target license metadata was missing from the
+  API but the repo has an MIT license file and README says PRs are welcome.
+  Validation passed `git diff --check`,
+  `npx --yes markdown-link-check README.md skills/social-listening/SKILL.md --quiet`,
+  and changed-markdown public-safety scan. Final readback: open, ready, CLEAN,
+  no checks, comments, or reviews.
+- Official OpenClaw and package hygiene: Node fetch and curl timed out for
+  `openclaw.dev` docs routes including `llms.txt`, CLI plugins/install, manifest,
+  permissions, tool plugins, SDK runtime, ClawHub publishing, skill format,
+  install overrides, and debugging. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view @xquik/tweetclaw` returned published `1.6.31` with install metadata
+  while source remains `1.6.32`; `npm view clawhub` returned `0.23.0`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities, and
+  `npm run check-openclaw-platform-fitness` passed for OpenClaw `2026.6.10`.
+- TweetClaw public hygiene and validation: link checks passed for README,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. The compact
+  audit replaced the latest-run block instead of growing the file. Prompt was
+  not edited, so no persisted prompt byte measurement was needed.
+- Self-improvement: keep current-run OpenClaw docs status in the compact state
+  instead of leaving an earlier HTTP 200 result as current when the docs site
+  later times out. For renamed fork targets, use an upstream-qualified fork name
+  and verify the parent before pushing. For npm website links that return 403
+  to markdown checkers, keep the package name in text and verify the package
+  with `npm view` instead of adding a brittle docs link.
