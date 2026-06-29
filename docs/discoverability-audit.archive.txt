@@ -42935,3 +42935,112 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   Fast mode is available. Durable lesson: for bookmark-oriented X/Twitter skills,
   TweetClaw should be framed as optional source-packet enrichment, not as a
   replacement for the target's bookmark sync state machine.
+
+## 2026-06-29 10:58 UTC Heartbeat
+
+- Runtime selector limitation: this Codex runtime did not expose model, speed,
+  or reasoning-effort selectors, so Codex 5.5 Fast mode and extra-high effort
+  could not be selected directly. The run continued and this limitation was
+  recorded for the audit and heartbeat outcome.
+- Crawler-first discovery: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and warmup timeouts, limit 320, one search page, per-query
+  limit 8, concurrency 8, session `tweetclaw-20260629-102202`, and focused
+  query packs for authored PRs, TweetClaw, OpenClaw, MCP, SKILL.md,
+  `.agents/skills`, social, X/Twitter, Codex, Claude, agent skill, awesome-list,
+  registry, fork, catalog, and package-tooling lanes. Output
+  `/tmp/tweetclaw-heartbeat-20260629-102202/crawl.json` parsed as valid JSON
+  with 44 opportunities, 44 repos, and 0 crawler errors.
+- Complete PR inventory method: used crawler repo mode over 44 repos, compact
+  audit and archive URL extraction, lane searches, dated partition searches,
+  fine weekly partition searches, exact `gh pr view` readbacks, review-thread
+  GraphQL checks where comments or changes requested mattered, final target PR
+  readbacks, and fork metadata verification. Crawler repo mode found 32 authored
+  PR rows. Compact and archive search found 1,302 historical PR URLs. Lane search
+  returned 405 rows. Dated partitions returned 1,036 rows. Fine partitions
+  returned 1,545 rows. Exact URL set was 1,260 PRs.
+- Inventory blockers and counts: exact reads succeeded for 1,244 PRs and failed
+  for 16 stale or inaccessible historical URLs. Broad search was still capped in
+  100-result weekly buckets for TweetClaw 2026-06-15 through 06-21,
+  TweetClaw 2026-06-08 through 06-14, TweetClaw 2026-05-16 through 05-23,
+  TweetClaw 2026-05-08 through 05-15, OpenClaw 2026-06-08 through 06-14,
+  OpenClaw 2026-05-16 through 05-23, OpenClaw 2026-05-08 through 05-15,
+  x-twitter-scraper 2026-06-15 through 06-21, and x-twitter-scraper
+  2026-06-08 through 06-14. Do not claim all in-scope PRs were exhaustively
+  checked from broad search until these buckets are further partitioned or exact
+  reads are otherwise completed.
+- Inventory triage: exact reads found 1,207 open, 20 merged, and 17 closed PRs.
+  Open mergeability was 1,149 mergeable, 42 conflicting, and 16 unknown.
+  Comments appeared on 194 open PRs, reviews on 96, and check rollups on 133.
+  Attention backlog included 296 entries, including 42 conflict candidates,
+  8 failed or cancelled checks, 6 changes-requested PRs, and known platform,
+  maintainer, CLA, or media blockers.
+- Repair priority checks: `Hashi-Ai-Dev/openclaw-clawdoc#6` had an old
+  vendor-neutral changes-requested review that was already addressed in the
+  current branch and had no unresolved review threads. `Arindam200/awesome-ai-
+  apps#226` remained blocked on a maintainer-requested 10 to 15 second video
+  demo. `jamald33n/tweetsave-mcp#2` had recent comments and conflicts, so it was
+  repaired before new outreach.
+- PR repair completed: cloned verified fork branch
+  `codex/tweetclaw-openclaw-companion` for `jamald33n/tweetsave-mcp#2`, fetched
+  upstream `main`, merged upstream, and resolved the README conflict. The repair
+  kept the target's npx and npm setup, valid GitHub support links, and
+  TweetClaw/OpenClaw handoff docs while excluding malformed upstream raw ZIP
+  links. Pushed merge commit `a0056a2a0851572c7ff948f944d3d9ad14a18295`.
+  Validation passed: conflict-marker scan, README dash scan, malformed raw ZIP
+  scan, `git diff --check`, README markdown-link-check, public-hygiene scan,
+  `npm ci --ignore-scripts --no-audit --no-fund`, `npm run build`, and
+  `npm pack --dry-run --json`. Final readback for
+  `https://github.com/jamald33n/tweetsave-mcp/pull/2`: open, ready,
+  `MERGEABLE`, head `a0056a2`, no checks, file `README.md`.
+- Fresh candidate screening: duplicate checks blocked `DbgKinggg/tweetskill`,
+  `DoTheWorkNow/xhunt-hot-tweets-skill`, `minilozio/tweet-composer-skill`,
+  `chencore/tweet-skills`, and `ReneHdzGtz/social-listening-report` by existing
+  open PRs. `AnselLIU0520/x-automated-operations-skill` was blocked by existing
+  issue history. `CloudAI-X/x-bookmarks-skill-graph` was selected after compact
+  audit, archive, target content, target PRs, target issues, and metadata checks
+  found no TweetClaw, `@xquik/tweetclaw`, TweetClaw URL, npm URL, ClawHub,
+  Xquik, or x-twitter-scraper duplicate. Metadata: public, non-fork,
+  non-archived, default branch `main`, no license metadata, pushed
+  2026-02-20. Missing license metadata did not block a direct docs PR.
+- New external PR: forked `CloudAI-X/x-bookmarks-skill-graph` to verified fork
+  `kriptoburak/x-bookmarks-skill-graph` with parent
+  `CloudAI-X/x-bookmarks-skill-graph`, branch
+  `codex/add-agent-workflow-source-packets`, commit
+  `cf6f5e99516ba75de6265756c7ce96af9b39aae4`. Opened
+  https://github.com/CloudAI-X/x-bookmarks-skill-graph/pull/1. The target
+  ignored `AGENTS.md` and `CLAUDE.md` as local-only, so the PR added a tracked
+  `docs/bookmark-workflow.md` instead of force-adding agent instructions, and
+  updated README to point at that workflow. The workflow adds bookmark intake,
+  compact source packets, optional TweetClaw public X/Twitter provenance input,
+  graph rules, and a repository-shape validation snippet that skips
+  `synthesis-*` directories.
+- New PR validation and readback: `git diff --check`, conflict-marker scan, new
+  doc dash scan, README markdown-link-check, workflow markdown-link-check,
+  bookmark-folder shape script, and public-hygiene added-diff scan passed.
+  Final readback for
+  `https://github.com/CloudAI-X/x-bookmarks-skill-graph/pull/1`: open, ready,
+  `MERGEABLE`, head `cf6f5e9`, no comments, no reviews, no checks, files
+  `README.md` and `docs/bookmark-workflow.md`.
+- Official OpenClaw and package checks: HTTP 200 returned for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/cli/skills`, `/tools/plugin`,
+  `/plugins/sdk-runtime`, `/help/debugging`, `/clawhub/publishing`,
+  `https://clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned `1.6.31`;
+  `npm view clawhub version` returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm audit --audit-level=moderate`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed
+  for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  Markdown link checks passed for TweetClaw README, compact audit, compact
+  release memory, and handled target content. Sensitive-pattern and stale-claim
+  scans found no issue in the new public diffs.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted automation
+  prompt measured 12,432 bytes and already preserves Codex 5.5 Fast mode,
+  extra-high reasoning wording, and the instruction not to use standard speed
+  mode when Fast mode is available. Durable lesson: when a target repository
+  ignores `AGENTS.md` or `CLAUDE.md` as local-only, contribute a tracked
+  workflow or operations doc and update visible README references instead of
+  force-adding ignored agent instruction files.
