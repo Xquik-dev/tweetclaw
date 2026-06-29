@@ -42329,3 +42329,114 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target PRs, target-owned punctuation consistency can be accepted when a
   maintainer bot requests it, but keep TweetClaw-owned memory ASCII and clean
   under local public-hygiene gates.
+
+## 2026-06-29 07:36 UTC Heartbeat
+
+- Runtime selector limitation: this environment did not expose model, speed, or
+  effort selection, so the requested Codex 5.5 Fast mode and extra-high effort
+  could not be set directly. The limitation was recorded and the run continued.
+- Crawler-first discovery: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with session `tweetclaw-20260629-073602`, `--json`, `--output
+  /tmp/tweetclaw-heartbeat-20260629-073602/crawl.json`, `--research-proxy`,
+  bounded request and proxy warmup timeouts, limit 260, one search page,
+  per-query limit 8, concurrency 8, and focused PR, TweetClaw, OpenClaw, MCP,
+  social, Twitter/X, skill, catalog, and agent query packs. Strict JSON parsing
+  found 24 opportunities and 0 crawler errors.
+- Skill-repo coverage: crawler queries included `SKILL.md`, `.agents/skills`,
+  skills directories, OpenClaw, MCP, Codex, Claude, agent, social media,
+  Twitter/X, awesome-list, registry, fork, generated-catalog, and web-index
+  surfaced lanes. Crawler opportunities again included duplicate-covered skill
+  and social lanes such as `mvanhorn/last30days-skill`,
+  `blacktwist/social-media-skills`, `reymerekar7/rm-skills`,
+  `tonkotsuboy/x-impact-checker`, `mvanhorn/clawdbot-skill-search-x`, and
+  `RanL703/TweetMCP`.
+- PR inventory partitions: broad authored-open PR search used stable updated
+  windows and did not hit the 1000-result cap: `updated:>=2026-06-29` 107,
+  `2026-06-28` 57, `2026-06-27` 1, `2026-06-26` 2, `2026-06-25` 3,
+  `2026-06-24` 20, `2026-06-22..2026-06-23` 250,
+  `2026-06-15..2026-06-21` 686, `2026-06-01..2026-06-14` 650,
+  `2026-05-01..2026-05-31` 549, `2026-04-01..2026-04-30` 52,
+  `2026-01-01..2026-03-31` 5, `2025-01-01..2025-12-31` 1, and
+  `updated:<2025-01-01` 0.
+- Exact PR reads: crawler repo mode through exact repo PR lists found 18 open
+  authored PRs across 24 crawler repos, with 0 repo-list errors. The exact-read
+  set combined the current authored partition, crawler repo PRs, and audit
+  blockers for 125 unique PR URLs. `gh pr view` exact-read all 125 with 0 read
+  errors, including state, draft status, mergeability, base/head, commits,
+  comments, reviews, check rollups, statuses, files, and maintainer-modify
+  state.
+- Repair triage: attention classification found 19 PRs. No branch-actionable
+  repair blocked outreach. Current notable outcomes: `Jylhis/skills#66` had a
+  Gemini formatting note already satisfied on the current head; `Jylhis/skills#67`
+  had a previously answered Gemini docs note; `bravian1/social-agent#4`,
+  `devladpopov/openapi-to-mcp#1`, `harsha-iiiv/openapi-mcp-generator#74`, and
+  `evalops/mcp-openapi#30` had bot findings already fixed by existing commits
+  and self-replies; `DefenderOfBasic/twitter-semantic-search#2` and
+  `denial-web/clawguard#1` had maintainer comments already answered or revised;
+  `higress-group/openapi-to-mcpserver#38` remains a CLA platform gate;
+  `antstudiocz/ant-marketplace#37` remains target-owner Vercel authorization;
+  `Arindam200/awesome-ai-apps#226` still needs maintainer-requested Nebius demo
+  video assets; `lmanchu/orpheus-curator#1` remained repaired, mergeable, and
+  GitGuardian-successful.
+- Fresh target screening: crawler candidates were mostly duplicate-covered or
+  prior-history lanes. Fallback GitHub repo searches covered human-in-the-loop
+  tweet agents, Twitter content pipelines, social approval queues, source
+  context, Discord approval, and Twitter research approval lanes. `sanjitr11/xcopilot`
+  was archive-screened already. `lalit1517/PostPilot` was fresh but missing
+  license metadata. `yoavimus/cutebot` was selected because it is MIT licensed,
+  non-fork, non-archived, issue-enabled, active in the last week, and directly
+  fits a reviewed public X/Twitter context workflow before human-approved
+  social generation.
+- Duplicate gates for `yoavimus/cutebot`: compact audit, archive, target
+  metadata, local content, and open plus closed target PRs/issues were checked
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, ClawHub, public context,
+  social approval, and variants. Target searches returned 0 matches. Local
+  content had no TweetClaw, Xquik, OpenClaw, or ClawHub mention before the PR.
+- New external PR: forked to verified parented fork `kriptoburak/cutebot` with
+  parent `yoavimus/cutebot`, branch `codex/document-tweetclaw-context`. Opened
+  https://github.com/yoavimus/cutebot/pull/1 with commit
+  `721f628279449a6e457629c8deda81bd5869e121`. The docs-only PR updates
+  README, `PRODUCT_SPEC.md`, and `brand.example.yaml` to document TweetClaw as
+  an optional OpenClaw source for reviewed public X/Twitter context that is
+  pasted into `brand.yaml` before generation. It keeps TweetClaw as an input
+  source only; CuteBot's Telegram approval gate and scheduled queue remain the
+  only path to publishing. Final readback showed PR #1 open, ready,
+  `MERGEABLE`, head `721f628279449a6e457629c8deda81bd5869e121`, no comments,
+  no reviews, and GitGuardian Security Checks success.
+- Target validation and hygiene: target `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`,
+  `npx --yes markdown-link-check PRODUCT_SPEC.md --quiet`, and
+  `python3 -m compileall -q app tests` passed. Text-file read validation
+  passed. Local Python lacked `tomllib`, so pyproject parsing was skipped rather
+  than adding dependencies. Added-line scans found no secret-shaped values,
+  restricted implementation details, internal cost mechanics, or unsupported
+  claims; the only API-key text was the documented environment variable name
+  `XQUIK_API_KEY`.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/cli/skills`, `/tools/plugin`, `/plugins/sdk-runtime`, `/help/debugging`,
+  `/clawhub/publishing`, `https://clawhub.ai/plugins/@xquik/tweetclaw`
+  redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned latest `1.6.31`;
+  `npm view clawhub version` returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm audit --audit-level=moderate` reported 0 vulnerabilities. Markdown link
+  checks passed for TweetClaw README, compact audit, and compact release memory.
+  `npm run check-memory-md-size`, `npm run check-em-dash`, `git diff --check`,
+  and `npm run check:all` passed after compact-memory edits. Untracked local
+  file `0` remained untouched.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted prompt
+  size was 12098 bytes and already preserves Codex 5.5 Fast mode and
+  extra-high effort wording, quiet autonomy, crawler-first discovery, mandatory
+  PR submission, aggressive skill-repo coverage, fresh discovery, complete PR
+  inventory and repair priority, duplicate/fork rules, OpenClaw docs checks,
+  link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap,
+  prompt cap, and durable self-improvement. Durable lesson: for approval-gated
+  social content pipelines, the strongest TweetClaw placement is often a
+  reviewed context-source workflow feeding the target's existing brand or
+  briefing input, not a publisher adapter or dependency.
