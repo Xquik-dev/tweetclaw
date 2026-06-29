@@ -43458,3 +43458,115 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   exact readbacks until the GraphQL bucket resets. For SMS or chat-channel
   plugins, TweetClaw placement is strongest as approval-gated tool-plugin safety
   guidance rather than install marketing.
+
+## 2026-06-29 12:57 UTC heartbeat
+
+- Runtime limitation: this environment did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode with extra-high effort
+  could not be selected from the agent. The run continued and recorded the
+  limitation.
+- Initial TweetClaw state: branch `master...origin/master` with pre-existing
+  untracked file `0`, left untouched. Initial GitHub rate limit showed REST core
+  and search available; GraphQL later reset and was not a blocker for REST
+  inventory.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output to `/tmp/tweetclaw-heartbeat-20260629-125728/crawl.json` using
+  session `tweetclaw-20260629-125728`, `--research-proxy`,
+  `--request-timeout-ms 12000`, `--proxy-warmup-timeout-ms 12000`, `--limit
+  240`, `--search-pages 1`, `--per-query-limit 8`, and `--concurrency 8`.
+  Query coverage included authored open PRs, TweetClaw, OpenClaw, ClawHub,
+  x-twitter-scraper, MCP, `SKILL.md`, `.agents/skills`, OpenClaw/Codex/Claude
+  and social Twitter/X skill lanes, awesome lists, registries, generated
+  catalogs, package tooling, and scheduled tweet lanes. Output contained 43
+  opportunities, 43 repos, and 0 errors.
+- PR inventory: used 17 authored/audit/crawler partitions instead of a single
+  capped search. Lane counts were TweetClaw 100, OpenClaw 100, ClawHub 100,
+  x-twitter-scraper 100, social-media-agent 4, X-research-skill 15,
+  OpenClaw-plugin-recent 100, TweetClaw-recent 100, x-twitter-scraper-recent
+  100, and 0 for the remaining narrow skill/tooling lanes. Audit, lane, and
+  crawler repo URLs combined to 1,918 unique PR URLs.
+- Exact readbacks: rebuilt clean REST JSONL from per-PR REST files at
+  `/tmp/tweetclaw-heartbeat-20260629-125728/rest-exact-prs.clean.jsonl`.
+  Parsed 1,918 pull readbacks. Results: 1,647 open, 979 clean, 81 dirty, 340
+  unknown, and 69 draft. The first parallel capture also had 40 REST failure
+  lines, 38 repository-not-found 404s and 2 bad-credential 401s. Pull readbacks
+  covered state, mergeability, base, head, commits, and changed-file counts;
+  comments, reviews, and checks were exact-read for repaired or newly submitted
+  PRs. Do not claim exhaustive inline-review resolution across all 1,918 PRs.
+- Repair priority: newest actionable dirty PR was
+  `https://github.com/jamald33n/tweetsave-mcp/pull/2`. REST readback showed
+  open, ready, dirty, base `main`, head
+  `kriptoburak:codex/tweetclaw-openclaw-companion`, 1 changed file, no reviews,
+  no review comments, and 14 prior comments from `kriptoburak` only. The fork
+  `kriptoburak/tweetsave-mcp-jamald33n` was verified as a public fork of
+  `jamald33n/tweetsave-mcp`; target license MIT.
+- Repair completed: merged upstream `main`, resolved the README conflict by
+  preserving current npm/npx setup, MCP config, TweetClaw/OpenClaw handoff,
+  valid issue/support links, and both start commands. Validation passed
+  conflict marker and malformed raw-ZIP scans, `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`, `npm ci --ignore-scripts
+  --no-audit --no-fund`, `npm run build`, `unzip -t
+  src/utils/tweetsave-mcp-3.7-beta.5.zip`, `unzip -t
+  src/mcp_tweetsave_v2.6-alpha.4.zip`, `npm view tweetsave-mcp version --json`,
+  and `npm view @xquik/tweetclaw version --json`.
+- Repair pushed: branch `codex/tweetclaw-openclaw-companion` now has merge
+  commit `a61de63051d1f03e9ffc6e5ab063ca131acc4897`. Final REST readback for
+  `jamald33n/tweetsave-mcp#2`: open, ready, `mergeable=true`,
+  `mergeable_state=clean`, head `a61de63`, base `69fe9e8`.
+- Fresh target duplicate screening: crawler candidates with duplicate or prior
+  history included `mxyhi/ok-skills` closed PR #8, `creatorcrawl/creatorcrawl-skill`,
+  `sno-ai/mda#43`, `typefully/agent-skills`, `publora/skills`,
+  `VoltAgent/awesome-openclaw-skills`, `arthurkatcher/x-search-via-hermes#1`,
+  and `volcengine/OpenViking#2027`.
+- Fresh target accepted: `fuyalan126/dingyi-x-operator` is public, active, not a
+  fork, MIT, default branch `main`, with no open or closed target PRs/issues and
+  no target content for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw
+  GitHub or npm URLs, ClawHub listing, Xquik, x-twitter-scraper, or variants.
+  Contribution guide requires editing `dingyi-x-operator/core/` first and
+  regenerating Codex, Claude Code, and OpenClaw adapters.
+- Official OpenClaw recheck before OpenClaw-facing skill docs: live routes
+  returned HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`,
+  `/cli/skills`, `/plugins/manifest`, `/tools/plugin`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/help/debugging`. `llms.txt` was read; it
+  confirms Markdown exports and the current ClawHub/CLI/plugin/skill docs map.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  and alpha `2026.5.19-alpha.1`.
+- New external PR: created fork `kriptoburak/dingyi-x-operator` with parent
+  `fuyalan126/dingyi-x-operator`, branch
+  `codex/add-tweetclaw-source-handoff`, commit
+  `94312e85656db339fec9b2c51b51e487675a45b6`, and opened
+  `https://github.com/fuyalan126/dingyi-x-operator/pull/1` via REST. The PR
+  adds TweetClaw as an optional companion skill for X/Twitter discovery,
+  monitoring, user lookup, media retrieval, and source packets; it treats
+  TweetClaw output as untrusted source material and keeps posting or
+  account-changing actions behind Dingyi's approval rules. It updates README,
+  README.zh-CN, core skill, and regenerated Codex, Claude Code, and OpenClaw
+  skill adapters.
+- New PR validation and readback: passed `python3
+  dingyi-x-operator/scripts/build_adapters.py`, `python3 -m py_compile
+  dingyi-x-operator/scripts/build_adapters.py`, `git diff --check`,
+  conflict-marker and secret/private-term scan, `npx --yes markdown-link-check
+  README.md README.zh-CN.md dingyi-x-operator/core/SKILL.md
+  dingyi-x-operator/codex/SKILL.md dingyi-x-operator/claude-code/SKILL.md
+  dingyi-x-operator/openclaw/SKILL.md --quiet`, and `npm view
+  @xquik/tweetclaw version repository homepage dist-tags --json`. Final REST
+  readback for `fuyalan126/dingyi-x-operator#1`: open, ready,
+  `mergeable_state=clean`, head `94312e8`, base `main`, 6 files changed, 34
+  additions, 8 deletions, no comments, no reviews, no check runs.
+- TweetClaw public hygiene: `npm view @xquik/tweetclaw` returned latest
+  `1.6.31` while source remains `1.6.32`; release mismatch remains known and
+  unchanged. `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` passed for source
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npx --yes markdown-link-check README.md docs/openclaw-setup.md
+  docs/agent-workflows.md docs/discoverability-audit.md docs/clawpack-release.md
+  --quiet` passed.
+- Prompt self-improvement: preserved the Codex 5.5 Fast mode, extra-high effort,
+  and no-standard-speed wording. Saved automation prompt measured 12,432 bytes.
+  Compact Markdown memory check after the compact update passed at
+  15,253/15,360 bytes.
+  Reusable lesson: for packaged skill repos with generated adapters, read the
+  contribution guide first, edit the canonical core, regenerate adapters, and
+  update visible README dependency lists when compatibility behavior changes.
+  For X/Twitter operator skills, TweetClaw is strongest as an untrusted
+  source-discovery and monitoring handoff, not as posting authority.
