@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 04:00 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 04:22 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core llms, `/cli/plugins`,
   plugin, manifest, ClawHub, skill, config, and help routes were live. Old
   command-specific subroutes plus permission, runtime, and Codex harness routes
   404; `/cli/plugins` covers install, update, and inspect.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 04:00 UTC, but latest ClawHub page remains
+  page on 2026-06-29 04:22 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 04:00 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 04:22 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +191,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 04:00 UTC: model/effort selector unavailable. Xquik crawler
-  session `tweetclaw-20260629-035034` returned 21 skill, directory, MCP,
-  OpenClaw, social, X, awesome-list, and catalog opportunities.
-- PR inventory: authored open PR partitions read 2,353 rows with no capped
-  bucket. Exact readback covered 79 PRs updated today plus audit-tracked repair
-  PRs; full all-lane exact read was not repeated after the 02:52 baseline.
-- Repair gate: conflict repairs pushed for `jamald33n/tweetsave-mcp#2`,
-  `Aqmar777/openclaw-competitive-intel#1`,
-  `Aditya923-c/xpoz-agent-skills#1`, and
-  `AbdNour627/awesome-openclaw-configs#1`; each read back clean once. The last
-  exact read found the 3 high-churn OpenClaw/skill README PRs dirty again.
-- New PR: `confused-pandas/sentiment-analysis-app#1` adds a tested
-  TweetClaw-style JSON, JSONL, and CSV batch sentiment importer, fixes README
-  code fences, and writes model score CSV output without live calls.
+- 2026-06-29 04:22 UTC: model/effort selector unavailable. Xquik crawler
+  session `tweetclaw-20260629-042236` returned 33 PR, skill, social, X,
+  OpenClaw, MCP, awesome-list, catalog, and sentiment opportunities.
+- PR inventory: newer authored open PR partitions read through
+  `updated:2026-06-01..2026-06-14`; GitHub API rate limits blocked older broad
+  buckets. Exact readback covered 80 PRs updated today.
+- Repair gate: conflict repair pushed for `warlockoussama/twitter-cli#1`, which
+  read back clean and mergeable. Three high-churn README PRs stayed dirty
+  backlog after prior clean repairs.
+- New PR: `machinelearningprodigy/sentiment-analysis#1` adds tested TweetClaw
+  export upload sentiment scoring and replaces a dead Streamlit demo link.
 - Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
   prompt bytes, memory-size, and self-improvement details are archived.
 

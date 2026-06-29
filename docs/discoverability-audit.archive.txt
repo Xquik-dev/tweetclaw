@@ -2,6 +2,108 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+## 2026-06-29 04:22 UTC Heartbeat
+
+- Model/effort limitation: the runtime did not expose GPT-5.5 or explicit
+  extra-high reasoning selection. Continued and recorded the limitation.
+- Crawler-first discovery: ran Xquik crawler session
+  `tweetclaw-20260629-042236` from `/Users/burak/Developer/xquik` with
+  focused authored-PR, TweetClaw/OpenClaw, npm, MCP, skill, awesome-list,
+  `.agents/skills`, SKILL.md, x-twitter-scraper, and sentiment-analysis
+  queries. Strict JSON parsed successfully with 33 opportunities and no crawler
+  errors. Crawler candidates included skill repos, TweetClaw/Xquik repos,
+  OpenClaw lanes, and sentiment app repos.
+- Complete PR inventory attempt: broad authored open-PR partitions were read for
+  `updated:>=2026-06-29` (80), `2026-06-28` (58), `2026-06-27` (1),
+  `2026-06-26` (2), `2026-06-25` (3), `2026-06-24` (20),
+  `2026-06-22..2026-06-23` (250), `2026-06-15..2026-06-21` (686), and
+  `2026-06-01..2026-06-14` (650). Older broad buckets hit GitHub API rate
+  limit for user ID 8755484 around 2026-06-29 04:24 to 04:25 UTC, so broad
+  authenticated search stopped for the run and fallback exact reads continued
+  through crawler output, known PRs, and target metadata.
+- Exact PR readback: 80 PRs updated today were exact-read. Failing or dirty PRs
+  were `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and
+  `AbdNour627/awesome-openclaw-configs#1`. No failed checks were found. Four
+  PRs were review-required and 23 were commented. The three OpenClaw/skill
+  README PRs were recorded as high-churn backlog after prior clean repairs.
+- Repair: repaired `warlockoussama/twitter-cli#1` on branch
+  `codex/update-readme-command-scope` in correctly parented fork
+  `kriptoburak/twitter-cli`. Conflict was README-only around an unchanged
+  download link. Commit `93709b0` was pushed and the PR was commented at
+  `https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4829003113`.
+  Final readback was open, `MERGEABLE`, `CLEAN`, no checks, no maintainer
+  comments, and no reviews.
+- Repair validation: conflict-marker scan, `git diff --check`, README
+  markdown-link-check, and changed-diff public hygiene scan passed. The diff
+  introduced no secrets, private implementation details, restricted provider or
+  source names, internal cost mechanics, unsupported claims, or stale metadata.
+- Fresh candidate screening: crawler and archive checks screened
+  `dafiqrahman/twitter_sentiment_app`,
+  `machinelearningprodigy/sentiment-analysis`,
+  `JacobPawlak/TwitterSentimentAnalysis`,
+  `nav727/Realtime-Twitter-Sentiment-Analysis`,
+  `JayantTaneja/Streamlit-Interactive-Twitter-Sentiment-Analyzer`,
+  `sidprobstein/tweetalyzer`, and
+  `skhand17/GPT-ENHANCED-TWITTER-ANALYTICS`. The selected repo was
+  `machinelearningprodigy/sentiment-analysis` because it was public, non-fork,
+  non-archived, issue-enabled, recently updated enough for a safe small PR,
+  duplicate-clean in compact and archive memory, and target-native for local
+  TweetClaw export batch scoring. Missing license metadata did not block the
+  direct PR.
+- Duplicate and policy checks: target content plus open and closed PRs and
+  issues were searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub, Xquik, x-twitter-scraper, and
+  variants. No duplicate PR, issue, or content history was found. No explicit
+  maintainer policy blocked contribution.
+- New external PR: opened
+  `https://github.com/machinelearningprodigy/sentiment-analysis/pull/1` from
+  correctly parented fork `kriptoburak/machinelearningprodigy-sentiment-analysis`,
+  branch `codex/tweetclaw-batch-upload`, commit
+  `50a7d3d2594b28394f9de77b28729e9217dbbf33`. The PR adds
+  `tweetclaw_import.py`, `tests/test_tweetclaw_import.py`, Streamlit upload
+  support in `app.py`, README usage notes for local TweetClaw JSON, JSONL,
+  NDJSON, and CSV exports, and a replacement for a dead Streamlit demo link.
+  Final readback was open, ready, `MERGEABLE`, `CLEAN`, no comments, no
+  reviews, no checks configured, 4 files changed, 211 additions, 27 deletions,
+  and maintainer edits enabled.
+- New PR validation: `python3 -m py_compile app.py tweetclaw_import.py
+  tests/test_tweetclaw_import.py`, `python3 -m unittest
+  tests/test_tweetclaw_import.py` with 4 tests, `git diff --check`, README
+  markdown-link-check, and changed-file public hygiene scan passed. The
+  contribution uses local uploaded files only and makes no live X or TweetClaw
+  calls.
+- Official OpenClaw and package checks: docs probes returned 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins`,
+  `/plugins/manifest`, `/clawhub`, `/skills`, `/configuration`, and `/help`.
+  Current 404s were `/plugins/permission-requests`, `/agents/runtime`,
+  `/sdk/runtime`, and `/codex-harness`; the unified `/cli/plugins` page remains
+  the install, update, and inspect source. `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub version` returned `0.23.0`; published
+  `@xquik/tweetclaw` remained `1.6.31` while source remained `1.6.32`.
+  Published install metadata still points at the older `>=2026.5.4` host floor
+  while source metadata targets `>=2026.6.10`. ClawHub page returned 200 and
+  still exposed `1.6.26`; OpenClaw Directory, TweetClaw GitHub, and npm
+  registry metadata returned 200. `npm audit --audit-level=moderate --json`
+  reported 0 vulnerabilities and `npm run check-openclaw-platform-fitness`
+  passed.
+- TweetClaw public hygiene and memory: markdown-link-check passed for README,
+  compact audit, and compact release memory. Persisted automation TOML was
+  12,314 bytes and parsed prompt text was 11,980 bytes, below the 15 KiB prompt
+  cap. No prompt edit was useful because current instructions already preserve
+  model/effort wording, quiet autonomy, crawler-first discovery, mandatory PR
+  submission, aggressive skill coverage, repair priority, duplicate/fork rules,
+  OpenClaw docs checks, link checks, validation gates, badge rule, Context7
+  exclusion, secret handling, cadence, thread binding, commit/push requirement,
+  Markdown cap, prompt cap, and self-improvement.
+- Durable lessons: when a target app already has a single-text sentiment model,
+  TweetClaw value is strongest as local upload parsing plus deterministic tests,
+  not a marketing mention. If the default fork name is already occupied by an
+  unrelated parent, create a uniquely named fork and verify parent metadata
+  before pushing.
+
 ## 2026-06-28 23:33 UTC Heartbeat
 
 - Runtime limitation: the current runtime exposed no GPT-5.5 or extra-high
