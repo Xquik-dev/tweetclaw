@@ -41074,3 +41074,105 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target-owned live-fetch behavior and approval boundaries. When fixing bot
   findings on adjacent Xquik/OpenAPI PRs, exact-read review threads after push
   and record pending CLA blockers separately from actionable code repairs.
+
+## 2026-06-29 01:57 UTC Heartbeat
+
+- Model and effort: runtime did not expose GPT-5.5 or extra-high reasoning
+  selection controls, so the limitation was recorded and work continued.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler with research proxy, bounded request timeout 12000 ms, proxy warmup
+  20000 ms, limit 220, one search page, per-query limit 8, concurrency 8, and
+  session `tweetclaw-20260629-013024`. Query pack covered authored open PRs,
+  TweetClaw, Xquik, OpenClaw, MCP, `SKILL.md`, `.agents/skills`, skills dirs,
+  Claude, Codex, OpenClaw, agent, social, Twitter/X skills, awesome lists,
+  registries, forks, generated catalogs, LangGraph, LangChain, CrewAI, AutoGen,
+  Semantic Kernel, OpenAI Agents SDK, Mastra, Agno, DSPy, Haystack, and package
+  tooling lanes. Output parsed as JSON with 54 opportunities and no proxy
+  credential exposure.
+- PR inventory: compact audit, archives, crawler output, crawler repo mode,
+  exact repo REST lists, and authored open PR partitions were checked. Broad
+  authored open search hit the 1000-result cap, so update-window partitions were
+  used: `>=2026-06-29` 33, `2026-06-28` 71, `2026-06-27` 1, `2026-06-26` 2,
+  `2026-06-25` 3, `2026-06-24` 20, `2026-06-22..2026-06-23` 259,
+  `2026-06-15..2026-06-21` 689, `2026-06-01..2026-06-14` 652,
+  `2026-01-01..2026-05-31` 606, and `<=2025-12-31` 1. Partitions produced
+  2,337 unique rows and 2,240 lane matches. Batched GraphQL exact-read state,
+  mergeability, base, head, latest commit, comments, reviews, and check rollup
+  for all 2,240 lane matches; 245 transient HTTP 502 rows retried with smaller
+  batches and final read failures were 0.
+- PR backlog: exact reads found 77 conflicting or dirty lane PRs, 58 with
+  non-success check rollups, and 393 with comments or reviews. Current-day
+  readbacks included clean `peige-guo/twitter_trend_agent#1`,
+  `bravian1/social-agent#4`, `jamald33n/tweetsave-mcp#2`, and
+  `harsha-iiiv/openapi-mcp-generator#74`; `higress-group/openapi-to-mcpserver#38`
+  remained CLA or platform blocked. Remaining dirty or failing older PRs are a
+  repair backlog, not a cleared queue.
+- Repair gate: repaired `warlockoussama/twitter-cli#1`, an in-scope X/Twitter
+  README conflict. Merged upstream `main`, removed duplicate conflict markers
+  around identical final download-link text, preserved the command-scope
+  clarification and TweetClaw companion note, pushed `2159b8a` to
+  `kriptoburak/twitter-cli:codex/update-readme-command-scope`, and posted
+  comment `https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4828291282`.
+  Validation passed conflict-marker scan, `git diff --check`,
+  `npx --yes markdown-link-check README.md --quiet`, and changed-diff public
+  hygiene scan. Final readback was open, `MERGEABLE`, `CLEAN`.
+- Fresh target screening: crawler-surfaced `0xNyk/xint`, `jedi4ever/social-skills`,
+  `blacktwist/social-media-skills`, `0xNyk/xint-rs`,
+  `benmillerat/openclaw-x-bookmark-archiver`, `BuddhaYi/macos-cli`,
+  `mvanhorn/last30days-skill`, and other high-score repos were duplicate or
+  prior-history blocked by compact audit, archive, target open PRs, or existing
+  issues. `liyupi/yupi-hot-monitor` was re-screened because the current prompt
+  no longer treats missing license metadata alone as a direct-PR blocker.
+- Duplicate and policy checks for `liyupi/yupi-hot-monitor`: compact audit and
+  archive had only prior missing-license holds; target content, open and closed
+  PR search, and open and closed issue search found no TweetClaw, Xquik,
+  `@xquik/tweetclaw`, npm URL, ClawHub, or x-twitter-scraper duplicate. GitHub
+  metadata: public, non-fork, non-archived, issues enabled, default branch
+  `master`, stars 507, pushed 2026-04-16, no license metadata. Fork was created
+  as `kriptoburak/yupi-hot-monitor` and REST readback verified parent
+  `liyupi/yupi-hot-monitor`.
+- New external PR: opened
+  `https://github.com/liyupi/yupi-hot-monitor/pull/6` from
+  `kriptoburak/yupi-hot-monitor:codex/import-tweetclaw-source`, commit
+  `8d0a843`. The PR adds dependency-free
+  `skills/hot-monitor/scripts/import_tweetclaw.py` and documents it in
+  `skills/hot-monitor/SKILL.md`, letting agents import reviewed TweetClaw or
+  OpenClaw X/Twitter JSON exports into the existing Hot Monitor report schema
+  without changing live Twitter search behavior. Final PR readback: open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, no checks configured.
+- Target validation: `python3 -m py_compile` for the new importer and existing
+  report generator passed; a sample TweetClaw JSON row imported to valid JSON
+  and piped into `generate_report.py`; `npx --yes markdown-link-check
+  skills/hot-monitor/SKILL.md --quiet` passed; `git diff --check` passed; target
+  diff public-hygiene scan found no secrets, private implementation details,
+  restricted provider/source names, internal cost mechanics, or unsupported
+  claims introduced.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  `/agent-runtime-architecture`, `/concepts/agent`, `/concepts/agent-runtimes`,
+  `/plugins/codex-harness-runtime`, `clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `clawhub.ai/xquik/plugins/tweetclaw`; old `/sdk/runtime` returned 404 and was
+  replaced by the current runtime routes from `llms.txt`.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; published `@xquik/tweetclaw` remained `1.6.31`
+  while source remained `1.6.32`; ClawHub page remained live but still at
+  `1.6.26`; `npm audit --audit-level=moderate --json` reported 0
+  vulnerabilities; `npm run check-openclaw-platform-fitness` passed.
+- Public links and TweetClaw validation: `npx --yes markdown-link-check` passed
+  for README, `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Direct probes
+  returned GitHub 200, target PR 200, and npm web UI 403 due package-page bot
+  protection while npm registry metadata was verified through `npm view`.
+  `npm run check-memory-md-size` passed at 15,319 of 15,360 bytes; prompt bytes
+  were 12,012; `npm run check:all` passed with 168 tests and 100 percent
+  coverage.
+- Prompt self-improvement: missing license metadata alone must stay recorded but
+  must not block direct, narrow, target-native PRs when duplicate, policy, fork,
+  validation, and public-hygiene gates pass. For multi-source hotspot, trend,
+  and agent-skill targets, prefer dependency-free importers that normalize
+  reviewed TweetClaw JSON into the target's existing result schema instead of
+  replacing target-owned live fetch logic.

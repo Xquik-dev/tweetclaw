@@ -49,14 +49,17 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 01:18 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 01:57 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core docs and Markdown
   route check: `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
   `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
-  `/cli/skills`, `/clawhub/publishing`, `/clawhub/skill-format`,
-  `/gateway/config-tools`, and `/help/debugging` 200; `/sdk/runtime` 404.
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/cli/skills`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/config-tools`, `/help/debugging`,
+  `/agent-runtime-architecture`, `/concepts/agent`, `/concepts/agent-runtimes`,
+  and `/plugins/codex-harness-runtime` 200; `/sdk/runtime` 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` redirected to a live
-  HTTP 200 page on 2026-06-29 01:18 UTC, but latest ClawHub page remains
+  HTTP 200 page on 2026-06-29 01:57 UTC, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical until
   current package publishing is fixed.
 - OpenClaw Directory listing remains useful but stale:
@@ -76,7 +79,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 00:52 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 01:57 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -192,20 +195,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 01:18 UTC: model/effort selector unavailable. Xquik crawler
-  session `tweetclaw-20260629-005951` returned 55 repos; crawler exact repo PR
-  lists found 77 open PR rows and 37 open authored PRs. Broad authored search
-  was limited to PRs updated on 2026-06-29, so full inventory is not complete.
-- Repair gate: pushed `bravian1/social-agent#4` `bf85547` for the remaining
-  CodeRabbit dotenv-order thread, `jamald33n/tweetsave-mcp#2` `531c038` for a
-  README conflict, and `harsha-iiiv/openapi-mcp-generator#74` `d783085` for a
-  valid bearer-auth test review. Final readbacks were clean or checks-success;
-  `higress-group/openapi-to-mcpserver#38` remains CLA-owner blocked.
-- New PR: `peige-guo/twitter_trend_agent#1` adds optional
-  `TWEETCLAW_SOURCE_FILE` support so LangGraph retrieval can use reviewed local
-  TweetClaw JSON exports without live Twitter API calls during a run.
-- Maintenance: OpenClaw docs, npm, ClawHub, audit, links, target validation,
-  memory-size, public hygiene, and self-improvement details are archived.
+- 2026-06-29 01:57 UTC: model/effort selector unavailable. Crawler session
+  `tweetclaw-20260629-013024` returned 54 repos; crawler repo mode found 62
+  open PR rows and 40 open authored PRs. Authored open search hit the
+  1000-result cap, then partitions read 2,337 rows and exact-read 2,240 lane
+  matches with 0 final read failures.
+- Repair gate: `warlockoussama/twitter-cli#1` was merged with upstream and
+  conflict-repaired at `2159b8a`; final readback was `MERGEABLE` and `CLEAN`.
+  Remaining dirty or failing open PRs were recorded as backlog, not cleared.
+- New PR: `liyupi/yupi-hot-monitor#6` adds a dependency-free
+  `import_tweetclaw.py` so the Hot Monitor Agent Skill can import reviewed
+  TweetClaw/OpenClaw X/Twitter JSON exports into its existing report schema.
+- Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, target validation,
+  public hygiene, prompt bytes, memory-size, and self-improvement details are
+  archived.
 
 ## Reporting Checklist
 
