@@ -44435,3 +44435,131 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   blocker. For local-first bookmark skill repos, prefer offline import bridges
   from reviewed user-provided X/Twitter JSON over direct install instructions
   when the target promises no login, no API keys, or no network calls.
+
+## 2026-06-29 17:26 UTC Heartbeat
+
+- Runtime selector note: the runtime exposed no model, Fast-mode, or
+  reasoning-effort selector, so Codex 5.5 Fast plus extra-high effort could not
+  be selected manually. The automation prompt file was present at
+  `/Users/burak/.codex/automations/improve-tweetclaw-openclaw-integration/automation.toml`
+  and measured 12,432 bytes, below the 15 KiB persisted-prompt cap.
+- Start state: `/Users/burak/Developer/tweetclaw` was on `master` at
+  `0b047731a966cfec20e0ec876d2f5a7b02990c69` with unrelated untracked path
+  `0`, which was left untouched.
+- Crawler-first coverage used Xquik session `tweetclaw-20260629-170535` from
+  `/Users/burak/Developer/xquik` with exact command:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-170535/crawl.json --research-proxy --request-timeout-ms 10000 --proxy-warmup-timeout-ms 10000 --limit 180 --search-pages 1 --per-query-limit 8 --concurrency 8 --session-id tweetclaw-20260629-170535 --query 'author:kriptoburak is:pr is:open TweetClaw OR OpenClaw OR ClawHub OR MCP OR skill OR x-twitter-scraper' --query '"@xquik/tweetclaw" OR tweetclaw OR "TweetClaw"' --query '"SKILL.md" "twitter" "agent"' --query '".agents/skills" "twitter"' --query '"OpenClaw" "skill" "social"' --query '"MCP" "skill" "Twitter"' --query '"Codex" "skill" "social media"' --query '"Claude" "skill" "X/Twitter"' --query '"awesome" "agent skills" "social media"' --query '"skill registry" "twitter" "agent"' --query '"source packet" "X/Twitter" "skill"' --query '"bookmark" "Twitter" "SKILL.md"'`.
+  Output was strict JSON with 45 opportunities, 0 errors, and 45 unique repos
+  across authored PR, TweetClaw, skill, OpenClaw, MCP, Codex, Claude, social,
+  Twitter/X, awesome-list, registry, source-packet, and bookmark lanes.
+- PR inventory method: compact memory, archives, crawler output, crawler repo
+  lists, exact repo PR lists, broad authored PR search partitions, audit PR URL
+  extraction, and GraphQL exact readbacks were used. Search rate before broad
+  search showed core 4,929, search 30, and GraphQL 4,965 remaining. Broad
+  authored open PR search found 2,437 total. Created partitions returned
+  `<2024`: 0, `2024`: 0, `2025`: 1, `2026-01-01..2026-03-31`: 62,
+  `2026-04-01..2026-05-31`: 611, and `2026-06-01..2026-06-29`: 1,763. June
+  weekly partitions returned 143 for `2026-06-01..2026-06-07` and 513 for
+  `2026-06-08..2026-06-14`, then GitHub HTTP 403 blocked
+  `2026-06-15..2026-06-21` and `2026-06-22..2026-06-29`. Broad authenticated
+  search stopped for this run as required.
+- Exact readback coverage: crawler repo open PR lists covered 45 repos, 100 open
+  PR rows, and 0 repo-list errors. Compact and archive extraction found 1,317
+  unique PR URLs. The first full audit-URL GraphQL batch used a malformed query
+  and produced 0 reads with 70 errors; the corrected full audit-URL batch then
+  stalled and was interrupted after bounded waits. Bounded current inventory used
+  crawler PR rows plus known recent PRs
+  `harrrshall/tweetmark#1`, `anbanai/anbanwriter-openclaw#1`, and
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`: 103 candidates, 103 exact readbacks, 0
+  exact errors, 103 open, 0 closed. Merge-state counts were CLEAN 89, DIRTY 7,
+  BLOCKED 2, BEHIND 1, UNSTABLE 2, and UNKNOWN 2. Review decisions were NONE
+  101, CHANGES_REQUESTED 1, and REVIEW_REQUIRED 1. There were 20 PRs with
+  comments, 14 with reviews, 6 with unresolved threads, and 33 possible action
+  rows. This is not a complete all-GitHub claim.
+- Repair triage: `Hashi-Ai-Dev/openclaw-clawdoc#6` still reports stale
+  CHANGES_REQUESTED/BLOCKED state, but thread-aware review context showed the
+  maintainer's vendor-neutral request was already handled, the current head is
+  vendor-neutral, and there were no new actionable comments or checks.
+- Repair completed for `XPOZpublic/xpoz-agent-skills#3`: cloned
+  `kriptoburak/xpoz-agent-skills-xpozpublic`, fetched upstream `main`, merged,
+  resolved the README conflict by preserving upstream trial-token setup plus the
+  TweetClaw source-packet skill row, validated with `git diff --check`,
+  conflict-marker scan, markdown link checks on README and the packaged skill,
+  and public-safety scan. Pushed merge commit
+  `82b05c11948b2a2a39f4b3ce5d7fa65177a4f7ee` to
+  `codex/add-tweetclaw-source-packets` and posted
+  https://github.com/XPOZpublic/xpoz-agent-skills/pull/3#issuecomment-4835183305.
+  Final readback: open, ready, mergeable, CLEAN, no checks, head `82b05c1`.
+- Repair completed for `Aditya923-c/xpoz-agent-skills#1`: cloned
+  `kriptoburak/xpoz-agent-skills`, fetched upstream `main`, merged, resolved the
+  README Quick Links conflict by keeping the repository page link plus the
+  TweetClaw OpenClaw resource note, validated with `git diff --check`,
+  conflict-marker scan, README markdown link check, and public-safety scan.
+  Pushed merge commit `f4533c1256f8535a501ae76e8b1cddabadb73898` to
+  `codex/add-tweetclaw-openclaw-resource` and posted
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4835192358.
+  Final readback: open, ready, mergeable, CLEAN, no checks, head `f4533c1`.
+- Fresh target screening: duplicate or prior-history checks blocked
+  `CloudAI-X/x-bookmarks-skill-graph`, `win4r/x-post-skill`,
+  `Aanlifire/social-media-automation-skills`,
+  `HunterSUNSUN/social-media-research-ops`, `KiKi-Builds/AI-Briefing-Skill`,
+  `indranilbanerjee/socialforge`, `jedi4ever/social-skills`,
+  `liyupi/yupi-hot-monitor`, `skernelx/MySearch-Proxy`,
+  `ReneHdzGtz/web3-community-marketing`, and several older crawler lanes.
+  `AnsirStudio/social-video-planner-skill`, `bobosdaddy/claw-friends`, and
+  `checkra1neth/xbird-skill` were screened as backup or weaker-fit routes.
+  `MohibShaikh/clawvet` was selected because it is an MIT-signaled validator
+  repo with no TweetClaw/Xquik duplicate and a strong target-native fixture
+  surface.
+- New external PR: cloned `MohibShaikh/clawvet`, read README, package scripts,
+  scanner tests, fixtures, edge tests, and scanner code. Added
+  `apps/api/test/fixtures/benign-social-approval/SKILL.md` and a scanner test
+  in `apps/api/test/scanner.test.ts` for an approval-gated social evidence
+  skill. TweetClaw appears only as source evidence in the fixture.
+- ClawVet fork safety: existing `kriptoburak/clawvet` had wrong parent
+  `BeardedChop/clawvet`, so it was not used. A push to that wrong-parent fork
+  failed before use. Created correct fork `kriptoburak/mohibshaikh-clawvet`
+  parented to `MohibShaikh/clawvet`, branch `codex/social-approval-fixture`,
+  commit `6e6e022e3be269b2e5ed005d957d07c40f6d2334`.
+- ClawVet validation: `npm ci` passed with ignored lifecycle scripts and no
+  audit network change; `npm --workspace apps/api test -- scanner.test.ts`
+  passed 7 tests; `npm --workspace apps/api test` passed 7 files and 63 tests.
+  A mistaken `packages/shared` test command with Jest-only args failed and was
+  rerun correctly; the correct shared package test failed before tests because
+  target dependency `obug` was missing under the target's workspace Vitest
+  install path. `git diff --check`, conflict-marker scan, and changed-diff
+  public-safety scans passed.
+- ClawVet PR opened: https://github.com/MohibShaikh/clawvet/pull/5. Exact
+  readback: open, ready, mergeable, UNSTABLE only because CodeRabbit was the
+  sole check, head `6e6e022e3be269b2e5ed005d957d07c40f6d2334`. Final follow-up
+  readback showed CodeRabbit SUCCESS and no actionable comments.
+- Official OpenClaw and release hygiene: current docs routes returned HTTP 200
+  for `llms.txt`, CLI plugin install/update/inspect docs, CLI skills, plugin
+  manifest, tool plugins, ClawHub publishing, ClawHub skill format, plugin
+  validation fixes, gateway sandbox/tool/elevated policy, secrets, concepts
+  agent, agent runtime architecture, debugging, and update testing. ClawHub
+  route `https://clawhub.ai/plugins/@xquik/tweetclaw` and OpenClaw Directory
+  route `https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200.
+  `npm view openclaw` returned latest `2026.6.10`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned published
+  `1.6.31`; source remains `1.6.32`; `npm view clawhub` returned `0.23.0`.
+  `npm audit --audit-level=moderate --json` reported 0 vulnerabilities and
+  `npm run check-openclaw-platform-fitness` passed for source targeting
+  OpenClaw `2026.6.10`.
+- Public hygiene before compact edits: markdown link checks passed for README,
+  OpenClaw setup docs, agent workflow docs, compact discoverability audit, and
+  compact release memory. Diff and comment scans exposed no secrets, private
+  implementation details, or unsupported public claims. Socket.dev token was not
+  used.
+- Self-improvement: always verify the fork parent when a target repo name
+  collides with an existing unrelated fork under `kriptoburak`. For validator
+  repos, prefer tested benign fixtures over generic docs mentions. When a full
+  audit-URL GraphQL inventory stalls, switch to bounded current crawler
+  PR/readback coverage, record the blocker, and avoid any complete all-GitHub
+  claim.
+- Post-edit TweetClaw validation: `npm run check-memory-md-size` passed at
+  15,350/15,360 bytes, `git diff --check` passed, markdown link checks passed
+  for README, OpenClaw setup docs, agent workflow docs, compact audit, and
+  compact release memory, changed-diff public safety scan was clean, and
+  `npm run check:all` passed including OpenClaw fitness, package artifact check,
+  and 168 tests with 100 percent coverage.

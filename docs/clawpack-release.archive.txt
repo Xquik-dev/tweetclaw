@@ -1711,3 +1711,22 @@ alpha `2026.5.19-alpha.1`; `npm view clawhub` returned `0.23.0`; published
 canonical page, with npm as canonical install metadata. npm publish auth and
 ClawHub owner-scope blockers remain unchanged, so no release or ClawHub publish
 was attempted.
+
+## 2026-06-29 17:26 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after PR inventory,
+two external PR repairs, and the new ClawVet validator PR. Current OpenClaw docs
+returned HTTP 200 for `llms.txt`, CLI plugin install/update/inspect docs, CLI
+skills, plugin manifest docs, tool plugin docs, ClawHub publishing, ClawHub skill
+format, ClawHub plugin validation fixes, gateway sandbox/tool/elevated policy,
+secrets, concepts agent, agent runtime architecture, debugging, and update
+testing. `npm view openclaw` returned latest `2026.6.10`, beta
+`2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+`0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` while source remains
+unpublished `1.6.32`. `npm audit --audit-level=moderate --json` reported 0
+vulnerabilities and `npm run check-openclaw-platform-fitness` passed. ClawHub
+route `https://clawhub.ai/plugins/@xquik/tweetclaw` still redirects to the live
+canonical page, with npm as canonical install metadata. OpenClaw Directory route
+`https://openclawdir.com/plugins/tweetclaw-m2h8cr` returned HTTP 200. npm
+publish auth and ClawHub owner-scope blockers remain unchanged, so no release or
+ClawHub publish was attempted.
