@@ -198,7 +198,8 @@ archive, before any outreach or duplicate decision.
   with 0 errors and 23 action rows. This is not a complete all-GitHub claim.
 - Repair gate: `blessonism/openclaw-skills#4` had current actionable bot review
   feedback. Pushed docs repairs `b93258c` and `24f5812`, commented validation,
-  and left only pending CodeRabbit re-review plus stale/comment-only bot text.
+  and final readback is CLEAN with CodeRabbit status success; only stale
+  comment-only bot review text remains.
 - Fresh PR: opened https://github.com/tonone-ai/tonone/pull/109 from verified
   `kriptoburak/tonone` fork with a Buzz source-evidence checkpoint. Readback:
   open, ready, mergeable, BLOCKED/review-required, no checks or comments.
