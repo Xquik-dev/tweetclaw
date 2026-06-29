@@ -42026,3 +42026,95 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   immediately before pushing; GraphQL `headRepository` may be blank for some
   old PRs, and same-name forks under `kriptoburak` can point at unrelated
   parents.
+
+## 2026-06-29 06:16 UTC Heartbeat
+
+- Runtime limitation: the current Codex desktop runtime did not expose model,
+  speed, or reasoning-effort selectors, so Codex 5.5 Fast mode and extra-high
+  effort could not be explicitly selected. The run continued and recorded the
+  limitation.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260629-061600/crawl.json --research-proxy`
+  with bounded 12s request and proxy warmup timeouts, limit 240, search-pages 1,
+  per-query-limit 8, concurrency 8, session
+  `tweetclaw-20260629-061600`, and focused PR, TweetClaw, OpenClaw, MCP,
+  SKILL.md, `.agents/skills`, social, Twitter/X, catalog, registry, and
+  plugin queries. Output parsed as strict JSON with 24 opportunities and 0
+  crawler errors. Crawler repo-mode REST readbacks covered 24 repos and found
+  17 open authored PRs; `allalongitwas/XActions` returned the expected 404.
+- PR inventory: broad authored open PR partitions read
+  `updated:>=2026-06-29` 96, `2026-06-28` 57, `2026-06-27` 1,
+  `2026-06-26` 2, `2026-06-25` 3, `2026-06-24` 20,
+  `2026-06-22..2026-06-23` 250, `2026-06-15..2026-06-21` 686,
+  `2026-06-01..2026-06-14` 650, `2026-05-01..2026-05-31` 549,
+  `2026-04-01..2026-04-30` 52, `2026-01-01..2026-03-31` 5,
+  `2025-01-01..2025-12-31` 1, and `updated:<2025-01-01` 0. No partition hit
+  the 1000-result cap.
+- Exact PR reads: `gh pr view` exact-read 114 current, crawler, and known
+  audit-blocker PRs with state, base/head, mergeability, reviews, comments,
+  checks, commits, and maintainer-modify state. No dirty merge conflicts were
+  found in the exact set. Older broad authored PRs were not all exact-read in
+  this short run because the current global authored open set is over 2300; the
+  previous run had just exact-read the older known audit set, so this run
+  focused on current updates, crawler repos, and audit blockers and did not
+  claim all-history exact coverage.
+- Repairs and blockers: answered maintainer workflow question on
+  `DefenderOfBasic/twitter-semantic-search#2` at
+  https://github.com/DefenderOfBasic/twitter-semantic-search/pull/2#issuecomment-4829616096
+  with a local flat-export, convert, embed, and query workflow. `higress-group/openapi-to-mcpserver#38`
+  was `MERGEABLE` and `UNSTABLE` with DCO success, sensitive scan success, and
+  CLA Assistant pending at a web signing/recheck URL; recorded as a platform
+  gate rather than automating a signature. `antstudiocz/ant-marketplace#37`
+  Vercel failure was target-owner authorization. `Arindam200/awesome-ai-apps#226`
+  remains blocked on maintainer-requested Nebius demo video assets. Old
+  `Hashi-Ai-Dev/openclaw-clawdoc#6`, `bravian1/social-agent#4`,
+  `denial-web/clawguard#1`, `reall8164/wechat-openclaw-plugin#1`, and
+  `Saminiscool/twitter-ai-agent#2` repairs remained non-actionable after the
+  latest readbacks.
+- Fresh candidate screening: searched compact audit and archive, then target
+  metadata/content and open/closed PRs and issues for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, and OpenClaw variants. Most crawler candidates were
+  duplicate-blocked or already recorded. `ayush-oswal/twitter-automation` was
+  fresh enough for direct PR work: non-archived, non-fork, PRs/issues enabled,
+  package license MIT in `package.json`, README says MIT, no target
+  TweetClaw/Xquik/OpenClaw PR or issue history, and direct fit as a Twitter
+  posting MCP server.
+- New external PR: forked to verified parented fork
+  `kriptoburak/twitter-automation`, branch
+  `codex/document-tweetclaw-context-workflow`, commit `808681a`, and opened
+  https://github.com/ayush-oswal/twitter-automation/pull/1. The PR adds a
+  README workflow for collecting or reviewing X/Twitter source context with
+  TweetClaw or another collector before passing only the final user-approved
+  tweet text to `twitter-automation`, plus a prompt and repository token-safety
+  note. Target validation passed: `git diff --check`,
+  `npx --yes prettier@3.6.2 --check README.md`, and
+  `npx --yes markdown-link-check README.md --quiet`. Final readback: open,
+  ready, maintainer edits allowed, `MERGEABLE`, `CLEAN`, no checks configured.
+- Official OpenClaw and package checks: `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, `https://docs.openclaw.ai/plugins/manifest`,
+  `https://docs.openclaw.ai/cli/skills`, `https://docs.openclaw.ai/tools/plugin`,
+  `https://docs.openclaw.ai/plugins/sdk-runtime`, `https://docs.openclaw.ai/help/debugging`,
+  and `https://docs.openclaw.ai/clawhub/publishing` returned HTTP 200.
+  `https://openclaw.ai/llms.txt` still returned 200, but old
+  `https://openclaw.ai/cli/plugins`, `/plugins`, `/clawhub`, `/skills`,
+  `/manifest`, `/config`, and `/debugging` returned 404. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view clawhub version` returned `0.23.0`; published
+  `@xquik/tweetclaw` remained `1.6.31`; source remained `1.6.32`. ClawHub
+  canonical route returned HTTP 200 and still exposed `1.6.26`. OpenClawDir
+  returned HTTP 200.
+- TweetClaw validation and public hygiene: `npm run check-openclaw-platform-fitness`
+  passed for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  `npm audit --audit-level=moderate` reported 0 vulnerabilities. Markdown link
+  checks passed for README, compact audit, and compact release memory. Active
+  public surfaces showed no stale `openclaw.ai` docs links outside audit/release
+  memory. Public comments and PR bodies were inspected for secrets, restricted
+  implementation details, internal cost mechanics, unsupported claims, and
+  stale metadata.
+- Prompt and memory: prompt text measured 12,098 bytes. Compact Markdown memory
+  was checked with `npm run check-memory-md-size` after updates. Self-improvement:
+  future OpenClaw route checks should start from `docs.openclaw.ai` Markdown
+  exports, and old `openclaw.ai` deep docs routes should be treated as stale
+  unless `llms.txt` or a current redirect proves otherwise. No automation prompt
+  edit was needed.

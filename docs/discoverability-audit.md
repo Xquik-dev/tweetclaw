@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 05:44 UTC: latest `2026.6.10`, beta
-  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Core llms, `/cli/plugins`,
-  plugin, ClawHub, and skill routes were live. `llms-full.txt`, manifest,
-  config, debugging, old permission, runtime, and Codex harness routes 404;
-  `/cli/plugins` covers install, update, and inspect.
+- OpenClaw npm checked 2026-06-29 06:16 UTC: latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
+  `docs.openclaw.ai`; llms, CLI plugins, manifest, skills, ClawHub publishing,
+  plugin-system, and SDK runtime pages returned HTTP 200. Old `openclaw.ai`
+  deep docs routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 05:44 UTC after redirecting to
+  page on 2026-06-29 06:16 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 05:44 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 06:16 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +191,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 05:44 UTC: Codex 5.5 Fast mode and extra-high selectors were not
-  available. Crawler session `tweetclaw-20260629-054427` returned 29 PR, skill,
-  social, X, OpenClaw, MCP, agent, catalog, and Streamlit opportunities.
+- 2026-06-29 06:16 UTC: Codex 5.5 Fast mode and extra-high selectors were not
+  available. Crawler session `tweetclaw-20260629-061600` returned 24 PR, skill,
+  social, X, OpenClaw, MCP, agent, and catalog opportunities.
 - PR inventory: authored open PR partitions read through `updated:<2025-01-01`
-  with no cap; exact repo reads covered 49 crawler and audit-tracked PRs.
-  Repaired `denial-web/clawguard#1`, `reall8164/wechat-openclaw-plugin#1`, and
-  `Saminiscool/twitter-ai-agent#2`; `Arindam200/awesome-ai-apps#226` remains
-  blocked on a maintainer-requested Nebius demo video.
-- New PR: `SujayVivek/AgentY#1` documents local setup, required env variables,
-  validation, and credential handling for the NestJS Twitter bot. Final
-  readback was open, ready, `MERGEABLE`, `CLEAN`, with GitGuardian success.
-- Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
-  prompt bytes, memory-size, security-boundary handling, and self-improvement
-  details are archived.
+  with no cap; exact reads covered 114 current, crawler, and audit-blocker PRs.
+  Replied to `DefenderOfBasic/twitter-semantic-search#2`; CLA and external
+  auth gates were recorded without unsafe automation.
+- New PR: `ayush-oswal/twitter-automation#1` documents using TweetClaw as
+  optional X/Twitter source context before user-approved MCP posting. Final
+  readback was open, ready, `MERGEABLE`, and `CLEAN`.
+- Maintenance: OpenClaw docs moved to `docs.openclaw.ai`, npm, ClawHub,
+  TweetClaw links, public hygiene, prompt bytes, memory-size, and
+  self-improvement details are archived.
 
 ## Reporting Checklist
 
