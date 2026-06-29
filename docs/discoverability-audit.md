@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 06:43 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 07:05 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
   `docs.openclaw.ai`; llms, CLI plugins, manifest, skills, ClawHub publishing,
   plugin-system, and SDK runtime pages returned HTTP 200. Old `openclaw.ai`
   deep docs routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 06:43 UTC after redirecting to
+  page on 2026-06-29 07:05 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 06:43 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 07:05 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,19 +191,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 06:43 UTC: Codex 5.5 Fast mode and extra-high selectors were not
-  available. Crawler session `tweetclaw-20260629-064357` returned 24 PR, skill,
+- 2026-06-29 07:05 UTC: Codex 5.5 Fast mode and extra-high selectors were not
+  available. Crawler session `tweetclaw-20260629-070500` returned 24 PR, skill,
   social, X, OpenClaw, MCP, agent, and catalog opportunities.
 - PR inventory: authored open PR partitions read through `updated:<2025-01-01`
-  with no cap; exact reads covered 119 current, crawler, and audit-blocker PRs.
-  No safe repairable maintainer request, review, conflict, DCO/CLA, generated
-  drift, or bot finding blocked outreach.
-- New PR: `anas-aqeel/Agent-X#1` documents using TweetClaw as optional reviewed
-  X/Twitter source context while keeping Agent-X as the only publisher. Final
-  readback was open, ready, and `MERGEABLE`, with no checks configured.
-- Maintenance: OpenClaw docs moved to `docs.openclaw.ai`, npm, ClawHub,
-  TweetClaw links, public hygiene, prompt bytes, memory-size, and
-  self-improvement details are archived.
+  with no cap; exact reads covered 121 current, crawler, and audit-blocker PRs.
+  No safe repairable maintainer request, conflict, check failure, DCO/CLA,
+  generated drift, or bot finding blocked outreach.
+- New PR: `lmanchu/orpheus-curator#1` documents TweetClaw as optional public
+  X/Twitter evidence before Orpheus human review. Gemini feedback was fixed;
+  final readback was open, ready, `MERGEABLE`, and GitGuardian success.
+- Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
+  prompt bytes, memory-size, and self-improvement details are archived.
 
 ## Reporting Checklist
 
