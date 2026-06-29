@@ -43143,3 +43143,110 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   owner has multiple similarly named forks, verify both fork owner and parent
   immediately before setting the push remote, because GitHub may create a
   suffixed fork such as `x-research-skill-1`.
+
+## 2026-06-29 12:05 UTC Heartbeat
+
+- Runtime selector limitation: this Codex runtime did not expose model, speed,
+  or reasoning-effort selectors, so Codex 5.5 Fast mode and extra-high effort
+  could not be selected directly. The run continued and this limitation was
+  recorded for the audit and heartbeat outcome.
+- Crawler-first discovery: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, research proxy,
+  bounded request and warmup timeouts, limit 360, one search page, per-query
+  limit 8, concurrency 8, session `tweetclaw-20260629-114402`, and focused
+  query packs for authored PRs, TweetClaw, OpenClaw, MCP, SKILL.md,
+  `.agents/skills`, social, X/Twitter, Codex, Claude, agent skill,
+  awesome-list, registry, fork, catalog, validator, package-tooling, source
+  packet, and X research lanes. Output parsed as valid JSON with 28
+  opportunities, 28 repos, and 0 crawler errors.
+- Crawler repo mode: first repo-mode attempt used macOS `awk` with unsupported
+  `%q`, which prefixed repo names with `%` and produced bad repo paths. Reran
+  with simple safe argument expansion over the same 28 repos; proxy quality
+  limited repo-mode output to 4 opportunities with 0 crawler errors. Continued
+  through exact repo PR lists and GitHub metadata fallbacks.
+- Complete PR inventory method: used crawler repo PR lists over 28 repos,
+  crawler repo-mode output, compact audit and archive duplicate context,
+  focused lane searches, exact `gh pr view` readbacks, review-thread GraphQL for
+  the selected repair, final target PR readbacks, and fork metadata
+  verification. Crawler repo PR lists found 21 authored open PRs. Lane search
+  returned 477 unique URLs. Exact readback target set was 491 unique current
+  crawler and lane PR URLs.
+- Inventory blockers and counts: exact reads succeeded for all 491 current PR
+  URLs with 0 failures. Broad lane counts were TweetClaw 100, OpenClaw 100,
+  ClawHub 100, x-twitter-scraper 100, MCP Twitter 1, SKILL.md Twitter 0, agent
+  skills Twitter 0, social media agent 4, package tooling OpenClaw 0, validator
+  OpenClaw 0, OpenClaw Twitter skill 0, Codex Twitter skill 0, TweetClaw source
+  packet 23, X research skill 15, OpenClaw plugin updated since 2026-06-01 79,
+  TweetClaw updated since 2026-06-01 100, and x-twitter-scraper updated since
+  2026-06-01 100. Do not claim all in-scope PRs were exhaustively checked
+  because several broad lanes remain capped at 100 results.
+- Inventory triage: exact current reads found 491 open PRs, 467 mergeable, 21
+  conflicting, 3 unknown mergeability, comments on 86, reviews on 42, check
+  rollups on 68, 2 changes-requested PRs, and 14 PRs with failed,
+  cancelled, action-required, or non-success checks. `Hashi-Ai-Dev/openclaw-
+  clawdoc#6` stayed changes-requested from older feedback; `Arindam200/awesome-
+  ai-apps#226` remained blocked on the maintainer-requested 10 to 15 second
+  video demo.
+- PR repair completed: selected newest conflict
+  `Aqmar777/openclaw-competitive-intel#1` because it had no unresolved review
+  threads and no checks, only a recurring README conflict. Cloned verified fork
+  `kriptoburak/openclaw-competitive-intel` with parent
+  `Aqmar777/openclaw-competitive-intel`, merged upstream `main` into
+  `codex/tweetclaw-x-source`, resolved README conflicts by keeping the existing
+  NHS badge area and canonical download badge, and corrected the "Need Help"
+  GitHub-page link from the raw ZIP asset to the repository page. Pushed commit
+  `8c27e08a63b4ab61dc31ab07420d99bab8b68509`. Validation passed:
+  conflict-marker scan, `git diff --check`, Python compile for skills and tests,
+  `python3 -m unittest tests/test_tweetclaw_fetcher.py`, `bash -n install.sh`,
+  README and docs markdown-link-check, and changed-diff public-hygiene scan.
+  Final readback for
+  `https://github.com/Aqmar777/openclaw-competitive-intel/pull/1`: open, ready,
+  `MERGEABLE`, head `8c27e08`, no checks.
+- Fresh candidate screening: `mvanhorn/last30days-skill` was duplicate-blocked
+  by prior merged Xquik/TweetClaw PRs #191 and #483 plus issue history.
+  `win4r/x-post-skill` was selected after compact audit, archive, target
+  content, target PRs, target issues, and metadata checks found no TweetClaw,
+  `@xquik/tweetclaw`, TweetClaw URL, npm URL, ClawHub, Xquik, x-twitter-scraper,
+  or OpenClaw duplicate in the target. Metadata: public, non-fork, non-archived,
+  default branch `main`, issues enabled, no license metadata, pushed
+  2026-01-29. Missing license metadata did not block a direct, original docs PR
+  under the current rule.
+- New external PR: `kriptoburak/x-post-skill` already existed as a fork of
+  `fkysly/x-post-skill`, so GitHub created verified fork
+  `kriptoburak/x-post-skill-1` with parent `win4r/x-post-skill`. Branch
+  `codex/add-tweetclaw-research-context`, commit
+  `dd69d194f796516bb392fc40415d6d7400c3667a`, opened
+  https://github.com/win4r/x-post-skill/pull/1. The PR adds optional
+  TweetClaw/OpenClaw research-context guidance to README and SKILL.md, treats
+  TweetClaw packets as reviewed source input only, and keeps final copy, media,
+  screenshot capture, and posting approval inside the target skill.
+- New PR validation and readback: `git diff --check`, `python3 -m py_compile
+  x-post.py`, SKILL frontmatter bounds check, added-line public-hygiene and dash
+  scan, and README markdown-link-check passed with an ignore pattern for the
+  target's pre-existing placeholder `https://x.com/i/status/123` example URL.
+  Final readback for `https://github.com/win4r/x-post-skill/pull/1`: open,
+  ready, `MERGEABLE`, head `dd69d19`, no comments, no reviews, no checks, files
+  `README.md` and `SKILL.md`.
+- Official OpenClaw and package checks: HTTP 200 returned for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/cli/skills`, `/tools/plugin`,
+  `/plugins/sdk-runtime`, `/help/debugging`, `/clawhub/publishing`,
+  `https://clawhub.ai/plugins/@xquik/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned `1.6.31`;
+  `npm view clawhub version` returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm audit --audit-level=moderate`
+  reported 0 vulnerabilities. `npm run check-openclaw-platform-fitness` passed
+  for source `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.10`.
+  Markdown link checks passed for TweetClaw README, compact audit, compact
+  release memory, and handled target content. `npm run check-memory-md-size`,
+  archive/compact dash scans, `git diff --check`, and `npm run check:all`
+  passed before the TweetClaw audit commit. Sensitive-pattern and stale-claim
+  scans found no issue in the new public diffs.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted automation
+  prompt measured 12,432 bytes and already preserves Codex 5.5 Fast mode,
+  extra-high reasoning wording, and the instruction not to use standard speed
+  mode when Fast mode is available. Durable lesson repeated: when a target name
+  has multiple similarly named forks, verify fork parent immediately before
+  pushing; GitHub may create suffixed forks such as `x-post-skill-1`.

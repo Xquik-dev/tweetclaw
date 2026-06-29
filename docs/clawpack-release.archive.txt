@@ -1189,6 +1189,24 @@ and ClawHub owner-scope blockers remain unchanged, so no release or ClawHub
 publish was attempted. Prompt bytes remained 12,432, and no release-prompt edit
 was needed.
 
+## 2026-06-29 12:05 UTC Heartbeat Release Hygiene
+
+OpenClaw platform and release-adjacent checks were refreshed after complete
+current PR inventory, one conflict repair, and the new external PR. Official
+docs returned HTTP 200 for llms export, CLI plugin docs, manifest docs, plugin
+permission requests, skills docs, tool plugin docs, SDK runtime docs, debugging
+docs, ClawHub publishing docs, the ClawHub TweetClaw route, and the OpenClaw
+Directory TweetClaw listing. `npm view openclaw` returned latest `2026.6.10`,
+beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`; `npm view clawhub`
+returned `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` while source
+remains `1.6.32`. `npm audit --audit-level=moderate` reported 0 vulnerabilities
+and `npm run check-openclaw-platform-fitness` passed. ClawHub route
+`https://clawhub.ai/plugins/@xquik/tweetclaw` still redirects to the live
+canonical page, but latest ClawHub listing remains `1.6.26`. npm publish auth
+and ClawHub owner-scope blockers remain unchanged, so no release or ClawHub
+publish was attempted. Prompt bytes remained 12,432, and no release-prompt edit
+was needed.
+
 ## 2026-06-23 21:39 UTC Heartbeat Release Hygiene
 
 OpenClaw platform and release-adjacent checks were refreshed after outreach,
