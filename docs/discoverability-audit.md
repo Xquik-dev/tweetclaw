@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished because safe local npm
   auth returned E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-29 09:18 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-29 09:38 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current official docs live on
   `docs.openclaw.ai`; llms, CLI plugins, manifest, skills, ClawHub publishing,
   plugin-system, and SDK runtime pages returned HTTP 200. Old `openclaw.ai`
   deep docs routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned a live HTTP 200
-  page on 2026-06-29 09:18 UTC after redirecting to
+  page on 2026-06-29 09:38 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-29 09:18 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-29 09:38 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,21 +191,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-29 09:18 UTC: Codex 5.5 Fast mode and extra-high selectors were not
-  available. Crawler session `tweetclaw-20260629-084827` returned 30 PR, skill,
+- 2026-06-29 09:38 UTC: Codex 5.5 Fast mode and extra-high selectors were not
+  available. Crawler session `tweetclaw-20260629-092927` returned 36 PR, skill,
   social, X, OpenClaw, MCP, agent, and catalog opportunities with 0 errors.
-- PR inventory: broad authored search partitioned all open `kriptoburak` PRs
-  without rate-limit or cap, finding 2392 unique open PRs; crawler repo mode
-  found 21 authored PRs. Full 2668-URL GraphQL exact read was too large, so the
-  current exact set covered 138 PRs with 0 read errors and 27 attention entries.
-- Repairs: resolved conflicts and pushed `warlockoussama/twitter-cli#1`,
-  `reall8164/wechat-openclaw-plugin#1`,
-  `AbdNour627/awesome-openclaw-configs#1`, and
-  `Aqmar777/openclaw-competitive-intel#1`; all final readbacks were open, ready,
-  and `MERGEABLE`.
-- New PR: `ythx-101/x-monitor#6` documents TweetClaw as optional reviewed
-  OpenClaw input for reply/search context and fixes a broken Camofox link.
-  Final readback was open, ready, `MERGEABLE`, head `a88c904`.
+- PR inventory: broad authenticated search hit a secondary rate limit, so
+  current exact reads used crawler repo lists, compact memory, recent archive
+  URLs, and known blockers. Crawler repo mode found 23 authored PRs; current
+  exact reads covered 38 PRs with 0 errors and no branch-actionable conflicts.
+- New PR: `ALT-F1-OpenClaw/openclaw-skill-x-twitter#1` adds a TweetClaw
+  reviewed-research workflow, keeps posting user-approved, and adds missing
+  `LICENSE`. Final readback was open, ready, `MERGEABLE`, head `1279017`.
 - Maintenance: OpenClaw docs, npm, ClawHub, TweetClaw links, public hygiene,
   prompt bytes, memory-size, and self-improvement details are archived.
 

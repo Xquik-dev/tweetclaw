@@ -42734,3 +42734,96 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   Fast mode is available. Durable lesson: for reply-monitor skills, a useful
   TweetClaw placement is optional reviewed input context plus read-only local
   drafting, paired with broken-link repair when available.
+
+## 2026-06-29 09:29 UTC Heartbeat
+
+- Runtime and safety: Codex 5.5 Fast mode, explicit speed selection, and
+  extra-high effort selection were not available in this runtime, so the
+  limitation was recorded and the run continued. TweetClaw stayed on `master`
+  with only the pre-existing untracked path `0`; no dev server, Browser,
+  Chrome, production SSH, secret read, Context7 work, or destructive command was
+  used. `Xquik-dev/tweetclaw` had no open PRs or issues.
+- Crawler-first coverage: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with session `tweetclaw-20260629-092927`, strict JSON output to
+  `/tmp/tweetclaw-heartbeat-20260629-092927/crawl.json`, research proxy,
+  12000 ms request and proxy warmup timeouts, limit 260, one search page,
+  per-query limit 8, and concurrency 8. Query pack covered authored PRs,
+  TweetClaw, `@xquik/tweetclaw`, OpenClaw, MCP, Codex, Claude, agent, social,
+  X/Twitter skills, `SKILL.md`, `.agents/skills`, skill dirs, awesome lists,
+  registries, generated catalogs, forks, and package-tooling lanes. Crawler
+  returned 36 opportunities and 0 errors.
+- PR inventory: the broad authenticated search command initially used a bad
+  single-argument query form and then hit a GitHub secondary rate limit on
+  `updated:2026-06-27`; broad authenticated search stopped for the run. Crawler
+  repo mode checked 36 repos and found 23 open authored PRs with 0 errors. A
+  full audit URL scrape found 1309 historical PR URLs and was recorded as too
+  large for exact read in this run. The fallback current exact set used crawler
+  repo PRs, compact memory, recent archive URLs, and known blocker URLs.
+- Exact PR reads: current exact set contained 38 PR URLs. `gh pr view` exact-read
+  all 38 with 0 read errors, including state, draft state, mergeability,
+  base/head, commits, comments, reviews, check rollups, files, and
+  maintainer-modify state. Triage found 12 review or comment flags. No PR in
+  the exact set was conflicting. Known non-branch blockers remained
+  `Arindam200/awesome-ai-apps#226` for maintainer-requested demo video assets,
+  `higress-group/openapi-to-mcpserver#38` for CLA, and
+  `antstudiocz/ant-marketplace#37` for target-owner Vercel authorization.
+- Review follow-up: `ythx-101/x-monitor#6`, `lalit1517/PostPilot#38`, and
+  `denial-web/clawguard#1` had no new actionable code or docs changes. The
+  `lmanchu/orpheus-curator#1` Gemini review suggested replacing
+  `content-generator.js` with `twitter-curator.js` in the TweetClaw workflow;
+  exact branch read showed that the TweetClaw workflow already uses
+  `twitter-curator.js`. The separate suggestion to use an em dash in a table was
+  not applied because the active workspace policy forbids writing U+2014.
+- Fresh target screening: `benmillerat/openclaw-x-bookmark-archiver` was
+  duplicate-blocked by existing `#1`, and `yongkangc/x-skill` was blocked by
+  existing `#1`. `seph1709/x-twitter`,
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter`, and
+  `huatianwan/researchwang-bookmark-assistant` had no TweetClaw, Xquik,
+  `@xquik/tweetclaw`, x-twitter-scraper, ClawHub, or OpenClaw PR or issue hits.
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter` was selected because it is a
+  posting-focused OpenClaw skill with a visible README badge area, MIT package
+  metadata, no duplicate history, a missing `LICENSE` link target, and a
+  target-native need for reviewed X/Twitter research context before final
+  user-approved posting.
+- New external PR: forked `ALT-F1-OpenClaw/openclaw-skill-x-twitter` to verified
+  fork `kriptoburak/openclaw-skill-x-twitter` with parent
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter`, branch
+  `codex/document-tweetclaw-research-context`. Opened
+  https://github.com/ALT-F1-OpenClaw/openclaw-skill-x-twitter/pull/1 with
+  commit `127901706617af113efd8bb4ce2b42472e5724cb`. The PR adds TweetClaw as
+  an optional OpenClaw companion for reviewed X/Twitter source context before
+  this skill posts tweets, replies, threads, or media; keeps final posting under
+  explicit user approval; converts edited README and SKILL em dashes to ASCII
+  hyphens per workspace policy; and adds the missing MIT `LICENSE` file
+  referenced by README. Final readback: open, ready, `MERGEABLE`, no comments,
+  no reviews, no checks, files `LICENSE`, `README.md`, and `SKILL.md`.
+- Target validation and hygiene for
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter#1`: README and SKILL
+  markdown-link-check passed, edited-file dash scan passed, `git diff --check`
+  passed, `npm ci` with ignored lifecycle scripts and no audit completed,
+  `node --check scripts/xpost.mjs` passed, and `node scripts/xpost.mjs --help`
+  ran successfully. Public-hygiene diff scan found only expected credential and
+  API-key wording already present in the target or introduced as generic safety
+  guidance.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/cli/skills`, `/tools/plugin`,
+  `/plugins/sdk-runtime`, `/help/debugging`, `/clawhub/publishing`,
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`, and
+  `https://openclawdir.com/plugins/tweetclaw-m2h8cr`. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned latest `1.6.31`;
+  `npm view clawhub version` returned `0.23.0`.
+- TweetClaw validation and public hygiene: `npm run
+  check-openclaw-platform-fitness` passed for source `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.10`. `npm audit --audit-level=moderate` reported
+  0 vulnerabilities. Markdown link checks passed for TweetClaw README, compact
+  audit, compact release memory, and handled target content.
+- Prompt self-improvement: no saved prompt edit was needed. Persisted prompt
+  measured 12098 bytes and already preserves Codex 5.5 Fast mode, extra-high
+  reasoning wording, and the instruction not to use standard speed mode when
+  Fast mode is available. Durable lesson: for posting-focused X/Twitter skills,
+  the strongest TweetClaw placement is reviewed source context before final
+  human-approved posting, plus target-native hygiene fixes such as missing
+  license links when present.
