@@ -44766,6 +44766,14 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   clawhub` returned `0.23.0`. `npm audit --audit-level=moderate --json`
   reported 0 vulnerabilities, and `npm run check-openclaw-platform-fitness`
   passed.
+- TweetClaw audit update: changed `docs/discoverability-audit.md` and this
+  archive only. Final validation passed `npm run check-memory-md-size`
+  (15,262/15,360 bytes), `git diff --check`, markdown link checks for README
+  and public docs, public-safety diff scan, and `npm run check:all` (168 tests,
+  100 percent coverage). Pushed all audit documentation commits to `master`;
+  final branch readback matched `origin/master`, with only pre-existing
+  untracked `0` left untouched. Persisted prompt was not edited, so no prompt
+  byte measurement was needed.
 - Self-improvement: for high-volume authored PR monitoring, first use search
   partitions for counts, then exact-read a focused action set with short
   per-call timeouts. If exact `gh pr view` loops stall, stop them and continue
