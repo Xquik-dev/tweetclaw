@@ -40891,3 +40891,94 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   default path and make TweetClaw source evidence optional. Always repair
   maintainer comments before opening the next outreach PR, even when a fresh
   target has already been screened.
+
+## 2026-06-29 00:52 UTC Heartbeat
+
+- Runtime limitation: no GPT-5.5 or reasoning-effort selector was available in
+  this runtime, so the run continued on the available model and recorded the
+  limitation.
+- Crawler-first discovery: Xquik crawler session
+  `tweetclaw-20260629-002450` ran from `/Users/burak/Developer/xquik` with
+  focused authored-PR, SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex,
+  Claude, social, Twitter/X, awesome-list, registry, framework, and package
+  tooling queries. Strict JSON output was valid and returned 47 unique repos,
+  including `tclxtianxiang-yu/twitter-writer`, `Burnsedia/PydanticAI-Twitter-bot`,
+  `ALT-F1-OpenClaw/openclaw-skill-x-twitter`, skill repos, MCP repos, and
+  Twitter/X agent integrations.
+- PR inventory: broad `gh search prs --author kriptoburak --state open --limit
+  1000` failed at page 8 with GitHub search HTTP 403, so broad authenticated
+  search was stopped. Crawler exact repo PR lists covered 47 repos, returned 72
+  open PR rows, and had no failures. Archive URL reads attempted 1,281 PR URLs,
+  exact-read 1,243, and failed on 38 mostly inaccessible or deleted URLs. The
+  archive read found 1,012 open authored PRs; inventory is not complete because
+  broad search was rate-limited and the archive had 38 exact-read failures.
+- Repair gate: `bravian1/social-agent#4` had fresh valid CodeRabbit findings on
+  the prior repair. Pushed commit `a10692a18d4272ea3e7c6b71e8de083bcb53079f`
+  to `kriptoburak/social-agent:codex/add-xquik-direct-x-backend`, handling
+  non-JSON 2xx Xquik responses and `None` text values before `.strip()`.
+  Validation: `git diff --check`, `python3 -m py_compile agents/x.py
+  tests/test_x.py`, and `uv run --with pytest pytest tests/test_x.py` passed.
+  Commented validation:
+  https://github.com/bravian1/social-agent/pull/4#issuecomment-4828055900.
+  Final readback: open, mergeable, head `a10692a`, CodeRabbit status pending
+  because the bot hit its review rate limit.
+- Repair gate: `Saminiscool/twitter-ai-agent#2` was newly dirty after upstream
+  README changes. Merged upstream `main` and resolved the README-only conflict
+  in `3b6cb1e165b8bbfd827106878020b72540a1738b`, preserving the optional
+  Xquik backend docs once. Validation: conflict-marker scan, `git diff
+  --check`, Prettier check on README plus touched TypeScript/test files,
+  focused Biome lint, `npx tsc --noEmit`, `npx vitest run
+  tests/twitter-api.test.ts`, and README markdown-link-check passed. `npm ci`
+  reported pre-existing dependency advisories in the target lockfile; no
+  dependency files changed. Commented validation:
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4828078082.
+  Final readback: open, mergeable `CLEAN`, head `3b6cb1e`, no checks reported.
+- Fresh target screening: `tclxtianxiang-yu/twitter-writer` was selected from
+  crawler AI-framework results. It is a small Mastra Twitter/X writing agent,
+  default branch `master`, not a fork, not archived, pushed 2026-01-25, no
+  GitHub license metadata. Target content plus open and closed PR/issue
+  searches found no TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper,
+  OpenClaw, or ClawHub duplicate history.
+- External PR: created verified fork `kriptoburak/twitter-writer`, branch
+  `codex/add-tweetclaw-context`, commit
+  `707c85e12b15c45815355697e0ab6720828d9351`, and opened
+  https://github.com/tclxtianxiang-yu/twitter-writer/pull/1. The PR adds a
+  Mastra `tweetclaw-context` tool that reads optional local TweetClaw JSON
+  exports, normalizes common tweet, post, and evidence shapes, wires the tool
+  into the Twitter/X writing agent, and documents `TWEETCLAW_CONTEXT_FILE`.
+  Final readback: open, ready, mergeable `CLEAN`, no comments, no reviews, no
+  checks reported.
+- Target validation: for `twitter-writer`, `npm ci`, `git diff --check`, `npm
+  run build`, and `npx tsc --noEmit` passed. The target lockfile reported
+  pre-existing dependency advisories during `npm ci`; no dependency files were
+  changed or committed. Generated `.mastra` output and `node_modules` remained
+  ignored and unstaged.
+- Official OpenClaw and package checks: route probes returned HTTP 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/cli/skills`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/config-tools`, `/help/debugging`,
+  `clawhub.ai/plugins/@xquik/tweetclaw`, and OpenClaw Directory. `/sdk/runtime`
+  remained 404. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view clawhub` returned
+  `0.23.0`; published `@xquik/tweetclaw` remains `1.6.31` with older
+  `2026.5.4` OpenClaw metadata while source remains `1.6.32` targeting
+  `2026.6.10`.
+- TweetClaw validation and public hygiene: `npm run
+  check-openclaw-platform-fitness`, `npm audit --audit-level=moderate --json`,
+  markdown-link-check for README, OpenClaw setup, agent workflows, compact
+  audit, and compact release memory, and `npm run check:all` passed. `check:all`
+  ran 168 tests with 100 percent coverage. Diffs and comments were checked for
+  secrets, private implementation details, restricted provider/source names,
+  internal cost mechanics, unsupported claims, and stale metadata. No NHS badge
+  was added.
+- End-of-run gates before audit edit: compact Markdown memory measured
+  15149/15360 bytes; persisted automation prompt string measured 12013 escaped
+  bytes and the automation TOML measured 12314 bytes. No prompt edit was
+  needed.
+- Prompt self-improvement: for Mastra and similar agent frameworks, prefer a
+  small optional local-context tool that reads reviewed TweetClaw exports and
+  leaves live publishing or trend fetching out of scope unless the target
+  already owns that workflow. After broad GitHub search rate-limits, keep exact
+  crawler and archive reads, but record that inventory is incomplete when URL
+  read failures or search caps remain.
