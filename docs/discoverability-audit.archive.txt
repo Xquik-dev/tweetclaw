@@ -49481,7 +49481,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `npm run check-openclaw-platform-fitness`,
   `npm run check-package-artifact`, `npm run check-versions`, and full
   `npm run check:all` passed. The full gate included
-  `npm run check-memory-md-size` at 15243/15360 bytes, 168 passing tests, and
+  `npm run check-memory-md-size` at 15264/15360 bytes, 168 passing tests, and
   100% statement, branch, function, and line coverage. Public markdown link
   checks and direct URL probes for TweetClaw GitHub, ClawHub, OpenClaw docs,
   the repaired Saminiscool PR, and all 4 new PRs passed. Persisted prompt size
