@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 09:28 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 10:53 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
@@ -190,21 +190,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 10:32 UTC: runtime selectors unavailable. OpenClaw docs routes
+- 2026-06-30 10:53 UTC: runtime selectors unavailable. OpenClaw docs routes
   returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
   latest `1.6.31`.
-- Crawler sessions `tweetclaw-20260630-103206` and `...103206b` returned 3
-  duplicate opportunities and then 0 with proxy socket-close noise. Broad
-  GitHub PR search hit 403; exact-repo and archive readbacks continued.
-- PR repair gate exact-read 4 known open PRs plus 3 new PRs. Only Codex
-  usage-limit bot notes appeared; no actionable maintainer repair existed.
+- Xquik crawler session `tweetclaw-20260630-105305` returned 0 opportunities.
+  Broad authored PR search hit the 1000-result cap; archive extraction found
+  1,407 PR URLs and 961 relevant URLs. Exact-read newest 10 open PRs found no
+  actionable maintainer repair.
 - Three fresh PRs met the mandate:
-  https://github.com/Hainrixz/claude-ads/pull/7,
-  https://github.com/guia-matthieu/clawfu-skills/pull/8, and
-  https://github.com/automationcreators/claude-code-skills/pull/2. All read
-  back OPEN, non-draft, and MERGEABLE with no checks registered.
-- Duplicate gates, renamed-fork parent checks, target policies, validation,
-  public links, prompt bytes, memory size, and self-improvement are archived.
+  https://github.com/harrylabsj/social-media-batch-kit/pull/1,
+  https://github.com/anamipit/twitter-x/pull/1, and
+  https://github.com/boobutler/boo-skills/pull/1. All read back OPEN,
+  non-draft, and MERGEABLE with no checks registered.
+- Duplicate gates, fork parent checks, target policies, validation, public
+  links, prompt bytes, memory size, and self-improvement are archived.
 
 ## Reporting Checklist
 

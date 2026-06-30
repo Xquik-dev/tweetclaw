@@ -48454,3 +48454,120 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   bytes and the automation TOML measured 13,165 bytes. Durable lesson: always
   check fork parent even when the fork name exists; if the name points to a
   different upstream, use a renamed fork and verify parent before pushing.
+
+## 2026-06-30 10:53 UTC heartbeat
+
+- Runtime and source checks: runtime model, Fast speed, and effort selectors
+  were not exposed in this environment, so the run continued and records that
+  limitation. Official OpenClaw docs were rechecked by HTTP: `llms.txt`,
+  `llms-full.txt`, plugin install docs, manifest docs, tool plugins,
+  permission requests, SDK/runtime docs, install overrides, ClawHub publishing,
+  skill format, and debugging all returned HTTP 200. npm metadata showed
+  OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and TweetClaw npm latest `1.6.31`.
+- Crawler-first coverage: Xquik crawler session
+  `tweetclaw-20260630-105305` used focused SKILL, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social, Twitter/X, registry, validator, and package
+  tooling queries. It returned strict JSON with 0 opportunities. No GitHub
+  tokens were used by the crawler.
+- PR inventory and repair gate: broad authenticated `gh search prs --author
+  kriptoburak --state open --limit 1000` returned 1,000 results and therefore
+  hit the platform cap. Archive extraction found 1,407 PR URLs and 961
+  relevant URLs. Exact readbacks covered newest updated open relevant PRs:
+  `anuoua/swagger-doc-explorer-mcp#1`, `aryanmehrotra/mcpgen#1`,
+  `EliFuzz/api-docs-mcp#1`, `yangtaoer/hermes-skills#1`,
+  `wyp1157/hermes-skills#1`, `Agentic-Project-Workflow/hermes-skills#1`,
+  `automationcreators/claude-code-skills#2`,
+  `guia-matthieu/clawfu-skills#8`, `Hainrixz/claude-ads#7`, and
+  `Saminiscool/twitter-ai-agent#2`. All were OPEN and MERGEABLE. Comments
+  found on the newest set were Codex usage-limit or prior self-repair notes;
+  no actionable maintainer comments, review requests, CI failures, conflicts,
+  DCO/CLA blockers, generated-file drift, or valid bot findings were found.
+  Complete in-scope inventory was not claimed because the broad search bucket
+  hit the 1,000-result cap.
+- Fresh discovery and blockers: duplicate-blocked targets included
+  `eskobar95/guapo-agent-skills`, `JNHFlow21/ocl-social-fetcher`,
+  `kennyzir/twitter-automation-local`, `harrylabsj/twitter-thread-crafter`,
+  `rediumvex/social-media-caption-generator-claude`,
+  `michaelcarwile/claude-skill-x-twitter`, and
+  `attainmentlabs/x-open-source-algorithm-skill`. Missing GitHub license
+  metadata alone did not block direct PRs when target-native docs edits were
+  safe and original.
+- Duplicate, fork, and target-policy checks for selected repos: compact audit,
+  archive, target content, and target open or closed PRs/issues were searched
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, social, Twitter/X, and
+  variants. `harrylabsj/social-media-batch-kit`, `anamipit/twitter-x`, and
+  `boobutler/boo-skills` had no target duplicate. Forks
+  `kriptoburak/social-media-batch-kit`, `kriptoburak/twitter-x`, and
+  `kriptoburak/boo-skills` were created with `gh repo fork --clone=false`;
+  REST readbacks verified owner `kriptoburak`, `fork: true`, and the expected
+  upstream parent before pushing.
+- Fresh PR 1: opened
+  https://github.com/harrylabsj/social-media-batch-kit/pull/1 from verified
+  fork `kriptoburak/social-media-batch-kit`, parent
+  `harrylabsj/social-media-batch-kit`, branch
+  `codex/tweetclaw-source-packets`, commit
+  `a0692d696d22d3fda716d52878289b3e14196696`. Changed `README.md` and
+  `SKILL.md` to document optional TweetClaw/OpenClaw source packets for public
+  X/Twitter audience language while keeping packets as drafting evidence only
+  with no publish, schedule, reply, DM, or monitor behavior. Validation passed
+  `git diff --check`, `skill.json` parse and file-count check, edited-file
+  markdown link check, added-line ASCII scan, and public-hygiene scan. Exact
+  PR readback: OPEN, non-draft, MERGEABLE, base `main`, head owner
+  `kriptoburak`, 2 changed files, 12 additions, 1 deletion, 0 reviews, 0
+  checks, and 1 Codex usage-limit comment. The comment is not actionable.
+- Fresh PR 2: opened https://github.com/anamipit/twitter-x/pull/1 from
+  verified fork `kriptoburak/twitter-x`, parent `anamipit/twitter-x`, branch
+  `codex/add-tweetclaw-openclaw-path`, commit
+  `66570343276f3d927fa9e4a363b59e4891226bd4`. Changed `SKILL.md` to add an
+  optional TweetClaw/OpenClaw path for structured X/Twitter source packets,
+  repeatable endpoint selection, and explicit approval before account-changing
+  TweetClaw-assisted actions. Validation passed `git diff --check`,
+  `python3 -m py_compile` for all scripts, edited-file markdown link check,
+  added-line ASCII scan, and public-hygiene scan. Exact PR readback: OPEN,
+  non-draft, MERGEABLE, base `main`, head owner `kriptoburak`, 1 changed file,
+  19 additions, 0 comments, 0 reviews, and 0 checks.
+- Fresh PR 3: opened https://github.com/boobutler/boo-skills/pull/1 from
+  verified fork `kriptoburak/boo-skills`, parent `boobutler/boo-skills`,
+  branch `codex/add-tweetclaw-managed-path`, commit
+  `81cbdfc45e7eda8739663b034b0273877da77746`. Changed
+  `skills/twitter/SKILL.md` to add an optional TweetClaw/OpenClaw path while
+  keeping direct x-cli and cookie-MCP operation as skill-owned setup paths and
+  requiring explicit approval for account-scoped actions. Validation passed
+  `git diff --check`, edited-file markdown link check, added-line ASCII scan,
+  and public-hygiene scan. Exact PR readback: OPEN, non-draft, MERGEABLE, base
+  `main`, head owner `kriptoburak`, 1 changed file, 15 additions, 0 comments,
+  0 reviews, and 0 checks.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. External changed files are listed
+  above. The unrelated untracked local path `0` in TweetClaw was preserved and
+  not inspected.
+- Validation and public hygiene: edited external diffs passed `git diff
+  --check`, edited-file link checks, and scans for secrets, credentials,
+  private implementation details, restricted provider/source names, internal
+  cost mechanics, unsupported claims, and stale metadata. TweetClaw public
+  checks passed `npm audit --audit-level=moderate`, `npm audit --omit=dev
+  --audit-level=moderate`, README/audit/release-memory markdown link checks,
+  direct `curl -L` probes for TweetClaw GitHub, npm latest, both current
+  ClawHub URLs, OpenClaw Directory, all 3 new PRs,
+  `docs.openclaw.ai/llms.txt`, and OpenClaw manifest docs, `npm run build`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npm run check-versions`, `npm run check-memory-md-size`, `git diff
+  --check`, and `npm run check:all`. `check:all` passed typecheck, lint, cpd,
+  knip, suppression check, dash check, memory-size check, skill frontmatter,
+  versions, build, OpenClaw fitness, package artifact, and coverage with 11
+  files, 168 tests, and 100% statements, branches, functions, and lines.
+  Compact automation Markdown measured 14,904/15,360 bytes after the final
+  replacement.
+- Prompt self-improvement: no prompt edit was saved because the current prompt
+  already preserves Codex 5.5 Fast mode and extra-high reasoning wording, quiet
+  autonomy, crawler-first discovery, the 3-PR mandate, skill-repo coverage,
+  complete PR inventory and repair priority, duplicate/fork rules, OpenClaw
+  docs checks, link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, cadence, thread binding, commit/push requirement, Markdown
+  cap, prompt cap, and this self-improvement rule. Prompt measured 12,831
+  bytes and the automation TOML measured 13,165 bytes. Durable lesson: this
+  `gh repo fork` version rejects `--remote=false` with an explicit repository
+  argument, so use `--clone=false`, add a fork remote manually, and verify the
+  fork parent through REST before pushing.
