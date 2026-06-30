@@ -43401,7 +43401,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   Validation passed `git diff --check`,
   `npx prettier --check README.md src/tools.ts src/twitter-api.ts tests/twitter-api.test.ts`,
   `npx biome lint src/tools.ts src/twitter-api.ts tests/twitter-api.test.ts`,
-  `npx tsc --noEmit`, `npm test -- tests/twitter-api.test.ts`, and
+  `npx tsc --noEmit`, `npm test '--' tests/twitter-api.test.ts`, and
   `npx markdown-link-check README.md --quiet`. `npm ci` reported pre-existing
   target dependency advisories. Pushed repair commit
   `cc8357caf6dbfbf0131d69541b858d3e1d80e3b9`. Final REST readback:
@@ -44090,7 +44090,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   scan, `git diff --check`, `npx prettier --check README.md src/tools.ts
   src/twitter-api.ts tests/twitter-api.test.ts`, `npx biome lint src/tools.ts
   src/twitter-api.ts tests/twitter-api.test.ts`, `npx tsc --noEmit`, `npm test
-  -- tests/twitter-api.test.ts`, `npx --yes markdown-link-check README.md
+  '--' tests/twitter-api.test.ts`, `npx --yes markdown-link-check README.md
   --quiet`, and public-safety scan. `npm ci --ignore-scripts` exposed 29
   pre-existing target advisories but no dependency files changed. Posted
   validation comment
@@ -44522,7 +44522,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   parented to `MohibShaikh/clawvet`, branch `codex/social-approval-fixture`,
   commit `6e6e022e3be269b2e5ed005d957d07c40f6d2334`.
 - ClawVet validation: `npm ci` passed with ignored lifecycle scripts and no
-  audit network change; `npm --workspace apps/api test -- scanner.test.ts`
+  audit network change; `npm --workspace apps/api test '--' scanner.test.ts`
   passed 7 tests; `npm --workspace apps/api test` passed 7 files and 63 tests.
   A mistaken `packages/shared` test command with Jest-only args failed and was
   rerun correctly; the correct shared package test failed before tests because
@@ -45279,7 +45279,7 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `codex/add-xquik-backend`. Validation passed conflict-marker scan,
   `git diff --check`, Prettier check on touched files, Biome lint on touched
   code/tests, README markdown link check, changed-diff public-safety scan,
-  `npx tsc --noEmit`, and `npm test -- tests/twitter-api.test.ts` after
+  `npx tsc --noEmit`, and `npm test '--' tests/twitter-api.test.ts` after
   `npm ci --ignore-scripts`. Target lockfile audit reported pre-existing
   advisories only. Posted
   https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4836938330.
@@ -49562,6 +49562,44 @@ TweetClaw public hygiene and validation:
 - Final TweetClaw validation passed: `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run build`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, public Markdown link checks, direct URL probes for TweetClaw GitHub, npm registry, ClawHub, and all 3 new PRs, and full `npm run check:all`. The full gate included `npm run check-memory-md-size` at 14910/15360 bytes, 168 passing tests, and 100% statement, branch, function, and line coverage.
 - TweetClaw changed files: `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`. The pre-existing untracked local path `0` was preserved.
 
+## 2026-06-30 21:06 UTC heartbeat
+
+Runtime and platform:
+- Codex 5.5 Fast mode and extra-high reasoning controls were not exposed in the runtime, so the limitation was recorded and the run continued.
+- Xquik open issue preflight returned 0 open issues via exact `--repo Xquik-dev/xquik`. The Xquik worktree had unrelated dirty files and was not changed.
+- Current official OpenClaw docs were checked before public wording and compatibility decisions. HTTP 200: `llms.txt`, `/cli/plugins`, `/plugins`, `/plugins/manifest`, `/plugins/tool-plugins`, `/plugins/install-overrides`, `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`, `/gateway/secrets`, `/concepts/agent-runtimes`, and `clawhub.ai/plugins/@xquik/tweetclaw` after redirect. A first Node fetch probe printed complete results but kept the event loop open and was interrupted; future probes should call `process.exit`.
+- npm metadata read OpenClaw latest `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest remained `1.6.31`, while source stayed `1.6.32`.
+
+Open PR inventory and repair:
+- Crawler-first discovery and monitoring ran from `/Users/burak/Developer/xquik` with strict JSON output at `/tmp/tweetclaw-heartbeat-20260630-210637/crawler-opportunities.json`, research proxy, bounded request and warmup timeouts, 20 focused skill/OpenClaw/MCP/social/X/TweetClaw query packs, limit 650, search pages 3, per-query limit 10, concurrency 16, and session `tweetclaw-20260630-210637`. It returned 3 opportunities: `rabden/X-twitter-social-manager-skill`, `expropriationhoorayhenry64/social-media-scraper-skill`, and `aaaronmiller/create-viral-content`. No crawler credentials were printed, stored, or committed.
+- A second web-index crawler slice returned 0 opportunities after repeated managed-proxy socket closures and endpoint quarantines. A third smaller slice returned `peleg-jpg/content-ideas-skill`.
+- Authored open PR search partitions read `updated:>=2026-06-30`, `2026-06-23..2026-06-29`, `2026-06-01..2026-06-22`, and split early-June windows. GitHub secondary rate limits blocked several older partitions, so complete all-open inventory is not claimed.
+- Archive and successful search partitions produced 2061 unique candidate PR URLs. Exact-read 180 priority PRs with 180 successes, 0 errors, 22 with comments, 14 with reviews, 0 failing checks, and 0 unmergeable readbacks.
+- One PR showed `CHANGES_REQUESTED`: `electricsheephq/openclaw-capability-manifest-verifier#1`. Exact readback showed the changes-requested review was on an old commit, while CodeRabbit later approved the current head. The PR was mergeable and check-clean, so no repair was needed.
+- GraphQL authored-PR pagination stalled and was interrupted, so GraphQL inventory completeness is explicitly not claimed.
+
+Fresh discovery and duplicate screening:
+- Duplicate blockers: `rabden/X-twitter-social-manager-skill` already had open PR #1; `aaaronmiller/create-viral-content` already had open PR #3 and issue history; `opensubagents/subagentskills` had open PR #6; many fallback social-skill repos had existing TweetClaw/Xquik history.
+- Safety or fit blockers: `expropriationhoorayhenry64/social-media-scraper-skill` contained only a README plus downloadable Windows binary ZIP, so it was rejected as an unsafe trust-building lane even though missing license metadata alone is not a direct-PR blocker. `prateekjain98/social-media-manager-skills` was rejected for stealth browser-automation and AI-identity-deception positioning. `matt-riley/agent-skills` was validated but platform-blocked by GitHub PR creation ambiguity across same-owner forks.
+- Selected clean lanes passed compact/archive checks, target content scans, exact open and closed target PR and issue reads, fork parent verification, public diff review, and duplicate searches for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and X/Twitter variants: `peleg-jpg/content-ideas-skill`, `jihe520/social-push`, and `PLA-yi/Social-Media-Scraper-Skills`.
+- Missing license metadata on `jihe520/social-push` and `PLA-yi/Social-Media-Scraper-Skills` was recorded but did not block direct PRs under the current run rule. No explicit no-contribution policy was found.
+
+Fresh PRs opened:
+- `peleg-jpg/content-ideas-skill#1` - https://github.com/peleg-jpg/content-ideas-skill/pull/1 - added `scripts/import_tweetclaw.py` to normalize reviewed TweetClaw JSON, JSONL, object-wrapped arrays, and common row fields into the existing `twitter_data.json` shape, plus Step 4 guidance for read-only TweetClaw source evidence. Fork `kriptoburak/content-ideas-skill` verified parent/source `peleg-jpg/content-ideas-skill`. Commit `db8f56f` pushed to `codex/tweetclaw-export-import-20260630`. Validation: `python3 -m py_compile`, sample JSONL import and `json.tool`, `git diff --check`, and SKILL markdown link check. Readback: OPEN, non-draft, MERGEABLE, CLEAN, 0 comments, 0 reviews, 0 checks.
+- `jihe520/social-push#6` - https://github.com/jihe520/social-push/pull/6 - added Chinese and English TweetClaw/OpenClaw X/Twitter source-context guidance while preserving the target's draft-only publishing boundary, repaired the local SKILL.md link, and fixed a pre-existing dead `agent-browser` repository link to the live repository already used elsewhere in the docs. Fork `kriptoburak/social-push` verified parent/source `jihe520/social-push`. Commit `d755b4c` pushed to `codex/tweetclaw-source-context-20260630`. Validation: `git diff --check` and markdown link checks for README, README_EN, SKILL, and X workflow. Readback: OPEN, non-draft, MERGEABLE, CLEAN, 0 comments, 0 reviews, 0 checks.
+- `PLA-yi/Social-Media-Scraper-Skills#1` - https://github.com/PLA-yi/Social-Media-Scraper-Skills/pull/1 - added `scrape-x/import_tweetclaw.py` so reviewed TweetClaw/OpenClaw X exports can become local read-only evidence without asking for fresh X cookies or submitting a new scrape job, plus README and prompt docs. Fork `kriptoburak/Social-Media-Scraper-Skills` verified parent/source `PLA-yi/Social-Media-Scraper-Skills`. Commit `dabbcfc` pushed to `codex/tweetclaw-x-source-import-20260630`. Validation: `python3 -m py_compile`, sample JSONL import and `json.tool`, `git diff --check`, and markdown link checks with pre-existing `localhost:8000` ignored. Readback: OPEN, non-draft, MERGEABLE, CLEAN, 0 comments, 0 reviews, 0 checks.
+
+Blocked but preserved lane:
+- `matt-riley/agent-skills`: fork `kriptoburak/agent-skills-matt-riley-xquik` verified parent/source `matt-riley/agent-skills`; branch `codex/x-source-evidence-skill-20260630` commit `84c0bdc` pushed with a full `x-source-evidence` skill package, OpenAI metadata, eval fixtures, catalog chooser entry, and Release Please metadata. Validation passed `python3 _shared/validate-skills.py skills`, `npm run validate` with a temporary local `python` shim to `python3`, `git diff --check`, and markdown link checks. PR creation failed because GitHub selected the unrelated existing `kriptoburak/agent-skills` fork for `CreatePullRequest`; REST attempts with explicit `head_repo` returned 404. No issue was opened because 3 safe PR lanes were completed.
+
+TweetClaw public hygiene and validation:
+- New external PR bodies disclosed TweetClaw maintainer affiliation where TweetClaw was mentioned and avoided secret values, private implementation details, restricted provider/source names, internal cost mechanics, unsupported claims, and stale metadata. No NHS badge was added because no handled surface had a fitting badge area.
+- Broken-link checks passed for all newly edited target Markdown after ignoring target-local `http://localhost:8000` in PLA docs. Direct PR readbacks returned valid GitHub URLs for all 3 new PRs.
+- Final TweetClaw validation passed: `npm run check-memory-md-size`, public Markdown link checks for README, OpenClaw setup, compact audit, release memory, agent workflows, and packaged skill docs, direct URL probes for current OpenClaw docs, ClawHub, npm registry metadata, and all 3 new PR URLs, `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run check-versions`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, and full `npm run check:all`.
+- Persisted prompt was not edited; automation TOML measured 13165 bytes. Candidate persisted prompt bytes therefore remained below the 15 KiB prompt cap.
+- Prompt self-improvement: reject binary-only download repos even when license metadata is not a blocker; preserve validated branches when GitHub PR creation is blocked by fork-name ambiguity, but switch to another safe PR lane instead of counting the blocked branch; for scraper-skill targets, import reviewed TweetClaw exports as source evidence rather than adding competing live-scrape claims.
+- TweetClaw changed files: `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`. The pre-existing untracked local path `0` was preserved.
+
 ## 2026-06-30 20:30 UTC heartbeat
 
 Runtime and platform:
@@ -49772,7 +49810,7 @@ Duplicate and target screening:
 
 Fresh PRs opened:
 - `imartinstudio/mts-skills#4` - https://github.com/imartinstudio/mts-skills/pull/4 - added `x-action-approval-gate`, a reusable X action approval skill for browser, OpenClaw, TweetClaw, MCP, or local automation workflows that may draft, stage, schedule, publish, like, repost, follow, unfollow, or DM. Fork `kriptoburak/mts-skills` verified parent/source `imartinstudio/mts-skills`. Commit `1b985af` pushed to `feat/x-action-approval-gate`. Validation: `npm run validate`, `git diff --check`, and public diff scan. Readback: OPEN, draft per target policy, MERGEABLE, 0 comments, 0 reviews, 0 checks.
-- `ollieb89/agent-skill-validator#1` - https://github.com/ollieb89/agent-skill-validator/pull/1 - added a warning for social or browser action skills that mention publishing or account actions without an explicit approval/no-submit boundary, added a regression test, and fixed ClawHub spelling in docs. Fork `kriptoburak/agent-skill-validator` verified parent/source `ollieb89/agent-skill-validator`. Commit `45b25f9` pushed to `codex/social-action-approval-lint`. Validation: `npm ci`, `npm test -- --runInBand` (72 tests passed), `npm run lint`, `git diff --check`, and public diff scan. `npm ci` reported pre-existing dependency audit findings; no dependency metadata changed. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 2 Socket checks successful.
+- `ollieb89/agent-skill-validator#1` - https://github.com/ollieb89/agent-skill-validator/pull/1 - added a warning for social or browser action skills that mention publishing or account actions without an explicit approval/no-submit boundary, added a regression test, and fixed ClawHub spelling in docs. Fork `kriptoburak/agent-skill-validator` verified parent/source `ollieb89/agent-skill-validator`. Commit `45b25f9` pushed to `codex/social-action-approval-lint`. Validation: `npm ci`, `npm test '--' --runInBand` (72 tests passed), `npm run lint`, `git diff --check`, and public diff scan. `npm ci` reported pre-existing dependency audit findings; no dependency metadata changed. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 2 Socket checks successful.
 - `StaryMoon/codex-skill-catalog#1` - https://github.com/StaryMoon/codex-skill-catalog/pull/1 - stripped leading `SKILL.md` frontmatter before body parsing and used simple `name` and `description` fields as title, description, and trigger-hint fallbacks for compact skill files. Fork `kriptoburak/codex-skill-catalog` verified parent/source `StaryMoon/codex-skill-catalog`. Commit `b197fc0` pushed to `codex/frontmatter-skill-fallbacks`. Validation: `PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_*.py'` (3 tests passed), `python3 -m compileall -q src tests`, `git diff --check`, and public diff scan. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 0 checks.
 
 TweetClaw public hygiene and validation:

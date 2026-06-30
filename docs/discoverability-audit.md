@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 20:30 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-06-30 21:06 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs are indexed by
   `llms.txt`; `/cli/plugins`, `/clawhub/skill-format`, `/help/debugging`,
   `/gateway/secrets`, and `/concepts/agent-runtimes` replace several stale
   legacy route probes.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 20:30 UTC after redirecting to
+  2026-06-30 21:06 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -189,21 +189,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 20:30 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-06-30 21:06 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik open issues were rechecked; source still targets
   `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
-- Inventory used Xquik crawler output, GraphQL-authored open PR pagination,
-  archive URLs, fork metadata, and 130 exact PR readbacks. Complete all-open
-  inventory is not claimed because the GraphQL page cap stopped at 2000 nodes.
-  Seven conflicted outreach PRs were repaired and re-read as mergeable before
-  new outreach.
+- Inventory used crawler output, authored-PR search partitions, 2061
+  archive/search PR URLs, and 180 exact PR readbacks. Complete all-open
+  inventory is not claimed because GraphQL stalled and GitHub search
+  rate-limited older partitions. No current-head PR repair was required.
 - Fresh safe PRs opened:
-  https://github.com/kostja94/social-cards-skills/pull/1,
-  https://github.com/RendShotTeam/rendshot-skills/pull/1, and
-  https://github.com/oinkywaddles/social-media-trending-cli/pull/1.
+  https://github.com/peleg-jpg/content-ideas-skill/pull/1,
+  https://github.com/jihe520/social-push/pull/6, and
+  https://github.com/PLA-yi/Social-Media-Scraper-Skills/pull/1.
+- Extra validated but blocked lane:
+  `matt-riley/agent-skills` branch
+  `codex/x-source-evidence-skill-20260630` could not open a PR because GitHub
+  selected an unrelated same-owner fork and returned `CreatePullRequest`
+  permission errors even after exact fork parent verification.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
-  screening, repaired PR SHAs, target validation, broken-link results, prompt
-  bytes, and self-improvement are archived.
+  screening, target validation, broken-link results, prompt bytes, and
+  self-improvement are archived.
 
 ## Reporting Checklist
 
