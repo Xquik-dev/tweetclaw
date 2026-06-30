@@ -190,18 +190,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 11:14 UTC: runtime selectors unavailable. OpenClaw docs routes
+- 2026-06-30 11:35 UTC: runtime selectors unavailable. OpenClaw docs routes
   returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
   latest `1.6.31`.
-- Crawler sessions `tweetclaw-20260630-111404` and `...111404b` returned 1
-  duplicate-blocked repo and then 0 with proxy socket-close noise. Broad
-  authenticated PR search hit GitHub secondary rate limits; exact repo
-  readbacks continued and found no actionable maintainer repair.
-- Three fresh PRs met the mandate:
-  https://github.com/twominutereports/marketing-skills/pull/1,
-  https://github.com/Charpup/clawhub-publisher/pull/1, and
-  https://github.com/Wayy-Research/clawpub/pull/1. All read back OPEN,
-  non-draft, and MERGEABLE with no checks registered.
+- Crawler session `tweetclaw-20260630-113504` returned 101 repos across
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, social, Twitter/X,
+  registry, validator, spec, and package-tooling lanes. Today-updated authored
+  PR partitions and exact audit-tracked PR readbacks found no actionable
+  maintainer repair; complete all-open inventory is not claimed because the
+  all-open bucket remains over platform caps.
+- Three fresh validator or spec PRs met the mandate:
+  https://github.com/joeynyc/skillscore/pull/2,
+  https://github.com/mareasw/ontoskills/pull/75, and
+  https://github.com/ForgeVista/fv-skills-schema-spec/pull/3. All read back
+  OPEN, non-draft, and MERGEABLE.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 

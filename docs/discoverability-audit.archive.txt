@@ -48698,3 +48698,118 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   partitions, so stop broad search immediately and use exact repo reads plus
   archive-backed lanes; parse the automation prompt as an escaped TOML string
   when measuring prompt bytes.
+
+## 2026-06-30 11:35 UTC heartbeat
+
+- Runtime and source checks: runtime model, Fast speed, and effort selectors
+  were not exposed in this environment, so the run continued and records that
+  limitation. Official OpenClaw docs were rechecked by HTTP: `llms.txt`,
+  `llms-full.txt`, plugin install docs, manifest docs, tool plugins,
+  permission requests, SDK/runtime docs, install overrides, ClawHub publishing,
+  skill format, and debugging all returned HTTP 200. npm metadata showed
+  OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and TweetClaw npm latest `1.6.31`.
+- Crawler-first coverage: Xquik crawler session
+  `tweetclaw-20260630-113504` used focused SKILL, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social, Twitter/X, registry, validator, spec, and
+  package-tooling queries. It returned strict JSON with 101 repos including
+  skill catalogs, X/Twitter skills, skill validators, registry tools, and
+  schema/spec packages. No GitHub tokens were used by the crawler.
+- PR inventory and repair gate: exact readbacks covered the 6 newest
+  TweetClaw audit PRs from the prior 2 runs plus today-updated authored PRs
+  surfaced by partitioned search: `joeynyc/skillscore#2`,
+  `mareasw/ontoskills#75`, `ForgeVista/fv-skills-schema-spec#3`,
+  `kaizen-org/openapi-mcp-server#1`, `imai-design/mcpify#1`,
+  `csoftware-arigpt/apix#2`, `volkan-m/api-to-mcp-gateway#1`,
+  `zhangpanda/gomcp#21`, `adarshp14/relay#1`,
+  `twominutereports/marketing-skills#1`,
+  `Charpup/clawhub-publisher#1`, `Wayy-Research/clawpub#1`,
+  `harrylabsj/social-media-batch-kit#1`, `anamipit/twitter-x#1`, and
+  `boobutler/boo-skills#1`. All checked current PRs read back OPEN,
+  non-draft, and MERGEABLE. Comments were Codex usage-limit notices or absent;
+  no actionable maintainer comments, review requests, CI failures, conflicts,
+  DCO/CLA blockers, generated-file drift, or valid bot findings were found.
+  Complete all-open inventory is not claimed because the all-open authored PR
+  bucket remains over GitHub platform caps.
+- Fresh discovery and blockers: exact audit, target content, open and closed
+  target PRs/issues, and metadata checks duplicate-blocked or held
+  `0xNyk/xint`, `blacktwist/social-media-skills`,
+  `aaaronmiller/create-viral-content`,
+  `benmillerat/openclaw-x-bookmark-archiver`,
+  `sickn33/antigravity-awesome-skills`, `hashgraph-online/skill-publish`,
+  `agent-sh/agnix`, `nord342/openclaw-skill-validator`,
+  `shane9coy/Agent-Skill-Architecture-Guide`,
+  `luna-prompts/skillnote`, `wshuyi/x-article-publisher-skill`,
+  `LeonTing1010/tap-skills`, `MohibShaikh/clawvet`,
+  `agentskills/agentskills`, and `FrancyJGLisboa/agent-skill-creator`.
+  Missing GitHub license metadata alone did not block direct PRs when
+  package-level or repo files supplied license evidence and the contribution
+  was target-native.
+- Duplicate, fork, and target-policy checks for selected repos: compact audit,
+  archive, target content, and target open or closed PRs/issues were searched
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, social, Twitter/X,
+  validator, spec, and package-tooling variants. `joeynyc/skillscore`,
+  `mareasw/ontoskills`, and `ForgeVista/fv-skills-schema-spec` had no target
+  duplicate. Forks `kriptoburak/skillscore`, `kriptoburak/ontoskills`, and
+  `kriptoburak/fv-skills-schema-spec` were created or reused with
+  `gh repo fork`; REST readbacks verified owner `kriptoburak`, `fork: true`,
+  and the expected upstream parent before pushing.
+- Fresh PR 1: opened https://github.com/joeynyc/skillscore/pull/2 from
+  verified fork `kriptoburak/skillscore`, parent `joeynyc/skillscore`, branch
+  `codex/social-action-approval-safety`, commit
+  `8f795c4e899302127b7c4193e5f650cc4154ea6b`. Changed `src/scorer.ts`,
+  `tests/unit/scorer.test.ts`, and
+  `tests/fixtures/social-action-skill/SKILL.md` to warn when a skill includes
+  X/Twitter social account-changing actions without explicit approval or
+  review gates. Validation passed `git diff --check`, public-hygiene scans,
+  `npm run build`, and the scorer unit test with 22 passing tests. Exact PR
+  readback: OPEN, non-draft, MERGEABLE, base `main`, head owner `kriptoburak`,
+  3 changed files, 61 additions, 2 deletions, 0 comments, 0 reviews, and 0
+  checks.
+- Fresh PR 2: opened https://github.com/mareasw/ontoskills/pull/75 from
+  verified fork `kriptoburak/ontoskills`, parent `mareasw/ontoskills`, branch
+  `codex/social-approval-state-test`, commit
+  `2af3cc843846c04d959b2603bd94fa8d012e8774`. Changed
+  `core/tests/test_schemas.py` to prove approval-gated social account actions
+  can be modeled as explicit OntoSkills state transitions with approval
+  required, approved, and denied states. Validation passed `git diff --check`,
+  public-hygiene scans, and `uv run` with pytest on `tests/test_schemas.py`
+  with 54 passing tests. The validation-only `core/uv.lock` drift was restored
+  and not committed. Exact PR readback: OPEN, non-draft, MERGEABLE, base
+  `main`, head owner `kriptoburak`, 1 changed file, 21 additions, 0 reviews, 0
+  checks, and 1 Codex usage-limit comment. The comment is not actionable.
+- Fresh PR 3: opened https://github.com/ForgeVista/fv-skills-schema-spec/pull/3
+  from verified fork `kriptoburak/fv-skills-schema-spec`, parent
+  `ForgeVista/fv-skills-schema-spec`, branch
+  `codex/approval-gated-social-example`, commit
+  `c04e70ef1f14c93679a6b6a24ae8e74271fd9936`. Changed
+  `spec/skill-schema-spec.md` to document a `dof: 2` approval-gated social
+  account workflow example for source collection, user approval, and recording
+  the approved action. Validation passed `git diff --check`,
+  public-hygiene scans, `npm run build`, and markdown link checks for README
+  plus the spec. Exact PR readback: OPEN, non-draft, MERGEABLE, base `main`,
+  head owner `kriptoburak`, 1 changed file, 19 additions, 0 comments, 0
+  reviews, and 0 checks.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. External changed files are listed
+  above. The unrelated untracked local path `0` in TweetClaw was preserved and
+  not inspected.
+- Validation and public hygiene: edited external diffs passed `git diff
+  --check`, target-specific tests or build checks, target link checks where
+  touched Markdown existed, added-line ASCII scans, and scans for secrets,
+  credentials, private implementation details, restricted provider/source
+  names, internal cost mechanics, unsupported claims, and stale metadata.
+  TweetClaw public and release checks ran after this archive update and are
+  recorded in the compact latest-run summary and final commit.
+- Prompt self-improvement: no prompt edit was saved because the current prompt
+  already preserves Codex 5.5 Fast mode and extra-high reasoning wording, quiet
+  autonomy, crawler-first discovery, the 3-PR mandate, skill-repo coverage,
+  complete PR inventory and repair priority, duplicate/fork rules, OpenClaw
+  docs checks, link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, cadence, thread binding, commit/push requirement, Markdown
+  cap, prompt cap, and this self-improvement rule. Prompt measured 12,831
+  bytes and automation TOML measured 13,165 bytes. Durable lesson: validator
+  and schema/spec repos are useful TweetClaw trust lanes when the patch
+  improves generic approval-gated social-action safety or modeling and does
+  not add a thin package listing.
