@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 21:41 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-06-30 22:14 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs are indexed by
   `llms.txt`; `/cli/plugins`, `/clawhub/skill-format`, `/help/debugging`,
   `/gateway/secrets`, and `/concepts/agent-runtimes` replace several stale
   legacy route probes.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 21:41 UTC after redirecting to
+  2026-06-30 22:14 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -189,17 +189,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 21:41 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-06-30 22:14 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik open issues were rechecked; source still targets
   `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output with 103 opportunities, authored-PR search
-  partitions, 1474 archive PR URLs, and 180 exact PR readbacks. Complete
-  all-open inventory is not claimed because several search windows capped at
-  300 results. No current-head PR repair was required.
+- Inventory used crawler output with 25 opportunities, authored-PR search
+  partitions that capped at 300 rows, 1477 archive PR URLs, and 180 exact PR
+  readbacks. Complete all-open inventory is not claimed. Repaired
+  `devladpopov/openapi-to-mcp#2` for a valid CodeRabbit portability note.
 - Fresh safe PRs opened:
-  https://github.com/lvpiggyqq/xcatcher-mcp-manifest/pull/1,
-  https://github.com/YoriHan/influencer-skills/pull/2, and
-  https://github.com/sawzhang/sawzhang_skills/pull/2.
+  https://github.com/DengShiyingA/x-copywriter-skill/pull/1,
+  https://github.com/PythonLuvr/x-preflight/pull/1, and
+  https://github.com/wesleysimplicio/x-virality-skills/pull/1.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
   screening, target validation, broken-link results, prompt bytes, and
   self-improvement are archived.
