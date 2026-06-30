@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 10:53 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 11:14 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
@@ -190,17 +190,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 10:53 UTC: runtime selectors unavailable. OpenClaw docs routes
+- 2026-06-30 11:14 UTC: runtime selectors unavailable. OpenClaw docs routes
   returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
   latest `1.6.31`.
-- Xquik crawler session `tweetclaw-20260630-105305` returned 0 opportunities.
-  Broad authored PR search hit the 1000-result cap; archive extraction found
-  1,407 PR URLs and 961 relevant URLs. Exact-read newest 10 open PRs found no
-  actionable maintainer repair.
+- Crawler sessions `tweetclaw-20260630-111404` and `...111404b` returned 1
+  duplicate-blocked repo and then 0 with proxy socket-close noise. Broad
+  authenticated PR search hit GitHub secondary rate limits; exact repo
+  readbacks continued and found no actionable maintainer repair.
 - Three fresh PRs met the mandate:
-  https://github.com/harrylabsj/social-media-batch-kit/pull/1,
-  https://github.com/anamipit/twitter-x/pull/1, and
-  https://github.com/boobutler/boo-skills/pull/1. All read back OPEN,
+  https://github.com/twominutereports/marketing-skills/pull/1,
+  https://github.com/Charpup/clawhub-publisher/pull/1, and
+  https://github.com/Wayy-Research/clawpub/pull/1. All read back OPEN,
   non-draft, and MERGEABLE with no checks registered.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.

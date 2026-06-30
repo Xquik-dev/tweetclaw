@@ -48571,3 +48571,130 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `gh repo fork` version rejects `--remote=false` with an explicit repository
   argument, so use `--clone=false`, add a fork remote manually, and verify the
   fork parent through REST before pushing.
+
+## 2026-06-30 11:14 UTC heartbeat
+
+- Runtime and source checks: runtime model, Fast speed, and effort selectors
+  were not exposed in this environment, so the run continued and records that
+  limitation. Official OpenClaw docs were rechecked by HTTP: `llms.txt`,
+  `llms-full.txt`, plugin install docs, manifest docs, tool plugins,
+  permission requests, SDK/runtime docs, install overrides, ClawHub publishing,
+  skill format, and debugging all returned HTTP 200. npm metadata showed
+  OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and TweetClaw npm latest `1.6.31`.
+- Crawler-first coverage: Xquik crawler session
+  `tweetclaw-20260630-111404` used focused SKILL, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social, Twitter/X, registry, validator, and package
+  tooling queries. It returned strict JSON with 1 opportunity,
+  `beggarticksarthurtatum121/reddit-skills`, which was duplicate-blocked by
+  existing open PR 1. Session `tweetclaw-20260630-111404b` returned 0
+  opportunities with managed-proxy socket-close/quarantine noise. No GitHub
+  tokens were used by the crawler.
+- PR inventory and repair gate: broad authenticated authored PR partitions for
+  `updated:>=2026-06-30`, `created:2026-06-30`, and `updated:2026-06-29` hit
+  GitHub secondary rate limits, so broad authenticated search stopped for the
+  run. Exact readbacks continued for the latest three PRs from the previous
+  heartbeat: `harrylabsj/social-media-batch-kit#1`,
+  `anamipit/twitter-x#1`, and `boobutler/boo-skills#1`. All were OPEN,
+  non-draft, and MERGEABLE. The only comment was a Codex usage-limit notice;
+  no actionable maintainer comments, review requests, CI failures, conflicts,
+  DCO/CLA blockers, generated-file drift, or valid bot findings were found.
+  Complete in-scope inventory was not claimed because authenticated search was
+  rate-limited.
+- Fresh discovery and blockers: exact repo and archive-backed candidates
+  screened included `twominutereports/marketing-skills`,
+  `Agents365-ai/mermaid-skill`, `yourclaw/clawguard`,
+  `Charpup/clawhub-publisher`, `Wayy-Research/clawpub`,
+  `XPOZpublic/xpoz-openclaw-plugin`, `mpesavento/openclaw-memory-sync`,
+  `collectivewinca/hacker-feeds-cli`, `davidkny22/recursive-claw`,
+  `rick-stevens-ai/memory-falda`, `Dexter-DAO/opendexter-plugin`,
+  `clawdmint/clawdmint-plugin`, `rubix1138/askew-openclaw-plugin`,
+  `yourclaw/clawguard`, and `Wayy-Research/clawpub`. Existing PRs
+  duplicate-blocked `XPOZpublic/xpoz-openclaw-plugin`,
+  `davidkny22/recursive-claw`, `rick-stevens-ai/memory-falda`, and
+  `Dexter-DAO/opendexter-plugin`. Missing GitHub license metadata alone did
+  not block direct PRs when target-native docs edits were safe and original.
+- Duplicate, fork, and target-policy checks for selected repos: compact audit,
+  archive, target content, and target open or closed PRs/issues were searched
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, social, Twitter/X, and
+  variants. `twominutereports/marketing-skills`,
+  `Charpup/clawhub-publisher`, and `Wayy-Research/clawpub` had no target
+  duplicate. Existing fork `kriptoburak/marketing-skills` pointed to
+  `robertbstillwell/marketing-skills`, so a renamed fork
+  `kriptoburak/twominutereports-marketing-skills` was created. Forks
+  `kriptoburak/clawhub-publisher` and `kriptoburak/clawpub` were created with
+  `gh repo fork --clone=false`; REST readbacks verified owner `kriptoburak`,
+  `fork: true`, and the expected upstream parent before pushing.
+- Fresh PR 1: opened
+  https://github.com/twominutereports/marketing-skills/pull/1 from verified
+  fork `kriptoburak/twominutereports-marketing-skills`, parent
+  `twominutereports/marketing-skills`, branch
+  `codex/tweetclaw-social-context`, commit
+  `4acad7d02c293f394932041d74391842ab03809b`. Changed
+  `social-media/facebook-insights-report/skill.md` and
+  `social-media/instagram-insights-report/skill.md` to allow pre-provided
+  TweetClaw/OpenClaw public X/Twitter notes as qualitative Action Plan context
+  only, while keeping Two Minute Reports MCP as the only metrics source and
+  forbidding posts, replies, DMs, scheduling, or monitoring. Validation passed
+  `git diff --check`, added-line ASCII scan, and public-hygiene scan.
+  Edited-file markdown link check only reported the pre-existing authenticated
+  TMR MCP endpoint returning HTTP 401. Exact PR readback: OPEN, non-draft,
+  MERGEABLE, base `main`, head owner `kriptoburak`, 2 changed files, 10
+  additions, 0 comments, 0 reviews, and 0 checks.
+- Fresh PR 2: opened
+  https://github.com/Charpup/clawhub-publisher/pull/1 from verified fork
+  `kriptoburak/clawhub-publisher`, parent `Charpup/clawhub-publisher`, branch
+  `codex/account-action-approval-checklist`, commit
+  `916366f5eae879c8962bdcb02f94e3b90a6cd57e`. Changed `README.md` and
+  `SKILL.md` to add account-changing approval guidance for pre-publish review
+  and fixed the README license badge link to the existing License section.
+  Validation passed `git diff --check`, `npx -y markdown-link-check README.md
+  SKILL.md --quiet`, added-line ASCII scan, and public-hygiene scan. Exact PR
+  readback: OPEN, non-draft, MERGEABLE, base `master`, head owner
+  `kriptoburak`, 2 changed files, 13 additions, 1 deletion, 0 reviews, 0
+  checks, and 1 Codex usage-limit comment. The comment is not actionable.
+- Fresh PR 3: opened https://github.com/Wayy-Research/clawpub/pull/1 from
+  verified fork `kriptoburak/clawpub`, parent `Wayy-Research/clawpub`, branch
+  `codex/tweetclaw-openclaw-example`, commit
+  `2d50075d207fc54e2e0329f0fb7247e2b3357afb`. Changed `README.md` and added
+  `examples/tweetclaw-openclaw.json` to show a TweetClaw-style OpenClaw skill
+  publishing to ClawHub and GitHub releases with reserved package names.
+  Validation passed `git diff --check`, `npx -y markdown-link-check README.md
+  --quiet`, JSON parse for the new example, `npm run build`, added-line ASCII
+  scan, and public-hygiene scan. Exact PR readback: OPEN, non-draft,
+  MERGEABLE, base `main`, head owner `kriptoburak`, 2 changed files, 39
+  additions, 0 comments, 0 reviews, and 0 checks.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. External changed files are listed
+  above. The unrelated untracked local path `0` in TweetClaw was preserved and
+  not inspected.
+- Validation and public hygiene: edited external diffs passed `git diff
+  --check`, target-specific link checks, added-line ASCII scans, and scans for
+  secrets, credentials, private implementation details, restricted
+  provider/source names, internal cost mechanics, unsupported claims, and stale
+  metadata. TweetClaw public checks passed `npm audit --audit-level=moderate`,
+  `npm audit --omit=dev --audit-level=moderate`, README/audit/release-memory
+  markdown link checks, direct `curl -L` probes for TweetClaw GitHub, npm
+  latest, both current ClawHub URLs, OpenClaw Directory, all 3 new PRs,
+  `docs.openclaw.ai/llms.txt`, and OpenClaw manifest docs, `npm run build`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npm run check-versions`, `npm run check-memory-md-size`, `git diff
+  --check`, and `npm run check:all`. `check:all` passed typecheck, lint, cpd,
+  knip, suppression check, dash check, memory-size check, skill frontmatter,
+  versions, build, OpenClaw fitness, package artifact, and coverage with 11
+  files, 168 tests, and 100% statements, branches, functions, and lines.
+  Compact automation Markdown measured 14,931/15,360 bytes after the final
+  replacement.
+- Prompt self-improvement: no prompt edit was saved because the current prompt
+  already preserves Codex 5.5 Fast mode and extra-high reasoning wording, quiet
+  autonomy, crawler-first discovery, the 3-PR mandate, skill-repo coverage,
+  complete PR inventory and repair priority, duplicate/fork rules, OpenClaw
+  docs checks, link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, cadence, thread binding, commit/push requirement, Markdown
+  cap, prompt cap, and this self-improvement rule. Prompt measured 12,831
+  bytes and the automation TOML measured 13,165 bytes. Durable lessons:
+  authenticated GitHub search can enter secondary limits even with narrow
+  partitions, so stop broad search immediately and use exact repo reads plus
+  archive-backed lanes; parse the automation prompt as an escaped TOML string
+  when measuring prompt bytes.
