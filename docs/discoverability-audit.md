@@ -198,7 +198,7 @@ archive, before any outreach or duplicate decision.
 - Open PR inventory exact-read 55 audit and current-day PRs: 54 open, 1 closed;
   merge states 37 CLEAN, 14 UNSTABLE, 4 BLOCKED. No actionable maintainer
   repair remained; the inspected bot-comment thread was already addressed.
-- Three fresh PRs met the mandate:
+- Three fresh PRs exact-read open, ready, MERGEABLE, CLEAN and met the mandate:
   https://github.com/astierfe/x-agent/pull/1,
   https://github.com/cyber-max-huang/xh-skills-md-to-pdf/pull/1, and
   https://github.com/FOFANA1990/Ripostes_Agent_IA/pull/1.
