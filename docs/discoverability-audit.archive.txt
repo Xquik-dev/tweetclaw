@@ -46148,3 +46148,82 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   run summary. Prefer current `docs.openclaw.ai` routes from `llms.txt` before
   classifying OpenClaw docs as unavailable, because recent runs timed out on
   older `openclaw.dev` probes while current docs are reachable.
+
+2026-06-30 01:45 UTC heartbeat
+
+- Runtime selectors were unavailable; work continued under the active runtime.
+- Crawler-first discovery from `/Users/burak/Developer/xquik` used strict JSON,
+  research proxy, bounded timeouts, 320 limit, 1 search page, 12 per query,
+  concurrency 8, and session `tweetclaw-20260630-013011`. Query coverage
+  included `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X, awesome lists, registries, validators, forks, generated
+  catalogs, package tooling, and ClawHub/OpenClaw plugin lanes. Output parsed
+  as 43 opportunities across 43 repos; 12 were fresh after compact/archive
+  checks, including `gopendrasharma89-tech/openclaw-mission-preflight`,
+  `hinayoung23/plan-tracker`, and `seanyang1983/omnilimb`.
+- Open PR inventory: audit memory yielded 1,342 PR URLs. Authored open PR
+  partition yielded 2,496 unique URLs without a capped bucket:
+  `>=2026-06-30` 52, `2026-06-29` 190, `2026-06-28` 53, `2026-06-27` 1,
+  `2026-06-26` 2, `2026-06-25` 3, `2026-06-24` 17, `2026-06-23` 125,
+  `2026-06-22` 122, `2026-06-21` 166, `2026-06-20` 135, `2026-06-19` 24,
+  `2026-06-18` 68, `2026-06-17` 114, `2026-06-16` 87, `2026-06-15` 87,
+  `2026-06-14` 137, `2026-06-13` 143, `2026-06-12` 91,
+  `2026-06-01..2026-06-11` 276, and `<2026-06-01` 603. REST exact reads
+  covered 52 current-day authored PRs plus audit-known and conflict/bot
+  suspects; do not claim all 2,496 PRs were exact-read this run.
+- Repair gate: exact reads found conflicts on `jamald33n/tweetsave-mcp#2` and
+  `reall8164/wechat-openclaw-plugin#1`. Verified forks were under
+  `kriptoburak` and parented correctly. Merged current upstream main, resolved
+  only README conflicts, validated with conflict-marker scans, `git diff
+  --check`, markdown-link-check, target JSON/package checks, and TweetSave
+  build. Pushed `f421947` and `f14d475`, posted validation comments, then
+  exact-read both as open, ready, MERGEABLE, and check-clean.
+- Repair gate also addressed `yaacovcorcos/papiskill#3`: Gemini flagged
+  mismatched Hermes Tweet descriptions between `SKILL.md` frontmatter and
+  `skill.yml`. Pushed `da900f6` after `npm ci --ignore-scripts --no-audit
+  --no-fund`, `npm run registry:generate`, `npm run registry:validate`, and
+  `git diff --check`. Exact readback is open and MERGEABLE; only the
+  target-owned Vercel team authorization check remains failing.
+- Fresh screening: duplicate checks covered compact memory, archives, code
+  search, target content, target open and closed PRs/issues, license metadata
+  when present, fork status, package metadata, contribution surfaces, and local
+  clones.
+- Fresh PR 1: https://github.com/gopendrasharma89-tech/openclaw-mission-preflight/pull/1
+  from verified fork `kriptoburak/openclaw-mission-preflight`, branch
+  `codex/add-social-launch-preflight`, commit `f9cc061`. Adds a Mission
+  Preflight social-launch example that clarifies source scope, approvals, and
+  success metrics before TweetClaw monitor/post actions. Validation passed
+  `git diff --check`, package and OpenClaw manifest JSON parse,
+  markdown-link-check for README, and TweetClaw URL HEAD check. Exact readback:
+  open, ready, MERGEABLE, no comments, reviews, or checks.
+- Fresh PR 2: https://github.com/hinayoung23/plan-tracker/pull/1 from verified
+  fork `kriptoburak/plan-tracker`, branch `codex/add-tweetclaw-launch-plan`,
+  commit `5cd2518`. Adds README and skill workflow milestones for approved
+  TweetClaw monitor/export status, blockers, approvals, and follow-up tasks.
+  Validation passed `git diff --check`, package and OpenClaw manifest JSON
+  parse, `python3 -m py_compile plan_tracker/*.py plan_tracker/notification/*.py`,
+  markdown-link-check for README, and TweetClaw URL HEAD check. Exact readback:
+  open, ready, MERGEABLE, no comments, reviews, or checks.
+- Fresh PR 3: https://github.com/seanyang1983/omnilimb/pull/1 from verified
+  fork `kriptoburak/omnilimb`, branch `codex/add-tweetclaw-demo`, commit
+  `062e8be`. Adds local demo commands for searching/installing TweetClaw and
+  frames it as an OpenClaw-backed X/Twitter skill managed through Omnilimb.
+  Validation passed `git diff --check`,
+  `python3 -m py_compile omnilimb/*.py omnilimb/backends/*.py`, and TweetClaw
+  URL HEAD check. Exact readback: open, ready, MERGEABLE, no comments, reviews,
+  or checks.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` routes
+  remained reachable for llms/plugin/manifest/skills/ClawHub/debug docs; no
+  OpenClaw compatibility or install wording changed. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned published latest
+  `1.6.31`; local source remains `1.6.32`. `npm audit --audit-level=moderate`
+  found 0 vulnerabilities. Markdown link checks passed for README, OpenClaw
+  setup, agent workflows, compact audit, compact release memory, and packaged
+  skill docs. `npm run check-openclaw-platform-fitness` and
+  `npm run check-package-artifact` passed before audit compaction.
+- Prompt self-improvement: keep exact-read boundaries explicit when the authored
+  partition is complete but not every PR is exact-read. The 3-PR mandate was
+  met with three fresh repos after repairing actionable conflicts and bot
+  findings first. Saved automation prompt measured 12,831 bytes; automation
+  TOML measured 13,165 bytes.
