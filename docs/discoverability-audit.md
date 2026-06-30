@@ -189,23 +189,26 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 16:10 UTC: runtime selector limitation recorded. Current OpenClaw
-  docs, npm, and ClawHub were rechecked; source metadata and lockfile now target
-  OpenClaw `2026.6.11`.
-- Crawler session `tweetclaw-20260630-161004` returned 2 opportunities; fallback
-  searches returned 23 unique repo hits after crawler-first coverage.
-- PR inventory read 339 today-updated authored in-scope open PRs; all-open
+- 2026-06-30 16:36 UTC: runtime selector limitation recorded. OpenClaw docs,
+  npm, and ClawHub were rechecked; source still targets OpenClaw
+  `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
+- Crawler session `tweetclaw-20260630-163604` returned 0 opportunities from
+  SKILL/OpenClaw/MCP/Codex/Claude/social/X-Twitter query coverage, so
+  fallback screening used exact repo reads, clones, archive checks, and target
+  content scans. Broad authenticated search later hit a GitHub rate limit and
+  was stopped for the run.
+- PR inventory read 342 today-updated authored in-scope open PRs; all-open
   authored search capped at 1000, so complete all-open inventory is not claimed.
-  Exact-read 61 recent or tracked PRs; 1 GitHub 503 was recorded and no
-  repairable current-head blocker was found.
-- Fresh safe PRs opened and read back OPEN, non-draft, and MERGEABLE:
-  https://github.com/opensubagents/subagentskills/pull/6,
-  https://github.com/takumaoshiro/analysis-skills-md/pull/1, and
-  https://github.com/Narwhal-Lab/MagicSkills/pull/45.
-- TweetClaw changed `README.md`, `docs/openclaw-setup.md`, `package.json`,
-  `package-lock.json`, `scripts/check-openclaw-platform-fitness.mjs`, and audit
-  memory. Link checks, audits, package checks, and `npm run check:all` passed;
-  detailed candidates, duplicate gates, prompt bytes, memory size, and
+  Exact-read 95 recent or tracked PRs and repaired the conflict on
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2.
+- Fresh safe PRs opened and read back OPEN, non-draft, MERGEABLE/CLEAN, with 0
+  comments, 0 reviews, and 0 checks:
+  https://github.com/m13v/skill-social-autoposter/pull/1,
+  https://github.com/NaderNabil216/skillsmith/pull/2, and
+  https://github.com/valkli/twitter-campaign/pull/1.
+- TweetClaw changed audit memory only. External target checks, public diff
+  scans, link checks, OpenClaw/package gates, audits, and `npm run check:all`
+  passed; detailed candidates, duplicate gates, prompt bytes, memory size, and
   self-improvement are archived.
 
 ## Reporting Checklist
