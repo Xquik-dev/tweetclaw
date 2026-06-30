@@ -46450,3 +46450,97 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   audit edits passed `npm run check-memory-md-size`, `git diff --check`,
   compact Markdown link checks, changed-diff public-hygiene review, and
   `npm run check:all`.
+
+## 2026-06-30 03:28 UTC heartbeat
+
+- Runtime selectors: Codex model, Fast mode, and extra-high reasoning controls
+  were not exposed in this runtime. The run recorded the limitation and
+  continued.
+- PR inventory: crawler-first discovery ran before broad authenticated search.
+  Broad `gh search prs` hit a GitHub secondary rate-limit on the first corrected
+  partition (`created:>=2026-06-30`), so broad search stopped as required. The
+  run continued with crawler output, audit URLs, archive URLs, previous exact
+  read lists, target REST reads, clone checks, fork metadata, and PR readbacks.
+  It does not claim the broad search was complete.
+- Exact PR readbacks: 55 known audit and current-day PR URLs were exact-read,
+  with 54 open and 1 closed; merge states were 37 CLEAN, 14 UNSTABLE, and 4
+  BLOCKED. Twelve PRs had comments, 13 had reviews, and 7 had checks. No new
+  repair commit was appropriate before outreach. One X-client PR was inspected
+  because Sourcery and CodeRabbit comments were present; the current head
+  already validates query type, limit, date, non-object responses, HTTP errors,
+  environment API-key isolation, sparse payloads, optional parameters, and owned
+  client close behavior.
+- Crawler coverage: from `/Users/burak/Developer/xquik`, session
+  `tweetclaw-20260630-032826` used 16 focused lanes covering SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw skill, MCP skill, Codex skill,
+  Claude skill, agent skill, social media skill, Twitter/X skill, awesome skill
+  lists, skill registries, forks, generated catalogs, validators, docs, package
+  tooling, and plugin ecosystems. Strict JSON parsed successfully and contained
+  11 opportunities. Fresh-to-memory repos were `astierfe/x-agent`,
+  `cyber-max-huang/xh-skills-md-to-pdf`, and
+  `FOFANA1990/Ripostes_Agent_IA`. Follow-up crawler session
+  `tweetclaw-20260630-032826-b` used additional CSV, dashboard, Python,
+  OpenClaw, and skill lanes; proxy socket failures were logged by the crawler
+  and strict JSON returned 0 opportunities.
+- Fresh screening: compact memory, archive memory, target content, target
+  open and closed PRs/issues, forks, package metadata, and local clones were
+  searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, the TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, and variants.
+  `astierfe/x-agent`, `cyber-max-huang/xh-skills-md-to-pdf`, and
+  `FOFANA1990/Ripostes_Agent_IA` were duplicate-clean, policy-clean,
+  validation-ready, and safe to patch. Missing repository license metadata was
+  recorded for `astierfe/x-agent` and `FOFANA1990/Ripostes_Agent_IA` but was
+  not a direct-PR blocker. `cyber-max-huang/xh-skills-md-to-pdf` declares MIT
+  in `package.json`.
+- Fresh PR 1: https://github.com/astierfe/x-agent/pull/1 from verified custom
+  fork `kriptoburak/x-agent-astierfe`, branch
+  `codex/tweetclaw-source-import`. Added a standard-library TweetClaw CSV
+  source importer that maps exported rows into existing `FeedEntry` objects,
+  wired optional `TWEETCLAW_EXPORT_CSV` ingestion into `main.py`, and documented
+  TweetClaw source packets as approval-gated context rather than publish,
+  reply, follow, or mutate automation. Validation passed dependency install in
+  a temp venv, Python compile, `unittest` discovery, diff check, and added-line
+  secret scan. Exact readback: open, ready, MERGEABLE, UNSTABLE, 1 commit,
+  0 comments, 0 reviews, 1 check, 4 files.
+- Fresh PR 2: https://github.com/cyber-max-huang/xh-skills-md-to-pdf/pull/1
+  from verified fork `kriptoburak/xh-skills-md-to-pdf`, branch
+  `codex/openclaw-doc-links`. Replaced stale OpenClaw skill and ClawHub docs
+  links with `https://docs.openclaw.ai/cli/skills` and
+  `https://docs.openclaw.ai/clawhub/publishing` in README, SKILL.md, and
+  reference docs. Validation passed `npm ci --ignore-scripts --no-audit
+  --no-fund`, `node --check scripts/xh-md-to-pdf.mjs`, markdown link checks
+  with only the existing npm website 403 ignored, and diff check. Exact
+  readback: open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews,
+  0 checks, 3 files.
+- Fresh PR 3: https://github.com/FOFANA1990/Ripostes_Agent_IA/pull/1 from
+  verified fork `kriptoburak/Ripostes_Agent_IA`, branch
+  `codex/tweetclaw-corpus-loader`. Added TweetClaw-style CSV detection and
+  corpus normalization in `agents_cnc/data_loader.py`, then documented the
+  offline TweetClaw export workflow for `run_demo.py` and `run_stream.py`.
+  The repo contains a sensitive-looking sample value in `agents_cnc/.env.example`;
+  this run did not read, print, modify, or include that value in any diff.
+  Validation passed dependency install in a temp venv, Python compile, sample
+  TweetClaw CSV load assertions, markdown link checks, diff check, and
+  added-line secret scan. Exact readback: open, ready, MERGEABLE, CLEAN,
+  1 commit, 0 comments, 0 reviews, 0 checks, 3 files.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/cli/skills`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/install-overrides`. Guessed optional
+  routes `/plugins/permission-requests`, `/sdk/runtime`, and `/debugging`
+  returned HTTP 404. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw`
+  returned published latest `1.6.31`; local source remains `1.6.32`.
+- Public hygiene and links: new PR URLs, TweetClaw GitHub, npm registry
+  metadata, ClawHub plugin route, and the handled OpenClaw docs routes returned
+  HTTP 200. `markdown-link-check` passed for TweetClaw README, OpenClaw setup,
+  agent workflows, compact audit, compact release memory, and packaged skill
+  docs. The npm website remained unsuitable for curl-style probing because it
+  returns HTTP 403 to automation, so registry metadata is the stable npm probe.
+- Validation before audit edits passed `npm audit --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact`. Prompt self-improvement preserved the
+  3-opportunity and 3-PR mandate, crawler-first discovery, duplicate gates,
+  official OpenClaw docs checks, link checks, quiet autonomy, Context7
+  exclusion, and commit/push rule. Saved automation prompt measured 12,831
+  bytes; automation TOML measured 13,165 bytes.
