@@ -49487,3 +49487,42 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   the repaired Saminiscool PR, and all 4 new PRs passed. Persisted prompt size
   measured 12831 bytes and automation TOML measured 13165 bytes. The
   pre-existing untracked local path `0` was preserved.
+
+## 2026-06-30 14:33 UTC heartbeat
+
+Runtime and platform:
+- Codex 5.5 Fast mode and extra-high reasoning controls were not exposed in the runtime, so the limitation was recorded and the run continued.
+- Current official OpenClaw docs were checked before public wording or compatibility decisions: llms, llms-full, CLI plugin install docs, tool plugins, SDK runtime, permission modes, ClawHub publishing, skill format, skill creation, and debugging all returned HTTP 200. `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 after redirect. npm metadata read OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest remained `1.6.31`.
+
+Open PR inventory and repair:
+- Crawler-first and archive-backed PR inventory ran before outreach. Authored open PR search for `updated:>=2026-06-30` returned 318 PRs. All-open authored PR search hit GitHub's 1000-result cap, so complete all-open inventory was not claimed.
+- Exact-read 24 recent in-scope PRs from current partitions and audit-tracked lanes for state, draft status, mergeability, comments, reviews, checks, base/head, and commits.
+- `jamald33n/tweetsave-mcp#2` read back OPEN, non-draft, CONFLICTING/DIRTY, head `kriptoburak:codex/tweetclaw-openclaw-companion`. Fork `kriptoburak/tweetsave-mcp-jamald33n` verified parent/source `jamald33n/tweetsave-mcp`.
+- Repaired the README conflict by preserving the upstream package examples plus the TweetClaw/OpenClaw companion setup, removed malformed raw-ZIP links, and pushed commit `c7a0f2dda36467983ec9eaa1ec9c475957cdd093`. Validation: conflict-marker scan, `git diff --check`, README dash scan, `npx --yes markdown-link-check README.md --quiet`, `npm ci --ignore-scripts --no-audit --no-fund`, `npm run build`, both bundled ZIPs with `unzip -t`, `npm pack --dry-run --json`, `npm view tweetsave-mcp version`, and `npm view @xquik/tweetclaw version openclaw.install`. Public diff scan found no secret values or private provider details.
+- Commented repair status at https://github.com/jamald33n/tweetsave-mcp/pull/2#issuecomment-4844684571. Final readback was OPEN, non-draft, MERGEABLE/CLEAN, head `c7a0f2d`.
+
+Crawler and discovery:
+- Ran Xquik crawler from `/Users/burak/Developer/xquik` with strict JSON output:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260630-143305/crawler-opportunities.json --research-proxy --request-timeout-ms 12000 --proxy-warmup-timeout-ms 12000 --limit 420 --search-pages 3 --per-query-limit 10 --concurrency 16 --session-id tweetclaw-20260630-143305`
+- Query pack covered `SKILL.md`, `.agents/skills`, skills directories, OpenClaw skill, MCP skill, Codex skill, Claude skill, agent skill, social media skill, Twitter/X skill, awesome skill lists, skill registries, forks, generated catalogs, web-index surfaced skill repos, plugin manifests, and package-tooling catalogs.
+- Output parsed as 69 opportunities, 0 repositories, 0 issues, 0 pull requests, 0 code records. Proxy warmup completed with 770 endpoints; no crawler credentials were printed or stored.
+
+Duplicate and target screening:
+- Blocked `hashgraph-online/skill-publish`, `creatorcrawl/creatorcrawl-skill`, and `blacktwist/social-media-skills` as archive duplicates.
+- Blocked `zients/awesome-ai-agent-skills` because target PRs already covered Xquik skill placement.
+- Blocked `Firmislabs/skillship` because open PR #1 already covered Xquik eval coverage.
+- Blocked `elbis330/social-media-scraper-skill` because open PR #2 already covered optional Xquik Twitter fallback.
+- Blocked `tinh2/skills-hub-registry` because open PR #4 covered an adjacent Hermes Tweet skill lane during parallel outreach.
+
+Fresh PRs opened:
+- `m13v/s4l-plugin#1` - https://github.com/m13v/s4l-plugin/pull/1 - added a reviewed X/Twitter source handoff path for S4L so OpenClaw/TweetClaw evidence packets can feed `read_thread` without sharing cookies, browser profiles, exports, or account secrets. Fork `kriptoburak/m13v-s4l-plugin` verified parent/source `m13v/s4l-plugin`. Commit `1230ded` pushed to `codex/tweetclaw-source-handoff`. Validation: `git diff --check`, `npx --yes markdown-link-check README.md skills/social-autoposter/SKILL.md --quiet`, public secret-pattern scan. Readback: OPEN, non-draft, MERGEABLE/CLEAN, 0 comments, 0 reviews, 0 checks.
+- `6missedcalls/awesome-agent-skills#6` - https://github.com/6missedcalls/awesome-agent-skills/pull/6 - added TweetClaw to the curated skill list, added a Social & X/Twitter category, added install and approval-gated capability notes, updated the skill count, and removed a pre-existing dead LICENSE-file link so README link validation passes. Default fork name was occupied by a different parent, so fork `kriptoburak/6missedcalls-awesome-agent-skills` was created and verified parent/source `6missedcalls/awesome-agent-skills`. Commit `208517e` pushed to `codex/add-tweetclaw-skill`. Validation: `git diff --check`, `npx --yes markdown-link-check README.md --quiet`, public secret-pattern scan. Readback: OPEN, non-draft, MERGEABLE/BLOCKED, 0 comments, 0 reviews, 0 checks; no actionable blocker found.
+- `diberry/skills-catalog#2` - https://github.com/diberry/skills-catalog/pull/2 - added validation guidance for social or publishing skills, including human approval, preview paths, local credential handling, and stop conditions for rate-limit or platform safety errors, with TweetClaw-style X/Twitter skills as an example. Default fork name was occupied by a different parent, so fork `kriptoburak/diberry-skills-catalog` was created and verified parent/source `diberry/skills-catalog`. Commit `fca0ba4` pushed to `codex/social-publishing-validation`. Validation: `git diff --check`, `npx --yes markdown-link-check README.md --quiet`, `npm install --ignore-scripts --no-audit --no-fund`, `npm test` with `--runInBand` (94 tests passed), public secret-pattern scan. Readback: OPEN, non-draft, MERGEABLE/CLEAN, 0 comments, 0 reviews, 0 checks.
+
+TweetClaw public hygiene and validation:
+- New external PR bodies disclosed TweetClaw/Xquik maintainer affiliation where TweetClaw was mentioned and avoided internal routing, provider, cost, and credential details.
+- Broken-link checks passed for all newly edited target Markdown. TweetClaw public surface link check passed for `README.md`, `docs/openclaw-setup.md`, `docs/discoverability-audit.md`, and `docs/clawpack-release.md`.
+- TweetClaw gates passed: `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, `npm run build`, and `npm run check:all` (168 tests passed, 100% coverage).
+- Memory cap was enforced with `npm run check-memory-md-size`; compact Markdown stayed at 14952/15360 bytes after moving detail here.
+- Persisted prompt size measured 12831 bytes; automation TOML measured 13165 bytes.
+- Prompt self-improvement: keep custom-fork fallback explicit when default kriptoburak fork names already point to different parents; always read the fork parent after `gh repo fork`; treat `mergeStateStatus=BLOCKED` with 0 checks/comments/reviews as a recorded non-actionable GitHub state, not a repair target.

@@ -190,24 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 13:44 UTC: runtime selector limits were recorded. OpenClaw docs
-  and ClawHub returned HTTP 200; npm latests were OpenClaw `2026.6.10` and
-  TweetClaw `1.6.31`.
-- Crawler session `tweetclaw-20260630-134433` returned 46 opportunities across
-  skill, social, OpenClaw, MCP, registry, and package-tooling lanes.
-- Authored PR inventory read 306 today-updated open PRs; all-open authored PRs
-  still capped at 1000, so complete all-open inventory is not claimed. Recent
-  tracked PR readbacks found `Saminiscool/twitter-ai-agent#2` conflicted; it
-  was repaired to CLEAN and MERGEABLE on the exact PR head.
-- Four fresh PRs met the mandate:
-  https://github.com/devadio/post-skill/pull/2,
-  https://github.com/danasong/xiaohongshu-skill/pull/1,
-  https://github.com/alex-vbcoding/openclaw-local-dev-studio/pull/1, and
-  https://github.com/tsubasakong/oss-contribution-conductor/pull/1. All read
-  back OPEN, non-draft, and MERGEABLE. Devadio Gemini feedback was addressed in
-  `72d989a`; the first 3 are CLEAN and the fourth is UNSTABLE with no checks.
-- Duplicate gates, fork parent checks, target policies, validation, public
-  links, prompt bytes, memory size, and self-improvement are archived.
+- 2026-06-30 14:33 UTC: runtime selector limitation recorded; OpenClaw docs,
+  npm, and ClawHub were rechecked. Crawler session
+  `tweetclaw-20260630-143305` returned 69 opportunities.
+- PR inventory read 318 today-updated authored open PRs; all-open authored
+  search capped at 1000, so complete all-open inventory is not claimed. Exact
+  read 24 recent in-scope PRs and repaired
+  `jamald33n/tweetsave-mcp#2` from CONFLICTING/DIRTY to CLEAN/MERGEABLE.
+- Fresh safe PRs opened:
+  https://github.com/m13v/s4l-plugin/pull/1,
+  https://github.com/6missedcalls/awesome-agent-skills/pull/6, and
+  https://github.com/diberry/skills-catalog/pull/2. All read back OPEN,
+  non-draft, and MERGEABLE; the 6missedcalls PR is GitHub BLOCKED with no
+  checks, comments, or reviews.
+- Duplicate and blocked lanes, fork checks, validation, links, prompt bytes,
+  memory size, and self-improvement are archived.
 
 ## Reporting Checklist
 
