@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 17:33 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-06-30 18:00 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
   HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 17:33 UTC after redirecting to
+  2026-06-30 18:00 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -189,21 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 17:33 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-06-30 18:00 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, and ClawHub were rechecked; source still targets `2026.6.11`, while npm
   latest remains `@xquik/tweetclaw@1.6.31`.
-- Repair priority exact-read
-  https://github.com/jeremylongshore/claude-code-plugins-plus-skills/pull/924:
-  OPEN, MERGEABLE, all checks successful after prior repairs; stale Greptile
-  prose remains but the current Greptile check passed on the latest commit.
-- Crawler session `tweetclaw-20260630-173342` returned 3 prior or duplicate
-  opportunities. Today-updated authored search found 354 filtered in-scope PRs;
-  all-open authored search capped at 1000, so complete all-open inventory is not
-  claimed. Exact-read 40 recent PRs plus `#924`.
+- PR inventory used crawler output, compact/archive URLs, authored open PR
+  partitions, and exact readbacks. Today-updated authored search found 361
+  filtered in-scope PRs; the earlier-June partition capped at 1000, so complete
+  all-open inventory is not claimed. Exact-read 80 PRs; no current-head repair
+  was actionable.
+- Crawler session `tweetclaw-20260630-180009` returned 3 prior or duplicate
+  opportunities, then fallback search found 75 repos for exact screening.
 - Fresh safe PRs opened:
-  https://github.com/timscheuerai/content-vault/pull/1,
-  https://github.com/whawkinsiv/solo-founder-superpowers/pull/2, and
-  https://github.com/charlesdove977/goviralbro/pull/18.
+  https://github.com/jonahcarv-dev/second-brain-builder/pull/1,
+  https://github.com/NachaFromMars/social-media-content-calendar/pull/1, and
+  https://github.com/kennyzheng-builds/x-analytics/pull/1.
 - TweetClaw changed audit memory only. Detailed duplicate blockers, target
   checks, validation, public hygiene, prompt bytes, memory size, and
   self-improvement are archived.
