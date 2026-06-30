@@ -198,11 +198,12 @@ archive, before any outreach or duplicate decision.
   authored search capped at 1000, so complete all-open inventory is not claimed.
   Exact-read 40 recent or tracked PRs; no repairable current-head blocker was
   found.
-- Fresh safe PRs opened and read back OPEN, non-draft, MERGEABLE, and with no
-  comments, reviews, or checks:
+- Fresh safe PRs opened and read back OPEN, non-draft, and MERGEABLE:
   https://github.com/ZSeven-W/skill-cli/pull/1,
   https://github.com/rybkr/morpheus/pull/1, and
   https://github.com/agent-catalog/meta-skills/pull/1.
+  The ZSeven PR has a generic Codex connector review with no actionable
+  suggestions; the other two have no comments, reviews, or checks.
 - Detailed candidates, duplicate and blocked lanes, validations, fork checks,
   prompt bytes, memory size, links, and self-improvement are archived.
 
