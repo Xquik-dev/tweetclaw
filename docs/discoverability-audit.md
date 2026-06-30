@@ -189,17 +189,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 22:20 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-06-30 22:39 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik open issues were rechecked; source still targets
   `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output with 30 opportunities, authored-PR partitions
-  that capped at 300 rows, 1483 archive PR URLs, and 90 exact PR readbacks after
-  a 200-URL exact-read process stalled and was stopped. Complete all-open
-  inventory is not claimed. No safe actionable repair was found before outreach.
+- Inventory used crawler output with 32 opportunities, 1486 archive PR URLs,
+  authored-PR partitions capped at 300 rows, and 90 exact PR readbacks. Complete
+  all-open inventory is not claimed. No safe actionable repair was found before
+  outreach.
 - Fresh safe PRs opened:
-  https://github.com/Ganidhuz/ganidhuz-foxx/pull/1,
-  https://github.com/gurjarmahesh95-dev/x-post-creater-skill/pull/1, and
-  https://github.com/AyushVerma7861/web3-twitter-thread-skill/pull/1.
+  https://github.com/soia-team/soia-open-skills/pull/1,
+  https://github.com/seph1709/x-twitter/pull/1, and
+  https://github.com/windhood-jza/openclaw-bird-skill/pull/1.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
   screening, target validation, broken-link results, prompt bytes, and
   self-improvement are archived.
