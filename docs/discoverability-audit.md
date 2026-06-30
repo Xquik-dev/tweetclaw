@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 00:12 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 01:02 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs host timed out
   via curl; installed `openclaw@2026.6.10` package docs were used as fallback.
   No compatibility wording changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 00:12 UTC after redirecting to
+  2026-06-30 01:02 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-30 00:12 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-30 01:02 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -188,20 +188,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 00:30 UTC: runtime selectors unavailable. Automation prompt updated
-  to require 3 fresh opportunities and 3 PRs per heartbeat or regular run when
-  safe lanes exist; prompt size was 13,165 bytes.
-- Crawler `tweetclaw-20260629-235153` returned 43 opportunities and 0 errors;
-  3-PR rerun returned 0 after proxy socket failures. Broad authored PR search
-  stopped after GitHub rate limit with 815 partial URLs. Crawler repo lists
-  found 33 open PRs; exact reads covered 260 PRs with 0 errors.
+- 2026-06-30 01:02 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260630-004319` returned 40 opportunities across 40 repos.
+  Authored open-PR partition found 2,482 unique URLs without a capped bucket.
+  Broad GraphQL exact-read aborted after repeated HTTP 502, so this run does
+  not claim complete inventory. Recent REST exact reads covered 30 latest PRs
+  plus known audit PRs; only `AytuncYildizli/reach-optimizer#20` had a failing
+  check, and Vercel marked it maintainer-authorization blocked.
 - Repair gate: updated `AbdNour627/awesome-openclaw-configs#1` to upstream main,
-  pushed `a6117fe`, posted validation, and exact-read it open, ready, CLEAN,
-  MERGEABLE, with no checks or reviews.
-- Fresh PRs opened and exact-read open, ready, CLEAN/MERGEABLE, with no current
-  comments, reviews, or checks: https://github.com/heyhank-app/heyhank/pull/6,
-  https://github.com/yangohuang/twitter-declutter/pull/1, and
-  https://github.com/spences10/check-skills/pull/40.
+  pushed `9fe0294`, posted validation, and exact-read it open, ready, MERGEABLE,
+  with no reviews or failing checks.
+- Fresh PRs opened and exact-read open, ready, MERGEABLE, with no comments,
+  reviews, or checks: https://github.com/bregman-arie/devops-sre-skills/pull/1,
+  https://github.com/pranrichh/spectre-mcp/pull/1, and
+  https://github.com/walters2020/sociallistening/pull/1.
 - OpenClaw docs timed out via curl; installed `openclaw@2026.6.10` package docs
   were fallback evidence. npm metadata, ClawHub route, npm audit, target link
   checks, OpenClaw fitness, and final validation are archived.
