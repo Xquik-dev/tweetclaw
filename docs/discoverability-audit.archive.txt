@@ -46781,3 +46781,138 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   public-hygiene review, `npm run check-versions`, and `npm run check:all`.
   Final compact Markdown memory size was 15,133/15,360 bytes. TweetClaw audit
   and release-memory changes were committed and pushed to `master`.
+
+## 2026-06-30 04:50 UTC - Four repairs plus 3 fresh PRs
+
+- Runtime selector note: Codex model, Fast speed, and extra-high reasoning
+  controls were not exposed by this runtime, so the run continued and recorded
+  the limitation.
+- Crawler coverage: from `/Users/burak/Developer/xquik`, strict JSON crawler
+  session `tweetclaw-20260630-045052` used 18 focused lanes covering SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X, awesome-list, registry, forks, generated catalogs,
+  validators, docs, package tooling, OpenClaw social plugins, and social MCPs.
+  Strict JSON parsed successfully and returned 110 opportunities. Repo-mode
+  crawler readback session `tweetclaw-20260630-045052-repos` exact-read
+  `tdack/openclaw-bluesky-channel`, `Horizon733/social-media-insights-mcp`,
+  and `mchtshn1/agent-social`.
+- PR inventory method: compact memory, archive memory, audit-tracked PR URLs,
+  crawler output, broad authored PR search, created-window partitions, current
+  day created and updated partitions, fork metadata, and exact PR reads were
+  combined. Archive extraction found 1,368 known PR URLs. Unqualified authored
+  open PR search hit GitHub's 1,000-result cap, so created windows were
+  partitioned: before 2026-06-01 returned 671, 2026-06-01..10 returned 242,
+  2026-06-11..20 returned 929, 2026-06-21..29 returned 625, and
+  2026-06-30 returned 88. Current-day updated returned 123. The exact-read set
+  covered 123 current-day and repair-relevant open PRs with 93 CLEAN, 19
+  UNSTABLE, 5 BLOCKED, 2 UNKNOWN, 4 DIRTY, and 0 read errors. The run does not
+  claim every historical PR URL was exact-read.
+- Repair 1: https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 was DIRTY.
+  The fork `kriptoburak/xpoz-agent-skills` was verified as parented to
+  `Aditya923-c/xpoz-agent-skills`. Upstream `main` was merged and the README
+  Quick Links conflict was resolved by keeping the GitHub Repository link
+  pointed at the repository page while preserving the TweetClaw resource note.
+  Validation passed conflict-marker scan, README markdown-link-check, diff
+  check, and public-hygiene scan. Commit `ce9e8fd` was pushed; final exact
+  readback was open, ready, MERGEABLE, CLEAN.
+- Repair 2: https://github.com/Aqmar777/openclaw-competitive-intel/pull/1 was
+  DIRTY. The fork `kriptoburak/openclaw-competitive-intel` was verified as
+  parented to `Aqmar777/openclaw-competitive-intel`. Upstream `main` was merged
+  and the README badge/download conflict was resolved by keeping the TweetClaw
+  X/Twitter source section, existing badge area, and one canonical download
+  badge. Validation passed conflict-marker scan, README and docs
+  markdown-link-check, diff check, and public-hygiene scan. Commit `b6ccf6a`
+  was pushed; final exact readback was open, ready, MERGEABLE, CLEAN.
+- Repair 3: https://github.com/jamald33n/tweetsave-mcp/pull/2 was DIRTY. The
+  custom fork `kriptoburak/tweetsave-mcp-jamald33n` was verified as parented to
+  `jamald33n/tweetsave-mcp`. Upstream `main` was merged and the README setup
+  conflict was resolved by keeping the npm/npx setup, MCP config, valid GitHub
+  support links, and TweetClaw handoff while excluding malformed raw-ZIP README
+  links. Validation passed conflict-marker scan, README markdown-link-check,
+  diff check, and public-hygiene scan. Commit `69587b8` was pushed; final
+  exact readback was open, ready, MERGEABLE, CLEAN.
+- Repair 4: https://github.com/reall8164/wechat-openclaw-plugin/pull/1 was
+  DIRTY. The fork `kriptoburak/wechat-openclaw-plugin` was verified as parented
+  to `reall8164/wechat-openclaw-plugin`. Upstream `main` was merged and the
+  README support/download conflict was resolved by keeping the repository
+  support link, optional TweetClaw workflow section, and one download badge.
+  Validation passed conflict-marker scan, README markdown-link-check, diff
+  check, and public-hygiene scan. Commit `27f7ff4` was pushed; final exact
+  readback was open, ready, MERGEABLE, CLEAN.
+- Fresh screening: compact audit, archive audit, crawler output, target content,
+  local clones, fork metadata, open and closed target PRs/issues, package
+  metadata, and exact repo metadata were searched for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, the TweetClaw GitHub URL, npm URL, ClawHub listing,
+  Xquik, x-twitter-scraper, xquik.com, OpenClaw, X/Twitter, social media, and
+  variants. Duplicate or prior-history blockers included
+  `8bitAlex/openclaw-bluesky`, `Upload-Post/upload-post-mcp`,
+  `The-Focus-AI/twitter-skill`, `K0rsantan/x-post-writer`,
+  `jeremy9682/social-monitor-skill`, and
+  `zhaoyan996rongjie-ship-it/x-account-ops-skill`.
+  `tdack/openclaw-bluesky-channel`, `Horizon733/social-media-insights-mcp`, and
+  `mchtshn1/agent-social` were duplicate-clean, non-archived, non-forks,
+  policy-clean, validation-ready, and safe to patch. `tdack` declares MIT in
+  repo metadata and package metadata; `mchtshn1` declares MIT in README;
+  `Horizon733` lacked license metadata, which was recorded but not used as a
+  direct-PR blocker.
+- Fresh PR 1: https://github.com/tdack/openclaw-bluesky-channel/pull/1 from
+  verified fork `kriptoburak/openclaw-bluesky-channel`, branch
+  `codex/tweetclaw-x-context`, commit `ad7362d`. Added a README companion note
+  that keeps the plugin focused on Bluesky DMs and AT Protocol credentials
+  while TweetClaw supplies reviewed X/Twitter source packets and keeps
+  write-like actions in its own approval flow. Validation passed README
+  markdown-link-check, package and manifest JSON parse, diff check,
+  introduced-link HTTP 200, and added-line public-hygiene scan. Final exact
+  readback was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews,
+  0 checks, and 1 file.
+- Fresh PR 2: https://github.com/Horizon733/social-media-insights-mcp/pull/1
+  from verified fork `kriptoburak/social-media-insights-mcp`, branch
+  `codex/tweetclaw-source-context`, commit `f5ba1b2`. Added a README optional
+  X/Twitter source-context workflow before Instagram analytics recommendations.
+  The README link checker only failed the pre-existing `http://localhost:3000`
+  demo URL; the introduced TweetClaw link returned HTTP 200. Validation passed
+  package JSON parsing, diff check, introduced-link check, and added-line
+  public-hygiene scan. Final exact readback was open, ready, MERGEABLE, CLEAN,
+  GitGuardian successful, 1 commit, 0 comments, 0 reviews, and 1 file.
+- Fresh PR 3: https://github.com/mchtshn1/agent-social/pull/3 from verified
+  fork `kriptoburak/agent-social`, branch `codex/tweetclaw-source-signal`,
+  commit `f54117a`. Added a Turkish README note for using TweetClaw as an
+  optional X/Twitter source-signal path while Agent Social keeps its own post,
+  reply, like, and follow flow. The README link checker only failed the
+  pre-existing localhost dashboard URL; the introduced TweetClaw link returned
+  HTTP 200. Validation passed package and agent-card JSON parsing, diff check,
+  introduced-link check, and added-line public-hygiene scan. Final exact
+  readback was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews,
+  0 checks, and 1 file.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/cli/skills`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/install-overrides`. Guessed optional
+  routes `/plugins/permission-requests`, `/sdk/runtime`, and `/debugging`
+  returned HTTP 404. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw`
+  returned published latest `1.6.31`; local source remains `1.6.32`. `npm view
+  clawhub` returned `0.23.1`. `npm audit --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  and `npm run check-versions` passed.
+- Public hygiene and links: TweetClaw README, OpenClaw setup docs, agent
+  workflows, compact audit, compact release memory, and packaged skill docs
+  passed markdown link checks. All 3 new PR URLs, all 4 repaired PR URLs,
+  ClawHub plugin route, TweetClaw GitHub URL, npm registry metadata, and
+  handled OpenClaw docs routes were probed without broken-link regressions.
+  Diff reviews found no secrets, private implementation details, internal cost
+  mechanics, stale metadata, unsupported claims, or restricted provider/source
+  names.
+- Prompt self-improvement: existing automation prompt already preserved Codex
+  5.5 Fast mode and extra-high reasoning wording, quiet autonomy,
+  crawler-first discovery, mandatory 3-PR submission to 3 different repos,
+  complete inventory priority, duplicate/fork gates, official OpenClaw checks,
+  public link checks, Context7 exclusion, secret handling, cadence, thread
+  binding, Markdown cap, prompt cap, commit/push rule, and self-improvement
+  rule. No prompt edit was needed. Automation TOML measured 13,165 bytes, below
+  the 15 KiB prompt cap.
+- Final validation after audit edits passed `npm run check-memory-md-size`,
+  `git diff --check`, compact Markdown link checks, changed-diff
+  public-hygiene review, `npm run check-versions`, and `npm run check:all`.
+  Final compact Markdown memory size was 15,236/15,360 bytes. TweetClaw audit
+  and release-memory changes were committed and pushed to `master`.
