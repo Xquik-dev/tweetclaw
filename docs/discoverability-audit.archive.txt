@@ -49338,3 +49338,143 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   repos for generic approval-boundary improvements when validator and catalog
   lanes are saturated, but keep the patch template-native and avoid adding
   TweetClaw placement unless it is directly useful.
+
+## 2026-06-30 13:44 UTC heartbeat
+
+- Runtime selector note: this run could not select Codex 5.5 Fast mode or
+  extra-high reasoning in app/runtime controls, so the limitation was recorded
+  and the run continued.
+- TweetClaw repo state: started on `master` at `1795ad1 docs: record
+  2026-06-30 13:23 outreach heartbeat` with only the pre-existing untracked
+  local path `0`. `Xquik-dev/tweetclaw` had no open issues or PRs. The current
+  xquik workspace issue check returned no open issues.
+- Official OpenClaw and package checks:
+  `https://docs.openclaw.ai/llms.txt`, `/llms-full.txt`, `/cli/plugins`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`,
+  `/tools/permission-modes`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/tools/creating-skills`, `/help/debugging`, and
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200. npm metadata
+  showed OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and TweetClaw npm latest `1.6.31`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260630-134433` covered `SKILL.md`,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude,
+  social/Twitter-X skills, skill registries, awesome lists, ClawHub skill
+  formats, validators, plugin manifests, package tooling, and approval-control
+  surfaces. It returned 46 candidates. The list included skill registries,
+  social-media skills, OpenClaw registries, POST/social schedulers, social
+  browser skills, and skill tooling. No crawler credentials were printed.
+- PR inventory and repair gate: today-updated authored open PR search returned
+  306 PRs. The all-open authored PR bucket still capped at 1000, so complete
+  all-open inventory is not claimed. Exact readbacks covered the 30 newest
+  today-updated authored PRs plus audit-sensitive recent TweetClaw/OpenClaw,
+  MCP, social, X/Twitter, registry, and package-tooling PRs. `Saminiscool/
+  twitter-ai-agent#2` was OPEN, non-draft, `CONFLICTING`, and `DIRTY` with 13
+  prior self-repair comments and no maintainer review. The conflict was repaired
+  before new outreach.
+- Repair: cloned `Saminiscool/twitter-ai-agent`, discovered the PR head was the
+  separately named fork `kriptoburak/saminiscool-twitter-ai-agent-xquik`, and
+  used REST fork readback after an initial push went to an older redirected fork
+  remote. The exact PR head branch `codex/add-xquik-backend` was merged with
+  upstream `main`, README conflict markers were removed, and commit
+  `eb85f142728ec93a9bc94c889deeabcf38643d7f` was pushed. Validation passed:
+  `npm ci --ignore-scripts` after removing older automation-owned temp clones
+  to recover disk space, `npx prettier --check README.md src/tools.ts
+  src/twitter-api.ts tests/twitter-api.test.ts`, `npx biome lint src/tools.ts
+  src/twitter-api.ts tests/twitter-api.test.ts`, `npx tsc --noEmit`,
+  `npx vitest run tests/twitter-api.test.ts`, README markdown-link-check, and
+  public-hygiene diff scan. The target lockfile still reports pre-existing
+  dependency advisories; no dependency files were changed. Final readback showed
+  OPEN, non-draft, MERGEABLE, CLEAN, no reviews, no checks.
+- Fresh candidate screening: compact audit, archive, crawler output, target
+  metadata, target content, target PRs, target issues, clone metadata, and REST
+  fork data were checked for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, social, Twitter/X, approval, validator, catalog, package-tooling,
+  source-evidence, starter-template, local-dev, contribution workflow, and
+  skill-template variants. `blacktwist/social-media-skills`,
+  `creatorcrawl/creatorcrawl-skill`, `kostja94/marketing-skills`, and several
+  social-skill crawler hits were duplicate-covered by existing PRs, issues, or
+  audit history. `devadio/post-skill` was previously held only for missing
+  license metadata, which is not a direct-PR blocker under current rules, and no
+  target PR or issue duplicate was found. Fresh selected lanes were
+  `devadio/post-skill`, `danasong/xiaohongshu-skill`,
+  `alex-vbcoding/openclaw-local-dev-studio`, and
+  `tsubasakong/oss-contribution-conductor`.
+- Fork safety: `gh repo fork` created or confirmed personal forks under
+  `kriptoburak`. Exact REST readback verified `fork: true`, parent, and source
+  before pushing: `kriptoburak/post-skill` parent `devadio/post-skill`;
+  `kriptoburak/xiaohongshu-skill` parent `danasong/xiaohongshu-skill`;
+  `kriptoburak/openclaw-local-dev-studio` parent
+  `alex-vbcoding/openclaw-local-dev-studio`; and
+  `kriptoburak/oss-contribution-conductor` parent
+  `tsubasakong/oss-contribution-conductor`.
+- Fresh PR 1: opened https://github.com/devadio/post-skill/pull/2 from branch
+  `codex/tweetclaw-source-context`, commit
+  `94a2970 docs: add X source context guidance`. The PR documents TweetClaw as
+  an optional OpenClaw source-evidence packet for X/Twitter search, profile,
+  thread, media, and monitor context before Devad CORE POST dry-runs while
+  preserving CORE POST as the only publishing and scheduling authority. It also
+  updates the reusable `SKILL.md` and `MASTER_PROMPT.md` guidance. Validation
+  passed `git diff --check`, public-hygiene diff scan, and markdown-link-check
+  on touched docs with a config ignore limited to the pre-existing API authority
+  URL `https://devad.io/api/v1/post`, which returns 404 to generic link
+  checkers. Readback showed OPEN, non-draft, MERGEABLE, CLEAN, no comments, no
+  reviews, and no checks configured.
+- Fresh PR 2: opened https://github.com/danasong/xiaohongshu-skill/pull/1 from
+  branch `codex/final-approval-checkpoint`, commit
+  `aad14f6 docs: add final approval checkpoint`. The PR adds a final human
+  approval checkpoint across the root bilingual README, English README, Chinese
+  README, packaged SKILL.md, and skill guide so the public-safe Xiaohongshu
+  workflow stops at a reviewable handoff package before any platform-side
+  action. Validation passed `git diff --check`, public-hygiene diff scan, and
+  markdown-link-check on all touched docs. Readback showed OPEN, non-draft,
+  MERGEABLE, CLEAN, no comments, no reviews, and no checks configured.
+- Fresh PR 3: opened
+  https://github.com/alex-vbcoding/openclaw-local-dev-studio/pull/1 from branch
+  `codex/approval-gated-test-docs`, commit
+  `92e2059 docs: add approval-gated test recipe`. The PR adds a README recipe
+  for testing approved and denied action paths with custom mocks before
+  deployment, focused on skills that send messages, publish posts, schedule
+  content, delete data, or change external accounts. Validation passed
+  `git diff --check`, public-hygiene diff scan, and markdown-link-check on
+  README with config ignores limited to pre-existing dead README links:
+  `https://openclaw.com`, `https://openclaw.com/docs/skills`, and the VS Code
+  marketplace placeholder. Readback showed OPEN, non-draft, MERGEABLE, CLEAN,
+  no comments, no reviews, and no checks configured.
+- Fresh PR 4: opened
+  https://github.com/tsubasakong/oss-contribution-conductor/pull/1 from branch
+  `codex/fork-parent-preflight`, commit
+  `9cff1a6 docs: add fork parent preflight`. The PR adds fork-parent
+  verification to the core skill, PR checklist, and gh command reference, and
+  rebuilds `oss-contribution-conductor.skill`. Validation passed `make test`,
+  `make validate`, `git diff --check`, and public-hygiene diff scan. Readback
+  showed OPEN, non-draft, MERGEABLE, UNSTABLE, no comments, no reviews, and no
+  checks reported by `gh pr checks`.
+- Link and public-hygiene checks: touched external diffs added no secret
+  values, private implementation details, restricted provider or source names,
+  internal cost mechanics, unsupported claims, stale metadata, em dashes, or
+  spaced double-hyphen sequences. PR bodies disclosed TweetClaw/Xquik
+  affiliation where relevant. No NHS badge was added because none of the
+  touched surfaces had a useful badge area for it.
+- Local-disk maintenance: `/private/tmp` was nearly full during the
+  `twitter-ai-agent` repair install. Only older automation-owned
+  `/private/tmp/tweetclaw-heartbeat-*` directories were removed, preserving the
+  current run directory. Available space recovered from about 138 MiB to about
+  48 GiB.
+- Prompt self-improvement: durable lesson captured by PR 4 and this audit:
+  verify fork parent/source with exact REST reads before every push, especially
+  when a same-name fork, renamed fork, or moved repository exists. No persisted
+  prompt edit was needed because the prompt already requires fork parent
+  verification and correct `kriptoburak` fork ownership.
+- Final TweetClaw validation: `npm audit --audit-level=moderate`,
+  `npm audit --omit=dev --audit-level=moderate`, `npm run build`,
+  `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-versions`, and full
+  `npm run check:all` passed. The full gate included
+  `npm run check-memory-md-size` at 15243/15360 bytes, 168 passing tests, and
+  100% statement, branch, function, and line coverage. Public markdown link
+  checks and direct URL probes for TweetClaw GitHub, ClawHub, OpenClaw docs,
+  the repaired Saminiscool PR, and all 4 new PRs passed. Persisted prompt size
+  measured 12831 bytes and automation TOML measured 13165 bytes. The
+  pre-existing untracked local path `0` was preserved.

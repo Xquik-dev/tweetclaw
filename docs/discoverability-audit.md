@@ -190,19 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 13:23 UTC: runtime selector limits were recorded. Current OpenClaw
+- 2026-06-30 13:44 UTC: runtime selector limits were recorded. Current OpenClaw
   docs and ClawHub route returned HTTP 200; npm showed OpenClaw latest
   `2026.6.10` and TweetClaw latest `1.6.31`.
-- Crawler session `tweetclaw-20260630-132334` returned 0 opportunities, so exact
-  GitHub metadata, PR/issue search, clone, and link checks carried discovery.
-- Authored PR inventory read 301 today-updated open PRs; all-open authored PRs
+- Crawler session `tweetclaw-20260630-134433` returned 46 opportunities across
+  skill, social, OpenClaw, MCP, registry, and package-tooling lanes.
+- Authored PR inventory read 306 today-updated open PRs; all-open authored PRs
   still capped at 1000, so complete all-open inventory is not claimed. Recent
-  tracked PR readbacks found no maintainer-actionable repair.
-- Three fresh PRs met the mandate:
-  https://github.com/ALT-F1-OpenClaw/openclaw-skill-template/pull/1,
-  https://github.com/alex-vbcoding/openclaw-skill-starter-kit/pull/1, and
-  https://github.com/daniellessa/openclaw-skill-template/pull/1. All read back
-  OPEN, non-draft, MERGEABLE, and CLEAN.
+  tracked PR readbacks found `Saminiscool/twitter-ai-agent#2` conflicted; it
+  was repaired to CLEAN and MERGEABLE on the exact PR head.
+- Four fresh PRs met the mandate:
+  https://github.com/devadio/post-skill/pull/2,
+  https://github.com/danasong/xiaohongshu-skill/pull/1,
+  https://github.com/alex-vbcoding/openclaw-local-dev-studio/pull/1, and
+  https://github.com/tsubasakong/oss-contribution-conductor/pull/1. All read
+  back OPEN, non-draft, and MERGEABLE; the first 3 are CLEAN and the fourth is
+  UNSTABLE with no checks reported.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 
