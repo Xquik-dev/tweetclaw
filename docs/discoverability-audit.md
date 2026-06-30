@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 03:28 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 03:55 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin CLI, manifest, tool-plugin, ClawHub,
   skill-format, and install-override routes returned HTTP 200. No compatibility
   wording changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 03:28 UTC after redirecting to
+  2026-06-30 03:55 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-30 03:28 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-30 03:55 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,23 +189,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 03:28 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260630-032826` returned 11 repos from 16 focused skill,
-  OpenClaw, MCP, social, and X/Twitter lanes; follow-up crawler session
-  `tweetclaw-20260630-032826-b` hit proxy socket failures and returned 0 repos.
-  Broad authenticated PR search stopped on GitHub secondary rate-limit before
-  partition completion, then continued with exact PR URLs and REST readbacks.
-- Open PR inventory exact-read 55 audit and current-day PRs: 54 open, 1 closed;
-  merge states 37 CLEAN, 14 UNSTABLE, 4 BLOCKED. No actionable maintainer
-  repair remained; the inspected bot-comment thread was already addressed.
+- 2026-06-30 03:55 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260630-035521` returned 15 repos from 18 focused skill,
+  OpenClaw, MCP, social, and X/Twitter lanes. Exact PR inventory covered 58
+  known PRs, then a current-day authored partition added 16 exact reads; 74
+  combined exact reads found 73 open, 1 closed, 52 CLEAN, 18 UNSTABLE, and 4
+  BLOCKED PRs with no read errors.
+- Repaired https://github.com/Samin12/instagram-thread-carousel/pull/1 for 2
+  valid JSON-loader findings; final head `f3e6af0` exact-read open, ready,
+  MERGEABLE, and CLEAN.
 - Three fresh PRs exact-read open, ready, MERGEABLE, CLEAN and met the mandate:
-  https://github.com/astierfe/x-agent/pull/1,
-  https://github.com/cyber-max-huang/xh-skills-md-to-pdf/pull/1, and
-  https://github.com/FOFANA1990/Ripostes_Agent_IA/pull/1.
-- Duplicate, fork, policy, license, target-content, target PR/issue, and
-  validation gates passed. Official docs, npm metadata, ClawHub route, PR URL
-  probes, markdown links, OpenClaw fitness, package artifact, npm audit, memory
-  cap, prompt bytes, and final validation are archived.
+  https://github.com/arcmich/openclaw-tiktok/pull/1,
+  https://github.com/pashechello/kotkit-social-agent/pull/1, and
+  https://github.com/XPOZpublic/xpoz-openclaw-plugin/pull/2.
+- Fresh target duplicate, fork, policy, license, target-content, PR/issue,
+  validation, docs, npm, ClawHub, link, prompt-byte, and final gate details are
+  archived.
 
 ## Reporting Checklist
 

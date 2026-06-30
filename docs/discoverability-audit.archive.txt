@@ -46549,3 +46549,116 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   review, `npm run check-versions`, and `npm run check:all`. Final memory size
   was 15,164/15,360 bytes before the readback wording update. TweetClaw audit
   and release-memory changes were committed and pushed to `master`.
+
+## 2026-06-30 03:55 UTC - Repair plus 3 fresh PRs
+
+- Runtime selector note: Codex model, Fast speed, and extra-high reasoning
+  controls were not exposed by this runtime, so the run continued and recorded
+  the limitation.
+- Crawler coverage: from `/Users/burak/Developer/xquik`, strict JSON crawler
+  session `tweetclaw-20260630-035521` used 18 focused lanes covering SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw skill, MCP skill, Codex skill,
+  Claude skill, agent skill, social media skill, Twitter/X skill, awesome skill
+  lists, skill registries, forks, generated catalogs, validators, docs, package
+  tooling, plugin ecosystems, and OpenClaw social plugins. Strict JSON parsed
+  successfully and returned 15 repos: `astierfe/x-agent`,
+  `beggarticksarthurtatum121/reddit-skills`, `brightdata/openclaw-plugin`,
+  `pashechello/kotkit-social-agent`,
+  `cyber-max-huang/xh-skills-md-to-pdf`, `XPOZpublic/xpoz-openclaw-plugin`,
+  `rikouu/openclaw-tikhub-plugin`, `mondaymandy/openclaw-agentpresence`,
+  `BAiSEDagent/social-agent`, `FOFANA1990/Ripostes_Agent_IA`,
+  `DevinChen2014/social-media-openclaw-plugins`, `arcmich/openclaw-tiktok`,
+  `TINZY0612/openclaw-x-signal`, `pepicrft/openclaw-plugin-social`, and
+  `seantunley/openclaw-social-pipeline`.
+- PR inventory method: compact memory, archive memory, prior exact-read URLs,
+  audit-tracked PR URLs, crawler-backed lanes, and narrow authenticated
+  current-day authored search were combined. Initial exact reads covered 58
+  known PRs with 57 open, 1 closed, 40 CLEAN, 14 UNSTABLE, 4 BLOCKED, 55
+  blank review decisions, 1 APPROVED, 2 REVIEW_REQUIRED, 23 attention items,
+  and 0 read errors. A current-day authored search returned 73 open PRs and 16
+  extra PR URLs, all exact-read without errors. Combined coverage was 74 exact
+  reads: 73 open, 1 closed, 52 CLEAN, 18 UNSTABLE, 4 BLOCKED, and 27 attention
+  items. This run did not claim all possible authored PRs beyond the completed
+  known-URL and current-day partitions.
+- PR repair: https://github.com/Samin12/instagram-thread-carousel/pull/1 had 2
+  valid Greptile JSON-loader findings. Commits `33d85eb` and `f3e6af0` now
+  preserve intentionally empty `tweets` arrays, reject ambiguous top-level JSON
+  row arrays, validate row arrays, and normalize JSON row keys like CSV
+  headers. Validation passed Python compile, JSON and CSV sample conversions,
+  expected ambiguous-JSON failure, diff check, and public-hygiene scan. Final
+  exact readback was open, ready, MERGEABLE, CLEAN, 3 commits, 2 changed files,
+  and head `f3e6af06277cd2f4dfa32fee17ad8e8546874cdf`.
+- Fresh screening: compact audit, archive audit, target content, open and
+  closed target PRs/issues, forks, package metadata, local clones, and public
+  metadata were searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, the
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  and variants. `arcmich/openclaw-tiktok`,
+  `pashechello/kotkit-social-agent`, and
+  `XPOZpublic/xpoz-openclaw-plugin` were duplicate-clean, non-archived,
+  non-forks, issue-enabled, policy-clean, validation-ready, and safe to patch.
+  All 3 lacked license metadata, which was recorded but not used as a direct
+  PR blocker. `brightdata/openclaw-plugin` was duplicate-blocked by existing
+  open TweetClaw history.
+- Fresh PR 1: https://github.com/arcmich/openclaw-tiktok/pull/1 from verified
+  fork `kriptoburak/openclaw-tiktok`, branch
+  `codex/tweetclaw-evidence-handoff`, commit `fb9bc3f`. Added an optional
+  TweetClaw source-packet handoff to `SETUP.md` for separate X/Twitter
+  evidence that can inform TikTok briefs without granting automatic publish
+  authority. Validation passed package JSON parse, markdown link check, diff
+  check, and public-hygiene scan. Final exact readback was open, ready,
+  MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews, 0 checks, 1 file, and
+  head `fb9bc3f93e2dc782336cb24a5d956b5ca843c224`.
+- Fresh PR 2: https://github.com/pashechello/kotkit-social-agent/pull/1 from
+  verified fork `kriptoburak/kotkit-social-agent`, branch
+  `codex/tweetclaw-signal-import`, commit `a35a21f`. Added
+  `api/services/tweetclaw_import.py`, wired
+  `SocialPipelineService.create_tweetclaw_signal()`, documented TweetClaw
+  source packets, and added unit tests for mapping, no-text skip, and service
+  dedupe. The repo uses Python 3.10-plus syntax, so validation used Python 3.11
+  after the system Python 3.9 parser failed on pre-existing annotations.
+  Validation passed dependency install in a temp venv, focused and full pytest,
+  Python compile, README link check, diff check, and public-hygiene scan. Final
+  exact readback was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0
+  reviews, 0 checks, 4 files, and head
+  `a35a21fd5b739e81192bf288d91dca9a82e08ded`.
+- Fresh PR 3: https://github.com/XPOZpublic/xpoz-openclaw-plugin/pull/2 from
+  verified fork `kriptoburak/xpoz-openclaw-plugin`, branch
+  `codex/tweetclaw-companion-workflow`, commit `b7524ae`. Added a README
+  companion X/Twitter workflow explaining that TweetClaw can provide separate
+  source packets, reply context, monitors, media checks, giveaway workflows,
+  and approval-gated write-like actions while Xpoz remains the cross-platform
+  intelligence layer. Validation passed dependency install, typecheck, tests,
+  README link check, diff check, and public-hygiene scan. Final exact readback
+  was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews, 0
+  checks, 1 file, and head `b7524ae99379042e9c4b5f020a34e2a1cb533248`.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/cli/skills`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/install-overrides`. Guessed optional
+  routes `/plugins/permission-requests`, `/sdk/runtime`, and `/debugging`
+  returned HTTP 404. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw`
+  returned published latest `1.6.31`; local source remains `1.6.32`.
+  `npm view clawhub` returned `0.23.1`. `npm audit --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact` passed.
+- Public hygiene and links: TweetClaw README, OpenClaw setup docs, agent
+  workflows, compact audit, compact release memory, and packaged skill docs
+  passed markdown link checks. All 3 new PR URLs and the repaired PR URL
+  returned HTTP 200. The ClawHub plugin route, TweetClaw GitHub URL, npm
+  registry metadata, and handled OpenClaw docs routes were probed without
+  broken-link regressions. Diff reviews found no secrets, private
+  implementation details, internal cost mechanics, stale metadata, unsupported
+  claims, or restricted provider/source names.
+- Prompt self-improvement: existing automation prompt already preserved the
+  3-opportunity and 3-PR mandate, crawler-first discovery, complete inventory
+  priority, duplicate/fork gates, official OpenClaw checks, public link checks,
+  quiet autonomy, Context7 exclusion, secret handling, Markdown cap, prompt
+  cap, commit/push rule, and self-improvement rule. No prompt edit was needed.
+  Automation TOML measured 13,165 bytes, below the 15 KiB prompt cap.
+- Final validation after audit edits passed `npm run check-memory-md-size`,
+  `git diff --check`, compact Markdown link checks, changed-diff
+  public-hygiene review, `npm run check-versions`, and `npm run check:all`.
+  Final compact Markdown memory size was 14,998/15,360 bytes before the final
+  readback check. TweetClaw audit and release-memory changes were committed
+  and pushed to `master`.
