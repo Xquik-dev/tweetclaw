@@ -189,18 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 19:42 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, and ClawHub were rechecked; source still targets `2026.6.11`, while npm
-  latest remains `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output, authored open PR search, archive URLs, and 90
-  exact PR readbacks. Complete all-open inventory is not claimed. Repaired
-  `jeremylongshore/claude-code-plugins-plus-skills#924`; all checks passed.
+- 2026-06-30 20:09 UTC: runtime selector limitation recorded. OpenClaw docs,
+  npm, ClawHub, and Xquik open issues were rechecked; source still targets
+  `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
+- Inventory used crawler output, authored open PR search, archive URLs, and 100
+  exact PR readbacks. Complete all-open inventory is not claimed. No
+  maintainer-actionable repair blocked outreach; 3 Vercel failures were
+  target-owned authorization gates.
 - Fresh safe PRs opened:
-  https://github.com/cindyleadgenz/ai-content-gen/pull/1,
-  https://github.com/arturseo-geo/content-creation-skill/pull/2, and
-  https://github.com/thedanielmay/supersocials-skill/pull/1.
-- TweetClaw changed audit memory only. Detailed crawler coverage, blockers,
-  validation, public hygiene, prompt bytes, and self-improvement are archived.
+  https://github.com/gabogabucho/trendingcontent-agent/pull/1,
+  https://github.com/loong-solvable/x-bookmark-digest-skill/pull/1, and
+  https://github.com/mukai-work/skill-sns-post-ja/pull/1.
+- TweetClaw changed audit memory only. Detailed crawler coverage, rate-limit
+  blocker, duplicate screening, validation, public hygiene, prompt bytes, and
+  self-improvement are archived.
 
 ## Reporting Checklist
 
