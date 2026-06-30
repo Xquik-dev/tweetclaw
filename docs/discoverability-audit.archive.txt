@@ -48329,3 +48329,128 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   verified fork remote manually; avoid zsh word-splitting loops over strings
   while `set -u` is active; and treat Codex review usage-limit comments as
   non-actionable unless they include a concrete requested change.
+
+## 2026-06-30 10:32 UTC heartbeat
+
+- Runtime and source checks: runtime model, Fast speed, and effort selectors
+  were not exposed in this environment, so the run continued and records that
+  limitation. Official OpenClaw docs were rechecked by HTTP: `llms.txt`,
+  `llms-full.txt`, plugin install docs, manifest docs, tool plugins,
+  permission requests, SDK/runtime docs, install overrides, ClawHub publishing,
+  skill format, and debugging all returned HTTP 200. npm metadata showed
+  OpenClaw latest `2026.6.10` and TweetClaw latest `1.6.31`.
+- Crawler-first coverage: Xquik crawler session
+  `tweetclaw-20260630-103206` used focused SKILL, `.agents/skills`, OpenClaw,
+  MCP, Codex, Claude, social, Twitter/X, registry, validator, and package
+  tooling queries. It returned 3 opportunities, all duplicate or prior-history
+  blocked: `elbis330/social-media-scraper-skill`,
+  `rabden/X-twitter-social-manager-skill`, and
+  `AISA-skills/social-media-skills`. Session
+  `tweetclaw-20260630-103206b` returned 0 opportunities with managed-proxy
+  socket-close/quarantine noise. No GitHub tokens were used by the crawler.
+- PR inventory and repair gate: broad authenticated `gh search prs --author
+  kriptoburak --state open --limit 1000` and the current-day partition both hit
+  GitHub 403 search-rate limits, so broad authenticated search stopped for the
+  run. Archive extraction found 1,404 PR URLs and 1,026 relevant PR URLs.
+  Exact readbacks covered current known open PRs:
+  `biodoia/biodoia-skills-marketplace#2` OPEN, non-draft, MERGEABLE, UNSTABLE,
+  5 comments, 3 reviews, 2 checks, with only CodeRabbit usage-limit and prior
+  approval notes; `azeemkafridi/bulkpublish-ai-toolkit#1` OPEN, MERGEABLE,
+  CLEAN, no comments or checks; `waseemnasir2k26/skynet-social-stack#1` OPEN,
+  MERGEABLE, CLEAN, 1 Codex usage-limit comment; and
+  `reparrent/claude-skills-workflow#1` OPEN, MERGEABLE, CLEAN, no comments or
+  checks. No actionable maintainer comments, review threads, CI failures,
+  conflicts, DCO/CLA blockers, generated-file drift, or bot findings were
+  found.
+- Fresh discovery and blockers: duplicate or prior-history blockers included
+  `charlie947/social-media-skills`, `daymade/claude-code-skills`,
+  `STGime/posta-skill`, `wshuyi/x-article-publisher-skill`,
+  `alirezarezvani/claude-skills`, `kodustech/awesome-agent-skills`,
+  `heilcheng/awesome-agent-skills`, `VoltAgent/awesome-agent-skills`,
+  `affaan-m/ECC`, `tilomitra/release-kit-claude-skills`,
+  `jeremyknows/x-master`, `minhnv0807/ai-business-skills`,
+  `ComposioHQ/awesome-claude-skills`, and `davila7/claude-code-templates`.
+  `vanities/social-skills` was blocked by target policy against platform APIs.
+  `sharbelxyz/sage-x-agent` remained blocked by missing license from prior
+  screening. `sergebulaev/linkedin-skills` was policy-blocked because target
+  instructions require commits authored as the maintainer. Missing license
+  metadata alone did not block direct PRs.
+- Duplicate, fork, and target-policy checks for selected repos: compact audit,
+  archive, target content, and target open or closed PRs/issues were searched
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, social, Twitter/X, and
+  variants. `Hainrixz/claude-ads`, `guia-matthieu/clawfu-skills`, and
+  `automationcreators/claude-code-skills` had no target duplicate. Existing
+  fork names `kriptoburak/claude-ads` and `kriptoburak/claude-code-skills`
+  pointed to different upstream parents, so renamed forks
+  `kriptoburak/hainrixz-claude-ads` and
+  `kriptoburak/automationcreators-claude-code-skills` were created and parent
+  verified before push.
+- Fresh PR 1: opened https://github.com/Hainrixz/claude-ads/pull/7 from
+  verified fork `kriptoburak/hainrixz-claude-ads`, parent
+  `Hainrixz/claude-ads`, branch `codex/tweetclaw-source-packets`, commit
+  `d949959071b8383fb68295f81672a7347a6159e6`. Changed
+  `skills/ads-competitor/SKILL.md` and `skills/ads-create/SKILL.md` to add
+  optional TweetClaw/OpenClaw public X/Twitter source packets for competitor ad
+  intelligence and campaign briefs while forbidding posting, scheduling,
+  replies, DMs, or monitoring. Validation passed `git diff --check`,
+  edited-file markdown link check, `python3 -m pytest tests/` with 169 passed
+  and 4 skipped, `bash -n install.sh uninstall.sh`, and JSON schema parse.
+  Exact PR readback: OPEN, non-draft, MERGEABLE, base `main`, head owner
+  `kriptoburak`, 2 changed files, 25 additions, 0 reviews, 0 checks, and 1
+  Codex usage-limit comment. The comment is not actionable.
+- Fresh PR 2: opened https://github.com/guia-matthieu/clawfu-skills/pull/8 from
+  verified fork `kriptoburak/clawfu-skills`, parent
+  `guia-matthieu/clawfu-skills`, branch
+  `codex/tweetclaw-social-analytics-source-packets`, commit
+  `96b37158ed7b1fb5f7a8fc2c44645a97852413e8`. Changed
+  `skills/social/social-analytics/SKILL.md` to document TweetClaw/OpenClaw
+  source packets for public Twitter/X profile audits, metric caveats, and
+  report citation while forbidding write-like actions. Validation passed `git
+  diff --check` and edited-file markdown link check. README link check found a
+  pre-existing target-owned npm URL 403 for `@clawfu/mcp-skills`. Exact PR
+  readback: OPEN, non-draft, MERGEABLE, base `main`, head owner `kriptoburak`,
+  1 changed file, 15 additions, 0 comments, 0 reviews, and 0 checks.
+- Fresh PR 3: opened
+  https://github.com/automationcreators/claude-code-skills/pull/2 from verified
+  fork `kriptoburak/automationcreators-claude-code-skills`, parent
+  `automationcreators/claude-code-skills`, branch
+  `codex/tweetclaw-thread-source-evidence`, commit
+  `882d799cd018ae1765c99ddce0981a04752b31c4`. Changed
+  `twitter-thread-builder/SKILL.md` to accept TweetClaw/OpenClaw public
+  X/Twitter source packets for hooks, examples, and audience wording while
+  keeping output as a human-reviewed draft thread. Validation passed `git diff
+  --check` and edited-file markdown link check. No package-level test command
+  exists. Exact PR readback: OPEN, non-draft, MERGEABLE, base `main`, head
+  owner `kriptoburak`, 1 changed file, 15 additions, 0 reviews, 0 checks, and 1
+  Codex usage-limit comment. The comment is not actionable.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. External changed files are listed
+  above. The unrelated untracked local path `0` in TweetClaw was preserved and
+  not inspected.
+- Validation and public hygiene: edited external diffs passed `git diff
+  --check`, edited-file link checks, and scans for secrets, credentials,
+  private implementation details, restricted provider/source names, internal
+  cost mechanics, unsupported claims, and stale metadata. TweetClaw public
+  checks passed `npm audit --audit-level=moderate`, `npm audit --omit=dev
+  --audit-level=moderate`, README/audit/release-memory markdown link checks,
+  direct `curl -L` probes for TweetClaw GitHub, npm latest, current ClawHub,
+  OpenClaw Directory, all 3 new PRs, `docs.openclaw.ai/llms.txt`, and OpenClaw
+  manifest docs, `npm run build`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-versions`, `npm run
+  check-memory-md-size`, `git diff --check`, and `npm run check:all`.
+  `check:all` passed typecheck, lint, cpd, knip, suppression check, dash check,
+  memory-size check, skill frontmatter, versions, build, OpenClaw fitness,
+  package artifact, and coverage with 11 files, 168 tests, and 100%
+  statements, branches, functions, and lines. Compact automation Markdown
+  measured 15,027/15,360 bytes after the final replacement.
+- Prompt self-improvement: no prompt edit was saved because the current prompt
+  already preserves Codex 5.5 Fast mode and extra-high reasoning wording, quiet
+  autonomy, crawler-first discovery, the 3-PR mandate, skill-repo coverage,
+  complete PR inventory and repair priority, duplicate/fork rules, OpenClaw
+  docs checks, link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, cadence, thread binding, commit/push requirement, Markdown
+  cap, prompt cap, and this self-improvement rule. Prompt measured 12,831
+  bytes and the automation TOML measured 13,165 bytes. Durable lesson: always
+  check fork parent even when the fork name exists; if the name points to a
+  different upstream, use a renamed fork and verify parent before pushing.

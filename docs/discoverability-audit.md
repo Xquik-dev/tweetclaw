@@ -190,24 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 10:01 UTC: runtime selectors unavailable. OpenClaw docs routes
+- 2026-06-30 10:32 UTC: runtime selectors unavailable. OpenClaw docs routes
   returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
   latest `1.6.31`.
-- Crawler sessions `tweetclaw-20260630-100138` and `...100138b` returned 5 and
-  10 opportunities across skill, OpenClaw, MCP, social, and Twitter/X lanes.
-  Duplicate history blocked repeated social-skill targets; policy blocked
-  internal-only or no-brand submissions.
-- PR inventory exact-read 234 current-day authored open PRs from a 1,550-URL
-  archive/current set. No all-time completion claim was made. No actionable
-  maintainer repair existed; `biodoia` and `skynet` bot notes were usage-limit
-  only.
+- Crawler sessions `tweetclaw-20260630-103206` and `...103206b` returned 3
+  duplicate opportunities and then 0 with proxy socket-close noise. Broad
+  GitHub PR search hit 403; exact-repo and archive readbacks continued.
+- PR repair gate exact-read 4 known open PRs plus 3 new PRs. Only Codex
+  usage-limit bot notes appeared; no actionable maintainer repair existed.
 - Three fresh PRs met the mandate:
-  https://github.com/azeemkafridi/bulkpublish-ai-toolkit/pull/1,
-  https://github.com/waseemnasir2k26/skynet-social-stack/pull/1, and
-  https://github.com/reparrent/claude-skills-workflow/pull/1. All read back
-  OPEN, non-draft, MERGEABLE, and CLEAN.
-- Duplicate gates, fork parents, target policies, validation, public links,
-  prompt bytes, memory size, and self-improvement details are archived.
+  https://github.com/Hainrixz/claude-ads/pull/7,
+  https://github.com/guia-matthieu/clawfu-skills/pull/8, and
+  https://github.com/automationcreators/claude-code-skills/pull/2. All read
+  back OPEN, non-draft, and MERGEABLE with no checks registered.
+- Duplicate gates, renamed-fork parent checks, target policies, validation,
+  public links, prompt bytes, memory size, and self-improvement are archived.
 
 ## Reporting Checklist
 
