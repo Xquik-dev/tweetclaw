@@ -47897,3 +47897,145 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   target-native PRs through broken-link repair, license-file parity, and
   reproducible dependency setup; validate with target link checks and exact PR
   readbacks before returning to TweetClaw maintenance.
+
+## 2026-06-30 09:03 UTC heartbeat
+
+- Runtime selector limitation: Codex runtime did not expose model, Fast-mode, or
+  reasoning-effort controls to this turn. The run continued and records the
+  limitation here and in the heartbeat outcome.
+- OpenClaw and package source checks: `npm view openclaw version dist-tags
+  --json` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw version openclaw.install
+  repository.url homepage --json` returned npm latest `1.6.31` and canonical
+  repository/homepage metadata. Source package remains `1.6.32`.
+- Official OpenClaw route check: direct fetch returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, plugin overview, manifest, tool plugins,
+  permission requests, install overrides, Codex harness runtime, SDK provider
+  plugins, adding capabilities, tools/plugin, ClawHub publishing, skill format,
+  and debugging pages. No OpenClaw compatibility wording changed.
+- Public surface links: direct fetch returned 200 for TweetClaw GitHub, 403 for
+  the npm package web page through expected bot protection while registry
+  metadata succeeded, 308 from `clawhub.ai/plugins/@xquik/tweetclaw` to
+  `/xquik/plugins/tweetclaw`, 200 for the redirected ClawHub page, 200 for
+  OpenClaw Directory, and 200 for all 3 new PR URLs.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, crawler session
+  `tweetclaw-20260630-090316` used strict JSON output with research proxy,
+  bounded request and warmup timeouts, focused skill/OpenClaw/MCP/ClawHub/
+  package-tooling/Twitter-X query packs, and returned 21 opportunities:
+  `Xquik-dev/x-twitter-scraper`, `creatorcrawl/creatorcrawl-skill`,
+  `christian-beep383/carryfeed-agent-tools`, `gabros20/x-relay`,
+  `Xquik-dev/.github`, `blacktwist/social-media-skills`,
+  `Feedsquad/feedsquad-agent`, `elbis330/social-media-scraper-skill`,
+  `Hao0321/claude-skill-social-post`, `liangdabiao/tikhub_api_skill`,
+  `KiKi-Builds/AI-Briefing-Skill`, `litianci8866/Overseas-trends-skill`,
+  `rabden/X-twitter-social-manager-skill`, `aimerge-studio/bip-skills`,
+  `clairelin1994/founder-story-content`, `AISA-skills/social-media-skills`,
+  `kriptoburak/claude-skill-media-fetcher`, `tang-vu/social-posting-skills`,
+  `sytaylor/social-posts-plugin`, `aaaronmiller/create-viral-content`, and
+  `tiendatne2004/tikhub_api_skill`.
+- Open PR inventory: broad `gh search prs --author kriptoburak --state open
+  --limit 1000` hit GitHub API 403 on page 9 with request ID
+  `BAE0:2C9AC2:1381A83:1278FB3:6A43869C` at `2026-06-30 09:04:28 UTC`; broad
+  authenticated search stopped for the run, so no all-time completion claim was
+  made. Archive and exact repo paths yielded 40 recent PR URLs, all exact-read
+  with 0 errors. Merge-state counts were CLEAN 33, UNSTABLE 4, BLOCKED 1,
+  DIRTY 1, and UNKNOWN 1. Mergeable counts were MERGEABLE 38, CONFLICTING 1,
+  and UNKNOWN 1. Attention lanes: `pashechello/kotkit-social-agent#1`,
+  `AbdNour627/awesome-openclaw-configs#1`, `jamald33n/tweetsave-mcp#2`,
+  `reall8164/wechat-openclaw-plugin#1`,
+  `CoderofTheWest/openclaw-plugin-threads#1`,
+  `MangroveTechnologies/mangrove-trader-plugin#20`,
+  `rzyns/openclaw-context-engine#9`, `ElliotPadfield/openclaw-x402#1`, and
+  `Saminiscool/twitter-ai-agent#2`.
+- Repair 1: `jamald33n/tweetsave-mcp#2` had an upstream README conflict. The
+  branch `codex/tweetclaw-openclaw-companion` was merged with upstream `main`,
+  keeping the existing clean npm/MCP setup plus TweetClaw/OpenClaw handoff.
+  Validation: no conflict markers, `git diff --check`,
+  `npx -y markdown-link-check README.md --quiet`,
+  `npm ci --ignore-scripts --no-audit --no-fund`, `npm run build`,
+  `npm pack --dry-run --json`, and public-hygiene scan. Commit
+  `ceb30d05e1b7a3c8a281daf30958eee4b213edfc` was pushed. Exact readback:
+  OPEN, non-draft, MERGEABLE, CLEAN, no checks.
+- Repair 2: `AbdNour627/awesome-openclaw-configs#1` had an upstream README
+  conflict around the TweetClaw related-project row. The branch
+  `codex/add-tweetclaw-x-config` kept the TweetClaw row and accepted upstream
+  content otherwise. Validation: no conflict markers, `git diff --check`,
+  `npx -y json5 configs/automation/x-twitter-monitor-tweetclaw.json5`,
+  `npx -y markdown-link-check README.md --quiet`, and public-hygiene scan.
+  Commit `fb7e6ce6433a1ea1b995ecc8e018627bf352a021` was pushed. Exact
+  readback: OPEN, non-draft, MERGEABLE, CLEAN, no checks.
+- Duplicate, policy, and fork gates: compact audit, archive, target content,
+  open and closed target PRs/issues, target metadata, local clones, and GitHub
+  API metadata were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, MCP, skill, social, Twitter/X, and variant terms. Duplicate-blocked
+  fresh lanes included `christian-beep383/carryfeed-agent-tools`,
+  `gabros20/x-relay`, `Feedsquad/feedsquad-agent`,
+  `clairelin1994/founder-story-content`, `sytaylor/social-posts-plugin`,
+  `aaaronmiller/create-viral-content`, `KiKi-Builds/AI-Briefing-Skill`,
+  `aimerge-studio/bip-skills`, and `tang-vu/social-posting-skills`. Selected
+  targets were non-archived, non-fork upstreams; missing license metadata did
+  not block direct PRs. Forks were created and verified under `kriptoburak`,
+  with parents matching the upstream repos.
+- Fresh PR 1: https://github.com/litianci8866/Overseas-trends-skill/pull/1
+  from verified fork `kriptoburak/Overseas-trends-skill`, parent
+  `litianci8866/Overseas-trends-skill`, branch
+  `codex/fix-setup-links-license-20260630`, head
+  `6e5630ab597bfa6f45e01f150974cb007baddbff`. Changed `README.md`,
+  `references/sources.md`, and `LICENSE` to fix the clone URL, add the MIT
+  license file referenced by the badge, replace a dead KnowYourMeme source URL,
+  and remove a dead follow-ai-builder link. Validation: `git diff --check`,
+  `npx -y markdown-link-check README.md references/sources.md
+  references/template.md --quiet`, and sensitive-string scan. Exact readback:
+  OPEN, non-draft, MERGEABLE, CLEAN, no checks, comments, or reviews, 3 files,
+  +25/-4.
+- Fresh PR 2: https://github.com/tiendatne2004/tikhub_api_skill/pull/1 from
+  verified fork `kriptoburak/tikhub_api_skill`, parent
+  `tiendatne2004/tikhub_api_skill`, branch
+  `codex/remove-default-token-20260630`, head
+  `1e55f190fb4793b01ec994c6fe573c16de691ae7`. Changed
+  `.claude/skills/tikhub-api-helper/api_client.py`, `CLAUDE.md`,
+  `README_EN.md`, `openapi说明.md`, and `skills.md` to move API-token examples
+  to `TIKHUB_API_TOKEN`, replace stale status-monitor wording, and update
+  Claude docs links. Validation: `git diff --check`, `python3 -m py_compile
+  .claude/skills/tikhub-api-helper/api_client.py
+  .claude/skills/tikhub-api-helper/api_searcher.py explore_openapi.py`,
+  `npx -y markdown-link-check README.md README_EN.md openapi说明.md skills.md
+  --quiet`, and sensitive-string scan. Exact readback: OPEN, non-draft,
+  MERGEABLE, CLEAN, no checks, comments, or reviews, 5 files, +18/-18.
+- Fresh PR 3: https://github.com/liangdabiao/tikhub_api_skill/pull/1 from
+  verified fork `kriptoburak/liangdabiao-tikhub_api_skill`, parent
+  `liangdabiao/tikhub_api_skill`, branch
+  `codex/liangdabiao-remove-default-token-20260630`, head
+  `67bdca307e8d62abb2f9557e7dd1f9b2b98fcb4b`. Changed
+  `.claude/skills/tikhub-api-helper/api_client.py`, `CLAUDE.md`, `README.md`,
+  `README_EN.md`, `openapi说明.md`, and `skills.md` to move API-token examples
+  to `TIKHUB_API_TOKEN`, replace stale status-monitor wording, update Claude
+  docs links, and remove a README link returning 403 in automated checks.
+  Validation: `git diff --check`, `python3 -m py_compile
+  .claude/skills/tikhub-api-helper/api_client.py
+  .claude/skills/tikhub-api-helper/api_searcher.py explore_openapi.py`,
+  `npx -y markdown-link-check README.md README_EN.md openapi说明.md skills.md
+  --quiet`, and sensitive-string scan. Exact readback: OPEN, non-draft,
+  MERGEABLE, CLEAN, no checks, comments, or reviews, 6 files, +19/-18.
+- TweetClaw validation before audit edit: `npm audit --audit-level=moderate`,
+  `npm audit --omit=dev --audit-level=moderate`, `npx -y markdown-link-check
+  README.md docs/discoverability-audit.md docs/clawpack-release.md --quiet`,
+  `npm run build`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and serial `npm run check-versions` passed.
+  A parallel `check-versions` attempt briefly failed while package-artifact was
+  active, then passed after the package-artifact script restored package state.
+- TweetClaw post-edit validation: `git diff --check`, `npx -y
+  markdown-link-check README.md docs/discoverability-audit.md
+  docs/clawpack-release.md --quiet`, and `npm run check:all` passed.
+  `check:all` included typecheck, lint, cpd, knip, suppression check, dash
+  check, memory-size check, skill frontmatter, versions, build, OpenClaw
+  fitness, package artifact, and coverage with 11 files, 168 tests, and 100%
+  statements, branches, functions, and lines.
+- Memory, prompt, and self-improvement: compact Markdown memory measured
+  15,239/15,360 bytes after the audit edit. Persisted prompt measured 12,831
+  bytes; automation TOML measured 13,165 bytes. No prompt edit was needed.
+  Durable lesson: do not run `check-package-artifact` in parallel with package
+  metadata checks because its temporary package-json preparation can make npm
+  script discovery flaky; run package artifact after version checks or rerun
+  version checks serially before recording validation.
