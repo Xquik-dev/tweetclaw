@@ -2034,3 +2034,40 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   memory cap, OpenClaw fitness, package checks, and `npm run check:all`.
   Release blockers remain npm publish auth and ClawHub owner-scope validation
   only.
+2026-06-30 05:11 UTC release and package hygiene heartbeat
+
+- Runtime selectors unavailable in the heartbeat runtime; continued under the
+  available runtime and recorded the limitation in the discoverability audit.
+- Official OpenClaw checks before any compatibility statement: `llms.txt`,
+  `llms-full.txt`, CLI plugins, CLI skills, plugin manifest docs, tool-plugin
+  docs, ClawHub publishing docs, and skill-format docs returned HTTP 200.
+  Install-overrides and debugging probes returned HTTP 404, so no install or
+  debugging copy changed this run.
+- `npm view openclaw version dist-tags --json` returned latest `2026.6.10`,
+  beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`. TweetClaw source
+  remains aligned to OpenClaw `2026.6.10`.
+- `npm view @xquik/tweetclaw version dist-tags peerDependencies
+  openclaw.install --json` returned npm latest `1.6.31`, latest dist-tag
+  `1.6.31`, OpenClaw host peer `>=2026.5.4`, and npm-first install metadata for
+  `@xquik/tweetclaw@1.6.31`. Local source remains `1.6.32` and unpublished, so
+  npm remains canonical for users at `1.6.31` while source metadata points at
+  the pending release.
+- ClawHub route checks: `clawhub.ai/plugins/@xquik/tweetclaw`,
+  `clawhub.ai/xquik/plugins/tweetclaw`, and stale
+  `clawhub.ai/kriptoburak/xquik-tweetclaw` returned HTTP 200. Probe-only
+  `clawhub.openclaw.ai/plugins/@xquik/tweetclaw` failed DNS and is not a
+  source-backed route. `npm view clawhub version --json` returned `0.23.1`.
+  Latest ClawHub listing still lags at `1.6.26`; keep npm canonical and do not
+  retry ClawHub publish until owner-scope migration or exception is granted.
+- Release gates passed: `npm run build`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`
+  with 61 packaged files, `npm run check-versions` with all surfaces at
+  `1.6.32`, full `npm audit --audit-level=moderate`, omit-dev
+  `npm audit --omit=dev --audit-level=moderate`, public Markdown link check on
+  README, OpenClaw setup docs, agent workflows docs, compact audit, compact
+  release notes, packaged skill, `npm run check-memory-md-size`, and final
+  `npm run check:all`.
+- No release was attempted, no npm auth was used, no ClawHub publish was run,
+  and no package metadata changed. Changed release-memory file is
+  `docs/clawpack-release.md`; full run details and outreach PR URLs are in
+  `docs/discoverability-audit.archive.txt`.
