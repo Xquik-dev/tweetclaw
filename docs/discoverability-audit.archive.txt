@@ -47185,3 +47185,114 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
   `docs/clawpack-release.archive.txt`. No NHS badge was added because handled
   target surfaces had no useful badge area.
+
+2026-06-30 06:19 UTC outreach and repair heartbeat
+
+- Runtime selectors: Codex 5.5 Fast mode and extra-high effort were required by
+  prompt, but this heartbeat runtime exposed no model, speed, or effort
+  selector. Continued under the available runtime and recorded the limitation.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  research-proxy crawler session `tweetclaw-20260630-061928` with bounded
+  request and proxy warmup timeouts, limit 1000, 1 search page, per-query limit
+  20, concurrency 8, and 20 focused query lanes covering SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter-X, awesome-list, registry, fork, generated catalog,
+  validator, package-tooling, plugin-manifest, and web-index surfaced skill
+  repos. Output parsed as valid JSON with 63 opportunities. Proxy output
+  contained no credential values.
+- Open PR inventory: compact audit and archive PR URL extraction found 1,378
+  unique PR URLs. Broad authored open PR search for `kriptoburak` hit the
+  1,000-result cap, so no all-time complete inventory was claimed. Current-day
+  authored exact-read queue covered 153 open PRs with 0 read errors. Merge state
+  was 109 CLEAN, 23 UNSTABLE, 13 UNKNOWN, 6 BLOCKED, and 2 DIRTY. Mergeability
+  was 138 MERGEABLE, 13 UNKNOWN, and 2 CONFLICTING.
+- Repair 1: repaired
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 from verified fork
+  `kriptoburak/xpoz-agent-skills`, parented to `Aditya923-c/xpoz-agent-skills`.
+  Merged upstream `main` into branch `codex/add-tweetclaw-openclaw-resource`,
+  resolved the README Quick Links conflict by keeping the ZIP download link and
+  the repository-page link, validated with `git diff --check`,
+  conflict-marker scan, README markdown-link-check, and fork-parent readback,
+  then pushed head `49c8c5e`. Comment:
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4840532746.
+  Final exact readback was open, MERGEABLE, and CLEAN.
+- Repair 2: repaired https://github.com/warlockoussama/twitter-cli/pull/1 from
+  verified fork `kriptoburak/twitter-cli`, parented to
+  `warlockoussama/twitter-cli`. Merged upstream `main` into branch
+  `codex/update-readme-command-scope`, resolved the duplicate README download
+  link conflict, validated with `git diff --check`, conflict-marker scan,
+  README markdown-link-check, and fork-parent readback, then pushed head
+  `e820dfa`. Comment:
+  https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4840532756.
+  Final exact readback was open, MERGEABLE, and CLEAN.
+- Duplicate and target-fit gates: compact audit, archives, target content,
+  target open and closed PRs/issues, repo metadata, license metadata where
+  present, fork state, and local clones were checked for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, OpenClaw, MCP, social automation, Twitter-X, validators,
+  package tooling, approval, source context, and related variants. Duplicate or
+  prior-history blockers included `EwingYangs/x-user-skill-creator`,
+  `jnkindi/x-post-generator-skill`, `rabden/X-twitter-social-manager-skill`,
+  `tspen/openclaw-twilio-sms-bridge`, `DevinChen2014/social-media-openclaw-plugins`,
+  `pepicrft/openclaw-plugin-social`, `seantunley/openclaw-social-pipeline`,
+  `wsobinski/openclaw-social-learning`, `blacktwist/social-media-skills`,
+  `elbis330/social-media-scraper-skill`, `tonkotsuboy/x-impact-checker`,
+  `MichaelLod/openclaw-promote`, `Lobstash/twitter-plugin`, and prior direct
+  X/Twitter skill lanes. `jamebobob/openclaw-read-guardrail` was archived.
+  `effectorHQ/openclaw-cli` was archived. Missing license metadata alone was
+  not treated as a direct PR blocker.
+- Fresh PR 1: opened
+  https://github.com/MangroveTechnologies/mangrove-trader-plugin/pull/20 from
+  verified fork `kriptoburak/mangrove-trader-plugin`, branch
+  `codex/harden-wallet-key-guidance`, commit `562dbcc`. The command docs stop
+  asking users to paste or disclose wallet private keys into chat and instead
+  direct users to configure wallet signing outside the chat session. Validation
+  passed `git diff --check`, conflict-marker scan, and markdown-link-check on
+  the 3 changed command files. A broader README link check found pre-existing
+  target-owned broken links for the Discord invite and MangroveTrader source or
+  checklist URLs. Final readback: open, MERGEABLE, BLOCKED by review-required
+  policy, 3 changed files, no comments, no checks.
+- Fresh PR 2: opened https://github.com/kvs-skills/safe-guardian/pull/1 from
+  verified fork `kriptoburak/safe-guardian`, branch
+  `codex/add-social-automation-example`, commit `6b43550`. The README adds a
+  concrete account-changing social automation guardrail example with read-only
+  TweetClaw tools allowed and post or reply actions requiring explicit
+  approval evidence. Validation passed `git diff --check`, conflict-marker
+  scan, and README markdown-link-check. Final readback: open, MERGEABLE, CLEAN,
+  1 changed file, no comments, no checks.
+- Fresh PR 3: opened
+  https://github.com/Yish-AI/openclaw-bundle-validation-37df87298/pull/1 from
+  verified fork `kriptoburak/openclaw-bundle-validation-37df87298`, branch
+  `codex/add-openclaw-verification-steps`, commit `1a43e8b`. The README adds a
+  pinned git install command, skills-only manifest checks, and runtime inspect
+  guidance for the generated OpenClaw bundle. Validation passed
+  `git diff --check`, conflict-marker scan, and markdown-link-check on README
+  plus both packaged skills. Final readback: open, MERGEABLE, CLEAN, 1 changed
+  file, no comments, no checks.
+- OpenClaw and public hygiene: official `docs.openclaw.ai` `llms.txt`,
+  `llms-full.txt`, plugin docs, manifest docs, tool-plugin docs, permission
+  requests, install overrides, SDK/provider docs, ClawHub publishing,
+  skill-format, and debugging routes returned HTTP 200. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw` returned npm latest
+  `1.6.31` while source remains `1.6.32`. `npm view clawhub` returned `0.23.1`.
+  TweetClaw GitHub, npm registry metadata, ClawHub plugin routes, and
+  OpenClaw Directory route returned HTTP 200. npm package page returned
+  expected bot-protection HTTP 403. TweetClaw Markdown link check passed for
+  README, OpenClaw setup docs, agent workflows docs, compact audit, compact
+  release notes, and packaged skill.
+- TweetClaw validation: full and omit-dev `npm audit` found 0 vulnerabilities.
+  `npm run build`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-versions`,
+  `npm run check-memory-md-size`, and final `npm run check:all` passed. Final
+  `check:all` covered typecheck, ESLint, jscpd, knip, suppression and dash
+  guards, memory cap, skill frontmatter, version parity, build, OpenClaw
+  fitness, package artifact, and 168 Vitest tests with 100 percent coverage.
+  Three parallel npm invocations produced false missing-script errors during
+  package checks; sequential reruns of the same scripts passed.
+- Prompt and memory: persisted automation prompt measured 12,863 bytes, under
+  the 15 KiB cap, and no prompt edit was useful. Compact Markdown memory
+  measured 15,121/15,360 bytes. Changed TweetClaw files are
+  `docs/discoverability-audit.md`, `docs/discoverability-audit.archive.txt`,
+  `docs/clawpack-release.md`, and `docs/clawpack-release.archive.txt`. No NHS
+  badge was added because handled target surfaces had no useful badge area.

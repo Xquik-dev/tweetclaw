@@ -2097,3 +2097,32 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   `npm run check-versions`, `npm run check-memory-md-size`, and final
   `npm run check:all`. No package metadata, release notes, ClawHub publish, or
   npm publish action changed release state.
+
+2026-06-30 06:19 UTC release and package hygiene heartbeat
+
+- Runtime selectors were unavailable in the heartbeat runtime; continued under
+  the available runtime and recorded the limitation in the discoverability
+  audit.
+- Official OpenClaw docs were rechecked through Node fetch. `llms.txt`,
+  `llms-full.txt`, canonical plugin docs, manifest docs, tool-plugin docs,
+  plugin permission requests, install overrides, SDK/provider docs, ClawHub
+  publishing, ClawHub skill format, and help debugging returned HTTP 200.
+- Package metadata: `npm view openclaw version dist-tags --json` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`.
+  `npm view @xquik/tweetclaw version dist-tags peerDependencies
+  openclaw.install --json` returned npm latest `1.6.31`, OpenClaw peer
+  `>=2026.5.4`, and npm-first install metadata for `@xquik/tweetclaw@1.6.31`.
+  Local source remains `1.6.32`; no release was attempted.
+- ClawHub route `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
+  after redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`, and
+  `npm view clawhub version --json` returned `0.23.1`. ClawHub listing remains
+  stale at `1.6.26`; keep npm canonical until owner-scope migration or
+  exception is granted.
+- Public hygiene and gates passed: TweetClaw Markdown link checks, full and
+  omit-dev npm audit with 0 vulnerabilities, `npm run build`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npm run check-versions`, `npm run check-memory-md-size`, and final
+  `npm run check:all`. Three parallel npm invocations returned false
+  missing-script errors during validation; sequential reruns passed. No package
+  metadata, release notes, ClawHub publish, or npm publish action changed
+  release state.
