@@ -198,8 +198,8 @@ archive, before any outreach or duplicate decision.
   claimed. Exact-read 169 of 170 requested PRs.
 - Repaired https://github.com/jeremylongshore/claude-code-plugins-plus-skills/pull/924
   by removing an unused include, fixing a target markdownlint blocker, and
-  narrowing synced assets after bot readback; checks were rerunning after the
-  final push.
+  addressing bot readbacks on synced assets and community verification metadata;
+  checks were rerunning after the final push.
 - Fresh safe PRs opened:
   https://github.com/WenyuChiou/ai-research-skills/pull/50,
   https://github.com/OpenAnalystInc/10x-Content-Expert/pull/1, and
