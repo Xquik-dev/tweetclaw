@@ -47296,3 +47296,152 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `docs/discoverability-audit.md`, `docs/discoverability-audit.archive.txt`,
   `docs/clawpack-release.md`, and `docs/clawpack-release.archive.txt`. No NHS
   badge was added because handled target surfaces had no useful badge area.
+
+2026-06-30 06:54 UTC outreach, repair, and 3 fresh PR heartbeat
+
+- Runtime and docs source checks: runtime model/speed/effort selectors were not
+  exposed in this environment, so Codex 5.5 Fast and extra-high effort could not
+  be selected manually. Official OpenClaw docs were rechecked before install and
+  inspect wording changed: `llms.txt`, `llms-full.txt`, `/plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/codex-harness-runtime`, `/plugins/sdk-provider-plugins`,
+  `/plugins/adding-capabilities`, `/tools/plugin`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/help/debugging` all returned HTTP 200.
+  `llms-full.txt`, `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/tools/plugin`, and `/help/debugging` still contain current plugin install or
+  inspect command forms. Local-path installs are documented as
+  `openclaw plugins install ./path/to/local/plugin`; npm-source installs are
+  documented as `openclaw plugins install npm:<package>`; runtime verification
+  uses `openclaw plugins inspect <plugin-id> --runtime --json`.
+
+- Crawler-first discovery and inventory: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with session `tweetclaw-20260630-065451`,
+  research proxy, JSON output, bounded request and proxy warmup timeouts, limit
+  80, search pages 2, per-query limit 5, concurrency 16, and 20 focused
+  OpenClaw/plugin/skill/validator/query lanes. Output file
+  `/tmp/tweetclaw-heartbeat-20260630-065451/crawler-opportunities.json`
+  contained 73 opportunities. Proxy logs exposed endpoint counts and country
+  aggregates only, with no credential values.
+
+- Authored PR inventory: compact/archive extraction found 1,381 unique audit PR
+  URLs. Authored open PR search hit GitHub's 1,000-result cap, so no full
+  all-time exact claim was made. Current-day partitions returned 129 open PRs
+  created since 2026-06-30T00:00:00Z and 164 open PRs updated since that time;
+  the exact-read set was 164 URLs after de-duplication and recent audit-known
+  additions. Exact readback succeeded for 164/164 with 0 errors. Merge-state
+  buckets before repair were 127 CLEAN, 24 UNSTABLE, 8 BLOCKED, 3 DIRTY, and
+  2 UNKNOWN. Actionable dirty PRs were
+  https://github.com/AbdNour627/awesome-openclaw-configs/pull/1,
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1, and
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1.
+
+- PR repair 1: repaired
+  https://github.com/AbdNour627/awesome-openclaw-configs/pull/1 from verified
+  fork branch `codex/add-tweetclaw-x-config`. Merged current upstream `main`,
+  resolved the recurring README conflict by preserving the existing TweetClaw
+  config and current branch content, validated conflict-marker scan,
+  `git diff --check`, JSON5 validation for
+  `configs/automation/x-twitter-monitor-tweetclaw.json5`, and markdown link
+  checks for `README.md`, `README_EN.md`, and `CONTRIBUTING.md`. Pushed head
+  `e3e8a9e`; exact readback after GitHub recomputation was open, MERGEABLE,
+  CLEAN, with 0 checks.
+
+- PR repair 2: repaired
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1 from verified
+  fork branch `codex/tweetclaw-x-source`. Merged current upstream `main`,
+  preserved the TweetClaw source, tests, docs, install path, and README source
+  section, validated conflict-marker scan, `git diff --check`, Python compile
+  for `skills/tweetclaw_fetcher.py` and `tests/test_tweetclaw_fetcher.py`,
+  `python3 -m unittest tests/test_tweetclaw_fetcher.py`, `bash -n install.sh`,
+  and markdown link checks for `README.md`, `SKILL.md`, and
+  `docs/tweetclaw-x-source.md`. Pushed head `c60718a`; exact readback after
+  GitHub recomputation was open, MERGEABLE, CLEAN, with 0 checks.
+
+- PR repair 3: repaired
+  https://github.com/reall8164/wechat-openclaw-plugin/pull/1 from verified fork
+  branch `codex/add-tweetclaw-workflow`. Merged current upstream `main`,
+  preserved the optional TweetClaw workflow README section, validated
+  conflict-marker scan, `git diff --check`, JSON parse for `package.json` and
+  `openclaw.plugin.json`, and README markdown link check. Pushed head
+  `6379619`; exact readback after GitHub recomputation was open, MERGEABLE,
+  CLEAN, with 0 checks. No repair comments were posted to avoid adding another
+  repeated maintainer-visible note on already noisy recurring conflict threads.
+
+- Fresh screening and duplicate gates: crawler output and archive screening
+  blocked or deprioritized prior-history catalog lanes including
+  `iflytek/skillhub`, `davepoon/buildwithclaude`,
+  `EthanYolo01/Awesome-OpenClaw`, `agentskillexchange/skills`, and
+  `AnantDhavale/cerone-openclaw-plugin`. `cerone-openclaw-plugin` is blocked by
+  existing TweetClaw PR 1. `bluetieroperations-create/blackwall-openclaw-plugin`,
+  `agenticsrclab/openclaw-agent-marketplace-pack-doctor`, and
+  `rzyns/openclaw-context-engine` were duplicate-clean across compact audit,
+  archive, local target content scans, and target open/closed PR/issue reads.
+  Forks were created and verified under `kriptoburak`, with parents
+  `bluetieroperations-create/blackwall-openclaw-plugin`,
+  `agenticsrclab/openclaw-agent-marketplace-pack-doctor`, and
+  `rzyns/openclaw-context-engine`. Missing GitHub license metadata did not block
+  the direct PRs; Pack Doctor had Apache-2.0 license file and contribution
+  policy, Blackwall declares MIT in `package.json`, and Context Engine declares
+  MIT in README.
+
+- Fresh PR 1: opened
+  https://github.com/bluetieroperations-create/blackwall-openclaw-plugin/pull/1
+  from branch `codex/add-openclaw-cli-verify`, head `b330654`. The PR adds
+  current OpenClaw CLI install plus runtime inspect commands, keeps manual npm
+  wiring as the fallback path, and aligns `openclaw.plugin.json` version
+  `0.1.6` with `package.json`. Validation passed: JSON parse for package and
+  manifest, `node --check index.mjs`, `node --check src/index.mjs`,
+  `node --check src/gate.mjs`, README markdown link check, `git diff --check`,
+  and public diff hygiene scan. `npm ci --ignore-scripts --no-audit --no-fund`
+  was attempted but blocked by local `ENOSPC`; no dependency files were
+  committed. Exact PR readback: open, MERGEABLE, UNSTABLE, no checks yet, no
+  comments, no reviews, maintainer edits allowed.
+
+- Fresh PR 2: opened
+  https://github.com/agenticsrclab/openclaw-agent-marketplace-pack-doctor/pull/1
+  from branch `codex/check-openclaw-install-proof`, head `12bf5fa`. The PR adds
+  warning-level Pack Doctor checks for OpenClaw plugin README install proof,
+  requiring both `openclaw plugins install` and runtime
+  `openclaw plugins inspect` guidance, with passing and warning fixtures.
+  Validation passed: `npm test` with 7 passing tests, `npm run smoke`,
+  `git diff --check`, and public diff hygiene scan. Exact PR readback: open,
+  MERGEABLE, UNSTABLE, no checks yet, no comments, no reviews, maintainer edits
+  allowed.
+
+- Fresh PR 3: opened
+  https://github.com/rzyns/openclaw-context-engine/pull/9 from branch
+  `codex/add-install-verification`, head `e50ec72`. The README-only PR adds a
+  local OpenClaw build, install, and runtime inspect path for the context engine
+  plugin using the official local-plugin install form and avoids claiming a
+  published package. Validation passed: JSON parse for package and manifest,
+  README markdown link check, `git diff --check`, and public diff hygiene scan.
+  `npm ci --ignore-scripts --no-audit --no-fund` was attempted but blocked by
+  local `ENOSPC`; no dependency files were committed. Exact PR readback: open,
+  MERGEABLE, CLEAN, no checks, no comments, no reviews, maintainer edits
+  allowed.
+
+- TweetClaw public hygiene and validation: README, `docs/openclaw-setup.md`,
+  `docs/agent-workflows.md`, compact audit, release memory, and packaged skill
+  markdown link checks passed. Public URL checks returned GitHub 200, npm
+  registry 200, npm package page 403 expected bot protection, canonical ClawHub
+  plugin page 200, stale alternate ClawHub route 404, and stale OpenClawDir
+  route 404. `npm audit --audit-level=moderate` and
+  `npm audit --omit=dev --audit-level=moderate` both found 0 vulnerabilities.
+  `npm run build`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-versions`,
+  `npm run check-memory-md-size`, and final `npm run check:all` passed. Final
+  `check:all` included 11 Vitest files, 168 tests, and 100% coverage.
+
+- Memory, prompt, and self-improvement: compact Markdown memory was
+  15,105/15,360 bytes after replacing the latest-run block. Persisted
+  automation prompt was 12,831 bytes, TOML file 13,165 bytes. Self-improvement
+  lesson: when old `/tmp/tweetclaw-heartbeat-*` directories accumulate,
+  dependency installs can fail with `ENOSPC`; future install-heavy target
+  validation should check temp space early and remove old automation-owned
+  scratch directories before cloning or installing. The prompt already contains
+  the 3-PR mandate, crawler-first rule, complete inventory priority,
+  duplicate/fork gates, official OpenClaw checks, link checks, validation gates,
+  Context7 exclusion, secret handling, cadence, thread binding, commit/push
+  requirement, Markdown cap, prompt cap, and self-improvement rule, so no
+  prompt edit was needed.

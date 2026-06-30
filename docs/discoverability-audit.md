@@ -190,23 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 06:19 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260630-061928` returned 63 opportunities from 20 focused lanes.
+- 2026-06-30 06:54 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260630-065451` returned 73 opportunities from 20 focused lanes.
 - Authored open PR search hit the 1,000 cap; current-day exact reads covered
-  153 open PRs with 109 CLEAN, 23 UNSTABLE, 13 UNKNOWN, 6 BLOCKED, 2 DIRTY, and
-  0 read errors. Audit extraction found 1,378 PR URLs; no full all-time exact
+  164 open PRs with 127 CLEAN, 24 UNSTABLE, 8 BLOCKED, 3 DIRTY, 2 UNKNOWN, and
+  0 read errors. Audit extraction found 1,381 PR URLs; no full all-time exact
   claim.
-- Repaired https://github.com/Aditya923-c/xpoz-agent-skills/pull/1 to head
-  `49c8c5e` and https://github.com/warlockoussama/twitter-cli/pull/1 to head
-  `e820dfa`; both read back open, MERGEABLE, and CLEAN.
-- Three fresh PRs met the mandate: Mangrove private-key safety
-  https://github.com/MangroveTechnologies/mangrove-trader-plugin/pull/20,
-  Safe Guardian social-write guardrail
-  https://github.com/kvs-skills/safe-guardian/pull/1, and OpenClaw bundle
-  validation steps
-  https://github.com/Yish-AI/openclaw-bundle-validation-37df87298/pull/1.
-- Duplicate, fork, policy, target-content, PR/issue, validation, link,
-  prompt-byte, and blocker details are archived.
+- Repaired dirty PRs to clean mergeable heads: AbdNour627 configs `e3e8a9e`,
+  Aqmar777 competitive intel `c60718a`, and reall8164 WeChat plugin `6379619`.
+- Three fresh PRs met the mandate: Blackwall install verification
+  https://github.com/bluetieroperations-create/blackwall-openclaw-plugin/pull/1,
+  Pack Doctor OpenClaw proof checks
+  https://github.com/agenticsrclab/openclaw-agent-marketplace-pack-doctor/pull/1,
+  and Context Engine install verification
+  https://github.com/rzyns/openclaw-context-engine/pull/9.
+- Duplicate, fork, policy, target-content, PR/issue, validation, local ENOSPC,
+  link, prompt-byte, and blocker details are archived.
 
 ## Reporting Checklist
 
