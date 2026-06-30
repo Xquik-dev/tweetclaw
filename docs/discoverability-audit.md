@@ -190,23 +190,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 12:30 UTC: runtime selector limits were recorded. Current OpenClaw
-  llms, CLI, plugin, manifest, permission, SDK, ClawHub, skill, and debug routes
-  returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw latest
-  `1.6.31`.
-- Crawler session `tweetclaw-20260630-123008` found 1 duplicate skill-catalog
-  opportunity; follow-up skill coverage hit managed-egress socket-closed
-  blockers, so exact GitHub metadata, PR/issue search, clone, and link-check
-  fallbacks were used. Today-updated authored PRs read 287; all-open authored
-  PRs still capped at 1000, so complete all-open inventory is not claimed.
-- Repaired https://github.com/electricsheephq/openclaw-capability-manifest-verifier/pull/1
-  after bot review; latest readback is OPEN, non-draft, MERGEABLE, CLEAN, with
-  checks green and stale review threads resolved.
+- 2026-06-30 13:01 UTC: runtime selector limits were recorded. Current OpenClaw
+  docs returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
+  latest `1.6.31`.
+- Crawler sessions `tweetclaw-20260630-130135` and `130135b` returned 0
+  opportunities after managed-egress socket-closed fallbacks, so exact GitHub
+  metadata, PR/issue search, clone, and link checks carried discovery.
+- Authored PR inventory read 295 today-updated open PRs; all-open authored PRs
+  still capped at 1000, so complete all-open inventory is not claimed. Recent
+  tracked PR readbacks found no maintainer-actionable repair.
 - Three fresh PRs met the mandate:
-  https://github.com/rogerchappel/action-approval-skill/pull/4,
-  https://github.com/rogerchappel/skill-permission-matrix/pull/4, and
-  https://github.com/clawSean/skillreef/pull/5. All read back OPEN, non-draft,
-  and MERGEABLE.
+  https://github.com/chenhuiyu/openclaw-skill-safety-kit/pull/1,
+  https://github.com/alex-vbcoding/openclaw-skill-tester/pull/1, and
+  https://github.com/brucestudios/clawskill-generator/pull/1. All read back
+  OPEN, non-draft, and MERGEABLE.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 

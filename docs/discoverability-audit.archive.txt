@@ -49075,3 +49075,137 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   requirement, Markdown cap, prompt cap, and self-improvement. Durable lesson:
   PR repair can require resolving outdated review threads after the latest bot
   approval, not just pushing the fix commit.
+
+## 2026-06-30 13:01 UTC heartbeat
+
+- Runtime selector note: this run could not select Codex 5.5 Fast mode or
+  extra-high reasoning in the app/runtime controls, so the limitation was
+  recorded and the run continued.
+- TweetClaw repo state: started on `master` at `ab3cba0 docs: record
+  2026-06-30 12:30 outreach heartbeat` with only the pre-existing untracked
+  local path `0`. `Xquik-dev/tweetclaw` had no open issues or PRs. The current
+  xquik workspace issue check also returned no open issues before using the
+  crawler there.
+- Official OpenClaw and package checks:
+  `https://docs.openclaw.ai/llms.txt`, `/llms-full.txt`, `/cli/plugins`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`,
+  `/tools/permission-modes`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/tools/creating-skills`, and `/help/debugging`
+  returned HTTP 200. npm metadata showed OpenClaw latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`, and TweetClaw npm latest
+  `1.6.31`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260630-130135` covered SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude,
+  social/Twitter-X skills, skill registries, awesome lists, ClawHub publishing,
+  validators, plugin manifests, package tooling, source-evidence skills, and
+  approval-control surfaces. It returned 0 opportunities. Follow-up session
+  `tweetclaw-20260630-130135b` covered focused SKILL.md, social media,
+  Twitter/X, OpenClaw, ClawHub, MCP, Codex, Claude, and validator terms but
+  also returned 0 opportunities after repeated managed-egress socket-closed
+  fetches and proxy quarantines. Discovery continued through exact GitHub
+  metadata, PR/issue searches, archive checks, clones, and link checks.
+- PR inventory and repair gate: today-updated authored open PR search returned
+  295 PRs. The all-open authored PR bucket still capped at 1000, so complete
+  all-open inventory is not claimed. Exact readbacks covered
+  `rogerchappel/action-approval-skill#4`,
+  `rogerchappel/skill-permission-matrix#4`, `clawSean/skillreef#5`,
+  `electricsheephq/openclaw-capability-manifest-verifier#1`,
+  `rogerchappel/clawplug#9`, and `mgechev/skills-best-practices#4`. No
+  maintainer comment, review, conflict, DCO/CLA blocker, generated-file drift,
+  or failing check was branch-actionable before outreach; the older CodeRabbit
+  requested-changes review on the capability-manifest PR was superseded by a
+  latest approval and green Socket checks.
+- Fresh candidate screening: compact audit, archive, target content, target
+  PRs and issues, forks, clone metadata, and GitHub searches checked TweetClaw,
+  `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub
+  listing, Xquik, x-twitter-scraper, OpenClaw, skill, social, Twitter/X,
+  approval, validator, catalog, package-tooling, source-evidence, and
+  external-action variants. Duplicate or policy/history blockers included
+  `denial-web/clawguard`, `Cluka-399/openclaw-skills-explorer`,
+  `Sehab121/awesome-openclaw-skills-CN`,
+  `garibong-labs/openclaw-skills`, `kintzhao/anySkills`,
+  `cyrustmods/OPENCLAW-SKILL-SAFE`,
+  `jingchang0623-crypto/openclaw-skill-validator`, and
+  `nord342/openclaw-skill-validator`. `qaicodes/openclaw-skills-safety` was
+  duplicate-clean, public, non-fork, non-archived, and issue-enabled, but held
+  because it is a small vendored skill dump with no root README, license, test
+  or contribution surface for a maintainable TweetClaw PR. Fresh selected lanes
+  were `chenhuiyu/openclaw-skill-safety-kit` (MIT in repo, non-fork,
+  non-archived, issue-enabled, CI/tests), `alex-vbcoding/openclaw-skill-tester`
+  (package MIT, non-fork, non-archived, issue-enabled, existing test script),
+  and `brucestudios/clawskill-generator` (package MIT classifier, non-fork,
+  non-archived, issue-enabled, README bug and generator surface).
+- Fresh PR 1: opened
+  https://github.com/chenhuiyu/openclaw-skill-safety-kit/pull/1 from verified
+  fork `kriptoburak/openclaw-skill-safety-kit` parented to
+  `chenhuiyu/openclaw-skill-safety-kit`, branch
+  `codex/social-action-approval-lint`, commit
+  `f03965590614ae4a52d1dccdf0b0c0fcd2be6b16`. The PR adds a
+  `missing_social_action_approval` linter finding for SKILL.md files that
+  describe social-account actions without approval boundaries, TweetClaw-style
+  positive and negative fixtures, and an approval note for the existing safe
+  Xiaohongshu publisher example. Validation passed `python3 -m unittest
+  linter.tests.test_linter`, `python3 -m linter.main lint
+  examples/safe-xhs-publisher`, output matching for the missing-approval
+  fixture, `git diff --check`, and markdown-link-check on touched markdown.
+  Final readback showed OPEN, non-draft, MERGEABLE, `UNSTABLE`, no comments,
+  one automated Codex review shell with no concrete actionable finding, and
+  GitGuardian Security Checks successful.
+- Fresh PR 2: opened
+  https://github.com/alex-vbcoding/openclaw-skill-tester/pull/1 from verified
+  fork `kriptoburak/alex-vbcoding-openclaw-skill-tester` parented to
+  `alex-vbcoding/openclaw-skill-tester`, branch
+  `codex/social-approval-security-check`, commit
+  `2527b875eba9cde5f2479375f89c5a0b623f2b9a`. The PR adds a security warning
+  for social-account actions that omit explicit approval guidance, social
+  approval fixtures, and the missing `src/test-runner.js` used by the existing
+  `npm test` script. Validation passed `npm ci`, `npm test`, `git diff
+  --check`, and markdown-link-check on touched markdown. `npm audit
+  --audit-level=moderate` reported 7 pre-existing target dependency findings
+  before this change. Readback showed OPEN, non-draft, MERGEABLE, `UNSTABLE`,
+  no reviews, Vercel authorization notice as a target-owned wait state, and no
+  branch-actionable check failure.
+- Fresh PR 3: opened https://github.com/brucestudios/clawskill-generator/pull/1
+  from verified fork `kriptoburak/clawskill-generator` parented to
+  `brucestudios/clawskill-generator`, branch
+  `codex/openclaw-slug-safety-template`, commit
+  `71aaae80dc3cc2921ecd6e3befb65c16a2613347`. The PR fixes the generator so
+  README-style OpenClaw slugs such as `my-awesome-skill` pass validation, adds
+  OpenClaw frontmatter to generated SKILL.md files, adds approval and
+  credential-safety guidance for generated external-action skills, and adds
+  unit coverage. Validation passed `python3 -m unittest test_skill_generator.py`,
+  direct `python3 skill_generator.py tweetclaw-social -o ...` smoke generation,
+  output matching for `explicit approval before posting`, and `git diff
+  --check`. Readback showed OPEN, non-draft, MERGEABLE, `CLEAN`, no comments,
+  no reviews, and no checks configured.
+- Link and public-hygiene checks: target diff whitespace checks passed for all
+  handled external repos. Touched target markdown links passed. Public diff
+  inspection found no secret values, private implementation details, restricted
+  provider or source names, internal cost mechanics, unsupported claims, stale
+  metadata, em dashes, or spaced double-hyphen sequences in the opened PR diffs. PR bodies
+  disclosed TweetClaw/Xquik affiliation and kept TweetClaw as a generic
+  social-action fixture or example. No NHS badge was added because the touched
+  surfaces were safety/tester/generator internals, not useful badge areas.
+- TweetClaw validation after this archive update: `npm run
+  check-memory-md-size` passed after compacting the latest-run summary. `git
+  diff --check`, README/audit/release-memory markdown link checks, direct
+  public URL probes for TweetClaw, OpenClaw docs, and all 3 new PRs passed.
+  npm full and omit-dev moderate audits found 0 vulnerabilities. `npm run
+  build`, `npm run check-openclaw-platform-fitness`, `npm run
+  check-package-artifact`, serial `npm run check-versions`, and full `npm run
+  check:all` passed.
+- Prompt and cap readback: persisted automation prompt measured 12831 bytes and
+  automation TOML measured 13165 bytes, under the 15 KiB prompt cap. No prompt
+  edit was saved.
+- Prompt self-improvement: no persisted prompt edit was useful; the current
+  prompt already preserves Codex 5.5 Fast wording, extra-high reasoning wording,
+  quiet autonomy, crawler-first discovery, mandatory 3-PR submission, aggressive
+  skill-repo coverage, fresh repo/framework/library discovery, complete PR
+  inventory and repair priority, duplicate and fork rules, official OpenClaw
+  checks, link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap,
+  prompt cap, and self-improvement. Durable lesson: when a personal fork name
+  exists but REST says its parent is a different upstream, create a separately
+  named fork and verify `fork`, `parent.full_name`, and `source.full_name`
+  before pushing.
