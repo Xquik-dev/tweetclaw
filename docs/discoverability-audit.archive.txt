@@ -49562,6 +49562,43 @@ TweetClaw public hygiene and validation:
 - Final TweetClaw validation passed: `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run build`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, public Markdown link checks, direct URL probes for TweetClaw GitHub, npm registry, ClawHub, and all 3 new PRs, and full `npm run check:all`. The full gate included `npm run check-memory-md-size` at 14910/15360 bytes, 168 passing tests, and 100% statement, branch, function, and line coverage.
 - TweetClaw changed files: `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`. The pre-existing untracked local path `0` was preserved.
 
+## 2026-06-30 17:33 UTC heartbeat
+
+Runtime and platform:
+- Codex 5.5 Fast mode and extra-high reasoning controls were not exposed in the runtime, so the limitation was recorded and the run continued.
+- Xquik open issue preflight returned 0 open issues. The local xquik workspace `AGENTS.md` was honored for crawler use and no dev server was started.
+- Current official OpenClaw docs were checked before public wording decisions: llms, llms-full, CLI plugin docs, tool plugins, SDK runtime, permission modes, ClawHub publishing, skill format, skill creation, and debugging returned HTTP 200. `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 after redirect to `clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata read OpenClaw latest `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest remained `1.6.31`, while source stayed `1.6.32` targeting OpenClaw `2026.6.11`.
+
+Open PR inventory and repair:
+- Crawler-first and archive-backed PR inventory ran before outreach. Authored open PR search for `updated:>=2026-06-30` returned 359 raw PRs and 354 filtered in-scope PRs. All-open authored PR search hit GitHub's 1000-result cap, so complete all-open inventory was not claimed.
+- Exact-read 40 recent in-scope PRs plus audit-priority `jeremylongshore/claude-code-plugins-plus-skills#924` for state, draft status, mergeability, base/head, commits, comments, reviews, checks, conflicts, DCO or CLA signals, generated-file drift, maintainer comments, and bot findings.
+- Repair priority `jeremylongshore/claude-code-plugins-plus-skills#924` readback: OPEN, non-draft, MERGEABLE, review required, all checks successful, latest commit `ecacdb2` on `codex/add-hermes-tweet-20260630-164630`. The Greptile comment still includes older prose about `verified: true`, but the latest Greptile check completed successfully on the current commit; no current-head repair remained.
+
+Crawler and discovery:
+- Ran Xquik crawler from `/Users/burak/Developer/xquik` with strict JSON output at `/tmp/tweetclaw-heartbeat-20260630-173342/crawler-opportunities.json`, research proxy, bounded request and warmup timeouts, limit 500, 3 search pages, per-query limit 10, concurrency 16, and session `tweetclaw-20260630-173342`.
+- Query pack covered `SKILL.md`, `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent, social media, Twitter/X skills, awesome lists, registries, forks, generated catalogs, plugin manifests, validators, package tooling, and web-index surfaced skill repos.
+- Output parsed as 3 opportunities, all duplicate or prior-history lanes: `postmypost/postmypost-mcp-skill`, `rabden/X-twitter-social-manager-skill`, and `metachemist/Full-Time-Employee`. No crawler credentials were printed, stored, or committed.
+
+Duplicate and target screening:
+- Fresh candidate checks searched compact audit, archive, target content, exact open and closed target PRs and issues, local clones, fork metadata, and public diffs for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and Twitter/X variants.
+- Selected targets were `timscheuerai/content-vault`, `whawkinsiv/solo-founder-superpowers`, and `charlesdove977/goviralbro`. Forks were verified as `kriptoburak/content-vault` parent `timscheuerai/content-vault`, `kriptoburak/solo-founder-superpowers` parent `whawkinsiv/solo-founder-superpowers`, and `kriptoburak/goviralbro` parent `charlesdove977/goviralbro`.
+- Duplicate or prior-history blocked candidates included `indranilbanerjee/digital-marketing-pro` by merged PR `#7`, `coreyhaines31/marketingskills`, `charlie947/social-media-skills`, `Affitor/affiliate-skills`, `agentskillexchange/skills`, `ndesv21/socialclaw`, `VoltAgent/awesome-openclaw-skills`, `VoltAgent/awesome-agent-skills`, `OpenClaudia/openclaudia-skills`, `alirezarezvani/claude-skills`, `alchaincyf/x-mentor-skill`, `gtmagents/gtm-agents`, `TerminalSkills/skills`, `ReScienceLab/opc-skills`, and `rampstackco/claude-skills`.
+
+Fresh PRs opened:
+- `timscheuerai/content-vault#1` - https://github.com/timscheuerai/content-vault/pull/1 - added optional approval-gated TweetClaw/OpenClaw X source-packet steps to `researcher` and `x-copywriter`, and changed a broken seed-account link to the tracked example file. Fork `kriptoburak/content-vault` verified parent/source `timscheuerai/content-vault`. Commit `d7b82fd` pushed to `codex/tweetclaw-x-source-evidence-20260630`. Validation: `git diff --check`, `npx --yes markdown-link-check@3.13.7 skills/researcher/SKILL.md skills/x-copywriter/SKILL.md --quiet`, and changed-diff public hygiene scan. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- `whawkinsiv/solo-founder-superpowers#2` - https://github.com/whawkinsiv/solo-founder-superpowers/pull/2 - added an X evidence-pack workflow to the social-media skill with optional TweetClaw collection, source URLs, customer pain mapping, and user-approved publishing boundaries. Fork `kriptoburak/solo-founder-superpowers` verified parent/source `whawkinsiv/solo-founder-superpowers`. Commit `c902291` pushed to `codex/tweetclaw-social-evidence-20260630`. Validation: `git diff --check`, `npx --yes markdown-link-check@3.13.7 skills/social-media/SKILL.md --quiet`, and changed-diff public hygiene scan. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- `charlesdove977/goviralbro#18` - https://github.com/charlesdove977/goviralbro/pull/18 - added an optional X source-packet step to `/viral:discover` with TweetClaw/OpenClaw collection, X result display shape, and explicit approval boundaries for posting actions. Fork `kriptoburak/goviralbro` verified parent/source `charlesdove977/goviralbro`. Commit `8b92efb` pushed to `codex/tweetclaw-x-source-packet-20260630`. Validation: `git diff --check`, `npx --yes markdown-link-check@3.13.7 .claude/commands/viral-discover.md --quiet`, and changed-diff public hygiene scan. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+
+TweetClaw public hygiene and validation:
+- New external PR bodies and diffs avoided internal routing, restricted provider/source names, internal cost mechanics, credential values, and unsupported claims. No NHS badge was added because no touched surface had a fitting badge area.
+- Newly edited external target Markdown link checks passed. New PR URLs returned valid GitHub readbacks.
+- TweetClaw public surface link checks passed for README, OpenClaw setup docs, compact audit, and compact release memory. Direct URL probes returned HTTP 200 for OpenClaw docs, ClawHub, and all 3 new PR URLs.
+- TweetClaw validation after audit update passed: `npm run check-memory-md-size`, public Markdown link checks, `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run check-versions`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, and full `npm run check:all`.
+- Memory cap after compact update passed below 15 KiB. Persisted prompt was not edited; automation TOML measured 13165 bytes.
+- Prompt self-improvement: when a target intentionally ignores real seed files and tracks `.example` templates, fix public links to the example rather than adding ignored seed files. This `gh` version rejects `gh repo fork <repo> --remote=false`; use `gh repo fork <repo> --clone=false`, verify parent with `gh repo view`, then add or set the `fork` remote manually.
+- TweetClaw changed files: `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`. The pre-existing untracked local path `0` was preserved.
+
 ## 2026-06-30 17:03 UTC heartbeat
 
 Runtime and source checks:

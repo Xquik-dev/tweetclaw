@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 16:10 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-06-30 17:33 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
   HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 16:10 UTC after redirecting to
+  2026-06-30 17:33 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -189,23 +189,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 17:03 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-06-30 17:33 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, and ClawHub were rechecked; source still targets `2026.6.11`, while npm
   latest remains `@xquik/tweetclaw@1.6.31`.
-- Crawler session `tweetclaw-20260630-170313` returned 2 duplicate/prior
-  opportunities. Today-updated authored search found 340 filtered in-scope PRs;
+- Repair priority exact-read
+  https://github.com/jeremylongshore/claude-code-plugins-plus-skills/pull/924:
+  OPEN, MERGEABLE, all checks successful after prior repairs; stale Greptile
+  prose remains but the current Greptile check passed on the latest commit.
+- Crawler session `tweetclaw-20260630-173342` returned 3 prior or duplicate
+  opportunities. Today-updated authored search found 354 filtered in-scope PRs;
   all-open authored search capped at 1000, so complete all-open inventory is not
-  claimed. Exact-read 169 of 170 requested PRs.
-- Repaired https://github.com/jeremylongshore/claude-code-plugins-plus-skills/pull/924
-  by removing an unused include, fixing a target markdownlint blocker, and
-  addressing bot readbacks on synced assets and community verification metadata;
-  checks were rerunning after the final push.
+  claimed. Exact-read 40 recent PRs plus `#924`.
 - Fresh safe PRs opened:
-  https://github.com/WenyuChiou/ai-research-skills/pull/50,
-  https://github.com/OpenAnalystInc/10x-Content-Expert/pull/1, and
-  https://github.com/vnklab/claude-smm-skills/pull/1.
-- TweetClaw changed audit memory only. External validations, public diff scans,
-  link checks, OpenClaw/package gates, audits, prompt bytes, memory size, and
+  https://github.com/timscheuerai/content-vault/pull/1,
+  https://github.com/whawkinsiv/solo-founder-superpowers/pull/2, and
+  https://github.com/charlesdove977/goviralbro/pull/18.
+- TweetClaw changed audit memory only. Detailed duplicate blockers, target
+  checks, validation, public hygiene, prompt bytes, memory size, and
   self-improvement are archived.
 
 ## Reporting Checklist
