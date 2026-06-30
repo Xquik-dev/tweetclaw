@@ -45842,3 +45842,125 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   X/Twitter research skills that already separate evidence from guidance, keep
   TweetClaw as optional source-packet context only and explicitly block drafting,
   scheduling, publishing, and write-like actions from the target skill.
+
+2026-06-30 00:30 UTC heartbeat discoverability run
+
+- Runtime selectors: Codex model, Fast speed, and extra-high effort selectors
+  were unavailable in this runtime. The limitation was recorded and work
+  continued.
+- Automation prompt update: user instructed that every heartbeat or regular run
+  must find 3 opportunities and open 3 PRs to 3 different GitHub repos when safe
+  lanes exist. Updated automation `improve-tweetclaw-openclaw-integration` and
+  verified TOML prompt size at 13,165 bytes. Future runs must open all safe
+  lanes and record blockers when fewer than 3 eligible PR lanes remain after
+  duplicate, policy, fork, safety, and validation gates.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler session `tweetclaw-20260629-235153` with research proxy, bounded
+  request and proxy warmup timeouts, 240 limit, 1 search page, 8 per query,
+  concurrency 8, and focused OpenClaw, TweetClaw, skill, social, Twitter/X,
+  MCP, catalog, validator, and package-tooling query packs. Output parsed as
+  valid JSON with 43 opportunities and 0 errors. A fallback crawler run with
+  session `tweetclaw-20260629-235153-fallback` returned valid JSON with 0
+  opportunities after managed-proxy socket failures and endpoint quarantines. A
+  later 3-PR focused crawler rerun returned valid JSON with 0 opportunities
+  after the same managed-proxy socket failures. No crawler credential values
+  were printed or stored.
+- PR inventory: partial broad authored PR search hit GitHub search rate limit
+  after 815 unique open PR URLs, so broad authenticated search stopped for this
+  run. Continued with crawler output, crawler repo PR lists, compact audit,
+  archive PR URLs, fork metadata, and exact PR reads. Crawler repo PR lists
+  covered 43 repos, found 33 authored open PRs, and had 0 errors. GraphQL exact
+  reads covered 260 current, crawler, audit, and archive PR URLs with 0 errors.
+  Merge states: CLEAN 206, UNSTABLE 27, BLOCKED 19, DIRTY 4, UNKNOWN 3, BEHIND
+  1. Review decisions: none 244, REVIEW_REQUIRED 13, APPROVED 2,
+  CHANGES_REQUESTED 1. Checks: NO_CHECKS 227, SUCCESS 29, FAILING 4. Dirty PRs
+  included `AbdNour627/awesome-openclaw-configs#1`,
+  `daymade/claude-code-skills#43`, `Saminiscool/twitter-ai-agent#2`, and
+  `warlockoussama/twitter-cli#1`. Failing checks were target-owned Vercel
+  authorization gates on `devhindo/x#75`, `Atemndobs/hermes-plugins-hub#1`,
+  `b-open-io/prompts#5`, and `ChrysKoum/skillguard-directory#1`.
+- Repair gate: selected `AbdNour627/awesome-openclaw-configs#1` because it was
+  dirty and in the TweetClaw/OpenClaw placement lane. Verified fork
+  `kriptoburak/awesome-openclaw-configs` is parented to
+  `AbdNour627/awesome-openclaw-configs`, merged upstream `main`, resolved the
+  README related-project conflict, preserved the TweetClaw config row, validated
+  JSON5, README, README_EN, and CONTRIBUTING links, ran `git diff --check`,
+  conflict-marker scan, and changed-diff public-hygiene scan. Pushed commit
+  `a6117fe` and posted validation comment
+  https://github.com/AbdNour627/awesome-openclaw-configs/pull/1#issuecomment-4838639371.
+  Exact readback after recalculation showed open, ready, `MERGEABLE`, `CLEAN`,
+  no reviews, and no checks.
+- Fresh PR 1: screened `heyhank-app/heyhank` from crawler output. Duplicate
+  checks across compact audit, archive, target content, target PRs, and issues
+  found no TweetClaw, Xquik, OpenClaw, or x-twitter-scraper history. Target is
+  MIT, non-fork, active, and has a built-in skill marketplace that installs
+  GitHub repos with `skills/<slug>/SKILL.md`; TweetClaw ships
+  `skills/tweetclaw/SKILL.md`. Verified fork `kriptoburak/heyhank` parent,
+  added TweetClaw as a built-in marketplace source, added a focused Vitest test,
+  passed `cd web && bun run typecheck`, `cd web && bun run test --
+  server/marketplace.test.ts`, `git diff --check`, and public-hygiene diff
+  scan. Full `cd web && bun run test` hit unrelated ffmpeg `drawtext` and
+  existing settings-page accessibility failures; PR body records them. Opened
+  https://github.com/heyhank-app/heyhank/pull/6 from branch
+  `codex/add-tweetclaw-marketplace-source`, commit `c648990`. Exact readback:
+  open, ready, `MERGEABLE`, no comments, reviews, or checks.
+- Fresh PR 2: screened `yangohuang/twitter-declutter` from archive backlog after
+  crawler duplicate saturation. Exact metadata: MIT, non-fork, non-archived,
+  issue-enabled. Compact audit, archive, target content, target PRs, and issues
+  were duplicate-clean. The PR adds optional public signal-packet guidance for
+  ambiguous X/Twitter unfollow decisions, frames TweetClaw only as an optional
+  public source-context helper, and forbids auth tokens, cookies, browser
+  profiles, DMs, private following lists, full exports, execution results, and
+  any follow, unfollow, like, reply, or final-script action by TweetClaw.
+  Validation passed `git diff --check`, `npx --yes markdown-link-check
+  README.md --quiet`, and `npx --yes markdown-link-check SKILL.md --quiet`.
+  Verified fork `kriptoburak/twitter-declutter` parent, pushed commit
+  `beecaca`, and opened https://github.com/yangohuang/twitter-declutter/pull/1.
+  Exact readback: open, ready, `MERGEABLE`, no comments, reviews, or checks.
+- Fresh PR 3: screened `spences10/check-skills` from archive validator backlog.
+  Exact metadata: MIT, non-fork, non-archived, issue-enabled. Compact audit,
+  archive, target content, target PRs, and issues were duplicate-clean. The PR
+  is target-native validator work: it keeps the Agent Skills string-to-string
+  metadata rule, reports the received value type for invalid nested metadata,
+  suggests flattening nested metadata into dotted string keys, and adds a
+  focused spec-rule test. Validation passed `pnpm run check`, `pnpm exec vitest
+  run src/rules/spec.test.ts`, and full `pnpm test`. Verified fork
+  `kriptoburak/check-skills` parent, pushed commit `cee411d`, and opened
+  https://github.com/spences10/check-skills/pull/40. Exact readback: open,
+  ready, `MERGEABLE`, no comments, reviews, or checks.
+- Blocked duplicate candidates: `AISA-skills/social-media-skills` had existing
+  open issue 1; `wshuyi/x-article-publisher-skill`, `gisk0/typefully-skill`,
+  `baijunjie/skill-x-social`, `citedy/citedy-seo-agent`, `publora/skills`,
+  `LZHOU317/x-post-writer-product-announcement`,
+  `minilozio/x-research-but-cheaper`, `dorukardahan/twitterapi-io-skill`,
+  `prtikku-ships/claude-code-builds`,
+  `ccccchuck/social-media-publishing-flow-skill`,
+  `demtomi/social-media-agent-toolkit`, and
+  `onvoyage-ai/gtm-engineer-skills` were duplicate-blocked by existing open
+  TweetClaw/Xquik PRs. `BuddhaYi/macos-cli` stayed weak fit and nonstandard
+  license; `costrict-plugins-repo/github-trending-tweetclaw` is generated with
+  issues disabled; `tweetclaw/humancode` and `tweetclaw/microcompany` are not
+  external outreach targets; `koda-stack` was held as lower fit.
+- Official OpenClaw and package hygiene: `npm view openclaw` returned latest
+  `2026.6.10`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view
+  @xquik/tweetclaw` returned published latest `1.6.31`; `npm view clawhub`
+  returned `0.23.0`. ClawHub TweetClaw route returned HTTP 200 and redirected
+  to `clawhub.ai/xquik/plugins/tweetclaw`. Official `openclaw.dev` docs routes
+  for llms exports, CLI plugin docs, manifest, permission requests, tool
+  plugins, SDK runtime, ClawHub publishing, skill format, install overrides, and
+  debugging timed out via curl with HTTP 000; installed
+  `openclaw@2026.6.10` package docs were used as fallback. No OpenClaw
+  compatibility, manifest, install, approval, public-doc, packaged-skill, or
+  release-gate wording changed.
+- Validation and hygiene: target PR bodies were checked for public-safety
+  wording. TweetClaw public validation passed `npm audit --audit-level=moderate`
+  before audit writes. Final link checks, memory cap, OpenClaw fitness, and
+  `npm run check:all` are recorded in compact memory and release archive for
+  this run. Existing untracked `0` in TweetClaw and install-only `bun.lock` in
+  the HeyHank temp clone were left untouched.
+- Self-improvement: the 3-PR rule is now durable automation guidance. When the
+  crawler result set is duplicate-heavy or proxy-constrained, immediately move
+  to archive-backed licensed backlog lanes and exact repo PR/issue/content
+  checks instead of spending time on repeated broad search. Validator and
+  package-tooling targets can satisfy the outreach goal when the change is
+  target-native, tested, and not a thin TweetClaw mention.
