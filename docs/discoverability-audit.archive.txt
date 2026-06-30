@@ -49190,7 +49190,8 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - TweetClaw validation after this archive update: `npm run
   check-memory-md-size` passed after compacting the latest-run summary. `git
   diff --check`, README/audit/release-memory markdown link checks, direct
-  public URL probes for TweetClaw, OpenClaw docs, and all 3 new PRs passed.
+  public URL probes for TweetClaw, the ClawHub route, OpenClaw docs, and all 3
+  new PRs passed.
   npm full and omit-dev moderate audits found 0 vulnerabilities. `npm run
   build`, `npm run check-openclaw-platform-fitness`, `npm run
   check-package-artifact`, serial `npm run check-versions`, and full `npm run

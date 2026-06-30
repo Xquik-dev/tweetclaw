@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 12:30 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 13:01 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
   HTTP 200; stale `/docs/...` probes returned 404. No compatibility wording
   changed.
-- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 308 on
-  2026-06-30 08:53 UTC redirecting to
+- ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
+  2026-06-30 13:20 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
