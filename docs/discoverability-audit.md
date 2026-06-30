@@ -190,9 +190,9 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 13:44 UTC: runtime selector limits were recorded. Current OpenClaw
-  docs and ClawHub route returned HTTP 200; npm showed OpenClaw latest
-  `2026.6.10` and TweetClaw latest `1.6.31`.
+- 2026-06-30 13:44 UTC: runtime selector limits were recorded. OpenClaw docs
+  and ClawHub returned HTTP 200; npm latests were OpenClaw `2026.6.10` and
+  TweetClaw `1.6.31`.
 - Crawler session `tweetclaw-20260630-134433` returned 46 opportunities across
   skill, social, OpenClaw, MCP, registry, and package-tooling lanes.
 - Authored PR inventory read 306 today-updated open PRs; all-open authored PRs
@@ -204,8 +204,8 @@ archive, before any outreach or duplicate decision.
   https://github.com/danasong/xiaohongshu-skill/pull/1,
   https://github.com/alex-vbcoding/openclaw-local-dev-studio/pull/1, and
   https://github.com/tsubasakong/oss-contribution-conductor/pull/1. All read
-  back OPEN, non-draft, and MERGEABLE; the first 3 are CLEAN and the fourth is
-  UNSTABLE with no checks reported.
+  back OPEN, non-draft, and MERGEABLE. Devadio Gemini feedback was addressed in
+  `72d989a`; the first 3 are CLEAN and the fourth is UNSTABLE with no checks.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 

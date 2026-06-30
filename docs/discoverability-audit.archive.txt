@@ -49419,8 +49419,17 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   passed `git diff --check`, public-hygiene diff scan, and markdown-link-check
   on touched docs with a config ignore limited to the pre-existing API authority
   URL `https://devad.io/api/v1/post`, which returns 404 to generic link
-  checkers. Readback showed OPEN, non-draft, MERGEABLE, CLEAN, no comments, no
-  reviews, and no checks configured.
+  checkers. Readback initially showed OPEN, non-draft, MERGEABLE, CLEAN, no
+  comments, no reviews, and no checks configured. Gemini Code Assist then left
+  2 consistency comments about evidence-packet fields; follow-up commit
+  `72d989ae3f5a29f38549b947c5fda3d7605eb8cb` aligned
+  `MASTER_PROMPT.md` and `SKILL.md`, passed `git diff --check`, current-diff
+  dash and public-safety scans, and markdown-link-check with the same config,
+  and was pushed to the PR branch. Posted validation comment
+  https://github.com/devadio/post-skill/pull/2#issuecomment-4844421963.
+  Exact REST readback showed head `72d989a`, OPEN, non-draft, MERGEABLE, CLEAN,
+  1 bot review with addressed comments, 1 author comment, and no checks
+  configured.
 - Fresh PR 2: opened https://github.com/danasong/xiaohongshu-skill/pull/1 from
   branch `codex/final-approval-checkpoint`, commit
   `aad14f6 docs: add final approval checkpoint`. The PR adds a final human
