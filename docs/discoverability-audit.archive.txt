@@ -47784,3 +47784,116 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   lesson: direct OpenClaw plugin repos often have safe, high-signal manifest
   version drift even when license metadata is missing; use package/manifests
   parity checks and target README link checks as the validation lane.
+
+## 2026-06-30 08:53 UTC heartbeat
+
+- Runtime selector limitation: Codex runtime did not expose model, Fast-mode, or
+  reasoning-effort controls to this turn. The run continued and records the
+  limitation here and in the heartbeat outcome.
+- OpenClaw and package source checks: `npm view openclaw version dist-tags
+  --json` returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw version openclaw.install
+  repository.url homepage --json` returned npm latest `1.6.31` and canonical
+  repository/homepage metadata. Source package remains `1.6.32`.
+- Official OpenClaw route check: direct fetch returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, plugin overview, manifest, tool plugins,
+  permission requests, install overrides, Codex harness runtime, SDK provider
+  plugins, adding capabilities, tools/plugin, ClawHub publishing, skill format,
+  and debugging pages. No OpenClaw compatibility wording changed.
+- Public surface links: direct fetch returned 200 for TweetClaw GitHub, 403 for
+  the npm package web page through expected bot protection while registry
+  metadata succeeded, 308 from `clawhub.ai/plugins/@xquik/tweetclaw` to
+  `/xquik/plugins/tweetclaw`, 200 for the redirected ClawHub page, and 200 for
+  OpenClaw Directory. ClawHub page text still lists latest `1.6.26`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, crawler session
+  `tweetclaw-20260630-084027` used strict JSON output with research proxy,
+  bounded request and warmup timeouts, focused skill/OpenClaw/MCP/ClawHub/x402/
+  package-tooling/Twitter-X query packs, and returned 20 opportunities:
+  `creatorcrawl/creatorcrawl-skill`, `elbis330/social-media-scraper-skill`,
+  `Hao0321/claude-skill-social-post`, `jeremy9682/social-monitor-skill`,
+  `jefflinshu/release-calendar-skill`, `rabden/X-twitter-social-manager-skill`,
+  `ceoguy/x-algorithm-skill`, `gurjarmahesh95-dev/x-post-creater-skill`,
+  `K0rsantan/x-post-writer`, `AISA-skills/social-media-skills`,
+  `win4r/x-post-skill`, `shannhk/viral-x-posts`,
+  `sytaylor/social-posts-plugin`, `luna-prompts/skillnote`,
+  `aaaronmiller/create-viral-content`, `tonkotsuboy/x-impact-checker`,
+  `ShellyDeng08/twitter-connector-skill`, `guzus/go-viral`,
+  `jarrodwatts/x-api-skill`, and archived `nemoaigc/x-cli-legacy`.
+- Crawler repo-mode monitoring: repo-mode crawler for known PR repositories
+  produced managed-egress `socket connection was closed` events but emitted
+  valid JSON with 1 opportunity, `Saminiscool/twitter-ai-agent`, recommended
+  skip because no clear new submission path was found. Exact GitHub API
+  readbacks continued after this crawler blocker.
+- Open PR inventory: compact audit plus archive yielded 1,391 prior PR URLs.
+  Broad `gh search prs --author kriptoburak --state open --limit 1000` hit the
+  1,000 cap, so no all-time completion claim was made. Current-day partitions
+  found 163 created and 199 updated PRs; exact reads covered 199 unique
+  current-day PRs with 0 read errors. Merge-state counts were CLEAN 154,
+  UNSTABLE 32, BLOCKED 10, UNKNOWN 3. Mergeable counts were MERGEABLE 196 and
+  UNKNOWN 3. Review decisions were empty 190, APPROVED 1, REVIEW_REQUIRED 8.
+- Repair gate: 10 attention PRs were exact-read. Most had review-required state
+  without comments, reviews, checks, conflicts, DCO/CLA, or generated-file
+  drift. `pleaseai/claude-code-plugins#237` had old Gemini feedback already
+  addressed at head `ca92982`; remaining failures were target-owned Optimize CI
+  and Vercel authorization blockers. `sefaertunc/anthropic-watch#44` had the
+  prior workflow-env finding already addressed and checks succeeded. No safe
+  change-side repair lane remained before outreach.
+- Duplicate, policy, and fork gates: compact audit, archive, target content,
+  open and closed target PRs/issues, target metadata, local clones, and GitHub
+  API metadata were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, MCP, skill, social, Twitter/X, and variant terms. Selected targets
+  were non-archived, non-fork upstreams. Forks were created and verified under
+  `kriptoburak`, with parents matching the upstream repos.
+- Fresh PR 1: https://github.com/jefflinshu/release-calendar-skill/pull/1 from
+  verified fork `kriptoburak/release-calendar-skill`, parent
+  `jefflinshu/release-calendar-skill`, branch
+  `codex/fix-stale-doc-links-20260630`, head
+  `9315945a0c958e4a6e8ee55f34ab4bd7fa3eaaa6`. Changed `README.md`,
+  `README_CN.md`, and `SKILL.md` to remove two dead GitHub links from setup
+  tables and replace a stale `pbs.twimg.com` avatar URL with live-profile
+  guidance. Validation: `git diff --check`, `npx -y markdown-link-check
+  README.md README_CN.md SKILL.md --quiet`, and sensitive-string scan. Exact
+  readback: OPEN, non-draft, MERGEABLE, CLEAN, no comments or reviews,
+  GitGuardian Security Checks SUCCESS, 3 files, +5/-5.
+- Fresh PR 2: https://github.com/jarrodwatts/x-api-skill/pull/1 from verified
+  fork `kriptoburak/x-api-skill`, parent `jarrodwatts/x-api-skill`, branch
+  `codex/add-license-file-20260630`, head
+  `53adae23f0b992e53c2d2bc595ac8a3972347a44`. Added the MIT `LICENSE` file
+  referenced by README/license badge and refreshed a stale X help-policy link
+  to `https://docs.x.com/developer-terms/policy`. Validation: `git diff
+  --check`, `npx -y markdown-link-check README.md --quiet`, and
+  sensitive-string scan. Exact readback: OPEN, non-draft, MERGEABLE, CLEAN, no
+  checks, comments, or reviews, 2 files, +22/-1.
+- Fresh PR 3: https://github.com/ShellyDeng08/twitter-connector-skill/pull/1
+  from verified fork `kriptoburak/twitter-connector-skill`, parent
+  `ShellyDeng08/twitter-connector-skill`, branch
+  `codex/add-playwright-requirements-20260630`, head
+  `4d3babb8293480596e59de1ee91507480b2503b4`. Added `requirements.txt` with
+  `playwright`, documented reproducible Playwright install commands in README
+  and `SKILL.md`, and noted the generated cookie file is already gitignored.
+  Validation: `git diff --check`, `python3 -m py_compile scripts/login.py
+  scripts/search.py`, requirements assertion, `npx -y markdown-link-check
+  README.md SKILL.md --quiet`, and sensitive-string scan. Exact readback: OPEN,
+  non-draft, MERGEABLE, CLEAN, no checks, comments, or reviews, 3 files,
+  +21/-0.
+- Other fresh lanes screened: `gurjarmahesh95-dev/x-post-creater-skill`,
+  `shannhk/viral-x-posts`, and `ceoguy/x-algorithm-skill` were duplicate-clean
+  or archive-checked but no safer concrete target-native fix was selected
+  within this run after the 3 eligible PR lanes above were validated.
+- TweetClaw validation: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npx -y markdown-link-check README.md
+  docs/discoverability-audit.md docs/clawpack-release.md --quiet`, `git diff
+  --check`, `npm run build`, `npm run check-openclaw-platform-fitness`, `npm run
+  check-package-artifact`, `npm run check-versions`, and `npm run check:all`
+  passed. `check:all` included typecheck, lint, cpd, knip, suppression check,
+  dash check, memory-size check, skill frontmatter, versions, build, OpenClaw
+  fitness, package artifact, and coverage with 11 files, 168 tests, and 100%
+  statements, branches, functions, and lines.
+- Memory, prompt, and self-improvement: compact Markdown memory measured
+  15,233/15,360 bytes. Persisted prompt measured 12,831 bytes; automation TOML
+  measured 13,165 bytes. No prompt edit was needed. Durable lesson: social/X
+  skill repos with no direct TweetClaw lane can still support high-quality,
+  target-native PRs through broken-link repair, license-file parity, and
+  reproducible dependency setup; validate with target link checks and exact PR
+  readbacks before returning to TweetClaw maintenance.
