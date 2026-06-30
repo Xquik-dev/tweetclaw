@@ -46580,14 +46580,16 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   reads: 73 open, 1 closed, 52 CLEAN, 18 UNSTABLE, 4 BLOCKED, and 27 attention
   items. This run did not claim all possible authored PRs beyond the completed
   known-URL and current-day partitions.
-- PR repair: https://github.com/Samin12/instagram-thread-carousel/pull/1 had 2
-  valid Greptile JSON-loader findings. Commits `33d85eb` and `f3e6af0` now
-  preserve intentionally empty `tweets` arrays, reject ambiguous top-level JSON
-  row arrays, validate row arrays, and normalize JSON row keys like CSV
-  headers. Validation passed Python compile, JSON and CSV sample conversions,
-  expected ambiguous-JSON failure, diff check, and public-hygiene scan. Final
-  exact readback was open, ready, MERGEABLE, CLEAN, 3 commits, 2 changed files,
-  and head `f3e6af06277cd2f4dfa32fee17ad8e8546874cdf`.
+- PR repair: https://github.com/Samin12/instagram-thread-carousel/pull/1 had
+  valid Greptile JSON-loader and value-shape findings. Commits `33d85eb`,
+  `f3e6af0`, and `2674450` now preserve intentionally empty `tweets` arrays,
+  reject ambiguous or missing top-level JSON row arrays, validate row arrays,
+  normalize JSON row keys like CSV headers, and avoid stringifying non-scalar
+  JSON media values into invalid file paths. Validation passed Python compile,
+  JSON and CSV sample conversions, expected ambiguous and no-row JSON failures,
+  media-array conversion, diff check, and public-hygiene scan. Final exact
+  readback was open, ready, MERGEABLE, CLEAN, 4 commits, 2 changed files, and
+  head `2674450e4e3e041240f4c73df06b4da3859ebc13`.
 - Fresh screening: compact audit, archive audit, target content, open and
   closed target PRs/issues, forks, package metadata, local clones, and public
   metadata were searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, the
@@ -46662,6 +46664,6 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
 - Final validation after audit edits passed `npm run check-memory-md-size`,
   `git diff --check`, compact Markdown link checks, changed-diff
   public-hygiene review, `npm run check-versions`, and `npm run check:all`.
-  Final compact Markdown memory size was 14,998/15,360 bytes before the final
-  readback check. TweetClaw audit and release-memory changes were committed
+  Final compact Markdown memory size was 15,006/15,360 bytes after the final
+  readback updates. TweetClaw audit and release-memory changes were committed
   and pushed to `master`.

@@ -195,9 +195,9 @@ archive, before any outreach or duplicate decision.
   known PRs, then a current-day authored partition added 16 exact reads; 74
   combined exact reads found 73 open, 1 closed, 52 CLEAN, 18 UNSTABLE, and 4
   BLOCKED PRs with no read errors.
-- Repaired https://github.com/Samin12/instagram-thread-carousel/pull/1 for 2
-  valid JSON-loader findings; final head `f3e6af0` exact-read open, ready,
-  MERGEABLE, and CLEAN.
+- Repaired https://github.com/Samin12/instagram-thread-carousel/pull/1 for
+  JSON-loader and value-shape findings; final head `2674450` exact-read open,
+  ready, MERGEABLE, and CLEAN.
 - Three fresh PRs exact-read open, ready, MERGEABLE, CLEAN and met the mandate:
   https://github.com/arcmich/openclaw-tiktok/pull/1,
   https://github.com/pashechello/kotkit-social-agent/pull/1, and
