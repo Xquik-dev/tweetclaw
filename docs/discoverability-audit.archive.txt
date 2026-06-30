@@ -46227,3 +46227,136 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   met with three fresh repos after repairing actionable conflicts and bot
   findings first. Saved automation prompt measured 12,831 bytes; automation
   TOML measured 13,165 bytes.
+
+2026-06-30 02:01 UTC heartbeat
+
+- Runtime selectors were unavailable; work continued under the active runtime.
+- Crawler-first discovery from `/Users/burak/Developer/xquik` used strict JSON,
+  research proxy, bounded timeouts, 320 limit, 1 search page, 12 per query,
+  concurrency 8, and session `tweetclaw-20260630-020125`. Query coverage
+  included `SKILL.md`, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent,
+  social, Twitter/X, awesome lists, registries, validators, forks, generated
+  catalogs, package tooling, ClawHub, OpenClaw plugin, and web-index skill
+  lanes. Output parsed as 15 opportunities across 15 repos.
+- Open PR inventory: authored open PR partitions yielded 2,505 unique open URLs
+  without a capped bucket: `>=2026-06-30` 35, `2026-06-29` 158,
+  `2026-06-28` 46, `2026-06-27` 0, `2026-06-26` 0, `2026-06-25` 0,
+  `2026-06-24` 17, `2026-06-23` 127, `2026-06-22` 120, `2026-06-21` 159,
+  `2026-06-20` 123, `2026-06-19` 23, `2026-06-18` 68, `2026-06-17` 115,
+  `2026-06-16` 96, `2026-06-15` 90, `2026-06-14` 147, `2026-06-13` 146,
+  `2026-06-12` 93, `2026-06-01..2026-06-11` 270, and `<2026-06-01` 672.
+  Exact reads covered 42 current-day and audit PRs: 41 open, 1 maintainer-closed,
+  31 clean, 9 unstable, and 2 blocked. Do not claim every authored PR was
+  exact-read this run.
+- Repair gate: fixed actionable maintainer, bot, generated-file, and validation
+  findings before new outreach. Verified every repair fork under `kriptoburak`
+  and parented to its target repository.
+- Repair 1: `yaacovcorcos/papiskill#3`, commit `772831e`, changed the network
+  validation pattern to catch API key warnings and added coverage. Validation
+  passed npm install without scripts, registry generate, registry validate,
+  focused validation tests, and diff check. Posted
+  https://github.com/yaacovcorcos/papiskill/pull/3#issuecomment-4839258518.
+  Final readback: open, ready, MERGEABLE, UNSTABLE because target Vercel
+  authorization remains target-owned.
+- Repair 2: `yfge/agentskill.work#1`, commit `bb18881`, preserved
+  `.claude-plugin` source files and classified manifest-only Hermes plugins.
+  Validation passed Python 3.11 dependency install, focused repository
+  inspection tests, and diff check. Posted
+  https://github.com/yfge/agentskill.work/pull/1#issuecomment-4839269852.
+  Final readback: open, ready, MERGEABLE, CLEAN.
+- Repair 3: `p0ki/x-bookmarks-mcp#2`, commit `b59efc0`, preserved local
+  bookmark metadata during Xquik imports. Validation passed focused Python
+  tests, compile checks, ruff, and diff check. Posted
+  https://github.com/p0ki/x-bookmarks-mcp/pull/2#issuecomment-4839280405.
+  Final readback: open, ready, MERGEABLE, UNSTABLE with no target checks.
+- Repair 4: `sefaertunc/anthropic-watch#44`, commit `f4d363a`, passed
+  `TWITTER_PROVIDER` and `XQUIK_API_KEY` through the workflow and added workflow
+  coverage. Validation passed npm install without scripts, focused tests, and
+  diff check. Posted
+  https://github.com/sefaertunc/anthropic-watch/pull/44#issuecomment-4839286594.
+  Final readback: open, ready, MERGEABLE, BLOCKED with target checks successful;
+  remaining gate appears maintainer-owned.
+- Repair 5: `thensls/claude-marketplace#1`, commit `b7890b8`, pinned the
+  Hermes Tweet marketplace source ref. Validation passed JSON parse, remote SHA
+  verification, and diff check. Posted
+  https://github.com/thensls/claude-marketplace/pull/1#issuecomment-4839291369.
+  Final readback: open, ready, MERGEABLE, CLEAN.
+- Repair 6: `gebl/anvil-skill-marketplace#6`, commit `5b90aaa`, classified
+  Hermes Tweet as a Claude-only skill wrapper and removed unsupported generated
+  outputs. Validation passed generated registry repair and validation plus diff
+  check. Posted
+  https://github.com/gebl/anvil-skill-marketplace/pull/6#issuecomment-4839304599.
+  Final readback: open, ready, MERGEABLE, CLEAN.
+- Repair 7: `biodoia/biodoia-skills-marketplace#2`, commit `a25a257`, pinned
+  the Hermes Tweet marketplace source ref after verifying current frontmatter
+  delimiters. Validation passed JSON parse, pinned SHA check, frontmatter
+  delimiter check, and diff check. Posted
+  https://github.com/biodoia/biodoia-skills-marketplace/pull/2#issuecomment-4839308958.
+  Final readback: open, ready, MERGEABLE, UNSTABLE because CodeRabbit is
+  rate-limited while Gitar approved after the push.
+- Fresh screening: duplicate checks covered compact memory, archives, target
+  content, target open and closed PRs/issues, license metadata when present,
+  fork status, package metadata, contribution surfaces, and local clones for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, and variants. Duplicate or prior
+  history blocked `Schmedu/social-post-skill`,
+  `michaellady/claude-social-media-skills`, `indranilbanerjee/socialforge`,
+  `ndesv21/socialclaw`, `hyperfx-ai/marketing-skills`,
+  `jrrqd/verosight-monitor`, `Kartikm09/agentic-social-redteam-skillpack`,
+  `WendyK-LS/omni-image-studio-skill`, `openclaw/clawhub`,
+  `VoltAgent/awesome-openclaw-skills`, `iflytek/skillhub`,
+  `XPOZpublic/xpoz-agent-skills`, `philipbankier/awesome-agent-skills`, and
+  `zients/awesome-ai-agent-skills`. `longlannet/bird` was lower-fit. Missing
+  license metadata did not block a direct PR to `riDfathima/Social-Media-Insights-Dashboard`
+  because the contribution was original and target-native.
+- Fresh PR 1: https://github.com/Carojing/X-KOL-impressions/pull/1 from
+  verified fork `kriptoburak/X-KOL-impressions`, branch
+  `codex/tweetclaw-profile-export`, commit `2e20959`. Added a dependency-free
+  TweetClaw profile CSV importer, sample CSV, and README, SKILL, and AGENTS
+  guidance for seeded KOL analysis. Validation passed Node syntax check, sample
+  import, existing output builder run, and diff check. Exact readback: open,
+  ready, MERGEABLE, CLEAN, no comments, reviews, or checks.
+- Fresh PR 2: https://github.com/Anand195/social-media-skills/pull/1 from
+  verified custom fork `kriptoburak/social-media-skills-anand195`, branch
+  `codex/tweetclaw-source-research`, commit `13474ad`. Added a source packet
+  research skill that uses approval-gated TweetClaw evidence, updated skill
+  catalogs and plugin manifests, and preserved the target package format.
+  Validation passed JSON parse for all manifests, full skill validation with
+  18 skills and 92 passing checks, diff check, and secret scan review. Exact
+  readback: open, ready, MERGEABLE, CLEAN, no comments, reviews, or checks.
+- Fresh PR 3: https://github.com/riDfathima/Social-Media-Insights-Dashboard/pull/1
+  from verified fork `kriptoburak/Social-Media-Insights-Dashboard`, branch
+  `codex/tweetclaw-csv-import`, commit `260576c`. Added TweetClaw-style CSV
+  detection and a dedicated view to the generated dashboard, plus sample data
+  and README usage. No local Streamlit server was started. Validation passed
+  Python compile for the wrapper file, generated dashboard AST compile, and
+  diff check. Exact readback: open, ready, MERGEABLE, CLEAN, no comments,
+  reviews, or checks.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/install-overrides`. Direct guesses for
+  `/plugins/permission-requests`, `/sdk/runtime`, and `/debugging` returned
+  HTTP 404, but the docs export and linked pages still exposed those current
+  topics. No OpenClaw compatibility metadata, manifest shape, install docs,
+  approval behavior, packaged-skill guidance, or release wording changed.
+- Package metadata: `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw`
+  returned published latest `1.6.31` while local source remains `1.6.32`.
+  The unpublished local version remains expected because npm publish auth and
+  ClawHub owner-scope validation are blocked.
+- Public hygiene: markdown-link-check passed for README, OpenClaw setup, agent
+  workflows, compact audit, compact release memory, and packaged skill docs.
+  URL probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  ClawHub plugin route, and all 3 new PR URLs. The npm website returned HTTP
+  403 to the headless checker, so registry metadata remains the stable package
+  probe.
+- Validation before audit compaction passed `npm audit --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and `npm run check-package-artifact`.
+  Final validation after audit edits covered memory cap, full check suite,
+  diff hygiene, public-safety scan, commit, and push.
+- Prompt self-improvement: keep current `docs.openclaw.ai` routes and
+  `llms.txt` as first-party OpenClaw evidence before falling back to package
+  docs. Keep the 3-fresh-opportunity and 3-PR mandate explicit in every run
+  summary. Saved automation prompt measured 12,831 bytes; automation TOML
+  measured 13,165 bytes.
