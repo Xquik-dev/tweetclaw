@@ -189,26 +189,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 16:36 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, and ClawHub were rechecked; source still targets OpenClaw
-  `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
-- Crawler session `tweetclaw-20260630-163604` returned 0 opportunities from
-  SKILL/OpenClaw/MCP/Codex/Claude/social/X-Twitter query coverage, so
-  fallback screening used exact repo reads, clones, archive checks, and target
-  content scans. Broad authenticated search later hit a GitHub rate limit and
-  was stopped for the run.
-- PR inventory read 342 today-updated authored in-scope open PRs; all-open
-  authored search capped at 1000, so complete all-open inventory is not claimed.
-  Exact-read 95 recent or tracked PRs and repaired the conflict on
-  https://github.com/Saminiscool/twitter-ai-agent/pull/2.
-- Fresh safe PRs opened and read back OPEN, non-draft, MERGEABLE/CLEAN, with 0
-  comments, 0 reviews, and 0 checks:
-  https://github.com/m13v/skill-social-autoposter/pull/1,
-  https://github.com/NaderNabil216/skillsmith/pull/2, and
-  https://github.com/valkli/twitter-campaign/pull/1.
-- TweetClaw changed audit memory only. External target checks, public diff
-  scans, link checks, OpenClaw/package gates, audits, and `npm run check:all`
-  passed; detailed candidates, duplicate gates, prompt bytes, memory size, and
+- 2026-06-30 17:03 UTC: runtime selector limitation recorded. OpenClaw docs,
+  npm, and ClawHub were rechecked; source still targets `2026.6.11`, while npm
+  latest remains `@xquik/tweetclaw@1.6.31`.
+- Crawler session `tweetclaw-20260630-170313` returned 2 duplicate/prior
+  opportunities. Today-updated authored search found 340 filtered in-scope PRs;
+  all-open authored search capped at 1000, so complete all-open inventory is not
+  claimed. Exact-read 169 of 170 requested PRs.
+- Repaired https://github.com/jeremylongshore/claude-code-plugins-plus-skills/pull/924
+  by removing an unused include, fixing a target markdownlint blocker, and
+  narrowing synced assets after bot readback; checks were rerunning after the
+  final push.
+- Fresh safe PRs opened:
+  https://github.com/WenyuChiou/ai-research-skills/pull/50,
+  https://github.com/OpenAnalystInc/10x-Content-Expert/pull/1, and
+  https://github.com/vnklab/claude-smm-skills/pull/1.
+- TweetClaw changed audit memory only. External validations, public diff scans,
+  link checks, OpenClaw/package gates, audits, prompt bytes, memory size, and
   self-improvement are archived.
 
 ## Reporting Checklist
