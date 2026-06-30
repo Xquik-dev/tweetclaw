@@ -190,20 +190,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 13:01 UTC: runtime selector limits were recorded. Current OpenClaw
-  docs returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
-  latest `1.6.31`.
-- Crawler sessions `tweetclaw-20260630-130135` and `130135b` returned 0
-  opportunities after managed-egress socket-closed fallbacks, so exact GitHub
-  metadata, PR/issue search, clone, and link checks carried discovery.
-- Authored PR inventory read 295 today-updated open PRs; all-open authored PRs
+- 2026-06-30 13:23 UTC: runtime selector limits were recorded. Current OpenClaw
+  docs and ClawHub route returned HTTP 200; npm showed OpenClaw latest
+  `2026.6.10` and TweetClaw latest `1.6.31`.
+- Crawler session `tweetclaw-20260630-132334` returned 0 opportunities, so exact
+  GitHub metadata, PR/issue search, clone, and link checks carried discovery.
+- Authored PR inventory read 301 today-updated open PRs; all-open authored PRs
   still capped at 1000, so complete all-open inventory is not claimed. Recent
   tracked PR readbacks found no maintainer-actionable repair.
 - Three fresh PRs met the mandate:
-  https://github.com/chenhuiyu/openclaw-skill-safety-kit/pull/1,
-  https://github.com/alex-vbcoding/openclaw-skill-tester/pull/1, and
-  https://github.com/brucestudios/clawskill-generator/pull/1. All read back
-  OPEN, non-draft, and MERGEABLE.
+  https://github.com/ALT-F1-OpenClaw/openclaw-skill-template/pull/1,
+  https://github.com/alex-vbcoding/openclaw-skill-starter-kit/pull/1, and
+  https://github.com/daniellessa/openclaw-skill-template/pull/1. All read back
+  OPEN, non-draft, MERGEABLE, and CLEAN.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 

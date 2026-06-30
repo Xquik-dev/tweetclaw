@@ -49212,3 +49212,129 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   exists but REST says its parent is a different upstream, create a separately
   named fork and verify `fork`, `parent.full_name`, and `source.full_name`
   before pushing.
+
+## 2026-06-30 13:23 UTC heartbeat
+
+- Runtime selector note: this run could not select Codex 5.5 Fast mode or
+  extra-high reasoning in the app/runtime controls, so the limitation was
+  recorded and the run continued.
+- TweetClaw repo state: started on `master` at `5eebd10 docs: record heartbeat
+  push outcome` with only the pre-existing untracked local path `0`.
+  `Xquik-dev/tweetclaw` had no open issues or PRs. The current xquik workspace
+  issue check returned no open issues before using the crawler there.
+- Official OpenClaw and package checks:
+  `https://docs.openclaw.ai/llms.txt`, `/llms-full.txt`, `/cli/plugins`,
+  `/plugins/tool-plugins`, `/plugins/sdk-runtime`,
+  `/tools/permission-modes`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/tools/creating-skills`, `/help/debugging`, and
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200. npm metadata
+  showed OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and TweetClaw npm latest `1.6.31`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260630-132334` covered SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude,
+  social/Twitter-X skills, skill registries, awesome lists, ClawHub publishing,
+  validators, plugin manifests, package tooling, source-evidence skills, and
+  approval-control surfaces. It returned 0 opportunities after successful proxy
+  warmup, so discovery continued through exact GitHub metadata, PR/issue
+  searches, archive checks, clones, and link checks.
+- PR inventory and repair gate: today-updated authored open PR search returned
+  301 PRs. The all-open authored PR bucket still capped at 1000, so complete
+  all-open inventory is not claimed. Exact readbacks covered
+  `chenhuiyu/openclaw-skill-safety-kit#1`,
+  `alex-vbcoding/openclaw-skill-tester#1`,
+  `brucestudios/clawskill-generator#1`, `rustho/openapi-to-mcp#3`,
+  `kirkwat/openapi-to-mcp#2`, `EvilFreelancer/openapi-to-mcp#3`,
+  `gunpal5/QuickMCP#10`, `lyeslabs/mcpgen#5`,
+  `ChristopherDond/MCP-Generator#1`, `clawSean/skillreef#5`,
+  `rogerchappel/skill-permission-matrix#4`, and
+  `rogerchappel/action-approval-skill#4`. No maintainer comment, review,
+  conflict, DCO/CLA blocker, generated-file drift, or failing check was
+  branch-actionable before outreach; Vercel authorization notices were
+  target-owned wait states.
+- Fresh candidate screening: compact audit, archive, target content, target
+  PRs and issues, forks, clone metadata, and GitHub searches checked TweetClaw,
+  `tweetclaw`, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub
+  listing, Xquik, x-twitter-scraper, OpenClaw, skill, social, Twitter/X,
+  approval, validator, catalog, package-tooling, source-evidence,
+  external-action, starter-template, local-dev, and skill-template variants.
+  Fresh duplicate-clean targets included `ALT-F1-OpenClaw/openclaw-skill-template`,
+  `alex-vbcoding/openclaw-skill-starter-kit`,
+  `alex-vbcoding/openclaw-local-dev-studio`,
+  `daniellessa/openclaw-skill-template`, `danasong/xiaohongshu-skill`, and
+  `tsubasakong/oss-contribution-conductor`. Selected lanes were ALT-F1's
+  reusable OpenClaw skill template, alex-vbcoding's starter kit, and
+  daniellessa's compact template because each had a reviewable docs/template
+  surface where approval boundaries improved all downstream external-action
+  skills without adding a TweetClaw dependency.
+- Fresh PR 1: opened
+  https://github.com/ALT-F1-OpenClaw/openclaw-skill-template/pull/1 from
+  verified fork `kriptoburak/openclaw-skill-template` parented to
+  `ALT-F1-OpenClaw/openclaw-skill-template`, branch
+  `codex/external-action-approval-checklist`, commit
+  `6e6a23888611c0c7e8c4088b1e71aa1e6824395d`. The PR adds explicit
+  confirmation guidance for external account actions in README and SKILL.md,
+  adds pre-publish checklist items for draft-first social/account actions, and
+  adds the same rule to ALT-F1 conventions. Validation passed `git diff
+  --check`, changed-line hygiene scan, and markdown-link-check on touched docs
+  with config ignores limited to pre-existing template placeholders such as
+  `{{SERVICE_URL}}`, `{{slug}}`, and `CHANGEME`. Readback showed OPEN,
+  non-draft, MERGEABLE, `CLEAN`, no comments, no reviews, and no checks
+  configured.
+- Fresh PR 2: opened
+  https://github.com/alex-vbcoding/openclaw-skill-starter-kit/pull/1 from
+  verified fork `kriptoburak/openclaw-skill-starter-kit` parented to
+  `alex-vbcoding/openclaw-skill-starter-kit`, branch
+  `codex/account-action-approval-guidance`, commit
+  `427d7bff20f4a30b1389099963cea4d8a5d5cc41`. The PR adds draft-first approval
+  guidance to the social media API-integration use case, automation workflow
+  best practices, and the general skill best-practices list. Validation passed
+  `git diff --check`, changed-line hygiene scan, and markdown-link-check on
+  touched docs with a config ignore limited to the pre-existing
+  `agentskills.org` timeout. Readback showed OPEN, non-draft, MERGEABLE,
+  `CLEAN`, no comments, no reviews, and no checks configured.
+- Fresh PR 3: opened
+  https://github.com/daniellessa/openclaw-skill-template/pull/1 from verified
+  fork `kriptoburak/daniellessa-openclaw-skill-template` parented to
+  `daniellessa/openclaw-skill-template`, branch
+  `codex/approval-boundaries-template`, commit
+  `201a1f29089c3a721ada743ce89cd462cc5ae145`. The PR adds an Approval
+  Boundaries section to the copyable SKILL.md template and adds draft-first
+  approval guidance to best practices for posting, scheduling, replies, follows,
+  messages, deletes, purchases, and external account changes. Validation passed
+  `git diff --check`, changed-line hygiene scan, and markdown-link-check on
+  README. Readback showed OPEN, non-draft, MERGEABLE, `CLEAN`, no comments, no
+  reviews, and no checks configured.
+- Link and public-hygiene checks: target diff whitespace checks passed for all
+  handled external repos. Touched target markdown links passed after ignoring
+  only pre-existing target placeholders or one target-owned external timeout.
+  Public diff inspection found no secret values, private implementation
+  details, restricted provider or source names, internal cost mechanics,
+  unsupported claims, stale metadata, em dashes, or spaced double-hyphen
+  sequences in the opened PR diffs. PR bodies disclosed TweetClaw/Xquik
+  affiliation and framed TweetClaw only as a generic social-account example. No
+  NHS badge was added because the touched surfaces were template guidance, not
+  useful badge areas.
+- TweetClaw validation after this archive update: `npm run
+  check-memory-md-size`, `git diff --check`, README/audit/release-memory
+  markdown link checks, direct public URL probes for TweetClaw, the ClawHub
+  route, OpenClaw docs, and all 3 new PRs passed. npm full and omit-dev
+  moderate audits found 0 vulnerabilities. `npm run build`, `npm run
+  check-openclaw-platform-fitness`, `npm run check-package-artifact`, serial
+  `npm run check-versions`, and full `npm run check:all` passed.
+- TweetClaw audit changes were committed and pushed to `master` after
+  validation; the pre-existing untracked local path `0` was preserved.
+- Prompt and cap readback: persisted automation prompt measured 12831 bytes and
+  automation TOML measured 13165 bytes, under the 15 KiB prompt cap. No prompt
+  edit was saved.
+- Prompt self-improvement: no persisted prompt edit was useful; the current
+  prompt already preserves Codex 5.5 Fast wording, extra-high reasoning wording,
+  quiet autonomy, crawler-first discovery, mandatory 3-PR submission, aggressive
+  skill-repo coverage, fresh repo/framework/library discovery, complete PR
+  inventory and repair priority, duplicate and fork rules, official OpenClaw
+  checks, link checks, validation gates, badge rule, Context7 exclusion, secret
+  handling, cadence, thread binding, commit/push requirement, Markdown cap,
+  prompt cap, and self-improvement. Durable lesson: use reusable skill-template
+  repos for generic approval-boundary improvements when validator and catalog
+  lanes are saturated, but keep the patch template-native and avoid adding
+  TweetClaw placement unless it is directly useful.
