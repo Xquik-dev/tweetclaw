@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 11:14 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 12:30 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
@@ -190,23 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 11:56 UTC: runtime selectors unavailable. Current OpenClaw llms,
-  CLI, ClawHub, skill, permission, plugin, SDK, and debug routes returned HTTP
-  200; npm showed OpenClaw latest `2026.6.10` and TweetClaw latest `1.6.31`.
-- Crawler session `tweetclaw-20260630-115607` returned 74 repos across skill,
-  OpenClaw, MCP, Codex, Claude, social, Twitter/X, registry, validator, plugin,
-  and package-tooling lanes. The exact-repo crawler pass hit managed-egress
-  socket-closed fetches, so GitHub metadata, clone, and link-check fallbacks
-  were used.
-- Today-updated authored open PR search returned 275 PRs; the all-open bucket
-  still capped at 1000, and duplicate-search follow-up hit a GitHub search API
-  rate limit. Exact recent and audit-tracked PR readbacks found no actionable
-  maintainer repair before new outreach.
-- Three fresh OpenClaw or skill-tooling PRs met the mandate:
-  https://github.com/electricsheephq/openclaw-capability-manifest-verifier/pull/1,
-  https://github.com/rogerchappel/clawplug/pull/9, and
-  https://github.com/mgechev/skills-best-practices/pull/4. All read back OPEN,
-  non-draft, and MERGEABLE.
+- 2026-06-30 12:30 UTC: runtime selector limits were recorded. Current OpenClaw
+  llms, CLI, plugin, manifest, permission, SDK, ClawHub, skill, and debug routes
+  returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw latest
+  `1.6.31`.
+- Crawler session `tweetclaw-20260630-123008` found 1 duplicate skill-catalog
+  opportunity; follow-up skill coverage hit managed-egress socket-closed
+  blockers, so exact GitHub metadata, PR/issue search, clone, and link-check
+  fallbacks were used. Today-updated authored PRs read 287; all-open authored
+  PRs still capped at 1000, so complete all-open inventory is not claimed.
+- Repaired https://github.com/electricsheephq/openclaw-capability-manifest-verifier/pull/1
+  after bot review; latest readback is OPEN, non-draft, MERGEABLE, CLEAN, with
+  checks green and stale review threads resolved.
+- Three fresh PRs met the mandate:
+  https://github.com/rogerchappel/action-approval-skill/pull/4,
+  https://github.com/rogerchappel/skill-permission-matrix/pull/4, and
+  https://github.com/clawSean/skillreef/pull/5. All read back OPEN, non-draft,
+  and MERGEABLE.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 
