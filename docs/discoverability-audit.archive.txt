@@ -46667,3 +46667,117 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   Final compact Markdown memory size was 15,006/15,360 bytes after the final
   readback updates. TweetClaw audit and release-memory changes were committed
   and pushed to `master`.
+
+## 2026-06-30 04:22 UTC - Current-day repairs plus 3 fresh PRs
+
+- Runtime selector note: Codex model, Fast speed, and extra-high reasoning
+  controls were not exposed by this runtime, so the run continued and recorded
+  the limitation.
+- Crawler coverage: from `/Users/burak/Developer/xquik`, strict JSON crawler
+  session `tweetclaw-20260630-042248` used 18 focused lanes covering SKILL.md,
+  `.agents/skills`, skills directories, OpenClaw skill, MCP skill, Codex skill,
+  Claude skill, agent skill, social media skill, Twitter/X skill, awesome skill
+  lists, skill registries, forks, generated catalogs, validators, docs, package
+  tooling, plugin ecosystems, OpenClaw social plugins, and X/Twitter OpenClaw
+  plugins. Strict JSON parsed successfully and returned 31 repos. Duplicate
+  screening selected `arcmich/openclaw-instagram`, `MrAlony/openclaw-instagram`,
+  and `0xGval/openclaw-headless-setup` as safe fresh lanes. Repo-mode crawler
+  readback session `tweetclaw-20260630-042248-repos` exact-read the 3 handled
+  target repos through the crawler path.
+- PR inventory method: compact memory, archive memory, audit-tracked PR URLs,
+  crawler output, prior exact-read URLs, fork branch metadata, current-day
+  authored partitions, and exact PR reads were combined. Archive extraction
+  found 1,365 known PR URLs. Current-day authored partitions returned 79 PRs by
+  created date and 114 by updated date; the combined exact-read set contained
+  114 open PRs with 71 CLEAN, 19 UNSTABLE, 17 UNKNOWN, 5 BLOCKED, 2 DIRTY, and
+  0 read errors. This run does not claim all 1,365 historical URLs were
+  exact-read.
+- PR repair 1: https://github.com/AbdNour627/awesome-openclaw-configs/pull/1
+  was DIRTY and conflict-blocked. The fork parent was verified as
+  `AbdNour627/awesome-openclaw-configs`. Upstream `main` was merged, the
+  README conflict was resolved by keeping the TweetClaw related-project row,
+  and commit `b40c596` was pushed. Validation passed conflict-marker scan,
+  JSON5 config parsing, README markdown link check, diff check, and public
+  hygiene review. Final exact readback was open, ready, MERGEABLE, CLEAN, no
+  checks, and head `b40c59678ede8b2d0e4211c8b52d1db7cb2ef178`.
+- PR repair 2: https://github.com/warlockoussama/twitter-cli/pull/1 was DIRTY
+  and conflict-blocked. The fork parent was verified as
+  `warlockoussama/twitter-cli`. Upstream `main` was merged, the README download
+  link conflict was resolved without changing target content semantics, and
+  commit `229082c` was pushed. Validation passed conflict-marker scan, README
+  markdown link check, diff check, and public hygiene review. Final exact
+  readback was open, ready, MERGEABLE, CLEAN, no checks, and head
+  `229082cd2c3e007492263939c47bf0e399f0662e`.
+- Fresh screening: compact audit, archive audit, target content, open and
+  closed target PRs/issues, forks, package metadata, local clones, and public
+  metadata were searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, the
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  and variants. `arcmich/openclaw-instagram`,
+  `MrAlony/openclaw-instagram`, and `0xGval/openclaw-headless-setup` were
+  duplicate-clean, non-archived, non-forks, policy-clean, validation-ready, and
+  safe to patch. `arcmich/openclaw-instagram` lacked license metadata;
+  `MrAlony/openclaw-instagram` lacked repository license metadata but declared
+  MIT in `package.json`; `0xGval/openclaw-headless-setup` declared MIT. Missing
+  repository license metadata was recorded but not used as a direct-PR blocker.
+- Fresh PR 1: https://github.com/arcmich/openclaw-instagram/pull/1 from
+  verified custom fork `kriptoburak/openclaw-instagram-arcmich`, branch
+  `codex/tweetclaw-instagram-source-handoff`, commit `79ccaa0`. Added a
+  `SETUP.md` cross-channel source workflow that keeps the Instagram plugin
+  responsible for Instagram actions while TweetClaw supplies reviewed
+  X/Twitter source packets and separate approval-gated write-like actions.
+  Validation passed markdown link check, diff check, and added-line secret
+  pattern scan. Final exact readback was open, ready, MERGEABLE, CLEAN,
+  1 commit, 0 comments, 0 reviews, 0 checks, 1 file, and head
+  `79ccaa048386ea6252f18b7bae75244031852b92`.
+- Fresh PR 2: https://github.com/MrAlony/openclaw-instagram/pull/1 from
+  verified fork `kriptoburak/openclaw-instagram`, branch
+  `codex/tweetclaw-instagram-dm-context`, commit `3683de6`. Added README notes
+  for using TweetClaw as a separate OpenClaw source-context plugin before
+  Instagram replies while keeping Instagram login inputs, CLI state, and DM
+  thread IDs inside this plugin. Validation passed markdown link check,
+  `package.json` parse, diff check, and added-line secret pattern scan. Final
+  exact readback was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments,
+  0 reviews, 0 checks, 1 file, and head
+  `3683de624abfe5f2786bed112981d65843ecbd42`.
+- Fresh PR 3: https://github.com/0xGval/openclaw-headless-setup/pull/1 from
+  verified fork `kriptoburak/openclaw-headless-setup`, branch
+  `codex/tweetclaw-headless-boundary`, commit `bfcad0b`. Added a README
+  X/Twitter plugin-boundary note that keeps browser-bound login and host
+  security in the headless setup while using TweetClaw for repeatable research,
+  monitoring, source packets, and separate write-like approvals. Validation
+  passed markdown link check, diff check, and added-line secret pattern scan.
+  Final exact readback was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments,
+  0 reviews, 0 checks, 1 file, and head
+  `bfcad0bf024fa62a019f160f49f81dd35a8a04f8`.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/cli/skills`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/install-overrides`. Guessed optional
+  routes `/plugins/permission-requests`, `/sdk/runtime`, and `/debugging`
+  returned HTTP 404. `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. `npm view @xquik/tweetclaw`
+  returned published latest `1.6.31`; local source remains `1.6.32`. `npm view
+  clawhub` returned `0.23.1`. `npm audit --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact` passed.
+- Public hygiene and links: TweetClaw README, OpenClaw setup docs, agent
+  workflows, compact audit, compact release memory, and packaged skill docs
+  passed markdown link checks. All 3 new PR URLs, the 2 repaired PR URLs,
+  ClawHub plugin route, TweetClaw GitHub URL, npm registry metadata, and
+  handled OpenClaw docs routes were probed without broken-link regressions.
+  Diff reviews found no secrets, private implementation details, internal cost
+  mechanics, stale metadata, unsupported claims, or restricted provider/source
+  names.
+- Prompt self-improvement: existing automation prompt already preserved Codex
+  5.5 Fast mode and extra-high reasoning wording, quiet autonomy,
+  crawler-first discovery, mandatory 3-PR submission to 3 different repos,
+  complete inventory priority, duplicate/fork gates, official OpenClaw checks,
+  public link checks, Context7 exclusion, secret handling, cadence, thread
+  binding, Markdown cap, prompt cap, commit/push rule, and self-improvement
+  rule. No prompt edit was needed. Automation TOML measured 13,165 bytes, below
+  the 15 KiB prompt cap.
+- Final validation after audit edits passed `npm run check-memory-md-size`,
+  `git diff --check`, compact Markdown link checks, changed-diff
+  public-hygiene review, `npm run check-versions`, and `npm run check:all`.
+  Final compact Markdown memory size was 15,133/15,360 bytes. TweetClaw audit
+  and release-memory changes were committed and pushed to `master`.
