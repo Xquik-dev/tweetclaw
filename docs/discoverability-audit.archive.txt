@@ -49598,6 +49598,7 @@ TweetClaw public hygiene and validation:
 - Final TweetClaw validation passed: `npm run check-memory-md-size`, public Markdown link checks for README, OpenClaw setup, compact audit, release memory, agent workflows, and packaged skill docs, direct URL probes for current OpenClaw docs, ClawHub, npm registry metadata, and all 3 new PR URLs, `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run check-versions`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, and full `npm run check:all`.
 - Persisted prompt was not edited; automation TOML measured 13165 bytes. Candidate persisted prompt bytes therefore remained below the 15 KiB prompt cap.
 - Prompt self-improvement: reject binary-only download repos even when license metadata is not a blocker; preserve validated branches when GitHub PR creation is blocked by fork-name ambiguity, but switch to another safe PR lane instead of counting the blocked branch; for scraper-skill targets, import reviewed TweetClaw exports as source evidence rather than adding competing live-scrape claims.
+- TweetClaw audit commit `f5920f1` was pushed to `master` after validation.
 - TweetClaw changed files: `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`. The pre-existing untracked local path `0` was preserved.
 
 ## 2026-06-30 20:30 UTC heartbeat
