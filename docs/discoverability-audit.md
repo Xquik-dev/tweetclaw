@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 15:25 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 15:46 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
   HTTP 200; stale `/docs/...` probes returned 404. No compatibility wording
   changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 15:25 UTC after redirecting to
+  2026-06-30 15:46 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,21 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 15:25 UTC: runtime selector limitation recorded; OpenClaw docs,
+- 2026-06-30 15:46 UTC: runtime selector limitation recorded; OpenClaw docs,
   npm, and ClawHub were rechecked. Crawler session
-  `tweetclaw-20260630-152504` returned 24 opportunities.
-- PR inventory read 325 today-updated authored in-scope open PRs; all-open
+  `tweetclaw-20260630-154603` returned 2 opportunities, so fallback searches
+  followed crawler-first coverage.
+- PR inventory read 330 today-updated authored in-scope open PRs; all-open
   authored search capped at 1000, so complete all-open inventory is not claimed.
-  Exact-read 32 recent or tracked PRs; no repairable current-head blocker was
+  Exact-read 40 recent or tracked PRs; no repairable current-head blocker was
   found.
-- Fresh safe PRs opened:
-  https://github.com/imartinstudio/mts-skills/pull/4,
-  https://github.com/ollieb89/agent-skill-validator/pull/1, and
-  https://github.com/StaryMoon/codex-skill-catalog/pull/1. All read back OPEN
-  and MERGEABLE; the MTS PR is draft per target policy, and the validator PR's
-  Socket checks passed.
-- Duplicate and blocked lanes, target validations, fork checks, prompt bytes,
-  memory size, links, and self-improvement are archived.
+- Fresh safe PRs opened and read back OPEN, non-draft, MERGEABLE, and with no
+  comments, reviews, or checks:
+  https://github.com/ZSeven-W/skill-cli/pull/1,
+  https://github.com/rybkr/morpheus/pull/1, and
+  https://github.com/agent-catalog/meta-skills/pull/1.
+- Detailed candidates, duplicate and blocked lanes, validations, fork checks,
+  prompt bytes, memory size, links, and self-improvement are archived.
 
 ## Reporting Checklist
 
