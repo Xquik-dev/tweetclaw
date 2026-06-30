@@ -47580,3 +47580,104 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   bot check is pending on a fresh docs PR, poll exact PR status once after local
   `check:all`; if it completes with no actionable comments, record the clean
   readback instead of leaving a false next-run blocker.
+
+## 2026-06-30 07:47 UTC heartbeat
+
+- Runtime and scope: no model, Fast-mode, or reasoning-effort selector is
+  exposed in this runtime, so the run continued under the available heartbeat
+  runtime while preserving the Codex 5.5 Fast and extra-high effort wording in
+  the persisted automation prompt. Context7, Browser, Chrome, dev servers,
+  production SSH, secret values, destructive git actions, and unrelated
+  refactors were not used. TweetClaw started on `master` at `48aa9c9` with only
+  the pre-existing untracked `0` path.
+- Official OpenClaw checks: current docs routes returned HTTP 200 for llms,
+  full llms, plugins, manifest, tool plugins, permission requests, install
+  overrides, Codex harness runtime, SDK provider plugins, adding capabilities,
+  tool plugin, ClawHub publishing, skill format, and debugging. `npm view
+  openclaw version dist-tags --json` reported latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler session `tweetclaw-20260630-074723` used research proxy, bounded
+  request and proxy warmup timeouts, limit 120, 2 search pages, 6 per query, and
+  concurrency 16. Query coverage included OpenClaw plugin manifests, runtime
+  inspection, approval hooks, context-engine plugins, x402 plugins, SKILL.md,
+  `.agents/skills`, OpenClaw/MCP/Codex/Claude/social/Twitter-X skills,
+  ClawHub, registries, package tooling, and validators. Output parsed as valid
+  JSON with 18 opportunities.
+- PR inventory: compact audit plus archive extraction found 1,385 audit PR
+  URLs. Broad authored-open PR search hit the GitHub 1,000 result cap, so no
+  all-time exact-complete claim was made. Current-day authored partitions found
+  142 created and 178 updated open PRs. Exact reads covered 178 current-day PRs:
+  138 CLEAN, 29 UNSTABLE, 9 BLOCKED, 2 UNKNOWN, 0 read errors, 176 MERGEABLE,
+  2 UNKNOWN mergeability. No dirty PRs, requested changes, conflicts, DCO/CLA
+  blocker, generated-file drift, or actionable maintainer comments were found.
+- Repair gate: 9 BLOCKED PRs were review-required or platform-gated but
+  mergeable. `pleaseai/claude-code-plugins#237` had older Gemini feedback about
+  install docs already fixed at current head, plus target-owned Graphite
+  optimizer failure from missing `GRAPHITE_CI_OPTIMIZER_TOKEN` and Vercel team
+  authorization. No safe change-side repair was available.
+- Fresh duplicate and policy gates: compact audit, archive, crawler output,
+  exact metadata, target content, open and closed PRs/issues, fork metadata, and
+  local clones were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, social, Twitter/X, x402, package
+  tooling, validator, registry, and variant terms. Duplicate or prior-history
+  blockers included `0xNyk/xint`, `mvanhorn/last30days-skill`,
+  `Hakurei-git/xpost`, and `hashgraph-online/registry-broker-skills`.
+  `marmutapp/superbased-openclaw-plugin` was left unsubmitted because the
+  crawler description surfaced broad GUI automation and CAPTCHA guidance that
+  needs a separate safety pass.
+- Fresh PRs opened:
+  - `LunaceLabs/openclaw-claude-cowork#1`
+    https://github.com/LunaceLabs/openclaw-claude-cowork/pull/1 from verified
+    fork `kriptoburak/openclaw-claude-cowork`, parent
+    `LunaceLabs/openclaw-claude-cowork`, branch
+    `codex/fix-lunace-homepage-20260630`, head `32af4bb`. Changed
+    `package.json`, `manifest.json`, and `.claude-plugin/plugin.json` to point
+    homepage metadata at the current LunaceLabs repo. Validation: JSON parses,
+    stale owner string absent, `git diff --check`, and canonical repo URL 200.
+    Exact readback: OPEN, MERGEABLE, CLEAN, no comments, reviews, or checks.
+  - `GoPlausible/openclaw-algorand-plugin#2`
+    https://github.com/GoPlausible/openclaw-algorand-plugin/pull/2 from
+    verified fork `kriptoburak/openclaw-algorand-plugin`, parent
+    `GoPlausible/openclaw-algorand-plugin`, branch
+    `codex/algorand-mcp-version-doc-20260630`, head `d92b724`. Changed
+    `README.md` to sync the bundled `@goplausible/algorand-mcp` version from
+    `4.3.3` to package-declared `4.4.0`. Validation: JSON parses, dependency
+    version readback, stale version absent, markdown-link-check, and
+    `git diff --check`. Exact readback: OPEN, MERGEABLE, CLEAN, no comments,
+    reviews, or checks.
+  - `GoPlausible/travala-plugin-openclaw#1`
+    https://github.com/GoPlausible/travala-plugin-openclaw/pull/1 from verified
+    fork `kriptoburak/travala-plugin-openclaw`, parent
+    `GoPlausible/travala-plugin-openclaw`, branch
+    `codex/travala-update-docs-20260630`, head `6b597bf`. Changed `README.md`
+    to remove duplicated update setup commands and remove a broken link to a
+    missing local `.notes` file. Validation: JSON parses, missing local link
+    absent, markdown-link-check, and `git diff --check`. Exact readback: OPEN,
+    MERGEABLE, CLEAN, no comments, reviews, or checks.
+- Public hygiene and links: direct checks returned 200 for the three new PR
+  URLs, TweetClaw GitHub, and canonical ClawHub route. The npm package web page
+  returned expected bot-protection 403, while `npm view @xquik/tweetclaw
+  version openclaw.install repository.url homepage --json` returned npm version
+  `1.6.31` and canonical metadata. `npx -y markdown-link-check README.md
+  docs/discoverability-audit.md docs/clawpack-release.md --quiet` passed.
+  Target README link checks passed for Algorand and Travala; Lunace changed
+  only JSON metadata and the new homepage URL returned 200. Diff hygiene found
+  no exposed secrets, private implementation details, unsupported claims, or
+  stale public metadata introduced by this run.
+- TweetClaw validation: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run build`, `npm run
+  check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  standalone `npm run check-versions`, and `npm run check:all` passed.
+  `check:all` included typecheck, lint, cpd, knip, suppression check, dash
+  check, memory-size check, skill frontmatter check, version check, build,
+  OpenClaw platform fitness, package artifact check, and coverage with 11 files,
+  168 tests, and 100% statements, branches, functions, and lines.
+- Memory, prompt, and self-improvement: compact Markdown memory measured
+  15,151/15,360 bytes after compaction. Persisted prompt measured 12,831 bytes;
+  automation TOML measured 13,165 bytes. No prompt edit was needed. Durable
+  lessons: keep repeated high-score crawler hits duplicate-blocked until
+  maintainer asks; for direct OpenClaw plugin repos, small metadata drift,
+  dependency-version drift, repeated install/update steps, and broken README
+  links are safe high-signal PR lanes when duplicate gates are clean.

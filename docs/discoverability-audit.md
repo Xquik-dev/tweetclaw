@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 06:19 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 07:47 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-30 06:19 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-30 07:47 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,24 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 07:15 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260630-071552` returned 55 opportunities from focused OpenClaw,
-  MCP, skill, catalog, package-tooling, x402, and social/Twitter lanes.
-- Authored open PR search again hit the 1,000 cap; current-day exact reads
-  covered 171 open PRs with 136 CLEAN, 26 UNSTABLE, 9 BLOCKED, all MERGEABLE,
-  and 0 read errors. Audit extraction found 1,384 PR URLs; no full all-time
-  exact claim.
-- Review repair gate found no dirty/conflicting PRs. One related client PR
-  review item was already fixed at current head and validated with 9 passing
-  Python 3.11 tests under `uv`.
-- Three fresh PRs met the mandate: CognitiveRAG local runtime verification
-  https://github.com/ictin/openclaw-cognitiverag-memory/pull/1,
-  OpenGuardrails runtime hook inspection
-  https://github.com/openguardrails/openguardrails-instrumentation-openclaw/pull/1,
-  and openclaw-x402 runtime inspect verification
-  https://github.com/ElliotPadfield/openclaw-x402/pull/1.
-- Duplicate, fork, policy, target-content, PR/issue, validation, official-docs,
-  link, prompt-byte, and blocker details are archived.
+- 2026-06-30 07:47 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260630-074723` returned 18 opportunities from OpenClaw, MCP,
+  skill, ClawHub, package-tooling, x402, and X/Twitter lanes.
+- Authored open PR search again hit the 1,000 cap; current-day partitions found
+  142 created and 178 updated PRs. Exact reads covered 178 current-day PRs with
+  138 CLEAN, 29 UNSTABLE, 9 BLOCKED, 2 UNKNOWN, 0 read errors, and no dirty or
+  requested-changes repair lane. One `pleaseai` CI failure is target-owned
+  maintainer-secret and Vercel authorization fallout.
+- Three fresh PRs met the mandate: Lunace homepage metadata
+  https://github.com/LunaceLabs/openclaw-claude-cowork/pull/1, Algorand MCP
+  README version sync https://github.com/GoPlausible/openclaw-algorand-plugin/pull/2,
+  and Travala update-doc plus broken-link cleanup
+  https://github.com/GoPlausible/travala-plugin-openclaw/pull/1.
+- Official OpenClaw docs, duplicate gates, fork parents, target policies,
+  target validation, public links, prompt bytes, memory size, and final
+  validation details are archived.
 
 ## Reporting Checklist
 
