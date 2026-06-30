@@ -190,24 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 09:28 UTC: runtime selectors unavailable. OpenClaw docs route
-  checks returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and
-  TweetClaw latest `1.6.31`.
-- Crawler sessions `tweetclaw-20260630-092810` and
-  `tweetclaw-20260630-092810b` returned 6 and 30 opportunities across skill,
-  OpenClaw, MCP, package-tooling, validator, and Twitter/X lanes. Duplicate
-  history blocked repeated TweetClaw placements.
-- PR inventory exact-read 299 current-day and archive URLs: 298 succeeded, 1
-  repo was gone, 282 were open, and 63 needed attention review.
-- Repair gate pushed conflict repairs for `Aditya923-c/xpoz-agent-skills#1`,
-  `Aqmar777/openclaw-competitive-intel#1`,
-  `reall8164/wechat-openclaw-plugin#1`, and
-  `warlockoussama/twitter-cli#1`; all read back OPEN, non-draft, MERGEABLE, and
-  CLEAN.
+- 2026-06-30 10:01 UTC: runtime selectors unavailable. OpenClaw docs routes
+  returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
+  latest `1.6.31`.
+- Crawler sessions `tweetclaw-20260630-100138` and `...100138b` returned 5 and
+  10 opportunities across skill, OpenClaw, MCP, social, and Twitter/X lanes.
+  Duplicate history blocked repeated social-skill targets; policy blocked
+  internal-only or no-brand submissions.
+- PR inventory exact-read 234 current-day authored open PRs from a 1,550-URL
+  archive/current set. No all-time completion claim was made. No actionable
+  maintainer repair existed; `biodoia` and `skynet` bot notes were usage-limit
+  only.
 - Three fresh PRs met the mandate:
-  https://github.com/hashgraph-online/skill-publish/pull/33,
-  https://github.com/fosterushka/skillsmith-for-claude/pull/1, and
-  https://github.com/lijinnair/claude-code-skillforge/pull/1.
+  https://github.com/azeemkafridi/bulkpublish-ai-toolkit/pull/1,
+  https://github.com/waseemnasir2k26/skynet-social-stack/pull/1, and
+  https://github.com/reparrent/claude-skills-workflow/pull/1. All read back
+  OPEN, non-draft, MERGEABLE, and CLEAN.
 - Duplicate gates, fork parents, target policies, validation, public links,
   prompt bytes, memory size, and self-improvement details are archived.
 

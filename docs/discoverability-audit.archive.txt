@@ -48197,3 +48197,135 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   `check-package-artifact` serial from package metadata checks; and treat
   target-owned bot review "processing" comments as pending signals, not
   actionable findings, until exact comments or inline reviews name a fix.
+
+## 2026-06-30 10:01 UTC Heartbeat
+
+- Runtime selectors: this Codex desktop runtime did not expose model, Fast
+  speed, or extra-high reasoning controls, so the requested Codex 5.5 Fast mode
+  and effort selection could not be applied. The limitation was recorded and
+  the run continued.
+- Official OpenClaw and package checks: current OpenClaw docs returned HTTP 200
+  for `llms.txt`, `llms-full.txt`, plugin, manifest, tool-plugin, permission
+  request, install-override, SDK runtime, adding-capabilities, tool plugin,
+  ClawHub publishing, skill-format, and debugging routes. npm metadata showed
+  OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and `@xquik/tweetclaw` latest `1.6.31`.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output, bounded request and warmup timeouts, managed crawler routing,
+  and focused SKILL.md, `.agents/skills`, skills directory, OpenClaw, MCP,
+  Codex, Claude, agent, social-media, Twitter/X, awesome-list, registry,
+  validator, and package-tooling query packs. Session
+  `tweetclaw-20260630-100138` returned 5 opportunities:
+  `JuneYaooo/awesome-ai-media-skills`,
+  `elbis330/social-media-scraper-skill`,
+  `jeremy9682/social-monitor-skill`,
+  `rabden/X-twitter-social-manager-skill`, and
+  `AISA-skills/social-media-skills`; all were duplicate or prior-history
+  blocked. Session `tweetclaw-20260630-100138b` returned 10 opportunities:
+  `azeemkafridi/bulkpublish-ai-toolkit`, `Crawlora-org/crawlora-skills`,
+  `Kartikm09/agentic-social-redteam-skillpack`,
+  `maxtron777/claude-code-business-skills`,
+  `reparrent/claude-skills-workflow`, `xroad-studio/xroad-studio-agent`,
+  `Yikelvin868/homsh-marketing-skills`,
+  `nickyc1/social-publish-guardrails`, `Vasanth19/skills`, and
+  `waseemnasir2k26/skynet-social-stack`. The second crawler output had
+  transient route, proxy, and socket-close warnings, but both JSON files parsed.
+- Open PR inventory: built the run inventory from compact audit, archive PR
+  URLs, crawler context, current-day authored open PR partitions, and exact
+  GitHub PR readbacks. Current-day `gh search prs --author kriptoburak --state
+  open --updated >=2026-06-30 --limit 300` returned 234 PRs; `--created
+  >=2026-06-30 --limit 300` returned 198. Archive extraction found 1,400 PR
+  URLs and the merged archive/current set had 1,550 unique URLs. This run
+  exact-read the 234 current-day authored open PRs. State counts were OPEN 234.
+  Merge-state counts were BLOCKED 10, CLEAN 181, UNKNOWN 5, and UNSTABLE 38.
+  Mergeable counts were MERGEABLE 229 and UNKNOWN 5. Review-decision counts
+  were blank 224, REVIEW_REQUIRED 9, and APPROVED 1. The attention list had 23
+  rows. No all-time completion claim was made beyond the recorded partitions.
+- Repair gate: no safe actionable repair existed before new outreach.
+  `biodoia/biodoia-skills-marketplace#2` had CodeRabbit FAILURE only because
+  the maintainer side reached review usage limits after approval; Gitar was
+  approved and no generated-file, conflict, DCO, CLA, or maintainer request
+  required changes. Other attention rows were target-owned review-required
+  gates, Vercel owner-auth failures, usage-limit comments, or clean PRs with
+  non-actionable self-comments.
+- Duplicate, policy, and target screening: compact audit, archive, target
+  content, target open and closed PRs/issues, local clones, fork metadata, and
+  GitHub metadata were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, MCP, skill, catalog, social, Twitter/X, and variants. Selected
+  targets had no TweetClaw duplicates, were non-archived, and had safe fork
+  paths. `maxtron777/claude-code-business-skills` was held because
+  CONTRIBUTING says no company names or brand-specific content.
+  `Yikelvin868/homsh-marketing-skills` was blocked because the README license
+  says internal use only. `Vasanth19/skills` stalled during clone and sparse
+  fallback, so it was not selected. `xroad-studio/xroad-studio-agent` remained
+  lower fit with prior no-license screening. Missing license metadata alone did
+  not block direct PRs.
+- Fresh PR 1: opened
+  https://github.com/azeemkafridi/bulkpublish-ai-toolkit/pull/1 from verified
+  fork `kriptoburak/bulkpublish-ai-toolkit`, parent
+  `azeemkafridi/bulkpublish-ai-toolkit`, branch
+  `codex/add-tweetclaw-context-intake`, commit
+  `7a80101a037c9526962d987fa720a61249dd252e`. Changed `README.md` and
+  `skills/schedule-post/SKILL.md` to add optional X/Twitter research intake,
+  TweetClaw/OpenClaw install context, and explicit approval before
+  `publish_post`. Validation passed `git diff --check` and markdown link check
+  with only the pre-existing target-owned npm URL 403 ignored. Added-line ASCII
+  and public-hygiene scans passed. Exact readback after settle: OPEN,
+  non-draft, MERGEABLE, CLEAN, 0 comments, 0 reviews, and 0 checks.
+- Fresh PR 2: opened
+  https://github.com/waseemnasir2k26/skynet-social-stack/pull/1 from verified
+  fork `kriptoburak/skynet-social-stack`, parent
+  `waseemnasir2k26/skynet-social-stack`, branch
+  `codex/add-tweetclaw-evidence-intake`, commit
+  `3a120b9136011274604e7cc435963f1468837781`. Changed
+  `recipes/x-pack-mwf-drip.md` and `templates/x-pack/README.md` to add
+  optional reviewed X/Twitter evidence intake, source-note storage, hook-bank
+  updates, and no publish or schedule behavior from the evidence tool.
+  Validation passed `git diff --check`, markdown link check, added-line ASCII
+  scan, and public-hygiene scan. Exact readback after settle: OPEN, non-draft,
+  MERGEABLE, CLEAN, 1 Codex review usage-limit comment, 0 reviews, and 0
+  checks. The usage-limit comment was not actionable.
+- Fresh PR 3: opened
+  https://github.com/reparrent/claude-skills-workflow/pull/1 from verified
+  fork `kriptoburak/claude-skills-workflow`, parent
+  `reparrent/claude-skills-workflow`, branch
+  `codex/add-x-posting-evidence-flow`, commit
+  `d3156eab917251f0ebd70782bc8f5c6c9a4a7140`. Changed
+  `src/skills/social-post-blotato.SKILL.md` and `src/skills/README.md` to
+  extend Blotato social posting guidance to X/Twitter and add optional
+  TweetClaw/OpenClaw evidence intake while keeping Blotato responsible for
+  final approved publishing or scheduling. Validation passed `git diff
+  --check`, markdown link check, added-line ASCII scan, and public-hygiene
+  scan. Exact readback after settle: OPEN, non-draft, MERGEABLE, CLEAN, 0
+  comments, 0 reviews, and 0 checks.
+- TweetClaw public-hygiene and validation: npm full and omit-dev audits found 0
+  vulnerabilities. Markdown link check passed for `README.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Direct
+  `curl -L` URL probes returned 200 for TweetClaw GitHub, npm registry latest,
+  current ClawHub URLs, OpenClaw Directory, all 3 new PRs,
+  `docs.openclaw.ai/llms.txt`, and OpenClaw manifest docs. `npm run build`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `npm run check-versions`, `npm run check-memory-md-size`, `git diff
+  --check`, and `npm run check:all` passed. `check:all` included typecheck,
+  lint, cpd, knip, suppression check, dash check, memory-size check, skill
+  frontmatter, versions, build, OpenClaw fitness, package artifact, and coverage
+  with 11 files, 168 tests, and 100% statements, branches, functions, and
+  lines.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. External changed files are listed
+  in the individual PR entries above. Unrelated untracked local path `0` in the
+  TweetClaw worktree was preserved and not inspected.
+- Memory, prompt, and self-improvement: compact automation Markdown measured
+  15,164/15,360 bytes after compaction. Persisted automation prompt measured
+  12,831 bytes; TOML measured 13,165 bytes. No saved prompt edit was useful
+  because current instructions already preserve the mandatory model, speed,
+  effort wording, quiet autonomy, crawler-first discovery, 3-PR requirement,
+  skill-repo coverage, duplicate/fork rules, OpenClaw docs checks, link checks,
+  validation gates, badge rule, Context7 exclusion, secret handling, cadence,
+  thread binding, commit/push requirement, Markdown cap, prompt cap, and this
+  self-improvement rule. Durable lessons: this `gh repo fork` version rejects
+  `--remote=false` with a repository argument, so use `--clone=false` and add a
+  verified fork remote manually; avoid zsh word-splitting loops over strings
+  while `set -u` is active; and treat Codex review usage-limit comments as
+  non-actionable unless they include a concrete requested change.
