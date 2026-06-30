@@ -46610,17 +46610,20 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   head `fb9bc3f93e2dc782336cb24a5d956b5ca843c224`.
 - Fresh PR 2: https://github.com/pashechello/kotkit-social-agent/pull/1 from
   verified fork `kriptoburak/kotkit-social-agent`, branch
-  `codex/tweetclaw-signal-import`, commit `a35a21f`. Added
+  `codex/tweetclaw-signal-import`, commits `a35a21f` and `810a6b3`. Added
   `api/services/tweetclaw_import.py`, wired
   `SocialPipelineService.create_tweetclaw_signal()`, documented TweetClaw
   source packets, and added unit tests for mapping, no-text skip, and service
   dedupe. The repo uses Python 3.10-plus syntax, so validation used Python 3.11
   after the system Python 3.9 parser failed on pre-existing annotations.
-  Validation passed dependency install in a temp venv, focused and full pytest,
-  Python compile, README link check, diff check, and public-hygiene scan. Final
-  exact readback was open, ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0
-  reviews, 0 checks, 4 files, and head
-  `a35a21fd5b739e81192bf288d91dca9a82e08ded`.
+  A post-open Codex review correctly noted metrics were not nested where proof
+  scoring reads them, so `810a6b3` moved imported metrics under
+  `post.public_metrics` and added a proof-score regression test. Validation
+  passed dependency install in a temp venv, focused and full pytest, Python
+  compile, README link check, diff check, and public-hygiene scan. Final exact
+  readback was open, ready, MERGEABLE, CLEAN, 2 commits, 0 issue comments, 1
+  outdated review comment on the prior commit, 0 checks, 4 files, and head
+  `810a6b300d59d0ebe5bc8dd56513d70309201a4e`.
 - Fresh PR 3: https://github.com/XPOZpublic/xpoz-openclaw-plugin/pull/2 from
   verified fork `kriptoburak/xpoz-openclaw-plugin`, branch
   `codex/tweetclaw-companion-workflow`, commit `b7524ae`. Added a README
