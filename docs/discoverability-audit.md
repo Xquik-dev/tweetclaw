@@ -189,17 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 22:39 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-06-30 22:55 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik open issues were rechecked; source still targets
   `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output with 32 opportunities, 1486 archive PR URLs,
-  authored-PR partitions capped at 300 rows, and 90 exact PR readbacks. Complete
-  all-open inventory is not claimed. No safe actionable repair was found before
-  outreach.
+- Inventory used crawler output with 10 opportunities, 1487 archive PR URLs,
+  authored-PR partitions capped at 300 rows with 291 filtered rows each, and 100
+  exact PR readbacks. Complete all-open inventory is not claimed.
+- Repaired `lvpiggyqq/xcatcher-mcp-manifest#1` for reviewed TweetClaw user
+  import behavior. Two Hermes-adjacent repairs were blocked by missing fork head
+  repos.
 - Fresh safe PRs opened:
-  https://github.com/soia-team/soia-open-skills/pull/1,
-  https://github.com/seph1709/x-twitter/pull/1, and
-  https://github.com/windhood-jza/openclaw-bird-skill/pull/1.
+  https://github.com/linny006/awesome-agent-skills/pull/5,
+  https://github.com/shajith003/awesome-claude-skills/pull/4, and
+  https://github.com/XD-BASHARAT/agent-skills-directory/pull/1.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
   screening, target validation, broken-link results, prompt bytes, and
   self-improvement are archived.
