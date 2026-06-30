@@ -48039,3 +48039,161 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   metadata checks because its temporary package-json preparation can make npm
   script discovery flaky; run package artifact after version checks or rerun
   version checks serially before recording validation.
+
+## 2026-06-30 09:28 UTC Heartbeat
+
+- Runtime selectors: this Codex desktop runtime did not expose model, Fast
+  speed, or extra-high reasoning controls, so the requested Codex 5.5 Fast mode
+  and effort selection could not be applied. The limitation was recorded and
+  the run continued.
+- Official OpenClaw and package checks: current OpenClaw docs returned HTTP 200
+  for `llms.txt`, `llms-full.txt`, plugin, manifest, tool-plugin, permission
+  request, install-override, SDK runtime, adding-capabilities, tool plugin,
+  ClawHub publishing, skill-format, and debugging routes. npm metadata showed
+  OpenClaw latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`, and `@xquik/tweetclaw` latest `1.6.31` with
+  `openclaw.install.npmSpec` still pointing at `@xquik/tweetclaw@1.6.31`.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output, bounded request and warmup timeouts, managed crawler routing, and
+  focused SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude,
+  social-media, Twitter/X, awesome-list, registry, validator, and
+  package-tooling query packs. Session `tweetclaw-20260630-092810` returned 6
+  opportunities: `ndesv21/socialclaw`,
+  `elbis330/social-media-scraper-skill`,
+  `rabden/X-twitter-social-manager-skill`,
+  `AISA-skills/social-media-skills`, `NachaFromMars/social-media-agent`, and
+  `produtoramaxvision/maxvision-x-mcp`. Session
+  `tweetclaw-20260630-092810b` returned 30 validator and skill-package
+  opportunities including `DualNova/agent-skills`,
+  `ItamarZand88/awesome-agent-conventions`, `sno-ai/mda`, `agent-sh/agnix`,
+  `hashgraph-online/skill-publish`, `fosterushka/skillsmith-for-claude`,
+  `LevyBytes/AI-skill-drafting`, `lijinnair/claude-code-skillforge`,
+  `yuziri-open/claude-md-lint`, and related skill catalogs. Crawler fetches had
+  transient socket-close warnings and endpoint quarantines, but both output
+  JSON files parsed.
+- Open PR inventory: built the run inventory from compact audit, archive PR
+  URLs, crawler context, current-day authored open PR partitions, and exact
+  GitHub PR readbacks. Current-day `gh search prs --author kriptoburak --state
+  open --updated >=2026-06-30 --limit 300` returned 223 PRs; `--created
+  >=2026-06-30 --limit 300` returned 187. Merging those with 80 archive PR URLs
+  yielded 299 unique URLs. Exact GraphQL readbacks succeeded for 298; one older
+  audit URL failed because `www222fff/openclaw-social-skills` no longer
+  resolved. State counts were CLOSED 11, MERGED 5, OPEN 282. Merge-state counts
+  were BLOCKED 13, CLEAN 230, DIRTY 5, UNKNOWN 6, and UNSTABLE 44. Mergeable
+  counts were CONFLICTING 5, MERGEABLE 287, UNKNOWN 6. The attention list had
+  63 rows. No all-time completion claim was made beyond the recorded partitions.
+- Repair 1: `Aditya923-c/xpoz-agent-skills#1` was open and conflicting. The
+  correctly parented fork `kriptoburak/xpoz-agent-skills` was fetched, upstream
+  `main` was merged into `codex/add-tweetclaw-openclaw-resource`, and commit
+  `09c304423f75b858116a9f7f3bc1f8d33f75c16f` was pushed. Validation passed
+  `git diff --check`, README conflict-marker scan, README markdown link check,
+  and public-hygiene scan. Exact readback: OPEN, non-draft, MERGEABLE, CLEAN,
+  no checks.
+- Repair 2: `Aqmar777/openclaw-competitive-intel#1` was open and conflicting.
+  The correctly parented fork `kriptoburak/openclaw-competitive-intel` was
+  fetched, upstream `main` was merged into `codex/tweetclaw-x-source`, and
+  commit `52e8342f06e8bc3345149f78ca90636cfe5e5a48` was pushed. Validation
+  passed `git diff --check`, README conflict-marker scan, Python compile,
+  `python3 -m unittest tests/test_tweetclaw_fetcher.py` with 4 tests, `bash -n
+  install.sh`, README/SKILL/docs markdown link checks, and public-hygiene scan.
+  Exact readback: OPEN, non-draft, MERGEABLE, CLEAN, no checks.
+- Repair 3: `reall8164/wechat-openclaw-plugin#1` was open and conflicting. The
+  correctly parented fork `kriptoburak/wechat-openclaw-plugin` was fetched,
+  upstream `main` was merged into `codex/add-tweetclaw-workflow`, and commit
+  `6f380af11b22ebd0a4fa6a8eecda2b29e3cad1c2` was pushed. Validation passed
+  `git diff --check`, README conflict-marker scan, JSON parsing for
+  `package.json` and `openclaw.plugin.json`, README markdown link check, and
+  public-hygiene scan. Exact readback: OPEN, non-draft, MERGEABLE, CLEAN, no
+  checks.
+- Repair 4: `warlockoussama/twitter-cli#1` was open and conflicting. The
+  correctly parented fork `kriptoburak/twitter-cli` was fetched, upstream
+  `main` was merged into `codex/update-readme-command-scope`, and commit
+  `323608c1d6902f426c760331feed5f08ac4fed1e` was pushed. Validation passed
+  `git diff --check`, README conflict-marker scan, README markdown link check,
+  and public-hygiene scan. Exact readback: OPEN, non-draft, MERGEABLE, CLEAN,
+  no checks.
+- Duplicate, policy, and target screening: compact audit, archive, target
+  content, target open and closed PRs/issues, local clones, fork metadata, and
+  GitHub metadata were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, MCP, skill, catalog, validator, social, Twitter/X, and variants.
+  `ndesv21/socialclaw`, `elbis330/social-media-scraper-skill`,
+  `AISA-skills/social-media-skills`, and `NachaFromMars/social-media-agent`
+  were duplicate or prior-history blocked. `fabw222/awesome-openclaw-sites`
+  remained blocked because TweetClaw/Xquik still lacks the site-level
+  `/skill.md` endpoint that directory requires. `DualNova/agent-skills`,
+  `agent-sh/agnix`, `sno-ai/mda`, `hymhub/skill-indexer`,
+  `moonrunnerkc/skillcheck`, `bregman-arie/devops-sre-skills`,
+  `Anvil-Code/skill-validator`, `dongsheng123132/skill-multi-publisher`,
+  `contextosai/skills`, and several awesome-list lanes had prior PR history or
+  duplicate blockers. Missing license metadata alone did not block direct PRs;
+  selected targets were non-fork, non-archived, policy-clean, and useful without
+  thin marketing.
+- Fresh PR 1: opened https://github.com/hashgraph-online/skill-publish/pull/33
+  from verified fork `kriptoburak/skill-publish`, parent
+  `hashgraph-online/skill-publish`, branch `codex/add-approval-preset`, commit
+  `4813836b7db6ee753c4431772dca74e7bee778ce`. Changed `README.md`,
+  `bin/lib/skill-presets.mjs`, `bin/lib/start-command.mjs`, and
+  `test/repo-workflows.test.mjs` to add an approval-gated skill preset,
+  document it in create examples, include it in interactive preset help, and
+  test scaffold output. Validation passed `node --check` for changed JS/test
+  files, `node test/repo-workflows.test.mjs`, and `git diff --check`.
+  README link check found one pre-existing dead target-owned link to
+  `hiero-consensus-specifications`; rerun with only that URL ignored passed.
+  Exact readback: OPEN, non-draft, MERGEABLE, UNSTABLE, no checks, 0 comments,
+  1 Gemini Code Assist review with no requested changes or inline comments.
+- Fresh PR 2: opened
+  https://github.com/fosterushka/skillsmith-for-claude/pull/1 from verified fork
+  `kriptoburak/skillsmith-for-claude`, parent
+  `fosterushka/skillsmith-for-claude`, branch
+  `codex/add-approval-publishing-pattern`, commit
+  `c4fe05bf66b0ebc66cebb9c307dc0b3b7f4fe267`. Changed
+  `src/data/patterns.ts` and `src/utils/applyPattern.ts` to add an
+  approval-gated publishing scaffold with triggers, anti-triggers, a custom
+  `tweetclaw` MCP example, an approval contract, review flow, and failure
+  handling. Validation passed `npm ci --ignore-scripts --no-audit --no-fund`,
+  `npm run type-check`, `npm run build`, README markdown link check, and
+  `git diff --check`. Final readback after the bot review completed: OPEN,
+  non-draft, MERGEABLE, CLEAN, CodeRabbit SUCCESS with no actionable comments.
+- Fresh PR 3: opened
+  https://github.com/lijinnair/claude-code-skillforge/pull/1 from verified fork
+  `kriptoburak/claude-code-skillforge`, parent
+  `lijinnair/claude-code-skillforge`, branch `codex/add-social-approval-eval`,
+  commit `2f343f59053266d943fd8bac367146505718ea5b`. Changed `README.md` and
+  `evaluations/eval-social-approval-skill.json` to add a social publishing MCP
+  evaluation that requires dry-run defaults, exact approval before publish or
+  schedule, and no secret leakage. Validation passed JSON parse and
+  `git diff --check`. README link check found one pre-existing transient
+  target-owned homepage 503 at `https://lijinnair.com`; rerun with only that URL
+  ignored passed. Exact readback: OPEN, non-draft, MERGEABLE, CLEAN, no checks,
+  comments, or reviews.
+- TweetClaw public-hygiene and validation: npm full and omit-dev audits found 0
+  vulnerabilities. Markdown link check passed for `README.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`. Direct URL
+  probes returned 200 for TweetClaw GitHub, npm registry latest, current
+  ClawHub page, OpenClaw Directory, all 3 new PRs, `docs.openclaw.ai/llms.txt`,
+  and OpenClaw manifest docs; legacy ClawHub plugin URL returned expected 308 to
+  `/xquik/plugins/tweetclaw`. `npm run build`, `npm run
+  check-openclaw-platform-fitness`, `npm run check-package-artifact`, serial
+  `npm run check-versions`, `npm run check-memory-md-size`, `git diff
+  --check`, and `npm run check:all` passed. `check:all` included typecheck,
+  lint, cpd, knip, suppression check, dash check, memory-size check, skill
+  frontmatter, versions, build, OpenClaw fitness, package artifact, and coverage
+  with 11 files, 168 tests, and 100% statements, branches, functions, and lines.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. External changed files are listed
+  in the individual PR entries above. Unrelated untracked local path `0` in the
+  TweetClaw worktree was preserved and not inspected.
+- Memory, prompt, and self-improvement: compact automation Markdown measured
+  15,245/15,360 bytes. Persisted automation prompt measured 12,831 bytes; TOML
+  measured 13,165 bytes. No saved prompt edit was useful because current
+  instructions already preserve the mandatory model/speed/effort wording,
+  quiet autonomy, crawler-first discovery, 3-PR requirement, skill-repo
+  coverage, duplicate/fork rules, OpenClaw docs checks, link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, cadence, thread
+  binding, commit/push requirement, Markdown cap, prompt cap, and this
+  self-improvement rule. Durable lessons: avoid using zsh's special `path`
+  variable in shell readback loops because it can break command lookup; keep
+  `check-package-artifact` serial from package metadata checks; and treat
+  target-owned bot review "processing" comments as pending signals, not
+  actionable findings, until exact comments or inline reviews name a fix.

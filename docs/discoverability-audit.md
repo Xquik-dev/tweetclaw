@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 08:53 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 09:28 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
@@ -76,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-30 08:53 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-30 09:28 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,23 +190,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 09:03 UTC: runtime selectors unavailable. OpenClaw official docs
-  returned HTTP 200 for llms, plugin, manifest, permission, install, SDK,
-  ClawHub, skill-format, and debugging routes. npm showed OpenClaw latest
-  `2026.6.10` and TweetClaw latest `1.6.31`.
-- Crawler session `tweetclaw-20260630-090316` returned 21 opportunities across
-  skill, OpenClaw, MCP, ClawHub, package-tooling, and Twitter/X lanes. Broad
-  authored-PR search hit GitHub API 403 on page 9, so no all-time completion
-  claim was made. Archive and exact repo paths exact-read 40 recent PRs and 9
-  attention lanes.
-- Repair gate pushed conflict repairs for
-  https://github.com/jamald33n/tweetsave-mcp/pull/2 and
-  https://github.com/AbdNour627/awesome-openclaw-configs/pull/1; both read back
-  OPEN, non-draft, MERGEABLE, and CLEAN.
+- 2026-06-30 09:28 UTC: runtime selectors unavailable. OpenClaw docs route
+  checks returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and
+  TweetClaw latest `1.6.31`.
+- Crawler sessions `tweetclaw-20260630-092810` and
+  `tweetclaw-20260630-092810b` returned 6 and 30 opportunities across skill,
+  OpenClaw, MCP, package-tooling, validator, and Twitter/X lanes. Duplicate
+  history blocked repeated TweetClaw placements.
+- PR inventory exact-read 299 current-day and archive URLs: 298 succeeded, 1
+  repo was gone, 282 were open, and 63 needed attention review.
+- Repair gate pushed conflict repairs for `Aditya923-c/xpoz-agent-skills#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `reall8164/wechat-openclaw-plugin#1`, and
+  `warlockoussama/twitter-cli#1`; all read back OPEN, non-draft, MERGEABLE, and
+  CLEAN.
 - Three fresh PRs met the mandate:
-  https://github.com/litianci8866/Overseas-trends-skill/pull/1,
-  https://github.com/tiendatne2004/tikhub_api_skill/pull/1, and
-  https://github.com/liangdabiao/tikhub_api_skill/pull/1.
+  https://github.com/hashgraph-online/skill-publish/pull/33,
+  https://github.com/fosterushka/skillsmith-for-claude/pull/1, and
+  https://github.com/lijinnair/claude-code-skillforge/pull/1.
 - Duplicate gates, fork parents, target policies, validation, public links,
   prompt bytes, memory size, and self-improvement details are archived.
 
