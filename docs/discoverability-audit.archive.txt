@@ -47681,3 +47681,106 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   maintainer asks; for direct OpenClaw plugin repos, small metadata drift,
   dependency-version drift, repeated install/update steps, and broken README
   links are safe high-signal PR lanes when duplicate gates are clean.
+
+## 2026-06-30 08:10 UTC heartbeat
+
+- Runtime selector note: the current app runtime did not expose controls for
+  model, Fast speed, or extra-high reasoning effort, so Codex could not force
+  Codex 5.5 Fast mode. Work continued and this limitation is recorded here.
+- Official OpenClaw docs recheck: HTTP 200 was captured for current
+  `docs.openclaw.ai` llms, full llms, plugins, manifest, tool-plugins,
+  permission requests, install overrides, SDK provider/runtime routes, ClawHub
+  publishing, skill format, and debugging pages. The Node fetch process was
+  stopped after all statuses printed because sockets stayed open. OpenClaw npm
+  remained latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`.
+- Crawler-first discovery: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260630-081056/crawler-opportunities.json --research-proxy --request-timeout-ms 12000 --proxy-warmup-timeout-ms 12000 --limit 140 --search-pages 2 --per-query-limit 6 --concurrency 16 --session-id tweetclaw-20260630-081056` with focused OpenClaw, MCP, ClawHub, SKILL.md, `.agents/skills`, skill directory, agent/social/Twitter-X skill, x402, validator, package tooling, and install/setup query packs. Output parsed as valid JSON with 18 opportunities.
+- PR inventory: compact audit plus archive extraction found 1,388 audit PR
+  URLs. Broad authored-open PR search hit the GitHub 1,000 result cap, so no
+  all-time exact-complete claim was made. Current-day authored partitions found
+  154 created and 190 updated open PRs. Exact reads covered 190 current-day PRs:
+  147 CLEAN, 31 UNSTABLE, 9 BLOCKED, 2 UNKNOWN, 1 DIRTY, 0 read errors, 187
+  MERGEABLE, 2 UNKNOWN mergeability, and 1 CONFLICTING.
+- Repair gate: `Saminiscool/twitter-ai-agent#2` was DIRTY/CONFLICTING. The PR
+  head was exact-read as `kriptoburak/saminiscool-twitter-ai-agent-xquik`
+  branch `codex/add-xquik-backend`; a first local checkout from the wrong fork
+  was discarded for the PR path. The real PR branch merged upstream `main`,
+  resolved a README conflict by keeping upstream download/contact wording and
+  the optional Xquik backend section, passed `npm ci --ignore-scripts --no-audit
+  --no-fund`, `npx prettier --check README.md src/tools.ts src/twitter-api.ts
+  tests/twitter-api.test.ts`, `npx biome lint src/tools.ts src/twitter-api.ts
+  tests/twitter-api.test.ts`, `npx vitest run tests/twitter-api.test.ts`, and
+  `git diff --check`. Pushed head `6662976` and commented:
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4841323345.
+  Exact readback after repair: OPEN, MERGEABLE, CLEAN, no checks, reviews, or
+  generated-file drift.
+- Remaining actionable backlog: Vercel authorization blockers remain on
+  `7Ese/Awesome-Agent-Skills#6`, `Himanshu507/cgcone#5`,
+  `san-npm/skills-ws#10`, and `yaacovcorcos/papiskill#3`. The
+  `pleaseai/claude-code-plugins#237` Graphite/Vercel failures remain
+  target-owned maintainer-secret and authorization blockers. `biodoia` retained
+  target review/bot state but no safe change-side repair lane was found.
+- Fresh duplicate and policy gates: compact audit, archive, crawler output,
+  exact metadata, target content, open and closed PRs/issues, fork metadata, and
+  local clones were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, MCP, SKILL.md, `.agents/skills`, social, Twitter/X, x402, package
+  tooling, validator, registry, and variant terms. `AnantDhavale/cerone-openclaw-plugin`
+  remained blocked by existing PR #1. Fresh screened lanes included
+  `davidkny22/recursive-claw`, `rick-stevens-ai/memory-falda`,
+  `Dexter-DAO/opendexter-plugin`, `clawdmint/clawdmint-plugin`,
+  `rubix1138/askew-openclaw-plugin`, `yourclaw/clawguard`,
+  `Charpup/clawhub-publisher`, and `Wayy-Research/clawpub`.
+- Fresh PRs opened:
+  - `davidkny22/recursive-claw#1`
+    https://github.com/davidkny22/recursive-claw/pull/1 from verified fork
+    `kriptoburak/recursive-claw`, parent `davidkny22/recursive-claw`, branch
+    `codex/sync-manifest-version-20260630`, head `062c2af`. Changed
+    `openclaw.plugin.json` to sync manifest version from `0.1.0` to package
+    version `0.2.1`. Validation: JSON parses, manifest/package version parity,
+    `git diff --check`, target README markdown-link-check, no TweetClaw or
+    private-data strings introduced. Exact readback: OPEN, non-draft,
+    MERGEABLE, CLEAN, no comments, reviews, or checks.
+  - `rick-stevens-ai/memory-falda#1`
+    https://github.com/rick-stevens-ai/memory-falda/pull/1 from verified fork
+    `kriptoburak/memory-falda`, parent `rick-stevens-ai/memory-falda`, branch
+    `codex/add-manifest-version-20260630`, head `ea9f9d7`. Changed
+    `openclaw.plugin.json` to add manifest version `0.1.0` from `package.json`.
+    Validation: JSON parses, manifest/package version parity, `git diff
+    --check`, target README markdown-link-check, no TweetClaw or private-data
+    strings introduced. Exact readback: OPEN, non-draft, MERGEABLE, CLEAN, no
+    comments, reviews, or checks.
+  - `Dexter-DAO/opendexter-plugin#2`
+    https://github.com/Dexter-DAO/opendexter-plugin/pull/2 from verified fork
+    `kriptoburak/opendexter-plugin`, parent `Dexter-DAO/opendexter-plugin`,
+    branch `codex/add-manifest-version-20260630`, head `4f3cd4e`. Changed
+    `openclaw.plugin.json` to add manifest version `1.1.0` from `package.json`.
+    Validation: JSON parses, manifest/package version parity, `git diff
+    --check`, target README markdown-link-check. Sensitive-string scan found
+    pre-existing public manifest labels for wallet private-key config, but the
+    diff only added the version field and exposed no secret values. Exact
+    readback: OPEN, non-draft, MERGEABLE, CLEAN, no comments, reviews, or
+    checks.
+- Public hygiene and links: direct checks returned 200 for the three new PR
+  URLs and TweetClaw GitHub, 308 redirect for canonical ClawHub to
+  `/xquik/plugins/tweetclaw`, and expected npm package web-page bot-protection
+  403. `npm view @xquik/tweetclaw version openclaw.install repository.url
+  homepage --json` returned npm version `1.6.31` and canonical metadata.
+- TweetClaw final validation: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npx -y markdown-link-check README.md
+  docs/discoverability-audit.md docs/clawpack-release.md --quiet`, `git diff
+  --check`, `npm run build`, `npm run check-openclaw-platform-fitness`, `npm run
+  check-package-artifact`, `npm run check-versions`, and `npm run check:all`
+  passed. `check:all` included typecheck, lint, cpd, knip, suppression check,
+  dash check, memory-size check, skill frontmatter, versions, build, OpenClaw
+  fitness, package artifact, and coverage with 11 files, 168 tests, and 100%
+  statements, branches, functions, and lines. One initial `npm run
+  check-versions` attempt reported a transient missing-script error, then
+  `npm pkg get scripts.check-versions` and rerun succeeded.
+- Memory, prompt, and self-improvement: compact Markdown memory measured
+  15,075/15,360 bytes after compaction. Persisted prompt measured 12,831 bytes;
+  automation TOML measured 13,165 bytes. No prompt edit was needed. Durable
+  lesson: direct OpenClaw plugin repos often have safe, high-signal manifest
+  version drift even when license metadata is missing; use package/manifests
+  parity checks and target README link checks as the validation lane.
