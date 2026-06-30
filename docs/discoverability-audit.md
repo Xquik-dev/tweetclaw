@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 02:01 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 02:56 UTC: latest `2026.6.10`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin CLI, manifest, tool-plugin, ClawHub,
   skill-format, and install-override routes returned HTTP 200. No compatibility
   wording changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 02:01 UTC after redirecting to
+  2026-06-30 02:56 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-30 02:01 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-30 02:56 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,22 +189,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 02:01 UTC: runtime selectors unavailable. Crawler session
-  `tweetclaw-20260630-020125` returned 15 opportunities across 15 repos.
-  Authored open-PR partitions found 2,505 unique URLs without a capped bucket;
-  exact reads covered 42 current-day and audit PRs.
-- Repair gate fixed 7 actionable PRs before outreach:
-  `yaacovcorcos/papiskill#3`, `yfge/agentskill.work#1`,
-  `p0ki/x-bookmarks-mcp#2`, `sefaertunc/anthropic-watch#44`,
-  `thensls/claude-marketplace#1`, `gebl/anvil-skill-marketplace#6`, and
-  `biodoia/biodoia-skills-marketplace#2`.
+- 2026-06-30 02:56 UTC: runtime selectors unavailable. Crawler session
+  `tweetclaw-20260630-025655` returned 56 repos from 14 focused skill,
+  OpenClaw, MCP, social, and X/Twitter query lanes. Broad authenticated PR
+  search stopped on a GitHub search rate-limit after 399 partition records; the
+  run continued with crawler output, exact PR URLs, and REST readbacks.
+- Open PR inventory exact-read 52 current-day and audit PRs: 51 open, 1 closed;
+  merge states 34 CLEAN, 13 UNSTABLE, 4 BLOCKED, 1 UNKNOWN. No new actionable
+  maintainer repair remained after prior fixes and target-owned check gates.
 - Three fresh PRs met the mandate and exact-read open, ready, MERGEABLE, CLEAN:
-  https://github.com/Carojing/X-KOL-impressions/pull/1,
-  https://github.com/Anand195/social-media-skills/pull/1, and
-  https://github.com/riDfathima/Social-Media-Insights-Dashboard/pull/1.
-- Official docs, npm metadata, ClawHub and registry route checks, markdown link
-  checks, OpenClaw fitness, package artifact, npm audit, memory cap, prompt
-  bytes, and final validation are archived.
+  https://github.com/HoangAViet/AI-Marketing-Kit/pull/1,
+  https://github.com/Samin12/instagram-thread-carousel/pull/1, and
+  https://github.com/metasal1/tweetapi-skill/pull/1.
+- Duplicate and target-policy checks covered compact memory, archive memory,
+  target content, target PRs/issues, forks, license metadata, and validation
+  surfaces. Official docs, npm metadata, ClawHub and registry route checks,
+  markdown link checks, OpenClaw fitness, package artifact, npm audit, memory
+  cap, prompt bytes, and final validation are archived.
 
 ## Reporting Checklist
 

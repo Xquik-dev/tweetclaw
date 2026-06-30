@@ -46360,3 +46360,93 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   docs. Keep the 3-fresh-opportunity and 3-PR mandate explicit in every run
   summary. Saved automation prompt measured 12,831 bytes; automation TOML
   measured 13,165 bytes.
+
+2026-06-30 02:56 UTC heartbeat
+
+- Runtime selection: Codex model, Fast speed, and extra-high reasoning controls
+  were not exposed in this runtime. The run recorded the limitation and
+  continued.
+- Complete PR inventory method: searched compact audit and archives, ran the
+  Xquik crawler first, attempted authored open-PR partitions, stopped broad
+  authenticated GitHub search after a search rate-limit on the
+  `created:2026-06-22` bucket, and continued with exact known URLs, crawler
+  output, target REST lists, target content clones, fork metadata, and PR
+  readbacks. Completed partition buckets before the blocker were
+  `created:>=2026-06-30` 51, `2026-06-29` 158, `2026-06-28` 46,
+  `2026-06-27` 0, `2026-06-26` 0, `2026-06-25` 0, `2026-06-24` 17, and
+  `2026-06-23` 127, for 399 partial records. The run does not claim the broad
+  search was complete because the rate-limit blocked the next partition.
+- Exact PR readbacks: 52 current-day and audit URLs were exact-read: 51 open
+  and 1 closed; merge states 34 CLEAN, 13 UNSTABLE, 4 BLOCKED, 1 UNKNOWN;
+  review decisions 1 APPROVED, 2 REVIEW_REQUIRED, 49 blank; 11 had comments,
+  12 had reviews, and 7 had checks. Actionable review and bot findings were
+  either already addressed by prior fixes, target-owned, rate-limited, or not
+  substantiated by the current head. No new repair commit was appropriate
+  before outreach.
+- Crawler coverage: from `/Users/burak/Developer/xquik`, session
+  `tweetclaw-20260630-025655` used 14 focused query lanes covering SKILL.md,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, social media, Twitter/X,
+  awesome-list, skill-registry, package-tooling, validator, plugin, and
+  docs/examples lanes. Strict JSON output parsed successfully and contained
+  56 repos. Fresh-to-memory candidates included
+  `HoangAViet/AI-Marketing-Kit`, `Samin12/instagram-thread-carousel`,
+  `XPOZpublic/xpoz-openclaw-plugin`, `metasal1/tweetapi-skill`,
+  `mpesavento/openclaw-memory-sync`, `Agents365-ai/mermaid-skill`,
+  `collectivewinca/hacker-feeds-cli`, and related OpenClaw or skill repos.
+- Fresh screening: duplicate checks searched compact memory, archive memory,
+  target content, target open/closed PRs and issues, forks, package metadata,
+  and local clones for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw
+  GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, and variants.
+  `HoangAViet/AI-Marketing-Kit`, `Samin12/instagram-thread-carousel`, and
+  `metasal1/tweetapi-skill` were duplicate-clean, policy-clean, fork-clean,
+  and validation-ready. `XPOZpublic/xpoz-openclaw-plugin` was inspected but
+  deferred after three safer PR lanes were already available.
+- Fresh PR 1: https://github.com/HoangAViet/AI-Marketing-Kit/pull/1 from
+  verified fork `kriptoburak/AI-Marketing-Kit`, branch
+  `codex/tweetclaw-reply-import`. Added a TweetClaw reply-opportunity CSV
+  importer for the SnapGen marketing tracker, documented the workflow in the
+  README and SKILL.md, and repaired handled README links. Validation passed
+  Python compile, sample workbook import, markdown link checks for handled
+  docs, and diff check. Final exact readback: open, ready, MERGEABLE, CLEAN,
+  2 commits, 0 comments, 0 reviews, 0 checks, 3 files.
+- Fresh PR 2: https://github.com/Samin12/instagram-thread-carousel/pull/1 from
+  verified fork `kriptoburak/instagram-thread-carousel`, branch
+  `codex/tweetclaw-thread-config`. Added a TweetClaw CSV/JSON thread-export to
+  carousel `config.json` converter and documented the workflow in SKILL.md.
+  Validation passed Python compile, CSV and JSON sample conversions, SKILL.md
+  link check, and diff check. Final exact readback: open, ready, MERGEABLE,
+  CLEAN, 1 commit, 1 comment, 1 review, 0 checks, 2 files.
+- Fresh PR 3: https://github.com/metasal1/tweetapi-skill/pull/1 from verified
+  fork `kriptoburak/tweetapi-skill`, branch `codex/write-safety-docs`. Added
+  write-action approval and credential-handling safety guidance to README and
+  SKILL.md, then fixed handled broken links. Validation passed markdown link
+  checks, diff check, and secret scan review. Final exact readback: open,
+  ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews, 0 checks, 2 files.
+- Official OpenClaw and package hygiene: current `docs.openclaw.ai` returned
+  HTTP 200 for `llms.txt`, `llms-full.txt`, `/cli/plugins`,
+  `/plugins/manifest`, `/plugins/tool-plugins`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/plugins/install-overrides`. Guessed legacy
+  routes `/plugins/permission-requests`, `/sdk/runtime`, and `/debugging`
+  returned HTTP 404; linked docs and LLM exports remain the source for those
+  topics. No OpenClaw compatibility metadata, manifest shape, install docs,
+  approval behavior, packaged-skill guidance, or release wording changed.
+- Package metadata: `npm view openclaw` returned latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw`
+  returned published latest `1.6.31` while local source remains `1.6.32`.
+  The unpublished local version remains expected because npm publish auth and
+  ClawHub owner-scope validation are blocked.
+- Public hygiene: markdown-link-check passed for README, OpenClaw setup, agent
+  workflows, compact audit, compact release memory, and packaged skill docs.
+  URL probes returned HTTP 200 for TweetClaw GitHub, npm registry metadata,
+  ClawHub plugin route, and all 3 new PR URLs. The npm website returned HTTP
+  403 to curl, so registry metadata remains the stable package probe.
+- Validation before audit edits passed `npm audit --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact`. Prompt self-improvement preserved the
+  current 3-opportunity and 3-PR mandate, crawler-first discovery, duplicate
+  gates, official OpenClaw docs checks, link checks, quiet autonomy, Context7
+  exclusion, and commit/push rule. Saved automation prompt measured
+  12,831 bytes; automation TOML measured 13,165 bytes. Final validation after
+  audit edits passed `npm run check-memory-md-size`, `git diff --check`,
+  compact Markdown link checks, changed-diff public-hygiene review, and
+  `npm run check:all`.
