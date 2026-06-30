@@ -49,14 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 15:46 UTC: latest `2026.6.10`, beta
+- OpenClaw npm checked 2026-06-30 16:10 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
   `docs.openclaw.ai` llms, plugin, manifest, tool-plugin, permission,
   install-overrides, SDK, ClawHub, skill-format, and debugging routes returned
-  HTTP 200; stale `/docs/...` probes returned 404. No compatibility wording
-  changed.
+  HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 15:46 UTC after redirecting to
+  2026-06-30 16:10 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -64,7 +63,7 @@ archive, before any outreach or duplicate decision.
 
 ## Current OpenClaw Fitness
 
-- TweetClaw source targets OpenClaw `2026.6.10`.
+- TweetClaw source targets OpenClaw `2026.6.11`.
 - Compatibility, build, install, host peer, and lockfile metadata are aligned.
 - `npm run check-openclaw-platform-fitness` is required after build for any
   OpenClaw metadata, manifest, runtime, approval, docs, packaged-skill, or
@@ -76,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-06-30 15:23 UTC found 0 vulnerabilities.
+- Npm audit on 2026-06-30 16:10 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,22 +189,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 15:46 UTC: runtime selector limitation recorded; OpenClaw docs,
-  npm, and ClawHub were rechecked. Crawler session
-  `tweetclaw-20260630-154603` returned 2 opportunities, so fallback searches
-  followed crawler-first coverage.
-- PR inventory read 330 today-updated authored in-scope open PRs; all-open
+- 2026-06-30 16:10 UTC: runtime selector limitation recorded. Current OpenClaw
+  docs, npm, and ClawHub were rechecked; source metadata and lockfile now target
+  OpenClaw `2026.6.11`.
+- Crawler session `tweetclaw-20260630-161004` returned 2 opportunities; fallback
+  searches returned 23 unique repo hits after crawler-first coverage.
+- PR inventory read 339 today-updated authored in-scope open PRs; all-open
   authored search capped at 1000, so complete all-open inventory is not claimed.
-  Exact-read 40 recent or tracked PRs; no repairable current-head blocker was
-  found.
+  Exact-read 61 recent or tracked PRs; 1 GitHub 503 was recorded and no
+  repairable current-head blocker was found.
 - Fresh safe PRs opened and read back OPEN, non-draft, and MERGEABLE:
-  https://github.com/ZSeven-W/skill-cli/pull/1,
-  https://github.com/rybkr/morpheus/pull/1, and
-  https://github.com/agent-catalog/meta-skills/pull/1.
-  The ZSeven PR has a generic Codex connector review with no actionable
-  suggestions; the other two have no comments, reviews, or checks.
-- Detailed candidates, duplicate and blocked lanes, validations, fork checks,
-  prompt bytes, memory size, links, and self-improvement are archived.
+  https://github.com/opensubagents/subagentskills/pull/6,
+  https://github.com/takumaoshiro/analysis-skills-md/pull/1, and
+  https://github.com/Narwhal-Lab/MagicSkills/pull/45.
+- TweetClaw changed `README.md`, `docs/openclaw-setup.md`, `package.json`,
+  `package-lock.json`, `scripts/check-openclaw-platform-fitness.mjs`, and audit
+  memory. Link checks, audits, package checks, and `npm run check:all` passed;
+  detailed candidates, duplicate gates, prompt bytes, memory size, and
+  self-improvement are archived.
 
 ## Reporting Checklist
 
