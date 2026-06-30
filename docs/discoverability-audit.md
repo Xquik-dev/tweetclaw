@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-06-30 01:02 UTC: latest `2026.6.10`, beta
-  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official docs host timed out
-  via curl; installed `openclaw@2026.6.10` package docs were used as fallback.
-  No compatibility wording changed.
+- OpenClaw npm checked 2026-06-30 01:07 UTC: latest `2026.6.10`, beta
+  `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Official
+  `docs.openclaw.ai` llms, plugin CLI, manifest, skills, ClawHub, and debug
+  routes returned HTTP 200. No compatibility wording changed.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-06-30 01:02 UTC after redirecting to
+  2026-06-30 01:07 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -188,23 +188,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 01:02 UTC: runtime selectors unavailable. Crawler
-  `tweetclaw-20260630-004319` returned 40 opportunities across 40 repos.
-  Authored open-PR partition found 2,482 unique URLs without a capped bucket.
-  Broad GraphQL exact-read aborted after repeated HTTP 502, so this run does
-  not claim complete inventory. Recent REST exact reads covered 30 latest PRs
-  plus known audit PRs; only `AytuncYildizli/reach-optimizer#20` had a failing
-  check, and Vercel marked it maintainer-authorization blocked.
-- Repair gate: updated `AbdNour627/awesome-openclaw-configs#1` to upstream main,
-  pushed `9fe0294`, posted validation, and exact-read it open, ready, MERGEABLE,
-  with no reviews or failing checks.
+- 2026-06-30 01:07 UTC: runtime selectors unavailable. Crawler
+  `tweetclaw-20260630-010750` returned 40 opportunities across 40 repos, 5
+  fresh after compact and archive checks. Authored open-PR partition found
+  2,491 unique URLs without a capped bucket; recent REST exact reads plus known
+  audit PRs found 3 recurring README conflicts.
+- Repair gate: merged current upstream and pushed conflict repairs for
+  `Aqmar777/openclaw-competitive-intel#1` (`0cb0bcb`),
+  `Aditya923-c/xpoz-agent-skills#1` (`9fb398a`), and
+  `warlockoussama/twitter-cli#1` (`8f3583e`). All exact-read open, ready,
+  MERGEABLE, with no reviews or failing checks.
 - Fresh PRs opened and exact-read open, ready, MERGEABLE, with no comments,
-  reviews, or checks: https://github.com/bregman-arie/devops-sre-skills/pull/1,
-  https://github.com/pranrichh/spectre-mcp/pull/1, and
-  https://github.com/walters2020/sociallistening/pull/1.
-- OpenClaw docs timed out via curl; installed `openclaw@2026.6.10` package docs
-  were fallback evidence. npm metadata, ClawHub route, npm audit, target link
-  checks, OpenClaw fitness, and final validation are archived.
+  reviews, or checks: https://github.com/MyCasaflora/paperclip-skill-validator/pull/1,
+  https://github.com/thu-nmrc/THUQX-Autops-for-OpenClaw-0.5/pull/1, and
+  https://github.com/Anvil-Code/skill-validator/pull/1.
+- Official OpenClaw docs returned HTTP 200 for llms exports, plugin CLI docs,
+  manifest, skills, ClawHub, and debug routes. npm metadata, ClawHub route, npm
+  audit, link checks, OpenClaw fitness, and final validation are archived.
 
 ## Reporting Checklist
 

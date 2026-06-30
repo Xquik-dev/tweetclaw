@@ -46062,3 +46062,89 @@ The heartbeat prompt may compact details into this audit to stay below its byte 
   blocker, then use recent REST exact reads plus exact repo reads rather than
   stalling. Treat maintainer-owned Vercel authorization failures as recorded
   blockers unless a code failure is visible.
+
+2026-06-30 01:07 UTC heartbeat discoverability run
+
+- Runtime selectors were unavailable; work continued under the active runtime.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with session
+  `tweetclaw-20260630-010750`, `--research-proxy`, strict JSON output, 12
+  focused skill/OpenClaw/MCP/X-Twitter/social queries, limit 260, search pages
+  1, per-query limit 10, and concurrency 8. Output contained 40 opportunities
+  across 40 repos. Fresh after compact audit and archive checks:
+  `Anvil-Code/skill-validator`, `MyCasaflora/paperclip-skill-validator`,
+  `coffeegrind123/skill-refiner`, `raphaelstolt/skill-validator`, and
+  `thu-nmrc/THUQX-Autops-for-OpenClaw-0.5`.
+- Open PR inventory: audit memory yielded 1,339 unique PR URLs. Authored open
+  PR partition yielded 2,491 unique PR URLs with no capped bucket:
+  `>=2026-06-30` 45, `2026-06-29` 192, `2026-06-28` 53, `2026-06-27` 1,
+  `2026-06-26` 2, `2026-06-25` 3, `2026-06-24` 17, `2026-06-23` 125,
+  `2026-06-22` 122, `2026-06-21` 166, `2026-06-20` 135, `2026-06-19` 24,
+  `2026-06-18` 68, `2026-06-17` 114, `2026-06-16` 87, `2026-06-15` 87,
+  `2026-06-14` 137, `2026-06-13` 143, `2026-06-12` 91,
+  `2026-06-01..2026-06-11` 276, and `<2026-06-01` 603. REST exact read covered
+  latest current-day authored PRs plus known audit PRs and conflict suspects.
+- Repair gate: exact reads found recurring `README.md` conflicts on
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and
+  `warlockoussama/twitter-cli#1`. Verified forks were owned by `kriptoburak`
+  and parented to their target repos. Merged current upstream main, resolved
+  only the README conflict hunks, validated each with `git diff --check`,
+  conflict-marker scans, README markdown-link-check, and changed-diff
+  public-hygiene scans. Pushed `0cb0bcb`, `9fb398a`, and `8f3583e`; posted
+  validation comments
+  https://github.com/Aqmar777/openclaw-competitive-intel/pull/1#issuecomment-4838999287,
+  https://github.com/Aditya923-c/xpoz-agent-skills/pull/1#issuecomment-4838999291,
+  and https://github.com/warlockoussama/twitter-cli/pull/1#issuecomment-4838999294.
+  Final exact readback: all 3 open, ready, MERGEABLE, with no reviews or
+  failing checks.
+- Fresh screening: target metadata, license metadata when present, existing
+  PRs/issues, target content, and compact/archive duplicate searches were
+  checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, ClawHub, npm,
+  and related variants. `raphaelstolt/skill-validator` was high fit but local
+  PHP/composer validation was unavailable; `coffeegrind123/skill-refiner` was
+  kept as a backlog lane after the 3 safe PR lanes were completed.
+- Fresh PR 1: `MyCasaflora/paperclip-skill-validator#1`
+  https://github.com/MyCasaflora/paperclip-skill-validator/pull/1. Target-native
+  validator fix tightened skill slug validation to reject trailing and
+  consecutive hyphens, aligned the rule detector and JSON schemas, and added
+  regression tests. Verified fork `kriptoburak/paperclip-skill-validator`
+  parent. Validation passed isolated Python 3.11 venv install,
+  `pytest tests/test_end_to_end.py tests/test_frontmatter.py -q`, full
+  `pytest -q` with 27 tests, and `git diff --check`. Exact readback: open,
+  ready, MERGEABLE, no comments, reviews, or checks.
+- Fresh PR 2: `thu-nmrc/THUQX-Autops-for-OpenClaw-0.5#1`
+  https://github.com/thu-nmrc/THUQX-Autops-for-OpenClaw-0.5/pull/1.
+  Target-native wrapper fix passes `twitter/tweet.sh` optional second argument
+  through to `cdp_tweet.py --base-url`, matching the wrapper usage comment.
+  Verified fork `kriptoburak/THUQX-Autops-for-OpenClaw-0.5` parent. Validation
+  passed `bash -n` for shell entrypoints, `python3 -m py_compile` for Python
+  scripts, and `git diff --check`. Exact readback: open, ready, MERGEABLE, no
+  comments, reviews, or checks.
+- Fresh PR 3: `Anvil-Code/skill-validator#1`
+  https://github.com/Anvil-Code/skill-validator/pull/1. Target-native docs fix
+  replaced the README install step's direct `https://claude.ai` link, which
+  returns 403 to link checkers, with the public Claude Projects support URL.
+  Verified fork `kriptoburak/skill-validator-1` parent. Validation passed
+  README and SKILL markdown-link-check plus `git diff --check`. Exact readback:
+  open, ready, MERGEABLE, no comments, reviews, or checks.
+- Official OpenClaw/package hygiene: `docs.openclaw.ai` returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`, `/skills`,
+  ClawHub publishing/listing routes, and OpenClaw Directory. `llms.txt` was
+  read and confirmed current routes for CLI plugins, approvals, secrets,
+  plugin manifest, permission requests, install overrides, SDK runtime,
+  ClawHub publishing, ClawHub skill format, and debugging. `npm view openclaw`
+  returned latest `2026.6.10`, beta `2026.6.11-beta.2`, alpha
+  `2026.5.19-alpha.1`; `npm view @xquik/tweetclaw` returned published latest
+  `1.6.31`; `npm view clawhub` returned `0.23.0`. ClawHub TweetClaw route
+  returned HTTP 200 and redirected to `https://clawhub.ai/xquik/plugins/tweetclaw`;
+  page metadata still references version `1.6.26`, so npm remains canonical.
+- Validation and hygiene before TweetClaw commit: `npm audit --audit-level=moderate`
+  found 0 vulnerabilities. Markdown link checks passed for README, OpenClaw
+  setup, compact audit, compact release memory, and packaged skill docs.
+  Package repository, homepage, and bugs URLs returned HTTP 200.
+  `npm run check-openclaw-platform-fitness` passed. Final validation also ran
+  memory cap, package checks, and `npm run check:all`.
+- Prompt self-improvement: keep the 3-opportunity and 3-PR requirement in every
+  run summary. Prefer current `docs.openclaw.ai` routes from `llms.txt` before
+  classifying OpenClaw docs as unavailable, because recent runs timed out on
+  older `openclaw.dev` probes while current docs are reachable.
