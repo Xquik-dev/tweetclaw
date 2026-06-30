@@ -190,20 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 11:35 UTC: runtime selectors unavailable. OpenClaw docs routes
-  returned HTTP 200; npm showed OpenClaw latest `2026.6.10` and TweetClaw
-  latest `1.6.31`.
-- Crawler session `tweetclaw-20260630-113504` returned 101 repos across
-  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, social, Twitter/X,
-  registry, validator, spec, and package-tooling lanes. Today-updated authored
-  PR partitions and exact audit-tracked PR readbacks found no actionable
-  maintainer repair; complete all-open inventory is not claimed because the
-  all-open bucket remains over platform caps.
-- Three fresh validator or spec PRs met the mandate:
-  https://github.com/joeynyc/skillscore/pull/2,
-  https://github.com/mareasw/ontoskills/pull/75, and
-  https://github.com/ForgeVista/fv-skills-schema-spec/pull/3. All read back
-  OPEN, non-draft, and MERGEABLE.
+- 2026-06-30 11:56 UTC: runtime selectors unavailable. Current OpenClaw llms,
+  CLI, ClawHub, skill, permission, plugin, SDK, and debug routes returned HTTP
+  200; npm showed OpenClaw latest `2026.6.10` and TweetClaw latest `1.6.31`.
+- Crawler session `tweetclaw-20260630-115607` returned 74 repos across skill,
+  OpenClaw, MCP, Codex, Claude, social, Twitter/X, registry, validator, plugin,
+  and package-tooling lanes. The exact-repo crawler pass hit managed-egress
+  socket-closed fetches, so GitHub metadata, clone, and link-check fallbacks
+  were used.
+- Today-updated authored open PR search returned 275 PRs; the all-open bucket
+  still capped at 1000, and duplicate-search follow-up hit a GitHub search API
+  rate limit. Exact recent and audit-tracked PR readbacks found no actionable
+  maintainer repair before new outreach.
+- Three fresh OpenClaw or skill-tooling PRs met the mandate:
+  https://github.com/electricsheephq/openclaw-capability-manifest-verifier/pull/1,
+  https://github.com/rogerchappel/clawplug/pull/9, and
+  https://github.com/mgechev/skills-best-practices/pull/4. All read back OPEN,
+  non-draft, and MERGEABLE.
 - Duplicate gates, fork parent checks, target policies, validation, public
   links, prompt bytes, memory size, and self-improvement are archived.
 
