@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 06:27 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 07:22 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/tools/plugin`,
   `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
   `/clawhub/skill-format`, `/tools/llm-task`, `/gateway/secrets`, and
   `/concepts/agent-runtimes` returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 06:27 UTC after redirecting to
+  2026-07-01 07:22 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,20 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 07:14 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-07-01 07:22 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik issues were rechecked. Crawler-first discovery covered
   skill, social, OpenClaw, MCP, catalog, validator, source-evidence, approval,
-  and skill-repo lanes and returned 8 already-archived repos. Broad authored
-  open PR search was partitioned into 16 uncapped created windows with 2,892
-  unique open PRs; 165 priority PRs were exact-read after a too-broad 1,587 URL
-  archive set was stopped at 108 exact reads to avoid rate-limit risk. Repaired
-  `Aqmar777/openclaw-competitive-intel#1` from conflicting or dirty to
-  mergeable and clean. GitHub code search later returned HTTP 403, so broad
-  authenticated search stopped and exact-repo reads plus clones continued.
+  and skill-repo lanes; it returned 1 stale reference repo, then valid empty
+  JSON after proxy socket-close noise. GitHub Search hit HTTP 403 after four
+  created-window counts, so broad search stopped. Exact-read 121 recent PRs;
+  repaired actionable Gemini feedback on `QVerisAI/open-qveris-skills#32` to
+  mergeable and clean.
 - Fresh safe PRs opened:
-  https://github.com/GiantClam/auto-viral-article-writer/pull/1,
-  https://github.com/kiemul/last30days-agent-research/pull/1, and
-  https://github.com/QVerisAI/open-qveris-skills/pull/32.
+  https://github.com/aarushi481/twitter-sentiment-analysis/pull/1,
+  https://github.com/OkayAkanksha/twitter-sentiment-analysis-ml-streamlit/pull/1,
+  and https://github.com/wasim000999/NLP-Sentiment-Analysis/pull/1.
 - TweetClaw changed audit memory only. Details, duplicate blockers, validation,
   link checks, prompt status, and self-improvement are archived.
 
