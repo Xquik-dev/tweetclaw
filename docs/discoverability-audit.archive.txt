@@ -54097,6 +54097,148 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-01 19:44 UTC Heartbeat Audit
+
+Runtime:
+- Model, speed, and effort selector was not exposed in this runtime, so Codex
+  5.5 Fast mode and extra-high effort could not be verified. Continued with the
+  available runtime and recorded the limitation.
+- TweetClaw branch: `master` at start `0e6125e43e306e545fb1f08752f4bb88f3bd40ab`.
+  Pre-existing untracked `0` was preserved and not staged.
+
+Crawler-first coverage:
+- Ran Xquik crawler from `/Users/burak/Developer/xquik` with `--json`,
+  `--output`, `--research-proxy`, bounded timeouts, session ids, focused PR,
+  skill, and fresh-target query packs, and concurrency 16.
+- PR-monitoring crawler: 0 opportunities, 0 errors.
+- Skill-repo crawler: 2 opportunities, 0 errors:
+  `liangdabiao/tikhub_api_skill` and
+  `beggarticksarthurtatum121/reddit-skills`; both were prior-history or
+  duplicate blocked by archive entries and existing outreach.
+- Fresh-target crawler: 34 opportunities, 0 errors. High-signal repeats already
+  blocked included `harshalshinde437/social_media_sentiment_analysis`,
+  `malavikap-596/Social-Media-Sentiment-Analysis-Dashboard`,
+  `ankit-sharma2005/twitter-sentiment-analysis`,
+  `diksha1829/twitter-sentiment-analysis-flask`, and several known no-license
+  or duplicate lanes.
+
+Open PR inventory and repair priority:
+- GitHub rate limits before inventory: core 4997/5000, search 30/30, GraphQL
+  4172/5000.
+- Broad authored open PR search updated since 2026-07-01 returned 318 and was
+  exact-read completely with `gh pr view`. Created-date partitions avoided the
+  1000-result cap: 2026-06-01..07 = 143, 2026-06-08..14 = 508,
+  2026-06-15..21 = 671, 2026-06-22..30 = 820, 2026-07-01 = 266, for 2407
+  unique URLs in the partition set. Normalized audit URL scan found 1616 unique
+  PR URLs.
+- Exact readback for updated-today set: 318/318 with 0 read errors. Mergeability
+  summary: 295 MERGEABLE/no-review, 6 CONFLICTING/no-review, 9
+  MERGEABLE/review-required, 7 UNKNOWN/no-review, 1 MERGEABLE/approved.
+- Priority exact reads covered known current failures and latest PRs:
+  `08Gauri/tweet-sentiment-dashboard#1`, `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `Saminiscool/twitter-ai-agent#2`, `anthropics/knowledge-work-plugins#440`,
+  `jamald33n/tweetsave-mcp#2`, `reall8164/wechat-openclaw-plugin#1`,
+  `warlockoussama/twitter-cli#1`,
+  `mubashir-data-science/twitter-sentiment-analysis#1`,
+  `AK-rock-run/Sentiment-Analysis-Using-Machine-Learning#1`, and
+  `DhuruvanShanker-9426/nlp-twitter-sentiment-analysis#1`.
+- Repair outcome: no maintainer-requested changes or review comments were
+  found. Recurring README conflict lanes remained conflicting after repeated
+  upstream force-updates. `08Gauri/tweet-sentiment-dashboard#1` still has
+  target-owned Netlify rule failures. `anthropics/knowledge-work-plugins#440`
+  still has the known `scope-guard` blocker. Prior fresh PRs remained open,
+  ready, and mergeable.
+
+Fresh candidate screening and duplicate gates:
+- Compact audit, archive, crawler output, target metadata, target content,
+  target open and closed PRs/issues, local clones, and fork metadata were
+  checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL,
+  npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Twitter/X,
+  SKILL.md, and variants.
+- Selected direct-PR targets were public, non-fork, non-archived, forkable,
+  issue-enabled, duplicate-clean in target PRs/issues, and had no explicit
+  blocking maintainer policy. Missing license metadata was recorded for all 3
+  and did not block direct PRs under the current rule:
+  `krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS`,
+  `yash-bagale/Twitter_Sentiment_Analysis`, and
+  `saumya02-lab/twitter-sentiment-analysis-dashboard`.
+- Additional screened candidate:
+  `HardikVasava/twitter-sentiment-analysis-app`, public/non-fork/forkable and
+  duplicate-clean, was held after 3 safer lanes were already validated.
+- Fork verification before pushing:
+  `kriptoburak/krishan-real-time-twitter-sentiment` parent
+  `krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS`;
+  `kriptoburak/yash-twitter-sentiment-analysis` parent
+  `yash-bagale/Twitter_Sentiment_Analysis`;
+  `kriptoburak/saumya-twitter-sentiment-dashboard` parent
+  `saumya02-lab/twitter-sentiment-analysis-dashboard`.
+
+External PRs opened:
+- `krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS#1`:
+  https://github.com/krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS/pull/1
+  from branch `codex/add-csv-batch-classification`, commit
+  `dcdfcee388529505945a6a8a5010be9b4fd8ee05`. Adds CSV upload support to the
+  Django classify page, auto-detects tweet/text/content/message columns, returns
+  `tweet_sentiment_predictions.csv`, and documents reviewed TweetClaw/OpenClaw
+  Twitter/X text exports. Validation: `python3 -m py_compile
+  Django-Dashboard/dashboard/views.py`, CRLF-aware `git diff --check`, README
+  markdown-link-check after sparse-checking out the existing `imgs` folder.
+  Readback: OPEN, ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+- `yash-bagale/Twitter_Sentiment_Analysis#1`:
+  https://github.com/yash-bagale/Twitter_Sentiment_Analysis/pull/1 from branch
+  `codex/add-batch-predict-endpoint`, commit
+  `ca7449ecfc2ca737a19ef7759af3a204132506e2`. Adds `POST /predict-batch`,
+  filters empty rows, returns count plus per-row sentiment summaries, and
+  documents CSV and TweetClaw/OpenClaw source-workflow inputs. Validation:
+  `python3 -m py_compile ml_service/app.py`, `git diff --check`, README
+  markdown-link-check. Readback: OPEN, ready, MERGEABLE, 0 checks, 0 comments,
+  0 reviews.
+- `saumya02-lab/twitter-sentiment-analysis-dashboard#1`:
+  https://github.com/saumya02-lab/twitter-sentiment-analysis-dashboard/pull/1
+  from branch `codex/add-batch-analysis-endpoint`, commit
+  `49024c0ae854e68a9a6b7d217664736d532426de`. Factors scoring into
+  `analyzeText`, adds `POST /analyze-batch`, and documents CSV and
+  TweetClaw/OpenClaw source-workflow inputs. Validation: `node --check
+  index.js`, `git diff --check`, README markdown-link-check. Readback: OPEN,
+  ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probe returned HTTP 200 for `llms.txt`, `/cli`,
+  `/cli/plugins`, `/cli/skills`, `/tools`, `/tools/plugin`,
+  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`, and
+  `/concepts/agent-runtimes`. ClawHub TweetClaw route returned HTTP 200 after
+  redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`,
+  `npm audit --omit=dev --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory, and
+  target README link checks for all 3 edited external repositories.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  or stale metadata in edited external diffs or TweetClaw audit diffs. A broad
+  grep hit only expected target template text `csrf_token`; no action needed.
+  No NHS Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact Markdown memory was near the cap before edits at 15136 of 15360 bytes,
+  so only the current blocks were replaced and this full record was moved here.
+  Automation prompt file size was 13514 bytes, under the 15 KiB cap.
+- Durable lesson: when a target README has local image links and the repo was
+  sparse-cloned, add the referenced asset directory before running
+  `markdown-link-check`; otherwise sparse checkout can produce false broken-link
+  results.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`.
+
 ## 2026-07-01 19:21 UTC Discoverability Heartbeat
 
 Inventory and repair:
