@@ -191,19 +191,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 14:17 UTC: runtime selector limitation recorded. Crawler PR
-  monitoring returned 0; today-updated authored-open exact-read covered
-  199 PRs, 0 errors, 2 known failed-check rows, and 8 recurring conflicts.
-  All-time completeness remains capped by GitHub search scale and is not
-  claimed.
-- Fresh crawler skill/social pack returned 86 repos. Screened OpenClaw
-  directory, skill catalog, and export-dashboard lanes, then opened 3 PRs:
-  https://github.com/clawfred/openclaw-directory/pull/1,
-  https://github.com/DAMediaCo/bestclawskills/pull/1, and
-  https://github.com/pythongeek/twitter-scraper-dashboard/pull/1.
-- New PRs are open, non-draft, mergeable, and exact-read. Pythongeek
-  GitGuardian completed successfully. Detailed candidate gates, rate-limit
-  blockers, validation, fork readbacks, and link checks are archived.
+- 2026-07-01 14:57 UTC: runtime selector limitation recorded. Crawler PR
+  monitoring returned 0. Today-updated authored-open search found 211 PRs; 210
+  exact-read succeeded and 1 repo read returned 401. Broad all-open search still
+  capped at 1000, so all-time completeness is not claimed.
+- Repair pass pushed review fixes to OyaAIProd/truss-api-mcp#1,
+  kiemul/last30days-agent-research#1, tangredtea/skill-registry#1, and
+  qiuyiwu1989-star/openclaw-skill-ops#1.
+- Fresh crawler and fallback discovery screened skill, MCP, catalog, publishing,
+  and analytics lanes, then opened 3 mergeable PRs:
+  https://github.com/peturgeorgievv-factory/postfast-mcp/pull/12,
+  https://github.com/thijssmudde/agentreacher-skills/pull/1, and
+  https://github.com/ezbiz-services/mcp-social-media/pull/2.
+- OpenClaw docs, npm metadata, public links, package audit, and fitness checks
+  passed. Full blockers, duplicate gates, validation, prompt byte size, and
+  repair readbacks are archived.
 
 ## Reporting Checklist
 

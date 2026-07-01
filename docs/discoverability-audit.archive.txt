@@ -52571,3 +52571,125 @@ Self-improvement:
 - Prefer catalog/schema/adapter changes for OpenClaw and TweetClaw placement:
   directory entries, static catalog pages, and export normalizers are easier for
   maintainers to review than generic README mentions.
+
+2026-07-01 14:57 UTC heartbeat run:
+
+Runtime and prompt:
+- Runtime model, speed, and effort controls were not exposed in this shell, so
+  Codex 5.5 Fast mode with extra-high effort could not be selected or verified.
+  Work continued under the available runtime.
+- Persisted automation prompt readback:
+  `/Users/burak/.codex/automations/improve-tweetclaw-openclaw-integration/automation.toml`
+  was 13514 bytes. No prompt edit was needed because the current prompt already
+  requires finding and screening at least 3 fresh opportunities, then submitting
+  3 PRs whenever safe lanes exist.
+
+Open PR inventory and repair:
+- Crawler PR monitoring used focused TweetClaw, OpenClaw, ClawHub, MCP, skills,
+  social-media, Xquik, and x-twitter-scraper lanes from
+  `/Users/burak/Developer/xquik`; strict JSON parsed cleanly with 0
+  opportunities and 0 errors.
+- Authored-open PR inventory for PRs updated on 2026-07-01 found 211 PRs. Exact
+  readbacks succeeded for 210 and failed for 1 with GitHub 401 on
+  `Deep-Insight-Labs/awesome-ai-agents#34`. Broad all-open authored search hit
+  the GitHub 1000-result cap, so all-time completeness was not claimed.
+- Exact-read backlog showed 2 failed-check rows, 7 conflict rows, and 25 PRs
+  with comment or review history. Review comments were read before repair.
+- Repaired `OyaAIProd/truss-api-mcp#1` by updating the Xquik OpenAPI eval
+  fixture to the current tweet search response shape. Validation passed with
+  dependency install, OpenAPI evals, and mergeability readback. Pushed commit
+  `3cb5801957f844699e04db0313d1ebd93c2f947a`.
+- Repaired `kiemul/last30days-agent-research#1` by correcting TweetClaw export
+  relevance argument order. Validation passed with diff check and Python
+  compile. Pushed commit `63035cf99d6aa7e804145439a5ade521653c025b`.
+- Repaired `tangredtea/skill-registry#1` by adding the advertised JSON skill
+  registry record for the TweetClaw social workflow example. Validation passed
+  with diff check, JSON parse, and Markdown link checks. Pushed commit
+  `6e702c2e93f9b4222bac48b385a099b5c5bcc0b7`.
+- Repaired `qiuyiwu1989-star/openclaw-skill-ops#1` by changing the TweetClaw
+  skill-card fixture to the current 10-dimension 1-5 score shape with total 41.
+  Validation passed with diff check, JSON parse, schema assertion, and README
+  link check. Pushed commit `7f57469e1a35ce285bd59beea16e30099e1641b2`.
+- `matthewhand/mcp-openapi-proxy#61` review comment was a false-positive
+  against the live OpenAPI path: `https://xquik.com/openapi.json` exposes server
+  `https://xquik.com` and path `/api/v1/x/tweets/search`. Target local tests
+  remain blocked by missing optional `mcp`; target README has pre-existing
+  owner-owned broken links.
+- Already-fixed or non-actionable comment lanes this run: `DAMediaCo`
+  bestclawskills, `clawfred/openclaw-directory`, `avikds` sentiment dashboard,
+  `QVerisAI/open-qveris-skills#32`, and `austindixson/tweet-crafter#1`.
+
+Fresh discovery and duplicate gates:
+- Primary fresh crawler pack returned 0 opportunities. Smaller crawler packs
+  returned 8 skill opportunities, 13 MCP opportunities, and 0 catalog
+  opportunities. Valid JSON was produced; several proxy socket-close events
+  were logged without credential exposure.
+- Duplicate or policy gates blocked these crawler-backed lanes:
+  `blacktwist/social-media-skills`, `creatorcrawl/creatorcrawl-skill`,
+  `woosal1337/media-mcp`, `oluwaeinstein007/social-mcp`,
+  `AISA-skills/social-media-skills`, `tang-vu/social-posting-skills`,
+  `rabden/X-twitter-social-manager-skill`, `elbis330/social-media-scraper-skill`,
+  `liangdabiao/tikhub_api_skill`, `tiendatne2004/tikhub_api_skill`,
+  `social-freak-ltd/socialfetch-mcp`, `alessio-web-dev/social-cli-mcp`, and
+  `produtoramaxvision/maxvision-x-mcp`.
+- Fallback screened and blocked `kritsanan1/social-media-mcp-server` as empty,
+  `MuhammadHamidRazaAi/social-media-mcp-server` as README-only and too thin,
+  `TheNextGenNexus/social-media-mcp-servers` for no X/Twitter fit in actual
+  tools, and `GGTEFG/social-media-mcp` for Instagram/TikTok-only fit.
+
+Fresh PRs opened:
+- `peturgeorgievv-factory/postfast-mcp#12` -
+  https://github.com/peturgeorgievv-factory/postfast-mcp/pull/12 - adds
+  TweetClaw as an optional approved X/Twitter source context in README and the
+  bundled social-media posting skill. Fork parent was verified as
+  `peturgeorgievv-factory/postfast-mcp`. Validation passed with diff check,
+  JSON parses, Markdown link checks, public diff scan, and exact PR readback.
+  Head commit `2063b3d0d04a3f903bac3a22944e7e8e4be52cf9`.
+- `thijssmudde/agentreacher-skills#1` -
+  https://github.com/thijssmudde/agentreacher-skills/pull/1 - adds TweetClaw
+  source-evidence notes to the post-packager and repurpose skills and README.
+  Fork parent was verified as `thijssmudde/agentreacher-skills`. Validation
+  passed with skill list discovery, Markdown link checks, public diff scan, and
+  exact PR readback. Head commit `535d6a51036d6126ff8757fb53a6a4fb71381f87`.
+- `ezbiz-services/mcp-social-media#2` -
+  https://github.com/ezbiz-services/mcp-social-media/pull/2 - adds TweetClaw as
+  optional X source context in README and `llms-install.md`. Fork parent was
+  verified as `ezbiz-services/mcp-social-media`. Validation passed with diff
+  check, JSON parses, Markdown link checks, public diff scan, and exact PR
+  readback. Head commit `bac58a614995e28b877eab5d5649e6a79824e781`.
+- All 3 fresh PRs were open, non-draft, mergeable, and had no comments,
+  reviews, or checks on exact readback after submission.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw docs and routes rechecked: `llms.txt`, `llms-full.txt`,
+  CLI, plugin, tool, permission, bundle, SDK runtime, ClawHub, install,
+  publishing, skill format, secrets, agent runtimes, and debugging routes all
+  returned HTTP 200. ClawHub TweetClaw route returned HTTP 200 after redirect;
+  OpenClaw Directory TweetClaw route returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, `openclaw`
+  latest `2026.6.11`, and `@openclaw/cli` returned expected npm E404.
+- TweetClaw public Markdown link check passed for README, OpenClaw setup, agent
+  workflows, compact audit, and release memory.
+- TweetClaw checks passed before memory edit: package audit had 0
+  vulnerabilities and `npm run check-openclaw-platform-fitness` passed for
+  OpenClaw `2026.6.11`.
+- Post-memory validation passed: `npm run check-memory-md-size` reported
+  15169/15360 bytes, scoped public Markdown link check passed, package audit had
+  0 vulnerabilities, OpenClaw platform fitness passed, `git diff --check`
+  passed, and the new diff scan found no em dash or new spaced double-hyphen
+  text.
+- External repair and fresh PR diffs plus PR bodies were inspected for secrets,
+  private implementation details, restricted provider or source names, internal
+  cost mechanics, unsupported claims, and stale metadata. Sensitive-pattern
+  scans found placeholders or code terms only. No NHS badge was added.
+
+Self-improvement:
+- Keep repair-first ordering strict: actionable comments and generated-schema
+  drift can hide inside otherwise mergeable PRs, so exact review-comment reads
+  must precede fresh outreach.
+- When the primary crawler pack is empty but strict JSON is valid, rerun smaller
+  focused skill and MCP packs before fallback search; this yielded safe lanes
+  without broad GitHub search dependence.
+- Archive duplicate blocks by repository and lane type. Repeated social-skill
+  repos commonly already have open TweetClaw PRs, while social MCP repos often
+  fail target fit because they omit X/Twitter or expose provider-specific copy.
