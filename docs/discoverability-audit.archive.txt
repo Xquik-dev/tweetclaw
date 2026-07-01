@@ -51163,3 +51163,156 @@ Self-improvement:
 - For redaction PRs, run secret scans over added lines only so removed public
   credential values are not printed again; still tell maintainers to rotate
   historical values without repeating them.
+
+## 2026-07-01 08:49 UTC heartbeat
+
+Runtime and source checks:
+- Runtime selector limitation: this environment did not expose Codex model,
+  Fast mode, or reasoning-effort controls. Continued and recorded the
+  limitation.
+- TweetClaw working tree started on `master...origin/master` with only
+  pre-existing untracked path `0`. It was preserved.
+- OpenClaw docs and surfaces rechecked with direct HTTP probes:
+  `llms.txt`, `/cli`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
+  `/plugins/bundles`, `/clawhub`, `/clawhub/cli`, `/clawhub/skill-format`,
+  `/tools/llm-task`, `/gateway/secrets`, `/concepts/agent-runtimes`, and
+  `clawhub.ai/plugins/@xquik/tweetclaw` all returned HTTP 200.
+- npm metadata: `openclaw` latest `2026.6.11`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest `1.6.31`;
+  `clawhub` latest `0.23.1`.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned `[]`.
+
+Crawler and PR inventory:
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with
+  strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-084943/crawler-pr-monitoring.json`,
+  research proxy, request timeout 15000 ms, proxy warmup timeout 30000 ms,
+  limit 80, search pages 2, per-query limit 10, concurrency 8, and session
+  `tweetclaw-20260701-084943-pr`. Output parsed as valid JSON with
+  20 opportunities. No crawler credentials were printed, stored, or committed.
+- Crawler-first fresh target discovery wrote strict JSON to
+  `/tmp/tweetclaw-heartbeat-20260701-084943/crawler-fresh-targets.json`,
+  research proxy, request timeout 15000 ms, proxy warmup timeout 30000 ms,
+  limit 180, search pages 3, per-query limit 10, concurrency 12, and session
+  `tweetclaw-20260701-084943-fresh`. Query coverage included OpenClaw, MCP,
+  Codex, Claude, agent, social media, Twitter/X, `SKILL.md`,
+  `.agents/skills`, skills directories, awesome lists, registries, forks,
+  generated catalogs, plugin catalogs, CSV sentiment dashboards, and target
+  validator lanes. Output parsed as valid JSON with 31 opportunities.
+- Authored-open updated-today search returned 132 PRs. Exact-read covered all
+  132 plus crawler-discovered PR URLs with 0 read errors. Summary: 5 dirty or
+  blocked states, 1 failing check, 17 PRs with comments, and 18 PRs with
+  reviews. This run did not exact-read every older open authored PR partition,
+  so the inventory claim is limited to updated-today and crawler-discovered
+  PRs.
+- Blocked or no-action readbacks: `AmeerJ97/mcp-multiplex#2` remained
+  maintainer-owner/legal-rights blocked after the previous Apache-2.0 rights
+  confirmation comment; `ComposioHQ/awesome-claude-skills#1194` remained
+  review-required; `anthropics/knowledge-work-plugins#440` remained
+  target-policy blocked by `scope-guard`; `kouko/monkey-skills#394` remained
+  blocked/no-checks/no-comment with no safe action. Recent comments after
+  2026-07-01 08:20 UTC were either prior confirmations or non-actionable.
+
+Repair before new outreach:
+- Repaired `Saminiscool/twitter-ai-agent#2` after a shallow merge first hit an
+  unrelated-history blocker. Full fetch converted it into a README-only
+  conflict. Commit `838cecc` was pushed to the exact PR head branch
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik:codex/add-xquik-backend`.
+  The resolution keeps upstream download/contact wording and preserves the
+  optional Xquik backend section.
+- Repair validation: `npm ci` completed but reported pre-existing target
+  dependency advisories; `npm run check` still failed on pre-existing
+  unrelated formatting drift. Scoped gates passed: `git diff --check`,
+  Prettier check on README plus touched TypeScript and test files, focused
+  Biome lint on touched TypeScript and test files, `npx tsc --noEmit`,
+  `npm test -- tests/twitter-api.test.ts`, README markdown-link-check, and
+  public diff scan. Final readback: OPEN, non-draft, MERGEABLE/CLEAN.
+  No PR comment was posted to avoid repeated repair-comment churn.
+
+Fresh discovery and duplicate screening:
+- Crawler candidates screened first. Duplicate or prior-history blockers
+  included `XPOZpublic/xpoz-agent-skills`, `blacktwist/social-media-skills`,
+  `hyperfx-ai/marketing-skills`, `citedy/citedy-seo-agent`,
+  `ndesv21/socialclaw`, `devadio/post-skill`,
+  `rabden/X-twitter-social-manager-skill`, `typefully/agent-skills`,
+  `BrikerMan/skilless.ai`, and multiple social-skill catalogs with existing
+  TweetClaw/Xquik history or weak target-native fit.
+- Fallback GitHub metadata searches covered recent Streamlit, CSV, sentiment,
+  dashboard, and tweet-analysis repos after crawler coverage. Fresh exact-read
+  duplicate-clean candidates included `sabir-10/Sentiment-Analysis-Web-App`,
+  `srishtighosh04/tweet-sentiment-analysis-`,
+  `VerbalAid/Sentiment-Analysis-on-Tweets`,
+  `arunrawatrealm/Airline-Sentiment-Analysis`, and
+  `MoinDalvs/Sentiment_Analysis_on_-Elon_musk_Tweets`. `mohul2004` cloned as
+  empty and was skipped. Notebook/data-only repos were held as backups.
+- Selected repos passed compact audit, archive, target content, local clone,
+  target PR and issue searches, fork-parent checks, policy checks, validation,
+  README link checks, and public diff inspection for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, OpenClaw, X/Twitter, and source-export variants. Missing
+  license metadata was recorded and did not block direct PRs.
+- Forks were verified by REST readback as `kriptoburak/sabir-sentiment-analysis-web-app`
+  parent `sabir-10/Sentiment-Analysis-Web-App`,
+  `kriptoburak/srishti-tweet-sentiment-analysis` parent
+  `srishtighosh04/tweet-sentiment-analysis-`, and
+  `kriptoburak/verbalaid-sentiment-analysis-on-tweets` parent
+  `VerbalAid/Sentiment-Analysis-on-Tweets`.
+
+Fresh PRs opened:
+- `sabir-10/Sentiment-Analysis-Web-App#1` -
+  https://github.com/sabir-10/Sentiment-Analysis-Web-App/pull/1 - adds real
+  CSV upload support while preserving Excel upload support, detects common
+  tweet text columns, avoids crashing when `Unnamed: 0` is absent, fixes
+  subjectivity display, and documents reviewed TweetClaw/OpenClaw-style
+  X/Twitter export uploads. Commit `6bffc45` pushed to
+  `codex/support-csv-excel-import`. Validation: `python3 -m py_compile
+  main.py`, `git diff --check`, README markdown-link-check, and public diff
+  scan. Readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head owner
+  `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+- `srishtighosh04/tweet-sentiment-analysis-#1` -
+  https://github.com/srishtighosh04/tweet-sentiment-analysis-/pull/1 - adds an
+  optional no-dependency CSV input mode to `tweet_sentiment.py`, detects common
+  tweet text columns, writes analyzed rows to CSV, and documents offline
+  TweetClaw/OpenClaw-style reviewed export analysis. Commit `b14d200` pushed to
+  `codex/add-offline-csv-analysis`. Validation: `python3 -m py_compile
+  tweet_sentiment.py`, sample CSV execution, CSV output shape assertion,
+  `git diff --check`, README markdown-link-check, and public diff scan.
+  Readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head owner
+  `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+- `VerbalAid/Sentiment-Analysis-on-Tweets#1` -
+  https://github.com/VerbalAid/Sentiment-Analysis-on-Tweets/pull/1 - replaces
+  the non-compiling mixed shell/YAML/Python file with a working sentiment
+  script, moves Twitter API credentials to environment variables, adds offline
+  CSV input for reviewed tweet exports, and adds a minimal `requirements.txt`.
+  Commit `539315e` pushed to `codex/repair-sentiment-script`. Validation:
+  `python3 -m py_compile tweet_sentiment_analysis.py`, `git diff --check`,
+  README markdown-link-check, and public diff scan. Readback: OPEN, non-draft,
+  MERGEABLE/CLEAN, base `main`, head owner `kriptoburak`, 0 comments,
+  0 reviews, 0 checks.
+
+Public hygiene and TweetClaw validation:
+- New PR bodies and diffs avoided secret values, private implementation
+  details, restricted provider/source names, internal cost mechanics,
+  unsupported claims, and stale metadata. Environment variable names were used
+  only as placeholders; no credential values were printed. No NHS badge was
+  added.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+  Pre-existing untracked local path `0` was preserved.
+- Final TweetClaw validation passed: `npm run check-memory-md-size`, public
+  Markdown link checks for README, OpenClaw setup, agent workflows, compact
+  audit, and release memory, `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `git diff --check`, targeted public-diff
+  secret scan, and full `npm run check:all`.
+- Persisted automation prompt was not edited. Automation TOML measured
+  13165 bytes, under the 15 KiB prompt cap.
+
+Self-improvement:
+- When a maintained Streamlit or script target already has CSV claims, prefer
+  fixing real input-mode drift over adding a marketing mention. The best
+  TweetClaw placement is a reviewed export path plus common text-column aliases
+  and a warning to keep keys, cookies, and raw sessions out of files.
+- For recurring conflict PRs, avoid repeated repair comments when no maintainer
+  signal changed and exact readback is CLEAN.
