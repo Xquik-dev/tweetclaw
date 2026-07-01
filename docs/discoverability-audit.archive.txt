@@ -54097,6 +54097,114 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-01 22:49 UTC Outreach Run
+
+Runtime and crawler coverage:
+- Runtime model, speed, and effort selector was unavailable; continued on the
+  available runtime and recorded the limitation here and in compact memory.
+- Crawler-first monitoring from Xquik covered TweetClaw, OpenClaw, MCP, social,
+  Twitter, skill, and PR terms. PR monitoring returned 10 irrelevant generic
+  repository opportunities; skill coverage returned 0; fresh target coverage
+  returned 0. The crawler produced valid JSON and no crawler errors.
+- Official OpenClaw docs were rechecked live. `llms.txt`, `llms-full.txt`, CLI,
+  plugin install and inspect, skills, tool plugin, manifest, bundle, SDK runtime,
+  permission request, install override, ClawHub, publishing, skill-format,
+  gateway secrets, debugging, and runtime architecture routes returned HTTP 200.
+  ClawHub TweetClaw redirected to `https://clawhub.ai/xquik/plugins/tweetclaw`
+  and returned HTTP 200.
+
+Open PR inventory and repair priority:
+- Audit URL scan found 1626 unique PR URLs. Created-date partitions exact-read
+  counts were 143, 507, 671, 118, 127, 17, 0, 0, 0, 43, and 154 before GitHub
+  Search returned HTTP 403 on the 2026-06-30 bucket page 3. The updated-current
+  authored search also returned HTTP 403. Per policy, broad authenticated search
+  stopped for this run.
+- Fallback exact reads covered the previous updated inventory plus the newest 3
+  PR URLs, 334/334 with 0 readback errors. Merge-state summary: 258 CLEAN, 44
+  UNSTABLE, 12 UNKNOWN, 8 BLOCKED with REVIEW_REQUIRED, 5 BLOCKED without review
+  decision, 4 DIRTY, 2 BEHIND, and 1 BLOCKED with APPROVED.
+- No comments or reviews were created after the previous run cutoff. No
+  actionable maintainer comments, review comments, DCO, CLA, generated-file
+  drift, or valid bot findings were found. Known failing checks remained
+  target-owned: `08Gauri/tweet-sentiment-dashboard#1` Netlify checks and
+  `anthropics/knowledge-work-plugins#440` `scope-guard`.
+
+Fresh candidate screening:
+- `preethamushetty/mcp-server-for-twitter`: public, non-fork, non-archived,
+  issue-enabled, default `main`, MIT license, pushed 2025-08-10. Compact audit,
+  archive, target content, open and closed PRs, and issues had no TweetClaw,
+  Xquik, x-twitter-scraper, npm, ClawHub, or OpenClaw duplicate. Selected for a
+  target-native README, dependency metadata, and agent-safety lane.
+- `arunrawatrealm/Airline-Sentiment-Analysis`: public, non-fork, non-archived,
+  issue-enabled, default `main`, no detected license, pushed 2026-01-06.
+  Duplicate checks were clean. Selected for a README plus reviewed tweet export
+  converter that preserves the Kaggle notebook workflow and leaves missing
+  sentiment labels blank for manual review.
+- `MoinDalvs/Sentiment_Analysis_on_-Elon_musk_Tweets`: public, non-fork,
+  non-archived, issue-enabled, default `main`, no detected license, pushed
+  2022-06-27. Duplicate checks were clean. Selected for a reviewed tweet export
+  converter into the existing `Text` CSV shape.
+- `kartikbansode/AI-News-Tweet-Agent` was rechecked and duplicate-blocked by
+  existing PR history, so it was not selected.
+
+External PRs opened:
+- `preethamushetty/mcp-server-for-twitter#1`:
+  https://github.com/preethamushetty/mcp-server-for-twitter/pull/1 from branch
+  `codex/document-twitter-mcp-setup`, commit
+  `6b4c76ef3dd36edee0822ed985e01f7cbc8d939f`. Adds a README, declares the
+  dependencies already imported by the code, refreshes `uv.lock`, and documents
+  approved write-action boundaries plus optional reviewed TweetClaw/OpenClaw
+  source context. Validation: Python compile across project scripts, `uv lock`,
+  diff check, README link check, and public-hygiene scan. Readback: OPEN, ready,
+  CLEAN, 0 checks, 0 comments, 0 reviews.
+- `arunrawatrealm/Airline-Sentiment-Analysis#1`:
+  https://github.com/arunrawatrealm/Airline-Sentiment-Analysis/pull/1 from
+  branch `codex/add-reviewed-tweet-converter`, commit
+  `7d3ec145bb8f5ea8a96207be813a4428b1c59636`. Adds a README and
+  `prepare_reviewed_tweets.py` to convert reviewed X/Twitter exports into the
+  airline CSV shape without inventing labels. Validation: Python compile, sample
+  conversion, CSV output assertion, diff check, README link check, and
+  public-hygiene scan. Readback: OPEN, ready, CLEAN, 0 checks, 0 comments,
+  0 reviews.
+- `MoinDalvs/Sentiment_Analysis_on_-Elon_musk_Tweets#1`:
+  https://github.com/MoinDalvs/Sentiment_Analysis_on_-Elon_musk_Tweets/pull/1
+  from branch `codex/add-reviewed-elon-converter`, commit
+  `5c5f3735cd3378da1fc2ab641e539460c208df89`. Adds
+  `prepare_reviewed_tweets.py` and README guidance to normalize reviewed tweet
+  exports into the notebook's existing `Text` CSV shape. Validation: Python
+  compile, sample conversion, CSV output assertion, diff check, README link
+  check, and public-hygiene scan. Readback: OPEN, ready, CLEAN, 0 checks,
+  0 comments, 0 reviews.
+- Fork owner and parent were verified through REST readbacks before pushing each
+  branch. External PR URLs returned HTTP 200 after creation.
+
+TweetClaw validation and hygiene:
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: npm moderate audit, production-only npm moderate
+  audit, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  target README link checks, public PR URL checks, and OpenClaw route checks.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  or stale metadata in edited target diffs or TweetClaw audit diffs. No NHS
+  Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact Markdown memory after the compact edit was measured by the required
+  script in this run. Persisted automation prompt was unchanged and measured
+  13180 prompt bytes, 13514 file bytes.
+- Durable lesson: when broad search returns HTTP 403 after several exact
+  partitions, record the last successful partition counts and immediately pivot
+  to exact reads from prior inventory, audit URLs, and newly created PR URLs.
+  Do not retry broad search inside the same heartbeat.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
+  recorded by the repository history for this audit run.
+
 ## 2026-07-01 22:28 UTC Outreach Run
 
 Runtime and crawler coverage:
