@@ -52946,3 +52946,138 @@ Memory and TweetClaw changed files:
 - Compact audit and this archive were updated. Changed files were
   `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`.
   The pre-existing untracked local path `0` was preserved.
+
+2026-07-01 16:08 UTC heartbeat run:
+
+Runtime and prompt:
+- Runtime model, speed, and effort controls were not exposed in this shell, so
+  Codex 5.5 Fast mode with extra-high effort could not be selected or verified.
+  Work continued under the available runtime.
+- Persisted automation prompt readback stayed 13514 bytes. No prompt edit was
+  needed because the current prompt already requires finding and screening at
+  least 3 fresh opportunities and submitting 3 PRs whenever safe lanes exist.
+
+Open PR inventory and repair:
+- Crawler PR monitoring from `/Users/burak/Developer/xquik` used strict JSON at
+  `/tmp/tweetclaw-heartbeat-20260701-155342/crawler-pr-monitoring.json` with
+  research proxy, request timeout 15000 ms, proxy warmup timeout 18000 ms, limit
+  120, search pages 1, per-query limit 10, concurrency 16, and session
+  `tweetclaw-20260701-155342-pr`. Query coverage included TweetClaw, OpenClaw,
+  ClawHub, MCP, skills, X/Twitter automation, Xquik, x-twitter-scraper, social
+  media, agent tools, catalogs, validators, and prior outreach. Output parsed as
+  valid JSON with 0 opportunities and 0 errors.
+- Authored-open PR partition `updated:>=2026-07-01` found 237 PRs. Exact
+  REST/GraphQL readbacks succeeded for all 237 and found 26 comment-thread PRs,
+  29 review-row PRs, 2 failing-check rows, and 9 non-mergeable or unknown rows.
+  Broad all-open authored search returned the 1000-result cap, so all-time
+  inventory completeness was not claimed.
+- Failing checks remained target-owned: `08Gauri/tweet-sentiment-dashboard#1`
+  had Netlify header, page, and redirect failures; `anthropics/knowledge-work-plugins#440`
+  had target `scope-guard` failure. No maintainer comments or reviews requested
+  action there.
+- Recent comment and review triage checked new Vercel, Codex, and maintainer
+  signals. `edholofy/dojo.md#1` had only a Vercel team authorization notice.
+  `Martin-Hausleitner/martins-awesome-skills#2` had a Codex review wrapper with
+  no suggestions. `ProdByBuddha/openapi-mcp-server#55` had a maintainer approval
+  and a Codex usage-limit wrapper, not an actionable request. Saminiscool PR 2
+  remained open and MERGEABLE at head `a38f351`.
+
+Fresh discovery and duplicate gates:
+- Fresh crawler coverage ran from `/Users/burak/Developer/xquik` with strict
+  JSON at `/tmp/tweetclaw-heartbeat-20260701-155342/crawler-fresh-targets.json`,
+  research proxy, request timeout 15000 ms, proxy warmup timeout 18000 ms, limit
+  240, search pages 1, per-query limit 12, concurrency 16, and session
+  `tweetclaw-20260701-155342-fresh`. Query coverage included `SKILL.md`,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent/social
+  Twitter-X skills, awesome lists, registries, forks, generated catalogs, and
+  web-index surfaced skill repos. Output parsed as valid JSON with 1 opportunity:
+  `beggarticksarthurtatum121/reddit-skills`, blocked by existing PR 1 and
+  archive history.
+- A second smaller crawler batch covered tweet skills, OpenClaw social skills,
+  social-media MCPs, and scheduler docs. It returned valid JSON with 0
+  opportunities and 0 errors after proxy socket-close and endpoint-quarantine
+  logs. No crawler credentials were printed, stored, or committed.
+- Fallback searches screened OpenClaw Twitter/social skill repos, skill lists,
+  social MCPs, tweet scheduler MCPs, and Twitter sentiment dashboard lanes.
+  Duplicate or archive-history blockers included `adminlove520/openclaw-twitter-skill`,
+  `beggarticksarthurtatum121/reddit-skills`, `Lala0Land/openclaw-social-skills`,
+  `montedimes-blip/openclaw-social-skill`, and `maheshcr/tweet-scheduler-mcp`.
+  `Vanclief/twitter-sentiment-analysis` was skipped as a financial/trading lane.
+- Selected lanes passed compact audit, archive, target content, target open and
+  closed PR and issue searches, fork metadata, policy checks, local clone scans,
+  validation-path checks, and public diff inspection for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik,
+  x-twitter-scraper, OpenClaw, and Twitter/X variants:
+  `agrawal-rohit/tweet-sense`, `SakshiL28/twitter-sentiment-streamlit`, and
+  `eswar004/twitter-sentiment-streamlit-NLP`. All lacked GitHub license
+  metadata, but missing license metadata alone did not block focused direct PRs.
+
+Fresh PRs opened:
+- `agrawal-rohit/tweet-sense#43` -
+  https://github.com/agrawal-rohit/tweet-sense/pull/43 - adds README and docs
+  guidance for optional TweetClaw/OpenClaw source review before comparing
+  hashtag sentiment results, while keeping Tweepy as the target's default live
+  source. Fork parent verified as `agrawal-rohit/tweet-sense`. Commit
+  `ab87178822cc1933a76da9c4d75762abf13f158b`. Validation: `git diff --check`,
+  Markdown link check for README and the new doc with existing localhost dev URL
+  ignored, public diff scan, and exact PR readback. Readback: OPEN, non-draft,
+  MERGEABLE, 0 comments, 0 reviews, no checks, files `README.md` and
+  `docs/tweetclaw-source-review.md`.
+- `SakshiL28/twitter-sentiment-streamlit#1` -
+  https://github.com/SakshiL28/twitter-sentiment-streamlit/pull/1 - adds a
+  README, changes the Streamlit data path from a user-specific Windows path to
+  the bundled `Tweets.csv`, and documents optional reviewed TweetClaw source
+  exports for fresh public X/Twitter comparisons. Fork parent verified as
+  `SakshiL28/twitter-sentiment-streamlit`. Commit
+  `2a9d32e078f1a1265869c396256677b63b05d11a`. Validation: `git diff --check`,
+  `python3 -m py_compile airline.py`, README link check, public diff scan, and
+  exact PR readback. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0
+  reviews, no checks, files `README.md` and `airline.py`.
+- `eswar004/twitter-sentiment-streamlit-NLP#1` -
+  https://github.com/eswar004/twitter-sentiment-streamlit-NLP/pull/1 - adds
+  README guidance for using reviewed text-only TweetClaw exports as optional
+  batch inputs while preserving Sentiment140 as the reproducible training and
+  evaluation dataset. Fork parent verified as
+  `eswar004/twitter-sentiment-streamlit-NLP`. Commit
+  `de867a0c375e2abfda5bdef2fe7ea653552d3be8`. Validation: `git diff --check`,
+  `python3 -m py_compile app.py`, README link check, public diff scan, and exact
+  PR readback. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, no
+  checks, file `README.md`.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw docs and routes rechecked: `llms.txt`, `llms-full.txt`,
+  CLI, plugin, skill, manifest, tool plugin, ClawHub skill format, secrets,
+  agent runtimes, and debugging routes all returned HTTP 200. ClawHub TweetClaw
+  route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`. The Node probe printed complete
+  JSON, then an owned idle network handle was interrupted.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, `openclaw`
+  latest `2026.6.11`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`.
+- TweetClaw package audit reported 0 vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.11`.
+- TweetClaw public Markdown link check passed for README, OpenClaw setup, agent
+  workflows, compact audit, and release memory. Direct PR URL probe returned
+  HTTP 200 for the 3 new PR URLs; that curl command also printed GitHub HTML
+  noise after the status lines, so only the status-line result was recorded.
+- External PR diffs plus PR bodies were inspected for secrets, private
+  implementation details, restricted provider or source names, internal cost
+  mechanics, unsupported claims, and stale metadata. Sensitive-pattern scans
+  found no secret values. No NHS badge was added.
+
+Self-improvement:
+- When crawler output is duplicate-only, dashboard and sample-data repos can
+  still be valid fallback lanes if the contribution improves source provenance,
+  sample refresh hygiene, or portability without moving scoring or publishing
+  into TweetClaw.
+- For repositories without license metadata, keep the change small, original,
+  docs-focused or bug-fix-focused, and easy for maintainers to review. Record
+  missing metadata, but do not treat it as a direct PR blocker.
+- Avoid broad `curl -w` probes over multiple URLs without one output target per
+  URL; otherwise GitHub HTML can flood logs after the status lines.
+
+Memory and TweetClaw changed files:
+- Compact audit and this archive were updated. Changed files were
+  `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`.
+  The pre-existing untracked local path `0` was preserved.

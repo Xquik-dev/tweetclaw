@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 15:46 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 16:08 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 15:46 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 16:08 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,17 +191,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 15:46 UTC: runtime selector limitation recorded. Crawler PR
-  monitoring returned 0. Today-updated authored-open inventory exact-read 225
-  PRs with 0 errors, 2 failing rows, 8 conflicts, 25 comment threads, and 28
-  review rows; all-open search remains capped and incomplete.
-- Repair pushed Saminiscool/twitter-ai-agent#2 merge commit `a38f351` and
-  restored mergeability. Target-wide check is still blocked by pre-existing
-  format drift, but scoped lint, typecheck, unit tests, and links passed.
-- Fresh crawler and repo-mode screening selected 3 duplicate-clean lanes and
-  opened PRs: https://github.com/edholofy/dojo.md/pull/1,
-  https://github.com/initializ/forge/pull/207, and
-  https://github.com/Elemzir/KTA-Social/pull/1.
+- 2026-07-01 16:08 UTC: runtime selector limitation recorded. Crawler PR
+  monitoring returned 0. Today-updated authored-open inventory exact-read 237
+  PRs with 0 errors, 2 target-owned failing rows, 9 conflicts, 26 comment
+  threads, and 29 review rows; all-open search remains capped at 1000.
+- Repair triage found no new actionable maintainer request. Latest bot and
+  Vercel comments were non-actionable; Saminiscool/twitter-ai-agent#2 remained
+  mergeable after the prior repair.
+- Fresh crawler found duplicate-covered `beggarticksarthurtatum121/reddit-skills`
+  and a second empty batch with proxy socket-close blockers. Fallback screening
+  opened 3 PRs: https://github.com/agrawal-rohit/tweet-sense/pull/43,
+  https://github.com/SakshiL28/twitter-sentiment-streamlit/pull/1, and
+  https://github.com/eswar004/twitter-sentiment-streamlit-NLP/pull/1.
 - OpenClaw docs, ClawHub, npm metadata, public links, package audit, PR URL
   probes, and fitness checks passed. Full gates, readbacks, prompt size
   `13514`, and self-improvement notes are archived.
