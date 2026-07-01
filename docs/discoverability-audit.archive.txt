@@ -50911,3 +50911,134 @@ TweetClaw public hygiene and validation:
 - TweetClaw changed files: `docs/discoverability-audit.md`,
   `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`. The
   pre-existing untracked local path `0` was preserved.
+
+## 2026-07-01 07:48 UTC heartbeat
+
+Runtime and source checks:
+- Runtime selector limitation: this environment did not expose Codex model,
+  Fast mode, or reasoning-effort controls. Continued and recorded the limitation.
+- TweetClaw working tree started on `master...origin/master` with only
+  pre-existing untracked path `0`. It was preserved.
+- OpenClaw docs and surfaces rechecked with direct HTTP probes:
+  `llms.txt`, `/cli`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
+  `/plugins/bundles`, `/clawhub`, `/clawhub/cli`, `/clawhub/skill-format`,
+  `/tools/llm-task`, `/gateway/secrets`, `/concepts/agent-runtimes`, and
+  `clawhub.ai/plugins/@xquik/tweetclaw` all returned HTTP 200.
+- npm metadata: `openclaw` latest `2026.6.11`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest `1.6.31`;
+  `clawhub` latest `0.23.1`.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned `[]`.
+
+PR inventory and repairs:
+- Searched compact audit, release memory, archive, and current open PR output.
+- Crawler-first discovery from `/Users/burak/Developer/xquik` used strict JSON
+  output under `/tmp/tweetclaw-heartbeat-20260701-074837/`. The skill/social/
+  OpenClaw/MCP/catalog/validator/source-evidence/approval pack completed after
+  proxy refresh and wrote valid empty JSON. A narrowed sentiment pack also wrote
+  valid empty JSON after socket-close proxy failures and endpoint quarantines.
+- Authenticated fallback search succeeded:
+  `gh search prs --author kriptoburak --state open --updated >=2026-07-01`
+  returned 127 open PRs. All 127 were exact-read with `gh pr view`; 0 read
+  errors. Initial summary: 5 dirty conflicts, 1 failed check, 18 PRs with
+  reviews, and 17 PRs with comments.
+- `DishaS08/Twitter-Sentiments-Analysis#1` had a flat CodeRabbit review saying
+  1 actionable comment, but GraphQL review-thread readback showed the thread was
+  already resolved and outdated on head `4a788ec`; no repair needed.
+- Repaired `Aqmar777/openclaw-competitive-intel#1` after full upstream fetch
+  converted a shallow unrelated-history blocker into a normal README conflict.
+  Kept the TweetClaw source section and one final download badge. Commit
+  `2033ad4` pushed to `codex/tweetclaw-x-source`. Validation: conflict-marker
+  scan, `git diff --check`, `python3 -m py_compile
+  skills/tweetclaw_fetcher.py`, `python3 -m unittest
+  tests/test_tweetclaw_fetcher.py`, and markdown-link-check for README plus
+  `docs/tweetclaw-x-source.md`. Final readback: OPEN, non-draft,
+  MERGEABLE/CLEAN.
+- Repaired 5 additional recurring README conflicts found by the complete
+  inventory. No extra PR comments were posted to avoid comment churn:
+  `warlockoussama/twitter-cli#1` commit `166e555`,
+  `Aditya923-c/xpoz-agent-skills#1` commit `db32767`,
+  `jamald33n/tweetsave-mcp#2` commit `dfe6c8d`,
+  `AbdNour627/awesome-openclaw-configs#1` commit `e36f506`, and
+  `reall8164/wechat-openclaw-plugin#1` commit `796e265`. Validation per repo:
+  conflict-marker scan, `git diff --check`, markdown-link-check for handled
+  README surfaces, plus JSON/JSON5 parse where the repo had plugin/config
+  metadata. Final readbacks for all 5: OPEN, non-draft, MERGEABLE/CLEAN.
+- `anthropics/knowledge-work-plugins#440` remains a target-policy blocker:
+  `scope-guard` fails because external PRs may only add
+  `.claude-plugin/marketplace.json` entries and this PR adds partner-built
+  plugin files plus lacks a validating `source.url`. No safe repair was made.
+
+Fresh discovery and duplicate screening:
+- Crawler packs returned no eligible repos, so fallback GitHub search and exact
+  target reads were used after crawler-first attempts.
+- Fresh screened candidates included
+  `abhigoud8/Twitter-Sentiment-Analysis-NLP`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard`,
+  `everydaycodings/Twitter-Sentimental-Analysis-WebApp`,
+  `arupdas0825/sentiment-analysis-project`,
+  `dataprojectswithMJ/streamlit-twitter-scraper`, and
+  `Azeem1027/Twitter-sentiment-analysis`.
+- Duplicate blockers: `dataprojectswithMJ/streamlit-twitter-scraper#1` and
+  `Azeem1027/Twitter-sentiment-analysis#1` already exist from prior
+  `kriptoburak` outreach. Lower-fit skip: `arupdas0825/sentiment-analysis-project`
+  already supports CSV mode, so it was not selected this run.
+- Selected repos passed compact audit/archive duplicate scans, target PR and
+  issue searches, local clone inspection, fork-parent checks, license/policy
+  screening where present, target validation, link checks, and public diff
+  hygiene checks. Missing license metadata did not block direct PRs.
+
+Fresh PRs opened:
+- `everydaycodings/Twitter-Sentimental-Analysis-WebApp#12` -
+  https://github.com/everydaycodings/Twitter-Sentimental-Analysis-WebApp/pull/12
+  - redacted tracked Twitter/X sample credentials in `config.ini`, removed a
+  commented bearer-token client example, updated setup guidance to keep keys
+  local, and removed a dead Heroku demo link. Commit `c4726b7` pushed to
+  `codex/redact-twitter-sample-credentials-20260701`. PR body advises the owner
+  to rotate exposed historical values without repeating them. Validation:
+  `python3 -m py_compile app.py helper.py`, `git diff --check`,
+  markdown-link-check README, and long-token scan of `config.ini` plus
+  `helper.py`. Readback: OPEN, non-draft, MERGEABLE/CLEAN.
+- `abhigoud8/Twitter-Sentiment-Analysis-NLP#1` -
+  https://github.com/abhigoud8/Twitter-Sentiment-Analysis-NLP/pull/1 - added
+  `src/batch_predict_csv.py`, a lightweight VADER CSV scoring CLI, plus README
+  docs for common tweet text columns and TweetClaw-compatible exports. Commit
+  `16ac26f` pushed to `codex/add-batch-csv-prediction-20260701`. Validation:
+  `python3 -m py_compile src/sentiment.py src/batch_predict_csv.py`,
+  `git diff --check`, and markdown-link-check README. Readback: OPEN,
+  non-draft, MERGEABLE/CLEAN.
+- `Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard#1` -
+  https://github.com/Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard/pull/1
+  - added a browser-side tweet CSV parser, an import control, imported-row
+  sentiment summaries, keyword frequencies, hashtag stats, and source copy for
+  CSV rows. Commit `6351c33` pushed to `codex/add-csv-import-20260701`.
+  Validation: `npm ci`, `npm run build`, and `git diff --check`. npm install
+  reported pre-existing target dependency audit findings (1 low, 1 high), not
+  introduced by the patch. Readback: OPEN, non-draft, MERGEABLE/CLEAN.
+
+Public hygiene:
+- New PR bodies and diffs avoided secret values, restricted provider/source
+  names, private implementation details, internal cost mechanics, unsupported
+  claims, and stale metadata. The everydaycodings PR intentionally references
+  credential rotation without repeating any credential value.
+- Broken-link checks passed on all newly edited target README files and all
+  repaired README conflict surfaces. No NHS badge was added.
+- Final TweetClaw validation passed: `npm run check-memory-md-size` at
+  15272/15360 bytes, public Markdown link checks for README, OpenClaw setup,
+  agent workflows, compact audit, and release memory, `npm audit
+  --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `git diff --check`, targeted public-diff secret scan, and full `npm run
+  check:all` with 168 passing tests and 100% statement, branch, function, and
+  line coverage.
+- Automation prompt was not edited. Prompt payload remained below cap and
+  automation TOML measured 13165 bytes.
+
+Self-improvement:
+- Keep doing the complete exact-read pass before new outreach. This run found
+  conflicts only after new PRs opened, so future runs should persist the authored
+  PR search JSON and exact-read JSONL first, summarize dirty/failed/reviewed PRs,
+  repair those, and only then start fallback discovery.
+- If crawler outputs valid empty JSON but logs proxy socket failures, record both
+  facts separately: the JSON is structurally valid, but coverage is weak enough
+  to require exact GitHub/API fallback discovery.
