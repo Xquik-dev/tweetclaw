@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 03:42 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 05:08 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/tools/plugin`,
   `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
   `/clawhub/skill-format`, `/tools/llm-task`, `/gateway/secrets`, and
   `/concepts/agent-runtimes` returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 03:42 UTC after redirecting to
+  2026-07-01 05:08 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,23 +190,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 03:42 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, ClawHub, and Xquik issues were rechecked. Crawler strict JSON returned
-  160 repos. Inventory exact-read 280 priority PRs: 280 ok/open, 37 with
-  comments, 23 with reviews, 1 conflict, 11 dirty/blocked, and 5 failing
-  checks. Complete all-open inventory is not claimed because one focused search
-  failed syntax validation.
-- Repaired conflict before outreach: `shajith003/awesome-claude-skills#4`
-  pushed `b971337` after a normal upstream merge; final readback was
-  MERGEABLE/CLEAN. `AmeerJ97/mcp-multiplex#2` remains blocked on user/legal
-  rights confirmation, and `anthropics/knowledge-work-plugins#440` remains
-  blocked by target `scope-guard` policy.
+- 2026-07-01 05:08 UTC: runtime selector limitation recorded. OpenClaw docs,
+  npm, ClawHub, and Xquik issues were rechecked. Crawler-first discovery hit
+  duplicate-only and proxy-noisy batches; fallback search produced 3 fresh,
+  duplicate-clean Streamlit sentiment dashboards. Authored open PR search was
+  partitioned into 16 uncapped updated windows: 2,870 unique open PRs, 2,795
+  lane-matching; 51 priority or recent PRs were exact-read and remaining
+  exact-read backlog is archived.
+- Actionable blockers noted before outreach: multiple exact-read PRs have
+  conflicts or comments, `AmeerJ97/mcp-multiplex#2` still needs legal rights
+  confirmation, and `anthropics/knowledge-work-plugins#440` is still blocked by
+  target `scope-guard`.
 - Fresh safe PRs opened:
-  https://github.com/snoips/openclaw-registry/pull/1,
-  https://github.com/hiOrchestra/orchestra-skills-catalogue/pull/1, and
-  https://github.com/moux1024/openclaw-skill-hub/pull/1.
+  https://github.com/minahill9/twitter-sentiment-analysis/pull/1,
+  https://github.com/Sahas-2417/Twitter-Sentiment-Analysis/pull/1, and
+  https://github.com/HayreKhan750/twitter-sentiment-analyzer/pull/1.
 - TweetClaw changed audit memory only. Details, validation, link checks, prompt
-  bytes, blockers, and self-improvement are archived.
+  status, blockers, and self-improvement are archived.
 
 ## Reporting Checklist
 
