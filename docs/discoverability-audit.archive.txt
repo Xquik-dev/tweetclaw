@@ -52416,3 +52416,148 @@ Self-improvement:
 - For older Streamlit examples, make upload support robust to missing optional
   coordinate, airline/topic, and sentiment-label values; otherwise a valid CSV
   import can break maps, filters, or word clouds.
+
+## 2026-07-01 14:17 UTC heartbeat
+
+Runtime and inventory:
+- Runtime model, Fast-mode speed, and extra-high effort controls were not
+  exposed in the local execution surface, so the limitation was recorded and
+  the run continued.
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with
+  strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-135433/crawler-pr-monitoring.json`, using
+  focused authored-open, TweetClaw, OpenClaw, ClawHub, MCP, skill, X/Twitter,
+  social-media, and sentiment query packs through the research proxy. It
+  returned 0 opportunities and 0 errors.
+- Authored-open GitHub fallback read updated-today rows before fresh outreach:
+  `updated:>=2026-07-01` returned 199 open PRs; all-authored-open returned
+  1000 and was treated as capped, so all-time completeness was not claimed.
+  Exact `gh pr view` readbacks covered all 199 updated-today rows with
+  0 errors and 0 `CHANGES_REQUESTED` reviews.
+- Exact readbacks found 8 recurring conflicts:
+  `shajith003/awesome-claude-skills#4`,
+  `Saminiscool/twitter-ai-agent#2`, `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `jamald33n/tweetsave-mcp#2`,
+  `AbdNour627/awesome-openclaw-configs#1`, and
+  `reall8164/wechat-openclaw-plugin#1`.
+- Known failed-check rows remained `08Gauri/tweet-sentiment-dashboard#1`
+  Netlify preview checks and `anthropics/knowledge-work-plugins#440`
+  `scope-guard`. No safe repair lane or maintainer request was found.
+
+Fresh discovery and duplicate gates:
+- Fresh crawler discovery ran with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-135433/crawler-fresh-targets.json`, using
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X skill, awesome-list, registry, dashboard, and OpenClaw plugin query
+  packs. It returned 86 opportunities across 86 repos with 0 errors.
+- Fresh candidates screened from crawler output included
+  `DAMediaCo/bestclawskills`, `clawfred/openclaw-directory`,
+  `pythongeek/twitter-scraper-dashboard`,
+  `preethamushetty/mcp-server-for-twitter`, `umidjon3455/clawhub_nina`, and
+  `jarvisclaudebotsr-dotcom/openclaw-directory`. All were public, non-fork,
+  non-archived, and defaulted to `main`; `preethamushetty` and `umidjon` had
+  MIT license metadata, while the selected catalog and directory lanes had no
+  GitHub license metadata.
+- Compact audit, release memory, archive memory, target content scans, local
+  clone scans, and exact target REST reads found no TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, or
+  x-twitter-scraper duplicates in the selected lanes.
+- Broad authenticated duplicate search hit GitHub Search HTTP 403 rate limiting
+  after initial invalid-state retries, so broad authenticated search stopped
+  for the run. Exact target repo REST reads for the 6 screened repos returned
+  0 pull requests, 0 issues, and 0 duplicate-term matches.
+- `preethamushetty/mcp-server-for-twitter` remained a viable MCP fallback lane
+  but was not needed after 3 safe PR lanes. `umidjon3455/clawhub_nina` had
+  issues disabled but PRs were possible; `jarvisclaudebotsr-dotcom` remained a
+  possible later OpenClaw-directory lane.
+
+External PRs opened:
+- `clawfred/openclaw-directory#1` -
+  https://github.com/clawfred/openclaw-directory/pull/1 - adds
+  `data/skills/tweetclaw/SKILL.md` and `meta.json` with OpenClaw plugin
+  install, inspect command, fit notes, approval-gated safety notes, and public
+  TweetClaw links. Fork parent verified:
+  `kriptoburak/clawfred-openclaw-directory` parent
+  `clawfred/openclaw-directory`. Commit `c15f85d` on branch
+  `codex/add-tweetclaw-skill`. Validation: JSON parse and SKILL required-link
+  check, `git diff --check`, `npx --yes markdown-link-check
+  data/skills/tweetclaw/SKILL.md --quiet`, direct public link probes, and
+  public diff scan. Exact readback: OPEN, non-draft, MERGEABLE, base `main`,
+  head `c15f85d39412423b15e6ef25ed8c35e5d4434b92`, 0 comments, 0 reviews,
+  0 checks.
+- `DAMediaCo/bestclawskills#1` -
+  https://github.com/DAMediaCo/bestclawskills/pull/1 - adds TweetClaw to the
+  static skills catalog, JSON data, social-media count, sitemap, and a dedicated
+  static skill page with install, source, and ClawHub links. Fork parent
+  verified: `kriptoburak/damediaco-bestclawskills` parent
+  `DAMediaCo/bestclawskills`. Commit `4141635` on branch
+  `codex/add-tweetclaw-catalog-entry`. Validation: `git diff --check`,
+  `node -c js/skills-data.js`, JSON catalog parse, HTML parser check,
+  `sitemap.xml` parse, direct public link probes, and public diff scan. Exact
+  readback: OPEN, non-draft, MERGEABLE, base `main`, head
+  `4141635a5e526669ea153d5018cbe7d9b571f97a`, 0 comments, 0 reviews, 0 checks.
+- `pythongeek/twitter-scraper-dashboard#1` -
+  https://github.com/pythongeek/twitter-scraper-dashboard/pull/1 - updates the
+  archive API to read `archive.json`, `tweetclaw-export.json`, or `tweets.json`,
+  normalizes common TweetClaw export field names into the existing `Tweet`
+  response shape, and preserves the newest-first 200-row response. Fork parent
+  verified: `kriptoburak/pythongeek-twitter-scraper-dashboard` parent
+  `pythongeek/twitter-scraper-dashboard`. Commit `baef601` on branch
+  `codex/normalize-tweetclaw-archive`. Validation: `git diff --check`,
+  `npx --yes tsx -e "import('./app/api/archive/route.ts')..."`, and public diff
+  scan. `npx tsc --noEmit --pretty false` was run and is blocked by
+  pre-existing unrelated errors in `app/api/config/route.ts` and
+  `app/api/manifest/route.ts`; the changed archive route imported cleanly.
+  Exact readback: OPEN, non-draft, MERGEABLE, base `main`, head
+  `baef601620b8bad162dd42069a92d7e942ee12b5`, 0 comments, 0 reviews, and
+  GitGuardian Security Checks SUCCESS.
+
+OpenClaw, package, public hygiene, and validation:
+- Official OpenClaw docs were rechecked after outreach with Node fetch:
+  `https://docs.openclaw.ai/llms.txt`, `/cli`, `/cli/plugins`, `/cli/skills`,
+  `/tools`, `/tools/plugin`, `/plugins/manifest`, `/plugins/bundles`,
+  `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/secrets`, and `/concepts/agent-runtimes` all returned HTTP 200.
+- `npm view openclaw dist-tags --json` returned latest `2026.6.11`, beta
+  `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`. `npm view clawhub
+  version` returned `0.23.1`. `npm view @xquik/tweetclaw version` returned
+  `1.6.31`. The ClawHub route
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 after
+  redirecting to `/xquik/plugins/tweetclaw`.
+- Target PR URLs returned HTTP 200. Target TweetClaw links in edited content
+  returned HTTP 200. TweetClaw public link check passed for `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`.
+- TweetClaw checks passed before memory commit: `npm audit
+  --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact`.
+- Post-memory validation passed: `npm run check-memory-md-size` at
+  15033/15360 bytes, scoped public Markdown link checks for README, OpenClaw
+  setup, agent workflows, compact audit, and release memory, `git diff
+  --check`, and full `npm run check:all` with 168 passing tests and 100%
+  statement, branch, function, and line coverage.
+- Target diffs and PR bodies were inspected for secrets, private implementation
+  details, unsupported claims, stale metadata, internal cost mechanics, and
+  restricted provider or source names. Sensitive-pattern scans had no real
+  hits. No NHS badge was added.
+- Prompt self-improvement: the persisted automation prompt already contains the
+  user's stronger "at least 3 opportunities every run and submit" requirement,
+  crawler-first discovery, 3-PR mandate, and safety gates, so no prompt edit was
+  needed. Prompt file readback:
+  `/Users/burak/.codex/automations/improve-tweetclaw-openclaw-integration/automation.toml`
+  was 13514 bytes.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
+Self-improvement:
+- Keep custom fork names for same-name OpenClaw directory forks, but always
+  exact-read the fork parent before push because target owners often reuse
+  generic `openclaw-directory` names.
+- When broad duplicate search hits GitHub Search 403, stop broad authenticated
+  search immediately and rely on crawler output, exact target REST PR/issue
+  reads, local clone scans, and archive history for the remainder of the run.
+- Prefer catalog/schema/adapter changes for OpenClaw and TweetClaw placement:
+  directory entries, static catalog pages, and export normalizers are easier for
+  maintainers to review than generic README mentions.
