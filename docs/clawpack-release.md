@@ -52,7 +52,7 @@ the archive, before any release or ClawHub decision.
 ## ClawHub State
 
 - ClawHub plugin route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
-  on 2026-06-30 16:10 UTC after redirecting to
+  on 2026-07-01 06:27 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but keep npm canonical until current
   scoped package publishing succeeds.
 - `npm view clawhub` now reports `0.23.1`.
