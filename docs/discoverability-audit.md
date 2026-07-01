@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 22:49 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 23:10 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; required CLI, tool,
   plugin, ClawHub, gateway, debugging, and runtime routes returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 22:49 UTC after redirecting to
+  2026-07-01 23:10 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 22:49 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 23:10 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -188,19 +188,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 22:49 UTC: runtime selector unavailable. Crawler monitoring found
-  10 irrelevant generic repos; skill and fresh-target batches returned 0 useful
-  hits and no errors.
-- Inventory: created partitions read 1780 PRs before a 2026-06-30 search 403;
-  updated-current search also hit 403, so fallback exact-read covered 334/334
-  recent plus new URLs. Audit URL scan found 1626 normalized PR URLs. No new
-  actionable maintainer comments were found.
-- Fresh PRs opened and read back OPEN, ready, MERGEABLE:
-  https://github.com/preethamushetty/mcp-server-for-twitter/pull/1,
-  https://github.com/arunrawatrealm/Airline-Sentiment-Analysis/pull/1, and
-  https://github.com/MoinDalvs/Sentiment_Analysis_on_-Elon_musk_Tweets/pull/1.
-- Target syntax, diff, links, OpenClaw docs, ClawHub, npm metadata, audits,
-  artifact, memory, and fitness checks passed. Details archived.
+- 2026-07-01 23:10 UTC: runtime selector unavailable. Crawler monitoring found
+  10 generic hits; skill and fresh-target batches returned 0 useful hits.
+  Updated-current inventory exact-read 346/346 PRs; one created partition hit
+  GitHub 403, so broad search was stopped. No new actionable maintainer comments
+  were found.
+- Fresh PRs opened and read back OPEN, ready, MERGEABLE, CLEAN:
+  https://github.com/gdvtramarao/Twitter-Sentiment-Analyser/pull/1,
+  https://github.com/Prem07a/TwitterSentiment/pull/1, and
+  https://github.com/Davisy/Swahili-Tweet-Sentiment-Analysis-App/pull/1.
+- Target syntax and diff checks passed. Two target README link checks passed;
+  gdvtramarao had a pre-existing Streamlit auth-loop link failure. TweetClaw
+  links, OpenClaw docs, ClawHub, npm metadata, audit, artifact, memory, and
+  fitness checks passed. `openclaw.ai/directory/plugins/tweetclaw` returned 404.
+  Details archived.
 
 ## Reporting Checklist
 
