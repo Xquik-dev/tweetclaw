@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 11:33 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 11:55 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 11:33 UTC after redirecting to
+  2026-07-01 11:55 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -191,16 +191,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 11:33 UTC: runtime selector limitation recorded. Crawler PR
-  monitoring returned 0 opportunities; today-updated authored-open exact-read
-  covered 145 PRs with 0 read errors. All-time completeness remains capped by
-  GitHub search scale and is not claimed.
-- Repaired `sydasif/web-search-mcp#1`. Fresh duplicate-clean PRs opened:
-  https://github.com/gpriya32/tweet-sentiment-analysis/pull/1,
-  https://github.com/Rishavgg/Twitter-sentiment-analysis/pull/2, and
-  https://github.com/kingabzpro/NLP-Tweets-Web-App/pull/2.
-- OpenClaw docs, ClawHub, target links, validation, prompt status, blockers,
-  fork readbacks, public hygiene, and self-improvement details are archived.
+- 2026-07-01 11:55 UTC: runtime selector limitation recorded. Crawler PR
+  monitoring returned 0; today-updated authored-open exact-read covered
+  152 PRs, 0 errors, 36 in scope, 1 failed check, and 8 conflicts. All-time
+  completeness remains capped by GitHub search scale and is not claimed.
+- Fresh crawler skill/social pack returned 9 historical candidates. Fallback
+  screened 3 duplicate-clean sentiment dashboards and opened:
+  https://github.com/santanukumar666/Twitter-Sentiment-Analysis/pull/3,
+  https://github.com/Akanksha-tetwar/Airline-Tweets-Sentiment-Analysis-Dashboard/pull/1,
+  and https://github.com/Saumya-Bhatt/Sentiment-Analysis-Dashboard/pull/4.
+- OpenClaw docs, ClawHub, target links, validation, blockers, fork readbacks,
+  public hygiene, and self-improvement details are archived.
 
 ## Reporting Checklist
 
