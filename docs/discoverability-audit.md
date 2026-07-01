@@ -189,19 +189,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-06-30 22:55 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, ClawHub, and Xquik open issues were rechecked; source still targets
-  `2026.6.11`, while npm latest remains `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output with 10 opportunities, 1487 archive PR URLs,
-  authored-PR partitions capped at 300 rows with 291 filtered rows each, and 100
-  exact PR readbacks. Complete all-open inventory is not claimed.
-- Repaired `lvpiggyqq/xcatcher-mcp-manifest#1` for reviewed TweetClaw user
-  import behavior. Two Hermes-adjacent repairs were blocked by missing fork head
-  repos.
+- 2026-07-01 00:08 UTC: runtime selector limitation recorded. Current OpenClaw
+  docs, npm, ClawHub, and Xquik issues were rechecked; OpenClaw latest stayed
+  `2026.6.11`, and npm latest stayed `@xquik/tweetclaw@1.6.31`.
+- Inventory used crawler output with 10 opportunities, 1490 archive PR URLs,
+  authored open partitions of 300, 300, and 13 rows, and 120 exact PR readbacks.
+  Complete all-open inventory is not claimed because broad authored partitions
+  remain capped.
+- Repairs before outreach: made `Planable/smm-skills#1` and
+  `anthropics/knowledge-work-plugins#440` mergeable again, and closed
+  `alvabillwu/mcpindex#1` after the maintainer required a public MCP source repo
+  that Xquik does not currently publish. Block skill-security warnings were
+  already answered and target-owned approval gates remain.
 - Fresh safe PRs opened:
-  https://github.com/linny006/awesome-agent-skills/pull/5,
-  https://github.com/shajith003/awesome-claude-skills/pull/4, and
-  https://github.com/XD-BASHARAT/agent-skills-directory/pull/1.
+  https://github.com/NachaFromMars/upload-post/pull/1,
+  https://github.com/jadye527/obsidian-growth-kit/pull/1, and
+  https://github.com/maoshuorz/openclaw-skills/pull/1.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
   screening, target validation, broken-link results, prompt bytes, and
   self-improvement are archived.
