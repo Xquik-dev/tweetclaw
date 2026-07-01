@@ -52079,9 +52079,8 @@ Fresh PRs opened:
   `python3 -m py_compile app.py` and `git diff --check`, and was pushed to the
   PR branch. Follow-up comment:
   https://github.com/avikds/Airline-Tweet-Sentiment-Dashboard/pull/1#issuecomment-4855052089.
-  Final readback after the repair: OPEN, non-draft, head owner `kriptoburak`,
-  1 own comment, 1 automated review, and 0 checks. Mergeability was still
-  recalculating as `UNKNOWN` immediately after the repair push.
+  Final readback after the repair: OPEN, non-draft, MERGEABLE/CLEAN, head
+  owner `kriptoburak`, 1 own comment, 1 automated review, and 0 checks.
 - `Heedgeit/tweet-sentiment-dashboard#1` -
   https://github.com/Heedgeit/tweet-sentiment-dashboard/pull/1 - adds a
   dashboard data-source switch for live scraping or uploaded CSVs, normalizes
