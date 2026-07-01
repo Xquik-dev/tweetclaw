@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 14:17 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 15:46 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 14:15 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 15:46 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +191,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 15:13 UTC: runtime selector limitation recorded. Crawler PR
-  monitoring returned 0. Today-updated authored-open inventory exact-read 223
-  PRs with 0 errors, 3 failing-check rows, and 5 conflicts; all-open search
-  remains capped and all-time completeness is not claimed.
-- Repair pass pushed AgentReacher approval-boundary wording to
-  thijssmudde/agentreacher-skills#1. Hermes-tweet #580 already had the needed
-  metadata fix and checks were green on re-read.
-- Fresh crawler packs returned 66 skill/MCP candidates. After duplicate gates,
-  opened 3 docs PRs: https://github.com/rolliinc/rolli-mcp/pull/23,
-  https://github.com/htekdev/late-social-mcp/pull/2, and
-  https://github.com/maheshcr/tweet-scheduler-mcp/pull/8.
-- OpenClaw docs, npm metadata, public links, package audit, and fitness checks
-  passed. Full candidate gates, validation, prompt byte size, and PR readbacks
-  are archived.
+- 2026-07-01 15:46 UTC: runtime selector limitation recorded. Crawler PR
+  monitoring returned 0. Today-updated authored-open inventory exact-read 225
+  PRs with 0 errors, 2 failing rows, 8 conflicts, 25 comment threads, and 28
+  review rows; all-open search remains capped and incomplete.
+- Repair pushed Saminiscool/twitter-ai-agent#2 merge commit `a38f351` and
+  restored mergeability. Target-wide check is still blocked by pre-existing
+  format drift, but scoped lint, typecheck, unit tests, and links passed.
+- Fresh crawler and repo-mode screening selected 3 duplicate-clean lanes and
+  opened PRs: https://github.com/edholofy/dojo.md/pull/1,
+  https://github.com/initializ/forge/pull/207, and
+  https://github.com/Elemzir/KTA-Social/pull/1.
+- OpenClaw docs, ClawHub, npm metadata, public links, package audit, PR URL
+  probes, and fitness checks passed. Full gates, readbacks, prompt size
+  `13514`, and self-improvement notes are archived.
 
 ## Reporting Checklist
 

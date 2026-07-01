@@ -52808,3 +52808,141 @@ Self-improvement:
 - If `gh repo fork <repo> --remote` fails because a repo argument is present,
   rerun `gh repo fork --remote --remote-name fork` from inside the clone, then
   verify the fork parent before pushing.
+
+2026-07-01 15:46 UTC heartbeat run:
+
+Runtime and prompt:
+- Runtime model, speed, and effort controls were not exposed in this shell, so
+  Codex 5.5 Fast mode with extra-high effort could not be selected or verified.
+  Work continued under the available runtime.
+- Persisted automation prompt readback stayed 13514 bytes. No prompt edit was
+  needed because the current prompt already requires actively finding and
+  screening at least 3 fresh opportunities and submitting 3 PRs whenever safe
+  lanes exist.
+
+Open PR inventory and repair:
+- Crawler PR monitoring from `/Users/burak/Developer/xquik` used strict JSON at
+  `/tmp/tweetclaw-heartbeat-20260701-152209/crawler-pr-monitoring.json` with
+  research proxy, request timeout 15000 ms, proxy warmup timeout 18000 ms, limit
+  120, search pages 1, per-query limit 10, concurrency 16, and session
+  `tweetclaw-20260701-152209-pr`. Query coverage included TweetClaw, OpenClaw,
+  ClawHub, MCP, skills, X/Twitter automation, Xquik, x-twitter-scraper, social
+  media, agent tools, catalogs, validators, and prior outreach. Output parsed as
+  valid JSON with 0 opportunities and 0 errors.
+- Authored-open PR partition `updated:>=2026-07-01` found 225 PRs. Exact
+  REST/GraphQL readbacks succeeded for all 225 and found 25 comment threads, 28
+  review rows, 2 failing-check rows, and 8 conflicts or dirty merge states.
+  Broad all-open authored search remains capped at 1000, so all-time inventory
+  completeness was not claimed. Exact readbacks were saved under
+  `/tmp/tweetclaw-heartbeat-20260701-152209/`.
+- Repair priority check re-read recent blocked PRs. `Saminiscool/twitter-ai-agent#2`
+  was actionable because upstream `main` conflicted with the TweetClaw/Xquik
+  backend branch. The fork parent was verified as
+  `Saminiscool/twitter-ai-agent`; the push remote was
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik`.
+- Repaired `Saminiscool/twitter-ai-agent#2` by merging upstream `main` into
+  `codex/add-xquik-backend` and resolving the README conflict without changing
+  the target-owned package updates. Pushed commit
+  `a38f351a3fb8954bc378e40ba461a2bdc3b4b050`. Exact readback after push was
+  OPEN, non-draft, MERGEABLE, 16 comments, 0 reviews, no checks, and files
+  `README.md`, `src/tools.ts`, `src/twitter-api.ts`, and
+  `tests/twitter-api.test.ts`.
+- Repair validation: `npm ci --ignore-scripts` passed with target-owned
+  advisories, scoped Prettier and Biome checks passed for the touched files,
+  `npx tsc --noEmit` passed, `npx vitest run tests/twitter-api.test.ts` passed,
+  and README link check passed. Target-wide `npm run check` remains blocked by
+  pre-existing formatting drift in unrelated files.
+
+Fresh discovery and duplicate gates:
+- Fresh crawler coverage ran from `/Users/burak/Developer/xquik` with strict
+  JSON at `/tmp/tweetclaw-heartbeat-20260701-152209/crawler-fresh-targets.json`,
+  research proxy, request timeout 15000 ms, proxy warmup timeout 18000 ms, limit
+  180, search pages 1, per-query limit 12, concurrency 16, and session
+  `tweetclaw-20260701-152209-fresh`. Query coverage included `SKILL.md`,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X skills, awesome lists, registries, forks, generated
+  catalogs, and web-index surfaced skill repos. Output parsed as valid JSON with
+  1 opportunity, `blacktwist/social-media-skills`, which was duplicate-blocked
+  by archive and prior PR history.
+- Crawler repo-mode exact probes for `edholofy/dojo.md`, `initializ/forge`, and
+  `Elemzir/KTA-Social` produced valid empty JSON after proxy socket-close
+  blockers. The blocker and command output were recorded; no crawler
+  credentials were printed, stored, or committed.
+- Selected lanes passed compact audit, archive, target content, target open and
+  closed PR and issue searches, fork metadata, policy checks, license or package
+  metadata checks, local clone scans, and public diff inspection for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub
+  listing, Xquik, x-twitter-scraper, OpenClaw, and Twitter/X variants:
+  `edholofy/dojo.md`, `initializ/forge`, and `Elemzir/KTA-Social`.
+- `edholofy/dojo.md` was MIT licensed, non-fork, non-archived, issue-enabled,
+  and a strong scenario-lab fit for an approval-gated X/Twitter evidence pack.
+  `initializ/forge` was Apache-2.0, non-fork, non-archived, issue-enabled, and
+  a strong OpenClaw skill-doc fit. `Elemzir/KTA-Social` was MIT licensed,
+  non-fork, non-archived, issue-enabled, and a focused KTA Social/X/Twitter
+  context-doc fit.
+
+Fresh PRs opened:
+- `edholofy/dojo.md#1` -
+  https://github.com/edholofy/dojo.md/pull/1 - adds a reviewed public X/Twitter
+  evidence pack to the thread-newsletter-funnel scenario and keeps TweetClaw or
+  an equivalent approved source inside human-approved evidence boundaries. Fork
+  parent verified as `edholofy/dojo.md`. Commit
+  `cc0d1468993bb2cd92c2f5461456b940cf76df9a`. Validation: dependency install,
+  `npm test -- src/engine/loader.test.ts`, `npm run build`, diff check, public
+  hygiene scan, and exact PR readback. Readback: OPEN, non-draft, MERGEABLE, 1
+  Vercel authorization comment, 0 reviews, and Vercel Agent Review completed as
+  NEUTRAL.
+- `initializ/forge#207` -
+  https://github.com/initializ/forge/pull/207 - adds a worked
+  `tweetclaw-x-evidence` skill example with `openclaw` command requirements,
+  `XQUIK_API_KEY`, `xquik.com` egress, `web_search` denied, and a clear split
+  between source collection and approval-gated publishing. Fork parent verified
+  as `initializ/forge`. Commit
+  `17d6a92b3ebccaaf72d0d0fe880a7d174f1c95e7`. Validation: Markdown link check,
+  diff check, public hygiene scan, and exact PR readback. Readback: OPEN,
+  non-draft, MERGEABLE, review required, 0 comments, 0 reviews, and no checks.
+- `Elemzir/KTA-Social#1` -
+  https://github.com/Elemzir/KTA-Social/pull/1 - adds optional X/Twitter
+  context guidance, `docs/x-twitter-context.md`, and `public/llms.txt` updates
+  that keep TweetClaw/OpenClaw usage read-only unless a human approves writing.
+  Fork parent verified as `Elemzir/KTA-Social`. Commit
+  `44b662a4f18f111c07b7ebdd93d5a3268545de01`. Validation: dependency install,
+  `npm run type-check`, Markdown link checks, diff check, public hygiene scan,
+  and exact PR readback. Readback: OPEN, non-draft, MERGEABLE, 0 comments, 0
+  reviews, and no checks.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw docs and routes rechecked: `llms.txt`, `llms-full.txt`,
+  CLI, plugin, skill, manifest, tool plugin, ClawHub skill format, secrets,
+  agent runtimes, and debugging routes all returned HTTP 200. ClawHub TweetClaw
+  route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`. The Node probe printed complete
+  JSON, then an owned idle network handle was interrupted.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, `openclaw`
+  latest `2026.6.11`, beta `2026.6.11-beta.2`, and alpha
+  `2026.5.19-alpha.1`.
+- TweetClaw package audit reported 0 vulnerabilities. `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.11`.
+- Public Markdown link check passed for README, OpenClaw setup, agent
+  workflows, compact audit, and release memory. Direct HTTP probes returned 200
+  for all 3 new PR URLs and the repaired Saminiscool PR URL.
+- External repair and fresh PR diffs plus PR bodies were inspected for secrets,
+  private implementation details, restricted provider or source names, internal
+  cost mechanics, unsupported claims, and stale metadata. Sensitive-pattern
+  scans found placeholders or generic safety terms only. No NHS badge was added.
+
+Self-improvement:
+- Keep repo-mode crawler blockers distinct from duplicate blockers. A valid
+  empty repo-mode JSON after proxy socket closures should not be treated as a
+  target duplicate; continue with exact REST metadata, clone scans, target PR
+  and issue reads, and archive checks.
+- Skill-doc and scenario repos are high-fit when TweetClaw is framed as
+  approval-gated source evidence, not as a scheduler or analytics authority.
+- For conflict repairs, run scoped touched-file checks before target-wide checks
+  so pre-existing format drift is recorded without masking a valid merge repair.
+
+Memory and TweetClaw changed files:
+- Compact audit and this archive were updated. Changed files were
+  `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`.
+  The pre-existing untracked local path `0` was preserved.
