@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 00:53 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 01:22 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs are indexed by
   `llms.txt`; `/cli/plugins`, `/clawhub/skill-format`, `/help/debugging`,
   `/gateway/secrets`, and `/concepts/agent-runtimes` replace several stale
   legacy route probes.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 00:53 UTC after redirecting to
+  2026-07-01 01:22 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -189,20 +189,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 00:53 UTC: runtime selector limitation recorded. Current OpenClaw
+- 2026-07-01 01:22 UTC: runtime selector limitation recorded. Current OpenClaw
   docs, npm, ClawHub, and Xquik issues were rechecked; OpenClaw latest stayed
   `2026.6.11`, and npm latest stayed `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output with 22 repos, 1497 archive PR URLs, authored
-  partitions of 14 and capped 300, focused REST searches blocked by GitHub 403,
-  and 90 exact PR readbacks. Complete all-open inventory is not claimed because
-  broad partitions were capped or rate-limited.
-- Repairs before outreach: pushed `austindixson/tweet-crafter#1` review fix so
-  local fallback generation ignores source-note mentions, and repaired
-  `Saminiscool/twitter-ai-agent#2` README conflict.
-- Fresh safe PRs opened:
-  https://github.com/pamelafox/comedy-roast-skill/pull/1,
-  https://github.com/IvanStancich/vitals-audit/pull/1, and
-  https://github.com/liangdabiao/tikhub_api_skill/pull/2.
+- Inventory used 2 crawler passes that parsed but returned 0 repos after proxy
+  socket failures, 1500 archive PR URLs, 100 updated-authored open PRs, 12
+  same-day open PRs, and 160 priority exact PR readbacks. Complete all-open
+  inventory is not claimed because broad authored inventory remains capped.
+- Repairs before outreach: pushed conflict/sync repairs to
+  `reall8164/wechat-openclaw-plugin#1`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, and `AmeerJ97/mcp-multiplex#2`.
+- Maintainer-owner action remains: `AmeerJ97/mcp-multiplex#2` asks the user to
+  confirm rights to submit under Apache-2.0; the branch was synced, but no
+  legal confirmation was posted.
+- Fresh safe PRs opened: https://github.com/bjester/shinyskills/pull/4,
+  https://github.com/ronaldtebrake/agent-skills-validator/pull/2, and
+  https://github.com/ZyanZealous/openclaw-cli-control/pull/1.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
   screening, target validation blockers, broken-link results, prompt bytes, and
   self-improvement are archived.
