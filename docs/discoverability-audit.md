@@ -188,20 +188,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 23:10 UTC: runtime selector unavailable. Crawler monitoring found
-  10 generic hits; skill and fresh-target batches returned 0 useful hits.
-  Updated-current inventory exact-read 346/346 PRs; one created partition hit
-  GitHub 403, so broad search was stopped. No new actionable maintainer comments
-  were found.
-- Fresh PRs opened and read back OPEN, ready, MERGEABLE, CLEAN:
-  https://github.com/gdvtramarao/Twitter-Sentiment-Analyser/pull/1,
-  https://github.com/Prem07a/TwitterSentiment/pull/1, and
-  https://github.com/Davisy/Swahili-Tweet-Sentiment-Analysis-App/pull/1.
-- Target syntax and diff checks passed. Two target README link checks passed;
-  gdvtramarao had a pre-existing Streamlit auth-loop link failure. TweetClaw
-  links, OpenClaw docs, ClawHub, npm metadata, audit, artifact, memory, and
-  fitness checks passed. `openclaw.ai/directory/plugins/tweetclaw` returned 404.
-  Details archived.
+- 2026-07-01 23:31 UTC: runtime selector unavailable. Xquik crawler found 10
+  generic PR-monitor hits; skill and fresh batches returned 0. Inventory union
+  was 2,870 authored open PR URLs; exact readbacks finished for 1,819 and
+  GraphQL quota blocked 1,051. No new post-23:10 maintainer comments or repairs
+  were found in exact reads.
+- Fresh PRs opened: https://github.com/tmtsmrsl/TwitterSentimentAnalyzer/pull/1,
+  https://github.com/zaidmukaddam/live-twitter-sentiment-analysis/pull/1, and
+  https://github.com/Sushmitha-93/Tweet-Sentiment-Analysis-StreamLit/pull/1.
+  Target checks passed; upstream check-runs were none, successful GitGuardian,
+  and none. TweetClaw link uses `github.com/Xquik-dev/tweetclaw`; npm, OpenClaw,
+  ClawHub, audit, artifact, links, memory, and fitness gates passed. Details
+  archived.
 
 ## Reporting Checklist
 

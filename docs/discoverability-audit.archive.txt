@@ -54097,6 +54097,131 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-01 23:31 UTC Heartbeat
+
+Runtime and scope:
+- Runtime selectors for Codex 5.5 Fast mode and extra-high reasoning effort
+  were not exposed in this environment, so the run continued under the available
+  runtime and recorded the limitation.
+- Context7, browser/Chrome GUI inspection, dev servers, production SSH, secret
+  reads, and destructive git actions were not used.
+
+Crawler-first discovery:
+- Xquik crawler PR-monitoring run covered TweetClaw, OpenClaw, MCP, social,
+  Twitter/X, skill, and pull-request lanes. It returned 10 generic PR hits and
+  no crawler errors.
+- Xquik crawler skill-coverage run covered SKILL.md, .agents/skills, skills
+  dirs, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill variants,
+  awesome lists, registries, forks, and web-index skill lanes. It returned 0
+  opportunities and no crawler errors.
+- Xquik crawler fresh-target run covered Twitter sentiment CSV converters,
+  tweet sentiment notebooks, social sentiment dashboards, OpenClaw skill, MCP,
+  and Twitter/X agent skill lanes. It returned 0 opportunities and no crawler
+  errors.
+
+Open PR inventory and repair priority:
+- Inventory sources included compact audit, archives, crawler output, audit URL
+  scan, authored open PR partitions, fork branch metadata, and exact GitHub
+  readbacks. The audit URL scan found 1,632 normalized PR URLs.
+- Authored open PR partitioning covered updated-current, created-current,
+  2026-06-01 to 2026-06-07, 2026-06-08 to 2026-06-14, 2026-06-15 to
+  2026-06-21, 2026-06-22 to 2026-06-30, and 2026-05-01 to 2026-05-31.
+  Partition union was 2,870 unique open PR URLs.
+- Exact readbacks completed for 1,819 PRs; 1,051 were blocked by GitHub GraphQL
+  quota exhaustion. Parsed merge-state summary: 1,377 clean, 289 unstable,
+  60 blocked review-required, 41 dirty, 37 blocked, and small approved, behind,
+  unknown, and changes-requested buckets. No post-23:10 maintainer comments or
+  reviews were found in exact reads.
+- Repair triage found no safe current repair blocking outreach. Remaining
+  actionable-looking states were old conflicts, target-owned CI, review gates,
+  or GraphQL-blocked exact reads. The run stopped broad authenticated search
+  after GraphQL quota hit and continued through REST, clone scans, and archive
+  checks.
+
+Fresh screening and duplicate gates:
+- Fresh REST metadata and target PR/issue checks were completed for
+  tmtsmrsl/TwitterSentimentAnalyzer,
+  laxmimerit/NLP-Project-3---Twitter-Sentiment-Analysis-with-Random-Forest,
+  zaidmukaddam/live-twitter-sentiment-analysis,
+  Sushmitha-93/Tweet-Sentiment-Analysis-StreamLit, stuhow/airline_sentiment,
+  cmadusankahw/python-visualization-with-streamlit-dashboards, and
+  Srivari07/Twitter-sentiment-analysis. Target open PR and issue counts were 0
+  for all 7 candidates.
+- Compact audit, archive, target content, target PRs, and issues were searched
+  for TweetClaw, tweetclaw, @xquik/tweetclaw, TweetClaw GitHub URL variants,
+  npm URL, ClawHub, Xquik, x-twitter-scraper, and OpenClaw variants. Selected
+  targets had no duplicate TweetClaw placement.
+- No CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, LICENSE, or .github policy files
+  were present in the 3 selected repos. Missing license metadata was not treated
+  as a direct-PR blocker.
+- Blockers recorded: laxmimerit app lacks the committed model artifact needed
+  for meaningful app validation; Srivari07 contains public hardcoded API secrets
+  and a removal PR would repeat secret values in the public diff; cmadusankahw
+  is a lower-fit generic airline dashboard than the selected direct sentiment
+  apps.
+
+External PRs opened:
+- https://github.com/tmtsmrsl/TwitterSentimentAnalyzer/pull/1 from
+  kriptoburak:tweetclaw-csv-upload-tmtsmrsl-20260701. Head
+  c2e1efa8337090b89a6ad1d8918c99ede09f3f9f. Changed README.md, app.py, and
+  helper_functions.py to add CSV upload for Tweet/text/content/full_text
+  columns and document reviewed TweetClaw CSV source input. REST readback: open,
+  non-draft, maintainer edits enabled, mergeable true, clean, 1 commit,
+  3 files, 0 comments, 0 review comments, 0 reviews, no status contexts, no
+  check-runs.
+- https://github.com/zaidmukaddam/live-twitter-sentiment-analysis/pull/1 from
+  kriptoburak:tweetclaw-csv-upload-zaid-20260701. Head
+  37c5635a7af4bc149903ae63bc02691718b62092. Changed README.md and app.py to
+  add CSV upload, delay Tweepy credential reads until live mode, and reuse the
+  scoring/dashboard path for uploaded tweet data. REST readback: open,
+  non-draft, maintainer edits enabled, mergeable true, unstable aggregate due
+  pending status state, 1 commit, 2 files, 0 comments, 0 review comments,
+  0 reviews. Check-runs: GitGuardian Security Checks succeeded.
+- https://github.com/Sushmitha-93/Tweet-Sentiment-Analysis-StreamLit/pull/1
+  from kriptoburak:tweetclaw-csv-upload-sushmitha-20260701. Head
+  21ee3375b1d60769aab1fc0e11ed8e39a1e4dfb8. Changed README.md and
+  TweetSentimentAnalysis_Streamlit.py to add CSV upload for content/tweet/text/
+  full_text columns and reuse the existing Transformers classifier for uploaded
+  rows. REST readback: open, non-draft, maintainer edits enabled, mergeable
+  true, clean, 1 commit, 2 files, 0 comments, 0 review comments, 0 reviews, no
+  status contexts, no check-runs.
+
+Validation, links, and public hygiene:
+- Target validation passed: Python syntax compile and git diff whitespace check
+  for all 3 selected repos.
+- Public link checks caught that github.com/kriptoburak/tweetclaw is not public.
+  External README links were corrected to https://github.com/Xquik-dev/tweetclaw,
+  which returned HTTP 200.
+- Official OpenClaw route probes returned HTTP 200 for llms.txt, llms-full.txt,
+  CLI plugins, CLI skills, testing updates and plugins, ClawHub, publishing,
+  skill format, gateway secrets, agent runtimes, and the ClawHub TweetClaw
+  listing.
+- npm metadata readbacks: @xquik/tweetclaw latest 1.6.31 with public repository
+  https://github.com/Xquik-dev/tweetclaw; openclaw latest 2026.6.11; clawhub
+  latest 0.23.1.
+- TweetClaw gates passed: npm audit found 0 vulnerabilities, production-omitted
+  audit found 0 vulnerabilities, OpenClaw platform fitness passed for
+  @xquik/tweetclaw@1.6.32 targeting OpenClaw 2026.6.11, package artifact check
+  passed for 61 files, and public Markdown link check passed for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider or source names, internal cost mechanics, unsupported
+  claims, or stale metadata in selected external diffs or TweetClaw audit diffs.
+  No NHS Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact audit and release memory were kept under the Markdown cap by replacing
+  the latest-run block and moving full detail here. Automation prompt file size
+  remained 13,514 bytes and was not edited.
+- Durable lesson: use the public npm repository URL
+  https://github.com/Xquik-dev/tweetclaw for external README links; the
+  kriptoburak fork owner is only for outreach branches and is not the public
+  TweetClaw repository URL.
+- Changed TweetClaw files: docs/discoverability-audit.md,
+  docs/discoverability-audit.archive.txt, and docs/clawpack-release.md.
+  TweetClaw final commit and push are recorded by repository history for this
+  run.
+
 2026-07-01 23:10 UTC discoverability heartbeat:
 
 Runtime and scope:
