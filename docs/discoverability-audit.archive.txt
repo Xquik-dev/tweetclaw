@@ -53828,3 +53828,135 @@ Memory, prompt self-improvement, and changed files:
 - Durable lesson: reply on exact review-comment threads when a later commit
   already addressed bot feedback, so repair state is visible without reopening
   a duplicate issue or making an unnecessary code change.
+## 2026-07-01 18:15 UTC heartbeat
+
+Runtime and prompt state:
+- Runtime did not expose a Codex 5.5 Fast mode or extra-high reasoning selector
+  for this heartbeat. Continued on the available runtime and recorded the
+  limitation.
+- Persisted automation TOML size readback: 13514 bytes, under the 15 KiB prompt
+  cap. Prompt wording was preserved because it already contained Fast mode,
+  extra-high effort, quiet autonomy, crawler-first discovery, mandatory 3-PR
+  submission, skill-repo coverage, duplicate/fork rules, OpenClaw docs checks,
+  link checks, validation gates, Context7 exclusion, secret handling, commit and
+  push requirement, Markdown cap, prompt cap, and self-improvement rules.
+
+Complete PR inventory and repair priority:
+- Crawler-first PR monitoring from `/Users/burak/Developer/xquik` wrote
+  `/tmp/tweetclaw-heartbeat-20260701-181538/crawler-pr-monitoring.json`.
+  Coverage included open PRs/issues/code in TweetClaw, OpenClaw, ClawHub, MCP,
+  skill, Xquik, x-twitter-scraper, social-media, and agent-tool lanes. Output:
+  0 opportunities, 0 repositories, 0 errors.
+- Authored broad open PR search was partitioned into all-open and
+  updated-today buckets. All-open returned the GitHub 1000-result cap and was
+  recorded as capped. Updated-today returned 287 PRs and all 287 were exact-read
+  with `gh pr view`: 0 read errors, 177 comments, 38 reviews, and 7 failing
+  check rows. Failing rows were Netlify checks on
+  `08Gauri/tweet-sentiment-dashboard#1`, scope-guard on
+  `anthropics/knowledge-work-plugins#440`, and Vercel checks on
+  `edholofy/dojo.md#1` and `JPeetz/Hermes-Studio#10`.
+- Repair priority found 2 actionable fresh bot reviews. `npstorey/civic-ai-tools#97`
+  was closed with a comment because the review correctly found the directory
+  policy excludes paid or login-walled commercial APIs without qualifying
+  public-access basis. `Left2y/x-bookmarks-obsidian#1` was repaired by adding
+  explicit opt-in guidance for Hermes Tweet bookmark enrichment in `SKILL.md`
+  and `references/bird-safety.md`; validation passed with `git diff --check`
+  and Markdown link check. Pushed commit
+  `026be5c97a82a837f75a911d4bf35ffc5ceea180` and replied to review discussion
+  `https://github.com/Left2y/x-bookmarks-obsidian/pull/1#discussion_r3508189550`.
+
+Fresh discovery, duplicate checks, and target policy:
+- Fresh crawler output at
+  `/tmp/tweetclaw-heartbeat-20260701-181538/crawler-fresh-targets.json`
+  covered SKILL.md, `.agents/skills`, skills directories, OpenClaw/MCP/Codex/
+  Claude/agent/social/Twitter-X skill terms, awesome lists, registries, forks,
+  generated catalogs, and Twitter sentiment examples. It returned
+  `beggarticksarthurtatum121/reddit-skills` and
+  `Salrahim21/twitter-sentiment-dashboard`, both blocked by prior archive
+  history.
+- Fallback searches screened Twitter sentiment Streamlit and Flask repos.
+  Archive or prior-history blockers included
+  `mstibi/twitter-sentiment-classifier`, `sidv11/twitter-sentiment-analysis`,
+  `diksha1829/twitter-sentiment-analysis-flask`,
+  `OkayAkanksha/twitter-sentiment-analysis-ml-streamlit`, and
+  `Salrahim21/twitter-sentiment-dashboard`.
+- Fresh safe lanes opened:
+  `zooviee/twitter-sentiment-streamlit`, `hashemwa/twitter_sentimental`, and
+  `nileshparmar-web/Tweet-Sentiment-Analytics-Web-App`. Each target was active,
+  not archived, not a fork, had no license metadata, and had no target open or
+  closed PR/issue duplicate hits for TweetClaw, tweetclaw, @xquik/tweetclaw,
+  Xquik, x-twitter-scraper, OpenClaw, or ClawHub. Missing license metadata was
+  treated as non-blocking for direct useful PRs.
+- Fork parent verification before push:
+  `kriptoburak/zooviee-twitter-sentiment-streamlit` parent
+  `zooviee/twitter-sentiment-streamlit`;
+  `kriptoburak/hashemwa-twitter-sentimental` parent
+  `hashemwa/twitter_sentimental`;
+  `kriptoburak/nileshparmar-tweet-sentiment-analytics-web-app` parent
+  `nileshparmar-web/Tweet-Sentiment-Analytics-Web-App`. The default fork name
+  `kriptoburak/twitter-sentiment-streamlit` existed with parent
+  `SakshiL28/twitter-sentiment-streamlit`, so it was not used.
+
+External PRs opened:
+- `zooviee/twitter-sentiment-streamlit#1`:
+  https://github.com/zooviee/twitter-sentiment-streamlit/pull/1. Added a
+  Batch CSV tab, text-column detection, scored CSV download, corrected the clone
+  URL, and removed a Streamlit live-app badge URL that redirected into an auth
+  loop and failed markdown-link-check. Commit
+  `015e4af62a9468eb72b76a2f9a302e8e2610aeb0`. Validation: `python3 -m
+  py_compile app.py`, `git diff --check`, README markdown-link-check, public
+  diff scan. Readback: OPEN, ready, MERGEABLE, GitGuardian SUCCESS, 0 comments,
+  0 reviews.
+- `hashemwa/twitter_sentimental#1`:
+  https://github.com/hashemwa/twitter_sentimental/pull/1. Added a Batch
+  Prediction tab that loads existing trained models, detects common text
+  columns, scores non-empty tweet/review rows, previews results, and exports
+  predictions. Commit `f7783118e2c0205d8722f7a3b676146f106707de`.
+  Validation: `python3 -m py_compile app.py`, `git diff --check`, public diff
+  scan. Readback: OPEN, ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+- `nileshparmar-web/Tweet-Sentiment-Analytics-Web-App#1`:
+  https://github.com/nileshparmar-web/Tweet-Sentiment-Analytics-Web-App/pull/1.
+  Added README and `predict_sentiment.py` CLI for saved Logistic Regression,
+  Naive Bayes, and TF-IDF artifacts, with single-text and batch-CSV modes,
+  automatic text-column detection, and prediction CSV output. Commit
+  `8d6508619ee90ae0ed6ddcb03db7f262334dee2d`. Validation: `python3 -m
+  py_compile predict_sentiment.py`, `git diff --check`, README
+  markdown-link-check, public diff scan. End-to-end model inference was not run
+  because the local Python environment lacks scikit-learn. Readback: OPEN,
+  ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probe returned HTTP 200 for `https://docs.openclaw.ai/llms.txt`,
+  `/cli`, `/cli/plugins`, `/cli/skills`, `/tools`, `/tools/plugin`,
+  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`, and
+  `/concepts/agent-runtimes`. ClawHub TweetClaw route returned HTTP 200 after
+  redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- Package and public-surface validation passed before audit edit:
+  `npm audit --audit-level=moderate`, `npm audit --omit=dev
+  --audit-level=moderate`, `npm run check-openclaw-platform-fitness`, `npm run
+  check-package-artifact`, and public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and ClawPack release memory.
+- Public hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, or unsupported
+  claims in edited external target diffs. No NHS Agentic Readiness badge was
+  added.
+
+Memory and self-improvement:
+- Compact audit and ClawPack release memory were updated with current readbacks;
+  full detail is archived here to keep Markdown memory compact. Changed
+  TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`.
+- Durable lesson: if a target README live demo URL fails markdown-link-check via
+  a Streamlit Community Cloud auth loop and the contribution changes that
+  README, either repair or remove that uncheckable public link instead of
+  carrying it forward as an unrelated blocker.
+- Post-edit `npm run check-memory-md-size`, public Markdown link check, package
+  audit, OpenClaw fitness, package artifact check, `git diff --check`, and full
+  `npm run check:all` are required before commit.

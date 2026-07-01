@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 17:54 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 18:15 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 17:54 UTC after redirecting to
+  2026-07-01 18:15 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 17:54 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 18:15 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,21 +191,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 17:54 UTC: runtime selector limitation recorded. Crawler PR
-  monitoring returned 0; exact-read covered 278 today-updated PRs with
-  0 errors, 7 failing-check rows, 177 comments, and 35 reviews; all-open
-  search remains capped at 1000. Replied to repaired Codex review on
-  `robustonian/codex-hermes-x-search-skill#3`.
+- 2026-07-01 18:15 UTC: runtime selector unavailable. Crawler PR monitoring
+  returned 0. Open-PR inventory hit the 1000 all-open cap; updated-today
+  exact-read covered 287/287 with 0 errors, 177 comments, 38 reviews, and
+  7 failing-check rows.
+- Repairs: closed `npstorey/civic-ai-tools#97` after a valid policy review and
+  repaired `Left2y/x-bookmarks-obsidian#1` with opt-in bookmark enrichment
+  guard commit `026be5c`.
 - Fresh crawler returned duplicate-covered `reddit-skills` and
-  `Salrahim21/twitter-sentiment-dashboard`. Fallback screening opened 3 batch
-  CSV prediction PRs: https://github.com/Hakimchanan/streamlit-twitter-sentiment/pull/1,
-  https://github.com/afeefanver/Twitter-Sentiment-Analysis/pull/1, and
-  https://github.com/KadiyalaKomali/twitter-sentiment-app/pull/1.
-- Readback: all 3 OPEN, ready, MERGEABLE, CLEAN, 0 comments, 0 reviews,
-  0 checks, maintainer-editable, and PR URLs HTTP 200. Target py_compile,
-  diff, and README link checks passed. OpenClaw docs, ClawHub, npm metadata,
-  public links, package audits, artifact check, and fitness check passed.
-  Details archived.
+  `Salrahim21/twitter-sentiment-dashboard`. Fallback screening opened 3 clean
+  batch CSV or CLI prediction PRs: https://github.com/zooviee/twitter-sentiment-streamlit/pull/1,
+  https://github.com/hashemwa/twitter_sentimental/pull/1, and
+  https://github.com/nileshparmar-web/Tweet-Sentiment-Analytics-Web-App/pull/1.
+- Readback: all 3 OPEN, ready, MERGEABLE; Zooviee GitGuardian passed. Target
+  syntax, diff, and README link checks passed where applicable. OpenClaw docs,
+  ClawHub, npm metadata, public links, audits, artifact, and fitness checks
+  passed. Details archived.
 
 ## Reporting Checklist
 
