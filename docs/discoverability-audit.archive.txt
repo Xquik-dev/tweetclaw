@@ -54097,6 +54097,171 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-01 20:05 UTC Heartbeat
+
+- Runtime selector limitation: Codex 5.5 Fast mode and extra-high reasoning
+  effort could not be selected in this environment, so the run continued on the
+  available runtime and recorded the limitation here and in the heartbeat
+  outcome. Hard scope preserved: no Context7, no TweetClaw GitHub GUI/browser
+  inspection, no dev server, no SSH, no secrets, and no destructive git.
+- Initial TweetClaw state: branch `master`, HEAD
+  `226d13815bf56dff4d4b326bd4ae688d028c2c38`, and only pre-existing untracked
+  path `0`, which was preserved and not staged.
+- Crawler-first coverage from `/Users/burak/Developer/xquik` used strict JSON
+  outputs under `/tmp/tweetclaw-heartbeat-20260701-200538` with
+  `--research-proxy`, bounded request/proxy warmup timeouts, focused query
+  packs, and no GitHub tokens. PR-monitoring crawler returned 0 opportunities;
+  skill-repo coverage returned 2 opportunities; fresh-target crawler returned
+  16 opportunities; all crawler files were valid JSON and had 0 crawler errors.
+- Skill coverage included SKILL.md, `.agents/skills`, skills directories,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill variants, awesome
+  lists, registries, forks, generated catalogs, and web-index surfaced skill
+  repos. Crawler skill hits `liangdabiao/tikhub_api_skill` and
+  `beggarticksarthurtatum121/reddit-skills` were archive or duplicate blocked.
+
+Open PR inventory and repairs:
+- Broad authored open PR inventory used crawler output, compact/archive URLs,
+  audit URL scan, authored PR search partitions, and exact PR reads. Partitions
+  read back exactly: `2026-06-01..07` 143, `2026-06-08..14` 508,
+  `2026-06-15..21` 671, and `>=2026-07-01` 269, for 1591 unique open authored
+  PRs before the `2026-06-22..30` partition hit GitHub HTTP 403 on page 8:
+  API rate limit exceeded for user ID 8755484, request ID
+  BADD:13C5FF:AF76F:A4041:6A45739E at 2026-07-01 20:07:58 UTC. Per policy,
+  broad authenticated search stopped for the run.
+- Audit URL scan found 1619 normalized PR URLs. Updated-today and created-today
+  exact read set was 322 PR URLs; exact reads completed 322/322 with 0 errors.
+  Summary: 306 `MERGEABLE|NO_REVIEW`, 9 `MERGEABLE|REVIEW_REQUIRED`, 1
+  `MERGEABLE|APPROVED`, and 6 `CONFLICTING|NO_REVIEW`.
+- Priority PR readbacks included previous 19:44 fresh PRs and known blockers.
+  The 19:44 PRs remained OPEN, ready, and MERGEABLE:
+  `krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS#1`
+  `dcdfcee388529505945a6a8a5010be9b4fd8ee05`,
+  `yash-bagale/Twitter_Sentiment_Analysis#1`
+  `ca7449ecfc2ca737a19ef7759af3a204132506e2`, and
+  `saumya02-lab/twitter-sentiment-analysis-dashboard#1`
+  `49024c0ae854e68a9a6b7d217664736d532426de`.
+- No actionable maintainer comments, review comments, CI failures with target
+  fix scope, DCO/CLA blockers, generated-file drift, or valid bot findings were
+  found. Known blockers remained target-owned or recurring:
+  `08Gauri/tweet-sentiment-dashboard#1` Netlify failures,
+  `anthropics/knowledge-work-plugins#440` `scope-guard`, and conflicts on
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `Saminiscool/twitter-ai-agent#2`, `jamald33n/tweetsave-mcp#2`, and
+  `reall8164/wechat-openclaw-plugin#1`.
+
+Fresh discovery and target screening:
+- Fresh crawler candidates included `HardikVasava/twitter-sentiment-analysis-app`,
+  `Mishrashivam66/mental-health-tweet-classifier`,
+  `ankit-sharma2005/twitter-sentiment-analysis`,
+  `diksha1829/twitter-sentiment-analysis-flask`,
+  `paridhi-pandey/covid-tweet-sentiment`,
+  `paridhi-pandey/covid-tweet-sentiment-app`,
+  `AnuragSingh1104/Tweets-Sentiment-Analysis`,
+  `Dineshkumarsammeta/Business_Insight_Engine_Project`,
+  `JusticeKAE/twitter-sentiment-analysis-streamlit`,
+  `MUKULDUGAWA/Real-Time-Transport-Sentiment-Analysis-System`,
+  `Shankar-behera/twitter-sentiment-analysis`,
+  `kottarivaibhav/Sentiment_Analysis`, `puskardev/StockApp`,
+  `ammar-s847/FeelTheTweet`, `likith06/Sentiment-Analysis-`, and
+  `SayaliBandvalkar/twitter-sentiment-analysis`.
+- Duplicate and archive blockers: `AnuragSingh1104/Tweets-Sentiment-Analysis`
+  had prior PR history; `kottarivaibhav/Sentiment_Analysis` and
+  `likith06/Sentiment-Analysis-` were archive-known lower-priority fallbacks;
+  skill hits were duplicate/prior-history blocked.
+- Exact metadata and target PR/issue duplicate checks for
+  `HardikVasava/twitter-sentiment-analysis-app`,
+  `Mishrashivam66/mental-health-tweet-classifier`,
+  `MUKULDUGAWA/Real-Time-Transport-Sentiment-Analysis-System`,
+  `SayaliBandvalkar/twitter-sentiment-analysis`, and
+  `ammar-s847/FeelTheTweet` showed public, non-fork, unarchived, forkable
+  repos with no TweetClaw, Xquik, x-twitter-scraper, OpenClaw, npm, or ClawHub
+  duplicate PR/issue/content. Licenses: Ammar MIT; Hardik, Mishra, MUKUL, and
+  Sayali no license metadata.
+- Target-fit blockers: MUKULDUGAWA lacked backend/source files referenced by
+  README; Sayali was built static output only; Mishra was README-only but safe
+  because README was the repository's only public implementation contract and
+  the CSV input contract was target-native.
+- Fork-parent verification before push:
+  `kriptoburak/hardik-twitter-sentiment-analysis-app` parent
+  `HardikVasava/twitter-sentiment-analysis-app`;
+  `kriptoburak/ammar-feel-the-tweet` parent `ammar-s847/FeelTheTweet`;
+  `kriptoburak/mishra-mental-health-tweet-classifier` parent
+  `Mishrashivam66/mental-health-tweet-classifier`.
+
+External PRs opened:
+- `HardikVasava/twitter-sentiment-analysis-app#1`:
+  https://github.com/HardikVasava/twitter-sentiment-analysis-app/pull/1 from
+  `codex/20260701-batch-twitter-input`, commit
+  `4640216d3d4018f1ef4cc6f013ae4259ba84fa4b`. Adds newline-separated batch
+  input to the React UI using the existing `/predict` `texts` array contract,
+  keeps 280-character validation per tweet, fixes the Vite frontend command,
+  and repairs README TOC anchors. Validation: `npm --prefix client ci
+  --ignore-scripts`, `npm --prefix client run build`, `npm --prefix client run
+  lint`, README markdown-link-check, and `git diff --check`. Readback: OPEN,
+  ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+- `ammar-s847/FeelTheTweet#1`: https://github.com/ammar-s847/FeelTheTweet/pull/1
+  from `codex/20260701-offline-text-scoring`, commit
+  `83605ffb6b730a53e90dcf2ab7f9e79062d7b6d0`. Adds `POST /score-texts` for
+  reviewed tweet text without running the live keyword tracker and documents
+  the request/response shape for CSV exports and review queues. Validation:
+  `python3 -m py_compile backend/main.py backend/sentiment_reader.py`, README
+  and Backend markdown-link-check, and `git diff --check`. Readback: OPEN,
+  ready, MERGEABLE, 0 checks, 1 non-actionable Codex usage-limit bot comment,
+  0 reviews.
+- `Mishrashivam66/mental-health-tweet-classifier#1`:
+  https://github.com/Mishrashivam66/mental-health-tweet-classifier/pull/1 from
+  `codex/20260701-csv-input-format`, commit
+  `b66d88dd30f3309533e5bad0505bf35459453fba`. Documents the CSV input contract
+  for batch classification, including `tweet` or `text` columns and reviewed
+  export workflow mapping. Validation: README markdown-link-check and
+  `git diff --check`. Readback: OPEN, ready, MERGEABLE, 0 checks, 0 comments,
+  0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli`, `/cli/plugins`, `/cli/skills`, `/tools`,
+  `/tools/plugin`, `/plugins/manifest`, `/plugins/bundles`,
+  `/plugins/sdk-runtime`, `/plugins/plugin-permission-requests`,
+  `/plugins/install-overrides`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`,
+  `/help/debugging`, `/concepts/agent-runtimes`, and
+  `/agent-runtime-architecture`. Initial guessed paths `/plugins/permissions`
+  and `/cli/install-overrides` returned 404, then canonical paths were found via
+  `llms.txt` and returned 200. ClawHub TweetClaw route returned HTTP 200 after
+  redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory.
+- Broken-link results: target README/docs checks passed for all 3 edited
+  external repos; TweetClaw public Markdown link check passed for README and
+  docs. Hardik had pre-existing emoji-heading TOC link-check failures that were
+  repaired with explicit anchors inside the PR.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported
+  claims, or stale metadata in edited target diffs or TweetClaw audit diffs. No
+  NHS Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact Markdown memory started at 15145 of 15360 bytes. This run replaced
+  the latest compact block and moved full detail here. Prompt file size was
+  13514 bytes, below the 15 KiB cap.
+- Durable lesson: OpenClaw docs route probes should derive permission and
+  install-overrides paths from `llms.txt` when guessed route names 404; current
+  canonical paths are `/plugins/plugin-permission-requests` and
+  `/plugins/install-overrides`.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw validation, commit, and
+  push are recorded by repository history for this audit run.
+
 ## 2026-07-01 19:44 UTC Heartbeat Audit
 
 Runtime:
