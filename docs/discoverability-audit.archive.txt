@@ -52067,12 +52067,21 @@ Fresh PRs opened:
   word cloud views for missing optional columns, and documents local TweetClaw
   or OpenClaw export review. Fork
   `kriptoburak/Airline-Tweet-Sentiment-Dashboard` was REST-verified as a fork
-  of `avikds/Airline-Tweet-Sentiment-Dashboard` before push. Commit `aef0edd`
-  on `codex/add-custom-csv-upload`. Validation: `python3 -m py_compile app.py`
-  and `git diff --check`; `npx --yes markdown-link-check README.md --quiet`
-  reported the pre-existing Streamlit Cloud app URL as status 0, which the PR
-  body disclosed. Exact readback: OPEN, non-draft, MERGEABLE/CLEAN, base
-  `main`, head owner `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+  of `avikds/Airline-Tweet-Sentiment-Dashboard` before push. Initial commit
+  `aef0edd` on `codex/add-custom-csv-upload`. Validation:
+  `python3 -m py_compile app.py` and `git diff --check`; `npx --yes
+  markdown-link-check README.md --quiet` reported the pre-existing Streamlit
+  Cloud app URL as status 0, which the PR body disclosed. Exact readback after
+  opening found an automated Codex review with two valid P2 comments:
+  word-cloud sentiment options needed to use normalized upload labels, and
+  separate `date` plus `time` upload columns needed to be combined before
+  timestamp parsing. Follow-up commit `16f5df7` fixed both issues, passed
+  `python3 -m py_compile app.py` and `git diff --check`, and was pushed to the
+  PR branch. Follow-up comment:
+  https://github.com/avikds/Airline-Tweet-Sentiment-Dashboard/pull/1#issuecomment-4855052089.
+  Final readback after the repair: OPEN, non-draft, head owner `kriptoburak`,
+  1 own comment, 1 automated review, and 0 checks. Mergeability was still
+  recalculating as `UNKNOWN` immediately after the repair push.
 - `Heedgeit/tweet-sentiment-dashboard#1` -
   https://github.com/Heedgeit/tweet-sentiment-dashboard/pull/1 - adds a
   dashboard data-source switch for live scraping or uploaded CSVs, normalizes
