@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 05:31 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 05:57 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/tools/plugin`,
   `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
   `/clawhub/skill-format`, `/tools/llm-task`, `/gateway/secrets`, and
   `/concepts/agent-runtimes` returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 05:31 UTC after redirecting to
+  2026-07-01 05:57 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,18 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 05:31 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-07-01 05:57 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik issues were rechecked. Crawler-first discovery covered
-  skill, social, OpenClaw, MCP, catalog, validator, and CSV sentiment lanes and
-  returned 16 duplicate-only repos. Authored open PR search was partitioned into
-  16 uncapped windows: 2,873 unique open PRs, 2,798 lane-matching. Exact-read 63
-  priority or recent PRs; repaired `XD-BASHARAT/agent-skills-directory#1` from
-  conflicting to mergeable and clean. Remaining conflict, legal, and scope-guard
-  blockers are archived.
+  skill, social, OpenClaw, MCP, catalog, validator, source-evidence, and CSV
+  sentiment lanes and returned 32 already-archived repos. Authored open PR search
+  was partitioned into 16 uncapped created windows with 2,878 rows before dedupe.
+  Exact-read 101 recent or priority PRs; repaired `sydasif/web-search-mcp#1`
+  from conflicting or dirty to mergeable and clean. Remaining conflict, legal,
+  and scope-guard blockers are archived.
 - Fresh safe PRs opened:
-  https://github.com/ChaitrikaBonu/TweetSentimentAnalysis/pull/1,
-  https://github.com/Sornapriyadas/twitter-sentiment-analysis/pull/1, and
-  https://github.com/DishaS08/Twitter-Sentiments-Analysis/pull/1.
+  https://github.com/vinuniyal/twitter-sentiment-analysis/pull/1,
+  https://github.com/prachii1609/twitter-sentiment-analysis/pull/1, and
+  https://github.com/rohanpadhan-ai/twitter_sentiment_analysis/pull/1.
 - TweetClaw changed audit memory only. Details, validation, link checks, prompt
   status, blockers, and self-improvement are archived.
 
