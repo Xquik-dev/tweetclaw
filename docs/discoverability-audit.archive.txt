@@ -50635,3 +50635,128 @@ TweetClaw public hygiene and validation:
 - Final TweetClaw validation passed after the compact audit update: `npm run check-memory-md-size` at 15063/15360 bytes, scoped public Markdown link checks for README, OpenClaw setup, agent workflows, compact audit, and release memory, `npm audit --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, and full `npm run check:all` with 168 passing tests and 100% statement, branch, function, and line coverage.
 - Prompt self-improvement: CSV sentiment targets are now heavily exercised, so future fresh discovery should bias to adjacent target-native lanes such as examples, validators, registries, packaged skills, or repair-first PRs unless crawler output surfaces a clearly maintained unsubmitted app. When repairing review comments, re-read final mergeability after GitHub recalculates and record owner comments without posting unnecessary public replies.
 - TweetClaw changed files: `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`. The pre-existing untracked local path `0` was preserved.
+- 2026-07-01 07:14 UTC heartbeat: runtime model, Fast speed, and effort
+  selectors were not exposed in this app session, so the requested Codex 5.5
+  Fast plus extra-high effort mode could not be selected or verified. The run
+  continued and recorded the limitation.
+- Official surface recheck: OpenClaw docs and platform pages returned HTTP 200
+  for llms export, CLI, tools, tool plugins, plugin manifests and bundles,
+  ClawHub CLI and skill format, LLM task tool docs, gateway credential docs, and agent
+  runtimes. `npm view openclaw` returned latest `2026.6.11`; `npm view
+  @xquik/tweetclaw` returned `1.6.31`; `npm view clawhub` returned `0.23.1`.
+  ClawHub TweetClaw route returned HTTP 200 and still advertised plugin version
+  `1.6.26` in the page metadata.
+- Crawler-first discovery: ran the internal Xquik GitHub opportunity crawler
+  from `/Users/burak/Developer/xquik` with research-proxy JSON output, bounded
+  request and proxy-warmup timeouts, limit 1000, search pages 2, per-query limit
+  8, concurrency 16, and focused SKILL.md, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, social, Twitter/X, registry, awesome-list, validator,
+  approval, plugin-manifest, and examples queries. The crawler returned 8 repos,
+  all duplicate or archive-history covered: `creatorcrawl/creatorcrawl-skill`,
+  `blacktwist/social-media-skills`, `elbis330/social-media-scraper-skill`,
+  `liangdabiao/tikhub_api_skill`, `rabden/X-twitter-social-manager-skill`,
+  `AISA-skills/social-media-skills`, `tang-vu/social-posting-skills`, and
+  `tiendatne2004/tikhub_api_skill`. No crawler credentials were printed.
+- PR inventory: checked `gh auth status` as `kriptoburak`; `gh search prs
+  --author kriptoburak --state open --updated >=2026-07-01` returned 115 recent
+  open PR rows. Broad authored open PR search was partitioned by created date
+  into 16 uncapped buckets with counts `<2026-04-01` 63, April 34, May 573,
+  June 1-6 72, June 7-13 434, June 14-21 819, June 22 119, June 23 127, June 24
+  17, June 25 0, June 26 0, June 27 0, June 28 45, June 29 156, June 30 362,
+  and `>=2026-07-01` 71, for 2,892 unique open authored URLs. A too-broad
+  historical archive exact-read set had 1,587 URLs; the run stopped that owned
+  loop after 108 exact reads with 0 failures to avoid rate-limit risk, then used
+  a priority exact set built from recent updates, compact audit, recent archive,
+  and known problem URLs.
+- Priority exact readbacks covered 165 unique PR URLs with 0 failures, 163 open,
+  14 dirty or blocked, 28 with comments, 27 with reviews, and 1 pending or
+  failing check. Conflict or blocker backlog included
+  `ComposioHQ/awesome-claude-skills#1194`,
+  `anthropics/knowledge-work-plugins#440`, `AmeerJ97/mcp-multiplex#2`,
+  `Mucho-G/pi-skills#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `jamald33n/tweetsave-mcp#2`,
+  `AbdNour627/awesome-openclaw-configs#1`,
+  `reall8164/wechat-openclaw-plugin#1`, `linny006/awesome-agent-skills#5`,
+  `soia-team/soia-open-skills#1`, `WenyuChiou/ai-research-skills#50`,
+  `jeremylongshore/claude-code-plugins-plus-skills#924`, and
+  `ferdinandobons/startup-skill#4`.
+- Repair before outreach: fixed `Aqmar777/openclaw-competitive-intel#1`
+  conflict by resolving an identical README download-badge conflict while
+  preserving the existing TweetClaw X source content. Fork verified:
+  `kriptoburak/openclaw-competitive-intel` parent
+  `Aqmar777/openclaw-competitive-intel`. Commit `e541617` pushed to
+  `codex/tweetclaw-x-source`. Validation passed: conflict-marker scan,
+  `git diff --check`, Python compile for `skills/*.py` and
+  `tests/test_tweetclaw_fetcher.py`, `python3 -m unittest
+  tests/test_tweetclaw_fetcher.py`, `bash -n install.sh`,
+  markdown-link-check for README and `docs/tweetclaw-x-source.md`, and public
+  diff hygiene scan. Readback: OPEN, non-draft, MERGEABLE, CLEAN, head
+  `e541617443cd3d9914fa57398b1a8b70bfe3358d`, comments 20, reviews 0, checks 0.
+- Fresh discovery after crawler duplicates used exact repo reads, target content
+  clones, archive checks, and direct code-search results captured before GitHub
+  Search returned HTTP 403 rate limit at 2026-07-01 07:02 UTC. After the rate
+  limit, broad authenticated search stopped for the run. Duplicate or
+  prior-history blockers included `laozishudao3/openclaw-skill-registry`,
+  `Charpup/openclaw-skill-indexer`, `v1k22/skillhub-registry`,
+  `Jignesh-Ponamwar/skills-mcp`, `tinyhumansai/skill-registry`,
+  `CentauriAgent/agent-social-skills`, `dhiraj-salian/buffer-api-skill`,
+  `Schmedu/social-post-skill`,
+  `Kartikm09/agentic-social-redteam-skillpack`,
+  `BAiSEDagent/social-agent`, `zuocharles/openclaw-social-media-skill`,
+  `gabogabucho/trendingcontent-agent`, `ahmadawais/typefully-cli`,
+  `gitroomhq/postiz-docs`, `refly-ai/refly-skills`, and other archive hits.
+- Selected clean lanes: `GiantClam/auto-viral-article-writer`, MIT, non-fork,
+  issue-enabled, no exact target PR/issue duplicate, no local TweetClaw/Xquik
+  content, target-native hot-topic ingestion and tests; `kiemul/last30days-agent-
+  research`, MIT, non-fork, issue-enabled, no exact target PR/issue duplicate,
+  no TweetClaw/Xquik content, target-native recent-web/X scoring pipeline;
+  `QVerisAI/open-qveris-skills`, MIT, non-fork, issue-enabled, no exact
+  target PR/issue duplicate, no local TweetClaw/Xquik content, target-native
+  X founder-operations validator and tests. Forks verified before push:
+  `kriptoburak/auto-viral-article-writer` parent
+  `GiantClam/auto-viral-article-writer`,
+  `kriptoburak/last30days-agent-research` parent
+  `kiemul/last30days-agent-research`, and `kriptoburak/open-qveris-skills`
+  parent `QVerisAI/open-qveris-skills`.
+- Opened `https://github.com/GiantClam/auto-viral-article-writer/pull/1` from
+  branch `codex/tweetclaw-hot-topics-export-20260701`, commit `21c387c`. It
+  adds TweetClaw-style X export normalization to `tools/hot_topics_viral_ingest.py`,
+  maps tweet text, URL, platform, and public counters into the existing ViralKB
+  score and duplicate pipeline, adds tests, and documents the workflow in
+  `docs/skills/hot-topics.md`. Validation passed: `python3 -m pytest
+  tests/test_hot_topics_viral_ingest.py -q`, markdown-link-check for
+  `docs/skills/hot-topics.md`, `git diff --check`, and public diff hygiene
+  scan. Readback: OPEN, non-draft, MERGEABLE, UNSTABLE only because GitGuardian
+  was still IN_PROGRESS, comments 0, reviews 0.
+- Opened `https://github.com/kiemul/last30days-agent-research/pull/1` from
+  branch `codex/tweetclaw-local-export-20260701`, commit `0af4b0b`. It adds a
+  Python 3.9-compatible TweetClaw JSON/JSONL export loader, wires
+  `--tweetclaw-export` before existing X normalization, date filtering, scoring,
+  and rendering, adds tests, documents the flag, and repairs a pre-existing
+  README link from `./vendor` to `scripts/lib/vendor`. Validation passed:
+  `python3 -m unittest tests.test_tweetclaw_export`, Python compile for the
+  loader and CLI, markdown-link-check for README and SKILL, `git diff --check`,
+  and public diff hygiene scan. Readback: OPEN, non-draft, MERGEABLE, CLEAN,
+  comments 0, reviews 0, checks 0.
+- Opened `https://github.com/QVerisAI/open-qveris-skills/pull/32` from branch
+  `codex/tweetclaw-x-validator-20260701`, commit `60e02ad`. It adds TweetClaw
+  export adapters for the X Founder Operations validator, converts local rows
+  into the existing timeline and tweet-detail shapes, preserves zero counters,
+  adds tests, and documents the workflow in README and SKILL. Validation passed:
+  `python3 -m unittest discover x-founder-operations/tests`, Python compile for
+  `x_data_validator.py`, markdown-link-check for README and SKILL,
+  `git diff --check`, and public diff hygiene scan. Readback: OPEN, non-draft,
+  MERGEABLE, CLEAN, comments 0, reviews 0, checks 0.
+- Broken-link and public hygiene: TweetClaw public surfaces were checked through
+  direct markdown-link-check runs for README, OpenClaw setup, agent workflows,
+  compact audit, and release memory, plus target markdown-link-checks listed
+  above. Added diffs passed public-safety scans for credential values,
+  nonpublic implementation details, provider/source exposure, cost mechanics,
+  claim accuracy, and stale metadata. The only extra
+  target-owned link failure was the pre-existing kiemul README `./vendor` link,
+  repaired in the same PR.
+- Prompt self-improvement: no persisted automation prompt edit was needed. The
+  useful durable lesson is to stop broad authenticated GitHub Search immediately
+  on HTTP 403 rate limits, continue with exact-repo REST and local clones, and
+  avoid claiming complete all-PR coverage when the archive URL set is too broad
+  to exact-read safely in one heartbeat.

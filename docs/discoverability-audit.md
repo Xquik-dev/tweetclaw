@@ -190,20 +190,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 06:27 UTC: runtime selector limitation recorded. OpenClaw docs,
+- 2026-07-01 07:14 UTC: runtime selector limitation recorded. OpenClaw docs,
   npm, ClawHub, and Xquik issues were rechecked. Crawler-first discovery covered
-  skill, social, OpenClaw, MCP, catalog, validator, source-evidence, and approval
-  lanes and returned 8 already-archived repos. Authored open PR search was
-  partitioned into 16 uncapped created windows with 2,887 unique open PRs.
-  Exact-read 110 recent or priority PRs; repaired `warlockoussama/twitter-cli#1`
-  from conflicting or dirty to mergeable and clean. Remaining conflict, legal,
-  and scope-guard blockers are archived.
+  skill, social, OpenClaw, MCP, catalog, validator, source-evidence, approval,
+  and skill-repo lanes and returned 8 already-archived repos. Broad authored
+  open PR search was partitioned into 16 uncapped created windows with 2,892
+  unique open PRs; 165 priority PRs were exact-read after a too-broad 1,587 URL
+  archive set was stopped at 108 exact reads to avoid rate-limit risk. Repaired
+  `Aqmar777/openclaw-competitive-intel#1` from conflicting or dirty to
+  mergeable and clean. GitHub code search later returned HTTP 403, so broad
+  authenticated search stopped and exact-repo reads plus clones continued.
 - Fresh safe PRs opened:
-  https://github.com/tangredtea/skill-registry/pull/1,
-  https://github.com/nvhuy249/agent-skills-registry/pull/1, and
-  https://github.com/shubhmartin107-web/skillforge/pull/1.
-- TweetClaw changed audit memory only. Details, validation, link checks, prompt
-  status, blockers, and self-improvement are archived.
+  https://github.com/GiantClam/auto-viral-article-writer/pull/1,
+  https://github.com/kiemul/last30days-agent-research/pull/1, and
+  https://github.com/QVerisAI/open-qveris-skills/pull/32.
+- TweetClaw changed audit memory only. Details, duplicate blockers, validation,
+  link checks, prompt status, and self-improvement are archived.
 
 ## Reporting Checklist
 
