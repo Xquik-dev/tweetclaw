@@ -2148,5 +2148,28 @@ passed. `check:all` included 168 tests with 100 percent coverage.
 - Public hygiene and gates passed: TweetClaw Markdown link checks, full and
   omit-dev npm audit with 0 vulnerabilities, `npm run
   check-openclaw-platform-fitness`, and `npm run check-package-artifact`.
-  No package metadata, ClawHub publish, npm publish, or release-state change
-  was made.
+ No package metadata, ClawHub publish, npm publish, or release-state change
+ was made.
+
+2026-07-01 17:23 UTC release and package hygiene heartbeat
+
+- Official OpenClaw docs were rechecked through bounded Node fetch:
+  `llms.txt`, `llms-full.txt`, `/cli`, `/cli/plugins`, `/cli/skills`,
+  `/tools`, `/tools/plugin`, `/plugins/manifest`, `/plugins/bundles`,
+  `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/secrets`, `/concepts/agent-runtimes`, and `/help/debugging`
+  returned HTTP 200.
+- ClawHub route `https://clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200
+  after redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`. Listing
+  remains stale relative to source; keep npm canonical until owner-scope
+  migration or exception is granted.
+- `npm view @xquik/tweetclaw` returned latest `1.6.31` and public homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`; local source remains
+  `1.6.32` and no publish was attempted. `npm view openclaw` returned latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`;
+  `npm view clawhub` returned `0.23.1`.
+- Public hygiene and gates passed: TweetClaw Markdown link checks, full and
+  omit-dev npm audit with 0 vulnerabilities, `npm run
+  check-openclaw-platform-fitness`, `npm run check-package-artifact`, and
+  `npm run check-memory-md-size` at 15276 of 15360 bytes. No package metadata,
+  ClawHub publish, npm publish, or release-state change was made.

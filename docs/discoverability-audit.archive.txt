@@ -51226,7 +51226,7 @@ Repair before new outreach:
   unrelated formatting drift. Scoped gates passed: `git diff --check`,
   Prettier check on README plus touched TypeScript and test files, focused
   Biome lint on touched TypeScript and test files, `npx tsc --noEmit`,
-  `npm test -- tests/twitter-api.test.ts`, README markdown-link-check, and
+  focused npm test for `tests/twitter-api.test.ts`, README markdown-link-check, and
   public diff scan. Final readback: OPEN, non-draft, MERGEABLE/CLEAN.
   No PR comment was posted to avoid repeated repair-comment churn.
 
@@ -52888,7 +52888,7 @@ Fresh PRs opened:
   an equivalent approved source inside human-approved evidence boundaries. Fork
   parent verified as `edholofy/dojo.md`. Commit
   `cc0d1468993bb2cd92c2f5461456b940cf76df9a`. Validation: dependency install,
-  `npm test -- src/engine/loader.test.ts`, `npm run build`, diff check, public
+  focused npm test for `src/engine/loader.test.ts`, `npm run build`, diff check, public
   hygiene scan, and exact PR readback. Readback: OPEN, non-draft, MERGEABLE, 1
   Vercel authorization comment, 0 reviews, and Vercel Agent Review completed as
   NEUTRAL.
@@ -53523,3 +53523,154 @@ Memory, prompt self-improvement, and changed files:
   docs, not the non-existent `xquik/tweetclaw` URL. Continue recording
   pre-existing target-owned link failures separately from links introduced by
   a contribution.
+
+2026-07-01 17:23 UTC discoverability heartbeat
+
+Runtime and model:
+- Model, speed, and reasoning-effort selectors were not exposed in this
+  heartbeat runtime, so Codex 5.5 Fast mode and extra-high effort could not be
+  selected explicitly. Continued under the available runtime and recorded the
+  limitation.
+
+Complete PR inventory and repair priority:
+- Xquik crawler-first PR monitoring wrote strict JSON to
+  `/tmp/tweetclaw-heartbeat-20260701-172308/crawler-pr-monitoring.json` with
+  open PR, issue, repo, code, TweetClaw, OpenClaw, ClawHub, MCP, social,
+  Twitter/X, skill, catalog, validator, and package-tooling query coverage.
+  Result: 0 crawler opportunities.
+- Broad authored open PR search was partitioned by today-updated rows and all
+  open rows. Today-updated search returned 272 PRs and every row was exact-read
+  through REST. All-open authored search still hit the GitHub 1000-result cap,
+  so the run does not claim all authored open PRs were exhausted.
+- Exact readbacks covered state, mergeability, base/head refs, commits,
+  comments, reviews, checks, conflicts, maintainer editability, files, author,
+  and review decision for 272 PRs. Counts: 272 read, 0 errors, 177 comments,
+  34 reviews, 7 failing check rows, and a remaining conflict or unknown backlog
+  in older outreach lanes.
+- Repair triage: `Yanu403/api-spec-gen#1` review feedback was already fixed by
+  commit `c2581ed797d68d30f129fa7e395aaaedfca56579`; `QVerisAI/open-qveris-skills#32`
+  current head already validates non-dict TweetClaw export rows and integer IDs;
+  `gmr-inc/social-listening-tagger#2` had already been answered; `edholofy/dojo.md#1`
+  and `JPeetz/Hermes-Studio#10` remain Vercel owner-team authorization
+  blockers; `anthropics/knowledge-work-plugins#440` remains a scope-guard
+  target-policy blocker; `08Gauri/tweet-sentiment-dashboard#1` has Netlify
+  deploy-preview rule failures without actionable maintainer feedback.
+
+Fresh discovery, duplicate checks, and target policy:
+- Fresh Xquik crawler output
+  `/tmp/tweetclaw-heartbeat-20260701-172308/crawler-fresh-targets.json` included
+  SKILL.md, `.agents/skills`, skills dirs, OpenClaw skill, MCP skill, Codex
+  skill, Claude skill, agent skill, social media skill, Twitter/X skill,
+  awesome skill lists, skill registries, forks, generated catalogs, and
+  web-index surfaced skill repos. It surfaced
+  `beggarticksarthurtatum121/reddit-skills`, blocked by prior TweetClaw PR
+  history.
+- Fallback searches focused on maintained small airline or tweet sentiment
+  Streamlit dashboards where uploaded TweetClaw-compatible CSV support is
+  target-native.
+- Fresh screened lanes:
+  `benjaminjvdm/Airline_Sentiment_Dashboard`,
+  `jwarner3rd/AirlineSentimentAnalysisDashboard`, and
+  `ahmedjafri1-OTU/US-Airline-Sentiment-Analysis`. All were public, non-fork,
+  non-archived, default branch `main`, no license metadata, and no explicit
+  maintainer policy blocker found. Missing license metadata was not treated as
+  a direct PR blocker.
+- Duplicate checks covered compact audit, archive, target content, target open
+  and closed PRs, and target open and closed issues for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, TweetClaw GitHub URL variants, npm URL, ClawHub, Xquik,
+  x-twitter-scraper, and OpenClaw variants. All 3 selected lanes were
+  duplicate-clean.
+- Blocked or skipped candidates included
+  `AbdulRehman393/streamlit-airline-sentiment` because archive history already
+  showed prior PR `#1`, plus lower-fit alternates after 3 clean lanes were
+  validated.
+
+External PRs opened:
+- `benjaminjvdm/Airline_Sentiment_Dashboard#4` -
+  https://github.com/benjaminjvdm/Airline_Sentiment_Dashboard/pull/4 - branch
+  `codex/add-compatible-csv-upload`, fork
+  `kriptoburak/benjaminjvdm-airline-sentiment-dashboard` parent
+  `benjaminjvdm/Airline_Sentiment_Dashboard`, commit
+  `02fece9c1e4ead5355c50a1d23835f5fbce003ef`. Added compatible CSV upload,
+  column alias normalization, optional map handling, word-cloud empty-state
+  handling, dynamic filter defaults, README docs, and removed a stale Contact
+  table-of-contents anchor. Readback: OPEN, ready, MERGEABLE, CLEAN, base
+  `main`, head owner `kriptoburak`, maintainer can modify, 1 commit,
+  0 comments, 0 reviews, 0 checks, files `README.md` and `app.py`.
+- `jwarner3rd/AirlineSentimentAnalysisDashboard#1` -
+  https://github.com/jwarner3rd/AirlineSentimentAnalysisDashboard/pull/1 -
+  branch `codex/add-compatible-csv-upload`, fork
+  `kriptoburak/jwarner3rd-airline-sentiment-dashboard` parent
+  `jwarner3rd/AirlineSentimentAnalysisDashboard`, commit
+  `93d21a5b6670b9a982c5ed7240127ed24974d00e`. Added compatible CSV upload,
+  column alias normalization, raw-URL fallback to local sample data, optional
+  map handling, dynamic filter defaults, trend grouping fix, word-cloud
+  empty-state handling, and README docs. Readback: OPEN, ready, MERGEABLE,
+  CLEAN, base `main`, head owner `kriptoburak`, maintainer can modify,
+  1 commit, 0 comments, 0 reviews, 0 checks, files `README.md` and
+  `StreamlitSentimentDashboard.py`.
+- `ahmedjafri1-OTU/US-Airline-Sentiment-Analysis#1` -
+  https://github.com/ahmedjafri1-OTU/US-Airline-Sentiment-Analysis/pull/1 -
+  branch `codex/add-compatible-csv-upload`, fork
+  `kriptoburak/ahmedjafri1-us-airline-sentiment-analysis` parent
+  `ahmedjafri1-OTU/US-Airline-Sentiment-Analysis`, commit
+  `8d054611a092bc0a8cd860917f31d3a961deb57b`. Added compatible CSV upload,
+  column alias normalization, optional map handling, word-cloud empty-state
+  handling, dynamic filter defaults, and README docs. Readback: OPEN, ready,
+  MERGEABLE, CLEAN, base `main`, head owner `kriptoburak`, maintainer can
+  modify, 1 commit, 0 comments, 0 reviews, 0 checks, files `README.md` and
+  `app.py`.
+
+Validation and link checks:
+- Benjamin validation passed: `python3 -m py_compile app.py`, `git diff
+  --check`, and README markdown-link-check. Added public-hygiene scan found
+  only the expected TweetClaw GitHub link.
+- JWarner validation passed: `python3 -m py_compile
+  StreamlitSentimentDashboard.py` and `git diff --check`. README
+  markdown-link-check reports only the pre-existing LinkedIn profile URL as
+  status 999. Added public-hygiene scan found only the expected TweetClaw
+  GitHub link.
+- Ahmed validation passed: `python3 -m py_compile app.py`, `git diff --check`,
+  and README markdown-link-check. Added public-hygiene scan found only the
+  expected TweetClaw GitHub link.
+- PR URL probes returned HTTP 200 for all 3 new PRs.
+
+OpenClaw, TweetClaw, release, and public hygiene:
+- Official OpenClaw route probe checked `llms.txt`, `llms-full.txt`, `/cli`,
+  `/cli/plugins`, `/cli/skills`, `/tools`, `/tools/plugin`,
+  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`,
+  `/concepts/agent-runtimes`, and `/help/debugging`. All returned HTTP 200.
+  ClawHub TweetClaw route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31` with public
+  homepage `https://github.com/Xquik-dev/tweetclaw#readme`; local source
+  remains `1.6.32`; `openclaw` latest `2026.6.11`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `clawhub` `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate` and `npm audit
+  --omit=dev --audit-level=moderate` both reported 0 vulnerabilities;
+  `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`; `npm run
+  check-package-artifact` passed with 61 files; public Markdown link check
+  passed for README, OpenClaw setup, agent workflows, compact audit, and
+  ClawPack release memory.
+
+Memory, prompt self-improvement, and changed files:
+- Compact audit and ClawPack release memory were updated with current readbacks.
+  Full run detail is archived here to keep Markdown memory compact. Changed
+  TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`.
+- `npm run check-memory-md-size` passed at 15276 of 15360 bytes.
+- Persisted automation prompt file
+  `/Users/burak/.codex/automations/improve-tweetclaw-openclaw-integration/automation.toml`
+  measured 13514 bytes. No prompt edit was needed because the current prompt
+  already preserves required Fast/extra-high wording, quiet autonomy,
+  crawler-first discovery, mandatory 3-PR submission, skill-repo coverage,
+  complete PR inventory and repair priority, duplicate/fork rules, OpenClaw
+  docs checks, link checks, validation gates, badge rule, Context7 exclusion,
+  secret handling, cadence, thread binding, commit/push requirement, Markdown
+  cap, prompt cap, and self-improvement rule.
+- Durable lesson: for small sentiment dashboards, compatible TweetClaw CSV
+  upload support is higher-fit than a catalog-only mention when it improves the
+  target's own workflow and can be validated with static checks.
