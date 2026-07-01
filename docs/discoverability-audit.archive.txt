@@ -52272,3 +52272,147 @@ Self-improvement:
 - Public-facing target improvements should prefer import, normalization, and
   validation affordances over thin mention-only additions; these CSV lanes gave
   target users direct utility while making TweetClaw/OpenClaw exports usable.
+
+## 2026-07-01 13:27 UTC heartbeat
+
+Runtime and inventory:
+- Runtime model, Fast-mode speed, and extra-high effort controls were not
+  exposed in the local execution surface, so the limitation was recorded and
+  the run continued.
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with
+  strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-131704/crawler-pr-monitoring.json`, using
+  focused authored-open, TweetClaw, OpenClaw, ClawHub, MCP, skill, X/Twitter,
+  social-media, and sentiment query packs through the research proxy. It
+  returned 0 opportunities and 0 errors.
+- Authored-open GitHub fallback was partitioned by updated date. Updated since
+  2026-07-01 returned 182 open PRs; all-authored-open returned 1000 and was
+  treated as capped, so all-time completeness was not claimed. Exact `gh pr
+  view` readbacks covered all 182 updated-today rows with 0 errors.
+- Exact readbacks found the same 9 recurring conflicts:
+  `shajith003/awesome-claude-skills#4`,
+  `XD-BASHARAT/agent-skills-directory#1`,
+  `Saminiscool/twitter-ai-agent#2`, `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `jamald33n/tweetsave-mcp#2`,
+  `AbdNour627/awesome-openclaw-configs#1`, and
+  `reall8164/wechat-openclaw-plugin#1`. These remain previously repaired
+  high-churn conflict rows with no fresh maintainer comments this run.
+- The only failed check in the broad readback remained
+  `anthropics/knowledge-work-plugins#440` `scope-guard:FAILURE`, already
+  recorded as a target-policy blocker. No safe bypass was attempted. No
+  `CHANGES_REQUESTED` reviews were found.
+- The 3 PRs opened in the previous run were exact-read:
+  `Shubham13062004/Global-Tweet-Sentiment-Dashboard#1`,
+  `jee8/tweet-sentiment-dashboard#1`, and
+  `Simransingh495/Tweet-Sentiment-Dashboard#1` were open, non-draft,
+  mergeable, and clean with 0 comments, 0 reviews, and 0 checks.
+
+Fresh discovery and duplicate gates:
+- Fresh crawler target discovery ran with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-131704/crawler-fresh-targets.json`, using
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X skill, awesome-list, registry, and sentiment-dashboard query packs.
+  It returned 51 opportunities across 51 repos with 0 errors.
+- Crawler-screened skill/catalog lanes without prior audit hits included
+  `Laiqingde/moviepilot-skill`, `AnnAngela/moegirlpedia-mediawiki-api`,
+  `disi3r/openclaw-skill-manus`, `ZJunCher/openclaw-qqbot-send-skill`,
+  `omiron33/clawarr-suite`, `ZeroLu/Ultimate-AI-Media-Generator-Skill`,
+  `zrewolwerowanykaloryfer/deapi-clawdbot-skill`, and
+  `agmmnn/fal-ai-openclaw`; they were recorded as lower-fit for this run
+  because they lacked a direct TweetClaw export-analysis path.
+- Fallback GitHub search screened fresh sentiment-dashboard lanes. Selected
+  repos were public, non-archived, non-fork, and duplicate-clean in compact
+  audit, archive, target content, open and closed PRs, and open and closed
+  issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, OpenClaw,
+  ClawHub, and x-twitter-scraper variants.
+- `maanaar/airline-tweets-sentiment-dashboard-powerbi` was screened but blocked
+  for PR work because its tree only exposed binary workbook/database assets.
+  `zenalytiks/arab-tweet-sentiment-dashboard` remained a viable fallback lane
+  but was not needed after 3 safe PR lanes were validated.
+- Missing license metadata was not treated as a direct-PR blocker for
+  `cvam29`, `08Gauri`, or `aashinsinghal`; `zenalytiks` was GPL-3.0. Forks were
+  created under `kriptoburak`, never `Xquik-dev`, and REST-verified before
+  push:
+  `kriptoburak/cvam29-streamlit-sentiment-dashboard` parent
+  `cvam29/Streamlit-sentiment-dashboard`,
+  `kriptoburak/08gauri-tweet-sentiment-dashboard` parent
+  `08Gauri/tweet-sentiment-dashboard`, and
+  `kriptoburak/aashinsinghal-crypto-tweet-sentiment-dashboard` parent
+  `aashinsinghal/Crypto_Tweet_Sentiment_Dashboard`.
+
+External PRs opened:
+- `cvam29/Streamlit-sentiment-dashboard#1` -
+  https://github.com/cvam29/Streamlit-sentiment-dashboard/pull/1 - adds a
+  sidebar CSV uploader for local tweet sentiment exports, normalizes common
+  text, sentiment, time, airline, and coordinate columns, keeps checked-in
+  `Tweets.csv` as the default, and guards map and word-cloud views when optional
+  columns are absent. Commit `6e44e87` on branch `codex/add-local-csv-upload`.
+  Validation: `python3 -m py_compile app.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Exact readback: OPEN,
+  non-draft, MERGEABLE/CLEAN, base `main`, head `codex/add-local-csv-upload`,
+  0 comments, 0 reviews, 0 checks.
+- `08Gauri/tweet-sentiment-dashboard#1` -
+  https://github.com/08Gauri/tweet-sentiment-dashboard/pull/1 - replaces a
+  machine-specific default CSV path with checked-in `Tweets.csv`, adds a
+  sidebar CSV uploader, normalizes common text, sentiment, time, airline, and
+  coordinate columns, and guards map and word-cloud views when optional columns
+  are absent. Commit `f97925e` on branch `codex/add-portable-csv-upload`.
+  Validation: `python3 -m py_compile app.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Exact readback: OPEN,
+  non-draft, MERGEABLE/UNSTABLE, base `master`, head
+  `codex/add-portable-csv-upload`, 0 comments, 0 reviews. Netlify preview checks
+  `Header rules`, `Pages changed`, `Redirect rules`, and
+  `netlify/inspiring-nobel-9561a9/deploy-preview` failed with only
+  target-owned `Deploy failed` summaries and no GitHub annotations; the public
+  details page exposed no logs, so no safe code repair was available in this
+  run.
+- `aashinsinghal/Crypto_Tweet_Sentiment_Dashboard#1` -
+  https://github.com/aashinsinghal/Crypto_Tweet_Sentiment_Dashboard/pull/1 -
+  adds a column normalizer before the existing crypto tweet cleaning flow,
+  accepts common tweet text, follower count, and profile description columns
+  from local exports, and preserves the default input and output filenames used
+  by the Tableau workflow. Commit `9ee2bca` on branch
+  `codex/add-export-column-normalizer`. Validation:
+  `python3 -m py_compile generalCleaningTweets.py cleanedTweetsWithWords.py tweetsWithCountry.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Exact readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head
+  `codex/add-export-column-normalizer`, 0 comments, 0 reviews, 0 checks.
+
+OpenClaw, package, public hygiene, and validation:
+- Official OpenClaw docs were rechecked after outreach with Node fetch:
+  `https://docs.openclaw.ai/llms.txt`, `/cli`, `/cli/plugins`, `/cli/skills`,
+  `/tools`, `/tools/plugin`, `/plugins/manifest`, `/plugins/bundles`,
+  `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/secrets`, and `/concepts/agent-runtimes` all returned HTTP 200.
+- `npm view openclaw version dist-tags --json` returned latest `2026.6.11`,
+  beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`. `npm view clawhub
+  version --json` returned `0.23.1`. The ClawHub route
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned 308 to
+  `/xquik/plugins/tweetclaw`; the destination returned HTTP 200.
+- Target PR URLs returned HTTP 200. Target READMEs passed
+  `markdown-link-check`. TweetClaw public link check passed for `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`.
+- TweetClaw checks passed: `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm audit --audit-level=moderate`, and
+  `npm audit --omit=dev --audit-level=moderate`.
+- Target diffs and PR bodies were inspected for secrets, private implementation
+  details, unsupported claims, stale metadata, internal cost mechanics, and
+  restricted provider or source names. Sensitive-pattern scans had no real hits;
+  regex-only false positives were from Streamlit `key=` arguments and existing
+  README wording. No NHS badge was added.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
+Self-improvement:
+- For Netlify or deployment checks on non-webapp targets, inspect check-run
+  output and public details before deciding. If only target-owned deploy
+  summaries are exposed and local validation passes, record the blocker instead
+  of adding speculative deployment config.
+- Keep a fallback list of unused sentiment dashboard lanes from crawler and
+  GitHub search so each heartbeat can continue past the first three duplicate
+  or binary-only repos without delaying the 3-PR mandate.
+- For older Streamlit examples, make upload support robust to missing optional
+  coordinate, airline/topic, and sentiment-label values; otherwise a valid CSV
+  import can break maps, filters, or word clouds.

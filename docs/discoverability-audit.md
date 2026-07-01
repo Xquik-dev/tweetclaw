@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 13:09 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 13:27 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 13:09 UTC after redirecting to
+  2026-07-01 13:27 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 13:08 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 13:26 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,19 +191,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 13:09 UTC: runtime selector limitation recorded. Crawler PR
+- 2026-07-01 13:27 UTC: runtime selector limitation recorded. Crawler PR
   monitoring returned 0; today-updated authored-open exact-read covered
-  177 PRs, 0 errors, 1 known failed scope guard, and 9 recurring conflicts.
+  182 PRs, 0 errors, 1 known failed scope guard, and 9 recurring conflicts.
   All-time completeness remains capped by GitHub search scale and is not
   claimed.
-- Fresh crawler skill/social pack found 1 catalog lane and fallback search
-  screened fresh sentiment-dashboard lanes. Opened 3 duplicate-clean PRs:
-  https://github.com/Shubham13062004/Global-Tweet-Sentiment-Dashboard/pull/1,
-  https://github.com/jee8/tweet-sentiment-dashboard/pull/1, and
-  https://github.com/Simransingh495/Tweet-Sentiment-Dashboard/pull/1.
-- New PRs exact-read open, non-draft, mergeable, clean, with no comments,
-  reviews, or checks. Validation, blockers, fork readbacks, link checks, and
-  self-improvement details are archived.
+- Fresh crawler skill/social pack plus fallback search screened fresh
+  duplicate-clean sentiment-dashboard lanes. Opened 3 PRs:
+  https://github.com/cvam29/Streamlit-sentiment-dashboard/pull/1,
+  https://github.com/08Gauri/tweet-sentiment-dashboard/pull/1, and
+  https://github.com/aashinsinghal/Crypto_Tweet_Sentiment_Dashboard/pull/1.
+- New PRs are open, non-draft, and mergeable. `08Gauri#1` has target-owned
+  Netlify preview failures with no exposed annotations; other readbacks are
+  clean. Validation, blockers, fork readbacks, and link checks are archived.
 
 ## Reporting Checklist
 
