@@ -49,14 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 03:11 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 03:42 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/tools/plugin`,
   `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
   `/clawhub/skill-format`, `/tools/llm-task`, `/gateway/secrets`, and
   `/concepts/agent-runtimes` returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 03:11 UTC after redirecting to
+  2026-07-01 03:42 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,21 +190,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 03:11 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, ClawHub, and Xquik issues were rechecked. Crawler strict JSON returned 64
-  opportunities. Inventory exact-read 260 priority PRs: 260 ok, 260 open, 36
-  with comments, 20 with reviews, 11 dirty/blocked, and 4 failing checks.
-  Complete all-open inventory is not claimed because the created-window
-  partition capped and one focused search failed.
-- Repaired conflicts before outreach: `Saminiscool/twitter-ai-agent#2` pushed
-  `a28dea2` and `Codek365/hermes-skills#2` pushed `afdb401`; both final
-  readbacks were MERGEABLE/CLEAN. `anthropics/knowledge-work-plugins#440`
-  pushed `1143d5d` and is now blocked by target `scope-guard` policy.
-  `AmeerJ97/mcp-multiplex#2` remains blocked on user/legal rights confirmation.
+- 2026-07-01 03:42 UTC: runtime selector limitation recorded. OpenClaw docs,
+  npm, ClawHub, and Xquik issues were rechecked. Crawler strict JSON returned
+  160 repos. Inventory exact-read 280 priority PRs: 280 ok/open, 37 with
+  comments, 23 with reviews, 1 conflict, 11 dirty/blocked, and 5 failing
+  checks. Complete all-open inventory is not claimed because one focused search
+  failed syntax validation.
+- Repaired conflict before outreach: `shajith003/awesome-claude-skills#4`
+  pushed `b971337` after a normal upstream merge; final readback was
+  MERGEABLE/CLEAN. `AmeerJ97/mcp-multiplex#2` remains blocked on user/legal
+  rights confirmation, and `anthropics/knowledge-work-plugins#440` remains
+  blocked by target `scope-guard` policy.
 - Fresh safe PRs opened:
-  https://github.com/qwwiwi/skill-installer/pull/1,
-  https://github.com/bhagesh-h/SkillGod/pull/1, and
-  https://github.com/abczsl520/codex-review/pull/1.
+  https://github.com/snoips/openclaw-registry/pull/1,
+  https://github.com/hiOrchestra/orchestra-skills-catalogue/pull/1, and
+  https://github.com/moux1024/openclaw-skill-hub/pull/1.
 - TweetClaw changed audit memory only. Details, validation, link checks, prompt
   bytes, blockers, and self-improvement are archived.
 
