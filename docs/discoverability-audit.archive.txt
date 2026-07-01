@@ -52140,3 +52140,135 @@ Self-improvement:
 - For SMM ordering or engagement-purchase surfaces, block TweetClaw placement
   even if the repo is fresh and open source; reviewed export analysis is safer
   than growth-order automation context.
+
+## 2026-07-01 13:09 UTC heartbeat
+
+Runtime and inventory:
+- Runtime model, Fast-mode speed, and extra-high effort controls were not
+  exposed in the local execution surface, so the limitation was recorded and
+  the run continued.
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with
+  strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-125601/crawler-pr-monitoring.json`, using
+  focused authored-open, TweetClaw, OpenClaw, ClawHub, MCP, skill, X/Twitter,
+  social-media, and sentiment query packs through the research proxy. It
+  returned 0 opportunities and 0 errors.
+- Authored-open GitHub fallback was partitioned by updated date: updated since
+  2026-07-01 returned 177 open PRs; all-authored-open returned 1000 and was
+  treated as capped, so all-time completeness was not claimed. Exact `gh pr
+  view` readbacks covered all 177 updated-today rows with 0 errors.
+- Exact readbacks found 9 recurring conflicts:
+  `shajith003/awesome-claude-skills#4`,
+  `XD-BASHARAT/agent-skills-directory#1`,
+  `Saminiscool/twitter-ai-agent#2`, `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `jamald33n/tweetsave-mcp#2`,
+  `AbdNour627/awesome-openclaw-configs#1`, and
+  `reall8164/wechat-openclaw-plugin#1`. These had already been repaired in
+  prior runs and showed no fresh maintainer comments in this run, so they were
+  recorded as a recurring conflict backlog rather than blocking new discovery.
+- The only failing check remained the known target-policy blocker
+  `anthropics/knowledge-work-plugins#440` `scope-guard:FAILURE`. No safe bypass
+  was attempted. No `CHANGES_REQUESTED` reviews were found.
+- Current sentiment-dashboard PRs from the prior run were exact-read:
+  `johnjoshua1502/tweet-sentiment-dashboard#1`,
+  `Heedgeit/tweet-sentiment-dashboard#1`, and
+  `avikds/Airline-Tweet-Sentiment-Dashboard#1` were open, non-draft,
+  mergeable, and clean. `avikds` still showed the prior automated Codex review
+  comments, but the previous follow-up commit and comment had addressed both
+  findings. No new repair was needed.
+
+Fresh discovery and duplicate gates:
+- Fresh crawler target discovery ran with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260701-125601/crawler-fresh-targets.json`, using
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent, social,
+  Twitter/X skill, awesome-list, registry, and sentiment-dashboard query packs.
+  It returned 49 opportunities across 1 repo, `sickn33/antigravity-awesome-skills`,
+  with 0 errors. The catalog lane was recorded for backlog; fallback found
+  higher-fit dashboard lanes for this run.
+- Fallback GitHub search screened fresh tweet sentiment repositories. Compact
+  audit plus archive duplicate checks found no prior history for
+  `Shubham13062004/Global-Tweet-Sentiment-Dashboard`,
+  `jee8/tweet-sentiment-dashboard`, `Simransingh495/Tweet-Sentiment-Dashboard`,
+  or `adlinadev/tweet-sentiment-dashboard`. `adlinadev` was not used because the
+  tree only exposed a README, leaving no safe target-native code lane.
+- Duplicate PR and issue searches for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, OpenClaw, ClawHub, and x-twitter-scraper variants
+  returned no open or closed hits for the 3 selected targets. Target content
+  scans found no existing TweetClaw or Xquik mentions before edits.
+- Selected targets were public, non-archived, non-fork, issues-enabled, and had
+  no detected license metadata. Missing license metadata was not treated as a
+  direct-PR blocker. Forks were created under `kriptoburak`, never `Xquik-dev`,
+  and REST-verified before push:
+  `kriptoburak/Global-Tweet-Sentiment-Dashboard` parent
+  `Shubham13062004/Global-Tweet-Sentiment-Dashboard`,
+  `kriptoburak/jee8-tweet-sentiment-dashboard` parent
+  `jee8/tweet-sentiment-dashboard`, and
+  `kriptoburak/simransingh495-tweet-sentiment-dashboard` parent
+  `Simransingh495/Tweet-Sentiment-Dashboard`.
+
+External PRs opened:
+- `Shubham13062004/Global-Tweet-Sentiment-Dashboard#1` -
+  https://github.com/Shubham13062004/Global-Tweet-Sentiment-Dashboard/pull/1 -
+  adds an optional Streamlit CSV uploader, detects common tweet text, country,
+  and timestamp columns used by local exports, and keeps live Twitter and demo
+  data modes intact. Commit `a26dcd9` on branch
+  `codex/add-tweet-csv-upload`. Validation: `python3 -m py_compile main.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Exact readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head
+  `codex/add-tweet-csv-upload`, 0 comments, 0 reviews, 0 checks.
+- `jee8/tweet-sentiment-dashboard#1` -
+  https://github.com/jee8/tweet-sentiment-dashboard/pull/1 - adds a Streamlit
+  sidebar CSV uploader, normalizes common tweet text and sentiment-label
+  columns, and updates the TextBlob preparation script to accept exported CSVs.
+  Commit `51afb1e` on branch `codex/add-export-csv-support`. Validation:
+  `python3 -m py_compile visuals/dashboard.py src/analyze/sentiment.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Exact readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head
+  `codex/add-export-csv-support`, 0 comments, 0 reviews, 0 checks.
+- `Simransingh495/Tweet-Sentiment-Dashboard#1` -
+  https://github.com/Simransingh495/Tweet-Sentiment-Dashboard/pull/1 - turns
+  the hardcoded Power BI preprocessing script into a reusable tweet export
+  normalizer while preserving the default input and output paths. Commit
+  `c73714f` on branch `codex/add-powerbi-export-normalizer`. Validation:
+  `python3 -m py_compile Social_Media_Sentiment_Dashboard/scripts/sentiment_analysis.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Exact readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head
+  `codex/add-powerbi-export-normalizer`, 0 comments, 0 reviews, 0 checks.
+
+OpenClaw, package, public hygiene, and validation:
+- Official OpenClaw docs were rechecked after outreach with Node fetch:
+  `https://docs.openclaw.ai/llms.txt`, `/cli`, `/cli/plugins`, `/cli/skills`,
+  `/tools`, `/tools/plugin`, `/plugins/manifest`, `/plugins/bundles`,
+  `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/secrets`, and `/concepts/agent-runtimes` all returned HTTP 200.
+- `npm view openclaw version dist-tags --json` returned latest `2026.6.11`,
+  beta `2026.6.11-beta.2`, and alpha `2026.5.19-alpha.1`. `npm view clawhub
+  version --json` returned `0.23.1`. The ClawHub route
+  `https://clawhub.ai/plugins/@xquik/tweetclaw` returned 308 to
+  `/xquik/plugins/tweetclaw`; the destination returned HTTP 200.
+- Target PR URLs returned HTTP 200. Target READMEs passed
+  `markdown-link-check`. TweetClaw public link check passed for `README.md`,
+  `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md`.
+- TweetClaw checks passed: `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm audit --audit-level=moderate`, and
+  `npm audit --omit=dev --audit-level=moderate`.
+- Target diffs and PR bodies were inspected for secrets, private implementation
+  details, unsupported claims, stale metadata, internal cost mechanics, and
+  restricted provider or source names. The only sensitive scan hits were
+  public-safe credential wording and a pre-existing target `TWITTER_BEARER_TOKEN`
+  context line. No NHS badge was added.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+
+Self-improvement:
+- Keep using custom fork names for duplicate short repo names even when the
+  selected upstream owner differs; REST parent checks are the reliable fork
+  proof because `gh repo view --json parent` can return null for valid forks.
+- For repeated conflict backlogs with no fresh maintainer signal, exact-read and
+  record the recurring blockers, then continue with the 3-PR discovery mandate
+  rather than letting stale conflict churn prevent fresh safe submissions.
+- Public-facing target improvements should prefer import, normalization, and
+  validation affordances over thin mention-only additions; these CSV lanes gave
+  target users direct utility while making TweetClaw/OpenClaw exports usable.
