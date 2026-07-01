@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 10:35 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 11:04 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 10:35 UTC after redirecting to
+  2026-07-01 11:04 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -191,20 +191,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 10:34 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, ClawHub, and TweetClaw package metadata were rechecked. Crawler-first PR
+- 2026-07-01 11:04 UTC: runtime selector limitation recorded. Crawler PR
   monitoring returned 0 opportunities; fresh skill/social/OpenClaw/MCP/catalog
-  and sentiment packs returned 37 opportunities. Authored-open all-time search
-  capped at 1000, then was partitioned by updated windows; today-updated
-  exact-read covered 137 PRs with 0 read errors. The full partitioned likely
-  in-scope URL set is 2501, so all-time per-PR comments/checks were not claimed
-  complete this run. High-churn conflicts without fresh maintainer signal
-  remained recorded for `twitter-cli#1`, `xpoz-agent-skills#1`,
-  `wechat-openclaw-plugin#1`, and related queue lanes.
-- Fresh safe PRs opened:
-  https://github.com/tarushi78/twitter-sentiment-analysis/pull/1,
-  https://github.com/Srinivas6808/twitter-sentiment-analysis/pull/1, and
-  https://github.com/satwiktelang18/TweetSense/pull/1.
+  and sentiment packs returned 62 opportunities. Today-updated authored-open
+  exact-read covered 140 PRs with 0 read errors; all-time per-PR completeness
+  remains capped by broad GitHub search scale and is not claimed.
+- Repaired `mroops0111/openapi-mcp-gateway#41` and responded on #40. Fresh PRs:
+  https://github.com/Aniketdhankar/Trend-analysis-using-X-twitter-/pull/1,
+  https://github.com/Mohammed0520/NLP_Model/pull/1, and
+  https://github.com/Saismita09/tweet-sentiment-analysis/pull/5.
 - TweetClaw changed audit memory only. Details, duplicate blockers, validation,
   link checks, prompt status, and self-improvement are archived.
 

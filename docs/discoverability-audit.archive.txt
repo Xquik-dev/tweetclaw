@@ -51451,3 +51451,133 @@ Self-improvement:
   URL set is too large for full per-PR exact reads in a heartbeat.
 - Recent sentiment/CSV targets are increasingly duplicate-covered. Search the
   archive for exact owner names, not only repo slugs, before selecting a target.
+
+## 2026-07-01 11:04 UTC - Outreach heartbeat
+
+Runtime:
+- Model, speed, and effort selectors were not exposed in this runtime, so Codex
+  5.5 Fast and extra-high reasoning could not be set directly. Continued and
+  recorded the limitation.
+
+Open PR inventory and repairs:
+- Xquik crawler PR monitoring ran first with focused authored-open,
+  TweetClaw/OpenClaw/ClawHub/MCP/skill/social queries and wrote strict JSON to
+  `/tmp/tweetclaw-heartbeat-20260701-104515/crawler-pr-monitoring.json`.
+  Readback was valid JSON with 0 opportunities.
+- GitHub authored-open updated-today exact read covered 140 PRs with 0 read
+  errors via `/tmp/tweetclaw-heartbeat-20260701-104515/pr-exact.jsonl`.
+  Summary: 140 total, 26 dirty, 19 with comments, 18 with reviews, 1 failing
+  check. All-time per-PR completeness is not claimed because the broad authored
+  open bucket exceeds GitHub search scale for a heartbeat; capped all-time
+  inventory remains a recorded platform blocker.
+- `anthropics/knowledge-work-plugins#440` remained blocked by target
+  scope-guard failure. Several older high-churn or conflicting PRs remained
+  blocked without fresh maintainer signal.
+- Repaired `mroops0111/openapi-mcp-gateway#41`: fork
+  `kriptoburak/openapi-mcp-gateway` parent readback matched
+  `mroops0111/openapi-mcp-gateway`; commit `6ec8932` changed the API-key docs
+  example from a product-specific sample to neutral Petstore wording. Validation:
+  `git diff --check` and README markdown-link-check. PR title and body were
+  updated, and a correction comment fixed an earlier wrong hash reference.
+  Readback: OPEN, non-draft, MERGEABLE/BEHIND, checks success.
+- Responded on `mroops0111/openapi-mcp-gateway#40` that HEAD/OPTIONS/TRACE do
+  not have a strong enough use case while the client drops headers and returns
+  status only. Readback: OPEN, non-draft, MERGEABLE/BEHIND, checks success.
+
+Fresh discovery:
+- Crawler fresh target run wrote strict JSON to
+  `/tmp/tweetclaw-heartbeat-20260701-104515/crawler-fresh-targets.json` and
+  returned 62 opportunities across SKILL.md, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, and sentiment apps.
+- Fresh screened lanes included `Aniketdhankar/Trend-analysis-using-X-twitter-`,
+  `Mohammed0520/NLP_Model`, `Saismita09/tweet-sentiment-analysis`,
+  `vercel-labs/agent-skills`, `AshaYalla/Twitter-Sentiment-Analysis-Flask-App`,
+  `Donchitos/Claude-Code-Game-Studios`, `OthmanAdi/planning-with-files`, and
+  `zarazhangrui/frontend-slides`. Compact and archive duplicate searches plus
+  target open and closed PR/issue searches were clean for selected targets.
+- `AshaYalla/Twitter-Sentiment-Analysis-Flask-App` was blocked for direct PR
+  this run because the useful fix removes upstream hardcoded credential values;
+  a public PR diff would repeat those values. Values were not repeated in public
+  outreach. `vercel-labs/agent-skills` stayed a lower-fit fallback for this run.
+
+Fresh PRs opened:
+- `Aniketdhankar/Trend-analysis-using-X-twitter-#1` -
+  https://github.com/Aniketdhankar/Trend-analysis-using-X-twitter-/pull/1 -
+  adds env-backed OAuth config, a CSV upload route for reviewed tweet exports,
+  reusable CSV sentiment helpers, `requirements.txt`, and tests. Fork
+  `kriptoburak/aniket-trend-analysis-x-twitter` parent was verified before
+  push. Commit `37ebaa3` on `codex/add-csv-export-analysis-20260701`.
+  Validation: `git diff --check`, `python3 -m py_compile app.py
+  csv_sentiment.py test_csv_sentiment.py`, `python3 -m unittest
+  test_csv_sentiment.py`, and README markdown-link-check. Readback: OPEN,
+  non-draft, MERGEABLE, base `master`, head owner `kriptoburak`, 0 comments,
+  0 reviews, 0 checks.
+- `Mohammed0520/NLP_Model#1` -
+  https://github.com/Mohammed0520/NLP_Model/pull/1 - adds tweet export column
+  normalization for `Text`, `text`, `tweet`, `full_text`, `content`, `body`,
+  and `message`, fills missing `Id` and `ProductId`, and documents direct use
+  with reviewed TweetClaw/OpenClaw CSV exports. Fork
+  `kriptoburak/mohammed0520-nlp-model` parent was verified before push. Commit
+  `c4add1d` on `codex/support-tweet-export-columns-20260701`. Validation:
+  `git diff --check`, `python3 -m py_compile nlp_model.py tweet_columns.py
+  test_tweet_columns.py`, `python3 -m unittest test_tweet_columns.py`, and
+  README markdown-link-check. Readback: OPEN, non-draft, MERGEABLE, base
+  `main`, head owner `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+- `Saismita09/tweet-sentiment-analysis#5` -
+  https://github.com/Saismita09/tweet-sentiment-analysis/pull/5 - replaces
+  invalid credential placeholders with the env vars already named in the README,
+  fixes null boolean handling, adds `/label_csv`, and tests CSV labeling for
+  common tweet export columns. Fork
+  `kriptoburak/saismita09-tweet-sentiment-analysis` parent was verified before
+  push. Commit `a5e8b4e` on `codex/add-env-config-csv-labeling-20260701`.
+  Validation: `git diff --check`, `python3 -m py_compile
+  labeled-tweet-generator-master/app.py labeled-tweet-generator-master/twitter.py
+  labeled-tweet-generator-master/tweet_exports.py
+  labeled-tweet-generator-master/test_tweet_exports.py`, `cd
+  labeled-tweet-generator-master && python3 -m unittest test_tweet_exports.py`,
+  and README markdown-link-check. Readback: OPEN, non-draft, MERGEABLE, base
+  `master`, head owner `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+
+Platform and public hygiene:
+- Current OpenClaw docs were rechecked: `llms.txt`, `/cli`, `/cli/plugins`,
+  `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
+  `/plugins/bundles`, `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/secrets`, and
+  `/concepts/agent-runtimes` all returned HTTP 200. The first shell probe used
+  `path` as a zsh variable and clobbered command lookup, then was rerun with
+  `doc_path`; only the rerun is treated as source truth.
+- npm metadata read `openclaw` latest `2026.6.11`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest `1.6.31`; and
+  `clawhub` latest `0.23.1`. ClawHub canonical route returned HTTP 200 after
+  redirecting to `clawhub.ai/xquik/plugins/tweetclaw`; npmjs package page
+  returned 403, so CLI npm metadata remains the trusted npm check.
+- Public PR bodies and diffs were inspected for secret values, private
+  implementation details, restricted provider/source names, internal cost
+  mechanics, unsupported claims, and stale metadata. No NHS badge was added.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+  The pre-existing local untracked path `0` was preserved.
+- User requested sharper 3-opportunity submission language during the run.
+  Automation `improve-tweetclaw-openclaw-integration` was updated through the
+  automation tool to require active discovery and screening of at least 3 fresh
+  opportunities, continued discovery until 3 safe PR lanes are found or blocked,
+  and no stopping at issue-only, repair-only, maintenance, or audit work while
+  a plausible path remains. Persisted automation TOML measured 13514 bytes.
+- Final TweetClaw validation passed: `npm run check-memory-md-size` at
+  14991/15360 bytes, public Markdown link checks for README, OpenClaw setup,
+  agent workflows, compact audit, and release memory, `npm audit
+  --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `git diff --check`, targeted public-diff scan, and `npm run check:all` with
+  168 passing tests and 100% statement, branch, function, and line coverage.
+
+Self-improvement:
+- Do not use `path` as a zsh loop variable in audit probes; zsh ties it to
+  command lookup.
+- If a target-native remediation would remove public hardcoded credentials,
+  avoid a public PR when the diff would repeat credential values. Prefer a
+  maintainer-private security channel when available, or record the blocker.
+- When local Python lacks target dependencies, keep helper tests dependency-light
+  and reserve heavy package imports for `py_compile` unless the target declares
+  an install path that can run safely.
