@@ -52693,3 +52693,118 @@ Self-improvement:
 - Archive duplicate blocks by repository and lane type. Repeated social-skill
   repos commonly already have open TweetClaw PRs, while social MCP repos often
   fail target fit because they omit X/Twitter or expose provider-specific copy.
+
+2026-07-01 15:13 UTC heartbeat run:
+
+Runtime and prompt:
+- Runtime model, speed, and effort controls were not exposed in this shell, so
+  Codex 5.5 Fast mode with extra-high effort could not be selected or verified.
+  Work continued under the available runtime.
+- Persisted automation prompt readback stayed 13514 bytes. No prompt edit was
+  needed because the prompt already requires finding and screening at least 3
+  fresh opportunities and submitting 3 PRs whenever safe lanes exist.
+
+Open PR inventory and repair:
+- Crawler PR monitoring from `/Users/burak/Developer/xquik` used focused
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, social-media, Xquik, and
+  x-twitter-scraper lanes. Strict JSON parsed cleanly with 0 opportunities and
+  0 errors.
+- Authored-open PR inventory for PRs updated on 2026-07-01 found 223 PRs. Exact
+  readbacks succeeded for all 223. Summary: 24 PRs with comments, 27 with
+  reviews, 3 failing-check rows, and 5 conflicts or dirty rows. Broad all-open
+  search remains capped at 1000, so all-time completeness was not claimed.
+- Failing-check rows: `Xquik-dev/hermes-tweet#580`,
+  `08Gauri/tweet-sentiment-dashboard#1`, and
+  `anthropics/knowledge-work-plugins#440`. Hermes was re-read after the initial
+  snapshot and target checks were green. The sentiment dashboard failures are
+  target-owned Netlify page/header checks. The Anthropics PR remains blocked by
+  target-owned `scope-guard`.
+- New actionable review threads were read with thread-aware GraphQL on
+  `thijssmudde/agentreacher-skills#1` and `Xquik-dev/hermes-tweet#580`.
+  AgentReacher had a valid note that "read-only source tool" overstated
+  TweetClaw's safety boundary. Hermes had already pushed `Update ecosystem URL
+  expectation` before local action was needed, and current GitHub checks showed
+  `check`, `scan`, plugin scanner, GitGuardian, and Socket checks passing.
+- Repaired `thijssmudde/agentreacher-skills#1` by changing README and packaged
+  skills from read-only wording to approved source-evidence and approval-gated
+  source-packet wording. Validation passed `git diff --check`, `npx skills add
+  . --list`, Markdown link checks for the touched files, and added-line public
+  hygiene scan. Pushed commit `c7b2ae834203927feca336630f7be98e6cfde822`.
+
+Fresh discovery and duplicate gates:
+- Fresh crawler coverage used strict JSON with research proxy and covered
+  `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude,
+  agent/social/Twitter-X skills, awesome lists, registries, forks, generated
+  catalogs, and web-index surfaced skill repos. Skill pack returned 38
+  opportunities, MCP pack returned 28, and catalog pack returned 0. No crawler
+  credentials were printed or stored.
+- Duplicate or prior-history blocks included `mxyhi/ok-skills`,
+  `joeynyc/skillscore`, `creatorcrawl/creatorcrawl-skill`,
+  `blacktwist/social-media-skills`, `liu1700/scoutkit`,
+  `christian-beep383/carryfeed-agent-tools`, `shane9coy` guide,
+  `aaaronmiller/create-viral-content`, `AINightCoder` social skills,
+  `clairelin1994/founder-story-content`, `WenyuChiou/ai-research-skills`,
+  `luna-prompts/skillnote`, `shensi8312/blogburst-claude-skill`, and
+  `talm/eclincher-mcp-server`.
+- Fresh eligible lanes selected after exact repo metadata, target content, open
+  and closed target PR and issue searches, license/package metadata, local clone
+  scans, and target-fit review: `rolliinc/rolli-mcp`,
+  `htekdev/late-social-mcp`, and `maheshcr/tweet-scheduler-mcp`. All were
+  public, non-fork, non-archived, PR-enabled, and duplicate-clean. GitHub
+  license metadata was missing, but in-repo MIT evidence existed for Rolli and
+  Late, and package MIT metadata existed for Tweet Scheduler.
+
+Fresh PRs opened:
+- `rolliinc/rolli-mcp#23` -
+  https://github.com/rolliinc/rolli-mcp/pull/23 - adds optional TweetClaw
+  source-context guidance to README and `llms-install.md`, keeping Rolli
+  responsible for cross-platform search, topic trees, user analysis, and agent
+  reports. Fork parent verified as `rolliinc/rolli-mcp`. Commit
+  `2a0e59c2606c3f8578e71b4a980dd3b3aa3980a4`. Validation: `git diff --check`,
+  JSON parses for package and manifests, Markdown link checks, added-line public
+  hygiene scan, and PR readback. Readback: OPEN, non-draft, mergeStateStatus
+  `BLOCKED` with no comments, reviews, or checks.
+- `htekdev/late-social-mcp#2` -
+  https://github.com/htekdev/late-social-mcp/pull/2 - adds optional TweetClaw
+  source-context guidance while keeping Late responsible for approvals,
+  scheduling, publishing, analytics, engagement, media, and webhooks. Fork
+  parent verified as `htekdev/late-social-mcp`. Commit
+  `4f69614b2f22d71b085fea405de6f2cfb2d7c196`. Validation: `git diff --check`,
+  package JSON parse, Markdown link check, added-line public hygiene scan, and
+  PR readback. Readback: OPEN, non-draft, mergeStateStatus `BLOCKED` with no
+  comments, reviews, or checks.
+- `maheshcr/tweet-scheduler-mcp#8` -
+  https://github.com/maheshcr/tweet-scheduler-mcp/pull/8 - adds optional
+  source-context guidance for local tweet drafts, scheduling, posting, undo, and
+  vault workflows. Fork parent verified as `maheshcr/tweet-scheduler-mcp`.
+  Commit `f4e02d87674757409458736f2b08b83ac0537f0b`. Validation:
+  `git diff --check`, package JSON parse, Markdown link check, added-line public
+  hygiene scan, and PR readback. Readback: OPEN, non-draft, CLEAN, with no
+  comments, reviews, or checks.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw docs and routes rechecked: `llms.txt`, `llms-full.txt`,
+  CLI, plugin, tool, permission, bundle, SDK runtime, ClawHub, install,
+  publishing, skill format, secrets, agent runtimes, and debugging routes all
+  returned HTTP 200. ClawHub TweetClaw route returned HTTP 200 after redirect;
+  OpenClaw Directory TweetClaw route returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, `openclaw`
+  latest `2026.6.11`, and `@openclaw/cli` returned expected npm E404.
+- TweetClaw checks passed before memory edit: public Markdown link check,
+  package audit with 0 vulnerabilities, and `npm run
+  check-openclaw-platform-fitness` for OpenClaw `2026.6.11`.
+- External PR diffs and bodies were inspected for secrets, private
+  implementation details, restricted provider or source names, internal cost
+  mechanics, unsupported claims, and stale metadata. Added credential-boundary
+  terms were generic safety guidance only. No NHS badge was added.
+
+Self-improvement:
+- When exact PR inventory sees a new failing check, re-read current PR checks
+  before cloning. Hermes showed a stale failed-check snapshot after a later push
+  had already repaired the reviewed metadata expectation.
+- For social-management MCPs, small source-context docs are safest when they
+  preserve the target's ownership of scheduling, publishing, analytics, and
+  account state while limiting TweetClaw to reviewed source evidence.
+- If `gh repo fork <repo> --remote` fails because a repo argument is present,
+  rerun `gh repo fork --remote --remote-name fork` from inside the clone, then
+  verify the fork parent before pushing.
