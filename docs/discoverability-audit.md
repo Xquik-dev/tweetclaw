@@ -189,24 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 01:45 UTC: runtime selector limitation recorded. Current OpenClaw
+- 2026-07-01 02:16 UTC: runtime selector limitation recorded. Current OpenClaw
   docs, npm, ClawHub, and Xquik issues were rechecked; OpenClaw latest stayed
   `2026.6.11`, and npm latest stayed `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler strict JSON with 175 opportunities, 1503 archive PR
-  URLs, authored partitions, and 160 priority PR readbacks: 159 ok, 1 old
-  unreadable, 149 open, 0 pending checks, and 2 target-owned failing checks.
-  Complete all-open inventory is not claimed because broad inventory is capped.
-- Repairs before outreach: pushed conflict repairs to
-  `XD-BASHARAT/agent-skills-directory#1`, `jamald33n/tweetsave-mcp#2`,
-  `warlockoussama/twitter-cli#1`,
-  `Aqmar777/openclaw-competitive-intel#1`, and
-  `shajith003/awesome-claude-skills#4`; final exact readbacks were clean and
-  mergeable.
-- Maintainer-owner action remains: `AmeerJ97/mcp-multiplex#2` asks the user to
-  confirm rights to submit under Apache-2.0; no legal confirmation was posted.
-- Fresh safe PRs opened: https://github.com/qiuyiwu1989-star/openclaw-skill-ops/pull/1,
-  https://github.com/lza6/AIWriteX-Skills/pull/2, and
-  https://github.com/ferdinandobons/startup-skill/pull/4.
+- Inventory used crawler strict JSON with 38 opportunities, 1506 archive PR
+  URLs, authored partitions, and 220 priority PR readbacks: 220 ok, 220 open,
+  33 with comments, 16 with reviews, 0 pending checks, and 3 target-owned
+  failing checks. Complete all-open inventory is not claimed because one broad
+  partition capped and one focused search was invalid.
+- Repair before outreach: resolved `Aditya923-c/xpoz-agent-skills#1` README
+  conflict, pushed `44538b3`, commented, and exact-read MERGEABLE/CLEAN.
+  `AmeerJ97/mcp-multiplex#2` remains blocked on user/legal license-rights
+  confirmation; no confirmation was posted.
+- Fresh safe PRs opened: https://github.com/scadastrangelove/agent-audit/pull/3,
+  https://github.com/sudokrang/aceforge/pull/1, and
+  https://github.com/KenWang-dev/skill-catalog/pull/1.
 - TweetClaw changed audit memory only. Details, validation, prompt bytes, and
   self-improvement are archived.
 
