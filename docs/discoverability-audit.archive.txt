@@ -51316,3 +51316,138 @@ Self-improvement:
   and a warning to keep keys, cookies, and raw sessions out of files.
 - For recurring conflict PRs, avoid repeated repair comments when no maintainer
   signal changed and exact readback is CLEAN.
+
+## 2026-07-01 10:16 UTC heartbeat
+
+- Runtime selector limitation: this Codex runtime did not expose a model, Fast
+  speed, or reasoning-effort selector to the agent. The run continued and this
+  limitation was recorded.
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with
+  research proxy, bounded request/proxy warmup timeouts, session
+  `tweetclaw-20260701-101645-pr`, and focused authored/TweetClaw/OpenClaw/MCP/
+  social query pack. Output parsed as valid JSON with 0 opportunities.
+- Crawler-first fresh discovery ran with session
+  `tweetclaw-20260701-101645-fresh` and covered `SKILL.md`, `.agents/skills`,
+  skills directories, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills,
+  awesome lists, registries, generated catalogs, forks, validators, examples,
+  package tooling, and sentiment/CSV lanes. Output parsed as valid JSON with 37
+  opportunities. Proxy logs contained no credential values.
+- PR inventory: authored open all-time search hit GitHub's 1000 result cap, so
+  it was partitioned by updated windows. Exact bucket counts were today 137,
+  2026-06-25..30 587, 2026-06-18..24 652, 2026-06-11..17 684,
+  2026-06-01..10 247, and before 2026-06-01 601. URL filtering across
+  TweetClaw/OpenClaw/MCP/skill/agent/social/sentiment/plugin/catalog/registry/
+  tool/API/scraper/validator lanes yielded 2501 likely in-scope open URLs.
+  Today-updated exact read covered 137 PRs with 0 read errors; the all-time
+  2501 URL set was not per-PR exact-read this run, so all-time inventory is not
+  claimed complete.
+- Exact-read repair triage for the 137 today-updated PRs found 8 dirty or
+  blocked lanes, 19 comments, 18 reviews, and 1 failed check. No new
+  maintainer-actionable repairs were safe: `ComposioHQ/awesome-claude-skills#1194`
+  remained queue-blocked, `anthropics/knowledge-work-plugins#440` remained
+  target `scope-guard` blocked, `AmeerJ97/mcp-multiplex#2` still had our
+  latest legal-rights/sync response and no newer maintainer request,
+  `kouko/monkey-skills#394` stayed blocked without action, and recurring
+  conflicts on `shajith003/awesome-claude-skills#4`,
+  `warlockoussama/twitter-cli#1`, `Aditya923-c/xpoz-agent-skills#1`, and
+  `reall8164/wechat-openclaw-plugin#1` had no fresh maintainer signal.
+- Duplicate and blocker gates: crawler hits such as
+  `sickn33/antigravity-awesome-skills`,
+  `JuneYaooo/awesome-ai-media-skills`, `ndesv21/socialclaw`,
+  `ReneHdzGtz/social-listening-report`,
+  `ankit-sharma2005/twitter-sentiment-analysis`,
+  `abdulqadir7391/Twitter-Sentiment-Analysis-using-BERT`, and
+  `JusticeKAE/twitter-sentiment-analysis-streamlit` were duplicate or prior-PR
+  blocked by compact/archive history or target content. `vinuniyal` was also
+  excluded after archive search showed a prior PR. Empty or weak-fit repos such
+  as `Rithika1749/twitter_sentiment_analysis`, `machariaesquire/...FPL-Tweets-`,
+  `minhcanh-dev/Twitter-Sentiment-Analysis`, and `hamza-6969` were skipped.
+- Fresh selected lanes passed compact audit, archive, target content, local
+  clone scan, target open and closed PR/issue searches, policy checks, fork
+  parent verification, validation, and public-diff scans for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub
+  listing, Xquik, x-twitter-scraper, OpenClaw, and X/Twitter variants:
+  `tarushi78/twitter-sentiment-analysis`,
+  `Srinivas6808/twitter-sentiment-analysis`, and `satwiktelang18/TweetSense`.
+  `tarushi78` is MIT licensed; the other 2 had no GitHub license metadata and
+  no blocking contribution policy. Missing license metadata was not treated as a
+  direct PR blocker.
+- Forks were verified by REST readback as
+  `kriptoburak/tarushi78-twitter-sentiment-analysis` parent
+  `tarushi78/twitter-sentiment-analysis`,
+  `kriptoburak/srinivas6808-twitter-sentiment-analysis` parent
+  `Srinivas6808/twitter-sentiment-analysis`, and
+  `kriptoburak/satwiktelang18-tweetsense` parent `satwiktelang18/TweetSense`.
+
+Fresh PRs opened:
+- `tarushi78/twitter-sentiment-analysis#1` -
+  https://github.com/tarushi78/twitter-sentiment-analysis/pull/1 - adds common
+  tweet export column detection for `tweet`, `text`, `full_text`, `content`,
+  `body`, and `message`, handles blank cells before cleaning, and documents
+  reviewed TweetClaw/OpenClaw-style CSV exports. Commit `59b056a` pushed to
+  `codex/tweetclaw-export-columns-20260701`. Validation: `git diff --check`,
+  `python3 -m py_compile app.py tweet_columns.py test_tweet_columns.py`, and
+  `python3 -m unittest test_tweet_columns.py`. README link check found the
+  pre-existing Streamlit demo URL returning status 0; this PR added no new
+  external links. Readback: OPEN, non-draft, MERGEABLE/CLEAN, base `main`, head
+  owner `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+- `Srinivas6808/twitter-sentiment-analysis#1` -
+  https://github.com/Srinivas6808/twitter-sentiment-analysis/pull/1 - adds a
+  dataset schema helper for common tweet text columns, lets preprocessing
+  accept `text`, `tweet`, `full_text`, `content`, `body`, and `message`, and
+  fixes README and script paths to match the root-level files actually present
+  in the repo. Commit `74973f4` pushed to
+  `codex/fix-csv-schema-paths-20260701`. Validation: `git diff --check`,
+  `python3 -m py_compile dataset_schema.py generate_sample_data.py
+  preprocess.py train_model.py test_dataset_schema.py`, `python3 -m unittest
+  test_dataset_schema.py`, and README markdown-link-check. Readback: OPEN,
+  non-draft, MERGEABLE/CLEAN, base `main`, head owner `kriptoburak`,
+  0 comments, 0 reviews, 0 checks.
+- `satwiktelang18/TweetSense#1` -
+  https://github.com/satwiktelang18/TweetSense/pull/1 - adds CSV batch
+  sentiment prediction beside the single-tweet Streamlit workflow, detects
+  common tweet text columns, adds scored CSV download, and adds a
+  column-detection test. Commit `2c26fdf` pushed to
+  `codex/add-csv-batch-prediction-20260701`. Validation: `git diff --check`,
+  `python3 -m py_compile app.py chatbot.py tweet_columns.py
+  test_tweet_columns.py`, `python3 -m unittest test_tweet_columns.py`, and
+  README markdown-link-check. Readback: OPEN, non-draft, MERGEABLE/CLEAN, base
+  `main`, head owner `kriptoburak`, 0 comments, 0 reviews, 0 checks.
+
+Public hygiene and platform checks:
+- Current OpenClaw docs were checked before outreach wording. `llms.txt`,
+  `/cli`, `/cli/plugins`, `/cli/skills`, `/tools`, `/tools/plugin`,
+  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`, and
+  `/concepts/agent-runtimes` returned HTTP 200. Old Markdown export paths under
+  `/markdown/...` returned 404 and should not be used.
+- npm metadata read `openclaw` latest `2026.6.11`, beta `2026.6.11-beta.2`,
+  alpha `2026.5.19-alpha.1`; `@xquik/tweetclaw` latest remained `1.6.31`; and
+  `clawhub` latest remained `0.23.1`. ClawHub canonical route returned HTTP
+  200 after redirecting to `clawhub.ai/xquik/plugins/tweetclaw`; npmjs web page
+  returned 403, so CLI npm metadata remained the trusted npm check.
+- Public PR bodies and diffs avoided secret values, private implementation
+  details, restricted provider/source names, internal cost mechanics,
+  unsupported claims, and stale metadata. No NHS badge was added. The
+  pre-existing local untracked path `0` was preserved.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, and `docs/clawpack-release.md`.
+- Final TweetClaw validation passed: `npm run check-memory-md-size` at
+  15299/15360 bytes, public Markdown link checks for README, OpenClaw setup,
+  agent workflows, compact audit, and release memory, `npm audit
+  --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  `git diff --check`, targeted public-diff scan, and full `npm run check:all`
+  with 168 passing tests and 100% statement, branch, function, and line
+  coverage.
+- Persisted automation prompt was not edited. Automation TOML measured
+  13165 bytes, under the 15 KiB prompt cap.
+
+Self-improvement:
+- Current OpenClaw docs use clean routes from `llms.txt`; avoid stale
+  `/markdown/...` probes in future runs.
+- The authored all-open PR bucket now exceeds GitHub's 1000 cap. Start with
+  stable updated-date partitions and record when the all-time likely in-scope
+  URL set is too large for full per-PR exact reads in a heartbeat.
+- Recent sentiment/CSV targets are increasingly duplicate-covered. Search the
+  archive for exact owner names, not only repo slugs, before selecting a target.

@@ -49,14 +49,15 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 08:49 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 10:35 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
-  `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/tools/plugin`,
-  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
-  `/clawhub/skill-format`, `/tools/llm-task`, `/gateway/secrets`, and
-  `/concepts/agent-runtimes` returned HTTP 200.
+  `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
+  `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
+  `/plugins/bundles`, `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
+  returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 08:49 UTC after redirecting to
+  2026-07-01 10:35 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -190,18 +191,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 08:49 UTC: runtime selector limitation recorded. OpenClaw docs,
-  npm, ClawHub, and Xquik issues were rechecked. Crawler-first PR monitoring
-  and skill/social/OpenClaw/MCP/catalog/validator/sentiment packs returned 20
-  and 31 opportunities. Authored-open updated-today search found 132 PRs;
-  exact-read covered all 132 plus crawler PR URLs with 0 read errors. Blocked
-  no-action states remained `mcp-multiplex#2`, `awesome-claude-skills#1194`,
-  `knowledge-work-plugins#440`, and `monkey-skills#394`. Repaired
-  `Saminiscool/twitter-ai-agent#2` README conflict; readback is CLEAN.
+- 2026-07-01 10:34 UTC: runtime selector limitation recorded. OpenClaw docs,
+  npm, ClawHub, and TweetClaw package metadata were rechecked. Crawler-first PR
+  monitoring returned 0 opportunities; fresh skill/social/OpenClaw/MCP/catalog
+  and sentiment packs returned 37 opportunities. Authored-open all-time search
+  capped at 1000, then was partitioned by updated windows; today-updated
+  exact-read covered 137 PRs with 0 read errors. The full partitioned likely
+  in-scope URL set is 2501, so all-time per-PR comments/checks were not claimed
+  complete this run. High-churn conflicts without fresh maintainer signal
+  remained recorded for `twitter-cli#1`, `xpoz-agent-skills#1`,
+  `wechat-openclaw-plugin#1`, and related queue lanes.
 - Fresh safe PRs opened:
-  https://github.com/sabir-10/Sentiment-Analysis-Web-App/pull/1,
-  https://github.com/srishtighosh04/tweet-sentiment-analysis-/pull/1, and
-  https://github.com/VerbalAid/Sentiment-Analysis-on-Tweets/pull/1.
+  https://github.com/tarushi78/twitter-sentiment-analysis/pull/1,
+  https://github.com/Srinivas6808/twitter-sentiment-analysis/pull/1, and
+  https://github.com/satwiktelang18/TweetSense/pull/1.
 - TweetClaw changed audit memory only. Details, duplicate blockers, validation,
   link checks, prompt status, and self-improvement are archived.
 
