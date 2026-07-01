@@ -53960,3 +53960,139 @@ Memory and self-improvement:
 - Post-edit `npm run check-memory-md-size`, public Markdown link check, package
   audit, OpenClaw fitness, package artifact check, `git diff --check`, and full
   `npm run check:all` are required before commit.
+
+## 2026-07-01 18:36 UTC Discoverability Heartbeat
+
+Runtime and scope:
+- Runtime did not expose a Codex 5.5 Fast mode or extra-high reasoning selector.
+  Continued under the available heartbeat runtime and preserved the required
+  prompt wording.
+- Hard scope held: no Context7 work, no Browser or Chrome visual inspection of
+  TweetClaw GitHub, no dev servers, no production SSH, no secret reads, no
+  destructive git actions. Pre-existing untracked TweetClaw path `0` was left
+  untouched.
+
+Complete PR inventory and repairs:
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded request and warmup timeouts, 3 focused
+  PR/review/code queries for TweetClaw, OpenClaw, ClawHub, MCP, skills, Xquik,
+  x-twitter-scraper, social-media, and agent-tool lanes. Output:
+  0 opportunities, 0 repositories, 0 errors.
+- Authored open PR inventory used an updated-today partition after the broad
+  all-open authenticated search hit the 1000-result cap or platform blocker.
+  The normalized updated-today set contained 295 PRs. A first exact-read helper
+  exposed a repository-field bug and one hanging `gh pr view`; the rerun used
+  per-PR timeouts and exact-read 295 of 295 with 0 errors, 177 comments,
+  39 reviews, 8 conflicting PRs, 8 review-required PRs, and 4 failing check
+  rows. Failing rows were Netlify checks on
+  `08Gauri/tweet-sentiment-dashboard#1` and one scope-guard row in a skill
+  directory PR.
+- Repair priority selected `warlockoussama/twitter-cli#1` because it was a
+  README-only conflict in a relevant X/Twitter CLI lane. Merged upstream `main`,
+  kept the command-scope clarification, TweetClaw companion note, and upstream
+  download link once, and pushed commit
+  `95ad08caa6832c1e899031c8c9c5a6958ca2f915`. Validation passed:
+  `git diff --check`, conflict-marker scan, README markdown-link-check, and
+  public-hygiene scan. Commented with validation summary. Final readback:
+  OPEN, ready, MERGEABLE, no checks, no reviews.
+- Other conflict/check rows remain queued and were not repaired in this run
+  after the safe README conflict repair because discovery and 3 PR submissions
+  also completed.
+
+Fresh discovery, duplicate gates, and target policy:
+- Fresh crawler pack covered `SKILL.md`, `.agents/skills`, skills directories,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, generated catalogs, and Twitter sentiment examples.
+  Output: 5 opportunities. `beggarticksarthurtatum121/reddit-skills`,
+  `ankit-sharma2005/twitter-sentiment-analysis`,
+  `Salrahim21/twitter-sentiment-dashboard`,
+  `JusticeKAE/twitter-sentiment-analysis-streamlit`, and
+  `Shankar-behera/twitter-sentiment-analysis` were duplicate or prior-history
+  blocked by compact or archive history and target PR history.
+- Two additional crawler packs covered tweet-analysis Streamlit, social
+  listening, brand monitoring, X/Twitter skill, MCP Twitter, and source-evidence
+  terms. One returned 0 opportunities; the other returned 0 opportunities after
+  managed-proxy socket failures and endpoint quarantines. No credential values
+  were printed.
+- Focused fallback repository searches screened current Streamlit sentiment,
+  SKILL.md, MCP Twitter, and social-media sentiment lanes. Duplicate or
+  prior-history blockers included `labyla/x-search`,
+  `BuddhaYi/macos-cli`, `ReneHdzGtz/web3-community-marketing`,
+  `gpk2544/Social_Media_Sentiment_Analyzer`,
+  `dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard`,
+  `Jui-Ramteke/Social-Media-Sentiment-Analytics`, and
+  `shravani120625/Social-Media-Sentiment-Analysis-Dashboard-`.
+- Fresh safe lanes opened after compact audit, archive, target content, clone,
+  exact target PR, exact target issue, fork-parent, policy, and validation
+  checks: `Muhammad72717/Twitter-Sentiment-Analysis`,
+  `LucyAdhiambo/twitter-sentiment-analysis`, and
+  `sushantkumarsingh8306-r/sentiment_analysis_logistic_reg`. Missing license
+  metadata was recorded but did not block direct useful PRs.
+- Fork parent verification before push:
+  `kriptoburak/muhammad-twitter-sentiment-analysis` parent
+  `Muhammad72717/Twitter-Sentiment-Analysis`;
+  `kriptoburak/lucy-twitter-sentiment-analysis` parent
+  `LucyAdhiambo/twitter-sentiment-analysis`;
+  `kriptoburak/sushant-sentiment-analysis-logistic-reg` parent
+  `sushantkumarsingh8306-r/sentiment_analysis_logistic_reg`.
+
+External PRs opened:
+- `Muhammad72717/Twitter-Sentiment-Analysis#1`:
+  https://github.com/Muhammad72717/Twitter-Sentiment-Analysis/pull/1 from
+  branch `codex/add-batch-csv-prediction-20260701T183638Z`, commit
+  `d1af0f45ca50cc64cb8c302a19bb98c5b54d698c`. Adds Streamlit CSV upload,
+  text-column detection, scored CSV download, and README notes for optional
+  reviewed TweetClaw CSV source text. Validation passed: `python3 -m py_compile
+  app.py`, `git diff --check`, README markdown-link-check, and public-hygiene
+  scan. Readback: OPEN, ready, MERGEABLE, no checks, no comments, no reviews.
+- `LucyAdhiambo/twitter-sentiment-analysis#1`:
+  https://github.com/LucyAdhiambo/twitter-sentiment-analysis/pull/1 from branch
+  `codex/add-batch-csv-prediction-20260701T183638Z`, commit
+  `bc5e6822c033eddb5d1bd6cab3ffc5976ac0f53d`. Adds batch CSV prediction,
+  reusable prediction helper, detected text columns, scored CSV export, and
+  README workflow notes. Validation passed: `python3 -m py_compile app.py`,
+  `git diff --check`, README markdown-link-check, and public-hygiene scan.
+  Readback: OPEN, ready, MERGEABLE, no checks, no comments, no reviews.
+- `sushantkumarsingh8306-r/sentiment_analysis_logistic_reg#1`:
+  https://github.com/sushantkumarsingh8306-r/sentiment_analysis_logistic_reg/pull/1
+  from branch `codex/add-batch-csv-prediction-20260701T183638Z`, commit
+  `983e9c2ee6c85f909c299b8e79ec9f057125d92f`. Adds CSV batch prediction to the
+  Streamlit app and a README with TweetClaw as an optional reviewed CSV source.
+  Validation passed: `python3 -m py_compile model/app.py`, `git diff --check`,
+  README markdown-link-check, and public-hygiene scan. Readback: OPEN, ready,
+  MERGEABLE, no checks, no comments, no reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probe returned HTTP 200 for `llms.txt`, `/cli`,
+  `/cli/plugins`, `/cli/skills`, `/tools`, `/tools/plugin`,
+  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`, and
+  `/concepts/agent-runtimes`. ClawHub TweetClaw route returned HTTP 200 after
+  redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw package checks passed before audit edit: `npm audit
+  --audit-level=moderate`, `npm audit --omit=dev --audit-level=moderate`,
+  `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact`.
+- Broken-link results: target README checks passed for all edited external
+  repos; TweetClaw public Markdown link check passed for README and docs.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  or stale metadata in edited target diffs or TweetClaw audit diffs. No NHS
+  Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact Markdown memory was kept under cap by replacing the latest-run block
+  and moving full detail here. Pre-edit compact size was 15256 of 15360 bytes.
+  Automation prompt file size was 13514 bytes, under the 15 KiB cap.
+- Durable lesson: when updated-today PR inventory contains mixed repository
+  JSON shapes, normalize `repository.nameWithOwner` before exact `gh pr view`
+  loops and use per-PR timeouts so one slow repository cannot block inventory.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
+  recorded by the repository history for this audit run.
