@@ -189,22 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 00:08 UTC: runtime selector limitation recorded. Current OpenClaw
+- 2026-07-01 00:32 UTC: runtime selector limitation recorded. Current OpenClaw
   docs, npm, ClawHub, and Xquik issues were rechecked; OpenClaw latest stayed
   `2026.6.11`, and npm latest stayed `@xquik/tweetclaw@1.6.31`.
-- Inventory used crawler output with 10 opportunities, 1490 archive PR URLs,
-  authored open partitions of 300, 300, and 13 rows, and 120 exact PR readbacks.
-  Complete all-open inventory is not claimed because broad authored partitions
-  remain capped.
-- Repairs before outreach: made `Planable/smm-skills#1` and
-  `anthropics/knowledge-work-plugins#440` mergeable again, and closed
-  `alvabillwu/mcpindex#1` after the maintainer required a public MCP source repo
-  that Xquik does not currently publish. Block skill-security warnings were
-  already answered and target-owned approval gates remain.
+- Inventory used crawler output with 18 opportunities, 1493 archive PR URLs,
+  authored open partitions of 6, capped 300, and 4 rows, and 140 exact PR
+  readbacks. Complete all-open inventory is not claimed because one authored
+  partition remained capped.
+- Repairs before outreach: pushed review fixes to
+  `jadye527/obsidian-growth-kit#1` and `maoshuorz/openclaw-skills#1` so
+  TweetClaw is not described as read-only by default. Vercel auth failures on
+  older Xquik/OpenAPI PRs remain target-owned blockers.
 - Fresh safe PRs opened:
-  https://github.com/NachaFromMars/upload-post/pull/1,
-  https://github.com/jadye527/obsidian-growth-kit/pull/1, and
-  https://github.com/maoshuorz/openclaw-skills/pull/1.
+  https://github.com/austindixson/tweet-crafter/pull/1,
+  https://github.com/theaayushstha1/agentic-skills/pull/1, and
+  https://github.com/weekendli/skill-x-tweet-fetcher/pull/1.
 - TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
   screening, target validation, broken-link results, prompt bytes, and
   self-improvement are archived.
