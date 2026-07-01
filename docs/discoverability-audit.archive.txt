@@ -54096,3 +54096,125 @@ Memory and self-improvement:
   `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
+
+## 2026-07-01 19:00 UTC Discoverability Heartbeat
+
+Runtime and scope:
+- Runtime did not expose a Codex 5.5 Fast mode or extra-high reasoning selector.
+  Continued on the available runtime and preserved the required prompt wording.
+- Hard scope held: no Context7 work, no Browser or Chrome visual inspection of
+  TweetClaw GitHub, no dev servers, no production SSH, no secret reads, no
+  destructive git actions. Pre-existing untracked TweetClaw path `0` stayed
+  untouched.
+
+Complete PR inventory and repair:
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded timeouts, and 3 PR/review/code queries for
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, Xquik, x-twitter-scraper,
+  social-media, and agent-tool lanes. Output: 0 opportunities, 0 repositories,
+  0 errors.
+- Crawler skill coverage included `SKILL.md`, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, agent, social, Twitter/X, awesome-list, registry, fork, and
+  generated-catalog lanes. It returned `liangdabiao/tikhub_api_skill` and
+  `beggarticksarthurtatum121/reddit-skills`; both were prior-history or
+  duplicate-blocked. Fresh sentiment crawler returned
+  `Twitter-Sentiment-Analysiss/Twitter-Sentiment-Analysis` and
+  `Gift-Ojeabulu/Twitter-SentimentAirline-Analysis`.
+- Authenticated authored-open PR inventory used an updated-today partition plus
+  focused topic partitions for TweetClaw, OpenClaw, ClawHub, MCP, SKILL.md,
+  skill, Xquik, x-twitter-scraper, Twitter, social media, agent-tool, catalog,
+  validator, and package-tooling lanes. Updated-today exact-read covered 302 of
+  302 PRs with 0 errors, 178 comments, 40 reviews, 6 conflicts,
+  9 review-required rows, and 5 failing-check rows. Topic partitions found
+  1540 unique URLs, but multiple buckets reached their 200-result limit, so the
+  broad topic inventory remains capped and not claimed complete.
+- Repair priority selected `shajith003/awesome-claude-skills#4`, a README-only
+  conflict in a relevant skill catalog lane. Merged current upstream `main`,
+  preserved valid repository/local-skill links over upstream zip-link regressions,
+  and pushed commit `64ea13e56c48503eb4e88179e8c0e4c2af0383c7`. Validation
+  passed: `git diff --check`, conflict-marker scan, README markdown-link-check,
+  and public-hygiene scan. Commented with validation summary:
+  https://github.com/shajith003/awesome-claude-skills/pull/4#issuecomment-4859208022.
+  Final readback: OPEN, ready, MERGEABLE, 0 checks, 0 reviews.
+
+Fresh discovery, duplicate gates, and target policy:
+- Duplicate and prior-history blockers included `beggarticksarthurtatum121/reddit-skills`,
+  `liangdabiao/tikhub_api_skill`, `Pritam1011/twitter-sentiment-analysis-streamlit`,
+  and archive-known `louaysaleh/twitter-sentiment-analysis-streamlit`. Target PR
+  and issue searches found no TweetClaw, Xquik, x-twitter-scraper, OpenClaw, npm,
+  or ClawHub duplicate for selected targets.
+- Selected targets passed compact audit, archive, target content, open and closed
+  target PR and issue, clone, fork-parent, policy, and validation checks:
+  `Twitter-Sentiment-Analysiss/Twitter-Sentiment-Analysis`,
+  `techsavvyumer/tsa`, and `Vikesh-04/Twitter_Sentiment_Analysis_Streamlit`.
+  Missing license metadata was recorded but did not block useful direct PRs.
+- REST fork-parent verification before PR creation:
+  `kriptoburak/twitter-sentiment-analysiss-batch-csv` parent
+  `Twitter-Sentiment-Analysiss/Twitter-Sentiment-Analysis`;
+  `kriptoburak/techsavvyumer-tsa-batch-csv` parent `techsavvyumer/tsa`;
+  `kriptoburak/vikesh-twitter-sentiment-streamlit-csv` parent
+  `Vikesh-04/Twitter_Sentiment_Analysis_Streamlit`.
+
+External PRs opened:
+- `Twitter-Sentiment-Analysiss/Twitter-Sentiment-Analysis#2`:
+  https://github.com/Twitter-Sentiment-Analysiss/Twitter-Sentiment-Analysis/pull/2
+  from branch `codex/add-batch-csv-mode-20260701T190038Z`, commit
+  `c91b9b12cef547740b021c51da7a58eda1999aaf`. Adds CSV upload support to the
+  Streamlit ML app, auto-detects tweet/text columns, writes `predicted_sentiment`,
+  and documents compatible reviewed TweetClaw CSV exports as an optional source.
+  Validation: `python3 -m py_compile ML_app.py`, `git diff --check`, README
+  markdown-link-check, public-hygiene scan. Readback: OPEN, ready, MERGEABLE,
+  0 checks, 0 comments, 0 reviews.
+- `techsavvyumer/tsa#1`: https://github.com/techsavvyumer/tsa/pull/1 from
+  branch `codex/add-batch-csv-mode-20260701T190038Z`, commit
+  `b7daf95bb975b5e7bc32c0f34fe1931528af15d6`. Adds a home-page CSV upload demo,
+  auto-detects tweet/text columns, writes predicted sentiment and VADER compound
+  score, and documents compatible reviewed TweetClaw CSV exports. Validation:
+  `python3 -m py_compile apps/home.py`, `git diff --check`, README
+  markdown-link-check, public-hygiene scan. Readback: OPEN, ready, MERGEABLE,
+  0 checks, 0 comments, 0 reviews.
+- `Vikesh-04/Twitter_Sentiment_Analysis_Streamlit#1`:
+  https://github.com/Vikesh-04/Twitter_Sentiment_Analysis_Streamlit/pull/1 from
+  branch `codex/add-batch-csv-mode-20260701T190038Z`, commit
+  `435639d327613abf33f7691cd8e3ed4a46c7ef26`. Adds an Uploaded CSV mode that
+  reuses the existing TextBlob sentiment pipeline without requiring live API
+  credentials, plus README column guidance for reviewed TweetClaw CSV exports.
+  Validation: `python3 -m py_compile main.py`, `git diff --check`, README
+  markdown-link-check, public-hygiene scan. Readback: OPEN, ready, MERGEABLE,
+  0 checks, 0 comments, 0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probe returned HTTP 200 for `llms.txt`, `/cli`,
+  `/cli/plugins`, `/cli/skills`, `/tools`, `/tools/plugin`,
+  `/plugins/manifest`, `/plugins/bundles`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`, and
+  `/concepts/agent-runtimes`. ClawHub TweetClaw route returned HTTP 200 after
+  redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory.
+- Broken-link results: target README checks passed for all 3 edited external
+  repos; TweetClaw public Markdown link check passed for README and docs.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  or stale metadata in edited target diffs or TweetClaw audit diffs. No NHS
+  Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact Markdown memory was kept near the cap by replacing the latest-run
+  block and moving full detail here. Pre-edit compact size was 15132 of
+  15360 bytes. Automation prompt file size was 13514 bytes, under the 15 KiB cap.
+- Durable lesson: when `gh repo fork` uses explicit repository arguments, create
+  custom-named forks without `--remote`, then add remotes manually and verify
+  parentage through the REST repo payload; GraphQL `parent` may return null for
+  custom fork-name readbacks immediately after creation.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
+  recorded by the repository history for this audit run.

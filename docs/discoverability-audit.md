@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 18:36 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 19:00 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 18:36 UTC after redirecting to
+  2026-07-01 19:00 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 18:36 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 19:00 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,19 +191,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 18:36 UTC: runtime selector unavailable. Crawler monitoring
-  returned 0. Updated-today exact-read covered 295/295 with 177 comments,
-  39 reviews, 8 conflicts, and 4 failing-check rows.
-- Repair: `warlockoussama/twitter-cli#1` README conflict resolved in `95ad08c`;
-  readback OPEN, ready, MERGEABLE. Remaining conflict/check backlog archived.
-- Fresh discovery: crawler surfaced 5 duplicate or prior-history lanes; 2 extra
-  crawler packs returned 0 after one proxy-failure batch. Focused fallback
-  opened https://github.com/Muhammad72717/Twitter-Sentiment-Analysis/pull/1,
-  https://github.com/LucyAdhiambo/twitter-sentiment-analysis/pull/1, and
-  https://github.com/sushantkumarsingh8306-r/sentiment_analysis_logistic_reg/pull/1.
-- Readback: all 3 OPEN, ready, MERGEABLE. Target syntax, diff, README links,
-  OpenClaw docs, ClawHub, npm metadata, public links, audits, artifact, and
-  fitness checks passed. Details archived.
+- 2026-07-01 19:00 UTC: runtime selector unavailable. Crawler monitoring
+  returned 0; skill/fresh crawlers returned 4 repos, mostly prior-history lanes.
+  Updated-today exact-read covered 302/302 with 178 comments, 40 reviews,
+  6 conflicts, 9 review-required rows, and 5 failing-check rows. Topic lane
+  partitions found 1540 unique URLs but several 200-limit caps remain recorded.
+- Repair: `shajith003/awesome-claude-skills#4` README conflict resolved in
+  `64ea13e`; readback OPEN, ready, MERGEABLE.
+- Fresh PRs opened and read back OPEN, ready, MERGEABLE:
+  https://github.com/Twitter-Sentiment-Analysiss/Twitter-Sentiment-Analysis/pull/2,
+  https://github.com/techsavvyumer/tsa/pull/1, and
+  https://github.com/Vikesh-04/Twitter_Sentiment_Analysis_Streamlit/pull/1.
+- Target syntax, diff, README links, OpenClaw docs, ClawHub, npm metadata,
+  public links, audits, artifact, and fitness checks passed. Details archived.
 
 ## Reporting Checklist
 
