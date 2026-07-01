@@ -189,25 +189,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 01:22 UTC: runtime selector limitation recorded. Current OpenClaw
+- 2026-07-01 01:45 UTC: runtime selector limitation recorded. Current OpenClaw
   docs, npm, ClawHub, and Xquik issues were rechecked; OpenClaw latest stayed
   `2026.6.11`, and npm latest stayed `@xquik/tweetclaw@1.6.31`.
-- Inventory used 2 crawler passes that parsed but returned 0 repos after proxy
-  socket failures, 1500 archive PR URLs, 100 updated-authored open PRs, 12
-  same-day open PRs, and 160 priority exact PR readbacks. Complete all-open
-  inventory is not claimed because broad authored inventory remains capped.
-- Repairs before outreach: pushed conflict/sync repairs to
-  `reall8164/wechat-openclaw-plugin#1`,
-  `AbdNour627/awesome-openclaw-configs#1`,
-  `Aditya923-c/xpoz-agent-skills#1`, and `AmeerJ97/mcp-multiplex#2`.
+- Inventory used crawler strict JSON with 175 opportunities, 1503 archive PR
+  URLs, authored partitions, and 160 priority PR readbacks: 159 ok, 1 old
+  unreadable, 149 open, 0 pending checks, and 2 target-owned failing checks.
+  Complete all-open inventory is not claimed because broad inventory is capped.
+- Repairs before outreach: pushed conflict repairs to
+  `XD-BASHARAT/agent-skills-directory#1`, `jamald33n/tweetsave-mcp#2`,
+  `warlockoussama/twitter-cli#1`,
+  `Aqmar777/openclaw-competitive-intel#1`, and
+  `shajith003/awesome-claude-skills#4`; final exact readbacks were clean and
+  mergeable.
 - Maintainer-owner action remains: `AmeerJ97/mcp-multiplex#2` asks the user to
-  confirm rights to submit under Apache-2.0; the branch was synced, but no
-  legal confirmation was posted.
-- Fresh safe PRs opened: https://github.com/bjester/shinyskills/pull/4,
-  https://github.com/ronaldtebrake/agent-skills-validator/pull/2, and
-  https://github.com/ZyanZealous/openclaw-cli-control/pull/1.
-- TweetClaw changed audit memory only. Detailed crawler coverage, duplicate
-  screening, target validation blockers, broken-link results, prompt bytes, and
+  confirm rights to submit under Apache-2.0; no legal confirmation was posted.
+- Fresh safe PRs opened: https://github.com/qiuyiwu1989-star/openclaw-skill-ops/pull/1,
+  https://github.com/lza6/AIWriteX-Skills/pull/2, and
+  https://github.com/ferdinandobons/startup-skill/pull/4.
+- TweetClaw changed audit memory only. Details, validation, prompt bytes, and
   self-improvement are archived.
 
 ## Reporting Checklist
