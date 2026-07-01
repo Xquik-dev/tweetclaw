@@ -51581,3 +51581,141 @@ Self-improvement:
 - When local Python lacks target dependencies, keep helper tests dependency-light
   and reserve heavy package imports for `py_compile` unless the target declares
   an install path that can run safely.
+
+2026-07-01 11:33 UTC heartbeat
+
+Runtime and prompt:
+- Runtime model, speed, and reasoning-effort selectors were not exposed in this
+  Codex app run, so the requested Codex 5.5 Fast and extra-high reasoning mode
+  could not be verified from a runtime control. The run continued under the
+  available runtime and recorded the limitation.
+- The automation prompt already contains the user-requested stronger rule:
+  every run must actively find and screen at least 3 fresh opportunities, submit
+  3 useful PRs when safe lanes exist, and not stop at issue-only, repair-only,
+  maintenance, or audit work while a plausible path remains. Persisted prompt
+  size from the prior same-thread update was 13514 bytes, under the 15 KiB cap.
+
+Open PR inventory and repair:
+- Crawler-first PR monitoring was run from `/Users/burak/Developer/xquik` with
+  strict JSON output, research proxy mode, bounded request and proxy warmup
+  timeouts, limit 50, search pages 2, per-query limit 10, concurrency 8, and
+  session `tweetclaw-20260701-111212-pr`. Query coverage included open PRs by
+  `kriptoburak`, TweetClaw, OpenClaw, ClawHub, MCP, skills, Xquik,
+  x-twitter-scraper, Twitter/X automation, social media, sentiment, and
+  package variants. Output parsed as valid JSON with 0 opportunities.
+- Authored-open updated-today inventory exact-read 145 PRs with 0 read errors.
+  Triage classified 32 relevant PRs, 19 with comments, 18 with reviews, 1 with
+  failed checks, and 8 non-mergeable. All-time authored-open completeness was
+  not claimed because broad GitHub search scale remains capped; the run also
+  searched compact audit and archive URLs and exact PR JSON files.
+- Repair priority found `sydasif/web-search-mcp#1` as actionable. The branch
+  already contained the owner-requested rebase fixes for `_sanitize_query`,
+  `from __future__ import annotations`, and `Depth`. Remaining valid review
+  items were addressed by limiting Xquik response extraction to known list
+  envelopes, removing broad top-level username fallbacks, and adding tests for
+  missing API key, HTTP status error, request error, and ignored nested
+  non-envelope content. Validation passed: `git diff --check` and
+  `uv run pytest tests/test_x.py` with 6 tests. Public diff scan found no
+  secret values or internal implementation details. Commit
+  `5d3ec09 Address Xquik review feedback` was pushed to
+  `kriptoburak/web-search-mcp` branch `codex/add-xquik-x-search`. Comment:
+  https://github.com/sydasif/web-search-mcp/pull/1#issuecomment-4853819921.
+  Exact readback after push: PR OPEN, commits include `5d3ec09`, no status
+  checks, mergeability temporarily UNKNOWN while GitHub recalculated.
+
+Fresh discovery and screening:
+- Fresh crawler run from `/Users/burak/Developer/xquik` used strict JSON output,
+  research proxy mode, bounded request and proxy warmup timeouts, limit 100,
+  search pages 3, per-query limit 10, concurrency 8, and session
+  `tweetclaw-20260701-111212-fresh`. Query coverage included `SKILL.md`,
+  `.agents/skills`, skills directories, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X skills, awesome lists, registries, forks, generated
+  catalogs, web-index skill repos, tweet sentiment CSV, dashboards, and OpenAPI
+  MCP examples. Output parsed as valid JSON with 36 opportunities.
+- Crawler opportunity history filtering found most candidate repos already
+  handled or blocked. `op7418/guizang-ppt-skill` was the only crawler candidate
+  without archive history, but inspection kept it as weak fit for this run
+  because a presentation-skill example would be less target-native than active
+  tweet sentiment CSV lanes.
+- Fallback web-index and GitHub metadata screening found fresh sentiment and
+  MCP candidates. Archive blockers included `TheSethRose/SocialData-MCP-Server`,
+  `aiskillstore/marketplace`, `heilcheng/awesome-agent-skills`,
+  `jonathanrao99/Indian-airline-tweet-sentiment-analysis`, and
+  `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis`. GitHub
+  Search then hit an API rate limit at 2026-07-01 11:25 UTC, so broad
+  authenticated search stopped for the run per policy. Duplicate checks
+  continued with exact repo metadata, exact PR and issue lists where available,
+  target tree reads, local clone scans, and compact/archive history.
+- Selected fresh safe lanes:
+  `gpriya32/tweet-sentiment-analysis` (MIT, not forked, not archived, issues
+  enabled, 0 PRs, 0 issues, duplicate-clean content and exact lists),
+  `Rishavgg/Twitter-sentiment-analysis` (GPL-2.0, not forked, not archived,
+  PRs enabled, issues disabled, one merged license PR, duplicate-clean content),
+  and `kingabzpro/NLP-Tweets-Web-App` (MIT, not forked, not archived, one open
+  ImgBot PR, no issues, duplicate-clean content). Missing or disabled issues
+  did not block direct PRs because PR lanes were safe and target-native.
+
+Fresh PRs opened:
+- `gpriya32/tweet-sentiment-analysis#1` -
+  https://github.com/gpriya32/tweet-sentiment-analysis/pull/1 - adds a
+  Streamlit sidebar CSV uploader, normalizes common tweet text, sentiment,
+  timestamp, and airline columns, uses uploaded data in the existing charts,
+  and replaces a dead Heroku link with local run instructions. Fork
+  `kriptoburak/gpriya32-tweet-sentiment-analysis` parent and source were
+  verified as `gpriya32/tweet-sentiment-analysis` before push. Commit
+  `9cb452a` on `codex/add-csv-imports`. Validation: `python3 -m py_compile
+  app.py`, `git diff --check`, and `npx --yes markdown-link-check README.md
+  --quiet`. Exact readback: OPEN, non-draft, MERGEABLE, base `main`, head owner
+  `kriptoburak`, 0 comments, 0 reviews, GitGuardian check SUCCESS.
+- `Rishavgg/Twitter-sentiment-analysis#2` -
+  https://github.com/Rishavgg/Twitter-sentiment-analysis/pull/2 - adds batch
+  CSV upload and prediction for common tweet text column names, appends
+  `predicted_sentiment`, provides CSV download, and adds pandas to
+  requirements. Fork `kriptoburak/rishavgg-twitter-sentiment-analysis` parent
+  and source were verified as `Rishavgg/Twitter-sentiment-analysis` before
+  push. Commit `4c68e71` on `codex/add-batch-csv-prediction`. Validation:
+  `python3 -m py_compile app.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Exact readback: OPEN,
+  non-draft, MERGEABLE, base `main`, head owner `kriptoburak`, 0 comments,
+  0 reviews, 0 checks.
+- `kingabzpro/NLP-Tweets-Web-App#2` -
+  https://github.com/kingabzpro/NLP-Tweets-Web-App/pull/2 - adds a Streamlit
+  sidebar CSV uploader, normalizes common tweet text, sentiment, timestamp, and
+  airline columns, reuses uploaded data in the existing dashboard charts, and
+  removes empty in-code ExpertAI credential assignments so the app relies on
+  README-documented environment variables. Fork
+  `kriptoburak/kingabzpro-nlp-tweets-web-app` parent and source were verified
+  as `kingabzpro/NLP-Tweets-Web-App` before push. Commit `831cd2c` on
+  `codex/add-csv-dataset-imports`. Validation: `python3 -m py_compile app.py`
+  and `git diff --check`. README markdown-link-check was run and reports 8
+  pre-existing broken demo/vendor docs links; the PR adds no external links and
+  the failure was disclosed in the PR body. Exact readback: OPEN, non-draft,
+  MERGEABLE, base `main`, head owner `kriptoburak`, 0 comments, 0 reviews,
+  0 checks.
+
+OpenClaw, public hygiene, and validation:
+- Current official OpenClaw docs were rechecked after outreach:
+  `https://docs.openclaw.ai/llms.txt`, `/cli`, `/cli/plugins`, `/cli/skills`,
+  `/tools`, `/tools/plugin`, `/plugins/manifest`, `/plugins/bundles`,
+  `/clawhub`, `/clawhub/cli`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/gateway/secrets`, and `/concepts/agent-runtimes` all returned HTTP 200.
+  `npm view openclaw` returned latest `2026.6.11`, beta `2026.6.11-beta.2`,
+  and alpha `2026.5.19-alpha.1`; `npm view clawhub version` returned
+  `0.23.1`; ClawHub TweetClaw route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- Target PR bodies and diffs were inspected for secrets, sensitive
+  implementation details, unsupported claims, and stale metadata. The only
+  target credential reference was removal of an empty assignment in an already
+  public file; no secret value was present. No NHS badge was added.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. The pre-existing local untracked
+  path `0` was preserved.
+
+Self-improvement:
+- Do not use `status` as a zsh variable in docs probes; it is read-only.
+- When GitHub Search rate-limits after exact inventory, stop broad searches and
+  continue with exact repo lists, local clone scans, target trees, and archive
+  checks.
+- Sentiment-dashboard targets can accept useful TweetClaw placement through
+  CSV import and batch-prediction support when the contribution improves the app
+  without thin marketing.
