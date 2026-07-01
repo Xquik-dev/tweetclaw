@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-01 16:52 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-01 17:02 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; `/cli`, `/cli/plugins`,
   `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
@@ -57,7 +57,7 @@ archive, before any outreach or duplicate decision.
   `/clawhub/skill-format`, `/gateway/secrets`, and `/concepts/agent-runtimes`
   returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-01 16:52 UTC after redirecting to
+  2026-07-01 17:02 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -77,7 +77,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-01 16:52 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-01 17:02 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -191,20 +191,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-01 16:52 UTC: runtime selector limitation recorded. Crawler PR
-  monitoring returned 0; authored-open exact-read covered 254 today-updated PRs
-  with 0 errors, 4 failing-check rows, 10 conflict/unknown rows, 28 comment
-  threads, and 30 review rows; all-open search remains capped at 1000.
-- Repair triage found prior mroops0111 and Disha/MedKhed bot findings already
-  answered or fixed; Anthropic scope guard is a target-policy blocker.
+- 2026-07-01 17:02 UTC: runtime selector limitation recorded. Crawler PR
+  monitoring returned 0; authored-open exact-read covered 263 today-updated PRs
+  with 0 errors, 3 failing-check rows, 16 conflict/unknown rows, 29 comment
+  threads, and 31 review rows; all-open search remains capped at 1000.
+- Repair triage answered stale `gmr-inc/social-listening-tagger#2` bot feedback
+  by confirming the current branch already keeps `post_id` canonical.
 - Fresh crawler returned duplicate-covered `beggarticksarthurtatum121/reddit-skills`.
-  Fallback screening opened 3 PRs:
-  https://github.com/AparnaSamidala/sentiment_analysis_tweets/pull/1,
-  https://github.com/karishmasyed56/tweet-sentiment-analysis/pull/1, and
-  https://github.com/Harishptdr/Tweets-Sentiment-Analysis/pull/1.
-- OpenClaw docs, ClawHub, npm metadata, public links, package audit, PR URL
-  probes, target syntax checks, and fitness checks passed. Aparna README link
-  check has one pre-existing Streamlit auth redirect loop. Details archived.
+  Fallback screening opened 3 CSV-batch sentiment PRs:
+  https://github.com/Ayushjain45/airline-sentiment-analyzer/pull/1,
+  https://github.com/Rahil567/airline-sentiment-analyzer/pull/1, and
+  https://github.com/sheema-sul/airline_sentiment_analyzer/pull/1.
+- Readback: all 3 OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks,
+  and PR URLs HTTP 200. Target syntax and diff checks passed; Ayush README link
+  check passed, while Rahil and Sheema have pre-existing target-owned link
+  failures. OpenClaw docs, ClawHub, npm metadata, public links, package audits,
+  artifact check, and fitness check passed. Details archived.
 
 ## Reporting Checklist
 
