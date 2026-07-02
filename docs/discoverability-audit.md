@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 14:29 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 15:13 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
-  `docs.openclaw.ai` and are indexed by `llms.txt`; current CLI, plugin,
-  permission request, tool, ClawHub, skill, install, and help routes returned
-  HTTP 200.
+  `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
+  under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
+  guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 14:29 UTC after redirecting to
+  2026-07-02 15:13 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -189,21 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 14:59 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 5, skill coverage 4, fresh-target crawl 0. Recent authored-open
-  partition found 270 PRs; lane filter exact-read 199 with 0 read errors,
-  164 comments, 8 reviews, 38 checks, 8 conflicts, and 12 blocked or
-  review-required rows. Broad all-time inventory remains capped by search limits.
-- Repair priority: 8 dirty PRs rejected GitHub update-branch with HTTP 422 merge
-  conflicts. Manual non-destructive repair checks on `ogthheu` and `warlockoussama`
-  hit unrelated-history blockers, so force-push repair was not attempted. Google
-  CLA and maintainer review gates remain owner or maintainer blockers.
-- Opened 3 fresh PRs after duplicate and policy gates:
-  `Sadhana107/Social-Media-Sentiment-Analysis-Dashboard#1`,
-  `dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard#1`, and
-  `Jui-Ramteke/Social-Media-Sentiment-Analytics#1`. All are OPEN, ready,
-  MERGEABLE, and CLEAN with 0 comments, 0 reviews, and 0 checks at readback.
-  Archive records exact URLs, blockers, validation, and fork parent readbacks.
+- 2026-07-02 15:13 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 5, skill coverage 0 after proxy socket failures, fresh crawl 0.
+  Authored-open partition `updated >= 2026-07-02` exact-read 278 PRs with 0
+  read errors, 173 comments, 15 reviews, 57 checks, 8 conflicts, 27 blocked or
+  unknown rows, and 40 unstable rows. Broad all-time search remains capped.
+- Repair priority: prior 8 dirty PRs remain conflict or unrelated-history
+  blocked. A CodeRabbit finding on `KamujuSaiSuryaVenkat#1` was exact-checked
+  and already repaired in branch. No new maintainer action was required.
+- Opened 3 fresh PRs after duplicate, policy, fork, and validation gates:
+  `IlyaShaposhnikov/airline-sentiment-analysis#1`,
+  `sdiveshh/Twitter-sentiment-analysis#1`, and
+  `somyajain08/Twitter-Sentiment-Analysis-#1`. All are OPEN, ready, and
+  MERGEABLE; Ilya is UNSTABLE with no checks yet, the other 2 are CLEAN.
+  Archive records URLs, blockers, validations, and fork parent readbacks.
 
 ## Reporting Checklist
 
