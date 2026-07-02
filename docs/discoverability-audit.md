@@ -194,8 +194,9 @@ archive, before any outreach or duplicate decision.
   JSON with proxy socket failures. Broad authored REST search had 3,489 open
   PRs and GraphQL returned 502, so complete exact inventory remains blocked.
   Exact reads covered 9 recent TweetClaw PRs; 8 had no actionable comments,
-  checks, reviews, conflicts, DCO, or CLA, and `ptdr1516/Sentiment-Analysis#1`
-  had only pending CodeRabbit review state.
+  checks, reviews, conflicts, DCO, or CLA. `ptdr1516/Sentiment-Analysis#1`
+  received CodeRabbit review comments, repaired in commit `922cd6b`, and the
+  follow-up CodeRabbit check succeeded.
 - Opened 3 PRs: `Vaibhavv2203/Twitter_analysis_agent#1`,
   `Charan304304/Twitter-Sentiment-Analysis#1`, and
   `ptdr1516/Sentiment-Analysis#1`. All are OPEN and mergeable. Full crawler,
