@@ -57843,3 +57843,129 @@ Self-improvement:
   compatibility code that maps aliases into the target's existing data shape and
   rejects unlabeled training data clearly rather than adding marketing-only
   mentions.
+
+## 2026-07-02 19:14 UTC heartbeat
+
+- Runtime and starting state: the runtime did not expose a Codex 5.5 Fast mode
+  or extra-high reasoning-effort selector, so the run continued under the
+  available runtime and recorded the limitation. TweetClaw started on `master`
+  with only pre-existing untracked `0`. Xquik had unrelated dirty files and was
+  used only for crawler commands. Automation TOML was 13514 bytes.
+- Crawler-first monitoring from `/Users/burak/Developer/xquik` used strict JSON
+  and research proxy. PR monitor command:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260702-1852/pr-monitor.json --research-proxy --request-timeout-ms 15000 --proxy-warmup-timeout-ms 15000 --limit 90 --search-pages 1 --per-query-limit 10 --concurrency 6 --session-id tweetclaw-pr-monitor-20260702-1852 --query 'TweetClaw OpenClaw ClawHub MCP is:pr is:open' --query 'x-twitter-scraper Xquik social media agent tools is:pr is:open' --query 'SKILL.md OpenClaw MCP Codex Claude is:pr is:open'`. It returned 5 opportunities: `Xquik-dev/tweetclaw`, `yopiesuryadi/mailbot-programmable-inbox`, `rxhxm/sixtyfour-skill`, `shane9coy/Agent-Skill-Architecture-Guide`, and `RajeshKalidandi/ai-agent-knowledge`.
+- Skill and fresh-target crawler coverage included SKILL.md, `.agents/skills`,
+  skills dirs, OpenClaw, MCP, Codex, Claude, agent, social media, Twitter/X,
+  awesome skill lists, registries, forks, catalogs, and web-index surfaced skill
+  repos. Commands wrote
+  `/tmp/tweetclaw-heartbeat-20260702-1852/skill-coverage.json`,
+  `fresh-targets.json`, and `skill-coverage-small.json` with bounded timeouts,
+  research proxy, and session IDs `tweetclaw-skill-coverage-20260702-1852`,
+  `tweetclaw-fresh-targets-20260702-1852`, and
+  `tweetclaw-skill-small-20260702-1852`. All parsed as valid JSON with
+  0 opportunities and repeated managed-proxy socket failures, so the run used
+  read-only GitHub metadata and web-index fallback discovery after crawler-first
+  coverage.
+- Complete PR inventory: compact audit, archive URLs, crawler output, recent PR
+  URLs, authored open PRs, term partitions, and exact `gh pr view` readbacks
+  were merged. Authored open PR search hit the 1,000-result cap. Term partitions
+  `tweetclaw`, `OpenClaw`, and `SKILL.md` each hit 500 before GitHub Search
+  returned HTTP 403 rate limit on the `Xquik` partition at
+  `2026-07-02 18:56:05 UTC`; broad authenticated search stopped there. Union
+  inventory had 1,831 URLs and exact reads succeeded for all 1,831. Exact state:
+  1,831 OPEN; mergeability: 1,779 MERGEABLE, 37 CONFLICTING, 15 UNKNOWN; other
+  counts: 8 drafts, 409 comments, 210 reviews, 367 check items, and 9 current
+  failed-check PRs. This is a capped, rate-limited partitioned inventory, not a
+  claim that all in-scope GitHub PRs are exhausted.
+- Repair priority: all 37 open conflicting PRs were passed to
+  `gh pr update-branch`; every attempt returned that GitHub could not update
+  due conflicts. Failed-check triage found `SukinShetty/Nemp-memory#7` had a
+  target/account Kilo credit blocker, while the CodeRabbit README comments were
+  already fixed on the current PR branch. `08Gauri/tweet-sentiment-dashboard#1`
+  had target-owned Netlify checks with no maintainer comments. `meiorz/mcp-skills#3`
+  had a target label workflow failure. Previously explained failed checks on
+  `shubhmartin107-web/skillforge#1`,
+  `OpenSenseNova/SenseNova-Skills#135`,
+  `anthropics/knowledge-work-plugins#440`,
+  `af0nx/openclaw-twitterbot#25`, `EthanAlgoX/MarketBot#8`, and
+  `paytience/FindAPIs#3` remained owner-side, stale, policy, label, or
+  target-secret blockers. No safe repair lane blocked outreach.
+- Fresh discovery and duplicate gates: web-index fallback surfaced 10 tweet
+  sentiment/dashboard candidates after crawler output was empty. Compact audit,
+  archive, target content, local clone scans, and target open plus closed PR and
+  issue lists were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, and variants. Duplicate blockers included
+  `M1325-source/Sentiment-Analysis`, `jonathanrao99/Indian-airline-tweet-sentiment-analysis`,
+  `kingabzpro/NLP-Tweets-Web-App`, and
+  `saurabhshreni-cmyk/twitter-sentiment-analysis`. `JINU98/Data-Dashboard-using-Streamlit`
+  was not cloneable. `masa-finance/elon-trump` was blocked because the target
+  contains a pre-existing public credential, and a public PR would amplify the
+  issue. `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis` also contains a
+  pre-existing public Django setting outside this diff; the PR body and diff do
+  not repeat it. Selected targets were public, non-fork, non-archived,
+  duplicate-clean, and had no explicit contribution policy files. Missing
+  license metadata was recorded and did not block direct PRs.
+- External PR `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis#1`:
+  https://github.com/Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis/pull/1
+  from fork `kriptoburak/Interactive-dashboards-for-twitter-sentiment-analysis`,
+  branch `codex/reviewed-tweet-csv-upload`, commits `0234eeb` and repair
+  commit `5227849`. REST fork parent verified
+  `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis`. The PR
+  replaces a Windows-only CSV path with the bundled sample, adds reviewed
+  TweetClaw/Twitter-X CSV upload normalization, handles missing map coordinates,
+  and avoids random-sample failures when an uploaded file lacks one sentiment
+  class. Codex connector left 1 actionable comment about sparse sentiment
+  word-clouds and malformed uploads; the repair commit catches pandas CSV parse
+  errors and adds the word-cloud empty state. Validation before and after the
+  repair: `python3 -m py_compile app.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Final readback: OPEN,
+  ready, MERGEABLE, 1 repaired comment, 0 reviews, 0 checks.
+- External PR `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis#1`:
+  https://github.com/drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis/pull/1
+  from fork `kriptoburak/Real-Time-Twitter-Sentiment-Analysis`, branch
+  `codex/normalize-reviewed-tweet-csv`, commit `4a99dc4`. REST fork parent
+  verified `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis`. The PR adds a
+  standalone converter and sample that maps reviewed TweetClaw/Twitter-X CSV
+  exports into the existing Kafka validation CSV shape. Validation:
+  `python3 -m py_compile tools/normalize_tweet_export.py Django-Dashboard/dashboard/views.py Kafka-PySpark/producer-validation-tweets.py`,
+  sample conversion to `/tmp/tweetclaw-heartbeat-20260702-1852/driss-normalized.csv`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Final readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- External PR `stuhow/airline_sentiment#1`:
+  https://github.com/stuhow/airline_sentiment/pull/1 from fork
+  `kriptoburak/airline_sentiment`, branch `codex/local-reviewed-csv-source`,
+  commit `a7b76ae`. REST fork parent verified `stuhow/airline_sentiment`. The
+  PR adds local sample and reviewed CSV upload source options, normalizes common
+  TweetClaw/Twitter-X headers into the chart fields, and fills the empty README
+  with local setup and upload guidance. Validation:
+  `python3 -m py_compile airline_sentiment/streamlit/Airline.py airline_sentiment/data_sources/local_disk.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Final readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- Official OpenClaw and package recheck: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/plugins/architecture`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/help/debugging`, and
+  `clawhub.ai/plugins/@xquik/tweetclaw` all returned HTTP 200. npm metadata:
+  `@xquik/tweetclaw` `1.6.31`; `openclaw` latest `2026.6.11`, beta
+  `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`, modified
+  `2026-07-02T07:13:30.391Z`; `clawhub` `0.23.1`, modified
+  `2026-06-30T02:19:43.454Z`. Full and omit-dev npm audits found
+  0 vulnerabilities. `npm run check-openclaw-platform-fitness` and
+  `npm run check-package-artifact` passed.
+- Public links and direct URL checks: TweetClaw markdown-link-check passed for
+  README, OpenClaw setup, agent workflows, compact audit, release memory, and
+  packaged skill. Direct URL checks returned HTTP 200 for all 3 new PRs, all
+  3 fork branches, TweetClaw GitHub, and ClawHub TweetClaw. `npmjs.com` returned
+  HTTP 403 to direct curl, while `npm view` and the npm registry metadata URL
+  returned valid package metadata and HTTP 200 respectively.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Compact Markdown memory before final
+  validation was 15280/15360 bytes.
+- Self-improvement: when crawler output is empty but proxy failures are present,
+  keep the crawler-first record and continue through exact metadata, clone, web
+  index, and archive-backed discovery. For tweet-dashboard targets, prefer
+  reviewed CSV upload or converter lanes that require sentiment labels instead
+  of implying TweetClaw itself supplies labels.

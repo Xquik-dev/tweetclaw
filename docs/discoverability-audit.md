@@ -189,20 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 18:45 UTC: runtime selector unavailable. Crawler coverage: PR
-  monitor 5, skill coverage 13 with proxy socket failures, fresh target crawl
-  0. PR inventory exact-read 2,558 of 2,598 URLs: 2,304 open, 2,314 mergeable,
-  66 conflicting, 178 unknown, 9 draft, 902 comments, 411 reviews, 905 check
-  items, and 28 failed checks across all states.
-- Repair priority: 51 open conflicts could not update due conflicts. Failed
-  checks were stale, owner-side, base-branch, target-policy, or already
-  explained. `OpenSenseNova/SenseNova-Skills#135` had a later passing title
-  check; `anthropics/knowledge-work-plugins#440` is scope-guard blocked.
+- 2026-07-02 19:14 UTC: runtime selector unavailable. Crawler coverage: PR
+  monitor 5, skill/fresh crawls 0 with proxy socket failures after a smaller
+  rerun. Authored open PR search hit the 1,000 cap; term partitions
+  `tweetclaw`, `OpenClaw`, and `SKILL.md` hit 500 before GitHub Search rate
+  limited `Xquik`. Exact readbacks covered 1,831 current open PR URLs: 1,779
+  mergeable, 37 conflicting, 15 unknown, 8 draft, 409 comments, 210 reviews,
+  367 check items, and 9 failed-check PRs.
+- Repair priority: all 37 conflicts failed `gh pr update-branch` due conflicts.
+  Current failed checks were target-owned, stale, label/config, scope-guard, or
+  account-credit blockers; no safe repair lane blocked outreach.
 - Opened 3 fresh PRs after duplicate, policy, fork, and validation gates:
-  `vincevertulfo/PHStock-tweets-dashboard#2`,
-  `abdulrahmansamy766/disaster-tweets-dashboard#1`, and
-  `divisiondeariza/tweets-dashboard#10`. All are OPEN, ready, MERGEABLE, and
-  have 0 comments, 0 reviews, and 0 checks on final readback.
+  `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis#1`,
+  `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis#1`, and
+  `stuhow/airline_sentiment#1`. All are OPEN, ready, MERGEABLE, and have
+  0 reviews and 0 checks; the 1 Tekraj Codex connector comment was repaired.
 
 ## Reporting Checklist
 
