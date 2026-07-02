@@ -2223,6 +2223,30 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
   `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
 
+## 2026-07-02 14:29 UTC Release-Fitness Check
+
+- Runtime model, speed, and effort selector was unavailable for this heartbeat;
+  continued on the available runtime.
+- Official OpenClaw docs and routes rechecked live: root and docs `llms.txt`,
+  `llms-full.txt`, CLI, plugin install/update/inspect, skills, tools/plugin,
+  plugin manifest, bundle, SDK runtime, permission request, install override,
+  ClawHub, publishing, skill-format, gateway secrets, agent runtime, and
+  debugging routes all returned HTTP 200. ClawHub TweetClaw redirected to
+  `https://clawhub.ai/xquik/plugins/tweetclaw` with HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- Package hygiene passed: npm moderate audit, production-only npm moderate
+  audit, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory, plus
+  `npm run check-memory-md-size`.
+- No release files or package metadata changed beyond compact memory timestamp
+  refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
+  `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
+
 ## 2026-07-02 13:52 UTC Release-Fitness Check
 
 - Runtime model, speed, and effort selector was unavailable for this heartbeat;
