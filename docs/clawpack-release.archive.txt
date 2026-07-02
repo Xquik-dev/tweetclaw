@@ -2223,6 +2223,27 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
   `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
 
+## 2026-07-02 01:04 UTC Release-Fitness Check
+
+- Runtime model, speed, and effort selector was unavailable for this heartbeat;
+  continued on the available runtime.
+- Official OpenClaw docs rechecked live: `llms.txt`, CLI plugin docs, plugin
+  install/update/inspect docs, manifest docs, permission request docs, tools
+  plugin docs, SDK/runtime docs, ClawHub publishing and skill-format docs,
+  install override docs, and debugging docs returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` published latest `1.6.31`,
+  homepage `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- Package hygiene passed: `npm run check-openclaw-platform-fitness`, `npm audit
+  --audit-level=moderate`, `npm run check-memory-md-size`, and public Markdown
+  link check for README, OpenClaw setup, agent workflows, compact audit, and
+  release memory. Final compact Markdown memory size was 15068 of 15360 bytes.
+- No release files or package metadata changed beyond compact memory timestamp
+  refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
+  `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
+
 ## 2026-07-02 00:03 UTC Release-Fitness Check
 
 - Runtime model, speed, and effort selector was unavailable for this heartbeat;

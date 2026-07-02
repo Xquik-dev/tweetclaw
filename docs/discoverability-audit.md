@@ -188,22 +188,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 00:34 UTC: runtime selector unavailable. Xquik crawler-first
-  coverage: PR monitor 10 hits, skill coverage 0, fresh-target batch 0. Broad
-  authored PR search hit a GitHub 504, so audit-tracked and recent updated PRs
-  were exact-read by REST. Exact readbacks covered 27 open PRs; no maintainer
-  repair was needed after the stale `zaidmukaddam#2` review comment was already
-  fixed at head.
+- 2026-07-02 01:04 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 10 generic hits, skill coverage 0, fresh-target batch 0. Authored
+  open inventory was partitioned after all-2026 and June caps; 3,138 rows were
+  deduped, 3,068 were broad in-scope, and 39 recent or audit PRs were
+  exact-read.
+- Repairs: `Aditya923-c/xpoz-agent-skills#1` and
+  `shajith003/awesome-claude-skills#4` conflicts were repaired and exact-read
+  mergeable; `KamujuSaiSuryaVenkat/...Dashboard#1` was exact-read mergeable
+  with an equivalent remote column-normalization fix already at head.
 - Fresh PRs opened:
-  https://github.com/woragis/social-media-sentiment-analysis/pull/3,
-  https://github.com/krithik1807/PRODIGY_DS_04/pull/2, and
-  https://github.com/HayreBuilds/twitter-sentiment-analyzer/pull/1. All were
-  open, ready, mergeable, comment-free, review-free, and check-free at
-  readback. Selected targets were MIT licensed, duplicate-clean,
-  policy-clean, and fork-parent verified under `kriptoburak`.
-- OpenClaw docs, ClawHub, npm metadata, target links, syntax checks, diff
-  checks, public-hygiene scans, audits, link checks, package gates, and
-  `check:all` passed. Prompt size remained 13,514 bytes.
+  https://github.com/meetshah1304/NLP-Sentiment-Analysis-on-Social-Media-Data/pull/1,
+  https://github.com/konduriprudhvikumar/Social-Media-Sentiment-Intelligence-Platform/pull/1,
+  and https://github.com/Nithya200505/Twitter_Sentiment_Analysis/pull/1. All
+  were exact-read open, ready, mergeable, comment-free, review-free, and
+  check-free. Full duplicate gates, validation, links, and OpenClaw/npm checks
+  are in the archive.
 
 ## Reporting Checklist
 
