@@ -2866,3 +2866,36 @@ passed. `check:all` included 168 tests with 100 percent coverage.
 - No package metadata changed. Source remains `@xquik/tweetclaw@1.6.32`;
   published npm remains `1.6.31`; npm publish auth and ClawHub owner-scope
   blockers remain unchanged.
+
+## 2026-07-02 18:12 UTC Release-Fitness Check
+
+- Runtime model, Fast mode, and extra-high effort selector was unavailable for
+  this heartbeat; continued on the available runtime.
+- Official OpenClaw docs rechecked live. `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/plugins/architecture`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`, and the
+  ClawHub TweetClaw redirect route returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- ClawHub TweetClaw route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`; ClawHub remains stale compared
+  with source and npm, so npm remains canonical and `openclaw.install.clawhubSpec`
+  must stay absent.
+- Package hygiene passed before memory archive edits: full and omit-dev npm
+  audits, `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact`.
+- Final post-archive release gate passed through `npm run check:all`, including
+  package fitness, package artifact validation, 168 tests, and 100 percent
+  statement, branch, function, and line coverage. Compact Markdown memory was
+  15265/15360 bytes, public Markdown links passed, and diff hygiene had no
+  matches.
+- No package metadata changed. Source remains `@xquik/tweetclaw@1.6.32`;
+  published npm remains `1.6.31`; npm publish auth and ClawHub owner-scope
+  blockers remain unchanged. Durable release lesson: outreach runs may update
+  release memory timestamps without changing release state when OpenClaw docs,
+  npm metadata, package artifact checks, and audits match prior blockers.
