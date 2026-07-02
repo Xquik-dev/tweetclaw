@@ -2223,6 +2223,33 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
   `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
 
+## 2026-07-02 12:32 UTC Release-Fitness Check
+
+- Runtime model, speed, and effort selector was unavailable for this heartbeat;
+  continued on the available runtime.
+- Official OpenClaw docs rechecked live: `openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugins, CLI skills,
+  tools/plugin, plugin manifest, plugin bundles, install overrides, ClawHub
+  publishing, ClawHub skill-format docs, gateway secrets, agent runtime docs,
+  and help debugging all returned HTTP 200. Old permission-request and
+  `/debugging` routes returned HTTP 404.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- ClawHub TweetClaw route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`; ClawHub remains stale compared
+  with source and npm, so npm remains canonical and `openclaw.install.clawhubSpec`
+  must stay absent.
+- Package hygiene passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  and `npm run check-package-artifact`. Public Markdown link check and memory
+  size checks are recorded in the final compact commit validation.
+- No release files or package metadata changed beyond compact memory timestamp
+  refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
+  `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
+
 ## 2026-07-02 04:40 UTC Release-Fitness Check
 
 - Runtime model, speed, and effort selector was unavailable for this heartbeat;

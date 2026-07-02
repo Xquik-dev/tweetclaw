@@ -54097,6 +54097,134 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-02 12:32 UTC Heartbeat Run
+
+Runtime and crawler coverage:
+- Runtime model, speed, and reasoning-effort selector was unavailable for this
+  same-thread heartbeat; continued on the available runtime and recorded the
+  limitation here and in compact memory.
+- Crawler-first discovery from `/Users/burak/Developer/xquik` used strict JSON
+  output with `--research-proxy`, bounded request and warmup timeouts, focused
+  query packs, and stable session ids. PR monitor output contained 5
+  opportunities and 0 errors. Skill coverage output contained 1 opportunity and
+  0 errors. Fresh-target crawler output contained 1 opportunity and 0 errors.
+- Crawler-covered lanes included open PR monitoring, Xquik/x-twitter-scraper
+  social agent tools, TweetClaw/OpenClaw/ClawHub/MCP, SKILL.md, `.agents/skills`,
+  skills directories, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill
+  variants, awesome lists, registries, forks, generated catalogs, and sentiment
+  dashboard targets.
+
+Open PR inventory and repair:
+- Inventory inputs: compact audit, archives, crawler output, audit URL scrape,
+  authored open PR partitions, exact target PR reads, and known PR URLs.
+  Extracted 1655 audit/archive PR URLs. Authored search partition readbacks:
+  updated on 2026-07-02 returned 130 URLs, updated on 2026-07-01 returned 316
+  URLs, and updated before 2026-07-01 hit the GitHub 1000-result cap, so the
+  older broad partition remains incomplete.
+- Exact-read set covered 248 URLs from current-day authored PRs and recent audit
+  URLs. Summary: 248 total, 247 exact-read, 1 repo-resolution error, 226 open, 7
+  conflicts, 16 unknown mergeability rows, 43 with comments, 15 with reviews, 22
+  with checks, 0 failing checks, and 4 review-required rows. Conflict rows were
+  recorded for `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `vaibhav4046/mcp-marketplace#1`, `vauxr-ai/vauxr-openclaw#5`,
+  `wondelai/skills#6`, and `xpaysh/awesome-x402#346`. The repo-resolution error
+  was `www222fff/openclaw-social-skills#1`.
+- Actionable repair completed for
+  https://github.com/understanding-81/topsis-mcdm-tool/pull/1. Thread-aware
+  GraphQL found 2 unresolved CodeRabbit comments. Pushed `fddaac9` to branch
+  `codex/validate-topsis-inputs` on correctly parented fork
+  `kriptoburak/understanding-topsis-mcdm`, then commented
+  https://github.com/understanding-81/topsis-mcdm-tool/pull/1#issuecomment-4862410198.
+  Validation: `python3 -m py_compile backend/app.py`, `git diff --check`,
+  temp-venv Flask client checks for empty CSV upload and `/api/download/..`, and
+  diff public-hygiene scan. Exact readback: OPEN, ready, MERGEABLE, CodeRabbit
+  APPROVED, 1 successful CodeRabbit status context, and no failing checks.
+
+Fresh candidates and duplicate gates:
+- Fresh crawler and fallback candidates screened included
+  `yopiesuryadi/mailbot-programmable-inbox`, `rxhxm/sixtyfour-skill`,
+  `shane9coy/Agent-Skill-Architecture-Guide`, `RajeshKalidandi/ai-agent-knowledge`,
+  `creatorcrawl/creatorcrawl-skill`, `Eyalm321/zernio-mcp`,
+  `ShafqaatMalik/sentiment-tracker-dashboard`,
+  `Deepchachle/real-time-social-dashboard`, `BluShooz/SocialLinkr-Advanced`,
+  `Ashritagogula/twitter-sentiment-analysis-bert`,
+  `N-Haritha16/twitter-sentiment-bert-api`, and
+  `Anupam-Santra/Social-Media-Sentiment-Analysis-Dashboard`.
+- Duplicate and target-policy checks searched compact memory, archives, target
+  content, target PRs, target issues, repo metadata, and local clones for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and variants. The 3
+  selected repos were non-forks, non-archived, issue-enabled, absent from
+  compact/archive as prior TweetClaw submissions, duplicate-clean in target
+  PRs/issues/content, and had no AGENTS, CLAUDE, CONTRIBUTING, CODE_OF_CONDUCT,
+  or SECURITY policy blockers. License metadata was missing for all 3 selected
+  repos and was recorded but did not block direct PRs.
+
+Fresh PRs submitted:
+- https://github.com/Ashritagogula/twitter-sentiment-analysis-bert/pull/1 from
+  correctly parented fork `kriptoburak/ashrita-twitter-sentiment-analysis-bert`,
+  branch `codex/flexible-batch-text-column`, commit `19cb511`. The PR adds
+  flexible batch text-column detection, `--text-column`, README usage notes, and
+  early CSV schema validation for common social export columns. Validation:
+  `python3 -m py_compile scripts/batch_predict.py`, `git diff --check`,
+  README markdown-link-check, and diff public-hygiene scan. Readback: OPEN,
+  ready, MERGEABLE, 1 successful GitGuardian check, 0 comments, 0 reviews.
+- https://github.com/N-Haritha16/twitter-sentiment-bert-api/pull/1 from
+  correctly parented fork `kriptoburak/haritha-twitter-sentiment-bert-api`,
+  branch `codex/flexible-batch-text-column`, commit `21a6720`. The PR adds
+  flexible batch text-column detection, `--text-column`, corrected batch script
+  README paths, and safe current-directory output handling. Validation:
+  `python3 -m py_compile scripts/batch_predict.py`, `git diff --check`, and
+  diff public-hygiene scan. README markdown-link-check was attempted but a
+  pre-existing localhost variable URL in the target README throws
+  `ERR_INVALID_URL`. Readback: OPEN, ready, MERGEABLE, 1 successful GitGuardian
+  check, 0 comments, 0 reviews.
+- https://github.com/Anupam-Santra/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from correctly parented fork `kriptoburak/anupam-social-media-sentiment-dashboard`,
+  branch `codex/csv-prediction-input`, commit `8edf0b4`. The PR adds
+  `--csv-file`, `--output-file`, `--text-column`, social text-column
+  auto-detection, and CSV prediction output with original rows plus cleaned
+  text, sentiment, confidence, and class scores. Validation:
+  `python3 -m py_compile src/predict.py`, `git diff --check`, and diff
+  public-hygiene scan. README markdown-link-check was attempted but pre-existing
+  localhost and LinkedIn links fail independently of this change. Readback:
+  OPEN, ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probe returned HTTP 200 for `openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, CLI plugins, CLI skills,
+  tools/plugin, plugin manifest, plugin bundles, install overrides, ClawHub
+  publishing, ClawHub skill format, gateway secrets, agent runtimes, and help
+  debugging. Old permission-request and `/debugging` routes returned 404.
+  ClawHub TweetClaw routes returned HTTP 200, with
+  `clawhub.ai/plugins/@xquik/tweetclaw` redirecting to
+  `clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  and `npm run check-package-artifact`. Public Markdown link check and memory
+  size checks are recorded in the final compact commit validation.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  or stale metadata in edited external PR diffs. No NHS Agentic Readiness badge
+  was added.
+
+Memory and self-improvement:
+- Compact Markdown memory was kept below the 15 KiB cap by replacing the
+  latest-run block and moving this full record here. Persisted prompt file size
+  was 13514 bytes, under the 15 KiB cap.
+- Durable lesson: CodeRabbit thread fetch helpers can target the fork instead
+  of the base repo for custom fork PRs; when that happens, query unresolved
+  review threads against the base repository owner/name directly, then verify
+  post-repair review decision by exact PR readback.
+- Durable lesson: newer `openclaw` beta tags do not replace `latest`; only
+  update TweetClaw platform metadata when official docs or `latest` require it.
+
 ## 2026-07-02 04:40 UTC Heartbeat Run
 
 Runtime and scope:
