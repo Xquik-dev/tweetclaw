@@ -49,12 +49,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 00:03 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 00:34 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; required CLI, tool,
   plugin, ClawHub, gateway, debugging, and runtime routes returned HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 00:03 UTC after redirecting to
+  2026-07-02 00:34 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -74,7 +74,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 00:03 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 00:34 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -188,22 +188,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 00:03 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 10 hits, skill coverage 0, fresh-target batch 0. Focused authored
-  search found 698 open URLs; GraphQL quota was 0, so recent and audit-tracked
-  PRs were exact-read by REST. Repaired active PRs
-  `tmtsmrsl/TwitterSentimentAnalyzer#2` and
-  `Sushmitha-93/Tweet-Sentiment-Analysis-StreamLit#2`; `zaidmukaddam#2` already
-  had the null-cell fix and GitGuardian was successful.
+- 2026-07-02 00:34 UTC: runtime selector unavailable. Xquik crawler-first
+  coverage: PR monitor 10 hits, skill coverage 0, fresh-target batch 0. Broad
+  authored PR search hit a GitHub 504, so audit-tracked and recent updated PRs
+  were exact-read by REST. Exact readbacks covered 27 open PRs; no maintainer
+  repair was needed after the stale `zaidmukaddam#2` review comment was already
+  fixed at head.
 - Fresh PRs opened:
-  https://github.com/JP-sDEV/twitter_sentiment_streamlit/pull/1,
-  https://github.com/akash701752/Twitter_sentiment_Streamlit/pull/1, and
-  https://github.com/dilshadakhtar/Twitter_Sentiment_Streamlit_App/pull/1.
-  All were open, ready, clean, comment-free, review-free, and check-free at
-  REST readback. Duplicate, empty-repo, and history blockers archived.
-- OpenClaw docs, ClawHub, npm metadata, audits, artifact, TweetClaw link,
-  memory, fitness, public links, and `check:all` passed. Prompt size remained
-  13,514 bytes; details archived.
+  https://github.com/woragis/social-media-sentiment-analysis/pull/3,
+  https://github.com/krithik1807/PRODIGY_DS_04/pull/2, and
+  https://github.com/HayreBuilds/twitter-sentiment-analyzer/pull/1. All were
+  open, ready, mergeable, comment-free, review-free, and check-free at
+  readback. Selected targets were MIT licensed, duplicate-clean,
+  policy-clean, and fork-parent verified under `kriptoburak`.
+- OpenClaw docs, ClawHub, npm metadata, target links, syntax checks, diff
+  checks, public-hygiene scans, audits, link checks, package gates, and
+  `check:all` passed. Prompt size remained 13,514 bytes.
 
 ## Reporting Checklist
 
