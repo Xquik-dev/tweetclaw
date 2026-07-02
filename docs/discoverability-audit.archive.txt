@@ -57765,3 +57765,81 @@ Self-improvement:
 - For CSV/export sentiment targets, prefer a user-selectable text-column
   fallback over a hard error. It avoids rejecting useful non-standard exports
   while still defaulting to TweetClaw and X analytics column names.
+
+## 2026-07-02 18:45 UTC heartbeat
+
+- Runtime and starting state: this same-thread heartbeat did not expose a
+  Codex 5.5 Fast selector or extra-high reasoning-effort selector, so the run
+  continued under the available runtime and recorded the limitation. TweetClaw
+  started on `master` with only pre-existing untracked `0`. Xquik had unrelated
+  dirty files, left untouched. Automation TOML was 13514 bytes.
+- Crawler-first monitoring from `/Users/burak/Developer/xquik` used strict JSON
+  and research proxy. PR monitor command:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260702-1821/pr-monitor.json --research-proxy --request-timeout-ms 15000 --proxy-warmup-timeout-ms 15000 --limit 90 --search-pages 1 --per-query-limit 10 --concurrency 6 --session-id tweetclaw-pr-monitor-20260702-1821 --query 'TweetClaw OpenClaw ClawHub MCP is:pr is:open' --query 'x-twitter-scraper Xquik social media agent tools is:pr is:open' --query 'SKILL.md OpenClaw MCP Codex Claude is:pr is:open'`. It returned 5 candidates: `Xquik-dev/tweetclaw`, `yopiesuryadi/mailbot-programmable-inbox`, `rxhxm/sixtyfour-skill`, `shane9coy/Agent-Skill-Architecture-Guide`, and `RajeshKalidandi/ai-agent-knowledge`.
+- Skill crawler command:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260702-1821/skill-coverage.json --research-proxy --request-timeout-ms 15000 --proxy-warmup-timeout-ms 0 --limit 120 --search-pages 1 --per-query-limit 10 --concurrency 6 --session-id tweetclaw-skill-coverage-20260702-1821 --query 'SKILL.md twitter agent social media -Context7' --query '.agents/skills twitter x social media' --query 'OpenClaw skill MCP skill Codex skill Claude skill' --query 'awesome agent skills Twitter X social media' --query 'skill registry agent social media twitter'`. It returned 13 candidates and repeated proxy socket failures: `hashgraph-online/registry-broker-skills`, `AElfProject/aelf-skills`, `zhayujie/CowAgent`, `liyupi/ai-guide`, `wanshuiyin/Auto-claude-code-research-in-sleep`, `jdrhyne/agent-skills`, `LLMQuant/skills`, `codeking-ai/cligate`, `gybob/aai-gateway`, `shepsci/kaggle-skill`, `rabden/X-twitter-social-manager-skill`, `elbis330/social-media-scraper-skill`, and `AISA-skills/social-media-skills`.
+- Fresh target crawler command:
+  `bun run github:crawl --json --output /tmp/tweetclaw-heartbeat-20260702-1821/fresh-targets.json --research-proxy --request-timeout-ms 15000 --proxy-warmup-timeout-ms 0 --limit 140 --search-pages 1 --per-query-limit 10 --concurrency 6 --session-id tweetclaw-fresh-targets-20260702-1821 --query 'twitter analytics csv export streamlit sentiment' --query 'social media analytics csv upload tweet dashboard' --query 'X Twitter agent tool catalog plugin list' --query 'agent skills social media twitter registry' --query 'OpenClaw plugin examples social media twitter'`. It returned valid JSON with 0 candidates and proxy socket failures, so fallback GitHub metadata search was used.
+- Complete PR inventory: compact audit, archives, previous run URL lists, crawler output, authored open PR partitions, broad term partitions, and exact `gh pr view` readbacks were merged. Authenticated partitions returned 352 current-day authored open PRs; `tweetclaw`, `OpenClaw`, `SKILL.md`, and `Xquik` term partitions each hit the 500 cap; `Twitter sentiment` returned 13. Union inventory was 2598 PR URLs. Exact reads succeeded for 2558 and failed for 40 stale, deleted, or otherwise unreadable archived URLs. Exact state counts: 2304 OPEN, 129 CLOSED, 125 MERGED. Mergeability: 2314 MERGEABLE, 66 CONFLICTING, 178 UNKNOWN. Other counts: 9 drafts, 902 comments, 411 reviews, 905 status-check items, and 28 failing check items across all states. This is a broad partitioned inventory with unresolved caps in the capped term partitions, not a claim that all in-scope GitHub PRs are exhausted.
+- Repair priority: 51 open conflicting PRs were passed to `gh pr update-branch`; every attempt returned that GitHub could not update due conflicts. Failed-check triage found `OpenSenseNova/SenseNova-Skills#135` had a stale title-check failure followed by a passing title check. `shubhmartin107-web/skillforge#1` failures were target/base lint debt and missing FastAPI dependency, with no hits for this run's changed example files. `anthropics/knowledge-work-plugins#440` failed the target scope guard because non-member PRs may only add marketplace entries for already live plugin sources. `The-Swarm-Corporation/swarms-tools#56`, `af0nx/openclaw-twitterbot#25`, `paytience/FindAPIs#3`, and `EthanAlgoX/MarketBot#8` were owner-side label, canceled, base automation, or already-explained target-secret blockers. Closed or merged historical failures were not repairable. No safe repair lane remained before outreach.
+- Fresh screening and blockers: duplicate gates checked compact audit, archive, target content, open plus closed target PRs, open plus closed issues, fork metadata, and local clone scans for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and variants. `tom-doerr/twitter-analytics-dashboard` was duplicate-blocked by existing PR #1. `Shwetapandey10/Streamlit-tweet-dashboard-` was archive-known. `aut-twitter/analytics-dashboard` was archive-known as duplicate-clean but low fit. `vaish-vkb/Twitter-Analytics-Dashboard` and `Shwetapandey10/streamlit-tweet-dashboard` were weak lanes because they were Power BI or README-only. `dastinnette/politweets`, `Sairam-DE/tweet_dashboard`, `vincevertulfo/PHStock-tweets-dashboard`, `abdulrahmansamy766/disaster-tweets-dashboard`, `divisiondeariza/tweets-dashboard`, `momalekpour/usairlines-tweets-dashboard`, and other tweet-dashboard search results were screened. Selected targets were non-fork, non-archived, public, duplicate-clean, and had no explicit contribution-policy blocker. Missing license metadata was recorded and did not block direct PRs.
+- External PR `vincevertulfo/PHStock-tweets-dashboard#2`:
+  https://github.com/vincevertulfo/PHStock-tweets-dashboard/pull/2 from fork
+  `kriptoburak/PHStock-tweets-dashboard`, branch
+  `codex/flexible-x-export-csv`, commit `2672681`. REST fork parent verified
+  `vincevertulfo/PHStock-tweets-dashboard`. The PR accepts common Twitter/X and
+  TweetClaw export CSV headers for text, date, user, cashtag, and ticker, extracts
+  a stock symbol from tweet text when needed, handles a missing `datasets`
+  folder or no CSV files safely, and documents reviewed CSV imports. Validation:
+  `python3 -m py_compile app.py scraper.py`, `git diff --check`, and
+  markdown-link-check with a config ignoring the pre-existing LinkedIn bot block.
+  Final readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- External PR `abdulrahmansamy766/disaster-tweets-dashboard#1`:
+  https://github.com/abdulrahmansamy766/disaster-tweets-dashboard/pull/1 from
+  fork `kriptoburak/disaster-tweets-dashboard`, branch
+  `codex/normalize-uploaded-tweet-csv`, commit `0201785`. REST fork parent
+  verified `abdulrahmansamy766/disaster-tweets-dashboard`. The PR normalizes
+  common tweet text, label, keyword, and location aliases, keeps supervised
+  training explicit by raising a clear error when no label column exists, and
+  shows Streamlit upload errors without a stack trace. Validation:
+  `python3 -m py_compile app.py logic.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Final readback: OPEN,
+  ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- External PR `divisiondeariza/tweets-dashboard#10`:
+  https://github.com/divisiondeariza/tweets-dashboard/pull/10 from fork
+  `kriptoburak/tweets-dashboard`, branch
+  `codex/accept-x-export-csv-aliases`, commit `9410141`. REST fork parent
+  verified `divisiondeariza/tweets-dashboard`. The PR maps common Twitter/X and
+  TweetClaw CSV aliases into the existing Django tweet loader, preserves original
+  Twitter archive columns, imports like and retweet counts when present, fixes a
+  stale virtualenv docs link, and removes a localhost URL from link checking.
+  Validation: `python3 -m py_compile libs/twitter_utils/csv_loader.py`,
+  `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  Final readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- Official OpenClaw and package recheck: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/plugins/architecture`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/help/debugging`, and
+  `clawhub.ai/plugins/@xquik/tweetclaw` all returned HTTP 200. npm metadata:
+  `@xquik/tweetclaw` `1.6.31`; `openclaw` latest `2026.6.11`, beta
+  `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`, modified
+  `2026-07-02T07:13:30.391Z`; `clawhub` `0.23.1`, modified
+  `2026-06-30T02:19:43.454Z`. Full and omit-dev npm audits found 0
+  vulnerabilities. `npm run check-openclaw-platform-fitness` and
+  `npm run check-package-artifact` passed.
+- Public links and direct URL checks: TweetClaw markdown-link-check passed for
+  README, OpenClaw setup, agent workflows, compact audit, release memory, and
+  packaged skill. Direct URL checks returned HTTP 200 for TweetClaw GitHub, npm
+  registry metadata, ClawHub TweetClaw route, all 3 new PRs, and all 3 fork
+  branches. Target link checks passed after treating the PH dashboard's
+  pre-existing LinkedIn bot block as an ignored target-owned link.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Validation after edits is recorded in the
+  commit that follows this archive entry.
+- Self-improvement: keep using broad PR partitions plus exact URL readbacks, but
+  record capped term partitions plainly. For CSV/export dashboards, prefer
+  compatibility code that maps aliases into the target's existing data shape and
+  rejects unlabeled training data clearly rather than adding marketing-only
+  mentions.

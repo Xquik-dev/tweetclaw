@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 18:12 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 18:40 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 18:12 UTC after redirecting to
+  2026-07-02 18:40 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 18:12 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 18:40 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,22 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 18:12 UTC: runtime selector unavailable. Crawler coverage: PR
-  monitor 5; skill coverage 13 with proxy socket failures; fresh target crawl
-  0. GitHub PR inventory exact-read 1,406 open PRs with 0 errors after a
-  partial broad-search rate limit: 1,352 mergeable, 29 conflicting, 25 unknown,
-  7 draft, 378 comments, 147 reviews, 248 check items, and 8 failed or
-  action-required checks.
-- Repair priority: update-branch left all 29 conflicts unresolved. Sampled
-  failing checks were owner-side labels, stale bot failures, missing target
-  secrets, authorization, or bot-account credit blockers. No safe repair lane
-  remained before outreach.
+- 2026-07-02 18:45 UTC: runtime selector unavailable. Crawler coverage: PR
+  monitor 5, skill coverage 13 with proxy socket failures, fresh target crawl
+  0. PR inventory exact-read 2,558 of 2,598 URLs: 2,304 open, 2,314 mergeable,
+  66 conflicting, 178 unknown, 9 draft, 902 comments, 411 reviews, 905 check
+  items, and 28 failed checks across all states.
+- Repair priority: 51 open conflicts could not update due conflicts. Failed
+  checks were stale, owner-side, base-branch, target-policy, or already
+  explained. `OpenSenseNova/SenseNova-Skills#135` had a later passing title
+  check; `anthropics/knowledge-work-plugins#440` is scope-guard blocked.
 - Opened 3 fresh PRs after duplicate, policy, fork, and validation gates:
-  `jatingujju/social-media-sentiment-analysis-dashboard#1`,
-  `aldrinjenson/twitter-profile-analysis#2`, and
-  `DanielRough/tweetthing#1`. All are OPEN, ready, and MERGEABLE. Bot readbacks
-  show only a Codex usage-limit notice and a repaired Sourcery suggestion on
-  `aldrinjenson`; GitGuardian passed after the repair push.
+  `vincevertulfo/PHStock-tweets-dashboard#2`,
+  `abdulrahmansamy766/disaster-tweets-dashboard#1`, and
+  `divisiondeariza/tweets-dashboard#10`. All are OPEN, ready, MERGEABLE, and
+  have 0 comments, 0 reviews, and 0 checks on final readback.
 
 ## Reporting Checklist
 
