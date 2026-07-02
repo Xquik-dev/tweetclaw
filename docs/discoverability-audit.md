@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 04:09 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 04:20 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; required CLI, tool,
   plugin, ClawHub, and skill routes returned HTTP 200. The old debugging route
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 04:09 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 04:20 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,17 +189,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 04:09 UTC: runtime selector unavailable. Crawler-first coverage:
+- 2026-07-02 04:20 UTC: runtime selector unavailable. Crawler-first coverage:
   PR monitor 5, skill coverage 1, fresh-target batch 5. Broad authored PR
-  inventory partitions were read without treating the 1000-result cap as
-  complete; current-day exact read covered 91 PRs plus audit-known URLs.
-- Repair: `shajith003/awesome-claude-skills#4` conflict was merged with
-  upstream, link-checked, pushed as `710f72b`, and exact-read open, ready,
-  mergeable, 0 checks, 0 comments, 0 reviews.
+  inventory hit the 1000-result cap and then GitHub Search rate limits, so broad
+  search was stopped per policy; current-day exact read covered 106 PRs.
+- Repair: `jamald33n/tweetsave-mcp#2` conflict was merged with upstream,
+  link-checked, pushed as `c7552fa`, and exact-read open, ready, mergeable, 0
+  checks, 0 comments, 0 reviews.
 - Fresh PRs opened and exact-read mergeable:
-  https://github.com/PatJosh-Codes/social-media-sentiment-analysis/pull/1,
-  https://github.com/kashifali6273/Twitter-Sentiment-Analysis-with-Big-Data-Spark-FastAPI-React/pull/1,
-  and https://github.com/pushpashree637/Social_Media_Sentiment_analysis/pull/1.
+  https://github.com/shravani120625/Social-Media-Sentiment-Analysis-Dashboard-/pull/1,
+  https://github.com/ashishverma101/Social-Media-Sentimental-Analysis/pull/1,
+  and https://github.com/annajoseph42365-beep/sentimentscope/pull/1.
   Archive records duplicate gates, target policy, validation limits, link
   checks, OpenClaw/npm checks, and prompt-size readback.
 

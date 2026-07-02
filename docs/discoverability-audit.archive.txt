@@ -54097,6 +54097,131 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-02 04:20 UTC Discoverability Heartbeat
+
+Inventory and repairs:
+- Runtime selector limitation: this environment did not expose Codex 5.5 Fast
+  mode or extra-high reasoning controls, so the run continued on the available
+  runtime and recorded the limitation.
+- Xquik crawler-first PR monitoring ran from `/Users/burak/Developer/xquik`
+  with research proxy, strict JSON output, session
+  `tweetclaw-pr-monitor-20260702-0420`, and focused TweetClaw/OpenClaw/MCP,
+  x-twitter-scraper/Xquik, social media, agent tool, and skill PR queries.
+  Result: 0 repositories, 5 opportunities, 0 crawler errors.
+- Skill coverage crawler session `tweetclaw-skill-coverage-20260702-0420`
+  covered `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw, MCP, Codex,
+  Claude, agent, social media, Twitter/X skills, awesome skill lists, skill
+  registries, forks, and generated catalog lanes. Result: 0 repositories, 1
+  opportunity, 0 crawler errors.
+- Fresh-target crawler session `tweetclaw-fresh-targets-20260702-0420` covered
+  Twitter sentiment Flask, Streamlit, dashboard, CSV, and FastAPI lanes. Result:
+  0 repositories, 5 opportunities, 0 crawler errors.
+- Authenticated authored-open partitions read `updated:>=2026-07-02` with 106
+  PRs and `updated:2026-07-01` with 316 PRs. The `<2026-07-01` bucket hit the
+  1000-result cap, and narrower follow-up buckets hit GitHub Search 403 rate
+  limits at 2026-07-02 04:23 UTC. Broad authenticated search stopped per policy.
+- Exact readback covered 106 current-day authored PRs: 0 read errors, 0 failing
+  check sets, 0 summary conflicts, 5 unknown mergeability states, 10 commented
+  PRs, 3 reviewed PRs, and 5 PRs with checks. Manual exact read found
+  `jamald33n/tweetsave-mcp#2` was conflicting despite a prior unknown summary.
+- Repair: `jamald33n/tweetsave-mcp#2`
+  https://github.com/jamald33n/tweetsave-mcp/pull/2 was repaired by merging
+  upstream `main` into `codex/tweetclaw-openclaw-companion`, resolving README
+  conflicts by preserving valid GitHub links and the existing TweetClaw/OpenClaw
+  section, validating `markdown-link-check README.md --quiet` and
+  `git diff --check`, then pushing commit
+  `c7552fa8154716d67b38ff5989e5d2c3e42d81e1`. Exact readback after push:
+  OPEN, ready, MERGEABLE, 0 checks.
+
+Fresh candidate screening:
+- `shravani120625/Social-Media-Sentiment-Analysis-Dashboard-`: non-fork,
+  non-archived, default branch `main`, no license metadata, no TweetClaw,
+  Xquik, x-twitter-scraper, npm, ClawHub, or OpenClaw duplicate in compact
+  memory, archive, target content, open/closed target PRs, or open/closed target
+  issues. Prior archive held it only for missing license metadata, which no
+  longer blocks a direct target-native PR.
+- `ashishverma101/Social-Media-Sentimental-Analysis`: non-fork, non-archived,
+  default branch `main`, no license metadata, no duplicate in compact memory,
+  archive, target content, target PRs, or target issues.
+- `annajoseph42365-beep/sentimentscope`: non-fork, non-archived, default branch
+  `main`, no license metadata, no duplicate in compact memory, archive, target
+  content, target PRs, or target issues.
+- Fork-parent verification before PR creation: `kriptoburak/shravani-sentiment-dashboard-csv`
+  parent `shravani120625/Social-Media-Sentiment-Analysis-Dashboard-`;
+  `kriptoburak/ashish-hn-sentiment-csv-dashboard` parent
+  `ashishverma101/Social-Media-Sentimental-Analysis`;
+  `kriptoburak/annajoseph-sentimentscope-comments` parent
+  `annajoseph42365-beep/sentimentscope`.
+
+External PRs opened:
+- `shravani120625/Social-Media-Sentiment-Analysis-Dashboard-#1`:
+  https://github.com/shravani120625/Social-Media-Sentiment-Analysis-Dashboard-/pull/1
+  from branch `codex/accept-common-text-columns`, commit
+  `e4ed586cebae67746fe57e635c325ba7eacae923`. Adds detection for common CSV
+  text columns, keeps `text` compatibility, shows a clear upload error when no
+  text-like column exists, and documents accepted upload columns. Validation:
+  `python3 -m py_compile app/app.py src/predict.py src/preprocess.py`,
+  `git diff --check`, target public-hygiene diff scan. README link check found
+  only a pre-existing LinkedIn HTTP 999 response outside the change. Readback:
+  OPEN, ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+- `ashishverma101/Social-Media-Sentimental-Analysis#1`:
+  https://github.com/ashishverma101/Social-Media-Sentimental-Analysis/pull/1
+  from branch `codex/add-uploaded-csv-dashboard-mode`, commit
+  `ac463e90692d0b433475327fb98b1bf9a924bdeb`. Adds optional uploaded CSV mode
+  for dashboard analysis when PostgreSQL is unavailable, infers common text
+  columns, computes sentiment labels locally, fixes the existing auto-refresh
+  time import, and documents CSV mode. Validation: `python3 -m py_compile
+  dashboard.py hn_scraper.py s3_uploader.py`, `npx --yes markdown-link-check
+  README.md --quiet`, `git diff --check`, public-hygiene diff scan. Readback:
+  OPEN, ready, MERGEABLE, 0 checks, 0 comments, 0 reviews.
+- `annajoseph42365-beep/sentimentscope#1`:
+  https://github.com/annajoseph42365-beep/sentimentscope/pull/1 from branch
+  `codex/add-direct-comments-analysis`, commit
+  `f00b70ea9561afa8782f80b8e94a099588a68335`. Adds
+  `POST /api/analyze/comments` for already collected social comments, reuses
+  existing batch analysis, analytics, database, result, and export flow, and
+  documents the direct-comments API with a curl example. Validation:
+  `python3 -m py_compile backend/main.py backend/routes.py backend/database.py
+  backend/services/*.py`, `npx --yes markdown-link-check README.md --quiet`,
+  `git diff --check`, public-hygiene diff scan. Readback: OPEN, ready,
+  MERGEABLE, 0 checks, 0 comments, 0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw root `llms.txt` now points agents to `docs.openclaw.ai` and
+  `documentation.openclaw.ai`. Current docs probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, `/cli`, `/cli/plugins`,
+  `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
+  `/plugins/bundles`, `/plugins/install-overrides`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`,
+  `/concepts/agent-runtimes`, and `/help/debugging`. The guessed
+  `/plugins/permission-requests` and `/debugging` routes returned HTTP 404.
+  ClawHub TweetClaw route returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-memory-md-size`, `git diff
+  --check`, and public Markdown link check for README, OpenClaw setup, agent
+  workflows, compact audit, and release memory.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  or stale metadata in edited target diffs or TweetClaw audit diffs. No NHS
+  Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Compact Markdown memory stayed under the 15 KiB cap after replacing the
+  latest-run block and moving full details here. Automation prompt file size was
+  13514 bytes, under the 15 KiB cap.
+- Durable lesson: treat `openclaw.ai/llms.txt` as the top-level site index only;
+  current product documentation should be derived from `docs.openclaw.ai` or
+  `documentation.openclaw.ai` before route-level OpenClaw decisions.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`.
+
 ## 2026-07-02 04:09 UTC Heartbeat Outreach Run
 
 - Runtime model, Fast mode, and extra-high reasoning selector was unavailable

@@ -2223,6 +2223,36 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
   `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
 
+## 2026-07-02 04:20 UTC Release-Fitness Check
+
+- Runtime model, speed, and effort selector was unavailable for this heartbeat;
+  continued on the available runtime.
+- Official OpenClaw root `llms.txt` now points agents to `docs.openclaw.ai` and
+  `documentation.openclaw.ai`. Current docs probes returned HTTP 200 for
+  `docs.openclaw.ai/llms.txt`, `llms-full.txt`, `/cli`, `/cli/plugins`,
+  `/cli/skills`, `/tools`, `/tools/plugin`, `/plugins/manifest`,
+  `/plugins/bundles`, `/plugins/install-overrides`, `/clawhub`, `/clawhub/cli`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/gateway/secrets`,
+  `/concepts/agent-runtimes`, and `/help/debugging`. The guessed
+  `/plugins/permission-requests` and `/debugging` routes returned HTTP 404.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- ClawHub TweetClaw route returned HTTP 200 at
+  `https://clawhub.ai/xquik/plugins/tweetclaw`; ClawHub remains stale compared
+  with source and npm, so npm remains canonical and `openclaw.install.clawhubSpec`
+  must stay absent.
+- Package hygiene passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, `npm run check-memory-md-size`, and public
+  Markdown link check for README, OpenClaw setup, agent workflows, compact audit,
+  and release memory.
+- No release files or package metadata changed beyond compact memory timestamp
+  refreshes. Source remains `@xquik/tweetclaw@1.6.32`; published npm remains
+  `1.6.31`; npm publish auth and ClawHub owner-scope blockers remain unchanged.
+
 ## 2026-07-02 04:09 UTC Release-Fitness Check
 
 - Runtime model, speed, and effort selector was unavailable for this heartbeat;
