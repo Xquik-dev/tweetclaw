@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 15:43 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 16:04 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 15:43 UTC after redirecting to
+  2026-07-02 16:04 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 14:29 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 16:04 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,21 +189,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 15:43 UTC: runtime selector unavailable. Crawler-first coverage:
+- 2026-07-02 16:04 UTC: runtime selector unavailable. Crawler-first coverage:
   PR monitor 5, skill coverage 0 after proxy socket failures, fresh crawl 0.
-  Authored-open partition `updated >= 2026-07-02` exact-read 292 PRs with 0
-  read errors, 173 comments, 15 reviews, 57 checks, 8 conflicts, 284 mergeable
-  rows, and 4 check blockers. Broad all-time search remains capped.
-- Repair priority: 8 dirty PRs remain conflict or unrelated-history blocked.
-  Current check blockers are owner-side Vercel authorization, Google CLA, or
-  already-passing stale PR-title readback. Taskade's changeset bot is optional
-  for a test-only PR. No safe repair lane was open.
+  Current-day authored-open partition exact-read 304 PRs with 0 read errors,
+  173 comments, 16 reviews, 59 checks, 8 conflicts, 296 mergeable rows, and
+  5 failing check items. Older broad search hit GitHub Search 403, so the run
+  stopped broad authenticated search and used direct readbacks.
+- Repair priority: direct branch update failed on all 8 conflict PRs. Check
+  blockers are owner-side Vercel authorization, Google CLA, or stale rollup
+  readback where the latest OpenSense title check is passing. No safe repair
+  lane was open.
 - Opened 3 fresh PRs after duplicate, policy, fork, and validation gates:
-  `Abhiramrushi/twitter-sentiment-app#1`,
-  `kulkarnishreeraksha23-pixel/sentiment-deployment-capstone#1`, and
-  `Palvin21/Multi-Platform-Social-Media-Sentiment-and-Sarcasm-Analyzer#1`.
-  All are OPEN, ready, MERGEABLE, and have 0 comments, 0 reviews, and 0 checks.
-  Archive records URLs, blockers, validations, and fork parent readbacks.
+  `shoneprince/Twitter-sentiment-Analysis#1`,
+  `pssingh6312-ai/twitter-sentiment-app#1`, and
+  `Koshal-30/TwitterSentimentAnalyzer#1`. All are OPEN, ready, MERGEABLE, and
+  have 0 comments, 0 reviews, and 0 checks. Archive records URLs, blockers,
+  validations, and fork parent readbacks.
 
 ## Reporting Checklist
 
