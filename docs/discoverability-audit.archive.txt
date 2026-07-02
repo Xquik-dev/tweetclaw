@@ -54097,6 +54097,144 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-02 13:11 UTC Discoverability Heartbeat
+
+Run setup and scope:
+- Runtime model, speed, and effort selector was unavailable in this runtime;
+  continued on the available runtime and recorded the limitation. Hard scope was
+  preserved: no Context7 work, no TweetClaw GitHub GUI/browser inspection, no
+  dev servers, no production SSH, no secret reads, and no destructive git
+  actions. Pre-existing untracked TweetClaw path `0` stayed untouched.
+
+Crawler-first coverage and PR inventory:
+- Xquik crawler ran from `/Users/burak/Developer/xquik` with JSON output,
+  research proxy, bounded timeouts, focused query packs, and no GitHub tokens.
+  Coverage included PR monitoring for TweetClaw, OpenClaw, ClawHub, MCP, skills,
+  Xquik, x-twitter-scraper, and social automation terms; skill coverage for
+  `SKILL.md`, `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude,
+  agent, social, Twitter/X skills, registries, awesome lists, forks, generated
+  catalogs, and web-index surfaced skill repos; and 2 fresh-target passes.
+- Crawler readbacks: PR monitor returned 5 opportunities and 0 errors; skill
+  coverage returned 1 opportunity and 0 errors; fresh-target pass 1 returned 1
+  opportunity and 0 errors; fresh-target pass 2 returned 1 opportunity and 0
+  errors.
+- Audit URL extraction found 1659 PR URLs. Authored open PR partitions returned
+  225 PRs updated today, 311 PRs for 2026-07-01, and a capped older partition of
+  1000. Exact-read set used today URLs, a prior-day sample, audit URLs, crawler
+  output, and known PR URLs.
+- Exact readbacks requested 498 PR URLs and read 478, with 1 readback error
+  from `www222fff/openclaw-social-skills`. Summary: 452 open, 7 conflicts, 46
+  unknown mergeability, 62 with comments, 31 with reviews, 49 with checks, 6
+  failing checks, and 2 review-required.
+- Failing checks recorded for
+  `vanDevBett/task-manager-api#1`, `berkinksk/SenseCatch#10`,
+  `DxVerm/mcp-hub#1`, `chanduoneight/Twitiment#1`,
+  `vaibhav4046/mcp-marketplace#1`, and `weave-logic-ai/weftos#34`; target-owned
+  or expected blockers remain archived.
+
+Repair priority:
+- Repaired `shajith003/awesome-claude-skills#4` by merging upstream `main`,
+  resolving README conflicts, and preserving working GitHub repo and local docs
+  links instead of malformed raw ZIP links. Validation passed: no conflict
+  markers, `git diff --check`, README markdown-link-check, and public-hygiene
+  scan. Commit `d953ab2` was pushed to
+  `codex/fix-awesome-claude-skill-links-20260630`. Exact readback after push:
+  OPEN, MERGEABLE, no checks. Repair comment:
+  https://github.com/shajith003/awesome-claude-skills/pull/4#issuecomment-4865850449.
+
+Fresh candidate screening:
+- `dogukanucak/skribe`: MIT, not forked, not archived, duplicate-clean in
+  compact audit, archive, target content, open and closed PRs, and issues.
+  CONTRIBUTING validation path was `npm run typecheck && npm test`. Selected for
+  an OpenClaw asset-provider detector and fixture.
+- `tenequm/skills`: MIT, not archived, not forked, duplicate-clean, and target
+  topics include OpenClaw, ClawHub, MPP, and skills. Selected for an MPP skill
+  boundary note that uses TweetClaw as a concrete OpenClaw example. Existing
+  `kriptoburak/skills` was a fork of a different parent, so a custom
+  `kriptoburak/tenequm-skills` fork was created and parent-verified.
+- `mvanhorn/clawdbot-skill-remotion-server`: no license metadata in GitHub API,
+  but SKILL/README declare MIT. Not forked, not archived, duplicate-clean, and
+  target topics include OpenClaw, ClawHub, social-media, and Twitter/X video.
+  Selected for a TweetClaw-assisted public X thread recap recipe.
+- Blocked or deferred candidates: `skpm-ai/spec` had only LICENSE and git
+  metadata; `Atri2-code/Forge-Multi-Agent-Orchestration-Framework` had no clear
+  target-native TweetClaw lane; `rescheme/skills` is review-only; `barlevalon`
+  requires full package maintenance for a new skill; `luminarylane/x-twitter-
+  mcp-server` is a standalone competitor where TweetClaw would be promotional;
+  `hridaydutta123/awesome-twitter-tools` already has TweetClaw/Xquik history;
+  `creatorcrawl/creatorcrawl-skill` and `Eyalm321/zernio-mcp` remain prior or
+  archive-known blockers.
+
+External PRs opened:
+- `dogukanucak/skribe#1`:
+  https://github.com/dogukanucak/skribe/pull/1 from branch
+  `codex/add-openclaw-provider`, commit `ac4cf42`. Adds an OpenClaw provider
+  that detects `openclaw.plugin.json` plus ClawHub skill entrypoints such as
+  `SKILL.md`, `skill.md`, `skills.md`, and skill-folder variants. Adds tests and
+  a TweetClaw plugin fixture. Validation passed: npm install, typecheck, test,
+  diff check, and public-hygiene scan. Target-owned `npm audit` still reports an
+  existing `js-yaml` advisory unrelated to this change. Fork
+  `kriptoburak/skribe` parent was verified. Exact readback: OPEN, MERGEABLE.
+- `tenequm/skills#15`: https://github.com/tenequm/skills/pull/15 from branch
+  `codex/add-mpp-agent-tool-boundary`, commit `8b24fa5`. Adds MPP agent tool
+  boundary guidance, bumps the MPP skill metadata to `0.8.2`, regenerates the
+  README table, and links TweetClaw as a public OpenClaw example. Validation
+  passed: README generation, README check mode, skill policy/reference check,
+  ruff check, ruff format check, ty check, diff check, and new TweetClaw link
+  HTTP 200. `just` was unavailable locally, so equivalent `uv` commands were
+  run directly. Target markdown-link-check still reports pre-existing MPP links
+  and mailto parsing errors unrelated to this change. Fork
+  `kriptoburak/tenequm-skills` parent was verified. Exact readback: OPEN,
+  MERGEABLE.
+- `mvanhorn/clawdbot-skill-remotion-server#1`:
+  https://github.com/mvanhorn/clawdbot-skill-remotion-server/pull/1 from branch
+  `codex/add-tweetclaw-x-recap-recipe`, commit `c5655dc`. Adds a small
+  TweetClaw/OpenClaw recipe for turning public X/Twitter post or thread material
+  into approved `ChatDemo` recap excerpts before rendering. Validation passed:
+  diff check, SKILL markdown-link-check, TweetClaw URL HTTP 200, and
+  public-hygiene scan. Fork `kriptoburak/clawdbot-skill-remotion-server` parent
+  was verified. Exact readback: OPEN, MERGEABLE.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw routes returned HTTP 200 for `openclaw.ai/llms.txt`,
+  docs `llms.txt`, docs `llms-full.txt`, CLI plugins, plugin manifest, plugin
+  bundles, plugin permission requests, install overrides, tools/plugin, CLI
+  skills, ClawHub publishing, ClawHub skill format, and help debugging. ClawHub
+  TweetClaw route returned 308 to `/xquik/plugins/tweetclaw`; the canonical
+  route returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: npm moderate audit, production-only npm moderate
+  audit, OpenClaw platform fitness, package artifact check, and public Markdown
+  link check for README, OpenClaw setup, agent workflows, compact audit, and
+  release memory. The direct npmjs webpage returned 403 to Node fetch, but npm
+  registry metadata returned HTTP 200.
+- External PR URLs and the shajith repair comment returned HTTP 200. Target
+  link checks passed for `dogukanucak/skribe` and
+  `mvanhorn/clawdbot-skill-remotion-server`; `tenequm/skills` has only
+  pre-existing target-owned MPP link failures unrelated to the PR.
+- Public-hygiene scans found no secret values, restricted provider or source
+  names, private implementation details, internal cost mechanics, unsupported
+  claims, or stale metadata in edited target diffs, PR bodies, or TweetClaw
+  audit diffs. No NHS Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Prompt file size readback: 13514 bytes, under the 15 KiB prompt cap. Prompt
+  content was not changed. Compact Markdown memory was updated and full detail
+  moved here; `npm run check-memory-md-size` passed at 15228 of 15360 bytes.
+- Durable lesson: keep a renamed-fork escape path when the default
+  `owner/repo` fork name is already occupied by an unrelated parent, but always
+  verify the new fork parent before pushing. For skill repos, a target-native
+  recipe is acceptable only when the skill already owns the workflow surface and
+  the guidance includes approval or public-data boundaries.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
+  recorded by repository history for this audit run.
+
 ## 2026-07-02 12:32 UTC Heartbeat Run
 
 Runtime and crawler coverage:
