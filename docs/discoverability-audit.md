@@ -49,13 +49,14 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 04:20 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 04:40 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
-  `docs.openclaw.ai` and are indexed by `llms.txt`; required CLI, tool,
-  plugin, ClawHub, and skill routes returned HTTP 200. The old debugging route
-  returned 404; do not use it as current evidence.
+  `docs.openclaw.ai` and are indexed by `llms.txt`; current CLI, tool, plugin,
+  ClawHub, skill, gateway, and help routes returned HTTP 200. The old
+  permission-request and debugging routes returned 404; do not use them as
+  current evidence.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 00:34 UTC after redirecting to
+  2026-07-02 04:40 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +76,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 04:20 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 04:40 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,19 +190,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 04:20 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 5, skill coverage 1, fresh-target batch 5. Broad authored PR
-  inventory hit the 1000-result cap and then GitHub Search rate limits, so broad
-  search was stopped per policy; current-day exact read covered 106 PRs.
-- Repair: `jamald33n/tweetsave-mcp#2` conflict was merged with upstream,
-  link-checked, pushed as `c7552fa`, and exact-read open, ready, mergeable, 0
-  checks, 0 comments, 0 reviews.
+- 2026-07-02 04:40 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 5 opportunities, skill coverage 1, and fresh-target crawler batches
+  0 with proxy socket failures, then web-index fallback. GitHub broad authored
+  search rate-limited after current-day partitions; archive-known exact read
+  covered 58 PR URLs, 55 open, with 0 conflicts, 0 failing checks, and no
+  actionable maintainer or bot repair.
 - Fresh PRs opened and exact-read mergeable:
-  https://github.com/shravani120625/Social-Media-Sentiment-Analysis-Dashboard-/pull/1,
-  https://github.com/ashishverma101/Social-Media-Sentimental-Analysis/pull/1,
-  and https://github.com/annajoseph42365-beep/sentimentscope/pull/1.
-  Archive records duplicate gates, target policy, validation limits, link
-  checks, OpenClaw/npm checks, and prompt-size readback.
+  https://github.com/kishorkumar173/Social-Media-Sentiment-Analysis-Dashboard/pull/1,
+  https://github.com/saurabhshreni-cmyk/twitter-sentiment-analysis/pull/1,
+  and https://github.com/ceodaniyal/twitter_sentiment_analysis/pull/1.
+  Archive records target policies, duplicate gates, validation, pre-existing
+  target Streamlit link blockers, OpenClaw/npm checks, and prompt-size readback.
 
 ## Reporting Checklist
 
