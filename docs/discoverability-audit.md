@@ -49,7 +49,7 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 03:18 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 04:09 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; required CLI, tool,
   plugin, ClawHub, and skill routes returned HTTP 200. The old debugging route
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 00:34 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 04:09 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,19 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 03:18 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 5, skill coverage 1, fresh-target batch 8. Updated-today authored
-  PR inventory found 79 rows and exact-read all 79 plus 6 known audit PRs.
-- Repair: `reall8164/wechat-openclaw-plugin#1` had a README conflict, was
-  merged with upstream, link-checked, pushed as `b1dd086`, and exact-read open,
-  ready, mergeable, 20 comments, 0 reviews, 0 checks.
+- 2026-07-02 04:09 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 5, skill coverage 1, fresh-target batch 5. Broad authored PR
+  inventory partitions were read without treating the 1000-result cap as
+  complete; current-day exact read covered 91 PRs plus audit-known URLs.
+- Repair: `shajith003/awesome-claude-skills#4` conflict was merged with
+  upstream, link-checked, pushed as `710f72b`, and exact-read open, ready,
+  mergeable, 0 checks, 0 comments, 0 reviews.
 - Fresh PRs opened and exact-read mergeable:
-  https://github.com/Shree1194/chatgpt-twitter-sentiment-analysis/pull/1,
-  https://github.com/meshubhangivats/Twitter-Sentiment-Analysis-System/pull/1,
-  and https://github.com/princekabeer630-hash/Twitter-Sentiments-Analysis/pull/1.
-  Archive records duplicate gates, target PR blockers, validation, links,
-  OpenClaw/npm checks, and the next-run lesson to exact-check target PR lists
-  before cloning even when the archive has no hit.
+  https://github.com/PatJosh-Codes/social-media-sentiment-analysis/pull/1,
+  https://github.com/kashifali6273/Twitter-Sentiment-Analysis-with-Big-Data-Spark-FastAPI-React/pull/1,
+  and https://github.com/pushpashree637/Social_Media_Sentiment_analysis/pull/1.
+  Archive records duplicate gates, target policy, validation limits, link
+  checks, OpenClaw/npm checks, and prompt-size readback.
 
 ## Reporting Checklist
 
