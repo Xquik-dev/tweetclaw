@@ -54097,6 +54097,165 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-02 13:52 UTC Heartbeat
+
+Runtime and inventory:
+- Runtime model, speed, and effort selector was unavailable; continued on the
+  available runtime and recorded the limitation.
+- Crawler-first PR monitor from `/Users/burak/Developer/xquik` produced 5
+  opportunities and 0 crawler errors. Skill coverage produced 4 opportunities
+  and 0 crawler errors across `SKILL.md`, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, agent, social, Twitter/X, awesome-list, registry, fork, and
+  generated-catalog lanes. Fresh target crawls produced 12 and 8 opportunities.
+- Broad authored-open PR search returned exactly 1000 results, so broad
+  inventory is capped and not complete. Lane partitions for several broad terms
+  hit the 200-result cap. Recent authored-open search since 13:00 UTC returned
+  17 PRs; all 17 were exact-read for state, mergeability, base, head, commits,
+  comments, reviews, checks, maintainer-modify state, conflicts, and bot
+  findings.
+
+Open PR repair:
+- Repaired `Saminiscool/twitter-ai-agent#2` on head branch
+  `kriptoburak:codex/add-xquik-backend` by merging current upstream `main`,
+  resolving the README conflict, committing `7e880d4 Merge upstream main`, and
+  pushing to the exact PR head fork `kriptoburak/saminiscool-twitter-ai-agent-xquik`.
+- Repair validation passed: conflict-marker scan, `git diff --check`, Prettier
+  check on README plus touched TypeScript/test files, focused Biome lint,
+  `npx tsc --noEmit`, `npx vitest run tests/twitter-api.test.ts`, README
+  markdown-link-check, and public-hygiene scan. `npm ci --ignore-scripts`
+  reported pre-existing target lockfile advisories and changed no files.
+- Exact readback after repair: OPEN, MERGEABLE, CLEAN, no checks, no reviews,
+  no new maintainer action needed. No additional PR comment was posted to avoid
+  repeating prior self-comments.
+
+Fresh target screening:
+- Duplicate-blocked or prior-history-blocked lanes included
+  `aaaronmiller/create-viral-content`, `Kartikm09/agentic-social-redteam-skillpack`,
+  `WendyK-LS/omni-image-studio-skill`, `devadio/post-skill`,
+  `tiendatne2004/tikhub_api_skill`, and `XieWxx/maxhub-api-skills`.
+- Safety or policy blockers included
+  `expropriationhoorayhenry64/social-media-scraper-skill` because the repo has
+  prior unsafe binary ZIP concern, missing license metadata, and issues
+  disabled.
+- Additional screened lanes included `um-why/xiaohongshu-openclaw-skill`,
+  `seekneedle/rednote_crawler`, `zhuangjunhong21-blip/xhs-content-digest`,
+  `sumingcheng/posterforge-skill`, `ANVEAI/openclaw-marketing-skills`,
+  `huangji6693-max/social-media-publish-skill`,
+  `JuneYaooo/awesome-ai-media-skills`, `jrrqd/verosight-monitor`,
+  `NachaFromMars/social-media-agent`, `Baileybasic68/opencli-skill`, and
+  `rrrrrredy/all-net-search-read`.
+- Accepted lanes passed compact audit, archive, target content, open/closed
+  PR/issue duplicate checks, fork-parent checks, contribution-policy checks,
+  public-hygiene scans, and target validation.
+
+Initial PRs opened, then closed by concurrent same-account action:
+- `lovensky1992-wk/xiaohongshu-ops#1`:
+  https://github.com/lovensky1992-wk/xiaohongshu-ops/pull/1 from fork
+  `kriptoburak/xiaohongshu-ops`, branch
+  `codex/add-x-twitter-source-signals`, commit
+  `3d7787771a2956618aefb7a9e3ecaf6b958e791b`. It replaces broken local README
+  asset links with text descriptions, adds
+  `references/x-twitter-source-signals.md`, and documents TweetClaw as optional
+  public X/Twitter source evidence for cross-platform topic research. Validation:
+  `git diff --check`, markdown-link-check for README/SKILL/reference, and
+  public-hygiene scan. Final readback: CLOSED after a same-account comment
+  saying that run excluded TweetClaw routes.
+- `plagtech/ai-content-creator-skill#1`:
+  https://github.com/plagtech/ai-content-creator-skill/pull/1 from fork
+  `kriptoburak/ai-content-creator-skill`, branch
+  `codex/add-x-twitter-source-context`, commit
+  `400b02df110942773cffcada12a61f4e1323d301`. It adds an optional TweetClaw
+  source-context step for social media and repurposing workflows and updates the
+  Social Media Post workflow to summarize public evidence before drafting.
+  Validation: `git diff --check`, markdown-link-check for README/SKILL, and
+  public-hygiene scan. Final readback: CLOSED after the same same-account
+  closure comment.
+- `DeliciousBuding/xiaohongshu-skill#3`:
+  https://github.com/DeliciousBuding/xiaohongshu-skill/pull/3 from fork
+  `kriptoburak/xiaohongshu-skill-1`, branch
+  `codex/add-x-twitter-source-packets`, commit
+  `1442e362c6d9e2c682749f9d51c09fe9dad15073`. It adds Chinese and English
+  README guidance plus SKILL guidance for reviewed X/Twitter source packets.
+  TweetClaw is framed only as public source evidence; Xiaohongshu operations
+  remain in the target project and still follow existing write-confirmation
+  rules. Validation: `git diff --check`, markdown-link-check for README,
+  README_EN, and SKILL, `python3 -m compileall -q scripts tests`, and
+  public-hygiene scan. Final readback: CLOSED after the same same-account
+  closure comment. Bot comments and reviews were not actionable after closure.
+
+Replacement external PRs currently open:
+- `um-why/xiaohongshu-openclaw-skill#2`:
+  https://github.com/um-why/xiaohongshu-openclaw-skill/pull/2 from verified fork
+  `kriptoburak/xiaohongshu-openclaw-skill` parent
+  `um-why/xiaohongshu-openclaw-skill`, branch
+  `codex/add-x-twitter-source-packets`, commit
+  `850aeebfd6ccbb52a0a014db25e07b6511331329`. It adds optional X/Twitter
+  source-packet guidance for cross-platform topic research while keeping
+  Xiaohongshu search, note detail, author posts, and comment analysis in the
+  target skill. Validation: `git diff --check`, JSON parse of `package.json`,
+  markdown-link-check with the target-owned `nodejs@16.14.0+` frontmatter
+  false-positive ignored, and public-hygiene scan. Exact readback: OPEN,
+  MERGEABLE, CLEAN, 0 checks, 0 comments, 0 reviews.
+- `sumingcheng/posterforge-skill#8`:
+  https://github.com/sumingcheng/posterforge-skill/pull/8 from verified fork
+  `kriptoburak/posterforge-skill` parent `sumingcheng/posterforge-skill`,
+  branch `codex/add-source-evidence-cards`, commit
+  `ad9ba4aae03bb48b69741c3436324eb8ff506990`. It documents source evidence
+  cards and maps reviewed public X/Twitter packets into PosterForge `CardSpec`
+  fields without copying raw posts or private data. Validation:
+  `git diff --check`, markdown-link-check for README/SKILL, and public-hygiene
+  scan. Exact readback: OPEN, MERGEABLE, merge state BLOCKED, GitGuardian
+  Security Checks SUCCESS, 0 comments, 0 reviews.
+- `seekneedle/rednote_crawler#1`:
+  https://github.com/seekneedle/rednote_crawler/pull/1 from verified fork
+  `kriptoburak/rednote_crawler` parent `seekneedle/rednote_crawler`, branch
+  `codex/add-x-twitter-travel-signals`, commit
+  `369e89c10e3a123b598daee48a634f9e096bfdfd`. It documents optional X/Twitter
+  travel signal packets for RedNote keyword and hypothesis selection while
+  keeping RedNote posts as the source of record. Validation: `git diff --check`,
+  markdown-link-check for README, SKILL, and references, plus public-hygiene
+  scan. Exact readback: OPEN, MERGEABLE, CLEAN, 0 checks, 0 comments,
+  0 reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw docs and routes returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, CLI plugins, manifest, bundles, permission requests, tool
+  plugin docs, skills, ClawHub publishing, ClawHub skill format, install
+  overrides, and debugging. The canonical ClawHub TweetClaw route returned
+  HTTP 200 after redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+  The owned route-probe Node process stayed open after printing all results and
+  was stopped with Ctrl-C.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` tags latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory.
+- Broken-link results: target link checks passed for all edited replacement
+  external content. Initial closed PR target link checks also passed, including
+  the repaired pre-existing broken README image references in
+  `lovensky1992-wk/xiaohongshu-ops`. TweetClaw public Markdown link check
+  passed.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported
+  claims, or stale metadata in edited target diffs or audit updates. No NHS
+  Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Pre-edit compact Markdown memory size was 15036 of 15360 bytes. Automation
+  prompt file size was 13514 bytes, under the 15 KiB prompt cap.
+- Durable lesson: after opening PRs, do a final state read after audit edits;
+  concurrent same-account automation can close PRs and leave stale audit state.
+  If this repeats, stop opening more PRs in that run and record the automation
+  collision rather than reopening closed PRs.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
+  recorded by the repository history for this audit run.
+
 ## 2026-07-02 13:22 UTC Discoverability Heartbeat
 
 Run setup and scope:

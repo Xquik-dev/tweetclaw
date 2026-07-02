@@ -49,14 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 13:22 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 13:52 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
-  `docs.openclaw.ai` and are indexed by `llms.txt`; current CLI, tool, plugin,
-  ClawHub, skill, gateway, and help routes returned HTTP 200. The old
-  permission-request and debugging routes returned 404; do not use them as
-  current evidence.
+  `docs.openclaw.ai` and are indexed by `llms.txt`; current CLI, plugin,
+  permission request, tool, ClawHub, skill, install, and help routes returned
+  HTTP 200.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 13:22 UTC after redirecting to
+  2026-07-02 13:52 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -76,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 13:22 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 13:52 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -190,18 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 13:22 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 5 opportunities, skill coverage 1, and fresh targets 10. Recent
-  authored PR search found 10 open PRs updated since 13:00 UTC, with only 2
-  TweetClaw-scope PRs needing exact readback.
-- Exact reads confirmed the 3 fresh 13:11 PRs and
-  `shajith003/awesome-claude-skills#4` remain open, mergeable, and without new
-  maintainer comments, reviews, checks, conflicts, DCO, CLA, or bot findings.
-- Fresh PR opened and exact-read mergeable:
-  https://github.com/shensi8312/blogburst-openclaw-skill/pull/1. Duplicate or
-  prior-history blockers covered the other screened skill/social lanes; archive
-  records target policies, validation, link checks, OpenClaw/npm checks, prompt
-  size, and fork-parent verification.
+- 2026-07-02 13:52 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 5, skill coverage 4, fresh targets 12 plus 8. Broad authored-open
+  search hit GitHub's 1000-result cap and some lane partitions hit 200 caps, so
+  inventory is capped; recent in-scope window exact-read 17 PRs.
+- Repaired `Saminiscool/twitter-ai-agent#2` by merging upstream main and
+  pushing `7e880d4`; exact read is OPEN, MERGEABLE, CLEAN, with no reviews or
+  checks.
+- Opened 3 current fresh PRs after 3 initial PRs were closed by a concurrent
+  same-account process: `um-why/xiaohongshu-openclaw-skill#2` and
+  `seekneedle/rednote_crawler#1` are OPEN, MERGEABLE, CLEAN;
+  `sumingcheng/posterforge-skill#8` is OPEN and MERGEABLE with GitGuardian
+  success and target merge state BLOCKED. Archive records closed PRs, blockers, validation, links, prompt
+  size, fork parents, and exact URLs.
 
 ## Reporting Checklist
 
