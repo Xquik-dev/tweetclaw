@@ -57969,3 +57969,116 @@ Self-improvement:
   index, and archive-backed discovery. For tweet-dashboard targets, prefer
   reviewed CSV upload or converter lanes that require sentiment labels instead
   of implying TweetClaw itself supplies labels.
+
+## 2026-07-02 19:24 UTC Heartbeat
+
+- Runtime model, Fast mode, and extra-high effort selector was unavailable for
+  this heartbeat; continued on the available runtime and recorded the limitation.
+- Complete PR inventory method: started with Xquik crawler output, then unioned
+  compact audit, archive URLs, previous-run PR URLs, authored open PR search,
+  term partitions, fork metadata, and target URL reads into
+  `/tmp/tweetclaw-heartbeat-20260702-1924/pr-targets.txt`. Authored open PR
+  search returned 1,000 items, so it was treated as capped. Term partitions for
+  `tweetclaw`, `OpenClaw`, `SKILL.md`, and `Xquik` returned 500 each and were
+  treated as capped; `Twitter sentiment` returned 14. GraphQL quota reached
+  0 remaining during repair triage, so broad conflict updates stopped and REST
+  plus local clone discovery continued.
+- Exact PR readbacks: 2,800 unioned PR URLs, 2,327 exact-read successes, and
+  473 stale, deleted, or unreadable URLs. Summary: 2,121 open, 111 merged,
+  95 closed; 2,135 mergeable, 60 conflicting, 132 unknown; 8 draft,
+  756 comments, 372 reviews, 853 check items, and 66 failing-check PRs.
+  Recent run PRs read back as open, ready, mergeable:
+  `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis#1`,
+  `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis#1`, and
+  `stuhow/airline_sentiment#1`.
+- PR repair priority: the Tekraj Codex connector comment about missing sentiment
+  classes and malformed upload handling had already been repaired by previous
+  commit `5227849`. A conflict update attempt on
+  `AbdNour627/awesome-openclaw-configs#1` failed because GraphQL quota was
+  exhausted. Failing checks were recorded for backlog review; no safe current
+  maintainer-actionable repair lane blocked outreach.
+- Crawler-first coverage: from `/Users/burak/Developer/xquik`, ran strict JSON
+  crawler commands with research proxy, bounded request and warmup timeouts,
+  focused query packs, and session IDs `tweetclaw-pr-monitor-20260702-1924`,
+  `tweetclaw-skill-coverage-20260702-1924`, and
+  `tweetclaw-fresh-targets-20260702-1924`. Coverage included open PRs/issues,
+  TweetClaw, OpenClaw, ClawHub, MCP, Xquik, x-twitter-scraper, SKILL.md,
+  `.agents/skills`, skill dirs, Codex, Claude, OpenClaw, agent, social,
+  Twitter-X skills, awesome lists, registries, forks, generated catalogs, and
+  web-index style skill repos. PR monitor returned 5 opportunities; skill and
+  fresh target crawls returned valid JSON with 0 opportunities and proxy socket
+  failures. No crawler credential values were printed or stored.
+- Fresh discovery and duplicate gates: fallback REST repository searches
+  produced 20 initial candidates and 120 additional candidates after crawler
+  output was empty. Compact audit, archive, target content, local clones, fork
+  metadata, open plus closed PRs, and open plus closed issues were checked for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Twitter/X, SKILL.md,
+  skill registries, social dashboards, CSV upload workflows, and variants.
+  Duplicate or prior-history blockers included prior archive hits such as
+  `PBrindha25/Social_Media_Performance_Dashboard#1`,
+  `Shankar-behera/twitter-sentiment-analysis#1`,
+  `sabir-10/Sentiment-Analysis-Web-App#1`,
+  `abdulqadir7391/Twitter-Sentiment-Analysis-using-BERT#1`,
+  `tom-doerr/twitter-analytics-dashboard#1`, and many Streamlit sentiment lanes
+  already listed in the archive. `Vedangi-2025/twitter-sentiment-analyzer` was
+  blocked by an existing open kriptoburak PR. `sociometryjrv-a11y/Sociometry`
+  was blocked because the public source contains hardcoded API credentials; no
+  values were copied to the audit or PR text.
+- Fresh PR submitted: https://github.com/GSPriya13/Twibuzz/pull/1 from verified
+  fork `kriptoburak/gspriya13-twibuzz`, branch
+  `codex/add-tweetclaw-export-upload`, commit `7f28414`. The PR adds
+  `tweetclaw_import.py`, optional TweetClaw JSON, JSONL, NDJSON, and CSV upload
+  support, feed reuse for uploaded rows, and repository-local background asset
+  resolution instead of Windows-only absolute paths. Validation:
+  `python3 -m py_compile app.py tweetclaw_import.py`, `git diff --check`, and
+  sensitive-term diff scan. REST readback: OPEN, ready, mergeable `clean`,
+  1 commit, 2 changed files, 0 comments, 0 reviews.
+- Fresh PR submitted: https://github.com/Utsav017/SociaLens/pull/1 from verified
+  fork `kriptoburak/utsav017-socialens`, branch
+  `codex/import-tweetclaw-uploads`, commit `5736be3`. The PR adds
+  `utils/tweetclaw_import.py`, accepts TweetClaw JSON, JSONL, NDJSON, or CSV
+  uploads, normalizes text/date fields into the existing classifier path, and
+  documents the upload workflow. Validation:
+  `python3 -m py_compile app.py utils/tweetclaw_import.py`, `git diff --check`,
+  and sensitive-term diff scan. Target README link check failed only on the
+  pre-existing `https://socialens-app.streamlit.app/` link returning status 0;
+  this PR introduced no new external URL. REST readback: OPEN, ready, mergeable
+  `clean`, 1 commit, 3 changed files, 0 comments, 0 reviews.
+- Fresh PR submitted:
+  https://github.com/JoelManohar007/HexSoftwares_TwitterSentimentAnalisys/pull/1
+  from verified fork
+  `kriptoburak/joelmanohar007-hexsoftwares-twitter-sentiment`, branch
+  `codex/add-tweetclaw-csv-converter`, commit `b77bb69`. The PR adds the
+  missing `twitter_sentiment.py` script described by the README, adds
+  `tweetclaw_to_ttt_csv.py` to convert TweetClaw JSON, JSONL, NDJSON, or CSV
+  exports into `tweet_id,tweet`, and updates usage docs. Validation:
+  `python3 -m py_compile twitter_sentiment.py tweetclaw_to_ttt_csv.py`,
+  converter smoke test with a sample TweetClaw JSON export, `git diff --check`,
+  README link check, and sensitive-term diff scan. REST readback: OPEN, ready,
+  mergeable `clean`, 1 commit, 3 changed files, 0 comments, 0 reviews.
+- Official OpenClaw and package recheck: `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/plugins/architecture`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/help/debugging`, and
+  `clawhub.ai/plugins/@xquik/tweetclaw` all returned HTTP 200. npm metadata:
+  `@xquik/tweetclaw` `1.6.31`; `openclaw` latest `2026.6.11`, beta
+  `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` `0.23.1`.
+  Full and omit-dev npm audits found 0 vulnerabilities.
+  `npm run check-openclaw-platform-fitness` and
+  `npm run check-package-artifact` passed.
+- Public links and URL checks: TweetClaw markdown-link-check passed for README,
+  OpenClaw setup, agent workflows, compact audit, release memory, and packaged
+  skill. Direct URL checks returned HTTP 200 for all 3 new PRs, all 3 fork
+  branches, TweetClaw GitHub, npm registry metadata, and ClawHub TweetClaw.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Compact Markdown memory after
+  compaction was 15302/15360 bytes before archive edits.
+- Prompt self-improvement: prompt text was not changed; saved prompt bytes were
+  13514. Archive lesson: when GraphQL quota is exhausted after exact readbacks,
+  use REST issue/PR reads, local clones, custom-name forks, and REST PR creation
+  to keep outreach moving. If a target contains public credential material, do
+  not submit a PR that would repeat deleted secret values in a diff; record the
+  blocker and continue discovery.

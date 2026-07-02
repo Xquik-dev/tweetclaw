@@ -189,21 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 19:14 UTC: runtime selector unavailable. Crawler coverage: PR
-  monitor 5, skill/fresh crawls 0 with proxy socket failures after a smaller
-  rerun. Authored open PR search hit the 1,000 cap; term partitions
-  `tweetclaw`, `OpenClaw`, and `SKILL.md` hit 500 before GitHub Search rate
-  limited `Xquik`. Exact readbacks covered 1,831 current open PR URLs: 1,779
-  mergeable, 37 conflicting, 15 unknown, 8 draft, 409 comments, 210 reviews,
-  367 check items, and 9 failed-check PRs.
-- Repair priority: all 37 conflicts failed `gh pr update-branch` due conflicts.
-  Current failed checks were target-owned, stale, label/config, scope-guard, or
-  account-credit blockers; no safe repair lane blocked outreach.
-- Opened 3 fresh PRs after duplicate, policy, fork, and validation gates:
-  `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis#1`,
-  `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis#1`, and
-  `stuhow/airline_sentiment#1`. All are OPEN, ready, MERGEABLE, and have
-  0 reviews and 0 checks; the 1 Tekraj Codex connector comment was repaired.
+- 2026-07-02 19:24 UTC: runtime selector unavailable. Crawler coverage: PR
+  monitor 5; skill and fresh crawls 0 with proxy socket failures. Inventory
+  unioned audit, archive, crawler, authored search, fork, and target URLs into
+  2,800 PR URLs; exact reads covered 2,327 with 473 stale or unreadable. Counts:
+  2,121 open, 111 merged, 95 closed; 2,135 mergeable, 60 conflicting, 132
+  unknown, 8 draft, 756 comments, 372 reviews, 853 check items, 66 failing
+  checks. GraphQL quota was exhausted; 1 conflict update was quota-blocked. The
+  only fresh maintainer comment was the Tekraj Codex note already repaired.
+- Fresh gates checked compact/archive memory, target content, issues, PRs, fork
+  parents, and clones. Blockers: `sociometryjrv-a11y/Sociometry` contains
+  hardcoded public credentials, and `Vedangi-2025/twitter-sentiment-analyzer`
+  already has an open kriptoburak PR.
+- Opened 3 clean PRs: `GSPriya13/Twibuzz#1`, `Utsav017/SociaLens#1`, and
+  `JoelManohar007/HexSoftwares_TwitterSentimentAnalisys#1`. All are OPEN,
+  ready, REST mergeable `clean`, with 0 comments and 0 reviews.
 
 ## Reporting Checklist
 
