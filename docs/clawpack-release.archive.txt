@@ -2802,3 +2802,36 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   published npm remains `1.6.31`; npm publish auth and ClawHub owner-scope
   blockers remain unchanged. Durable release lesson: release memory updates can
   stay timestamp-only when OpenClaw, npm, and ClawHub state are unchanged.
+
+## 2026-07-02 16:35 UTC Release-Fitness Check
+
+- Runtime model, Fast mode, and extra-high effort selector was unavailable for
+  this heartbeat; continued on the available runtime.
+- Official OpenClaw docs rechecked live. `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/plugins/architecture`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`, and the
+  ClawHub TweetClaw redirect route returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- ClawHub TweetClaw route returned HTTP 200 after redirecting to
+  `https://clawhub.ai/xquik/plugins/tweetclaw`; ClawHub remains stale compared
+  with source and npm, so npm remains canonical and `openclaw.install.clawhubSpec`
+  must stay absent.
+- Package hygiene passed before memory archive edits: full and omit-dev npm
+  audits, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and `npm run check-memory-md-size` at
+  15265/15360 bytes.
+- Final post-edit release gate passed through `npm run check:all`, including
+  package fitness, package artifact validation, and 168 tests at 100 percent
+  coverage. Public Markdown link check, diff hygiene checks, and compact
+  Markdown memory at 15337/15360 bytes passed.
+- No package metadata changed. Source remains `@xquik/tweetclaw@1.6.32`;
+  published npm remains `1.6.31`; npm publish auth and ClawHub owner-scope
+  blockers remain unchanged. Durable release lesson: no release-state change is
+  needed when OpenClaw docs, npm metadata, package artifact checks, and audits
+  all match the prior release state.
