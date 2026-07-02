@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 22:29 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 23:08 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 22:29 UTC after redirecting to
+  2026-07-02 23:08 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 22:29 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 23:08 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,21 +189,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 22:29 UTC: runtime selector unavailable. Crawler-first monitor
-  found 5 PR opportunities; skill and fresh-target crawls returned valid empty
-  JSON with proxy socket failures. Inventory unioned audit, archive, crawler,
-  authored search partitions, fork metadata, and target URLs into 2,812 PR URLs:
-  2,519 open, 252 closed, 40 stale or unreadable, 1 bad URL. Exact reads found
-  2,542 mergeable, 75 conflicting, 195 unknown or blank; 9 drafts; 910 comments;
-  443 review comments.
-- Repair priority closed weak branded fixture PRs after maintainer pushback:
-  `pb33f/libopenapi#599` and `pb33f/libopenapi-validator#299`.
-- Fresh duplicate and policy gates passed for 5 sentiment/export targets. Opened
-  3 clean PRs: `Aarushhg/Sentiment-Analyzer#1`,
-  `SriramR02/Twitter_Sentiment_Analysis#1`, and
-  `aiwithkd/twitter-sentiment-analyzer#1`. All are OPEN, ready, REST mergeable
-  `clean`, with 0 comments and 0 review comments. Full evidence is in the
-  archive.
+- 2026-07-02 23:08 UTC: runtime selector unavailable. Crawler-first monitor
+  returned 5 opportunities; skill and fresh-target crawls returned valid empty
+  JSON with proxy socket failures. Broad authored PR search hit capped buckets
+  and then GitHub secondary 403s; archive/crawler/search/URL union produced
+  2,552 PR URLs. Complete exact inventory is blocked this run; repair-focused
+  exact reads covered 11 known recent PRs and found no actionable comments,
+  review comments, conflicts, DCO, CLA, or bot findings.
+- Opened 3 clean PRs: `KeerthanaM44/Twitter-Sentiment-Analysis#1`,
+  `1ncHaider/Twitter-sentiment-analysis-Using-Live-Api-tweepy-#1`, and
+  `skmn1/Twitter-Sentiment-Analysis-Pipeline#1`. All are OPEN, ready, REST
+  mergeable `clean`, with 0 comments, 0 review comments, and no reported checks.
+  Full crawler, duplicate, policy, validation, and blocker evidence is archived.
 
 ## Reporting Checklist
 
