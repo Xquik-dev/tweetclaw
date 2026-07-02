@@ -49,10 +49,11 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 00:34 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 03:18 UTC: latest `2026.6.11`, beta
   `2026.6.11-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; required CLI, tool,
-  plugin, ClawHub, gateway, debugging, and runtime routes returned HTTP 200.
+  plugin, ClawHub, and skill routes returned HTTP 200. The old debugging route
+  returned 404; do not use it as current evidence.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
   2026-07-02 00:34 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
@@ -188,22 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 01:04 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 10 generic hits, skill coverage 0, fresh-target batch 0. Authored
-  open inventory was partitioned after all-2026 and June caps; 3,138 rows were
-  deduped, 3,068 were broad in-scope, and 39 recent or audit PRs were
-  exact-read.
-- Repairs: `Aditya923-c/xpoz-agent-skills#1` and
-  `shajith003/awesome-claude-skills#4` conflicts were repaired and exact-read
-  mergeable; `KamujuSaiSuryaVenkat/...Dashboard#1` was exact-read mergeable
-  with an equivalent remote column-normalization fix already at head.
-- Fresh PRs opened:
-  https://github.com/meetshah1304/NLP-Sentiment-Analysis-on-Social-Media-Data/pull/1,
-  https://github.com/konduriprudhvikumar/Social-Media-Sentiment-Intelligence-Platform/pull/1,
-  and https://github.com/Nithya200505/Twitter_Sentiment_Analysis/pull/1. All
-  were exact-read open, ready, mergeable, comment-free, review-free, and
-  check-free. Full duplicate gates, validation, links, and OpenClaw/npm checks
-  are in the archive.
+- 2026-07-02 03:18 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 5, skill coverage 1, fresh-target batch 8. Updated-today authored
+  PR inventory found 79 rows and exact-read all 79 plus 6 known audit PRs.
+- Repair: `reall8164/wechat-openclaw-plugin#1` had a README conflict, was
+  merged with upstream, link-checked, pushed as `b1dd086`, and exact-read open,
+  ready, mergeable, 20 comments, 0 reviews, 0 checks.
+- Fresh PRs opened and exact-read mergeable:
+  https://github.com/Shree1194/chatgpt-twitter-sentiment-analysis/pull/1,
+  https://github.com/meshubhangivats/Twitter-Sentiment-Analysis-System/pull/1,
+  and https://github.com/princekabeer630-hash/Twitter-Sentiments-Analysis/pull/1.
+  Archive records duplicate gates, target PR blockers, validation, links,
+  OpenClaw/npm checks, and the next-run lesson to exact-check target PR lists
+  before cloning even when the archive has no hit.
 
 ## Reporting Checklist
 
