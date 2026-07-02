@@ -189,17 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 14:29 UTC: runtime selector unavailable. Crawler-first coverage:
-  PR monitor 5, skill coverage 4, first fresh-target crawl 0, second fresh
-  crawl 9. Broad authored-open search hit GitHub's 1000-result cap, so
-  inventory is capped; recent `>=2026-07-02T14:00:00Z` exact-read 11 PRs. No
-  actionable maintainer repair was found.
-- Opened 3 fresh PRs: `tom-doerr/twitter-analytics-dashboard#1`,
-  `purumehra1/social-media-sentiment#1`, and
-  `Saachi47/Sentiment-Analysis-System#1`. All are OPEN, ready, MERGEABLE, and
-  CLEAN with 0 checks at final readback. Tom's Codex bot P2 timestamp review was
-  repaired in `d94d202` with a public validation comment; the other 2 PRs have
-  0 comments and 0 reviews. Archive records exact URLs and validation.
+- 2026-07-02 14:59 UTC: runtime selector unavailable. Crawler-first coverage:
+  PR monitor 5, skill coverage 4, fresh-target crawl 0. Recent authored-open
+  partition found 270 PRs; lane filter exact-read 199 with 0 read errors,
+  164 comments, 8 reviews, 38 checks, 8 conflicts, and 12 blocked or
+  review-required rows. Broad all-time inventory remains capped by search limits.
+- Repair priority: 8 dirty PRs rejected GitHub update-branch with HTTP 422 merge
+  conflicts. Manual non-destructive repair checks on `ogthheu` and `warlockoussama`
+  hit unrelated-history blockers, so force-push repair was not attempted. Google
+  CLA and maintainer review gates remain owner or maintainer blockers.
+- Opened 3 fresh PRs after duplicate and policy gates:
+  `Sadhana107/Social-Media-Sentiment-Analysis-Dashboard#1`,
+  `dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard#1`, and
+  `Jui-Ramteke/Social-Media-Sentiment-Analytics#1`. All are OPEN, ready,
+  MERGEABLE, and CLEAN with 0 comments, 0 reviews, and 0 checks at readback.
+  Archive records exact URLs, blockers, validation, and fork parent readbacks.
 
 ## Reporting Checklist
 

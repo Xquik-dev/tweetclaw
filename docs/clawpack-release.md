@@ -56,8 +56,9 @@ the archive, before any release or ClawHub decision.
   `clawhub.ai/xquik/plugins/tweetclaw`, but keep npm canonical until current
   scoped package publishing succeeds.
 - `npm view @xquik/tweetclaw` reports `1.6.31` on 2026-07-02 14:29 UTC.
-- `npm view openclaw` reports latest `2026.6.11` on 2026-07-02 14:29 UTC.
-- `npm view clawhub` reports `0.23.1` on 2026-07-02 14:29 UTC.
+- `npm view openclaw` reports latest `2026.6.11`, beta `2026.7.1-beta.1` on
+  2026-07-02 14:59 UTC.
+- `npm view clawhub` reports `0.23.1` on 2026-07-02 14:59 UTC.
 - Latest ClawHub version remains `1.6.26`.
 - Owner: `kriptoburak`
 - Family: `code-plugin`

@@ -56773,3 +56773,132 @@ Memory and self-improvement:
   `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
+## 2026-07-02 14:59 UTC Discoverability Heartbeat
+
+Runtime and scope:
+- Runtime did not expose a Codex 5.5 Fast mode or extra-high reasoning selector.
+  Continued on the available runtime and preserved the required prompt wording.
+- Hard scope held: no Context7 work, no Browser or Chrome visual inspection of
+  TweetClaw GitHub, no dev servers, no production SSH, no secret reads, no
+  destructive git actions. Pre-existing untracked TweetClaw path `0` stayed
+  untouched.
+
+Complete PR inventory and repair:
+- Crawler-first PR monitoring ran from `/Users/burak/Developer/xquik` with JSON
+  output, research proxy, bounded timeouts, and focused PR/review/code queries
+  for TweetClaw, OpenClaw, ClawHub, MCP, skills, Xquik, x-twitter-scraper,
+  social-media, and agent-tool lanes. Output: 5 opportunities, 0 repositories,
+  0 errors. Skill coverage for `SKILL.md`, `.agents/skills`, OpenClaw, MCP,
+  Codex, Claude, agent, social, Twitter/X, awesome-list, registry, fork, and
+  generated-catalog lanes returned 4 opportunities. Fresh target crawler
+  returned 0 opportunities.
+- Recent authored-open partition `updated >= 2026-07-02` found 270 open PRs.
+  Lane filter for TweetClaw, OpenClaw, ClawHub, MCP, skills, Xquik,
+  x-twitter-scraper, X/Twitter, social, OpenAPI, and sentiment exact-read 199
+  PRs with 0 read errors, 164 comments, 8 reviews, 38 checks, 8 conflicts, and
+  12 blocked or review-required rows. Broad all-time inventory remains capped by
+  GitHub search limits and is not claimed complete.
+- The 3 PRs opened in the prior heartbeat were exact-read clean:
+  `tom-doerr/twitter-analytics-dashboard#1`,
+  `purumehra1/social-media-sentiment#1`, and
+  `Saachi47/Sentiment-Analysis-System#1` were OPEN, ready, MERGEABLE, CLEAN,
+  with 0 checks; Tom's prior bot P2 timestamp review remains tied to the older
+  commit and the repair comment is present.
+- Dirty PR repair queue: `AbdNour627/awesome-openclaw-configs#1`,
+  `Aditya923-c/xpoz-agent-skills#1`, `Aqmar777/openclaw-competitive-intel#1`,
+  `JettHu/skills#1`, `jamald33n/tweetsave-mcp#2`,
+  `ogthheu/Insightify-Sentiment-API#1`,
+  `reall8164/wechat-openclaw-plugin#1`, and
+  `warlockoussama/twitter-cli#1`. GitHub update-branch returned HTTP 422 merge
+  conflicts for all 8. Manual non-destructive repair probes for `ogthheu` and
+  `warlockoussama` hit unrelated-history blockers, so clearing them would
+  require rewriting fork branches; no force push was attempted. Google CLA and
+  maintainer review-required rows were recorded as owner or maintainer blockers.
+
+Fresh discovery, duplicate gates, and target policy:
+- Crawler skill candidates `creatorcrawl/creatorcrawl-skill`,
+  `rabden/X-twitter-social-manager-skill`,
+  `expropriationhoorayhenry64/social-media-scraper-skill`, and
+  `aaaronmiller/create-viral-content` were blocked by archive history or prior
+  safety review. `shravani120625/Social-Media-Sentiment-Analysis-Dashboard-`
+  was fallback-screened then duplicate-blocked by existing open PR #1 from this
+  account.
+- Fallback metadata discovery used GitHub repo search after crawler output was
+  exhausted. Selected lanes passed compact audit, archive, target content,
+  exact open and closed target PR and issue reads, policy checks, fork-parent
+  readbacks, syntax checks, diff checks, and public-diff hygiene scans for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL,
+  ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and X/Twitter variants.
+  Missing license metadata on the 3 selected repos was recorded and did not
+  block direct PRs.
+
+External PRs opened:
+- `Sadhana107/Social-Media-Sentiment-Analysis-Dashboard#1`:
+  https://github.com/Sadhana107/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/sadhana-social-sentiment-csv` parent
+  `Sadhana107/Social-Media-Sentiment-Analysis-Dashboard`, branch
+  `codex/flexible-social-csv-columns`, commit `3ce3938`. The PR accepts common
+  social export text columns during CSV upload and documents reviewed TweetClaw
+  export compatibility. Validation: `python3 -m py_compile app/streamlit_app.py`,
+  `git diff --check`, README markdown-link-check, and public-hygiene scan.
+  Readback: OPEN, ready, MERGEABLE, CLEAN, 0 comments, 0 reviews, 0 checks.
+- `dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard#1`:
+  https://github.com/dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard/pull/1
+  from verified fork `kriptoburak/dp2005-social-sentiment-csv` parent
+  `dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard`, branch
+  `codex/add-batch-csv-upload`, commit `c1d2074`. The PR adds batch CSV
+  prediction to the runnable Streamlit dashboard, accepts common social export
+  text columns, returns downloadable predictions, and documents reviewed
+  TweetClaw export compatibility. Validation:
+  `python3 -m py_compile sentiment_dashboard.py`, `git diff --check`, README
+  markdown-link-check, and public-hygiene scan. Readback: OPEN, ready,
+  MERGEABLE, CLEAN, 0 comments, 0 reviews, 0 checks.
+- `Jui-Ramteke/Social-Media-Sentiment-Analytics#1`:
+  https://github.com/Jui-Ramteke/Social-Media-Sentiment-Analytics/pull/1 from
+  verified fork `kriptoburak/jui-social-sentiment-csv` parent
+  `Jui-Ramteke/Social-Media-Sentiment-Analytics`, branch
+  `codex/flexible-upload-text-columns`, commit `9ddce80`. The PR normalizes
+  common uploaded text column aliases to the dashboard `Text` contract and
+  documents reviewed TweetClaw export compatibility. Validation:
+  `python3 -m py_compile app/app.py`, `git diff --check`, and public-hygiene
+  scan. README markdown-link-check still reports a pre-existing target-owned
+  LinkedIn HTTP 999 blocker not introduced by the PR. Readback: OPEN, ready,
+  MERGEABLE, CLEAN, 0 comments, 0 reviews, 0 checks.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw route probe returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, CLI, plugin install and inspect docs, skills docs,
+  tools/plugin docs, plugin manifest, bundle, SDK runtime, permission request,
+  install override, ClawHub CLI/publishing/skill-format docs, gateway secrets,
+  agent runtime docs, and debugging docs. ClawHub TweetClaw route returned HTTP
+  200 after redirecting to `https://clawhub.ai/xquik/plugins/tweetclaw`.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: `npm audit --audit-level=moderate`, `npm audit
+  --omit=dev --audit-level=moderate`, `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, public Markdown link check for README,
+  OpenClaw setup, agent workflows, compact audit, and release memory,
+  `npm run check-memory-md-size`, and `npm run check:all` with 168 tests and
+  100% coverage.
+- Broken-link results: Sadhana and dp2005 target README link checks passed.
+  Jui target README has a pre-existing LinkedIn HTTP 999 blocker; no new links
+  were added. TweetClaw public Markdown link check passed. No NHS Agentic
+  Readiness badge was added.
+- Public-hygiene scans found no secret values, private implementation details,
+  restricted provider/source names, private pricing details, unsupported claims,
+  stale metadata, banned dashes, or ` -- ` patterns in edited target diffs or
+  TweetClaw audit diffs.
+
+Memory and self-improvement:
+- Compact Markdown memory was 14913 of 15360 bytes before edits. Automation
+  prompt file measured 13514 bytes, under the 15 KiB cap. Changed TweetClaw
+  files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`.
+- Durable lesson: when repeated conflict repairs hit unrelated-history blockers,
+  record the non-destructive blocker and avoid force-push repair under quiet
+  autonomy. Continue fresh discovery only after the repair queue is blocked by
+  platform or history state, not merely inconvenient.
