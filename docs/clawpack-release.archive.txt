@@ -2928,6 +2928,30 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   remains `@xquik/tweetclaw@1.6.32`; published npm remains `1.6.31`; npm
   publish auth and ClawHub owner-scope blockers remain unchanged.
 
+## 2026-07-02 22:29 UTC Release-Fitness Check
+
+- Runtime model, Fast mode, and extra-high effort selector was unavailable for
+  this heartbeat; continued on the available runtime.
+- Official OpenClaw docs rechecked live. `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/plugins/architecture`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/help/debugging`, and the ClawHub TweetClaw route
+  returned HTTP 200.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`; `openclaw`
+  latest `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`;
+  `clawhub` `0.23.1`.
+- ClawHub TweetClaw route returned HTTP 200 and remains stale compared with
+  source and npm, so npm remains canonical and `openclaw.install.clawhubSpec`
+  must stay absent.
+- Package hygiene passed before memory archive edits: full and omit-dev npm
+  audits, `npm run check-openclaw-platform-fitness`, and
+  `npm run check-package-artifact`.
+- Final post-archive release gate is recorded in the matching discoverability
+  archive entry and commit validation. No package metadata changed. Source
+  remains `@xquik/tweetclaw@1.6.32`; published npm remains `1.6.31`; npm
+  publish auth and ClawHub owner-scope blockers remain unchanged.
+
 ## 2026-07-02 19:24 UTC Release-Fitness Check
 
 - Runtime model, Fast mode, and extra-high effort selector was unavailable for

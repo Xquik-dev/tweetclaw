@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 18:40 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-02 22:29 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 18:40 UTC after redirecting to
+  2026-07-02 22:29 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 18:40 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-02 22:29 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,21 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 19:24 UTC: runtime selector unavailable. Crawler coverage: PR
-  monitor 5; skill and fresh crawls 0 with proxy socket failures. Inventory
-  unioned audit, archive, crawler, authored search, fork, and target URLs into
-  2,800 PR URLs; exact reads covered 2,327 with 473 stale or unreadable. Counts:
-  2,121 open, 111 merged, 95 closed; 2,135 mergeable, 60 conflicting, 132
-  unknown, 8 draft, 756 comments, 372 reviews, 853 check items, 66 failing
-  checks. GraphQL quota was exhausted; 1 conflict update was quota-blocked. The
-  only fresh maintainer comment was the Tekraj Codex note already repaired.
-- Fresh gates checked compact/archive memory, target content, issues, PRs, fork
-  parents, and clones. Blockers: `sociometryjrv-a11y/Sociometry` contains
-  hardcoded public credentials, and `Vedangi-2025/twitter-sentiment-analyzer`
-  already has an open kriptoburak PR.
-- Opened 3 clean PRs: `GSPriya13/Twibuzz#1`, `Utsav017/SociaLens#1`, and
-  `JoelManohar007/HexSoftwares_TwitterSentimentAnalisys#1`. All are OPEN,
-  ready, REST mergeable `clean`, with 0 comments and 0 reviews.
+- 2026-07-02 22:29 UTC: runtime selector unavailable. Crawler-first monitor
+  found 5 PR opportunities; skill and fresh-target crawls returned valid empty
+  JSON with proxy socket failures. Inventory unioned audit, archive, crawler,
+  authored search partitions, fork metadata, and target URLs into 2,812 PR URLs:
+  2,519 open, 252 closed, 40 stale or unreadable, 1 bad URL. Exact reads found
+  2,542 mergeable, 75 conflicting, 195 unknown or blank; 9 drafts; 910 comments;
+  443 review comments.
+- Repair priority closed weak branded fixture PRs after maintainer pushback:
+  `pb33f/libopenapi#599` and `pb33f/libopenapi-validator#299`.
+- Fresh duplicate and policy gates passed for 5 sentiment/export targets. Opened
+  3 clean PRs: `Aarushhg/Sentiment-Analyzer#1`,
+  `SriramR02/Twitter_Sentiment_Analysis#1`, and
+  `aiwithkd/twitter-sentiment-analyzer#1`. All are OPEN, ready, REST mergeable
+  `clean`, with 0 comments and 0 review comments. Full evidence is in the
+  archive.
 
 ## Reporting Checklist
 
