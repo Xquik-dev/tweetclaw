@@ -2928,6 +2928,22 @@ passed. `check:all` included 168 tests with 100 percent coverage.
   remains `@xquik/tweetclaw@1.6.32`; published npm remains `1.6.31`; npm
   publish auth and ClawHub owner-scope blockers remain unchanged.
 
+## 2026-07-02 23:51 UTC platform recheck
+
+Official OpenClaw docs were rechecked before writing the outreach audit. The
+llms exports, CLI plugin docs, manifest docs, permission requests, tool plugins,
+SDK runtime, install overrides, plugin build docs, ClawHub publishing, skill
+format, and debugging routes all returned HTTP 200. `npm view @xquik/tweetclaw`
+still reports latest `1.6.31`; source remains `1.6.32`. `npm view openclaw`
+still reports latest `2026.6.11`, beta `2026.7.1-beta.1`, alpha
+`2026.5.19-alpha.1`; `npm view clawhub` still reports `0.23.1`. The ClawHub
+TweetClaw route returned HTTP 200 after redirecting to the `xquik` page, but npm
+remains canonical because ClawHub still exposes stale package state. Full and
+omit-dev npm audits found 0 vulnerabilities, `npm run
+check-openclaw-platform-fitness` passed, and `npm run check-package-artifact`
+reported the source package artifact OK with 61 files. No package metadata,
+manifest, release gate, or publish state changed.
+
 ## 2026-07-02 23:26 UTC Release-Fitness Check
 
 - Runtime model, Fast mode, and extra-high effort selector was unavailable for
