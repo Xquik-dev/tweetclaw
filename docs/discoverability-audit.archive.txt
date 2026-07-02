@@ -54097,6 +54097,111 @@ Memory and self-improvement:
   `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
   recorded by the repository history for this audit run.
 
+## 2026-07-02 13:22 UTC Discoverability Heartbeat
+
+Run setup and scope:
+- Runtime model, speed, and effort selector was unavailable in this runtime;
+  continued on the available runtime and recorded the limitation. Hard scope was
+  preserved: no Context7 work, no TweetClaw GitHub GUI/browser inspection, no
+  dev servers, no production SSH, no secret reads, and no destructive git
+  actions. Pre-existing untracked TweetClaw path `0` stayed untouched.
+
+Crawler-first coverage and PR monitoring:
+- Xquik crawler ran from `/Users/burak/Developer/xquik` with strict JSON output,
+  research proxy, bounded request and warmup timeouts, focused query packs, and
+  no GitHub tokens. Coverage included PR monitoring for TweetClaw, OpenClaw,
+  ClawHub, MCP, skills, Xquik, x-twitter-scraper, and social automation terms;
+  skill coverage for `SKILL.md`, `.agents/skills`, skill dirs, OpenClaw, MCP,
+  Codex, Claude, agent, social, Twitter/X skills, registries, awesome lists,
+  forks, generated catalogs, and web-index surfaced skill repos; and a fresh
+  target pass for OpenClaw social, ClawHub, Twitter sentiment, and MCP social
+  analytics lanes.
+- Crawler readbacks: PR monitor returned 5 opportunities and 0 errors; skill
+  coverage returned 1 opportunity and 0 errors; fresh targets returned 10
+  opportunities and 0 errors.
+- Recent authored PR search for `updated >= 2026-07-02T13:00:00Z` returned 10
+  open PRs. Exact readbacks checked the 3 fresh 13:11 TweetClaw PRs and the
+  repaired shajith PR: `dogukanucak/skribe#1`, `tenequm/skills#15`,
+  `mvanhorn/clawdbot-skill-remotion-server#1`, and
+  `shajith003/awesome-claude-skills#4` were all OPEN and MERGEABLE with no new
+  maintainer comments, review requests, checks, conflicts, DCO, CLA, generated
+  drift, or valid bot findings. No repair was required before outreach.
+- Complete broad inventory was intentionally not claimed. The earlier authored
+  older partition remains known capped at 1000; this follow-up run used
+  crawler-backed monitoring, the compact and archive PR URLs, recent authored
+  partitions, and exact readbacks for updated TweetClaw-scope PRs.
+
+Fresh candidate screening:
+- Duplicate or prior-history blockers from compact audit, archive, target PRs,
+  target issues, and crawler output included `creatorcrawl/creatorcrawl-skill`,
+  `Eyalm321/zernio-mcp`, `beggarticksarthurtatum121/reddit-skills`,
+  `mvanhorn/last30days-skill`, `NachaFromMars/social-media-agent`,
+  `NachaFromMars/social-media-scheduler`, `JNHFlow21/ocl-social-fetcher`,
+  `zuocharles/openclaw-social-media-skill`, `rrrrrredy/all-net-search-read`,
+  `shane9coy/Agent-Skill-Architecture-Guide`, `luna-prompts/skillnote`, and
+  `WenyuChiou/ai-research-skills`.
+- Weak-fit or policy blockers: `rxhxm/sixtyfour-skill`,
+  `yopiesuryadi/mailbot-programmable-inbox`, and
+  `RajeshKalidandi/ai-agent-knowledge` stayed weak-fit or prior-history
+  blockers; `aptratcn/skill-social-growth` is archived.
+- `shensi8312/blogburst-openclaw-skill` was duplicate-clean in compact/archive
+  checks, target content, open and closed target PRs, and target issues. GitHub
+  license metadata was absent, but the current run policy says missing license
+  metadata alone does not block a direct PR. The target is an OpenClaw skill with
+  synchronized `blogburst/` and `skills/blogburst/` copies and an explicit
+  human-review safety model, so a public X evidence-source note was target
+  native.
+
+External PR opened:
+- `shensi8312/blogburst-openclaw-skill#1`:
+  https://github.com/shensi8312/blogburst-openclaw-skill/pull/1 from branch
+  `codex/add-tweetclaw-public-x-evidence`, commit `69505d7`. Adds TweetClaw as
+  an optional OpenClaw source for public X/Twitter buyer-question evidence while
+  keeping BlogBurst responsible for the brief, quality gate, human review, and
+  publishing decision. Updated both compatibility copies. Validation passed:
+  `cmp` sync checks for both SKILL and README copies, `git diff --check`,
+  markdown-link-check across README and both skill copies, and public-hygiene
+  diff scan. Fork `kriptoburak/blogburst-openclaw-skill` parent was verified
+  against `shensi8312/blogburst-openclaw-skill`. Exact readback: OPEN,
+  MERGEABLE, no checks, no comments, no reviews.
+
+OpenClaw, package, links, and public hygiene:
+- Official OpenClaw routes returned HTTP 200 for `openclaw.ai/llms.txt`, docs
+  `llms.txt`, docs `llms-full.txt`, CLI plugins, plugin manifest, plugin
+  bundles, plugin permission requests, install overrides, tools/plugin, CLI
+  skills, ClawHub publishing, ClawHub skill format, and help debugging. ClawHub
+  TweetClaw route returned 308 to `/xquik/plugins/tweetclaw`; the canonical
+  route returned HTTP 200. The route probe printed complete results but needed
+  manual interruption after fetch cleanup stalled.
+- npm metadata readbacks: `@xquik/tweetclaw` latest `1.6.31`, homepage
+  `https://github.com/Xquik-dev/tweetclaw#readme`, repository
+  `git+https://github.com/Xquik-dev/tweetclaw.git`; `openclaw` latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+  `0.23.1`.
+- TweetClaw checks passed: npm moderate audit, production-only npm moderate
+  audit, OpenClaw platform fitness, package artifact check, and public Markdown
+  link check for README, OpenClaw setup, agent workflows, compact audit, and
+  release memory. External PR URLs, npm registry metadata, TweetClaw GitHub, and
+  ClawHub canonical route returned HTTP 200.
+- Public-hygiene scans found no secret values, restricted provider or source
+  names, private implementation details, internal cost mechanics, unsupported
+  claims, or stale metadata in edited target diffs, PR bodies, or TweetClaw
+  audit diffs. No NHS Agentic Readiness badge was added.
+
+Memory and self-improvement:
+- Prompt file size readback: 13514 bytes, under the 15 KiB prompt cap. Prompt
+  content was not changed. Compact Markdown memory was updated and full detail
+  moved here; `npm run check-memory-md-size` passed at 15036 of 15360 bytes.
+- Durable lesson: for repos with duplicate published skill layouts, a safe
+  TweetClaw recipe must update every advertised copy and validate byte-for-byte
+  sync before opening a PR. Missing GitHub license metadata alone should be
+  recorded, not used as a direct blocker when the target-native patch is small
+  and maintainer-reviewable.
+- Changed TweetClaw files: `docs/discoverability-audit.md`,
+  `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
+  `docs/clawpack-release.archive.txt`. Final TweetClaw commit and push are
+  recorded by repository history for this audit run.
+
 ## 2026-07-02 13:11 UTC Discoverability Heartbeat
 
 Run setup and scope:
