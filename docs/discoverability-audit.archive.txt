@@ -60725,6 +60725,92 @@ Self-improvement:
   before drafting edits and treat maintainer-only author impersonation rules as
   external PR blockers, not instructions to spoof authorship.
 
+### 2026-07-03 18:30 UTC Reader, Publisher, and Content Calibration PRs
+
+- Runtime selector limitation: Codex Desktop still did not expose model, speed,
+  or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could
+  not be explicitly selected. Continued under the available runtime.
+- Open PR inventory method: exact-read the 3 fresh PRs from the previous run:
+  `tangka/x-collect#1`, `Tylerz0/x-thread-cards#1`, and
+  `tangka/x-post-cover#1`. All were open, ready, mergeable, and had 0 comments,
+  0 reviews, and 0 checks, so no repair was needed. Authored-open search
+  partitions returned 200 rows for `updated:>=2026-07-03` and therefore hit the
+  configured cap, 125 rows for `2026-07-03T18:00:00Z..18:30:59Z`, and 12 rows
+  for `updated:>=2026-07-03T18:31:00Z`. This run does not claim complete
+  in-scope inventory because the day bucket remained capped.
+- Crawler-first discovery: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260703T1830/fresh.json`, bounded request and
+  proxy warmup timeouts, concurrency 8, limit 140, search page 1, per-query
+  limit 8, and focused TweetClaw/Xquik/OpenClaw, SKILL.md, `.agents/skills`,
+  Codex, Claude, social-media, Twitter/X, content card, and source-adapter
+  queries. Strict JSON parsed with 24 opportunities and 0 crawler errors.
+- Fresh screening: crawler duplicates or prior-history blockers included
+  `blacktwist/social-media-skills`, `ndesv21/socialclaw`,
+  `hyperfx-ai/marketing-skills`, `BuddhaYi/macos-cli`,
+  `devadio/post-skill`, `arome3/code-to-content`,
+  `KiKi-Builds/AI-Briefing-Skill`, `Jiaranbb/content-reader`,
+  `ClawCap/Mimic`, `huangji6693-max/social-media-publish-skill`,
+  `Lala0Land/openclaw-social-skills`,
+  `zuocharles/openclaw-social-media-skill`,
+  `NachaFromMars/social-media-agent`,
+  `rrrrrredy/all-net-search-read`, `6551Team/opentwitter-mcp`, and
+  same-run duplicate-covered `tangka/x-collect`, `Tylerz0/x-thread-cards`, and
+  `tangka/x-post-cover`. Fresh fallback discovery found the selected
+  duplicate-clean lanes `guoxudong2019-crypto/read-link`,
+  `zhuyansen/textual-and-graphic-publish-x-vx-shu`, and
+  `XBuilderLAB/cheat-on-content`.
+- Duplicate and fork checks: compact audit, archive, target content, target
+  PRs, and target issues were searched for TweetClaw, tweetclaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, and variants. No duplicates were found
+  for the 3 submitted repos. Forks were created under `kriptoburak` and REST
+  readbacks confirmed parents `guoxudong2019-crypto/read-link`,
+  `zhuyansen/textual-and-graphic-publish-x-vx-shu`, and
+  `XBuilderLAB/cheat-on-content`.
+- New PR: `https://github.com/guoxudong2019-crypto/read-link/pull/1` from
+  `kriptoburak:codex/add-tweetclaw-link-queue`, commit
+  `b204ae6f8db76a159565859d641655834c9ad57a`. It documents TweetClaw/Xquik as
+  an optional public URL queue before the `read-link` skill reads X/Twitter,
+  WeChat, or web pages. Final readback: open, ready, `MERGEABLE`, base
+  `master`, 1 commit, 2 files, 0 comments, 0 reviews, 0 checks.
+- New PR:
+  `https://github.com/zhuyansen/textual-and-graphic-publish-x-vx-shu/pull/1`
+  from `kriptoburak:codex/add-tweetclaw-source-review`, commit
+  `7a95ebecfacb8b05e214aa02d19fda1b0613a8dc`. It adds TweetClaw/Xquik as an
+  optional public source review queue before the existing article URL or direct
+  text acquisition path. Final readback: open, ready, `MERGEABLE`, base `main`,
+  1 commit, 2 files, 0 comments, 0 reviews, 0 checks.
+- New PR: `https://github.com/XBuilderLAB/cheat-on-content/pull/63` from
+  `kriptoburak:codex/add-tweetclaw-source-evidence`, commit
+  `25ea5eb75d9f11c6123fff485ba67a8e362ed377`. It documents TweetClaw/Xquik
+  public X context as optional benchmark or candidate evidence for
+  `/cheat-learn-from` and `/cheat-trends`, while keeping scoring and blind
+  prediction inside Cheat on Content. Final readback: open, ready,
+  `MERGEABLE`, base `main`, 1 commit, 2 files, 0 comments, 0 reviews, 0
+  checks.
+- External validation: all three targets have no package manifest, so
+  validation used docs and skill metadata diff checks. Each target passed
+  `git diff --check` and an added-line hygiene scan for em dash, double dash,
+  account URL, and GitHub mention patterns. No validation-only artifacts were
+  staged.
+- Public and link hygiene: no new external links were added to target docs.
+  OpenClaw docs probes returned HTTP 200 for `https://openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, and `/skills`. PR bodies
+  used the required optional first-person visibility note with plain
+  `burakbayir`, no account URL, and no GitHub mention. Changed target content
+  and PR bodies were checked for secrets, private implementation details,
+  internal cost mechanics, unsupported claims, stale metadata, and restricted
+  provider wording.
+- TweetClaw audit maintenance: changed only
+  `docs/discoverability-audit.archive.txt`; pre-existing untracked path `0`
+  remained untouched. Markdown memory stayed under the 15 KiB cap, and the
+  persisted automation prompt readback measured 13,833 bytes. Prompt
+  self-improvement did not require an automation prompt edit.
+- Self-improvement: when crawler candidates are exhausted by duplicate social
+  skill lanes, broaden fallback discovery to content calibration, reader, and
+  source-review workflows where TweetClaw/Xquik can supply public evidence
+  without becoming a publishing bypass.
+
 ### 2026-07-03 17:56 UTC Fresh Xquik Visibility PR Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
