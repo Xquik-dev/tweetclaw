@@ -60640,6 +60640,91 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-03 18:10 UTC X Skill Source Queue PRs
+
+- Runtime selector limitation: Codex Desktop still did not expose model, speed,
+  or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could
+  not be explicitly selected. Continued and recorded the limitation.
+- Open PR inventory method: started from the audit-derived
+  `/tmp/tweetclaw-comment-all-scope-20260703/open-authored.tsv` ledger with
+  1,461 authored open PR rows, exact-read the 3 prior same-day PRs
+  `js-x-monitor-skill#1`, `twitter-ai-agent#1`, and
+  `TweetFlow-AI-Agent#1`, and ran a current-day authored open PR partition.
+  That partition returned 200 rows and was therefore capped, so this run does
+  not claim complete in-scope inventory. The 3 prior PRs were open, ready,
+  mergeable, had 0 comments, 0 reviews, and 0 checks, so no repair was needed.
+- Crawler-first discovery: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, bounded request and
+  proxy warmup timeouts, concurrency 8, focused OpenClaw, MCP, SKILL.md,
+  `.agents/skills`, social media, Twitter/X, Claude, Codex, awesome-list, and
+  content workflow queries. Strict JSON parsed with 12 opportunities and 0
+  crawler errors.
+- Fresh screening: blocked repeated lanes already in compact or archive memory:
+  `JuneYaooo/awesome-ai-media-skills` already lists TweetClaw and
+  x-twitter-scraper, `alexclowe/awesome-copilot-cowork-plugins`,
+  `rabden/X-twitter-social-manager-skill`, `aaaronmiller/create-viral-content`,
+  `AnselLIU0520/x-automated-operations-skill`, `NachaFromMars/upload-post`,
+  `whoisdhana/x-monitor`, `leanstartpad/social-media-quotes`, and
+  `80years80/Tweet_Sentiment_Googlesheet_Dashboard` have prior history or
+  coverage, and `expropriationhoorayhenry64/social-media-scraper-skill` remains
+  blocked by safety and license concerns. Fresh fallback search found
+  `sergebulaev/x-skills`, `tangka/x-collect`, `Tylerz0/x-thread-cards`, and
+  `tangka/x-post-cover`.
+- Target policy gate: `sergebulaev/x-skills` was skipped because its
+  repository `AGENTS.md` requires every commit to use Sergey as primary author.
+  That is maintainer-context policy and not appropriate for an external PR from
+  `kriptoburak`.
+- Duplicate and fork checks: compact audit, archive, local target content,
+  target PRs, and target issues were searched for TweetClaw, tweetclaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, and variants. No duplicates were found
+  for the 3 submitted repos. Forks were created under `kriptoburak` and exact
+  REST readbacks confirmed parents `tangka/x-collect`,
+  `Tylerz0/x-thread-cards`, and `tangka/x-post-cover`.
+- New PR: `https://github.com/tangka/x-collect/pull/1` from
+  `kriptoburak:codex/add-tweetclaw-source-queue`, commit
+  `7a8a27ce6717b5d468de994ffb9c0347ee1982f7`. It adds README and SKILL
+  guidance for using TweetClaw/Xquik as an optional public URL review queue
+  before `x-collect` materializes `content.md`, `post.json`, and `media/`.
+  Final readback: open, ready, `MERGEABLE`, base `main`, 1 commit, 2 files, 0
+  comments, 0 reviews, 0 checks.
+- New PR: `https://github.com/Tylerz0/x-thread-cards/pull/1` from
+  `kriptoburak:codex/add-tweetclaw-source-notes`, commit
+  `69f4f31188c1102286e0e16edbe17826cd97fc4a`. It adds Chinese README, English
+  README, and SKILL guidance for turning approved TweetClaw/Xquik public X
+  context into `slides.json` while keeping the renderer scoped to local image
+  export. Final readback: open, ready, `MERGEABLE`, base `main`, 1 commit, 3
+  files, 0 comments, 0 reviews, 0 checks.
+- New PR: `https://github.com/tangka/x-post-cover/pull/1` from
+  `kriptoburak:codex/add-tweetclaw-cover-source`, commit
+  `af5750450815fea1ec04e9ce54f656808d6d6b61`. It documents TweetClaw/Xquik as
+  an optional upstream queue for public X URLs and notes, then hands selected
+  URLs to `x-collect` before `x-cover` renders the cover. Final readback: open,
+  ready, `MERGEABLE`, base `main`, 1 commit, 2 files, 0 comments, 0 reviews, 0
+  checks.
+- External validation: `x-collect` passed `pnpm install --frozen-lockfile`,
+  `pnpm run build`, `git diff --check`, and added-line hygiene scans.
+  `x-thread-cards` passed `python3 -m py_compile` for its renderer,
+  `skill-creator` quick validation, `git diff --check`, and added-line hygiene
+  scans. `x-post-cover` has no package manifest, so validation used docs and
+  skill diff checks plus added-line hygiene scans. No validation-only lockfiles
+  or artifacts were staged.
+- Public and link hygiene: no new external links were added to target docs.
+  OpenClaw docs probes returned HTTP 200 for `https://openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/llms.txt`, `/cli/plugins`, `/skills`, and
+  `/clawhub/skill-format.md`. PR bodies used the required optional
+  first-person visibility note with plain `burakbayir`, no account URL, and no
+  GitHub mention. Changed target content and PR bodies were checked for
+  secrets, private implementation details, internal cost mechanics,
+  unsupported claims, stale metadata, and restricted provider wording.
+- TweetClaw audit maintenance: changed only
+  `docs/discoverability-audit.archive.txt`; pre-existing untracked path `0`
+  remained untouched. Markdown memory was 14,998 of 15,360 bytes before the
+  archive edit. Persisted automation prompt readback measured 13,833 bytes.
+  Prompt self-improvement did not require an automation prompt edit.
+- Self-improvement: future skill-repo screening should read target `AGENTS.md`
+  before drafting edits and treat maintainer-only author impersonation rules as
+  external PR blockers, not instructions to spoof authorship.
+
 ### 2026-07-03 17:56 UTC Fresh Xquik Visibility PR Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
