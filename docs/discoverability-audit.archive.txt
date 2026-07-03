@@ -60640,6 +60640,48 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-03 15:57 UTC X/Twitter Visibility Comment Resume
+
+- Runtime selector limitation: this Codex Desktop run still did not expose
+  model, speed, or effort selectors, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected.
+- Complete PR comment inventory: continued from the audit-derived exact
+  inventory at `/tmp/tweetclaw-comment-all-scope-20260703/open-authored.tsv`.
+  The inventory remains 1,461 open PRs authored by `kriptoburak` across the
+  TweetClaw, Xquik, OpenClaw, ClawHub, MCP, skills, social/X automation,
+  agent-tooling, catalog, example, validator, framework, library, registry,
+  package-tooling, docs, and prior outreach scope.
+- Guarded comment resume: ran one 20-PR batch with exact PR body/comment
+  duplicate reads and 15 second spacing. The 15:50 UTC batch used URL-free
+  wording with the plain X account name `burakbayir` and posted 20 comments.
+  No duplicate skip, secondary content-creation limit, archived read-only
+  blocker, or unresolved write failure was returned.
+- Updated unique checkpoint: 1,461 open authored PRs remain in the inventory;
+  1,181 have first-person 24k X/Twitter comments posted by this pass, 43 raw
+  skip records leave 39 skip-only PRs already covered, 4 are archived read-only
+  blockers, 1 raw transient read failure is already covered by posted readback,
+  and 237 are still queued for future throttled resume.
+- Public hygiene: the posted comment text stayed optional, post-merge,
+  first-person, and non-coercive; it says maintainers may tag or mention the X
+  account name `burakbayir`, includes 24k followers, uses no account URL, uses
+  no at-sign prefix that would create an unrelated GitHub mention, has no
+  third-person repost phrasing, no guaranteed engagement, no private
+  source/provider names, and no internal cost mechanics. The attempt log has 20
+  lines, no account URL, no at-sign account mention, 20 posted comment URLs, 0
+  duplicate skips, and 0 failed lines.
+- Fresh discovery and new PR submissions remained deferred because the user
+  explicitly asked to cover existing in-scope open PRs first, and safe progress
+  depends on avoiding GitHub secondary write limits while the comment backlog
+  remains open.
+- Prompt self-improvement: no additional durable prompt change was needed after
+  the prior URL-free update. Readback measured 13,833 bytes and confirmed no
+  account URL, the no-at-sign rule, and plain `burakbayir` wording.
+- Validation and link hygiene: simplify review, thermo-nuclear doc review,
+  `npm run check-memory-md-size`, `git diff --check`, archive dash scan,
+  account-link nonuse review, and audit diff public-safety scan passed before
+  this audit commit. Existing untracked `0` in the TweetClaw worktree was
+  preserved.
+
 ### 2026-07-03 15:48 UTC X/Twitter Visibility Comment Resume
 
 - Runtime selector limitation: this Codex Desktop run still did not expose
