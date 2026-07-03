@@ -59559,6 +59559,26 @@ Self-improvement:
 - Validation: `npm run check-memory-md-size` passed at 14,998 of 15,360 bytes.
   Existing untracked `0` in the TweetClaw worktree was preserved.
 
+### 2026-07-03 08:29 UTC X/Twitter Visibility Comment Resume
+
+- Runtime selector limitation: this Codex Desktop run still did not expose
+  model, speed, or effort selectors, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected.
+- Guarded comment resume: continued the existing audit-derived open PR queue
+  with per-PR body/comment duplicate reads, 7 second spacing, and a 20 comment
+  cap. Posted 20 additional first-person 24k X/Twitter visibility comments,
+  skipped 1 PR already containing the note, and hit no secondary limit.
+- Updated unique checkpoint: 1,461 open authored PRs remain in the inventory;
+  256 have first-person 24k X/Twitter comments posted by this pass, 10 are
+  skipped as already covered, 2 are archived read-only blockers, and 1,193 are
+  still queued for future throttled resume.
+- Public hygiene: newly posted comment text stayed optional, post-merge,
+  first-person, and non-coercive; it included `https://x.com/burakbayir`, 24k
+  followers, no third-person repost phrasing, no guaranteed engagement, no
+  private source/provider names, and no internal cost mechanics.
+- Validation: `npm run check-memory-md-size` passed at 14,998 of 15,360 bytes.
+  Existing untracked `0` in the TweetClaw worktree was preserved.
+
 ## Heartbeat 2026-07-03 06:32 UTC
 
 - Runtime and prompt: current runtime did not expose model, Fast speed, or
