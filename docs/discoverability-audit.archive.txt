@@ -59285,3 +59285,144 @@ Self-improvement:
   `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and
   `docs/clawpack-release.archive.txt`. Compact Markdown memory was kept under
   the 15 KiB cap after archiving full detail.
+
+## 2026-07-03 02:24 UTC Heartbeat - Xquik Visibility PRs
+
+- Runtime and scope: model, speed, and effort selector unavailable in this
+  runtime. The automation prompt was already updated to prioritize Xquik
+  visibility and skip generic target cleanup unless it directly enables or
+  repairs an Xquik placement. Persisted prompt measured 13037 bytes, below the
+  15 KiB cap.
+- Existing TweetClaw state: repo was on `master` and synced with origin before
+  edits. The only pre-existing untracked path was `0`, preserved untouched.
+  Xquik repo had unrelated local docs changes, ignored.
+- Crawler-first coverage:
+  - PR monitor JSON from `/Users/burak/Developer/xquik` returned 1 opportunity,
+    `Xquik-dev/tweetclaw`.
+  - Skill coverage JSON returned 0 opportunities after research-proxy socket
+    failures and endpoint quarantine messages.
+  - Fresh target JSON returned 0 opportunities after the same proxy failure
+    class. Fallback GitHub metadata search was used only after these crawler
+    outputs.
+- Open PR inventory and repairs:
+  - Built the inventory from compact audit, archive URLs, crawler output,
+    target readbacks, and 35 audit-tracked PR URLs. Exact `gh pr view` read 35
+    tracked PR URLs. Summary: most are still open, `pb33f/libopenapi#599` and
+    `pb33f/libopenapi-validator#299` are closed, and
+    `80years80/Tweet_Sentiment_Googlesheet_Dashboard#1` is merged.
+  - `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis#1` had a
+    bot comment on an older commit, but exact branch readback showed newer
+    commit `5227849` already handled sparse and malformed uploads. Thread-aware
+    GraphQL found 0 unresolved review threads, so no repair was needed.
+  - `alipbudiman/SENTIMENT-ANALYSIS-USING-MACHINE-LEARNING-ON-SOCIAL-MEDIA-PLATFORM-X-TWITTER-#1`
+    had an unresolved bot review on `tweetclaw_import.py` requiring actual
+    TweetClaw fields `tweetText`, `xUsername`, and reply text support. Repair
+    branch `codex/import-tweetclaw-export` on fork `kriptoburak/...` now
+    supports `tweetText`, `reply_text`, `replyText`, `author_username`,
+    `authorUsername`, `x_username`, and `xUsername`. Validation: Python compile
+    plus JSONL smoke test loaded 2 rows with correct text and usernames,
+    whitespace diff check passed, and public-hygiene diff scan was clean.
+    Commit `bee47ce` pushed.
+  - `korbirayen/MoodMonitor#1` had an unresolved bot review on
+    `twitter_bot/tweetclaw_import.py` requiring `tweetText` and `reply_text`.
+    Repair branch `codex/import-tweetclaw-export` on fork
+    `kriptoburak/MoodMonitor` now supports `tweetText`, `reply_text`,
+    `replyText`, `x_username`, and `xUsername`. Validation: Python compile plus
+    CLI smoke run on a JSONL sample produced 2 scored rows and CSV output;
+    whitespace diff check passed and public-hygiene diff scan was clean.
+    Commit `fd0ec2b` pushed.
+- Fresh discovery and duplicate gates:
+  - Fallback searches produced 37 unique candidate repos. Archive scan removed
+    many prior-history or duplicate lanes, including
+    `AnuragChauhan1120/Social-Media-Analytics-Tool-WIthout-BERT-`,
+    `AnuragSingh1104/Tweets-Sentiment-Analysis`,
+    `Himansxhu/Social-Media-Sentiment-Analysis`,
+    `Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard`,
+    `Putrabadiws/X-Sentiment-Analysis`,
+    `Palvin21/Multi-Platform-Social-Media-Sentiment-and-Sarcasm-Analyzer`,
+    `Vaibhavv2203/Twitter_analysis_agent`, `Wibinah/tweet-sentiment-analyzer`,
+    `11Anupam/Sentiment-analysis-machine`, and
+    `vivhere/social-media-sentiment-dashboard-sect`.
+  - Fresh-screen metadata checked 11 non-fork, non-archived candidates:
+    `REDDIDIVAKARSAI/Twitter-Trend-Analyzer`,
+    `Fratu223/Social-Media-Sentiment-Analysis`,
+    `malav-radia/diwali-sale-sentiment-analysis`,
+    `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel`,
+    `anzelafiadha/Brand-Reputation-Sentiment-Analysis`,
+    `ghulamraza110/sentiment-analysis-dashboard`,
+    `hasannjaffal/tweets-processing`,
+    `Mynk724/financial-news-sentimental-analysis`,
+    `Ronit26Mehta/Twitter-Analysis-Dashboard`,
+    `Swastika2401/Social-Media-Sentiment-Analysis`, and `Tanish-og/CREW_AI`.
+  - Target PR and issue duplicate checks found no Xquik, TweetClaw,
+    x-twitter-scraper, OpenClaw, or ClawHub history on selected targets.
+    `Fratu223/Social-Media-Sentiment-Analysis` was duplicate-blocked by the
+    existing open PR `Fratu223/Social-Media-Sentiment-Analysis#109`, "Add
+    optional Xquik tweet source".
+- Fresh PRs opened:
+  - `REDDIDIVAKARSAI/Twitter-Trend-Analyzer#1`:
+    https://github.com/REDDIDIVAKARSAI/Twitter-Trend-Analyzer/pull/1 from
+    verified fork `kriptoburak/Twitter-Trend-Analyzer`, parent
+    `REDDIDIVAKARSAI/Twitter-Trend-Analyzer`, branch
+    `codex/add-xquik-export-upload`, commit `ad7c892`. Adds optional
+    TweetClaw/Xquik CSV, JSON, and JSONL upload support to the existing
+    Streamlit X trend dashboard, coalescing `tweetText`, `reply_text`,
+    `replyText`, author, date, and engagement fields while preserving the
+    simulation mode. Validation: Python compile, helper smoke test for mixed
+    `tweetText` and `reply_text` rows, whitespace diff check, and public-hygiene
+    diff scan. README link check reports 2 pre-existing broken screenshot paths
+    under `screenshots/`; the PR introduced no links.
+  - `malav-radia/diwali-sale-sentiment-analysis#1`:
+    https://github.com/malav-radia/diwali-sale-sentiment-analysis/pull/1 from
+    verified fork `kriptoburak/diwali-sale-sentiment-analysis`, parent
+    `malav-radia/diwali-sale-sentiment-analysis`, branch
+    `codex/add-xquik-export-upload`, commit `b5f6af3`. Adds optional
+    TweetClaw/Xquik CSV, JSON, and JSONL upload support to the Diwali X
+    sentiment dashboard, computes VADER labels for uploaded reviewed exports,
+    and leaves the bundled sample data path unchanged. Validation: Python
+    compile, helper smoke test for mixed `tweetText` and `reply_text` rows,
+    whitespace diff check, and public-hygiene diff scan. README link check
+    reports the pre-existing placeholder `YOUR_STREAMLIT_APP_URL_HERE`; the PR
+    introduced no links.
+  - `ghulamraza110/sentiment-analysis-dashboard#1`:
+    https://github.com/ghulamraza110/sentiment-analysis-dashboard/pull/1 from
+    verified fork `kriptoburak/sentiment-analysis-dashboard`, parent
+    `ghulamraza110/sentiment-analysis-dashboard`, branch
+    `codex/add-xquik-export-upload`, commit `f03abb0`. Extends batch upload
+    parsing to CSV, JSON, and JSONL and coalesces common dashboard plus
+    TweetClaw fields including `tweetText`, `reply_text`, `replyText`, and
+    `full_text`. Validation: Python compile, JSONL parser smoke test,
+    whitespace diff check, README link check passed, and public-hygiene diff
+    scan was clean.
+  - Exact readbacks after creation: all 3 PRs are OPEN, ready, MERGEABLE, base
+    `main`, head owner `kriptoburak`, branch `codex/add-xquik-export-upload`,
+    with 0 comments, 0 reviews, and 0 checks. Direct PR URL probes returned
+    HTTP 200.
+- Official docs, package, and public checks:
+  - Current OpenClaw docs host `docs.openclaw.ai` returned HTTP 200 for
+    `/llms.txt`, `/cli/plugins`, `/plugins/manage-plugins`,
+    `/plugins/manifest`, `/plugins/sdk-runtime`, `/plugins/tool-plugins`,
+    `/plugins/install-overrides`, `/clawhub/publishing`,
+    `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+    `/help/debugging`, and `/help/testing-updates-plugins`.
+  - npm metadata: `@xquik/tweetclaw` latest `1.6.31`; `openclaw` latest
+    `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub`
+    `0.23.1`. ClawHub TweetClaw route returned HTTP 200 after redirecting to
+    `clawhub.ai/xquik/plugins/tweetclaw`; page metadata still references
+    version `1.6.26`. OpenClaw Directory TweetClaw route returned HTTP 200.
+    Direct npmjs HTTP probe returned 403, so `npm view` is the package metadata
+    source of truth for this run.
+  - Full and production npm audits found 0 vulnerabilities.
+    OpenClaw platform fitness passed for `@xquik/tweetclaw@1.6.32` targeting
+    OpenClaw `2026.6.11`. Package artifact check passed with 61 files.
+    TweetClaw Markdown link check passed for README, OpenClaw setup, agent
+    workflows, compact audit, and compact release notes.
+- Prompt self-improvement: persisted prompt already contains the user's
+  Xquik-visibility-only update. Durable lesson reinforced here: when a target
+  has mixed TweetClaw export fields across rows, coalesce all known text columns
+  row by row instead of choosing the first present column.
+- TweetClaw changed files for this heartbeat: `docs/discoverability-audit.md`
+  and `docs/discoverability-audit.archive.txt`. Final gate readback:
+  `npm run check-memory-md-size` reported 15331 of 15360 bytes,
+  `npm run check:all` passed with 168 tests and 100 percent coverage, and the
+  post-edit TweetClaw Markdown link check passed.
