@@ -2,6 +2,93 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-03 19:52 UTC Signal Digest Source Review PRs
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors in this run, so Codex 5.5 Fast mode and extra-high reasoning
+  could not be explicitly selected. Continued within the available runtime.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned 0 open issues.
+- Crawler-first discovery: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, bounded request and
+  proxy warmup timeouts, concurrency 8, and focused query packs for X/Twitter
+  intelligence digests, signal monitors, social trend monitors, brand
+  intelligence, SKILL.md, OpenClaw, MCP, Claude, Codex, agent skills, social
+  media skills, Twitter/X skills, awesome lists, skill registries, n8n, Slack,
+  Notion, Telegram, and source-review workflows. First output parsed with 3
+  opportunities: `yours2grab/sucana-grok-x-monitoring`, already archive-blocked
+  from a prior run; `affectionatec/niche-radar-alpha`, blocked for this run
+  because the repo already has Xquik backend docs and code; and
+  `amiya-09/crypto-trend-bot`, held as weaker fit because its README explicitly
+  avoids X/Twitter API and scraping paths. A second crawler pass across
+  competitive-intelligence, product-radar, market-signal, lead-signal, brand,
+  launch, reputation, AI-trend, and creator-radar queries parsed with 0
+  additional opportunities.
+- Authored PR inventory: broad `updated:>=2026-07-03` search returned the local
+  200-item limit and was not claimed complete. Partition readbacks were exact
+  for `00:00-01:59` with 10, `02:00-03:59` with 5, `04:00-05:59` with 4,
+  `19:00-19:45` with 140, `19:46-19:52` with 22, and `>=19:53` with 22.
+  Windows `06:00-07:59`, `08:00-09:59`, `10:00-11:59`, `12:00-13:59`,
+  `14:00-15:59`, `16:00-17:59`, and `18:00-18:59` still hit the 200-item
+  local limit, so complete all-day inventory remained capped. Exact reads were
+  completed for 44 PR URLs from the current active windows, all open: 36
+  `CLEAN`, 6 `UNSTABLE`, and 2 `BLOCKED`.
+- Repair gate: exact non-clean reads found no safe Xquik visibility repair for
+  this run. `YusufAlper17/Social-Pulse#1` is blocked only by a Vercel
+  target-owner authorization comment. `toomuchdesign/openapi-ts-json-schema#627`
+  has a changeset-bot note that explicitly says no changeset is OK when no
+  package version bump is intended. `tumf/xcom-rs#4` has a generic Codex review
+  shell and no flat actionable finding. Other unstable PRs had no failing
+  checks or maintainer requests in the exact readback.
+- Fresh candidate screening: duplicate and policy gates checked compact audit,
+  archive, target PRs, target issues, repo metadata, fork state, local clone
+  scans, README or skill docs, and target runtime files for TweetClaw, Xquik,
+  `@xquik/tweetclaw`, x-twitter-scraper, OpenClaw, ClawHub, GitHub and npm
+  variants. Selected `qiayue/Twitter-Trend-Radar` because it is MIT,
+  non-archived, non-fork, and directly scans X/Twitter launch signals. Selected
+  `Celina-create/trend-radar` because its roadmap includes X/Twitter source
+  ingestion and tweet draft generation, and missing license metadata alone did
+  not block the direct docs PR. Selected `z2z23n0/idea-miner` because it is MIT,
+  a skill repo with a source-policy reference for curated X/Twitter lists, and
+  a TweetClaw review note fits its evidence-confirmation rules.
+- New external PRs:
+  `https://github.com/qiayue/Twitter-Trend-Radar/pull/1`,
+  `https://github.com/Celina-create/trend-radar/pull/1`, and
+  `https://github.com/z2z23n0/idea-miner/pull/12`. All were opened from
+  correctly parented `kriptoburak` forks on
+  `codex/add-tweetclaw-source-review`, with PR bodies using the required
+  first-person optional visibility note, plain `burakbayir`, no X account URL,
+  and no GitHub account mention. Final readbacks showed all 3 open, ready,
+  `MERGEABLE`, `CLEAN`, no comments, no reviews, and no checks configured.
+- Target changes: added a TweetClaw source-review section to
+  `qiayue/Twitter-Trend-Radar` README while preserving its filtering, domain
+  age, traffic, and local triage ownership; added a planned-X/Twitter preflight
+  note to `Celina-create/trend-radar` README while preserving its clustering,
+  summaries, ranking, and draft generation ownership; added TweetClaw as an
+  optional X/Twitter review aid in `z2z23n0/idea-miner` source policy while
+  preserving independent confirmation before final ideas.
+- Validation: target `git diff --check` passed for all 3 repos. Added-line
+  scans found no em dash, spaced double-hyphen, malformed outreach handles,
+  restricted-source wording, private-cost wording, or secret-like tokens.
+  `node scripts/install-local.mjs --dry-run` passed for `idea-miner`. TweetClaw
+  GitHub link check returned 200.
+- OpenClaw and public hygiene: current OpenClaw probes returned 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw 2026.6.11.
+  Public link checks returned 200 for TweetClaw GitHub, all 3 new PR URLs, and
+  Xquik docs API overview. `npm view @xquik/tweetclaw` returned latest 1.6.31
+  with GitHub repository, homepage, and bugs URLs.
+- TweetClaw repository changes: only this archive file changed. Existing
+  untracked `0` in `/Users/burak/Developer/tweetclaw` was preserved. Compact
+  Markdown memory stayed at 14998/15360 bytes. Persisted automation prompt
+  size stayed 14173 bytes, under the 15 KiB cap.
+- Durable lesson: when npm package pages return 403 to command-line link
+  checks, prefer the TweetClaw GitHub URL in target docs and use `npm view` as
+  package metadata validation. Do not reuse crawler candidates already archived
+  as blocked unless a later prompt explicitly changes that blocker.
+
 ## 2026-06-29 05:23 UTC Heartbeat
 
 - Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast mode
