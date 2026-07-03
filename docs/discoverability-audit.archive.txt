@@ -74,9 +74,11 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   target focused on direct X API v2 while using TweetClaw for broader
   approval-gated OpenClaw automation.
 - PR readbacks: all 3 new PRs are open, ready, clean, mergeable, authored by
-  `kriptoburak`, have 1 commit each, no comments, no reviews, no checks, and no
-  malformed optional visibility wording in the PR body. Changed target files
-  were 2 in `autocli-skill`, 2 in `twitter-digest`, and 3 in `x-skill`.
+  `kriptoburak`, have 1 commit each, no comments, no checks, and no malformed
+  optional visibility wording in the PR body. `odrobnik/x-skill#1` has one
+  automated Codex `COMMENTED` review row with no actionable suggestions. Changed
+  target files were 2 in `autocli-skill`, 2 in `twitter-digest`, and 3 in
+  `x-skill`.
 - Validation and links: target `git diff --check`, added-line public hygiene
   scans, canonical TweetClaw GitHub link check, and npm registry metadata link
   check passed for all 3 targets. `python3 -m py_compile run.py` passed for
