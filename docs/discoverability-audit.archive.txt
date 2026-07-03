@@ -60725,6 +60725,98 @@ Self-improvement:
   before drafting edits and treat maintainer-only author impersonation rules as
   external PR blockers, not instructions to spoof authorship.
 
+### 2026-07-03 18:43 UTC Social Source Queue PRs
+
+- Runtime selector limitation: Codex Desktop still did not expose model, speed,
+  or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could
+  not be explicitly selected. Continued under the available runtime.
+- Open PR inventory method: crawler-first monitoring was run before broad
+  authenticated searches. Exact-read the 3 PRs from 18:30 UTC and the 3 PRs
+  from 17:56 UTC. All 6 were open, ready, `MERGEABLE`, and had 0 comments, 0
+  reviews, and 0 checks, so no Xquik visibility repair was needed. Authored
+  open PR partitions returned 200 rows for `updated:>=2026-07-03`, 167 rows
+  for `2026-07-03T18:00:00Z..18:43:59Z`, and 21 rows for
+  `updated:>=2026-07-03T18:44:00Z`. This run does not claim complete in-scope
+  inventory because the day bucket stayed capped.
+- Crawler-first discovery: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260703T1843/fresh.json`, bounded request and
+  proxy warmup timeouts, concurrency 8, limit 180, search page 1, per-query
+  limit 10, and focused TweetClaw/Xquik/OpenClaw PR, SKILL.md, `.agents/skills`,
+  Codex, Claude, social-media, Twitter/X, source-evidence, MCP, agent
+  marketplace, and workflow-template queries. Strict JSON parsed with 5
+  opportunities and 0 crawler errors.
+- Fresh screening and blockers: crawler candidates
+  `ccccchuck/social-media-publishing-flow-skill`,
+  `kennyzheng-builds/x-analytics`, and
+  `enescingoz/n8n-twitter-thread-fetcher` were duplicate-blocked by existing
+  open kriptoburak PRs. `visiosoft/n8n-twitter-thread-fetcher` had been
+  screened earlier and was not counted as a fresh lane. Fallback repo searches
+  screened direct Twitter skills and social publishing workflow repos. Existing
+  PRs or archive history blocked `mindcodings/openclaw-twitter-skill`,
+  `vvd-art/x-twitter-skill`, `Ganidhuz/ganidhuz-foxx`,
+  `nemoaigc/grok-x-skills`, `maoshuorz/twitter-skill`,
+  `Deveshwy/blog-to-twitter-skill`, and
+  `iamasters-academy/content-engine`. Fresh duplicate-clean selected lanes were
+  `784697524-ux/social-media-auto-publish`,
+  `JiamanJemma/social-creator-toolkit`, and
+  `sidhardhbalaji/x-automation-N8N`.
+- Duplicate, policy, and fork checks: compact audit, archive, target content,
+  open and closed target PRs, and open and closed target issues were searched
+  for TweetClaw, tweetclaw, Xquik, x-twitter-scraper, OpenClaw, ClawHub, and
+  variants. No duplicates were found for the 3 submitted repos. No target
+  `AGENTS.md`, `CLAUDE.md`, or contribution policy was found. License metadata
+  was missing on `784697524-ux/social-media-auto-publish` and
+  `sidhardhbalaji/x-automation-N8N`; per policy, that did not block direct
+  docs PRs. Forks were created under `kriptoburak` and REST readbacks confirmed
+  parents `784697524-ux/social-media-auto-publish`,
+  `JiamanJemma/social-creator-toolkit`, and
+  `sidhardhbalaji/x-automation-N8N`. The n8n fork used the alternate fork name
+  `kriptoburak/x-automation-N8N-1` because `kriptoburak/X-Automation-N8N`
+  already points to a different parent.
+- New PR: `https://github.com/784697524-ux/social-media-auto-publish/pull/1`
+  from `kriptoburak:codex/add-xquik-source-queue`, commit
+  `abadb3a7ddd61c7c705f59933156bef849d68ee5`. It adds an optional
+  TweetClaw/Xquik public X/Twitter source queue before social-auto-upload
+  publishing while keeping runtime credentials outside the skill package. Final
+  readback: open, ready, `MERGEABLE`, base `main`, 1 commit, 2 files, 0
+  comments, 0 reviews, 0 checks.
+- New PR: `https://github.com/JiamanJemma/social-creator-toolkit/pull/2` from
+  `kriptoburak:codex/add-xquik-source-context`, commit
+  `b5da0ffb34b47c532f2d3970af9b4a361c915e3e`. It adds an optional
+  TweetClaw/Xquik source-packet step before title and copy generation while
+  preserving the toolkit's platform adaptation, cover-prompt, timing, and
+  social-auto-upload flow. Final readback: open, ready, `MERGEABLE`, base
+  `main`, 1 commit, 2 files, 0 comments, 0 reviews, 0 checks.
+- New PR: `https://github.com/sidhardhbalaji/x-automation-N8N/pull/1` from
+  `kriptoburak:codex/add-xquik-source-feed`, commit
+  `5e5e010cb50ddf2658995fc99c0ac41d6ca1eab8`. It documents TweetClaw/Xquik as
+  an optional public X/Twitter source feed before n8n virality scoring while
+  keeping Telegram approval as the publishing gate. Final readback: open,
+  ready, `MERGEABLE`, base `main`, 1 commit, 1 file, 0 comments, 0 reviews, 0
+  checks.
+- External validation: all 3 target clones passed `git diff --check`. Added
+  lines passed scans for em dash, spaced double-hyphen, burakbayir account URL,
+  and account-prefixed GitHub mention patterns. The edits added no new external
+  links. PR bodies used the required optional first-person visibility note with
+  plain `burakbayir`, no account URL, no account-prefixed GitHub mention, no
+  third-person repost phrasing, and no merge condition.
+- Public and link hygiene: OpenClaw docs probes returned HTTP 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and `https://docs.openclaw.ai/skills`.
+  Diffs and PR bodies were inspected for secret values, private implementation
+  details, restricted provider/source names, internal cost mechanics,
+  unsupported claims, stale metadata, and unsafe publishing bypasses.
+- TweetClaw audit maintenance: changed only
+  `docs/discoverability-audit.archive.txt`; pre-existing untracked path `0`
+  remained untouched. Markdown memory stayed under the 15 KiB cap at
+  14,998/15,360 bytes. The persisted automation prompt readback measured 13,833
+  bytes. Prompt self-improvement did not require an automation prompt edit.
+- Self-improvement: social auto-publishing repos can be useful fresh lanes when
+  the Xquik placement is framed as source evidence before scoring, drafting, or
+  approval, not as a replacement for the target's publishing runtime or account
+  credential flow.
+
 ### 2026-07-03 18:30 UTC Reader, Publisher, and Content Calibration PRs
 
 - Runtime selector limitation: Codex Desktop still did not expose model, speed,
