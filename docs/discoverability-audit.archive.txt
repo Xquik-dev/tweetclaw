@@ -58694,6 +58694,163 @@ Self-improvement:
   `docs/clawpack-release.md`, and `docs/clawpack-release.archive.txt`.
   End-of-run commit and push include this archive entry.
 
+## 2026-07-03 01:20 UTC heartbeat
+
+- Runtime selector limitation: current runtime did not expose Codex 5.5 Fast
+  mode or reasoning-effort controls, so the limitation was recorded and the run
+  continued.
+- Run directory: `/tmp/tweetclaw-heartbeat-20260703-0109`.
+- Issue checks: explicit `gh issue list` against `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` returned no open issues.
+- Crawler coverage from `/Users/burak/Developer/xquik`:
+  - PR monitor used `bun run github:crawl` with flags `--json`, `--output`
+    `/tmp/tweetclaw-heartbeat-20260703-0109/pr-monitor.json`,
+    `--research-proxy`, `--request-timeout-ms 12000`,
+    `--proxy-warmup-timeout-ms 12000`, `--limit 120`,
+    `--search-pages 1`, `--per-query-limit 10`, `--concurrency 6`, and
+    `--session-id tweetclaw-pr-monitor-20260703-0109`. Focused queries covered
+    TweetClaw, OpenClaw, ClawHub, MCP, x-twitter-scraper, Xquik, social media,
+    agent tools, SKILL.md, Codex, Claude, and sentiment PRs. Output parsed as 5
+    opportunities: `Xquik-dev/tweetclaw`, `yopiesuryadi/mailbot-programmable-inbox`,
+    `rxhxm/sixtyfour-skill`, `shane9coy/Agent-Skill-Architecture-Guide`, and
+    `RajeshKalidandi/ai-agent-knowledge`.
+  - Skill coverage used the crawler with output
+    `/tmp/tweetclaw-heartbeat-20260703-0109/skill-coverage.json`, limit 160,
+    search pages 1, per-query limit 10, concurrency 6, and session
+    `tweetclaw-skill-coverage-20260703-0109`. Queries covered SKILL.md,
+    `.agents/skills`, OpenClaw/MCP/Codex/Claude, agent, social, Twitter/X,
+    awesome-list, registry, fork, and generated-catalog lanes. Output parsed as
+    13 opportunities: `hashgraph-online/registry-broker-skills`,
+    `AElfProject/aelf-skills`, `codeking-ai/cligate`, `gybob/aai-gateway`,
+    `zhayujie/CowAgent`, `wanshuiyin/Auto-claude-code-research-in-sleep`,
+    `elbis330/social-media-scraper-skill`, `jdrhyne/agent-skills`,
+    `LLMQuant/skills`, `shepsci/kaggle-skill`, `liyupi/ai-guide`,
+    `rabden/X-twitter-social-manager-skill`, and `AISA-skills/social-media-skills`.
+  - Fresh-target coverage used the crawler with output
+    `/tmp/tweetclaw-heartbeat-20260703-0109/fresh-targets.json`, limit 180,
+    search pages 1, per-query limit 10, concurrency 6, and session
+    `tweetclaw-fresh-targets-20260703-0109`. Queries covered Twitter/X
+    sentiment, Streamlit, Flask, dashboard, CSV, and classifier lanes. Output
+    parsed as 25 opportunities.
+- Open PR inventory method: compact audit, archive, crawler outputs, explicit
+  issue lists, authored PR search partitions, exact PR URL reads, and
+  thread-aware GraphQL were used. Authored PR searches for TweetClaw and Xquik
+  lanes both returned 200-result caps, so no complete all-GitHub inventory claim
+  was made. The OpenClaw/ClawHub authored partition returned 10. Rate-limit
+  readback showed core 4977, search 30, and GraphQL 4573 remaining.
+- Exact PR readbacks covered 15 tracked PRs:
+  `alipbudiman/SENTIMENT-ANALYSIS-USING-MACHINE-LEARNING-ON-SOCIAL-MEDIA-PLATFORM-X-TWITTER-#1`,
+  `LayanAbuSinni/twitter-sentiment-analysis#1`,
+  `prince693/sentiment-analysis-on-twitter-dataset#1`,
+  `hi-imran/Sentiment-Analysis-with-Python#1`,
+  `khokhriya/Python-Project-Sentiment-Classifier#1`,
+  `Timothy-L-Baron/sent_class_coursera#1`,
+  `Dhamo0085/Twittter-scrapper-using-snscrape-and-streamlit#1`,
+  `Kalki-Teja-Patimidi/Twitter_Scraper#1`,
+  `80years80/Tweet_Sentiment_Googlesheet_Dashboard#1`,
+  `Vaibhavv2203/Twitter_analysis_agent#1`,
+  `Charan304304/Twitter-Sentiment-Analysis#1`,
+  `ptdr1516/Sentiment-Analysis#1`,
+  `adityatamhanedev/Social-Media-Sentiment-Analysis-Dashboard#1`,
+  `VaidehiDeore/Social-Media-Sentiment-Analysis-Dashboard#1`, and
+  `UbaleAditya/Social-Media-Sentiment-Analysis-Dashboard#1`.
+- Repair readback: no new actionable maintainer comments, failing checks,
+  conflicts, DCO, CLA, or generated drift were found. `80years80#1` remains
+  merged with the maintainer contact request already notified in the prior run.
+  `ptdr1516/Sentiment-Analysis#1` has a CodeRabbit actionable summary, but
+  thread-aware GraphQL reported the thread resolved with body text saying it was
+  addressed in commit `922cd6b`.
+- Fresh candidate screening:
+  - Archive and compact duplicate checks blocked or deprioritized repeated
+    candidates including `Abhay929-pr/real-time-sentiment`,
+    `sherintht/Twitter_Sentiment_Dashboard`,
+    `AnuragSingh1104/Tweets-Sentiment-Analysis`,
+    `KhushiKansal/Sentiment_Analysis_WebApp`,
+    `SaiRam-0319/social-media-sentiment-analysis`, and
+    `dandulalitha/Multichannel-Social-Media-Sentiment-Engine-End-to-End-NLP-Pipeline`.
+  - Newly screened clean candidates included
+    `jai-fadia/twitter-sentiment-analytics`,
+    `JoelEmmanuel795/sentiment-classifier`, and
+    `prachi-bansal26/sentiment-analysis-python`. All are public, non-fork,
+    non-archived, issue-enabled repos. GitHub license metadata was absent for
+    all three, which did not block direct PRs under the current rule.
+  - Target PR and issue searches with explicit `--repo` flags found no open or
+    closed duplicates for TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, Xquik,
+    x-twitter-scraper, OpenClaw, or ClawHub variants. Earlier `gh search`
+    attempts using `--state all` and inline `repo:` qualifiers failed on this
+    CLI version, so the successful duplicate gate used explicit `--repo`
+    searches plus clone-local `rg`.
+- External PRs opened after fork-parent verification:
+  - https://github.com/jai-fadia/twitter-sentiment-analytics/pull/1 from
+    verified fork `kriptoburak/jai-twitter-sentiment-analytics-tweetclaw`,
+    parent `jai-fadia/twitter-sentiment-analytics`, branch
+    `codex/import-tweetclaw-tav-csv`, commit `8aa5042`. Adds
+    `tweetclaw_to_tav_csv.py` and README guidance to convert reviewed TweetClaw
+    CSV, JSON, JSONL, or NDJSON exports into the target Tableau-friendly CSV
+    shape with tweet metadata and sentiment score columns.
+  - https://github.com/JoelEmmanuel795/sentiment-classifier/pull/1 from
+    verified fork `kriptoburak/joel-sentiment-classifier-tweetclaw`, parent
+    `JoelEmmanuel795/sentiment-classifier`, branch
+    `codex/import-tweetclaw-project-csv`, commit `c2d6fea`. Adds
+    `tweetclaw_to_project_twitter_data.py`, README usage, and fixes the README
+    command to the current `sentiment-classifier.py` filename. The converter
+    writes `tweet_text,retweet_count,reply_count` into the existing
+    `assets/project_twitter_data.csv` input shape.
+  - https://github.com/prachi-bansal26/sentiment-analysis-python/pull/1 from
+    verified fork `kriptoburak/prachi-sentiment-analysis-tweetclaw`, parent
+    `prachi-bansal26/sentiment-analysis-python`, branch
+    `codex/import-tweetclaw-training-csv`, commit `08bc843`. Adds
+    `tweetclaw_to_training_csv.py` and README guidance to convert reviewed
+    TweetClaw exports into the target `Sr No,Tweet,Sentiment` training CSV
+    shape with positive, negative, and neutral label mapping.
+- New PR exact readbacks: all 3 new PRs are OPEN, non-draft, MERGEABLE, have 1
+  commit, 0 comments, 0 reviews, and 0 configured checks.
+- External validation:
+  - Each new converter passed `python3 -m py_compile`.
+  - The shared scratch fixture `/tmp/tweetclaw-heartbeat-20260703-0109/sample-export.json`
+    produced 3 usable rows and skipped 1 row without tweet text for each target.
+  - Each edited target README passed `npx --yes markdown-link-check README.md
+    --quiet`, and each target passed `git diff --check`.
+  - Diff hygiene scans on changed target files found no secrets, restricted
+    provider/source names, internal cost mechanics, unsupported claims, stale
+    metadata, em dashes, or space-double-hyphen patterns.
+- Official OpenClaw and package recheck:
+  - Official docs returned HTTP 200 for `llms.txt`, `llms-full.txt`,
+    `/plugins/manage-plugins`, `/plugins/manifest`,
+    `/plugins/building-plugins`, `/plugins/community`,
+    `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+    `/plugins/sdk-runtime`, `/plugins/install-overrides`, `/clawhub`,
+    `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`, and the
+    raw `openclaw/openclaw` CLI plugin reference.
+  - npm metadata stayed unchanged: `@xquik/tweetclaw` latest `1.6.31`;
+    `openclaw` latest `2026.6.11`, beta `2026.7.1-beta.1`, alpha
+    `2026.5.19-alpha.1`; `clawhub` `0.23.1`.
+  - Full and omit-dev `npm audit` at moderate level found 0 vulnerabilities.
+    `npm run check-openclaw-platform-fitness` and
+    `npm run check-package-artifact` passed.
+- Public link checks:
+  - TweetClaw README, OpenClaw setup docs, agent workflow docs, compact audit,
+    compact release memory, packaged skill, and skill card passed Markdown link
+    checking.
+  - Direct URL checks returned HTTP 200 for the 3 new PRs, TweetClaw GitHub,
+    and ClawHub TweetClaw redirect. The probe-only
+    `https://openclaw.ai/directory` route returned HTTP 404; current compact
+    docs point at the stale but known OpenClaw Directory listing on
+    `openclawdir.com`, not that probe-only route.
+- Memory and prompt:
+  - Pre-edit `npm run check-memory-md-size` passed at 15012 of 15360 bytes.
+  - Persisted automation TOML measured 13514 bytes; parsed prompt payload
+    measured 13180 bytes, both under the 15 KiB prompt cap.
+  - Prompt self-improvement: the archive now records this CLI-specific
+    duplicate-search lesson. Use explicit `--repo` flags for target PR/issue
+    searches because this `gh` build rejects `--state all` and can misparse
+    inline `repo:` qualifiers containing OR terms. No prompt edit was needed
+    because the durable duplicate/fork gate already covers the policy.
+- Changed TweetClaw files for this heartbeat:
+  `docs/discoverability-audit.md`, `docs/discoverability-audit.archive.txt`,
+  `docs/clawpack-release.md`, and `docs/clawpack-release.archive.txt`.
+  Final validation and commit follow this archive entry.
+
 ## 2026-07-03 00:53 UTC Outreach Heartbeat
 
 - Runtime selector: current runtime exposed no model, speed, or effort selector,
