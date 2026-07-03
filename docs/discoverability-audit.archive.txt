@@ -59504,6 +59504,126 @@ Self-improvement:
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
 
+## Heartbeat 2026-07-03 06:32 UTC
+
+- Runtime and prompt: current runtime did not expose model, Fast speed, or
+  extra-high reasoning controls, so the limitation was recorded and work
+  continued. Persisted prompt measured 13,656 bytes with Python 3.11 TOML
+  parsing, below the 15 KiB cap. It contains the first-person
+  `x.com/burakbayir` PR wording; stale third-person repost wording appears only
+  as a prohibition.
+- Crawler-first discovery from `/Users/burak/Developer/xquik`:
+  - PR monitor used strict JSON output
+    `/tmp/tweetclaw-heartbeat-20260703-0632/pr-monitor.json`, research proxy,
+    session `tweetclaw-20260703-0632-pr`, bounded 12s request timeout, 30s proxy
+    warmup, limit 40, 2 search pages, per-query 10, concurrency 8, and authored
+    open Xquik, TweetClaw, x-twitter-scraper, and social-agent PR queries.
+    Output parsed as valid JSON with 0 opportunities.
+  - Skill coverage used strict JSON output
+    `/tmp/tweetclaw-heartbeat-20260703-0632/skill-coverage.json`, session
+    `tweetclaw-20260703-0632-skills`, and SKILL.md, `.agents/skills`,
+    OpenClaw, MCP, Codex, Claude, social, Twitter/X, awesome-list, registry,
+    fork, and generated-catalog terms. Output parsed as valid JSON with 28
+    opportunities.
+  - Fresh target coverage used strict JSON output
+    `/tmp/tweetclaw-heartbeat-20260703-0632/fresh-targets.json`, session
+    `tweetclaw-20260703-0632-fresh`, and X/Twitter automation, n8n workflow,
+    tweet scraper, dashboard, monitor, webhook, scheduler, and approval terms.
+    Output parsed as valid JSON with 71 opportunities.
+  - Focused `gh search prs --owner kriptoburak --state open` partitions for
+    Xquik/TweetClaw/x-twitter-scraper/OpenClaw/ClawHub and social/n8n/agent
+    terms returned empty arrays with no rate-limit stderr. This does not claim
+    exhaustive all-GitHub PR inventory.
+- Open PR inventory:
+  - Exact-read 16 known or newly tracked Xquik visibility PRs from compact
+    audit, archive, and recent run memory. `Ronit26Mehta/Twitter-Analysis-Dashboard#1`
+    remained MERGED. The other 15 read back OPEN, non-draft, and MERGEABLE:
+    `nikopastore/scalepilot-autopost#1`, `kooui/x-tweet-scraper#1`,
+    `reizto/x-automation-with-agent#1`,
+    `Manirider/Twitter-Sentiment-Bert#1`,
+    `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`,
+    `YashSerai/clearfeed-twitter-x-dashboard#1`,
+    `rockywuest/community-scout#1`,
+    `jimmc414/claude-code-plugin-marketplace#3`,
+    `SankeerthBoddu/n8n-marketing-workflows#1`,
+    `HANG939/signal-watcher#1`, `danbirker-svg/x-growth-os#1`,
+    `ythx-101/x-tweet-fetcher#73`, `erp-linker/n8n-workflows#2`,
+    `notrealaman/X-Automation-N8N#1`, and
+    `enescingoz/n8n-twitter-thread-fetcher#1`.
+  - Comments, reviews, checks, head commits, body wording, mergeability, and
+    draft state were read into
+    `/tmp/tweetclaw-heartbeat-20260703-0632/pr-readbacks.json`. No new
+    maintainer comment, CI failure, DCO/CLA blocker, conflict, generated-file
+    drift, or valid bot finding needed repair. All checked bodies contained
+    first-person `x.com/burakbayir` wording with no third-person repost wording.
+- Fresh candidate screens and blockers:
+  - Duplicate gates searched compact audit, this archive, target content, open
+    and closed target PRs, and open and closed issues for TweetClaw, tweetclaw,
+    `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, ClawHub, package
+    and repo URLs, and variants.
+  - Prior-history or duplicate blockers included `blacktwist/social-media-skills`,
+    `XPOZpublic/xpoz-agent-skills`, `typefully/agent-skills`,
+    `devadio/post-skill`, `ava-agent/promotion-agent`,
+    `theaayushstha1/agentic-skills`, `d-wwei/superb-publisher`,
+    `ronakmunjapara/BlogWritingCrew`, and `citedy/citedy-seo-agent`.
+    `Sawera-Farrukh/linkedin-twitter-posting-agent-n8n` was duplicate-clean but
+    held after 3 safer lanes existed because its workflow JSON contains
+    target-owned credential and sheet IDs.
+  - Selected safe lanes were `franklili3/square-agent`,
+    `revanthkakarla26/ai-social-media-agent`, and
+    `ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation`. All were
+    public, non-fork, non-archived, duplicate-clean in target content and exact
+    open/closed PR and issue searches, and had no blocking contribution policy.
+    `square-agent` is MIT in repository files; missing GitHub license metadata
+    on the 2 n8n repos did not block direct PRs.
+- Fresh PRs opened:
+  - `franklili3/square-agent#1`:
+    https://github.com/franklili3/square-agent/pull/1 from verified fork
+    `kriptoburak/square-agent` parented to `franklili3/square-agent`, branch
+    `codex/add-xquik-source-example`, commit `5409722`. Added
+    `examples/xquik-source-context.mjs`, `.env.example` settings, and README
+    docs so SquareAgent can fetch `GET /api/v1/x/tweets/search` with
+    `X-API-Key` and save reviewable X/Twitter source rows before generation.
+    Validation: `node --check examples/xquik-source-context.mjs`,
+    `git diff --check`, and `npx --yes markdown-link-check README.md --quiet`.
+  - `revanthkakarla26/ai-social-media-agent#1`:
+    https://github.com/revanthkakarla26/ai-social-media-agent/pull/1 from
+    verified fork `kriptoburak/ai-social-media-agent` parented to
+    `revanthkakarla26/ai-social-media-agent`, branch
+    `codex/add-xquik-context-node`, commit `b795913`. Added README and setup
+    guidance for an optional n8n HTTP Request node before Gemini using
+    `GET /api/v1/x/tweets/search`, `X-API-Key`, `q`, and `limit`, while keeping
+    Google Sheets as the review surface. Validation: `jq . "AI Social Media Agent.json"`,
+    `git diff --check`, and `npx --yes markdown-link-check README.md SETUP.md --quiet`.
+  - `ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation#1`:
+    https://github.com/ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation/pull/1
+    from verified fork `kriptoburak/AI-Workflow-for-Social-Media-Content-Automation`
+    parented to `ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation`,
+    branch `codex/add-xquik-source-node`, commit `752ee69`. Added an optional
+    Xquik source-context step to the n8n workflow docs with concrete HTTP
+    Request fields and a review or test-account note before automatic posting.
+    Validation: `jq . "My workflow.json"`, `git diff --check`, and
+    `npx --yes markdown-link-check README.md --quiet`.
+  - New PR exact readbacks in
+    `/tmp/tweetclaw-heartbeat-20260703-0632/new-pr-readbacks.json`: all 3 are
+    OPEN, non-draft, MERGEABLE, 0 comments, 0 reviews, 0 checks, and include
+    first-person `x.com/burakbayir` wording with no GitHub-linked handle or
+    third-person repost wording.
+- Public docs and hygiene:
+  - OpenClaw docs probes returned HTTP 200 for `llms.txt`, CLI plugins,
+    manifest docs, ClawHub publishing, and debugging. No OpenClaw compatibility,
+    package metadata, manifest, approval behavior, or release gate changed.
+  - TweetClaw public link check passed for `README.md`,
+    `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+    `docs/discoverability-audit.md`, and `docs/clawpack-release.md`.
+  - Target public-hygiene scans found no secret values, private implementation
+    details, restricted provider names, internal cost mechanics, unsupported
+    public claims, GitHub-linked `burakbayir` handles, or stale third-person
+    repost wording. SquareAgent scan flagged only a placeholder
+    `XQUIK_API_KEY=your_xquik_api_key` and pre-existing README dash context.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
+
 ## Heartbeat 2026-07-03 06:07 UTC
 
 - Runtime and prompt: current runtime did not expose model, speed, or reasoning

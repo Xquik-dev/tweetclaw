@@ -189,23 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 06:07 UTC: runtime selector unavailable. Xquik crawler strict JSON
-  returned PR-monitor 0, skill-coverage 72, and fresh-target 79 opportunities.
-  Focused authored-PR search returned no extra rows. Exact-read 16 known or new
-  Xquik PRs; `Ronit26Mehta/Twitter-Analysis-Dashboard#1` merged, the rest were
-  open and mergeable.
-- Repaired `nikopastore/scalepilot-autopost#1` for real Xquik `trends`
-  payloads in `311643b` and updated `ythx-101/x-tweet-fetcher#73` PR body with
-  first-person `x.com/burakbayir` wording.
+- 2026-07-03 06:32 UTC: runtime selector unavailable. Xquik crawler strict JSON
+  returned PR-monitor 0, skill-coverage 28, and fresh-target 71 opportunities.
+  Focused authored-PR searches returned no extra rows. Exact-read 16 known
+  Xquik PRs; `Ronit26Mehta/Twitter-Analysis-Dashboard#1` remained merged, the
+  other 15 were open and mergeable with no new repair.
 - Opened 3 fresh mergeable Xquik PRs from verified `kriptoburak` forks:
-  `erp-linker/n8n-workflows#2`, `notrealaman/X-Automation-N8N#1`, and
-  `enescingoz/n8n-twitter-thread-fetcher#1`. All PR bodies use first-person
+  `franklili3/square-agent#1`, `revanthkakarla26/ai-social-media-agent#1`,
+  and `ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation#1`.
+  All PR bodies use first-person
   `x.com/burakbayir` wording and no third-person repost text.
-- Fresh screens also covered `ythx-101/x-tweet-fetcher` duplicate-blocked by
-  PR 73, `visiosoft/n8n-twitter-thread-fetcher`, `WestphalJonas/x-bot`,
-  `KoaChu/twitter_monitor`, and archived or lower-fit lanes. Archive has
-  duplicate, policy, validation, link-blocker, prompt-byte, and
-  self-improvement details.
+- Fresh screens also covered duplicate or prior-history blockers
+  `blacktwist/social-media-skills`, `citedy/citedy-seo-agent`,
+  `theaayushstha1/agentic-skills`, `ronakmunjapara/BlogWritingCrew`,
+  `d-wwei/superb-publisher`, and held `Sawera-Farrukh/...` after 3 safer lanes.
+  Archive has validation, link, prompt-byte, and self-improvement details.
 
 ## Reporting Checklist
 
