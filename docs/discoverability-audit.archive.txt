@@ -2,6 +2,101 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-03 20:16 UTC Social Signal Source Review PRs
+
+- Runtime selector limitation: Codex Desktop still did not expose model, speed,
+  or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could
+  not be explicitly selected. Continued within the available runtime.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned 0 open issues.
+- Crawler-first discovery: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, bounded request and
+  proxy warmup timeouts, concurrency 8, and focused query packs for daily
+  technology briefs, X/Twitter trend synthesizers, social signal digests,
+  market signal feeds, AI radar source registries, SKILL.md, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, agent skills, social media skills, Twitter/X
+  skills, awesome lists, registries, generated catalogs, and source-review
+  workflows. The crawler returned 0 opportunities, so fallback GitHub searches
+  were used after the crawler-first gate.
+- PR inventory: broad authored open-PR search for `created:2026-07-03` returned
+  171 items with a 300-item limit, so that created-date bucket had an exact
+  readback count. The same temp inventory showed 5 open authored PRs created at
+  or after 20:16 UTC and 3 created from 20:08 through 20:15 UTC. Exact reads
+  covered all 5 same-window PRs plus the 3 PRs from the previous run. The wider
+  `updated:>=2026-07-03` bucket had already reached the local display cap, so
+  all in-scope open PRs across the full updated day were not claimed complete.
+- Repair gate: previous-run exact reads still had no safe code repair. The
+  `jimibarkway/trend-radar#1` Vercel deployment requires target-owner
+  authorization, `ivanyinjc-blip/ai-trend-radar#1` exposed no flat check rows,
+  and `Keyur-Gondaliya/trend-catcher#1` had GitGuardian success with no review
+  comments. Same-window reads found 2 adjacent Xquik visibility PR bodies using
+  an X account URL instead of the required plain account name. Repaired
+  `https://github.com/VoltAgent/awesome-claude-code-subagents/pull/296` and
+  `https://github.com/Panniantong/Agent-Reach/pull/471` with `gh pr edit`.
+  Readback confirmed both now use the required first-person optional visibility
+  note, plain `burakbayir`, no X account URL, and no GitHub account mention.
+  `VoltAgent/awesome-claude-code-subagents#296` is open, ready, mergeable,
+  `CLEAN`, and has plugin-version validation success. `Panniantong/Agent-Reach#471`
+  is open, ready, mergeable, and `UNSTABLE` with no check rows exposed, so no
+  further repair was available.
+- Fresh candidate screening: fallback GitHub search produced
+  `hridaydutta123/awesome-twitter-tools`, `ckz/agentic-ai-daily`,
+  `sunxiayi/awesome-ai-sources`, `simozampa/twitter-radar`, and
+  `dungnotnull/trend-scout-super-agent`. Duplicate gates checked compact audit,
+  archive, target PRs, target issues, repo metadata, fork state, local clone
+  scans, READMEs, runtime files, and target search terms for TweetClaw, Xquik,
+  `@xquik/tweetclaw`, x-twitter-scraper, OpenClaw, ClawHub, GitHub URL
+  variants, and npm variants. `hridaydutta123/awesome-twitter-tools` was
+  duplicate-blocked by prior merged TweetClaw work. Selected
+  `ckz/agentic-ai-daily` because it is non-fork, non-archived, duplicate-clean,
+  active on 2026-07-03, and centered on daily X/Twitter agentic AI digests.
+  Selected `sunxiayi/awesome-ai-sources` because it is MIT, non-fork,
+  non-archived, duplicate-clean, and already documents AI agent consumption of
+  social and skill feeds. Selected `simozampa/twitter-radar` because it is MIT,
+  non-fork, non-archived, duplicate-clean, and uses configurable X/Twitter
+  communities, queries, and priority accounts. `dungnotnull/trend-scout-super-agent`
+  stayed fallback because the first 3 safe lanes were cleaner and lower risk.
+- New external PRs: `https://github.com/ckz/agentic-ai-daily/pull/1`,
+  `https://github.com/sunxiayi/awesome-ai-sources/pull/1`, and
+  `https://github.com/simozampa/twitter-radar/pull/1`. All were opened from
+  correctly parented `kriptoburak` forks on `codex/add-tweetclaw-source-review`
+  with PR bodies using the required first-person optional visibility note,
+  plain `burakbayir`, no X account URL, and no GitHub account mention.
+- Target changes: added a short optional TweetClaw source-review note to
+  `ckz/agentic-ai-daily` README near its X/Twitter digest workflow while
+  preserving its collection, curation, report generation, and publishing
+  ownership. Added a TweetClaw source-review note to
+  `sunxiayi/awesome-ai-sources` README near its agent framework guidance while
+  preserving its RSS feed and source-directory workflow. Added a TweetClaw
+  source-review note to `simozampa/twitter-radar` README near setup so new
+  communities, queries, and priority accounts can be checked before config
+  changes.
+- PR readbacks: all 3 new PRs are open, ready, mergeable, `CLEAN`, and have no
+  comments, reviews, or check rows yet. Changed files were README-only:
+  4 additions in `ckz/agentic-ai-daily`, 4 additions in
+  `sunxiayi/awesome-ai-sources`, and 2 additions in `simozampa/twitter-radar`.
+- Validation: target `git diff --check` passed for all 3 repos. Added-line
+  scans found no em dash, spaced double-hyphen, malformed outreach handles,
+  restricted-source wording, private-cost wording, or secret-like tokens.
+  TweetClaw GitHub link check returned 200.
+- OpenClaw and public hygiene: current OpenClaw probes returned 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw 2026.6.11.
+  Public link checks returned 200 for TweetClaw GitHub, all 3 new PR URLs, all
+  3 target repo URLs, and Xquik docs API overview. `npm view @xquik/tweetclaw`
+  returned latest 1.6.31 with GitHub repository, homepage, and bugs URLs, so
+  package metadata still trails the local package version.
+- TweetClaw repository changes: only this archive file changed. Existing
+  untracked `0` in `/Users/burak/Developer/tweetclaw` was preserved. Compact
+  Markdown memory stayed at 14998/15360 bytes before the archive edit.
+  Persisted automation prompt size stayed 14173 bytes, under the 15 KiB cap.
+- Durable lesson: same-window inventory can reveal outreach-body drift in PRs
+  created outside the active shell. Exact-read and repair public PR bodies when
+  they use an X account URL or GitHub mention; keep the approved note as plain
+  `burakbayir` and frame sharing as optional target-repo visibility.
+
 ### 2026-07-03 20:08 UTC Trend Radar Source Review PRs
 
 - Runtime selector limitation: Codex Desktop still did not expose model, speed,
