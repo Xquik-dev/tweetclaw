@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-02 23:51 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-03 00:07 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-02 23:51 UTC after redirecting to
+  2026-07-03 00:07 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-02 23:51 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-03 00:07 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,17 +189,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-02 23:51 UTC: runtime selector unavailable. Crawler-first monitor,
-  skill, and fresh-target JSON runs returned 5, 13, and 0 opportunities.
-  Authored REST partitions again exceeded caps and then hit a secondary rate
-  limit; exact reads covered the 3 prior PRs and 3 new PRs. No new repair was
-  required; `ptdr1516/Sentiment-Analysis#1` remains repaired and CodeRabbit
-  green.
-- Opened 3 PRs: `Dhamo0085/Twittter-scrapper-using-snscrape-and-streamlit#1`,
-  `Kalki-Teja-Patimidi/Twitter_Scraper#1`, and
-  `80years80/Tweet_Sentiment_Googlesheet_Dashboard#1`. All are OPEN,
-  ready, and mergeable. Full crawler, duplicate, policy, validation, and
-  blocker evidence is archived.
+- 2026-07-03 00:07 UTC: runtime selector unavailable. Crawler-first monitor,
+  skill, and fresh-target JSON runs returned 5, 13, and 6 opportunities; exact
+  repo-mode crawler coverage returned 4 repos and logged proxy socket-closure
+  blockers. Exact `gh` reads covered 9 open TweetClaw outreach PRs.
+- Repair: answered maintainer context request on
+  `80years80/Tweet_Sentiment_Googlesheet_Dashboard#1`; `ptdr1516#1` still has a
+  stale CodeRabbit review summary, but current branch content includes the
+  neutral-label repair.
+- Opened 3 PRs: `hi-imran/Sentiment-Analysis-with-Python#1`,
+  `khokhriya/Python-Project-Sentiment-Classifier#1`, and
+  `Timothy-L-Baron/sent_class_coursera#1`. All are OPEN, non-draft, and
+  mergeable. Full evidence is archived.
 
 ## Reporting Checklist
 

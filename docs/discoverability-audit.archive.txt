@@ -58437,3 +58437,114 @@ Self-improvement:
 - Public link and URL checks: direct URL checks returned HTTP 200 for TweetClaw GitHub, ClawHub TweetClaw redirect, OpenClaw Directory, and all 3 new PRs. The npmjs package page returned expected bot-protection 403 while `npm view @xquik/tweetclaw` succeeded.
 - Durable self-improvement: local disk was nearly full because prior `/private/tmp/tweetclaw-heartbeat-*` scratch clones accumulated. Removing only automation-owned old scratch directories restored free space from about 132 MiB to 38 GiB and unblocked Git index writes. Future runs should check and prune old automation scratch when free space is below 1 GiB before cloning targets or running Python bytecode validation. Prompt text was unchanged; persisted automation prompt byte size remains 13514.
 - Changed TweetClaw files for this heartbeat: `docs/discoverability-audit.md`, `docs/discoverability-audit.archive.txt`, `docs/clawpack-release.md`, and `docs/clawpack-release.archive.txt`. Compact Markdown memory was kept under the 15 KiB cap by replacing the current run block and archiving detail.
+- 2026-07-03 00:07 UTC heartbeat:
+  - Runtime selector limitation: the local runtime exposed no model, speed, or
+    effort selector, so Codex 5.5 Fast mode and extra-high reasoning could not
+    be verified. Continued and recorded the limitation.
+  - PR inventory and repair gate: compact audit, archive, crawler output, exact
+    PR reads, and target repo reads were checked. Initial exact `gh pr view`
+    covered 6 PRs from the prior two heartbeats:
+    `Dhamo0085/Twittter-scrapper-using-snscrape-and-streamlit#1`,
+    `Kalki-Teja-Patimidi/Twitter_Scraper#1`,
+    `80years80/Tweet_Sentiment_Googlesheet_Dashboard#1`,
+    `Vaibhavv2203/Twitter_analysis_agent#1`,
+    `Charan304304/Twitter-Sentiment-Analysis#1`, and
+    `ptdr1516/Sentiment-Analysis#1`. All were OPEN and mergeable. No CI failure
+    was found. `80years80#1` had a maintainer context request; reply posted at
+    https://github.com/80years80/Tweet_Sentiment_Googlesheet_Dashboard/pull/1#issuecomment-4871410253.
+    `ptdr1516#1` still showed the stale CodeRabbit review summary, but exact
+    file readback confirmed the current branch maps neutral labels to `2`,
+    preserves the `cd project` README convention, and reports skipped rows.
+  - Crawler coverage from `/Users/burak/Developer/xquik`: PR monitor wrote
+    `/tmp/tweetclaw-heartbeat-20260702-2356/pr-monitor.json` with 5
+    opportunities: `Xquik-dev/tweetclaw`,
+    `yopiesuryadi/mailbot-programmable-inbox`, `rxhxm/sixtyfour-skill`,
+    `shane9coy/Agent-Skill-Architecture-Guide`, and
+    `RajeshKalidandi/ai-agent-knowledge`. Skill coverage wrote
+    `/tmp/tweetclaw-heartbeat-20260702-2356/skill-targets.json` with 13
+    opportunities including `hashgraph-online/registry-broker-skills`,
+    `AElfProject/aelf-skills`, `codeking-ai/cligate`, `gybob/aai-gateway`,
+    `zhayujie/CowAgent`, `elbis330/social-media-scraper-skill`,
+    `jdrhyne/agent-skills`, `LLMQuant/skills`,
+    `rabden/X-twitter-social-manager-skill`, and
+    `AISA-skills/social-media-skills`. Fresh-target coverage wrote
+    `/tmp/tweetclaw-heartbeat-20260702-2356/fresh-targets-a.json` with 6
+    opportunities: `sherintht/Twitter_Sentiment_Dashboard`,
+    `hi-imran/Sentiment-Analysis-with-Python`, `JorUrie/Data-Analysis`,
+    `khokhriya/Python-Project-Sentiment-Classifier`, `OSS-GR/TwitterBot`, and
+    `Timothy-L-Baron/sent_class_coursera`. Exact repo-mode crawler coverage
+    wrote `/tmp/tweetclaw-heartbeat-20260702-2356/exact-target-repos.json` with
+    4 opportunities and repeated proxy socket-closure blockers for the other
+    target repo fetches. No crawler credentials were printed or stored.
+  - Fresh screening and duplicate gates: compact audit plus archive had no prior
+    entries for `hi-imran/Sentiment-Analysis-with-Python`,
+    `khokhriya/Python-Project-Sentiment-Classifier`, or
+    `Timothy-L-Baron/sent_class_coursera`. Target content scans and open plus
+    closed PR and issue searches found no TweetClaw, `@xquik/tweetclaw`,
+    Xquik, x-twitter-scraper, OpenClaw, or ClawHub duplicates. All 3 targets are
+    non-fork, non-archived, issue-enabled repos with no open or closed PR or
+    issue history. License metadata was absent, which is not a direct-PR
+    blocker. `sherintht/Twitter_Sentiment_Dashboard` was duplicate-blocked by
+    prior PR history; `JorUrie/Data-Analysis` had prior lower-fit audit history;
+    `OSS-GR/TwitterBot` was held because it is a posting-bot lane with
+    credential placeholders and weaker approval-gated TweetClaw fit.
+  - External PRs opened after fork-parent verification through REST:
+    `hi-imran/Sentiment-Analysis-with-Python#1`
+    https://github.com/hi-imran/Sentiment-Analysis-with-Python/pull/1 from
+    verified fork `kriptoburak/Sentiment-Analysis-with-Python`, parent
+    `hi-imran/Sentiment-Analysis-with-Python`, branch
+    `codex/import-tweetclaw-project-data`, commit `619c9fb`; adds
+    `tweetclaw_to_project_data.py` and README usage to convert TweetClaw CSV,
+    JSON, JSONL, or NDJSON exports to the repo's `project_twitter_data.csv`
+    schema.
+  - `khokhriya/Python-Project-Sentiment-Classifier#1`
+    https://github.com/khokhriya/Python-Project-Sentiment-Classifier/pull/1
+    from verified fork `kriptoburak/Python-Project-Sentiment-Classifier`,
+    parent `khokhriya/Python-Project-Sentiment-Classifier`, branch
+    `codex/import-tweetclaw-project-data`, commits `a76f11b` and `a586151`;
+    adds the same target-native converter and README usage for
+    `Sentiment_classifier.py`, then fixes the README image link from
+    `/result.png` to `result.png`.
+  - `Timothy-L-Baron/sent_class_coursera#1`
+    https://github.com/Timothy-L-Baron/sent_class_coursera/pull/1 from
+    verified fork `kriptoburak/sent_class_coursera`, parent
+    `Timothy-L-Baron/sent_class_coursera`, branch
+    `codex/import-tweetclaw-project-data`, commit `5a1604e`; adds the converter
+    and README usage for `sent_class_coursera.py`.
+  - External validation: each selected target passed
+    `python3 -m py_compile tweetclaw_to_project_data.py`, a sample TweetClaw CSV
+    conversion producing 2 rows with missing counts defaulted to `0`, and
+    `git diff --check`. The 3 edited target READMEs passed
+    `npx --yes markdown-link-check README.md --quiet` after fixing the
+    pre-existing `khokhriya` image path. Diff hygiene found no secrets in
+    changed files; a `secretive` word-list fixture hit in `hi-imran` was
+    pre-existing target data, not a credential.
+  - Final exact PR readbacks covered 9 PRs: the 3 new PRs above plus
+    `Dhamo0085#1`, `Kalki-Teja-Patimidi#1`, `80years80#1`,
+    `Vaibhavv2203#1`, `Charan304304#1`, and `ptdr1516#1`. All were OPEN,
+    non-draft, and mergeable. GitGuardian remained SUCCESS on
+    `Vaibhavv2203#1`; CodeRabbit status remained SUCCESS on `ptdr1516#1`.
+  - Official OpenClaw and package recheck: `llms.txt`, `llms-full.txt`,
+    `/cli/plugins`, `/plugins/manifest`, `/plugins/plugin-permission-requests`,
+    `/plugins/tool-plugins`, `/plugins/sdk-runtime`,
+    `/plugins/install-overrides`, `/plugins/building-plugins`,
+    `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`,
+    `/clawhub/plugin-validation-fixes`, and the ClawHub TweetClaw route all
+    returned HTTP 200. npm metadata: `@xquik/tweetclaw` latest `1.6.31`;
+    `openclaw` latest `2026.6.11`, beta `2026.7.1-beta.1`, alpha
+    `2026.5.19-alpha.1`; `clawhub` `0.23.1`. Full and omit-dev npm audits
+    found 0 vulnerabilities. `npm run check-openclaw-platform-fitness`,
+    `npm run check-package-artifact`, and final `npm run check:all` passed.
+    TweetClaw markdown link checks passed for README, OpenClaw setup, agent
+    workflows, compact audit, release memory, and packaged skill docs. Direct
+    URL probes returned HTTP 200 for TweetClaw GitHub, ClawHub TweetClaw
+    redirect, OpenClaw Directory, all 3 new PRs, and the answered `80years80`
+    PR; `npm view @xquik/tweetclaw` succeeded with `1.6.31`.
+  - Prompt self-improvement: no automation prompt change was needed. Durable
+    lesson: avoid zsh loop variable `path` because it rewrites `PATH` and makes
+    `gh`, `base64`, and `sed` unavailable inside the loop. Keep using a safe
+    variable such as `file_name` in future GitHub content reads. Persisted
+    automation prompt TOML size stayed 13514 bytes.
+  - Changed TweetClaw files for this heartbeat:
+    `docs/discoverability-audit.md`, `docs/discoverability-audit.archive.txt`,
+    `docs/clawpack-release.md`, and `docs/clawpack-release.archive.txt`.

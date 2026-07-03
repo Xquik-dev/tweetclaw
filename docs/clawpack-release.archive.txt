@@ -3068,3 +3068,16 @@ manifest, release gate, or publish state changed.
   archive entry and commit validation. No package metadata changed. Source
   remains `@xquik/tweetclaw@1.6.32`; published npm remains `1.6.31`; npm
   publish auth and ClawHub owner-scope blockers remain unchanged.
+- 2026-07-03 00:07 UTC: OpenClaw and release hygiene rechecked during the
+  TweetClaw outreach heartbeat. Official docs returned HTTP 200 for `llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-runtime`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/help/debugging`, and `/clawhub/plugin-validation-fixes`. ClawHub TweetClaw
+  route returned HTTP 200. npm metadata stayed unchanged:
+  `@xquik/tweetclaw` latest `1.6.31`; `openclaw` latest `2026.6.11`, beta
+  `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` `0.23.1`. Full and
+  omit-dev npm audits found 0 vulnerabilities. `npm run
+  check-openclaw-platform-fitness`, `npm run check-package-artifact`, and final
+  `npm run check:all` passed.
