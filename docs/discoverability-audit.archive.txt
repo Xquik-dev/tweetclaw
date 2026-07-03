@@ -60597,3 +60597,45 @@ Self-improvement:
   passed before audit commit.
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
+
+### 2026-07-03 08:58 UTC X/Twitter Visibility Comment Resume
+
+- Runtime selector limitation: this Codex Desktop run still did not expose
+  model, speed, or effort selectors, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected.
+- Complete PR comment inventory: resumed from the 07:49 UTC exact-read
+  inventory built from compact audit, archive, GraphQL, REST retry, and known
+  PR URLs. That inventory still contains 1,461 open PRs authored by
+  `kriptoburak` in the TweetClaw, Xquik, OpenClaw, ClawHub, MCP, skills,
+  social/X automation, agent-tooling, catalog, example, validator, framework,
+  library, registry, package-tooling, docs, and prior outreach scope.
+- Guarded comment resume: continued the audit-derived open PR queue from
+  `/tmp/tweetclaw-comment-all-scope-20260703/open-authored.tsv` with exact PR
+  body/comment duplicate reads, 8 second spacing, and per-batch caps. The
+  08:48 UTC batch completed with 20 additional comments and 1 overlap skip; the
+  08:51 UTC batch completed with 20 additional comments and 1 overlap skip. No
+  new secondary content-creation limit or archived read-only blocker was
+  returned.
+- Updated unique checkpoint: 1,461 open authored PRs remain in the inventory;
+  316 have first-person 24k X/Twitter comments posted by this pass, 10
+  additional PRs are skip-only as already covered, 3 are archived read-only
+  blockers, and 1,132 are still queued for future throttled resume.
+- Overlap readback: the raw skipped log has 12 entries because adjacent
+  throttled runs observed newly posted notes on
+  `PBrindha25/Social_Media_Performance_Dashboard#1` and
+  `PLA-yi/Social-Media-Scraper-Skills#1`. Exact comment readback found exactly
+  1 matching `x.com/burakbayir` plus 24k note on each PR, so both are counted
+  as posted coverage, not skip-only coverage.
+- Public hygiene: newly posted comment text stayed optional, post-merge,
+  first-person, and non-coercive; it included `https://x.com/burakbayir`, 24k
+  followers, no third-person repost phrasing, no guaranteed engagement, no
+  private source/provider names, and no internal cost mechanics.
+- Fresh discovery and new PR submissions were deferred in this heartbeat
+  because the user explicitly asked to cover all existing in-scope open PRs and
+  GitHub write-rate safety required throttled comment continuation. This
+  remains the blocker to the 3 fresh PR rule until the comment backlog is
+  finished or paused.
+- Validation and link hygiene: `npm run check-memory-md-size`, `git diff
+  --check`, archive dash scan, and `https://x.com/burakbayir` link check passed
+  before this audit commit. Existing untracked `0` in the TweetClaw worktree
+  was preserved.
