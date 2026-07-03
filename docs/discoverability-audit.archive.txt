@@ -59503,6 +59503,97 @@ Self-improvement:
   changed in this run.
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
+
+## 2026-07-03 05:16 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued.
+- Prompt state: persisted prompt already contained Xquik visibility focus and
+  first-person PR outreach wording. Prompt text measured 13656 bytes, below the
+  15 KiB cap. It contains `x.com/burakbayir`; the phrase "he can repost it"
+  appears only as a prohibition in the prompt.
+- Crawler-first coverage:
+  - Strict JSON crawler outputs under
+    `/tmp/tweetclaw-heartbeat-20260703-0516`: `pr-monitor.json`,
+    `skill-coverage.json`, and `fresh-targets.json`.
+  - PR monitor covered authored open Xquik, TweetClaw, and
+    x-twitter-scraper queries and returned 0 opportunities.
+  - Skill coverage covered SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex,
+    Claude, agent, social, Twitter/X skill, awesome list, registry, fork, and
+    generated catalog lanes and returned 0 opportunities.
+  - Fresh target coverage covered Twitter automation, social analytics, tweet
+    scraper, X API workflow, content-agent, and Streamlit dashboard lanes and
+    returned 0 opportunities.
+  - Skill and fresh target crawls produced repeated managed-proxy socket-close
+    errors, but final JSON outputs were valid. No crawler credentials were
+    printed or stored.
+- PR inventory and repair priority:
+  - Compact audit plus archive extraction found 1751 PR URLs. The full exact
+    read pass stalled for about 120 seconds and was stopped; it did not produce
+    a complete inventory, so this run does not claim all PRs were checked.
+  - Broad authenticated `gh search prs` fallback for authored open Xquik,
+    TweetClaw, and x-twitter-scraper PRs hit GitHub secondary rate limits and
+    was stopped for the run.
+  - Exact known Xquik PR readbacks continued and found no repair needed:
+    `Manirider/Twitter-Sentiment-Bert#1`,
+    `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`,
+    `YashSerai/clearfeed-twitter-x-dashboard#1`,
+    `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+    `rockywuest/community-scout#1`, and
+    `jimmc414/claude-code-plugin-marketplace#3` are OPEN and MERGEABLE, with
+    first-person `x.com/burakbayir` wording and no new comments, reviews, or
+    checks requiring repair.
+- Fresh discovery and duplicate gates:
+  - Because broad search was rate-limited after crawler output, fallback used
+    exact repo metadata plus audit/archive checks for known unsent or previously
+    lower-fit lanes.
+  - Screened repos: `nikopastore/scalepilot-autopost` MIT,
+    `kooui/x-tweet-scraper` MIT, `reizto/x-automation-with-agent` missing
+    license metadata, and `isaac-rnd/x-research-agent` missing license
+    metadata. The selected 3 were public, non-fork, non-archived,
+    issue-enabled, duplicate-clean in target PRs/issues/content, and had
+    correctly parented `kriptoburak` forks. Missing license metadata did not
+    block the direct PR for `reizto`.
+  - `kooui/x-tweet-scraper` required fork-name care: `kriptoburak/x-tweet-scraper`
+    points to old parent `enigmatronix13/X-Tweet-Scraper`, so the verified
+    parented fork for this target was `kriptoburak/x-tweet-scraper-1`.
+- Fresh PRs opened:
+  - `nikopastore/scalepilot-autopost#1`:
+    https://github.com/nikopastore/scalepilot-autopost/pull/1 from verified
+    fork `kriptoburak/scalepilot-autopost`, branch
+    `codex/add-xquik-trend-import`, commit `00c7229`. Adds
+    `scripts/import_xquik_trends.py` so reviewed Xquik/TweetClaw CSV, JSON, or
+    JSONL rows can become `content/trends.json` items consumed by the existing
+    RSS topic flow. Validation: Python compile, sample JSONL import,
+    whitespace diff check, and public-hygiene scan passed. README link check
+    failed only on pre-existing `IMPLEMENTATION_SUMMARY.md`.
+  - `kooui/x-tweet-scraper#1`:
+    https://github.com/kooui/x-tweet-scraper/pull/1 from verified fork
+    `kriptoburak/x-tweet-scraper-1`, branch `codex/add-xquik-jsonl-export`,
+    commit `544778e`. Adds `examples/xquik_jsonl_export.py` so scraper JSON
+    output can become reviewed Xquik/TweetClaw JSONL with text, author,
+    timestamp, URL, metrics, and status fields. Validation: Python compile,
+    sample JSON conversion, whitespace diff check, and public-hygiene scan
+    passed. README link check failed only on pre-existing `assets/workflow.svg`.
+  - `reizto/x-automation-with-agent#1`:
+    https://github.com/reizto/x-automation-with-agent/pull/1 from verified
+    fork `kriptoburak/x-automation-with-agent`, branch
+    `codex/add-xquik-context`, commit `929ccc0`. Adds optional
+    `XQUIK_CONTEXT_FILE` support to include only reviewed Xquik/TweetClaw JSON
+    or JSONL rows as drafting context in `x_auto_post_tweet.py`. Validation:
+    Python compile, import smoke test, whitespace diff check, README link
+    check, and public-hygiene scan passed.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN and MERGEABLE, base
+    `main`, head owner `kriptoburak`, and all bodies contain first-person
+    `x.com/burakbayir` wording with no third-person repost wording.
+- Official docs and public checks: OpenClaw docs probes returned HTTP 200 for
+  `llms.txt`, CLI plugins, manifest, ClawHub publishing, and debugging. No
+  OpenClaw compatibility, package metadata, manifest, approval behavior, or
+  release-gate behavior changed. TweetClaw README and public docs link checks
+  passed before audit commit.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
 - Final validation before commit: `npm run check-memory-md-size` reported
   14878 of 15360 bytes before this final line, TweetClaw Markdown link check
   passed, EngageX README link check passed, OpenClaw docs probes returned HTTP
