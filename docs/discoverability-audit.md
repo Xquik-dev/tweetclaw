@@ -49,13 +49,13 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-03 01:43 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-03 02:16 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-03 01:43 UTC after redirecting to
+  2026-07-03 02:16 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -75,7 +75,7 @@ archive, before any outreach or duplicate decision.
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
   TweetClaw regression. TweetClaw is a mixed `definePluginEntry` plugin.
-- Npm audit on 2026-07-03 01:43 UTC found 0 vulnerabilities.
+- Npm audit on 2026-07-03 02:16 UTC found 0 vulnerabilities.
 
 ## GitHub-First Rule
 
@@ -189,19 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 01:43 UTC: runtime selector unavailable. Crawler-first monitor,
-  skill, and fresh-target JSON runs returned 5, 13, and 19 opportunities. Broad
-  authored PR partitions for TweetClaw and Xquik lanes still hit 200-result
-  caps, so no full inventory claim. Exact `gh` reads covered 18 tracked PRs and
-  thread-aware GraphQL confirmed `ptdr1516#1` has no unresolved review thread.
+- 2026-07-03 02:16 UTC: runtime selector unavailable; persisted automation
+  prompt already contains Xquik-visibility-only wording. Crawler-first monitor,
+  skill, and fresh-target JSON runs returned 1, 0, and 12 opportunities; 2
+  smaller crawler reruns returned empty JSON after proxy socket failures. Broad
+  authored PR search hit GitHub secondary rate limits, so no full inventory
+  claim. Exact `gh` reads covered 21 tracked PRs plus 3 new PRs. Thread-aware
+  GraphQL confirmed `ptdr1516#1` still has 0 unresolved review threads.
 - Repair: no actionable maintainer, check, conflict, DCO, CLA, generated drift,
-  or unresolved bot finding. `80years80#1` owner contact request was already
-  notified.
-- Opened 3 PRs: `Sameeksha288/Twitter-Sentiment-Analysis#1`,
-  `syedaareeba20/Tweets-Sentiments-Analysis#1`, and
-  `09gauravbisht/Coronavirus-Tweet-Sentiment-Analysis#1`. All are OPEN,
-  non-draft, and mergeable; `Sameeksha288#1` has GitGuardian success. Full
-  evidence is archived.
+  or unresolved bot finding on Xquik-visibility PRs. Non-Xquik repairs were
+  skipped by the updated focus rule.
+- Opened 3 Xquik-visibility PRs: `shivdev79/twitter-sentiment-tracker#1`,
+  `AnuragChauhan1120/Social-Media-Analytics-Tool-WIthout-BERT-#1`, and
+  `korbirayen/MoodMonitor#1`. All are OPEN, non-draft, mergeable, and have 0
+  comments, 0 reviews, and 0 checks at readback. Full evidence is archived.
 
 ## Reporting Checklist
 

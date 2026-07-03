@@ -3155,3 +3155,21 @@ manifest, release gate, or publish state changed.
   `2026.5.19-alpha.1`; `clawhub` `0.23.1`. Full and omit-dev npm audits found
   0 vulnerabilities. `npm run check-openclaw-platform-fitness` and `npm run
   check-package-artifact` passed. No package metadata changed.
+2026-07-03 02:16 UTC release-memory check
+
+- No release was attempted. Persisted automation prompt already contains the
+  Xquik-visibility-only wording requested by the user; prompt payload is 13037
+  bytes and automation TOML is 13373 bytes.
+- Official OpenClaw docs recheck used current host `docs.openclaw.ai` after
+  old host `openclaw.dev` returned repeated `000`. HTTP 200 routes:
+  `/llms.txt`, `/llms-full.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-runtime`, `/plugins/install-overrides`,
+  `/plugins/building-plugins`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`.
+- npm metadata: `@xquik/tweetclaw` latest remains `1.6.31`; OpenClaw latest
+  `2026.6.11`, beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; ClawHub
+  `0.23.1`.
+- Validation: full and omit-dev npm audits found 0 vulnerabilities;
+  `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and TweetClaw markdown link checks passed.
