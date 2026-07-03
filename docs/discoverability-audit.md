@@ -189,17 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 22:19 UTC: runtime selector unavailable. Two strict JSON Xquik
-  crawler packs returned 0 opportunities, then fallback screened fresh
-  X/Twitter skill lanes.
-- Authored PR partitions returned 178 created-today PRs, 4 recently updated PRs
-  exact-read, and 1 created-window PR. Patched 5 in-scope stale visibility
-  comments to current plain `burakbayir` wording.
+- 2026-07-03 22:35 UTC: runtime selector unavailable. Two strict JSON crawler
+  packs covered skill and registry lanes and returned 0 opportunities; broad
+  GitHub search later hit a rate limit, so fallback used exact repo reads,
+  local clones, and archive gates.
+- PR inventory read 181 created-today PRs, 16 recently updated PRs, and 3
+  created-window PRs; 16 updated/window PRs were exact-read. Repaired
+  `AmeerJ97/mcp-multiplex#2` for actionable review feedback and patched 7
+  stale visibility comments to current plain `burakbayir` wording.
 - Opened 3 clean, mergeable PRs from verified `kriptoburak` forks:
-  `nashsu/autocli-skill#10`,
-  `96528025/openclaw-skill-twitter-digest#1`, and `odrobnik/x-skill#1`.
-- Validation, OpenClaw docs, public links, memory size, prompt bytes, blockers,
-  and self-improvement details are recorded in the archive.
+  `gcolenstra/mcp_catalog#2`, `JeffreyGarrett/mcp-registry#1`, and
+  `LeonardSibelius/clawmart#1`.
+- Validation, public links, memory size, prompt bytes, screened blockers,
+  pushed commits, and durable self-improvement notes are recorded in the
+  archive.
 
 ## Reporting Checklist
 

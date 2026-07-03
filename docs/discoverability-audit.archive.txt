@@ -2,6 +2,97 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-03 22:35 UTC Xquik MCP Registry PR Batch
+
+- Runtime selector limitation: Codex Desktop exposed no model, speed, or effort
+  selector, so Codex 5.5 Fast mode and extra-high reasoning could not be
+  explicitly selected. Continued within the available runtime.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned 0 open issues.
+- Crawler-first coverage: ran two strict JSON Xquik crawler packs from
+  `/Users/burak/Developer/xquik` with bounded request and proxy warmup timeouts,
+  concurrency 8, and query coverage for SKILL.md, `.agents/skills`, skills
+  directories, OpenClaw, MCP, Codex, Claude, agent skills, social media,
+  Twitter/X, awesome skill lists, registries, forks, generated catalogs, and
+  web-index surfaced skill repos. Both output files parsed cleanly and returned
+  `opportunityCount: 0`, `repoCount: 0`.
+- PR inventory: authored open PR partitions returned 181 PRs for
+  `created:2026-07-03`, 16 PRs for `updated:>=2026-07-03T22:19:00Z`, and 3 PRs
+  for the 22:20 through 22:35 UTC created window. The 16 updated/window PRs were
+  exact-read for state, mergeability, base/head, commits, comments, reviews,
+  files, and check rollups. No 1000-result cap was hit before GitHub search
+  later rate-limited broad discovery; after that blocker, discovery continued
+  through crawler output, exact repo PR/issue reads, local clones, and archive
+  gates.
+- Repair gate: fixed actionable review feedback on
+  `https://github.com/AmeerJ97/mcp-multiplex/pull/2` by adding an importable
+  Xquik catalog fixture, switching the test fixture concurrency to serialized,
+  merging upstream `main`, rerunning targeted pytest and ruff checks, and
+  pushing commits `67aeeb7` and `278fcd5`. The PR is now mergeable but remains
+  blocked by the earlier review state until the reviewer rechecks it. Patched 7
+  owned stale visibility comments on `GGROM1/schemantic#1`,
+  `shajith003/awesome-claude-skills#5`,
+  `shajith003/awesome-claude-skills#4`, `Saminiscool/twitter-ai-agent#2`,
+  `mahaishu/n8n-CyberSecurity-Workflows#2`, `Toyoclara233/registry#1`, and
+  `xbim08/awesome-claude-code-plugins#1` to current optional first-person
+  wording with plain `burakbayir`; readback found 0 malformed comments. Skipped
+  `Hashi-Ai-Dev/openclaw-clawdoc#6` because the requested follow-up no longer
+  improved Xquik visibility after that PR became vendor-neutral.
+- Fresh candidate screening: exact repo reads, archive search, and local clones
+  duplicate-blocked or policy-blocked `punkpeye/awesome-mcp-servers`,
+  `appcypher/awesome-mcp-servers`, `wong2/awesome-mcp-servers`,
+  `chatmcp/mcpso`, `toolsdk-ai/toolsdk-mcp-registry`,
+  `acuvity/mcp-servers-registry`, `hireblackout/awesome-mcp-servers`,
+  `Sagargupta16/awesome-mcp-servers`, `ever-works/awesome-mcp-servers-data`,
+  `PipedreamHQ/awesome-mcp-servers`, `lidge-jun/mcp-ref`,
+  `keshrath/agent-discover`, `selfsupervised-ai/mcp-servers`,
+  `divesky2373-design/mcpr-registry`, `surayainc/mcp-registry`,
+  `lastmile-ai/mcp-registry-search`, `EcosystemNetwork/openclaw-mcp-registry`,
+  `gengirish/mcphub`, `realloganholmes/jumith-hub`,
+  `breynol01/mcp-registry`, and `urule-ai/mcp-gateway`. Missing GitHub license
+  metadata alone did not block direct PRs.
+- New external PRs: opened `https://github.com/gcolenstra/mcp_catalog/pull/2`,
+  `https://github.com/JeffreyGarrett/mcp-registry/pull/1`, and
+  `https://github.com/LeonardSibelius/clawmart/pull/1`. Forks were verified as
+  `kriptoburak/mcp_catalog` parent `gcolenstra/mcp_catalog`,
+  `kriptoburak/jeffreygarrett-mcp-registry` parent
+  `JeffreyGarrett/mcp-registry`, and `kriptoburak/clawmart` parent
+  `LeonardSibelius/clawmart`.
+- Target changes: `mcp_catalog#2` adds hosted Xquik MCP metadata to
+  `mcp_catalog.py`; `mcp-registry#1` adds `com.xquik/mcp` to the static registry
+  plus latest and pinned 2.4.8 endpoint files; `clawmart#1` adds Xquik as a
+  hosted Streamable HTTP seed entry. All three PR bodies use the current
+  optional post-merge X/Twitter wording with plain `burakbayir`, no GitHub
+  account mention, and no X account URL.
+- PR readbacks: all 3 new PRs are open, ready, clean, mergeable, authored by
+  `kriptoburak`, have 1 commit each, no comments, no reviews, no checks yet, and
+  no malformed visibility wording in the PR body. Changed files are
+  `mcp_catalog.py`, five static registry files, and `seed_data.py`.
+- Validation and public links: ran `git diff --check`, Python compile/import or
+  JSON validation for each target, added-diff hygiene scans for account URLs and
+  secret-looking values, and public link checks. Xquik manifest and docs
+  returned HTTP 200; `https://xquik.com/mcp` returned HTTP 401 as an expected
+  auth challenge. TweetClaw `npm run check-memory-md-size`,
+  `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`,
+  and `npm run check:all` passed before this audit commit. Manual public URL
+  checks returned 200 for Xquik manifest/docs and new PR URLs, 401 for the
+  authenticated Xquik MCP endpoint, 200 for OpenClaw `llms.txt`, `/plugins`,
+  `/plugins/manifest`, `/cli/plugins`, `/clawhub/publishing`, and
+  `/help/debugging`; guessed OpenClaw detail routes `/plugins/permissions` and
+  `/sdk/runtime` returned 404 and were not used as edited links.
+- Durable self-improvement: after GitHub search rate limits, keep using exact
+  repo PR/issue reads and local clones for discovery. For generic MCP registry
+  forks, verify existing fork parent first because common names like
+  `mcp-registry` can already point to a different upstream; use a target-specific
+  fork name when needed. Public Xquik MCP manifest at
+  `/.well-known/mcp.json` is the safest source for registry metadata.
+- Prompt size, memory, and commits: persisted automation prompt was unchanged at
+  14,173 bytes. Markdown memory checked at 15,079/15,360 bytes. External commits
+  pushed: `08a33c4`, `f46618d`, `5bdfacd`, `67aeeb7`, and `278fcd5`. TweetClaw
+  audit changes are committed and pushed in the current master commit containing
+  this record.
+- Existing untracked TweetClaw file `0` was preserved.
+
 ### 2026-07-03 22:19 UTC TweetClaw X Skill PR Batch
 
 - Runtime selector limitation: Codex Desktop still exposed no model, speed, or
