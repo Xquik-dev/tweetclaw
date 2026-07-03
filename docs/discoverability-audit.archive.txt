@@ -2,6 +2,89 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-03 21:54 UTC TweetClaw Source Companion PR
+
+- Runtime selector limitation: Codex Desktop still exposed no model, speed, or
+  effort selector, so Codex 5.5 Fast mode and extra-high reasoning could not be
+  explicitly selected. Continued within the available runtime.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned 0 open issues.
+- Crawler-first coverage: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, bounded request and
+  proxy warmup timeouts, concurrency 8, and focused query packs for SKILL.md,
+  `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent skills,
+  social media, Twitter/X, tweet analytics, source adapters, awesome lists,
+  registries, forks, generated catalogs, and web-index surfaced skill repos.
+  The first pass returned 6 opportunities and the second returned 5. Crawler
+  credentials were not printed or stored.
+- PR inventory: authored open PR search for `created:2026-07-03` returned 177
+  items, `updated:>=2026-07-03T21:29:00Z` returned 10 items, and the
+  21:45 through 21:54 UTC created-window partition returned 0 items. All 10
+  recently updated PRs were exact-read for state, mergeability, base/head,
+  commits, comments, reviews, files, and checks. No GitHub 1000-result cap was
+  hit in these partitions.
+- Repair gate: `foyzulkarim/skills#27` had stale optional visibility wording in
+  the PR body. Edited the body to the required first-person post-merge note with
+  plain `burakbayir`; final readback was open, ready, mergeable, and
+  `UNSTABLE` only on target checks. `davila7/claude-code-templates#634` had an
+  actionable maintainer request to rebase and preserve the 22-tool MCP wording.
+  Patched the editable own visibility comment, rebased the fork, resolved the
+  generated skill conflict, kept "The MCP server exposes 22 tools covering all
+  API capabilities.", regenerated component JSON, removed unrelated generated
+  index churn, amended to commit `22f43974`, and force-with-lease pushed. Final
+  readback was open, ready, mergeable, and `UNSTABLE` with target checks
+  pending. One maintainer-authored quote still contains old wording and is not
+  editable from the contributor account.
+- Fresh candidate screening and blockers: duplicate or existing-open-PR blockers
+  covered `kohoj/skills`, `nexu-io/html-anything`,
+  `Tylerz0/x-thread-cards`, `zuocharles/openclaw-social-media-skill`,
+  `NachaFromMars/social-media-agent`, `NachaFromMars/social-media-scheduler`,
+  `rrrrrredy/all-net-search-read`, `JNHFlow21/ocl-social-fetcher`,
+  `Hao0321/claude-skill-social-post`, `soia-team/soia-open-skills`,
+  `xuxinmaxen/agentic-commerce-news`, `Mrpixelraf/follow-investors`,
+  `gabros20/x-relay`, and `tiendatne2004/tikhub_api_skill`.
+  `sergebulaev/x-skills` remained maintainer-policy blocked because repo
+  instructions require Sergey as primary commit author. ZIP-only or binary-heavy
+  unsafe blockers were
+  `expropriationhoorayhenry64/social-media-scraper-skill` and
+  `Marcel98717/openclaw-power-skills`. `Guoen0/xiaoduiyou-public` was cloned
+  and rejected as Xiaoduiyou/Hermes oriented with no real X/Twitter/TweetClaw
+  surface. `SkillNerds/xskill` had no native entry path for this run.
+- New external PR: opened
+  `https://github.com/labsclaw/openclaw-x-integration/pull/1` from verified
+  fork `kriptoburak/openclaw-x-integration` whose parent and source are
+  `labsclaw/openclaw-x-integration`. Branch
+  `codex/add-tweetclaw-source-companion` commit `462edde` updates
+  `skills/x-integration/SKILL.md` and
+  `skills/x-integration/references/README.md` with a TweetClaw source companion
+  for the X skill. PR body uses the required first-person optional visibility
+  note with plain `burakbayir`, no account URL, and no GitHub account mention.
+  Final readback was open, ready, mergeable, `CLEAN`, no comments, no reviews,
+  no checks, 1 commit, and 2 changed files.
+- Validation and links: `labsclaw` target `git diff --check`, added-line public
+  hygiene scan, local Python docs assertion, and direct link checks passed for
+  the TweetClaw GitHub repo and npm registry metadata. TweetClaw package
+  artifact check passed for `@xquik/tweetclaw@1.6.32`; npm registry latest
+  remains `1.6.31`. Current OpenClaw docs and `llms` exports returned HTTP 200
+  for CLI plugin install/update/inspect, manifest, permission requests, tool
+  plugins, SDK runtime, ClawHub publishing, skill format, install overrides,
+  building plugins, and debugging. Current OpenClaw npm latest remained
+  `2026.6.11`, beta `2026.7.1-beta.1`, and alpha `2026.5.19-alpha.1`.
+- Final TweetClaw verification: `git diff --check`, added-line public hygiene
+  scan, source-backed public URL sweep with 38 HTTP 200 responses,
+  `npm run check-memory-md-size` at 15072/15360 bytes,
+  `npm run check-openclaw-platform-fitness`,
+  `npm run check-package-artifact`, and `npm run check:all` passed.
+  Persisted automation prompt file measured 14173 bytes and was not changed.
+- Prompt self-improvement: keep using missing-license metadata as a nonblocking
+  direct-PR signal, but treat ZIP-only, binary-heavy, or public stateful
+  workspace repos as stricter fit lanes. Public workspace repos can still be
+  safe only when the patch is narrow, duplicate-clean, limited to target-owned
+  skill/reference files, and does not touch private state or generated memory.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Existing untracked `0` was
+  preserved.
+
 ### 2026-07-03 21:29 UTC Skill Source Context PRs
 
 - Runtime selector limitation: Codex Desktop still exposed no model, speed, or
