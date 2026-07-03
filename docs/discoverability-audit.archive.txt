@@ -60640,6 +60640,99 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-03 17:56 UTC Fresh Xquik Visibility PR Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  reasoning-effort controls, so Codex 5.5 Fast mode and extra-high reasoning
+  could not be explicitly selected. Continued under the available runtime.
+- OpenClaw reference check: `https://openclaw.ai/llms.txt` and the ClawHub
+  TweetClaw listing returned HTTP 200. Older guessed routes under
+  `openclaw.ai` for CLI plugins, plugins, ClawHub, and skills returned 404.
+  Canonical documentation indexes on `docs.openclaw.ai` and
+  `documentation.openclaw.ai` returned HTTP 200. `docs.openclaw.ai/cli/plugins`
+  and `/skills` returned HTTP 200, while `/integrations` returned 404. Current
+  skill docs confirm git-installed skills require a folder containing
+  `SKILL.md`, with `openclaw skills install git:owner/repo` as the user-facing
+  install path.
+- Complete PR inventory readback: reused the crawler and ledger-backed
+  open-authored PR inventory for TweetClaw, Xquik, OpenClaw, ClawHub, MCP,
+  skills, x-twitter-scraper, X/Twitter automation, social media, agent tools,
+  catalogs, examples, validators, frameworks, libraries, registries, package
+  tooling, docs, and prior outreach. Final ledger counts were 1,461 open
+  authored PRs accounted for, 1,415 visibility comments posted, 42 skip-only,
+  4 archived, and 0 unresolved remaining. No maintainer comment, review,
+  conflict, CI, DCO/CLA, generated-file drift, or bot finding required repair
+  before fresh outreach.
+- Crawler-first fresh discovery: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output path
+  `/tmp/tweetclaw-heartbeat-20260703T1756-fresh.json`, bounded request timeout,
+  proxy warmup skip, concurrency 8, search pages 1, and focused OpenClaw,
+  MCP, SKILL.md, agent, social, Twitter/X, scheduler, monitor, analytics, and
+  X post approval queries. Strict JSON parsed 13 opportunities with 0 parser
+  blockers.
+- Fresh candidate screening: exact-screened `imjszhang/js-x-monitor-skill`,
+  `evangelinensy/twitter-ai-agent`,
+  `Aditya-raghuvanshi19/TweetFlow-AI-Agent`,
+  `gokborayilmaz/daily-briefing-agent`, and lower-fit monitor or watch-only
+  repos. The three selected lanes were public, non-archived, duplicate-clean
+  across compact audit, archive memory, target content, target open and closed
+  PRs, and target open and closed issues for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, ClawHub, OpenClaw, npm, and
+  GitHub URL variants. Missing license metadata on two targets did not block
+  direct docs PRs.
+- Fork gates: created or verified forks under `kriptoburak`. Exact REST
+  readbacks confirmed `kriptoburak/js-x-monitor-skill` parent
+  `imjszhang/js-x-monitor-skill`, `kriptoburak/twitter-ai-agent-xquik` parent
+  `evangelinensy/twitter-ai-agent`, and
+  `kriptoburak/TweetFlow-AI-Agent` parent
+  `Aditya-raghuvanshi19/TweetFlow-AI-Agent`. An existing
+  `kriptoburak/Twitter-Ai-Agent` fork belonged to a different parent, so it was
+  rejected for this lane and the correctly-parented alternate fork was used.
+- New external PR: opened
+  `https://github.com/imjszhang/js-x-monitor-skill/pull/1` from branch
+  `codex/add-tweetclaw-source-prefilter`, commit `c4e93a9`. The PR adds a
+  Chinese README and `SKILL.md` workflow that uses `@xquik/tweetclaw` or
+  x-twitter-scraper as an optional public X/Twitter prefilter before users
+  approve `openclaw x-monitor add <username>` monitor targets. Final readback:
+  open, ready, mergeable, clean, 1 commit, 0 comments, 0 reviews, and 0 checks.
+- New external PR: opened
+  `https://github.com/evangelinensy/twitter-ai-agent/pull/1` from branch
+  `codex/add-tweetclaw-source-context`, commit `a1159ef`. The PR fills the
+  empty README with an optional `@xquik/tweetclaw` source-context workflow for
+  collecting public X/Twitter examples before Claude drafts reviewed scheduled
+  posts. Final readback: open, ready, mergeable, clean, 1 commit, 0 comments,
+  0 reviews, and 0 checks.
+- New external PR: opened
+  `https://github.com/Aditya-raghuvanshi19/TweetFlow-AI-Agent/pull/1` from
+  branch `codex/add-tweetclaw-research-context`, commit `cdbff09`. The PR adds
+  an optional `@xquik/tweetclaw` research-context workflow before Gemini drafts
+  posts, with final review before the Twitter posting tool. Final readback:
+  open, ready, mergeable, clean, 1 commit, 0 comments, 0 reviews, and 0 checks.
+- PR wording and public hygiene: each PR body used the optional first-person
+  X/Twitter visibility note with plain account name `burakbayir`, 24k follower
+  context, no account URL, no account-prefixed GitHub mention, no third-person
+  repost phrasing, no condition for merging, no guaranteed engagement, no
+  private provider names, no secret values, and no internal cost mechanics.
+- Validation: each target clone passed `git diff --check`. Edited target docs
+  and PR bodies were scanned for em dash, spaced double-hyphen, burakbayir
+  account URL, and account-prefixed burakbayir mention patterns; no hits. No
+  new public URLs were added to the target docs, so broken-link risk was limited
+  to pre-existing target content. OpenClaw link readbacks returned HTTP 200 for
+  `openclaw.ai/llms.txt`, `docs.openclaw.ai/llms.txt`,
+  `docs.openclaw.ai/cli/plugins`, and `docs.openclaw.ai/skills`. GitHub PR
+  readbacks returned open, mergeable, clean for all 3 new PRs.
+- TweetClaw archive validation: `npm run check-memory-md-size` passed with
+  automation Markdown memory at 14,998 of 15,360 bytes. `git diff --check`
+  passed. Added archive lines passed em dash, spaced double-hyphen, burakbayir
+  account URL, and account-prefixed burakbayir mention scans. Prompt byte
+  readback remained 13,833 bytes with no persisted prompt edit. Changed
+  TweetClaw file: `docs/discoverability-audit.archive.txt`. TweetClaw worktree
+  still only had pre-existing untracked `0` before this archive update.
+- Self-improvement: the prior visibility-comment queue is now drained and must
+  not keep deferring fresh submissions. Future runs should keep the exact
+  inventory readback, then move directly into crawler-first fresh lanes unless
+  a newly discovered in-scope PR repair affects Xquik visibility.
+
 ### 2026-07-03 17:51 UTC X/Twitter Visibility Comment Queue Drained
 
 - Runtime selector limitation: this Codex Desktop run still did not expose
