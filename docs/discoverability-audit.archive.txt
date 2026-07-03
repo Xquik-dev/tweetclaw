@@ -60258,6 +60258,143 @@ Self-improvement:
   OpenClaw platform fitness, package artifact check, 168 tests, and 100 percent
   coverage.
 
+## 2026-07-03 06:53 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued. No Context7 work, Browser, Chrome, GUI automation, dev
+  server, production SSH, destructive git action, or secret read was used.
+- Starting state: TweetClaw stayed on `master` with only pre-existing untracked
+  `0`. Xquik had unrelated user edits in `docs/feature-roadmap.md` and two
+  untracked article drafts; those were preserved and not touched.
+- Crawler-first coverage from `/Users/burak/Developer/xquik`:
+  - Strict JSON outputs were written under
+    `/tmp/tweetclaw-heartbeat-20260703-0653`.
+  - PR monitor covered authored open Xquik, TweetClaw, x-twitter-scraper,
+    social-media agent, and n8n Twitter lanes and returned 0 opportunities.
+  - Skill coverage covered SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex,
+    Claude, agent, social, Twitter/X, awesome-list, registry, fork, generated
+    catalog, and web-index skill lanes and returned 28 opportunities.
+  - Fresh target coverage covered Twitter automation, X API workflow, tweet
+    scraper dashboard, monitor, content-agent, sentiment dashboard, scheduler,
+    approval, and data-pipeline lanes and returned 94 opportunities.
+  - No crawler credential values were printed, stored, or committed.
+- PR inventory and repair priority:
+  - Exact readbacks covered 19 audit-tracked Xquik PRs:
+    `nikopastore/scalepilot-autopost#1`, `kooui/x-tweet-scraper#1`,
+    `reizto/x-automation-with-agent#1`,
+    `Manirider/Twitter-Sentiment-Bert#1`,
+    `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`,
+    `YashSerai/clearfeed-twitter-x-dashboard#1`,
+    `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+    `rockywuest/community-scout#1`,
+    `jimmc414/claude-code-plugin-marketplace#3`,
+    `SankeerthBoddu/n8n-marketing-workflows#1`,
+    `HANG939/signal-watcher#1`, `danbirker-svg/x-growth-os#1`,
+    `ythx-101/x-tweet-fetcher#73`, `erp-linker/n8n-workflows#2`,
+    `notrealaman/X-Automation-N8N#1`,
+    `enescingoz/n8n-twitter-thread-fetcher#1`,
+    `franklili3/square-agent#1`,
+    `revanthkakarla26/ai-social-media-agent#1`, and
+    `ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation#1`.
+  - `Ronit26Mehta/Twitter-Analysis-Dashboard#1` remained MERGED. The other
+    18 PRs read back OPEN, non-draft, and MERGEABLE. No new maintainer comment,
+    requested change, CI failure, conflict, DCO, CLA, generated drift, or valid
+    bot finding required an Xquik repair.
+  - Focused authored-PR searches for core Xquik, TweetClaw, OpenClaw, ClawHub,
+    x-twitter-scraper, Twitter, social media, n8n, and agent skill terms
+    returned 0 extra rows. Later broad target duplicate search hit a GitHub API
+    limit after 7 exact repo partitions; the run continued with crawler output,
+    exact PR reads, exact target metadata, local clones, fork metadata, and
+    target content scans.
+- Fresh discovery and duplicate gates:
+  - Target content plus open and closed target PR and issue reads were checked
+    for the first 7 screened candidates before the GitHub API limit:
+    `Kensuke-sam/twitter-ai-agent`, `TanayCodes17/ai-content-agent`,
+    `Sawera-Farrukh/linkedin-twitter-posting-agent-n8n`,
+    `SheikhTalha03/YouTube-Ai-Repurposer`,
+    `ShreyashPatil530/Social-Media-Multi-Agent-Automation-System`,
+    `vippawar1104/X-Post-agent-`, and `paratechnology/x-bot`. All 7 were
+    duplicate-clean in exact target search before the limit.
+  - Compact and archive duplicate checks blocked or deprioritized
+    `blacktwist/social-media-skills`, `typefully/agent-skills`,
+    `labyla/x-search`, `ajfaysal/smart-ai-social-automation-agent`,
+    `XPOZpublic/xpoz-agent-skills`, `tang-vu/social-posting-skills`, and other
+    prior-history skill lanes. `TanayCodes17/ai-content-agent` was skipped
+    because its README is UTF-16 and a docs patch would be too fragile for the
+    value.
+  - Selected safe lanes were `Kensuke-sam/twitter-ai-agent`,
+    `Sawera-Farrukh/linkedin-twitter-posting-agent-n8n`, and
+    `paratechnology/x-bot`. All were public, non-fork, non-archived,
+    duplicate-clean in the completed exact target partitions, had no explicit
+    blocking contribution policy, and had verified `kriptoburak` forks with the
+    correct parents. Missing license metadata alone did not block direct PRs.
+- Fresh PRs opened:
+  - `Kensuke-sam/twitter-ai-agent#1`:
+    https://github.com/Kensuke-sam/twitter-ai-agent/pull/1 from verified fork
+    `kriptoburak/twitter-ai-agent-2` parented to
+    `Kensuke-sam/twitter-ai-agent`, branch
+    `codex/import-xquik-sources-20260703`, commit `a7fd16f`. Adds
+    `src/commands/import_xquik.py`, registers `import-xquik`, and tests that
+    reviewed Xquik or TweetClaw JSON exports can become existing
+    `articles.json` records for dry-run and autopilot flows. Validation passed
+    Python 3.11 compile, Python 3.11 unittest with a temporary `python3` shim,
+    and git whitespace check. System `/usr/bin/python3` is 3.9.6 and cannot run
+    the target's existing `dataclass(slots=True)` code, so Python 3.11 was used
+    for meaningful validation.
+  - `Sawera-Farrukh/linkedin-twitter-posting-agent-n8n#1`:
+    https://github.com/Sawera-Farrukh/linkedin-twitter-posting-agent-n8n/pull/1
+    from verified fork `kriptoburak/linkedin-twitter-posting-agent-n8n`
+    parented to `Sawera-Farrukh/linkedin-twitter-posting-agent-n8n`, branch
+    `codex/xquik-source-review-20260703`, commit `6ed44eb`. Adds README
+    guidance for an optional Xquik or TweetClaw source-review stage using
+    approved Google Sheets rows before AI expansion. The workflow JSON was left
+    untouched because it contains target-owned n8n credential and sheet IDs.
+    Validation passed README link check and git whitespace check.
+  - `paratechnology/x-bot#1`:
+    https://github.com/paratechnology/x-bot/pull/1 from verified fork
+    `kriptoburak/x-bot-1` parented to `paratechnology/x-bot`, branch
+    `codex/xquik-source-adapter-20260703`, commit `7f4e373`. Adds a built-in
+    `xquik` source adapter, registers it in the source map, documents optional
+    `XQUIK_API_KEY`, and adds a disabled config example. The existing
+    `kriptoburak/x-bot` fork was rejected by the safety gate because it is
+    parented to a different upstream. Validation passed `npm ci`, `npm run
+    build`, and git whitespace check. `npm ci` reported pre-existing dependency
+    advisories in the target dependency tree; no dependency metadata changed.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN, ready, MERGEABLE,
+    comments-free, review-free, and check-free. All bodies contain first-person
+    `https://x.com/burakbayir` outreach wording with no third-person repost
+    wording and no GitHub-linked handle.
+- Official OpenClaw and public checks:
+  - OpenClaw docs probes returned HTTP 200 for `llms.txt`, CLI plugins,
+    plugin manifest, ClawHub publishing, and debugging.
+  - Direct public probes returned HTTP 200 for xquik.com and TweetClaw GitHub.
+    The npm package page returned expected HTTP 403 bot protection, while
+    `npm view @xquik/tweetclaw version` returned `1.6.31`.
+  - Sawera target README link check passed. The other 2 target changes did not
+    introduce Markdown links.
+- Public hygiene: added diffs were scanned for secrets, private implementation
+  details, restricted source names, private cost wording, unsupported claims,
+  stale metadata, third-person repost wording, GitHub-linked X handle text, and
+  banned dash forms. No sensitive values were found. Placeholder tokens in the
+  existing and edited `x-bot` environment example remained placeholders.
+- Prompt self-improvement: no persisted automation prompt edit was useful. The
+  prompt already contains the first-person `x.com/burakbayir` PR outreach rule,
+  quiet autonomy, crawler-first discovery, mandatory 3-PR rule, PR repair
+  priority, duplicate and fork rules, OpenClaw checks, link checks, validation
+  gates, badge rule, Context7 exclusion, secret handling, commit and push
+  requirement, Markdown cap, prompt cap, and self-improvement. Persisted TOML
+  measured 13996 bytes and prompt text measured 13656 bytes; the stale
+  third-person repost wording appears only inside the prohibition.
+- Final TweetClaw validation after audit edits: memory Markdown check passed at
+  14998 of 15360 bytes, compact docs link check passed, direct public probes
+  for the 3 new PRs plus xquik.com and TweetClaw GitHub returned HTTP 200, git
+  whitespace and public-hygiene diff checks passed, and `npm run check:all`
+  passed including OpenClaw platform fitness, package artifact check, 168 tests,
+  and 100 percent coverage.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
+
 ## 2026-07-03 04:42 UTC Xquik visibility heartbeat
 
 - Runtime selector: model, Fast mode, and extra-high reasoning controls were

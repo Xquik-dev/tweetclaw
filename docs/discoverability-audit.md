@@ -189,21 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 06:32 UTC: runtime selector unavailable. Xquik crawler strict JSON
-  returned PR-monitor 0, skill-coverage 28, and fresh-target 71 opportunities.
-  Focused authored-PR searches returned no extra rows. Exact-read 16 known
-  Xquik PRs; `Ronit26Mehta/Twitter-Analysis-Dashboard#1` remained merged, the
-  other 15 were open and mergeable with no new repair.
-- Opened 3 fresh mergeable Xquik PRs from verified `kriptoburak` forks:
-  `franklili3/square-agent#1`, `revanthkakarla26/ai-social-media-agent#1`,
-  and `ramcharan170605/AI-Workflow-for-Social-Media-Content-Automation#1`.
-  All PR bodies use first-person
+- 2026-07-03 06:53 UTC: runtime selector unavailable. Xquik crawler strict JSON
+  returned PR-monitor 0, skill-coverage 28, and fresh-target 94. Focused
+  authored-PR searches returned 0; target duplicate search later hit a GitHub
+  API limit after 7 exact repo partitions.
+- Exact-read 19 known Xquik PRs: `Ronit26Mehta/...#1` remained merged; the
+  other 18 were open, ready, mergeable, and needed no Xquik repair.
+- Opened 3 fresh mergeable PRs from verified `kriptoburak` forks:
+  `Kensuke-sam/twitter-ai-agent#1`,
+  `Sawera-Farrukh/linkedin-twitter-posting-agent-n8n#1`, and
+  `paratechnology/x-bot#1`. All bodies use first-person
   `x.com/burakbayir` wording and no third-person repost text.
-- Fresh screens also covered duplicate or prior-history blockers
-  `blacktwist/social-media-skills`, `citedy/citedy-seo-agent`,
-  `theaayushstha1/agentic-skills`, `ronakmunjapara/BlogWritingCrew`,
-  `d-wwei/superb-publisher`, and held `Sawera-Farrukh/...` after 3 safer lanes.
-  Archive has validation, link, prompt-byte, and self-improvement details.
+- Archive has blockers, validation, link checks, prompt bytes, and
+  self-improvement details.
 
 ## Reporting Checklist
 
