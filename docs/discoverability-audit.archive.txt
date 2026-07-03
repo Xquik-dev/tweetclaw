@@ -60640,6 +60640,43 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-03 11:41 UTC X/Twitter Visibility Comment Resume
+
+- Runtime selector limitation: this Codex Desktop run still did not expose
+  model, speed, or effort selectors, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected.
+- Complete PR comment inventory: continued from the audit-derived exact
+  inventory at `/tmp/tweetclaw-comment-all-scope-20260703/open-authored.tsv`.
+  The inventory remains 1,461 open PRs authored by `kriptoburak` across the
+  TweetClaw, Xquik, OpenClaw, ClawHub, MCP, skills, social/X automation,
+  agent-tooling, catalog, example, validator, framework, library, registry,
+  package-tooling, docs, and prior outreach scope.
+- Guarded comment resume: ran one 20-comment batch with exact PR body/comment
+  duplicate reads and 15 second spacing. The 11:35 UTC batch posted 20
+  comments and recorded 1 newly archived read-only blocker at
+  `dgriffin831/clawhub-skills#2`. No new skip-only PR, secondary
+  content-creation limit, or unresolved write failure was returned.
+- Updated unique checkpoint: 1,461 open authored PRs remain in the inventory;
+  676 have first-person 24k X/Twitter comments posted by this pass, 22
+  additional PRs are skip-only as already covered, 4 are archived read-only
+  blockers, 1 raw transient read failure is already covered by posted
+  readback, and 759 are still queued for future throttled resume.
+- Public hygiene: posted comment text stayed optional, post-merge, first-person,
+  and non-coercive; it included `https://x.com/burakbayir`, 24k followers, no
+  third-person repost phrasing, no guaranteed engagement, no private
+  source/provider names, and no internal cost mechanics.
+- Fresh discovery and new PR submissions remained deferred because the user
+  explicitly asked to cover existing in-scope open PRs first, and safe progress
+  depends on avoiding GitHub secondary write limits while the comment backlog
+  remains open.
+- Prompt self-improvement: no durable prompt change was needed. The persisted
+  automation prompt readback measured 14,052 bytes and still includes the 24k
+  follower wording.
+- Validation and link hygiene: `npm run check-memory-md-size`, `git diff
+  --check`, archive dash scan, `https://x.com/burakbayir` link check, and audit
+  diff public-safety scan passed before this audit commit. Existing untracked
+  `0` in the TweetClaw worktree was preserved.
+
 ### 2026-07-03 11:24 UTC X/Twitter Visibility Comment Resume
 
 - Runtime selector limitation: this Codex Desktop run still did not expose
