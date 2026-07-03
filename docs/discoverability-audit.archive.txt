@@ -59426,3 +59426,84 @@ Self-improvement:
   `npm run check-memory-md-size` reported 15331 of 15360 bytes,
   `npm run check:all` passed with 168 tests and 100 percent coverage, and the
   post-edit TweetClaw Markdown link check passed.
+
+## 2026-07-03 02:56 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued.
+- Prompt update: user requested that Xquik outreach PRs recommend optional
+  post-merge sharing on X/Twitter by tagging `@burakbayir` so he can repost the
+  merged PR to developers and power users. The automation prompt was updated in
+  place, preserving the Xquik-visibility-only focus, crawler-first discovery,
+  repair priority only for Xquik placement, and safety gates. Persisted prompt
+  size after update: 13465 bytes.
+- Crawler-first coverage:
+  - PR monitor crawler JSON produced 1 opportunity, `Xquik-dev/tweetclaw`.
+  - Skill coverage crawler and fresh-target crawler both produced 0 usable
+    opportunities after managed-proxy network egress socket failures and
+    endpoint quarantine. Fallback discovery continued under the rate-limit rule.
+  - Broad authenticated `gh search prs` hit GitHub secondary rate limits and
+    was stopped for the run. Exact REST and clone-backed reads continued.
+- PR inventory:
+  - Archive and compact audit produced 60 recent PR URLs for exact reads.
+    Exact readbacks found 57 open, 1 merged, and 2 closed PRs.
+  - Six flagged PRs with comments, reviews, or checks were re-read. Recent
+    PRs remained open and mergeable. `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis#1`
+    review items were already fixed in the latest pushed commit and `python3`
+    compile passed. `aldrinjenson/twitter-profile-analysis#2` had a successful
+    GitGuardian check and already-addressed CSV selector feedback. Other flags
+    were stale Codex reviews, a usage-limit notice, or clean checks, with no new
+    Xquik-visibility repair required.
+- Fresh discovery and duplicate gates:
+  - Compact audit, archive, target repo content, and exact target PR plus issue
+    reads were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+    x-twitter-scraper, OpenClaw, ClawHub, and variants.
+  - Three fresh backlog candidates were selected because they were public,
+    non-fork, non-archived, issue-enabled, duplicate-clean, and target-native:
+    `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel`,
+    `anzelafiadha/Brand-Reputation-Sentiment-Analysis`, and
+    `hasannjaffal/tweets-processing`. All lacked license metadata, which did
+    not block direct PRs.
+- Fresh PRs opened:
+  - `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel#1`:
+    https://github.com/wafiyulahdi-port/SentimentAnalysis_SVM_Fuel/pull/1 from
+    verified fork `kriptoburak/SentimentAnalysis_SVM_Fuel`, branch
+    `codex/add-xquik-export-upload`, commit `f61b3fc`. Adds optional sidebar
+    upload support for reviewed Xquik/TweetClaw CSV, JSON, and JSONL exports,
+    normalizing common tweet text fields into the existing `full_text`
+    preprocessing, EDA, and SVM path while preserving `bbm.csv` as default.
+    Validation: `python3` compile, whitespace diff check, README link check
+    passed, and public-hygiene diff scan found no sensitive terms.
+  - `anzelafiadha/Brand-Reputation-Sentiment-Analysis#1`:
+    https://github.com/anzelafiadha/Brand-Reputation-Sentiment-Analysis/pull/1
+    from verified fork `kriptoburak/Brand-Reputation-Sentiment-Analysis`,
+    branch `codex/add-xquik-brand-import`, commit `cd93e01`. Adds a
+    standard-library converter from reviewed Xquik/TweetClaw CSV, JSON, and
+    JSONL exports into the existing Kopi Tuku dataset schema, including tweet
+    text, author, URL, timestamp, and engagement mappings plus an optional
+    keyword filter. Validation: `python3` compile, keyword-filter smoke test,
+    whitespace diff check, and public-hygiene scan passed. README link check
+    found only a pre-existing LinkedIn 429 on the target's existing video link.
+  - `hasannjaffal/tweets-processing#1`:
+    https://github.com/hasannjaffal/tweets-processing/pull/1 from verified fork
+    `kriptoburak/tweets-processing`, branch `codex/add-xquik-tweets-converter`,
+    commit `d0f254b`. Adds a converter from reviewed Xquik/TweetClaw CSV,
+    JSON, and JSONL exports into the target's `sentiment,tweet` training CSV
+    shape, mapping positive, neutral, and negative labels to Sentiment140
+    values. Validation: `python3` compile, JSONL converter smoke test,
+    whitespace diff check, README link check passed, and public-hygiene diff
+    scan found no sensitive terms.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN, ready, MERGEABLE,
+    and contain the new optional `@burakbayir` X/Twitter sharing note. Checks
+    arrays were empty on creation.
+- Official docs and public checks: OpenClaw docs routes returned HTTP 200 for
+  `llms.txt`, CLI plugins, manifest, ClawHub publishing, and debugging. No
+  OpenClaw compatibility, package metadata, manifest, or release-gate behavior
+  changed in this run.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
+  Final validation: `npm run check-memory-md-size` reported 15116 of 15360
+  bytes, TweetClaw Markdown link check passed, and `npm run check:all` passed
+  including OpenClaw platform fitness, package artifact check, 168 tests, and
+  100 percent coverage.

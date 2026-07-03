@@ -189,22 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 02:43 UTC: runtime selector unavailable; persisted prompt remains
-  Xquik-visibility-focused at 13037 bytes. Crawler-first monitor, skill, and
-  fresh-target JSON returned 1, 0, and 0 opportunities after proxy failures.
-  Exact inventory read 35 tracked PR URLs. Repairs pushed for
-  `alipbudiman/...#1` commit `bee47ce` and `korbirayen/MoodMonitor#1` commit
-  `fd0ec2b`; `Tekraj15#1` was already fixed.
-- Fresh screening covered 37 fallback results and 11 candidates. Duplicate
-  gates blocked `Fratu223/Social-Media-Sentiment-Analysis#109`. Opened 3 new
-  Xquik-visibility PRs: `REDDIDIVAKARSAI/Twitter-Trend-Analyzer#1`,
-  `malav-radia/diwali-sale-sentiment-analysis#1`, and
-  `ghulamraza110/sentiment-analysis-dashboard#1`. All are OPEN and mergeable.
-- Public checks: official OpenClaw docs routes returned HTTP 200, npm metadata
-  stayed unchanged, full and production npm audits found 0 vulnerabilities,
-  OpenClaw fitness and package artifact checks passed, TweetClaw Markdown links
-  passed, and target README link checks found only pre-existing target-owned
-  blockers in 2 targets. No badge was added.
+- 2026-07-03 02:56 UTC: runtime selector unavailable; prompt updated with the
+  optional `@burakbayir` post-merge X/Twitter PR-body note and measured 13465
+  bytes. Crawler JSON counts were 1, 0, and 0 after proxy failures; broad
+  authenticated PR search hit GitHub secondary rate limits; exact inventory read
+  60 PR URLs and found no new Xquik-visibility repair.
+- Fresh duplicate-clean PRs opened and exact-read OPEN, ready, and MERGEABLE:
+  `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel#1`,
+  `anzelafiadha/Brand-Reputation-Sentiment-Analysis#1`, and
+  `hasannjaffal/tweets-processing#1`. All PR bodies include the optional
+  X/Twitter sharing note. Full record is in the archive.
+- Public checks: target compile and smoke tests passed, target README links
+  passed except a pre-existing LinkedIn 429 in the brand repo, OpenClaw docs
+  route probes returned HTTP 200, no OpenClaw compatibility changed, and
+  TweetClaw `npm run check:all` passed.
 
 ## Reporting Checklist
 
