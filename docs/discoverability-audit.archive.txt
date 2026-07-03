@@ -59504,6 +59504,94 @@ Self-improvement:
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
 - Final validation before commit: `npm run check-memory-md-size` reported
+  14878 of 15360 bytes before this final line, TweetClaw Markdown link check
+  passed, EngageX README link check passed, OpenClaw docs probes returned HTTP
+  200 for llms, CLI plugins, manifest, ClawHub publishing, and debugging,
+  public-hygiene diff scan found no sensitive terms beyond the phrase
+  `secret-bearing files`, and `npm run check:all` passed including OpenClaw
+  platform fitness, package artifact check, 168 tests, and 100 percent coverage.
+
+## 2026-07-03 04:00 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued.
+- Prompt and PR wording repair: the automation prompt was updated before this
+  run to require first-person X/Twitter wording with `x.com/burakbayir`; prompt
+  size read 13694 bytes. Repaired stale third-person PR body wording in:
+  `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+  `Swastika2401/Social-Media-Sentiment-Analysis#5`,
+  `Tanish-og/CREW_AI#1`, `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel#1`,
+  `anzelafiadha/Brand-Reputation-Sentiment-Analysis#1`, and
+  `hasannjaffal/tweets-processing#1`. Exact body readback confirmed
+  `x.com/burakbayir` present and no stale `he can repost` or
+  `tag @burakbayir` text.
+- Crawler-first coverage:
+  - Strict JSON crawler outputs under
+    `/tmp/tweetclaw-heartbeat-20260703-0348`: `pr-monitor.json`,
+    `skill-coverage.json`, and `fresh-targets.json`.
+  - All 3 produced 0 opportunities after managed-proxy socket failures and
+    endpoint quarantine. Fallback exact reads, direct metadata, clone, and
+    target PR/issue checks continued.
+- Complete PR inventory:
+  - Compact audit plus archive produced 1740 GitHub PR URLs. Exact REST read
+    pass succeeded for 1700 and returned 40 inaccessible 404s. Exact counts:
+    1442 open, 132 closed, 126 merged, and 255 flagged by comments, review
+    comments, or conflicts.
+  - Open mergeability buckets: 1392 mergeable, 10 unknown, 40 conflicting.
+  - Newest conflicting PRs inspected:
+    `reall8164/wechat-openclaw-plugin#1`,
+    `warlockoussama/twitter-cli#1`, and
+    `Aqmar777/openclaw-competitive-intel#1`. All showed recurring upstream
+    force-update or README conflict repair churn with only prior `kriptoburak`
+    repair comments and no new maintainer ask; repair was recorded as lower
+    value than fresh Xquik visibility placement for this run.
+- Fresh discovery and duplicate gates:
+  - Direct fallback queries screened Xquik/API/social automation lanes after
+    crawler proxy failures. Duplicate searches covered compact audit, archive,
+    target content, and target open/closed PRs and issues for TweetClaw,
+    tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw,
+    ClawHub, URLs, and variants.
+  - `Matthew-Selvam/Open-Dispatch` was blocked because it already has open
+    Xquik PR `#1`. `praj2408/Smart-Marketing-Assistant-Crew-AI` was blocked by
+    prior archive history. `zernio-dev/zernflow`, `aneebnaqvi15/TweetScraper`,
+    and `AnkurKumarShukla/EngageX` were selected as public, non-fork,
+    non-archived, duplicate-clean, policy-clean, and target-native. Missing
+    license metadata did not block direct PRs.
+- Fresh PRs opened:
+  - `zernio-dev/zernflow#9`:
+    https://github.com/zernio-dev/zernflow/pull/9 from verified fork
+    `kriptoburak/zernflow`, branch `codex/add-xquik-twitter-workflow`, commit
+    `2b0a5aa`. Adds `docs/xquik-twitter-workflows.md` plus a README pointer for
+    using ZernFlow HTTP Request nodes with approval-gated Xquik Twitter/X
+    workflows and response mappings. Validation: new-doc markdown-link-check,
+    git diff check, and public-hygiene scan passed. README link check found
+    only the target's pre-existing localhost link.
+  - `aneebnaqvi15/TweetScraper#1`:
+    https://github.com/aneebnaqvi15/TweetScraper/pull/1 from verified fork
+    `kriptoburak/TweetScraper`, branch `codex/add-xquik-import-helper`, commit
+    `d449a76`. Adds `server/src/lib/xquik-import.js`, focused Jest tests, and
+    `XQUIK_IMPORT.md` so reviewed Xquik/TweetClaw CSV, JSON, and JSONL exports
+    can reuse TweetScraper's grouped tweet shape. Validation: `node -c`, Jest
+    test, sample JSONL import smoke test, markdown-link-check for the new guide,
+    git diff check, and public-hygiene scan passed.
+  - `AnkurKumarShukla/EngageX#1`:
+    https://github.com/AnkurKumarShukla/EngageX/pull/1 from verified fork
+    `kriptoburak/EngageX`, branch `codex/add-xquik-campaign-context`, commit
+    `98aba8e`. Adds `social_media_agent/tools/xquik_context.py`, unittest
+    coverage, and README guidance for building campaign context from reviewed
+    Xquik/TweetClaw exports before `/planner` or `/run-campaign`. Validation:
+    Python compile, unittest, sample JSONL context smoke test, git diff check,
+    and public-hygiene scan passed.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN and MERGEABLE, base
+    `main`, head owner `kriptoburak`, and all PR bodies contain
+    `x.com/burakbayir` with no stale third-person wording.
+- Official docs and public checks: no OpenClaw compatibility, package metadata,
+  manifest, or release-gate behavior changed in this run. No production SSH,
+  dev servers, Browser, Chrome, Context7, or secret-bearing files were used.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
+- Final validation before commit: `npm run check-memory-md-size` reported
   15355 of 15360 bytes, TweetClaw Markdown link check passed, public-hygiene
   diff scan found no sensitive terms, and `npm run check:all` passed including
   OpenClaw platform fitness, package artifact check, 168 tests, and 100 percent

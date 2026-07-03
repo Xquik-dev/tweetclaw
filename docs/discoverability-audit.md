@@ -189,22 +189,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 03:20 UTC: runtime selector unavailable; prompt already contained
-  Xquik-only focus plus the optional `@burakbayir` X/Twitter PR note and
-  measured 13501 bytes. Crawler JSON counts were 1, 0, and 0 after proxy
-  socket/quarantine failures; exact inventory read 80 audit PR URLs, found 77
-  open, and flagged 7. Krishan conflict repair commit `6288e98` pushed to the
-  fork branch, but the old PR stayed `CONFLICTING` at `dcdfcee` because the fork
-  parent now points elsewhere.
-- Fresh duplicate-clean PRs opened and exact-read OPEN/MERGEABLE with the
-  optional X/Twitter note: `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
-  `Swastika2401/Social-Media-Sentiment-Analysis#5`, and
-  `Tanish-og/CREW_AI#1`. `Mynk724/financial-news-sentimental-analysis` was too
-  empty for useful target-native value. Full record is in the archive.
-- Public checks: target compile/smoke/diff checks passed; Ronit and Tanish link
-  checks passed, while Swastika had only a pre-existing localhost link.
-  OpenClaw core docs probes returned HTTP 200 with optional guessed paths still
-  404; no OpenClaw compatibility changed; TweetClaw final checks passed.
+- 2026-07-03 04:00 UTC: runtime selector unavailable. Prompt now requires
+  first-person PR notes with `x.com/burakbayir`; 6 recent PR bodies were
+  repaired. Crawler JSON returned 0/0/0 after proxy socket failures; exact
+  archive inventory read 1740 PR URLs, with 1700 exact reads, 1442 open, 40
+  inaccessible, and 40 conflicts. Newest conflicts were recurring merge-refresh
+  noise with no maintainer ask.
+- Fresh duplicate-clean PRs opened and exact-read OPEN/MERGEABLE:
+  `zernio-dev/zernflow#9`, `aneebnaqvi15/TweetScraper#1`, and
+  `AnkurKumarShukla/EngageX#1`. Each body uses `x.com/burakbayir` and first
+  person. Full validation and blockers are in the archive.
 
 ## Reporting Checklist
 
