@@ -2,6 +2,106 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-03 20:29 UTC X Skill Source Context PRs
+
+- Runtime selector limitation: Codex Desktop still did not expose model, speed,
+  or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could
+  not be explicitly selected. Continued within the available runtime.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned 0 open issues.
+- Crawler-first discovery: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, bounded request and
+  proxy warmup timeouts, concurrency 8, and focused query packs for Twitter API
+  tool catalogs, X automation integrations, social media API directories,
+  SKILL.md, `.agents/skills`, skills dirs, OpenClaw, MCP, Codex, Claude, agent
+  skills, social media skills, Twitter/X skills, awesome lists, registries,
+  forks, generated catalogs, and web-index surfaced skill repos. Strict parse
+  returned 14 opportunities. Crawler candidates were blocked or deprioritized
+  by duplicate history, existing open kriptoburak PRs, archived state, or lower
+  fit, so fallback GitHub search was used after the crawler-first gate.
+- PR inventory: broad authored open-PR search for `created:2026-07-03`
+  returned 171 items with a 300-item limit, so that created-date bucket had an
+  exact readback count. `updated:>=2026-07-03T20:16:00Z` returned 49 open PRs
+  and every URL in that bucket was exact-read into
+  `/tmp/tweetclaw-heartbeat-20260703T2029/exact-updated-prs.jsonl`. The
+  created-window search for 20:24 through 20:29 UTC returned 0 items before
+  this run opened new PRs. No 1000-result cap was hit in these partitions.
+- Repair gate: exact reads found no new maintainer review comments requiring
+  code changes. Repaired an older public visibility comment on
+  `https://github.com/Aditya923-c/xpoz-agent-skills/pull/1` because it used an
+  X account URL; readback now has no malformed X account URL or GitHub mention
+  matches. `Panniantong/Agent-Reach#471` and several older PRs remain
+  `UNSTABLE` or `BLOCKED` with no actionable check rows. Attempted a conflict
+  repair on `https://github.com/wx-chevalier/Awesome-Agent-Skills/pull/3`, but
+  upstream `master` deleted the root README and most prior top-level content,
+  turning the repair into a large target restructure rather than a safe
+  Xquik-only update, so the merge was aborted. `Aditya923-c/xpoz-agent-skills#1`
+  is still `DIRTY`; it has repeated upstream README churn and no safe minimal
+  repair in this run after the wording repair.
+- Fresh candidate screening: fallback searches and duplicate gates checked
+  compact audit, archive, target PRs, target issues, repo metadata, fork state,
+  local clones, READMEs, SKILL.md files, and target search terms for TweetClaw,
+  Xquik, `@xquik/tweetclaw`, x-twitter-scraper, OpenClaw, ClawHub, GitHub URL
+  variants, and npm variants. `sergebulaev/x-skills` stayed blocked by its
+  `AGENTS.md` primary-author policy. `navarch-orion/x-intake` was blocked by
+  prior open PR history. `ngmeyer/x-oauth-api` is archived. Existing PR history
+  blocked `michaelcarwile/claude-skill-x-twitter`,
+  `jiamizhongshifu/x-tweet-scorer`, `Hidden-Leaf-Networks/x-skill`,
+  `travisseh/x-bookmarks-to-todos`, `JayceBatallones/x-video-extractor`,
+  `mshegolev/x-claude-tips`, and `piao0123/x-post-project`. Lower-fit direct
+  publishing or thinner skill lanes were left as backups.
+- New external PRs: `https://github.com/Lucasyao1985/x-post-analyzer/pull/1`,
+  `https://github.com/Lucasyao1985/x-video-downloader/pull/1`, and
+  `https://github.com/wangdefou-dev/twitter-article-to-markdown/pull/1`.
+  All were opened from correctly parented `kriptoburak` forks on
+  `codex/tweetclaw-source-context` with PR bodies using the required
+  first-person optional visibility note, plain `burakbayir`, no X account URL,
+  and no GitHub account mention.
+- Target changes: added optional TweetClaw public source-context notes to the
+  English README and SKILL.md in `x-post-analyzer` while keeping that skill
+  responsible for fetching and analyzing the target post into a structured
+  Chinese report. Added optional TweetClaw public precheck context to
+  `x-video-downloader` while keeping that skill responsible for media extraction
+  and MP4 download. Added optional TweetClaw context to
+  `twitter-article-to-markdown` while keeping that skill responsible for local
+  `gallery-dl`, exported cookies, optional R2 image hosting, and Markdown
+  conversion; also corrected the README install URL from the stale owner path
+  to `wangdefou-dev`.
+- PR readbacks: `x-post-analyzer#1` and `x-video-downloader#1` are open, ready,
+  mergeable, `CLEAN`, and have no comments, reviews, or check rows.
+  `twitter-article-to-markdown#1` is open, ready, mergeable, and `CLEAN` after
+  GitGuardian completed successfully. Changed files were README.md and SKILL.md
+  in all 3 target repos.
+- Validation: target `git diff --check` passed for all 3 repos. Added-line
+  scans found no em dash, spaced double-hyphen, malformed outreach handles,
+  restricted-source wording, private-cost wording, or secret-like tokens. Fork
+  owner and parent readbacks confirmed the new forks are under `kriptoburak`
+  and point to the intended upstream repositories.
+- OpenClaw and public hygiene: current OpenClaw probes returned 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw 2026.6.11.
+  Public link checks returned 200 for TweetClaw GitHub, all 3 new PR URLs, all
+  3 target repo URLs, npm registry metadata, DeepWiki, Context7, Skills.sh,
+  Smithery, NHS, Apify, OpenClaw GitHub, Xquik, Xquik billing docs, and the
+  dashboard login redirect. The corrected article-skill install URL returned
+  200; the existing Claude Code link returned 403 from the site and was left
+  unchanged. `npm view @xquik/tweetclaw` returned latest 1.6.31 with GitHub
+  repository, homepage, and bugs URLs, so package metadata still trails the
+  local package version.
+- TweetClaw repository changes: only this archive file changed. Existing
+  untracked `0` in `/Users/burak/Developer/tweetclaw` was preserved. Compact
+  Markdown memory stayed at 14998/15360 bytes before the archive edit.
+  Persisted automation prompt size stayed 14173 bytes, under the 15 KiB cap.
+- Durable lesson: paired Lucasyao skill repos are useful when each PR stays
+  scoped to that skill's separate authority. Missing GitHub license metadata
+  alone does not block a direct docs PR when the README declares MIT and no
+  maintainer policy blocks contribution; record the license evidence and keep
+  the target value concrete. If a prior PR conflict now reflects a major
+  upstream restructuring rather than a local merge conflict, abort and record
+  the blocker instead of pushing broad deletions.
+
 ### 2026-07-03 20:16 UTC Social Signal Source Review PRs
 
 - Runtime selector limitation: Codex Desktop still did not expose model, speed,
