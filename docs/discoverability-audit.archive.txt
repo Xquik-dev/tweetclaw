@@ -59504,6 +59504,40 @@ Self-improvement:
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
 
+### 2026-07-03 07:49 UTC X/Twitter Visibility Comment Repair
+
+- Runtime selector limitation: this Codex Desktop run did not expose model,
+  speed, or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning
+  could not be explicitly selected.
+- User correction: PR sharing notes must be first-person from the
+  `burakbayir` account and should ask maintainers to tag
+  `https://x.com/burakbayir` so I can repost or retweet to my 24k followers.
+  The local heartbeat automation prompt was updated with this 24k wording and
+  measured at 14,052 TOML bytes, with the prompt literal at 13,750 bytes.
+- Complete PR comment inventory method: extracted 1,764 PR URLs from compact
+  audit plus archive, GraphQL exact-read covered 800, REST retry covered 920,
+  and 40 deleted or inaccessible URLs remained unreadable. Combined inventory
+  found 1,461 open PRs authored by `kriptoburak` in the TweetClaw, Xquik,
+  OpenClaw, ClawHub, MCP, skills, social/X automation, agent-tooling, catalog,
+  example, validator, framework, library, registry, package-tooling, docs, and
+  prior outreach scope.
+- Comment repair result before platform block: posted 206 first-person optional
+  visibility comments with `https://x.com/burakbayir` and 24k-follower wording,
+  skipped 7 PRs already covered by the same note, and recorded 2 archived
+  read-only target blockers. The retry at 07:49 UTC attempted the next missing
+  PR and GitHub still returned the content-creation secondary limit. The
+  remaining 1,243 open PRs were left unprocessed to avoid hammering GitHub.
+- Public hygiene: comment body was checked for first-person wording, no
+  third-person repost phrasing, no private source/provider names, no internal
+  cost mechanics, no unsupported guaranteed-engagement claim, and no stale
+  metadata. Duplicate guard requires both `x.com/burakbayir` or `@burakbayir`
+  and `24k` or `24,000` before skipping a PR.
+- Follow-up: resume after GitHub content creation cooldown from
+  `/tmp/tweetclaw-comment-all-scope-20260703/open-authored.tsv`, preserving
+  `/tmp/tweetclaw-comment-all-scope-20260703/posted-comments.tsv`,
+  `skipped-comments.tsv`, `failed-comments.tsv`, and per-attempt logs. Retry
+  secondary-limit failures, but keep archived read-only repos blocked.
+
 ## Heartbeat 2026-07-03 06:32 UTC
 
 - Runtime and prompt: current runtime did not expose model, Fast speed, or
