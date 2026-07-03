@@ -2,6 +2,94 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-03 20:08 UTC Trend Radar Source Review PRs
+
+- Runtime selector limitation: Codex Desktop still did not expose model, speed,
+  or effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could
+  not be explicitly selected. Continued within the available runtime.
+- Xquik issue check: `gh issue list --repo Xquik-dev/xquik --state open`
+  returned 0 open issues.
+- Crawler-first discovery: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output, bounded request and
+  proxy warmup timeouts, concurrency 8, and focused query packs for X/Twitter
+  source packets, TweetClaw source review, OpenClaw skills, social-listening
+  source policy, AI growth operator workflows, creator signal radar, launch
+  signals, GitHub trending, startup idea mining, market signal collectors,
+  SKILL.md, `.agents/skills`, MCP, Codex, Claude, agent skills, social media
+  skills, Twitter/X skills, awesome lists, registries, and source-review
+  workflows. The crawler returned 0 opportunities, so fallback GitHub searches
+  were used after the crawler-first gate.
+- PR inventory: broad authored open-PR search for `updated:>=2026-07-03`
+  returned the local 200-item cap and was not claimed complete. Active windows
+  were exact: `19:46-19:52` returned 22, `19:53-20:07` returned 42, and
+  `>=20:08` returned 0 before the new PRs. Exact reads covered the 42 PR URLs
+  from `19:53-20:07`: all open; 31 `CLEAN`, 8 `UNSTABLE`, 2 `DIRTY`, and 1
+  `BLOCKED`; 40 had no checks and 2 had 1 check.
+- Repair gate: exact reads found no safe same-run repair before the fresh PR
+  mandate. The `DIRTY` items were `vadym-shliachkov/twt#2` and
+  `vosslab/vosslab-skills#2`; both need conflict-specific target checkout work
+  and had no flat maintainer comment in the active readback. The `BLOCKED`
+  item, `tumf/xcom-rs#4`, still had only a generic Codex review shell and no
+  visible actionable finding. Other unstable PRs had no repairable flat check
+  failure or maintainer request in this pass.
+- Fresh candidate screening: fallback repo searches covered trend-radar,
+  source-policy, launch-signal, and growth-intelligence lanes. Duplicate gates
+  checked compact audit, archive, target PRs, target issues, repo metadata,
+  fork state, local clone scans, READMEs, and target runtime files for
+  TweetClaw, Xquik, `@xquik/tweetclaw`, x-twitter-scraper, OpenClaw, ClawHub,
+  GitHub URL variants, and npm variants. Selected
+  `jimibarkway/trend-radar` because it is MIT, non-fork, non-archived, and
+  already has an X/Twitter keyword watch path. Selected
+  `ivanyinjc-blip/ai-trend-radar` because it is MIT, non-fork, non-archived,
+  and includes a Twitter collector in a 14-source AI trend radar. Selected
+  `Keyur-Gondaliya/trend-catcher` because it is MIT, non-fork, non-archived,
+  and centers on X/Twitter dataset triage, velocity scoring, and feedback
+  learning. `OranSimon/Tech-Daily-Oracle` stayed a fallback because its repo
+  already contains broad OpenClaw mentions in generated data and the first 3
+  lanes were cleaner.
+- New external PRs:
+  `https://github.com/jimibarkway/trend-radar/pull/1`,
+  `https://github.com/ivanyinjc-blip/ai-trend-radar/pull/1`, and
+  `https://github.com/Keyur-Gondaliya/trend-catcher/pull/1`. All were opened
+  from correctly parented `kriptoburak` forks on
+  `codex/add-tweetclaw-source-review`, with PR bodies using the required
+  first-person optional visibility note, plain `burakbayir`, no X account URL,
+  and no GitHub account mention.
+- Target changes: added a TweetClaw source-review note to
+  `jimibarkway/trend-radar` README while preserving ingestion, scoring,
+  convergence clustering, hidden-gem filters, and angle generation ownership;
+  added a Chinese TweetClaw source precheck note to
+  `ivanyinjc-blip/ai-trend-radar` README while preserving multi-source
+  collection, filtering, topic linking, and summaries; added a TweetClaw
+  source-review section to `Keyur-Gondaliya/trend-catcher` README while
+  preserving clustering, velocity scoring, preference fitting, digest ranking,
+  and feedback learning.
+- PR readbacks: all 3 new PRs were open, ready, mergeable, and had no reviews.
+  `jimibarkway/trend-radar#1` was `UNSTABLE` only because Vercel requires a
+  target team member to authorize the deployment. `ivanyinjc-blip/ai-trend-radar#1`
+  was `UNSTABLE` with no flat check rows at readback time. `Keyur-Gondaliya/trend-catcher#1`
+  was `UNSTABLE` with GitGuardian Security Checks completed successfully.
+- Validation: target `git diff --check` passed for all 3 repos. Added-line
+  scans found no em dash, spaced double-hyphen, malformed outreach handles,
+  restricted-source wording, private-cost wording, or secret-like tokens.
+  TweetClaw GitHub link check returned 200.
+- OpenClaw and public hygiene: current OpenClaw probes returned 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run check-openclaw-platform-fitness`
+  passed for local `@xquik/tweetclaw@1.6.32` targeting OpenClaw 2026.6.11.
+  Public link checks returned 200 for TweetClaw GitHub, all 3 new PR URLs, and
+  Xquik docs API overview. `npm view @xquik/tweetclaw` returned latest 1.6.31
+  with GitHub repository, homepage, and bugs URLs.
+- TweetClaw repository changes: only this archive file changed. Existing
+  untracked `0` in `/Users/burak/Developer/tweetclaw` was preserved. Compact
+  Markdown memory stayed at 14998/15360 bytes. Persisted automation prompt
+  size stayed 14173 bytes, under the 15 KiB cap.
+- Durable lesson: when crawler output is empty, use narrow GitHub fallback
+  searches but keep selected repos in the same crawler-covered lane. Trend
+  radar READMEs are good Xquik visibility targets only when the note preserves
+  the target's own ingestion, ranking, scoring, digest, and feedback ownership.
+
 ### 2026-07-03 19:52 UTC Signal Digest Source Review PRs
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
