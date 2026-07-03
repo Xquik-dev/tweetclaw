@@ -189,19 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 23:06 UTC: runtime selector unavailable. Crawler-first skill and
-  catalog packs hit network-egress failures, so fallback used authored PR
-  partitions, exact PR reads, target repo lists, local clones, and archive gates.
-- Inventory read 184 created-today PRs, 20 recently updated PRs, and 3
-  created-window PRs; 20 updated PRs plus current repair and outreach PRs were
-  exact-read. Repaired `Saminiscool/twitter-ai-agent#2` and patched stale
-  `bobmatnyc/claude-mpm-skills#26` visibility wording.
-- Opened 3 clean, mergeable Xquik OpenClaw-directory PRs from verified
-  `kriptoburak` forks: `Kevjade/openclaw-api-list#1`,
-  `daddy-gier/openclaw-api-list#1`, and `cporter202/openclaw-api-list#2`.
-- OpenClaw docs check, duplicate gates, target policy checks, validation,
-  inherited link blockers, memory size, prompt bytes, pushed commits, and
-  durable self-improvement notes are recorded in the archive.
+- 2026-07-03 23:31 UTC: runtime selector unavailable. Crawler-first skill and
+  catalog packs parsed as strict JSON but returned no opportunities after
+  network-egress socket-close logs, so fallback used authored PR partitions,
+  exact PR reads, target repo lists, local clones, and archive gates.
+- Inventory read 189 created-today PRs, 18 recently updated PRs, and 6
+  created-window PRs; 18 updated PRs plus `bobmatnyc/claude-mpm-skills#34` and
+  the new outreach PRs were exact-read. No in-scope Xquik PR needed repair.
+- Opened 2 clean, mergeable Xquik PRs from verified `kriptoburak` forks:
+  `umairsohail049/openclaw-api-list#1` and
+  `ivishnuraj/awesome-mcp-servers#3`. A third safe lane was not found after
+  duplicate, generated-source, policy, and fit gates.
+- OpenClaw docs check, duplicate gates, target policy checks, validation, link
+  checks, memory size, prompt bytes, pushed commits, and durable
+  self-improvement notes are recorded in the archive.
 
 ## Reporting Checklist
 
