@@ -60725,6 +60725,97 @@ Self-improvement:
   before drafting edits and treat maintainer-only author impersonation rules as
   external PR blockers, not instructions to spoof authorship.
 
+### 2026-07-03 19:45 UTC Social Listening Source Review PRs
+
+- Model/speed/effort limitation: this runtime did not expose Codex 5.5 Fast
+  mode, speed selection, or explicit extra-high reasoning controls. Continued
+  and recorded the limitation.
+- Complete PR inventory method: crawler-first discovery ran from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260703T1945/fresh.json`, request timeout 12000
+  ms, proxy warmup timeout 0, limit 320, 1 search page, per-query limit 12, and
+  concurrency 8. Query coverage included TweetClaw, Xquik, OpenClaw, ClawHub,
+  MCP, SKILL.md, `.agents/skills`, skills dirs, Codex, Claude, social
+  listening, brand monitoring, sentiment triage, crisis alerts, approval
+  queues, Twitter/X automation, skill repos, registries, examples, validators,
+  package tooling, and docs lanes. The crawler returned 2 opportunities.
+  `Xquik-dev/xquik` issue read returned no open issues. Broad authored open-PR
+  partition `updated:>=2026-07-03` returned 200 rows and hit the query cap, so
+  this run does not claim complete all-day inventory. Narrow partitions read 0
+  rows for `2026-07-03T19:36:00Z..19:45:59Z` and 0 rows for
+  `updated:>=2026-07-03T19:46:00Z`. Exact readbacks covered the 3 newest PRs
+  from 19:35, the Mann1988 repaired PR, and the 3 new PRs opened in this run.
+  No conflicts, DCO/CLA blockers, generated-file drift, maintainer comments, or
+  actionable bot findings needed repair. The only new failed check was a
+  SocialPulse Vercel team authorization gate that requires target-owner action.
+- Fresh screening and duplicate gates: compact memory, archive, crawler output,
+  target metadata, target PRs, target issues, local clone scans, and fork
+  parent reads were checked for TweetClaw, tweetclaw, package scope, TweetClaw
+  GitHub URL, npm URL, ClawHub, Xquik, x-twitter-scraper, OpenClaw, and
+  variants. `pourebadi/social-review-curator-agent` was duplicate-blocked by
+  existing issue 1. `RaisingGods/impact.pulse`, `yogitaranwa/SocialScoutOps`,
+  and other fallback social-listening repos were screened but held after 3
+  stronger safe lanes existed. Selected duplicate-clean lanes were
+  `Team-shunya0/Agent-Saad`, `YusufAlper17/Social-Pulse`, and
+  `BrawDeolu/social-scout`; the first and second had MIT metadata and the third
+  had Apache-2.0 metadata.
+- Opened `https://github.com/Team-shunya0/Agent-Saad/pull/1` from verified
+  fork `kriptoburak/Agent-Saad`, branch `codex/add-tweetclaw-source-review`,
+  commit `f0c396e`. The PR adds optional TweetClaw source review for X/Twitter
+  searches, profiles, or monitor exports before mentions enter Agent Saad's
+  alert queue while Agent Saad keeps sentiment scoring, urgency,
+  recommendations, Slack alerts, email alerts, and dashboard tracking. Final
+  readback: open, non-draft, `MERGEABLE`, clean, base `main`, 1 commit, file
+  `README.md`, 0 comments, 0 reviews, 0 checks, and PR body uses plain
+  `burakbayir` with no account URL or GitHub mention.
+- Opened `https://github.com/YusufAlper17/Social-Pulse/pull/1` from verified
+  custom fork `kriptoburak/yusuf-social-pulse`, branch
+  `codex/add-tweetclaw-source-review`, commit `7d27837`. The PR documents
+  TweetClaw source review for X/Twitter searches, profiles, and monitor exports
+  before SocialPulse classifies sentiment and shows analytics. Final readback:
+  open, non-draft, `MERGEABLE`, `UNSTABLE` merge state due only to target-owned
+  Vercel team authorization, base `main`, 1 commit, file `README.md`, 1 Vercel
+  authorization comment, 0 reviews, 1 failing Vercel authorization check, and
+  PR body uses plain `burakbayir` with no account URL or GitHub mention.
+- Opened `https://github.com/BrawDeolu/social-scout/pull/1` from verified fork
+  `kriptoburak/social-scout`, branch `codex/add-tweetclaw-source-review`,
+  commit `ac759bf`. The PR adds an optional source-review section for
+  Twitter/X mentions before they enter Social Scout, while Social Scout keeps
+  keyword tracking, Slack or email alerts, and scheduled reporting. Final
+  readback: open, non-draft, `MERGEABLE`, clean, base `main`, 1 commit, file
+  `README.md`, 0 comments, 0 reviews, 0 checks, and PR body uses plain
+  `burakbayir` with no account URL or GitHub mention.
+- Target validation and public hygiene: all 3 target diffs passed `git diff
+  --check` and added-line scans for em dash, spaced double hyphen, added HTTP
+  links, account URLs, GitHub account mentions, secret placeholders,
+  confidential source wording, pricing mechanics, and private implementation
+  details. `Team-shunya0/Agent-Saad` passed `python3 -m compileall -q app run.py
+  config.py`. `YusufAlper17/Social-Pulse` passed `python3 -m py_compile
+  backend/app.py api/index.py`. `BrawDeolu/social-scout` is README-only and
+  had no source validation runner. No lockfiles, build artifacts, or
+  validation-only files were committed.
+- OpenClaw and link checks: official OpenClaw probes returned HTTP 200 via
+  `curl -L` for `https://openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw 2026.6.11. npm metadata readback returned latest
+  `@xquik/tweetclaw@1.6.31`, repository, homepage, and issue URLs. TweetClaw
+  public link sweep over README, compact audit, and compact release URLs
+  returned HTTP 200 for checked links except the docs root, which Python
+  reported as HTTP error and `curl -L` confirmed as HTTP 200 at
+  `https://docs.xquik.com/api-reference/overview`. Context7 content was not
+  inspected.
+- TweetClaw audit and self-improvement: changed TweetClaw file is this archive
+  only. Pre-existing untracked path `0` was left untouched. `npm run
+  check-memory-md-size` remained 14998/15360 bytes before archive commit, and
+  persisted automation prompt readback measured 14173 bytes. No automation
+  prompt edit was needed. Durable lesson: when a target has deployment checks
+  owned by a maintainer team, record the check as target-owner authorization if
+  local validation and docs-only review passed; do not treat it as a repairable
+  code failure.
+
 ### 2026-07-03 19:35 UTC RSS Source Check PRs
 
 - Model/speed/effort limitation: this runtime did not expose Codex 5.5 Fast
