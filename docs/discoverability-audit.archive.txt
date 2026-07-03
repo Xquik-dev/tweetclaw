@@ -32,6 +32,11 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   `zocomputer/skills#96`, and `zocomputer/skills#95`. All 6 were patched to the
   required first-person optional visibility note with plain `burakbayir`; readback
   found no malformed X account URL, GitHub account mention, or old handle text.
+  After `nalediym/x-to-skill#1` opened, the Codex GitHub connector left an
+  actionable P2 review about the README owner fix not updating `install.sh`.
+  Pushed follow-up commit `3b9b83f` to update both stale owner references in
+  `install.sh` and posted technical reply
+  `https://github.com/nalediym/x-to-skill/pull/1#issuecomment-4879509040`.
   `Aditya923-c/xpoz-agent-skills#1` remains dirty/conflicting after prior
   wording repair; repeated upstream README churn still leaves no safe minimal
   Xquik-only repair in this run.
@@ -58,15 +63,19 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   Added optional TweetClaw public source evidence to `x-to-skill` README.md and
   SKILL.md while keeping x-to-skill responsible for extraction, artifact type,
   checkpoints, and install; also corrected stale `naledi` install URLs to
-  `nalediym` after link checks returned 404 for the old owner and 200 for the
-  current owner. Added optional TweetClaw context to `x-shot-skill` README.md,
-  README.zh-CN.md, and SKILL.md while keeping x-shot responsible for opening the
-  tweet, choosing the screenshot engine, and producing PNG output.
+  `nalediym` in README.md and `install.sh` after link checks returned 404 for
+  the old owner and 200 for the current owner. Added optional TweetClaw context
+  to `x-shot-skill` README.md, README.zh-CN.md, and SKILL.md while keeping
+  x-shot responsible for opening the tweet, choosing the screenshot engine, and
+  producing PNG output.
 - PR readbacks: all 3 new PRs are open, ready, mergeable, `CLEAN`, authored by
-  `kriptoburak`, headed from `kriptoburak:codex/tweetclaw-source-context`, and
-  have no comments, reviews, or check rows at readback. Changed target files
-  were 2 files in `video-downloader-skill`, 2 in `x-to-skill`, and 3 in
-  `x-shot-skill`.
+  `kriptoburak`, and headed from
+  `kriptoburak:codex/tweetclaw-source-context`. `video-downloader-skill#1` and
+  `x-shot-skill#1` have no comments, reviews, or check rows. `x-to-skill#1`
+  now has 2 commits, 1 addressed Codex review row, 1 technical follow-up
+  comment, no check rows, and no stale outreach wording in body or comments.
+  Changed target files were 2 files in `video-downloader-skill`, 3 in
+  `x-to-skill`, and 3 in `x-shot-skill`.
 - Validation: target `git diff --check` and cached diff checks passed for all 3
   repos. Added-line scans found no em dash, spaced double-hyphen, malformed
   outreach handle, restricted-source wording, private-cost wording, or
