@@ -1357,6 +1357,7 @@ blockers remain unchanged, so no release or ClawHub publish was attempted.
 
 Release-adjacent checks ran after PR inventory, one maintainer-question reply,
 and external PR https://github.com/ayush-oswal/twitter-automation/pull/1.
+
 Official OpenClaw docs are currently live on `docs.openclaw.ai`: llms, CLI
 plugins, plugin manifest, CLI skills, plugin-system, SDK runtime, debugging,
 and ClawHub publishing routes returned HTTP 200. Old `openclaw.ai` deep docs
@@ -3109,6 +3110,37 @@ manifest, release gate, or publish state changed.
   `2026.5.19-alpha.1`; `clawhub` `0.23.1`. Full and omit-dev npm audits found
   0 vulnerabilities. `npm run check-openclaw-platform-fitness` and `npm run
   check-package-artifact` passed. No package metadata changed.
+
+## 2026-07-03 01:43 UTC Release And Platform Recheck
+
+- Runtime selector: current runtime exposed no model, speed, or effort selector,
+  so Codex 5.5 Fast mode and extra-high reasoning could not be verified.
+- Official OpenClaw docs returned HTTP 200 for `llms.txt`, `llms-full.txt`,
+  `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/community`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-runtime`, `/plugins/install-overrides`, `/clawhub`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`, and the
+  raw `openclaw/openclaw` CLI plugin reference.
+- Package metadata stayed unchanged: `@xquik/tweetclaw` npm latest `1.6.31`;
+  source remains `1.6.32` and unpublished; `openclaw` latest `2026.6.11`,
+  beta `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`; `clawhub` `0.23.1`.
+- Full and omit-dev npm audits found 0 vulnerabilities.
+- `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+- `npm run check-package-artifact` passed with 61 files.
+- Public link checks passed for README, OpenClaw setup, agent workflows,
+  compact audit, compact release memory, packaged skill, and skill card.
+- Direct URL checks returned HTTP 200 for TweetClaw GitHub, ClawHub TweetClaw
+  redirect, OpenClaw Directory, and the 3 external PRs opened in this
+  heartbeat:
+  https://github.com/Sameeksha288/Twitter-Sentiment-Analysis/pull/1,
+  https://github.com/syedaareeba20/Tweets-Sentiments-Analysis/pull/1, and
+  https://github.com/09gauravbisht/Coronavirus-Tweet-Sentiment-Analysis/pull/1.
+- Memory and prompt readbacks: initial compact Markdown memory size was 14975
+  of 15360 bytes; persisted automation TOML size was 13514 bytes; parsed prompt
+  payload size was 13180 bytes. Prompt text was unchanged because the archive
+  captured the useful CSV-lane and blocker lesson without needing prompt edits.
 - 2026-07-03 01:20 UTC: OpenClaw and release hygiene rechecked during the
   TweetClaw outreach heartbeat. Official docs returned HTTP 200 for `llms.txt`,
   `llms-full.txt`, `/plugins/manage-plugins`, `/plugins/manifest`,
