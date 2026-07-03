@@ -60725,6 +60725,94 @@ Self-improvement:
   before drafting edits and treat maintainer-only author impersonation rules as
   external PR blockers, not instructions to spoof authorship.
 
+### 2026-07-03 19:09 UTC Agent Scheduler Source Context PRs
+
+- Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast
+  mode, speed selection, or explicit extra-high reasoning controls. Continued
+  and recorded the limitation.
+- Complete PR inventory method: crawler-first discovery ran from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260703T1909/fresh.json`, bounded timeouts,
+  concurrency 8, and focused coverage for TweetClaw, Xquik, OpenClaw, ClawHub,
+  MCP, SKILL.md, `.agents/skills`, skills dirs, Codex, Claude, agent skill,
+  social media, Twitter/X automation, content calendar, n8n, scheduler,
+  analytics, examples, validators, package tooling, and docs lanes. The crawler
+  returned 8 opportunities and no parsed crawler errors. Direct
+  `Xquik-dev/xquik` issue read returned no open issues. Authored open-PR
+  partitions read `updated:>=2026-07-03` at 200 rows and capped,
+  `2026-07-03T18:55:00Z..19:09:59Z` at 0 rows, and
+  `updated:>=2026-07-03T19:10:00Z` at 0 rows, so this run does not claim a
+  complete all-day inventory. Exact readbacks covered the 9 newest
+  audit-tracked Xquik visibility PRs from 18:30, 18:43, and 18:54; all were
+  open, ready, `MERGEABLE`, and had no maintainer comments, conflicts,
+  DCO/CLA blockers, generated-file drift, failing checks, or valid bot findings
+  requiring repair. The only review was the previously recorded standard
+  automated Codex commented review on
+  `aashishbharti04/autonomous-social-media-agent#1`, with no suggestions.
+- Fresh screening and duplicate gates: compact memory, archive, crawler output,
+  target metadata, fork state, local target scans, target PRs, and target issues
+  were checked for TweetClaw, tweetclaw, package scope, TweetClaw GitHub URL,
+  npm URL, ClawHub, Xquik, x-twitter-scraper, OpenClaw, and variants. Crawler
+  candidate `ndesv21/socialclaw` was duplicate-blocked by prior TweetClaw PR
+  history. `xroad-studio/xroad-studio-agent` was re-evaluated after an older
+  missing-license hold and selected because missing license metadata alone does
+  not block a direct docs PR. Additional duplicate-clean fresh candidates
+  included `syed-reza98/SMCM`, `CatSatOK/trinops-marketing-scheduler`,
+  `Mayur-00/OncePost-Api`, `andr5579/multi-platform-social-autoposting`,
+  `b2bvic/social-poster`, and `lakshmanna566/socialsync-ai`; Xroad, SMCM, and
+  Trinops were selected as the strongest immediate source-context lanes.
+- Opened `https://github.com/xroad-studio/xroad-studio-agent/pull/1` from
+  correctly parented fork `kriptoburak/xroad-studio-agent`, branch
+  `codex/add-xquik-source-context`, commit `dae9fe0`. The PR adds optional
+  TweetClaw from Xquik source context to the README and agent skill while
+  keeping Xroad Studio responsible for connected accounts, media hosting, post
+  creation, scheduling, edits, cancellations, and analytics. Final readback:
+  open, non-draft, `MERGEABLE`, clean merge state, base `main`, 1 commit, files
+  `README.md` and `agent-skills.md`, 0 comments, 0 reviews, 0 checks, PR body
+  uses the plain account name only and no account URL or GitHub mention.
+- Opened `https://github.com/syed-reza98/SMCM/pull/2` from correctly parented
+  fork `kriptoburak/SMCM`, branch `codex/add-xquik-source-context`, commit
+  `6b5e13f`. The PR documents optional TweetClaw source context for Twitter/X
+  campaign briefs while SMCM remains responsible for scheduling, approval
+  workflows, connected accounts, publishing, analytics, and reports. Final
+  readback: open, non-draft, `MERGEABLE`, clean merge state, base `main`, 1
+  commit, file `README.md`, 0 comments, 0 reviews, 0 checks, PR body uses the
+  plain account name only and no account URL or GitHub mention.
+- Opened `https://github.com/CatSatOK/trinops-marketing-scheduler/pull/1` from
+  correctly parented fork `kriptoburak/trinops-marketing-scheduler`, branch
+  `codex/add-xquik-source-evidence`, commit `54e385d`. The PR adds optional
+  TweetClaw source evidence notes before campaigns enter the queue while
+  Trinops keeps ownership of campaign storage, platform adapters, retries, and
+  final publish status. Final readback: open, non-draft, `MERGEABLE`,
+  `UNSTABLE` merge state with no visible checks, base `main`, 1 commit, file
+  `README.md`, 0 comments, 0 reviews, 0 checks, PR body uses the plain account
+  name only and no account URL or GitHub mention.
+- Target validation and public hygiene: all three target diffs passed `git diff
+  --check` and added-line scans for em dash, spaced double hyphen, account URLs,
+  GitHub account mentions, secret placeholders, confidential source wording,
+  pricing mechanics, and private implementation details. The target changes are
+  docs-only and add no HTTP links, so no target lockfiles, build artifacts, or
+  validation-only files were committed.
+- OpenClaw and link checks: official OpenClaw probes returned HTTP 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw 2026.6.11. npm
+  metadata readback returned latest `@xquik/tweetclaw@1.6.31`, repository,
+  homepage, and issue URLs. TweetClaw public link sweep over README, compact
+  audit, and compact release URLs returned HTTP 200 for checked links except
+  the docs root, which Python reported as HTTP 308 and `curl -L` confirmed as
+  HTTP 200 at `https://docs.xquik.com/api-reference/overview`. Context7 content
+  was not inspected.
+- TweetClaw audit and self-improvement: changed TweetClaw file is this archive
+  only. Pre-existing untracked path `0` was left untouched. `npm run
+  check-memory-md-size` stayed at 14998/15360 bytes, prompt readback measured
+  13833 bytes, and no automation prompt edit was needed. Durable lesson for
+  future runs: missing license metadata alone must not block direct docs PRs
+  when target policy, duplicate, safety, fork, and validation gates pass, and
+  agent-scheduler skill repos can accept TweetClaw as optional reviewed source
+  context while keeping the target scheduler in control.
+
 ### 2026-07-03 18:54 UTC Scheduler Source Evidence PRs
 
 - Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast mode,
