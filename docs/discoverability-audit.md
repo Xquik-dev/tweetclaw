@@ -189,24 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 05:16 UTC: runtime selector unavailable. Prompt text measured
-  13656 bytes and preserves Xquik focus plus first-person `x.com/burakbayir`
-  PR wording. Crawler JSON for authored PR, skill, and fresh lanes was valid
-  but empty after managed-proxy socket failures. Full archive PR exact-read was
-  stopped after stalling; broad `gh search prs` then hit GitHub secondary rate
-  limits, so repair checks used exact known Xquik PR reads only.
-- Latest exact known Xquik PR reads were OPEN/MERGEABLE with no repair needed:
-  `Manirider/Twitter-Sentiment-Bert#1`,
-  `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`,
-  `YashSerai/clearfeed-twitter-x-dashboard#1`,
-  `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
-  `rockywuest/community-scout#1`, and
-  `jimmc414/claude-code-plugin-marketplace#3`.
-- Opened and exact-read OPEN/MERGEABLE Xquik PRs:
-  `nikopastore/scalepilot-autopost#1`, `kooui/x-tweet-scraper#1`, and
-  `reizto/x-automation-with-agent#1`. All bodies use first-person
-  `x.com/burakbayir` wording. OpenClaw docs probes and TweetClaw public link
-  checks passed; full validation and blockers are in the archive.
+- 2026-07-03 05:37 UTC: runtime selector unavailable. Xquik crawler strict JSON
+  returned PR-monitor 0, skill-coverage 0, and fresh-target 62 opportunities.
+  Broad `gh search prs` partitions hit GitHub secondary limits after
+  crawler-first reads, so no exhaustive all-open PR claim. Exact-read 9 known
+  active Xquik PRs plus 3 new PRs; all were open or mergeable with no repair.
+- Opened 3 fresh mergeable Xquik PRs from verified `kriptoburak` forks:
+  `SankeerthBoddu/n8n-marketing-workflows#1`,
+  `HANG939/signal-watcher#1`, and `danbirker-svg/x-growth-os#1`. All PR bodies
+  use first-person `x.com/burakbayir` wording and no third-person repost text.
+- Fresh screens also covered `NormanSamsudin/n8n-automation-beginner`,
+  `Kensuke-sam/twitter-ai-agent`, `collectivewinca/ve-twini`,
+  `Yash7426/SuperSonic`, and other crawler lanes. Archive has duplicate,
+  policy, validation, link-blocker, prompt-byte, and self-improvement details.
 
 ## Reporting Checklist
 

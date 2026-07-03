@@ -59504,6 +59504,123 @@ Self-improvement:
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
 
+## Heartbeat 2026-07-03 05:37 UTC
+
+- Runtime and prompt: model, Fast speed, and extra-high effort selectors were
+  not exposed in this runtime. Prompt text measured 13656 bytes and already
+  preserved the Xquik-primary scope plus first-person `x.com/burakbayir` PR
+  wording, so no persisted prompt edit was needed.
+- Starting state: TweetClaw `master` was at `a9067d3`, matching `origin/master`,
+  with only pre-existing untracked path `0`; Xquik had unrelated user changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, which were not touched.
+- Crawler-first coverage from `/Users/burak/Developer/xquik` used strict JSON,
+  research proxy, bounded timeouts, focused PR-monitor, skill-coverage, and
+  fresh-target query packs, no GitHub tokens, and output directory
+  `/tmp/tweetclaw-heartbeat-20260703-0537`. Parsed counts were:
+  `pr-monitor.json` 0 opportunities, `skill-coverage.json` 0 opportunities, and
+  `fresh-targets.json` 62 opportunities. Skill coverage included SKILL.md,
+  `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X,
+  awesome-list, registry, fork, and generated-catalog lanes.
+- PR inventory and repair: exact-read known active Xquik visibility PRs
+  `nikopastore/scalepilot-autopost#1`, `kooui/x-tweet-scraper#1`,
+  `reizto/x-automation-with-agent#1`,
+  `Manirider/Twitter-Sentiment-Bert#1`,
+  `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`,
+  `YashSerai/clearfeed-twitter-x-dashboard#1`,
+  `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+  `rockywuest/community-scout#1`, and
+  `jimmc414/claude-code-plugin-marketplace#3`. All were open and mergeable
+  with no actionable maintainer comments, review requests, DCO/CLA blockers,
+  conflicts, generated-file drift, or failing checks visible in exact readback.
+  No generic non-Xquik repair was attempted.
+- Broad authenticated PR search partitions for `Xquik`, `TweetClaw`,
+  `x-twitter-scraper`, and `social media` hit GitHub secondary rate limits
+  after crawler-first monitoring. This run therefore does not claim an
+  exhaustive all-open PR inventory; it continued with crawler output, exact PR
+  reads, exact target REST reads, local clones, and fork metadata.
+- Fresh screening: compact audit and archive duplicate searches plus exact
+  target open/closed PR and issue reads covered TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, ClawHub, repo and
+  package URLs, and variants. Duplicate-clean, non-archived candidates included
+  `NormanSamsudin/n8n-automation-beginner`, `Kensuke-sam/twitter-ai-agent`,
+  `SankeerthBoddu/n8n-marketing-workflows`, `HANG939/signal-watcher`,
+  `danbirker-svg/x-growth-os`, and `collectivewinca/ve-twini`. Prior-history
+  blockers included `blacktwist/social-media-skills`,
+  `NachaFromMars/social-media-agent`, `thalesholleben/x-publisher`, and
+  `YusufSizmaz/social-agent-ai`. `Yash7426/SuperSonic` was held as
+  trading-adjacent, and `Pragyan2027/Auto_Bidding-Bot` was held because the job
+  automation lane could read as spam-adjacent.
+- Selected safe lanes and policies:
+  - `SankeerthBoddu/n8n-marketing-workflows`: public, non-archived,
+    issue-enabled, no duplicate history, missing license metadata only, no
+    contribution policy found. Target-native value was an optional Xquik HTTP
+    credential and review-first source pattern for n8n workflows.
+  - `HANG939/signal-watcher`: public, non-archived, MIT, issue-enabled, no
+    duplicate history. CONTRIBUTING allows new monitor modules, asks for
+    `bash scripts/check.sh`, README updates, and `.env.example` updates.
+  - `danbirker-svg/x-growth-os`: public, non-archived, MIT, issue-enabled, no
+    duplicate history. No contribution policy was found. Target-native value was
+    an optional Xquik upstream evidence source for the existing discover and
+    engage review workflow.
+- New PR 1: opened
+  https://github.com/SankeerthBoddu/n8n-marketing-workflows/pull/1 from
+  verified fork `kriptoburak/n8n-marketing-workflows`, branch
+  `codex/add-xquik-source-pattern`, commit `e1180d4`. Changed `README.md` and
+  `credentials/credentials-template.md` to add optional Xquik source
+  credentials, tweet-search source flow, draft and compose endpoint references,
+  and explicit Google Sheets approval retention. Validation: `git diff --check`
+  and `npx --yes markdown-link-check README.md credentials/credentials-template.md --quiet`
+  passed.
+- New PR 2: opened https://github.com/HANG939/signal-watcher/pull/1 from
+  verified fork `kriptoburak/signal-watcher`, branch
+  `codex/add-xquik-events-monitor`, commit `c0f98d6`. Changed `.env.example`,
+  `README.md`, `examples/config.example.yaml`,
+  `src/signal_watcher/watchers/__init__.py`,
+  `src/signal_watcher/watchers/xquik_events.py`, and
+  `tests/test_xquik_events.py` to add an `xquik_events` monitor that polls
+  `GET /api/v1/events` with `X-API-Key`, stores seen event IDs, and emits
+  notifications through the existing dispatcher. Validation:
+  `python3 -m py_compile src/signal_watcher/watchers/xquik_events.py`,
+  `python3 -m pytest`, `bash scripts/check.sh`, and `git diff --check` passed.
+  Markdown link check on handled files reported pre-existing target-owned
+  failures only: templated RSSHub URL 404 and DMIT stock page 403.
+- New PR 3: opened https://github.com/danbirker-svg/x-growth-os/pull/1 from
+  verified fork `kriptoburak/x-growth-os`, branch
+  `codex/add-xquik-source-docs`, commit `d7f1eb8`. Changed `README.md` to add
+  an optional Xquik source workflow that saves tweet-search JSON under
+  `~/.xgrowth/sources` while keeping X Growth OS as the review and draft layer,
+  not a publish shortcut. Validation: `git diff --check` and
+  `COLUMNS=200 python3 -m pytest` passed. Full markdown link check reported the
+  pre-existing `https://github.com/danbirker-svg/xurl` 404; rerun with that
+  target-owned 404 ignored passed, and the protected Xquik endpoint returned
+  HTTP 402 without an API key as expected.
+- Exact new-PR readback after creation: all 3 PRs are OPEN, MERGEABLE,
+  non-draft, have no comments, reviews, or checks yet, and have verified
+  `kriptoburak` forks with correct parents. All PR bodies contain first-person
+  `x.com/burakbayir` wording and no third-person repost or GitHub-linked handle
+  wording.
+- Public hygiene: target diffs and PR bodies were checked for secrets, private
+  implementation details, restricted provider names, internal cost mechanics,
+  unsupported claims, stale metadata, third-person repost wording, and
+  GitHub-linked X/Twitter handle links. Findings were placeholders or existing
+  credential guidance only. No secret values were printed or committed.
+- Official docs: OpenClaw probes returned HTTP 200 for `llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging`. No OpenClaw compatibility, manifest, approval behavior,
+  package metadata, release gate, or packaged skill surface changed.
+- Prompt self-improvement: durable lesson recorded here and compactly above:
+  keep PR outreach first-person from the `burakbayir` account, use
+  `x.com/burakbayir`, and treat maintainer sharing as optional target-repo
+  visibility support, not a merge condition. No automation prompt file changed
+  because the active prompt already encoded that rule within the 15 KiB cap.
+- TweetClaw validation before commit: public link checks passed for README,
+  OpenClaw setup, agent workflows, compact audit, and compact release memory.
+  `npm run check-memory-md-size` reported 15149/15360 bytes. `npm run check:all`
+  passed typecheck, lint, copy-paste detection, knip, suppression, dash, memory,
+  skill frontmatter, version, build, OpenClaw fitness, package artifact, and
+  coverage gates with 168 tests and 100% coverage.
+
 ## 2026-07-03 05:16 UTC Xquik visibility heartbeat
 
 - Runtime selector: model, Fast mode, and extra-high reasoning controls were
