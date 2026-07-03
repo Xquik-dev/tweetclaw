@@ -60725,6 +60725,96 @@ Self-improvement:
   before drafting edits and treat maintainer-only author impersonation rules as
   external PR blockers, not instructions to spoof authorship.
 
+### 2026-07-03 19:17 UTC Queue Source Context PRs
+
+- Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast
+  mode, speed selection, or explicit extra-high reasoning controls. Continued
+  and recorded the limitation.
+- Complete PR inventory method: crawler-first discovery ran from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260703T1917/fresh.json`, bounded timeouts,
+  concurrency 8, and focused coverage for TweetClaw, Xquik, OpenClaw, ClawHub,
+  MCP, SKILL.md, `.agents/skills`, skills dirs, Codex, Claude, social media,
+  Twitter/X automation, campaign managers, content repurposing, n8n, publisher
+  queues, dashboards, examples, validators, package tooling, and docs lanes.
+  The crawler returned 4 opportunities and no parsed crawler errors. Direct
+  `Xquik-dev/xquik` issue read returned no open issues. Authored open-PR
+  partitions read `updated:>=2026-07-03` at 200 rows and capped,
+  `2026-07-03T19:10:00Z..19:17:59Z` at 0 rows, and
+  `updated:>=2026-07-03T19:18:00Z` at 0 rows, so this run does not claim a
+  complete all-day inventory. Exact readbacks covered the 9 newest
+  audit-tracked Xquik visibility PRs from 18:43, 18:54, and 19:09; all were
+  open, ready, and `MERGEABLE`. `CatSatOK/trinops-marketing-scheduler#1`
+  remained mergeable with `UNSTABLE` merge state and no visible checks. The only
+  review was the previously recorded standard automated Codex commented review
+  on `aashishbharti04/autonomous-social-media-agent#1`, with no suggestions.
+  No maintainer comments, conflicts, DCO/CLA blockers, generated-file drift,
+  failing checks, or valid bot findings needed repair. Non-Xquik blockers were
+  skipped as out of focus.
+- Fresh screening and duplicate gates: compact memory, archive, crawler output,
+  target metadata, fork state, local target scans, target PRs, and target issues
+  were checked for TweetClaw, tweetclaw, package scope, TweetClaw GitHub URL,
+  npm URL, ClawHub, Xquik, x-twitter-scraper, OpenClaw, and variants.
+  `JuneYaooo/awesome-ai-media-skills` was duplicate-blocked by an existing open
+  PR and existing listings. `enescingoz/awesome-n8n-templates` was
+  duplicate-blocked by merged Xquik PR 138 and closed OpenClaw history.
+  `aptratcn/skill-social-growth` is archived. Fresh duplicate-clean lanes
+  included `b2bvic/social-poster`, `Mayur-00/OncePost-Api`,
+  `andr5579/multi-platform-social-autoposting`, and
+  `lakshmanna566/socialsync-ai`; the first three were selected as the strongest
+  queue and publisher source-context lanes.
+- Opened `https://github.com/b2bvic/social-poster/pull/1` from correctly
+  parented fork `kriptoburak/social-poster`, branch
+  `codex/add-tweetclaw-source-context`, commit `eafc882`. The PR adds optional
+  TweetClaw source context fields for JSONL queue items while social-poster
+  keeps responsibility for queue processing, platform dispatch, status updates,
+  and retries. Final readback: open, non-draft, `MERGEABLE`, clean merge state,
+  base `main`, 1 commit, file `README.md`, 0 comments, 0 reviews, 0 checks, PR
+  body uses the plain account name only and no account URL or GitHub mention.
+- Opened `https://github.com/Mayur-00/OncePost-Api/pull/1` from correctly
+  parented fork `kriptoburak/OncePost-Api`, branch
+  `codex/add-xquik-source-context`, commit `6f365ef`. The PR documents optional
+  TweetClaw source context before posts enter the OncePost queue while OncePost
+  keeps ownership of OAuth, media upload, background workers, per-platform
+  state, retries, and final publishing. Final readback: open, non-draft,
+  `MERGEABLE`, clean merge state, base `main`, 1 commit, file `README.md`, 0
+  comments, 0 reviews, 0 checks, PR body uses the plain account name only and no
+  account URL or GitHub mention.
+- Opened
+  `https://github.com/andr5579/multi-platform-social-autoposting/pull/1` from
+  correctly parented fork `kriptoburak/multi-platform-social-autoposting`,
+  branch `codex/add-xquik-source-context`, commit `1cd3876`. The PR adds
+  optional TweetClaw source columns for Google Sheets publishing rows while the
+  workflow keeps responsibility for scheduled-row selection, media upload,
+  caption generation, Blotato publishing, and per-platform status updates.
+  Final readback: open, non-draft, `MERGEABLE`, clean merge state, base `main`,
+  1 commit, file `README.md`, 0 comments, 0 reviews, 0 checks, PR body uses the
+  plain account name only and no account URL or GitHub mention.
+- Target validation and public hygiene: all three target diffs passed `git diff
+  --check` and added-line scans for em dash, spaced double hyphen, added links,
+  account URLs, GitHub account mentions, secret placeholders, confidential
+  source wording, pricing mechanics, and private implementation details. The
+  target changes are docs-only and add no HTTP links, so no target lockfiles,
+  build artifacts, or validation-only files were committed.
+- OpenClaw and link checks: official OpenClaw probes returned HTTP 200 for
+  `https://openclaw.ai/llms.txt`, `https://docs.openclaw.ai/llms.txt`,
+  `https://docs.openclaw.ai/cli/plugins`, and
+  `https://docs.openclaw.ai/skills`. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw 2026.6.11. npm
+  metadata readback returned latest `@xquik/tweetclaw@1.6.31`, repository,
+  homepage, and issue URLs. TweetClaw public link sweep over README, compact
+  audit, and compact release URLs returned HTTP 200 for checked links except
+  the docs root, which Python reported as HTTP 308 and `curl -L` confirmed as
+  HTTP 200 at `https://docs.xquik.com/api-reference/overview`. Context7 content
+  was not inspected.
+- TweetClaw audit and self-improvement: changed TweetClaw file is this archive
+  only. Pre-existing untracked path `0` was left untouched. `npm run
+  check-memory-md-size` stayed at 14998/15360 bytes, prompt readback measured
+  13833 bytes, and no automation prompt edit was needed. Durable lesson for
+  future runs: queue-first social posting tools are good Xquik visibility lanes
+  when TweetClaw is documented as review metadata beside queued rows, not as a
+  replacement for the target's own dispatch, worker, retry, or status system.
+
 ### 2026-07-03 19:09 UTC Agent Scheduler Source Context PRs
 
 - Model/speed/effort limitation: the runtime did not expose Codex 5.5 Fast
