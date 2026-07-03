@@ -189,20 +189,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 02:56 UTC: runtime selector unavailable; prompt updated with the
-  optional `@burakbayir` post-merge X/Twitter PR-body note and measured 13465
-  bytes. Crawler JSON counts were 1, 0, and 0 after proxy failures; broad
-  authenticated PR search hit GitHub secondary rate limits; exact inventory read
-  60 PR URLs and found no new Xquik-visibility repair.
-- Fresh duplicate-clean PRs opened and exact-read OPEN, ready, and MERGEABLE:
-  `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel#1`,
-  `anzelafiadha/Brand-Reputation-Sentiment-Analysis#1`, and
-  `hasannjaffal/tweets-processing#1`. All PR bodies include the optional
-  X/Twitter sharing note. Full record is in the archive.
-- Public checks: target compile and smoke tests passed, target README links
-  passed except a pre-existing LinkedIn 429 in the brand repo, OpenClaw docs
-  route probes returned HTTP 200, no OpenClaw compatibility changed, and
-  TweetClaw `npm run check:all` passed.
+- 2026-07-03 03:20 UTC: runtime selector unavailable; prompt already contained
+  Xquik-only focus plus the optional `@burakbayir` X/Twitter PR note and
+  measured 13501 bytes. Crawler JSON counts were 1, 0, and 0 after proxy
+  socket/quarantine failures; exact inventory read 80 audit PR URLs, found 77
+  open, and flagged 7. Krishan conflict repair commit `6288e98` pushed to the
+  fork branch, but the old PR stayed `CONFLICTING` at `dcdfcee` because the fork
+  parent now points elsewhere.
+- Fresh duplicate-clean PRs opened and exact-read OPEN/MERGEABLE with the
+  optional X/Twitter note: `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+  `Swastika2401/Social-Media-Sentiment-Analysis#5`, and
+  `Tanish-og/CREW_AI#1`. `Mynk724/financial-news-sentimental-analysis` was too
+  empty for useful target-native value. Full record is in the archive.
+- Public checks: target compile/smoke/diff checks passed; Ronit and Tanish link
+  checks passed, while Swastika had only a pre-existing localhost link.
+  OpenClaw core docs probes returned HTTP 200 with optional guessed paths still
+  404; no OpenClaw compatibility changed; TweetClaw final checks passed.
 
 ## Reporting Checklist
 

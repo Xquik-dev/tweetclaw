@@ -59503,7 +59503,104 @@ Self-improvement:
   changed in this run.
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
+- Final validation before commit: `npm run check-memory-md-size` reported
+  15355 of 15360 bytes, TweetClaw Markdown link check passed, public-hygiene
+  diff scan found no sensitive terms, and `npm run check:all` passed including
+  OpenClaw platform fitness, package artifact check, 168 tests, and 100 percent
+  coverage. Final commit and push SHA are reported in the heartbeat output
+  because the SHA cannot be known before this archive entry is committed.
   Final validation: `npm run check-memory-md-size` reported 15116 of 15360
   bytes, TweetClaw Markdown link check passed, and `npm run check:all` passed
   including OpenClaw platform fitness, package artifact check, 168 tests, and
   100 percent coverage.
+
+## 2026-07-03 03:20 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued.
+- Prompt state: persisted prompt already contained the Xquik-visibility focus
+  and optional post-merge X/Twitter sharing note for `@burakbayir`. Prompt byte
+  check read 13501 bytes, below the 15 KiB cap.
+- Crawler-first coverage:
+  - Strict JSON crawler outputs under
+    `/tmp/tweetclaw-heartbeat-20260703-0320`: `pr-monitor.json`,
+    `skill-coverage.json`, and `fresh-targets.json`.
+  - PR monitor produced 1 opportunity. Skill coverage and fresh-target crawls
+    produced 0 usable opportunities after managed-proxy socket failures and
+    endpoint quarantine, so fallback exact reads and clone-backed screening
+    continued. Broad authenticated GitHub search was not retried because the
+    prior run hit secondary limits.
+- PR inventory and repairs:
+  - Compact audit plus archive URLs produced 80 PR URLs for exact reads.
+    Exact readbacks found 77 open PRs and flagged 7 for comments, reviews,
+    checks, or conflicts.
+  - Six flagged PRs were stale Codex reviews, usage-limit notices, clean checks,
+    or already-addressed bot findings. No non-Xquik repair was done.
+  - `krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS#1` remained the only true
+    Xquik-placement conflict. The branch was fetched, upstream `main` was
+    merged, `Django-Dashboard/dashboard/views.py` was resolved to keep the
+    upstream view refactor plus Xquik/TweetClaw CSV batch classification, and
+    `python3 -m py_compile` plus `git diff --check` passed. Repair commit
+    `6288e98` was pushed to `kriptoburak:codex/add-csv-batch-classification`.
+    Exact PR readback still showed stale head `dcdfcee` and
+    `CONFLICTING` because the fork now resolves as
+    `kriptoburak/Real-Time-Twitter-Sentiment-Analysis` with parent
+    `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis`, not
+    `krishan04/REAL-TIME-TWITTER-SENTIMENT-ANALYSIS`. Replacement PR creation
+    was blocked by GitHub because the original PR already exists.
+- Fresh discovery and duplicate gates:
+  - Target content plus open/closed PR and issue reads were checked for
+    TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper,
+    OpenClaw, ClawHub, URLs, and variants.
+  - `Mynk724/financial-news-sentimental-analysis` was public, non-fork, and
+    duplicate-clean but blocked because the only notebook was essentially empty,
+    leaving no useful target-native integration lane.
+  - `Ronit26Mehta/Twitter-Analysis-Dashboard` was selected for a dashboard CSV
+    converter. `Swastika2401/Social-Media-Sentiment-Analysis` was selected for
+    Streamlit batch sentiment upload. `Tanish-og/CREW_AI` was selected for an
+    Xquik/TweetClaw export loader and CrewAI sentiment demo. All were public,
+    non-fork, non-archived, issue-enabled, duplicate-clean, and had no explicit
+    blocking maintainer policy; missing license metadata did not block direct
+    PRs. A pre-existing `kriptoburak/Social-Media-Sentiment-Analysis` fork
+    pointed at a different parent, so a verified unique fork
+    `kriptoburak/Swastika2401-Social-Media-Sentiment-Analysis` was used.
+- Fresh PRs opened:
+  - `Ronit26Mehta/Twitter-Analysis-Dashboard#1`:
+    https://github.com/Ronit26Mehta/Twitter-Analysis-Dashboard/pull/1 from
+    verified fork `kriptoburak/Twitter-Analysis-Dashboard`, branch
+    `codex/add-xquik-tweet-import`, commit `47d051a`. Adds
+    `tools/tweetclaw_to_rakshak.py` to normalize reviewed Xquik/TweetClaw CSV,
+    JSON, and JSONL exports into the raw and analyzed dashboard CSV shapes.
+    Validation: Python compile, sample JSONL conversion, whitespace diff check,
+    README link check, and public-hygiene scan passed.
+  - `Swastika2401/Social-Media-Sentiment-Analysis#5`:
+    https://github.com/Swastika2401/Social-Media-Sentiment-Analysis/pull/5
+    from verified fork
+    `kriptoburak/Swastika2401-Social-Media-Sentiment-Analysis`, branch
+    `codex/add-xquik-batch-analysis`, commit `c0472a7`. Adds Xquik/TweetClaw
+    CSV upload support to the Streamlit classifier, detects common export text
+    fields, displays predictions, and offers a downloadable CSV. Validation:
+    Python compile, whitespace diff check, and public-hygiene scan passed.
+    README link check failed only on the target's pre-existing localhost demo
+    link.
+  - `Tanish-og/CREW_AI#1`:
+    https://github.com/Tanish-og/CREW_AI/pull/1 from verified fork
+    `kriptoburak/CREW_AI`, branch `codex/add-xquik-export-loader`, commit
+    `9578859`. Adds `tweetclaw_export_loader.py`,
+    `run_tweetclaw_export_demo.py`, and `XQUIK_TWEETCLAW_IMPORT.md` so reviewed
+    Xquik/TweetClaw CSV, JSON, and JSONL exports can feed the existing creator
+    sentiment report flow. Validation: Python compile, sample JSONL text-report
+    smoke test, whitespace diff check, import-guide link check, and
+    public-hygiene scan passed. Local PDF generation was skipped because
+    `reportlab` is not installed, which the script handles.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN and MERGEABLE, base
+    `main`, head owner `kriptoburak`, and all PR bodies contain the optional
+    `@burakbayir` X/Twitter sharing note.
+- Official docs and public checks: OpenClaw docs probes returned HTTP 200 for
+  `llms.txt`, CLI plugins, manifest, ClawHub publishing, and debugging. Guessed
+  optional paths for tool plugins, SDK runtime, and install overrides returned
+  404. No OpenClaw compatibility, package metadata, manifest, or release-gate
+  behavior changed in this run.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
