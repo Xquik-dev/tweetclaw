@@ -59692,3 +59692,99 @@ Self-improvement:
   behavior changed in this run.
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
+
+## 2026-07-03 04:11 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued.
+- Prompt state: persisted prompt already contained the Xquik-visibility focus
+  and first-person PR outreach wording. Prompt text measured 13656 bytes, below
+  the 15 KiB cap. The active rule requires `x.com/burakbayir` for X/Twitter
+  mentions, first-person "I can share or repost" wording, and no GitHub-linked
+  handle when referring to X/Twitter.
+- Crawler-first coverage:
+  - Strict JSON crawler outputs under
+    `/tmp/tweetclaw-heartbeat-20260703-0411`: `pr-monitor.json`,
+    `skill-coverage.json`, and `fresh-targets.json`.
+  - PR monitor returned 0 opportunities for authored open Xquik, TweetClaw,
+    and x-twitter-scraper queries. Skill coverage returned 32 opportunities
+    across SKILL.md, OpenClaw, MCP, Codex, Claude, agent, social, and
+    Twitter/X skill lanes. Fresh target coverage returned 15 opportunities for
+    Twitter automation, social analytics, tweet scraper, and X API workflow
+    lanes.
+- PR inventory and repair priority:
+  - Compact audit plus archive URLs produced 1743 unique PR URLs. Exact
+    readbacks succeeded for 1703, with 1445 open, 132 closed, 126 merged, 40
+    inaccessible, 1399 mergeable, 43 conflicting, 3 unknown, and 259 flagged.
+  - Newest flagged PRs included `zernio-dev/zernflow#9`,
+    `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+    `jimmc414/claude-code-plugin-marketplace#3`,
+    `AmeerJ97/mcp-multiplex#2`, and
+    `reall8164/wechat-openclaw-plugin#1`. Non-Xquik repairs were skipped.
+  - `jimmc414/claude-code-plugin-marketplace#3` was a direct Xquik/Hermes
+    visibility PR with a real conflict and stale outreach wording. The fork
+    branch `kriptoburak:codex/add-hermes-tweet-plugin` was fetched, upstream
+    `master` was merged, `catalog.json` was resolved to upstream plus
+    regenerated Hermes Tweet metadata, and commit `601fd9b` was pushed. The PR
+    body now uses first-person `x.com/burakbayir` wording, and repair comment
+    https://github.com/jimmc414/claude-code-plugin-marketplace/pull/3#issuecomment-4872547387
+    records the validation. Exact readback is OPEN and MERGEABLE.
+- Fresh discovery and duplicate gates:
+  - Target content plus open and closed PR and issue reads were checked for
+    TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper,
+    OpenClaw, ClawHub, URLs, and variants.
+  - `Panniantong/Agent-Reach`, `paperfoot/xmaster-cli`,
+    `bravian1/social-agent`, `MikkyPrestige/football-x-agent`, and
+    `labyla/x-search` were blocked by prior TweetClaw or Xquik outreach.
+    `UjjwalSaini07/MCP-Quantum-Server` was blocked by explicit
+    no-contribution wording. Lower-fit or riskier lanes such as
+    `reizto/x-automation-with-agent` and `isaac-rnd/x-research-agent` were not
+    used once 3 safer lanes existed.
+  - Selected safe lanes were `rockywuest/community-scout` (MIT),
+    `Krish01agrawal/motia-ContentCreation-Agent` (missing license metadata, no
+    explicit block), and `agenticloop/Multi-Agentic-Content-Creation-`
+    (Apache-2.0). All were public, non-fork, non-archived, issue-enabled,
+    duplicate-clean, and had verified `kriptoburak` forks.
+- Fresh PRs opened:
+  - `rockywuest/community-scout#1`:
+    https://github.com/rockywuest/community-scout/pull/1 from verified fork
+    `kriptoburak/community-scout`, branch `codex/add-xquik-scout-source`,
+    commit `c07ab57`. Adds optional `XQUIK_EXPORT_FILE` support to parse
+    reviewed Xquik/TweetClaw CSV, JSON, or JSONL exports and include up to 12
+    reviewed X/Twitter rows in the Community Scout report. Validation:
+    `bash -n`, whitespace diff check, README and SKILL link check, and
+    public-hygiene scan passed.
+  - `Krish01agrawal/motia-ContentCreation-Agent#1`:
+    https://github.com/Krish01agrawal/motia-ContentCreation-Agent/pull/1 from
+    verified fork `kriptoburak/motia-ContentCreation-Agent`, branch
+    `codex/add-xquik-twitter-context`, commit `9793693`. Adds optional
+    `XQUIK_CONTEXT_FILE` support for reviewed Xquik/TweetClaw exports and feeds
+    context into the Twitter generation prompt while keeping Typefully as the
+    review and publishing surface. Validation: Python compile, whitespace diff
+    check, README link check, and public-hygiene scan passed.
+  - `agenticloop/Multi-Agentic-Content-Creation-#1`:
+    https://github.com/agenticloop/Multi-Agentic-Content-Creation-/pull/1 from
+    verified fork `kriptoburak/Multi-Agentic-Content-Creation-`, branch
+    `codex/add-xquik-content-context`, commit `7805c9d`. Adds
+    `utils/xquik_context.py`, wires reviewed Xquik/TweetClaw context into the
+    Twitter Agent prompts, and documents `XQUIK_CONTEXT_FILE`. Validation:
+    Python compile, JSONL parser smoke test, whitespace diff check, and
+    public-hygiene scan passed. README link check failed only on pre-existing
+    target-owned `mailto:contact@agenticloop.co` and `http://www.agenticloop.co`
+    links; this PR adds no links.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN and MERGEABLE, head
+    owner `kriptoburak`, and all bodies contain first-person
+    `x.com/burakbayir` outreach wording.
+- Official docs and public checks: OpenClaw docs probes returned HTTP 200 for
+  `llms.txt`, CLI plugins, manifest, ClawHub publishing, and debugging. No
+  OpenClaw compatibility, package metadata, manifest, approval behavior, or
+  release-gate behavior changed in this run. TweetClaw README and public docs
+  link checks passed before commit.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
+- Final validation before commit: `npm run check-memory-md-size` reported
+  15274 of 15360 bytes, TweetClaw Markdown link check passed, public-hygiene
+  diff scan found no sensitive terms, and `npm run check:all` passed including
+  OpenClaw platform fitness, package artifact check, 168 tests, and 100 percent
+  coverage.
