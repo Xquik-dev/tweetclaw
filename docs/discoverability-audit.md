@@ -189,20 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 22:35 UTC: runtime selector unavailable. Two strict JSON crawler
-  packs covered skill and registry lanes and returned 0 opportunities; broad
-  GitHub search later hit a rate limit, so fallback used exact repo reads,
-  local clones, and archive gates.
-- PR inventory read 181 created-today PRs, 16 recently updated PRs, and 3
-  created-window PRs; 16 updated/window PRs were exact-read. Repaired
-  `AmeerJ97/mcp-multiplex#2` for actionable review feedback and patched 7
-  stale visibility comments to current plain `burakbayir` wording.
-- Opened 3 clean, mergeable PRs from verified `kriptoburak` forks:
-  `gcolenstra/mcp_catalog#2`, `JeffreyGarrett/mcp-registry#1`, and
-  `LeonardSibelius/clawmart#1`.
-- Validation, public links, memory size, prompt bytes, screened blockers,
-  pushed commits, and durable self-improvement notes are recorded in the
-  archive.
+- 2026-07-03 23:06 UTC: runtime selector unavailable. Crawler-first skill and
+  catalog packs hit network-egress failures, so fallback used authored PR
+  partitions, exact PR reads, target repo lists, local clones, and archive gates.
+- Inventory read 184 created-today PRs, 20 recently updated PRs, and 3
+  created-window PRs; 20 updated PRs plus current repair and outreach PRs were
+  exact-read. Repaired `Saminiscool/twitter-ai-agent#2` and patched stale
+  `bobmatnyc/claude-mpm-skills#26` visibility wording.
+- Opened 3 clean, mergeable Xquik OpenClaw-directory PRs from verified
+  `kriptoburak` forks: `Kevjade/openclaw-api-list#1`,
+  `daddy-gier/openclaw-api-list#1`, and `cporter202/openclaw-api-list#2`.
+- OpenClaw docs check, duplicate gates, target policy checks, validation,
+  inherited link blockers, memory size, prompt bytes, pushed commits, and
+  durable self-improvement notes are recorded in the archive.
 
 ## Reporting Checklist
 

@@ -61397,6 +61397,117 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-03 23:06 UTC OpenClaw API Directory Outreach
+
+- Runtime selector limitation: this Codex Desktop run still did not expose
+  model, speed, or reasoning-effort selectors, so Codex 5.5 Fast mode and
+  extra-high reasoning could not be explicitly selected. The run continued and
+  recorded the limitation here and in the heartbeat outcome.
+- Crawler-first coverage: ran 2 strict JSON crawler packs from
+  `/Users/burak/Developer/xquik` into
+  `/tmp/tweetclaw-heartbeat-20260703T2306/skill-coverage.json` and
+  `/tmp/tweetclaw-heartbeat-20260703T2306/catalog-coverage.json`. The packs
+  covered open PRs, issues, repos, code, SKILL.md, `.agents/skills`, skills
+  dirs, OpenClaw, MCP, Codex, Claude, agent, social media, Twitter/X skill
+  lanes, awesome lists, registries, forks, generated catalogs, MCP registries,
+  and web-index surfaced skill repos. Both exited 0 but returned empty-shell
+  JSON with `queries: []` and null count fields after network-egress
+  socket-close and proxy quarantine logs. Treated as a crawler platform blocker,
+  not as empty discovery.
+- PR inventory method: fallback inventory used compact audit and archive URLs,
+  crawler outputs, authored open PR partitions, target repo PR and issue lists,
+  exact PR reads, fork metadata, local clones, and `rg`. Authenticated broad
+  partitions read 184 open PRs created on 2026-07-03, 20 open PRs updated since
+  2026-07-03T22:35:00Z, and 3 open PRs created in the 22:36-23:06 window. No
+  GitHub 1000-result cap was hit in those buckets. Because crawler broad
+  discovery failed and the full historical authored backlog was not exact-read,
+  this run does not claim a complete all-open inventory.
+- Exact PR readbacks: exact-read the 20 recently updated PRs plus the current
+  maintainer re-land, repaired PR, and 3 new outreach PRs. Recent in-scope
+  clean PRs included `JeffreyGarrett/mcp-registry#1`,
+  `LeonardSibelius/clawmart#1`, `gcolenstra/mcp_catalog#2`, and
+  `GGROM1/schemantic#1`. `shajith003/awesome-claude-skills#4` was a generic
+  conflicting README fix and out of Xquik-visibility repair focus.
+- Repairs: repaired `Saminiscool/twitter-ai-agent#2` by merging upstream README
+  changes into the exact PR fork `kriptoburak/saminiscool-twitter-ai-agent-xquik`
+  on `codex/add-xquik-backend`. Validation passed `npm ci --ignore-scripts`,
+  `git diff --check`, conflict-marker scan, Prettier check, Biome lint,
+  `npx tsc --noEmit`, `npx vitest run tests/twitter-api.test.ts`, Markdown link
+  check, and public hygiene scan. Pushed commit `2533c51` and posted follow-up:
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4879788790
+- Maintainer-owned repair lane: `bobmatnyc/claude-mpm-skills#34` is the clean
+  maintainer re-land of the Xquik skill, open and blocked only by review/check
+  policy. It supersedes our `#26`, so no forceful repair was appropriate. The
+  stale optional visibility comment on `#26` was patched to the current plain
+  `burakbayir` wording.
+- Fresh screened lanes and blockers: duplicate or policy blockers included
+  `TensorBlock/awesome-mcp-servers`, `cporter202/social-media-scraping-apis`,
+  `blacktwist/social-media-skills`, `cosmicstack-labs/mercury-agent-skills`,
+  `SamurAIGPT/awesome-openclaw`, `tech-leads-club/agent-skills`,
+  `sickn33/antigravity-awesome-skills`, `JSONbored/awesome-claude`,
+  `pathintegral-institute/mcpm.sh`, `toolsdk-ai/toolsdk-mcp-registry`,
+  `public-api-lists/public-api-lists`, `MobileFirstLLC/social-media-hacker-list`,
+  `serenakeyitan/awesome-openclaw-roles`, and several prior VoltAgent, sundial,
+  punkpeye, wong2, and dev-resource lanes already recorded in the archive.
+- Fresh safe targets: screened `Kevjade/openclaw-api-list`,
+  `daddy-gier/openclaw-api-list`, and `cporter202/openclaw-api-list` as newly
+  eligible OpenClaw API directory surfaces. Each target had no compact or
+  archive duplicate, no local `rg` hit for TweetClaw, Xquik, or
+  x-twitter-scraper, no open or closed target PR or issue hit for the same
+  terms, no explicit blocking maintainer policy, and no license metadata. The
+  missing license metadata was not treated as a blocker under the current rule.
+- Fork and parent safety: created verified `kriptoburak` forks
+  `kevajde-openclaw-api-list-xquik`, `daddy-gier-openclaw-api-list-xquik`, and
+  `cporter-openclaw-api-list-xquik`. Parent readbacks matched `Kevjade`,
+  `daddy-gier`, and `cporter202` respectively before push. No Xquik-dev forks
+  were used.
+- External PR 1: https://github.com/Kevjade/openclaw-api-list/pull/1 adds
+  Xquik to `OPENCLAW_RECOMMENDED.md`, bumps the exact curated count from 92 to
+  93, and frames Xquik as an API plus MCP surface for reviewed X/Twitter
+  context, monitoring, drafts, publishing workflows, analytics, and webhooks.
+  Commit pushed to fork: `bfbfec6`. Final readback: open, ready, clean,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, maintainer edits
+  enabled.
+- External PR 2: https://github.com/daddy-gier/openclaw-api-list/pull/1 makes
+  the same target-native Xquik curated-list addition and count bump. Commit
+  pushed to fork: `844311d`. Final readback: open, ready, clean, mergeable,
+  1 commit, 0 comments, 0 reviews, 0 checks, maintainer edits enabled.
+- External PR 3: https://github.com/cporter202/openclaw-api-list/pull/2 adds
+  Xquik to the curated integrations and productivity table as an X/Twitter
+  automation REST API and MCP surface for OpenClaw skills. Commit pushed to
+  fork: `367ef10`. Final readback: open, ready, clean, mergeable, 1 commit,
+  0 comments, 0 reviews, 0 checks, maintainer edits enabled.
+- PR body hygiene: all 3 new PR bodies include the optional first-person
+  visibility note with plain `burakbayir`, no GitHub mention, no X/Twitter
+  account URL, and no third-person wording.
+- Official OpenClaw docs re-check: before OpenClaw-related target edits,
+  checked current official docs for skills, MCP CLI, gateway config, and the
+  2026.6.11 release. Current docs confirm skill install/update patterns,
+  Git/local skill install forms, MCP server management, `~/.openclaw/openclaw.json`
+  config location, and ClawHub skill update safety policy.
+- External validation and link results: all 3 target diffs passed
+  `git diff --check`, conflict-marker scans, and added-line public hygiene scans.
+  `curl -I https://docs.xquik.com` returned 308 to `/api-reference/overview`;
+  `curl -I https://docs.xquik.com/api-reference/overview` returned 200.
+  Full target Markdown link checks found only inherited target-owned Apify 404s:
+  6 in the Kevjade and daddy-gier files and 1 in the cporter202 file. No new
+  broken Xquik link was introduced.
+- TweetClaw audit changes: updated `docs/discoverability-audit.md` compact
+  latest-run pointer and appended this full archive record. `docs/clawpack-release.md`
+  was unchanged. Existing untracked `0` in the TweetClaw worktree was preserved.
+- Markdown memory: after the compact edit, `npm run check-memory-md-size` passed
+  at 15127/15360 bytes. Raw sizes were `docs/discoverability-audit.md` 11184
+  bytes and `docs/clawpack-release.md` 3943 bytes.
+- Prompt self-improvement: no persisted prompt edit was needed. Decoded
+  automation prompt size was 13833 bytes, under the 15 KiB cap. Durable lessons:
+  missing license metadata alone permits direct PRs, same-named OpenClaw API
+  directory forks should use custom `kriptoburak` fork names, empty-shell crawler
+  JSON after egress failures must be recorded as a platform blocker, and
+  OpenClaw API directory rows should target curated lists rather than generated
+  bulk category files.
+- TweetClaw commit and push: this audit update is the only TweetClaw change for
+  the run; the run commits and pushes it to `master` after local gates pass.
+
 ### 2026-07-03 18:10 UTC X Skill Source Queue PRs
 
 - Runtime selector limitation: Codex Desktop still did not expose model, speed,
