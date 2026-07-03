@@ -189,19 +189,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 05:37 UTC: runtime selector unavailable. Xquik crawler strict JSON
-  returned PR-monitor 0, skill-coverage 0, and fresh-target 62 opportunities.
-  Broad `gh search prs` partitions hit GitHub secondary limits after
-  crawler-first reads, so no exhaustive all-open PR claim. Exact-read 9 known
-  active Xquik PRs plus 3 new PRs; all were open or mergeable with no repair.
+- 2026-07-03 06:07 UTC: runtime selector unavailable. Xquik crawler strict JSON
+  returned PR-monitor 0, skill-coverage 72, and fresh-target 79 opportunities.
+  Focused authored-PR search returned no extra rows. Exact-read 16 known or new
+  Xquik PRs; `Ronit26Mehta/Twitter-Analysis-Dashboard#1` merged, the rest were
+  open and mergeable.
+- Repaired `nikopastore/scalepilot-autopost#1` for real Xquik `trends`
+  payloads in `311643b` and updated `ythx-101/x-tweet-fetcher#73` PR body with
+  first-person `x.com/burakbayir` wording.
 - Opened 3 fresh mergeable Xquik PRs from verified `kriptoburak` forks:
-  `SankeerthBoddu/n8n-marketing-workflows#1`,
-  `HANG939/signal-watcher#1`, and `danbirker-svg/x-growth-os#1`. All PR bodies
-  use first-person `x.com/burakbayir` wording and no third-person repost text.
-- Fresh screens also covered `NormanSamsudin/n8n-automation-beginner`,
-  `Kensuke-sam/twitter-ai-agent`, `collectivewinca/ve-twini`,
-  `Yash7426/SuperSonic`, and other crawler lanes. Archive has duplicate,
-  policy, validation, link-blocker, prompt-byte, and self-improvement details.
+  `erp-linker/n8n-workflows#2`, `notrealaman/X-Automation-N8N#1`, and
+  `enescingoz/n8n-twitter-thread-fetcher#1`. All PR bodies use first-person
+  `x.com/burakbayir` wording and no third-person repost text.
+- Fresh screens also covered `ythx-101/x-tweet-fetcher` duplicate-blocked by
+  PR 73, `visiosoft/n8n-twitter-thread-fetcher`, `WestphalJonas/x-bot`,
+  `KoaChu/twitter_monitor`, and archived or lower-fit lanes. Archive has
+  duplicate, policy, validation, link-blocker, prompt-byte, and
+  self-improvement details.
 
 ## Reporting Checklist
 

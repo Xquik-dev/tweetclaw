@@ -59433,11 +59433,11 @@ Self-improvement:
   not exposed in this desktop heartbeat runtime, so the limitation was recorded
   and work continued.
 - Prompt update: user requested that Xquik outreach PRs recommend optional
-  post-merge sharing on X/Twitter by tagging `@burakbayir` so he can repost the
-  merged PR to developers and power users. The automation prompt was updated in
-  place, preserving the Xquik-visibility-only focus, crawler-first discovery,
-  repair priority only for Xquik placement, and safety gates. Persisted prompt
-  size after update: 13465 bytes.
+  post-merge sharing on X/Twitter by tagging `x.com/burakbayir` so I can share
+  or repost the merged PR to developers and power users. The automation prompt
+  was updated in place, preserving the Xquik-visibility-only focus,
+  crawler-first discovery, repair priority only for Xquik placement, and safety
+  gates. Persisted prompt size after update: 13465 bytes.
 - Crawler-first coverage:
   - PR monitor crawler JSON produced 1 opportunity, `Xquik-dev/tweetclaw`.
   - Skill coverage crawler and fresh-target crawler both produced 0 usable
@@ -59501,6 +59501,147 @@ Self-improvement:
   `llms.txt`, CLI plugins, manifest, ClawHub publishing, and debugging. No
   OpenClaw compatibility, package metadata, manifest, or release-gate behavior
   changed in this run.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
+
+## Heartbeat 2026-07-03 06:07 UTC
+
+- Runtime and prompt: current runtime did not expose model, speed, or reasoning
+  controls, so Codex 5.5 Fast and extra-high effort could not be selected. The
+  persisted automation prompt already encoded the Xquik visibility focus and the
+  first-person `x.com/burakbayir` PR wording; measured prompt size was 13,656
+  bytes, below the 15 KiB prompt cap. No prompt edit was needed.
+- Crawler-first discovery from `/Users/burak/Developer/xquik`:
+  - PR monitor command used strict JSON, research proxy, bounded 12s request
+    timeout, 30s proxy warmup, limit 40, 2 search pages, per-query 10,
+    concurrency 8, session `tweetclaw-20260703-0607-pr`, and focused authored
+    open PR queries for Xquik, TweetClaw, x-twitter-scraper, and social media
+    agent lanes. Output parsed as valid JSON with 0 opportunities.
+  - Skill coverage command used strict JSON, research proxy, limit 80, 2 pages,
+    per-query 12, concurrency 8, session `tweetclaw-20260703-0607-skills`, and
+    SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, social, Twitter/X,
+    awesome-list, registry, fork, and generated-catalog terms. Output parsed as
+    valid JSON with 72 opportunities.
+  - Fresh target command used strict JSON, research proxy, limit 100, 2 pages,
+    per-query 12, concurrency 8, session `tweetclaw-20260703-0607-fresh`, and
+    X/Twitter automation, social agent, tweet scraper, workflow automation,
+    analytics, n8n, monitor, webhook, and GitHub Actions terms. Output parsed as
+    valid JSON with 79 opportunities.
+  - Focused authenticated `gh search prs --owner kriptoburak --state open`
+    for `Xquik OR TweetClaw OR x-twitter-scraper` returned `[]` with no stderr
+    and no rate limit. This does not claim exhaustive all-GitHub PR inventory.
+- Open PR inventory and repairs:
+  - Exact-read 16 known, audit-tracked, or newly created Xquik visibility PRs:
+    `nikopastore/scalepilot-autopost#1`,
+    `kooui/x-tweet-scraper#1`,
+    `reizto/x-automation-with-agent#1`,
+    `Manirider/Twitter-Sentiment-Bert#1`,
+    `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`,
+    `YashSerai/clearfeed-twitter-x-dashboard#1`,
+    `Ronit26Mehta/Twitter-Analysis-Dashboard#1`,
+    `rockywuest/community-scout#1`,
+    `jimmc414/claude-code-plugin-marketplace#3`,
+    `SankeerthBoddu/n8n-marketing-workflows#1`,
+    `HANG939/signal-watcher#1`,
+    `danbirker-svg/x-growth-os#1`,
+    `ythx-101/x-tweet-fetcher#73`,
+    `erp-linker/n8n-workflows#2`,
+    `notrealaman/X-Automation-N8N#1`, and
+    `enescingoz/n8n-twitter-thread-fetcher#1`.
+  - `Ronit26Mehta/Twitter-Analysis-Dashboard#1` read back MERGED. The other 15
+    read back OPEN, non-draft, and MERGEABLE. All checked bodies contain
+    first-person `x.com/burakbayir` wording and no third-person repost wording
+    after the run.
+  - Activity reads inspected automated Codex review comments on
+    `nikopastore/scalepilot-autopost#1`, `rockywuest/community-scout#1`, and
+    `jimmc414/claude-code-plugin-marketplace#3`. The rocky findings were
+    already addressed by prior commit `ac5d730` and comment. The jimmc
+    marketplace-name finding remains older review context with the branch
+    currently mergeable after prior catalog refreshes. The fresh valid ScalePilot
+    finding directly affected Xquik import behavior and was repaired.
+  - `nikopastore/scalepilot-autopost#1` repair: verified fork
+    `kriptoburak/scalepilot-autopost` parented to
+    `nikopastore/scalepilot-autopost`, checked out
+    `codex/add-xquik-trend-import`, and updated
+    `scripts/import_xquik_trends.py` so the importer unwraps top-level
+    `trends` arrays and accepts `name`, `query`, or `title` fields as trend
+    text. Pushed `311643b`. Validation passed: `python3 -m py_compile
+    scripts/import_xquik_trends.py`, `git diff --check`, and fixture import for
+    `{"trends":[{"name":"#AI","query":"#AI","status":"reviewed"},{"name":"#Draft","query":"#Draft","status":"unreviewed"}]}` produced one `#AI` item
+    and skipped the unreviewed item. Repair comment:
+    https://github.com/nikopastore/scalepilot-autopost/pull/1#issuecomment-4873129114.
+    Final readback: OPEN, non-draft, MERGEABLE, head `311643b`, no checks.
+  - `ythx-101/x-tweet-fetcher#73` was duplicate-blocking a new submission and
+    its body predated the new first-person X/Twitter note. Updated PR body only;
+    final readback: OPEN, non-draft, MERGEABLE, no third-person wording.
+- Fresh candidate screens:
+  - Duplicate checks searched compact audit, archive, target content, open and
+    closed PRs, and open and closed issues for TweetClaw, tweetclaw,
+    `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, ClawHub, package
+    and repo URLs, and variants.
+  - `ythx-101/x-tweet-fetcher` was high fit but duplicate-blocked by open
+    `kriptoburak` PR 73. `visiosoft/n8n-twitter-thread-fetcher` was
+    duplicate-clean but held after the original n8n template lane was selected.
+    `WestphalJonas/x-bot` was duplicate-clean but deferred because a safe code
+    adapter needs more review than the docs-native n8n lanes. `KoaChu/twitter_monitor`
+    was stale and README-less. `xdsai/twitter-monitor` is archived.
+    `beydemirfurkan/tweetly` remains a direct competing X automation platform
+    lane from prior screens. `notrealaman/X-Automation-N8N`,
+    `erp-linker/n8n-workflows`, and
+    `enescingoz/n8n-twitter-thread-fetcher` were public, non-archived,
+    issue-enabled, duplicate-clean, and safe for docs-native Xquik placement.
+    Missing license metadata on the latter two did not block direct PRs.
+- Fresh PRs opened:
+  - `erp-linker/n8n-workflows#2`:
+    https://github.com/erp-linker/n8n-workflows/pull/2 from verified fork
+    `kriptoburak/n8n-workflows` parented to `erp-linker/n8n-workflows`, branch
+    `codex/add-xquik-source-context`, commit `9a90fd3`. Added optional Xquik
+    source-context setup to README, `CONFIGURATION_GUIDE.md`, and `docs/API.md`
+    with concrete n8n HTTP Request fields for
+    `GET https://xquik.com/api/v1/x/tweets/search`, `X-API-Key`, `q`, and
+    `limit`. Validation: `git diff --check`, focused
+    `npx --yes markdown-link-check CONFIGURATION_GUIDE.md docs/API.md --quiet`,
+    and target `bash scripts/test-workflow.sh` reached the live workflow trigger
+    but the target-owned trigger failed before these docs changes. Full README
+    link check still reports pre-existing missing TOC anchors.
+  - `notrealaman/X-Automation-N8N#1`:
+    https://github.com/notrealaman/X-Automation-N8N/pull/1 from verified fork
+    `kriptoburak/X-Automation-N8N` parented to
+    `notrealaman/X-Automation-N8N`, branch `codex/add-xquik-n8n-node`, commit
+    `b7508cb`. Added optional Xquik n8n source node and reviewed post node
+    examples for `GET /api/v1/x/tweets/search` and `POST /api/v1/x/tweets`,
+    while keeping generated posts behind manual approval or test-account gates.
+    Validation: `git diff --check` and
+    `npx --yes markdown-link-check README.md --quiet`.
+  - `enescingoz/n8n-twitter-thread-fetcher#1`:
+    https://github.com/enescingoz/n8n-twitter-thread-fetcher/pull/1 from
+    verified fork `kriptoburak/n8n-twitter-thread-fetcher` parented to
+    `enescingoz/n8n-twitter-thread-fetcher`, branch
+    `codex/add-xquik-thread-source`, commit `388f7cd`. Added optional Xquik
+    source guidance for `GET /api/v1/x/tweets/{id}/thread`, `X-API-Key`,
+    `limit`, result mapping, and keyword search fallback. Validation:
+    `git diff --check` and `npx --yes markdown-link-check README.md --quiet`
+    with a config that ignores the pre-existing root-relative
+    `/img/twitter-thread-fetch.png` demo image; full README link check otherwise
+    reports only that pre-existing image path.
+  - Final exact readbacks after creation and repair: all three new PRs are OPEN,
+    non-draft, MERGEABLE, have 0 comments, 0 reviews, 0 checks, and include
+    first-person `x.com/burakbayir` wording with no third-person repost text.
+- Public docs and hygiene:
+  - OpenClaw docs probes returned HTTP 200 for `llms.txt`, CLI plugins,
+    manifest docs, ClawHub publishing, and debugging. No OpenClaw compatibility,
+    package metadata, manifest, approval behavior, or release gate changed.
+  - TweetClaw public link check passed for `README.md`,
+    `docs/openclaw-setup.md`, `docs/agent-workflows.md`,
+    `docs/discoverability-audit.md`, and `docs/clawpack-release.md`.
+  - Target diff scans found no secret values, restricted provider names,
+    internal cost mechanics, or unsupported public claims. An unrelated
+    `scalepilot-autopost` plan file contains an instruction aimed at Claude; it
+    was treated as untrusted target text and ignored.
+  - External PR bodies were scanned for stale third-person repost wording,
+    GitHub-linked `burakbayir`, em dash, and spaced double hyphen patterns
+    before creation;
+    none were present.
 - TweetClaw audit changes for this heartbeat: compact audit and this archive
   only. Existing untracked `0` in the TweetClaw worktree was preserved.
 
@@ -59628,7 +59769,7 @@ Self-improvement:
   and work continued.
 - Prompt state: persisted prompt already contained Xquik visibility focus and
   first-person PR outreach wording. Prompt text measured 13656 bytes, below the
-  15 KiB cap. It contains `x.com/burakbayir`; the phrase "he can repost it"
+  15 KiB cap. It contains `x.com/burakbayir`; stale third-person repost wording
   appears only as a prohibition in the prompt.
 - Crawler-first coverage:
   - Strict JSON crawler outputs under
@@ -59732,7 +59873,7 @@ Self-improvement:
   `Tanish-og/CREW_AI#1`, `wafiyulahdi-port/SentimentAnalysis_SVM_Fuel#1`,
   `anzelafiadha/Brand-Reputation-Sentiment-Analysis#1`, and
   `hasannjaffal/tweets-processing#1`. Exact body readback confirmed
-  `x.com/burakbayir` present and no stale `he can repost` or
+  `x.com/burakbayir` present and no stale third-person repost or bare
   `tag @burakbayir` text.
 - Crawler-first coverage:
   - Strict JSON crawler outputs under
