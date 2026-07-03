@@ -189,22 +189,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-03 04:11 UTC: runtime selector unavailable. Persisted automation
-  prompt already focuses on Xquik visibility and first-person `x.com/burakbayir`
-  PR notes; prompt text measured 13656 bytes. Crawler JSON covered open PRs plus
-  skill and fresh target lanes, returning 0, 32, and 15 opportunities. Exact
-  archive inventory read 1743 PR URLs, with 1703 exact reads, 1445 open, 40
-  inaccessible, 43 conflicts, and 259 flagged. Non-Xquik repairs were skipped.
-- Repaired `jimmc414/claude-code-plugin-marketplace#3` by merging upstream,
-  regenerating catalog metadata, validating Hermes Tweet, pushing conflict fix
-  commit `601fd9b`, and updating the PR body/comment with first-person
-  `x.com/burakbayir` wording. Exact readback is OPEN/MERGEABLE.
-- Fresh duplicate-clean PRs opened and exact-read OPEN/MERGEABLE:
-  `rockywuest/community-scout#1`,
-  `Krish01agrawal/motia-ContentCreation-Agent#1`, and
-  `agenticloop/Multi-Agentic-Content-Creation-#1`. Each body uses
-  `x.com/burakbayir` and first person. Full validation and blockers are in the
-  archive.
+- 2026-07-03 04:42 UTC: runtime selector unavailable. Prompt text measured
+  13656 bytes and already preserves Xquik-visibility focus plus first-person
+  `x.com/burakbayir` PR wording. Crawler-first JSON covered authored PR,
+  skill, and fresh target lanes; all 3 valid outputs were empty after managed
+  proxy socket failures. Archive inventory exact-read 1746 PR URLs: 1706 read,
+  1448 open, 40 failed, 306 flagged.
+- Repaired Xquik PRs only: `Ronit26Mehta/Twitter-Analysis-Dashboard#1`
+  comment posted after confirming commit `599ea06`; `rockywuest/community-scout#1`
+  fixed reviewed-status and quoted-CSV handling in commit `ac5d730`. Skipped
+  generic or stale non-Xquik blockers.
+- Opened and exact-read OPEN/MERGEABLE Xquik PRs:
+  `Manirider/Twitter-Sentiment-Bert#1`,
+  `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`, and
+  `YashSerai/clearfeed-twitter-x-dashboard#1`. All bodies use first-person
+  `x.com/burakbayir` wording. OpenClaw docs probes and TweetClaw public link
+  checks passed; full validation and blockers are in the archive.
 
 ## Reporting Checklist
 

@@ -59788,3 +59788,112 @@ Self-improvement:
   diff scan found no sensitive terms, and `npm run check:all` passed including
   OpenClaw platform fitness, package artifact check, 168 tests, and 100 percent
   coverage.
+
+## 2026-07-03 04:42 UTC Xquik visibility heartbeat
+
+- Runtime selector: model, Fast mode, and extra-high reasoning controls were
+  not exposed in this desktop heartbeat runtime, so the limitation was recorded
+  and work continued.
+- Prompt state: persisted prompt already contained the Xquik visibility focus
+  and first-person PR outreach wording. Prompt text measured 13656 bytes, below
+  the 15 KiB cap. Active PR wording uses `x.com/burakbayir`, first person, and
+  no GitHub-linked handle for X/Twitter mentions.
+- Crawler-first coverage:
+  - Strict JSON crawler outputs under
+    `/tmp/tweetclaw-heartbeat-20260703-0442`: `pr-monitor.json`,
+    `skill-coverage.json`, and `fresh-targets.json`.
+  - PR monitor covered authored open Xquik, TweetClaw, and
+    x-twitter-scraper queries and returned 0 opportunities.
+  - Skill coverage covered SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex,
+    Claude, agent, social, Twitter/X skill, awesome list, registry, fork, and
+    generated catalog lanes and returned 0 opportunities.
+  - Fresh target coverage covered Twitter automation, social analytics, tweet
+    scraper, X API workflow, and content-agent lanes and returned 0
+    opportunities.
+  - Skill and fresh target crawls produced repeated managed-proxy socket-close
+    errors, but final JSON outputs were valid. No GitHub search cap was hit.
+- PR inventory and repair priority:
+  - Compact audit plus archive URLs produced 1746 unique PR URLs. Exact REST
+    readbacks succeeded for 1706, with 1448 open, 132 closed, 126 merged, 40
+    failures, and 306 flagged. Mergeability buckets: clean 1186, unstable 149,
+    blocked 60, dirty 41, behind 7, unknown 5.
+  - Newest actionable Xquik PRs were
+    `Ronit26Mehta/Twitter-Analysis-Dashboard#1` and
+    `rockywuest/community-scout#1`. Generic or stale non-Xquik blockers were
+    skipped per user focus, including
+    `shajith003/awesome-claude-skills#4`. Old recurring dirty
+    `Saminiscool/twitter-ai-agent#2` was inspected and skipped because it had
+    no new maintainer ask and repeated prior conflict repair comments.
+  - `Ronit26Mehta/Twitter-Analysis-Dashboard#1`: exact-read review comments
+    asked to preserve Xquik author aliases and creation timestamps. Branch
+    already contained commit `599ea06` with the requested alias handling.
+    Validation: `python3 -m py_compile tools/tweetclaw_to_rakshak.py` and
+    `git diff --check` passed. Comment posted:
+    https://github.com/Ronit26Mehta/Twitter-Analysis-Dashboard/pull/1#issuecomment-4872693769
+    Exact readback is OPEN, MERGEABLE, head `599ea06`, and body contains the
+    first-person `x.com/burakbayir` note.
+  - `rockywuest/community-scout#1`: review comments asked for explicit reviewed
+    statuses and quoted CSV record parsing. Patched `community-scout.sh`,
+    pushed commit `ac5d730`, and posted:
+    https://github.com/rockywuest/community-scout/pull/1#issuecomment-4872693783
+    Validation: `bash -n community-scout.sh`, parser smoke, `git diff --check`,
+    README and SKILL link checks, and public-hygiene scan passed. Exact
+    readback is OPEN and MERGEABLE.
+- Fresh discovery and duplicate gates:
+  - Fallback GH metadata search was used only after crawler-first output was
+    empty. Queries covered `twitter sentiment`, `tweet scraper`,
+    `twitter dashboard`, and `social media automation`.
+  - Duplicate checks searched compact audit, archive, target content, open and
+    closed PRs, and open and closed issues for TweetClaw, tweetclaw,
+    `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, ClawHub, package
+    and repo URLs, and variants.
+  - Blocked lanes: `estelar-latam/X-Tweet-Analyzer` had existing PR
+    https://github.com/estelar-latam/X-Tweet-Analyzer/pull/1;
+    `minhcanh-dev/Twitter-Sentiment-Analysis`,
+    `JayantTaneja/Streamlit-Interactive-Twitter-Sentiment-Analyzer`, and other
+    candidates had prior archive history or lower fit once 3 safer lanes
+    existed.
+  - Selected safe lanes were `Manirider/Twitter-Sentiment-Bert` MIT,
+    `AliaAbdullah727/Twitter-Sentiment-Analysis-` MIT, and
+    `YashSerai/clearfeed-twitter-x-dashboard` MIT. All were public,
+    non-archived, issue-enabled, duplicate-clean, and had verified
+    `kriptoburak` forks with the correct parents.
+- Fresh PRs opened:
+  - `Manirider/Twitter-Sentiment-Bert#1`:
+    https://github.com/Manirider/Twitter-Sentiment-Bert/pull/1 from verified
+    fork `kriptoburak/Twitter-Sentiment-Bert`, branch
+    `codex/add-xquik-batch-input`, commit `19b8e83`. Adds
+    `scripts/xquik_to_batch_input.py` so reviewed Xquik/TweetClaw CSV, JSON,
+    or JSONL exports can produce the existing `text` CSV input for
+    `scripts/batch_predict.py`. Validation: Python compile, sample JSONL
+    conversion, whitespace diff check, README link check, and public-hygiene
+    scan passed.
+  - `AliaAbdullah727/Twitter-Sentiment-Analysis-#1`:
+    https://github.com/AliaAbdullah727/Twitter-Sentiment-Analysis-/pull/1 from
+    verified fork `kriptoburak/Twitter-Sentiment-Analysis-`, branch
+    `codex/add-xquik-inference-csv`, commit `3ad7a1a`. Adds
+    `tools/xquik_to_inference_csv.py` so reviewed Xquik/TweetClaw exports can
+    produce notebook-ready inference CSV. Validation: Python compile, sample
+    JSON conversion, whitespace diff check, README link check, and
+    public-hygiene scan passed.
+  - `YashSerai/clearfeed-twitter-x-dashboard#1`:
+    https://github.com/YashSerai/clearfeed-twitter-x-dashboard/pull/1 from
+    verified fork `kriptoburak/clearfeed-twitter-x-dashboard`, branch
+    `codex/add-xquik-reviewed-import`, commit `ca7e7cb`. Adds
+    `scripts/import_xquik_export.py` so reviewed Xquik/TweetClaw CSV, JSON, or
+    JSONL exports can become local Clearfeed `scraped_posts` and queued
+    candidates for manual reply or quote review. Validation: Python 3.11
+    compile, parser smoke with repo-declared `PyYAML==6.0.2`, whitespace diff
+    check, and public-hygiene scan passed. README link check failed only on the
+    pre-existing local dashboard URL `http://127.0.0.1:8787/`, which this PR
+    did not add.
+  - Exact PR readbacks after creation: all 3 PRs are OPEN and MERGEABLE, base
+    `main`, head owner `kriptoburak`, and all bodies contain first-person
+    `x.com/burakbayir` wording with no third-person repost wording.
+- Official docs and public checks: OpenClaw docs probes returned HTTP 200 for
+  `llms.txt`, CLI plugins, manifest, ClawHub publishing, and debugging. No
+  OpenClaw compatibility, package metadata, manifest, approval behavior, or
+  release-gate behavior changed. TweetClaw README and public docs link checks
+  passed before audit commit.
+- TweetClaw audit changes for this heartbeat: compact audit and this archive
+  only. Existing untracked `0` in the TweetClaw worktree was preserved.
