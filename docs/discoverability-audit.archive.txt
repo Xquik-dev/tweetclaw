@@ -66570,3 +66570,112 @@ Self-improvement:
   Memory before edit was 15,131/15,360 bytes. Final memory check,
   `git diff --check`, `npm run check:all`, commit, and push were run after this
   archive write. Existing untracked TweetClaw file `0` was preserved.
+### 2026-07-04 12:03 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Prompt state: no prompt edit was needed. The persisted heartbeat prompt
+  measured 15,344 bytes by decoding the TOML basic string.
+- Crawler coverage: crawler-first native queries, skill-repo queries, and
+  repo-mode exact reads were run from `/Users/burak/Developer/xquik` with strict
+  JSON output paths under `/tmp/tweetclaw-heartbeat-20260704T1203`. Native
+  coverage included Xquik social analytics, Twitter sentiment dashboard, tweet
+  export import, X API source connector, social-media CSV import, framework,
+  dashboard, library, SDK, registry, example, and docs lanes. Skill coverage
+  included SKILL.md, `.agents/skills`, skills directories, OpenClaw, MCP,
+  Codex, Claude, agent, social, Twitter-X, awesome, registry, fork, and
+  generated catalog families. All 3 crawler outputs returned 0 opportunities
+  after managed proxy socket-close failures and endpoint quarantines.
+- OpenClaw docs check: `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/clawhub/publishing`, and `/help/debugging` returned HTTP 200.
+  `/plugins/permissions` returned HTTP 404, consistent with prior guessed-route
+  failures.
+- PR inventory: `gh search prs` for `xquik created:2026-07-04` returned 200
+  open results and hit the cap. `xquik created:<2026-07-04` also returned 200
+  open results and hit the cap. The named TweetClaw, OpenClaw, ClawHub, and
+  x-twitter-scraper open-PR search returned 0. The recent updated partition
+  returned 71 results and all 71 were exact-read for state, mergeability, base,
+  head, commits, comments, reviews, checks, bodies, and removable promotion
+  remnants. Inventory remains cap-recorded, not complete.
+- Existing PR repairs: removed 7 old self-authored comments with prior
+  promotion wording and edited 2 old PR bodies to remove the same class of
+  wording. Touched PRs were `GGROM1/schemantic#1`,
+  `Mann1988/awesome-claude-skills#1`,
+  `Saminiscool/twitter-ai-agent#2`, `Toyoclara233/registry#1`,
+  `mahaishu/n8n-CyberSecurity-Workflows#2`,
+  `nikopastore/scalepilot-autopost#1`, and
+  `xbim08/awesome-claude-code-plugins#1`. Post-cleanup scan had 0 narrow banned
+  wording hits.
+- Fresh discovery screening: fallback GitHub repo search plus compact and
+  archive duplicate checks screened
+  `Serkanbyx/social-media-dashboard`, `RaisingGods/impact.pulse`,
+  `Akash-yadav87/Social-Media-Analytics-Dashboard`, and
+  `mithulix/Social-Media-Dashboard` as fresh lanes. Duplicate or history gates
+  blocked `Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard`,
+  `Azeem1027/Twitter-sentiment-analysis`, `HasData/social-listening-tool`, and
+  `obris-dev/openmagpie`. The Mithulix lane was held because the target CRA app
+  has broad JSX-in-`.ts` source layout that made validation require an oversized
+  extension migration. Target all-state PR and issue searches returned 0
+  duplicates for the 3 submitted repos, and HEAD grep found no existing Xquik,
+  TweetClaw, x-twitter-scraper, OpenClaw, or ClawHub content.
+- Opened `Serkanbyx/social-media-dashboard#1`:
+  https://github.com/Serkanbyx/social-media-dashboard/pull/1 from
+  `kriptoburak:codex/xquik-export-import` at commit
+  `d40e96669c88bb3627358850268a9435102b6372`. Native integration: added
+  Xquik CSV, JSON, and JSONL export import to the existing posts workflow,
+  mapping tweet text, author, date, URL or ID, and engagement metrics into local
+  post records. Target improvements: localStorage post data is shape-checked
+  before use; post search trims whitespace before filtering; duplicate and
+  incomplete import rows are skipped with clear feedback. Validation:
+  `npm run build` and `git diff --check`. Exact readback: open, non-draft,
+  mergeable, 1 Netlify deploy-preview comment, 4 checks with deploy preview
+  passing and 2 neutral rule checks, no reviews, no narrow promotion wording.
+- Opened `RaisingGods/impact.pulse#1`:
+  https://github.com/RaisingGods/impact.pulse/pull/1 from
+  `kriptoburak:codex/xquik-results-import` at commit
+  `1eb3b5d70ba3b115736d658202835f563c5a7e19`. Native integration: added
+  `xquik_import.py` to load Xquik CSV, JSON, and JSONL tweet exports into
+  `impact_pulse_results.json`, mapping tweet text, author, URL, published time,
+  and engagement metrics into IMPACT PULSE article rows. Target improvements:
+  results file resolution is project-relative; missing or malformed local
+  result files return an empty result set; legacy list-shaped and crawler
+  object-shaped results are supported; latest summary rows sort by available
+  date fields. Validation: `python3 -m py_compile api.py xquik_import.py`,
+  Xquik JSONL sample import assertion, and `git diff --check`. Exact readback:
+  open, non-draft, mergeable, no comments, no reviews, no checks, no narrow
+  promotion wording.
+- Opened `Akash-yadav87/Social-Media-Analytics-Dashboard#1`:
+  https://github.com/Akash-yadav87/Social-Media-Analytics-Dashboard/pull/1 from
+  `kriptoburak:codex/xquik-export-import` at commit
+  `7f5187bd59c26c40089f3f4acc6eea494d1da728`. Native integration: added an
+  Xquik CSV, JSON, and JSONL import panel to the overview page, mapping imported
+  tweet metrics into KPI cards, platform metrics, and top posts across overview,
+  analytics, and engagement views. Target improvements: added a README with
+  setup, build, deploy, and import instructions; `TopPostsTable` now accepts
+  caller-provided rows instead of always using mock data; overview, analytics,
+  and engagement views now accept imported dashboard data; incomplete rows are
+  skipped and counted. Validation: `node node_modules/vite/bin/vite.js build`
+  and `git diff --check`. Plain `npm run build` remains blocked by the target's
+  checked-in non-executable `node_modules/.bin/vite`; direct Vite CLI validation
+  passed after restoring validation-only `node_modules` changes. Exact readback:
+  open, non-draft, mergeable, no comments, no reviews, no checks, no narrow
+  promotion wording.
+- Duplicate, fork, and policy checks: compact audit and archive were searched
+  before choosing targets. Target all-state PR and issue duplicate searches
+  returned 0 for submitted repos. Forks were created under `kriptoburak` and
+  exact-read as parented to intended upstreams:
+  `kriptoburak/serkan-social-media-dashboard-xquik`,
+  `kriptoburak/raising-impact-pulse-xquik`, and
+  `kriptoburak/akash-social-media-analytics-xquik`. Missing license metadata
+  alone did not block direct PRs.
+- Link and public hygiene: edited target docs introduced no external links.
+  OpenClaw public docs links above were checked. Changed diffs and PR bodies
+  were scanned for secrets, private implementation details, unsupported claims,
+  stale metadata, and narrow promotion wording. No narrow banned wording
+  remained in new PR bodies, comments, or changed files.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Memory before edit was 15,194/15,360 bytes; prompt was 15,344 bytes. Final
+  memory check, `git diff --check`, `npm run check:all`, commit, and push were
+  run after this archive write. Existing untracked TweetClaw file `0` was
+  preserved.

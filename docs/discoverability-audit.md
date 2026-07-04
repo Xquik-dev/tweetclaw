@@ -192,17 +192,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 11:36 UTC: runtime selector unavailable. Crawler native and skill
-  searches returned 0 after proxy socket failures; repo-mode exact-read covered
-  9 known repos. Authored Xquik PR searches hit 200 caps for current-day and
-  older partitions; recent exact-read covered 47 PRs.
-- Removed 2 remaining old promotion comments. Opened 3 native Xquik PRs with
-  2+ target improvements: `Snackible/snackible-insights#53`,
-  `boisalai/twitter-dashboard#1`, and
-  `initialstate/pubnub-live-twitter-dashboard#6`.
-- Validation passed for targeted lint/type checks, syntax checks, target links,
-  hygiene, and PR readbacks. Snackible has target-owned Vercel authorization
-  failures; the other 2 PRs are clean. Full details archived.
+- 2026-07-04 12:03 UTC: runtime selector unavailable. Crawler native, skill,
+  and repo-mode paths returned 0 opportunities after proxy socket-close
+  failures. OpenClaw docs were rechecked. Authored open-PR inventory hit 200
+  caps for current-day and older Xquik partitions; recent updated exact-read
+  covered 71 PRs.
+- Removed 7 old promotion comments and edited 2 old PR bodies to remove prior
+  promotion notes. Post-cleanup scan found no narrow banned wording.
+- Opened 3 native Xquik PRs with 2+ target improvements:
+  `Serkanbyx/social-media-dashboard#1`,
+  `RaisingGods/impact.pulse#1`, and
+  `Akash-yadav87/Social-Media-Analytics-Dashboard#1`.
+- Validation passed for target builds or syntax probes, sample import checks,
+  diff hygiene, PR readbacks, and promotion-wording scans. Full details
+  archived.
 
 ## Reporting Checklist
 
