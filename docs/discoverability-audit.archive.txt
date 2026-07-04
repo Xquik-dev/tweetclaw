@@ -66037,3 +66037,80 @@ Self-improvement:
   --check`, archive dash scan, and `https://x.com/burakbayir` link check passed
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
+
+### 2026-07-04 05:31 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- User-rule update: automation was updated to remove all promotion-note
+  language from future PRs, issues, and comments. New external PRs now require
+  a native Xquik integration plus at least 2 concrete target-repo fixes or
+  improvements in the same PR. The updated prompt measured 15,344 bytes.
+- PR inventory and repairs: crawler repo-mode readbacks plus exact GitHub reads
+  covered 6 existing open Xquik-visibility PRs:
+  vipulsystems/crimeintel-ai#1, ladyzeng12-dotcom/twitter-dashboard-proxy#1,
+  rpop67/Twitter-Analytics-Dashboard#16, ECTWNYC/market-awareness-alert#1,
+  eckartal/sm-g#1, and starslittle/twitter-listening-agent#1. All were open and
+  mergeable on readback. ECTWNYC remained blocked only by a target-owned Vercel
+  authorization gate. Deleted 6 legacy promotion-note comments and edited the 6
+  PR bodies to remove the same wording; follow-up body and comment scans found
+  no remaining promotion-note text.
+- Crawler coverage: proxy native crawl returned 0 opportunities after socket
+  closure and quarantine logs; direct native crawl returned 5 repo candidates;
+  direct skill crawl returned 11 skill candidates; repo-mode exact readbacks
+  returned 6 known PR repos. Skill coverage included SKILL.md, .agents/skills,
+  OpenClaw, MCP, Codex, Claude, agent, social, Twitter/X, awesome, registry,
+  fork, and generated-catalog query families.
+- Fresh candidates screened: duplicate or archive-history blockers included
+  Hans-Gonzalez-Barker/multi_platform_analysis_dashboard,
+  IlyaShaposhnikov/airline-sentiment-analysis,
+  sarvesh1714/Twitter-Account-Analysis-with-Personality-Insights,
+  1ncHaider/Twitter-sentiment-analysis-Using-Live-Api-tweepy-,
+  JusticeKAE/twitter-sentiment-analysis-streamlit,
+  N-Haritha16/twitter-sentiment-bert-api,
+  DishaS08/Twitter-Sentiments-Analysis,
+  AbdulRehman393/streamlit-airline-sentiment, 0xNyk/xint,
+  mvanhorn/last30days-skill, and rohunvora/x-research-skill. Public
+  credential-like material caused tanchaud/Sentiment_Analyser,
+  akshayaambati28/sentiment-analysis, and aimaster-dev/twitter-analysis-app to
+  be skipped without copying values. alara-data/real-time-twitter-sentiment-dashboard
+  was blocked as placeholder-only.
+- Opened boyzwhocried/twitter-scraping-dashboard#13 from
+  kriptoburak:codex/add-xquik-search-source at commit
+  e01d25987b117717c8d20f7f7d361679124c4b10. Native integration: optional
+  Xquik search source normalizes results into the existing Streamlit dashboard
+  schema. Target improvements: blank-query validation before live API calls,
+  safer filtered-data handling before username resolution, reusable normalization
+  tests, and README secret documentation. Exact readback: open, non-draft,
+  mergeable, no reviews, no checks, no comments.
+- Opened Muqeeth77/RealTime_Twitter_Sentiment#1 from
+  kriptoburak:codex/add-xquik-source at commit
+  728a5a21ac70cfe098cf32b15de622bd87466e38. Native integration: optional
+  Xquik source feeds the existing VADER sentiment charts. Target improvements:
+  Twitter bearer token is read from environment variables, tweet-count slider is
+  shared by both sources, empty frames keep consistent columns, and blank-query
+  warnings avoid UI breakage. Exact readback: open, non-draft, mergeable, no
+  reviews, no checks, no comments.
+- Opened Technicaladvisor01/twitter-sentiment-powerbi#4 from
+  kriptoburak:codex/import-xquik-powerbi-data at commit
+  7e433533d77f87d1a1608b4464ac70efb2034ce0. Native integration:
+  0_xquik_import.py converts Xquik JSON, JSONL, or CSV exports into the Power
+  BI sentiment pipeline. Target improvements: Power BI export now loads real
+  labeled data when present, imported sentiment and word-count fields are
+  normalized, source topics are preserved, and 2 broken README navigation
+  anchors were fixed. Exact readback: open, non-draft, mergeable, no reviews,
+  no checks, no comments.
+- Validation: boyzwhocried focused pytest passed 9 tests in the temp virtualenv.
+  All 3 PR repos passed Python compile for edited code, README link checks, and
+  git diff checks. Technicaladvisor sample Xquik export conversion and
+  load_export_data validation passed. xquik.com link check returned HTTP 200
+  after redirect. Initial boyzwhocried test run was blocked by missing local
+  pandas, then passed after installing target dependencies into a temp venv.
+- Public hygiene: PR bodies were technical-only and contained no promotion
+  notes. Edited diffs were scanned for promotion-note wording and old
+  api.xquik.com defaults; Xquik defaults were corrected to https://xquik.com.
+  Public credential-like material found in blocked target repos was not copied
+  into audit, PRs, or commits.
+- TweetClaw state: compact audit updated, archive appended, existing untracked
+  TweetClaw file `0` preserved.

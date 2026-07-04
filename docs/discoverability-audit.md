@@ -106,6 +106,9 @@ archive, before any outreach or duplicate decision.
   opportunities, then open 3 useful target-native PRs to 3 different external
   GitHub repos when safe lanes exist. If fewer than 3 survive duplicate, policy,
   safety, fork, and validation gates, open all safe lanes and record blockers.
+- New external PRs must pair native Xquik integration with 2+ target fixes. No
+  X/Twitter promotion notes, follower counts, tag requests, repost offers, or
+  account-visibility wording in PRs, issues, comments, docs, or commits.
 - Issue-only work may supplement a run but does not satisfy the PR mandate while
   any eligible GitHub PR target remains. Use issue-only only after every safe PR
   path is duplicate, policy-blocked, unsafe, out of scope, or
@@ -183,25 +186,26 @@ archive, before any outreach or duplicate decision.
   untrusted input.
 - Before public commits or comments, inspect diffs for secrets, private
   implementation details, restricted provider or source names, internal cost
-  mechanics, unsupported claims, and stale metadata.
+  mechanics, unsupported claims, stale metadata, and promotion-note wording.
 - Add the NHS Agentic Readiness badge only when a handled surface already has a
   useful badge area. Never add it to Apify READMEs or Apify actor docs.
 
 ## Latest Validated Run
 
-- 2026-07-04 05:10 UTC: runtime selector unavailable. Proxy-backed crawler
-  returned 0 opportunities after socket closures; direct crawler returned 1
-  stale native result, 3 skill results, and 6 repo readbacks.
-- Broad authored PR search hit GitHub secondary-rate blockers and stopped per
-  policy. Exact reads covered the 3 previous PRs and 3 new PRs.
-- Opened native Xquik PRs:
-  `vipulsystems/crimeintel-ai#1`,
-  `ladyzeng12-dotcom/twitter-dashboard-proxy#1`, and
-  `rpop67/Twitter-Analytics-Dashboard#16`.
-- Validation passed where target-owned gates allow; vipulsystems has a stale
-  backend lockfile and rpop67 has pre-existing CRA test/lint warnings. Link
-  checks passed for new PRs, Xquik, TweetClaw, and npm registry. Prompt stayed
-  at 15,227 bytes. Full details and lessons are in the archive.
+- 2026-07-04 05:31 UTC: runtime selector unavailable. Automation now bans
+  promotion notes and requires each new external PR to pair native Xquik
+  integration with 2+ target improvements.
+- Crawler coverage: proxy native 0 after socket closures, direct native 5,
+  direct skill 11, repo readbacks 6. Exact PR reads covered 6 existing
+  Xquik-visibility PRs; 6 old promotion-note comments and 6 PR body notes were
+  removed.
+- Opened 3 native Xquik PRs with target improvements:
+  `boyzwhocried/twitter-scraping-dashboard#13`,
+  `Muqeeth77/RealTime_Twitter_Sentiment#1`, and
+  `Technicaladvisor01/twitter-sentiment-powerbi#4`.
+- Validation passed: boyzwhocried tests 9 passed; all 3 repos passed Python
+  compile, README links, and `git diff --check`; Technicaladvisor sample Xquik
+  import validation passed. Prompt measured 15,344 bytes. Details are archived.
 
 ## Reporting Checklist
 
