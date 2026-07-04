@@ -192,19 +192,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 12:03 UTC: runtime selector unavailable. Crawler native, skill,
-  and repo-mode paths returned 0 opportunities after proxy socket-close
-  failures. OpenClaw docs were rechecked. Authored open-PR inventory hit 200
-  caps for current-day and older Xquik partitions; recent updated exact-read
-  covered 71 PRs.
-- Removed 7 old promotion comments and edited 2 old PR bodies to remove prior
-  promotion notes. Post-cleanup scan found no narrow banned wording.
+- 2026-07-04 12:34 UTC: runtime selector unavailable. Crawler proxy paths hit
+  socket-close failures; direct crawler found candidates. Broad GitHub PR
+  search hit secondary rate limits, so exact readbacks covered 6 known Xquik
+  PRs and all 3 new PRs. No actionable Xquik repair was needed.
 - Opened 3 native Xquik PRs with 2+ target improvements:
-  `Serkanbyx/social-media-dashboard#1`,
-  `RaisingGods/impact.pulse#1`, and
-  `Akash-yadav87/Social-Media-Analytics-Dashboard#1`.
+  `ammar-s847/FeelTheTweet#2`,
+  `AkshayaSri03/Aspect-Based-Sentiment-Analysis-Covid19#1`, and
+  `rNLKJA/Australia-Social-Media-Analytics-on-the-Cloud#16`.
 - Validation passed for target builds or syntax probes, sample import checks,
-  diff hygiene, PR readbacks, and promotion-wording scans. Full details
+  OpenClaw docs, diff hygiene, PR readbacks, and promotion-wording scans.
+  Akshaya has a target-owned Vercel authorization blocker. Full details
   archived.
 
 ## Reporting Checklist
