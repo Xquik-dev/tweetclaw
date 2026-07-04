@@ -192,21 +192,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 20:28 UTC: selector unavailable. Crawler strict JSON returned 0
-  rows; broad authored PR search still returned 0, so no complete-all
-  claim. Exact-read 39 audit/archive PRs and reopened an overly cautious
-  self-closed `Mubashirakhan03/...#1`.
-- Fresh lanes screened: `Henilt31/xterm-cli`,
-  `adityapatil2804/social-trend-forecaster-pro`, `Micka33/x-api-sdk-ts`,
-  `OmSapkar24/...` (duplicate open PR), and
-  `askmy-stack/airflow`.
-- Opened promotion-clean PRs: `Henilt31/xterm-cli#1`,
-  `adityapatil2804/social-trend-forecaster-pro#1`, and
-  `askmy-stack/airflow-twitter-pipeline#2`. They add Xquik JSONL/feed,
-  FastAPI-ingest, and Airflow ETL surfaces plus parser validation, timestamp and
-  pandas fixes, env credential checks, requirements/setup fixes, and tests.
-- Validation: xterm 10 tests, trend 4, Airflow 2 plus `py_compile`; new links
-  and OpenClaw `.ai` docs HTTP 200.
+- 2026-07-04 20:56 UTC: selector unavailable. Crawler strict JSON returned 0
+  rows. GitHub authored search read 100 latest open PRs; broad GraphQL exact
+  read hit resource limits, so no complete-all claim. Exact-read latest 10 PRs
+  and 4 handled PRs.
+- Repaired `galafis/Social-Media-Dashboard#1`: fixed empty-array payload
+  validation and valid-row preview limiting, resolved stale bot threads, and
+  kept CodeRabbit and Kilo green.
+- Fresh PRs opened or updated: `david-switalski/...#1`,
+  `melisamichuki01/...#1`, and `gastonke/...#1`. They add Xquik CSV upload
+  paths plus README/setup fixes, credential or path safety, blank-row and metric
+  guards, airline-label cleanup, and requirements docs.
+- Validation: new PR compile and diff checks passed; Galafis 15 tests passed;
+  Xquik, handled PR URLs, and OpenClaw `.ai` docs returned HTTP 200. No
+  promotion-note wording was posted.
 
 ## Reporting Checklist
 

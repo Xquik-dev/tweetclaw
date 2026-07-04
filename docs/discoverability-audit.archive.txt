@@ -68116,6 +68116,123 @@ Existing untracked TweetClaw file `0` was preserved.
   commit, and push were run after this archive write. Existing untracked
   TweetClaw file `0` was preserved.
 
+2026-07-04 20:56 UTC heartbeat
+
+- Runtime selector: Codex Desktop did not expose model, speed, or effort
+  controls, so Codex 5.5 Fast mode and extra-high reasoning could not be
+  explicitly selected. Work continued and this limitation was recorded.
+- Initial state: TweetClaw `HEAD` was `8b9332a` with only pre-existing
+  untracked file `0`. Xquik `HEAD` was `ae17f1f4` with unrelated user changes
+  in `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved. Xquik open issues
+  query returned 0.
+- OpenClaw docs recheck: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  returned 000 DNS failure earlier in the run. No OpenClaw compatibility
+  changes were made.
+- Crawler coverage: Xquik crawler ran first from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260704T2056/crawler/fresh.json`, bounded request
+  timeout, search pages, per-query limit, concurrency, and stable session
+  `tweetclaw-20260704-2056`. Queries covered Twitter and X analytics
+  dashboards, data pipelines, SDKs, automation CLIs, MCP servers, SKILL.md,
+  `.agents/skills`, OpenClaw, Codex, Claude, agent and social media skills,
+  awesome lists, dashboards, FastAPI, and Next.js starter lanes. Output parsed
+  as 0 opportunities and 0 repositories. No crawler credentials were printed or
+  stored.
+- PR inventory method: compact audit and archive yielded 1,926 historical PR
+  URLs. `gh search prs` read the latest 100 open PRs by `kriptoburak`; exact
+  `gh pr view` readbacks covered the latest 10 open authored PRs plus the 4
+  handled PRs. Broad GraphQL exact read for open Xquik PRs reported issueCount
+  2,762 and resource-limit errors, so no complete-all claim was made. Exact
+  readbacks covered state, draft status, mergeability, base and head, head
+  owner, commits, comments, reviews, checks, body, and update time for handled
+  PRs.
+- PR repair: `galafis/Social-Media-Dashboard#1`
+  https://github.com/galafis/Social-Media-Dashboard/pull/1 was found with
+  actionable Gemini, Codex, Kilo, CodeRabbit, and Qodo feedback on the Xquik
+  preview endpoint. Pushed commits `9840f1f` and `395ec7b` to verified fork
+  `kriptoburak/social-media-dashboard-xquik-galafis`, branch
+  `codex/add-xquik-normalizer`. Fixes added non-object payload validation,
+  empty-array rejection, valid-row preview limiting without scanning past the
+  cap once enough rows are collected, non-finite metric guards, UTC timestamp
+  normalization, invalid timestamp fallback, and tests. Resolved still-valid
+  non-outdated review threads after fixes; latest thread readback had no
+  unresolved non-outdated threads. CodeRabbit and Kilo succeeded. Validation:
+  `.venv/bin/python -m py_compile
+  dashboard.py tests/test_main.py`, `.venv/bin/python -m pytest
+  tests/test_main.py` passed 15 tests, and `git diff --check` passed.
+- Fresh screened and submitted lanes: `david-switalski/social-media-dashboard-
+  streamlit`, `melisamichuki01/Twitter-sentiment-Streamlit-dashboard`, and
+  `gastonke/OpenAI_Twitter_Sentiment_Streamlit_App`. Repos were non-fork,
+  non-archived, and had no explicit contribution-policy blocker. Compact audit
+  plus archive had no prior matching entries before the new PRs. Target
+  all-state PR and issue duplicate searches for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, ClawHub, and variants
+  found only the just-opened PRs after submission and 0 issues. Missing license
+  metadata on 2 repos did not block direct PRs; David's repo had a license file
+  but no SPDX metadata.
+- Opened and updated `david-switalski/social-media-dashboard-streamlit#1`:
+  https://github.com/david-switalski/social-media-dashboard-streamlit/pull/1
+  from verified fork `kriptoburak/social-media-dashboard-streamlit`, branch
+  `codex/xquik-csv-social-dashboard`, commits `a3043d5` and `36690f7`. Native
+  Xquik integration: Streamlit sidebar upload for saved Xquik CSV exports,
+  mapped into the existing dashboard's tweet, author, date, language, likes,
+  and retweet columns before VADER sentiment scoring. Target improvements:
+  README requirements typo and upload docs, numeric metric coercion for chart
+  safety, and blank tweet-row filtering before scoring. Validation:
+  `python3 -m py_compile app.py data_processing.py config.py plotting.py
+  utils.py` and `git diff --check`. Exact readback: open, ready, mergeable,
+  2 commits, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `melisamichuki01/Twitter-sentiment-Streamlit-dashboard#1`:
+  https://github.com/melisamichuki01/Twitter-sentiment-Streamlit-dashboard/pull/1
+  from verified fork `kriptoburak/Twitter-sentiment-Streamlit-dashboard`,
+  branch `codex/xquik-csv-streamlit-dashboard`, commit `86459ef`. Native Xquik
+  integration: sidebar upload maps saved Xquik CSV exports into the existing
+  airline sentiment dashboard columns. Target improvements: replaced the local
+  absolute `Tweets.csv` path with the repository file, guarded random sampling
+  when a sentiment has no rows, and corrected `US airway` to `US Airways`.
+  Validation: `python3 -m py_compile app.py` and `git diff --check`. Exact
+  readback: open, ready, mergeable, 1 commit, 0 comments, 0 reviews, 0 checks,
+  promotion-clean.
+- Opened `gastonke/OpenAI_Twitter_Sentiment_Streamlit_App#1`:
+  https://github.com/gastonke/OpenAI_Twitter_Sentiment_Streamlit_App/pull/1
+  from verified fork `kriptoburak/OpenAI_Twitter_Sentiment_Streamlit_App`,
+  branch `codex/xquik-csv-stock-sentiment`, commit `af72fa2`. Native Xquik
+  integration: Xquik CSV upload path lets saved tweet exports feed the stock
+  sentiment table without live Twitter credentials. Target improvements: moved
+  OpenAI and Twitter credentials to Streamlit secrets or environment variables,
+  added `requirements.txt` and run instructions, and reused existing sentiment
+  labels from uploaded exports when present. Validation:
+  `python3 -m py_compile streamlit_sentiment_analysis.py` and
+  `git diff --check`. Exact readback: open, ready, mergeable, 1 commit, 0
+  comments, 0 reviews, 0 checks, promotion-clean.
+- Additional exact inventory readback: top 10 open authored PRs were all open,
+  ready, and mergeable. `galafis/Social-Media-Dashboard#1` had 5 commits, 4
+  comments, 6 reviews, CodeRabbit success, and Kilo success after the final
+  fix. The other latest 9 readbacks had 0 comments, 0 reviews, and 0 checks.
+  Non-Xquik blockers outside handled PRs were skipped because the run remained
+  focused on Xquik visibility.
+- Link and public hygiene: `https://xquik.com`, `https://xquik.com/api/v1`,
+  `https://xquik.com/openapi.json`, the 4 handled PR URLs, and current
+  OpenClaw `.ai` docs returned HTTP 200. Public PR bodies and local diffs were
+  scanned for secrets, private implementation details, restricted provider or
+  source names, internal cost mechanics, unsupported claims, stale metadata,
+  and banned promotion-note wording. No promotion-note removal was needed. Bot
+  comments contained third-party share links, but no user-authored promotion
+  wording was posted.
+- Self-improvement: durable rules already cover crawler-first discovery, no
+  complete-all claim under platform limits, no-promotion PR bodies, missing
+  license metadata handling, PR repair priority, and the 2 target-improvement
+  rule. Reusable lesson: after bot review on external PRs, use thread-level
+  GraphQL reads because flat PR comments can hide unresolved review threads.
+  No prompt edit was needed and no prompt candidate was saved.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final `npm run check-memory-md-size`, `git diff --check`, `npm run check:all`,
+  commit, and push were run after this archive write. Existing untracked
+  TweetClaw file `0` was preserved.
+
 ### 2026-07-04 16:59 UTC Native Xquik CSV Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
