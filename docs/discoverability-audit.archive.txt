@@ -105,6 +105,7 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   `docs/discoverability-audit.md` and this archive. Durable lesson: for React
   demo dashboards, adapters that convert Xquik records into existing mock data
   or typed API shapes are more maintainer-native than new pages or generic docs.
+  The validated TweetClaw audit update was pushed to `master` as `a13c86e`.
   Existing untracked `0` in the TweetClaw worktree was preserved.
 
 ### 2026-07-04 01:37 UTC Native Dashboard Import Run
