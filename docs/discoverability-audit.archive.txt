@@ -67225,6 +67225,122 @@ Self-improvement:
   `npm run check:all`, commit, and push were run after this archive write.
   Existing untracked TweetClaw file `0` was preserved.
 
+2026-07-04 18:44 UTC heartbeat
+
+- Runtime selector: Codex 5.5 Fast mode and extra-high reasoning controls were
+  not exposed by the desktop runtime. Limitation recorded and run continued.
+- TweetClaw starting state: branch `master`, HEAD `51ebe86`, only untracked file
+  `0`; preserved. Markdown memory check before edits: 15,345 / 15,360 bytes.
+- Xquik session gate: `/Users/burak/Developer/xquik` branch `master`, HEAD
+  `ae17f1f4`; existing user changes in `docs/feature-roadmap.md`,
+  `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md` were preserved. `gh issue list
+  -R Xquik-dev/xquik --state open` returned no open issues.
+- OpenClaw docs re-check: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. Stale
+  `https://docs.openclaw.dev/llms.txt` returned 000. No OpenClaw compatibility
+  changes were made.
+- Crawler-first discovery: ran `bun run github:crawl -- --json --output
+  /tmp/tweetclaw-heartbeat-20260704T1844/crawler/fresh.json
+  --request-timeout-ms 12000 --proxy-warmup-timeout-ms 0 --limit 160
+  --search-pages 2 --per-query-limit 10 --concurrency 12 --session-id
+  tweetclaw-20260704-1844` from `/Users/burak/Developer/xquik` with focused
+  query coverage for Django/FastAPI Twitter/X sentiment, X API examples,
+  social media analytics, MCP/Twitter data sources, `SKILL.md`, `.agents/skills`,
+  OpenClaw/social/Twitter skills, and tweet-export analytics. Strict JSON parsed
+  successfully with 64 opportunities and 64 repos. Managed-network socket and
+  quarantine logs appeared, but final JSON was valid.
+- PR inventory method: compact audit and archive were searched first. Crawler
+  output and exact-repo/known-PR reads were used. Broad `gh search issues`
+  partitions for `is:pr is:open author:kriptoburak archived:false` and
+  Xquik/TweetClaw/OpenClaw variants unexpectedly returned 0, including known
+  authored PRs, so no complete-all claim was made. Exact readbacks were
+  completed for the 3 fresh PRs from the prior run:
+  `omk4r-codes/twitter-sentiment-analysis-flask-app#1`,
+  `6-Isa-9/Twitter-Sentiment-Analysis---Flask-App#1`, and
+  `nimit17/Twitter-Sentiment-Analysis-Flask-API#8`. All were open, ready,
+  mergeable, 1 commit each, 0 comments, 0 reviews, 0 checks, and
+  promotion-clean.
+- Fresh lanes screened: compact/archive duplicate search and target open/closed
+  PR and issue searches were run for `3moOoriiy/x-scraper-app`,
+  `AlexKim45/company-sentiment-scraper`,
+  `AbbasiSeddique/Social-Media-Trend-Scraper`,
+  `alvenkatesh100/social_media_analytics_repo`,
+  `Ihtes-ham/social-analytics-platform`, and
+  `bilalhassankhan007/Social-Media-Dashboard-Django` using TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, TweetClaw GitHub and
+  npm URLs, ClawHub, OpenClaw, and variants. No duplicate history or explicit
+  maintainer policy blocker was found. Missing license metadata did not block
+  direct PRs. The first 3 lanes had the clearest native Xquik workflow and
+  target fixes; `AbbasiSeddique`, `Ihtes-ham`, and `bilalhassankhan007` remain
+  available for future screening.
+- Opened `3moOoriiy/x-scraper-app#1`:
+  https://github.com/3moOoriiy/x-scraper-app/pull/1 from verified fork
+  `kriptoburak/x-scraper-app-xquik`, parent `3moOoriiy/x-scraper-app`, branch
+  `codex/add-xquik-source-3mo`, commit `c36a041`. Native Xquik integration:
+  added `source=xquik` for `/api/search` and `backend/xquik.py` to map Xquik
+  tweet rows to the existing post response shape. Target improvements: removed
+  hardcoded cookie fallback values and required `X_AUTH_TOKEN` / `X_CT0` from
+  env; avoided injecting empty auth cookies; added blank-query handling; updated
+  README docs for env-only cookies and Xquik source. Validation:
+  `python3 -m py_compile backend/main.py backend/scraper.py backend/xquik.py`,
+  `git diff --check`, staged public-content scan. Exact readback: open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `AlexKim45/company-sentiment-scraper#1`:
+  https://github.com/AlexKim45/company-sentiment-scraper/pull/1 from verified
+  fork `kriptoburak/company-sentiment-scraper-xquik`, parent
+  `AlexKim45/company-sentiment-scraper`, branch `codex/add-xquik-source-alex`,
+  commit `4f94046`. Native Xquik integration: added optional Xquik source for
+  the existing company sentiment pipeline and fed rows through `SocialPost`,
+  sentiment, and signal generation. Target improvements: added `xquik_count`
+  reporting; updated no-source errors and FastAPI health checks for Xquik-only
+  setups; added unit coverage for Xquik response mapping; documented
+  Xquik-only CLI usage and `.env.example`. Validation:
+  `python3 -m py_compile config.py services.py api.py main.py
+  scrapers/xquik_scraper.py tests/test_api.py tests/test_services.py
+  tests/test_xquik_scraper.py`, `git diff --check`, staged public-content scan.
+  `python3 -m pytest` was attempted and blocked by missing local dependencies
+  `cachetools` and `vaderSentiment`. Exact readback: open, ready, mergeable,
+  1 commit, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `alvenkatesh100/social_media_analytics_repo#2`:
+  https://github.com/alvenkatesh100/social_media_analytics_repo/pull/2 from
+  verified fork `kriptoburak/social-media-analytics-xquik`, parent
+  `alvenkatesh100/social_media_analytics_repo`, branch
+  `codex/add-xquik-import-alven`, commit `97cce1b`. Native Xquik integration:
+  added authenticated `POST /api/posts/xquik/import/` to fetch Xquik rows with
+  `XQUIK_API_KEY`, upsert them as `platform=xquik`, and return the existing
+  serializer with sentiment. Target improvements: moved Django secret/debug/
+  allowed-host/database settings to env variables; defaulted local setup to
+  SQLite while retaining env-driven DB config; removed tracked `db.sqlite3` and
+  Python bytecode files; fixed README setup fences and environment docs.
+  Validation: `python3 -m py_compile social_media_analytics/analytics/xquik.py
+  social_media_analytics/analytics/views.py
+  social_media_analytics/analytics/urls.py
+  social_media_analytics/social_media_analytics/settings.py`,
+  `git diff --check`, staged public-content scan. `python3
+  social_media_analytics/manage.py check` was attempted and blocked by missing
+  local Django. Exact readback: open, ready, mergeable, 1 commit, 0 comments,
+  0 reviews, 0 checks, promotion-clean.
+- Link checks: new PR URLs returned HTTP 200. Branch README raw URLs for all
+  3 forks returned HTTP 200. `https://xquik.com` returned 200. OpenClaw `.ai`
+  docs checked above returned 200; stale `.dev` returned 000. PR bodies,
+  commits, and staged target diffs were scanned for secrets, private
+  implementation details, restricted provider/source names, internal cost
+  mechanics, unsupported claims, stale metadata, and banned visibility wording.
+  No promotion-note wording was posted or found.
+- Prompt self-improvement: durable crawler-first, no-promotion, 3-PR, and 2
+  target-improvement rules already exist. No prompt edit was needed. Unescaped
+  persisted automation prompt measured 15,344 bytes. This run records that
+  broad authored PR search can return 0 for known PRs; future runs should mark
+  that as a platform/search anomaly and rely on crawler output plus exact known
+  PR reads without claiming complete inventory.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final `npm run check-memory-md-size`, `git diff --check`,
+  `npm run check-openclaw-platform-fitness`, `npm run check:all`, commit, and
+  push were run after this archive write. Existing untracked TweetClaw file `0`
+  was preserved.
+
 ### 2026-07-04 18:22 UTC Native Xquik Flask Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
