@@ -101,7 +101,9 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   `docs/discoverability-audit.md` and this archive. Durable lesson: when a
   target already has an X/Twitter sheet fallback, a converter into that exact
   sheet schema is more maintainer-native than adding another dashboard import
-  path. Existing untracked `0` in the TweetClaw worktree was preserved.
+  path. Validation passed before the TweetClaw audit update was pushed to
+  `master` as `d805dee`. Existing untracked `0` in the TweetClaw worktree was
+  preserved.
 
 ### 2026-07-04 01:16 UTC Native Dashboard Import Run
 
