@@ -66114,3 +66114,92 @@ Self-improvement:
   into audit, PRs, or commits.
 - TweetClaw state: compact audit updated, archive appended, existing untracked
   TweetClaw file `0` preserved.
+
+### 2026-07-04 10:01 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Prompt state: the existing automation prompt already contained the user's
+  no-promotion-note rule and the 2-target-improvement PR rule. No prompt edit
+  was needed. Prompt measured 15,344 bytes by decoding the TOML basic string.
+- Open PR inventory: crawler repo-mode plus exact GitHub readbacks covered 9
+  known Xquik-visibility PR repos:
+  starslittle/twitter-listening-agent, rpop67/Twitter-Analytics-Dashboard,
+  vipulsystems/crimeintel-ai, Technicaladvisor01/twitter-sentiment-powerbi,
+  ECTWNYC/market-awareness-alert, boyzwhocried/twitter-scraping-dashboard,
+  eckartal/sm-g, ladyzeng12-dotcom/twitter-dashboard-proxy, and
+  Muqeeth77/RealTime_Twitter_Sentiment. All discovered PRs were open,
+  non-draft, and mergeable. Muqeeth77 had a non-actionable automated review.
+  ECTWNYC remained blocked by target-owned Vercel authorization. Narrow
+  promotion-note scans found no remaining banned visibility-note wording in the
+  read PR bodies.
+- Crawler coverage: direct native crawl returned 9 opportunities, direct skill
+  crawl returned 17 opportunities, and repo-mode exact readbacks returned 9
+  known PR repos. Skill coverage included SKILL.md, .agents/skills, skills
+  directories, OpenClaw, MCP, Codex, Claude, agent, social, Twitter-X, awesome,
+  registry, fork, and generated-catalog query families.
+- Fresh discovery screening: duplicate or archive blockers included
+  rounakdey2003/Social-Sentiments,
+  VaishnaviDayanand/Twibuzz-Real-Time-Social-Media-Analytics-Dashboard,
+  sarvesh1714/Twitter-Account-Analysis-with-Personality-Insights,
+  varun0852/Twitter-Sentiment-Analytics-Dashboard,
+  Azeem1027/Twitter-sentiment-analysis,
+  jonathanrao99/Indian-airline-tweet-sentiment-analysis,
+  XPOZpublic/xpoz-agent-skills, ndesv21/socialclaw, hyperfx-ai/marketing-skills,
+  liyupi/yupi-hot-monitor, serenakeyitan/awesome-openclaw-roles,
+  MaxJiang103/x-spam-reply-shield, sergebulaev/x-skills,
+  woshiheihei/heihei-skills, and tonkotsuboy/x-impact-checker. Fallback search
+  also duplicate-blocked saumya02-lab/twitter-sentiment-analysis-dashboard,
+  Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard,
+  aarushi481/twitter-sentiment-analysis, kanakverma016/Twitter-Sentiment-Dashboard,
+  aravind08033/sentimentiq-dashboard, and anaghavs09/twitter-sentiment-dashboard.
+  ncreighton/479a1e94-social-media-management-analyt was README-only and too
+  thin for a native PR. ankitjha2621/twitter-sentiment-analysis was held as a
+  fallback and not used after 3 safer lanes opened.
+- Opened vituccione/bigdata-stock-tweet-sentiment-forecasting#1 from
+  kriptoburak:codex/xquik-sentiment-overlay at commit
+  b4675914fbefa4a95ea0dbc7e0fe4905c1c87165. Native integration: optional
+  Xquik tweet export importer builds daily ticker sentiment CSV and the
+  Streamlit app overlays it on the stock chart. Target improvements: root-based
+  data path handling, required-column validation, sorted tickers, empty-period
+  guard, and dynamic prediction labels. Exact readback: open, non-draft,
+  mergeable, no comments, no reviews, no checks.
+- Opened steveapp531/social-media-analytics-dashboard-api#1 from
+  kriptoburak:codex/xquik-social-source at commit
+  c3902aada95d768debab9a9d85ee52a4cfe35160. Native integration: optional
+  `source=xquik` route queries Xquik tweet search and maps results into the
+  existing dashboard metrics shape. Target improvements: mock data stays the
+  default, health endpoint, environment-based port, setup README, syntax-check
+  script, and structured source and limit validation. Exact readback: open,
+  non-draft, mergeable, no comments, no reviews, no checks.
+- Opened hypervaimika-web/tweet-analytics#1 from
+  kriptoburak:codex/xquik-export-import at commit
+  72427806e58abe0ec316605e13d9d2c0aa0d8d5d. Native integration: Xquik JSON or
+  JSONL export importer builds dashboard `data.json`. Target improvements:
+  removed credential-like updater material from tracked PowerShell scripts
+  without copying values into audit or PR text, added export-path wrappers,
+  replaced a machine-specific chart path with portable SVG generation, added
+  README, and added browser-side data validation, empty state, number formatting,
+  and safer outbound X links. Exact readback: open, non-draft, mergeable, no
+  comments, no reviews, no checks.
+- Duplicate and policy checks: original target trees had no Xquik, TweetClaw,
+  x-twitter-scraper, OpenClaw, ClawHub, or `@xquik/tweetclaw` content by
+  HEAD-based grep. Target PR and issue searches returned no matching open or
+  closed duplicates. Forks were created under `kriptoburak` and verified to
+  parent back to the intended upstream repos before push.
+- Validation and links: vituccione passed Python compile for dashboard files
+  plus a Xquik sentiment importer sample. steveapp passed `npm run check`.
+  hypervaimika passed Node syntax checks, a Xquik import sample to a temp output,
+  and chart generation. All 3 external repos passed changed-file hygiene and
+  whitespace checks. Edited link checks returned 200 for xquik.com after
+  redirect, github.com/hypervaimika-web, and x.com/Strakyo.
+- Public hygiene: changed files and PR bodies were scanned for promotion-note
+  phrases and common credential field names. No hits remained in changed files
+  or PR bodies. A broad retweet/followers scan was noisy in legitimate schema
+  fields and an old notebook image blob, so final no-promotion checks used the
+  exact banned-note phrase family. External public credential-like values seen
+  in the hypervaimika target were not repeated in audit, PRs, commits, or final
+  output.
+- TweetClaw state: compact audit updated, archive appended, existing untracked
+  TweetClaw file `0` preserved.

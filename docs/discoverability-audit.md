@@ -192,20 +192,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 05:31 UTC: runtime selector unavailable. Automation now bans
-  promotion notes and requires each new external PR to pair native Xquik
-  integration with 2+ target improvements.
-- Crawler coverage: proxy native 0 after socket closures, direct native 5,
-  direct skill 11, repo readbacks 6. Exact PR reads covered 6 existing
-  Xquik-visibility PRs; 6 old promotion-note comments and 6 PR body notes were
-  removed.
-- Opened 3 native Xquik PRs with target improvements:
-  `boyzwhocried/twitter-scraping-dashboard#13`,
-  `Muqeeth77/RealTime_Twitter_Sentiment#1`, and
-  `Technicaladvisor01/twitter-sentiment-powerbi#4`.
-- Validation passed: boyzwhocried tests 9 passed; all 3 repos passed Python
-  compile, README links, and `git diff --check`; Technicaladvisor sample Xquik
-  import validation passed. Prompt measured 15,344 bytes. Details are archived.
+- 2026-07-04 10:01 UTC: runtime selector unavailable. Crawler coverage returned
+  direct native 9, direct skill 17, and repo readbacks 9. Exact PR reads covered
+  9 existing Xquik-visibility PRs; no actionable maintainer repair was open.
+- Screened fresh dashboard, API, and static analytics lanes, then opened 3
+  native Xquik PRs with 2+ target improvements:
+  `vituccione/bigdata-stock-tweet-sentiment-forecasting#1`,
+  `steveapp531/social-media-analytics-dashboard-api#1`, and
+  `hypervaimika-web/tweet-analytics#1`.
+- Validation passed: Python compile plus importer sample, `npm run check`, Node
+  syntax plus Xquik import sample and chart generation, changed-file hygiene,
+  target link checks, and no promotion-note phrase hits in PR bodies. Prompt
+  measured 15,344 bytes. Details are archived.
 
 ## Reporting Checklist
 
