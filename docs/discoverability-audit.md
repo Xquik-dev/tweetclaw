@@ -192,18 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 19:04 UTC: runtime selector unavailable. Crawler-first discovery
-  plus exact repo checks screened fresh Flask, scheduler, dashboard, skill, and
-  legacy monitoring lanes. Opened 3 promotion-clean native Xquik PRs with 2+
-  target fixes: `jryahia/social-media-scheduler#1`,
-  `abhik1711/SocialBuzzX#1`, and `jk08y/x-api#1`.
-- Exact readbacks: all 3 new PRs open, ready, mergeable, 1 commit, 0 comments,
-  0 reviews, 0 checks. Six recent Xquik PRs were also exact-read; no repair or
-  promotion-note cleanup was needed. Broad authored PR search still returned 0,
-  so no complete-all inventory claim.
-- Links: Xquik, OpenClaw `.ai` docs, and new PR URLs returned HTTP 200. Diffs
-  and PR bodies scanned clean. Full inventory, blockers, target fixes, and
-  validation details archived.
+- 2026-07-04 19:25 UTC: runtime selector unavailable. Crawler-first discovery
+  covered scheduler, automation, dashboard, MCP, and skill queries but returned
+  0 records after managed egress failures; fallback GitHub search screened
+  fresh Flask automation, tweet-bot, auto-poster, scraper, dashboard, and
+  scheduler lanes.
+- Opened 3 promotion-clean native Xquik PRs with 2+ target fixes:
+  `SakethSripada/Flask-SocialMedia-Automation#17`,
+  `karansingh-in/Carax1s-Twitter-Bot#2`, and
+  `emanuel-poblano/auto-post#1`.
+- Exact readbacks: all 3 new PRs plus 9 recent audit-tracked PRs were open,
+  ready, mergeable, with 0 comments, 0 reviews, and 0 checks needing repair.
+  Broad authored PR search still returned 0, so no complete-all inventory
+  claim. Links for Xquik, OpenClaw `.ai` docs, and new PRs returned HTTP 200.
 
 ## Reporting Checklist
 

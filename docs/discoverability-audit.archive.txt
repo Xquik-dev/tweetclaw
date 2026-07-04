@@ -67225,6 +67225,115 @@ Self-improvement:
   `npm run check:all`, commit, and push were run after this archive write.
   Existing untracked TweetClaw file `0` was preserved.
 
+2026-07-04 19:25 UTC heartbeat
+- Runtime selector: no model, Fast-mode, or reasoning-effort selector was
+  exposed in this environment. Recorded limitation and continued.
+- Start state: Xquik kept unrelated user changes in `docs/feature-roadmap.md`,
+  `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved. Xquik issue list
+  returned 0 open issues. TweetClaw started at `7d30d6d` with only the
+  pre-existing untracked file `0`.
+- OpenClaw docs recheck: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  returned 000. No OpenClaw compatibility changes were made.
+- Crawler-first coverage: from `/Users/burak/Developer/xquik`, strict JSON
+  output `/tmp/tweetclaw-heartbeat-20260704T1925/crawler/fresh.json` covered
+  Twitter/X schedulers, Flask automation, Python exporters, Next.js and React
+  dashboards, MCP servers, SKILL.md, `.agents/skills`, Claude, OpenClaw,
+  social-media, Twitter/X skill, and awesome skill query lanes. Managed egress
+  logged socket failures and endpoint quarantines; final JSON parsed with 0
+  opportunities and 0 repositories. No crawler credentials were printed,
+  stored, or committed.
+- PR inventory: broad authored search
+  `is:pr is:open author:kriptoburak archived:false` again returned 0 despite
+  known PRs, so no complete-all claim was made. Exact readback covered 9 recent
+  audit-tracked PRs:
+  `jryahia/social-media-scheduler#1`, `abhik1711/SocialBuzzX#1`,
+  `jk08y/x-api#1`, `3moOoriiy/x-scraper-app#1`,
+  `AlexKim45/company-sentiment-scraper#1`,
+  `alvenkatesh100/social_media_analytics_repo#2`,
+  `omk4r-codes/twitter-sentiment-analysis-flask-app#1`,
+  `6-Isa-9/Twitter-Sentiment-Analysis---Flask-App#1`, and
+  `nimit17/Twitter-Sentiment-Analysis-Flask-API#8`. All 9 were open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, and 0 checks. No maintainer
+  feedback, CI repair, conflict, DCO/CLA blocker, generated-file drift, valid
+  bot finding, or promotion-note cleanup was needed.
+- Fresh screening and blockers: fallback search screened Streamlit dashboards,
+  Flask automation, Twitter/X schedulers, auto-posters, Python bots, scraper
+  repos, MCP lanes, and skill queries. Duplicate or prior-history blockers
+  included `JayantTaneja/Streamlit-Interactive-Twitter-Sentiment-Analyzer`,
+  `Salrahim21/twitter-sentiment-dashboard`,
+  `AbdulRehman393/streamlit-airline-sentiment`,
+  `varun0852/Twitter-Sentiment-Analytics-Dashboard`,
+  `JunchaoMei/Twitter-Sentiment-Analysis-System`,
+  `machinelearningprodigy/sentiment-analysis`,
+  `josephjilovec/Unified-Social-Scheduler`, and
+  `Matthew-Selvam/Open-Dispatch`. `Mriganka-codes/X-Twitter-scraper-without-using-API`
+  was blocked without reading the file because the repo tracks a `.env` path.
+  `karansingh-in/Carax1s-Twitter-Bot`,
+  `emanuel-poblano/auto-post`, and
+  `SakethSripada/Flask-SocialMedia-Automation` passed metadata, fork,
+  target-content, open/closed PR and issue duplicate, policy, and validation
+  gates. Missing license metadata for Karan and Emanuel did not block direct
+  PRs; Saketh is MIT licensed.
+- Opened `SakethSripada/Flask-SocialMedia-Automation#17`:
+  https://github.com/SakethSripada/Flask-SocialMedia-Automation/pull/17 from
+  verified fork `kriptoburak/saketh-flask-socialmedia-automation`, parent
+  `SakethSripada/Flask-SocialMedia-Automation`, branch
+  `codex/add-xquik-tweet-context`, commit `d69035d`. Native Xquik integration:
+  optional Xquik Topic field on the Twitter automation form fetches bounded
+  tweet-search source examples from `https://xquik.com/api/v1/x/tweets/search`
+  when `XQUIK_API_KEY` is configured and adds them to AI tweet prompts. Target
+  improvements: empty URL fields no longer trigger scraping; interval input is
+  validated and negative intervals are rejected; malformed schedule times are
+  rejected; passed schedule times no longer create stored scheduled-tweet rows;
+  empty tweet content is rejected before posting or storing. Validation:
+  `python3 -m py_compile app.py xquik_utils.py` and `git diff --check`. Exact
+  readback: open, ready, mergeable, 1 commit, 0 comments, 0 reviews, 0 checks,
+  4 files, 85 additions, 7 deletions, promotion-clean.
+- Opened `karansingh-in/Carax1s-Twitter-Bot#2`:
+  https://github.com/karansingh-in/Carax1s-Twitter-Bot/pull/2 from verified
+  fork `kriptoburak/carax1s-twitter-bot-xquik`, parent
+  `karansingh-in/Carax1s-Twitter-Bot`, branch
+  `codex/add-xquik-source-context`, commit `3bf195b`. Native Xquik
+  integration: optional `XQUIK_API_KEY`, `XQUIK_SEARCH_QUERY`, and
+  `XQUIK_CONTEXT_LIMIT` add bounded Xquik tweet-search source context to
+  scheduled advice tweets while keeping posts under the X character limit.
+  Target improvements: `post.py`, `polls.py`, and `poster.py` no longer start
+  scheduler loops at import time; `bot.py` owns the scheduler loop; uppercase
+  `X_BEARER_TOKEN` is accepted; write credentials are validated explicitly.
+  Validation: `python3 -m py_compile auth.py bot.py compose.py polls.py
+  post.py poster.py xquik_context.py` and `git diff --check`. Exact readback:
+  open, ready, mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, 8 files,
+  152 additions, 48 deletions, promotion-clean.
+- Opened `emanuel-poblano/auto-post#1`:
+  https://github.com/emanuel-poblano/auto-post/pull/1 from verified fork
+  `kriptoburak/emanuel-auto-post-xquik`, parent `emanuel-poblano/auto-post`,
+  branch `codex/add-xquik-post-context`, commit `5edf80a`. Native Xquik
+  integration: optional `XQUIK_API_KEY`, `XQUIK_SEARCH_QUERY`, and
+  `XQUIK_SEARCH_LIMIT` append bounded Xquik tweet-search source context to
+  selected or scheduled posts. Target improvements: `content/posts.txt` loads
+  relative to the repo; blank post lines are ignored; empty post sets fail
+  clearly; missing Twitter credentials and empty tweet text are rejected before
+  API calls; Twitter post requests use a timeout. Validation:
+  `python3 -m py_compile config.py main.py scheduler.py poster/twitter.py
+  xquik_context.py` and `git diff --check`. Exact readback: open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, 6 files, 113 additions,
+  6 deletions, promotion-clean.
+- Link and public hygiene: `https://xquik.com`, `https://xquik.com/api/v1`,
+  OpenClaw `.ai` docs, and all 3 new PR URLs returned HTTP 200. Diffs and PR
+  bodies were scanned for secrets, private implementation details, restricted
+  provider or source names, internal cost mechanics, unsupported claims, stale
+  metadata, and banned promotion-note wording. No banned wording was posted in
+  PR bodies, comments, commits, or changed files. No NHS badge changes.
+- Self-improvement: no prompt edit was needed. Lesson reinforced: after a
+  crawler run returns 0 because of egress failures, fallback lanes must still
+  include exact duplicate checks and blocker records; tracked `.env` paths in
+  candidate repos should block without reading contents.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Existing untracked TweetClaw file `0` was preserved.
+
 2026-07-04 19:04 UTC heartbeat
 - Runtime selector: no model, Fast-mode, or reasoning-effort selector was
   exposed in this environment. Recorded limitation and continued.
