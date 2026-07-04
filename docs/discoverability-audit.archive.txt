@@ -2,6 +2,124 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-04 00:14 UTC Native Dashboard And Registry PR Batch
+
+- Runtime selector limitation: Codex Desktop exposed no model, speed, or effort
+  selector, so Codex 5.5 Fast mode and extra-high reasoning could not be
+  explicitly selected. Continued within the available runtime.
+- User prompt update: the automation prompt was updated before this heartbeat to
+  require fresh framework, software, dashboard, project, library, SDK, CLI,
+  plugin, registry, catalog, example, package-tooling, and docs screening every
+  run, and to prefer target-native adapters, providers, dashboard data-source
+  recipes, SDK examples, templates, plugin manifests, configs, validators,
+  fixtures, compatibility notes, package metadata, and docs recipes over thin
+  marketing mentions. Prompt readback measured 15,227 bytes, under the 15 KiB
+  cap of 15,360 bytes.
+- Xquik issue and worktree check: `gh issue list --repo Xquik-dev/xquik
+  --state open` returned 0 open issues. Existing unrelated Xquik changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md` were preserved. TweetClaw kept the
+  existing untracked `0` file untouched.
+- Crawler-first coverage: ran two strict JSON Xquik crawler packs from
+  `/Users/burak/Developer/xquik` to
+  `/tmp/tweetclaw-heartbeat-20260704T0014/frameworks-dashboards-libraries.json`
+  and
+  `/tmp/tweetclaw-heartbeat-20260704T0014/skills-registries-catalogs.json`.
+  Coverage included framework, dashboard, library, SDK, agent framework,
+  social-media connector, X/Twitter automation, SKILL.md, `.agents/skills`,
+  OpenClaw, MCP, Codex, Claude, awesome-list, registry, fork, and generated
+  catalog lanes. The native pack parsed as strict JSON with 0 opportunities
+  after repeated network-egress socket-close and proxy quarantine logs. The
+  skill pack parsed as strict JSON with 3 skip-recommended hits:
+  `rabden/X-twitter-social-manager-skill`,
+  `elbis330/social-media-scraper-skill`, and
+  `AISA-skills/social-media-skills`; all were archive-known duplicate,
+  prior-history, or issue-first blockers.
+- PR inventory and repair gate: broad authored PR partitions for
+  `created:2026-07-04` and `updated:>=2026-07-03T23:31:00Z` hit GitHub
+  secondary search limits, so broad authenticated search stopped for this run.
+  Fallback exact readbacks covered the new PRs plus known in-scope PRs:
+  `umairsohail049/openclaw-api-list#1`,
+  `ivishnuraj/awesome-mcp-servers#3`,
+  `skilluse/skilluse#4`, and target open PR
+  `josecookai/awesome-openclaw-apis#4`. New PRs and the two 23:31 PRs were
+  open, ready, clean, and mergeable. `skilluse/skilluse#4` remained mergeable
+  but unstable only because Vercel requires target-team authorization; no
+  repairable maintainer comment, review comment, CI failure, conflict, DCO,
+  CLA, generated-file drift, or valid bot finding was found.
+- Fresh native screening: exact metadata, target PR and issue lists, compact
+  audit, archive, local clones, and content scans checked
+  `josecookai/awesome-openclaw-apis`,
+  `benbasha/awesome-openclaw-apis`,
+  `mayurrathi/awesome-agent-skills`,
+  `linx777/agent-skills-registry`, and
+  `keerthy-analyst/Twitter_scraping_using_pythonscripting_mongodb_streamlit`.
+  The older Streamlit and sentiment-dashboard lanes
+  `Dhamo0085/Twittter-scrapper-using-snscrape-and-streamlit`,
+  `Kalki-Teja-Patimidi/Twitter_Scraper`, and
+  `80years80/Tweet_Sentiment_Googlesheet_Dashboard` were duplicate-blocked by
+  prior PRs. `benbasha/awesome-openclaw-apis` was blocked because its rules
+  require a generous free-tier API confirmation that Xquik should not claim.
+  `mayurrathi/awesome-agent-skills` remained a possible future skill lane but
+  was lower priority after 3 safer native lanes existed. Missing license
+  metadata on selected dashboard or registry repos was recorded and did not
+  block direct PRs.
+- Duplicate and fork checks: compact audit, archive, target content, target
+  open and closed PRs, target open and closed issues, and local scans found no
+  prior TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, npm, ClawHub,
+  OpenClaw, or URL variant content in the 3 selected targets. Fork readbacks
+  verified `kriptoburak/Twitter_scraping_using_pythonscripting_mongodb_streamlit`
+  parent `keerthy-analyst/Twitter_scraping_using_pythonscripting_mongodb_streamlit`,
+  `kriptoburak/linx777-agent-skills-registry` parent
+  `linx777/agent-skills-registry`, and
+  `kriptoburak/josecookai-awesome-openclaw-apis` parent
+  `josecookai/awesome-openclaw-apis`.
+- New external PR 1: opened
+  https://github.com/keerthy-analyst/Twitter_scraping_using_pythonscripting_mongodb_streamlit/pull/1
+  from branch `codex/import-tweetclaw-export`, commit `8940c10`. The PR adds a
+  Streamlit data-source selector for TweetClaw CSV or JSON exports, normalizes
+  common TweetClaw export fields into the app's existing tweet table, documents
+  the workflow in README, and fixes the existing CSV and JSON download buttons
+  so imported data can round-trip through the app. Validation: `python3 -m
+  py_compile twitter_db.py`, `git diff --check`, added-line dash scan, and
+  added-line sensitive-value scan passed.
+- New external PR 2: opened
+  https://github.com/linx777/agent-skills-registry/pull/1 from branch
+  `codex/add-tweetclaw-registry-card`, commit `82679da`. The PR adds a
+  structured TweetClaw card to the React registry data with roles, install
+  command, compatibility, triggers, features, and best-fit guidance for
+  approval-gated X/Twitter workflows. Validation: `npm ci`, `npm run build`,
+  `git diff --check`, added-line dash scan, and added-line sensitive-value scan
+  passed. `npm ci` reported pre-existing dependency audit findings, but package
+  metadata was not changed and Vite build passed.
+- New external PR 3: opened
+  https://github.com/josecookai/awesome-openclaw-apis/pull/5 from branch
+  `codex/add-xquik-openclaw-api`, commit `54324a6`. The PR adds Xquik to the
+  social-media API section, includes the canonical `openclaw plugins install
+  npm:@xquik/tweetclaw` command, and adds Xquik to the registration priority
+  table with subscription or pay-per-use wording. Validation: `git diff
+  --check`, added-line dash scan, added-line sensitive-value scan, and public
+  link checks passed.
+- PR readbacks and public hygiene: all 3 new PRs read back OPEN, ready,
+  MERGEABLE, CLEAN, with 0 comments, 0 reviews, and 0 checks configured. PR
+  bodies used the required first-person optional post-merge X/Twitter note with
+  plain `burakbayir`, no GitHub mention, and no X/Twitter account URL. Direct
+  PR URL checks returned HTTP 200.
+- Official OpenClaw and public link checks: rechecked current docs at
+  `llms.txt`, `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` with HTTP 200. `/plugins/permissions` returned 404, so the
+  older guessed route remains invalid. New public URLs returned HTTP 302 for
+  `https://dashboard.xquik.com/`, HTTP 200 for TweetClaw GitHub, and HTTP 200
+  for the npm registry metadata endpoint.
+- TweetClaw audit validation: after compact edit,
+  `npm run check-memory-md-size` passed at 15,264/15,360 bytes, and
+  `npm run check:all` passed. Prompt self-improvement: no further prompt edit
+  was needed because the updated prompt already preserves
+  framework/software/dashboard/library/project coverage, native integration
+  rules, mandatory 3-PR submission, crawler-first discovery, skill coverage,
+  repair priority, duplicate/fork gates, OpenClaw docs checks, link checks,
+  validation, safety, cadence, thread binding, and prompt cap requirements.
+
 ### 2026-07-03 23:31 UTC Xquik OpenClaw And MCP PR Batch
 
 - Runtime selector limitation: Codex Desktop exposed no model, speed, or effort
