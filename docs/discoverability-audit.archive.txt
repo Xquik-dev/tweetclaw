@@ -2,6 +2,136 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-04 02:25 UTC Native Dashboard Import Run
+
+- Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,
+  speed, or reasoning-effort selector, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected. The persisted automation prompt
+  measured 15,267 decoded bytes; the full automation TOML measured 15,569
+  bytes. Python `tomllib` was unavailable locally, so the prompt bytes were
+  measured with a text parser. The prompt was not changed because it already
+  preserved the user's framework, software, dashboard, project, library, and
+  native-integration mandate.
+- Crawler-first coverage: ran strict JSON PR-monitoring, native dashboard, and
+  skill or registry query packs from `/Users/burak/Developer/xquik` into
+  `/tmp/tweetclaw-heartbeat-20260704T0225/`. Commands used `--json`, explicit
+  output paths, `--research-proxy`, stable session ids,
+  `--request-timeout-ms 12000`, `--proxy-warmup-timeout-ms 12000`,
+  `--limit 30`, `--search-pages 1`, `--per-query-limit 10`, and
+  `--concurrency 8` with `GITHUB_TOKEN` and `GH_TOKEN` empty for crawler
+  execution. Coverage included open PRs, issues, repos, code, Xquik, TweetClaw,
+  OpenClaw, ClawHub, MCP, skills, x-twitter-scraper, X/Twitter automation,
+  social media, agent tools, frameworks, software projects, dashboards,
+  libraries, SDKs, catalogs, examples, validators, registries, package tooling,
+  docs, `SKILL.md`, `.agents/skills`, Codex, Claude, forks, awesome lists,
+  generated catalogs, and web-index style skill queries. The strict JSON
+  outputs parsed as 11 monitoring opportunities, 17 native dashboard
+  opportunities, and 7 skill or registry opportunities.
+- PR inventory and repair gate: broad authored open-PR partitions searched
+  `TweetClaw`, `tweetclaw`, `Xquik`, `OpenClaw`, `ClawHub`, `MCP`, `skill`,
+  `skills`, `x-twitter-scraper`, `twitter`, `X`, `social`, `dashboard`, and
+  `analytics`; 1,057 unique URLs were indexed. Exact-read 14 recent
+  Xquik-visibility PRs updated after 2026-07-04 02:04 UTC for state,
+  mergeability, base/head, commits, comments, reviews, checks, maintainer edit
+  state, and body/comment wording. No maintainer request, actionable review,
+  conflict, generated-file drift, DCO, CLA, or valid bot finding needed code
+  repair. `huskar20/huskar20-plugins#1` read back mergeable but blocked with no
+  comments or checks to repair. `ninnettesudanese653/claude-plugins#1` read
+  back unknown with no comments, reviews, or checks to repair.
+- Visibility-comment repair: edited 8 own PR comments in place so they use the
+  current first-person optional wording with no X/Twitter URL and no GitHub
+  mention prefix. Readback confirmed the comments on
+  `Marine-softdrink524/claude-skills#1`,
+  `Simplex-june29108/saas-api-skills#1`,
+  `aland4747/awesome-prediction-markets#1`,
+  `kentunderage549/cc-harness-skills#1`,
+  `martgueritainaccurate875/skills#1`,
+  `modest-curator478/claude-skills#1`,
+  `ninnettesudanese653/claude-plugins#1`, and
+  `rubyt5673/trade-show-skills#1` contain `tag or mention the X account name
+  burakbayir` and do not contain the old X profile URL form.
+- Fresh discovery and duplicate gates: compact audit, archive, crawler output,
+  target metadata, target open plus closed PRs/issues, and local target content
+  were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, and
+  variants. Screened fresh lanes included
+  `Atharva12072004/X-Social-Media-Data-Analysis`,
+  `ajay-automates/social-pulse`,
+  `amrutawagh39/Audience-Trend-Insights`,
+  `athanggohane2347-jpg/x-twitter-intelligence-dashboard`,
+  `debaratip25-collab/ai-powered-social-media-engagement-dashboard`,
+  `imashu/Social-Media-Dashboard`,
+  `khawajahizbullah/Social-Media-Analytics-Dashboard`,
+  `kritikasingh143/Social-Media-Analytics-Platform`, and `Wallace-Best/best`.
+  `Wallace-Best/best` was dropped because repo metadata contains unsafe,
+  irrelevant pasted web payload. `Atharva12072004` was held as PowerBI-only
+  without a narrow code import surface. `ajay-automates/social-pulse` was held
+  because a proper Xquik provider would touch OAuth, database platform types,
+  and refresh flows, while 3 safer native lanes were available. The selected
+  lanes were public, non-fork, non-archived, issue-enabled, duplicate-clean,
+  and had no blocking maintainer policy or contribution file. Missing license
+  metadata was recorded but did not block direct PRs.
+- Selected native lanes: `amrutawagh39/Audience-Trend-Insights` is a React
+  mock-data audience dashboard, so the native fit was a JavaScript adapter that
+  turns Xquik post exports into the existing audience data shape and adds a
+  sample segment. `athanggohane2347-jpg/x-twitter-intelligence-dashboard`
+  already accepts CSV uploads for sentiment, hashtag, spam, fake-account,
+  word-cloud, CSV export, and PDF workflows, so the native fit was a converter
+  into that upload schema. `debaratip25-collab/ai-powered-social-media-engagement-dashboard`
+  is a formula-driven Excel/Python engagement dashboard using a fixed
+  `EngagementData` CSV schema, so the native fit was a converter into that
+  workbook dataset schema.
+- Fork gates: created and REST-verified `kriptoburak/Audience-Trend-Insights`
+  parent `amrutawagh39/Audience-Trend-Insights`,
+  `kriptoburak/x-twitter-intelligence-dashboard` parent
+  `athanggohane2347-jpg/x-twitter-intelligence-dashboard`, and
+  `kriptoburak/ai-powered-social-media-engagement-dashboard` parent
+  `debaratip25-collab/ai-powered-social-media-engagement-dashboard` before
+  pushing.
+- Opened `https://github.com/amrutawagh39/Audience-Trend-Insights/pull/1` from
+  `codex/import-xquik-audience-data`, commit `6e6e3fa`. The PR adds
+  `src/data/xquikAudienceData.js`, merges a sample "AI builders on X" segment
+  through `src/data/mockData.js`, and replaces the placeholder README with
+  adapter usage guidance. Readback: OPEN, MERGEABLE, CLEAN, non-draft,
+  maintainer-editable, 1 commit, 0 comments, 0 reviews, 0 checks, correct
+  first-person visibility note in the PR body.
+- Opened `https://github.com/athanggohane2347-jpg/x-twitter-intelligence-dashboard/pull/1`
+  from `codex/import-xquik-csv`, commit `93ddd4a`. The PR adds `xquik_csv.py`,
+  `examples/xquik-posts.jsonl`, and README upload guidance for reviewed Xquik
+  JSON, JSONL, NDJSON, or CSV rows. Readback: OPEN, MERGEABLE, CLEAN,
+  non-draft, maintainer-editable, 1 commit, 0 comments, 0 reviews, 0 checks,
+  correct first-person visibility note in the PR body.
+- Opened `https://github.com/debaratip25-collab/ai-powered-social-media-engagement-dashboard/pull/1`
+  from `codex/import-xquik-engagement-data`, commit `fe598d4`. The PR adds
+  `analysis/xquik_engagement_import.py`, `examples/xquik-posts.jsonl`, and
+  README guidance for generating workbook-compatible engagement CSV rows.
+  Readback: OPEN, MERGEABLE, CLEAN, non-draft, maintainer-editable, 1 commit,
+  0 comments, 0 reviews, 0 checks, correct first-person visibility note in the
+  PR body.
+- Validation and link hygiene: Amruta passed `npm ci`, `npm run build`,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`;
+  `npm ci` reported target-owned dependency audit findings and deprecated
+  packages, but the build succeeded and no validation-only artifacts were
+  committed. Athang passed `python3 -m py_compile xquik_csv.py`, sample JSONL
+  conversion with 2-row CSV readback assertions,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Debarati passed `python3 -m py_compile analysis/xquik_engagement_import.py`,
+  sample JSONL conversion with 2-row CSV readback assertions,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Direct `curl -fsSI https://xquik.com` passed. TweetClaw `README.md`,
+  `docs/discoverability-audit.md`, and `docs/clawpack-release.md` link checks
+  passed before this audit edit. Public text and changed files were searched
+  for secrets, private implementation details, restricted provider names,
+  internal cost mechanics, unsupported claims, the old X profile URL form, and
+  the at-sign account form; none were introduced.
+- TweetClaw audit and self-improvement: changed TweetClaw files are
+  `docs/discoverability-audit.md` and this archive. Durable lesson: for
+  spreadsheet-style dashboards, a converter into the workbook's checked-in CSV
+  schema is a native integration even when the workbook itself is binary. For
+  live OAuth dashboards, hold off unless the Xquik provider can be added without
+  broad auth/database churn or when no safer native lanes exist. Existing
+  untracked `0` in the TweetClaw worktree was preserved.
+
 ### 2026-07-04 02:04 UTC Native Dashboard Import Run
 
 - Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,

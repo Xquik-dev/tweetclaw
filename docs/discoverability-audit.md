@@ -189,19 +189,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 02:04 UTC: runtime selector unavailable; prompt remains 15,227
-  bytes. Crawler-first packs parsed 11 monitoring, 19 native dashboard, and 7
+- 2026-07-04 02:25 UTC: runtime selector unavailable; prompt measured 15,267
+  bytes. Crawler-first packs parsed 11 monitoring, 17 native dashboard, and 7
   skill or registry opportunities.
-- Authored open-PR partitions found 1,058 unique broad URLs; exact-read 28
-  audit-tracked, recent, or known Xquik-visibility PRs. No repair was needed;
-  blockers were target-owned checks or non-actionable comments.
-- Screened fresh native lanes: `Yura935`, `PradeepKumar771`, `Kmani888`,
-  `Khyati89`, `Ronit26Mehta`, and `VaishnaviDayanand`. `Ronit26Mehta` and
-  `VaishnaviDayanand` were duplicate-blocked; `Khyati89` was README-only.
+- Authored open-PR partitions found 1,057 unique broad URLs; exact-read 14
+  recent Xquik-visibility PRs. Repaired 8 own visibility comments to the
+  current no-URL wording. No maintainer request, conflict, generated-file drift,
+  DCO, CLA, or valid bot finding needed code repair.
+- Screened 9 fresh native lanes. `Wallace-Best` was unsafe/irrelevant,
+  `Atharva12072004` was PowerBI-only, and `ajay-automates` was held as broad
+  OAuth/database work after 3 safer lanes passed.
 - Opened 3 mergeable native import PRs from verified `kriptoburak` forks:
-  `Yura935/social-dashboard#1`, `PradeepKumar771/Social-media-dashboard#1`,
-  and `Kmani888/Real-Time-AI-Based-Customer-Sentiment-Analysis#1`.
-- Gates, validation, links, memory, push, and lessons are in the archive.
+  `amrutawagh39/Audience-Trend-Insights#1`,
+  `athanggohane2347-jpg/x-twitter-intelligence-dashboard#1`, and
+  `debaratip25-collab/ai-powered-social-media-engagement-dashboard#1`.
+- Target validation passed: React install/build, 2 Python compiles, 2 sample
+  conversions, target README link checks, Xquik HEAD check, and `git diff
+  --check`. Full details and lessons are in the archive.
 
 ## Reporting Checklist
 
