@@ -189,19 +189,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 00:35 UTC: runtime selector unavailable; persisted automation
-  prompt measured 15,227 bytes after the native framework, software, dashboard,
-  project, and library wording. Crawler-first native and skill packs returned no
-  usable hits after socket-close logs; broad authenticated GitHub search later
-  hit an API rate limit, so exact repo reads, archive checks, clones, and local
-  scans carried discovery.
-- Exact-read 6 open in-scope PRs. Five needed no repair; `skilluse/skilluse#4`
-  remains target-owned Vercel authorization blocked. No Xquik-visibility repair
-  was required.
-- Opened 3 mergeable native dashboard PRs from verified `kriptoburak` forks:
-  `dkessavane/twitter-dashboard#1`,
-  `follow-the-sh33p/twitter-dashboard#1`, and
-  `SanVic009/sentiment-dashboard#1`.
+- 2026-07-04 01:03 UTC: runtime selector unavailable; prompt remains 15,227
+  bytes. Crawler-first monitoring, native dashboard, and skill packs parsed as
+  strict JSON with 0 hits after socket-close logs, so exact PR reads, archive
+  checks, GitHub metadata, and clones carried the run.
+- Exact-read 10 in-scope open PRs. No Xquik-visibility repair was needed;
+  `skilluse/skilluse#4` remains target-owned Vercel authorization blocked, and
+  `SanVic009/sentiment-dashboard#1` had only a non-actionable Codex wrapper
+  review.
+- Opened 3 mergeable native integration PRs from verified `kriptoburak` forks:
+  `NikoVlasov/social-analyst-dashboard#1`,
+  `zonia7867/social-media-analytics-dashboard#1`, and
+  `Mahek-J21/SocialMediaAnalytics#1`.
 - Duplicate gates, target policy checks, validation, link checks, memory size,
   pushed audit commit, and self-improvement details are recorded in the archive.
 
