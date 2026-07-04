@@ -189,19 +189,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 02:57 UTC: runtime selector unavailable; prompt measured 15,227
-  bytes. Crawler parsed 10 monitoring, 0 native dashboard, and 10 skill or
-  registry opportunities; fallback repo search supplied native lanes.
-- Inventory indexed 1,383 open authored URLs and exact-read 17 recent PRs.
-  Repaired `technicalpickles/pickled-claude-plugins#101` metadata plus one
-  stale visibility comment. Nafi Vercel failure is maintainer authorization.
+- 2026-07-04 03:18 UTC: runtime selector unavailable; prompt measured 15,227
+  bytes. Crawler parsed 3 monitoring, 12 native framework/dashboard, and 1
+  skill opportunity.
+- Inventory indexed 1,380 open authored URLs and exact-read 12 recent PRs.
+  Repaired `polrai-bg/polr-ai-skills#3` by bundling a Xquik route reference.
+  Nafi Vercel failure is maintainer authorization.
 - Screened 9 fresh lanes. Opened native PRs:
-  `cadenburleson/social-dash#1`,
-  `NafisRayan/Social-Media-Dashboard#1`, and
-  `hemantDwivedi/social-media-analytics#3`.
-- Validation passed: 3 builds, changed-file lint where relevant, README link
-  checks with local examples ignored, Xquik HEAD, and `git diff --check`.
-  Full details and lessons are in the archive.
+  `samya36/x-daily-checkin#1`, `Krishna-9253/SocialPulse#1`, and
+  `rippersumit14/social-media-analytics-dashboard#1`.
+- Validation passed: focused tests/builds, route link checks with expected 402
+  auth responses, target diff checks, secret scans, and PR exact readbacks. Full
+  details and lessons are in the archive.
 
 ## Reporting Checklist
 
