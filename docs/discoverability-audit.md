@@ -192,17 +192,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 17:19 UTC: runtime selector unavailable. Crawler-first discovery
-  wrote valid empty JSON after managed-network failures. GitHub fallback found
-  fresh dashboard lanes. Broad authored-open PR search reported 3,967 results,
-  above GitHub's 1,000 cap, so no complete-all inventory claim was made.
-- Opened 3 promotion-clean Xquik integration PRs with 2+ target improvements:
-  `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`,
-  `ahmohler/social-media-sentiment-dashboard#3`, and
-  `AseemTapase123/Social-Media-Sentiment-Dashboard#1`. All exact-read open,
-  ready, mergeable, and promotion-clean.
-- Validation passed for tests, py compile, diff hygiene, duplicate checks,
-  fork-parent checks, OpenClaw doc readbacks, and banned wording scans. Full
+- 2026-07-04 17:40 UTC: runtime selector unavailable. Crawler wrote valid empty
+  JSON after managed-network failures. Authored-open inventory hit GitHub cap:
+  all open 3,973; Xquik 2,689; TweetClaw/tweetclaw 1,409; OpenClaw 802;
+  x-twitter-scraper 570. No complete-all claim.
+- Opened promotion-clean Xquik Airflow ETL PRs, each with 2+ target
+  improvements: `Prakashg7021/twitter-etl-airflow#1`,
+  `Ayim-sampson/X-Twitter-ETL-Airflow-Project#1`, and
+  `ahmedashraffcih/Twitter-Airflow-Data-Pipeline#1`. All open, ready, and
+  mergeable.
+- Repaired valid Codex review on
+  `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`
+  with commit `11f4ebf` and a technical comment. Compile, diff, duplicate,
+  fork-parent, PR-body, xquik.com, PR URL, and target README link checks
+  passed. Later OpenClaw docs retry hit DNS after earlier 200 reads. Full
   details archived.
 
 ## Reporting Checklist
