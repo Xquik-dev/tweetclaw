@@ -2,6 +2,90 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-04 05:10 UTC Native Source Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, Fast mode, or
+  reasoning-effort controls, so Codex 5.5 Fast mode and extra-high reasoning
+  could not be explicitly selected.
+- Workspace state: TweetClaw `master` only had existing untracked `0`; Xquik
+  `master` still had user-owned `docs/feature-roadmap.md` plus two untracked
+  article drafts. Xquik open issue check returned none. No dev servers, Browser,
+  Chrome, production SSH, or secret reads were used.
+- Crawler-first coverage: from `/Users/burak/Developer/xquik`, proxy-backed
+  strict JSON batches covered PR monitoring, native framework/dashboard/source
+  targets, skill/registry targets, and repo-mode readbacks for known outreach.
+  All proxy batches produced valid JSON but 0 opportunities after repeated
+  socket closures and endpoint quarantines. Direct crawler retry returned 1
+  stale native result, 3 skill/registry results, and 6 repo readbacks.
+- Open PR inventory: broad authenticated PR search for Xquik, TweetClaw,
+  OpenClaw/skill, and Twitter/dashboard partitions hit GitHub secondary-rate
+  403s and stopped per policy. Exact readbacks covered the 3 previous PRs:
+  `ECTWNYC/market-awareness-alert#1`, `eckartal/sm-g#1`, and
+  `starslittle/twitter-listening-agent#1`.
+- Fresh screening: compact audit, archive, target metadata, target PRs, target
+  issues, and target content were checked for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, and variants. `nocoo/xray` was blocked
+  by prior PR #117, `AbdulRehman393/streamlit-airline-sentiment` by prior
+  history, `opsecfreak/SocialMedia-BrandManager` by an empty repository, and
+  Power BI-only repos were lower fit. Selected lanes were public, non-fork,
+  non-archived, issue-enabled, duplicate-clean, and had no blocking
+  contribution policy.
+- Fork gates: created and REST-verified `kriptoburak/crimeintel-ai-xquik`
+  parent `vipulsystems/crimeintel-ai`,
+  `kriptoburak/ladyzeng-twitter-dashboard-proxy` parent
+  `ladyzeng12-dotcom/twitter-dashboard-proxy`, and
+  `kriptoburak/rpop67-twitter-analytics-dashboard` parent
+  `rpop67/Twitter-Analytics-Dashboard`.
+- Native PR 1: opened https://github.com/vipulsystems/crimeintel-ai/pull/1
+  from branch `codex/xquik-twitter-source`, commit `c85459a`. It adds an
+  optional Xquik `/api/v1/x/tweets/search` source to the disabled Twitter worker,
+  maps Xquik records into the existing post ingestion shape, and documents
+  backend env vars. Validation: `git diff --check`, `node --check
+  backend/src/modules/social/twitter/twitter.service.js`, and
+  `npm install --ignore-scripts --no-package-lock` passed. `npm ci
+  --ignore-scripts` is blocked by the target's stale backend lockfile.
+- Native PR 2: opened
+  https://github.com/ladyzeng12-dotcom/twitter-dashboard-proxy/pull/1 from
+  branch `codex/xquik-profile-source`, commit `c570ae1`. It adds an optional
+  Xquik `/api/v1/x/users/{username}` profile source to the Vercel proxy while
+  preserving the existing fallback and response shape. Validation: `git diff
+  --check`, `node --check api/twitter-proxy.js`, and
+  `npm install --ignore-scripts --no-package-lock` passed; `npm ci` is not
+  applicable because no lockfile exists.
+- Native PR 3: opened
+  https://github.com/rpop67/Twitter-Analytics-Dashboard/pull/16 from branch
+  `codex/xquik-metrics-adapter`, commit `911be18`. It adds
+  `src/Components/xquikMetrics.js`, wires the existing home doughnut chart
+  through that adapter without changing sample counts, and documents how Xquik
+  exports map into Chart.js input. Validation: `git diff --check`, `node
+  --check src/Components/xquikMetrics.js`, `npm ci --ignore-scripts`, and
+  `NODE_OPTIONS=--openssl-legacy-provider CI=false npm run build` passed with
+  the repo's pre-existing warnings. The CI test command with `watchAll=false`
+  remains blocked by the target's default CRA test and pre-existing React
+  warnings.
+- New PR exact readbacks: all 3 new PRs are open, ready, MERGEABLE, 1 commit,
+  no comments, no reviews, and no checks yet. Files changed:
+  crimeintel README/backend README/Twitter service; dashboard proxy
+  README/proxy function; rpop67 README/home component/Xquik adapter.
+- Public hygiene and links: PR bodies include the required optional first-person
+  post-merge X/Twitter note naming `burakbayir` without a GitHub mention or X
+  URL. Added diffs were scanned for secrets, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  and banned dash patterns. Link checks returned HTTP 200 for the 3 PRs,
+  `https://xquik.com`, TweetClaw GitHub, and npm registry.
+- TweetClaw validation: `npm run check-memory-md-size` passed at
+  15,013/15,360 bytes; `npm run check-em-dash`,
+  `npm run check-openclaw-platform-fitness`, `git diff --check`, and
+  `npm run check:all` passed. Full check covered typecheck, lint, duplication,
+  Knip, suppression, dash, memory, skill frontmatter, versions, build, OpenClaw
+  fitness, package artifact, and coverage with 11 test files, 168 tests, and
+  100 percent coverage.
+- Prompt self-improvement: direct crawler retry is useful when proxy batches
+  return only valid empty JSON after egress socket closures; record proxy
+  failure separately from target exhaustion. Continue prioritizing optional
+  native source adapters that preserve target fallback behavior and response
+  shapes. Persisted prompt was not edited and remains 15,227 bytes.
+
 ### 2026-07-04 03:39 UTC Native Integration Run
 
 - Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,

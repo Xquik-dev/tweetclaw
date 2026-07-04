@@ -189,19 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 04:49 UTC: runtime selector unavailable. Crawler parsed 0
-  monitoring, 0 native framework/dashboard, 1 skill/registry opportunity, and 6
-  exact repo readbacks with required skill-repo coverage.
-- Broad authored PR search hit malformed-query and GitHub secondary-rate
-  blockers, then stopped per policy. Exact reads covered 6 existing in-scope PRs
-  and 3 new PRs.
+- 2026-07-04 05:10 UTC: runtime selector unavailable. Proxy-backed crawler
+  returned 0 opportunities after socket closures; direct crawler returned 1
+  stale native result, 3 skill results, and 6 repo readbacks.
+- Broad authored PR search hit GitHub secondary-rate blockers and stopped per
+  policy. Exact reads covered the 3 previous PRs and 3 new PRs.
 - Opened native Xquik PRs:
-  `ECTWNYC/market-awareness-alert#1`, `eckartal/sm-g#1`, and
-  `starslittle/twitter-listening-agent#1`.
-- Validation passed where target-owned gates allow; eckartal has pre-existing
-  install/lint friction and starslittle has a pre-existing unrelated test
-  failure. Link checks passed for new PRs, Xquik, TweetClaw, and npm registry.
-  Prompt stayed at 15,227 bytes. Full details and lessons are in the archive.
+  `vipulsystems/crimeintel-ai#1`,
+  `ladyzeng12-dotcom/twitter-dashboard-proxy#1`, and
+  `rpop67/Twitter-Analytics-Dashboard#16`.
+- Validation passed where target-owned gates allow; vipulsystems has a stale
+  backend lockfile and rpop67 has pre-existing CRA test/lint warnings. Link
+  checks passed for new PRs, Xquik, TweetClaw, and npm registry. Prompt stayed
+  at 15,227 bytes. Full details and lessons are in the archive.
 
 ## Reporting Checklist
 
