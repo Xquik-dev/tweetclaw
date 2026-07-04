@@ -189,22 +189,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 00:14 UTC: runtime selector unavailable. The updated automation
-  prompt now prioritizes native framework, software, dashboard, project, and
-  library lanes. Crawler-first native pack returned 0 opportunities after
-  socket-close logs; skill pack returned 3 already archived or skip-recommended
-  social-skill hits. GitHub broad PR search hit a secondary rate limit, so
-  fallback exact-read known in-scope PRs and target repos.
-- Opened 3 clean, mergeable Xquik PRs from verified `kriptoburak` forks:
-  `keerthy-analyst/Twitter_scraping_using_pythonscripting_mongodb_streamlit#1`,
-  `linx777/agent-skills-registry#1`, and
-  `josecookai/awesome-openclaw-apis#5`.
-- Native lanes screened included a Streamlit import, React registry card,
-  OpenClaw API guide, free-tier blocker, and archive-blocked repeats. No
-  existing in-scope PR needed repair.
-- OpenClaw docs check, duplicate gates, target policy checks, validation, link
-  checks, memory size, prompt bytes, pushed commits, and durable
-  self-improvement notes are recorded in the archive.
+- 2026-07-04 00:35 UTC: runtime selector unavailable; persisted automation
+  prompt measured 15,227 bytes after the native framework, software, dashboard,
+  project, and library wording. Crawler-first native and skill packs returned no
+  usable hits after socket-close logs; broad authenticated GitHub search later
+  hit an API rate limit, so exact repo reads, archive checks, clones, and local
+  scans carried discovery.
+- Exact-read 6 open in-scope PRs. Five needed no repair; `skilluse/skilluse#4`
+  remains target-owned Vercel authorization blocked. No Xquik-visibility repair
+  was required.
+- Opened 3 mergeable native dashboard PRs from verified `kriptoburak` forks:
+  `dkessavane/twitter-dashboard#1`,
+  `follow-the-sh33p/twitter-dashboard#1`, and
+  `SanVic009/sentiment-dashboard#1`.
+- Duplicate gates, target policy checks, validation, link checks, memory size,
+  pushed audit commit, and self-improvement details are recorded in the archive.
 
 ## Reporting Checklist
 
