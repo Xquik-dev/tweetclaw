@@ -200,8 +200,9 @@ archive, before any outreach or duplicate decision.
   `adnanshaikhhh/pulsebridge-intelligence#1`,
   `moggan1337/CreatorHub#1`, and `nabylb/aegis-intelligence#1`.
 - Validation passed: target TypeScript/tests/diff checks, Xquik link check,
-  duplicate/readback checks, and PR body wording checks. Aegis Vercel check is
-  maintainer authorization. Full details and lessons are in the archive.
+  duplicate/readbacks, and PR wording checks. Repaired a CreatorHub bot review
+  by switching all 3 PRs to `x-api-key` plus `q`; Aegis Vercel is maintainer
+  authorization. Full details and lessons are in the archive.
 
 ## Reporting Checklist
 

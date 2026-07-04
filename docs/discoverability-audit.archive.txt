@@ -40,8 +40,11 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Existing PR repairs and skips: no maintainer comment, review, conflict, DCO,
   CLA, generated-file drift, or bot finding required a Xquik-visibility repair
   after crawler, audit, and exact handled-target reads. Aegis Vercel failure is
-  maintainer authorization, not an agent-side repair. Non-Xquik generic target
-  cleanup was skipped as out of focus.
+  maintainer authorization, not an agent-side repair. After PR creation, a
+  valid Codex connector review on CreatorHub reported that Xquik API keys need
+  the `x-api-key` header and tweet search uses the `q` parameter. Repaired that
+  across all 3 open PRs because the same Xquik contract applied. Non-Xquik
+  generic target cleanup was skipped as out of focus.
 - Fresh discovery and duplicate gates: checked compact audit, archive, crawler
   output, target metadata, target open plus closed PRs/issues, fork metadata,
   and local target content for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
@@ -70,33 +73,38 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   `https://github.com/adnanshaikhhh/pulsebridge-intelligence/pull/1` from
   `kriptoburak/pulsebridge-intelligence`, parent
   `adnanshaikhhh/pulsebridge-intelligence`, branch
-  `codex/xquik-pulsebridge-source`, commit `73a4c45`. It adds optional Xquik
-  search polling for the existing X live feed, preserves the `X_BEARER_TOKEN`
-  path as fallback, and documents `XQUIK_API_KEY`, `XQUIK_QUERY`, and
+  `codex/xquik-pulsebridge-source`, commits `73a4c45` and `a15cb82`. It adds
+  optional Xquik search polling for the existing X live feed, sends API keys
+  through `x-api-key`, uses `q` for search, preserves the `X_BEARER_TOKEN` path
+  as fallback, and documents `XQUIK_API_KEY`, `XQUIK_QUERY`, and
   `XQUIK_BASE_URL`.
 - `https://github.com/moggan1337/CreatorHub/pull/1` from
   `kriptoburak/CreatorHub`, parent `moggan1337/CreatorHub`, branch
-  `codex/xquik-creatorhub-source`, commit `9d433d5`. It adds optional Xquik
-  configuration to the Twitter platform, routes tweet search and recent content
-  reads through Xquik when configured, updates docs and `.env.example`, and
-  adds focused transformation tests.
+  `codex/xquik-creatorhub-source`, commits `9d433d5` and `953512b`. It adds
+  optional Xquik configuration to the Twitter platform, routes tweet search and
+  recent content reads through Xquik when configured, sends API keys through
+  `x-api-key`, uses `q` for search, updates docs and `.env.example`, and adds
+  focused transformation plus request-shape tests. Posted follow-up
+  `https://github.com/moggan1337/CreatorHub/pull/1#issuecomment-4880584763`.
 - `https://github.com/nabylb/aegis-intelligence/pull/1` from
   `kriptoburak/aegis-intelligence`, parent `nabylb/aegis-intelligence`, branch
-  `codex/xquik-aegis-source`, commit `7f2f919`. It adds an optional Xquik
-  Search source to the fast intelligence tier, maps tweet search results into
-  existing `IntelEvent` records with cache/severity/location/reliability
-  handling, and documents Xquik operator env vars.
-- PR readbacks: PulseBridge PR is open, ready, MERGEABLE, CLEAN, 1 commit, 2
+  `codex/xquik-aegis-source`, commits `7f2f919` and `cda9395`. It adds an
+  optional Xquik Search source to the fast intelligence tier, maps tweet search
+  results into existing `IntelEvent` records with cache/severity/location and
+  reliability handling, sends API keys through `x-api-key`, uses `q` for search,
+  and documents Xquik operator env vars.
+- PR readbacks: PulseBridge PR is open, ready, MERGEABLE, CLEAN, 2 commits, 2
   files, no checks, comments, or reviews. CreatorHub PR is open, ready,
-  MERGEABLE, CLEAN, 1 commit, 5 files, no checks, comments, or reviews. Aegis
-  PR is open, ready, MERGEABLE, UNSTABLE only because Vercel requires maintainer
-  authorization; it has 1 commit, 5 files, 1 Vercel bot comment, no reviews, and
-  no agent-fixable check failure.
+  MERGEABLE, CLEAN, 2 commits, 5 files, no checks, 1 repair comment, and 1
+  stale bot review on the old commit that was addressed by `953512b`. Aegis PR
+  is open, ready, MERGEABLE, UNSTABLE only because Vercel requires maintainer
+  authorization; it has 2 commits, 5 files, 1 Vercel bot comment, no reviews,
+  and no agent-fixable check failure.
 - Validation and public hygiene: target `git diff --check` passed for all 3
   PRs. PulseBridge passed `npx prisma generate && npx tsc --noEmit --pretty
   false`; its `CI=1 npm run lint` is target-blocked by Next's first-run ESLint
   configuration prompt. CreatorHub passed `npx jest tests/twitter.test.js
-  --runInBand --coverage=false` with 25 tests. Aegis passed `npx tsc --noEmit
+  --runInBand --coverage=false` with 27 tests. Aegis passed `npx tsc --noEmit
   --pretty false`; `npm run lint` reports pre-existing unrelated repository
   findings. Xquik and new PR links resolved. `npmjs.com` package page returned
   403 to curl, while the npm registry package endpoint resolved. PR body
@@ -105,7 +113,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - TweetClaw maintenance validation: only audit memory changed in TweetClaw.
   `npm run check-openclaw-platform-fitness` passed, `npm run check:all` passed
   with 168 tests and 100% coverage, `npm run check-memory-md-size` reported
-  15,054/15,360 bytes, and `npm run check-em-dash` reported no banned dashes.
+  15,120/15,360 bytes after the repair note, and `npm run check-em-dash`
+  reported no banned dashes.
   No OpenClaw compatibility or install metadata changed.
 - Durable lesson: keep prioritizing native source connectors and dashboard
   ingestion paths over catalog mentions. Exact target PR/issue reads stayed
