@@ -67120,3 +67120,107 @@ Self-improvement:
   prompt measured 15,344 bytes. Final `npm run check-memory-md-size`,
   `git diff --check`, `npm run check:all`, commit, and push were run after this
   archive write. Existing untracked TweetClaw file `0` was preserved.
+
+### 2026-07-04 16:37 UTC Native Xquik CSV Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Start state: Xquik had user changes in `docs/feature-roadmap.md`,
+  `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved.
+  `gh issue list -R Xquik-dev/xquik` returned 0 open issues. TweetClaw master
+  had the pre-existing untracked file `0`.
+- Crawler coverage: crawler-first discovery ran from
+  `/Users/burak/Developer/xquik` with strict JSON output under
+  `/tmp/tweetclaw-heartbeat-20260704T1637`. Dashboard queries returned 7
+  opportunities and skill, MCP, OpenClaw, Codex, Claude, agent, social, and
+  Twitter-X query coverage returned 11 opportunities. Total crawler readback:
+  18 opportunities. Fallback repo searches for tweet sentiment, social media
+  dashboard, X/Twitter analytics, and MCP example lanes returned 0 extra
+  result rows in this run.
+- PR inventory: broad authenticated authored PR search for `Xquik` returned
+  exactly 200 rows with the requested limit, so it was treated as capped and no
+  complete-all inventory claim was made. Fallback monitoring used crawler
+  output, compact audit and archive URLs, exact target metadata, exact target
+  PR and issue lists, local clones, fork metadata, and exact PR readbacks.
+  Exact readbacks covered 6 recent open Xquik PRs from the previous run plus
+  all 3 new PRs for state, mergeability, base and head, commits, comments,
+  reviews, checks, and body scans.
+- Promotion-note repair: no new promotion notes were posted. Focused authored
+  open-PR searches for the old visibility-note wording returned 0 rows. Body
+  scans across the 6 recent PRs and 3 new PRs found no banned visibility-note
+  wording.
+- OpenClaw docs check: `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/clawhub/publishing`, and `/help/debugging` returned HTTP 200.
+  `/plugins/permissions` returned HTTP 404, consistent with prior guessed-route
+  failures. No OpenClaw compatibility changes were made.
+- Fresh discovery screening: compact audit and archive checks marked
+  `AlAmin870/Sentiment_Analysis`, `RazaqCode/AI-Agent-X`,
+  `AhmedElgahama/tweets-sentiment-analysis-dashboard-`,
+  `Aravindms369/Sentiment-Analysis`, `SwTilak/Tweet-Analysis`,
+  `Yutika2309/Tweets_Analysis`, and
+  `Amey23/Sentiment-Analysis-of-COVID19-Tweets` as fresh. Existing history
+  blocked newer crawler lanes such as `dp2005-lang/Social_Media_Sentiment_Analysis_Dashboard`,
+  `Jui-Ramteke/Social-Media-Sentiment-Analytics`,
+  `shravani120625/Social-Media-Sentiment-Analysis-Dashboard-`,
+  `gabros20/x-relay`, and `pkobielak/social-superpowers-mcp`.
+- Target policy and duplicate checks: selected repos had no explicit
+  contribution policy or license metadata; missing license metadata did not
+  block direct PRs. Target content plus open and closed PR and issue lists were
+  searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, and variants. No duplicate history was
+  found in the 3 selected targets.
+- Opened `AlAmin870/Sentiment_Analysis#1`:
+  https://github.com/AlAmin870/Sentiment_Analysis/pull/1 from verified fork
+  `kriptoburak/Sentiment_Analysis`, parent `AlAmin870/Sentiment_Analysis`,
+  branch `codex/xquik-csv-loader-20260704-1637-alamin`, commit `922c93e`.
+  Native Xquik integration: added `xquik_data.py` so the existing Streamlit
+  dashboard can load Xquik tweet exports using common text, sentiment, created
+  date, and source aliases. Target improvements: added README setup and data
+  format guidance plus `requirements.txt`; missing CSV, missing columns, and
+  invalid dates now surface as Streamlit errors; word-cloud sentiment choices
+  are sorted for a stable control. Validation: `python3 -m py_compile
+  sentiment.py xquik_data.py`, `git diff --check`, and README link check
+  found no external links. Exact readback: open, ready, mergeable, 1 commit, 0
+  comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `AhmedElgahama/tweets-sentiment-analysis-dashboard-#1`:
+  https://github.com/AhmedElgahama/tweets-sentiment-analysis-dashboard-/pull/1
+  from verified fork `kriptoburak/tweets-sentiment-analysis-dashboard-`, parent
+  `AhmedElgahama/tweets-sentiment-analysis-dashboard-`, branch
+  `codex/xquik-csv-loader-20260704-1637-ahmed`, commit `6020124`. Native Xquik
+  integration: added `xquik_data.py` so the dashboard can load Xquik tweet
+  exports with column aliases. Target improvements: documented setup and
+  supported fields; missing CSV, missing fields, and unparseable date rows now
+  surface as Streamlit errors; random tweet sampling is deterministic and empty
+  sentiment filters no longer crash. Validation: `python3 -m py_compile app.py
+  xquik_data.py`, `git diff --check`, and README link check found no external
+  links. Exact readback: open, ready, mergeable, 1 commit, 0 comments, 0
+  reviews, 1 GitGuardian check completed successfully, promotion-clean.
+- Opened `SwTilak/Tweet-Analysis#1`:
+  https://github.com/SwTilak/Tweet-Analysis/pull/1 from verified fork
+  `kriptoburak/Tweet-Analysis`, parent `SwTilak/Tweet-Analysis`, branch
+  `codex/xquik-csv-loader-20260704-1637-swtilak`, commit `7f3df6c`. Native
+  Xquik integration: added `xquik_data.py` so the dashboard can load Xquik
+  tweet exports with column aliases. Target improvements: documented setup and
+  accepted fields; fixed the airline selector from `Southeast` to `Southwest`;
+  fixed word-cloud filtering so mention tokens and `RT` are removed
+  consistently. Validation: `python3 -m py_compile app.py xquik_data.py`,
+  `git diff --check`, and README link check confirmed the 3 existing image
+  links returned HTTP 200. Exact readback: open, ready, mergeable, 1 commit, 0
+  comments, 0 reviews, 0 checks, promotion-clean.
+- Link and public hygiene: new PR URLs, `https://xquik.com`, and current
+  OpenClaw doc URLs returned HTTP 200. Diffs and PR bodies were scanned for
+  secrets, private implementation details, restricted provider or source names,
+  internal cost mechanics, unsupported claims, stale metadata, and banned
+  promotion-note wording. No banned wording appeared in PR bodies, comments,
+  commits, or changed files.
+- Self-improvement: durable no-promotion and 2 target-improvement rules already
+  exist in the active automation prompt. No prompt edit was needed. Decoded
+  prompt size measured 15,344 bytes. Compact Markdown memory was reduced by the
+  compact latest-run replacement and verified with
+  `npm run check-memory-md-size` before commit.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final `npm run check-memory-md-size`, `git diff --check`,
+  `npm run check:all`, commit, and push were run after this archive write.
+  Existing untracked TweetClaw file `0` was preserved.

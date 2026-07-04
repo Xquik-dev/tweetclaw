@@ -192,21 +192,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 16:15 UTC: runtime selector unavailable. Crawler found 83
-  opportunities; broad PR search hit GitHub secondary-rate 403, so no
+- 2026-07-04 16:37 UTC: runtime selector unavailable. Crawler found 18
+  opportunities and broad authored PR search capped at 200 results, so no
   complete-all inventory claim.
-- Opened 3 promotion-clean native Xquik PRs with 2+ target improvements:
-  `Anand-roy21/-Real-Time-Social-Media-Sentiment-Analytics-Dashboard#1`,
-  `Chdh11/Sentiment_Analysis_Dashboard#1`, and
-  `kabragaurav/Dashboard-in-Streamlit#1`. All exact-read open, mergeable, with
-  no comments, reviews, or checks yet.
-- Duplicate history blocked prior MCP and sentiment lanes including
-  `JialiangFan/X-MCP-2.0`, `woosal1337/media-mcp`,
-  `Salrahim21/twitter-sentiment-dashboard`, and `MeshwaNpatel/Twitter-Sentiment-Analysis`.
-- Validation passed for py compile, converter smoke, README link checks, diff
-  hygiene, OpenClaw docs, fork-parent checks, PR readbacks, and banned wording
-  scans.
-  Full details archived.
+- Opened 3 promotion-clean Xquik CSV import PRs with 2+ target improvements:
+  `AlAmin870/Sentiment_Analysis#1`,
+  `AhmedElgahama/tweets-sentiment-analysis-dashboard-#1`, and
+  `SwTilak/Tweet-Analysis#1`. All exact-read open and mergeable; GitGuardian
+  passed on Ahmed.
+- Focused open-PR promotion scan found 0 old visibility notes to remove.
+- Validation passed for py compile, diff hygiene, README link checks, OpenClaw
+  docs, fork-parent checks, PR readbacks, and banned wording scans. Full
+  details archived.
 
 ## Reporting Checklist
 
