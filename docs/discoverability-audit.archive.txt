@@ -68116,6 +68116,116 @@ Existing untracked TweetClaw file `0` was preserved.
   commit, and push were run after this archive write. Existing untracked
   TweetClaw file `0` was preserved.
 
+2026-07-04 21:18 UTC heartbeat
+- Runtime and scope: no Codex model, speed, or reasoning-effort selector was
+  exposed, so the requested Codex 5.5 Fast and extra-high setting could not be
+  applied. Continued with the available runtime. TweetClaw worktree stayed on
+  `master` at `4136c84` with pre-existing untracked `0` preserved. Xquik
+  worktree stayed dirty only with pre-existing unrelated files:
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`.
+- Xquik issue and OpenClaw check: `gh issue list` in Xquik returned 0 open
+  issues. OpenClaw docs returned HTTP 200 for `llms.txt`, `/cli/plugins`,
+  `/plugins/manifest`, `/clawhub/publishing`, and `/help/debugging`.
+  `docs.openclaw.dev` still failed DNS with curl error 6.
+- Crawler-first discovery: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with strict JSON output, bounded request timeout, proxy warmup timeout 0,
+  concurrency 12, search pages 2, per-query limit 10, and focused packs for X
+  API pipelines, Twitter/X dashboards, MCP tools, SKILL.md, `.agents/skills`,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, dashboards, libraries, notebooks, package tooling, and Airflow.
+  Output parsed as valid JSON but returned 0 opportunities and 0 repositories.
+  Logs showed managed egress socket-close and quarantine warnings. No crawler
+  credentials or GitHub tokens were printed or used.
+- PR inventory method and limits: combined compact audit, archive, crawler
+  output, `gh search prs --author kriptoburak --state open --limit 100`, exact
+  readback of the latest 20 open PRs, and review-thread reads for Galafis,
+  Mithulix, Mubashir, and Darekar. Exact readbacks captured state,
+  mergeability, base, head, commit count, comments, reviews, and checks. This
+  is not a complete-all claim because broad open inventory was bounded to the
+  latest 100 and no full cap-partitioned inventory was finished.
+- Repair: `mithulix/Social-Media-Dashboard#4` had one actionable unresolved
+  review thread on `src/api/xquik.ts` for missing Xquik camelCase metrics.
+  Cloned the verified `kriptoburak` fork, updated the normalizer to read
+  `likeCount`, `replyCount`, `retweetCount`, and `viewCount`, documented the
+  fields in README, committed `0682119`, pushed branch
+  `codex/xquik-dashboard-normalizer-20260704-1957`, resolved review thread
+  `PRRT_kwDOJjCKlM6OXQtW`, and exact-read the PR as open, ready, mergeable, 2
+  commits, 0 comments, 1 review, 0 checks. Validation: scoped TypeScript compile
+  for `src/api/xquik.ts` and `git diff --check` passed. Full `npx tsc --noEmit`
+  still fails from target-owned JSX-in-`.ts` parse errors across the app.
+- Fresh screening: fallback `gh search repos` screened at least
+  `madhulikaw/sentiment-stock-analysis`,
+  `Yosef-AlSabbah/Social-Media-Follower-Dashboard`,
+  `alan-vieira/api_analise_de_sentimento_twitter`,
+  `Syed-hannan0910/twitter-sentiment-analysis`,
+  `Keshavja29/social-media-analytics-dashboard`, and
+  `Varad239/social-media-dashboard`. Duplicate checks searched compact audit,
+  archive, target PRs, and target issues for TweetClaw, tweetclaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw, ClawHub, and
+  variants. Selected targets had no target PRs or issues, were non-fork and
+  non-archived, had no explicit contribution policy blocker, and missing
+  license metadata was not treated as a direct-PR blocker. `Yosef...` contained
+  tracked `.env` paths; path names only were observed and contents were not
+  read. Default `kriptoburak` fork names for selected repos were already
+  occupied by non-fork repositories, so unique fork names were created and REST
+  parent metadata verified before push.
+- Opened `Syed-hannan0910/twitter-sentiment-analysis#1`:
+  https://github.com/Syed-hannan0910/twitter-sentiment-analysis/pull/1 from
+  verified fork `kriptoburak/syed-twitter-sentiment-analysis-xquik`, parent
+  `Syed-hannan0910/twitter-sentiment-analysis`, branch
+  `codex/xquik-csv-import`, commit `d3c06c7`. Native Xquik integration:
+  `/analyze-csv` auto-detects Xquik export text columns and preserves tweet
+  IDs, author, timestamps, and engagement fields, with sample
+  `data/sample_xquik_tweets.csv`. Target improvements: shared
+  `MAX_BATCH_ROWS`; clearer CSV validation for missing headers, missing text
+  columns, and empty text rows. Validation: `python3 -m py_compile
+  backend/app.py backend/sentiment_analyzer.py` and `git diff --check` passed.
+  Exact readback: open, ready, mergeable, 1 commit, 1 Vercel authorization
+  comment, 0 reviews, 1 pending deployment/check object, promotion-clean.
+- Opened `Keshavja29/social-media-analytics-dashboard#1`:
+  https://github.com/Keshavja29/social-media-analytics-dashboard/pull/1 from
+  verified fork `kriptoburak/keshav-social-media-analytics-dashboard-xquik`,
+  parent `Keshavja29/social-media-analytics-dashboard`, branch
+  `codex/xquik-dashboard-import`, commit `f47a3e2`. Native Xquik integration:
+  added `POST /api/analytics/xquik-import` and a dashboard paste/import panel
+  for Xquik JSON export rows. Target improvements: shared `build_overview`
+  aggregation for generated and imported data; hardened analyze endpoint and
+  visible import error handling. Validation: `python3 -m py_compile
+  backend/app.py backend/utils/sentiment_analyzer.py` and `git diff --check`
+  passed. `npm run build` stopped on target-owned missing
+  `frontend/public/index.html` after dependencies installed; validation-only
+  `node_modules` and generated lockfile were removed. Exact readback: open,
+  ready, mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `Varad239/social-media-dashboard#1`:
+  https://github.com/Varad239/social-media-dashboard/pull/1 from verified fork
+  `kriptoburak/varad-social-media-dashboard-xquik`, parent
+  `Varad239/social-media-dashboard`, branch `codex/xquik-analytics-import`,
+  commit `1e7dd48`. Native Xquik integration: added
+  `POST /api/analytics/xquik` to aggregate Xquik rows into the dashboard
+  analytics table. Target improvements: fixed broken backend route and DB
+  imports, added a safe default port, and normalized numeric metrics before DB
+  writes. Validation: `node --check backend/server.js`,
+  `node --check backend/analytics.js`, `node --check backend/auth.js`, and
+  `git diff --check` passed. Exact readback: open, ready, mergeable, 1 commit,
+  0 comments, 0 reviews, 0 checks, promotion-clean.
+- Link and public hygiene: OpenClaw `.ai` docs, `https://xquik.com/api/v1`, and
+  all 3 new PR URLs returned HTTP 200. New target README diffs added no new
+  external HTTP links. Diffs, commit messages, PR bodies, and changed public
+  docs were scanned for secrets, private implementation details, restricted
+  provider/source names, internal cost mechanics, unsupported claims, stale
+  metadata, and banned promotion-note wording. No promotion-note wording was
+  posted, and no prior editable promotion note needed removal.
+- Self-improvement: durable lessons recorded here. Reuse exact REST fork-parent
+  verification when default `kriptoburak` fork names collide with unrelated
+  repos. For crawler zero-result runs, use fresh fallback repo search and record
+  crawler network warnings without claiming exhaustion. Keep build attempts
+  target-safe and remove validation-only install artifacts. Persisted prompt
+  field measured 15,344 bytes earlier in this automation and was not changed.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final `npm run check-memory-md-size`, `git diff --check`,
+  `npm run check:all`, commit, and push were run after this archive write.
+
 2026-07-04 20:56 UTC heartbeat
 
 - Runtime selector: Codex Desktop did not expose model, speed, or effort
