@@ -192,21 +192,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 17:40 UTC: runtime selector unavailable. Crawler wrote valid empty
-  JSON after managed-network failures. Authored-open inventory hit GitHub cap:
-  all open 3,973; Xquik 2,689; TweetClaw/tweetclaw 1,409; OpenClaw 802;
-  x-twitter-scraper 570. No complete-all claim.
-- Opened promotion-clean Xquik Airflow ETL PRs, each with 2+ target
-  improvements: `Prakashg7021/twitter-etl-airflow#1`,
-  `Ayim-sampson/X-Twitter-ETL-Airflow-Project#1`, and
-  `ahmedashraffcih/Twitter-Airflow-Data-Pipeline#1`. All open, ready, and
-  mergeable.
-- Repaired valid Codex review on
-  `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`
-  with commit `11f4ebf` and a technical comment. Compile, diff, duplicate,
-  fork-parent, PR-body, xquik.com, PR URL, and target README link checks
-  passed. Later OpenClaw docs retry hit DNS after earlier 200 reads. Full
-  details archived.
+- 2026-07-04 18:01 UTC: runtime selector unavailable. Crawler produced 22 noisy
+  X/Twitter opportunities; fallback found 3 safe scraper lanes. Open counts:
+  all 3,982; Xquik 2,698; TweetClaw/tweetclaw 1,409; OpenClaw 802;
+  x-twitter-scraper 591.
+  No complete-all claim.
+- Opened promotion-clean Xquik PRs, each with 2+ target improvements:
+  `xsreeex/Twitter-Scraper-Streamlit#1`,
+  `VajraveluArumugam/Twitter-Scraper-Streamlit#1`, and
+  `idristrades/scrape-tweets-no-API-2024#1`. All open, ready, mergeable, and
+  exact-read with no comments, reviews, or checks yet.
+- PR and handled README links passed. Xquik route returned expected 402
+  unauthenticated. OpenClaw `.ai` docs returned 200; stale `.dev` DNS failed.
+  Older PR search found a large pre-rule promotion-note backlog; current and
+  recent exact-read PR bodies are clean. Full details archived.
 
 ## Reporting Checklist
 

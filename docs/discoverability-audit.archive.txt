@@ -67225,6 +67225,125 @@ Self-improvement:
   `npm run check:all`, commit, and push were run after this archive write.
   Existing untracked TweetClaw file `0` was preserved.
 
+### 2026-07-04 18:01 UTC Streamlit And Python Xquik Source Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Start state: Xquik had user changes in `docs/feature-roadmap.md`,
+  `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved.
+  `gh issue list -R Xquik-dev/xquik` returned 0 open issues. TweetClaw master
+  started at `b538713` with existing untracked file `0`, which was preserved.
+- Official OpenClaw docs check: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  failed DNS and remains stale for this run. No OpenClaw compatibility files
+  were changed.
+- Crawler-first discovery: ran from `/Users/burak/Developer/xquik` with strict
+  JSON output under `/tmp/tweetclaw-heartbeat-20260704T1801`. Query coverage
+  included Twitter/X Streamlit dashboards, sentiment dashboards, Kafka and
+  Dagster style pipelines, X API examples, scraper examples, MCP data sources,
+  SKILL.md, `.agents/skills`, OpenClaw skill, Codex/Claude/agent/social
+  skills, skill registries, awesome lists, generated catalogs, SDK/examples,
+  package tooling, validators, and docs lanes. Managed-network socket failures
+  and endpoint quarantine logs made the crawler noisy, but it exited 0 with
+  valid JSON, 1,509,373 bytes, and 22 opportunities. No skill-repo exhaustion
+  claim was made.
+- Fresh target screening: fallback metadata found `Ja-yy/Twitter-scraper-streamlit`,
+  `xsreeex/Twitter-Scraper-Streamlit`,
+  `VajraveluArumugam/Twitter-Scraper-Streamlit`, and
+  `idristrades/scrape-tweets-no-API-2024`. `sidprobstein/tweetalyzer` was
+  recognized as older archived history, not fresh. `haseebalam/python-twitter-api`
+  and `shugonta/tweetsharp` were old or low-fit. Duplicate checks searched
+  compact audit, archive, target content, open and closed target PRs, and open
+  and closed target issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, TweetClaw GitHub URL, npm URL, ClawHub, OpenClaw,
+  and variants. The selected 3 targets had no duplicate Xquik/TweetClaw history
+  and no explicit contribution-policy blocker. Missing license metadata did
+  not block direct PRs.
+- PR inventory: broad authored-open counts returned all open 3,982, Xquik
+  2,698, TweetClaw/tweetclaw 1,409, OpenClaw 802, x-twitter-scraper 591, MCP
+  788, skill 1,726, social media 270, dashboard 307, SDK 90, catalog 324,
+  examples 310, validators 7, registry 362, Twitter 3,381, and X API 678.
+  The broad set exceeds GitHub's exact-read practical cap, so this run makes
+  no complete-all claim. Exact reads covered the 3 new PRs and recent in-scope
+  PRs `Prakashg7021/twitter-etl-airflow#1`,
+  `Ayim-sampson/X-Twitter-ETL-Airflow-Project#1`,
+  `ahmedashraffcih/Twitter-Airflow-Data-Pipeline#1`, and
+  `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`.
+  The Raj inline Codex review comment remains visible but had already been
+  fixed with commit `11f4ebf`; no new actionable maintainer or bot blocker was
+  found.
+- Promotion-note scan: new PRs and the recent exact-read PR bodies were clean.
+  Broad open authored PR searches for old account-mention, audience-count, and
+  X/Twitter promotion-note patterns returned 2,852, 2,842, and 2,860 hits. This
+  is a large pre-rule cleanup backlog, not suitable for blind mass edits during
+  this run. Future repair runs should remove old visibility-note wording only
+  from exact-read, editable PR bodies or comments after target context checks.
+- Opened `xsreeex/Twitter-Scraper-Streamlit#1`:
+  https://github.com/xsreeex/Twitter-Scraper-Streamlit/pull/1 from verified
+  fork `kriptoburak/twitter-scraper-streamlit-xsreeex`, parent
+  `xsreeex/Twitter-Scraper-Streamlit`, branch
+  `codex/add-xquik-source-xsreeex`, commit `a24d33c`. Native Xquik integration:
+  added an optional Xquik tweet source beside snscrape and normalized rows into
+  the existing Streamlit table and CSV flow. Target improvements: moved MongoDB
+  writes to `MONGO_URI`; removed committed tunnel credential setup from the
+  README and asked the maintainer to rotate any previously committed credential;
+  replaced Colab tunnel-only setup with local Streamlit setup; handled blank or
+  zero-limit searches; avoided inserting empty rows into MongoDB. Validation:
+  `python3 -m py_compile app1.py`, `git diff --check`, and changed-file scans
+  for banned promotion wording and credential literals. Exact readback: open,
+  ready, mergeable, 1 commit, 2 changed files, 0 comments, 0 reviews, 0 checks,
+  promotion-clean.
+- Opened `VajraveluArumugam/Twitter-Scraper-Streamlit#1`:
+  https://github.com/VajraveluArumugam/Twitter-Scraper-Streamlit/pull/1 from
+  verified fork `kriptoburak/twitter-scraper-streamlit-vaj`, parent
+  `VajraveluArumugam/Twitter-Scraper-Streamlit`, branch
+  `codex/add-xquik-source-vaj`, commit `0739802`. Native Xquik integration:
+  added `xquik_source.py` and a Streamlit source selector so the app can load
+  Xquik tweet search rows or snscrape rows into the same dataframe. Target
+  improvements: made the query field work for usernames, hashtags, and search
+  queries; replaced missing temporary JSON-file download with in-memory JSON;
+  guarded empty result and chart-selection states; fixed README deployment
+  commands and the broken documentation link. Validation:
+  `python3 -m py_compile main.py xquik_source.py`, `git diff --check`, and
+  changed-file scans for banned promotion wording and credential literals.
+  Exact readback: open, ready, mergeable, 1 commit, 3 changed files, 0
+  comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `idristrades/scrape-tweets-no-API-2024#1`:
+  https://github.com/idristrades/scrape-tweets-no-API-2024/pull/1 from verified
+  fork `kriptoburak/scrape-tweets-no-api-2024-idris`, parent
+  `idristrades/scrape-tweets-no-API-2024`, branch
+  `codex/add-xquik-source-idris`, commit `3f14bbe`. Native Xquik integration:
+  added optional `TWEET_SOURCE=xquik` support for Xquik tweet search while
+  keeping Nitter as the default. Target improvements: added a `main()`
+  entrypoint guard; made username, limit, and output path configurable; wrote
+  UTF-8 JSON with safe serialization; replaced the minimal README with install,
+  run, customization, and rate-limit guidance. Validation:
+  `python3 -m py_compile xtweets.py`, `git diff --check`, and changed-file
+  scans for banned promotion wording and credential literals. Exact readback:
+  open, ready, mergeable, 1 commit, 2 changed files, 0 comments, 0 reviews,
+  0 checks, promotion-clean.
+- Link and public hygiene: PR URLs returned HTTP 200. Upstream and fork-branch
+  README raw URLs returned HTTP 200. OpenClaw `.ai` docs returned HTTP 200.
+  Xquik tweet search route returned expected HTTP 402 without credentials,
+  proving the route is live but guarded. Diffs, PR bodies, comments, commits,
+  and changed files were inspected for secrets, private implementation details,
+  restricted provider or source names, internal cost mechanics, unsupported
+  claims, stale metadata, and banned promotion-note wording. No secret values
+  were recorded.
+- Self-improvement: durable no-promotion and 2 target-improvement rules already
+  exist in the active automation prompt. No prompt edit was needed. This run
+  recorded that old promotion-note cleanup must be exact-read and scoped, not a
+  blind bulk edit across thousands of PRs, and that public target credential
+  removals must never repeat values in PR bodies or audit logs.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final `npm run check-memory-md-size`, `git diff --check`,
+  `npm run check-openclaw-platform-fitness`, `npm run check:all`, commit, and
+  push were run after this archive write. Existing untracked TweetClaw file `0`
+  was preserved.
+
 ### 2026-07-04 17:40 UTC Xquik Airflow ETL Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
