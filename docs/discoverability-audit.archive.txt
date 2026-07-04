@@ -99,8 +99,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   cost mechanics. Lesson retained: when a target fork name collides under
   `kriptoburak`, verify `parent.full_name` before pushing. For dashboard
   integrations, prefer API adapters, normalizers, source connectors, and chart
-  wiring over catalog-only mentions. Final TweetClaw audit commit hash was
-  pending at entry creation.
+  wiring over catalog-only mentions. TweetClaw audit commit
+  `b89edb6 Record July 4 Xquik native integrations` was pushed to `master`.
 
 ### 2026-07-04 02:25 UTC Native Dashboard Import Run
 
