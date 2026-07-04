@@ -62457,6 +62457,129 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-04 04:49 UTC Native Source Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. The run continued under the available runtime.
+- Starting state: TweetClaw `master` matched `origin/master` with existing
+  untracked `0` preserved. Xquik `master` matched `origin/master` with unrelated
+  user changes still present in `docs/feature-roadmap.md`,
+  `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`. Xquik open issue readback returned no
+  open issues.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with strict
+  JSON outputs under `/tmp/tweetclaw-heartbeat-20260704T0449`, request
+  timeouts, proxy warmup disabled, bounded limits, and focused query packs.
+  Coverage included open PR monitoring, native framework and dashboard repos,
+  SKILL.md, `.agents/skills`, skill directories, OpenClaw, MCP, Codex, Claude,
+  agent, social media, Twitter/X skill terms, awesome lists, registries, forks,
+  generated catalog terms, and exact repo readbacks.
+- Crawler output counts: `pr-monitoring.json` returned 0 opportunities;
+  `native-framework-dashboard.json` returned 0 opportunities;
+  `skills-registries.json` returned 1 opportunity, `BuddhaYi/macos-cli`, which
+  was prior-history blocked by existing archive entries; `repo-readbacks.json`
+  returned 6 exact existing outreach repos. No crawler credential values were
+  printed, stored, or committed.
+- Existing PR exact readbacks covered 6 in-scope Xquik visibility PRs:
+  `adnanshaikhhh/pulsebridge-intelligence#1` open, mergeable, no comments,
+  reviews, or checks; `moggan1337/CreatorHub#1` open, mergeable, one self
+  repair comment, one old automated review already repaired;
+  `nabylb/aegis-intelligence#1` open, mergeable, Vercel authorization blocker only;
+  `PSkinnerTech/X-Dashboard#1` open, mergeable, no comments, reviews, or checks;
+  `tugkanboz/multi-bot-x-automation#1` open, mergeable, only an empty automated
+  Codex review comment; `Troy96/x2ig#19` open, mergeable, Vercel authorization
+  blocker only. No actionable maintainer repair was required.
+- Complete PR inventory method: compact audit plus archive search, crawler
+  output, exact existing PR reads, exact new PR reads, target PR and issue
+  searches, target clone plus `rg`, fork metadata, and fallback GitHub repo
+  search. A broad authored open PR search attempted updated partitions but two
+  malformed `gh search prs` invocations failed, then GitHub returned secondary
+  rate limit 403 on later partitions. Broad authenticated search stopped for the
+  run per policy; exact-repo reads and crawler output continued.
+- Fresh candidate discovery after crawler fallback searched framework,
+  dashboard, scheduler, source adapter, social listening, and package/tooling
+  lanes. Duplicate or blocker outcomes: `dylee9/open-platter` already had open
+  Xquik PR #1; `liu1700/scoutkit` already had open Xquik PR #1;
+  `BuddhaYi/macos-cli` was prior-history blocked;
+  `blixor7/solana-blast-dashboard` was weaker because its X surface is mostly
+  UI/static OAuth flow;
+  `TornovDutta/SocialFlow` was weaker because it has a Spring scheduler but no
+  real X source seam; `omarahmedforeal-netizen/tweet-scheduler` had a
+  fetch-by-URL route but no reliable Xquik tweet-ID fetch route was confirmed.
+- Native PR 1: opened https://github.com/ECTWNYC/market-awareness-alert/pull/1
+  from verified fork `kriptoburak/market-awareness-alert`, branch
+  `codex/xquik-market-signal-source`, parent `ECTWNYC/market-awareness-alert`.
+  Commit `996533fb045fa6eeeaaa18d6f51746cdaa3a3aa2` added
+  `lib/fetchXquikPosts.ts`, wired `SIGNAL_SOURCE=xquik`, and documented
+  Xquik env vars. Existing `mock` and direct `x` modes remain unchanged.
+- Native PR 2: opened https://github.com/eckartal/sm-g/pull/1 from verified
+  fork `kriptoburak/sm-g`, branch `codex/xquik-recent-tweet-sync`, parent
+  `eckartal/sm-g`. Commit `a0db2af7dfcbdd646a70db36211eaf43e7647de7` added
+  `src/lib/xquik.ts`, wired optional recent tweet sync into `/api/sync`, and
+  documented `XQUIK_API_KEY` plus `XQUIK_API_BASE_URL`. Follower, like, and
+  repost lookups keep using the existing X OAuth flow.
+- Native PR 3: opened
+  https://github.com/starslittle/twitter-listening-agent/pull/1 from verified
+  fork `kriptoburak/twitter-listening-agent`, branch `codex/xquik-scout-source`,
+  parent `starslittle/twitter-listening-agent`. Commit
+  `dc8d9aa6dbdebf197c860d4054371458ae834c6e` added Xquik config fields,
+  optional ScoutAgent collection through Xquik tweet search, and README guidance.
+  Mock mode and the existing Tweepy path remain available.
+- Duplicate and target policy gates: compact audit, archive, target content,
+  target open and closed PRs, target open and closed issues, repo metadata,
+  README, package/runtime files, and validation commands were checked for
+  TweetClaw, `tweetclaw`, `@xquik/tweetclaw`, Xquik, x-twitter-scraper,
+  TweetClaw GitHub, npm, ClawHub, OpenClaw, and variants. The 3 selected repos
+  had no duplicate target PRs or issues and no explicit no-contribution policy.
+  Missing license metadata alone did not block direct PRs.
+- New PR exact readbacks: `ECTWNYC/market-awareness-alert#1` is open,
+  non-draft, mergeable, base `main`, maintainer edits enabled, one Vercel
+  authorization comment, no reviews. `eckartal/sm-g#1` is open, non-draft,
+  mergeable, base `main`, maintainer edits enabled, no comments, reviews, or
+  checks. `starslittle/twitter-listening-agent#1` is open, non-draft,
+  mergeable, base `main`, maintainer edits enabled, no comments, reviews, or
+  checks.
+- PR body wording: all 3 PRs included the required optional first-person
+  burakbayir X/Twitter visibility note, without an X/Twitter URL and without a
+  GitHub mention prefix.
+- Target validation: `ECTWNYC/market-awareness-alert` passed `npm ci`,
+  `npx tsc --noEmit --pretty false`, `npm run lint`, `git diff --check`, and
+  added-line scan; `npm ci` reported 6 pre-existing vulnerabilities.
+  `eckartal/sm-g` passed `npm ci --legacy-peer-deps`, `npx tsc --noEmit
+  --pretty false`, `git diff --check`, and added-line scan; plain `npm ci` is
+  blocked by a pre-existing Clerk/Next peer mismatch, `npm run lint` prompts to
+  create a Next ESLint config, and install reported 20 pre-existing
+  vulnerabilities. `starslittle/twitter-listening-agent` passed `python3 -m
+  py_compile backend/app/agents/scout_agent.py backend/app/core/config.py`,
+  `python3 -m compileall -q backend/app`, `git diff --check`, and added-line
+  scan; after installing declared requirements in a temporary venv,
+  `PYTHONPATH=backend python -m pytest backend/tests -q` reported 3 passed and
+  1 pre-existing unrelated failure in `test_extract_topics`.
+- Public link checks: the 3 new PR URLs returned 200. `https://xquik.com`
+  returned 200. `https://xquik.com/api/v1/x/tweets/search?q=test` returned
+  expected 402 without an API key. `https://github.com/Xquik-dev/tweetclaw`
+  returned 200. `https://registry.npmjs.org/@xquik%2ftweetclaw` returned 200.
+- OpenClaw and TweetClaw maintenance: no OpenClaw compatibility, install
+  metadata, manifest, approval behavior, release gate, public install doc, or
+  packaged skill behavior changed in this run. Current OpenClaw state from the
+  compact audit remains the reference.
+- Prompt self-improvement: durable lesson is that source-seam PRs should prefer
+  environment-gated Xquik adapters and leave the target's default source path
+  unchanged. Fallback repo search should prioritize terms like tweet scheduler,
+  social listening agent, recent tweet sync, and source adapter after crawler
+  native batches return no candidates. The persisted prompt was not edited
+  because it measured 15,227 UTF-8 bytes against the 15 KiB cap.
+- Changed TweetClaw files for this audit: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Existing untracked `0` in the
+  TweetClaw worktree was preserved.
+- Final TweetClaw validation before commit: `npm run check-memory-md-size`
+  passed at 15,025/15,360 bytes, `npm run check-em-dash` passed,
+  `npm run check-openclaw-platform-fitness` passed, `git diff --check` passed,
+  and `npm run check:all` passed with 11 test files, 168 tests, and 100 percent
+  coverage. Audit commit planned for current `master`: `Record July 4 source
+  adapter integrations`.
+
 ### 2026-07-04 04:15 UTC Native Xquik Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or

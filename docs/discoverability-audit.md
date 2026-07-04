@@ -189,19 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 04:15 UTC: runtime selector unavailable. Crawler parsed 3
-  monitoring, 22 native framework/dashboard, and 3 skill/registry opportunities
-  with required skill-repo coverage; one proxy crawler lane failed closed and a
-  direct crawler rerun supplied native candidates.
-- Inventory partitioned broad authored PR search until GitHub returned a cap or
-  rate blocker. Exact reads covered 3 existing in-scope PRs and 3 new PRs.
+- 2026-07-04 04:49 UTC: runtime selector unavailable. Crawler parsed 0
+  monitoring, 0 native framework/dashboard, 1 skill/registry opportunity, and 6
+  exact repo readbacks with required skill-repo coverage.
+- Broad authored PR search hit malformed-query and GitHub secondary-rate
+  blockers, then stopped per policy. Exact reads covered 6 existing in-scope PRs
+  and 3 new PRs.
 - Opened native Xquik PRs:
-  `PSkinnerTech/X-Dashboard#1`,
-  `tugkanboz/multi-bot-x-automation#1`, and `Troy96/x2ig#19`.
-- Validation passed for each target's safe checks and diff hygiene. Link checks
-  passed for GitHub PRs, Xquik, TweetClaw, and npm registry; npm web returned a
-  403 environment block. Prompt stayed at 15,227 bytes. Full details and
-  lessons are in the archive.
+  `ECTWNYC/market-awareness-alert#1`, `eckartal/sm-g#1`, and
+  `starslittle/twitter-listening-agent#1`.
+- Validation passed where target-owned gates allow; eckartal has pre-existing
+  install/lint friction and starslittle has a pre-existing unrelated test
+  failure. Link checks passed for new PRs, Xquik, TweetClaw, and npm registry.
+  Prompt stayed at 15,227 bytes. Full details and lessons are in the archive.
 
 ## Reporting Checklist
 
