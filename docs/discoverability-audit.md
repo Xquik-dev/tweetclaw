@@ -189,20 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 03:39 UTC: runtime selector unavailable. Crawler parsed 0
-  monitoring, 16 native framework/dashboard, and 36 skill/registry opportunities
-  with required skill-repo coverage.
-- Inventory partitioned 1,798 broad authored open PR URLs plus 2,433 exact
-  2026-07-03 subpartition URLs. Exact repo reads found no selected-target PR or
-  issue duplicates. Broad authenticated search later hit GitHub API rate limit,
-  so no more broad search was attempted.
-- Screened 10 fresh native lanes. Opened PRs:
-  `adnanshaikhhh/pulsebridge-intelligence#1`,
-  `moggan1337/CreatorHub#1`, and `nabylb/aegis-intelligence#1`.
-- Validation passed: target TypeScript/tests/diff checks, Xquik link check,
-  duplicate/readbacks, and PR wording checks. Repaired a CreatorHub bot review
-  by switching all 3 PRs to `x-api-key` plus `q`; Aegis Vercel is maintainer
-  authorization. Full details and lessons are in the archive.
+- 2026-07-04 04:15 UTC: runtime selector unavailable. Crawler parsed 3
+  monitoring, 22 native framework/dashboard, and 3 skill/registry opportunities
+  with required skill-repo coverage; one proxy crawler lane failed closed and a
+  direct crawler rerun supplied native candidates.
+- Inventory partitioned broad authored PR search until GitHub returned a cap or
+  rate blocker. Exact reads covered 3 existing in-scope PRs and 3 new PRs.
+- Opened native Xquik PRs:
+  `PSkinnerTech/X-Dashboard#1`,
+  `tugkanboz/multi-bot-x-automation#1`, and `Troy96/x2ig#19`.
+- Validation passed for each target's safe checks and diff hygiene. Link checks
+  passed for GitHub PRs, Xquik, TweetClaw, and npm registry; npm web returned a
+  403 environment block. Prompt stayed at 15,227 bytes. Full details and
+  lessons are in the archive.
 
 ## Reporting Checklist
 

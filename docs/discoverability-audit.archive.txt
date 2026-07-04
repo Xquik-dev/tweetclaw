@@ -62457,6 +62457,124 @@ Self-improvement:
   before this audit commit. Existing untracked `0` in the TweetClaw worktree
   was preserved.
 
+### 2026-07-04 04:15 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. The run continued under the available runtime.
+- Crawler-first monitoring and discovery ran from `/Users/burak/Developer/xquik`
+  with strict JSON outputs under `/tmp/tweetclaw-heartbeat-20260704T0415`.
+  Coverage included open PR monitoring, native framework and dashboard repos,
+  SKILL.md, `.agents/skills`, skill directories, OpenClaw, MCP, Codex, Claude,
+  agent, social media, Twitter/X skill terms, awesome lists, registries, forks,
+  and generated catalog terms.
+- Crawler outputs: `pr-monitoring.json` returned 3 existing PR opportunities;
+  `native-framework-dashboard.json` returned 1 stale native candidate;
+  `skills-registries.json` returned 3 skill candidates; a proxy-backed native
+  rerun returned 0 opportunities after repeated proxy socket closures; the
+  direct native rerun returned 22 opportunities. No crawler credentials were
+  printed, stored, or committed.
+- Complete PR inventory method: compact audit plus archive search, crawler
+  output, exact existing PR reads, broad authored open PR search partitions,
+  target PR and issue searches, target clone plus `rg`, fork metadata, and exact
+  GitHub PR readbacks. Broad authored open PR search hit the 1,000 result cap on
+  the all-open query, 2026-07-01 to 2026-07-03, and 2026-07-03 partitions.
+  Exact partition counts read back were 151 for updated since 2026-07-04, 324
+  for 2026-06, 134 for before 2026-06, 152 for 2026-07-02, and 52 for
+  2026-07-01. Term search later hit GitHub API 403 rate limiting after the
+  `x-twitter-scraper` partition returned 568 results, so broad authenticated
+  search stopped for the run per policy.
+- Existing in-scope PR exact readbacks: `adnanshaikhhh/pulsebridge-intelligence#1`
+  was open, mergeable, clean, no comments, no reviews, and no checks;
+  `moggan1337/CreatorHub#1` was open, mergeable, clean, no checks, with a stale
+  old-commit bot review already repaired by the prior `x-api-key` plus `q`
+  update; `nabylb/aegis-intelligence#1` was open, mergeable, unstable only
+  because Vercel needs maintainer authorization. No new repair was required.
+- Fresh lanes screened and blockers: `creatorcrawl/creatorcrawl-skill`,
+  `elbis330/social-media-scraper-skill`, `jeremy9682/social-monitor-skill`,
+  `AbdulRehman393/streamlit-airline-sentiment`,
+  `M1325-source/Sentiment-Analysis`,
+  `varun0852/Twitter-Sentiment-Analytics-Dashboard`,
+  `Salrahim21/twitter-sentiment-dashboard`, `GSPriya13/Twibuzz`,
+  `VaishnaviDayanand/Twibuzz-Real-Time-Social-Media-Analytics-Dashboard`,
+  `sarvesh1714/Twitter-Account-Analysis-with-Personality-Insights`, and
+  `Prem95/socialautonomies` were duplicate or prior-history blocked;
+  `BabyJ723/blast-ON` was unrelated Keycloak content; `bigsk1/cfx-terminal` was
+  archived; `geoffreywoo/clawfable` remained a future lane because a native
+  contribution needs a larger AGENTS/agent-policy change and test plan.
+- Native PR 1: opened https://github.com/PSkinnerTech/X-Dashboard/pull/1 from
+  fork `kriptoburak/X-Dashboard` branch `codex/xquik-search-source`, parent
+  verified as `PSkinnerTech/X-Dashboard`. Commit
+  `56b7d7eec04b362b466de93b2842ed88e6b48942` added an optional server-side
+  Next.js route `src/app/api/searchXquikTweets/route.ts` plus README env and
+  usage notes for `XQUIK_API_KEY` and `XQUIK_API_BASE_URL`. Existing profile
+  lookup remains unchanged.
+- Native PR 2: opened https://github.com/tugkanboz/multi-bot-x-automation/pull/1
+  from fork `kriptoburak/multi-bot-x-automation` branch
+  `codex/xquik-source-helper`, parent verified as
+  `tugkanboz/multi-bot-x-automation`. Commit
+  `e8872d77d8630b11cd09f44c94b1ebb7f9514b93` added `lib/xquik-source.ts`,
+  wired optional `XQUIK_SEARCH_QUERY` into `app/api/post-content/route.ts`, and
+  documented how Xquik search can supplement or replace RSS sources while
+  preserving RSS-only behavior.
+- Native PR 3: opened https://github.com/Troy96/x2ig/pull/19 from fork
+  `kriptoburak/x2ig` branch `codex/xquik-tweet-import`, parent verified as
+  `Troy96/x2ig`. Commit `78b176ce7e4602d42d48b3a4d670d927f4b95f63` added
+  `src/lib/xquik.ts`, a route-gated `source=xquik` refresh path in
+  `src/app/api/tweets/route.ts`, and README guidance. The default Twitter/X
+  refresh remains unchanged.
+- Duplicate and policy gates: compact audit, archive, target content, target
+  open and closed PRs, and target open and closed issues were searched for
+  TweetClaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, TweetClaw GitHub,
+  npm, ClawHub, OpenClaw, and variants. `PSkinnerTech/X-Dashboard`,
+  `tugkanboz/multi-bot-x-automation`, and `Troy96/x2ig` had no target duplicate.
+  Repository metadata, README, package manager, runtime, license metadata,
+  contribution hints, and validation commands were read where present.
+- PR body wording: all 3 PRs included the required optional first-person
+  burakbayir X/Twitter visibility note, without an X/Twitter URL and without a
+  GitHub mention prefix.
+- New PR exact readbacks: `PSkinnerTech/X-Dashboard#1` is open, non-draft,
+  mergeable, clean, base `main`, maintainer edits enabled, no comments, no
+  reviews, no checks. `tugkanboz/multi-bot-x-automation#1` is open, non-draft,
+  mergeable, clean, base `main`, maintainer edits enabled, no comments, no
+  reviews, no checks. `Troy96/x2ig#19` is open, non-draft, mergeable, unstable
+  only because Vercel needs maintainer authorization, base `main`, maintainer
+  edits enabled, one Vercel bot comment, no reviews.
+- Target validation: `PSkinnerTech/X-Dashboard` passed
+  `npx tsc --noEmit --pretty false`, `git diff --check`, and added-line
+  sensitive scan; `npm run lint` was blocked by a Next lint config prompt, so no
+  config churn was added. `tugkanboz/multi-bot-x-automation` passed
+  `npm run type-check`, `git diff --check`, and added-line sensitive scan;
+  `npm run lint` was blocked by a missing ESLint config prompt, so no config
+  churn was added. `Troy96/x2ig` passed `npx tsc --noEmit --pretty false`,
+  `npm run lint`, `git diff --check`, and added-line sensitive scan.
+- Public link checks: GitHub PR URLs returned 200. `https://xquik.com` returned
+  200. `https://xquik.com/api/v1/x/tweets/search?q=test` returned expected 402
+  without an API key. `https://github.com/Xquik-dev/tweetclaw` returned 200.
+  `https://registry.npmjs.org/@xquik%2ftweetclaw` returned 200. The npm web
+  package page returned 403 from this environment while the registry endpoint
+  confirmed the package link is live.
+- OpenClaw and TweetClaw maintenance: no OpenClaw compatibility, install
+  metadata, manifest, approval behavior, release gate, public install doc, or
+  packaged skill behavior changed in this run. Current OpenClaw state from the
+  compact audit remains the reference.
+- Prompt self-improvement: durable lesson is to prioritize native source helper
+  integrations over catalog-only mentions when dashboards or automation apps
+  expose normal data-source routes. Route-gated Xquik paths keep maintainer
+  risk low: use `x-api-key`, `q`, server-side env only, default existing
+  behavior unchanged, and target-native result shapes. Prompt file was not
+  edited because the persisted prompt measured 15,227 UTF-8 bytes against the
+  15 KiB cap, leaving only narrow headroom.
+- Changed TweetClaw files for this audit: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Existing untracked `0` in the
+  TweetClaw worktree was preserved.
+- Final TweetClaw validation before commit: `npm run check-memory-md-size`
+  passed at 15,026/15,360 bytes, `npm run check-em-dash` passed,
+  `npm run check-openclaw-platform-fitness` passed, `git diff --check` passed,
+  and `npm run check:all` passed with 11 test files, 168 tests, and 100 percent
+  coverage. Audit commit planned for current `master`: `Record July 4 native
+  Xquik integrations`.
+
 ### 2026-07-04 00:35 UTC Native Dashboard Integration Run
 
 - Runtime and prompt: this Codex Desktop heartbeat still exposed no callable
