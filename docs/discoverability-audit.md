@@ -192,15 +192,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 16:37 UTC: runtime selector unavailable. Crawler found 18
-  opportunities and broad authored PR search capped at 200 results, so no
-  complete-all inventory claim.
+- 2026-07-04 16:59 UTC: runtime selector unavailable. Crawler dashboard pack
+  returned 11 opportunities; skill, example, and package-tool packs returned 0
+  after proxy socket failures. Broad authored PR search hit GitHub secondary
+  rate limit 403, so no complete-all inventory claim.
 - Opened 3 promotion-clean Xquik CSV import PRs with 2+ target improvements:
-  `AlAmin870/Sentiment_Analysis#1`,
-  `AhmedElgahama/tweets-sentiment-analysis-dashboard-#1`, and
-  `SwTilak/Tweet-Analysis#1`. All exact-read open and mergeable; GitGuardian
-  passed on Ahmed.
-- Focused open-PR promotion scan found 0 old visibility notes to remove.
+  `Aravindms369/Sentiment-Analysis#1`, `Yutika2309/Tweets_Analysis#1`, and
+  `Amey23/Sentiment-Analysis-of-COVID19-Tweets#3`. All exact-read open,
+  ready, mergeable, with no checks configured.
 - Validation passed for py compile, diff hygiene, README link checks, OpenClaw
   docs, fork-parent checks, PR readbacks, and banned wording scans. Full
   details archived.
