@@ -68327,3 +68327,113 @@ Existing untracked TweetClaw file `0` was preserved.
   Final `npm run check-memory-md-size`, `git diff --check`, `npm run check:all`,
   commit, and push were run after this archive write. Existing untracked
   TweetClaw file `0` was preserved.
+
+2026-07-04 20:28 UTC heartbeat
+
+- Runtime selector: Codex Desktop did not expose model, speed, or effort
+  controls, so Codex 5.5 Fast mode and extra-high reasoning could not be
+  explicitly selected. Work continued and this limitation was recorded.
+- Initial state: TweetClaw `HEAD` was `c4b81fb` with only pre-existing
+  untracked file `0`. Xquik `HEAD` was `ae17f1f4` with unrelated user changes
+  in `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved. Xquik open issues
+  query returned 0.
+- OpenClaw docs recheck: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  returned 000 DNS failure. No OpenClaw compatibility changes were made.
+- Crawler coverage: Xquik crawler ran first from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260704T2028/crawler/fresh.json`, bounded request
+  timeout, search pages, per-query limit, concurrency, and stable session
+  `tweetclaw-20260704-2028`. Queries covered Twitter/X SDKs, automation CLIs,
+  MCP servers, social media MCP, tweet schedulers, Next.js starters, SKILL.md,
+  `.agents/skills`, OpenClaw, Codex, Claude, social/Twitter-X skills, and
+  awesome automation lists. Output parsed as 0 opportunities and 0 repositories
+  after network-egress socket/proxy logs. No crawler credentials were printed or
+  stored.
+- Complete PR inventory method: broad authored search
+  `is:pr is:open author:kriptoburak archived:false` still returned 0 despite
+  known open PRs, so no complete-all claim was made. Inventory was built from
+  compact audit, archive URLs, exact target metadata, and exact `gh pr view`
+  reads for 39 audit/archive PR URLs. Fields covered state, draft status,
+  mergeability, base and head, head owner, commits, comments, reviews, checks,
+  and body/comment review where relevant.
+- PR repair: `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis#1` was found
+  closed after an overly cautious self-close about missing license metadata.
+  Because the active rule says missing license metadata alone does not block a
+  direct PR, the self-comment was patched to remove the blocker wording and the
+  PR was reopened. Readback after repair: open, ready, mergeable, 1 comment, 0
+  reviews, GitGuardian success. No promotion-note removal was needed.
+- Fresh screening: fallback `gh search repos` and exact duplicate checks
+  screened `Henilt31/xterm-cli`, `adityapatil2804/social-trend-forecaster-pro`,
+  `Micka33/x-api-sdk-ts`,
+  `OmSapkar24/Real-time-Sentiment-Dashboard-NLP`,
+  `askmy-stack/airflow-twitter-pipeline`,
+  `arunnagappanaikbel/python-Twitter-data-pipeline`,
+  `AdeoluAdegboye/Twitter_Data_Pipeline`, and
+  `the-coderbee/unified-social-api`. `OmSapkar24/...` was blocked by existing
+  open Xquik PR `#1`. The `arunnagappanaikbel/...` clone had a tracked `.env`
+  path; contents were not read, and the lane was not selected. `Micka33/...`
+  lacked a clean target-native Xquik surface beyond a thin compatibility
+  example, so it was not selected. Selected targets were non-fork,
+  non-archived, had no explicit contribution-policy blocker, and target open
+  and closed PR/issue searches for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, OpenClaw, ClawHub, and variants returned 0.
+- Opened `Henilt31/xterm-cli#1`:
+  https://github.com/Henilt31/xterm-cli/pull/1 from verified fork
+  `kriptoburak/xterm-cli`, parent `Henilt31/xterm-cli`, branch
+  `codex/xquik-jsonl-input`, commit `3f28a97`. Native Xquik integration:
+  existing `twitter feed --input` now accepts Xquik JSONL and common Xquik
+  export envelopes for offline feed reading. Target improvements: empty-input
+  validation and JSONL line-error reporting; README plus packaged `SKILL.md`
+  docs for local structured input. Validation:
+  `uv run --with pytest pytest tests/test_serialization.py tests/test_cli.py::test_cli_feed_json_input_path tests/test_cli.py::test_cli_feed_input_accepts_structured_json_envelope tests/test_cli.py::test_cli_compact_mode`
+  passed 10 tests; `git diff --check` passed. Exact readback: open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `adityapatil2804/social-trend-forecaster-pro#1`:
+  https://github.com/adityapatil2804/social-trend-forecaster-pro/pull/1 from
+  verified fork `kriptoburak/social-trend-forecaster-pro`, parent
+  `adityapatil2804/social-trend-forecaster-pro`, branch
+  `codex/xquik-ingest-route`, commit `07389b0`. Native Xquik integration:
+  added `POST /ingest/xquik` to normalize Xquik tweet export rows into the
+  existing topic and forecast workflow. Target improvements: batch inserts in a
+  single commit with numeric/ISO timestamp coercion; mock ingestion clamp;
+  pandas hourly frequency changed from `H` to `h`; root README no longer points
+  to missing nested README files. Validation:
+  `PYTHONPATH=. uv run --with-requirements requirements.txt --with pytest --with httpx pytest tests/test_xquik_ingest.py tests/test_forecast.py tests/test_health.py`
+  passed 4 tests; `git diff --check` passed. Exact readback: open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `askmy-stack/airflow-twitter-pipeline#2`:
+  https://github.com/askmy-stack/airflow-twitter-pipeline/pull/2 from verified
+  fork `kriptoburak/airflow-twitter-pipeline`, parent
+  `askmy-stack/airflow-twitter-pipeline`, branch `codex/xquik-etl-source`,
+  commit `7c3cc3f`. Native Xquik integration: `XQUIK_TWEETS_PATH` lets the DAG
+  ingest Xquik JSON, JSONL, or CSV tweet exports before writing
+  `refined_tweets.csv`, with live Twitter/X API kept as fallback. Target
+  improvements: hardcoded blank credentials replaced by required environment
+  variables; output directories are created automatically; `TWITTER_MAX_COUNT`
+  is clamped to 200; missing `requirements.txt` added; install script now uses
+  the requirements file. Validation:
+  `PYTHONPATH=. uv run --with pytest --with pandas --with tweepy pytest tests/test_twitter_etl.py`
+  passed 2 tests; `python3 -m py_compile twitter_etl.py twitter_dag.py` and
+  `git diff --check` passed. Exact readback: open, ready, mergeable, 1 commit,
+  0 comments, 0 reviews, 0 checks, promotion-clean.
+- Link and public hygiene: `https://xquik.com/api/v1` returned HTTP 200. New
+  target repo URLs returned HTTP 200. Diffs, changed files, commit messages, and
+  PR bodies were scanned for secrets, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported claims,
+  stale metadata, and banned promotion-note wording. Only expected placeholder
+  environment variable names and tweet metric fields appeared. No banned
+  promotion wording was posted.
+- Self-improvement: durable rules already cover the run. Reusable lessons
+  recorded here: do not treat missing license metadata alone as a blocker after
+  the prompt update; when crawler returns zero rows and broad authored search
+  is anomalous, exact audit/archive URL reads plus fresh fallback repo search
+  are acceptable with no complete-all claim. Persisted prompt field measured
+  15,344 bytes; no prompt candidate was saved.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Markdown memory measured 15,357/15,360 bytes before final checks. Final
+  `npm run check-memory-md-size`, `git diff --check`, `npm run check:all`,
+  commit, and push were run after this archive write. Existing untracked
+  TweetClaw file `0` was preserved.

@@ -192,19 +192,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 20:07 UTC: runtime selector unavailable. Crawler-first pack
-  returned 23 rows, all skip-recommended for doc-fetch or submission-path gaps.
-  Fallback screened 5 fresh repos; `Sairam-DE/tweet_dashboard` was
-  archive-known, `anadanila98/disertatie` vendored a large env, and
-  `Sruthi869/major-project` was zip-only.
-- Opened 3 promotion-clean Xquik JSONL source PRs with 2+ target fixes:
-  `Manula-Fernando/TweetPulse-Pro#1`,
-  `Kaleemullah-Younas/Real-time-twitter-Sentiment-Analysis#1`, and
-  `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis#1`.
-- Exact readbacks: 18 prior audit-tracked PRs plus the 3 new PRs checked. All
-  new PRs are open, ready, mergeable, and had 0 comments/reviews; Mubashir
-  GitGuardian succeeded. Broad authored PR search still returned 0, so no
-  complete-all claim.
+- 2026-07-04 20:28 UTC: selector unavailable. Crawler strict JSON returned 0
+  rows; broad authored PR search still returned 0, so no complete-all
+  claim. Exact-read 39 audit/archive PRs and reopened an overly cautious
+  self-closed `Mubashirakhan03/...#1`.
+- Fresh lanes screened: `Henilt31/xterm-cli`,
+  `adityapatil2804/social-trend-forecaster-pro`, `Micka33/x-api-sdk-ts`,
+  `OmSapkar24/...` (duplicate open PR), and
+  `askmy-stack/airflow`.
+- Opened promotion-clean PRs: `Henilt31/xterm-cli#1`,
+  `adityapatil2804/social-trend-forecaster-pro#1`, and
+  `askmy-stack/airflow-twitter-pipeline#2`. They add Xquik JSONL/feed,
+  FastAPI-ingest, and Airflow ETL surfaces plus parser validation, timestamp and
+  pandas fixes, env credential checks, requirements/setup fixes, and tests.
+- Validation: xterm 10 tests, trend 4, Airflow 2 plus `py_compile`; new links
+  and OpenClaw `.ai` docs HTTP 200.
 
 ## Reporting Checklist
 
