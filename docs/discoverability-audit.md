@@ -192,19 +192,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 13:23 UTC: runtime selector unavailable. Crawler found 60
-  opportunities. Broad PR search hit a GitHub search-rate 403; no complete-all
-  inventory claim.
+- 2026-07-04 16:15 UTC: runtime selector unavailable. Crawler found 83
+  opportunities; broad PR search hit GitHub secondary-rate 403, so no
+  complete-all inventory claim.
 - Opened 3 promotion-clean native Xquik PRs with 2+ target improvements:
-  `rajdeepchaudhari-work/X-scanner#1`, `AISA-skills/social-media-skills#3`, and
-  `Rakshitha262004/Social-Media-Sentiment-Analysis-Dashboard#1`. All exact-read
-  open, mergeable, with no comments, reviews, or checks yet.
-- Duplicate history blocked `makalin/xenon`, `jedi4ever/social-skills`,
-  `d-wwei/superb-publisher`, `elbis330/social-media-scraper-skill`,
-  `challakishore-dev/social-media-sentiment-dashboard`, `isteamhq/twitter-mcp`,
-  and prior AISA TweetClaw issue scope.
-- Validation passed for py compile, converter smoke, diff hygiene, OpenClaw
-  docs, fork-parent checks, PR readbacks, and banned promotion-note scans.
+  `Anand-roy21/-Real-Time-Social-Media-Sentiment-Analytics-Dashboard#1`,
+  `Chdh11/Sentiment_Analysis_Dashboard#1`, and
+  `kabragaurav/Dashboard-in-Streamlit#1`. All exact-read open, mergeable, with
+  no comments, reviews, or checks yet.
+- Duplicate history blocked prior MCP and sentiment lanes including
+  `JialiangFan/X-MCP-2.0`, `woosal1337/media-mcp`,
+  `Salrahim21/twitter-sentiment-dashboard`, and `MeshwaNpatel/Twitter-Sentiment-Analysis`.
+- Validation passed for py compile, converter smoke, README link checks, diff
+  hygiene, OpenClaw docs, fork-parent checks, PR readbacks, and banned wording
+  scans.
   Full details archived.
 
 ## Reporting Checklist

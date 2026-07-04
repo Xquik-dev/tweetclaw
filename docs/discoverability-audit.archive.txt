@@ -67000,3 +67000,123 @@ Self-improvement:
   prompt measured 15,344 bytes. Final `npm run check-memory-md-size`,
   `git diff --check`, `npm run check:all`, commit, and push were run after this
   archive write. Existing untracked TweetClaw file `0` was preserved.
+
+### 2026-07-04 16:15 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Prompt state: no prompt edit was needed. The persisted heartbeat prompt
+  measured 15,344 bytes by decoding the automation TOML prompt string.
+- Xquik and TweetClaw start state: local Xquik still had user changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved. `gh issue list -R
+  Xquik-dev/xquik` returned 0 open issues. TweetClaw `master` had only the
+  pre-existing untracked file `0`.
+- Crawler coverage: crawler-first runs executed from
+  `/Users/burak/Developer/xquik` with strict JSON output paths under
+  `/tmp/tweetclaw-heartbeat-20260704T1615`. Skill coverage used the research
+  proxy, bounded request timeout, skipped warmup, stable session id, and
+  SKILL.md, `.agents/skills`, OpenClaw, MCP, Codex, Claude, agent, social, and
+  Twitter-X query variants; proxy transport logged socket-close failures but
+  wrote valid JSON with 14 opportunities. Direct fallback dashboard coverage
+  returned 48 opportunities. Direct OpenAPI, MCP, SDK, and agent-tool coverage
+  returned 21 opportunities. Total crawler readback count: 83 opportunities.
+- PR inventory: broad authenticated PR search for `Xquik` and
+  TweetClaw/OpenClaw/ClawHub terms hit GitHub secondary-rate HTTP 403 at the
+  first page, so broad authenticated search stopped for the run and no
+  complete-all claim was made. Fallback monitoring used crawler output, compact
+  audit and archive URLs, exact target repo metadata, exact target PR and issue
+  lists, local clones, fork metadata, and exact new-PR readbacks. Exact
+  readbacks covered all 3 new PRs for state, mergeability, base and head,
+  commits, comments, reviews, checks, and body text.
+- Promotion-note repair: no new promotion notes were posted. New PR body files
+  and exact-read PR bodies were scanned for banned visibility wording before
+  and after creation. No removable promotion notes were found on the handled
+  new PRs.
+- OpenClaw docs check: `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/clawhub/publishing`, and `/help/debugging` returned HTTP 200.
+  `/plugins/permissions` returned HTTP 404, consistent with prior guessed-route
+  failures.
+- Fresh discovery screening and blockers: duplicate or prior-history blockers
+  included `JialiangFan/X-MCP-2.0` with open PR #1,
+  `woosal1337/media-mcp` with open PR #1, `shundayo131/xpulse` with open PR #1,
+  `pkobielak/social-superpowers-mcp` with open PR #1,
+  `avrtt/social-metrics-dashboard` with open PR #1,
+  `Salrahim21/twitter-sentiment-dashboard` with open PRs #10 and #11,
+  `MeshwaNpatel/Twitter-Sentiment-Analysis` with open PR #1, and
+  `sarvesh1714/Twitter-Account-Analysis-with-Personality-Insights` with open
+  PR #1. `H-Atef/WhispersAnalytics-social-insights-dashboard` was held after
+  clone inspection because the repo contains generated binaries, runtime DB
+  artifacts, and credential-adjacent files, making a quick public PR too noisy.
+  `getxapi/getxapi-examples` was held as a competing official examples surface
+  where adding Xquik would not help the target first.
+- Clean lanes submitted: `Anand-roy21/-Real-Time-Social-Media-Sentiment-Analytics-Dashboard`,
+  `Chdh11/Sentiment_Analysis_Dashboard`, and
+  `kabragaurav/Dashboard-in-Streamlit` passed duplicate, target-policy, safety,
+  fork, and validation gates. Missing license metadata did not block direct PRs
+  for Anand or Chdh11; kabragaurav is MIT licensed.
+- Opened `Anand-roy21/-Real-Time-Social-Media-Sentiment-Analytics-Dashboard#1`:
+  https://github.com/Anand-roy21/-Real-Time-Social-Media-Sentiment-Analytics-Dashboard/pull/1
+  from verified fork `kriptoburak/anand-real-time-social-media-sentiment-xquik`,
+  parent `Anand-roy21/-Real-Time-Social-Media-Sentiment-Analytics-Dashboard`,
+  branch `codex/xquik-powerbi-import`, commit
+  `c1347cc1731983d06d2c6f2d1d192308c3ac27cf`. Native integration: added
+  `xquik_to_social_media_posts.py` to convert Xquik CSV, JSON, JSONL, or NDJSON
+  tweet exports into the existing
+  `post_id,platform,username,post_text,post_time,likes,shares,followers` source
+  CSV shape for MySQL or Power BI import. Target improvements: README project
+  structure now matches the actual files in the repository; the run flow now
+  describes the bundled CSV, converted CSV, MySQL, and Power BI file instead of
+  referring to missing directories and scripts. Validation:
+  `python3 -m py_compile xquik_to_social_media_posts.py`, sample Xquik JSON
+  conversion, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Exact readback: open,
+  mergeable, 1 commit, no comments, no reviews, no checks, promotion-clean.
+- Opened `Chdh11/Sentiment_Analysis_Dashboard#1`:
+  https://github.com/Chdh11/Sentiment_Analysis_Dashboard/pull/1 from verified
+  fork `kriptoburak/chdh11-sentiment-analysis-dashboard-xquik`, parent
+  `Chdh11/Sentiment_Analysis_Dashboard`, branch `codex/xquik-streamlit-upload`,
+  commit `1b8f864f5db383d6e72303f9cc946500a5c50c89`. Native integration:
+  added a Streamlit sidebar upload for Xquik CSV, JSON, JSONL, or NDJSON tweet
+  exports and normalized common Xquik fields into the existing airline
+  sentiment schema. Target improvements: replaced a dead hosted-app link with
+  local run instructions; made data loading repo-relative and safer with
+  datetime coercion, dynamic airline choices, map guards, empty-sentiment sample
+  guards, and empty word-cloud guards. Validation:
+  `python3 -m py_compile app.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Exact readback: open,
+  mergeable, 1 commit, no comments, no reviews, no checks, promotion-clean.
+- Opened `kabragaurav/Dashboard-in-Streamlit#1`:
+  https://github.com/kabragaurav/Dashboard-in-Streamlit/pull/1 from verified
+  fork `kriptoburak/kabragaurav-dashboard-streamlit-xquik`, parent
+  `kabragaurav/Dashboard-in-Streamlit`, branch `codex/xquik-streamlit-upload`,
+  commit `691ce6ac694f59b3077ee255cbf775b53fffca2c`. Native integration:
+  added a Streamlit sidebar upload for Xquik CSV, JSON, JSONL, or NDJSON tweet
+  exports and normalized common Xquik fields into the existing dashboard schema.
+  Target improvements: updated deprecated Streamlit caching and pyplot calls
+  for current Streamlit versions; map and word-cloud rendering now handle
+  missing coordinates or empty text safely; README install guidance was
+  simplified and the latitude typo was fixed. Validation:
+  `python3 -m py_compile dashboard.py`, `git diff --check`, and
+  `npx --yes markdown-link-check README.md --quiet`. Exact readback: open,
+  mergeable, 1 commit, no comments, no reviews, no checks, promotion-clean.
+- Duplicate, fork, and policy checks: compact audit and archive were searched
+  before outreach. Target content and all-state PR/issue lists were searched
+  for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper,
+  OpenClaw, ClawHub, and variants. Forks were created under `kriptoburak` and
+  exact-read as parented to intended upstreams:
+  `kriptoburak/anand-real-time-social-media-sentiment-xquik`,
+  `kriptoburak/chdh11-sentiment-analysis-dashboard-xquik`, and
+  `kriptoburak/kabragaurav-dashboard-streamlit-xquik`.
+- Link and public hygiene: `https://xquik.com` and all 3 new PR URLs returned
+  HTTP 200. Handled READMEs passed markdown link checks; the Chdh11 stale hosted
+  app link was removed. Changed diffs and PR bodies were scanned for secrets,
+  private implementation details, unsupported claims, stale metadata, and
+  banned promotion-note wording. No banned wording appeared in new PR bodies,
+  comments, commits, or changed files.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Compact Markdown memory measured 15,344/15,360 bytes after the compact edit;
+  prompt measured 15,344 bytes. Final `npm run check-memory-md-size`,
+  `git diff --check`, `npm run check:all`, commit, and push were run after this
+  archive write. Existing untracked TweetClaw file `0` was preserved.
