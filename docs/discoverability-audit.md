@@ -192,19 +192,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 21:18 UTC: selector unavailable. Xquik crawler strict JSON covered
-  PR, repo, MCP, dashboard, library, and skill queries but returned 0 rows with
-  egress warnings. No complete-all PR inventory claim.
-- Repaired `mithulix/Social-Media-Dashboard#4`: added Xquik camelCase metrics,
-  documented them, pushed `0682119`, resolved the review thread, and read back
-  open, ready, mergeable, 0 checks.
-- Fresh PRs: `Syed-hannan0910/...#1`, `Keshavja29/...#1`, and
-  `Varad239/...#1`. They add Xquik CSV/JSON/analytics imports plus validation,
-  shared summaries, UI errors, route/import fixes, safe port, and numeric
-  guards.
-- Validation: target py_compile/node/diff checks passed; Keshav build hit
-  pre-existing missing `frontend/public/index.html`; OpenClaw `.ai`, Xquik, and
-  PR URLs returned HTTP 200. PR bodies and diffs were promotion-clean.
+- 2026-07-04 21:38 UTC: selector unavailable. Crawler covered PR, repo, MCP,
+  dashboard, library, X/Twitter, and skill queries, returned 0 rows with egress
+  warnings, and broad Xquik PR search still had a capped 2026-07-03 partition.
+- Repaired `Keshavja29/...#1` and `galafis/...#1`; both were pushed, review
+  threads resolved, and read back open, ready, mergeable, and clean.
+- Opened `mail2dibyadarshinee-arch/...#1`, `TabassumSK/...#1`, and
+  `atharva-52/...#1`; each adds native Xquik import plus 2+ target fixes and
+  read back open, ready, mergeable, and clean.
+- Validation: target syntax/diff checks, TweetClaw link check, PR URL checks,
+  prompt-size check at 15,344 bytes, and promotion-hygiene scans passed. Mail2
+  README only had pre-existing localhost links.
 
 ## Reporting Checklist
 

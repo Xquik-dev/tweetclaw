@@ -68116,6 +68116,136 @@ Existing untracked TweetClaw file `0` was preserved.
   commit, and push were run after this archive write. Existing untracked
   TweetClaw file `0` was preserved.
 
+2026-07-04 21:38 UTC heartbeat:
+- Runtime selector: no exposed model, speed, or effort controls, so Codex 5.5
+  Fast mode and extra-high reasoning could not be selected. Recorded limitation
+  and continued.
+- Initial state: TweetClaw on `master` at `4de3881` with only untracked `0`.
+  Xquik on `master` at `ae17f1f4` with user changes in
+  `docs/feature-roadmap.md` and 2 article drafts, all preserved. Explicit
+  `gh issue list --repo Xquik-dev/xquik` returned no open issues; local default
+  issue listing pointed at an unrelated upstream remote and was not used.
+- Official OpenClaw check: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `docs.openclaw.dev/llms.txt` had DNS
+  failure 6.
+- Crawler-first discovery: ran Xquik crawler from `/Users/burak/Developer/xquik`
+  with strict JSON output, request timeout 12000 ms, proxy warmup 0, limit 300,
+  pages 2, per-query limit 10, concurrency 12, session
+  `tweetclaw-20260704-2138`, and queries covering X API dashboards, sentiment
+  apps, data pipelines, tweet schedulers, MCP, OpenClaw, SKILL.md,
+  `.agents/skills`, Claude/Codex/social/Twitter-X skills, awesome lists, and
+  Airflow lanes. Output parsed as valid JSON but contained 0 opportunities and
+  0 repositories; logs showed managed egress socket-close and quarantine
+  warnings without credential exposure.
+- PR inventory method: read compact audit and archive first; ran authored open
+  PR search for latest 100 and exact-read the latest 30 for state, draft,
+  mergeability, base/head, owner, commits, comments, reviews, checks, and review
+  thread state. Exact-read known active PRs for Keshav, Syed, Galafis, Darekar,
+  Mubashir, and Mithulix after repairs. Broad `Xquik` authored open PR search
+  hit the 1000 cap; partitions read `updated:>=2026-07-04` 570, 2026-07-02 10,
+  2026-07-01 22, 2026-06-29..30 41, 2026-06-25..28 5, while 2026-07-03 still
+  capped at 1000. Lane partitions for 2026-07-03 read dashboard 72 and
+  sentiment 44 before twitter capped at 1000. No complete-all inventory claim.
+- Repair 1: `Keshavja29/social-media-analytics-dashboard#1` had 2 unresolved
+  review threads. Verified fork `kriptoburak/keshav-social-media-analytics-dashboard-xquik`,
+  parent `Keshavja29/social-media-analytics-dashboard`, branch
+  `codex/xquik-dashboard-import`. Commit `f69078d` added over-limit rejection
+  for Xquik imports, `received_count` and `row_limit`, and support for
+  `tweetText`, `reply_text`, and `replyText`. README documented the fields and
+  500-row guard. Validation: `python3 -m py_compile backend/app.py
+  backend/utils/sentiment_analyzer.py` and `git diff --check`. Resolved both
+  threads. Final readback: open, ready, MERGEABLE, CLEAN, 2 commits, 0 comments,
+  1 review, 0 checks.
+- Repair 2: `galafis/Social-Media-Dashboard#1` had 5 unresolved review threads.
+  Verified fork `kriptoburak/social-media-dashboard-xquik-galafis`, parent
+  `galafis/Social-Media-Dashboard`, branch `codex/add-xquik-normalizer`.
+  Commit `84a4b0a` added Xquik text aliases, rejected preview payloads above
+  100 rows instead of scanning them, returned `preview_limit` and `row_limit`,
+  and fixed README run commands from nonexistent `python src/main.py` to
+  `python dashboard.py`. Validation: `python3 -m py_compile dashboard.py` and
+  `git diff --check`. Resolved all 5 threads. Final readback: open, ready,
+  MERGEABLE, CLEAN, 7 commits, 4 comments, 6 reviews, 2 checks.
+- Fresh screening: fallback repo search screened
+  `mail2dibyadarshinee-arch/Social-Media-Dashboard`,
+  `TabassumSK/social-media-sentiment-analysis`,
+  `p-zmud/social-competitor-report`,
+  `webdeveloperZannatul/Cross-Platform-Social-Media-Automation`,
+  `atharva-52/x-airflow-data-engineering-pipeline`, `Vaskoor/omnidesk`,
+  `ITZ41/arabic-sentiment-predictor`,
+  `balciemirhan/istanbul-economy-sentiment`,
+  `Eeswar-p/Social-Media-Abuse-and-Toxicity-Detection-System`,
+  `XidaoApi/xidao-nodejs-examples`, `Gayathrigit17/social-media-dashboard`,
+  `theatosam/social-media-command-center`, and `YZNLBD/SmartSocialApp`.
+  Target open/closed PR and issue duplicate searches for Xquik, TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, x-twitter-scraper, OpenClaw, ClawHub, and
+  variants returned 0 for selected targets. No CONTRIBUTING or blocking policy
+  files were present. Missing license metadata was not treated as a blocker.
+- Opened `mail2dibyadarshinee-arch/Social-Media-Dashboard#1`:
+  https://github.com/mail2dibyadarshinee-arch/Social-Media-Dashboard/pull/1
+  from verified fork `kriptoburak/mail2-social-media-dashboard-xquik`, parent
+  `mail2dibyadarshinee-arch/Social-Media-Dashboard`, branch
+  `codex/xquik-import`, commit `79cff47`. Native integration:
+  `/api/xquik/import` upserts Xquik tweet exports into tracked posts and daily
+  metrics. Target improvements: seeded an `xquik` platform, row-limit and
+  skipped-row validation, common text/date/id/metric aliases, and repeat-import
+  upserts. Validation: `node --check backend/controllers/xquikController.js`,
+  `node --check backend/routes/xquik.js`, `node --check backend/server.js`, and
+  `git diff --check`. Readback: open, ready, MERGEABLE, CLEAN, 1 commit, 0
+  comments, 0 reviews, 0 checks.
+- Opened `TabassumSK/social-media-sentiment-analysis#1`:
+  https://github.com/TabassumSK/social-media-sentiment-analysis/pull/1 from
+  verified fork `kriptoburak/tabassum-social-media-sentiment-xquik`, parent
+  `TabassumSK/social-media-sentiment-analysis`, branch `codex/xquik-import`,
+  commit `f8afdd6`. Native integration: `/xquik/analyze` sends Xquik tweet
+  exports through the existing sentiment, keyword, aspect, and visualization
+  flow. Target improvements: shared analysis response builder, 500-row rejection,
+  skipped-row feedback, cached imported results for visualization endpoints, and
+  README request docs. Validation: `python3 -m py_compile pluseai-backend/main.py
+  pluseai-backend/models/schemas.py` and `git diff --check`. Readback: open,
+  ready, MERGEABLE, CLEAN, 1 commit, 0 comments, 0 reviews, 0 checks.
+- Opened `atharva-52/x-airflow-data-engineering-pipeline#1`:
+  https://github.com/atharva-52/x-airflow-data-engineering-pipeline/pull/1 from
+  verified fork `kriptoburak/atharva-x-airflow-xquik`, parent
+  `atharva-52/x-airflow-data-engineering-pipeline`, branch
+  `codex/xquik-import`, commit `c22b1e3`. Native integration:
+  `XQUIK_EXPORT_PATH` loads Xquik JSON or CSV exports into the Airflow CSV
+  output schema. Target improvements: environment variables replace hardcoded
+  blank credentials, OAuth credential ordering fixed, missing env fails fast,
+  CSV output no longer includes the pandas index, and common Xquik text/id/date
+  and metric fields normalize. Validation: `python3 -m py_compile twitter_etl.py
+  twitter_dag.py` and `git diff --check`. Readback: open, ready, MERGEABLE,
+  CLEAN, 1 commit, 0 comments, 0 reviews, 0 checks.
+- Other exact readbacks: `Syed-hannan0910/twitter-sentiment-analysis#1` remained
+  open, ready, mergeable, UNSTABLE from an expected Vercel authorization check;
+  `DarekarA/TwitterSentimentAnalysis_Public#2`,
+  `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis#1`, and
+  `mithulix/Social-Media-Dashboard#4` remained open, ready, mergeable, and
+  clean. Non-Xquik blockers were skipped.
+- Link and public hygiene: TweetClaw markdown-link-check passed for README,
+  OpenClaw setup, agent workflows, compact audit, and compact release docs.
+  Target README link checks passed for Tabassum and Atharva; Mail2 failed only
+  on pre-existing localhost links, then passed with localhost ignored. The 3 new
+  PR URLs and TweetClaw GitHub URL returned HTTP 200. npm package page returned
+  HTTP 403 to curl, but `npm view @xquik/tweetclaw` succeeded and showed npm
+  version 1.6.31 while local package metadata is 1.6.32. No package change was
+  made in this outreach run.
+- Public-hygiene scans: changed target diffs, PR bodies, and commit messages
+  were reviewed for secrets, private implementation details, restricted
+  provider/source names, internal cost mechanics, unsupported claims, stale
+  metadata, and banned promotion-note wording. Only expected public env variable
+  names and tweet metric fields appeared. No promotion-note removals were
+  needed.
+- Self-improvement: archive now records that broad `Xquik` authored search can
+  hit date-lane caps; future runs should prefer exact audit URL reads plus
+  smaller updated, topic, and repo partitions, and must not claim complete
+  inventory when any partition remains capped. Persisted prompt measured 15,344
+  bytes and was not changed.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final Markdown memory measured 15,236/15,360 bytes. Final markdown link
+  checks, `git diff --check`, and `npm run check:all` passed. Existing
+  untracked `0` was preserved.
+
 2026-07-04 21:18 UTC heartbeat
 - Runtime and scope: no Codex model, speed, or reasoning-effort selector was
   exposed, so the requested Codex 5.5 Fast and extra-high setting could not be
