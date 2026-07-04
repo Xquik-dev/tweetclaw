@@ -192,18 +192,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 10:54 UTC: runtime selector unavailable. Crawler returned native
-  0 after proxy socket failures, skill 32, repo-mode 2. Authored PR search
-  returned 194 current-day opens; older search still hit the 200 cap, so
-  inventory is capped-recorded, not complete.
-- Removed banned visibility wording from 18 old comments and 1 editable body.
-  Opened 3 native Xquik PRs with 2+ target improvements:
-  `PavanSrikar2007/Twitter-Sentiment-Analysis-Project#1`,
-  `deepikasahani077-ui/RealTime-Sentiment-Dashboard#1`, and
-  `pgadekar14/smart-social-analytics-dashboard#1`.
-- Validation passed for compile, diff, README links, hygiene, and PR readbacks.
-  Pavan's dead Streamlit demo link was removed. Memory 15,226/15,360; prompt
-  15,344 bytes. Details archived.
+- 2026-07-04 11:15 UTC: runtime selector unavailable. Crawler native and skill
+  searches returned 0 after proxy socket failures; repo-mode returned 12.
+  Authored Xquik PR search hit 200 caps for current-day and older partitions;
+  recent exact-read covered 34 PRs.
+- Removed 6 old banned promotion comments. Opened 3 mergeable native Xquik PRs
+  with 2+ target improvements: `prashantapurkayastha/listenv1#3`,
+  `Nameless235/socialpulse#1`, and `mkinteh/social-media-dashboard#1`.
+- Validation passed for compile, importer probes, target links, hygiene, and PR
+  readbacks. No narrow promotion wording remained. Memory and prompt sizes are
+  archived with full details.
 
 ## Reporting Checklist
 
