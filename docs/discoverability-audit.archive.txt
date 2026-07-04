@@ -2,6 +2,107 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-04 01:37 UTC Native Dashboard Import Run
+
+- Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,
+  speed, or reasoning-effort selector, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected. The persisted automation prompt
+  measured 15,227 bytes and already preserved the user's native framework,
+  software, dashboard, project, and library integration mandate.
+- Crawler-first coverage: ran strict JSON PR-monitoring, native dashboard, and
+  skill or registry packs from `/Users/burak/Developer/xquik` into
+  `/tmp/tweetclaw-heartbeat-20260704T0137/`. Coverage included open PRs,
+  issues, repos, code, Xquik, TweetClaw, OpenClaw, ClawHub, MCP, skills,
+  x-twitter-scraper, X/Twitter automation, social media, agent tools,
+  frameworks, software projects, dashboards, libraries, SDKs, catalogs,
+  examples, validators, registries, package tooling, docs, `SKILL.md`,
+  `.agents/skills`, Codex, Claude, forks, awesome lists, and generated catalogs.
+  All 3 outputs parsed as strict JSON with 0 repos, issues, PRs, code results,
+  or opportunities after managed proxy socket-close logs, so exact GitHub reads,
+  metadata, archive checks, and clones carried discovery.
+- PR inventory and repair gate: exact-read 15 existing in-scope open PRs before
+  outreach: `NikoVlasov/social-analyst-dashboard#1`,
+  `zonia7867/social-media-analytics-dashboard#1`,
+  `Mahek-J21/SocialMediaAnalytics#1`,
+  `Pooja-Yadav05/social-media-analytics-dashboard#1`,
+  `productivityujjwal057-byte/social-media-analytics-dashboard#1`,
+  `Shrutika-Patil04/social-media-analytics-dashboard#1`,
+  `dkessavane/twitter-dashboard#1`, `follow-the-sh33p/twitter-dashboard#1`,
+  `SanVic009/sentiment-dashboard#1`,
+  `keerthy-analyst/Twitter_scraping_using_pythonscripting_mongodb_streamlit#1`,
+  `linx777/agent-skills-registry#1`,
+  `josecookai/awesome-openclaw-apis#5`, `skilluse/skilluse#4`,
+  `umairsohail049/openclaw-api-list#1`, and
+  `ivishnuraj/awesome-mcp-servers#3`. No maintainer request, actionable review,
+  conflict, generated-file drift, DCO, CLA, or valid bot finding needed repair.
+  `skilluse/skilluse#4` remains target-owned Vercel authorization blocked;
+  `SanVic009#1` had only a default Codex review wrapper; `dkessavane#1` remains
+  `UNSTABLE` with no comments or checks to repair.
+- Fresh discovery and duplicate gates: GitHub metadata plus exact open/closed PR
+  and issue checks screened `Divyanshu0508/Social-Media-Analytics-Dashboard-`,
+  `Foram0105/Social-Media-Analytics-Dashboard`,
+  `Maksim124512M/Social-Media-Analytics-Dashboard`,
+  `ayeshatech26/Social-Media-Analytics-Dashboard`,
+  `tuba638/Social-Media-Analytics-Dashboard`,
+  `tnshq/Social_Media_Analytics_Dashboard`,
+  `Shrinija17/justpaid-social-dashboard`,
+  `adimStrong/juan365-socmed-report`, `ZiyadBin/social-media-dashboard`,
+  `monishaahilana/Social-media-analytics-dashboard`, and
+  `AnshitaYadav3022/Social-Media-Analytics-Dashboard`. Target content was
+  searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, OpenClaw, ClawHub, GitHub, and npm variants. Selected
+  lanes were public, non-fork, non-archived, issue-enabled, and duplicate-clean.
+- Selected native lanes: `ayeshatech26` uses `social_media_data.csv` for
+  marketing KPIs, `tnshq` uses `Viral_Social_Media_Trends.csv` for Streamlit
+  trend analytics, and `Shrinija17` already documents an X/Twitter Google Sheet
+  fallback. `tuba638` was not selected because the app import names do not match
+  checked-in module filenames, making a narrow Xquik PR unsafe. `adimStrong`
+  and `ZiyadBin` were held for later because the three safer native lanes were
+  enough for this run.
+- Fork gates: created and REST-verified
+  `kriptoburak/ayesha-social-media-analytics-dashboard` parent
+  `ayeshatech26/Social-Media-Analytics-Dashboard`,
+  `kriptoburak/tnshq-social-media-analytics-dashboard` parent
+  `tnshq/Social_Media_Analytics_Dashboard`, and
+  `kriptoburak/shrinija-justpaid-social-dashboard` parent
+  `Shrinija17/justpaid-social-dashboard` before pushing.
+- Opened `https://github.com/ayeshatech26/Social-Media-Analytics-Dashboard/pull/1`
+  from `codex/import-xquik-marketing-data`, commit `503847f`. The PR adds
+  `xquik_import.py` to convert reviewed Xquik or TweetClaw CSV, JSON, JSONL, or
+  NDJSON exports into the app's marketing KPI CSV schema and documents the
+  command. Readback: OPEN, MERGEABLE, CLEAN, non-draft, maintainer-editable,
+  1 commit, 0 comments, 0 reviews, 0 checks.
+- Opened `https://github.com/tnshq/Social_Media_Analytics_Dashboard/pull/1`
+  from `codex/import-xquik-trend-data`, commit `f616491`. The PR adds
+  `xquik_import.py` for the viral trend CSV schema, documents usage, and
+  switches the app from a local absolute CSV path to the repo-local CSV so the
+  checked-in data and Xquik import path run for maintainers. Readback: OPEN,
+  MERGEABLE, CLEAN, non-draft, maintainer-editable, 1 commit, 0 comments,
+  0 reviews, 0 checks.
+- Opened `https://github.com/Shrinija17/justpaid-social-dashboard/pull/1` from
+  `codex/import-xquik-twitter-sheet`, commit `eb915f4`. The PR adds
+  `scripts/xquik_to_twitter_sheet.py` to convert reviewed Xquik or TweetClaw
+  exports into the existing X/Twitter Google Sheet columns and documents it
+  beside the existing backfill scripts. Readback: OPEN, MERGEABLE, CLEAN,
+  non-draft, maintainer-editable, 1 commit, 0 comments, 0 reviews, 0 checks.
+- Validation and link hygiene: Ayesha passed `python3 -m py_compile app.py
+  xquik_import.py`, sample conversion, `git diff --check`, and a direct
+  `curl -fsSI` check of the introduced TweetClaw link; the full README link
+  check reported the pre-existing Streamlit app URL as status 0. tnshq passed
+  `python3 -m py_compile app.py xquik_import.py`, sample conversion,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Shrinija passed `python3 -m py_compile scripts/xquik_to_twitter_sheet.py`,
+  sample conversion, `git diff --check`, and a direct TweetClaw link check; the
+  full README link check reported the pre-existing Cloud Run URL as 503. Public
+  text and diffs were searched for secrets, private implementation details,
+  restricted provider names, internal cost mechanics, and unsupported claims;
+  none were introduced.
+- TweetClaw audit and self-improvement: changed TweetClaw files are
+  `docs/discoverability-audit.md` and this archive. Durable lesson: when a
+  target already has an X/Twitter sheet fallback, a converter into that exact
+  sheet schema is more maintainer-native than adding another dashboard import
+  path. Existing untracked `0` in the TweetClaw worktree was preserved.
+
 ### 2026-07-04 01:16 UTC Native Dashboard Import Run
 
 - Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,

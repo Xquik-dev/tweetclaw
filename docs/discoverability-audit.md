@@ -189,22 +189,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 01:16 UTC: runtime selector unavailable; prompt remains 15,227
+- 2026-07-04 01:37 UTC: runtime selector unavailable; prompt remains 15,227
   bytes. Crawler-first monitoring, dashboard, and skill packs parsed as strict
   JSON with 0 hits, so exact PR reads, metadata, archive checks, and clones
   carried the run.
-- Exact-read 12 existing in-scope PRs plus 3 new PRs. No Xquik-visibility
-  repair was needed; `skilluse/skilluse#4` remains target-owned Vercel
+- Exact-read 15 existing in-scope PRs plus 3 new PRs. No Xquik-visibility
+  repair was needed. `skilluse/skilluse#4` remains target-owned Vercel
   authorization blocked, and `SanVic009/sentiment-dashboard#1` had only a
   non-actionable Codex wrapper review.
-- Screened fresh native dashboard lanes: `Pooja-Yadav05`,
-  `productivityujjwal057-byte`, `Rajasree9466`, `Divyanshu0508`,
-  `Shrutika-Patil04`, and `Foram0105`. Held `Rajasree9466` because the checked
-  runner and data paths already disagree.
+- Screened fresh native dashboard lanes: `ayeshatech26`, `tuba638`, `tnshq`,
+  `Shrinija17`, `adimStrong`, and `ZiyadBin`.
 - Opened 3 mergeable native import PRs from verified `kriptoburak` forks:
-  `Pooja-Yadav05/social-media-analytics-dashboard#1`,
-  `productivityujjwal057-byte/social-media-analytics-dashboard#1`, and
-  `Shrutika-Patil04/social-media-analytics-dashboard#1`.
+  `ayeshatech26/Social-Media-Analytics-Dashboard#1`,
+  `tnshq/Social_Media_Analytics_Dashboard#1`, and
+  `Shrinija17/justpaid-social-dashboard#1`.
 - Gates, validation, links, memory, push, and lessons are in the archive.
 
 ## Reporting Checklist
