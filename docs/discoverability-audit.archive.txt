@@ -66115,6 +66115,84 @@ Self-improvement:
 - TweetClaw state: compact audit updated, archive appended, existing untracked
   TweetClaw file `0` preserved.
 
+### 2026-07-04 10:54 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Prompt state: the automation prompt already contained the no-promotion rule
+  and 2-target-improvement rule. No prompt edit was needed. Persisted prompt
+  measured 15,344 bytes by decoding the TOML prompt string.
+- Crawler-first coverage: native dashboard/framework query pack wrote valid JSON
+  but returned 0 opportunities after managed-proxy socket failures. Skill query
+  pack wrote valid JSON and returned 32 opportunities across SKILL.md,
+  .agents/skills, OpenClaw, MCP, Codex, Claude, agent, social, Twitter-X,
+  awesome-list, registry, fork, and generated-catalog lanes. Repo-mode exact
+  crawl over 12 known dashboard/API/MCP repos returned 2 opportunity records.
+- PR inventory: `gh search prs` for `xquik created:2026-07-04` returned 194
+  open results. `xquik created:<2026-07-04` returned exactly 200 open results,
+  so that partition hit the cap and is recorded as incomplete. Named
+  TweetClaw/OpenClaw/x-twitter-scraper search returned 0. Exact readbacks
+  covered 28 recently updated in-scope PRs, 19 cleaned PRs, and the 3 new PRs.
+- Existing PR repairs: removed banned promotion wording from 18 old
+  self-authored PR comments and from the editable body on
+  `umairsohail049/openclaw-api-list#1`. Fresh readbacks over all 19 affected PRs
+  had zero narrow promotion-note hits.
+- Fresh discovery screening: fallback GitHub repo search screened recent
+  dashboard, Streamlit, social-media analytics, OpenAPI/MCP, and Twitter
+  analytics lanes. Archive/duplicate blockers included
+  `minhcanh-dev/Twitter-Sentiment-Analysis`, `Mahek-J21/SocialMediaAnalytics`,
+  and `YusufAlper17/Social-Pulse`. Fresh metadata and duplicate checks covered
+  `PavanSrikar2007/Twitter-Sentiment-Analysis-Project`,
+  `muhammadabdullahikhsan/sentiment-analysis-dashboard`,
+  `deepikasahani077-ui/RealTime-Sentiment-Dashboard`,
+  `pgadekar14/smart-social-analytics-dashboard`, and `Nabulizi/TickerPulse`.
+  `muhammadabdullahikhsan` and `Nabulizi` were held as unused safe backups after
+  3 simpler native PR lanes passed validation.
+- Opened `PavanSrikar2007/Twitter-Sentiment-Analysis-Project#1`:
+  https://github.com/PavanSrikar2007/Twitter-Sentiment-Analysis-Project/pull/1
+  from `kriptoburak:codex/xquik-batch-csv` at commit
+  `4e0fd09`. Native integration: Streamlit batch analyzer now accepts Xquik
+  tweet/search CSV exports with text-like columns and preserves export metadata.
+  Target improvements: missing-column and blank-row upload guards, README local
+  run guidance, actual training script names, corrected footer repo link, and
+  removal of a pre-existing dead Streamlit demo link. Validation: Python compile
+  for `app.py` and `data_utils.py`, `git diff --check`, README link check.
+  Exact readback: open, non-draft, mergeable, no comments, reviews, checks, or
+  banned wording.
+- Opened `deepikasahani077-ui/RealTime-Sentiment-Dashboard#1`:
+  https://github.com/deepikasahani077-ui/RealTime-Sentiment-Dashboard/pull/1
+  from `kriptoburak:codex/xquik-live-csv` at commit `8c676db`. Native
+  integration: optional sidebar Xquik CSV source feeds exported posts through
+  the existing VADER stream dashboard. Target improvements: upload-shape
+  warnings, session-state history, source labels, reset control, bounded
+  updates-per-run instead of an unbounded Streamlit loop, and README usage notes.
+  Validation: Python compile for the nested app, `git diff --check`, nested
+  README link check. Exact readback: open, non-draft, mergeable, no comments,
+  reviews, checks, or banned wording.
+- Opened `pgadekar14/smart-social-analytics-dashboard#1`:
+  https://github.com/pgadekar14/smart-social-analytics-dashboard/pull/1 from
+  `kriptoburak:codex/xquik-batch-analysis` at commit `f9b4f81`. Native
+  integration: batch analysis accepts Xquik tweet/search CSV exports with
+  text-column normalization and metadata preservation. Target improvements:
+  repo-root-safe model/data paths, missing-model upload errors, missing-column
+  and blank-row upload guards, and README support-column notes. Validation:
+  Python compile for `app.py`, `db_helper.py`, and `watson_helper.py`,
+  `git diff --check`, README link check. Exact readback: open, non-draft,
+  mergeable, no comments, reviews, checks, or banned wording.
+- Duplicate and fork checks: compact audit plus archive were searched before
+  choosing targets. Target all-state PR and issue searches for Xquik, TweetClaw,
+  tweetclaw, x-twitter-scraper, OpenClaw, and ClawHub returned 0 duplicates for
+  all 3 submitted repos. Forks were created under `kriptoburak` and exact REST
+  reads confirmed each fork parent before push.
+- Public hygiene: changed files and PR bodies were scanned for secrets,
+  private implementation details, unsupported claims, stale metadata, and
+  promotion-note wording. No banned wording remained. README link checks passed
+  for all submitted targets after the Pavan dead live-demo link was removed.
+- TweetClaw state: compact audit updated, archive appended, Markdown memory
+  check passed at 15,226/15,360 bytes, existing untracked TweetClaw file `0`
+  preserved.
+
 ### 2026-07-04 10:33 UTC Native Xquik Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
