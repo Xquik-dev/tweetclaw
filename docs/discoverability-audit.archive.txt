@@ -66115,6 +66115,92 @@ Self-improvement:
 - TweetClaw state: compact audit updated, archive appended, existing untracked
   TweetClaw file `0` preserved.
 
+### 2026-07-04 10:33 UTC Native Xquik Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Prompt state: the automation prompt already contained the no-promotion rule
+  and 2-target-improvement rule from the user. No prompt edit was needed.
+  Persisted prompt measured 15,344 bytes.
+- Crawler-first coverage: native framework/dashboard/library query pack and
+  skill-repo query pack both produced valid JSON but 0 opportunities after
+  managed-proxy socket closures. Repo-mode exact-read crawl over 12 known
+  dashboard/API/MCP repos produced 3 opportunity records. Skill coverage
+  included SKILL.md, .agents/skills, skills dirs, OpenClaw, MCP, Codex, Claude,
+  agent, social, Twitter-X, awesome-list, registry, fork, and generated-catalog
+  lanes.
+- PR inventory: `gh search prs` for `xquik created:2026-07-04` returned 188
+  open results. `xquik created:<2026-07-04` returned exactly 200 open results,
+  so that partition hit the requested cap and is recorded as incomplete. Exact
+  readbacks covered 20 high-priority in-scope PRs across recent dashboard/API,
+  MCP, and registry lanes. New PR readbacks covered all 3 PRs opened this run.
+- Existing PR repairs: removed banned visibility wording from PR bodies on
+  `agentic-community/mcp-gateway-registry#1385`,
+  `open-webui/mcpo#301`, and `open-webui/openapi-servers#73`. Deleted 2
+  matching self-authored comments on `agentic-community/mcp-gateway-registry#1385`
+  and `open-webui/mcpo#301`. Re-readbacks had zero banned phrase hits.
+- Non-actionable blockers skipped: `ECTWNYC/market-awareness-alert#1` had a
+  target-owned Vercel authorization comment. `Muqeeth77/RealTime_Twitter_Sentiment#1`
+  and `ladyzeng12-dotcom/twitter-dashboard-proxy#1` had non-actionable automated
+  reviews. `camimirabal/social-analytics-dashboard#1` received a target-owned
+  Netlify preview comment and 3 neutral deploy checks plus 1 success status.
+- Fresh discovery screening: fallback GitHub repo search screened 6 fresh
+  public non-fork, non-archived repos with no duplicate Xquik/TweetClaw/OpenClaw
+  PRs or issues: `lszefner/bird-eye`,
+  `camimirabal/social-analytics-dashboard`, `RAFCERAY/social-media-analytics`,
+  `DharmanshooChopra/Twitter-Sentiment-Dashboard`,
+  `mainibrahim336-create/twitter-sentiment-dashboard`, and
+  `vinuniyal/twitter-sentiment-analysis`. `lszefner/bird-eye` was not selected
+  because its browser-extension promise is no external requests. The
+  Dharmanshoo target contained credential-like material in target code, so it
+  was skipped without copying values into audit, commits, PRs, or final output.
+- Opened `camimirabal/social-analytics-dashboard#1`:
+  https://github.com/camimirabal/social-analytics-dashboard/pull/1 from
+  `kriptoburak:codex/xquik-export-parser` at commit
+  `79e6c9a542a0cde350b8945a46c7dfba457ef15f`. Native integration: browser-only
+  Xquik CSV source detection and normalization for tweet/search exports.
+  Target improvements: centralized source badge styling for neutral unknown
+  files, normalized additional metric fields including count-form columns and
+  bookmark counts, README support, and upload-card guidance. Validation:
+  `git diff --check`, README link check. Exact readback: open, non-draft,
+  mergeable, 1 target-owned Netlify comment, 4 deploy checks/statuses, no
+  reviews, no banned wording.
+- Opened `RAFCERAY/social-media-analytics#1`:
+  https://github.com/RAFCERAY/social-media-analytics/pull/1 from
+  `kriptoburak:codex/xquik-csv-import` at commit
+  `88f43719b14c770003e4d54115020b62b2baf06f`. Native integration: Streamlit
+  sidebar Xquik CSV importer maps text, created_at, query, and optional
+  sentiment fields into the existing dashboard schema, with TextBlob fallback
+  labels. Target improvements: single-date filter handling and empty-text
+  WordCloud guard. Validation: `python3 -m py_compile 05_dashboard.py`,
+  `git diff --check`. Link check found an existing Streamlit auth redirect loop
+  in the pre-existing README live-demo URL. Exact readback: open, non-draft,
+  mergeable, no comments, no reviews, no checks, no banned wording.
+- Opened `vinuniyal/twitter-sentiment-analysis#2`:
+  https://github.com/vinuniyal/twitter-sentiment-analysis/pull/2 from
+  `kriptoburak:codex/xquik-search-source` at commit
+  `4715934e2a7e0f6d68f1a498d6fc1e78fc8e7716`. Native integration: optional
+  Xquik tweet search via `/api/v1/x/tweets/search` when `XQUIK_API_KEY` is set.
+  Target improvements: blank-input guard, cached model/vectorizer loading,
+  artifact paths resolved relative to `app.py`, and missing `requirements.txt`
+  added for the README install flow. Validation: `python3 -m py_compile app.py`,
+  `git diff --check`, README link check. Exact readback: open, non-draft,
+  mergeable, no comments, no reviews, no checks, no banned wording.
+- Duplicate and fork checks: compact audit plus archive were searched before
+  choosing targets. Target all-state PR and issue searches for Xquik, TweetClaw,
+  tweetclaw, x-twitter-scraper, OpenClaw, and ClawHub returned 0 duplicates for
+  all 3 submitted repos. Forks were created under `kriptoburak`; fork parents
+  were exact-read before push. `RAFCERAY/social-media-analytics` fork name is
+  `kriptoburak/social-media-analytics-1`, and `vinuniyal/twitter-sentiment-analysis`
+  fork name is `kriptoburak/vinuniyal-twitter-sentiment-analysis`.
+- Public hygiene: PR bodies were technical-only and included no social
+  promotion wording. Changed files and PR bodies were scanned for the banned
+  visibility-note phrase family. External redirect output from Streamlit link
+  probing was not copied into files or public text.
+- TweetClaw state: compact audit updated, archive appended, memory check passed,
+  existing untracked TweetClaw file `0` preserved.
+
 ### 2026-07-04 10:01 UTC Native Xquik Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
