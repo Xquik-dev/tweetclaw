@@ -68218,3 +68218,112 @@ Existing untracked TweetClaw file `0` was preserved.
   Final `npm run check-memory-md-size`, `git diff --check`,
   `npm run check:all`, commit, and push were run after this archive write.
   Existing untracked TweetClaw file `0` was preserved.
+
+2026-07-04 20:07 UTC heartbeat
+
+- Runtime selector: Codex 5.5 Fast mode and extra-high reasoning controls were
+  not exposed in this environment. Recorded limitation and continued.
+- Initial state: TweetClaw `HEAD` was `0e4aad0` with only pre-existing untracked
+  file `0`. Xquik `HEAD` was `ae17f1f4` with unrelated user changes
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, all preserved. Xquik open issues query
+  returned 0.
+- Complete PR inventory method: ran crawler-first discovery, read compact audit
+  and archive matches for fresh candidates, reran broad authored PR search, and
+  exact-read 18 audit-tracked PRs plus the 3 new PRs through `gh pr view`.
+  Broad authored search `is:pr is:open author:kriptoburak archived:false`
+  still returned 0 despite known open PRs, so no complete-all inventory claim
+  was made. Exact readback fields covered state, draft status, mergeability,
+  base and head, head owner, commits, comments, reviews, checks, and update
+  time. Existing inventory PRs were all open and mergeable; `Twitterscrapper#1`
+  still has only a Vercel target-owner authorization comment/check blocker.
+- Crawler coverage: Xquik crawler ran from `/Users/burak/Developer/xquik` with
+  strict JSON output at `/tmp/tweetclaw-heartbeat-20260704T2007/crawler/fresh.json`,
+  bounded request timeout, search pages, per-query limit, concurrency, and
+  stable session `tweetclaw-20260704-2007`. Queries covered Twitter/X sentiment
+  dashboards, Django/Flask/Celery, Kafka/Airflow pipelines, Streamlit sources,
+  MCP servers, SKILL.md, `.agents/skills`, OpenClaw, Codex, Claude, social
+  agent, and awesome skill-list lanes. Output parsed as 23 opportunities and 0
+  repositories. All crawler rows were skip-recommended due repository document
+  fetch or clear-submission-path gaps, with many network-egress socket-close
+  fetch failures. No crawler credentials were printed or stored.
+- Fresh screening and duplicate gates: compact audit plus archive were searched
+  for `Manula-Fernando/TweetPulse-Pro`, `anadanila98/disertatie`,
+  `Kaleemullah-Younas/Real-time-twitter-Sentiment-Analysis`,
+  `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis`,
+  `Sruthi869/major-project`, `Sruthi869/my-project`, and
+  `Sairam-DE/tweet_dashboard`. `Sairam-DE/tweet_dashboard` was archive-known
+  from prior screening and excluded from the fresh count. `anadanila98/disertatie`
+  was blocked by a huge vendored environment tree and broad review risk.
+  `Sruthi869/major-project` was blocked by zip-only source. Selected targets
+  were non-fork, non-archived, recently pushed, and had no explicit
+  contribution-policy blocker. Target open and closed PR and issue searches for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, OpenClaw,
+  ClawHub, and variants returned 0 for all selected repos. Missing license
+  metadata on 2 selected repos did not block direct PRs.
+- Opened `Manula-Fernando/TweetPulse-Pro#1`:
+  https://github.com/Manula-Fernando/TweetPulse-Pro/pull/1 from verified fork
+  `kriptoburak/tweetpulse-pro-xquik`, parent `Manula-Fernando/TweetPulse-Pro`,
+  branch `codex/add-xquik-jsonl-source`, commit `abf0f11`. Native Xquik
+  integration: optional Xquik JSON Lines tweet source for the existing Kafka
+  producer, with API-catalog link in `docs/xquik-ingestion.md`. Target
+  improvements: CSV source path validation plus empty-row and missing-text
+  skips; producer delay and row-limit validation; helper unit tests for Xquik
+  JSONL normalization and missing-text errors. Validation:
+  `python3 -m py_compile tweetpulse-pipeline/kafka_producer.py
+  tweetpulse-pipeline/xquik_tweets.py test_xquik_tweets.py`,
+  `python3 test_xquik_tweets.py`, `git diff --check`, and
+  `https://xquik.com/api/v1` link check returned 200. Exact readback: open,
+  ready, mergeable, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `Kaleemullah-Younas/Real-time-twitter-Sentiment-Analysis#1`:
+  https://github.com/Kaleemullah-Younas/Real-time-twitter-Sentiment-Analysis/pull/1
+  from verified fork `kriptoburak/kaleemullah-twitter-sentiment-xquik`, parent
+  `Kaleemullah-Younas/Real-time-twitter-Sentiment-Analysis`, branch
+  `codex/add-xquik-jsonl-source`, commit `85066aa`. Native Xquik integration:
+  optional Xquik JSON Lines source mapped into the existing Kafka/Spark row
+  shape, documented in the README with an API-catalog link. Target improvements:
+  producer CLI options for CSV path, topic, bootstrap servers, delay, and row
+  limit; CSV path, empty-row, missing-text, and malformed JSONL validation;
+  helper unit tests. Validation: `python3 -m py_compile
+  Kafka-PySpark/producer-validation-tweets.py Kafka-PySpark/xquik_tweets.py
+  Kafka-PySpark/test_xquik_tweets.py`,
+  `python3 Kafka-PySpark/test_xquik_tweets.py`, `git diff --check`, and
+  `https://xquik.com/api/v1` link check returned 200. Exact readback: open,
+  ready, mergeable, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis#1`:
+  https://github.com/Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis/pull/1
+  from verified fork `kriptoburak/mubashir-twitter-sentiment-xquik`, parent
+  `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis`, branch
+  `codex/add-xquik-jsonl-source`, commit `0846c39`. Native Xquik integration:
+  optional Xquik JSON Lines source mapped into the existing Kafka/Spark row
+  shape, documented in the README with an API-catalog link. Target improvements:
+  producer CLI options for CSV path, topic, bootstrap servers, delay, and row
+  limit; CSV path, empty-row, missing-text, and malformed JSONL validation;
+  helper unit tests; `requirements.txt` now uses `kafka-python==2.0.2` for the
+  existing `from kafka import KafkaProducer` import. Validation:
+  `python3 -m py_compile Kafka-PySpark/producer-validation-tweets.py
+  Kafka-PySpark/xquik_tweets.py Kafka-PySpark/test_xquik_tweets.py`,
+  `python3 Kafka-PySpark/test_xquik_tweets.py`, `git diff --check`, and
+  `https://xquik.com/api/v1` link check returned 200. Exact readback: open,
+  ready, mergeable, 0 comments, 0 reviews, GitGuardian Security Checks
+  succeeded, promotion-clean.
+- OpenClaw docs recheck: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  returned 000 DNS failure. No OpenClaw compatibility changes were made.
+- Link and public hygiene: new PR URLs, `https://xquik.com`,
+  `https://xquik.com/api/v1`, `https://xquik.com/openapi.json`, and current
+  OpenClaw `.ai` docs returned HTTP 200. Diffs, changed files, and PR bodies
+  were scanned for secrets, private implementation details, restricted provider
+  or source names, private cost details, unsupported claims, stale metadata,
+  and banned promotion-note wording. No promotion-note removal was needed.
+- Self-improvement: durable no-promotion, crawler-first, 3-PR, skill coverage,
+  duplicate/fork, and 2 target-improvement rules already cover this run. The
+  reusable lesson is that crawler rows with document-fetch gaps can still seed
+  safe candidates after exact repo clone and duplicate checks. No prompt edit
+  was needed. Persisted prompt field measured 15,382 bytes before audit write;
+  no prompt candidate was saved.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final `npm run check-memory-md-size`, `git diff --check`, `npm run check:all`,
+  commit, and push were run after this archive write. Existing untracked
+  TweetClaw file `0` was preserved.

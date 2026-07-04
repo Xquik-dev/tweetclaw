@@ -192,19 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 19:46 UTC: runtime selector unavailable. Crawler-first query pack
-  covered OpenClaw/MCP/skill, scheduler, dashboard, library, SDK, and package
-  lanes but returned 0 records; fallback GitHub search screened 10 fresh or
-  duplicate-prone repos.
-- Opened 3 promotion-clean native Xquik PRs with 2+ target fixes:
-  `shaneyoungk/Twitterscrapper#1`,
-  `ertenOzsumer/twitter-scraper-demo#2`, and
-  `ew13r5/multiplatform-auto-poster#1`.
-- Exact readbacks: 12 recent audit-tracked PRs plus the 3 new PRs were open and
-  mergeable. `Twitterscrapper#1` has a Vercel team authorization failure and
-  bot comment; this is target-owner authorization, not an actionable code
-  failure. The other 2 new PRs had 0 comments, 0 reviews, and 0 checks. Broad
-  authored PR search still returned 0, so no complete-all inventory claim.
+- 2026-07-04 20:07 UTC: runtime selector unavailable. Crawler-first pack
+  returned 23 rows, all skip-recommended for doc-fetch or submission-path gaps.
+  Fallback screened 5 fresh repos; `Sairam-DE/tweet_dashboard` was
+  archive-known, `anadanila98/disertatie` vendored a large env, and
+  `Sruthi869/major-project` was zip-only.
+- Opened 3 promotion-clean Xquik JSONL source PRs with 2+ target fixes:
+  `Manula-Fernando/TweetPulse-Pro#1`,
+  `Kaleemullah-Younas/Real-time-twitter-Sentiment-Analysis#1`, and
+  `Mubashirakhan03/Real-Time-Twitter-Sentiment-Analysis#1`.
+- Exact readbacks: 18 prior audit-tracked PRs plus the 3 new PRs checked. All
+  new PRs are open, ready, mergeable, and had 0 comments/reviews; Mubashir
+  GitGuardian succeeded. Broad authored PR search still returned 0, so no
+  complete-all claim.
 
 ## Reporting Checklist
 
