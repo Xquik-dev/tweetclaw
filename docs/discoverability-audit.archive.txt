@@ -67225,6 +67225,121 @@ Self-improvement:
   `npm run check:all`, commit, and push were run after this archive write.
   Existing untracked TweetClaw file `0` was preserved.
 
+### 2026-07-04 17:19 UTC Native Xquik Import Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose model, speed, or
+  effort selectors, so Codex 5.5 Fast mode and extra-high reasoning could not
+  be explicitly selected. Work continued and this limitation was recorded.
+- Start state: Xquik had unrelated user edits in `docs/feature-roadmap.md`,
+  `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved. Xquik issue list
+  returned 0 open issues. TweetClaw master started at `012d66e` with only the
+  pre-existing untracked file `0`.
+- OpenClaw docs check: `llms.txt`, `/cli/plugins`, `/plugins/manifest`,
+  `/clawhub/publishing`, and `/help/debugging` returned HTTP 200.
+  `/plugins/permissions` returned HTTP 404, matching prior guessed-route
+  behavior. No OpenClaw compatibility changes were made.
+- Crawler coverage: crawler-first discovery ran from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/tweetclaw-heartbeat-20260704T1719/crawler/fresh.json`, request timeout
+  12000 ms, proxy warmup timeout 0, limit 80, search pages 2, per-query limit
+  10, concurrency 12, stable session `tweetclaw-20260704-1719`, and 15 fresh
+  dashboard, skill, MCP, SDK, package, OpenAPI, and social-data query lanes.
+  The crawler emitted repeated managed-network socket failures and proxy
+  quarantines, then wrote valid JSON with an empty `opportunities` array.
+  Skill-repo coverage was attempted through SKILL.md, OpenClaw skill, MCP
+  skill, Claude skill, agent skill, social media skill, Twitter/X skill, and
+  package-tooling query terms. No exhaustion claim was made.
+- PR inventory: broad authored-open search reported 3,967 open PRs and
+  `incomplete_results=false`, which is above GitHub's 1,000 search cap. The
+  run recorded this as an unresolved broad-inventory platform cap and did not
+  claim complete-all inventory. The 2026-07-04 updated partition returned
+  537 PR URLs. Exact readbacks covered the 3 new PRs plus 6 recent Xquik PRs
+  from the 16:37 and 16:59 runs for state, mergeability, base, head, commits,
+  comments, reviews, checks, and promotion-clean bodies. No actionable
+  maintainer comments, review comments, CI failures, conflicts, DCO/CLA
+  blockers, generated-file drift, valid bot findings, or removable promotion
+  notes were found.
+- Previous PR readbacks: `AlAmin870/Sentiment_Analysis#1`,
+  `AhmedElgahama/tweets-sentiment-analysis-dashboard-#1`,
+  `SwTilak/Tweet-Analysis#1`, `Aravindms369/Sentiment-Analysis#1`,
+  `Yutika2309/Tweets_Analysis#1`, and
+  `Amey23/Sentiment-Analysis-of-COVID19-Tweets#3` remained open, ready, and
+  mergeable, with no comments or reviews. Only Ahmed had a configured check,
+  GitGuardian Security Checks, and it was successful.
+- Fresh candidate screening: fallback GitHub CLI discovery screened
+  `twitter sentiment analysis`, `tweet sentiment analysis`,
+  `social media sentiment analysis`, `streamlit twitter sentiment analysis`,
+  `social media sentiment dashboard`, and related dashboard queries. Audit and
+  archive duplicate checks blocked or de-prioritized previously tracked lanes
+  including `Swastika2401/Social-Media-Sentiment-Analysis`, `Vayu-143`,
+  `challakishore-dev`, `sureshpadhiali-goat`, and existing Xquik PR targets.
+  Target metadata and content checks found `raj200501`,
+  `ahmohler`, and `AseemTapase123` public, non-fork, non-archived,
+  duplicate-clean, and target-native. Missing license metadata for
+  `raj200501` and `AseemTapase123` was recorded and did not block direct PRs;
+  `ahmohler` also lacked license metadata. Default fork names collided for the
+  two dashboard repos, so parent-specific fork names were used and parent
+  readbacks were verified before push.
+- Opened `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`:
+  https://github.com/raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System/pull/2
+  from verified fork `kriptoburak/smsa-trend-prediction-raj`, branch
+  `codex/import-xquik-export-data`, commit `f19d5b6`. Native Xquik integration:
+  added a standard-library importer and CLI that converts Xquik CSV, JSON, and
+  JSONL tweet exports into the project's `sample_data.csv` schema. Target
+  improvements: repository-relative data paths for loading, preprocessing, and
+  generation; importable deterministic sample generation; importer unit tests;
+  README and data dictionary workflow docs. Validation passed
+  `python3 -m unittest discover -s tests` with 14 tests, py compile for changed
+  modules and scripts, and `git diff --check`. Exact readback: open, ready,
+  mergeable, 8 files, 317 additions, 42 deletions, 0 comments, 0 reviews, 0
+  checks, promotion-clean.
+- Opened `ahmohler/social-media-sentiment-dashboard#3`:
+  https://github.com/ahmohler/social-media-sentiment-dashboard/pull/3 from
+  verified fork `kriptoburak/social-media-sentiment-dashboard-ahmohler`, branch
+  `codex/xquik-csv-dashboard-import`, commit `1377302`. Native Xquik
+  integration: added a Streamlit sidebar uploader that maps Xquik CSV text,
+  sentiment, entity, and identifier fields into the existing table and pie
+  chart. Target improvements: dataset path is now relative to `app.py`; empty
+  text, empty entity, and missing dataset states show clear Streamlit messages;
+  README headings, setup ordering, code fences, dataset placement, and accepted
+  CSV columns were cleaned up. Validation passed `python3 -m py_compile app.py`
+  and `git diff --check`. Exact readback: open, ready, mergeable, 2 files,
+  146 additions, 51 deletions, 0 comments, 0 reviews, 0 checks,
+  promotion-clean.
+- Opened `AseemTapase123/Social-Media-Sentiment-Dashboard#1`:
+  https://github.com/AseemTapase123/Social-Media-Sentiment-Dashboard/pull/1
+  from verified fork `kriptoburak/social-media-sentiment-dashboard-aseem`,
+  branch `codex/xquik-batch-csv-import`, commit `6715e6b`. Native Xquik
+  integration: added a Batch Insights uploader and normalizer for Xquik CSV
+  tweet exports. Target improvements: dashboard model artifacts now load from
+  the repository `models/` directory; missing model files stop the Streamlit
+  app cleanly; training writes model artifacts to the repository path and
+  creates the directory; an unused training import was removed; README
+  documents the Xquik CSV workflow. Validation passed py compile for
+  `app/main.py`, `src/data_loader.py`, `src/model_trainer.py`,
+  `src/preprocessing.py`, and `train.py`, plus `git diff --check`. Exact
+  readback: open, ready, mergeable, 4 files, 99 additions, 19 deletions,
+  0 comments, 0 reviews, 0 checks, promotion-clean.
+- Link and public hygiene: changed files and PR bodies were scanned for
+  secrets, private implementation details, restricted provider or source names,
+  internal cost mechanics, unsupported claims, stale metadata, em dash and
+  spaced double-hyphen style issues, and banned promotion-note wording. No
+  banned wording appeared in PR bodies, comments, commits, or changed files.
+  Target link checks were limited to edited docs without new external links
+  beyond existing public tool references and PR URLs.
+- Self-improvement: durable no-promotion and 2 target-improvement rules already
+  exist in the active automation prompt. No prompt edit was needed. Decoded
+  prompt size measured 15,344 bytes. This run recorded that when broad authored
+  open PR search exceeds GitHub's 1,000 cap, the compact audit must explicitly
+  avoid complete-all claims and record partition counts plus exact readbacks
+  actually performed.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Markdown memory measured 15,265 bytes before final check. Final
+  `npm run check-memory-md-size`, `git diff --check`, `npm run check:all`,
+  commit, and push were run after this archive write. Existing untracked
+  TweetClaw file `0` was preserved.
+
 ### 2026-07-04 16:59 UTC Native Xquik CSV Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, speed, or
