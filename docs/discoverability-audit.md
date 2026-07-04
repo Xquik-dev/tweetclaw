@@ -192,18 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 12:34 UTC: runtime selector unavailable. Crawler proxy paths hit
-  socket-close failures; direct crawler found candidates. Broad GitHub PR
-  search hit secondary rate limits, so exact readbacks covered 6 known Xquik
-  PRs and all 3 new PRs. No actionable Xquik repair was needed.
+- 2026-07-04 12:54 UTC: runtime selector unavailable. Crawler coverage included
+  proxy native 0, proxy skill 23, and direct dashboard 23 opportunities.
+  Current-day authored PR search exact-read 50 open PRs; no complete-all claim.
+- Removed 4 old self-authored promotion comments from `moggan1337/CreatorHub#1`,
+  `Troy96/x2ig#19`, and `kwonye/mcpx#15`.
 - Opened 3 native Xquik PRs with 2+ target improvements:
-  `ammar-s847/FeelTheTweet#2`,
-  `AkshayaSri03/Aspect-Based-Sentiment-Analysis-Covid19#1`, and
-  `rNLKJA/Australia-Social-Media-Analytics-on-the-Cloud#16`.
-- Validation passed for target builds or syntax probes, sample import checks,
-  OpenClaw docs, diff hygiene, PR readbacks, and promotion-wording scans.
-  Akshaya has a target-owned Vercel authorization blocker. Full details
-  archived.
+  `AbdulRehman393/streamlit-airline-sentiment#2`,
+  `varun0852/Twitter-Sentiment-Analytics-Dashboard#1`, and
+  `tom-doerr/twitter-analytics-dashboard#2`. All were open, mergeable, and
+  promotion-clean at exact readback.
+- Validation passed for syntax, diff hygiene, handled README links, OpenClaw
+  docs, fork-parent checks, and PR readbacks. Prompt remained 15,344 bytes.
+  Full details archived.
 
 ## Reporting Checklist
 
