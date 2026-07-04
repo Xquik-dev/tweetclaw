@@ -2,6 +2,106 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-04 02:57 UTC Native Framework Dashboard Run
+
+- Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,
+  speed, or reasoning-effort selector, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected. The persisted automation prompt
+  measured 15,227 decoded bytes and 15,569 TOML bytes. The prompt was not
+  changed because it already includes the user's framework, software,
+  dashboard, project, library, and native-integration mandate.
+- Crawler-first coverage: ran strict JSON crawler packs from
+  `/Users/burak/Developer/xquik` into
+  `/tmp/tweetclaw-heartbeat-20260704T0257/` with empty GitHub token env,
+  managed research proxy, stable session ids, explicit output files, request
+  and proxy warmup timeouts, bounded limits, search pages, per-query limits,
+  and concurrency. Coverage included open PRs, issues, repos, code, Xquik,
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, x-twitter-scraper, X/Twitter
+  automation, social media, agent tools, frameworks, software projects,
+  dashboards, libraries, SDKs, catalogs, examples, validators, registries,
+  package tooling, docs, `SKILL.md`, `.agents/skills`, Codex, Claude, forks,
+  awesome lists, generated catalogs, and web-index style skill queries.
+  Outputs parsed as 10 monitoring opportunities, 0 native dashboard
+  opportunities, and 10 skill or registry opportunities.
+- PR inventory: broad authored open-PR partitions searched `TweetClaw`,
+  `tweetclaw`, `Xquik`, `OpenClaw`, `ClawHub`, `MCP`, `skill`, `skills`,
+  `x-twitter-scraper`, `twitter`, `X`, `social`, `dashboard`, `analytics`,
+  `framework`, `software`, `SDK`, `CLI`, `plugin`, `registry`, and `catalog`.
+  The search indexed 1,383 unique open PR URLs and exact-read 17 recent
+  Xquik-visibility PRs for state, mergeability, base/head, commits, comments,
+  reviews, checks, conflicts, DCO/CLA style blockers, generated-file drift,
+  maintainer comments, and bot findings.
+- Existing PR repairs: `technicalpickles/pickled-claude-plugins#101` had an
+  actionable bot review about a non-conventional commit subject. Amended the
+  fork branch commit to `feat(x-twitter-scraper): add plugin`, pushed with
+  force-with-lease, updated the PR body to the current no-URL visibility note,
+  reran the target `scripts/check-commit-scope.sh` check against the commit
+  message file, and posted follow-up
+  `https://github.com/technicalpickles/pickled-claude-plugins/pull/101#issuecomment-4880455751`.
+  The stale review thread still leaves merge state blocked until the target
+  clears it. Edited one stale own visibility comment on
+  `vikynofebriputra-creator/Orkas-Awesome-AgentSkills#1` to the current
+  first-person no-URL wording. No other exact-read recent PR had maintainer
+  comments, conflicts, DCO/CLA blockers, generated-file drift, or code repair
+  work.
+- Fresh discovery and duplicate gates: after the crawler native-dashboard pack
+  returned 0 items, fallback GitHub repository search found fresh dashboard and
+  software lanes. Compact audit, archive, crawler outputs, target metadata,
+  target open plus closed PRs/issues, fork metadata, and local target content
+  were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub
+  URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper, OpenClaw, Xquik API
+  docs, and variants. `nocoo/xray` and
+  `tom-doerr/twitter-analytics-dashboard` were duplicate-blocked by prior PRs.
+  `brightbeanxyz/brightbean-studio` was broad and high-blast-radius for this
+  run. `rippersumit14/social-media-analytics-dashboard`,
+  `chogalepar/Social-Media-Dashboard`, and
+  `Bryanuno/Social-Media-Analytics-Dashboard` were duplicate-clean but not
+  selected after 3 stronger lanes passed.
+- New native PRs opened from verified `kriptoburak` forks:
+  `https://github.com/cadenburleson/social-dash/pull/1` from
+  `kriptoburak/social-dash`, parent `cadenburleson/social-dash`, branch
+  `codex/add-xquik-source`, commit `f34f063`. It adds X as a first-class
+  platform backed by Xquik tweet search, settings/test/debug support,
+  normalized posts and summaries, charts, tabs, and README setup.
+- `https://github.com/NafisRayan/Social-Media-Dashboard/pull/1` from
+  `kriptoburak/Social-Media-Dashboard-1`, parent
+  `NafisRayan/Social-Media-Dashboard`, branch
+  `codex/add-xquik-analytics`, commit `5cd51ff`. It adds an Xquik tweet-search
+  normalizer, wires sample normalized engagement data into the existing
+  analytics chart, and documents safe API-key handling. The earlier fork name
+  `kriptoburak/Social-Media-Dashboard` was detected as a different parent and
+  avoided.
+- `https://github.com/hemantDwivedi/social-media-analytics/pull/3` from
+  `kriptoburak/social-media-analytics`, parent
+  `hemantDwivedi/social-media-analytics`, branch
+  `codex/add-xquik-import-helper`, commit `0aeac15`. It adds a React frontend
+  helper that maps Xquik tweet and user response fields into the app's
+  existing analytics and account card schema, plus README usage guidance.
+- PR readbacks: `cadenburleson/social-dash#1` is open, ready, `MERGEABLE`,
+  `CLEAN`, no comments, no review comments, and no checks. `NafisRayan` PR #1
+  is open and mergeable but `UNSTABLE` because Vercel requires a maintainer to
+  authorize the deployment, which is not code-actionable by this run.
+  `hemantDwivedi/social-media-analytics#3` is open, ready, `MERGEABLE`,
+  `CLEAN`, no comments, no review comments, and no checks.
+- Validation and link hygiene: `cadenburleson/social-dash` passed `npm run
+  build`, changed-file `npx eslint`, README link check with the existing
+  localhost example ignored, and `git diff --check`; package-wide lint remains
+  blocked by an untouched pre-existing `src/components/ui/tabs.tsx`
+  `className` lint error. `NafisRayan/Social-Media-Dashboard` passed `npm run
+  build`, `npm run lint`, README link check with pre-existing localhost and
+  mailto examples ignored, and `git diff --check`. `hemantDwivedi` frontend
+  passed `npm run build`, README link check, and `git diff --check`.
+  `https://xquik.com` HEAD returned HTTP 307 to `/en`.
+- Public hygiene and self-improvement: PR bodies used the current optional
+  first-person `burakbayir` wording with no X/Twitter URL and no GitHub mention
+  prefix. Changed public content was scanned for secret-like strings, private
+  implementation details, unsupported claims, stale profile URLs, and internal
+  cost mechanics. Lesson retained: when a target fork name collides under
+  `kriptoburak`, verify `parent.full_name` before pushing. For dashboard
+  integrations, prefer API adapters, normalizers, source connectors, and chart
+  wiring over catalog-only mentions. Final TweetClaw audit commit hash was
+  pending at entry creation.
+
 ### 2026-07-04 02:25 UTC Native Dashboard Import Run
 
 - Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,
