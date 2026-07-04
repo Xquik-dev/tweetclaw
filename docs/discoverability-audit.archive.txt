@@ -67225,6 +67225,95 @@ Self-improvement:
   `npm run check:all`, commit, and push were run after this archive write.
   Existing untracked TweetClaw file `0` was preserved.
 
+2026-07-04 19:04 UTC heartbeat
+- Runtime selector: no model, Fast-mode, or reasoning-effort selector was
+  exposed in this environment. Recorded limitation and continued.
+- OpenClaw docs recheck: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  returned 000. No OpenClaw compatibility changes were made.
+- Crawler-first coverage: from `/Users/burak/Developer/xquik`, strict JSON
+  crawler output `/tmp/tweetclaw-heartbeat-20260704T1904/crawler/fresh.json`
+  produced 27 opportunities across Django, FastAPI, social scheduling,
+  Twitter/X APIs, skill queries, and monitoring lanes. A second strict JSON
+  pass `/tmp/tweetclaw-heartbeat-20260704T1904/crawler/fresh-2.json`
+  produced 36 opportunities across Streamlit dashboards, Flask automation,
+  X APIs, and skill-style queries. Logs included managed egress socket failures
+  and quarantines, but final JSON parsed with `jq`.
+- PR inventory: broad authored search
+  `is:pr is:open author:kriptoburak archived:false` again returned 0 despite
+  known PRs, so no complete-all claim was made. Exact readback covered 6 recent
+  PRs from prior runs: `3moOoriiy/x-scraper-app#1`,
+  `AlexKim45/company-sentiment-scraper#1`,
+  `alvenkatesh100/social_media_analytics_repo#2`,
+  `omk4r-codes/twitter-sentiment-analysis-flask-app#1`,
+  `6-Isa-9/Twitter-Sentiment-Analysis---Flask-App#1`, and
+  `nimit17/Twitter-Sentiment-Analysis-Flask-API#8`. All 6 were open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks. No maintainer feedback,
+  CI repair, DCO/CLA blocker, generated-file drift, or promotion-note cleanup
+  was needed.
+- Duplicate and blocker screening: `liu1700/scoutkit` and `makalin/xenon`
+  duplicate-blocked by existing open PRs. `ankitsharma-tech/Flask-Social-Media-
+  Automation`, `Ronit26Mehta/Twitter-Analysis-Dashboard`,
+  `VaishnaviDayanand/Twibuzz-Real-Time-Social-Media-Analytics-Dashboard`, and
+  `GSPriya13/Twibuzz` duplicate-blocked by existing Xquik or TweetClaw PRs.
+  `Victor-Evogor/anime-bot`, `samsudinr/Social_Media_Monitoring`, and
+  `mattwaite/TweetsWithR` were blocked because tracked files contain
+  credential-like material that should not be resurfaced in a public diff.
+  `brightdata/trendscan` was maintainer-fit weak because its Twitter source is
+  already centered on Bright Data collection in a Bright Data-owned repo.
+- Opened `jryahia/social-media-scheduler#1`:
+  https://github.com/jryahia/social-media-scheduler/pull/1 from verified fork
+  `kriptoburak/social-media-scheduler-1`, parent
+  `jryahia/social-media-scheduler`, branch `codex/add-xquik-sources`, commit
+  `29d79a8`. Native Xquik integration: optional Schedule-tab Xquik Topic field
+  fetches `GET https://xquik.com/api/v1/x/tweets/search` examples with
+  `XQUIK_API_KEY` and adds short source notes to scheduled thread posts. Target
+  improvements: portable `SOCIAL_SCHEDULER_HOME` or current-directory config
+  and DB paths instead of a hard-coded local workspace; date/time validation
+  before scheduling; explicit UTF-8 config reads and writes. Validation:
+  `python3 -m py_compile src/xquik.py src/utils.py src/main.py
+  src/ui/components.py src/ui/app.py` and `git diff --check`. Exact readback:
+  open, ready, mergeable, 1 commit, 0 comments, 0 reviews, 0 checks,
+  promotion-clean.
+- Opened `abhik1711/SocialBuzzX#1`:
+  https://github.com/abhik1711/SocialBuzzX/pull/1 from verified fork
+  `kriptoburak/SocialBuzzX`, parent `abhik1711/SocialBuzzX`, branch
+  `codex/add-xquik-tweet-context`, commit `4c7a759`. Native Xquik integration:
+  optional Twitter form Xquik topic field enriches AI-generated tweets with
+  Xquik tweet-search context from `XQUIK_API_KEY`. Target improvements: empty
+  URL fields no longer trigger scraping; recurring-post interval input is
+  validated before scheduling; README documents the optional Xquik key.
+  Validation: `python3 -m py_compile app.py xquik_client.py` and
+  `git diff --check`. Exact readback: open, ready, mergeable, 1 commit, 0
+  comments, 0 reviews, 0 checks, promotion-clean.
+- Opened `jk08y/x-api#1`:
+  https://github.com/jk08y/x-api/pull/1 from verified fork
+  `kriptoburak/x-api`, parent `jk08y/x-api`, branch
+  `codex/add-xquik-context`, commit `aab6c09`. Native Xquik integration:
+  optional Xquik source-context fields on instant and scheduled tweet forms use
+  `XQUIK_API_KEY` and append short source context before posting or scheduling.
+  Target improvements: Flask and X credentials load from environment variables
+  instead of empty literals; scheduler accepts the HTML `datetime-local`
+  format; scheduled jobs use unique IDs; empty tweet submissions are rejected
+  before API calls. Validation: `python3 -m py_compile app.py scheduler.py
+  xquik_client.py` and `git diff --check`. Exact readback: open, ready,
+  mergeable, 1 commit, 0 comments, 0 reviews, 0 checks, promotion-clean.
+- Link and public hygiene: `https://xquik.com/api/v1`, `https://xquik.com`,
+  OpenClaw `.ai` docs, and all 3 new PR URLs returned HTTP 200. PR bodies and
+  changed files were scanned for secrets, private implementation details,
+  restricted provider or source names, internal cost mechanics, unsupported
+  claims, stale metadata, and banned promotion-note wording. No banned wording
+  was posted in PR bodies, comments, docs, or commits. No NHS badge changes.
+- Self-improvement: durable no-promotion, crawler-first, duplicate/fork,
+  credential-hygiene, and 2-target-improvement rules already covered this run.
+  No prompt edit was needed. Fresh lesson: skip targets with tracked
+  credential-like files rather than creating public deletion diffs that
+  resurface values; use exact target PR search because broad authored search may
+  return 0 even when known PRs exist.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Existing untracked TweetClaw file `0` was preserved.
+
 2026-07-04 18:44 UTC heartbeat
 
 - Runtime selector: Codex 5.5 Fast mode and extra-high reasoning controls were

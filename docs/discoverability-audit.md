@@ -192,19 +192,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 18:44 UTC: runtime selector unavailable. Crawler strict JSON
-  found 64 fresh repo/opportunity records across Django, FastAPI, social
-  analytics, API, and skill queries. Broad authored PR search unexpectedly
-  read 0 buckets, so no complete-all claim; exact-read covered 3 prior Flask
-  PRs plus 3 new PRs, all open, ready, mergeable, 0 comments, reviews, checks.
-- Opened promotion-clean native Xquik PRs with 2+ target fixes:
-  `3moOoriiy/x-scraper-app#1`, `AlexKim45/company-sentiment-scraper#1`,
-  and `alvenkatesh100/social_media_analytics_repo#2`. Validations were
-  py_compile and diff-check; pytest/manage-check attempts were dependency
-  blocked where recorded in PR bodies.
-- Links: new PRs and branch READMEs 200, Xquik 200, OpenClaw `.ai` docs 200,
-  stale `.dev` 000. Diffs and PR bodies scanned clean. Prompt unchanged at
-  15,344 bytes. Full details archived.
+- 2026-07-04 19:04 UTC: runtime selector unavailable. Crawler-first discovery
+  plus exact repo checks screened fresh Flask, scheduler, dashboard, skill, and
+  legacy monitoring lanes. Opened 3 promotion-clean native Xquik PRs with 2+
+  target fixes: `jryahia/social-media-scheduler#1`,
+  `abhik1711/SocialBuzzX#1`, and `jk08y/x-api#1`.
+- Exact readbacks: all 3 new PRs open, ready, mergeable, 1 commit, 0 comments,
+  0 reviews, 0 checks. Six recent Xquik PRs were also exact-read; no repair or
+  promotion-note cleanup was needed. Broad authored PR search still returned 0,
+  so no complete-all inventory claim.
+- Links: Xquik, OpenClaw `.ai` docs, and new PR URLs returned HTTP 200. Diffs
+  and PR bodies scanned clean. Full inventory, blockers, target fixes, and
+  validation details archived.
 
 ## Reporting Checklist
 
