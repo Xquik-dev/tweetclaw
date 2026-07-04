@@ -192,19 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 19:25 UTC: runtime selector unavailable. Crawler-first discovery
-  covered scheduler, automation, dashboard, MCP, and skill queries but returned
-  0 records after managed egress failures; fallback GitHub search screened
-  fresh Flask automation, tweet-bot, auto-poster, scraper, dashboard, and
-  scheduler lanes.
+- 2026-07-04 19:46 UTC: runtime selector unavailable. Crawler-first query pack
+  covered OpenClaw/MCP/skill, scheduler, dashboard, library, SDK, and package
+  lanes but returned 0 records; fallback GitHub search screened 10 fresh or
+  duplicate-prone repos.
 - Opened 3 promotion-clean native Xquik PRs with 2+ target fixes:
-  `SakethSripada/Flask-SocialMedia-Automation#17`,
-  `karansingh-in/Carax1s-Twitter-Bot#2`, and
-  `emanuel-poblano/auto-post#1`.
-- Exact readbacks: all 3 new PRs plus 9 recent audit-tracked PRs were open,
-  ready, mergeable, with 0 comments, 0 reviews, and 0 checks needing repair.
-  Broad authored PR search still returned 0, so no complete-all inventory
-  claim. Links for Xquik, OpenClaw `.ai` docs, and new PRs returned HTTP 200.
+  `shaneyoungk/Twitterscrapper#1`,
+  `ertenOzsumer/twitter-scraper-demo#2`, and
+  `ew13r5/multiplatform-auto-poster#1`.
+- Exact readbacks: 12 recent audit-tracked PRs plus the 3 new PRs were open and
+  mergeable. `Twitterscrapper#1` has a Vercel team authorization failure and
+  bot comment; this is target-owner authorization, not an actionable code
+  failure. The other 2 new PRs had 0 comments, 0 reviews, and 0 checks. Broad
+  authored PR search still returned 0, so no complete-all inventory claim.
 
 ## Reporting Checklist
 

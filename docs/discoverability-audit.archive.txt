@@ -67223,7 +67223,122 @@ Self-improvement:
 - TweetClaw update: compact audit updated and this archive entry appended.
   Final `npm run check-memory-md-size`, `git diff --check`,
   `npm run check:all`, commit, and push were run after this archive write.
-  Existing untracked TweetClaw file `0` was preserved.
+Existing untracked TweetClaw file `0` was preserved.
+
+
+### 2026-07-04 19:46 UTC Native Xquik Source Integration Run
+
+- Runtime selector limitation: Codex Desktop did not expose a model, Fast speed,
+  or reasoning-effort selector, so Codex 5.5 Fast mode and extra-high reasoning
+  could not be explicitly selected. Work continued and this limitation was
+  recorded.
+- Start state: Xquik had pre-existing user changes in
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`; all were preserved. Xquik open issue
+  list returned 0. TweetClaw started at `e4ac4ca` with only pre-existing
+  untracked file `0`.
+- OpenClaw docs check: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned HTTP 200. `https://docs.openclaw.dev/llms.txt`
+  returned HTTP 000, consistent with the old host being unavailable. No
+  OpenClaw compatibility changes were made.
+- Crawler-first discovery: strict JSON crawler output at
+  `/tmp/tweetclaw-heartbeat-20260704T1946/crawler/fresh.json` parsed
+  successfully with 0 opportunities and 0 repositories. Query coverage included
+  Twitter/X analytics, FastAPI dashboards, schedulers, MCP servers, SKILL.md,
+  `.agents/skills`, OpenClaw, Codex, Claude, social/Twitter skills, awesome
+  lists, and skill registries. No exhaustion claim was made.
+- PR inventory: broad `gh search issues 'is:pr is:open author:kriptoburak
+  archived:false'` returned `[]` despite known open PRs, so this run recorded a
+  GitHub search anomaly and made no complete-all claim. Exact readbacks covered
+  12 recent audit-tracked PRs from the 18:22, 18:44, 19:04, and 19:25 UTC runs
+  plus the 3 new PRs. The 12 prior PRs were open, ready, mergeable, and had 0
+  comments, 0 reviews, and 0 checks needing repair.
+- Fresh screening: fallback repo search screened
+  `Ronit26Mehta/Twitter-Analysis-Dashboard`,
+  `shaneyoungk/Twitterscrapper`, `Mish926/Sentiment-Analyzer`,
+  `Ratnesh-181998/Twitter-NER-System`,
+  `ertenOzsumer/twitter-scraper-demo`, `JFGAtlas/tweetflare`,
+  `ew13r5/multiplatform-auto-poster`,
+  `Anil-matcha/Free-AI-Social-Media-Scheduler`, `ranaroussi/xpal`, and
+  `LinklyLuck/social_simulation`.
+- Duplicate blockers: target PR lists and archive search blocked Ronit
+  (merged `#1`), Mish (`#1` open), Ratnesh (`#1` open), JFG (`#1` open), Anil
+  (`#5` open), ranaroussi/xpal (`#1` open), and Linkly (`#1` open). Search
+  results also included unrelated or lower-fit `x` matches such as `xberg-io`
+  and non-social MCP projects.
+- Selected `shaneyoungk/Twitterscrapper` after target policy, duplicate,
+  fork, and safety checks. Missing license metadata did not block direct PR.
+  Open and closed target PR and issue searches for TweetClaw, Xquik,
+  x-twitter-scraper, OpenClaw, and ClawHub returned no prior target history.
+- Opened `shaneyoungk/Twitterscrapper#1`:
+  https://github.com/shaneyoungk/Twitterscrapper/pull/1 from verified fork
+  `kriptoburak/twitterscrapper-xquik`, parent
+  `shaneyoungk/Twitterscrapper`, branch
+  `codex/add-xquik-tweet-search`, commit `8a3c26c`. Native Xquik integration:
+  added `POST /xquik/tweets` backed by Xquik `GET /api/v1/x/tweets/search` and
+  mapped results into the existing `Tweet` model. Target improvements:
+  Pydantic validation for usernames, Xquik query, tweet limits, and callback
+  URLs; 15 second callback timeouts in discovery and tweet sync; duplicate
+  `DiscoverRequest` model cleanup through a single validated definition.
+  Validation: `python3 -m py_compile main.py jobs/tweet_sync.py
+  xquik_client.py models/data_models.py`, `git diff --check`, and hygiene
+  scans. Exact readback: open, ready, mergeable, 1 Vercel bot comment, 0
+  reviews, 1 failing Vercel authorization check requiring target-team approval.
+- Selected `ertenOzsumer/twitter-scraper-demo` after target policy, duplicate,
+  fork, and safety checks. The repo has MIT license metadata in-tree and no
+  Xquik/TweetClaw target history.
+- Opened `ertenOzsumer/twitter-scraper-demo#2`:
+  https://github.com/ertenOzsumer/twitter-scraper-demo/pull/2 from verified
+  fork `kriptoburak/erten-twitter-scraper-demo-xquik`, parent
+  `ertenOzsumer/twitter-scraper-demo`, branch `codex/add-xquik-source`, commit
+  `1a82cce`. Native Xquik integration: added `source: "xquik"` to the existing
+  `/scrape` workflow so Xquik tweet search feeds the same analytics and export
+  pipeline. Target improvements: URL validation now requires `x.com` or
+  `twitter.com` handle URLs and rejects missing or reserved handles; exports
+  write under `out/<handle>/` to avoid report overwrite collisions; settings
+  now use `pydantic-settings`, defer the Twitter bearer-token requirement until
+  the Twitter source is selected, and remove the Pydantic 2 warning. Validation:
+  local target dependency install for `pydantic-settings`, `python3 -m
+  py_compile src/app.py src/ingest.py src/schemas.py src/settings.py
+  src/analytics.py src/export_utils.py`, and `python3 -m pytest
+  tests/test_ingest.py -q` with 5 passed. Exact readback: open, ready,
+  mergeable, 0 comments, 0 reviews, 0 checks.
+- Selected `ew13r5/multiplatform-auto-poster` after target policy, duplicate,
+  fork, and safety checks. Missing license metadata did not block direct PR;
+  repo README claims MIT license and target has tests.
+- Opened `ew13r5/multiplatform-auto-poster#1`:
+  https://github.com/ew13r5/multiplatform-auto-poster/pull/1 from verified fork
+  `kriptoburak/ew13r5-auto-poster-xquik`, parent
+  `ew13r5/multiplatform-auto-poster`, branch
+  `codex/add-xquik-bulk-import`, commit `6e616ca`. Native Xquik integration:
+  JSON bulk import now accepts Xquik tweet-search payloads with a `page_name`
+  and `tweets` array, converting tweets into queued link posts. Target
+  improvements: unsupported JSON roots return a clear import error; CSV imports
+  validate required headers before processing; non-object JSON rows are handled
+  safely instead of raising. Validation: `python3 -m py_compile
+  backend/app/tasks/bulk_import.py backend/tests/test_bulk_import.py`, focused
+  SQLite importer validation for Xquik payload import, invalid JSON roots, and
+  missing CSV headers with local SQLAlchemy/Celery/Pydantic settings/aiosqlite
+  dependencies. Full `pytest tests/test_bulk_import.py` was not used because
+  target `conftest.py` imports the whole FastAPI app in the ambient environment.
+  Exact readback: open, ready, mergeable, 0 comments, 0 reviews, 0 checks.
+- Link and public hygiene: new PR URLs returned HTTP 200. `https://xquik.com/api/v1`,
+  `https://xquik.com/openapi.json`, and OpenClaw `.ai` docs returned HTTP 200.
+  Diffs and PR bodies were scanned for secrets, private implementation details,
+  restricted provider or source names, private billing details, unsupported
+  claims, stale metadata, em dash and spaced double-hyphen style issues, and
+  banned promotion-note wording. No banned wording appeared in PR bodies,
+  commits, comments, or changed files.
+- Self-improvement: durable no-promotion, crawler-first, 3 PR, duplicate, fork,
+  OpenClaw-doc, link-check, prompt-cap, Markdown-cap, and 2 target-improvement
+  rules already exist in the active automation prompt. No prompt edit was
+  needed. This run records that `gh repo view --json parent` can return null
+  for a fork even when `isFork` is true; use `gh api repos/<owner>/<repo>` to
+  verify `parent.full_name` before pushing or opening a PR.
+- TweetClaw update: compact audit updated and this archive entry appended.
+  Final memory-size, diff, check, commit, and push steps ran after this archive
+  write. Existing untracked TweetClaw file `0` was preserved.
 
 2026-07-04 19:25 UTC heartbeat
 - Runtime selector: no model, Fast-mode, or reasoning-effort selector was
