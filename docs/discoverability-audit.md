@@ -192,20 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 18:01 UTC: runtime selector unavailable. Crawler produced 22 noisy
-  X/Twitter opportunities; fallback found 3 safe scraper lanes. Open counts:
-  all 3,982; Xquik 2,698; TweetClaw/tweetclaw 1,409; OpenClaw 802;
-  x-twitter-scraper 591.
-  No complete-all claim.
-- Opened promotion-clean Xquik PRs, each with 2+ target improvements:
-  `xsreeex/Twitter-Scraper-Streamlit#1`,
-  `VajraveluArumugam/Twitter-Scraper-Streamlit#1`, and
-  `idristrades/scrape-tweets-no-API-2024#1`. All open, ready, mergeable, and
-  exact-read with no comments, reviews, or checks yet.
-- PR and handled README links passed. Xquik route returned expected 402
-  unauthenticated. OpenClaw `.ai` docs returned 200; stale `.dev` DNS failed.
-  Older PR search found a large pre-rule promotion-note backlog; current and
-  recent exact-read PR bodies are clean. Full details archived.
+- 2026-07-04 18:22 UTC: runtime selector unavailable. Crawler strict JSON
+  returned 0 opportunities after managed-network failures; fallback Flask
+  search found 3 safe lanes. Open counts: all 3,986; Xquik 2,702; TweetClaw
+  1,409; OpenClaw 802; x-twitter-scraper 593. No complete-all claim.
+- Opened promotion-clean Xquik Flask PRs with 2+ target fixes:
+  `omk4r-codes/twitter-sentiment-analysis-flask-app#1`,
+  `6-Isa-9/Twitter-Sentiment-Analysis---Flask-App#1`, and
+  `nimit17/Twitter-Sentiment-Analysis-Flask-API#8`. All open, ready,
+  mergeable, exact-read, and have 0 comments, reviews, or checks.
+- Repaired 1 old social note on `diksha1829/twitter-sentiment-analysis-flask#1`;
+  exact readback plus focused old-note search found no remaining open PR hits.
+  Links: new PRs and branch READMEs 200, Xquik route 402, OpenClaw `.ai` 200,
+  stale `.dev` 000. Full details archived.
 
 ## Reporting Checklist
 
