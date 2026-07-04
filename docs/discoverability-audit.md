@@ -192,18 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 12:54 UTC: runtime selector unavailable. Crawler coverage included
-  proxy native 0, proxy skill 23, and direct dashboard 23 opportunities.
-  Current-day authored PR search exact-read 50 open PRs; no complete-all claim.
-- Removed 4 old self-authored promotion comments from `moggan1337/CreatorHub#1`,
-  `Troy96/x2ig#19`, and `kwonye/mcpx#15`.
-- Opened 3 native Xquik PRs with 2+ target improvements:
-  `AbdulRehman393/streamlit-airline-sentiment#2`,
-  `varun0852/Twitter-Sentiment-Analytics-Dashboard#1`, and
-  `tom-doerr/twitter-analytics-dashboard#2`. All were open, mergeable, and
-  promotion-clean at exact readback.
-- Validation passed for syntax, diff hygiene, handled README links, OpenClaw
-  docs, fork-parent checks, and PR readbacks. Prompt remained 15,344 bytes.
+- 2026-07-04 13:23 UTC: runtime selector unavailable. Crawler found 60
+  opportunities. Broad PR search hit a GitHub search-rate 403; no complete-all
+  inventory claim.
+- Opened 3 promotion-clean native Xquik PRs with 2+ target improvements:
+  `rajdeepchaudhari-work/X-scanner#1`, `AISA-skills/social-media-skills#3`, and
+  `Rakshitha262004/Social-Media-Sentiment-Analysis-Dashboard#1`. All exact-read
+  open, mergeable, with no comments, reviews, or checks yet.
+- Duplicate history blocked `makalin/xenon`, `jedi4ever/social-skills`,
+  `d-wwei/superb-publisher`, `elbis330/social-media-scraper-skill`,
+  `challakishore-dev/social-media-sentiment-dashboard`, `isteamhq/twitter-mcp`,
+  and prior AISA TweetClaw issue scope.
+- Validation passed for py compile, converter smoke, diff hygiene, OpenClaw
+  docs, fork-parent checks, PR readbacks, and banned promotion-note scans.
   Full details archived.
 
 ## Reporting Checklist
