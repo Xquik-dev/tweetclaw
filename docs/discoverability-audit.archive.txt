@@ -68795,3 +68795,104 @@ Existing untracked TweetClaw file `0` was preserved.
   `npm run check-memory-md-size`, `git diff --check`, `npm run check:all`,
   commit, and push were run after this archive write. Existing untracked
   TweetClaw file `0` was preserved.
+2026-07-04 22:11 UTC heartbeat:
+- Runtime selector: no exposed control for Codex 5.5 Fast mode or extra-high
+  effort in this desktop run, so the limitation was recorded and work continued.
+- Official OpenClaw recheck: `docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/manifest`, `/clawhub/publishing`, and
+  `/help/debugging` returned 200. `docs.openclaw.dev/llms.txt` returned route
+  000, matching prior route unavailability; no OpenClaw compatibility changes
+  were made.
+- Repo state: TweetClaw on `master` at `42b0c8a` with untracked `0` preserved.
+  Xquik on `master` at `ae17f1f4` had user changes
+  `docs/feature-roadmap.md`, `top-x-api-alternatives-2026-article.md`, and
+  `x-api-alternatives-2026-article.md`, all preserved. Xquik issues were empty.
+- Crawler-first discovery: ran focused strict-JSON crawler from Xquik covering
+  Xquik PRs, repo/code lanes, Twitter/X dashboards, ETL, MCP, skill repos,
+  `.agents/skills`, `SKILL.md`, OpenClaw, Codex, Claude, social/Twitter-X
+  skills, awesome lists, and registries. Output was valid but empty:
+  0 opportunities, 0 repositories, 0 items, 0 errors. Earlier crawler stderr
+  showed managed egress socket-close warnings, so fallback discovery proceeded.
+- PR inventory method: searched compact and archive memory first, extracted
+  1,936 audit PR URLs, exact-read the latest 30 audit PRs, exact-read the 3
+  newly opened PRs, exact-read review threads for `galafis/...#1`,
+  `Keshavja29/...#1`, `raj200501/...#2`, and the latest 3 prior PRs, then used
+  exact repo PR/issue REST lists for fresh candidates. Broad authored-open PR
+  search hit GitHub secondary rate limit on page 2, so no complete all-authored
+  search claim was made.
+- Existing PR readbacks: latest 30 audit PRs were open. `galafis/...#1` and
+  `Keshavja29/...#1` had all review threads resolved. Prior new PRs
+  `mail2dibyadarshinee-arch/...#1`, `TabassumSK/...#1`, and
+  `atharva-52/...#1` had 0 current review threads and read back open, ready,
+  mergeable, and clean.
+- Repair: `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`
+  had one unresolved Codex review thread about the documented Xquik CLI path.
+  Checked out the PR, validated `python3 -m unittest tests/test_xquik_import.py`,
+  found Python 3.9 breakage in `scripts/generate_sample_data.py`, added
+  postponed annotations, validated CLI import with a JSONL sample and
+  `python3 scripts/generate_sample_data.py`, pushed
+  `9aae585 Fix sample data script on Python 3.9`, and resolved the review
+  thread. Final readback: open, ready, mergeable, 3 commits, thread resolved.
+- Fresh discovery: `gh search repos` returned 82 deduped repos after the crawler
+  miss. Duplicate checks used compact audit, archive, target PRs, target issues,
+  and target content for TweetClaw, Xquik, `@xquik/tweetclaw`,
+  x-twitter-scraper, OpenClaw, ClawHub, package URLs, and variants. Exact
+  repo REST checks found no duplicate Xquik/TweetClaw PRs or issues for the
+  screened fresh repos.
+- Fresh candidates screened: `Bernievdw/flask-sentiment-twitterAPI`
+  (no README and UTF-16 requirements, left for later), `ps982182/SentimentAnalysis-NLP`
+  (selected), `ojbilly/Twitter-ETL-Pipeline` (selected),
+  `rishabhbhati634/twitter-data-eng` (selected),
+  `Vaibhavi210/AI-Powered-Social-Media-Analytics-Dashboard` (README-only clone,
+  not selected), `souravchandak11/Social-Media-Recommendation-System`
+  (good future ML/API lane), `xianzeng0714/influencer-marketing` (good future
+  CLI/API lane), and `TrimStream/SentiPulse` (good future FastAPI lane).
+- Opened PR 1: https://github.com/ojbilly/Twitter-ETL-Pipeline/pull/1 from
+  verified fork `kriptoburak/ojbilly-twitter-etl-xquik`, parent
+  `ojbilly/Twitter-ETL-Pipeline`, branch `codex/xquik-export-source`.
+  Native Xquik lane: `XQUIK_EXPORT_PATH` replays Xquik CSV, JSON, or JSONL
+  exports through the ETL. Target improvements: configurable username, row
+  limit, and output destination; safe metric defaults; direct script entrypoint;
+  missing `requirements.txt`; `.gitignore`; fixed setup clone URL. Bot review
+  found blank metric conversion; pushed `eddb61d` and `6b57b96`, thread became
+  outdated. Final readback: open, ready, mergeable, clean, 3 commits.
+- Opened PR 2: https://github.com/rishabhbhati634/twitter-data-eng/pull/1 from
+  verified fork `kriptoburak/rishabh-twitter-data-eng-xquik`, parent
+  `rishabhbhati634/twitter-data-eng`, branch `codex/xquik-export-source`.
+  Native Xquik lane: `XQUIK_EXPORT_PATH` replays Xquik CSV, JSON, or JSONL
+  exports into `refined_tweets.csv`. Target improvements: env-based credentials
+  instead of empty placeholders; corrected Tweepy OAuth argument order;
+  configurable username, row limit, and output path; no pandas index in CSV;
+  current Airflow `PythonOperator` import with `catchup=False`; `requirements.txt`
+  and `.gitignore`; updated command script. Proactively pushed `79a0458` for
+  blank metric cells. Final readback: open, ready, mergeable, clean, 2 commits.
+- Opened PR 3: https://github.com/ps982182/SentimentAnalysis-NLP/pull/1 from
+  verified fork `kriptoburak/ps982182-sentiment-nlp-xquik`, parent
+  `ps982182/SentimentAnalysis-NLP`, branch `codex/xquik-batch-analysis`.
+  Native Xquik lane: `/predict/xquik` analyzes Xquik export rows in one Flask
+  API request and returns row results plus sentiment summary. Target
+  improvements: scoped CORS via `CORS_ORIGINS`; shared single-text prediction
+  logic; cleaned-text validation; specific `AttributeError` probability fallback;
+  per-row skipped counts for blank or unanalyzable export rows; README API
+  recipe. Final readback: open, ready, mergeable, `UNSTABLE` because target
+  Netlify header/page/redirect deploy checks failed and Vercel required owner
+  authorization; GitGuardian passed and no review threads were present.
+- Validation: target checks ran as `python3 -m py_compile twitter_etl.py
+  twitter_dags.py`, `python3 -m py_compile twitter_etl.py twitter_dag.py`,
+  `python3 -m py_compile app.py`, and `git diff --check` in each target. Link
+  checks: `markdown-link-check` was blocked by the local `npx` child `node` path
+  environment, so a direct `curl` URL probe covered 52 edited and in-scope
+  public URLs including new PR URLs and TweetClaw/Xquik links; 0 failures after
+  fixing the pre-existing placeholder clone URL in the `ojbilly` README.
+  `npm view @xquik/tweetclaw` read version `1.6.31`, homepage, and repository.
+- Public hygiene: diff scan found no promotion notes, follower-count asks,
+  tag/mention requests, repost offers, private implementation details, internal
+  cost mechanics, unsupported claims, or secrets. Matches were technical field
+  names or placeholder credential labels in target docs. No promotion-note
+  removals were needed.
+- Prompt self-improvement: durable lessons persisted here and compactly in the
+  audit. No automation prompt edit was useful because the prompt already
+  preserves crawler-first discovery, 3-PR mandate, exact readbacks, no promotion
+  notes, 2 target improvements, link checks, secret boundaries, and prompt cap.
+  Combined compact Markdown size was 15,204 bytes. Persisted prompt size was
+  15,344 bytes, so no prompt rewrite was attempted.
