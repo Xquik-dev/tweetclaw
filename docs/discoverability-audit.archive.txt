@@ -2,6 +2,117 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-04 03:39 UTC Native Integration Run
+
+- Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,
+  speed, or reasoning-effort selector, so Codex 5.5 Fast mode and extra-high
+  reasoning could not be explicitly selected. The persisted automation prompt
+  measured 15,227 decoded bytes and 15,569 TOML bytes. No prompt edit was
+  needed because the current prompt already preserves the user's framework,
+  software, dashboard, library, project, native-integration, maintainer-rule,
+  3-PR, crawler-first, duplicate, safety, link-check, prompt-cap, and
+  self-improvement mandates.
+- Crawler-first coverage: ran strict JSON crawler packs from
+  `/Users/burak/Developer/xquik` into
+  `/tmp/tweetclaw-heartbeat-20260704T0339/` with empty GitHub token env,
+  managed research proxy, stable session ids, explicit output files, request
+  and proxy warmup timeouts, bounded limits, search pages, per-query limits,
+  and concurrency. Coverage included open PRs, issues, repos, code, Xquik,
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, x-twitter-scraper, X/Twitter
+  automation, social media, agent tools, frameworks, software projects,
+  dashboards, libraries, SDKs, catalogs, examples, validators, registries,
+  package tooling, docs, `SKILL.md`, `.agents/skills`, Codex, Claude, forks,
+  awesome lists, generated catalogs, and web-index surfaced skill queries.
+  Outputs parsed as 0 monitoring opportunities, 16 native
+  framework/dashboard opportunities, and 36 skill/registry opportunities.
+- PR inventory: crawler monitoring found 0 open-PR opportunities. Broad
+  authored open-PR search first hit GitHub's 1,000-result cap, then was
+  partitioned by updated windows. Exact window counts were 136 for
+  2026-07-04, 204 for 2026-07-01 through 2026-07-02, 324 for June 2026, 133
+  for January through May 2026, and 1 before 2026. The capped 2026-07-03
+  bucket was subdivided into 19 for 00-05 UTC, 944 for 06-11 UTC, 470 for
+  18-23 UTC, and hourly 12-17 UTC buckets of 255, 261, 224, 240, 243, and 268.
+  The broad partition pass yielded 1,798 preliminary unique open PR URLs and
+  the exact 2026-07-03 subpartitions yielded 2,433 unique URLs. Exact repo
+  PR/issue reads and new PR readbacks were completed for handled targets.
+  Later broad authenticated duplicate search hit GitHub API rate limit, so no
+  more broad authenticated search was attempted that run.
+- Existing PR repairs and skips: no maintainer comment, review, conflict, DCO,
+  CLA, generated-file drift, or bot finding required a Xquik-visibility repair
+  after crawler, audit, and exact handled-target reads. Aegis Vercel failure is
+  maintainer authorization, not an agent-side repair. Non-Xquik generic target
+  cleanup was skipped as out of focus.
+- Fresh discovery and duplicate gates: checked compact audit, archive, crawler
+  output, target metadata, target open plus closed PRs/issues, fork metadata,
+  and local target content for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  TweetClaw GitHub URL, npm URL, ClawHub listing, Xquik, x-twitter-scraper,
+  OpenClaw, and variants. Screened `makalin/xenon` blocked by prior
+  `makalin/xenon#1`; `MayankUnbot/CreatorRPM` blocked by prior
+  `MayankUnbot/CreatorRPM#1`; `adnanshaikhhh/pulsebridge-intelligence`
+  selected; `nabylb/aegis-intelligence` selected; `moggan1337/CreatorHub`
+  selected; `kyletabura/tabura-app` lower fit; `muhammadabdullahikhsan/sentiment-analysis-dashboard`
+  safety-blocked because the repository contains committed session material
+  in scraper code; `prime-optimal/2xko-dashboard` lower fit; `Godbyhub/108api`
+  unsafe spam/credential-like surface; and multiple skill repos
+  (`0xNyk/xint`, `creatorcrawl/creatorcrawl-skill`,
+  `blacktwist/social-media-skills`, `mvanhorn/last30days-skill`) were blocked
+  by existing Xquik/TweetClaw history.
+- Target policy and fork checks: `adnanshaikhhh/pulsebridge-intelligence` is
+  non-fork, non-archived, default `master`, README MIT, no explicit
+  contribution blocker. `moggan1337/CreatorHub` is non-fork, non-archived,
+  default `main`, package MIT, no explicit contribution blocker.
+  `nabylb/aegis-intelligence` is non-fork, non-archived, MIT, default `main`;
+  its `AGENTS.md` required local Next docs review, so Next 16.2.1 route
+  handler, environment variable, and data-fetching docs were read from a
+  temporary npm package extract before code changes. Forks were verified under
+  `kriptoburak` with correct parents before pushing.
+- New native PRs opened from verified forks:
+  `https://github.com/adnanshaikhhh/pulsebridge-intelligence/pull/1` from
+  `kriptoburak/pulsebridge-intelligence`, parent
+  `adnanshaikhhh/pulsebridge-intelligence`, branch
+  `codex/xquik-pulsebridge-source`, commit `73a4c45`. It adds optional Xquik
+  search polling for the existing X live feed, preserves the `X_BEARER_TOKEN`
+  path as fallback, and documents `XQUIK_API_KEY`, `XQUIK_QUERY`, and
+  `XQUIK_BASE_URL`.
+- `https://github.com/moggan1337/CreatorHub/pull/1` from
+  `kriptoburak/CreatorHub`, parent `moggan1337/CreatorHub`, branch
+  `codex/xquik-creatorhub-source`, commit `9d433d5`. It adds optional Xquik
+  configuration to the Twitter platform, routes tweet search and recent content
+  reads through Xquik when configured, updates docs and `.env.example`, and
+  adds focused transformation tests.
+- `https://github.com/nabylb/aegis-intelligence/pull/1` from
+  `kriptoburak/aegis-intelligence`, parent `nabylb/aegis-intelligence`, branch
+  `codex/xquik-aegis-source`, commit `7f2f919`. It adds an optional Xquik
+  Search source to the fast intelligence tier, maps tweet search results into
+  existing `IntelEvent` records with cache/severity/location/reliability
+  handling, and documents Xquik operator env vars.
+- PR readbacks: PulseBridge PR is open, ready, MERGEABLE, CLEAN, 1 commit, 2
+  files, no checks, comments, or reviews. CreatorHub PR is open, ready,
+  MERGEABLE, CLEAN, 1 commit, 5 files, no checks, comments, or reviews. Aegis
+  PR is open, ready, MERGEABLE, UNSTABLE only because Vercel requires maintainer
+  authorization; it has 1 commit, 5 files, 1 Vercel bot comment, no reviews, and
+  no agent-fixable check failure.
+- Validation and public hygiene: target `git diff --check` passed for all 3
+  PRs. PulseBridge passed `npx prisma generate && npx tsc --noEmit --pretty
+  false`; its `CI=1 npm run lint` is target-blocked by Next's first-run ESLint
+  configuration prompt. CreatorHub passed `npx jest tests/twitter.test.js
+  --runInBand --coverage=false` with 25 tests. Aegis passed `npx tsc --noEmit
+  --pretty false`; `npm run lint` reports pre-existing unrelated repository
+  findings. Xquik and new PR links resolved. `npmjs.com` package page returned
+  403 to curl, while the npm registry package endpoint resolved. PR body
+  wording was exact-read and includes the required first-person optional
+  `burakbayir` visibility note without an account URL or GitHub mention.
+- TweetClaw maintenance validation: only audit memory changed in TweetClaw.
+  `npm run check-openclaw-platform-fitness` passed, `npm run check:all` passed
+  with 168 tests and 100% coverage, `npm run check-memory-md-size` reported
+  15,054/15,360 bytes, and `npm run check-em-dash` reported no banned dashes.
+  No OpenClaw compatibility or install metadata changed.
+- Durable lesson: keep prioritizing native source connectors and dashboard
+  ingestion paths over catalog mentions. Exact target PR/issue reads stayed
+  usable after broad GitHub search rate-limited, so future runs should switch
+  immediately to exact repo lists, crawler output, local clones, and archive
+  checks when broad authenticated search starts failing.
+
 ### 2026-07-04 03:18 UTC Native Framework Dashboard Run
 
 - Runtime and prompt: this Codex Desktop heartbeat exposed no callable model,
@@ -82,10 +193,10 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   commits, 1 comment, 1 stale bot review on the old commit, and no checks.
 - Validation and public hygiene: `x-daily-checkin` passed `python3 -m
   py_compile`, no-open dashboard generation, and `git diff --check`.
-  `SocialPulse` passed `node --check`, `CI=1 npm test -- --watchAll=false
+  `SocialPulse` passed `node --check`, `CI=1 npm test with --watchAll=false
   src/utils/xquikAnalytics.test.js`, `npm run build`, and `git diff --check`.
   `social-media-analytics-dashboard` passed `node --check`, targeted Jest via
-  `npm test -- --runTestsByPath tests/services/xquik/xquikAnalyticsMapper.test.js
+  `npm test with --runTestsByPath tests/services/xquik/xquikAnalyticsMapper.test.js
   --runInBand`, and `git diff --check`. Xquik route link checks returned the
   expected 402 auth/payment response, not broken routes. Diff scans found no
   real secrets, restricted provider/source names, internal cost mechanics, or
@@ -415,7 +526,7 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
   documents `--skip-model` parsing checks. Readback: OPEN, MERGEABLE, CLEAN,
   non-draft, maintainer-editable, 1 commit, 0 comments, 0 reviews, 0 checks,
   correct first-person visibility note in the PR body.
-- Validation and link hygiene: Yura passed `npm run test:run -- xquikAdapter`,
+- Validation and link hygiene: Yura passed `npm run test:run with xquikAdapter`,
   `npm run build`, `npm run lint`, `npx --yes markdown-link-check README.md
   --quiet`, and `git diff --check`; validation-only `package-lock.json` and
   `yarn.lock` churn from npm installation was not committed. Pradeep passed

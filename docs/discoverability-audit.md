@@ -189,18 +189,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 03:18 UTC: runtime selector unavailable; prompt measured 15,227
-  bytes. Crawler parsed 3 monitoring, 12 native framework/dashboard, and 1
-  skill opportunity.
-- Inventory indexed 1,380 open authored URLs and exact-read 12 recent PRs.
-  Repaired `polrai-bg/polr-ai-skills#3` by bundling a Xquik route reference.
-  Nafi Vercel failure is maintainer authorization.
-- Screened 9 fresh lanes. Opened native PRs:
-  `samya36/x-daily-checkin#1`, `Krishna-9253/SocialPulse#1`, and
-  `rippersumit14/social-media-analytics-dashboard#1`.
-- Validation passed: focused tests/builds, route link checks with expected 402
-  auth responses, target diff checks, secret scans, and PR exact readbacks. Full
-  details and lessons are in the archive.
+- 2026-07-04 03:39 UTC: runtime selector unavailable. Crawler parsed 0
+  monitoring, 16 native framework/dashboard, and 36 skill/registry opportunities
+  with required skill-repo coverage.
+- Inventory partitioned 1,798 broad authored open PR URLs plus 2,433 exact
+  2026-07-03 subpartition URLs. Exact repo reads found no selected-target PR or
+  issue duplicates. Broad authenticated search later hit GitHub API rate limit,
+  so no more broad search was attempted.
+- Screened 10 fresh native lanes. Opened PRs:
+  `adnanshaikhhh/pulsebridge-intelligence#1`,
+  `moggan1337/CreatorHub#1`, and `nabylb/aegis-intelligence#1`.
+- Validation passed: target TypeScript/tests/diff checks, Xquik link check,
+  duplicate/readback checks, and PR body wording checks. Aegis Vercel check is
+  maintainer authorization. Full details and lessons are in the archive.
 
 ## Reporting Checklist
 
