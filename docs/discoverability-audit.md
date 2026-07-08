@@ -192,19 +192,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 19:24 UTC: selector unavailable. Crawler-first run completed;
-  broad authored-PR search returned 100 open PRs, then hit a GitHub secondary
-  limit, so exact repo PR reads continued without more broad search.
-- Existing PR repair pass exact-read 7 scoped PRs. `ojbilly/...#1` and
-  `raj200501/...#2` bot findings are already fixed and validated;
-  `ps982182/...#1` and `Guten-Morgen1302/...#1` have target-owned Vercel or
-  Netlify authorization failures only.
-- Opened fresh PRs: `ISMAILELOUAZZANI/...#1`, `Guten-Morgen1302/...#1`, and
-  `inveetode/xpulse#1`. Each adds native Xquik import/source support plus 2+
-  target improvements. Direct PR links returned HTTP 200.
-- Validation: target syntax/build/helper checks, crawler JSON, duplicate scans,
-  fork-parent checks, promotion-hygiene scans, memory-size check, and audit
-  commit/push passed. Full evidence is in the archive.
+- 2026-07-08 19:48 UTC: selector unavailable. Existing PR repair reads found no
+  safe branch repair; target-owned deploy auth remained the only new blocker.
+- Crawler-first listing discovery plus exact repo reads screened 3 fresh safe
+  lanes and opened `Aiblogfirst/...#4`, `louislikescomputers/...#3`, and
+  `cybercryptone/...#1`, each with an Xquik/TweetClaw listing plus 2+ target
+  improvements. Full evidence is in the archive.
 
 ## Reporting Checklist
 

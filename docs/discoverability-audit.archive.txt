@@ -68988,3 +68988,82 @@ Existing untracked TweetClaw file `0` was preserved.
   automation prompt readback remained 15271 bytes after the prior prompt update.
 - TweetClaw repo status: untracked file 0 pre-existed or was unrelated and was
   left untouched. Audit/archive changes were committed and pushed to master.
+
+## 2026-07-08 19:48 UTC Heartbeat
+
+- Runtime selector: Codex 5.5 Fast and extra-high effort controls were not
+  exposed in this desktop runtime, so the limitation was recorded and the run
+  continued.
+- Existing PR inventory and repair-first pass: TweetClaw local branch was
+  `master...origin/master` with unrelated untracked file `0` left untouched.
+  Broad authenticated GitHub PR search hit a secondary rate limit, so broad
+  search stopped. Exact PR reads continued for
+  `ISMAILELOUAZZANI/Real-Time-Twitter-Sentiment-Analysis-Dashboard#1`,
+  `Guten-Morgen1302/Social-Media-Dashboard#1`, `inveetode/xpulse#1`,
+  `ojbilly/Twitter-ETL-Pipeline#1`,
+  `raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2`,
+  and `ps982182/SentimentAnalysis-NLP#1`. All were open and mergeable. The only
+  new failures were target-owned Vercel or Netlify authorization/deploy-preview
+  blockers on Guten-Morgen1302 and ps982182. ojbilly and raj bot findings were
+  already fixed by later branch commits. No maintainer-actionable repair,
+  conflict, DCO, CLA, generated-file drift, or editable banned outreach note was
+  found.
+- Crawler-first discovery: ran two strict JSON crawler passes from
+  `/Users/burak/Developer/xquik` with bounded request timeouts and no GitHub
+  tokens. The first returned 5 listing/catalog candidates; the second returned
+  3 candidates. Duplicate and policy gates blocked
+  `JuneYaooo/awesome-ai-media` by prior awesome-list history, existing
+  TweetClaw or x-twitter-scraper coverage, and audit records;
+  `Freespirits/awesome-social-auto-engine` by existing open Xquik PR #1;
+  `helenlan202602/awesome-ai-marketing-tools` by existing open Xquik PR #7; and
+  `luua-club/awesome-personal-branding-tools` by existing open TweetClaw PR #2.
+- Fresh safe lanes screened and selected:
+  `Aiblogfirst/awesome-free-ai-social-media-tools`,
+  `louislikescomputers/Awesome-social-media-automation-tools`, and
+  `cybercryptone/awesome-x-twitter-growth-tools`. Exact repo reads confirmed
+  public, non-fork, non-archived repos with issues enabled. Exact PR and issue
+  lists had no prior Xquik/TweetClaw submissions. Local clone scans found no
+  TweetClaw, Xquik, x-twitter-scraper, OpenClaw, or ClawHub strings before the
+  patches. Missing license metadata alone did not block the direct listing PRs.
+- New PR:
+  https://github.com/Aiblogfirst/awesome-free-ai-social-media-tools/pull/4 from
+  verified fork `kriptoburak/awesome-free-ai-social-media-tools`, branch
+  `codex/add-tweetclaw-listing`, commit `4f98c67`. Adds TweetClaw to Research
+  and Organization as an OpenClaw plugin for structured X/Twitter exports used
+  in social content planning. Target improvements: adds missing
+  `CONTRIBUTING.md`, adds missing MIT `LICENSE`, and removes a duplicate
+  plain-text README heading. Validation: `git diff --check`, local link check
+  for `CONTRIBUTING.md` and `LICENSE`, TweetClaw GitHub HTTP 200, PR URL HTTP
+  200, diff hygiene scan. Readback: open, ready,
+  mergeable, clean, no comments, no reviews, no checks.
+- New PR:
+  https://github.com/louislikescomputers/Awesome-social-media-automation-tools/pull/3
+  from verified fork `kriptoburak/Awesome-social-media-automation-tools`,
+  branch `codex/add-xquik-social-automation-tool`, commit `7331f87`. Adds Xquik
+  to the social media automation table with X/Twitter API, MCP, webhook, media,
+  monitor, and analytics workflow coverage. Target improvements: adds selection
+  criteria and contribution guidelines covering official links, pricing labels,
+  table format, and alternatives. Validation: `git diff --check`, xquik.com
+  HTTP 200, PR URL HTTP 200, diff hygiene scan. Readback:
+  open, ready, mergeable, clean, no comments, no reviews, no checks.
+- New PR:
+  https://github.com/cybercryptone/awesome-x-twitter-growth-tools/pull/1 from
+  verified fork `kriptoburak/awesome-x-twitter-growth-tools`, branch
+  `codex/add-xquik-analytics-listing`, commit `5516ae9`. Adds Xquik to
+  Analytics and Insights for X/Twitter API, MCP, webhook, monitor, media, and
+  analytics-ready export workflows. Target improvements: clarifies duplicate
+  listing rules and adds an automation-boundary requirement for follows,
+  replies, DMs, and posting. Validation: `git diff --check`, xquik.com HTTP
+  200, PR URL HTTP 200, diff hygiene scan. Readback: open,
+  ready, mergeable, clean, no comments, no reviews, no checks.
+- Public hygiene and links: added URLs `https://github.com/Xquik-dev/tweetclaw`
+  and `https://xquik.com` returned HTTP 200. New PR links returned HTTP 200.
+  Handled diffs and PR bodies had no sensitive values, private implementation
+  details, unsupported internal mechanics, source disclosures, or banned
+  outreach wording.
+- Prompt and memory self-improvement: the automation prompt had already been
+  updated before this heartbeat to make useful non-spammy listing/catalog PRs
+  valid lanes when they include 2+ real target improvements. Readback prompt
+  size was 15355 bytes. Compact Markdown memory was at 15355 bytes before this
+  edit, so the latest compact run summary was shortened and full evidence was
+  stored here.
