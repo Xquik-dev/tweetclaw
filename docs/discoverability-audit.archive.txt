@@ -69723,3 +69723,136 @@ Existing untracked TweetClaw file `0` was preserved.
   the same patch fixes concrete target issues such as CSV safety, typed config,
   localized labels, safe links, metadata, XSS-safe table rendering, and invalid
   `NaN` display.
+
+## 2026-07-08 22:36 UTC Heartbeat
+
+- Runtime limitation: Codex model, Fast speed, and extra-high reasoning effort
+  selectors were not exposed in this runtime. Work continued and this
+  limitation was recorded.
+- Initial state: TweetClaw on `master` with pre-existing untracked `0`
+  preserved. Xquik on clean `master`. `gh auth status` was valid for
+  `kriptoburak`. Xquik issue list returned no open issues.
+- Existing PR inventory first: Xquik crawler PR monitor ran with strict JSON,
+  focused Xquik/TweetClaw/OpenClaw/MCP/skill/social/listing queries, bounded
+  request timeout, and no GitHub token usage; it returned 0 repo results.
+  Authored open PR partitions returned 137 updated on/after 2026-07-08, 418
+  before 2026-07-01, and a 1000-result cap for 2026-07-01..07 that remains a
+  recorded broad-search blocker. Exact-read 126 recent scoped PRs with state,
+  head, mergeability, comments, reviews, and checks. Summary: 126 open,
+  194 comments, 15 reviews.
+- Existing PR repair 1: `AbdNour627/awesome-openclaw-configs#1` had a README
+  conflict. Resolved the related-projects table to keep the TweetClaw row with
+  GitHub, npm metadata, and ClawHub links. Validation passed conflict-marker
+  scan, `git diff --check`, `markdown-link-check` for README, README_EN, and
+  CONTRIBUTING, and JSON5 parsing for the TweetClaw monitor config. Removed the
+  validation-only generated JSON artifact. Pushed merge commit `7acc955`.
+  Exact readback: open, non-draft, clean, mergeable, 0 checks.
+- Existing PR repair 2: `Aditya923-c/xpoz-agent-skills#1` had a README quick
+  links conflict. Resolved the GitHub repository link to point at the repo while
+  the download row kept the ZIP URL. Validation passed conflict-marker scan,
+  `git diff --check`, and README markdown-link-check. Pushed merge commit
+  `798e00c`. Exact readback: open, non-draft, clean, mergeable, 0 checks.
+- Existing PR repair 3: `Aqmar777/openclaw-competitive-intel#1` had a duplicate
+  badge conflict. Kept one valid download badge. Validation passed
+  conflict-marker scan, `git diff --check`, markdown-link-check for README and
+  `docs/tweetclaw-x-source.md`, and `python3 -m py_compile
+  skills/tweetclaw_fetcher.py`. Pushed merge commit `b04b1c5`. Exact readback:
+  open, non-draft, clean, mergeable, 0 checks.
+- Remaining existing PR blockers and skips: `Code7unner/autoresearch#14`
+  remained dirty and included a maintainer request for test API keys, so key
+  provision is a credential blocker. `reall8164/wechat-openclaw-plugin#1` and
+  `warlockoussama/twitter-cli#1` remained queued dirty-conflict repairs after
+  the 3 repaired Xquik PRs. `shajith003/awesome-claude-skills#4` was skipped as
+  non-Xquik generic cleanup. No editable banned promotion notes were found in
+  the exact-read repaired PR comments or reviews.
+- Fresh crawler discovery: strict JSON search over Twitter/X dashboards, CSV
+  imports, social dashboards, awesome tools, MCP directories, `SKILL.md`, and
+  social agent skills returned 0 repo results, so fallback GitHub repo search,
+  exact metadata, target clone, target issue/PR searches, and compact/archive
+  duplicate checks were used.
+- Duplicate and weak-lane blockers: prior or open Xquik/TweetClaw history
+  blocked `nocoo/xray`, `sirishetty17/twitter_dashboard`,
+  `pythongeek/twitter-scraper-dashboard`,
+  `rippersumit14/social-media-analytics-dashboard`,
+  `blacktwist/social-media-skills`, `mvanhorn/last30days-skill`,
+  `MatteoBiviano/tweets-analysis-dashboard`,
+  `Mahek-J21/SocialMediaAnalytics`,
+  `Ronit26Mehta/Twitter-Analysis-Dashboard`,
+  `AbdulRehman393/streamlit-airline-sentiment`,
+  `hemantDwivedi/social-media-analytics`, and
+  `Surabhi04112003/social-media-dashboard`. Binary or weak direct patch
+  surfaces blocked `reddy2045/Twitter-Analytics-Dashboard`,
+  `piyush5700/twitter-analytics-dashboard`, and
+  `mnalini521-ops/Twitter-Analytics-Dashboard`.
+- Fresh lane 1: `Prince438/KD_Social_Analytics` was public, non-fork,
+  non-archived, no blocking maintainer policy found, and duplicate-clean across
+  compact audit, archive, target content, and target PR/issue searches for
+  TweetClaw, Xquik, x-twitter-scraper, OpenClaw, npm, GitHub, and ClawHub
+  variants. Fork verified as `kriptoburak/KD_Social_Analytics` parent
+  `Prince438/KD_Social_Analytics`. Opened
+  https://github.com/Prince438/KD_Social_Analytics/pull/1 from
+  `codex/add-xquik-import-templates`, commit `107ae3f`. Xquik lane: reviewed
+  X/Twitter CSV templates for the repo's existing `/import` workflow. Target
+  improvements: README workflow docs for safe Xquik exports; 2 dashboard-ready
+  sample CSV schemas for posts and account metrics. Validation passed
+  `git diff --check` and CSV shape checks. `npm ci --ignore-scripts` was blocked
+  by target package-lock drift, and README markdown-link-check failed only on
+  the existing local `http://localhost:3000` link. Exact readback: open,
+  non-draft, mergeable, Vercel authorization failure is target-owned.
+- Fresh lane 2: `Nasiya485/socialpulse-dashboard` was public, non-fork,
+  non-archived, no blocking maintainer policy found, and duplicate-clean across
+  compact audit, archive, target content, and target PR/issue searches. The repo
+  contains target-owned cookie-like files under a nested directory; they were
+  not read or touched. Fork verified as `kriptoburak/socialpulse-dashboard`
+  parent `Nasiya485/socialpulse-dashboard`. Opened
+  https://github.com/Nasiya485/socialpulse-dashboard/pull/1 from
+  `codex/add-xquik-schema-endpoint`, commit `c0f83bd`. Xquik lane: public-safe
+  `/api/sources/xquik/schema` endpoint for reviewed X/Twitter exports. Target
+  improvements: `/api/analytics` source metadata and `/health` service
+  identifier; README run and endpoint docs; `Werkzeug<3` dependency pin for
+  Flask 2.3.2 compatibility. Validation passed `python3 -m py_compile app.py`,
+  `git diff --check`, README markdown-link-check with local URL ignored,
+  dependency install to a temporary directory, and Flask test-client checks for
+  `/health`, `/api/analytics`, and `/api/sources/xquik/schema`. Pip emitted an
+  unrelated global resolver warning. Exact readback: open, non-draft,
+  mergeable, 0 checks.
+- Fresh lane 3: `Robbpmedia/Bil-Jac-analytics-dashboard` was public, non-fork,
+  non-archived, missing license metadata only, no blocking maintainer policy
+  found, and duplicate-clean across compact audit, archive, target content, and
+  target PR/issue searches. Fork verified as
+  `kriptoburak/Bil-Jac-analytics-dashboard` parent
+  `Robbpmedia/Bil-Jac-analytics-dashboard`. Opened
+  https://github.com/Robbpmedia/Bil-Jac-analytics-dashboard/pull/1 from
+  `codex/add-xquik-template`, commit `a951aa7`. Xquik lane: reviewed
+  X/Twitter CSV template in `public/xquik-x-template.csv`. Target improvements:
+  README setup, source-safety, and import mapping docs; app meta description
+  and no-JavaScript fallback in `public/index.html`. Validation passed
+  `git diff --check`, README markdown-link-check, CSV shape check, and HTML
+  parser check. Exact readback: open, non-draft, clean, mergeable, 0 checks.
+- Official OpenClaw docs check: HTTP 200 for `https://docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/plugins/manage-plugins`, `/plugins/manifest`, `/plugins/sdk-runtime`,
+  `/plugins/install-overrides`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. No TweetClaw OpenClaw compatibility files were changed.
+- Public hygiene and links: TweetClaw README, OpenClaw setup, agent workflows,
+  compact audit, and release memory passed markdown-link-check before audit
+  edits. `https://xquik.com`, `https://xquik.com/api/v1`, all 3 repaired PR
+  URLs, and all 3 new PR URLs returned HTTP 200. New external diffs and PR
+  bodies were scanned for secrets, private implementation details, restricted
+  source names, internal cost mechanics, unsupported claims, stale metadata, and
+  banned promotion wording. No banned promotion notes were added.
+- Memory and prompt: active automation TOML measured 13,657 bytes and prompt
+  payload measured 13,313 bytes, under the 15 KiB prompt cap. No automation
+  prompt edit was needed because the active prompt already requires existing PR
+  repair first, 3 fresh GitHub opportunities, and listing/catalog patches as
+  valid non-spammy lanes.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Planned commit message:
+  `docs: record Xquik outreach heartbeat`, pushed to `master` after validation.
+- Durable self-improvement: dashboard/listing lanes remain productive when the
+  Xquik change is a real import schema, source metadata, sample CSV, or catalog
+  entry and the same PR fixes target setup, docs, dependency, metadata, schema,
+  or link hygiene. Record weak binary-only dashboard repos as blockers, not
+  stale outreach targets. Re-read generated PR state after pushing conflict
+  repairs because GitHub can move from unknown to clean mergeable after a short
+  recalculation delay.
