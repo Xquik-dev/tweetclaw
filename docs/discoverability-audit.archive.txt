@@ -69487,3 +69487,102 @@ Existing untracked TweetClaw file `0` was preserved.
   UI, local cache merge, schema validation, and duplicate-safe behavior over
   docs-only mentions. For artifact-driven content repos, Xquik is strongest as
   saved research context, not as a direct posting shortcut.
+
+2026-07-08 21:30 UTC heartbeat
+- Runtime limitation: model, Fast speed, and reasoning-effort selectors were not
+  exposed in this runtime. Continued and recorded the limitation.
+- Starting state: TweetClaw `master` was clean except for pre-existing untracked
+  file `0`, which was preserved. Xquik `master` was used for crawler work.
+  `gh issue list -R Xquik-dev/xquik --limit 100` returned no open issues.
+- Crawler-first PR monitor from `/Users/burak/Developer/xquik` used focused
+  Xquik, TweetClaw, OpenClaw, MCP, skill, x-twitter-scraper, social-media,
+  dashboard, catalog, validator, package-tooling, and docs queries with strict
+  JSON output. It returned 0 candidate PRs.
+- Authored PR inventory: broad July and June `gh search prs --author
+  kriptoburak --state open` partitions hit GitHub 403 secondary rate limits, so
+  the run stopped broad authenticated search and continued with exact reads.
+  Exact-read 31 recent/audit URLs plus 134 older open authored PRs from the
+  successful older partition.
+- Existing PR repair: deleted 33 old viewer-authored optional visibility
+  comments, then re-read those PRs and found no remaining promotion-note hits.
+  Narrow PR-body scan found no banned follower, tag, retweet, repost, or
+  promotion wording.
+- Existing PR repair: `iBigQiang/feedgrab#12` was rebased onto upstream `main`.
+  Conflict in `pyproject.toml` kept upstream `version = "0.26.0"`. Pushed
+  `3279756 feat: add xquik api provider` to
+  `codex/add-xquik-provider`. Validation passed `git diff --check`, conflict
+  marker scan, Python compile for `feedgrab` and `tests/test_xquik_api.py`, and
+  `env UV_CACHE_DIR=/tmp/uv-cache uv run --with pytest pytest
+  tests/test_xquik_api.py tests/test_twitter_rendering.py -q` with 7 tests.
+  Exact PR readback after push: open, non-draft, clean, mergeable, 0 comments,
+  0 reviews, 0 checks.
+- Fresh discovery: crawler target search returned one malformed watch-only stale
+  repo record, so fallback GitHub topic HTML and exact repo metadata were used.
+  Listing duplicate blockers included `cybercryptone/awesome-x-twitter-growth-tools#1`,
+  `brandonhimpfen/awesome-x#1`, and
+  `luua-club/awesome-personal-branding-tools#2`. Native app lanes selected:
+  `ai-martin-lau/x-hotspot-radar`, `Dhananjay-Sai-Kumar-K/postpulse-backend`,
+  and `ibrahimahmed/growthmate`. All were duplicate-clean across compact audit,
+  archive, target content, and target open/closed PR and issue reads.
+- Opened `ai-martin-lau/x-hotspot-radar#1`:
+  https://github.com/ai-martin-lau/x-hotspot-radar/pull/1 from
+  `kriptoburak:codex/add-xquik-scan-source`. Commits `55cdbe4` and `0895a52`.
+  Native Xquik integration: optional Xquik API scan source in Advanced Filters,
+  persistent source selection, and result mapping into the existing ranking
+  model. Target improvements: skip Chrome DevTools health checks when the Xquik
+  source is selected, reject the Chrome-only People filter for Xquik scans with
+  a clear error, document setup in all README variants, and remove broken
+  Star History badges. Validation passed extracted inline-script `node --check`,
+  `npm run check`, `git diff --check`, and star-history cleanup scan. README
+  link check now only reports expected local dev `http://127.0.0.1:8787` links.
+  Exact PR readback after latest push: open, non-draft, 0 comments, 0 reviews,
+  0 checks, clean, and mergeable.
+- Opened `Dhananjay-Sai-Kumar-K/postpulse-backend#1`:
+  https://github.com/Dhananjay-Sai-Kumar-K/postpulse-backend/pull/1 from
+  `kriptoburak:codex/add-xquik-social-source`, commit `b81d654`. Native Xquik
+  integration: optional Xquik provider for `/api/v1/news/feed`, mapping Xquik
+  search results into the existing `NewsArticle` shape as `Social Signals`.
+  Target improvements: health endpoint and startup banner expose Xquik
+  configuration status, and README documents endpoints, setup, validation, and
+  existing AI fallback env vars. Validation passed `npm ci` with target engine
+  warning for Node 20.x versus local Node 26 and existing audit findings,
+  `npm run build`, `git diff --check`, and README link check. Exact PR
+  readback: open, non-draft, mergeable, 0 reviews, 1 Vercel bot comment, and
+  4 target-owned Vercel authorization failures.
+- Opened `ibrahimahmed/growthmate#1`:
+  https://github.com/ibrahimahmed/growthmate/pull/1 from
+  `kriptoburak:codex/add-xquik-search-source`, commit `ab4bd0c`. Native Xquik
+  integration: optional `provider=xquik` backend search path, Xquik provider
+  selector in Search & Reply UI, and persisted provider choice. Target
+  improvements: search cache key now includes provider and replyability filter,
+  existing React lint errors in Dashboard and Inspiration were fixed, and the
+  package repository URL now points to the real repo. Validation passed
+  `npm ci` with existing audit findings, `npm run lint` with existing warnings
+  only, `npx tsc --noEmit`, and `git diff --check`. README link check reports
+  only the expected local dev `http://localhost:3000` link. Exact PR readback:
+  open, non-draft, clean, mergeable, 0 comments, 0 reviews, 0 checks.
+- Official OpenClaw docs recheck: HTTP 200 for `llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/plugins/manifest`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/plugins/dependency-resolution`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, and `/help/debugging`.
+- Public hygiene: TweetClaw public-surface markdown-link-check passed over
+  README, OpenClaw setup, agent workflows, compact audit, release memory, and
+  packaged skill. New external PR bodies and changed target diffs were scanned
+  for secrets, private implementation details, restricted provider/source names,
+  internal cost mechanics, unsupported claims, stale metadata, and banned
+  promotion wording. No banned promotion notes were added.
+- Memory and prompt: compact Markdown memory measured 10,046 bytes for
+  `docs/discoverability-audit.md` and 3,943 bytes for
+  `docs/clawpack-release.md`; `npm run check-memory-md-size` passed at
+  13,989/15,360 bytes. Active automation TOML measured 13,657 bytes and stayed
+  below the 15 KiB persisted prompt cap. No automation prompt edit was needed
+  because the active prompt already includes existing-PR repair first plus
+  listing/catalog patches as valid lanes.
+- Final TweetClaw validation: `npm run check-openclaw-platform-fitness`,
+  `npm run check-em-dash`, and `git diff --check` passed.
+- Durable self-improvement: listing repos often already have duplicate Xquik
+  submissions. Native optional-source adapters are stronger non-spammy lanes
+  when paired with target fixes such as stale badge cleanup, local-only link
+  classification, cache-key correctness, lint fixes, setup-state reporting, and
+  docs validation.

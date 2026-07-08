@@ -10,16 +10,12 @@ archive, before any outreach or duplicate decision.
 
 ## Size Rule
 
-- Automation-owned Markdown memory scope is this file plus
-  `docs/clawpack-release.md`.
-- Their combined size must stay under 15 KiB.
-- Use `npm run check-memory-md-size` before committing prompt, audit, or release
+- Automation-owned Markdown memory is this file plus
+  `docs/clawpack-release.md`; keep their total below 15 KiB.
+- Run `npm run check-memory-md-size` before committing prompt, audit, or release
   memory changes.
-- When the cap is at risk, move detailed or historical content into non-Markdown
-  archives without deleting information, then keep only current status, pointers,
-  blockers, and reusable rules here.
-- Public product docs, README, and packaged skill docs are product surfaces, not
-  automation memory. Compact them only when that is the actual product-doc task.
+- Move detailed history to adjacent non-Markdown archives, then keep only
+  current status, blockers, pointers, and reusable rules here.
 
 ## Hard Scope
 
@@ -54,7 +50,7 @@ archive, before any outreach or duplicate decision.
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
-  2026-07-08 20:05 UTC.
+  2026-07-08 21:30 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
   2026-07-03 02:43 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
@@ -80,17 +76,16 @@ archive, before any outreach or duplicate decision.
 
 ## GitHub-First Rule
 
-- Before routine maintenance, check open PRs created by `kriptoburak` and
-  audit-tracked relevant PRs for TweetClaw, Xquik, OpenClaw, ClawHub, MCP,
+- Before new outreach, inventory and repair in-scope open `kriptoburak` PRs and
+  audit-tracked PRs across TweetClaw, Xquik, OpenClaw, ClawHub, MCP,
   X/Twitter automation, agent tools, skill catalogs, examples, and outreach.
-- Always use the internal Xquik GitHub crawler first to find new submission
-  targets before fallback metadata, clone, archive, or web-index lanes.
-- Use GitHub CLI/API only for narrow known-repo/PR readbacks: state,
-  mergeability, checks, reviews, comments, maintainer requests, conflicts, DCO,
-  CLA, target blockers, and body verification.
-- Act only when useful and maintainer-appropriate.
-- Avoid duplicate follow-ups.
-- Record status here or in the archive.
+- Use the internal Xquik GitHub crawler first for PR monitoring and fresh
+  targets, then fallback metadata, clone, archive, or web-index lanes.
+- Exact-read state, mergeability, checks, reviews, comments, conflicts, DCO,
+  CLA, generated drift, bot findings, target blockers, and PR body wording.
+- Repair actionable Xquik-visibility PR issues first; otherwise record blockers
+  before fresh outreach.
+- Avoid duplicates and record status here or in the archive.
 
 ## Codex Automation Rule
 
@@ -103,47 +98,36 @@ archive, before any outreach or duplicate decision.
 
 ## Discovery Rule
 
-- Every heartbeat or regular run must find and screen at least 3 fresh eligible
-  opportunities, then open 3 useful target-native PRs to 3 different external
-  GitHub repos when safe lanes exist. If fewer than 3 survive duplicate, policy,
-  safety, fork, and validation gates, open all safe lanes and record blockers.
-- Listing and catalog patches are valid lanes when they are target-native,
-  non-spammy, useful to the repo, and include 2+ real target fixes.
-- New external PRs must pair native Xquik integration with 2+ target fixes. No
-  X/Twitter promotion notes, follower counts, tag requests, repost offers, or
+- Every heartbeat or regular run must screen 3 fresh eligible GitHub repo lanes
+  after existing PR repair. Do not answer that a prior run is complete.
+- Open 3 useful target-native PRs to 3 different repos when safe lanes exist.
+  If fewer survive duplicate, policy, safety, fork, and validation gates, open
+  all safe lanes and record blockers.
+- Listing and catalog patches are first-class lanes when non-spammy, useful to
+  the repo, visible in the target workflow, and paired with 2+ real target
+  improvements.
+- New PRs must make Xquik usable or meaningfully discoverable and include 2+
+  target fixes such as docs clarity, setup safety, tests, validators, schema
+  alignment, compatibility notes, listing metadata, or broken-link repairs.
+- No promotion notes, follower counts, tag requests, repost offers, or
   account-visibility wording in PRs, issues, comments, docs, or commits.
-- Issue-only work may supplement a run but does not satisfy the PR mandate while
-  any eligible GitHub PR target remains. Use issue-only only after every safe PR
-  path is duplicate, policy-blocked, unsafe, out of scope, or
+- Issue-only work supplements a run only after all safe PR paths needed for the
+  3-PR mandate are duplicate, blocked, unsafe, out of scope, or
   maintainer-inappropriate.
-- Missing license metadata is not a direct-PR blocker. Read license and
-  contribution terms when present, respect explicit no-contribution policies,
-  and keep contributions original, target-native, and easy to review.
-- Find new maintained repositories or websites before maintenance.
-- Treat skill-repo coverage as ongoing and evidence-bounded; never claim all
-  unsubmitted GitHub skill repos are exhausted.
-- Include crawler-first skill-repo coverage each run and record screened lanes,
-  duplicate results, blockers, and next unscreened lanes.
-- Do not stop after the first clean skill target when validation time allows.
-- Use crawler-first GitHub, OpenClaw, ClawHub, MCP, npm, marketplace, fork,
-  web-index, awesome-list, plugin-directory, skill-catalog, tutorial, blog, and
-  package-registry lanes.
-- Run the crawler from `/Users/burak/Developer/xquik` with:
-  `bun run github:crawl --research-proxy`
-- For strict JSON use:
-  `bun run github:crawl --json --output <path> --research-proxy`
-- Use focused crawler query sets for authored PRs, audit-tracked PRs, TweetClaw,
-  OpenClaw, ClawHub, X/Twitter automation, MCP, agent tools, and skill catalogs.
-- Skill-repo query inventory lives in the archive; include `SKILL.md`,
-  `.agents/skills`, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skill
-  variants, awesome lists, registries, forks, and generated catalogs.
-- Do not use GitHub tokens for crawler searches.
-- Do not print, store, or commit crawler credential values.
-- If crawler output stalls after proxy-refresh logs, kill only owned crawler
-  PIDs, record the blocker, and rerun smaller focused batches.
+- Missing license metadata alone is not a direct-PR blocker. Respect explicit
+  no-contribution policies and keep changes original, target-native, and easy
+  to review.
+- Include crawler-first skill-repo coverage each run. Search `SKILL.md`,
+  `.agents/skills`, skill dirs, OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X
+  skill variants, awesome lists, registries, forks, and generated catalogs.
+- Never claim all unsubmitted GitHub skill repos are exhausted; maintain backlog
+  details in the archive.
+- Run crawler discovery from `/Users/burak/Developer/xquik` with strict JSON
+  output paths, bounded request timeouts, focused query packs, and no GitHub
+  tokens. Never print, store, or commit crawler credentials.
 - On GitHub API or secondary rate limits, stop broad authenticated search for
   that run and continue with crawler output, exact-repo REST lists, clone plus
-  `rg`, archive downloads, sparse/blobless clones, API tree reads, and metadata.
+  `rg`, sparse/blobless clones, API tree reads, archives, and metadata.
 
 ## Duplicate And Fork Rules
 
@@ -162,21 +146,16 @@ archive, before any outreach or duplicate decision.
 
 ## Target-Fit Rules
 
-- Help targets first. Prefer target-native fixes, tested examples, safer install
-  metadata, docs recipes, fixtures, workflows, compatibility notes, adapter code,
-  CI-safe checks, safety guidance, catalog metadata, plugin manifests, starter
-  configs, and skill templates.
+- Help targets first with target-native fixes, examples, install metadata, docs,
+  fixtures, workflows, compatibility notes, adapters, CI-safe checks, catalog
+  metadata, plugin manifests, starter configs, listings, and skill templates.
 - Avoid thin marketing mentions.
 - For scoring, drafting, scheduling, publishing, analytics, voice-match,
   validator, or control-layer targets, frame TweetClaw as source evidence or
   approval-gated context only.
 - Keep TweetClaw write-like actions inside OpenClaw/TweetClaw approval flow.
-- For runtime detector targets, prefer tested detector, policy rule, fixture, or
-  docs reference that marks TweetClaw/OpenClaw social-account writes as
-  approval-worthy. Keep read-only evidence collection low risk unless the target
-  already treats those reads differently.
-- For packaged skill targets, update visible docs and packaged contents together.
-- For README-only official MCP skill repos, update README only.
+- For skill targets, update visible docs and packaged contents together unless
+  the target is README-only.
 
 ## Link And Public-Hygiene Rule
 
@@ -195,13 +174,17 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 21:03 UTC: selector unavailable. Crawler monitor returned 0 and
-  broad authored PR search hit GitHub secondary rate limits, so exact PR reads
-  and repo metadata were used. Existing scoped PRs needed no new repair.
-  Opened 3 fresh PRs: `ttmouse/X-data#2`,
-  `miniyu157/x-timeline-archiver#1`, and
-  `intelligent-iterations/ii-content-engine#7`. Full evidence is in the
-  archive.
+- 2026-07-08 21:30 UTC: selector unavailable. Existing PR repair first:
+  exact-read 31 recent/audit PRs plus 134 older open authored PRs after crawler
+  monitor returned 0 and broad Jul/Jun authored searches hit GitHub 403 rate
+  limits. Removed 33 old optional visibility comments. Rebased
+  `iBigQiang/feedgrab#12` to upstream `0.26.0`, pushed `3279756`, and it is
+  clean/mergeable after targeted tests. Fresh discovery screened listing
+  duplicates plus native app lanes and opened 3 PRs:
+  `ai-martin-lau/x-hotspot-radar#1`,
+  `Dhananjay-Sai-Kumar-K/postpulse-backend#1`, and
+  `ibrahimahmed/growthmate#1`. PostPulse has only target-owned Vercel
+  authorization failures. Full evidence is in the archive.
 
 ## Reporting Checklist
 
