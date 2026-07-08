@@ -68896,3 +68896,95 @@ Existing untracked TweetClaw file `0` was preserved.
   notes, 2 target improvements, link checks, secret boundaries, and prompt cap.
   Combined compact Markdown size was 15,204 bytes. Persisted prompt size was
   15,344 bytes, so no prompt rewrite was attempted.
+2026-07-08 19:24 UTC heartbeat run
+
+- Runtime selector: this Codex runtime did not expose explicit model, speed, or
+  reasoning-effort controls, so Codex 5.5 Fast and extra-high effort could not
+  be selected here. Continued and recorded the limitation.
+- Existing PR inventory and repair order:
+  - Ran crawler-first discovery from /Users/burak/Developer/xquik with strict
+    JSON output at /tmp/xquik-hb-20260708-192420-crawler.json, 4 focused
+    queries, limit 24, search-pages 1, per-query-limit 6, concurrency 6, and
+    request-timeout-ms 8000.
+  - Broad authored open-PR search returned 100 open kriptoburak PRs, then
+    GitHub secondary rate limits blocked further broad search partitions. Per
+    prompt, stopped broad authenticated search and continued with exact audit
+    PR reads, repo REST reads, fork metadata, target duplicate searches, local
+    clones, and crawler output.
+  - Exact-read existing scoped PRs:
+    rohitgupta28/Twitter_realtime_sentiment#1, jc-lamero/Projet-tweets-streaming#1,
+    SumanKumar5/StreamPulse#1, ojbilly/Twitter-ETL-Pipeline#1,
+    rishabhbhati634/twitter-data-eng#1, ps982182/SentimentAnalysis-NLP#1,
+    and raj200501/Social-Media-Sentiment-Analysis-and-Trend-Prediction-System#2.
+  - rohitgupta28#1, jc-lamero#1, and SumanKumar5#1 were open, ready,
+    mergeable, with no comments, reviews, or checks.
+  - ojbilly#1 was open, ready, mergeable. Review comment
+    https://api.github.com/repos/ojbilly/Twitter-ETL-Pipeline/pulls/comments/3523936542
+    was tied to commit 2db8e26 and already fixed by later commit eddb61d
+    "Handle blank Xquik metric cells". Verified with
+    XQUIK_EXPORT_PATH blank-metric CSV, python3 -m py_compile, and
+    git diff --check. No new push needed.
+  - raj200501#2 was open, ready, mergeable. Prior P1 CLI-path comment was
+    already fixed and had a validation comment. No new push needed.
+  - ps982182#1 was open, ready, mergeable. Netlify and Vercel failures are
+    target-owned hosting authorization/configuration blockers; GitGuardian
+    passed. No code repair available from our branch.
+  - Promotion-note cleanup: scanned handled diffs and PR bodies for banned
+    promotion wording; none added or found in editable new work.
+
+- Fresh candidate screening after repair pass:
+  - Duplicate-clean and selected:
+    ISMAILELOUAZZANI/Real-Time-Twitter-Sentiment-Analysis-Dashboard,
+    Guten-Morgen1302/Social-Media-Dashboard, and inveetode/xpulse.
+  - Duplicate-clean but held:
+    DeviBhoi/Social-Media-Twitter-Dashboard was README plus Tableau workbook,
+    and xtrends07-blip/xtrends-api was README-only.
+  - Duplicate-blocked or prior-history:
+    athanggohane2347-jpg/x-twitter-intelligence-dashboard#1,
+    eckartal/sm-g#1, ythx-101/x-tweet-fetcher, agrawal-rohit/tweet-sense,
+    drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis, Chulong-Li/...#8,
+    nocoo/xray#117, tom-doerr/twitter-analytics-dashboard#2,
+    camimirabal/social-analytics-dashboard#1, Adisesh05/social_media_analytics#1,
+    data-han/twitter_kafka_sentiment#1, Ronit26Mehta/Twitter-Analysis-Dashboard#1,
+    and Khyati89/Social-Media-Dashboard archive-known.
+  - Archive and compact duplicate searches plus exact target PR and issue
+    searches were run for TweetClaw, tweetclaw, @xquik/tweetclaw, Xquik,
+    x-twitter-scraper, OpenClaw, and variants.
+
+- Fresh PRs opened:
+  - https://github.com/ISMAILELOUAZZANI/Real-Time-Twitter-Sentiment-Analysis-Dashboard/pull/1
+    from verified fork kriptoburak/ismail-twitter-sentiment-xquik, branch
+    codex/xquik-export-replay. Adds XQUIK_EXPORT_PATH CSV/JSON/JSONL replay
+    support and docs. Target improvements: dashboard starts the stream worker
+    instead of polling an idle queue; model/vectorizer paths are configurable
+    and missing joblib dependency is declared. Validation: py_compile,
+    iter_export_texts smoke test, git diff --check. Readback: open, ready,
+    mergeable, no comments, no reviews, no checks.
+  - https://github.com/Guten-Morgen1302/Social-Media-Dashboard/pull/1 from
+    verified fork kriptoburak/Social-Media-Dashboard-4, branch
+    codex/xquik-export-source-card. Adds typed Xquik sample rows and a
+    dashboard Xquik source card. Target improvements: README setup uses the
+    actual repo URL and runnable command blocks; dashboard sample metrics move
+    into a typed module. Validation: npm install --ignore-scripts, npm run
+    build, git diff --check. npm run lint is interactive because the target has
+    no ESLint config. Readback: open, ready, mergeable, GitGuardian passed;
+    Vercel requires target-owner authorization.
+  - https://github.com/inveetode/xpulse/pull/1 from verified fork
+    kriptoburak/xpulse-xquik-import, branch codex/xquik-export-import. Adds
+    /api/twitter/sync-xquik-export to normalize Xquik rows into the existing
+    sync path. Target improvements: tested normalizer for mixed field aliases;
+    rows without text are skipped, rows without IDs get stable xquik-* IDs, and
+    import docs were added. Validation: direct Python execution of
+    test_xquik_import functions because pytest was not installed, py_compile,
+    git diff --check. Readback: open, ready, mergeable, no comments, no reviews,
+    no checks.
+
+- Link checks: curl -L returned HTTP 200 for the 3 new PRs plus ojbilly#1 and
+  raj200501#2.
+- Public hygiene: no secrets, private implementation details, unsupported
+  claims, internal cost mechanics, or banned promotion-note wording were found
+  in handled diffs or PR bodies.
+- Memory and prompt: compact Markdown memory measured below cap after update;
+  automation prompt readback remained 15271 bytes after the prior prompt update.
+- TweetClaw repo status: untracked file 0 pre-existed or was unrelated and was
+  left untouched. Audit/archive changes were committed and pushed to master.

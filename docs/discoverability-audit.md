@@ -192,16 +192,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-04 22:11 UTC: selector unavailable. Crawler-first run returned empty
-  JSON; broad authored-PR search hit a GitHub secondary limit, so exact audit PR
-  reads, repo REST lists, fork metadata, and focused repo search continued.
-- Repaired `raj200501/...#2`; pushed Python 3.9 compatibility, validated CLI and
-  tests, and resolved the fixed review thread.
-- Opened `ojbilly/...#1`, `rishabhbhati634/...#1`, and `ps982182/...#1`.
-  Each adds native Xquik export import or batch analysis plus 2+ target fixes.
-- Validation: target syntax/diff checks, direct URL probes, npm metadata,
-  promotion-hygiene scans, prompt-size check, and TweetClaw checks passed.
-  `ps982182/...#1` has target-hosting Netlify/Vercel failures not tied to code.
+- 2026-07-08 19:24 UTC: selector unavailable. Crawler-first run completed;
+  broad authored-PR search returned 100 open PRs, then hit a GitHub secondary
+  limit, so exact repo PR reads continued without more broad search.
+- Existing PR repair pass exact-read 7 scoped PRs. `ojbilly/...#1` and
+  `raj200501/...#2` bot findings are already fixed and validated;
+  `ps982182/...#1` and `Guten-Morgen1302/...#1` have target-owned Vercel or
+  Netlify authorization failures only.
+- Opened fresh PRs: `ISMAILELOUAZZANI/...#1`, `Guten-Morgen1302/...#1`, and
+  `inveetode/xpulse#1`. Each adds native Xquik import/source support plus 2+
+  target improvements. Direct PR links returned HTTP 200.
+- Validation: target syntax/build/helper checks, crawler JSON, duplicate scans,
+  fork-parent checks, promotion-hygiene scans, memory-size check, and audit
+  commit/push passed. Full evidence is in the archive.
 
 ## Reporting Checklist
 
