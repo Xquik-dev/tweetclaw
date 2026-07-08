@@ -69982,3 +69982,120 @@ Existing untracked TweetClaw file `0` was preserved.
   checks, fork ownership, 2 target improvements, and no promotion notes. Keep
   using listing-only lanes only when the target receives real schema, setup,
   docs, validation, link, accessibility, or source-workflow improvements.
+
+2026-07-08 23:34 UTC heartbeat
+
+- Runtime: Codex 5.5 Fast mode and extra-high reasoning selectors were not
+  exposed by this runtime. Continued and recorded the limitation.
+- Local state: `/Users/burak/Developer/xquik` was clean on `master`; TweetClaw
+  was on `master` with only pre-existing untracked `0` before audit edits.
+  Xquik issue list returned no open issues.
+- PR inventory method: crawler-first PR monitor from Xquik used strict JSON
+  output at `/tmp/xquik-hb-20260708-233441/pr-monitor.json` with focused
+  Xquik, TweetClaw, OpenClaw, ClawHub, MCP, skill, catalog, dashboard, and
+  social automation queries. It returned 0 opportunities. Authenticated
+  authored-open partitions found 147 PRs updated on or after 2026-07-08 and a
+  1000-result cap for 2026-07-01 through 2026-07-07. The older broad search hit
+  GitHub search API 403 rate limit, request
+  `4AAB:2F614B:4CA0238:48C0966:6A4EDEEF`, at 2026-07-08 23:36 UTC, so broad
+  authenticated search stopped for the run. Recent scoped filtering found 139
+  in-scope PR URLs; exact readbacks succeeded for all 139 with 198 comments and
+  16 reviews.
+- Existing PR repair first: `Saminiscool/twitter-ai-agent#2` was an in-scope
+  Xquik visibility PR with README conflicts. The exact PR head was
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik:codex/add-xquik-backend`.
+  Merged upstream `main`, resolved the README-only conflict, preserved the
+  optional Xquik backend section, and kept upstream download/contact wording
+  once. Pushed `b67dbc6`. Exact readback is open, mergeable, clean, 17
+  comments, 0 reviews, 0 checks. Validation passed conflict-marker scan,
+  `git diff --check`, Prettier on README plus touched TypeScript and tests,
+  markdown-link-check, `npm ci --ignore-scripts`, focused Biome lint,
+  `npx tsc --noEmit`, and focused Vitest. `npm ci` reported target-owned
+  dependency advisories; no dependency files changed.
+- Non-Xquik blocker skipped: `ogthheu/Insightify-Sentiment-API#1` and
+  `shajith003/awesome-claude-skills#4` had conflict or dirty states but were
+  generic cleanup PRs, not Xquik visibility repair lanes. Other nonclean PRs
+  were target-owned Vercel authorization, branch protection, stale review
+  state, or no actionable current-head findings after exact reads.
+- Fresh crawler discovery: strict JSON target discovery at
+  `/tmp/xquik-hb-20260708-233441/fresh-targets.json` covered awesome lists,
+  MCP registries, social dashboards, Twitter/X agent skills, skill registries,
+  forks, generated catalogs, and package-tooling lanes. It returned 33
+  opportunities.
+- Fresh duplicate blockers: `cybercryptone/awesome-x-twitter-growth-tools` has
+  an open Xquik PR; `luua-club/awesome-personal-branding-tools` has an open
+  TweetClaw PR; `jai-fadia/twitter-sentiment-analytics` has prior closed
+  TweetClaw history; `brandonhimpfen/awesome-x` has prior closed Xquik history;
+  `DemumuMind/mcp-servers-catalog`, `remotemcplist/servers`, and
+  `muhammadrashid4587/mcp-registry` have open Xquik PRs.
+- Fresh PR 1: `aaronjellis/configonaut-catalog` was public, non-fork,
+  non-archived, duplicate-clean, and had no blocking maintainer policy found.
+  Missing license metadata was not treated as a blocker. Fork verified as
+  `kriptoburak/configonaut-catalog` parent
+  `aaronjellis/configonaut-catalog`. Opened
+  https://github.com/aaronjellis/configonaut-catalog/pull/1 from
+  `codex/add-xquik-mcp-entry`, commit `94e00d7`. Xquik lane: remote MCP catalog
+  entry for `https://xquik.com/mcp` with auth config fields and social category
+  placement. Target improvements: added a `Social & Marketing` category,
+  documented remote header/config field metadata, and documented catalog JSON
+  validation. Validation passed JSON parse, uniqueness/category checks, Xquik
+  remote URL check, diff check, README markdown-link-check, and hygiene scan.
+  Exact readback: open, mergeable, clean, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 2: `roverbird/mcpub` was public, non-fork, non-archived,
+  duplicate-clean, Unlicense, and had no blocking maintainer policy found. Fork
+  verified as `kriptoburak/mcpub` parent `roverbird/mcpub`. Opened
+  https://github.com/roverbird/mcpub/pull/2 from
+  `codex/add-xquik-submit-example`, commit `b5659a5`. Xquik lane: ready-to-edit
+  JSON-RPC payload for submitting Xquik to the public MCP endpoint directory.
+  Target improvements: reusable examples folder, JSON validation and `get`
+  confirmation guidance, clearer searchable-description guidance, and removal
+  of two dead `mcp-spider` links. Validation passed JSON parse, diff check,
+  markdown-link-check, `cargo test --manifest-path mcpub/Cargo.toml`, and
+  hygiene scan. `cargo fmt --check` reports target-owned formatting drift in
+  untouched Rust source. Exact readback: open, mergeable, clean, 0 comments, 0
+  reviews, 0 checks.
+- Fresh PR 3: `Tulimoa/tulimoa-mcp` was public, non-fork, non-archived,
+  duplicate-clean, MIT, and had no blocking maintainer policy found. Fork
+  verified as `kriptoburak/tulimoa-mcp` parent `Tulimoa/tulimoa-mcp`. Opened
+  https://github.com/Tulimoa/tulimoa-mcp/pull/1 from
+  `codex/add-xquik-listing-example`, commit `40fc1a9`. Xquik lane:
+  ready-to-edit `submit_listing` JSON-RPC payload for an MCP-enabled Xquik
+  directory listing. Target improvements: JSON example validation, category and
+  private-field safety guidance, endpoint formatting for link checks, and
+  packaged ClawHub skill docs updated for write tools and pending-review
+  behavior. Validation passed JSON parse, schema constraint check, diff check,
+  markdown-link-check, `pnpm install --frozen-lockfile`, `pnpm typecheck`, and
+  hygiene scan. Exact readback: open, mergeable, clean, 0 comments, 0 reviews,
+  0 checks.
+- Official OpenClaw docs check: HTTP 200 for `https://docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/plugins/manage-plugins`, `/plugins/manifest`, `/plugins/sdk-runtime`,
+  `/plugins/install-overrides`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. No TweetClaw OpenClaw compatibility files changed.
+- Public hygiene and links: `https://xquik.com` and
+  `https://xquik.com/.well-known/mcp.json` returned 200; Xquik MCP returned
+  expected unauthenticated 401; the repaired PR URL and all 3 new PR URLs
+  returned 200. New PR bodies and external diffs were scanned for secrets,
+  private implementation details, restricted source names, internal cost
+  mechanics, unsupported claims, stale metadata, and banned promotion wording.
+  No promotion notes were added or left in editable new PR bodies.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Validation after audit edits: `npm run check-memory-md-size` passed with
+  automation Markdown memory at 13,919 of 15,360 bytes; `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.11`; `npm run check-em-dash` passed; `git diff
+  --check` passed; markdown-link-check passed over README, OpenClaw setup,
+  agent workflows, compact audit, and release memory.
+- Prompt and memory before final validation: active automation TOML measured
+  13,657 bytes and prompt payload measured 13,313 bytes, under the 15 KiB prompt
+  cap. No automation prompt edit was needed because the active prompt already
+  preserves existing PR repair first, mandatory 3 fresh GitHub opportunities,
+  listing/catalog patches as valid non-spammy lanes, duplicate checks, fork
+  ownership, 2 target improvements, and no promotion notes.
+- Durable self-improvement: listing-only lanes are productive when the target's
+  native submission workflow receives concrete validation, schema, category,
+  packaged-skill, link, or review-safety improvements. Treat MCP transport
+  endpoints that return 401 or 406 to generic link checkers as expected when
+  documented as endpoints, not browser pages; format them as code where the
+  target's docs checker scans raw URLs.

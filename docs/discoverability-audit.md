@@ -174,18 +174,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 23:03 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0; authored open PR partitions read 144
-  updated on/after 2026-07-08 and 418 before 2026-07-01, while 2026-07-01..07
-  hit the 1000-result cap. Exact-read 130 recent scoped PRs and repaired 3
-  Xquik visibility PRs to clean mergeable heads:
-  `Code7unner/autoresearch#14` `dee41e9`,
-  `reall8164/wechat-openclaw-plugin#1` `5782130`, and
-  `warlockoussama/twitter-cli#1` `f99de6f`. Fresh crawler discovery returned 0,
-  then fallback screened MCP, dashboard, and listing lanes and opened 3 useful
-  Xquik PRs: `copperdogma/twitter-scraper-mcp#1`,
-  `cocoooowang1230/x-analytics-dashboard#1`, and
-  `MylavarapuAjaygopinath/twitter_dashboard#1`. Full evidence is in the archive.
+- 2026-07-08 23:34 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler PR monitor returned 0; authored open PR partitions read 147
+  updated on or after 2026-07-08, while 2026-07-01..07 hit the 1000-result cap
+  and the older broad search hit a GitHub 403 rate-limit blocker. Exact-read
+  139 recent scoped PRs, repaired `Saminiscool/twitter-ai-agent#2` to clean
+  mergeable head `b67dbc6`, then screened fresh listing/catalog lanes from a
+  crawler result set of 33. Opened 3 useful Xquik PRs:
+  `aaronjellis/configonaut-catalog#1`, `roverbird/mcpub#2`, and
+  `Tulimoa/tulimoa-mcp#1`. Full evidence is in the archive.
 
 ## Reporting Checklist
 
