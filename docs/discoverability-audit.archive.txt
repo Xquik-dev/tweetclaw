@@ -69067,3 +69067,133 @@ Existing untracked TweetClaw file `0` was preserved.
   size was 15355 bytes. Compact Markdown memory was at 15355 bytes before this
   edit, so the latest compact run summary was shortened and full evidence was
   stored here.
+## 2026-07-08 20:05 UTC heartbeat
+
+- Runtime limits: this Codex runtime did not expose a callable GPT-5.5 model,
+  Fast speed, or extra-high reasoning-effort selector. Continued with the
+  limitation recorded. Saved automation prompt already carried the requested
+  repair-first, always-screen-3, and listing/catalog-patch allowances; prompt
+  field measured 15355 bytes, under the 15 KiB cap.
+- Start state: TweetClaw `master` had only unrelated untracked file `0`; left
+  untouched. Automation-owned Markdown memory started at 14894 bytes. Broad
+  work used `/Users/burak/Developer/xquik` crawler and GitHub CLI.
+- Complete PR inventory method and blocker: crawler-first monitoring and
+  `gh search prs --author kriptoburak --state open --limit 100` found a capped
+  100-result page. A later `--limit 1000` broad authored search also returned
+  exactly 1000, so broad inventory was not complete. Attempted update-window
+  partitions then hit GitHub secondary rate limit, so broad authenticated search
+  was stopped for this run per policy. Exact known-repo and target reads
+  continued.
+- Exact PR readbacks: exact-read 18 newest open PRs from the capped page plus
+  newly discovered in-scope PRs on
+  `hemantDwivedi/social-media-analytics#3`,
+  `rippersumit14/social-media-analytics-dashboard#1`,
+  `cadenburleson/social-dash#1`,
+  `InfiniteLuupz/Social-Media-Analytics-Dashboard#1`,
+  `akankshashuklaWork/twitter-data-pipeline-airflow-bigquery-kibana#1`,
+  `sirishetty17/twitter_dashboard#1`, and
+  `tibor-ai/cypherpulse#1`. All were open and mergeable or target-owned
+  unstable. `rogerchappel/toolmirror#8` remained review-policy blocked.
+  `Guten-Morgen1302/Social-Media-Dashboard#1` remained target-owned Vercel
+  auth blocked.
+- Existing PR repairs: repaired `numbpill3d/mcp-radar#5` bot findings by
+  rebasing onto the maintainer-facing branch that already contained stronger
+  supplemental-server validation. Final branch was at remote
+  `e756544` with URL validation, string/int sanitizers, JSON parse handling,
+  and normalized supplemental URLs; no new push was needed after rebase.
+  Validation passed `python3 -m py_compile scripts/update_data.py`, custom
+  supplemental payload assertions, and `git diff --check`. Exact readback
+  after repair: open, mergeable, `CLEAN`, success statuses. Also removed the
+  old banned optional visibility comment from `tibor-ai/cypherpulse#1`; fresh
+  readback found no remaining comments or banned wording.
+- Crawler-first discovery coverage: ran strict-JSON crawler packs from Xquik
+  for listing/catalog repos, skill repos, and framework/dashboard repos with
+  bounded request timeouts and output files under `/tmp`. Initial outputs found
+  12 listing and 26 skill opportunities, but many were duplicate/prior-history
+  lanes. A second listing crawl wrote valid JSON but only produced 3 poor-fit
+  or duplicate results. Skill coverage included SKILL.md, `.agents/skills`,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, forks, and generated catalogs.
+- Duplicate and target-policy gates: duplicate-blocked or prior-history lanes
+  included `brandonhimpfen/awesome-x`, `SisoSol/awesome-realtime-social-monitoring`,
+  `blacktwist/social-media-skills`, `hridaydutta123/awesome-twitter-tools`,
+  `EwingYangs/x-user-skill-creator`, `Jiaranbb/content-reader`,
+  `ashemag/reddit-crosspost`, `jaw9c/awesome-remote-mcp-servers`,
+  `MobinX/awesome-mcp-list`, `YuzeHao2023/Awesome-MCP-Servers`,
+  `JustInCache/awesome-mcp-collection`, `Chat2AnyLLM/awesome-mcp-servers`,
+  `dev48v/mcp-directory`, `dev48v/public-apis`, multiple social analytics
+  repos with open Xquik/TweetClaw PRs, and `tibor-ai/cypherpulse#1`.
+  Archive-blocked or held lanes included `chogalepar/Social-Media-Dashboard`,
+  `anshuman-singh-93/purecloud-social-listening-mcp`,
+  `muhammadabdullahikhsan/sentiment-analysis-dashboard`, and
+  `maulnite/MenfessScope`.
+- Fresh lanes selected after clone and policy review:
+  `mwaxman1/x-trend-intelligence-mcp`,
+  `divya-09nimbalkar/Twitter-Trend-Analyzer-`, and
+  `Matt2454/SentiBrand-X`. Each was public, non-fork, non-archived, and
+  duplicate-clean across compact audit, archive, target content, open plus
+  closed PRs/issues, and fork metadata. Forks were REST-verified as
+  `kriptoburak` forks with correct parents before push.
+- Opened `mwaxman1/x-trend-intelligence-mcp#1`:
+  https://github.com/mwaxman1/x-trend-intelligence-mcp/pull/1 from
+  `kriptoburak/x-trend-intelligence-mcp`, branch
+  `codex/add-xquik-source-mode`, commit `6000042`. Native Xquik integration:
+  optional `x-data-source: xquik` mode maps Xquik tweet search results into the
+  existing search-backed MCP intelligence tools. Target improvements:
+  backwards-compatible shared auth context for source and Vercel handlers,
+  clearer missing-token messaging, HTTPS validation for optional Xquik base URL,
+  and README docs listing supported Xquik search-backed tools. Validation:
+  `npm install`, `npm run build`, `git diff --check`, target README link check.
+  Exact readback: open, ready, mergeable, `CLEAN`, no comments, reviews, checks,
+  or banned wording.
+- Opened `divya-09nimbalkar/Twitter-Trend-Analyzer-#1`:
+  https://github.com/divya-09nimbalkar/Twitter-Trend-Analyzer-/pull/1 from
+  `kriptoburak/Twitter-Trend-Analyzer-`, branch `codex/import-xquik-exports`,
+  commit `5fe2ec6`. Native Xquik integration: CSV, JSON, and JSONL Xquik export
+  loader normalizes tweet text, date, user, and sentiment into the target's
+  training and dashboard schema. Target improvements: fixed the training helper
+  so tests can inject data and write models to temp paths, implemented the
+  placeholder CLI pipeline, added dashboard upload validation, added `.gitignore`,
+  and removed committed Python bytecode. Validation: isolated `.venv`, installed
+  requirements, `python -m pytest tests` with 5 passed, `git diff --check`,
+  README link check. Exact readback: open, ready, mergeable, `CLEAN`, no
+  comments, reviews, checks, or banned wording.
+- Opened `Matt2454/SentiBrand-X#2`:
+  https://github.com/Matt2454/SentiBrand-X/pull/2 from
+  `kriptoburak/SentiBrand-X`, branch `codex/convert-xquik-mock-data`, commit
+  `352e810`. Native Xquik integration: typed converter and
+  `npm run convert:xquik` command convert reviewed Xquik JSON or JSONL exports
+  into the existing `data/mockData.json` mock ingestion schema. Target
+  improvements: real `npm test` script with Vitest coverage, removal of 2 stale
+  package scripts pointing to missing files, and TypeScript-appropriate
+  CONTRIBUTING guidance. Validation: `npm install` (existing 6 dependency
+  advisories, no new deps), `npm test` with 5 passed, targeted ESLint on changed
+  files, converter CLI smoke test, `git diff --check`, README and CONTRIBUTING
+  link check. Repo-wide `npm run lint` still fails on pre-existing unrelated
+  React/script lint errors; recorded in PR body. Exact readback: open,
+  mergeable, `UNSTABLE` only due target-owned Netlify and Vercel authorization
+  gates, no reviews, no banned wording.
+- Official OpenClaw checks: `docs.openclaw.ai/llms.txt`, `llms-full.txt`,
+  `/cli/plugins`, `/cli/skills`, `/cli/update`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/clawhub/plugin-validation-fixes`,
+  `/help/testing-updates-plugins`, `/plugins/manifest`, `/plugins/tool-plugins`,
+  `/plugins/install-overrides`, `/plugins/plugin-permission-requests`,
+  `/plugins/dependency-resolution`, and `/help/debugging` returned HTTP 200.
+  `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+- Broken-link and hygiene results: TweetClaw markdown-link-check over README,
+  OpenClaw setup, agent workflows, compact audit, release memory, and packaged
+  skill reported status-0 failures for `docs.xquik.com/guides/zapier` and
+  `/guides/make`; direct `curl -L` readbacks returned HTTP 200 for both, so
+  recorded as link-checker/network false positives. Target README/CONTRIBUTING
+  link checks passed. Public diff hygiene found no secrets, private source
+  names, unsupported claims, or promotion-note wording; one narrow scan false
+  positive was legitimate `retweetCount` field names.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. No package/runtime files changed.
+- Durable self-improvement: listing/catalog patches are acceptable only when
+  target-native and accompanied by real target fixes; repair existing PR
+  comments and CI/readback blockers before fresh outreach; for Xquik search
+  adapters, prefer explicit opt-in source headers and response-shape mapping
+  over changing existing direct-X workflows; Python outreach repos may still
+  run on Python 3.9, so use postponed annotations before `| None` types.

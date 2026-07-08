@@ -53,7 +53,8 @@ archive, before any outreach or duplicate decision.
   `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
-  guessed detail routes now 404.
+  guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
+  2026-07-08 20:05 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
   2026-07-03 02:43 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
@@ -106,6 +107,8 @@ archive, before any outreach or duplicate decision.
   opportunities, then open 3 useful target-native PRs to 3 different external
   GitHub repos when safe lanes exist. If fewer than 3 survive duplicate, policy,
   safety, fork, and validation gates, open all safe lanes and record blockers.
+- Listing and catalog patches are valid lanes when they are target-native,
+  non-spammy, useful to the repo, and include 2+ real target fixes.
 - New external PRs must pair native Xquik integration with 2+ target fixes. No
   X/Twitter promotion notes, follower counts, tag requests, repost offers, or
   account-visibility wording in PRs, issues, comments, docs, or commits.
@@ -192,12 +195,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 19:48 UTC: selector unavailable. Existing PR repair reads found no
-  safe branch repair; target-owned deploy auth remained the only new blocker.
-- Crawler-first listing discovery plus exact repo reads screened 3 fresh safe
-  lanes and opened `Aiblogfirst/...#4`, `louislikescomputers/...#3`, and
-  `cybercryptone/...#1`, each with an Xquik/TweetClaw listing plus 2+ target
-  improvements. Full evidence is in the archive.
+- 2026-07-08 20:05 UTC: selector unavailable. Repaired existing PR scope by
+  deleting old promotion wording on `tibor-ai/cypherpulse#1`; exact-read 25
+  in-scope PRs plus 3 new PRs. Broad authored search hit the 1000-result cap,
+  then GitHub secondary rate limit, so only exact partitions are claimed.
+- Opened 3 fresh PRs: `mwaxman1/x-trend-intelligence-mcp#1`,
+  `divya-09nimbalkar/Twitter-Trend-Analyzer-#1`, and
+  `Matt2454/SentiBrand-X#2`. SentiBrand-X has target-owned Netlify/Vercel auth
+  gates; the other 2 new PRs read back clean. Full evidence is in the archive.
 
 ## Reporting Checklist
 
