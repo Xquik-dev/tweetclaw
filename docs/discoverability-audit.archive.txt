@@ -69353,3 +69353,137 @@ Existing untracked TweetClaw file `0` was preserved.
   when no explicit policy blocker exists; for Next 16 targets with AGENTS
   guidance, install dependencies and read installed Next docs for changed app
   APIs before final validation.
+
+2026-07-08 21:03 UTC heartbeat
+
+- Runtime and prompt: Codex Desktop did not expose model, speed, or
+  reasoning-effort selectors, so Codex 5.5 Fast mode and extra-high effort
+  could not be selected directly. Work continued and the limitation is
+  recorded. Automation TOML measured 13,657 bytes; no prompt edit was needed.
+- Start state: TweetClaw `master` was synced with origin and had the
+  pre-existing untracked file `0`, which was preserved. `gh issue list -R
+  Xquik-dev/xquik --limit 100` returned no open issues. `npm run
+  check-memory-md-size` passed before edits at 15,066 bytes.
+- Crawler-first PR inventory: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON outputs under
+  `/tmp/xquik-hb-20260708-210341`, focused PR-monitor and fresh-target query
+  packs, bounded request timeout, limit, search-pages, per-query limit, and
+  concurrency. PR monitor parsed 0 opportunities. Fresh target crawler parsed
+  10 skill, dashboard, listing, and social-media candidates. Additional crawler
+  batches parsed 3 listing candidates and then 0 dashboard candidates.
+- Inventory partitions and blocker: audit and archive URL extraction was used
+  first. Broad authored open PR search was partitioned by updated windows, but
+  GitHub returned a secondary rate limit on all 3 search partitions, so broad
+  authenticated search stopped for this run. Exact repo and PR REST or GraphQL
+  reads continued.
+- Exact existing PR readbacks: exact-read 8 scoped PRs:
+  `unish6123/social-pulse#1`,
+  `lotions8969-prog/x-insight-analyzer#1`,
+  `Codekiller1122/Stock-leadfinder-AI#1`,
+  `mwaxman1/x-trend-intelligence-mcp#1`,
+  `divya-09nimbalkar/Twitter-Trend-Analyzer-#1`,
+  `Matt2454/SentiBrand-X#2`, `numbpill3d/mcp-radar#5`, and
+  `tibor-ai/cypherpulse#1`. All were open, non-draft, mergeable. The first 5
+  and `tibor-ai/cypherpulse#1` had no comments, reviews, or checks.
+  `Matt2454/SentiBrand-X#2` had only target-owned Netlify and Vercel deploy
+  authorization comments. `numbpill3d/mcp-radar#5` had bot review comments;
+  current head `780f3ad` already repaired malformed JSON, URL normalization,
+  supplemental field validation, and named sort fallback findings. No new safe
+  repair or promotion-note cleanup was needed.
+- Fresh discovery screens and duplicate gates: screened crawler candidates
+  `elbis330/social-media-scraper-skill`, `d-wwei/superb-publisher`,
+  `Aditya923-c/xpoz-agent-skills`, `AISA-skills/social-media-skills`,
+  `zuocharles/openclaw-social-media-skill`,
+  `NachaFromMars/social-media-agent`, `emreisik95/social-media-marketing`,
+  `Adedayooyetunji/Social-Media-Dashboard`, and
+  `rabden/X-twitter-social-manager-skill`. All except `Adedayooyetunji` had
+  open prior Xquik, TweetClaw, or related kriptoburak PR history.
+  `Adedayooyetunji` was too thin for a useful target-improvement PR. Listing
+  candidates `brandonhimpfen/awesome-x`,
+  `cybercryptone/awesome-x-twitter-growth-tools`, and
+  `luua-club/awesome-personal-branding-tools` were duplicate-blocked by closed
+  or open prior PRs.
+- Web-index fallback screens: after crawler fallback, public GitHub topic HTML
+  pages were used without tokens or visual browser automation. Fresh repo
+  screens included `Adedayooyetunji/Social-Media-Dashboard`,
+  `BANKA2017/twitter-monitor`, `ArtaXerxess/Social-Media-Analytics-Lab`,
+  `surajsjain/social-media-analytics-app`, `Owlseer-AI/Social-ops`,
+  `intelligent-iterations/ii-content-engine`, `ttmouse/X-data`,
+  `viewer12/tweetguard`, `spacesdrive/twiligent`, and
+  `miniyu157/x-timeline-archiver`. Duplicate blockers included
+  `surajsjain/social-media-analytics-app#27` and `Owlseer-AI/Social-ops#1`.
+  `BANKA2017/twitter-monitor` was held because its README marks major code
+  paths as removed or outdated. `ArtaXerxess` was old notebook-heavy lower fit.
+  `viewer12`, `spacesdrive`, and `BANKA2017` remained fallback candidates.
+- Selected fresh lanes: `ttmouse/X-data`, `miniyu157/x-timeline-archiver`, and
+  `intelligent-iterations/ii-content-engine` were duplicate-clean across
+  compact audit, archive, target content, and exact target PR and issue reads.
+  Repos were public, non-fork, non-archived, MIT licensed, and had clear native
+  X data workflows. Forks were created under `kriptoburak` and REST-verified
+  as correctly parented before push.
+- Opened `ttmouse/X-data#2`:
+  https://github.com/ttmouse/X-data/pull/2 from verified fork
+  `kriptoburak/X-data`, branch `codex/add-xquik-import`, commit `2a8a33a`.
+  Native Xquik integration: More Actions import flow merges reviewed Xquik JSON
+  or JSONL exports into the active local Chrome extension scenario. Target
+  improvements: validates tweet IDs and X/Twitter URLs, normalizes
+  `twitter.com` and `www.*` URLs to `x.com`, parses common metric fields into
+  the existing `stats` shape, duplicate-merges by tweet ID, and revokes the
+  download object URL after export. Validation passed `node --check` for
+  popup and content scripts, markdown-link-check over README, CONTRIBUTING,
+  and SECURITY, and `git diff --check`. Exact PR readback: open, non-draft,
+  mergeable, 0 checks, 0 comments, 0 reviews, no promotion wording.
+- Opened `miniyu157/x-timeline-archiver#1`:
+  https://github.com/miniyu157/x-timeline-archiver/pull/1 from verified fork
+  `kriptoburak/x-timeline-archiver`, branch `codex/add-xquik-import`, commit
+  `45ae45a`. Native Xquik integration: `twtree.py --xquik` normalizes
+  reviewed Xquik JSON or JSONL exports into the existing archive tree schema.
+  Target improvements: JSONL input support with line-specific decode errors,
+  `--timeline` mode for independent timeline nodes, parent-link-aware reply
+  tree ingestion, URL, author, media, and metric normalization, and README
+  examples. Validation passed Python compile for `twtree.py` and
+  `html_cleaner.py`, an Xquik JSONL smoke conversion to text, markdown-link
+  check for README, and `git diff --check`. Exact PR readback: open,
+  non-draft, mergeable, 0 checks, 0 comments, 0 reviews, no promotion wording.
+- Opened `intelligent-iterations/ii-content-engine#7`:
+  https://github.com/intelligent-iterations/ii-content-engine/pull/7 from
+  verified fork `kriptoburak/ii-content-engine`, branch
+  `codex/add-xquik-research-import`, commit `c3a83f5`. Native Xquik
+  integration: local `research:xquik` importer converts reviewed Xquik exports
+  into saved research artifacts for the repo's template-first carousel, video,
+  caption, and posting workflow. Target improvements: accepts JSON arrays,
+  JSONL rows, single-row JSON, and common wrapper keys; rejects rows without
+  valid tweet IDs; normalizes X URLs, author fields, timestamps, and engagement
+  metrics; and adds a docs page with a review checklist. Validation passed
+  `node --check` for the importer, a smoke conversion to JSON, docs-only
+  markdown-link-check, and `git diff --check`. Broader README link check still
+  reports pre-existing protected or network-blocked Discord and Claude links;
+  no new link failed. Exact PR readback: open, non-draft, mergeable, 0 checks,
+  0 comments, 0 reviews, no promotion wording.
+- Public hygiene and links: all 3 new PR URLs returned HTTP 200. PR bodies were
+  scanned for banned promotion-note wording. Changed target diffs were scanned
+  for secrets, private implementation details, private source names, private
+  cost mechanics, unsupported claims, and promotion wording. Hits were limited
+  to legitimate existing metric names such as retweets or pre-existing README
+  wording outside this patch.
+- Official OpenClaw and package recheck: current docs returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/plugins/manifest`, `/plugins/plugin-permission-requests`,
+  `/plugins/tool-plugins`, `/plugins/install-overrides`,
+  `/plugins/dependency-resolution`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, and `/help/debugging`. `npm run
+  check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`. npm metadata:
+  public `@xquik/tweetclaw` latest `1.6.31`; `openclaw` latest `2026.6.11`,
+  beta `2026.7.1-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` `0.23.1`.
+- TweetClaw link checks: markdown-link-check over README, OpenClaw setup,
+  agent workflows, compact audit, release memory, and packaged skill passed.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. No TweetClaw package or runtime
+  files changed. Pre-existing untracked file `0` was preserved.
+- Durable self-improvement: public GitHub topic HTML pages are a useful
+  non-authenticated fallback when crawler output is exhausted and GitHub search
+  is secondary-rate-limited. For local-first X extension targets, prefer import
+  UI, local cache merge, schema validation, and duplicate-safe behavior over
+  docs-only mentions. For artifact-driven content repos, Xquik is strongest as
+  saved research context, not as a direct posting shortcut.

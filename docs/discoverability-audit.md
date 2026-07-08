@@ -195,12 +195,13 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 20:42 UTC: selector unavailable. Crawler-first PR monitor returned
-  0; exact-read 5 active scoped PRs and found only stale bot text or target-owned
-  deploy gates. Opened 3 fresh PRs: `unish6123/social-pulse#1`,
-  `lotions8969-prog/x-insight-analyzer#1`, and
-  `Codekiller1122/Stock-leadfinder-AI#1`. Automation prompt compacted to 13,313
-  bytes. Full evidence is in the archive.
+- 2026-07-08 21:03 UTC: selector unavailable. Crawler monitor returned 0 and
+  broad authored PR search hit GitHub secondary rate limits, so exact PR reads
+  and repo metadata were used. Existing scoped PRs needed no new repair.
+  Opened 3 fresh PRs: `ttmouse/X-data#2`,
+  `miniyu157/x-timeline-archiver#1`, and
+  `intelligent-iterations/ii-content-engine#7`. Full evidence is in the
+  archive.
 
 ## Reporting Checklist
 
