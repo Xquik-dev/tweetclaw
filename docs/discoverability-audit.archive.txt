@@ -69586,3 +69586,140 @@ Existing untracked TweetClaw file `0` was preserved.
   when paired with target fixes such as stale badge cleanup, local-only link
   classification, cache-key correctness, lint fixes, setup-state reporting, and
   docs validation.
+
+2026-07-08 22:09 UTC heartbeat
+
+- Runtime selector note: the current runtime did not expose explicit Codex 5.5
+  Fast mode or extra-high effort selectors. Work continued and this limitation
+  is recorded here and in the heartbeat outcome.
+- Xquik issue gate: `gh issue list -R Xquik-dev/xquik --limit 100` returned
+  no open issues.
+- Crawler-first PR monitor: from `/Users/burak/Developer/xquik`, ran
+  `bun run github:crawl` with strict JSON output, bounded 9000 ms request
+  timeout, 5 focused PR and listing queries, limit 140, search-pages 1,
+  per-query-limit 20, and concurrency 8. Output parsed as 0 results.
+- Authenticated PR inventory: `gh search prs --author kriptoburak --state open`
+  partitioned by updated windows. Updated on/after 2026-07-08 returned 129;
+  before 2026-07-01 returned 418; 2026-07-01..2026-07-07 returned exactly
+  1000 and was recorded as a cap. Partial lane partitions in the capped bucket
+  included Xquik 1000 capped, TweetClaw 1000 capped, OpenClaw 691, and ClawHub
+  209, yielding 2084 partial unique URLs before interruption. Fallback exact
+  reads continued.
+- Exact PR readbacks: 94 recent scoped open PRs were exact-read for state,
+  mergeability, base/head, comments, reviews, checks, conflicts, and bot status.
+  Summary: 94 read, 94 open, 181 comments, 13 reviews. Dirty or blocked in-scope
+  readbacks included `Saminiscool/twitter-ai-agent#2`,
+  `jamald33n/tweetsave-mcp#2`, `jsilets/twscrape-twitter-mcp#6`,
+  `AgentMCP/ai-agent-directory#5`, `AmeerJ97/mcp-multiplex#2`,
+  `docker/mcp-registry#3229`, `anthropics/skills#807`,
+  `rodion-m/openclaw-use-cases#1`, and several target-owned unstable checks.
+- Existing PR repairs first:
+  - `Saminiscool/twitter-ai-agent#2`: repaired the exact PR head after upstream
+    README conflict, preserving the optional Xquik posting backend section and
+    dropping duplicated contact text. Validation passed conflict-marker scan,
+    `git diff --check`, `npx --yes prettier@3.6.2 --check README.md`, and
+    `npx --yes markdown-link-check README.md --quiet`. Pushed
+    `75bd2ed1098cb2ef08f7474bed4a15a0a9fe8a6a`; exact readback after push:
+    open, non-draft, clean, mergeable, 0 checks.
+  - `jamald33n/tweetsave-mcp#2`: merged upstream `main`, resolved README
+    conflict by keeping valid project badges/links plus the TweetClaw/OpenClaw
+    companion section and dropping malformed raw ZIP links. Validation passed
+    conflict-marker scan, `git diff --check`, `npm install --ignore-scripts`,
+    `npm run build`, and markdown-link-check. `npm install` reported existing
+    10 vulnerabilities; `package-lock.json` was restored and not committed.
+    Pushed `fbac4291d8e24c13d8d4bd46d60517aea361b4a8`; exact readback:
+    open, clean, mergeable.
+  - `jsilets/twscrape-twitter-mcp#6`: merged upstream `master`, resolved
+    conflicts in release workflow, README, `pyproject.toml`, and server code.
+    Kept upstream `0.1.2`, upstream workflow actions, media URL README wording,
+    upstream guarded tools, Xquik helper functions, and added `_guard` to
+    `xquik_search`. Validation passed conflict-marker scan, `git diff --check`,
+    Python compile, `PYTHONPATH=src python3 -m pytest
+    tests/test_tool_guard.py tests/test_formatters.py -q` with 14 passed and 1
+    skipped, and markdown-link-check. Pushed
+    `b5f43a47a649d8551fa02aed71c0cc94824cf3d9`; exact readback: open,
+    mergeable, no status rollup.
+  - Non-Xquik dirty PRs `ogthheu/Insightify-Sentiment-API#1` and
+    `shajith003/awesome-claude-skills#4` were exact-read and skipped as outside
+    the Xquik visibility repair lane.
+- Fresh discovery: crawler target search with SKILL.md, agent skills,
+  Twitter/X skills, dashboard, MCP, listing, and repo queries returned 1
+  malformed stale watch-only repo (`chikitang/A`) and failed document fetch, so
+  fallback GitHub repo search and exact repo metadata were used. Duplicate
+  blockers included `tweet-md/skill` with open TweetClaw PR #2,
+  `GenAIwithMS/twitter-mcp` with merged Xquik/TweetClaw history, and
+  `arvindrk/twitter-agent` with open Xquik PRs. Additional candidate searches
+  over curated lists returned no usable fresh lane.
+- Fresh lane 1: `elluremedia/social-media-dashboard` was public, non-fork,
+  non-archived, no blocking maintainer policy found, and duplicate-clean across
+  target content plus open and closed PR/issue searches for TweetClaw,
+  `@xquik/tweetclaw`, Xquik, x-twitter-scraper, ClawHub, and OpenClaw. Missing
+  license metadata alone was not treated as a blocker. Fork verified as
+  `kriptoburak/elluremedia-social-media-dashboard` parent
+  `elluremedia/social-media-dashboard`. Opened
+  https://github.com/elluremedia/social-media-dashboard/pull/1 from
+  `codex/add-xquik-sheet-template`, commit `f9129ce`. Xquik lane: downloadable
+  Xquik weekly X/Twitter sheet template that fits the existing Google Sheet CSV
+  workflow. Target improvements: shared safe CSV writer with formula escaping
+  and object URL revocation; missing or empty sheet tab count in sync status.
+  Validation passed inline script parse check and `git diff --check`. Exact PR
+  readback: open, non-draft, clean, mergeable, 0 checks.
+- Fresh lane 2: `pabpereza/mediakit` was public, non-fork, non-archived, no
+  blocking maintainer policy found, and duplicate-clean across target content
+  plus open and closed PR/issue searches. Fork verified as `kriptoburak/mediakit`
+  parent `pabpereza/mediakit`. Opened
+  https://github.com/pabpereza/mediakit/pull/6 from
+  `codex/add-xquik-media-kit-source`, commit `6e095d8`. Xquik lane: optional
+  typed `xquik` config block for reviewed X/Twitter campaign signals, rendered
+  in the existing metrics dashboard only when present. Target improvements:
+  localized UI labels for the source card; updated Twitter/X contact URL to
+  `x.com`; README documents the optional config workflow. Validation passed
+  `npm ci --ignore-scripts`, `npm run build`, and `git diff --check`. Target
+  validation blockers recorded: `npm run lint` fails because the repo has no
+  ESLint config file; markdown-link-check reaches the existing LinkedIn contact
+  URL with HTTP 999. Exact PR readback: open, non-draft, clean, mergeable,
+  0 checks.
+- Fresh lane 3: `dmatinho/SocialMedia-Dashboard` was public, non-fork,
+  non-archived, no blocking maintainer policy found, and duplicate-clean across
+  target content plus open and closed PR/issue searches. Fork verified as
+  `kriptoburak/SocialMedia-Dashboard` parent `dmatinho/SocialMedia-Dashboard`.
+  Opened https://github.com/dmatinho/SocialMedia-Dashboard/pull/1 from
+  `codex/add-xquik-dashboard-source`, commit `4d55481`. Xquik lane: optional
+  `DATA.x` source section for reviewed X/Twitter metrics exported from Xquik,
+  with no fake values added to totals or charts until numeric data exists.
+  Target improvements: added meta description; added `rel="noopener noreferrer"`
+  to external links; escaped generated video table values and replaced `NaN`
+  LinkedIn follower delta with a clear not-imported message. Validation passed
+  inline script parse check, `npx --yes markdown-link-check README.md --quiet`,
+  conflict-marker scan, banned promotion wording scan, and `git diff --check`.
+  Exact PR readback: open, non-draft, clean, mergeable, 0 checks.
+- Official OpenClaw docs check: HTTP 200 for `https://docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/plugins/manage-plugins`, `/plugins/manifest`, `/plugins/sdk-runtime`,
+  `/plugins/install-overrides`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. No OpenClaw compatibility files were changed.
+- Public hygiene and links: TweetClaw README, OpenClaw setup, agent workflows,
+  compact audit, and release memory passed markdown-link-check. `https://xquik.com`,
+  `https://xquik.com/api/v1`, and all 3 new PR URLs returned HTTP 200. The
+  dmatinho README link check passed; pabpereza link check had only target-owned
+  LinkedIn HTTP 999; elluremedia edited HTML has no new external docs links
+  beyond the Xquik template label. External diffs and PR bodies were scanned for
+  secrets, private implementation details, restricted provider or source names,
+  internal cost mechanics, unsupported claims, stale metadata, and banned
+  promotion-note wording. No banned promotion notes were added.
+- Memory and prompt: final compact Markdown memory measured 14,176/15,360
+  bytes after this audit edit. Active automation TOML measured 13,657 bytes
+  with prompt payload 13,523 bytes, under the 15 KiB persisted prompt cap. No
+  automation prompt edit was required because the active prompt already includes
+  existing PR repair first and listing/catalog patches as valid lanes.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Planned commit message:
+  `docs: record Xquik outreach heartbeat`, pushed to `master` after validation.
+- Durable self-improvement: crawler search can return malformed stale watch-only
+  repos even with strict JSON, so fallback exact repo metadata remains required.
+  Collision-safe fork names are necessary when `kriptoburak` already has a fork
+  with the same slug from another parent. Dashboard/listing PRs are viable
+  non-spammy lanes when the Xquik entry is a real optional source workflow and
+  the same patch fixes concrete target issues such as CSV safety, typed config,
+  localized labels, safe links, metadata, XSS-safe table rendering, and invalid
+  `NaN` display.

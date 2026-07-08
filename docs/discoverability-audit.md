@@ -174,17 +174,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 21:30 UTC: selector unavailable. Existing PR repair first:
-  exact-read 31 recent/audit PRs plus 134 older open authored PRs after crawler
-  monitor returned 0 and broad Jul/Jun authored searches hit GitHub 403 rate
-  limits. Removed 33 old optional visibility comments. Rebased
-  `iBigQiang/feedgrab#12` to upstream `0.26.0`, pushed `3279756`, and it is
-  clean/mergeable after targeted tests. Fresh discovery screened listing
-  duplicates plus native app lanes and opened 3 PRs:
-  `ai-martin-lau/x-hotspot-radar#1`,
-  `Dhananjay-Sai-Kumar-K/postpulse-backend#1`, and
-  `ibrahimahmed/growthmate#1`. PostPulse has only target-owned Vercel
-  authorization failures. Full evidence is in the archive.
+- 2026-07-08 22:09 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Existing PR repair first: crawler PR monitor returned 0; authored
+  open PR partitions read 129 updated on/after 2026-07-08 and 418 before
+  2026-07-01, while 2026-07-01..07 broad search hit the 1000-result cap with
+  partial lane readbacks. Exact-read 94 recent scoped PRs and repaired 3 dirty
+  Xquik visibility PRs: `Saminiscool/twitter-ai-agent#2` to clean mergeable
+  `75bd2ed`, `jamald33n/tweetsave-mcp#2` to clean mergeable `fbac429`, and
+  `jsilets/twscrape-twitter-mcp#6` to mergeable `b5f43a` with no checks.
+  Fresh crawler discovery returned 1 malformed stale blocker, then fallback
+  screened dashboard/listing lanes and opened 3 non-spammy Xquik source PRs:
+  `elluremedia/social-media-dashboard#1`, `pabpereza/mediakit#6`, and
+  `dmatinho/SocialMedia-Dashboard#1`. Full evidence is in the archive.
 
 ## Reporting Checklist
 
