@@ -174,18 +174,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 22:36 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0; authored open PR partitions read 137
+- 2026-07-08 23:03 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler PR monitor returned 0; authored open PR partitions read 144
   updated on/after 2026-07-08 and 418 before 2026-07-01, while 2026-07-01..07
-  hit the 1000-result cap. Exact-read 126 recent scoped PRs and repaired 3
-  dirty Xquik visibility PRs to clean mergeable heads:
-  `AbdNour627/awesome-openclaw-configs#1` `7acc955`,
-  `Aditya923-c/xpoz-agent-skills#1` `798e00c`, and
-  `Aqmar777/openclaw-competitive-intel#1` `b04b1c5`. Fresh crawler discovery
-  returned 0, then fallback screened dashboard/listing lanes and opened 3
-  useful Xquik source PRs: `Prince438/KD_Social_Analytics#1`,
-  `Nasiya485/socialpulse-dashboard#1`, and
-  `Robbpmedia/Bil-Jac-analytics-dashboard#1`. Full evidence is in the archive.
+  hit the 1000-result cap. Exact-read 130 recent scoped PRs and repaired 3
+  Xquik visibility PRs to clean mergeable heads:
+  `Code7unner/autoresearch#14` `dee41e9`,
+  `reall8164/wechat-openclaw-plugin#1` `5782130`, and
+  `warlockoussama/twitter-cli#1` `f99de6f`. Fresh crawler discovery returned 0,
+  then fallback screened MCP, dashboard, and listing lanes and opened 3 useful
+  Xquik PRs: `copperdogma/twitter-scraper-mcp#1`,
+  `cocoooowang1230/x-analytics-dashboard#1`, and
+  `MylavarapuAjaygopinath/twitter_dashboard#1`. Full evidence is in the archive.
 
 ## Reporting Checklist
 
