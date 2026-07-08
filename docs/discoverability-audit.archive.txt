@@ -69197,3 +69197,159 @@ Existing untracked TweetClaw file `0` was preserved.
   adapters, prefer explicit opt-in source headers and response-shape mapping
   over changing existing direct-X workflows; Python outreach repos may still
   run on Python 3.9, so use postponed annotations before `| None` types.
+
+2026-07-08 20:42 UTC heartbeat
+
+- Runtime and prompt: Codex Desktop did not expose a model, speed, or effort
+  selector, so Codex 5.5 Fast mode and extra-high effort could not be selected
+  directly. Work continued and the limitation is recorded. User-requested
+  automation update was already present but over cap; compacted the persisted
+  automation prompt with `automation_update`, preserving existing-PR-first,
+  3-fresh-opportunity, non-spammy listing/catalog, no-promotion, crawler-first,
+  Context7 exclusion, OpenClaw, link-check, Markdown cap, prompt cap, secret,
+  and 2-target-improvement rules. Prompt measured 13,313 bytes afterward;
+  automation TOML measured 13,657 bytes.
+- Start state: TweetClaw `master` was at `8e2e003`, synced with origin, with
+  pre-existing untracked file `0` preserved. Explicit `gh issue list -R
+  Xquik-dev/xquik --limit 100` returned no open issues; implicit issue list was
+  avoided because the local `/Users/burak/Developer/xquik` `upstream` remote
+  points to a stale unrelated repo.
+- Crawler-first PR monitoring: ran Xquik crawler from
+  `/Users/burak/Developer/xquik` with strict JSON output
+  `/tmp/xquik-hb-20260708-204241-crawler-prs.json`, focused Xquik, TweetClaw,
+  OpenClaw, MCP, skill, and x-twitter-scraper PR queries, limit 80,
+  search-pages 1, per-query-limit 12, concurrency 8, and 9000 ms request
+  timeout. Output parsed as 0 opportunities.
+- Crawler-first fresh target discovery: ran strict JSON crawler output
+  `/tmp/xquik-hb-20260708-204241-crawler-targets.json` with queries for X
+  analytics MCP, X/Twitter sentiment dashboards, social media analytics
+  dashboards, Streamlit CSV sentiment, agent social skills, and awesome
+  X/Twitter tools. Parsed 17 candidates. Ran a second crawler output
+  `/tmp/xquik-hb-20260708-204241-crawler-more.json` for social monitoring,
+  Streamlit CSV upload, and X analytics import lanes; parsed 6 more candidates.
+  Skill-repo coverage terms included SKILL.md, .agents/skills, skills dirs,
+  OpenClaw, MCP, Codex, Claude, agent, social media, Twitter-X, awesome lists,
+  registries, forks, and generated catalogs.
+- Existing PR inventory and repair priority: exact-read
+  `mwaxman1/x-trend-intelligence-mcp#1`,
+  `divya-09nimbalkar/Twitter-Trend-Analyzer-#1`,
+  `Matt2454/SentiBrand-X#2`, `numbpill3d/mcp-radar#5`, and
+  `tibor-ai/cypherpulse#1` for state, mergeability, base/head, commits,
+  comments, reviews, checks, and banned wording. The first 2 new prior-run PRs
+  were open, clean, mergeable, no comments, no reviews, no checks, no banned
+  wording. `Matt2454/SentiBrand-X#2` was open and mergeable with `UNSTABLE`
+  status only due target-owned Netlify/Vercel authorization comments.
+  `tibor-ai/cypherpulse#1` was clean, mergeable, and promotion-note-free.
+  `numbpill3d/mcp-radar#5` was clean and mergeable; bot review text about
+  supplemental URL/schema handling was stale against current head
+  `e7565443`, whose diff already validates https URLs, strips whitespace,
+  sanitizes supplemental data fields, normalizes dedupe URLs, and validates
+  supplemental server entries. No new actionable repair was safe or required.
+- Fresh duplicate and target-policy gates: compact audit, archive, target
+  content, exact target PRs/issues, fork metadata, license metadata, and local
+  clones were checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, TweetClaw GitHub URL, npm URL, ClawHub listing, OpenClaw,
+  and variants. Duplicate or prior-history blockers included
+  `adnanshaikhhh/pulsebridge-intelligence#1`, `ajay-automates/social-pulse`,
+  `ankit-sharma2005/twitter-sentiment-analysis#1`,
+  `abdulqadir7391/Twitter-Sentiment-Analysis-using-BERT#1`,
+  `JusticeKAE/twitter-sentiment-analysis-streamlit#1`,
+  `KhushiKansal/Sentiment_Analysis_WebApp#1`,
+  `Shankar-behera/twitter-sentiment-analysis#1`,
+  `sabir-10/Sentiment-Analysis-Web-App#1`,
+  `rounakdey2003/Social-Sentiments#1`, `avrtt/social-metrics-dashboard#1`,
+  `nickostark/xdash#1`, `ShetyeRupa/Social-Media-Sentiment-Analysis#1`,
+  `kanakverma016/Twitter-Sentiment-Dashboard#1`,
+  `Salrahim21/twitter-sentiment-dashboard#10/#11`, and other archive-known
+  sentiment lanes. `VortexV7/Redline-Signal` was technically useful but blocked
+  by explicit All Rights Reserved terms forbidding modification and derivative
+  works. `sociometryjrv-a11y/Sociometry` remained blocked by public source
+  containing hardcoded credential-like material; no values were copied.
+  `MathewAshvin/Social-Media-Monitoring-For-Data-Risks` was README-only and too
+  thin for a useful PR.
+- Fresh lanes selected: `unish6123/social-pulse`, `lotions8969-prog/x-insight-analyzer`,
+  and `Codekiller1122/Stock-leadfinder-AI`. All were public, non-fork,
+  non-archived, issue-enabled, duplicate-clean across target content and exact
+  target PR/issue searches. Missing license metadata on `unish6123` and
+  `Codekiller1122` did not block direct PRs. `lotions8969-prog` had target
+  AGENTS guidance requiring installed Next docs; read
+  `node_modules/next/dist/docs/01-app/01-getting-started/15-route-handlers.md`
+  and `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/route.md`
+  after install and confirmed the route handler shape.
+- Opened `unish6123/social-pulse#1`:
+  https://github.com/unish6123/social-pulse/pull/1 from verified custom fork
+  `kriptoburak/unish6123-social-pulse`, parent `unish6123/social-pulse`, branch
+  `codex/add-xquik-import-endpoint`, commit `a1549d7`. Native integration:
+  `POST /api/posts/import/xquik` imports reviewed Xquik or TweetClaw-style
+  rows into the existing `posts` table for a keyword. Target improvements:
+  fixed route ordering so keyword routes are not shadowed by `/:id`, fixed post
+  creation validation to allow documented `twitter` and `reddit` platforms,
+  added typed platform reuse, added pure importer tests, and documented import
+  payloads. Validation: `npm install` (existing 11 dependency advisories),
+  `npm run build`, `npm test` with Jest run serially and 6 tests passing,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Exact readback: open, non-draft, mergeable, `UNSTABLE` with 0 checks,
+  0 comments, 0 reviews, no banned wording.
+- Opened `lotions8969-prog/x-insight-analyzer#1`:
+  https://github.com/lotions8969-prog/x-insight-analyzer/pull/1 from verified
+  custom fork `kriptoburak/lotions-x-insight-analyzer`, parent
+  `lotions8969-prog/x-insight-analyzer`, branch
+  `codex/add-xquik-analytics-import`, commit `b6751d7`. Native integration:
+  `POST /api/analytics/xquik` converts reviewed Xquik export rows into the
+  existing analytics payload. Target improvements: shared analytics payload
+  builder between demo, synced, and imported paths; hardened tweet URL parsing
+  for `x.com`, `twitter.com`, `mobile.twitter.com`, and `/i/web/status/...`;
+  replaced starter README with setup, scripts, data modes, and import docs.
+  Validation: `npm install` (existing 5 dependency advisories), targeted ESLint
+  on changed files, `npx tsc --noEmit --pretty false`,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Full `npm run lint` remains blocked by pre-existing unrelated dashboard and
+  unused-symbol issues; recorded in PR body. Exact readback: open, non-draft,
+  clean, mergeable, 0 comments, 0 reviews, 0 checks, no banned wording.
+- Opened `Codekiller1122/Stock-leadfinder-AI#1`:
+  https://github.com/Codekiller1122/Stock-leadfinder-AI/pull/1 from verified
+  custom fork `kriptoburak/codekiller-stock-leadfinder-ai`, parent
+  `Codekiller1122/Stock-leadfinder-AI`, branch `codex/add-xquik-stock-import`,
+  commit `adfe624`. Native integration: `POST /api/import-xquik/` imports
+  reviewed Xquik or TweetClaw-style rows into `SocialPost` records for an
+  existing ticker. Target improvements: normalized ticker input, added request
+  timeout and structured params to live X/Twitter scans, skipped empty scan
+  rows, returned a clear no-posts error before sentiment analysis, and
+  documented the import flow. Validation: `python3 -m py_compile
+  backend/leads/views.py backend/leads/urls.py`,
+  `npx --yes markdown-link-check README.md --quiet`, and `git diff --check`.
+  Direct Django helper import was not run because Django is not installed in
+  the ephemeral environment. Exact readback: open, non-draft, clean,
+  mergeable, 0 comments, 0 reviews, 0 checks, no banned wording.
+- Public hygiene: newly edited target README files passed markdown-link-check
+  except no target-owned blockers. Direct curl readbacks returned HTTP 200 for
+  all 3 new PR URLs. PR bodies were scanned for no-promotion wording and kept
+  technical. Diff scans found no secrets, private implementation details,
+  private source names, private cost mechanics, unsupported claims, or
+  banned promotion wording; one stock diff scan hit only pre-existing env var
+  names `OPENAI_API_KEY` and `TWITTER_BEARER`, not values.
+- Official OpenClaw and package recheck: current docs returned HTTP 200 for
+  `llms.txt`, `llms-full.txt`, `/plugins/manage-plugins`, `/plugins/manifest`,
+  `/plugins/building-plugins`, `/plugins/community`,
+  `/plugins/plugin-permission-requests`, `/plugins/tool-plugins`,
+  `/plugins/sdk-runtime`, `/plugins/install-overrides`, `/clawhub`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, and `/help/debugging`.
+  `npm run check-openclaw-platform-fitness` passed for local
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`. npm metadata:
+  public `@xquik/tweetclaw` latest `1.6.31`; `openclaw` latest `2026.6.11`,
+  beta `2026.7.1-beta.2`, alpha `2026.5.19-alpha.1`; `clawhub` `0.23.1`.
+- TweetClaw link checks: `npx --yes markdown-link-check README.md
+  docs/openclaw-setup.md docs/agent-workflows.md docs/discoverability-audit.md
+  docs/clawpack-release.md skills/tweetclaw/SKILL.md --quiet` passed. Direct
+  new PR URL checks returned HTTP 200.
+- Changed TweetClaw files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. No package/runtime files changed.
+  Pre-existing untracked file `0` was preserved.
+- Durable self-improvement: compact the automation prompt itself when user
+  updates make the persisted TOML exceed the 15 KiB cap; custom-name forks are
+  required when a same-name `kriptoburak` fork is parented to a different repo;
+  explicit All Rights Reserved text blocks external PRs even when the technical
+  integration is useful; direct PRs with missing license metadata can proceed
+  when no explicit policy blocker exists; for Next 16 targets with AGENTS
+  guidance, install dependencies and read installed Next docs for changed app
+  APIs before final validation.

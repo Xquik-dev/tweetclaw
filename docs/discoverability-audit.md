@@ -195,14 +195,12 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 20:05 UTC: selector unavailable. Repaired existing PR scope by
-  deleting old promotion wording on `tibor-ai/cypherpulse#1`; exact-read 25
-  in-scope PRs plus 3 new PRs. Broad authored search hit the 1000-result cap,
-  then GitHub secondary rate limit, so only exact partitions are claimed.
-- Opened 3 fresh PRs: `mwaxman1/x-trend-intelligence-mcp#1`,
-  `divya-09nimbalkar/Twitter-Trend-Analyzer-#1`, and
-  `Matt2454/SentiBrand-X#2`. SentiBrand-X has target-owned Netlify/Vercel auth
-  gates; the other 2 new PRs read back clean. Full evidence is in the archive.
+- 2026-07-08 20:42 UTC: selector unavailable. Crawler-first PR monitor returned
+  0; exact-read 5 active scoped PRs and found only stale bot text or target-owned
+  deploy gates. Opened 3 fresh PRs: `unish6123/social-pulse#1`,
+  `lotions8969-prog/x-insight-analyzer#1`, and
+  `Codekiller1122/Stock-leadfinder-AI#1`. Automation prompt compacted to 13,313
+  bytes. Full evidence is in the archive.
 
 ## Reporting Checklist
 
