@@ -174,25 +174,28 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 15:23 UTC: Fast and extra-high selectors unavailable. Xquik and
+- 2026-07-09 15:29 UTC: Fast and extra-high selectors unavailable. Xquik and
   TweetClaw issue queues were empty; Xquik had unrelated
   `docs/feature-roadmap.md` changes and TweetClaw had pre-existing untracked
-  `0`, both untouched. Crawler-first PR, skill, registry, and project JSON
-  runs from `/Users/burak/Developer/xquik` returned 0 candidates while proxy
-  logs showed route failures only, so fallback GitHub code and repo search was
-  used. Exact readback covered 12 current Xquik/TweetClaw visibility PRs:
-  no repairable maintainer comments, conflicts, or bad checks; blockers remain
-  target-owned Vercel auth, CLA, or clean monitor states. Fresh screening found
-  13 candidate repos after compact/archive duplicate checks and selected 3
-  safe, target-native lanes. Opened
-  `CnxLuc/token-analysis-skill#1`,
-  `kennyzir/7deer_skills#3`, and
-  `asgard-ai-platform/skills#7`, each using TweetClaw/OpenClaw only as reviewed
-  public source-packet input plus 2+ target improvements. All 3 read back OPEN,
-  MERGEABLE, 0 comments, 0 reviews, and no check runs; `kennyzir` is merge-state
-  BLOCKED by target policy. Current OpenClaw docs, npm registry, target links,
-  public-hygiene scans, and target validations passed. Full evidence is in the
-  archive.
+  `0`, both untouched. Crawler-first PR, skill, registry, and project JSON runs
+  from `/Users/burak/Developer/xquik` used no GitHub token variables, parsed as
+  strict JSON, and returned 0 candidates while network-egress logs showed route
+  failures only. Exact PR readback covered 15 current Xquik/TweetClaw
+  visibility PRs; no repairable maintainer comments, conflicts, generated drift,
+  promotion notes, or bad checks were found. `KPZ231/Instra#2` already contains
+  the CodeRabbit MD040 fence fix; other blockers remain target-owned Vercel
+  authorization, CLA, policy, or clean monitor states. Fallback GitHub code
+  search found 197 archive-fresh repos; at least 7 were screened with metadata,
+  duplicate PR/issue/content checks, target file reads, and policy checks.
+  Opened `jzOcb/writing-style-skill#2`,
+  `jikssha/openclaw-dae-skills#1`, and `SpaceZephyr/myskill#2`. Each adds
+  optional TweetClaw/OpenClaw source-packet guidance plus 2+ target improvements
+  around provenance fields, privacy boundaries, and workflow clarity.
+  `ryoppippi/tgrab` was a safe lane but GitHub rejected PR creation with a
+  permission blocker after the fork branch push. The 3 opened PRs read back
+  OPEN, MERGEABLE, CLEAN, 0 comments, 0 reviews, and no check runs. Current
+  OpenClaw docs, npm registry, target PR links, TweetClaw public links, hygiene
+  scans, and target validations passed. Full evidence is in the archive.
 
 ## Reporting Checklist
 
