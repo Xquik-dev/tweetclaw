@@ -50,9 +50,9 @@ archive, before any outreach or duplicate decision.
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
-  2026-07-08 21:30 UTC.
+  2026-07-09 12:44 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
-  2026-07-03 02:43 UTC after redirecting to
+  2026-07-09 12:44 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
   `1.6.26` and owner-scope publishing is blocked. Keep npm canonical.
 - OpenClaw Directory listing remains useful but stale:
@@ -174,30 +174,27 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 11:56 UTC: Fast and extra-high selectors unavailable. Xquik and
+- 2026-07-09 12:27 UTC: Fast and extra-high selectors unavailable. Xquik and
   TweetClaw issue queues were empty. Crawler PR monitor returned 0 lanes.
-  Authored-open search again hit GitHub's 1000 cap, so no complete all-GitHub
-  inventory claim was made; exact reads covered 24 recent and audit-known PRs.
-  Repaired `seantunley/openclaw-social-pipeline#2`: rebased the branch onto
-  upstream `master`, resolved the README conflict, updated the PR body, pushed
-  `ff0b11d`, and read back OPEN, ready, MERGEABLE, CLEAN, with 0 comments,
-  reviews, or checks. Target-owned blockers remain on
-  `davila7/claude-code-templates#634` and `VenkateshDas/TwitterTreasures#1`;
-  `JimLiu/baoyu-skills#192` stale reviews still match already-repaired branch
-  content. Crawler and fallback discovery screened skill, OpenClaw, dashboard,
-  analytics, and import lanes; duplicate or prior-history blockers included
-  `XPOZpublic/xpoz-openclaw-plugin`, `azeemkafridi/bulkpublish-ai-toolkit`,
-  `rikouu/openclaw-tikhub-plugin`,
-  `DevinChen2014/social-media-openclaw-plugins`,
-  `mondaymandy/openclaw-agentpresence`, and several already-open dashboard PRs.
-  Opened 3 fresh safe PRs: `hibameo/-Social-Media-Analytics-Dashboard#1`,
-  `UmarRafique25/Safex-Task1#1`, and
-  `Osmond-Xin/InterviewPreparation#1`. Each adds a TweetClaw/Xquik import,
-  converter, or upload path plus target fixes such as alias validation,
-  root-relative loading, numeric and date coercion, blank-row guards, sample
-  exports, README workflows, and smoke checks. OpenClaw docs, handled public
-  links, and all handled PR URLs returned HTTP 200. Full evidence is in the
-  archive.
+  Crawler fresh packs returned 2, 14, and 2 lanes across skills, dashboards,
+  social analytics, and import targets. Broad authenticated GitHub search hit a
+  secondary rate limit, so no complete all-GitHub inventory claim was made.
+  Exact reads covered 27 recent and audit-known open PRs. No safe repair was
+  available: `davila7/claude-code-templates#634` still has target-owned
+  Security Audit and SkillSpector failures plus a non-editable quoted old
+  visibility note; `VenkateshDas/TwitterTreasures#1` is blocked by target-owned
+  Kilo credits; `JimLiu/baoyu-skills#192` has stale comments already addressed
+  by branch content. Fresh screens selected 3 safe lanes after duplicate and
+  target-policy checks and opened PRs:
+  `nico-beep17/nico-n8n-skills#1`,
+  `adrajameet7805/Twitter-Sentiment-analysis#1`, and
+  `b-i-king/Video_Game_Stats_Tracker#17`. They add TweetClaw/Xquik skill,
+  batch-import, and offline metrics workflows with target fixes including
+  README indexes, schema aliases, validation guards, approval guidance, sample
+  exports, numeric coercion, and smoke checks. Nico read back CLEAN. The Adraj
+  and b-i-king PRs read back MERGEABLE with target-owned Vercel authorization
+  failures. OpenClaw docs, handled PR URLs, Xquik, ClawHub, and npm
+  `@xquik/tweetclaw@1.6.31` checks passed. Full evidence is in the archive.
 
 ## Reporting Checklist
 
