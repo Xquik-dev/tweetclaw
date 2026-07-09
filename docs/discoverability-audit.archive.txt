@@ -72673,3 +72673,137 @@ Existing untracked TweetClaw file `0` was preserved.
   alignment, build, OpenClaw platform fitness, package artifact, and 168 tests
   with 100% coverage. Automation TOML measured 13,657 bytes, under the 15 KiB
   prompt cap.
+
+## 2026-07-09 12:50 UTC Heartbeat
+
+- Runtime limitation: Codex model, Fast speed, and extra-high reasoning
+  selectors were not exposed in this app runtime. Continued and recorded the
+  limitation.
+- Local state before edits: Xquik had unrelated user change
+  `docs/feature-roadmap.md`; TweetClaw had pre-existing untracked file `0`.
+  Both were preserved. TweetClaw issue queue and Xquik issue queue were empty.
+- Crawler-first inventory: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with token environment variables unset,
+  strict JSON output, bounded request timeouts, and skill, dashboard, social,
+  OpenAPI, MCP, OpenClaw, Codex, Claude, and Twitter/X query coverage. Outputs
+  `/tmp/xquik-hb-20260709-125004/pr-monitor.json`,
+  `/tmp/xquik-hb-20260709-125004/fresh-skills.json`, and
+  `/tmp/xquik-hb-20260709-125004/fresh-dashboards.json` were valid JSON and
+  returned 0 repos each.
+- Complete PR inventory blocker: full authored-open GraphQL pagination stalled
+  even with timeout protection, so this run did not claim complete all-GitHub
+  coverage. Exact-read fallback used compact memory, archive URLs, the first
+  authored-open GraphQL page, and audit-known URLs. It exact-read 41 open PRs
+  with 0 read failures and captured state, mergeability, head SHA, title,
+  comments, reviews, and checks.
+- Existing PR repair 1:
+  https://github.com/Xquik-dev/hermes-tweet/pull/592. CI had failed because
+  Hermes compatibility docs and source SHA locks drifted. Branch
+  `codex/reject-vouched-mcp-lists-20260709` was repaired in
+  `/Users/burak/Developer/hermes-tweet` with commits `49f28b0` and `c049d7c`.
+  Changed files were `scripts/check_hermes_agent_compat.py`,
+  `tests/test_hermes_agent_compat.py`, `docs/CONTEXT7.md`,
+  `docs/PUBLICATION_CHECKLIST.md`, and `tests/test_public_links.py`.
+  Validation passed Ruff format check, Ruff lint, Hermes compatibility script,
+  focused Hermes compatibility tests, basedpyright, public-safety scan, full
+  coverage test suite, and public-link script. Readback after push: OPEN,
+  MERGEABLE, BLOCKED only because `check` and `scan` were queued; GitGuardian
+  and Socket checks passed, Macroscope skipped.
+- Existing PR repair 2:
+  https://github.com/OpenHands/extensions/pull/396. The PR title was changed
+  to `docs: add Xquik integration catalog entry`. Rerun permission was blocked
+  by target rights, so branch `codex/add-xquik-integration` was checked out
+  from `kriptoburak/extensions`, verified at head `abec233`, and refreshed with
+  empty commit `ec05c14` to move checks onto the repaired title. Readback after
+  push: OPEN, MERGEABLE, BLOCKED by target policy state, but current title lint
+  and conventional-type label checks both passed on the refreshed head.
+- Existing PR blockers recorded: `KPZ231/Instra#2` has target-owned Vercel
+  authorization failure; prior Vercel authorization blockers remain target
+  owned for other dashboard PRs. `davila7/claude-code-templates#634` still has
+  target-owned Security Audit and SkillSpector findings plus a quoted,
+  non-editable old visibility note. `VenkateshDas/TwitterTreasures#1` remains
+  target-owned Kilo credit blocked.
+- Fresh discovery fallback: after crawler returned no lanes, screened
+  `bytewax/twitter-streamlit-sentiment`,
+  `JoyKimaiyo/Streamlit-Social-Media-Sentiment-Anlysis-Dashboard`,
+  `KPZ231/Instra`, `hamedtkd/social-publisher-dashboard`, and
+  `UtkarshTheDev/TweeterLens`. Selected the first 3 because they were fresh in
+  compact and archive memory, duplicate-clean across target content plus open
+  and closed PRs and issues, non-archived, forkable through `kriptoburak`, and
+  had target-native integration room plus at least 2 useful target fixes.
+- Fork and remote safety: before pushing, local target remotes were inspected.
+  `JoyKimaiyo/...` fork already existed under
+  `kriptoburak/Streamlit-Social-Media-Sentiment-Anlysis-Dashboard`. Bytewax
+  fork already existed under
+  `kriptoburak/bytewax-twitter-streamlit-sentiment-xquik`. `KPZ231/Instra` was
+  forked to `kriptoburak/Instra`. Each fork parent was verified before push,
+  and `origin` was set to the `kriptoburak` fork while `upstream` pointed to
+  the target owner.
+- Fresh PR 1 opened:
+  https://github.com/JoyKimaiyo/Streamlit-Social-Media-Sentiment-Anlysis-Dashboard/pull/2
+  from branch `codex/tweetclaw-xquik-csv-upload`, commit `a1db8ee`. The PR
+  adds TweetClaw/Xquik CSV upload and column alias normalization for text,
+  dates, likes, user, and sentiment fields. Target improvements include
+  applying country and date filters to all analysis views, fallback behavior
+  when filters return no rows, empty word-cloud guards, and fixing a malformed
+  requirements entry. Validation passed `python3 -m py_compile media.py` and
+  `git diff --check`. Readback: OPEN, MERGEABLE, CLEAN, no checks.
+- Fresh PR 2 opened:
+  https://github.com/bytewax/twitter-streamlit-sentiment/pull/2 from fork
+  `kriptoburak/bytewax-twitter-streamlit-sentiment-xquik`, branch
+  `codex/tweetclaw-export-source`, commit `4d7ade2`. The PR adds a source mode
+  selector for live stream or TweetClaw/Xquik CSV export. Target improvements
+  include text-column validation, reuse of the existing cleaning, sentiment,
+  and word-cloud flow for offline exports, missing dependency documentation,
+  and a corrected bearer credential setup comment. Validation passed
+  `python3 -m py_compile dataflow.py twitter.py contractions.py` and
+  `git diff --check`. Added-line hygiene only matched an expected environment
+  placeholder, not a secret value. Readback: OPEN, MERGEABLE, CLEAN, no checks.
+- Fresh PR 3 opened:
+  https://github.com/KPZ231/Instra/pull/2 from branch
+  `codex/xquik-plugin-docs`, commit `bf58111`. The PR updates plugin docs to
+  the current `POST /api/plugins/upload` multipart workflow and returned
+  identifiers, adds missing post widget capability names from the plugin config,
+  and adds a sandbox-safe Xquik dashboard widget manifest and example for
+  social publishing source review. Validation passed `git diff --check` and a
+  static grep for the upload route, missing capabilities, and Xquik example.
+  the targeted npm test command could not run because the clone has no
+  installed dependencies and `vitest` was unavailable. Readback: OPEN,
+  MERGEABLE, UNSTABLE with target-owned Vercel authorization failure; CodeRabbit
+  passed.
+- No promotion-note cleanup was possible or needed on new PRs. New PR bodies did
+  not include tag requests, follower counts, reshare asks, account-visibility
+  asks, or nontechnical visibility notes.
+- Official OpenClaw doc check: `llms.txt`, `/cli/plugins`,
+  `/plugins/manage-plugins`, `/plugins/building-plugins`, `/clawhub/cli`, and
+  `/tools/plugin` returned HTTP 200. Extracted docs confirm the current indexed
+  plugin routes cover install, update, inspect, manifest, runtime, permission
+  requests, ClawHub publishing, skill format, install overrides, and debugging.
+- Public link and surface checks: TweetClaw GitHub returned HTTP 200. Xquik
+  returned 307 to `/en` and then HTTP 200. Handled PR URLs for Hermes,
+  OpenHands, Joy, Bytewax, and Instra returned HTTP 200. ClawHub canonical
+  `https://clawhub.ai/xquik/plugins/tweetclaw` returned HTTP 200 after an
+  earlier HEAD-only redirect attempt hit a transient 500. The ClawHub page still
+  mirrors stale version `1.6.26`, so npm remains canonical. `npm view
+  @xquik/tweetclaw version` returned `1.6.31`; the npmjs.com web UI challenged
+  curl with HTTP 403.
+- TweetClaw changed files for this run:
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no automation prompt edit was needed. Durable
+  lesson: before external pushes, verify local remotes, fork owner, and fork
+  parent from the target clone itself. `gh repo fork` may reuse or create a
+  suffixed fork name, so push to the exact verified `kriptoburak` fork rather
+  than an assumed repository name. If a title-only repair leaves stale failed
+  checks on an old SHA, a verified empty refresh commit on a user-owned branch
+  can move checks to the repaired head without changing target content.
+- Final TweetClaw validation: simplify and thermo-nuclear structural review
+  found no code-path, abstraction, branching, boundary, or file-size concern in
+  this audit-only diff. `npm run check-memory-md-size` measured 14,615 of
+  15,360 bytes. `npm run check-openclaw-platform-fitness`,
+  `npm run check-em-dash`, diff whitespace check, added-line public-hygiene
+  scan, and `npm run check:all` passed, including typecheck, lint, duplicate
+  scan, Knip, suppression check, dash check, memory check, skill frontmatter,
+  version alignment, build, OpenClaw platform fitness, package artifact, and
+  168 tests with 100% coverage. Automation TOML measured 13,657 bytes, under
+  the 15 KiB prompt cap.

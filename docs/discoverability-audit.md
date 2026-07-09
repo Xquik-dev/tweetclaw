@@ -174,27 +174,25 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 12:27 UTC: Fast and extra-high selectors unavailable. Xquik and
-  TweetClaw issue queues were empty. Crawler PR monitor returned 0 lanes.
-  Crawler fresh packs returned 2, 14, and 2 lanes across skills, dashboards,
-  social analytics, and import targets. Broad authenticated GitHub search hit a
-  secondary rate limit, so no complete all-GitHub inventory claim was made.
-  Exact reads covered 27 recent and audit-known open PRs. No safe repair was
-  available: `davila7/claude-code-templates#634` still has target-owned
-  Security Audit and SkillSpector failures plus a non-editable quoted old
-  visibility note; `VenkateshDas/TwitterTreasures#1` is blocked by target-owned
-  Kilo credits; `JimLiu/baoyu-skills#192` has stale comments already addressed
-  by branch content. Fresh screens selected 3 safe lanes after duplicate and
-  target-policy checks and opened PRs:
-  `nico-beep17/nico-n8n-skills#1`,
-  `adrajameet7805/Twitter-Sentiment-analysis#1`, and
-  `b-i-king/Video_Game_Stats_Tracker#17`. They add TweetClaw/Xquik skill,
-  batch-import, and offline metrics workflows with target fixes including
-  README indexes, schema aliases, validation guards, approval guidance, sample
-  exports, numeric coercion, and smoke checks. Nico read back CLEAN. The Adraj
-  and b-i-king PRs read back MERGEABLE with target-owned Vercel authorization
-  failures. OpenClaw docs, handled PR URLs, Xquik, ClawHub, and npm
-  `@xquik/tweetclaw@1.6.31` checks passed. Full evidence is in the archive.
+- 2026-07-09 12:50 UTC: Fast and extra-high selectors unavailable. Xquik and
+  TweetClaw issue queues were empty. Crawler PR monitor and fresh skill,
+  dashboard, and social query packs returned 0 lanes. Full authored-open
+  GraphQL pagination stalled, so no complete all-GitHub inventory claim was
+  made. Exact reads covered 41 recent and audit-known open PRs. Repaired
+  `Xquik-dev/hermes-tweet#592` with commits `49f28b0` and `c049d7c`; local
+  checks passed and GitHub CI stayed queued. Repaired
+  `OpenHands/extensions#396` by retitling it and pushing refresh commit
+  `ec05c14`; current title checks pass. Fresh screens selected 3 safe lanes
+  after duplicate, fork, and target-policy checks and opened PRs:
+  `JoyKimaiyo/Streamlit-Social-Media-Sentiment-Anlysis-Dashboard#2`,
+  `bytewax/twitter-streamlit-sentiment#2`, and `KPZ231/Instra#2`. They add
+  TweetClaw/Xquik CSV imports, export-source mode, and Xquik plugin docs with
+  target fixes covering filters, empty-state guards, dependency docs, current
+  upload routes, capability names, and examples. Joy and Bytewax read back
+  CLEAN; Instra is MERGEABLE with target-owned Vercel authorization failure.
+  OpenClaw docs, handled PR URLs, Xquik, ClawHub, and npm
+  `@xquik/tweetclaw@1.6.31` checks passed; npmjs.com web UI challenged curl.
+  Full evidence is in the archive.
 
 ## Reporting Checklist
 
