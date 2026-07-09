@@ -174,19 +174,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 02:58 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Xquik crawler PR monitor returned 0; fresh crawler returned 1
-  already-used Crawlora lane. Authenticated broad PR search hit a GitHub search
-  block, so complete authored coverage was not claimed. Audit extraction found
-  1,989 unique PR URLs; exact fallback read 142 recent and priority URLs,
-  including 135 open PRs. Repaired dirty conflicts on
-  `PavanSrikar2007/Twitter-Sentiment-Analysis-Project#1` and
-  `pgadekar14/smart-social-analytics-dashboard#1`; both read back clean and
-  mergeable. Opened fresh PRs:
-  `suryatejabatchu08/twitter-sentiment-analysis#1`,
-  `singhishita/Interactive-Dashboards-With-Streamlit#1`, and
-  `AhmedAbdAlkreem/Sentiment-Analysis#1`. Each adds an Xquik CSV import path
-  plus 2+ target-native fixes. Full evidence is in the archive.
+- 2026-07-09 03:19 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler monitor and skill-target runs returned 0 opportunities after
+  network egress failures; fallback authored-open search hit one unresolved
+  July 3 cap, so complete coverage was not claimed. Exact-read 85 July 9
+  priority PRs; no actionable Xquik repair remained. Opened clean fresh PRs:
+  `jinghanlib/x-tweet-scraper#1`, `reachdhaval/twitter_scraper_project#1`, and
+  `Muhammad-Hamza-Nawaz/tweet_sentiment_flask_app#1`. Each adds an Xquik CSV
+  import or batch-analysis path plus 2+ target-native fixes. Full evidence is
+  in the archive.
 
 ## Reporting Checklist
 
