@@ -71192,3 +71192,121 @@ Existing untracked TweetClaw file `0` was preserved.
   self-improvement. Durable lesson reinforced: sentiment and scraper repos are
   useful Xquik lanes when Xquik is implemented as a normal CSV or batch API
   source with validation, link cleanup, safe exports, or app reliability fixes.
+
+2026-07-09 06:58 UTC heartbeat:
+
+- Runtime selector: Codex 5.5 Fast mode and extra-high effort controls were not
+  exposed in this runtime. Recorded limitation and continued.
+- Local state: Xquik was on `master` with no open GitHub issues from
+  `gh issue list --repo Xquik-dev/xquik`. TweetClaw was on `master` with only
+  pre-existing untracked `0` before audit edits.
+- Crawler-first coverage: PR-monitor crawler output from
+  `/tmp/xquik-hb-20260709-040508/pr-monitor.json` and fresh-target output from
+  `/tmp/xquik-hb-20260709-065845/fresh-targets.json` both parsed as strict JSON
+  with `opportunities: []`. Query packs covered Xquik, TweetClaw,
+  x-twitter-scraper, OpenClaw, ClawHub, MCP, SKILL.md, `.agents/skills`,
+  Twitter/X, social automation, dashboards, listings, registries, and catalogs.
+  Stderr showed repeated managed-egress socket closures and proxy quarantines.
+- PR inventory and exact reads: fallback authored-open partitions found July 9
+  = 100, July 8 = 72, July 7 = 6, July 6 = 5, July 5 = 214, July 4 = 562,
+  July 3 broad query at the 1,000-result cap, July 2 = 143, July 1 = 48, June =
+  318, and before June = 100. A July 3 split by created-date slices returned
+  no unresolved 1,000-result cap. Exact-read 100 July 9 priority PRs with
+  mergeability, commits, comments, reviews, checks, base/head, bot findings,
+  and wording scans; 0 exact-read failures. Merge buckets were 78 clean,
+  12 unstable, 8 blocked, and 2 dirty; comments = 44, reviews = 9, checks = 33.
+- Existing PR repair 1: `moonrunnerkc/skillcheck#10` had maintainer feedback
+  requesting a regression where `metadata` contains normal links and an unknown
+  nested marketplace namespace. Deleted the stale editable promotion-note
+  comment at issue comment `4877242763`. Pushed commit `2a7fce4` to
+  `kriptoburak/skillcheck-moonrunnerkc` branch
+  `codex/metadata-frontmatter-field`, adding a nested `marketplace-example`
+  fixture and parser assertion. Validation passed `git diff --check`,
+  `npx --yes markdown-link-check tests/fixtures/metadata_field.md --quiet`, and
+  `uv run --python /Users/burak/.local/bin/python3.11 --with pytest --with
+  pytest-cov --with pyyaml python -m pytest -q -o addopts=''
+  tests/test_v1_2_false_positive_fixes.py` with 17 passed. Readback:
+  https://github.com/moonrunnerkc/skillcheck/pull/10 is open, mergeable,
+  unstable only because no checks are reported, with the repair comment posted.
+- Existing PR readbacks: `jayteealao/agent-skills#4` is open, clean,
+  mergeable, and already includes commit `b672e39` preserving marketplace
+  version metadata after the Gemini comment. `iberi22/skills#2` is open, clean,
+  mergeable, with CodeRabbit and Socket checks passing; prior comments already
+  confirmed the `x-api-key` setup and README category-count repairs.
+  `portal-labs-infrastructure/remote-mcp-servers#4` and
+  `samuel-olaleye/tweet_sentiment_flask_v2.0#1` remain blocked only by
+  target-owner Vercel authorization. `Ja-yy/Twitter-scraper-streamlit#2`
+  remains mergeable but branch-protection blocked with no checks.
+- Fresh screening and duplicate gates: compact audit, archive, target content,
+  target PRs, target issues, and fork metadata were checked for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm URL, ClawHub,
+  Xquik, x-twitter-scraper, OpenClaw, and variants. Duplicate or prior-history
+  blockers included `jihe520/social-push#6`,
+  `Aanlifire/social-media-automation-skills#1/#2`,
+  `boobutler/boo-skills#1/#2`, `kennyzir/twitter-automation-local#1`,
+  `cm-growth-hacking/agent-skills-twitter#1`,
+  `Putrabadiws/X-Sentiment-Analysis#1`,
+  `cocoooowang1230/x-analytics-dashboard#1`,
+  `silentcool/blackmatter-xmcp#1`,
+  `Jayanthbm/twitter-sentiment-analysis-python-flask#4`,
+  `Zainaazar/Tweets-Sentiment-Analysis-Streamlit-project#1`, and older
+  `Sushmitha-93/Tweet-Sentiment-Analysis-StreamLit` history. Fresh selected
+  lanes were `jgitlin01/social-media-automation-skill`,
+  `thanveershanab/twitter-data-dashboard`, and
+  `Chaitanya081/social-media-analytics-streamlit-`; all were public,
+  non-archived, non-forks, duplicate-clean, and had no blocking maintainer
+  policy found. Missing license metadata was recorded but did not block direct
+  PRs under the current run rule. Forks were verified under `kriptoburak` with
+  correct upstream parents.
+- Fresh PR 1: opened https://github.com/jgitlin01/social-media-automation-skill/pull/1
+  from verified fork `kriptoburak/social-media-automation-skill`, branch
+  `codex/xquik-source-context`, commit `af43ed2`. Xquik lane:
+  optional `source_context.files` for reviewed Xquik CSV or JSON exports.
+  Target improvements: `generate_posts.py` records file existence, row counts,
+  and detected columns in the run summary; added dedicated safety/reference
+  docs; wired README, SKILL.md, and sample client config without changing the
+  existing Blotato publish path. Validation passed `git diff --check`,
+  `uv` Python 3.11 py_compile with PyYAML, one-day review-only generation, and
+  markdown link checks. Readback: open, clean, mergeable, 0 comments, 0 reviews,
+  0 checks.
+- Fresh PR 2: opened https://github.com/thanveershanab/twitter-data-dashboard/pull/1
+  from verified fork `kriptoburak/twitter-data-dashboard`, branch
+  `codex/xquik-csv-upload`, commit `3c5ed1c`. Xquik lane: Streamlit Data page
+  uploader for Xquik CSV exports. Target improvements: normalizes common text,
+  date, engagement, user, and language columns into the existing dashboard
+  schema; adds clear validation errors for missing text or date fields; README
+  now documents run steps, data sources, and accepted CSV fields. Validation
+  passed `git diff --check`, `python3 -m py_compile src/app.py`, and README
+  markdown link check. Readback: open, clean, mergeable, 0 comments, 0 reviews,
+  0 checks.
+- Fresh PR 3: opened https://github.com/Chaitanya081/social-media-analytics-streamlit-/pull/1
+  from verified fork `kriptoburak/social-media-analytics-streamlit-`, branch
+  `codex/xquik-csv-import`, commit `14317d5`. Xquik lane: sidebar import
+  workflow for reviewed Xquik CSV exports into the local `Posts` table. Target
+  improvements: validates required text and date columns before writes;
+  previews normalized rows and assigns them to the current logged-in dashboard
+  user for schema-compatible analytics; replaces malformed README Markdown and
+  stale placeholder clone URL with valid setup and import docs. Validation
+  passed `git diff --check`, `python3 -m py_compile app.py`, and README
+  markdown link check. Readback: open, clean, mergeable, 0 comments, 0 reviews,
+  0 checks.
+- Public hygiene and links: OpenClaw `llms.txt`, CLI plugins, plugin index,
+  ClawHub publishing, and debugging docs returned HTTP 200. Xquik docs,
+  TweetClaw GitHub, the repaired skillcheck PR, and all 3 new PR URLs returned
+  HTTP 200. The npm package page still returned the known 403. PR bodies and
+  target diffs were inspected for secrets, private implementation details,
+  restricted provider/source names, internal cost mechanics, unsupported
+  claims, stale metadata, badge misuse, and promotion-note wording. No
+  promotion notes were added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no automation prompt edit was useful because the
+  active prompt already preserves Fast and extra-high wording, quiet autonomy,
+  crawler-first discovery, existing PR repair first, 3 fresh screened lanes,
+  mandatory 3 PRs when safe, listing/catalog lanes as valid non-spammy paths,
+  2 target improvements per PR, duplicate/fork rules, OpenClaw checks, link
+  checks, public hygiene, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, prompt cap, and durable
+  self-improvement. Durable lesson reinforced: missing license metadata alone
+  does not block direct PRs in this run rule, but record it and keep diffs
+  small, optional, and target-native.

@@ -174,21 +174,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 03:40 UTC: Fast and extra-high selectors unavailable. Crawler PR
-  monitor returned strict JSON with 0 opportunities after managed egress socket
-  closures; fallback GitHub partitions were split below the 1,000-result cap.
-  Exact-read 91 July 9 priority PRs plus handled PRs. Repaired
-  `suryatejabatchu08/twitter-sentiment-analysis#1`; current readback is open,
-  clean, mergeable, GitGuardian success, with all Copilot threads outdated and
-  one UI thread still unresolved. Opened 3 fresh PRs:
-  `Sidhu-Reddy/twitter-sentiment-flask#1` (batch API plus docs and form
-  validation), `samuel-olaleye/tweet_sentiment_flask_v2.0#1` (batch API plus
-  input validation and dead-link cleanup), and
-  `Ja-yy/Twitter-scraper-streamlit#2` (Xquik CSV import tab plus safe exports,
-  path cleanup, and driver cleanup). V2 has a Vercel maintainer-authorization
-  blocker; Ja-yy is mergeable but branch-protection blocked with no checks.
-  OpenClaw docs, Xquik docs, x-twitter-scraper, and handled PR links returned
-  HTTP 200. Full evidence is in the archive.
+- 2026-07-09 06:58 UTC: Fast and extra-high selectors unavailable. Crawler
+  monitor and fresh-target passes returned strict JSON with 0 opportunities
+  after managed-egress socket closures. Exact-read 100 July 9 priority PRs.
+  Repaired `moonrunnerkc/skillcheck#10` by deleting the stale promotion-note
+  comment and pushing a metadata-namespace regression; `jayteealao/agent-skills#4`
+  and `iberi22/skills#2` already had their bot findings fixed. Opened 3 fresh
+  PRs: `jgitlin01/social-media-automation-skill#1` (Xquik source-context
+  summaries plus docs and config), `thanveershanab/twitter-data-dashboard#1`
+  (Xquik CSV uploader plus validation and README setup), and
+  `Chaitanya081/social-media-analytics-streamlit-#1` (Xquik CSV import workflow
+  plus README cleanup). OpenClaw docs and handled PR links returned HTTP 200;
+  npm package page still returned the known 403. Full evidence is in the
+  archive.
 
 ## Reporting Checklist
 
