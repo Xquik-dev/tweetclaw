@@ -70487,3 +70487,133 @@ Existing untracked TweetClaw file `0` was preserved.
   patch before pushing. For listing-only patches, registry consistency fixes
   such as empty timestamps, missing committed entries, index parity, schema
   tests, and validation docs make the Xquik addition useful to the target repo.
+
+## 2026-07-09 01:21 UTC Heartbeat
+
+- Runtime selector: current runtime exposed no model, speed, or reasoning-effort
+  selector, so Codex 5.5 Fast mode and extra-high reasoning could not be
+  verified. The run continued and recorded this limitation.
+- Local state: TweetClaw was on `master` at `8c167bf` with only pre-existing
+  untracked `0`. Xquik was clean on `master` at `89ebce46`.
+- Open PR inventory method: crawler-first monitor from Xquik wrote strict JSON
+  to `/tmp/xquik-hb-20260709-012109/pr-monitor.json` and covered Xquik,
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, catalogs, listings,
+  x-twitter-scraper, X/Twitter automation, social media, agent tools,
+  frameworks, dashboards, libraries, SDKs, validators, package tooling, docs,
+  and prior outreach. It returned 0 opportunities. Compact and archive memory
+  contained 1,978 PR URLs. Broad authored-open search reported 4,253 open PRs.
+  Lane partitioning stalled after 6 terms; the partial file held 3,062 unique
+  PRs, 2,285 with comments, and 123 recent entries. Full authored-open coverage
+  is not claimed.
+- Exact PR repair readback: 27 recent candidates were exact-read for state,
+  mergeability, base/head, commits, comments, reviews, checks, conflicts,
+  DCO/CLA signals, bot findings, generated drift, and promotion-note cleanup.
+  `agent-matrix/matrix-hub#26` stayed blocked by target-side policy or missing
+  checks with no comments, reviews, or exposed checks. `Giederius/mcp-registry#1`
+  and `enowdev/enowX-Skill#1` stayed clean. `iberi22/skills#2` already had the
+  category-count and Xquik auth-manifest fixes on head. `fpardon-upeo/
+  mcp-servers-collection#1` had an invalid auth-header bot claim already
+  answered with public manifest evidence. `kmransom56/universal-mcp-servers#19`
+  had no new actionable findings. Several dashboard PRs were blocked only by
+  target-owner deployment authorization. No editable promotion note was found.
+- Fresh discovery: crawler target discovery wrote
+  `/tmp/xquik-hb-20260709-012109/fresh-targets.json` and covered open
+  PRs/issues/repos/code, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, frameworks, dashboards, libraries, forks, generated catalogs,
+  web-index skill repos, examples, docs, package tooling, and listings. It
+  returned 2 candidates: `JuneYaooo/awesome-ai-media-skills`, blocked by
+  archive history, and `Pdbjork/hermosskills-site`, selected after duplicate
+  checks.
+- Fallback duplicate and target-fit blockers: `zocomputer/skills`,
+  `skilluse/skilluse`, `tinyhumansai/skill-registry`,
+  `ComeOnOliver/skillshub`, `Eclife-LiangHsing/jarvis-skills-catalog`,
+  `nannant666/openclaw-skills-catalog`, `GetStream/ai-agent-tools-catalog`,
+  `SihyeonJeon/tool-tax`, `jo-inc/safe-skill-search`,
+  `shubhmartin107-web/skillforge`, and
+  `framerslab/agentos-skills-registry` were blocked by existing Xquik,
+  TweetClaw, Hermes, or archive-tracked history. `iflytek/skillhub` had a prior
+  closed TweetClaw workflow PR and was not selected. `Joilence/
+  agent-tools-catalog`, `phureewat29/tool-search`, `hjs-spec/shutup-mcp`, and
+  `rogerchappel/toolmirror` were screened but lower fit than the 3 safe lanes.
+- Fresh PR 1: `oarisur/context-janitor` was public, MIT, non-archived,
+  duplicate-clean, and had no blocking maintainer policy found. Fork owner was
+  `kriptoburak`. Opened https://github.com/oarisur/context-janitor/pull/2 from
+  `codex/xquik-context-janitor-20260709`, commit `773c4f3`. Xquik lane:
+  Xquik-style MCP tools fixture at `examples/xquik_mcp_tools.json`. Target
+  improvements: parser support for MCP `capabilities.tools` wrappers, tested
+  social/X/Twitter prompt aliases, and tests for both paths. Validation passed
+  `python3 -m json.tool examples/xquik_mcp_tools.json`, `python3 -m py_compile`
+  on changed modules, targeted pytest, full `PYTHONPATH=src python3 -m pytest`
+  with 72 tests, and `git diff --check`. Readback: open, ready, mergeable,
+  merge-state unstable, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 2: `Pdbjork/hermosskills-site` was public, non-archived,
+  duplicate-clean, and had no blocking maintainer policy found. Missing license
+  metadata was not treated as a blocker. Fork owner was `kriptoburak`. Opened
+  https://github.com/Pdbjork/hermosskills-site/pull/1 from
+  `codex/xquik-hermosskills-20260709`, commit `6f72689`. Xquik lane:
+  `xquik-social-automation` catalog listing with SKILL.md, detail page,
+  catalog JSON, and OpenClaw count alignment. Target improvements: added
+  `npm run validate:catalog`; validated data/public catalog parity,
+  per-skill detail JSON, local SKILL.md files, local detail pages, HTML card
+  count, and OpenClaw count; corrected stale 5/6-skill counts to 7 across
+  README, catalog page, manifest, and readiness notes. Validation passed
+  `npm run validate:catalog`, `jq empty` over edited JSON, and
+  `git diff --check`. Final readback after force-with-lease update: open,
+  ready, mergeable, clean, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 3: `sohamdogra/agent-skills-registry` was public, non-archived,
+  duplicate-clean, and had no blocking maintainer policy found. Missing license
+  metadata was not treated as a blocker. GitHub created the verified fork as
+  `kriptoburak/agent-skills-registry-4` because `kriptoburak/
+  agent-skills-registry` already belongs to another fork network; exact readback
+  confirmed the suffixed fork parent is `sohamdogra/agent-skills-registry`.
+  Opened https://github.com/sohamdogra/agent-skills-registry/pull/12 from
+  `codex/xquik-agent-skill-20260709`, commit `7d0d920`. Xquik lane:
+  `xquik-social-automation` portable skill entry for Xquik API and MCP
+  workflows. Target improvements: documented the existing `code_execution`
+  capability token, added `scripts/validate-registry.mjs`, listed existing
+  `coin-flip`, `dice-roll`, and `contribute-skill` folders in the README, and
+  aligned the architecture diagram with the `ai-news-daily` requirement.
+  Validation passed `node --check scripts/validate-registry.mjs`,
+  `node scripts/validate-registry.mjs`, and `git diff --check`. Final readback
+  after force-with-lease update: open, ready, mergeable, clean, 0 comments,
+  0 reviews, 0 checks.
+- Public hygiene and link checks: PR URLs returned HTTP 200. `docs.xquik.com`,
+  `xquik.com`, current OpenClaw docs routes, TweetClaw GitHub, npm registry,
+  dashboard, ClawHub TweetClaw redirect, OpenClaw Directory, skills.sh entries,
+  and NHS badge returned HTTP 200. `https://xquik.com/api/v1/account` returned
+  expected unauthenticated 401. A broad handled-target link scan hit unrelated
+  pre-existing localhost, placeholder, and stale target-owned links, so it was
+  stopped and narrowed to introduced or directly handled URLs. External diffs
+  and PR bodies were inspected for secrets, private details, restricted source
+  names, internal cost mechanics, unsupported claims, stale metadata, and
+  banned promotion wording. The originally drafted `api.xquik.com` examples
+  failed DNS and were corrected to `xquik.com/api/v1/account` before final
+  pushes.
+- Official OpenClaw docs check: HTTP 200 for `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/cli/skills`, `/clawhub/publishing`, and
+  `/clawhub/skill-format`. Earlier in-run checks also covered update,
+  troubleshooting, debugging, sandbox/tool policy, and secrets routes. No
+  TweetClaw OpenClaw compatibility files changed.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: `npm run check-memory-md-size` passed at
+  14,008 of 15,360 bytes. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash` passed. `git diff --check` passed. `npm run
+  check:all` passed, including typecheck, lint, duplicate check, knip,
+  suppression check, dash check, memory check, skill frontmatter, version
+  alignment, build, OpenClaw platform fitness, package artifact, and 168 tests
+  with 100% coverage.
+- Prompt self-improvement: no automation prompt edit was needed because the
+  active prompt already preserves Fast extra-high wording, existing PR repair
+  first, mandatory 3 fresh GitHub opportunities, listing/catalog patches as
+  valid non-spammy lanes, duplicate/fork rules, OpenClaw docs checks, link
+  checks, validation gates, Context7 exclusion, secret handling,
+  commit/push requirement, prompt cap, no promotion-note rule, and
+  2 target-improvement PR rule. Automation TOML measured 13,657 bytes and
+  prompt payload measured 13,313 bytes, under the 15 KiB prompt cap.
+- Durable lesson: public API examples in external skill/listing patches need a
+  live unauthenticated link check before PR creation. Treat unresolved API
+  subdomains as blockers and prefer the deployed app API base when it returns a
+  clear 401 for unauthenticated requests.

@@ -174,15 +174,16 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 00:58 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0. Authored-open search returned
-  200 PRs; exact-read covered 152 before local timeout, so full authored
-  coverage was not claimed. Repaired `iberi22/skills#2` with category-count
-  fixes and Xquik auth manifest evidence. Fresh crawler discovery returned
-  12 candidates; fallback search and duplicate gates selected 3 safe lanes.
-  Opened `enowdev/enowX-Skill#1`, `Giederius/mcp-registry#1`, and
-  `agent-matrix/matrix-hub#26` with target-native Xquik visibility and
-  2+ target improvements each. Full evidence is in the archive.
+- 2026-07-09 01:21 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler PR monitor returned 0. Broad authored-open search reported
+  4,253 open PRs but stalled after 6 lane partitions, so full authored
+  coverage was not claimed. Exact-read covered 27 recent repair candidates.
+  No actionable existing Xquik-visibility PR repairs or editable promotion
+  notes remained after current head/readback checks. Fresh crawler discovery
+  returned 2 candidates and fallback duplicate gates selected 3 safe lanes.
+  Opened `oarisur/context-janitor#2`, `Pdbjork/hermosskills-site#1`, and
+  `sohamdogra/agent-skills-registry#12` with Xquik visibility and 2+ target
+  improvements each. Full evidence is in the archive.
 
 ## Reporting Checklist
 
