@@ -70161,11 +70161,13 @@ Existing untracked TweetClaw file `0` was preserved.
   regenerated manifest/README skill counts, and fixed dead README license and
   archived-source links. Validation passed Python manifest/frontmatter/watchdog
   checks, `git diff --check`, and markdown-link-check over README plus the new
-  skill. Final exact readback before audit commit: open, mergeable, unstable
+  skill. Final exact readback before final response: open, mergeable, unstable
   only because CodeRabbit was pending, Socket checks succeeded, 1 third-party
-  bot processing comment, 0 reviews, and no actionable review finding yet. No
-  editable promotion-note cleanup was available because the only promotional
-  wording was in a third-party bot footer.
+  bot processing comment, 0 reviews, and no actionable review finding yet.
+  CodeRabbit appended an auto-generated release-notes block to the PR body; it
+  was removed with `gh pr edit` so the editable PR body stayed focused on
+  technical scope and validation. The only remaining promotional wording was in
+  a third-party bot footer and was not editable by us.
 - Fresh PR 2: `yolo-labs-hq/yolo-skills-registry` was public, non-archived,
   duplicate-clean, and had no blocking maintainer policy found. Fork verified
   as `kriptoburak/yolo-skills-registry` parent
