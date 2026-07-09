@@ -174,15 +174,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 03:19 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler monitor and skill-target runs returned 0 opportunities after
-  network egress failures; fallback authored-open search hit one unresolved
-  July 3 cap, so complete coverage was not claimed. Exact-read 85 July 9
-  priority PRs; no actionable Xquik repair remained. Opened clean fresh PRs:
-  `jinghanlib/x-tweet-scraper#1`, `reachdhaval/twitter_scraper_project#1`, and
-  `Muhammad-Hamza-Nawaz/tweet_sentiment_flask_app#1`. Each adds an Xquik CSV
-  import or batch-analysis path plus 2+ target-native fixes. Full evidence is
-  in the archive.
+- 2026-07-09 03:40 UTC: Fast and extra-high selectors unavailable. Crawler PR
+  monitor returned strict JSON with 0 opportunities after managed egress socket
+  closures; fallback GitHub partitions were split below the 1,000-result cap.
+  Exact-read 91 July 9 priority PRs plus handled PRs. Repaired
+  `suryatejabatchu08/twitter-sentiment-analysis#1`; current readback is open,
+  clean, mergeable, GitGuardian success, with all Copilot threads outdated and
+  one UI thread still unresolved. Opened 3 fresh PRs:
+  `Sidhu-Reddy/twitter-sentiment-flask#1` (batch API plus docs and form
+  validation), `samuel-olaleye/tweet_sentiment_flask_v2.0#1` (batch API plus
+  input validation and dead-link cleanup), and
+  `Ja-yy/Twitter-scraper-streamlit#2` (Xquik CSV import tab plus safe exports,
+  path cleanup, and driver cleanup). V2 has a Vercel maintainer-authorization
+  blocker; Ja-yy is mergeable but branch-protection blocked with no checks.
+  OpenClaw docs, Xquik docs, x-twitter-scraper, and handled PR links returned
+  HTTP 200. Full evidence is in the archive.
 
 ## Reporting Checklist
 

@@ -71075,3 +71075,120 @@ Existing untracked TweetClaw file `0` was preserved.
   package artifact, and 168 tests with 100% coverage. Automation TOML measured
   13,657 bytes; decoded prompt text measured 13,657 bytes, under the 15 KiB
   prompt cap.
+
+2026-07-09 03:40 UTC heartbeat:
+
+- Runtime selector: Codex 5.5 Fast mode and extra-high effort controls were not
+  exposed in this runtime. Recorded limitation and continued.
+- Local state: Xquik was on `master`; TweetClaw was on `master` with only
+  pre-existing untracked `0` before audit edits. `gh issue list --repo
+  Xquik-dev/xquik` returned no open issues.
+- Crawler-first coverage: PR monitor crawler ran from Xquik with focused Xquik,
+  TweetClaw, x-twitter-scraper, OpenClaw, MCP, skill, social, Twitter/X,
+  framework, dashboard, listing, registry, and catalog lanes, including
+  SKILL.md and `.agents/skills` coverage. Output
+  `/tmp/xquik-hb-20260709-034007/pr-monitor.json` parsed as strict JSON with
+  `opportunities: []`; stderr showed managed egress socket closures and proxy
+  quarantines.
+- Inventory: compact and archive extraction found 1,993 unique PR URLs.
+  Authored-open partitions included July 9 = 91, July 8 = 72, July 7 = 6,
+  July 6 = 5, July 5 = 214, July 4 = 562, July 2 = 143, July 1 = 48, June =
+  318, and before June = 100. The July 3 broad query hit 1,000 and was split by
+  created date: July 3 = 100, July 2 = 187, July 1 = 208, June 24 to 30 = 451,
+  June 17 to 23 = 571, June 10 to 16 = 503, June 3 to 9 = 187, June 1 to 2 =
+  0, Jan to May = 492, 2025 = 0, before 2025 = 0. No unresolved cap remained in
+  these fallback partitions.
+- Exact readback: exact-read 91 July 9 priority PRs with state, mergeability,
+  base/head, commits, files, comments, reviews, checks, conflicts, DCO or CLA
+  indicators, bot findings, and PR-body wording. Flagged 33. Non-actionable
+  blockers included external Vercel owner authorization on
+  `portal-labs-infrastructure/remote-mcp-servers#4`, transient or policy merge
+  states, and non-Xquik dirty generic PRs
+  `ogthheu/Insightify-Sentiment-API#1` and
+  `shajith003/awesome-claude-skills#4`. Prior wording scans on earlier PRs were
+  false positives from validation text, not promotion notes.
+- Existing repair: `suryatejabatchu08/twitter-sentiment-analysis#1` had 3
+  Copilot review threads. Fixed NaN-to-string conversion, CSV read exceptions,
+  and CSV formula injection in downloadable text cells. Commit `088c75e` was
+  pushed to `kriptoburak/twitter-sentiment-analysis-10` branch
+  `codex/xquik-batch-csv-import`. Validation passed: `python3 -m py_compile
+  app.py`, `git diff --check`, helper-level import test with Streamlit, NLTK,
+  and joblib stubs, and public wording scan. Readback after repair: open,
+  clean, mergeable, GitGuardian success, 2 commits, 0 comments, Copilot review
+  remains informational. GraphQL review threads: all 3 outdated; 2 resolved,
+  CSV-injection thread still unresolved in UI but fixed in current diff.
+- Fresh screening: duplicate checks searched compact audit, archive, target
+  content, and target PRs/issues for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, OpenClaw, ClawHub, and variants. Screened
+  `Sidhu-Reddy/twitter-sentiment-flask`,
+  `samuel-olaleye/tweet_sentiment_flask_v2.0`,
+  `samuel-olaleye/tweet_sentiment_flask`,
+  `louaysaleh/twitter-sentiment-analysis-streamlit`,
+  `Ja-yy/Twitter-scraper-streamlit`, and
+  `xsreeex/Twitter-Scraper-Streamlit`. Blockers: `louaysaleh` clone has an
+  empty default branch, and `xsreeex` already has open Xquik PR
+  `xsreeex/Twitter-Scraper-Streamlit#1`. `samuel-olaleye/tweet_sentiment_flask`
+  remained a screened fallback lane, not needed after 3 safer PRs opened.
+- Fresh PR 1: opened https://github.com/Sidhu-Reddy/twitter-sentiment-flask/pull/1
+  from verified fork `kriptoburak/twitter-sentiment-flask`, parent
+  `Sidhu-Reddy/twitter-sentiment-flask`, branch
+  `codex/xquik-batch-sentiment-api`, commit `10178bd`. Xquik lane:
+  `/api/predict/batch` accepts plain text arrays and Xquik-style result rows.
+  Target improvements: shared prediction helpers keep web and API outputs
+  aligned; empty keyword validation renders a visible form error; previously
+  empty README now documents setup, web workflow, and batch API use. Validation:
+  `python3 -m py_compile app.py`, `git diff --check`, README link check, and
+  public wording scan. Readback: open, clean, mergeable, 0 comments, 0 reviews,
+  0 checks.
+- Fresh PR 2: opened https://github.com/samuel-olaleye/tweet_sentiment_flask_v2.0/pull/1
+  from verified fork `kriptoburak/tweet_sentiment_flask_v2.0`, parent
+  `samuel-olaleye/tweet_sentiment_flask_v2.0`, branch
+  `codex/xquik-batch-api-validation`, commit `72fba9c`. Xquik lane:
+  `/predict/batch` accepts plain text arrays and Xquik-style result rows.
+  Target improvements: JSON and non-empty single-text validation; removal of
+  2 stale backend links that failed link checks; README link syntax and project
+  tree path cleanup. Validation: `python3 -m py_compile app.py`,
+  `git diff --check`, README link check after cleanup, and public wording scan.
+  Readback: open, mergeable, unstable only because Vercel requires maintainer
+  team authorization; 1 Vercel bot comment, 0 reviews.
+- Fresh PR 3: opened https://github.com/Ja-yy/Twitter-scraper-streamlit/pull/2
+  from verified fork `kriptoburak/Twitter-scraper-streamlit`, parent
+  `Ja-yy/Twitter-scraper-streamlit`, branch `codex/xquik-csv-import-tab`,
+  commit `09d730f`. Xquik lane: Streamlit `Xquik CSV Import` tab for Xquik or
+  TweetClaw CSV exports. Target improvements: normalize handles, profile URLs,
+  and sample tweet text into the app output shape; sanitize CSV downloads;
+  build markdown paths via `Path`; always close Selenium driver; document
+  accepted columns. Validation: `python3 -m py_compile app.py
+  helper/download_button.py stremlitbuilder/tab_view_3.py constant.py
+  selenium_scripts/twitter/twitter_scraper_main.py`, `git diff --check`, README
+  link check, and public wording scan. Readback: open, mergeable, branch
+  protection blocked with no checks, 0 comments, 0 reviews.
+- Public hygiene and links: OpenClaw llms export, CLI plugin docs, ClawHub
+  publishing, and debugging docs returned HTTP 200. Xquik docs,
+  `https://github.com/Xquik-dev/x-twitter-scraper`, the repaired PR URL, and
+  all 3 fresh PR URLs returned HTTP 200. PR bodies and target diffs were
+  inspected for secrets, private implementation details, restricted
+  provider/source names, internal cost mechanics, unsupported claims, stale
+  metadata, badge misuse, and promotion-note wording. No promotion notes were
+  added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: simplify and thermo-nuclear review found no
+  structural issue in the audit-only diff. `npm run check-memory-md-size`
+  passed at 14,340 of 15,360 bytes. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all` passed,
+  including typecheck, lint, duplicate check, knip, suppression check, dash
+  check, memory check, skill frontmatter, version alignment, build, OpenClaw
+  platform fitness, package artifact, and 168 tests with 100% coverage.
+  Automation TOML measured 13,657 bytes, under the 15 KiB prompt cap.
+- Prompt self-improvement: no automation prompt edit was useful because the
+  current prompt already preserves Fast and extra-high wording, quiet autonomy,
+  crawler-first discovery, existing PR repair first, 3 fresh screened lanes,
+  mandatory 3 PRs when safe, listing/catalog lanes as valid non-spammy paths,
+  2 target improvements per PR, duplicate/fork rules, OpenClaw checks, link
+  checks, public hygiene, badge rule, Context7 exclusion, secret handling,
+  commit/push requirement, Markdown cap, prompt cap, and durable
+  self-improvement. Durable lesson reinforced: sentiment and scraper repos are
+  useful Xquik lanes when Xquik is implemented as a normal CSV or batch API
+  source with validation, link cleanup, safe exports, or app reliability fixes.
