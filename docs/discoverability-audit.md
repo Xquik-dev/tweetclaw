@@ -174,14 +174,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 00:15 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0. Authored-open partitions found 4,259
-  unique open PR URLs; exact-read 153 PRs updated on or after 2026-07-08 with
-  no safely repairable current Xquik blocker. Fresh crawler discovery returned
-  42 candidates; duplicate checks blocked many prior skill/catalog lanes.
-  Opened 3 useful listing/catalog PRs with target fixes:
-  `iberi22/skills#1`, `yolo-labs-hq/yolo-skills-registry#1`, and
-  `awesome-mcp-ru/awesome-mcp-ru#1`. Full evidence is in the archive.
+- 2026-07-09 00:27 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler PR monitor returned 0; broad authored search hit GitHub
+  secondary rate limits, so fallback exact-read covered 64 audit-tracked PRs
+  with 62 open and 17 nonclean or discussion-bearing. Four actionable comment
+  PRs were already repaired on current heads. Fresh crawler discovery returned
+  22 candidates. Opened 3 useful Xquik listing/integration PRs with target
+  fixes: `mcpambassador/community-registry#11`, `nzt108-dev/keystack#1`, and
+  `yunseo-kim/agent-toolbox#84`. Full evidence is in the archive.
 
 ## Reporting Checklist
 
