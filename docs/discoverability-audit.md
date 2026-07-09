@@ -174,26 +174,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 07:52 UTC: Fast and extra-high selectors unavailable. Crawler
+- 2026-07-09 08:41 UTC: Fast and extra-high selectors unavailable. Crawler
   monitor and fresh-target passes returned strict JSON with 0 opportunities
-  after managed-egress socket closures and proxy quarantine noise. Authored-open
-  fallback partitions were split past the July 3 1,000 cap; exact-read covered
-  125 priority PRs with 0 failures. Removed editable old promotion-note comments
-  from open Xquik visibility PRs at scale: 2,706 comments deleted, with only
-  `fosterushka/skillsmith-for-claude#1` blocked by archived read-only state.
-  Rechecked and commented resolved repair evidence on
-  `jayteealao/agent-skills#4` and `aak204/Tool-Catalog-Compiler#1`; remaining
-  blocks on `dansasser/claude-code-marketplace#24`,
-  `librefang/librefang-registry#100`, `samuel-olaleye/...#1`, and
-  `portal-labs-infrastructure/...#4` are maintainer review or authorization
-  gates. Opened 3 fresh PRs:
-  `Kanishka0470/Twitter-Sentiment-Analysis#1` (Xquik CSV upload plus safer CSV
-  parsing and README fixes), `jeetsarkar0004/NLP-Project#1` (Xquik CSV batch
-  predictions plus missing imports and README workflow), and
-  `vineethaponugoti7-cpu/Twitter-Sentiment-Analysis#1` (Xquik CSV scoring plus
-  path-safe assets and setup docs). OpenClaw docs, canonical Xquik OpenAPI,
-  MCP manifest, repaired PRs, and new PRs returned HTTP 200; npm package page
-  still returned known 403. Full evidence is in the archive.
+  after managed-egress socket closures and proxy quarantine noise. Broad
+  authored-open PR partitioning hit a GitHub secondary search limit, so the run
+  stopped broad search and exact-read 14 audit-tracked/new PRs by URL with 0
+  failures. Existing Xquik visibility PRs had no new editable repair beyond
+  known maintainer review, Vercel authorization, or archived read-only blockers.
+  Web-index fallback screened 16 concrete repositories after compact/archive
+  duplicate gates. Opened 3 fresh PRs:
+  `SachinthyaCodes/sentiment-analysis#1` (Xquik CSV upload plus parser errors,
+  blank input, shared VADER, and README setup fixes),
+  `Asad-Aziz-001/Sentiment-Analysis-Dashboard#1` (Xquik CSV columns plus blank
+  row validation, quiet VADER setup, dead demo link fix, and run docs), and
+  `Lakshya300104/Elegant-Sentiment-Analysis-App-with-Streamlit#1` (Xquik CSV
+  scoring plus path-safe artifacts, quiet NLTK, dependency cleanup, and contact
+  markdown fix). OpenClaw docs, canonical Xquik OpenAPI, MCP manifest, repaired
+  PRs, and new PRs returned HTTP 200; npm package page still returned known 403.
+  Full evidence is in the archive.
 
 ## Reporting Checklist
 
