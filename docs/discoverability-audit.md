@@ -174,14 +174,15 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 00:27 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0; broad authored search hit GitHub
-  secondary rate limits, so fallback exact-read covered 64 audit-tracked PRs
-  with 62 open and 17 nonclean or discussion-bearing. Four actionable comment
-  PRs were already repaired on current heads. Fresh crawler discovery returned
-  22 candidates. Opened 3 useful Xquik listing/integration PRs with target
-  fixes: `mcpambassador/community-registry#11`, `nzt108-dev/keystack#1`, and
-  `yunseo-kim/agent-toolbox#84`. Full evidence is in the archive.
+- 2026-07-09 00:58 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler PR monitor returned 0. Authored-open search returned
+  200 PRs; exact-read covered 152 before local timeout, so full authored
+  coverage was not claimed. Repaired `iberi22/skills#2` with category-count
+  fixes and Xquik auth manifest evidence. Fresh crawler discovery returned
+  12 candidates; fallback search and duplicate gates selected 3 safe lanes.
+  Opened `enowdev/enowX-Skill#1`, `Giederius/mcp-registry#1`, and
+  `agent-matrix/matrix-hub#26` with target-native Xquik visibility and
+  2+ target improvements each. Full evidence is in the archive.
 
 ## Reporting Checklist
 

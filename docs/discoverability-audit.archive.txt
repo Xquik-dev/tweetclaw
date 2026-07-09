@@ -70362,3 +70362,128 @@ Existing untracked TweetClaw file `0` was preserved.
   on native modules, prefer bundled stable Node before treating a build error as
   a target blocker. Listing-only PRs are useful when they also fix target
   counts, examples, generated indexes, schema alignment, or safe demo setup.
+
+2026-07-09 00:58 UTC heartbeat
+
+- Runtime: Codex 5.5 Fast mode and extra-high reasoning selectors were not
+  exposed by this runtime. Continued and recorded the limitation.
+- Local state: TweetClaw was on `master` at `ba4df60` with only pre-existing
+  untracked `0` before audit edits. Xquik was clean on `master` at `89ebce46`.
+- PR inventory method: crawler-first monitor from Xquik wrote strict JSON to
+  `/tmp/xquik-hb-20260709-005810/pr-monitor.json` and covered Xquik,
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, catalogs, listings,
+  x-twitter-scraper, X/Twitter automation, social media, agent tools,
+  frameworks, dashboards, libraries, SDKs, validators, package tooling, docs,
+  and prior outreach. It returned 0 opportunities. Compact and archive memory
+  contained 1,977 PR URLs. Authored-open search returned 200 current open PRs.
+  Exact-read covered 152 of those 200 before a local timeout, with 18 flagged
+  as nonclean, discussion-bearing, review-bearing, or check-bearing. This run
+  does not claim complete authored-open coverage because the exact-read loop
+  timed out.
+- Existing PR repair first: `Ishan96Dev/SentimentScope-NLP-Sentiment-Analysis-App#4`,
+  `fpardon-upeo/mcp-servers-collection#1`, and
+  `kmransom56/universal-mcp-servers#19` were exact-read and had no new
+  actionable repair after earlier head commits or manifest-backed comments.
+  `iberi22/skills#2` had a new Gemini review. The auth-header claim was invalid
+  against the public Xquik MCP manifest, but the README category-count issue was
+  valid. Pushed commit `a0f5b56` to
+  `codex/add-xquik-social-skill-clean-20260709`, syncing README counts to the
+  actual skill tree and adding public Xquik auth manifest evidence to the
+  Xquik social automation skill. Validation checked README counts, manifest
+  evidence, and `git diff --check`. Readback: PR open, merge-state unstable
+  only because Socket and CodeRabbit were pending.
+- Promotion-note cleanup: no editable promotion note was found in the exact
+  read set. New PR bodies used technical value, validation, and target-native
+  benefits only.
+- Fresh crawler discovery: strict JSON target discovery at
+  `/tmp/xquik-hb-20260709-005810/fresh-targets.json` covered open
+  PRs/issues/repos/code, `SKILL.md`, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, awesome lists,
+  registries, frameworks, dashboards, libraries, forks, generated catalogs,
+  web-index skill repos, examples, docs, and package tooling. It returned
+  12 candidates.
+- Fresh duplicate and target-fit blockers: `ravitemer/mcp-registry` had
+  existing open Xquik and GetXAPI PRs. `samith2002/LLM-Tool-Registry` had an
+  existing open Xquik remote-tool PR. `JuneYaooo/awesome-ai-media-skills` and
+  `alexclowe/awesome-copilot-cowork-plugins` were already seen in archive.
+  Single-product MCP repos such as `VarynForge/mcp`,
+  `cloudcenmax/cloudcenmax-mcp`, and `zernozerno/zerno-mcp` had no
+  maintainer-appropriate native surface for a useful Xquik patch. Fallback
+  repository search found the 3 safe lanes below.
+- Fresh PR 1: `enowdev/enowX-Skill` was public, non-archived,
+  duplicate-clean, and had no blocking maintainer policy found. Missing license
+  metadata was not treated as a blocker. Fork owner was `kriptoburak`. Opened
+  https://github.com/enowdev/enowX-Skill/pull/1 from
+  `codex/add-xquik-social-skill`, commit `9ef2500`. Xquik lane: enowX skill
+  registry entry for Xquik API and MCP social search, monitoring, analytics,
+  webhooks, and approval-gated publishing. Target improvements: filled the
+  empty `registry.json` `generated_at`, and added the existing committed
+  `enowx-docs` skill back into `registry.json`. Validation parsed
+  `registry.json` and each referenced manifest, checked slug uniqueness and
+  path existence, verified the new Xquik skill hash, and passed
+  `git diff --check`. Readback: open, ready, mergeable, clean, 0 comments,
+  0 reviews, 0 checks.
+- Fresh PR 2: `Giederius/mcp-registry` was public, non-archived,
+  duplicate-clean, and had no blocking maintainer policy found. Missing license
+  metadata was not treated as a blocker. Fork owner was `kriptoburak`. Opened
+  https://github.com/Giederius/mcp-registry/pull/1 from
+  `codex/add-xquik-mcp-entry`, commit `3031a27`. Xquik lane: hosted Xquik MCP
+  registry entry using `https://xquik.com/mcp` and bearer auth via
+  `XQUIK_API_KEY`. Target improvements: added a README documenting registry
+  shape and JSON validation, and refreshed stale `last_updated` metadata while
+  removing trailing whitespace. Validation passed JSON parsing, unique server
+  ID checks, Xquik entry checks, expected unauthenticated MCP 401, and
+  `git diff --check`. Readback: open, ready, mergeable, clean, 0 comments,
+  0 reviews, GitGuardian success.
+- Fresh PR 3: `agent-matrix/matrix-hub` was public, Apache-2.0,
+  non-archived, duplicate-clean, and had no blocking maintainer policy found.
+  Fork owner was `kriptoburak`. Opened
+  https://github.com/agent-matrix/matrix-hub/pull/26 from
+  `codex/add-xquik-mcp-example`, commit `e02382e`. Xquik lane: schema-valid
+  hosted HTTP MCP example manifest for Xquik in the Matrix Hub example catalog.
+  Target improvements: added tests ensuring example indexes reference existing
+  manifests, and added schema validation for the Xquik MCP manifest with
+  README and index updates covering local SSE and hosted HTTP examples.
+  Validation passed `python3 -m pytest tests/test_example_manifests.py`,
+  `python3 -m json.tool` over new and changed JSON files, expected
+  unauthenticated MCP 401, manifest version and endpoint checks, and
+  `git diff --check`. Readback: open, ready, mergeable, merge-state blocked by
+  target-side policy or missing checks, 0 comments, 0 reviews, 0 checks.
+- Official OpenClaw docs check: HTTP 200 for `https://docs.openclaw.ai/llms.txt`
+  and indexed docs covering `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/clawhub/troubleshooting`,
+  `/help/debugging`, sandbox/tool policy, secrets, and runtime concepts. No
+  TweetClaw OpenClaw compatibility files changed.
+- Public hygiene and link results: the three new PR URLs, Xquik MCP docs,
+  Xquik manifest, Xquik icon, x-twitter-scraper GitHub, TweetClaw GitHub,
+  ClawHub after redirect, and OpenClaw Directory returned 200. Xquik MCP
+  endpoint returned expected unauthenticated 401. New external PR bodies and
+  diffs were inspected for secrets, private implementation details, restricted
+  source names, internal cost mechanics, unsupported claims, stale metadata,
+  and banned promotion wording.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: `npm run check-memory-md-size` passed at
+  13,925 of 15,360 bytes. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash` passed. `git diff --check` passed. Public link
+  recheck returned 200 for the three new PR URLs, Xquik MCP docs, Xquik
+  manifest, Xquik icon, x-twitter-scraper GitHub, TweetClaw GitHub, ClawHub
+  after redirect, and OpenClaw Directory; Xquik MCP endpoint returned expected
+  unauthenticated 401. `npm run check:all` passed, including typecheck, lint,
+  duplicate check, knip, suppression check, dash check, memory check, skill
+  frontmatter, version alignment, build, OpenClaw platform fitness, package
+  artifact, and 168 tests with 100% coverage.
+- Prompt self-improvement: no automation prompt edit was needed because the
+  active prompt already preserves Fast extra-high wording, existing PR repair
+  first, mandatory 3 fresh GitHub opportunities, listing/catalog patches as
+  valid non-spammy lanes, duplicate/fork rules, OpenClaw docs checks, link
+  checks, validation gates, Context7 exclusion, secret handling,
+  commit/push requirement, prompt cap, no promotion-note rule, and
+  2 target-improvement PR rule. Automation TOML measured 13,657 bytes and
+  prompt payload measured 13,313 bytes, under the 15 KiB prompt cap.
+- Durable self-improvement: when a formatter rewrites a whole JSON registry
+  during outreach, restore the scratch clone and apply the smallest targeted
+  patch before pushing. For listing-only patches, registry consistency fixes
+  such as empty timestamps, missing committed entries, index parity, schema
+  tests, and validation docs make the Xquik addition useful to the target repo.
