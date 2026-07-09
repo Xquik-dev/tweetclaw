@@ -174,28 +174,29 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 16:12 UTC: Fast and extra-high selectors unavailable. Xquik and
+- 2026-07-09 17:12 UTC: Fast and extra-high selectors unavailable. Xquik and
   TweetClaw issue queues were empty; unrelated Xquik roadmap edits and
   TweetClaw untracked `0` were preserved. Crawler PR, skill, registry, and
   project runs from Xquik used token env vars unset, strict JSON, bounded
   timeouts, and skill-repo coverage, but parsed 0 candidates after network
-  route failures. Authored open PR search hit GitHub's 1000-result cap and a
-  secondary rate limit, so complete coverage was not claimed; fallback exact
-  reads covered 40 recent open visibility PRs plus audit-tracked URLs.
-  `efecanyldz/awesome-developer-apis#1` was repaired from CONFLICTING/DIRTY to
-  MERGEABLE/CLEAN in fork commit `5214133`; no other exact-read PR had a
-  safely repairable maintainer comment, review comment, CI failure, DCO/CLA
-  issue, bot finding, generated drift, or promotion wording. Fresh screening
-  duplicate-blocked several prior sentiment and social dashboard lanes and
-  archive-blocked `aravind08033/sentimentiq-dashboard`. Opened
-  `daouda85/tweet-sentiment-faang#1`,
-  `pavichettianvesh-boop/sentiment-dashbaord#1`, and
-  `dhanusriS/brandshield-ai#1`, each with Xquik or TweetClaw export/API usage
-  plus 2+ native fixes around setup docs, import mapping, health/config safety,
-  bytecode cleanup, requirements, CORS, or validation. Final readback for all
-  3 new PRs: OPEN, MERGEABLE, CLEAN, 0 comments, 0 reviews, and no checks.
-  OpenClaw docs, Xquik links, hygiene scans, and target validations passed.
-  Full evidence is in the archive.
+  route failures. Authored open PR partitions hit GitHub's 1000-result cap, so
+  complete coverage was not claimed; fallback exact reads covered 137 open
+  visibility PR URLs with 0 read errors. Repaired conflicts in
+  `shajith003/awesome-claude-skills#4` commit `43bb8fa` and
+  `ogthheu/Insightify-Sentiment-API#1` commit `ab25514`, pushed bot-review
+  repairs to `dansasser/claude-code-marketplace#24` commit `f1a3911` and
+  `jayteealao/agent-skills#4` commit `0cd6bb3`, and verified prior fixes in
+  `KPZ231/Instra#2`, `understanding-81/topsis-mcdm-tool#1`, and
+  `numbpill3d/mcp-radar#5`. Fresh archive-clean screens selected
+  `Mo-Awad-AI/Social-Listening-Brand-Sentiment-Dashboard`,
+  `ParthBhadola/brand-sentiment-monitor`, and
+  `Seran-14/real-time-brand-sentiment-analysis`; opened 3 PRs with Xquik or
+  TweetClaw source workflows plus 2+ native docs, validation, dependency,
+  import, timeout, uploader, control, or stale-link fixes. New PRs
+  `Mo-Awad-AI#1`, `ParthBhadola#1`, and `Seran-14#1` read back OPEN,
+  MERGEABLE, CLEAN, 0 comments, 0 reviews, and no checks. OpenClaw docs,
+  public links, hygiene scans, and target validations passed. Full evidence is
+  in the archive.
 
 ## Reporting Checklist
 

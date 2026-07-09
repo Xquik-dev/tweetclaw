@@ -73314,6 +73314,155 @@ Existing untracked TweetClaw file `0` was preserved.
   boundary, or file-size concern in this audit-only diff. The audit update was
   committed and pushed to `origin/master` after validation.
 
+## 2026-07-09 17:12 UTC heartbeat
+
+- Runtime and scope: Codex 5.5 Fast mode and extra-high reasoning effort
+  selectors were not exposed in this runtime, so the run continued and recorded
+  the limitation. No Browser, Chrome, GUI automation, dev server, production
+  SSH, Socket token, secret-bearing file access, or Context7 work was used.
+  Xquik still had unrelated modified `docs/feature-roadmap.md` and TweetClaw
+  still had pre-existing untracked `0`; both were preserved.
+- Issue queues: `gh issue list` checks for `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` returned no open issues.
+- Crawler-first coverage: ran the Xquik crawler from
+  `/Users/burak/Developer/xquik` with `GITHUB_TOKEN` and `GH_TOKEN` unset,
+  strict JSON outputs under `/tmp/xquik-hb-20260709-164641`, request timeout
+  12000 ms, proxy warmup timeout 0, stable session IDs, and focused PR monitor,
+  SKILL.md, `.agents/skills`, skills dir, OpenClaw, MCP, Codex, Claude, agent,
+  social media, Twitter/X, awesome-list, registry, framework, dashboard,
+  library, and package-tooling query packs. `pr-monitor.json`,
+  `fresh-skills.json`, and `fresh-projects.json` parsed with `jq` and had
+  count 0. Logs showed managed route socket failures on GitHub search paths and
+  no credential values.
+- Official docs recheck: current OpenClaw routes `/llms.txt`, `/cli/plugins`,
+  `/plugins/building-plugins`, `/plugins/manifest`, `/plugins/tool-plugins`,
+  `/plugins/plugin-permission-requests`, `/plugins/sdk-runtime`,
+  `/plugins/install-overrides`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  `/help/debugging`, `/cli/skills`, and `/skills` returned HTTP 200.
+- Existing PR inventory method: compact audit, archive, crawler output,
+  audit-tracked URLs, broad authored PR search, target PR and issue lists,
+  exact `gh pr view`, issue-comment, inline-comment, review, check, and file
+  readbacks were used. Broad partitions for TweetClaw, tweetclaw, Xquik, and
+  xquik each hit GitHub's 1000-result cap, so full coverage was not claimed.
+  Fallback exact reads covered 137 open visibility PR URLs with 0 read errors.
+  State summary before repairs: 95 CLEAN, 17 UNSTABLE, 14 UNKNOWN, 10 BLOCKED,
+  and 1 DIRTY; 53 had comments, reviews, checks, or non-clean merge states and
+  were classified by a live comment-summary pass.
+- Existing PR repairs: `shajith003/awesome-claude-skills#4` was DIRTY with a
+  README conflict and no reviews or checks. The verified fork branch
+  `codex/fix-awesome-claude-skill-links-20260630` merged upstream `main`,
+  removed conflict markers, preserved local resource links, passed conflict
+  marker scan, `git diff --check`, `npx --yes markdown-link-check README.md
+  --quiet`, and added-line hygiene scan, then pushed commit `43bb8fa`.
+  Readback showed OPEN, MERGEABLE, CLEAN.
+- Existing PR repairs: `ogthheu/Insightify-Sentiment-API#1` was DIRTY with an
+  identical README closing-paragraph conflict and no comments, reviews, or
+  checks. The verified fork branch `codex/fix-api-usage-docs` merged upstream
+  `main`, kept one paragraph, passed conflict marker scan, `git diff --check`,
+  and `npx --yes markdown-link-check README.md --quiet`, then pushed commit
+  `ab25514`. Readback showed OPEN, MERGEABLE, CLEAN.
+- Existing PR bot-review repairs: `dansasser/claude-code-marketplace#24` had a
+  valid CodeRabbit skill privacy note. Commit `f1a3911` changed the Xquik skill
+  to use Claude Code's configured MCP server and client-handled auth instead of
+  local MCP config or a manually exposed API key. Validation passed targeted
+  `rg`, `git diff --check`, and added-line hygiene scan. Final readback showed
+  OPEN, MERGEABLE, BLOCKED, with CodeRabbit SUCCESS and no new comments.
+- Existing PR bot-review repairs: `jayteealao/agent-skills#4` had a valid
+  Gemini note that marketplace versioning belonged in `metadata` after the
+  conflict repair. Commit `0cd6bb3` restored `metadata.version` at `1.134.0`
+  and removed top-level `version` and `description`. Validation passed
+  `python3 -m json.tool`, `jq` shape check, `git diff --check`, and hygiene
+  scan. Readback showed OPEN, MERGEABLE, CLEAN, with CodeRabbit SUCCESS.
+- Existing PR verified as already repaired: `KPZ231/Instra#2` already had the
+  CodeRabbit MD040 upload request fence labeled `http`; remaining failure is
+  target-owned Vercel authorization. `understanding-81/topsis-mcdm-tool#1`
+  had a later CodeRabbit APPROVED review after the earlier requested changes.
+  `numbpill3d/mcp-radar#5` already had JSON decode handling, URL normalization,
+  supplemental schema validation, and generated data checks; a validation run
+  of `python3 scripts/update_data.py` succeeded, then live generated
+  `data/servers.json` churn was discarded as validation-only. `maximhq/bifrost#5069`
+  remains CLA-blocked. Several other unstable PRs remain target-owned Vercel
+  authorization or GitHub UNKNOWN states with no safe local repair.
+- Fresh discovery fallback: after crawler search returned 0, GitHub repo search
+  screened Twitter sentiment dashboards, social analytics dashboards, and brand
+  monitoring dashboards. Compact and archive duplicate filtering marked prior
+  lanes such as `AbdulRehman393/streamlit-airline-sentiment`,
+  `Akash-yadav87/Real-Time-Twitter-Sentiment-Analysis-Dashboard`,
+  `Poorvaj-Naresh-S-P/twitter_sentiment_project`,
+  `CH-S-K-CHAITANYA/Social-Media-Sentiment-Dashboard`,
+  `Kanishka0470/Twitter-Sentiment-Analysis`,
+  `Ronit26Mehta/Twitter-Analysis-Dashboard`, and
+  `rounakdey2003/Social-Sentiments` as seen. Fresh selected lanes were
+  `Mo-Awad-AI/Social-Listening-Brand-Sentiment-Dashboard`,
+  `ParthBhadola/brand-sentiment-monitor`, and
+  `Seran-14/real-time-brand-sentiment-analysis`.
+- Fresh lane 1: `Mo-Awad-AI/Social-Listening-Brand-Sentiment-Dashboard` was
+  public, non-fork, non-archived, issue-enabled, default branch `main`, no
+  license metadata, no target-content or exact PR/issue duplicate for
+  TweetClaw, Xquik, `@xquik/tweetclaw`, x-twitter-scraper, OpenClaw, ClawHub,
+  or variants. The verified fork was
+  `kriptoburak/Social-Listening-Brand-Sentiment-Dashboard`. PR
+  https://github.com/Mo-Awad-AI/Social-Listening-Brand-Sentiment-Dashboard/pull/1
+  from branch `codex/add-xquik-source-guidance`, commit `f5efa36`, adds a
+  quick-start workflow, normalized source schema, Xquik and TweetClaw
+  references, and validation checklist for required fields, dedupe,
+  per-source thresholds, and model tracking. Validation passed
+  `npx --yes markdown-link-check README.md --quiet`, `git diff --check`, and
+  added-line hygiene scan.
+- Fresh lane 2: `ParthBhadola/brand-sentiment-monitor` was public, non-fork,
+  non-archived, issue-enabled, default branch `main`, no license metadata, no
+  target-content or exact PR/issue duplicate for the required terms. The
+  verified fork was `kriptoburak/brand-sentiment-monitor`. PR
+  https://github.com/ParthBhadola/brand-sentiment-monitor/pull/1 from branch
+  `codex/add-xquik-export-source`, commit `33a9459`, adds optional
+  `XQUIK_EXPORT_PATH` support for CSV, JSON, JSONL, and NDJSON, maps common
+  public post text, source, and timestamp fields into the existing scoring
+  pipeline, keeps NewsAPI as default, adds missing dependency metadata, adds
+  request timeout and missing-key guidance, and updates setup docs. Validation
+  passed Python compile, fixture CSV import, README link check, `git diff
+  --check`, and added-line hygiene scan.
+- Fresh lane 3: `Seran-14/real-time-brand-sentiment-analysis` was public,
+  non-fork, non-archived, issue-enabled, default branch `main`, no license
+  metadata, no target-content or exact PR/issue duplicate for the required
+  terms. The verified fork was `kriptoburak/real-time-brand-sentiment-analysis`.
+  PR https://github.com/Seran-14/real-time-brand-sentiment-analysis/pull/1
+  from branch `codex/add-xquik-export-upload`, commit `97bc759`, adds a
+  sidebar uploader for reviewed Xquik or TweetClaw CSV, JSON, JSONL, and NDJSON
+  exports, maps text fields into the existing classifier and alert loop, adds
+  row count, delay, and threshold controls, handles empty sources, and fixes the
+  stale Kaggle dataset link to a live search URL. Validation passed Python
+  compile, AST helper check, README link check with a local config ignoring the
+  Streamlit redirect that curl verified as HTTP 303, `git diff --check`, and
+  added-line hygiene scan.
+- External PR readback: all 3 new PRs read back OPEN, non-draft, MERGEABLE,
+  CLEAN, with 0 comments, 0 reviews, and no configured checks. PR bodies
+  summarized the Xquik or TweetClaw integration and 2+ target improvements and
+  passed public-hygiene scans.
+- Public links and hygiene: `https://xquik.com`, `https://docs.xquik.com`,
+  `https://github.com/Xquik-dev/tweetclaw`, and the 3 new PR URLs returned
+  HTTP 200. The Seran Streamlit demo returned HTTP 303 through curl. Added-line
+  scans for secrets, confidential facts, non-public source names, pricing
+  mechanics, unsupported claims, stale metadata, and account-promo wording
+  returned no findings.
+- Prompt self-improvement: no automation prompt edit was needed because the
+  current prompt already preserves Fast mode wording, quiet autonomy, existing
+  PR repair first, crawler-first discovery, 3 PR mandate, skill-repo coverage,
+  listing/catalog lanes, duplicate/fork rules, OpenClaw checks, link checks,
+  validation gates, no-promotion rule, 2-target-improvement rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap, prompt cap,
+  and self-improvement. Durable lesson: brand-monitoring and sentiment
+  dashboards remain strong lanes when Xquik or TweetClaw is optional reviewed
+  public-source input and the patch also improves setup, import validation,
+  dependencies, controls, timeouts, stale links, or source-schema docs.
+  README-only targets can be appropriate when the repo's useful surface is docs
+  and the patch adds schema, setup, validation, and canonical references rather
+  than a thin mention. Automation TOML measured 13,657 bytes.
+- Final TweetClaw validation and push: changed TweetClaw files were
+  `docs/discoverability-audit.md` and `docs/discoverability-audit.archive.txt`.
+  Final memory-size, OpenClaw platform fitness, em-dash, whitespace, public
+  hygiene, public link, and `npm run check:all` validations were run before the
+  audit update was committed and pushed to `origin/master`.
+
 ## 2026-07-09 16:12 UTC heartbeat
 
 - Runtime and local state: model, Fast speed, and extra-high reasoning selectors
