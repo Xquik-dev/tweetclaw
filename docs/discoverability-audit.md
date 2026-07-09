@@ -174,24 +174,30 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 09:52 UTC: Fast and extra-high selectors unavailable. Crawler
-  monitor returned 0 PR-monitor lanes and 27 fresh-target lanes; most were
-  prior-history skill/catalog/dashboard repos. Broad authored-open search hit
-  GitHub secondary limits after a malformed partition retry, so exact URL
-  readbacks were used. Final clean exact-read pass covered 19 known and new PRs
-  with 19 ok and 0 failures. Repaired
-  `Saminiscool/twitter-ai-agent#2` by merging current upstream `main`,
-  resolving the README conflict, applying a safe import-order fix, validating,
-  and pushing head `9b8fc84`; final readback is open, MERGEABLE, and CLEAN.
-  Removed no editable promotion notes. Screened crawler and fallback repos;
-  duplicate-blocked prior Xquik PR targets and weak notebook/thin repos. Opened
-  3 fresh PRs: `Tirthasen1000/Social-Media-Sentiment-Analysis-Dashboard#1`,
-  `Deepakkumar79826/Social-Media-Sentiment-Analysis-Dashboard#1`, and
-  `m-karthikeya/social-media-sentiment-analysis-dashboard#1`, each adding a
-  TweetClaw/Xquik export import workflow plus target-native dataset, path,
-  duplicate-row, neutral-label, README, or broken-link fixes. OpenClaw docs,
-  Xquik docs, ClawHub, repaired PR, and new PR links returned HTTP 200; npm
-  package page still returned the known 403. Full evidence is in the archive.
+- 2026-07-09 10:32 UTC: Fast and extra-high selectors unavailable. Xquik and
+  TweetClaw issue queues were empty. Crawler PR monitor returned 0 lanes;
+  authored-open keyword partitions hit the GitHub 1000 cap for several terms,
+  so known and recent PRs were exact-read. Repaired
+  `JimLiu/baoyu-skills#192` by adding EXTEND.md preference guidance and pushed
+  `f8c03b2`; repaired `nrjdalal/inscope#29` by sourcing Xquik MCP keys from
+  Keychain, switching MCP auth to `x-api-key`, validating live MCP HTTP 200,
+  replying to the maintainer, and pushing `4f9416c`. Removed the old editable
+  promotion-note comment from `larsderidder/openclaw-content-kit#1`.
+  Recorded blockers for target-owned workflow or auth failures on
+  `davila7/claude-code-templates#634`, `VenkateshDas/TwitterTreasures#1`, and
+  Vercel-gated dashboard PRs. Fresh crawler plus fallback discovery screened
+  skill, catalog, dashboard, and sentiment-analysis lanes; prior-history or
+  duplicate-blocked `JuneYaooo/awesome-ai-media-skills`,
+  `blacktwist/social-media-skills`, `zuocharles/openclaw-social-media-skill`,
+  `Aditya923-c/xpoz-agent-skills`, and several dashboard repos. Opened 3 fresh
+  safe PRs: `bindu-n-87/social-media-sentiment-analysis-dashboard#1`,
+  `Swijay/Social-Media-Sentiment-Analysis-Dashboard#1`, and
+  `KeerthanVallabha/AI-Sentiment-Analysis-Dashboard#1`. Each adds a
+  TweetClaw/Xquik import or upload path plus at least 2 target-native fixes
+  such as root-relative paths, dataset fallback, blank-row guards, setup docs,
+  sample files, converter smoke tests, or Sentiment140 compatibility. OpenClaw
+  docs, Xquik docs, handled README links, and all new PR URLs returned HTTP
+  200. Full evidence is in the archive.
 
 ## Reporting Checklist
 

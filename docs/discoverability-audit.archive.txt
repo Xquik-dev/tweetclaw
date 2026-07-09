@@ -71935,3 +71935,162 @@ Existing untracked TweetClaw file `0` was preserved.
   and extra-high wording, quiet autonomy, crawler-first discovery, existing PR
   repair first, mandatory 3 PRs, no promotion notes, duplicate/fork rules, link
   checks, prompt caps, and 2 target improvements per PR.
+
+2026-07-09 10:32 UTC heartbeat evidence
+
+- Runtime limitation: the current Codex desktop runtime did not expose model,
+  Fast speed, or extra-high reasoning selectors. Continued per heartbeat rule.
+- Local issue queues: `gh issue list` returned no open issues for
+  `Xquik-dev/xquik` and `Xquik-dev/tweetclaw`.
+- PR monitor crawler: ran from `/Users/burak/Developer/xquik` with strict JSON
+  output `/tmp/xquik-hb-20260709-103235/pr-monitor.json`, bounded request and
+  proxy warmup timeouts, focused PR-monitor queries, and no GitHub token in
+  crawler search. JSON parsed with 0 opportunities. Managed egress reported
+  transient socket closures and quarantines, so fallback GitHub API inventory
+  continued.
+- Authored-open inventory: broad authored-open search hit GitHub's 1000-result
+  cap and was not treated as complete. Focused keyword partitions produced
+  partial counts: TweetClaw 1000, tweetclaw 1000, Xquik 1000, xquik 1000,
+  x-twitter-scraper 713, OpenClaw 758, and ClawHub 223. The
+  `@xquik/tweetclaw` partition had GitHub search syntax errors. Recent-created
+  exact readbacks covered 10 PRs including `openbestof/awesome-ai#85`,
+  `0voice/awesome-ai-tools#77`, `YangsonHung/awesome-agent-skills#7`,
+  `Orkas-AI/Orkas-Awesome-AgentSkills#7`, `Ezeafk/awesome-agent-skills#7`,
+  `m-karthikeya/social-media-sentiment-analysis-dashboard#1`,
+  `Tirthasen1000/Social-Media-Sentiment-Analysis-Dashboard#1`,
+  `kinhluan/skills#18`, `mcollina/skills#37`, and
+  `JimLiu/baoyu-skills#192`.
+- Existing PR exact reads and repairs: top-50 plus known URL exact reads found
+  actionable `nrjdalal/inscope#29`, `JimLiu/baoyu-skills#192`, and an editable
+  old promotion note on `larsderidder/openclaw-content-kit#1`. Deleted old
+  comment `4876917727` on `larsderidder/openclaw-content-kit#1` because it
+  contained optional visibility wording. `Saminiscool/twitter-ai-agent#2`
+  stayed clean after the prior repair. `VenkateshDas/TwitterTreasures#1` was
+  blocked by an out-of-credits bot finding. `davila7/claude-code-templates#634`
+  had target-owned workflow comment-permission 403 failures, while its security
+  and SkillSpector reports were not PR-content blockers. `Lakshya300104/Elegant-Sentiment-Analysis-App-with-Streamlit#1`
+  stayed behind Vercel auth. Other exact reads showed no safe PR-side repair.
+- `JimLiu/baoyu-skills#192` repair: verified fork head
+  `kriptoburak/jimliu-baoyu-skills`, branch
+  `codex/add-baoyu-xquik-data-skill`. Added `## Preferences (EXTEND.md)` and
+  `## Extension Support` to `skills/baoyu-xquik-data/SKILL.md`. Validation
+  passed `git diff --check`, `npm run verify:skill-release-commits`, `npm ci`,
+  and `npm test` with 249 passing tests. Public wording scan passed. Committed
+  and pushed `f8c03b2 fix(baoyu-xquik-data): add extend preferences`. Final
+  readback: OPEN, MERGEABLE, UNSTABLE, head
+  `f8c03b2252513ff023c87642ff02516daeaef049`, no comments, and no inline
+  comments on the repaired commit.
+- `nrjdalal/inscope#29` repair: maintainer asked for Keychain-backed Xquik API
+  key sourcing and confirmation of the MCP auth header. Official Xquik MCP docs
+  and a live MCP initialize request confirmed `x-api-key` with HTTP 200; the
+  test retrieved the paid API key from macOS Keychain inside the command and did
+  not print, store, or log it. Implemented `--xquik-keychain`, `--seed-xquik`,
+  workspace finalization, hook exports, doctor checks, README docs, snapshots,
+  and MCP `headers: { "x-api-key": "${XQUIK_API_KEY:-}" }`. Validation passed
+  `bun install --frozen-lockfile`, `bun run format`, `bun test --update-snapshots`,
+  `bun test`, `bun run lint`, `bun run typecheck`, `bun run format:check`,
+  `bun run build`, and `git diff --check`. Public wording scan passed. Commit
+  `4f9416c fix: source Xquik MCP keys from Keychain` pushed to
+  `kriptoburak/inscope codex/add-xquik-mcp-server`. Maintainer reply:
+  https://github.com/nrjdalal/inscope/pull/29#issuecomment-4924303671.
+  Final readback: OPEN, MERGEABLE, checks Auto Labeler and GitGuardian success,
+  and our reply present.
+- Fresh crawler coverage: ran
+  `/tmp/xquik-hb-20260709-103235/fresh-discovery.json` from Xquik with strict
+  JSON, bounded request timeout, `--limit 40`, `--search-pages 1`,
+  `--per-query-limit 5`, `--concurrency 8`, and focused queries for SKILL.md,
+  `.agents/skills`, skill dirs, OpenClaw, MCP, Twitter/X, awesome lists,
+  social-media dashboards, and X API MCP examples. JSON parsed with 15
+  opportunities including `xpaysh/awesome-x402`,
+  `JuneYaooo/awesome-ai-media-skills`, `blacktwist/social-media-skills`,
+  `XeroAPI/xero-agent-toolkit`, `rickicode/patchright-browser`,
+  `checkra1neth/xbird-skill`, `liyupi/yupi-hot-monitor`,
+  `Aditya923-c/xpoz-agent-skills`, `alexclowe/awesome-copilot-cowork-plugins`,
+  `zuocharles/openclaw-social-media-skill`, `NachaFromMars/social-media-agent`,
+  `NachaFromMars/social-media-scheduler`, `rrrrrredy/all-net-search-read`,
+  `JNHFlow21/ocl-social-fetcher`, and
+  `Seshu-Konijeti/Social-Media-Sentiment-Analysis-Dashboard`.
+- Fresh duplicate and policy gates: compact audit, archive, target content,
+  and target open/closed PRs and issues were searched for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, TweetClaw GitHub
+  URL, npm URL, ClawHub, OpenClaw, and variants. Duplicate-blocked or
+  prior-history lanes included `JuneYaooo/awesome-ai-media-skills`,
+  `blacktwist/social-media-skills`, `zuocharles/openclaw-social-media-skill`,
+  `JNHFlow21/ocl-social-fetcher`, `Aditya923-c/xpoz-agent-skills`,
+  `Seshu-Konijeti/Social-Media-Sentiment-Analysis-Dashboard`,
+  `Swastika2401/Social-Media-Sentiment-Analysis`,
+  `Ronit26Mehta/Twitter-Analysis-Dashboard`, `Vayu-143/social-media-sentiment-dashboard`,
+  `palsreya785-ops/Social-Media-Sentiment-Analysis-Dashboard`, and
+  `tanusoul/Social-Media-Sentiment-Analysis-Dashboard`. Weak or noisy lanes
+  included `ncebakazimakhanya97-ui/sentiment-analysis-dashboard` as too thin
+  and `maheshbhakre/social-media-sentiment-analysis-dashboard` because it
+  commits a large `venv/` tree. Missing license metadata was recorded for
+  several dashboard candidates and did not block small direct PRs.
+- Fresh PR 1: opened
+  https://github.com/bindu-n-87/social-media-sentiment-analysis-dashboard/pull/1
+  from verified fork `kriptoburak/social-media-sentiment-analysis-dashboard-bindu`,
+  parent `bindu-n-87/social-media-sentiment-analysis-dashboard`, branch
+  `codex/import-tweetclaw-social-data`, commit `b60e552`. The PR adds a
+  TweetClaw/Xquik JSON, JSONL, and CSV converter into the target
+  `text,sentiment` shape, auto-loads `data/tweetclaw_social_data.csv` before
+  falling back to sample data, fixes root-relative model and dataset paths, and
+  fences setup, training, and launch commands. Validation passed `git diff
+  --check`, `python3 -m py_compile` for touched app, converter, and source
+  files, and converter smoke test to `/tmp/bindu-tweetclaw-social-data.csv`.
+  Final readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 2: opened
+  https://github.com/Swijay/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/social-media-sentiment-dashboard-swijay`,
+  parent `Swijay/Social-Media-Sentiment-Analysis-Dashboard`, branch
+  `codex/import-tweetclaw-social-posts`, commit `afce3bc`. The PR adds a
+  TweetClaw/Xquik converter into the target `post_id,platform,brand,text,sentiment,likes,shares,date`
+  CSV shape, makes training and dashboard prefer
+  `data/tweetclaw_social_media_posts.csv` when present, preserves the original
+  fallback dataset, adds CSV batch blank-row guards, and documents the import
+  workflow. Validation passed `git diff --check`, `python3 -m py_compile` for
+  touched app, converter, and source files, and converter smoke test to
+  `/tmp/swijay-tweetclaw-social-media-posts.csv`. Final readback: OPEN, ready,
+  MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 3: opened
+  https://github.com/KeerthanVallabha/AI-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/ai-sentiment-analysis-dashboard-keerthan`,
+  parent `KeerthanVallabha/AI-Sentiment-Analysis-Dashboard`, branch
+  `codex/accept-xquik-text-csv`, commit `41b7ae5`. The PR adds CSV upload
+  normalization for TweetClaw/Xquik text-like columns, preserves the existing
+  Sentiment140-style headerless upload path, filters blank text rows before
+  model calls, updates setup docs, and adds `examples/tweetclaw-export.csv`.
+  Validation passed `git diff --check`, `python3 -m py_compile app.py`, and a
+  static source check for text-column handling plus empty-row guard. Final
+  readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- Public hygiene and links: changed target README links were enumerated. Bindu
+  README had one GitHub clone URL; Swijay and Keerthan changed READMEs had no
+  external links. The 3 new PR URLs returned HTTP 200. Official OpenClaw
+  `llms.txt`, CLI plugin docs, manage plugins, building plugins, ClawHub CLI,
+  and tool plugin docs returned HTTP 200. Xquik MCP overview and API
+  authentication docs returned HTTP 200. New PR bodies and diffs were inspected
+  for secrets, private implementation details, restricted source names,
+  private cost mechanics, unsupported claims, badge misuse, and banned
+  promotion wording. No promotion notes were added.
+- TweetClaw changed files for this run: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: manual simplify and thermo-nuclear review found
+  no structural issue in the audit-only diff. `npm run check-memory-md-size`
+  passed at 14,997 of 15,360 bytes. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all`
+  passed, including typecheck, lint, duplicate scan, Knip, suppression check,
+  dash check, memory check, skill frontmatter, version alignment, build,
+  OpenClaw platform fitness, package artifact, and 168 tests with 100%
+  coverage. Automation TOML measured 13,657 bytes, under the 15 KiB prompt
+  cap.
+- Prompt self-improvement: no automation prompt edit was useful. Durable
+  lessons reinforced for future runs: exact-read recent authored PRs when broad
+  partitions hit GitHub's cap; treat target-owned workflow permission failures
+  as blockers after reading logs; for sentiment-dashboard lanes, prefer small
+  import or upload adapters plus concrete path, README, blank-row, fallback, or
+  schema fixes over thin listing mentions; keep old promotion-note cleanup in
+  the repair phase before new outreach. The active prompt already preserves
+  Fast and extra-high wording, quiet autonomy, crawler-first discovery,
+  existing PR repair first, mandatory 3 PRs, no promotion notes, duplicate and
+  fork rules, OpenClaw checks, link checks, prompt caps, and 2 target
+  improvements per PR.
