@@ -174,28 +174,27 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 15:29 UTC: Fast and extra-high selectors unavailable. Xquik and
-  TweetClaw issue queues were empty; Xquik had unrelated
-  `docs/feature-roadmap.md` changes and TweetClaw had pre-existing untracked
-  `0`, both untouched. Crawler-first PR, skill, registry, and project JSON runs
-  from `/Users/burak/Developer/xquik` used no GitHub token variables, parsed as
-  strict JSON, and returned 0 candidates while network-egress logs showed route
-  failures only. Exact PR readback covered 15 current Xquik/TweetClaw
-  visibility PRs; no repairable maintainer comments, conflicts, generated drift,
-  promotion notes, or bad checks were found. `KPZ231/Instra#2` already contains
-  the CodeRabbit MD040 fence fix; other blockers remain target-owned Vercel
-  authorization, CLA, policy, or clean monitor states. Fallback GitHub code
-  search found 197 archive-fresh repos; at least 7 were screened with metadata,
-  duplicate PR/issue/content checks, target file reads, and policy checks.
-  Opened `jzOcb/writing-style-skill#2`,
-  `jikssha/openclaw-dae-skills#1`, and `SpaceZephyr/myskill#2`. Each adds
-  optional TweetClaw/OpenClaw source-packet guidance plus 2+ target improvements
-  around provenance fields, privacy boundaries, and workflow clarity.
-  `ryoppippi/tgrab` was a safe lane but GitHub rejected PR creation with a
-  permission blocker after the fork branch push. The 3 opened PRs read back
-  OPEN, MERGEABLE, CLEAN, 0 comments, 0 reviews, and no check runs. Current
-  OpenClaw docs, npm registry, target PR links, TweetClaw public links, hygiene
-  scans, and target validations passed. Full evidence is in the archive.
+- 2026-07-09 15:50 UTC: Fast and extra-high selectors unavailable. Xquik and
+  TweetClaw issue queues were empty; unrelated Xquik roadmap edits and
+  TweetClaw untracked `0` were preserved. Crawler PR, skill, registry, and
+  project runs from Xquik used token env vars unset, strict JSON, request
+  timeouts, skill-repo coverage, and parsed as 0 candidates with only network
+  route failures logged. Exact audit URL inventory read 18 open visibility PRs;
+  no repairable comments, review comments, CI failures, conflicts, DCO/CLA
+  fixes, generated drift, bot findings, or promotion-note cleanup were found.
+  Blockers remain target-owned Vercel auth, Bifrost CLA, policy, or monitor-only
+  states. Fallback code search found 277 hits, 204 repos, and 144 archive-fresh
+  repos; screened at least 7 repos with duplicate, fork, license, policy, and
+  file reads. Opened `Justmalhar/x-cli#1`, `jgerton/brand-toolkit#2`, and
+  `creynir/x-builder#35`, each adding optional `@xquik/tweetclaw`/OpenClaw
+  source-packet guidance plus 2+ target improvements around provenance, privacy,
+  safety, storage, and workflow boundaries. A cubic P3 wording review on
+  `creynir/x-builder#35` was repaired in follow-up commit `0d8fa7d`. Final new
+  PR readback: x-cli and brand-toolkit OPEN, MERGEABLE, CLEAN with 0 comments
+  and 0 reviews; x-builder OPEN, MERGEABLE, BLOCKED with the repaired cubic
+  comment, a follow-up cubic approval, and a successful cubic check. OpenClaw
+  docs, target PR URLs, npm registry, TweetClaw public links, hygiene scans, and
+  target validations passed. Full evidence is in the archive.
 
 ## Reporting Checklist
 
