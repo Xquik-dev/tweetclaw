@@ -2,6 +2,99 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-09 09:10 UTC CSV Import Outreach Run
+
+- Runtime selector limitation: Codex Desktop did not expose callable model,
+  Fast mode, or reasoning-effort selectors, so Codex 5.5 Fast mode and
+  extra-high reasoning could not be explicitly selected. Xquik and TweetClaw
+  worktrees started clean except TweetClaw's pre-existing untracked `0`; Xquik
+  open issue check returned none. No dev server, Browser, Chrome, production
+  SSH, or secret reads were used.
+- Crawler-first coverage: ran strict JSON crawler batches from
+  `/Users/burak/Developer/xquik` for PR monitoring and fresh skill/catalog plus
+  social-dashboard targets. The monitor pass returned 0 opportunities. The
+  fresh-target pass returned 28 opportunities after managed-egress socket
+  closures and proxy quarantine noise; most were prior-history skill/catalog
+  lanes or duplicate-blocked.
+- Open PR inventory: broad authored-open search first hit the 1,000-result cap,
+  then was partitioned by update windows and 2026-07-09 minute slices until each
+  bucket was below the cap. The partition union contained 4,291 unique authored
+  open PR URLs. Exact readback covered 91 audit-tracked, newest, and watchlist
+  PRs with 0 REST/GraphQL read failures.
+- Existing PR repairs: `davila7/claude-code-templates#634` had a maintainer
+  rebase request, generated catalog conflict, and failed scanners. Rebased the
+  branch onto current upstream main, resolved `dashboard/public/components.json`
+  by preserving upstream generated catalog data plus the TweetClaw
+  x-twitter-scraper entries, kept the requested `The MCP server exposes 22
+  tools` wording, validated JSON/link/build/test checks, force-pushed with
+  lease, and posted
+  https://github.com/davila7/claude-code-templates/pull/634#issuecomment-4923598666.
+  Re-read showed SkillSpector itself passed for the 2 changed skills, while the
+  failing check status comes from GitHub Actions trying to post comments without
+  permission and from a target-wide security audit with hundreds of unrelated
+  pre-existing component findings. No safe PR-side fix remains.
+- Other existing PR blockers: Vercel authorization failures remain
+  maintainer-owner blockers on several exact-read PRs. `fosterushka/skillsmith-for-claude#1`
+  still contains an old maintainer-quoted promotion note, but deleting/editing
+  cleanup is blocked because the repository is archived and read-only. No
+  editable promotion note was added or left in new PR bodies.
+- Fresh screening and duplicate gates: compact audit, archive, target content,
+  target open/closed PRs and issues, target metadata, and fork state were
+  checked for TweetClaw, tweetclaw, `@xquik/tweetclaw`, Xquik,
+  x-twitter-scraper, TweetClaw GitHub/npm URLs, OpenClaw, ClawHub, and variants.
+  `11Anupam/Sentiment-analysis-machine` was blocked by prior history. Screened
+  `ADHIRAJ994/Sentiment-Analysis`, `AkInnovates08/Social-Media-Sentiment-Analysis-Dashboard`,
+  `VenkateshDas/TwitterTreasures`, and `gnanendranaidun/Sentiment-analysis---AI-Verse`;
+  the first 3 had native CSV import lanes with at least 2 target fixes, while
+  `gnanendranaidun` was lower-fit wellness content.
+- Fork gates: created or reused verified forks under `kriptoburak` only:
+  `Sentiment-Analysis-5` parent `ADHIRAJ994/Sentiment-Analysis`,
+  `Social-Media-Sentiment-Analysis-Dashboard-11` parent
+  `AkInnovates08/Social-Media-Sentiment-Analysis-Dashboard`, and
+  `TwitterTreasures` parent `VenkateshDas/TwitterTreasures`.
+- New PRs opened:
+  https://github.com/ADHIRAJ994/Sentiment-Analysis/pull/1 adds Xquik/TweetClaw
+  CSV text-column aliases, skips blank uploaded rows, removes sidebar debug path
+  disclosure, makes model lookup app-relative, fixes the clone URL, repairs
+  README anchors/links, and documents CSV columns.
+- https://github.com/AkInnovates08/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  adds a sidebar uploader for Xquik/TweetClaw tweet CSV exports, predicts labels
+  when uploaded CSVs lack `sentiment`, skips blank rows, makes data/model paths
+  app-relative, fixes the placeholder clone URL, and documents upload columns.
+- https://github.com/VenkateshDas/TwitterTreasures/pull/1 adds Xquik/TweetClaw
+  tweet text aliases, tolerates missing index columns, fills optional metadata,
+  rejects missing/empty uploads before analysis, fixes a UI typo, updates
+  README import docs, and replaces broken README links.
+- New PR readbacks: ADHIRAJ and AkInnovates PRs are open, mergeable, clean, no
+  checks, no comments, and no reviews. TwitterTreasures is open and mergeable;
+  its only check is `Kilo Code Review` action-required because the target bot
+  account is out of credits, which is not PR-side actionable.
+- Target validation: all 3 new lanes passed Python compile, Git whitespace
+  check, README markdown link check, and PR body readback. The davila repair
+  passed JSON parse for generated catalog/content files, Git whitespace check,
+  markdown link checks on both touched skill files, `npm run build`, and
+  `npm test`.
+- Official OpenClaw docs check: `https://docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, CLI plugin/skills/update docs, plugin manage/manifest/SDK
+  runtime docs, ClawHub publishing, and debugging docs all returned HTTP 200.
+- Public hygiene and links: Xquik app/docs/OpenAPI/MCP manifest, TweetClaw
+  GitHub, npm registry package, new PRs, davila repair PR, Skills.sh, and
+  OpenClaw GitHub returned HTTP 200. ClawHub TweetClaw URL timed out or failed
+  TLS from this network. New PR bodies were edited to remove raw flag-style
+  validation text and were scanned for promotion wording, secrets, private
+  implementation details, restricted provider/source names, unsupported claims,
+  and internal cost mechanics.
+- TweetClaw validation: simplify and thermo reviews found the audit-only edit
+  scoped and non-structural. `npm run check-openclaw-platform-fitness`,
+  `npm run check-em-dash`, `npm run check-suppressions`, `git diff` whitespace
+  check, and full `npm run check:all` passed with 168 tests and 100 percent
+  coverage. Memory markdown size passed at 14,414 of 15,360 bytes. Persisted
+  automation TOML measured 13,657 bytes and was not edited.
+- Prompt self-improvement: keep exact-read rechecks after repairs because queued
+  scanner failures can collapse to maintainer workflow-permission blockers.
+  For public PR bodies, prefer human-readable validation phrases over raw CLI
+  flags so validation remains clear without leaking shell-specific syntax.
+
 ### 2026-07-04 05:10 UTC Native Source Integration Run
 
 - Runtime selector limitation: Codex Desktop did not expose model, Fast mode, or

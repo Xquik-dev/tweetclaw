@@ -174,23 +174,20 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 08:41 UTC: Fast and extra-high selectors unavailable. Crawler
-  monitor and fresh-target passes returned strict JSON with 0 opportunities
-  after managed-egress socket closures and proxy quarantine noise. Broad
-  authored-open PR partitioning hit a GitHub secondary search limit, so the run
-  stopped broad search and exact-read 14 audit-tracked/new PRs by URL with 0
-  failures. Existing Xquik visibility PRs had no new editable repair beyond
-  known maintainer review, Vercel authorization, or archived read-only blockers.
-  Web-index fallback screened 16 concrete repositories after compact/archive
-  duplicate gates. Opened 3 fresh PRs:
-  `SachinthyaCodes/sentiment-analysis#1` (Xquik CSV upload plus parser errors,
-  blank input, shared VADER, and README setup fixes),
-  `Asad-Aziz-001/Sentiment-Analysis-Dashboard#1` (Xquik CSV columns plus blank
-  row validation, quiet VADER setup, dead demo link fix, and run docs), and
-  `Lakshya300104/Elegant-Sentiment-Analysis-App-with-Streamlit#1` (Xquik CSV
-  scoring plus path-safe artifacts, quiet NLTK, dependency cleanup, and contact
-  markdown fix). OpenClaw docs, canonical Xquik OpenAPI, MCP manifest, repaired
-  PRs, and new PRs returned HTTP 200; npm package page still returned known 403.
+- 2026-07-09 09:10 UTC: Fast and extra-high selectors unavailable. Crawler
+  monitor returned 0 opportunities and fresh-target JSON returned 28 mostly
+  prior-history skill/catalog lanes after managed-egress socket closures.
+  Authored-open PR inventory was partitioned below GitHub's 1,000-result cap and
+  yielded 4,291 unique URLs; 91 audit/new PRs were exact-read with 0 read
+  failures. Repaired `davila7/claude-code-templates#634` by rebasing, resolving
+  generated catalog drift, preserving maintainer-requested MCP wording, pushing,
+  and posting validation; remaining failures are target workflow comment
+  permissions or target-wide pre-existing scanner noise. Removed no editable
+  promotion notes; one archived repo blocked cleanup. Opened 3 fresh PRs:
+  `ADHIRAJ994/Sentiment-Analysis#1`, `AkInnovates08/Social-Media-Sentiment-Analysis-Dashboard#1`,
+  and `VenkateshDas/TwitterTreasures#1`, each adding Xquik/TweetClaw CSV import
+  plus target-native parser, path, blank-row, README, or link fixes. OpenClaw
+  docs and new PR links returned HTTP 200; ClawHub timed out from this network.
   Full evidence is in the archive.
 
 ## Reporting Checklist
