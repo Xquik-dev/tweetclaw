@@ -72096,3 +72096,115 @@ Existing untracked TweetClaw file `0` was preserved.
   existing PR repair first, mandatory 3 PRs, no promotion notes, duplicate and
   fork rules, OpenClaw checks, link checks, prompt caps, and 2 target
   improvements per PR.
+
+2026-07-09 11:17 UTC heartbeat
+
+- Runtime selector limitation: this Codex desktop run did not expose model,
+  speed, or reasoning-effort selectors, so Fast mode and extra-high effort could
+  not be selected. The run continued and recorded the limitation.
+- Local issue gate: `gh issue list` returned no open issues for
+  `Xquik-dev/tweetclaw` and `Xquik-dev/xquik`. TweetClaw started on
+  `master...origin/master` with only pre-existing untracked `0`; Xquik was
+  clean on master.
+- Existing PR inventory: crawler PR monitor from `/Users/burak/Developer/xquik`
+  wrote strict JSON to `/tmp/xquik-hb-20260709-111744/pr-monitor.json` and
+  parsed as 0 opportunities. Known PR URLs plus recent authored open PRs were
+  exact-read: `bindu-n-87/social-media-sentiment-analysis-dashboard#1`,
+  `Swijay/Social-Media-Sentiment-Analysis-Dashboard#1`,
+  `KeerthanVallabha/AI-Sentiment-Analysis-Dashboard#1`,
+  `pingan8787/awesome-ai-tools#172`,
+  `Aiblogfirst/awesome-free-ai-social-media-tools#5`,
+  `Kollyjose/awesome-workflow-automation#1`, `schwepps/skills#4`,
+  `openbestof/awesome-ai#85`, `0voice/awesome-ai-tools#77`,
+  `nrjdalal/inscope#29`, `JimLiu/baoyu-skills#192`,
+  `larsderidder/openclaw-content-kit#1`,
+  `davila7/claude-code-templates#634`, `VenkateshDas/TwitterTreasures#1`, and
+  `Saminiscool/twitter-ai-agent#2`. Open PRs were ready and mergeable unless
+  previously blocked; no new comments, reviews, conflicts, DCO or CLA blockers,
+  generated drift, valid bot findings, or editable promotion notes required
+  repair.
+- Existing PR blockers carried forward: `davila7/claude-code-templates#634`
+  remains blocked by target-owned Security Audit and SkillSpector workflow
+  permissions/report mismatch; `VenkateshDas/TwitterTreasures#1` remains
+  blocked by target-owned Kilo Code Review out-of-credits status. No safe
+  PR-side repair was available.
+- Crawler-first discovery: fresh crawler output
+  `/tmp/xquik-hb-20260709-111744/fresh-discovery.json` used skill, OpenClaw,
+  MCP, agent, awesome-list, and social-dashboard query coverage and parsed as
+  one candidate, `rounakdey2003/Social-Sentiments`. Archive search found prior
+  history around `rounakdey2003/Social-Sentiments#1`, so the lane was blocked.
+- Fallback discovery and duplicate checks: GitHub repo searches screened recent
+  social sentiment dashboards. Target archive, target content, open and closed
+  PRs, and issues were searched for TweetClaw, tweetclaw, `@xquik/tweetclaw`,
+  Xquik, x-twitter-scraper, TweetClaw URLs, ClawHub, and OpenClaw variants.
+  `gundellidivya/Social-Media-Sentiment-Dashboard` and
+  `sumedhagowda-commits/Social-Media-Sentiment-Analysis-Dashboard` were blocked
+  by existing open or archived Xquik PR history.
+  `arppitha-ai/social-media-sentiment-analysis-dashboard` was screened as a
+  clean backup lane but not opened because 3 safer first lanes were completed.
+- Fresh PR 1: opened
+  https://github.com/Santhosh151999/Social-Media-Sentiment----MCA-project/pull/1
+  from verified fork `kriptoburak/social-media-sentiment-mca-santhosh`, parent
+  `Santhosh151999/Social-Media-Sentiment----MCA-project`, branch
+  `codex/import-tweetclaw-dashboard-csv`, commit `17400a1`. The PR adds
+  `scripts/tweetclaw_to_dashboard_csv.py`, a TweetClaw/Xquik JSON, JSONL, and
+  CSV converter for the target's `tweets.csv` and
+  `hashtags_by_sentiment.csv` shapes; adds `examples/tweetclaw-export.json`;
+  adds a README with setup, sample-data, import, and launch guidance; makes the
+  Streamlit pages load CSV files relative to the repo root; and guards keyword
+  filtering when text fields are blank. Validation passed diff check, Python
+  compile for touched files, and a converter smoke test that wrote non-empty
+  tweet and hashtag CSV outputs. Final readback: OPEN, ready, MERGEABLE, 0
+  comments, 0 reviews, 0 checks.
+- Fresh PR 2: opened
+  https://github.com/ayushkrdubey-23/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/social-media-sentiment-dashboard-ayush`,
+  parent `ayushkrdubey-23/Social-Media-Sentiment-Analysis-Dashboard`, branch
+  `codex/import-tweetclaw-twitter-csv`, commit `474e73b`. The PR adds
+  `scripts/tweetclaw_to_twitter_csv.py`, a TweetClaw/Xquik converter for the
+  target's `data/twitter.csv` training shape; adds a sample export; documents
+  the import workflow; makes app, training, output, and model paths
+  repo-root-relative; accepts common upload text column names; stops cleanly for
+  blank uploads; and makes optional Plotly image export degrade gracefully when
+  the image backend is unavailable. Validation passed diff check, Python
+  compile for touched files, and a converter smoke test that wrote a valid
+  two-column training CSV. Final readback: OPEN, ready, MERGEABLE, 0 comments,
+  0 reviews, 0 checks.
+- Fresh PR 3: opened
+  https://github.com/VinodhiniC1234/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/social-media-sentiment-dashboard-vinodhini`,
+  parent `VinodhiniC1234/Social-Media-Sentiment-Analysis-Dashboard`, branch
+  `codex/import-tweetclaw-social-data`, commit `b17a12a`. The PR adds
+  `scripts/tweetclaw_to_social_media_data.py`, a TweetClaw/Xquik converter into
+  the target `text,sentiment` shape; adds a sample export; documents the import
+  workflow; makes model and app paths repo-root-relative; prefers the converted
+  dataset when present while preserving the bundled fallback dataset; and
+  filters blank text rows before fitting. Validation passed diff check, Python
+  compile for touched files, and a converter smoke test that wrote 3 labeled
+  rows. Final readback: OPEN, ready, MERGEABLE, 0 comments, 0 reviews, 0 checks.
+- Public hygiene and links: new PR bodies and diffs were inspected for secrets,
+  private implementation details, restricted source names, internal cost
+  mechanics, unsupported claims, badge misuse, and promotion-note wording. No
+  promotion notes were added. Handled README links were enumerated: Santhosh and
+  Vinodhini introduced no external URL; Ayush had only a localhost dashboard
+  URL. The 3 new PR URLs returned HTTP 200. Official OpenClaw `llms.txt`, CLI
+  plugin docs, manage plugins, building plugins, ClawHub CLI, and tool plugin
+  docs returned HTTP 200.
+- TweetClaw changed files for this run:
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: manual audit-only simplify and structural review
+  found no code issue. `npm run check-memory-md-size` passed at 14,578 of
+  15,360 bytes. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all` passed,
+  including typecheck, lint, duplicate scan, Knip, suppression check, dash
+  check, memory check, skill frontmatter, version alignment, build, OpenClaw
+  platform fitness, package artifact, and 168 tests with 100% coverage.
+  Automation TOML measured 13,657 bytes, under the 15 KiB prompt cap.
+- Prompt self-improvement: no automation prompt edit was useful. Durable lesson:
+  when dashboard repos are small and unmaintained, prefer low-risk import
+  adapters plus concrete repo fixes such as root-relative paths, README setup,
+  blank-row guards, safe optional exports, and fallback dataset behavior. Keep
+  duplicate screens anchored in compact audit, archive, target content, and
+  target PR or issue history before opening similar dashboard lanes.
