@@ -174,26 +174,26 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 14:26 UTC: Fast and extra-high selectors unavailable. Xquik and
-  TweetClaw issue queues were empty. Crawler PR monitor plus fresh skill,
-  project, and social packs returned 0 lanes. Authored-open GraphQL reported
-  4,345 PRs, so no complete all-GitHub inventory claim was made; exact reads
-  covered 200 recent open PRs with 0 read failures. Repaired 4 existing
-  Xquik-visibility PRs before outreach: `KPZ231/Instra#2` fixed an unlabeled
-  HTTP fence, `jayteealao/agent-skills#4`, `nrjdalal/inscope#29`, and
-  `numbpill3d/mcp-radar#5` resolved merge conflicts. Fresh screens blocked
-  placeholder, first-party, duplicate, or low-fit lanes, then opened 3 safe
-  target-native PRs: `Amarel-Taylor-Scott/mcp-servers-directory#3`,
-  `xiaozhenyangCode/awesome-cursor-rules#2`, and
-  `sisovin/mcp-servers-directory#4`. The PRs add Xquik MCP catalog entries with
-  category, install, auth, compatibility, generated-count, heading, or schema
-  metadata improvements. All 3 read back OPEN and MERGEABLE with no comments or
-  checks yet. Public hygiene removed one editable body phrase containing banned
-  visibility wording. Current OpenClaw indexed docs returned HTTP 200 for
-  `llms.txt`, CLI plugins, plugin build, manifest, tool plugin, permission
-  request, SDK runtime, install override, ClawHub publishing, skill format, and
-  debugging routes. Xquik, docs, target PR URLs, Xquik GitHub, `mcp-remote`, and
-  npm package links checked; `/mcp` returned expected unauthenticated 401.
+- 2026-07-09 15:05 UTC: Fast and extra-high selectors unavailable. Xquik and
+  TweetClaw issue queues were empty. Crawler PR monitor returned 0 lanes;
+  crawler skill coverage returned 10. Authored-open search hit GitHub's
+  1,000-result cap, so no complete all-GitHub inventory claim was made; focused
+  exact reads covered recent and audit-notable Xquik/TweetClaw PRs. Repair
+  pass found only blockers or clean readbacks: `KPZ231/Instra#2` has a stale
+  CodeRabbit MD040 thread already fixed and target-owned Vercel auth failure;
+  `maximhq/bifrost#5069` is CLA-pending; `b-i-king/Video_Game_Stats_Tracker#17`
+  and `adrajameet7805/Twitter-Sentiment-analysis#1` have target-owned Vercel
+  auth failures; `Xquik-dev/hermes-tweet#591` Socket noted a benign
+  `basedpyright` bump. Fresh screens selected 3 direct skill lanes after
+  duplicate and target checks, then opened target-native PRs:
+  `Gamma-Software/post-to-x-skill#1`,
+  `qazwsxedccsqzse/x-post-skill#1`, and
+  `pravj/claude-x-post-skill#1`. Each adds optional TweetClaw/OpenClaw
+  source-packet guidance plus safety, validation, or explicit-approval
+  improvements while keeping the target's posting or digest flow in control.
+  All 3 read back OPEN, MERGEABLE, no comments, no reviews, and no failing
+  checks. Current OpenClaw indexed docs and handled Xquik, docs, npm registry,
+  fork, and PR links checked; `/mcp` returned expected unauthenticated 401.
   Full evidence is in the archive.
 
 ## Reporting Checklist
