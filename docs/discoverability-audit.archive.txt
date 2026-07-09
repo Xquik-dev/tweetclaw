@@ -70734,3 +70734,120 @@ Existing untracked TweetClaw file `0` was preserved.
   no promotion notes, and 2 target improvements per PR. Automation TOML
   measured 13,657 bytes, and the persisted prompt measured 13,313 bytes, under
   the 15 KiB prompt cap.
+
+2026-07-09 02:37 UTC heartbeat:
+- Runtime selectors: Codex 5.5 Fast and extra-high controls were not exposed in
+  this runtime. Recorded the limitation and continued.
+- Existing PR inventory and repair first: Xquik crawler PR monitor ran first
+  from `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/xquik-hb-20260709-023714/pr-monitor.json`, focused authored-open
+  Xquik/TweetClaw/OpenClaw/ClawHub/MCP/skill/catalog/listing/social queries,
+  limit 300, 1 search page, per-query limit 35, concurrency 8, and request
+  timeout 9000 ms. It returned 0 opportunities. Audit extraction found 1,984
+  PR URLs. Authenticated `gh search prs --author kriptoburak --state open`
+  returned HTTP 403 API rate-limit errors, so broad authored coverage was not
+  claimed and broad search was stopped for the run. Fallback exact reads
+  covered 10 priority repair PRs from compact and archive memory.
+- Repair readbacks: `portal-labs-infrastructure/remote-mcp-servers#4` is open
+  and unstable only because Vercel requires Portal One team authorization.
+  `agenticdevops/awesome-devops-mcp#38`,
+  `WagnerAgent/awesome-mcp-servers-devops#57`,
+  `sohamdogra/agent-skills-registry#12`,
+  `Pdbjork/hermosskills-site#1`, and `Giederius/mcp-registry#1` are open and
+  clean with no comments, reviews, or repairable checks. `oarisur/context-janitor#2`
+  is open and unstable with no comments, reviews, or checks. `agent-matrix/matrix-hub#26`
+  and `filippolmt/skills#47` are open and blocked with no comments, reviews, or
+  checks. `jayteealao/agent-skills#4` is open and clean; current head
+  `b672e39` preserves `metadata.description`, `metadata.version=1.134.0`, and
+  `xquik-x-data` plugin version `0.1.0`, so the older Gemini metadata comment
+  is already repaired. CodeRabbit is rate-limited, not actionable. No editable
+  promotion notes were found.
+- Official OpenClaw docs check: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/clawhub/publishing`, and `/help/debugging` returned HTTP
+  200. No TweetClaw OpenClaw compatibility, manifest, install, packaged-skill,
+  or release-gate files changed.
+- Fresh discovery: Xquik crawler target discovery wrote strict JSON to
+  `/tmp/xquik-hb-20260709-023714/fresh-targets.json` with 12 focused query
+  packs over MCP registries, awesome lists, Claude plugin marketplaces, agent
+  skills, SKILL.md, OpenAPI examples, social listening dashboards, brand
+  monitoring, marketing analytics, and remote MCP OAuth listings. It returned
+  1 candidate, `Crawlora-org/crawlora-skills`, which remained blocked by
+  competitor ownership. GitHub REST and web-index fallback found sentiment and
+  dashboard candidates after broad authenticated search was rate-limited.
+- Duplicate and blocker gates: compact audit, archive, target content, target
+  PRs, and target issues were searched for TweetClaw, Xquik, x-twitter-scraper,
+  OpenClaw, ClawHub, and variants. Blocked lanes included
+  `sherintht/Twitter_Sentiment_Dashboard`,
+  `80years80/Tweet_Sentiment_Googlesheet_Dashboard`,
+  `Ukpejehonour/SoftGrowTech_Twitter_Sentiment_Analysis`,
+  `jai-fadia/twitter-sentiment-analytics`,
+  `Tekraj15/Interactive-dashboards-for-twitter-sentiment-analysis`,
+  `M1325-source/Sentiment-Analysis`,
+  `drisskhattabi6/Real-Time-Twitter-Sentiment-Analysis`,
+  `kingabzpro/NLP-Tweets-Web-App`,
+  `Akanksha-tetwar/Airline-Tweets-Sentiment-Analysis-Dashboard`,
+  `jonathanrao99/Indian-airline-tweet-sentiment-analysis`,
+  `Saumya-Bhatt/Sentiment-Analysis-Dashboard`,
+  `jatingujju/social-media-sentiment-analysis-dashboard`,
+  `Chdh11/Sentiment_Analysis_Dashboard`,
+  `Prem07a/TwitterSentiment`,
+  `tmtsmrsl/TwitterSentimentAnalyzer`, and
+  `Bhupendra-glitch/Twitter-Sentiment-Analysis` because of prior archive
+  history, existing open or closed Xquik/TweetClaw PRs, duplicate target
+  history, clone failure, or lower target fit after 3 safe lanes existed.
+- Fresh PR 1: opened https://github.com/golamSaroar/python-interactive-dashboard/pull/1
+  from verified fork `kriptoburak/golamsaroar-python-interactive-dashboard`,
+  branch `codex/add-xquik-export-adapter`, commit `dae77bb`. Xquik lane:
+  `xquik_to_tweets_csv.py` converts Xquik CSV, JSON, JSONL, or NDJSON exports
+  into the target's `Tweets.csv` schema. Target improvements: README documents
+  the Xquik import workflow and fixes the `virualenv` setup typo. Validation
+  passed `python3 -m py_compile app.py xquik_to_tweets_csv.py`, sample JSONL
+  conversion to dashboard CSV, `git diff --check`, link checks, and
+  promotion-wording scan. Readback: open, ready, merge-state clean,
+  0 comments, 0 reviews, 0 checks.
+- Fresh PR 2: opened https://github.com/Tim-Fili/twitter_sentiment_analysis/pull/1
+  from verified fork `kriptoburak/tim-fili-twitter-sentiment-analysis`, branch
+  `codex/add-xquik-notebook-import`, commit `2c62e9d`. Xquik lane:
+  `xquik_to_notebook_csv.py` converts Xquik CSV, JSON, JSONL, or NDJSON exports
+  into a notebook-ready `Tweet` column. Target improvements: README duplicate
+  headings were replaced with setup and import instructions, `requirements.txt`
+  was added for notebook dependencies, and `.gitignore` now excludes local
+  `config*.csv` credential files and generated `xquik_tweets.csv`. Validation
+  passed `python3 -m py_compile xquik_to_notebook_csv.py`, sample JSONL
+  conversion, `git diff --check`, link checks, and promotion-wording scan.
+  Readback: open, ready, merge-state clean, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 3: opened https://github.com/victoraccete/airline-tweets-streamlit/pull/1
+  from verified fork `kriptoburak/victoraccete-airline-tweets-streamlit`,
+  branch `codex/add-xquik-export-adapter`, commit `c13445a`. Xquik lane:
+  `xquik_to_tweets_csv.py` converts Xquik exports into this app's
+  `Tweets.csv` schema, including `tweet_coord`. Target improvements: README
+  documents the import workflow and replaces the inline run command with a
+  fenced shell block, and app coordinate parsing now uses numeric coercion so
+  blank or malformed coordinates do not crash the dashboard. Validation passed
+  `python3 -m py_compile app.py xquik_to_tweets_csv.py`, sample JSONL
+  conversion to app CSV, `git diff --check`, link checks, and
+  promotion-wording scan. Readback: open, ready, merge-state clean,
+  0 comments, 0 reviews, 0 checks.
+- Public hygiene and links: `https://github.com/Xquik-dev/x-twitter-scraper`
+  and the 3 new PR URLs returned HTTP 200. `https://xquik.com` and
+  `https://docs.xquik.com` returned expected redirects. PR bodies and external
+  diffs were inspected for secrets, private implementation details, restricted
+  provider or source names, internal cost mechanics, unsupported claims, stale
+  metadata, and banned promotion wording. No promotion notes were added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: `npm run check-memory-md-size` passed at 14,185
+  of 15,360 bytes. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all` passed,
+  including typecheck, lint, duplicate check, knip, suppression check, dash
+  check, memory check, skill frontmatter, version alignment, build, OpenClaw
+  platform fitness, package artifact, and 168 tests with 100% coverage.
+- Prompt self-improvement: compact audit now records the GitHub search
+  rate-limit fallback and the current adapter PR pattern. No automation prompt
+  edit was needed because the active prompt already requires existing PR repair
+  first, crawler-first discovery, 3 fresh GitHub opportunities, listing/catalog
+  lanes as valid non-spammy paths, duplicate/fork rules, OpenClaw checks, link
+  checks, no promotion notes, and 2 target improvements per PR. Automation TOML
+  measured 13,657 bytes, and the persisted prompt measured 13,313 bytes, under
+  the 15 KiB prompt cap.
