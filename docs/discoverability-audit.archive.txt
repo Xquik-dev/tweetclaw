@@ -72523,3 +72523,6 @@ Existing untracked TweetClaw file `0` was preserved.
   alignment, build, OpenClaw platform fitness, package artifact, and 168 tests
   with 100% coverage. Automation TOML measured 13,657 bytes, under the 15 KiB
   prompt cap.
+- Commit and push record: staged only `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`, committed the verified audit update
+  to TweetClaw `master`, and pushed it to `origin/master`.
