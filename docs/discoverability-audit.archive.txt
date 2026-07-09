@@ -71810,3 +71810,128 @@ Existing untracked TweetClaw file `0` was preserved.
   existing PR repair first, mandatory 3 PRs, no promotion notes,
   duplicate/fork rules, link checks, prompt caps, and 2 target improvements per
   PR.
+
+2026-07-09 09:52 UTC heartbeat:
+- Runtime selector limitation: Codex 5.5 Fast mode and extra-high reasoning
+  controls were not exposed in this runtime. Continued and recorded the
+  limitation.
+- Xquik and TweetClaw issue queues: `gh issue list` returned no open issues for
+  both `Xquik-dev/xquik` and `Xquik-dev/tweetclaw`.
+- Crawler-first coverage: PR monitor and fresh-target crawler passes ran from
+  `/Users/burak/Developer/xquik` with strict JSON outputs under
+  `/tmp/xquik-hb-20260709-095214/`, bounded request timeouts, focused PR,
+  SKILL.md, `.agents/skills`, skill-dir, OpenClaw, MCP, Codex, Claude, agent,
+  social/Twitter-X, awesome-list, registry, dashboard, and web-index query
+  packs, and no GitHub tokens in crawler search. PR monitor returned 0
+  opportunities. Fresh-target JSON parsed strictly and returned 27
+  opportunities, mostly prior-history skill/catalog or sentiment-dashboard
+  lanes.
+- Inventory method and blocker: compact audit, archive, crawler output, known
+  PR URLs, target PR lists, exact API readbacks, and fork metadata were used.
+  Broad authored-open partitioning was attempted, but an initial unsupported
+  field retry and malformed query wrapping triggered GitHub secondary search
+  limits. Per rule, broad authenticated search stopped for this run. Final
+  exact readback covered 19 known and new PR URLs with 19 ok and 0 failures.
+- Existing PR repair: `Saminiscool/twitter-ai-agent#2` was open,
+  CONFLICTING, and DIRTY on head fork
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik`. Fork parent was verified
+  as `Saminiscool/twitter-ai-agent`. Merged upstream `main`, resolved the
+  README conflict by keeping current upstream download/contact wording once
+  plus the optional Xquik backend section, applied Biome's safe import-order
+  fix in `src/tools.ts`, and pushed `9b8fc84` to the exact PR head branch.
+  Validation passed conflict-marker scan, Git whitespace check, Prettier check
+  on README and touched code, Biome check, TypeScript no-emit, focused Vitest
+  with 2 passing tests, README markdown link check, and public wording scan.
+  Final readback: OPEN, MERGEABLE, CLEAN, head `9b8fc84`, 0 checks.
+- Remaining existing PR blockers: exact reads showed target-owned Vercel
+  authorization blockers, review-required states, archived-repo cleanup
+  blockers, or target workflow noise on other tracked PRs. No safe PR-side
+  repair or editable promotion-note cleanup remained.
+- Fresh discovery and duplicate gates: crawler candidates were checked against
+  compact audit, archive, target content, and target PR/issue lists for
+  TweetClaw, tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub and npm URLs,
+  ClawHub, Xquik, x-twitter-scraper, OpenClaw, SKILL.md, skill registries,
+  social publishing, sentiment dashboards, and variants. Prior-history or
+  duplicate-blocked lanes included `blacktwist/social-media-skills`,
+  `creatorcrawl/creatorcrawl-skill`, `AISA-skills/social-media-skills`,
+  `Sadhana107/Social-Media-Sentiment-Analysis-Dashboard`,
+  `Jui-Ramteke/Social-Media-Sentiment-Analytics`,
+  `HasnenSheikh/Streamlit-Dashboard-for-Sentiment-Analysis-of-US-Airline-Tweets`,
+  `jai-fadia/twitter-sentiment-analytics`, `himanshu7252/SocialMediaSentimentAnalysisDashboard`,
+  `Aditya-Ujjwal/Social-Media-Sentiment-Analysis-Dashboard`,
+  `Suru2005-shri/Social-Media-Sentiment-Analysis-Dashboard`,
+  `milan881/Social-Media-Sentiment-Analysis-Dashboard`,
+  and `Rekha-n01/twitter-sentiment-dashboard`. Weak or unsafe lanes included
+  `arshido/Twitter-Sentiment-Analysis-Dashboard` as notebook-only and
+  `adrlab2026/DSBGProject-SocialMediaSentimentAnalysisDashboard` as too thin
+  for a useful PR. Missing license metadata was recorded where present and did
+  not block direct, small PRs.
+- Fresh PR 1: opened
+  https://github.com/Tirthasen1000/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/tirthasen-social-sentiment-xquik`, parent
+  `Tirthasen1000/Social-Media-Sentiment-Analysis-Dashboard`, branch
+  `codex/add-xquik-export-import`, commit `a5f3bcd`. The PR adds a
+  TweetClaw/Xquik JSON, JSONL, and CSV converter to `text,sentiment`, makes the
+  dashboard and training pipeline auto-load `data/tweetclaw_dataset.csv` or
+  `SENTIMENT_DATASET_PATH`, guards empty-filter percentage metrics, and
+  documents the import workflow. Validation passed module compile, converter
+  smoke test, Git whitespace check, README markdown link check, and public
+  wording scan. Readback: OPEN, ready, MERGEABLE/CLEAN, 4 files, 0 comments,
+  0 reviews, 0 checks.
+- Fresh PR 2: opened
+  https://github.com/Deepakkumar79826/Social-Media-Sentiment-Analysis-Dashboard/pull/1
+  from verified fork `kriptoburak/deepak-social-sentiment-xquik`, parent
+  `Deepakkumar79826/Social-Media-Sentiment-Analysis-Dashboard`, branch
+  `codex/add-xquik-export-import`, commit `7af52c2`. The PR adds a
+  TweetClaw/Xquik export converter for the target raw posts schema, preserves
+  existing raw CSV imports in `main.py` so converted exports are not
+  overwritten by generated sample data, fills dashboard columns, removes blank
+  or duplicate text rows, fixes the clone URL, and replaces dead placeholder
+  author links. Validation passed module compile, converter smoke test, Git
+  whitespace check, README markdown link check, and public wording scan.
+  Readback: OPEN, ready, MERGEABLE/CLEAN, 3 files, 0 comments, 0 reviews,
+  0 checks.
+- Fresh PR 3: opened
+  https://github.com/m-karthikeya/social-media-sentiment-analysis-dashboard/pull/1
+  from verified fork `kriptoburak/karthikeya-social-sentiment-xquik`, parent
+  `m-karthikeya/social-media-sentiment-analysis-dashboard`, branch
+  `codex/add-xquik-export-import`, commit `4398a9a`. The PR adds a
+  TweetClaw/Xquik converter for Sentiment140-style CSV, auto-loads
+  `data/tweetclaw_social_media_data.csv` or `SOCIAL_MEDIA_DATA_PATH`, preserves
+  neutral labels instead of collapsing them into negative, makes sampling safe
+  for smaller converted datasets, fixes the clone command, and keeps the local
+  browser URL out of README link-check failures. Validation passed module
+  compile, converter smoke test, Git whitespace check, README markdown link
+  check, and public wording scan. Readback: OPEN, ready, MERGEABLE/CLEAN,
+  4 files, 0 comments, 0 reviews, 0 checks.
+- Public hygiene and links: OpenClaw `llms.txt`, CLI plugin docs, plugin index,
+  ClawHub publishing docs, and debugging docs returned HTTP 200. TweetClaw
+  GitHub, ClawHub TweetClaw page, OpenClaw Directory listing, Xquik create
+  tweet docs, canonical Xquik OpenAPI routes, repaired Saminiscool PR, and all
+  3 new PR URLs returned HTTP 200. The npm package page still returned the
+  known 403. PR bodies and diffs were inspected for secrets, private
+  implementation details, private source names, private pricing mechanics,
+  unsupported claims, stale metadata, badge misuse, promotion-note
+  wording, em dash characters, and spaced double hyphens. No promotion notes
+  were added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: manual simplify and thermo-nuclear review found
+  no structural issue in the audit-only diff. `npm run check-memory-md-size`
+  passed at 14,608 of 15,360 bytes. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all`
+  passed, including typecheck, lint, duplicate scan, Knip, suppression check,
+  dash check, memory check, skill frontmatter, version alignment, build,
+  OpenClaw platform fitness, package artifact, and 168 tests with 100%
+  coverage. Automation TOML measured 13,657 bytes, under the 15 KiB prompt
+  cap. Audit changes were committed and pushed to TweetClaw `master`; the
+  pre-existing untracked `0` remains preserved.
+- Prompt self-improvement: no automation prompt edit was useful. Durable
+  lesson reinforced: when fallback sentiment-dashboard search finds repeated
+  clone-name collisions, use unique fork names and verify the fork parent before
+  pushing; when README link checks flag placeholder links, treat them as
+  target-native fixes in the same PR. The active prompt already preserves Fast
+  and extra-high wording, quiet autonomy, crawler-first discovery, existing PR
+  repair first, mandatory 3 PRs, no promotion notes, duplicate/fork rules, link
+  checks, prompt caps, and 2 target improvements per PR.

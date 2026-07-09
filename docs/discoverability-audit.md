@@ -174,21 +174,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 09:10 UTC: Fast and extra-high selectors unavailable. Crawler
-  monitor returned 0 opportunities and fresh-target JSON returned 28 mostly
-  prior-history skill/catalog lanes after managed-egress socket closures.
-  Authored-open PR inventory was partitioned below GitHub's 1,000-result cap and
-  yielded 4,291 unique URLs; 91 audit/new PRs were exact-read with 0 read
-  failures. Repaired `davila7/claude-code-templates#634` by rebasing, resolving
-  generated catalog drift, preserving maintainer-requested MCP wording, pushing,
-  and posting validation; remaining failures are target workflow comment
-  permissions or target-wide pre-existing scanner noise. Removed no editable
-  promotion notes; one archived repo blocked cleanup. Opened 3 fresh PRs:
-  `ADHIRAJ994/Sentiment-Analysis#1`, `AkInnovates08/Social-Media-Sentiment-Analysis-Dashboard#1`,
-  and `VenkateshDas/TwitterTreasures#1`, each adding Xquik/TweetClaw CSV import
-  plus target-native parser, path, blank-row, README, or link fixes. OpenClaw
-  docs and new PR links returned HTTP 200; ClawHub timed out from this network.
-  Full evidence is in the archive.
+- 2026-07-09 09:52 UTC: Fast and extra-high selectors unavailable. Crawler
+  monitor returned 0 PR-monitor lanes and 27 fresh-target lanes; most were
+  prior-history skill/catalog/dashboard repos. Broad authored-open search hit
+  GitHub secondary limits after a malformed partition retry, so exact URL
+  readbacks were used. Final clean exact-read pass covered 19 known and new PRs
+  with 19 ok and 0 failures. Repaired
+  `Saminiscool/twitter-ai-agent#2` by merging current upstream `main`,
+  resolving the README conflict, applying a safe import-order fix, validating,
+  and pushing head `9b8fc84`; final readback is open, MERGEABLE, and CLEAN.
+  Removed no editable promotion notes. Screened crawler and fallback repos;
+  duplicate-blocked prior Xquik PR targets and weak notebook/thin repos. Opened
+  3 fresh PRs: `Tirthasen1000/Social-Media-Sentiment-Analysis-Dashboard#1`,
+  `Deepakkumar79826/Social-Media-Sentiment-Analysis-Dashboard#1`, and
+  `m-karthikeya/social-media-sentiment-analysis-dashboard#1`, each adding a
+  TweetClaw/Xquik export import workflow plus target-native dataset, path,
+  duplicate-row, neutral-label, README, or broken-link fixes. OpenClaw docs,
+  Xquik docs, ClawHub, repaired PR, and new PR links returned HTTP 200; npm
+  package page still returned the known 403. Full evidence is in the archive.
 
 ## Reporting Checklist
 
