@@ -174,15 +174,14 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-08 23:34 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0; authored open PR partitions read 147
-  updated on or after 2026-07-08, while 2026-07-01..07 hit the 1000-result cap
-  and the older broad search hit a GitHub 403 rate-limit blocker. Exact-read
-  139 recent scoped PRs, repaired `Saminiscool/twitter-ai-agent#2` to clean
-  mergeable head `b67dbc6`, then screened fresh listing/catalog lanes from a
-  crawler result set of 33. Opened 3 useful Xquik PRs:
-  `aaronjellis/configonaut-catalog#1`, `roverbird/mcpub#2`, and
-  `Tulimoa/tulimoa-mcp#1`. Full evidence is in the archive.
+- 2026-07-09 00:15 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Crawler PR monitor returned 0. Authored-open partitions found 4,259
+  unique open PR URLs; exact-read 153 PRs updated on or after 2026-07-08 with
+  no safely repairable current Xquik blocker. Fresh crawler discovery returned
+  42 candidates; duplicate checks blocked many prior skill/catalog lanes.
+  Opened 3 useful listing/catalog PRs with target fixes:
+  `iberi22/skills#1`, `yolo-labs-hq/yolo-skills-registry#1`, and
+  `awesome-mcp-ru/awesome-mcp-ru#1`. Full evidence is in the archive.
 
 ## Reporting Checklist
 

@@ -70099,3 +70099,137 @@ Existing untracked TweetClaw file `0` was preserved.
   endpoints that return 401 or 406 to generic link checkers as expected when
   documented as endpoints, not browser pages; format them as code where the
   target's docs checker scans raw URLs.
+
+2026-07-09 00:15 UTC heartbeat
+
+- Runtime: Codex 5.5 Fast mode and extra-high reasoning selectors were not
+  exposed by this runtime. Continued and recorded the limitation.
+- Local state: `/Users/burak/Developer/xquik` was clean on `master`; TweetClaw
+  was on `master` with only pre-existing untracked `0` before audit edits.
+  Xquik issue list returned no open issues.
+- PR inventory method: crawler-first PR monitor from Xquik used strict JSON
+  output at `/tmp/xquik-hb-20260708-235536/pr-monitor.json` with focused
+  Xquik, TweetClaw, OpenClaw, ClawHub, MCP, skill, catalog, dashboard, package,
+  and social automation queries. It returned 0 opportunities. Authenticated
+  authored-open partitions found 153 PRs updated on or after 2026-07-08;
+  2026-07-01 returned 48, 2026-07-02 returned 144, 2026-07-03 needed hourly
+  partitioning after a daily cap with hour buckets 244, 246, 214, 235, 227,
+  and 259 plus surrounding 9 and 424 buckets, 2026-07-04 returned 564,
+  2026-07-05 returned 214, 2026-07-06 returned 8, 2026-07-07 returned 6, and
+  before 2026-07-01 returned 418. Combined unique authored-open PR URLs were
+  4,259; keyword-scoped URLs were 4,143. Detailed exact readbacks covered the
+  153 PRs updated on or after 2026-07-08 because new comments, checks, and
+  conflicts update that set; 0 exact-read errors and 37 flagged nonclean,
+  commented, or reviewed states. Older corpus partition counts were exact, but
+  older comments/checks were not fully detailed this run due volume.
+- Existing PR repair first: no safely repairable current Xquik visibility PR
+  issue was found. `fpardon-upeo/mcp-servers-collection#1` had a bot claim
+  that Xquik should use `x-api-key`; live
+  `https://xquik.com/.well-known/mcp.json` declares a bearer authorization
+  header for `https://xquik.com/mcp`, and the PR body already had a public
+  manifest-evidence response, so no code change was made. `numbpill3d/mcp-radar#5`
+  already had the bot feedback addressed on head `b2637cb` and was clean with
+  successful or skipped checks. `Panniantong/Agent-Reach#471` and
+  `AmeerJ97/mcp-multiplex#2` already had maintainer questions answered or
+  addressed. `ogthheu/Insightify-Sentiment-API#1` and
+  `shajith003/awesome-claude-skills#4` were non-Xquik generic cleanup
+  conflicts or dirty states and were skipped as out of repair scope. Target
+  owned Vercel or Netlify auth failures remained on several unrelated current
+  PRs.
+- Fresh crawler discovery: strict JSON target discovery at
+  `/tmp/xquik-hb-20260708-235536/fresh-targets.json` covered MCP registries,
+  awesome lists, skill catalogs, SKILL.md, `.agents/skills`, skills dirs,
+  OpenClaw/MCP/Codex/Claude/agent/social/Twitter-X skills, dashboards,
+  libraries, generated catalogs, forks, examples, docs, and package tooling.
+  It returned 42 opportunities.
+- Fresh duplicate blockers: `JuneYaooo/awesome-ai-media-skills`,
+  `framerslab/agentos-skills`, `jnMetaCode/skillet`, `meiorz/mcp-skills`,
+  `ToolmeshAI/awesome-mcp-workflows`, `v1k22/skillhub-registry`,
+  `framerslab/agentos-skills-registry`, `tinyhumansai/skill-registry`,
+  `sentenz/skills`, and `XMTLYL/skills-catcher` had existing Xquik,
+  TweetClaw, x-twitter-scraper, or closely overlapping PR history and were
+  duplicate-blocked for this run.
+- Fresh PR 1: `iberi22/skills` was public, non-archived, duplicate-clean, and
+  had no blocking maintainer policy found. The first fork name collided with an
+  older unrelated `kriptoburak/skills` fork, so the verified fork used was
+  `kriptoburak/skills-41`, parent `iberi22/skills`. Opened
+  https://github.com/iberi22/skills/pull/1 from
+  `codex/add-xquik-social-skill-20260709`, commit `9e68a4f`. Xquik lane:
+  `xquik-social-automation` skill for X/Twitter research, monitoring,
+  analytics, remote MCP setup, and approval-gated publishing through Xquik.
+  Target improvements: added TweetClaw to the skill-watchdog source list,
+  regenerated manifest/README skill counts, and fixed dead README license and
+  archived-source links. Validation passed Python manifest/frontmatter/watchdog
+  checks, `git diff --check`, and markdown-link-check over README plus the new
+  skill. Final exact readback before audit commit: open, mergeable, unstable
+  only because CodeRabbit was pending, Socket checks succeeded, 1 third-party
+  bot processing comment, 0 reviews, and no actionable review finding yet. No
+  editable promotion-note cleanup was available because the only promotional
+  wording was in a third-party bot footer.
+- Fresh PR 2: `yolo-labs-hq/yolo-skills-registry` was public, non-archived,
+  duplicate-clean, and had no blocking maintainer policy found. Fork verified
+  as `kriptoburak/yolo-skills-registry` parent
+  `yolo-labs-hq/yolo-skills-registry`. Opened
+  https://github.com/yolo-labs-hq/yolo-skills-registry/pull/1 from
+  `codex/add-xquik-social-data-20260709`, commit `405773b`. Xquik lane:
+  `xquik-social-data` skill and registry entry for X/Twitter research,
+  analytics, monitoring, webhooks, remote MCP setup, and approval-gated Xquik
+  workflows. Target improvements: added a README command that validates every
+  registry entry points at a real `SKILL.md`, and replaced a dead `yolo-code`
+  GitHub link with plain text. Validation passed JSON parsing, Node registry
+  path/frontmatter checks, `git diff --check`, and markdown-link-check over
+  README plus the new skill. Exact readback: open, mergeable, clean, 0
+  comments, 0 reviews, 0 checks.
+- Fresh PR 3: `awesome-mcp-ru/awesome-mcp-ru` was public, non-archived,
+  duplicate-clean, dual-licensed for content and tooling, and had no blocking
+  maintainer policy found. Fork verified as `kriptoburak/awesome-mcp-ru`
+  parent `awesome-mcp-ru/awesome-mcp-ru`. Opened
+  https://github.com/awesome-mcp-ru/awesome-mcp-ru/pull/1 from
+  `codex/add-xquik-mcp-entry-20260709`, commit `98b73b9`. Xquik lane:
+  schema-backed `xquik-mcp` catalog entry for `https://xquik.com/mcp`, using
+  public manifest and docs evidence for streamable HTTP, bearer auth, and the
+  `explore` and `xquik` MCP tool names. Target improvements: added missing
+  `CONTRIBUTING.md` and `STANDARD.md` files already linked from README, added
+  entry-specific schema/endpoint/tool tests, and regenerated README totals.
+  Validation passed local venv dependency install, generator build, 14 pytest
+  tests, `git diff --check`, and markdown-link-check over the new docs.
+  Generated entry pages returned expected 404 before target deployment, and
+  `https://xquik.com/mcp` returned expected unauthenticated 401. Exact
+  readback: open, mergeable, clean, 0 comments, 0 reviews, 0 checks.
+- Official OpenClaw docs check: HTTP 200 for `https://docs.openclaw.ai/llms.txt`,
+  `llms-full.txt`, `/cli/plugins`, `/cli/skills`, `/cli/update`,
+  `/plugins/manage-plugins`, `/plugins/manifest`, `/plugins/sdk-runtime`,
+  `/plugins/install-overrides`, `/clawhub/publishing`, `/clawhub/skill-format`,
+  and `/help/debugging`. No TweetClaw OpenClaw compatibility files changed.
+- Public hygiene and links: `https://xquik.com`,
+  `https://xquik.com/.well-known/mcp.json`, Xquik MCP docs, Xquik MCP tools
+  docs, and all 3 new PR URLs returned 200. Xquik MCP endpoint returned
+  expected unauthenticated 401. Target link checks passed for the two skill
+  registries after repairing dead target-owned README links. The MCP catalog
+  generated entry URLs returned expected pre-deployment 404s. New PR bodies and
+  external diffs were scanned for secrets, private implementation details,
+  restricted source names, internal cost mechanics, unsupported claims, stale
+  metadata, and banned promotion wording. No promotion notes were added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Validation before final commit: `npm run check-memory-md-size` passed with
+  automation Markdown memory at 13,854 of 15,360 bytes; `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.11`; `npm run check-em-dash` passed; `git diff
+  --check` passed; markdown-link-check passed over README, OpenClaw setup,
+  agent workflows, compact audit, and release memory. Active automation TOML
+  measured 13,657 bytes and prompt payload measured 13,313 bytes, under the
+  15 KiB prompt cap.
+- Prompt self-improvement: no automation prompt edit was needed because the
+  active prompt already preserves Fast extra-high wording, existing PR repair
+  first, mandatory 3 fresh GitHub opportunities, listing/catalog patches as
+  valid non-spammy lanes, duplicate/fork rules, OpenClaw docs checks, link
+  checks, validation gates, Context7 exclusion, secret handling, commit/push
+  requirement, prompt cap, no promotion-note rule, and 2 target-improvement PR
+  rule.
+- Durable self-improvement: when a generic repo name collides in the
+  `kriptoburak` namespace, treat the fork URL returned by `gh repo fork` as
+  authoritative and exact-read its parent before pushing. For YAML catalogs,
+  quote date strings when the JSON schema expects strings, because PyYAML will
+  otherwise turn ISO dates into `datetime.date` objects and fail schema
+  validation.
