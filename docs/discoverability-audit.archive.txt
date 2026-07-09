@@ -71354,6 +71354,9 @@ Existing untracked TweetClaw file `0` was preserved.
   `claude plugin validate ./plugins/xquik-x-data`, `git diff --check`, and
   public wording scan. Commented
   https://github.com/dansasser/claude-code-marketplace/pull/24#issuecomment-4922678159.
+  Final readback: open, mergeable, CodeRabbit status success, no failing
+  checks, but `mergeStateStatus: BLOCKED` with `reviewDecision: REVIEW_REQUIRED`.
+  Remaining block is maintainer/review gate, not an editable repair.
 - Existing PR repairs: `Saminiscool/twitter-ai-agent#2` was dirty/conflicting.
   Repaired the exact fork branch
   `kriptoburak/saminiscool-twitter-ai-agent-xquik:codex/add-xquik-backend` by
