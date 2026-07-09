@@ -72807,3 +72807,136 @@ Existing untracked TweetClaw file `0` was preserved.
   version alignment, build, OpenClaw platform fitness, package artifact, and
   168 tests with 100% coverage. Automation TOML measured 13,657 bytes, under
   the 15 KiB prompt cap.
+
+2026-07-09 14:26 UTC heartbeat
+
+- Runtime limitation: no runtime control was available for Codex 5.5 Fast mode
+  or extra-high reasoning effort selection, so the run continued and recorded
+  the selector limitation.
+- Issue inventory: `Xquik-dev/xquik` and `Xquik-dev/tweetclaw` open issue
+  queues were empty at run start. Xquik worktree had unrelated user change
+  `docs/feature-roadmap.md`; TweetClaw worktree had pre-existing untracked `0`.
+  Both were preserved.
+- Crawler-first coverage: from `/Users/burak/Developer/xquik`, unauthenticated
+  strict-JSON crawler runs completed for PR monitoring, skill/OpenClaw/MCP
+  skill repos, generated catalogs, dashboard/project/library lanes, and social
+  or X/Twitter automation lanes. Outputs
+  `/tmp/xquik-hb-20260709-134438/pr-monitor.json`,
+  `fresh-skills.json`, and `fresh-projects.json` parsed as valid JSON and
+  returned 0 opportunities.
+- Existing PR inventory: authored-open GraphQL search reported 4,345 open PRs,
+  so this run did not claim complete all-GitHub inventory. Compact and archive
+  memory held 2,039 unique known PR URLs. Recent authored-open search saved 200
+  PRs to `/tmp/xquik-hb-20260709-134438/authored-open-200.json`; exact readback
+  wrote 200 JSONL rows with 0 read failures. Scope included state, mergeability,
+  base/head, commits, comments, reviews, checks, conflicts, DCO/CLA indicators,
+  bot findings, and editable wording.
+- Repaired existing PRs before outreach:
+  `KPZ231/Instra#2` fixed CodeRabbit's actionable MD040 finding by labeling the
+  upload request fence as `http`, committed `8a567f0`, pushed to
+  `codex/xquik-plugin-docs`, and read back OPEN, MERGEABLE, UNSTABLE with only
+  target-owned Vercel authorization still failing. Validation: `git diff
+  --check` passed; targeted npm test could not run because `vitest` was not
+  installed.
+- Repaired `jayteealao/agent-skills#4`: merged upstream, resolved
+  `.claude-plugin/marketplace.json` by preserving upstream schema/version fields
+  and restoring the `xquik-x-data` plugin entry, committed `751c9d7`, pushed to
+  `codex/add-xquik-x-data-plugin`, and read back OPEN, MERGEABLE, CLEAN with no
+  actionable CodeRabbit comments. Validation: JSON parse checks and
+  `git diff --check`.
+- Repaired `nrjdalal/inscope#29`: merged upstream, resolved README,
+  `test/golden.test.ts`, and snapshot conflicts while preserving upstream
+  status tests and Xquik Keychain support, committed `1053405`, pushed to
+  `codex/add-xquik-mcp-server`, and read back OPEN, MERGEABLE, UNSTABLE with
+  GitGuardian still in progress. Validation passed `bun install
+  --frozen-lockfile`, `bun run format`, `bun run lint`, `bun run typecheck`,
+  `bun run test`, pre-commit build/lint-staged/commitlint, and pre-push
+  `bun audit`.
+- Repaired `numbpill3d/mcp-radar#5`: merged upstream, resolved
+  `data/servers.json` by reapplying the supplemental Xquik MCP entry to current
+  upstream generated data while preserving upstream timestamp and sitemap
+  changes, committed `acac37d`, pushed to `codex/add-supplemental-xquik-mcp`,
+  and read back OPEN, MERGEABLE, UNSTABLE with Socket checks successful and
+  GitGuardian/CodeRabbit pending. Validation passed JSON parse, Python compile,
+  focused entry/count checks, `git diff --check`, and `python3
+  scripts/update_data.py`; the script completed with a urllib3 LibreSSL warning.
+- Fresh blocked screens after crawler fallback: `paulboguta/mcp-servers-list`
+  had no actual listing surface beyond a LICENSE file; `integrabotia/mcp-servers`
+  was a first-party package collection rather than a third-party catalog;
+  `boyso/Awesome-Claude-MCP-Servers-List` was a one-line placeholder;
+  `CrackingShells/mcp-servers` was systems-biology-only and unrelated to
+  Xquik; `marcosguedes01/mcp-servers-list` was a personal MCP config set;
+  `cmdforge/mcp-manager` was a manager library, not a catalog;
+  `shibley/mymcptools` already contained Xquik; `toolsdk-ai/toolsdk-mcp-registry`,
+  `MCPFind/mcp-find`, `habitoai/Awesome-MCP-Servers-directory`,
+  `xuanlinflow413/mcp-server-directory`, `BehiSecc/awesome-claude-skills`,
+  `zocomputer/skills`, and `skilluse/skilluse` were duplicate or prior-history
+  blocked in compact/archive memory.
+- Fresh selected lanes and duplicate gates: `Amarel-Taylor-Scott/mcp-servers-directory`,
+  `xiaozhenyangCode/awesome-cursor-rules`, and
+  `sisovin/mcp-servers-directory` were fresh in compact/archive memory,
+  duplicate-clean across target content plus open and closed target PRs/issues
+  for TweetClaw, Xquik, x-twitter-scraper, and variants, non-archived, forkable
+  through verified `kriptoburak` forks, and had native listing/catalog surfaces.
+- New PR 1 opened:
+  https://github.com/Amarel-Taylor-Scott/mcp-servers-directory/pull/3 from fork
+  `kriptoburak/mcp-servers-directory`, branch `codex/add-xquik-mcp-entry`,
+  commit `957ef5b`. It adds Xquik to `data.py` with HTTP transport,
+  auth-required status, install command, homepage, repo, language, and tags,
+  then regenerates README counts and the Data & APIs table. Validation passed
+  `python3 main.py generate`, `python3 -m pytest -q`, and `git diff --check`.
+  Readback: OPEN, MERGEABLE, ready, no comments, no checks yet.
+- New PR 2 opened:
+  https://github.com/xiaozhenyangCode/awesome-cursor-rules/pull/2 from fork
+  `kriptoburak/awesome-cursor-rules`, branch `codex/add-xquik-mcp-config`,
+  commit `8235929`. It adds an Xquik MCP config example with `mcp-remote`,
+  adds remote-endpoint compatibility guidance, and removes a duplicate README
+  heading. Validation passed `git diff --check` and README hygiene review.
+  After submission, the PR body was edited to remove one sentence containing a
+  banned visibility term. Readback: OPEN, MERGEABLE, ready, no comments, no
+  checks yet.
+- New PR 3 opened:
+  https://github.com/sisovin/mcp-servers-directory/pull/4 from renamed fork
+  `kriptoburak/sisovin-mcp-servers-directory-xquik`, branch
+  `codex/add-xquik-directory-entry`, commit `2b623b9`. It adds Xquik MCP to the
+  typed static directory data with category alignment, install command,
+  community security status, public repo metrics, support tags, and updated
+  Communication category count. Validation passed `npm ci`, `npm run build`,
+  and `git diff --check`; npm reported pre-existing audit findings and build
+  reported pre-existing Browserslist freshness warnings. Readback: OPEN,
+  MERGEABLE, ready, no comments, no checks yet.
+- Fork safety: each external fork owner and parent were verified before push.
+  The `sisovin` fork reused GitHub's suffixed fork name, so the exact verified
+  fork URL was used for the push remote.
+- Public link and OpenClaw checks: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/plugins/building-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, `/plugins/install-overrides`,
+  `/clawhub/publishing`, `/clawhub/skill-format`, `/help/debugging`, and
+  `/cli/skills` returned HTTP 200. Older guessed routes
+  `/skills/format`, `/plugins/permissions`, `/sdk/runtime`,
+  `/cli/install-overrides`, and `/debugging` returned 404 and should not be
+  used. Xquik returned HTTP 200 after `/en` redirect; `https://xquik.com/mcp`
+  returned expected unauthenticated HTTP 401; `https://docs.xquik.com` returned
+  HTTP 200 after redirect; `https://github.com/Xquik-dev/x-twitter-scraper` and
+  the 3 new PR URLs returned HTTP 200; `npm view mcp-remote version` returned
+  `0.1.38`; npm registry metadata for `@xquik/tweetclaw` returned HTTP 200 and
+  npm latest remains `1.6.31`.
+- Changed TweetClaw files for this run:
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: no automation prompt edit was needed. Durable lesson:
+  for target README files with CRLF, avoid optional documentation edits unless
+  necessary because patching a small hunk can introduce mixed line endings; a
+  schema-rich data entry can still satisfy listing metadata, compatibility,
+  install, category, and safety improvements.
+- Final TweetClaw validation: simplify and thermo-nuclear review found no
+  code-path, abstraction, branching, boundary, or file-size concern in this
+  audit-only diff. `npm run check-memory-md-size` measured 14,808 of 15,360
+  bytes. `npm run check-openclaw-platform-fitness`, `npm run check-em-dash`,
+  diff whitespace check, added-line public-hygiene scan, and `npm run
+  check:all` passed, including typecheck, lint, duplicate scan, Knip,
+  suppression check, dash check, memory check, skill frontmatter, version
+  alignment, build, OpenClaw platform fitness, package artifact, and 168 tests
+  with 100% coverage. Automation TOML measured 13,657 bytes, under the 15 KiB
+  prompt cap.
