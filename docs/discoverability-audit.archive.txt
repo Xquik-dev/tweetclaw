@@ -70735,6 +70735,125 @@ Existing untracked TweetClaw file `0` was preserved.
   measured 13,657 bytes, and the persisted prompt measured 13,313 bytes, under
   the 15 KiB prompt cap.
 
+2026-07-09 02:58 UTC heartbeat:
+
+- Runtime selectors: this desktop runtime did not expose Codex 5.5 Fast mode or
+  extra-high reasoning selectors. The limitation is recorded here and the run
+  continued.
+- Crawler-first PR monitoring: ran the internal Xquik GitHub crawler from
+  `/Users/burak/Developer/xquik` with focused open-PR queries for Xquik,
+  TweetClaw, OpenClaw, ClawHub, MCP, skills, catalogs, listings, Twitter, and
+  social media. Strict JSON output was written to
+  `/tmp/xquik-hb-20260709-025807/pr-monitor.json`; it returned 0
+  opportunities and 0 repositories.
+- PR inventory method and coverage: exact-read first covered priority
+  in-scope PR URLs from compact and archive memory. A broad authored-open
+  GitHub Search fallback then hit a GitHub search block, so complete authored
+  coverage was not claimed. Search was stopped for the run, and fallback
+  inventory continued through crawler output, compact and archive URLs, exact
+  PR reads, and exact target reads. Audit URL extraction found 1,989 unique PR
+  URLs; the newest and priority slice exact-read 142 PRs, with 142 ok, 0 bad,
+  135 open, merge buckets 107 clean, 18 unstable, 7 blocked, 2 dirty, and 1
+  unknown. Flagged readbacks covered state, base, head, commits, comments,
+  reviews, checks, conflicts, DCO/CLA-visible comments, and bot findings.
+- Existing PR repair: `PavanSrikar2007/Twitter-Sentiment-Analysis-Project#1`
+  and `pgadekar14/smart-social-analytics-dashboard#1` were `DIRTY` conflicts.
+  Both fork parents were already `kriptoburak` forks. The branches were fetched,
+  merged with current upstream `main`, conflicts were resolved while preserving
+  Xquik import support and target upstream changes, and repair commits
+  `d9d0045` and `245655f` were pushed. Validation for each repair passed
+  `python3 -m py_compile app.py`, `git diff --check`, README
+  `markdown-link-check`, and promotion-wording scan. Final readback showed both
+  PRs open, ready, mergeable, clean, with 0 comments, 0 reviews, and 0 checks.
+- Non-repair blockers: `portal-labs-infrastructure/remote-mcp-servers#4`
+  remained blocked only by target-owner Vercel authorization. `jayteealao/agent-skills#4`
+  stayed clean with CodeRabbit success; the visible CodeRabbit item was a
+  rate-limit note and the Gemini metadata finding was already repaired on the
+  current head. Other blocked or unstable exact-read PRs had no current
+  comments, reviews, or checks to repair. No editable promotion note was found.
+- Official OpenClaw docs check: `https://docs.openclaw.ai/llms.txt`,
+  `/cli/plugins`, `/clawhub/publishing`, and `/help/debugging` all returned
+  HTTP 200. No OpenClaw compatibility or install-shape change was made.
+- Fresh discovery: ran the internal Xquik crawler with skill, MCP, OpenAPI,
+  social, dashboard, registry, listing, and package-tooling queries. Strict
+  JSON output went to `/tmp/xquik-hb-20260709-025807/fresh-targets.json`; it
+  returned 1 opportunity, `Crawlora-org/crawlora-skills`, which was blocked by
+  prior Xquik PR history. Fallback discovery used web-indexed GitHub results
+  and exact target REST reads because broad authenticated search was blocked.
+- Candidate and duplicate gates: compact audit, archive, target content, target
+  open/closed PRs, target open/closed issues where enabled, repo metadata,
+  local clones, and fork parents were checked for TweetClaw, `tweetclaw`,
+  `@xquik/tweetclaw`, TweetClaw GitHub and npm URLs, ClawHub, Xquik,
+  `x-twitter-scraper`, xquik.com, OpenClaw, Twitter/X, skill, catalog,
+  validator, MCP, package-tooling, and listing variants. Blocked candidates
+  included `Crawlora-org/crawlora-skills`, `dataprojectswithMJ/streamlit-twitter-scraper`,
+  `santanukumar666/Twitter-Sentiment-Analysis`,
+  `gdvtramarao/Twitter-Sentiment-Analyser`, `Rishavgg/Twitter-sentiment-analysis`,
+  and `AK-rock-run/Sentiment-Analysis-Using-Machine-Learning` for prior PR
+  history; `Srivari07/Twitter-sentiment-analysis` and `udhaya2823/SENTIMENT-ANALYSIS-MODEL---Deploy-using-AWS-Services-Hugging-Face-Pretrained-model`
+  were blocked by hardcoded public credentials, with no values repeated in a
+  public diff; `monicafar147/climate-change-tweet-sentiment-analysis` was a
+  fork with case-colliding files and lower fit.
+- Fresh PR 1: opened https://github.com/suryatejabatchu08/twitter-sentiment-analysis/pull/1
+  from verified fork `kriptoburak/twitter-sentiment-analysis-10`, branch
+  `codex/xquik-batch-csv-import`, commit `c6825fd`. Xquik lane: Streamlit Batch
+  CSV tab accepts Xquik tweet/search exports with `text`, `tweet_text`,
+  `full_text`, `content`, or `body` columns and links the canonical
+  `x-twitter-scraper` repository. Target improvements: model and vectorizer
+  load relative to `app.py`, Unix virtualenv activation was corrected, and
+  NLTK stopword download now runs quietly. Validation passed `python3 -m
+  py_compile app.py`, `git diff --check`, README `markdown-link-check`, public
+  diff scan, and PR body scan. Final readback: open, ready, mergeable, clean,
+  0 comments, 0 reviews, and GitGuardian Security Checks success.
+- Fresh PR 2: opened https://github.com/singhishita/Interactive-Dashboards-With-Streamlit/pull/1
+  from verified fork `kriptoburak/Interactive-Dashboards-With-Streamlit`,
+  branch `codex/xquik-upload-dashboard-source`, commit `35e9350`. Xquik lane:
+  sidebar upload accepts airline CSVs and Xquik exports with text-like columns,
+  optional sentiment labels, and unknown-sentiment fallback. Target
+  improvements: the hardcoded local `Tweets.csv` path was replaced with a
+  repository-relative default, missing coordinates no longer break map
+  rendering, and the word-cloud filter now excludes mentions instead of only
+  keeping mentions. Validation passed `python3 -m py_compile app.py`, `git
+  diff --check`, README `markdown-link-check`, public diff scan, and PR body
+  scan. Final readback: open, ready, mergeable, clean, 0 comments, 0 reviews,
+  and 0 checks.
+- Fresh PR 3: opened https://github.com/AhmedAbdAlkreem/Sentiment-Analysis/pull/1
+  from verified fork `kriptoburak/Sentiment-Analysis-4`, branch
+  `codex/xquik-batch-bert-import`, commit `de55942`. Xquik lane: Batch CSV tab
+  accepts Xquik exports with text-like columns and writes a downloadable
+  `predicted_sentiment` result. Target improvements: the hardcoded Windows
+  model path was replaced by `SENTIMENT_MODEL_DIR` with a missing-asset message,
+  model loading is cached, and the README now uses the actual repository URL
+  and `App.py` entry point. Validation passed `python3 -m py_compile App.py`,
+  `git diff --check`, README `markdown-link-check`, public diff scan, and PR
+  body scan. Final readback: open, ready, mergeable, clean, 0 comments,
+  0 reviews, and 0 checks.
+- Public hygiene and broken links: `https://github.com/Xquik-dev/x-twitter-scraper`
+  and the 3 new PR URLs returned HTTP 200. The 3 edited target READMEs passed
+  `npx --yes markdown-link-check ... --quiet`. External diffs and PR bodies
+  were scanned for secrets, private implementation details, restricted provider
+  or source names, internal cost mechanics, unsupported claims, stale metadata,
+  and banned promotion-note wording. No promotion notes were added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Prompt self-improvement: compact audit now preserves the current search-block
+  fallback, 142-PR exact read count, dirty-conflict repair priority, and the
+  current adapter PR pattern. No automation prompt edit was needed because the
+  active prompt already requires Fast and extra-high wording, quiet autonomy,
+  crawler-first discovery, mandatory 3 PRs to 3 repos, existing PR repair
+  first, listing/catalog patches as valid non-spammy lanes, duplicate and fork
+  rules, OpenClaw checks, link checks, validation gates, Context7 exclusion,
+  secret handling, commit/push, Markdown cap, prompt cap, no promotion notes,
+  2 target improvements per PR, and self-improvement. Automation TOML measured
+  13,657 bytes, and the decoded prompt measured 13,313 bytes.
+- Final TweetClaw validation: `npm run check-memory-md-size` passed at 14,134
+  of 15,360 bytes. `npm run check-openclaw-platform-fitness` passed for
+  `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all` passed,
+  including typecheck, lint, duplicate check, knip, suppression check, dash
+  check, memory check, skill frontmatter, version alignment, build, OpenClaw
+  platform fitness, package artifact, and 168 tests with 100% coverage.
+
 2026-07-09 02:37 UTC heartbeat:
 - Runtime selectors: Codex 5.5 Fast and extra-high controls were not exposed in
   this runtime. Recorded the limitation and continued.

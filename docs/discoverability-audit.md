@@ -174,19 +174,19 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 02:37 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Xquik crawler PR monitor returned 0. Authenticated broad PR search
-  hit GitHub API rate limit, so full authored coverage was not claimed.
-  Exact-read covered 10 priority repair PRs from compact and archive memory.
-  No actionable existing Xquik-visibility PR repairs remained:
-  `jayteealao/agent-skills#4` already preserves marketplace metadata, Portal
-  is blocked only by target-owner Vercel authorization, and other blocked or
-  unstable PRs had no comments, reviews, or checks to repair. Fresh discovery
-  used crawler, GitHub REST fallback, and web-indexed GitHub results. Opened
-  `golamSaroar/python-interactive-dashboard#1`,
-  `Tim-Fili/twitter_sentiment_analysis#1`, and
-  `victoraccete/airline-tweets-streamlit#1` with Xquik export adapters and 2+
-  target improvements each. Full evidence is in the archive.
+- 2026-07-09 02:58 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Xquik crawler PR monitor returned 0; fresh crawler returned 1
+  already-used Crawlora lane. Authenticated broad PR search hit a GitHub search
+  block, so complete authored coverage was not claimed. Audit extraction found
+  1,989 unique PR URLs; exact fallback read 142 recent and priority URLs,
+  including 135 open PRs. Repaired dirty conflicts on
+  `PavanSrikar2007/Twitter-Sentiment-Analysis-Project#1` and
+  `pgadekar14/smart-social-analytics-dashboard#1`; both read back clean and
+  mergeable. Opened fresh PRs:
+  `suryatejabatchu08/twitter-sentiment-analysis#1`,
+  `singhishita/Interactive-Dashboards-With-Streamlit#1`, and
+  `AhmedAbdAlkreem/Sentiment-Analysis#1`. Each adds an Xquik CSV import path
+  plus 2+ target-native fixes. Full evidence is in the archive.
 
 ## Reporting Checklist
 
