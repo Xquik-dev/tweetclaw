@@ -70617,3 +70617,120 @@ Existing untracked TweetClaw file `0` was preserved.
   live unauthenticated link check before PR creation. Treat unresolved API
   subdomains as blockers and prefer the deployed app API base when it returns a
   clear 401 for unauthenticated requests.
+
+2026-07-09 01:52 UTC heartbeat:
+- Runtime selectors: Codex 5.5 Fast and extra-high controls were not exposed in
+  this runtime. Recorded the limitation and continued.
+- PR inventory and repair order: Xquik crawler PR monitor ran first from
+  `/Users/burak/Developer/xquik` with strict JSON output at
+  `/tmp/xquik-hb-20260709-015244/pr-monitor.json`, focused authored-open
+  Xquik/TweetClaw/OpenClaw/ClawHub/MCP/skill/catalog/listing/social queries,
+  limit 260, 1 search page, per-query limit 30, concurrency 8, and request
+  timeout 9000 ms. It returned 0 opportunities. Audit extraction found 1,983
+  historical PR URLs. `gh search prs --author kriptoburak --state open
+  --limit 200` returned 200 rows, so full authored coverage was not claimed.
+  Exact-read covered 25 in-scope repair PRs from audit and authored-open
+  partitions.
+- Repair readbacks: no actionable maintainer comments, review comments, CI
+  failures, conflicts, DCO/CLA blockers, generated-file drift, valid bot
+  findings, or editable promotion notes remained. `jayteealao/agent-skills#4`
+  had prior Gemini feedback about removed marketplace version metadata, and
+  current head `b672e39` already preserves `metadata.description`,
+  `metadata.version=1.134.0`, and the `xquik-x-data` plugin version `0.1.0`.
+  Vercel/Netlify comments on unrelated or existing PRs were maintainer-owner
+  deployment authorization blockers.
+- Fresh discovery: Xquik crawler target discovery ran with strict JSON output at
+  `/tmp/xquik-hb-20260709-015244/fresh-targets.json`, 12 focused query packs
+  covering Claude plugin marketplaces, MCP registries, agent skills, AI tool
+  catalogs, awesome lists, OpenAPI examples, dashboards, and social automation
+  directories, limit 800, 2 search pages, per-query limit 50, concurrency 8,
+  and request timeout 9000 ms. Crawler surfaced 6 candidates. Fallback GitHub
+  metadata produced 66 candidate repos.
+- Blocked or duplicate lanes screened: `toolsdk-ai/toolsdk-mcp-registry`,
+  `obra/superpowers-marketplace`, `jimmc414/claude-code-plugin-marketplace`,
+  `nextlevelbuilder/skillx`, `LeeJuOh/claude-code-zero`,
+  `jmanhype/claude-code-plugin-marketplace`, `AmariahAK/atlarix-mcps`,
+  `TensorBlock/awesome-mcp-servers`, `MobinX/awesome-mcp-list`,
+  `AIAnytime/Awesome-MCP-Server`, `ever-works/awesome-mcp-servers`,
+  `bh-rat/awesome-mcp-enterprise`, `Crawlora-org/crawlora-skills`,
+  `studiomeyer-io/mcp-passport`, `stackhawk/agent-skills-marketplace`,
+  `DiversioTeam/agent-skills-marketplace`, `wong2/awesome-mcp-servers`,
+  `yzfly/Awesome-MCP-ZH`, `AlexMili/Awesome-MCP`,
+  `PipedreamHQ/awesome-mcp-servers`, `YuzeHao2023/Awesome-MCP-Servers`,
+  `rohitg00/awesome-devops-mcp-servers`, `darjeeling/awesome-mcp-korea`,
+  `apify/actor-mcp-servers`, `surayainc/mcp-registry`,
+  `EcosystemNetwork/openclaw-mcp-registry`,
+  `vinkius-labs/awesome-mcp-servers`, and
+  `Daeda-Technologies-Ltd/Awesome-MCP-Servers`. Reasons included prior Xquik
+  content or PR history, explicit no-PR policy, generated-only content, missing
+  target fit, validator-only surfaces, competitor ownership, required
+  deployment links, and maintainer-specific scope.
+- Duplicate gates: safe lanes searched compact audit, archive, pre-patch target
+  content, target PRs, and target issues for Xquik, TweetClaw,
+  x-twitter-scraper, OpenClaw, and variants. No duplicates were found in the 3
+  PR targets. `appcypher/awesome-mcp-servers` had clear PR history and issues
+  disabled, but PR creation was blocked by GitHub.
+- Appcypher blocked lane: patched `appcypher/awesome-mcp-servers` and pushed
+  `codex/add-xquik-social-mcp` to verified fork
+  `kriptoburak/appcypher-awesome-mcp-servers-visibility`, parent
+  `appcypher/awesome-mcp-servers`. Changes added Xquik to Social Media, fixed
+  the Continue client icon link, and fixed Mercado Pago and Intlayer typo,
+  malformed icon, and grammar issues. Validation passed `git diff --check` and
+  touched-link checks. `gh pr create` failed with GraphQL
+  `CreatePullRequest` permission denial, and REST create returned HTTP 404, so
+  no PR URL exists.
+- Fresh PR 1: opened
+  https://github.com/portal-labs-infrastructure/remote-mcp-servers/pull/4 from
+  `kriptoburak:codex/add-xquik-remote-mcp`, commit `5b12fec`. Xquik lane:
+  Xquik remote MCP seed JSON and CSV entry with OAuth2 metadata, docs,
+  maintainer, icon, and hosted MCP URL. Target improvements: fixed CSV import
+  header from `authentication_types` to `authentication_type`, restored the
+  missing Reddit CSV seed row, and updated README auth examples and stray code
+  fences. Validation passed `git diff --check` and a Python JSON/CSV parity
+  check for 46 seed rows. Link checks covered Xquik docs, icon, GitHub repo,
+  and expected 401 protected MCP response. Readback: open, ready, merge-state
+  unstable, 1 Vercel check failure and comment requiring Portal One team
+  authorization, 0 reviews.
+- Fresh PR 2: opened https://github.com/agenticdevops/awesome-devops-mcp/pull/38
+  from `kriptoburak:codex/add-xquik-devops-monitoring`, commit `98b0f88`.
+  Xquik lane: Monitoring & Observability entry for release feedback, incidents,
+  brand mentions, and account activity. Target improvements: fixed Opik entry
+  owner label, fixed Discord community link, and added missing
+  `CONTRIBUTING.md` linked from README. Validation passed `git diff --check`;
+  Xquik and Opik links returned 200; Discord returned 200 with local
+  certificate verification disabled. Readback: open, ready, merge-state clean,
+  0 comments, 0 reviews, 0 checks.
+- Fresh PR 3: opened
+  https://github.com/WagnerAgent/awesome-mcp-servers-devops/pull/57 from
+  `kriptoburak:codex/add-xquik-devops-observability`, commit `2e2475a`.
+  Xquik lane: APM & Monitoring entry for release feedback, incident signals,
+  brand mentions, and account activity. Target improvements: clarified Last9
+  APM, log, and incident workflow fit, and clarified Uptrack monitor and
+  incident management plus transport options. Validation passed
+  `git diff --check`; Last9, Uptrack, and Xquik links returned 200. Readback:
+  open, ready, merge-state clean, 0 comments, 0 reviews, 0 checks.
+- Public hygiene: PR bodies and external diffs were inspected for secrets,
+  private implementation details, restricted provider or source names,
+  internal cost mechanics, unsupported claims, stale metadata, and banned
+  promotion wording. No promotion notes were added.
+- OpenClaw docs: no TweetClaw OpenClaw compatibility, manifest, install,
+  packaged-skill, or release-gate files changed in this run. Current compact
+  audit still records the latest official docs checks.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final validation: `npm run check-memory-md-size` passed at 14,344 of 15,360
+  bytes for compact Markdown memory. `npm run
+  check-openclaw-platform-fitness` passed for `@xquik/tweetclaw@1.6.32`
+  targeting OpenClaw `2026.6.11`. `npm run check-em-dash`,
+  `git diff --check`, and `npm run check:all` passed, including typecheck,
+  lint, duplicate check, knip, suppression check, dash check, memory check,
+  skill frontmatter, version alignment, build, OpenClaw platform fitness,
+  package artifact, and 168 tests with 100% coverage.
+- Prompt self-improvement: compact audit now records the appcypher PR creation
+  blocker pattern and current listing/catalog PR evidence. No automation prompt
+  edit was needed because the active prompt already includes existing PR repair
+  first, 3 fresh GitHub opportunities every run, listing/catalog patches as
+  valid non-spammy lanes, duplicate/fork rules, OpenClaw checks, link checks,
+  no promotion notes, and 2 target improvements per PR. Automation TOML
+  measured 13,657 bytes, and the persisted prompt measured 13,313 bytes, under
+  the 15 KiB prompt cap.

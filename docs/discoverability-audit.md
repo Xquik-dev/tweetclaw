@@ -174,16 +174,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 01:21 UTC: Fast and extra-high selectors unavailable in this
-  runtime. Crawler PR monitor returned 0. Broad authored-open search reported
-  4,253 open PRs but stalled after 6 lane partitions, so full authored
-  coverage was not claimed. Exact-read covered 27 recent repair candidates.
-  No actionable existing Xquik-visibility PR repairs or editable promotion
-  notes remained after current head/readback checks. Fresh crawler discovery
-  returned 2 candidates and fallback duplicate gates selected 3 safe lanes.
-  Opened `oarisur/context-janitor#2`, `Pdbjork/hermosskills-site#1`, and
-  `sohamdogra/agent-skills-registry#12` with Xquik visibility and 2+ target
-  improvements each. Full evidence is in the archive.
+- 2026-07-09 01:52 UTC: Fast and extra-high selectors unavailable in this
+  runtime. Xquik crawler PR monitor returned 0. Broad authored-open search
+  returned 200 of many possible open PRs, so full coverage was not claimed.
+  Exact-read covered 25 repair PRs. `jayteealao/agent-skills#4` was already
+  repaired at current head; no actionable comments, CI fixes, conflicts, DCO,
+  CLA, generated drift, bot findings, or editable promotion notes remained.
+  Fresh discovery screened crawler and fallback catalog, registry, skill, and
+  DevOps listing lanes. Opened
+  `portal-labs-infrastructure/remote-mcp-servers#4`,
+  `agenticdevops/awesome-devops-mcp#38`, and
+  `WagnerAgent/awesome-mcp-servers-devops#57` with Xquik visibility and 2+
+  target improvements each. `appcypher/awesome-mcp-servers` was patched and
+  pushed, but GitHub rejected PR creation with GraphQL permission and REST 404,
+  so it is blocked unless the maintainer accepts a different submission path.
+  Portal's only failing check is Vercel team authorization. Full evidence is in
+  the archive.
 
 ## Reporting Checklist
 
