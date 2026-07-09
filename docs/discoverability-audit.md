@@ -174,22 +174,26 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 07:19 UTC: Fast and extra-high selectors unavailable. Crawler
+- 2026-07-09 07:52 UTC: Fast and extra-high selectors unavailable. Crawler
   monitor and fresh-target passes returned strict JSON with 0 opportunities
-  after managed-egress socket closures. Authored-open fallback partitions were
-  split past the July 3 1,000 cap; exact-read covered 112 priority PRs with 0
-  failures. Repaired `dansasser/claude-code-marketplace#24` by removing local
-  `.mcp.json` read guidance from the Xquik skill, and repaired
-  `Saminiscool/twitter-ai-agent#2` to clean/mergeable after upstream moved
-  twice. Opened 3 fresh PRs:
-  `xmanish-dev/Twitter-Sentiment-Analysis#1` (Xquik CSV upload plus duplicate
-  sidebar and empty word-cloud fixes),
-  `Nishant1016/social-media-sentiment-analyzer#1` (Xquik CSV source plus README
-  path and request error-handling fixes), and
-  `Magendran717/twitter-sentiment-app#1` (Xquik CSV batch API plus shared
-  prediction helper and frontend error handling). OpenClaw docs, Xquik docs,
-  OpenAPI, MCP manifest, repaired PRs, and new PRs returned HTTP 200; npm
-  package page still returned known 403. Full evidence is in the archive.
+  after managed-egress socket closures and proxy quarantine noise. Authored-open
+  fallback partitions were split past the July 3 1,000 cap; exact-read covered
+  125 priority PRs with 0 failures. Removed editable old promotion-note comments
+  from open Xquik visibility PRs at scale: 2,706 comments deleted, with only
+  `fosterushka/skillsmith-for-claude#1` blocked by archived read-only state.
+  Rechecked and commented resolved repair evidence on
+  `jayteealao/agent-skills#4` and `aak204/Tool-Catalog-Compiler#1`; remaining
+  blocks on `dansasser/claude-code-marketplace#24`,
+  `librefang/librefang-registry#100`, `samuel-olaleye/...#1`, and
+  `portal-labs-infrastructure/...#4` are maintainer review or authorization
+  gates. Opened 3 fresh PRs:
+  `Kanishka0470/Twitter-Sentiment-Analysis#1` (Xquik CSV upload plus safer CSV
+  parsing and README fixes), `jeetsarkar0004/NLP-Project#1` (Xquik CSV batch
+  predictions plus missing imports and README workflow), and
+  `vineethaponugoti7-cpu/Twitter-Sentiment-Analysis#1` (Xquik CSV scoring plus
+  path-safe assets and setup docs). OpenClaw docs, canonical Xquik OpenAPI,
+  MCP manifest, repaired PRs, and new PRs returned HTTP 200; npm package page
+  still returned known 403. Full evidence is in the archive.
 
 ## Reporting Checklist
 
