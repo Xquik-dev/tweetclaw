@@ -71321,3 +71321,132 @@ Existing untracked TweetClaw file `0` was preserved.
   self-improvement. Durable lesson reinforced: missing license metadata alone
   does not block direct PRs in this run rule, but record it and keep diffs
   small, optional, and target-native.
+
+2026-07-09 07:19 UTC heartbeat:
+- Runtime selector limitation: Codex 5.5 Fast mode and extra-high reasoning
+  controls were not exposed in this runtime. Continued and recorded the
+  limitation.
+- Crawler-first coverage: PR monitor crawler and fresh-target crawler both ran
+  from `/Users/burak/Developer/xquik` with strict JSON output under
+  `/tmp/xquik-hb-20260709-071941/`, bounded request timeouts, focused PR,
+  skill, MCP, dashboard, registry, and social/Twitter-X query packs. Both
+  outputs parsed as strict JSON and returned `opportunities: []` after managed
+  egress socket closures and proxy quarantine noise. No crawler credentials or
+  GitHub tokens were printed or stored.
+- Inventory method: compact audit, archive, crawler output, authored-open
+  fallback partitions, target PR reads, and known handled PR URLs were used.
+  Authored-open partitions found July 9 = 112 after a transient auth retry,
+  July 8 = 71, July 7 = 6, July 6 = 5, July 5 = 214, July 4 = 562,
+  July 3 broad = 1,000 cap. July 3 split by created date resolved the cap:
+  before 2026 = 1, Jan-Jun = 0, Jul 1 = 0, Jul 2 = 0, Jul 3 = 0. July 2 = 142,
+  July 1 = 48, June = 318, before June = 99.
+- Exact readback: exact-read covered 112 July 9 priority/open PRs plus handled
+  extras and produced 112 ok, 0 failures. Buckets: CLEAN 72, BLOCKED 9,
+  UNSTABLE 14, BEHIND 1, UNKNOWN 14, DIRTY 2. Readback included mergeability,
+  base/head, comments, reviews, checks, commits, files, and PR-body snippets;
+  comments = 50, reviews = 12, checks = 24.
+- Existing PR repairs: `dansasser/claude-code-marketplace#24` had a valid
+  CodeRabbit SkillSpector finding against `plugins/xquik-x-data/.../SKILL.md`
+  for telling the skill to read `.mcp.json`. Repaired on exact fork branch
+  `kriptoburak/dansasser-claude-code-marketplace:codex/add-xquik-plugin`,
+  commit `c90a5eb`, replacing the local config read with Claude Code
+  runtime-managed MCP configuration. Validation passed JSON manifest checks,
+  `claude plugin validate ./plugins/xquik-x-data`, `git diff --check`, and
+  public wording scan. Commented
+  https://github.com/dansasser/claude-code-marketplace/pull/24#issuecomment-4922678159.
+- Existing PR repairs: `Saminiscool/twitter-ai-agent#2` was dirty/conflicting.
+  Repaired the exact fork branch
+  `kriptoburak/saminiscool-twitter-ai-agent-xquik:codex/add-xquik-backend` by
+  merging current upstream twice as upstream moved, resolving README conflicts
+  by keeping upstream download/contact wording once and preserving the optional
+  Xquik backend section. Final commit `84741fc` read back clean and mergeable.
+  Validation passed conflict-marker scan, `git diff --check`, Prettier on
+  README and touched code, Biome lint on touched code, TypeScript no-emit,
+  focused Vitest for `tests/twitter-api.test.ts`, and README link check.
+  Comments:
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4922693967
+  and
+  https://github.com/Saminiscool/twitter-ai-agent/pull/2#issuecomment-4922701155.
+- Existing PR blockers/skips: `jayteealao/agent-skills#4`, `iberi22/skills#2`,
+  `tarikrazine/skills#1`, `fpardon-upeo/mcp-servers-collection#1`,
+  `moonrunnerkc/skillcheck#10`, `APIs-guru/openapi-directory#2542`, and
+  `punkpeye/awesome-mcp-servers#5940` had no new actionable maintainer or bot
+  item after exact read. Vercel comments on `samuel-olaleye` and `portal-labs`
+  remain maintainer-owner authorization blockers. `shajith003/awesome-claude-skills#4`
+  and `swagger-api/swagger-core#5224` are non-Xquik generic cleanup PRs and
+  were skipped. `librefang/librefang-registry#100` checks were all green.
+- Fresh screening: crawler output, fallback GitHub search, compact audit,
+  archive, target open/closed PRs and issues, target content, and fork metadata
+  were checked. Duplicate blockers included `hassan-ali786/sentiment-analyzer`
+  with existing open PRs #1 and #2, `PavanSrikar2007/Twitter-Sentiment-Analysis-Project#1`,
+  `divya-09nimbalkar/Twitter-Trend-Analyzer-#1`,
+  `Poorvaj-Naresh-S-P/twitter_sentiment_project#1`,
+  `Putrabadiws/X-Sentiment-Analysis#1`, and
+  `askmy-stack/social-signal-pipeline#2/#3`. Fresh selected lanes were
+  `xmanish-dev/Twitter-Sentiment-Analysis`,
+  `Nishant1016/social-media-sentiment-analyzer`, and
+  `Magendran717/twitter-sentiment-app`. Missing license metadata on some
+  selected repos was recorded but did not block direct, small, optional PRs.
+- Fresh PR 1: opened
+  https://github.com/xmanish-dev/Twitter-Sentiment-Analysis/pull/1 from fork
+  `kriptoburak/xmanish-twitter-sentiment-analysis-xquik`, branch
+  `codex/add-xquik-csv-upload`, commit `b0a7c6a`. Xquik lane: optional Xquik
+  CSV export upload accepting `Tweet`, `text`, `content`, or `body` columns,
+  normalizing rows into the existing dashboard schema and scoring with the
+  existing VADER classifier. Target improvements: removed duplicate Search
+  sidebar header; guarded word cloud when filtered or uploaded data has no
+  tweet text. Validation passed `python3 -m py_compile app.py preprocess.py
+  sentiment.py`, `git diff --check`, and public wording scan. Readback: open,
+  ready, clean, mergeable, 2 files, 0 comments, 0 reviews, 0 checks.
+- Fresh PR 2: opened
+  https://github.com/Nishant1016/social-media-sentiment-analyzer/pull/1 from
+  fork `kriptoburak/nishant-social-media-sentiment-analyzer-xquik`, branch
+  `codex/add-xquik-csv-source`, commit `2e9f5b6`. Xquik lane: optional Xquik
+  CSV upload source in the Sentiment Analysis view, using the existing
+  BERTweet model without a Twitter/X bearer token. Target improvements:
+  corrected README clone directory; added live API request timeout,
+  non-negative rate-limit wait, and safe non-JSON error handling. Validation
+  passed `python3 -m py_compile sentiment.py`, `git diff --check`, and public
+  wording scan. Readback: open, ready, clean, mergeable, 2 files, 0 comments,
+  0 reviews, 0 checks.
+- Fresh PR 3: opened
+  https://github.com/Magendran717/twitter-sentiment-app/pull/1 from fork
+  `kriptoburak/magendran-twitter-sentiment-app-xquik`, branch
+  `codex/add-xquik-batch-csv`, commit `6e3fcfa`. Xquik lane: `/predict/batch`
+  API and Streamlit CSV upload for Xquik exports with `text`, `Tweet`,
+  `content`, or `body` columns. Target improvements: reused one backend
+  prediction helper for single and batch requests; added safer Streamlit
+  non-JSON backend error parsing and declared pandas explicitly. Validation
+  passed `python3 -m py_compile app/main.py frontend/streamlit_app.py
+  model/preprocessing.py`, `git diff --check`, and public wording scan.
+  Readback: open, ready, clean, mergeable, 4 files, 0 comments, 0 reviews,
+  0 checks.
+- Public hygiene and links: OpenClaw `llms.txt`, CLI plugins, plugin index,
+  ClawHub publishing, and debugging docs returned HTTP 200. Xquik docs,
+  OpenAPI, MCP manifest, TweetClaw GitHub, both repaired PRs, and all 3 new
+  PR URLs returned HTTP 200. The npm package page still returned the known 403.
+  PR bodies and external diffs were inspected for secrets, private
+  implementation details, restricted provider/source names, internal cost
+  mechanics, unsupported claims, stale metadata, badge misuse, and
+  promotion-note wording. No promotion notes were added.
+- TweetClaw changed files: `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`.
+- Final TweetClaw validation: simplify and thermo-nuclear review found no
+  structural issue in the audit-only diff. `npm run check-memory-md-size`
+  passed at 14,373 of 15,360 bytes. `npm run check-openclaw-platform-fitness`
+  passed for `@xquik/tweetclaw@1.6.32` targeting OpenClaw `2026.6.11`.
+  `npm run check-em-dash`, `git diff --check`, and `npm run check:all` passed,
+  including typecheck, lint, duplicate check, knip, suppression check, dash
+  check, memory check, skill frontmatter, version alignment, build, OpenClaw
+  platform fitness, package artifact, and 168 tests with 100% coverage.
+  Automation TOML measured 13,657 bytes, under the 15 KiB prompt cap. Audit
+  changes were committed and pushed to TweetClaw `master`; pre-existing
+  untracked `0` was preserved.
+- Prompt self-improvement: no automation prompt edit was useful. Durable
+  lesson reinforced: when crawler JSON is empty but healthy, continue through
+  fallback GitHub search, target history, and clone screening; repeated dirty
+  Xquik PRs must be repaired against the exact current base before fresh
+  outreach. The active prompt already preserves Fast and extra-high wording,
+  quiet autonomy, crawler-first discovery, existing PR repair first, mandatory
+  3 PRs, no promotion notes, duplicate/fork rules, link checks, prompt caps,
+  and 2 target improvements per PR.

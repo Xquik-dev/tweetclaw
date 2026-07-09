@@ -174,19 +174,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 06:58 UTC: Fast and extra-high selectors unavailable. Crawler
+- 2026-07-09 07:19 UTC: Fast and extra-high selectors unavailable. Crawler
   monitor and fresh-target passes returned strict JSON with 0 opportunities
-  after managed-egress socket closures. Exact-read 100 July 9 priority PRs.
-  Repaired `moonrunnerkc/skillcheck#10` by deleting the stale promotion-note
-  comment and pushing a metadata-namespace regression; `jayteealao/agent-skills#4`
-  and `iberi22/skills#2` already had their bot findings fixed. Opened 3 fresh
-  PRs: `jgitlin01/social-media-automation-skill#1` (Xquik source-context
-  summaries plus docs and config), `thanveershanab/twitter-data-dashboard#1`
-  (Xquik CSV uploader plus validation and README setup), and
-  `Chaitanya081/social-media-analytics-streamlit-#1` (Xquik CSV import workflow
-  plus README cleanup). OpenClaw docs and handled PR links returned HTTP 200;
-  npm package page still returned the known 403. Full evidence is in the
-  archive.
+  after managed-egress socket closures. Authored-open fallback partitions were
+  split past the July 3 1,000 cap; exact-read covered 112 priority PRs with 0
+  failures. Repaired `dansasser/claude-code-marketplace#24` by removing local
+  `.mcp.json` read guidance from the Xquik skill, and repaired
+  `Saminiscool/twitter-ai-agent#2` to clean/mergeable after upstream moved
+  twice. Opened 3 fresh PRs:
+  `xmanish-dev/Twitter-Sentiment-Analysis#1` (Xquik CSV upload plus duplicate
+  sidebar and empty word-cloud fixes),
+  `Nishant1016/social-media-sentiment-analyzer#1` (Xquik CSV source plus README
+  path and request error-handling fixes), and
+  `Magendran717/twitter-sentiment-app#1` (Xquik CSV batch API plus shared
+  prediction helper and frontend error handling). OpenClaw docs, Xquik docs,
+  OpenAPI, MCP manifest, repaired PRs, and new PRs returned HTTP 200; npm
+  package page still returned known 403. Full evidence is in the archive.
 
 ## Reporting Checklist
 
