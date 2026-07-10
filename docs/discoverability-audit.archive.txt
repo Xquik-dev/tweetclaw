@@ -2,6 +2,138 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-10 12:45 UTC Target-Native Registry Run
+
+- Runtime and state: Codex Desktop exposed no callable model, Fast-speed, or
+  reasoning-effort selector, so Codex 5.5 Fast and extra-high could not be
+  explicitly selected. Xquik open issues and TweetClaw open issues were empty.
+  Unrelated Xquik `docs/feature-roadmap.md` edits and TweetClaw untracked `0`
+  were preserved. No Browser, Chrome, dev server, production SSH, secret read,
+  or Context7 work was used.
+- Inventory method and blocker: searched compact memory before the archive,
+  used crawler monitoring, audit URLs, recent authored-open searches, date
+  partitions, exact REST and GraphQL PR reads, fork metadata, comments,
+  reviews, checks, files, commits, and review threads. Open Xquik-match counts
+  were 0 for 2025, 86 for 2026 January through April, 448 for May, 180 for June
+  1-10, 596 for June 11-20, 571 for June 21-30, 999 for July 1-5, and 251 for
+  July 6-10, totaling 3,131. One minimal GraphQL page succeeded, then 3 reduced
+  partition reads returned HTTP 502. Broad paging stopped and complete
+  inventory coverage is not claimed.
+- Exact read gate: 15 recently changed open visibility PRs were read for state,
+  mergeability, base/head, commits, files, bodies, comments, reviews, checks,
+  conflicts, DCO/CLA signals, bot findings, generated drift, and promotion
+  wording. They were `webfuse-com/awesome-claude#300`,
+  `siddsachar/row-bot#275`, `cnych/claude-mcp#54`,
+  `tmstack/mcp-servers-hub#3`, `autohandai/community-skills#4`,
+  `XinmiaoYan/awesome-mcp-servers#4`,
+  `hectorr-st/Social-Media-Dashboard#1`,
+  `ingtingt/Mahidol-Social-Listening#1`,
+  `kentunderage549/cc-harness-skills#1`,
+  `Saminiscool/twitter-ai-agent#2`,
+  `aland4747/awesome-prediction-markets#1`,
+  `Simplex-june29108/saas-api-skills#1`,
+  `modest-curator478/claude-skills#1`,
+  `vikynofebriputra-creator/Orkas-Awesome-AgentSkills#1`, and
+  `freddy-schuetz/n8n-claw#39`. All 15 had 0 review threads. The only current
+  CI blocker was target-owned deployment authorization on `cnych#54`.
+- Existing PR repairs: `webfuse-com/awesome-claude#300` commit `90cc125`
+  added remote discovery and API-key setup detail while preserving one-entry
+  awesome-list policy. `aland4747/awesome-prediction-markets#1` merged current
+  upstream, removed a target-owned archive from the live diff, enriched the
+  Xquik data-source boundary, and replaced 2 confirmed GitHub 404 links in
+  commit `4cf7298`. `djmarat/skillhub#1` replaced direct generated-registry
+  editing with the target CLI's staged `incoming/xquik.json` workflow in commit
+  `61a8cc3`; 66 tests passed. `dev48v/public-mcp-servers#1` merged upstream,
+  aligned category, auth, discovery, and safety metadata, and passed its
+  123-entry validator in commit `dc9b011`. Its link checker reported all 123
+  server URLs alive but did not exit, so it was bounded and terminated. All 4
+  repaired PRs are open and mergeable with 0 review threads. No editable
+  promotion note needed removal.
+- Crawler-first coverage: ran strict JSON crawler batches from
+  `/Users/burak/Developer/xquik` with GitHub token env vars unset, bounded
+  request and warmup timeouts, concurrency 32, stable session IDs, and focused
+  open-PR, issue, repo, code, `SKILL.md`, `.agents/skills`, skill-dir,
+  OpenClaw, MCP, Codex, Claude, agent, social media, Twitter/X, awesome-list,
+  registry, fork, generated-catalog, web-index, framework, dashboard, library,
+  project, example, docs, and package-tooling lanes. PR monitoring returned 0;
+  skills returned 2 archive-duplicate candidates; projects returned 8; catalog
+  search returned 0 after managed network-egress request failures. All final
+  output files parsed as strict JSON; no credential value was printed or saved.
+- Fresh screening and duplicate gates: compact memory, archive, target content,
+  target open/closed PRs and issues, fork state, README, contributing rules,
+  schemas, generated-file policies, licenses, and validation tooling were
+  checked for TweetClaw, Xquik, x-twitter-scraper, OpenClaw, and variants.
+  Screened `wisechef-ai/loopskill-marketplace`,
+  `CleanSlice/agent-templates`, `Olorinm/agent-friendly-services`,
+  `octal-networks/mio-plugins`, `octal-networks/mio-skills`,
+  `octal-networks/agent-templates`, `OpenGoatHQ/opengoat`,
+  `opendatahub-io/skills-registry`, `zeroclaw-labs/zeroclaw-skills`,
+  `Chat2AnyLLM/awesome-claude-plugins`, and fresh MCP/skill directories.
+  MIO runtime validation was unavailable, OpenGoat requires a hireable human or
+  agent profile, OpenDataHub was product-specific, ZeroClaw already contains an
+  Xquik skill, and Chat2AnyLLM already contains generated Xquik rows. The 3
+  selected repos were duplicate-clean and had native validation paths.
+- Official docs recheck: current OpenClaw `/llms.txt`, CLI plugin and skill
+  routes, plugin building, manifest, permission request, tool-plugin, SDK
+  runtime, install-override, ClawHub publish/skill format, and debugging routes
+  returned HTTP 200. Official Claude plugin documentation was checked for
+  marketplace, plugin manifest, `.mcp.json`, Streamable HTTP, environment
+  expansion, and validator contracts before the Claude plugin patch.
+- New PR 1: https://github.com/wisechef-ai/loopskill-marketplace/pull/1 from
+  verified fork `kriptoburak/loopskill-marketplace`, branch
+  `codex/add-xquik-plugin`, commit `b0579f3`. It adds an installable Xquik
+  Claude plugin, remote MCP config with environment-only API-key expansion, and
+  a packaged research skill with source provenance, pagination, untrusted-data,
+  exact write approval, and uncertain-delivery rules. It also migrates the
+  existing marketplace description into current validator-supported metadata.
+  Both `claude plugin validate` targets, JSON parsing, links, and whitespace
+  checks passed.
+- New PR 2: https://github.com/CleanSlice/agent-templates/pull/1 from verified
+  fork `kriptoburak/agent-templates`, branch
+  `codex/add-xquik-social-research-template`, commit `37ab02d`. It adds a Ranch
+  template with Xquik MCP transport, secret-store reference, network/no-admin
+  declarations, provenance-focused persona, and 2 Paddock scenarios that test
+  evidence packets and exact write approval. Draft 7 JSON Schema validation,
+  URI formats, all YAML/JSON parsing, declared paths, scenario count, links,
+  and whitespace checks passed.
+- New PR 3: https://github.com/Olorinm/agent-friendly-services/pull/2 from
+  verified fork `kriptoburak/agent-friendly-services`, branch
+  `codex/add-xquik-provider`, commit `f43766d`. It adds the source-of-truth
+  `data/providers/xquik.yaml` with 14 canonical docs, API, OpenAPI, llms, MCP,
+  SDK, webhook, rate-limit, and error entrypoints; 5 dated evidence-backed
+  checks; explicit unknowns where public evidence is absent; and required
+  `submitted_by: vendor`. `npm run validate` passed with 77 providers, 924
+  checks, and 0 errors; all 17 unique entrypoint/evidence URLs returned 200.
+- Post-submit exact read: all 3 new PRs are open, ready, and mergeable with 0
+  comments, 0 reviews, and 0 review threads. LoopSkill and Ranch are CLEAN with
+  no configured checks. Olorin is UNSTABLE because workflow run `29093471432`
+  is `action_required` with 0 jobs until a maintainer approves forked CI; this
+  is a maintainer-owner blocker, not a failing validation. No PR body contains
+  a promotion note or unsupported visibility request.
+- Public links and hygiene: every introduced documentation, repository,
+  manifest, API reference, OpenAPI, SDK, webhook, rate-limit, error, signup,
+  and pricing link returned HTTP 200. Unauthenticated `https://xquik.com/mcp`
+  returned its expected 401. Added-diff and PR-body scans found no secret,
+  private implementation detail, restricted source name, internal cost
+  mechanic, unsupported claim, stale metadata, or banned promotion wording.
+- Prompt self-improvement: no prompt edit was needed. The saved prompt already
+  preserves Fast extra-high wording, quiet autonomy, existing-PR repair first,
+  crawler-first discovery, 3-PR mandate, skill coverage, listing/catalog lanes,
+  duplicate/fork rules, OpenClaw/link/validation gates, badge rule, Context7
+  exclusion, secret handling, commit/push requirement, Markdown cap,
+  no-promotion rule, 2-improvement rule, and self-improvement. Durable lesson:
+  prefer source-of-truth catalogs with schemas and generated-output boundaries;
+  use target validators before outreach; treat fork-workflow approval as a
+  maintainer blocker rather than CI failure. Prompt measured 13,313 decoded
+  bytes and automation TOML 13,657 bytes.
+- Final TweetClaw validation and push: changed files were
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Simplify and thermo-nuclear review
+  found the audit-only diff scoped and non-structural. Memory, OpenClaw fitness,
+  dash, public-hygiene, link, whitespace, and full repository checks passed;
+  the audit update was committed and pushed to `origin/master` while untracked
+  `0` remained untouched.
+
 ### 2026-07-09 09:10 UTC CSV Import Outreach Run
 
 - Runtime selector limitation: Codex Desktop did not expose callable model,

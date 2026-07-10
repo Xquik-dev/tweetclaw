@@ -174,21 +174,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 11:25 UTC: Fast and extra-high selectors were unavailable. Issue
+- 2026-07-10 12:45 UTC: Fast and extra-high selectors were unavailable. Issue
   queues were empty; unrelated Xquik roadmap edits and TweetClaw untracked `0`
-  were preserved. Authored-open partitions counted 4,379 PRs, including 3,127
-  Xquik matches, but GraphQL resource and secondary limits blocked a complete
-  inventory; coverage is not claimed. Repaired
-  `XinmiaoYan/awesome-mcp-servers#4` in commit `3e85df7` with correct Search
-  placement, remote discovery metadata, and 2 catalog label fixes. Token-free
-  crawler PR, skill, and project scans returned valid empty JSON after managed
-  egress failures; fallback discovery screened 3 duplicate-clean targets.
-  Opened `tmstack/mcp-servers-hub#3`, `cnych/claude-mcp#54`, and
-  `siddsachar/row-bot#275` with Xquik placement plus 2+ target improvements.
-  All are open and mergeable with no review threads. cnych has a target-owned
-  Vercel authorization failure; row-bot reports no checks. Official OpenClaw
-  docs, focused target tests, public links, and hygiene checks passed. Full
-  inventory, validation, and blocker details are in the archive.
+  were preserved. Date partitions counted 3,131 open Xquik matches, but
+  repeated GraphQL 502 responses blocked complete paging, so coverage is not
+  claimed. Exact reads covered 15 changed open PRs and found 0 review threads.
+  Repaired `webfuse-com/awesome-claude#300`,
+  `aland4747/awesome-prediction-markets#1`, `djmarat/skillhub#1`, and
+  `dev48v/public-mcp-servers#1`; no promotion-note cleanup was needed. The
+  token-free crawler covered PR, skill, registry, catalog, framework, project,
+  and OpenClaw lanes before fallback screening. Opened
+  `wisechef-ai/loopskill-marketplace#1`, `CleanSlice/agent-templates#1`, and
+  `Olorinm/agent-friendly-services#2` with install metadata, secret safety,
+  provenance or evidence checks, and 2+ target improvements each. All 3 are
+  open and mergeable with 0 review threads. Olorin CI awaits maintainer approval
+  to run; local validation passed. Official OpenClaw docs, target checks,
+  public links, hygiene scans, and TweetClaw gates passed. Full evidence and
+  blockers are in the archive.
 
 ## Reporting Checklist
 
