@@ -174,29 +174,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-09 17:12 UTC: Fast and extra-high selectors unavailable. Xquik and
+- 2026-07-10 10:57 UTC: Fast and extra-high selectors unavailable. Xquik and
   TweetClaw issue queues were empty; unrelated Xquik roadmap edits and
-  TweetClaw untracked `0` were preserved. Crawler PR, skill, registry, and
-  project runs from Xquik used token env vars unset, strict JSON, bounded
-  timeouts, and skill-repo coverage, but parsed 0 candidates after network
-  route failures. Authored open PR partitions hit GitHub's 1000-result cap, so
-  complete coverage was not claimed; fallback exact reads covered 137 open
-  visibility PR URLs with 0 read errors. Repaired conflicts in
-  `shajith003/awesome-claude-skills#4` commit `43bb8fa` and
-  `ogthheu/Insightify-Sentiment-API#1` commit `ab25514`, pushed bot-review
-  repairs to `dansasser/claude-code-marketplace#24` commit `f1a3911` and
-  `jayteealao/agent-skills#4` commit `0cd6bb3`, and verified prior fixes in
-  `KPZ231/Instra#2`, `understanding-81/topsis-mcdm-tool#1`, and
-  `numbpill3d/mcp-radar#5`. Fresh archive-clean screens selected
-  `Mo-Awad-AI/Social-Listening-Brand-Sentiment-Dashboard`,
-  `ParthBhadola/brand-sentiment-monitor`, and
-  `Seran-14/real-time-brand-sentiment-analysis`; opened 3 PRs with Xquik or
-  TweetClaw source workflows plus 2+ native docs, validation, dependency,
-  import, timeout, uploader, control, or stale-link fixes. New PRs
-  `Mo-Awad-AI#1`, `ParthBhadola#1`, and `Seran-14#1` read back OPEN,
-  MERGEABLE, CLEAN, 0 comments, 0 reviews, and no checks. OpenClaw docs,
-  public links, hygiene scans, and target validations passed. Full evidence is
-  in the archive.
+  TweetClaw untracked `0` were preserved. Crawler-first PR, skill, and project
+  discovery used strict JSON, bounded timeouts, no GitHub tokens, and
+  skill-repo coverage. Broad authored-open GitHub search hit the API rate
+  limit, so complete coverage was not claimed; fallback audit, archive,
+  crawler, and exact-repo reads covered 33 open visibility PRs with 0 read
+  errors. Repaired conflicts in
+  `ogthheu/Insightify-Sentiment-API#1` commit `99b8991` and
+  `shajith003/awesome-claude-skills#4` commit `1c7a6fa`. Fresh duplicate
+  checks selected `freddy-schuetz/n8n-claw`,
+  `hectorr-st/Social-Media-Dashboard`, and
+  `ingtingt/Mahidol-Social-Listening`; opened PRs #39, #1, and #1 with Xquik
+  or `@xquik/tweetclaw` integration plus 2+ target-native improvements. All 3
+  new PRs read back OPEN, MERGEABLE, 0 comments, 0 reviews, and no checks.
+  OpenClaw docs, public links, target validations, and hygiene scans passed
+  except target-owned hectorr CRA build blockers recorded in the archive.
 
 ## Reporting Checklist
 

@@ -73314,6 +73314,148 @@ Existing untracked TweetClaw file `0` was preserved.
   boundary, or file-size concern in this audit-only diff. The audit update was
   committed and pushed to `origin/master` after validation.
 
+## 2026-07-10 10:57 UTC heartbeat
+
+- Runtime and scope: model, Fast speed, and extra-high effort selectors were
+  unavailable in this runtime, so the limitation was recorded and the run
+  continued. Xquik status had unrelated `docs/feature-roadmap.md` changes and
+  TweetClaw status had only untracked `0`; both were preserved. Xquik and
+  TweetClaw issue queues were empty. Automation TOML measured 13,657 bytes.
+- Compact memory and release memory were searched before outreach. The compact
+  audit plus `docs/clawpack-release.md` started at 14,841 bytes, so the compact
+  latest-run block was shortened and this full evidence was appended here.
+- Crawler-first discovery ran from `/Users/burak/Developer/xquik` with strict
+  JSON output, bounded request timeouts, focused PR-monitor, skill, and project
+  query packs, skill-repo coverage, and GitHub token env vars unset. Outputs
+  were `/tmp/xquik-hb-20260710-105747/pr-monitor.json`,
+  `/tmp/xquik-hb-20260710-105747/fresh-skills.json`, and
+  `/tmp/xquik-hb-20260710-105747/fresh-projects.json`; all parsed as JSON.
+- Official OpenClaw docs recheck returned HTTP 200 for `/llms.txt`,
+  `/cli/plugins`, `/plugins/building-plugins`, `/plugins/manifest`,
+  `/plugins/tool-plugins`, `/plugins/plugin-permission-requests`,
+  `/plugins/sdk-runtime`, `/plugins/install-overrides`, `/clawhub/publishing`,
+  `/clawhub/skill-format`, `/help/debugging`, `/cli/skills`, and `/skills`.
+- Existing PR inventory used compact audit, this archive, crawler output,
+  audit-tracked PR URLs, exact `gh pr view` readbacks, target repo lists, and
+  clone-level checks. Audit URL extraction found 2,059 historical PR URLs.
+  Keyword open-PR searches for TweetClaw, Xquik, OpenClaw, skill, Twitter/X,
+  and MCP returned 0. Broad `author:kriptoburak is:open` search hit GitHub API
+  rate limit at 2026-07-10 11:00 UTC, so complete authored-open coverage was
+  not claimed and broad authenticated search stopped for the run.
+- Exact readback covered 33 current in-scope open PRs with 0 read errors:
+  `CnxLuc/token-analysis-skill#1`, `Gamma-Software/post-to-x-skill#1`,
+  `Justmalhar/x-cli#1`, `KPZ231/Instra#2`,
+  `Mo-Awad-AI/Social-Listening-Brand-Sentiment-Dashboard#1`,
+  `ParthBhadola/brand-sentiment-monitor#1`,
+  `Seran-14/real-time-brand-sentiment-analysis#1`, `SpaceZephyr/myskill#2`,
+  `Xquik-dev/hermes-tweet#591`, `adrajameet7805/Twitter-Sentiment-analysis#1`,
+  `asgard-ai-platform/skills#7`, `atpaawej/mcp-cli#12`,
+  `b-i-king/Video_Game_Stats_Tracker#17`,
+  `charles-future/awesome-claude-plugins#9`, `creynir/x-builder#35`,
+  `dansasser/claude-code-marketplace#24`,
+  `daouda85/tweet-sentiment-faang#1`, `dhanusriS/brandshield-ai#1`,
+  `hmzainjamil/awesome-claude-plugins#1`,
+  `itgoyo/awesome-claude-code-skills#9`, `jayteealao/agent-skills#4`,
+  `jgerton/brand-toolkit#2`, `jikssha/openclaw-dae-skills#1`,
+  `jzOcb/writing-style-skill#2`, `kennyzir/7deer_skills#3`,
+  `maximhq/bifrost#5069`, `numbpill3d/mcp-radar#5`,
+  `ogthheu/Insightify-Sentiment-API#1`,
+  `pavichettianvesh-boop/sentiment-dashbaord#1`,
+  `pravj/claude-x-post-skill#1`, `qazwsxedccsqzse/x-post-skill#1`,
+  `shajith003/awesome-claude-skills#4`, and
+  `understanding-81/topsis-mcdm-tool#1`.
+- Existing PR repairs: `ogthheu/Insightify-Sentiment-API#1` was CONFLICTING.
+  Merged upstream main in verified head repo
+  `kriptoburak/ogthheu-insightify-sentiment`, resolved the README conflict by
+  keeping one closing paragraph, validated `git diff --check`,
+  `markdown-link-check README.md`, conflict-marker scan, and public-hygiene
+  scan, then pushed commit `99b8991`; readback returned OPEN and MERGEABLE.
+  `shajith003/awesome-claude-skills#4` was CONFLICTING. Merged upstream main in
+  verified head repo `kriptoburak/shajith003-awesome-claude-skills`, preserved
+  working GitHub/local docs links over upstream malformed raw ZIP links,
+  validated `git diff --check`, `markdown-link-check README.md`,
+  conflict-marker scan, and public-hygiene scan, then pushed commit `1c7a6fa`;
+  readback returned OPEN and MERGEABLE.
+- Existing PR blocker notes: `maximhq/bifrost#5069` remains blocked on
+  CLAassistant. `KPZ231/Instra#2` only has target-owned Vercel auth and its
+  CodeRabbit MD040 finding is already fixed. `adrajameet7805` and `b-i-king`
+  have target-owned Vercel auth comments. `Xquik-dev/hermes-tweet#591` only has
+  the prior benign Socket note. `numbpill3d/mcp-radar#5` and
+  `understanding-81/topsis-mcdm-tool#1` had no new actionable repair. A wrong
+  scratch fork `kriptoburak/claude-code-marketplace` received non-PR commit
+  `616ea8b`, but the actual `dansasser/claude-code-marketplace#24` head repo
+  was verified separately and already had the safe wording with no `.mcp.json`
+  or `XQUIK_API_KEY` references.
+- Fresh duplicate and policy screens: archive and target checks blocked prior
+  or duplicate lanes for `nocoo/xray`, `SamurAIGPT/awesome-openclaw`,
+  `hashgraph-online/registry-broker-skills`,
+  `elbis330/social-media-scraper-skill`,
+  `rabden/X-twitter-social-manager-skill`,
+  `fa0311/twitter_api_safe_relay_skills`, and
+  `MatteoBiviano/tweets-analysis-dashboard`. Fresh metadata reads covered
+  `beita6969/ScienceClaw`, `WJZ-P/gemini-skill`, `mateaix/mateclaw`,
+  `unbrowse-ai/unbrowse`, `freddy-schuetz/n8n-claw`,
+  `hectorr-st/Social-Media-Dashboard`, and
+  `ingtingt/Mahidol-Social-Listening`. Selected lanes were public, non-forks,
+  non-archived, issues enabled, had no Xquik/TweetClaw duplicate, and had room
+  for 2+ target-native improvements.
+- Fresh PR 1: opened https://github.com/freddy-schuetz/n8n-claw/pull/39 from
+  verified fork `kriptoburak/n8n-claw`, branch
+  `codex/add-xquik-bridge-example`, commit `fa2c42d`. It adds Xquik as an
+  approval-gated social source bridge example using
+  `https://xquik.com/.well-known/mcp.json`, adds an OpenClaw workflow note for
+  `@xquik/tweetclaw` reviewed post packets, fixes two broken README contents
+  anchors, and replaces the stale OpenClaw GitHub 404 link with
+  `https://docs.openclaw.ai`. Validation passed `git diff --check` and
+  `markdown-link-check README.md` with pre-existing provider console links
+  ignored.
+- Fresh PR 2: opened
+  https://github.com/hectorr-st/Social-Media-Dashboard/pull/1 from verified
+  fork `kriptoburak/hectorr-social-media-dashboard`, branch
+  `codex/add-xquik-export-source`, commit `fcc77cf`. It adds optional
+  `REACT_APP_XQUIK_EXPORT_URL` support for Xquik or `@xquik/tweetclaw` JSON
+  exports, maps export rows into follower and overview cards, preserves the
+  demo API fallback with request timeouts, fixes the README clone URL to the
+  current repo, and replaces random card metrics with fetched values when data
+  is available. Validation passed `git diff --check` and
+  `markdown-link-check README.md`. `npm run build` is blocked by target-owned
+  CRA setup: Node 26 first needs the OpenSSL legacy flag, then the build stops
+  at JSX in `src/index.ts` using a `.ts` extension before reaching this patch.
+- Fresh PR 3: opened
+  https://github.com/ingtingt/Mahidol-Social-Listening/pull/1 from verified
+  fork `kriptoburak/Mahidol-Social-Listening`, branch
+  `codex/add-xquik-export-loader`, commit `01df44e`. It adds optional
+  `XQUIK_EXPORT_PATH` ingestion for CSV, JSON, JSONL, and NDJSON exports from
+  Xquik or `@xquik/tweetclaw`, maps reviewed post fields into existing Prisma
+  `Post` rows, skips duplicate IDs, documents the run command and supported
+  fields, and fixes the README project tree to match the root layout.
+  Validation passed `git diff --check`, `markdown-link-check README.md` with
+  localhost ignored, `npx prisma generate`, and a targeted `npx tsc --noEmit`
+  check for `scripts/loadAndMergeData.ts`.
+- New PR exact readback: `freddy-schuetz/n8n-claw#39` read back OPEN,
+  MERGEABLE, REVIEW_REQUIRED, 0 comments, 0 reviews, and no checks.
+  `hectorr-st/Social-Media-Dashboard#1` read back OPEN, MERGEABLE, 0 comments,
+  0 reviews, and no checks. `ingtingt/Mahidol-Social-Listening#1` read back
+  OPEN, MERGEABLE, 0 comments, 0 reviews, and no checks.
+- Public links and hygiene: new PR URLs returned HTTP 200. Introduced links
+  `https://xquik.com/.well-known/mcp.json`, `https://docs.xquik.com`,
+  `https://docs.openclaw.ai`, and the npm registry endpoint for
+  `@xquik/tweetclaw` returned HTTP 200. Added-line scans found no secrets,
+  private implementation details, restricted provider or source names, internal
+  cost mechanics, unsupported claims, or promotion-note wording; field/config
+  names such as `retweetCount`, `retweets`, `REACT_APP_XQUIK_EXPORT_URL`, and
+  `XQUIK_EXPORT_PATH` were treated as technical false positives.
+- Prompt self-improvement: no automation prompt edit was needed because the
+  current prompt already preserves Fast extra-high wording, quiet autonomy,
+  existing PR repair first, crawler-first discovery, 3 PR mandate, listing and
+  catalog lanes, skill-repo coverage, duplicate/fork rules, OpenClaw checks,
+  link checks, validation gates, Context7 exclusion, secret handling, commit and
+  push requirement, Markdown cap, prompt cap, no-promotion rule, 2-target
+  improvement rule, and self-improvement. Durable lesson: when GitHub search
+  rate-limits broad authored-open inventory, stop that partition and proceed
+  with crawler output, audit URLs, exact repo reads, and clone/API fallbacks
+  without claiming complete coverage.
+
 ## 2026-07-09 17:12 UTC heartbeat
 
 - Runtime and scope: Codex 5.5 Fast mode and extra-high reasoning effort
