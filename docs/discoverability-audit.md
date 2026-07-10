@@ -182,21 +182,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 22:32 UTC: selector readback remained unavailable while global
-  config retained `gpt-5.6-sol`, Ultra, and Fast. Twenty-six partitions fetched
-  all 4,412 authored-open PRs across 61 pages. Exact reads covered 62 initial
-  visibility PRs plus late and new lanes. Repaired 6 PRs, closed 1 weaker
-  duplicate, and recorded target-owned review, Vercel, and no-check blockers.
-  Token-free crawler output parsed 142 directory opportunities and 46 fresh
-  repos; current agent, skill, MCP, and framework directories supplied the safe
-  targets. Opened `mkurman/zorai#179`, `tekvisions/skill-index#1`, and
-  `v1truv1us/ai-eng-system#22` with Xquik integration plus tests, safer source
-  handling, schema-correct auth, discovery coverage, and docs repairs. Delayed
-  reads found all 3 open and mergeable with successful or absent checks, 0
-  comments, reviews, promotion notes, or threads. Official OpenClaw routes,
-  public schemas, and 38 handled links passed. The directory-first automation
-  now also rechecks all-state history immediately before submission and
-  validates public examples against live schemas. Full details are archived.
+- 2026-07-10 23:40 UTC: active selector readback remained unavailable while
+  persisted config retained `gpt-5.6-sol`, Ultra, and priority Fast. Twenty-six
+  uncapped partitions fetched all 4,418 authored-open PRs across 61 pages.
+  Exact reads covered 71 open visibility PRs; no actionable conflict, review,
+  check, thread, CLA/DCO, drift, bot, or promotion repair remained. Token-free
+  crawler output parsed 300 opportunities with 95 archive-fresh repos; current
+  SkillsMD, AgentSkills, MCP, and agent-framework directories fed 13 repo-mode
+  reads. Opened `Renzic-Stone/EasyAgent-SocialMedia#1`,
+  `Kimberlying/x-high-exposure-to-obsidian-skill#1`, and
+  `YingYveltal/social-hotlist-discovery#1` with tested Xquik API/import paths,
+  provenance, safer config and report handling, evidence schemas, and synced
+  docs. Delayed exact reads found all 3 open, mergeable, clean, and free of
+  comments, reviews, checks, promotion notes, or threads. Official OpenClaw
+  routes and handled links passed. The prompt now validates crawler output at
+  `.opportunities` and exact-reads bounded enrichment failures. Details are
+  archived.
 
 ## Reporting Checklist
 
