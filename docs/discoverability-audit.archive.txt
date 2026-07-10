@@ -2,6 +2,157 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-10 16:24 UTC Xquik Skill And Source Adapter Run
+
+- Runtime and worktree state: the saved heartbeat now pins
+  `model = "gpt-5.6-sol"` and `reasoning_effort = "ultra"`; global Codex
+  config pins `service_tier = "priority"`, and the current model catalog maps
+  that tier to Fast. The active heartbeat runtime did not expose its selected
+  model, reasoning effort, or service tier to the agent, so execution-time
+  selector verification remained unavailable. Xquik and TweetClaw issue queues
+  were empty. Unrelated Xquik `docs/feature-roadmap.md` edits and TweetClaw
+  untracked `0` were preserved. No Browser, Chrome, dev server, production SSH,
+  Context7, destructive Git action, or secret value exposure was used.
+- Complete partition inventory: compact memory and then the archive were
+  searched first. Internal crawler evidence, audit URLs, fork branch metadata,
+  target PR lists, and 17 sub-cap authored-open GraphQL date partitions were
+  combined. Counts were 0 before 2025, 1 for 2025, 92 for January-April, 530
+  for May, 233 for June 1-10, 892 for June 11-20, 919 for June 21-30, 280 for
+  July 1, 359 for July 2, 184 for July 3, 422 for July 4, 211 for July 5, 0
+  for July 6, 3 for July 7, 53 for July 8, 183 for July 9, and 36 for July 10.
+  All 54 pages completed and returned 4,398 unique open PR URLs without a cap,
+  unresolved partition, or API error.
+- Existing PR exact-read gate: exact-read 45 current visibility PRs with 0
+  read errors. Reads covered state, mergeability, base/head, commits, files,
+  bodies, comments, reviews, checks, DCO/CLA signals, conflicts, generated
+  drift, bot findings, and review-thread resolution. The body/comment/review
+  scan found no editable promotion note. `OpenOSINT/OpenOSINT#25` had passing
+  CLA; `davefurano/furano-skills#1` had its review thread resolved;
+  `KPZ231/Instra#2`, `daydreamsai/daydreams#691`,
+  `adrajameet7805/Twitter-Sentiment-analysis#1`, and
+  `b-i-king/Video_Game_Stats_Tracker#17` had target-owned deployment checks;
+  `maximhq/bifrost#5069` remained behind CLA while its other checks were clean.
+  The prior 3 PRs `Sevii/agent-marketplace#10`,
+  `Usman-Amin-AI/N8N-Templates#1`, and
+  `Orekidesu/n8n-workflow-project-lists#1` remained open, mergeable, clean,
+  comment-free, review-free, and check-free.
+- Existing PR repair: `Saminiscool/twitter-ai-agent#2` was `DIRTY` with one
+  README conflict and no maintainer review or check. Its exact fork and parent
+  were verified. Current upstream `main` was merged locally, preserving one
+  current contact paragraph plus the optional Xquik backend docs. Focused
+  Prettier, Biome, TypeScript, Vitest, Markdown-link, conflict-marker, and
+  whitespace checks passed. Full `npm run check` only reported pre-existing
+  format drift in 7 unrelated target files. The push was correctly rejected as
+  non-fast-forward because another automation had just advanced the exact PR
+  branch. Fetching `ee9fa26` proved that concurrent head already contained the
+  same safe upstream merge. No force push or additional self-comment was made;
+  final exact read was open, mergeable, and `CLEAN` with no checks or reviews.
+- Delayed existing-PR result: `siddsachar/row-bot#275` completed its full
+  regression suite, docs, lint, and macOS/Linux/Windows smoke jobs, then merged
+  at 15:49 UTC. Its later release-drafter job failed because the target workflow
+  had read-only release permissions. This was post-merge, target-owned, and not
+  author-repairable.
+- Crawler-first discovery: ran the internal Xquik crawler with GitHub token
+  variables unset, strict JSON output, a stable session ID, 12-second request
+  bounds, 10-second proxy warmup bounds, 3 search pages, limit 300, concurrency
+  32, and focused packs for `SKILL.md`, `.agents/skills`, skill directories,
+  OpenClaw, MCP, Codex, Claude, agent/social/Twitter-X skills, awesome lists,
+  registries, frameworks, dashboards, libraries, forks, generated catalogs,
+  web indexes, examples, docs, SDKs, package tooling, and connectors. Strict
+  output parsed with 300 opportunities: 123 agent-directory, 82 X integration,
+  42 generic, 38 MCP-directory, 11 SDK-directory, and 4 OpenAPI-directory.
+  122 repositories were absent from compact and archive history. Managed proxy
+  endpoint quarantines were recorded without printing or storing credentials.
+- Fresh screening and blocker gates: target content, all-state PRs and issues,
+  compact/archive history, fork state, README, contribution policy, schema,
+  generated-file rules, license metadata, and validation surfaces were checked
+  for all TweetClaw/Xquik variants. `0xfreddy/chronically-online-skill` had no
+  external import contract; `pbans-agent/social-skills` requires an issue before
+  major provider work; `siliconbag/osint-profiler` posed identity-correlation
+  safety risk; `Social-Glass-AI/social-glass-agent-plugins` is an own-service
+  marketplace; `grad0x/agent-social-skills` is only a signpost;
+  `LXGIC-Studios/x-safe-post-skill` was an automated-posting and shadow-ban
+  avoidance surface with weak fit. `michaelkernaghan/check-x-for-Claude-ideas-skill`
+  was duplicate-clean but held as a lower-value fallback. The 3 selected repos
+  were duplicate-clean, public non-forks, policy-compatible, and had native
+  skill, source, test, documentation, and validation surfaces for 2+ useful
+  target improvements. Missing license metadata on 2 selected repos was not
+  treated as a direct-PR blocker.
+- Fork handling: created and verified
+  `kriptoburak/openclaw-essentials-xquik` with parent
+  `a145137265/openclaw-essentials`, `kriptoburak/ai-news-skill-xquik` with
+  parent `MIAJIA/ai-news-skill`, and `kriptoburak/claude-content-xquik` with
+  parent `silas-automatework/claude-content`. All were owned by `kriptoburak`;
+  no external target was forked to `Xquik-dev`. Upstream heads were re-fetched
+  and remained identical to each branch base before commit and push.
+- New PR 1: opened
+  https://github.com/a145137265/openclaw-essentials/pull/1 from branch
+  `codex/add-xquik-search-source`, commit `4c3bc7e`. It adds an explicit
+  read-only `--source=xquik` search path and keeps Twitter recent search as the
+  default. Target improvements remove fake demo output, fail closed on missing
+  credentials, disable unsupported app-only posting, add request timeouts,
+  HTTP/JSON validation, range clamping, and 5 Node tests, and align the pack
+  README plus OpenClaw skill docs. `npm run check`, Markdown links, JSON parse,
+  conflict scan, public hygiene, and whitespace passed.
+- New PR 2: opened https://github.com/MIAJIA/ai-news-skill/pull/1 from branch
+  `codex/add-xquik-news-source`, commit `64f1ff8`. It adds Xquik as the
+  structured fallback between Twitter MCP and WebSearch in Chinese and English
+  skill instructions. Target improvements add canonical deduplication, direct
+  provenance requirements, untrusted-social-content rules, fix the moved
+  Twitter MCP repository, repair 5 stale RSS routes, move Meta AI to its
+  working HTML source, and correct the feed count. All 4 edited Markdown files
+  passed link and whitespace checks, and bilingual source/safety parity was
+  verified.
+- New PR 3: opened
+  https://github.com/silas-automatework/claude-content/pull/1 from branch
+  `codex/add-xquik-twitter-source`, commit `dee9ef3`. It adds
+  `TWITTER_SOURCE=xquik`, normalizes API rows into the existing Twitter CSV,
+  and preserves xAI as the default. Target improvements add 15-second Xquik and
+  30-second existing-source request bounds, provenance filtering, sanitized
+  errors, response-shape validation, evaluator prompt-injection guidance, 4
+  tests, a typecheck command, and setup docs. Ephemeral install used
+  `--no-package-lock`; no validation artifact was committed. TypeScript,
+  tests, Markdown links, public hygiene, and whitespace passed.
+- New PR exact readback: all 3 PRs were open, ready, mergeable, and `CLEAN` on
+  immediate and delayed reads. Each had 0 comments, 0 reviews, 0 checks, and 0
+  review threads. Bodies stated the Xquik integration and 2+ target
+  improvements and contained no promotion wording.
+- Official reference and contract recheck: all 13 current OpenClaw routes for
+  `llms.txt`, plugin CLI/building/manifest/tools/permission requests/SDK
+  runtime/install overrides, ClawHub publishing/skill format, debugging, and
+  skills returned HTTP 200. Official Codex scheduled-task docs confirmed that
+  model and reasoning effort may be selected explicitly; the manual helper
+  failed closed because the response omitted its integrity header, so the
+  official Docs MCP page was used. A bounded paid-key smoke returned 1 Xquik
+  search row and confirmed `tweets`, `has_next_page`, and `next_cursor` without
+  exposing key or row content.
+- Public links and hygiene: all handled target links passed after the 6 stale
+  news-skill links were repaired. TweetClaw README, OpenClaw docs, workflow
+  docs, registry steps, skill card, packaged skill, benchmark, and report links
+  passed. GitHub, ClawHub canonical and redirect routes, OpenClaw Directory,
+  Xquik app, and Xquik docs returned HTTP 200. The npm website returned an
+  anti-bot 403 while the canonical registry endpoint returned HTTP 200 and
+  version `1.6.31`, so the package was not treated as broken. Public diffs,
+  commits, and PR bodies contained no secret, private implementation detail,
+  restricted source name, internal cost mechanic, unsupported claim, or banned
+  promotion note.
+- Prompt self-improvement: official automation update corrected the stale
+  self-improvement phrase from Fast extra-high to 5.6 Sol Ultra Fast. The app
+  update API does not accept heartbeat model/effort fields and stripped them,
+  so the persisted TOML keys were restored directly and verified. Final decoded
+  prompt size was 13,322 bytes and TOML size 13,715 bytes, both below 15 KiB.
+  Durable lessons: never force after concurrent branch advancement; exact-read
+  the new head and accept an equivalent safe repair. Block source integrations
+  without an import contract, issue-first policy approval, or a safe use case.
+  In zsh automation scripts, do not use reserved `path` or `status` variables.
+- Final TweetClaw handling: only `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt` are changed in TweetClaw; untracked
+  `0` remains untouched. Simplify, thermo-nuclear review, repository-wide
+  checks, and memory-size validation passed. `npm run check:all` completed with
+  168 tests, 100% statement/branch/function/line coverage, 0 duplicate blocks,
+  valid package and skill artifacts, and OpenClaw fitness. The verified audit
+  commit was pushed directly to `origin/master`.
+
 ### 2026-07-10 15:15 UTC Xquik Research Plugin And n8n Source Run
 
 - Runtime and worktree state: Codex Desktop exposed no callable model,

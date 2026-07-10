@@ -27,8 +27,9 @@ archive, before any outreach or duplicate decision.
 - Preserve user changes.
 - Use GitHub CLI, GitHub API, repository metadata, static files, and public link
   checks for repo presentation reviews.
-- Runtime model, speed, and reasoning-effort selection may be unavailable. If
-  so, report that limitation and continue.
+- Persist `gpt-5.6-sol`, Ultra, and Fast for this automation. If the active
+  runtime does not expose a selector readback, record that limitation and
+  continue without downgrading the model.
 
 ## Source Of Truth
 
@@ -50,7 +51,7 @@ archive, before any outreach or duplicate decision.
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
-  2026-07-09 16:14 UTC.
+  2026-07-10 16:17 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
   2026-07-09 12:44 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
@@ -178,23 +179,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 15:15 UTC: Fast and extra-high selectors were unavailable. Issue
-  queues were empty; unrelated Xquik roadmap edits and TweetClaw untracked `0`
-  were preserved. Sixteen sub-cap authored-open partitions returned 4,392
-  unique PR URLs across 53 pages. Exact reads covered 15 existing and 3 new
-  PRs; no actionable review, CI, conflict, DCO/CLA, generated drift, promotion
-  note, or bot finding remained. `Paulinehot583/mcp2cli#2` is blocked by an
-  upstream force-rewrite merge-base artifact; final README blobs are identical.
-  Token-free crawler packs returned 0 skill-monitor and 94 integration results;
-  proxy closures and a search rate limit were handled through exact REST lists,
-  clones, metadata, and archive checks. Opened
-  `Sevii/agent-marketplace#10`, `Usman-Amin-AI/N8N-Templates#1`, and
-  `Orekidesu/n8n-workflow-project-lists#1`. They add a secure Xquik research
-  plugin, campaign brief workflow, and community question miner plus manifest
-  parity, catalog counts, setup safety, diagnostics, index, and broken-link
-  fixes. All 3 are open, clean, mergeable, and thread-free. Official OpenClaw
-  and Xquik contracts, validators, workflow fixtures, public links, and hygiene
-  checks passed. Full evidence and blockers are in the archive.
+- 2026-07-10 16:24 UTC: persisted automation state pins `gpt-5.6-sol`, Ultra,
+  and Fast; active runtime selector readback was unavailable. Issue queues were
+  empty and unrelated worktree changes were preserved. Seventeen sub-cap
+  partitions returned 4,398 authored-open PRs across 54 pages. Exact reads
+  covered 45 existing and 3 new PRs. `Saminiscool/twitter-ai-agent#2` was
+  conflict-repaired by an equivalent concurrent upstream merge and is clean;
+  no force push or extra comment was used. Token-free crawler discovery parsed
+  300 opportunities, including 122 fresh repos across skill, MCP, X,
+  framework, catalog, SDK, docs, and package lanes. Opened
+  `a145137265/openclaw-essentials#1`, `MIAJIA/ai-news-skill#1`, and
+  `silas-automatework/claude-content#1`. They add tested Xquik read/search
+  sources plus fail-closed auth, bounded requests, bilingual provenance and
+  safety rules, stale-link repairs, CSV normalization, prompt-injection
+  guidance, and tests. All 3 are open, clean, mergeable, and thread-free.
+  Official OpenClaw routes, live Xquik response shape, handled links, public
+  hygiene, and prior PR readbacks passed. Full evidence and blockers are in the
+  archive.
 
 ## Reporting Checklist
 
