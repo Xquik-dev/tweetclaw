@@ -174,23 +174,24 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 12:45 UTC: Fast and extra-high selectors were unavailable. Issue
+- 2026-07-10 13:40 UTC: Fast and extra-high selectors were unavailable. Issue
   queues were empty; unrelated Xquik roadmap edits and TweetClaw untracked `0`
-  were preserved. Date partitions counted 3,131 open Xquik matches, but
-  repeated GraphQL 502 responses blocked complete paging, so coverage is not
-  claimed. Exact reads covered 15 changed open PRs and found 0 review threads.
-  Repaired `webfuse-com/awesome-claude#300`,
-  `aland4747/awesome-prediction-markets#1`, `djmarat/skillhub#1`, and
-  `dev48v/public-mcp-servers#1`; no promotion-note cleanup was needed. The
-  token-free crawler covered PR, skill, registry, catalog, framework, project,
-  and OpenClaw lanes before fallback screening. Opened
-  `wisechef-ai/loopskill-marketplace#1`, `CleanSlice/agent-templates#1`, and
-  `Olorinm/agent-friendly-services#2` with install metadata, secret safety,
-  provenance or evidence checks, and 2+ target improvements each. All 3 are
-  open and mergeable with 0 review threads. Olorin CI awaits maintainer approval
-  to run; local validation passed. Official OpenClaw docs, target checks,
-  public links, hygiene scans, and TweetClaw gates passed. Full evidence and
-  blockers are in the archive.
+  were preserved. Eight complete authored-open partitions returned 3,136 unique
+  Xquik-query PR URLs with no paging failure. Exact reads covered 11 current
+  repaired, watchlist, and new PRs. Repaired
+  `SuperScript/sst-marketplace#1`, `AlejandroVelezGuillermo/registry#1`, and
+  previously untracked `GiladShoham/awesome-claude-plugins#14`; no promotion
+  note needed removal. Token-free crawler packs returned 97, 120, 120, and 120
+  opportunities across PR, skill, catalog, registry, framework, dashboard,
+  project, library, MCP, OpenClaw, and web-index lanes. After duplicate and
+  policy gates, opened `duyet/codex-claude-plugins#81`,
+  `sourav15mukherjee/skillforge-free-skills#1`, and
+  `timctfl/skillshelf#91`. Each makes Xquik usable in the target's install or
+  catalog workflow and adds 2+ target improvements. A valid Duyet bot finding
+  was fixed by synchronizing root marketplace count/date metadata; its review
+  thread was resolved. All 3 are open and mergeable. Current Agent Skills,
+  target validators, official OpenClaw and Claude docs, public links, hygiene,
+  and local safety checks passed. Full evidence and blockers are in the archive.
 
 ## Reporting Checklist
 

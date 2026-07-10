@@ -2,6 +2,144 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-10 13:40 UTC Marketplace and Skill Distribution Run
+
+- Runtime and worktree state: Codex Desktop exposed no callable model,
+  Fast-speed, or reasoning-effort selector, so Codex 5.5 Fast and extra-high
+  could not be explicitly selected. Xquik and TweetClaw issue queues were
+  empty. Unrelated Xquik `docs/feature-roadmap.md` edits and TweetClaw untracked
+  `0` were preserved. No Browser, Chrome, dev server, production SSH, Context7,
+  or secret value read was used.
+- Complete partition inventory: searched compact memory before the archive,
+  then combined crawler monitoring, audit URLs, fork branch metadata, target PR
+  lists, and authored-open Xquik query partitions. The 8 date partitions
+  returned 0 for 2025, 86 for 2026 January through April, 448 for May, 180 for
+  June 1-10, 596 for June 11-20, 570 for June 21-30, 999 for July 1-5, and 257
+  for July 6-10. Pagination used 1, 1, 5, 2, 6, 6, 10, and 3 pages respectively,
+  totaling 3,136 unique URLs with no cap, page, or read failure.
+- Existing PR exact-read gate: exact reads covered
+  `kKEo/claude-code-plugins-incubator#1`, `SuperScript/sst-marketplace#1`,
+  `squirrelsoft-dev/squirrelsoft-marketplace#1`,
+  `AlejandroVelezGuillermo/registry#1`,
+  `Olorinm/agent-friendly-services#2`, `CleanSlice/agent-templates#1`, and
+  `wisechef-ai/loopskill-marketplace#1` for state, mergeability, base/head,
+  files, commits, comments, reviews, checks, DCO/CLA signals, conflicts, bot
+  findings, generated drift, body wording, and review threads. All were open
+  and mergeable with 0 review threads. Squirrelsoft had one positive bot review
+  with no finding. Olorin remained UNSTABLE because its fork workflow requires
+  maintainer approval and exposed no failing job.
+- Existing PR repairs: `SuperScript/sst-marketplace#1` commit `fc40bb5` fixed
+  Claude author schema, restored live omitted README rows, kept ordering valid,
+  and removed candidate links that returned 404. Its marketplace validator,
+  Claude validator, links, JSON, and whitespace passed.
+  `AlejandroVelezGuillermo/registry#1` merge commit `aca8fc8` synchronized
+  upstream main, removed stale README drift, and retained only the schema-valid
+  Xquik streamable MCP seed; `go test ./...`, JSON, and whitespace passed.
+  Duplicate checks then uncovered previously untracked open
+  `GiladShoham/awesome-claude-plugins#14`. Commit `f8329e5` registered the
+  local plugin, updated stale package metadata, added remote HTTP MCP config,
+  packaged a provenance and pagination skill, documented installation, and
+  strengthened the target validator for marketplace parity and orphan plugin
+  detection. Shell syntax, target validation, Claude validation, JSON, links,
+  and whitespace passed. Its title and body were rewritten around technical
+  value. No editable promotion note remained on any repaired PR.
+- Crawler-first discovery: ran 4 strict JSON research-proxy packs from
+  `/Users/burak/Developer/xquik` with GitHub token env vars unset, request and
+  warmup timeouts, concurrency 16, stable session IDs, 2 search pages, and
+  focused query packs. Monitor, skill, catalog, and project/library packs
+  returned 97, 120, 120, and 120 opportunities. Coverage included open PRs,
+  issues, repos, code, `SKILL.md`, `.agents/skills`, skill directories,
+  OpenClaw, MCP, Codex, Claude, social and Twitter/X skills, awesome lists,
+  registries, forks, generated catalogs, web indexes, frameworks, dashboards,
+  projects, libraries, examples, docs, and package tooling. All outputs parsed
+  as strict JSON. A narrow marketplace retry produced valid empty JSON after
+  managed-egress socket closures. Authenticated GitHub code search then hit a
+  403 search-rate limit, so discovery continued through crawler output, public
+  web indexes, exact-repo REST, clone, and `rg` fallbacks.
+- Fresh screening and duplicate gates: compact memory, archive, target content,
+  all-state target PRs and issues, fork state, README, contribution policy,
+  schema, generated-file policy, license, and validation tooling were checked
+  for TweetClaw, Xquik, x-twitter-scraper, OpenClaw, MCP, and variants.
+  `apappascs/mcp-servers-hub` was generated without a source contribution lane;
+  `Agent-mag/skills`, `Ipayx-stellar/mcp-submit`, and Gilad were duplicate
+  blocked; Daniel Rose Hill's marketplace explicitly excluded third-party
+  plugin creation; MantaDigital and Didit were product-specific; nullapt
+  required WASM packages; metehan used a live registration workflow;
+  Honeybadger was an unrelated scanner. Safe lanes were
+  `duyet/codex-claude-plugins`, `sourav15mukherjee/skillforge-free-skills`, and
+  `timctfl/skillshelf`. All 3 forks were created under `kriptoburak` and their
+  parent repositories were verified before pushing.
+- Official reference recheck: current OpenClaw `llms.txt`, CLI plugin and skill
+  docs, plugin building, manifest, permission request, tool-plugin, SDK runtime,
+  install override, ClawHub publishing and skill format, and debugging routes
+  returned HTTP 200. Official Claude plugin, marketplace, and MCP docs returned
+  HTTP 200 and confirmed explicit remote HTTP transport, environment expansion
+  in headers, and packaged skill layout. The old OpenClaw
+  `/plugins/permission-requests` route remained a known 404; the indexed
+  `/plugins/plugin-permission-requests` route was used instead.
+- New PR 1: https://github.com/duyet/codex-claude-plugins/pull/81 from verified
+  fork `kriptoburak/codex-claude-plugins`, branch
+  `codex/add-xquik-plugin`, commits `af30dc2` and `9e320cf`. It adds synchronized
+  Claude and Codex manifests, environment-only remote MCP config, a packaged
+  source-backed research skill, client guidance, install docs, and license. It
+  also repairs the stale README plugin badge plus root marketplace count/date
+  metadata. The target's 51 checks, Claude validator, Agent Skills validator,
+  JSON, links, and whitespace passed. GitGuardian and both Socket checks passed.
+  Gemini found stale `totalPlugins` metadata after submission; it was corrected
+  to the actual 24, revalidated, pushed, and its review thread resolved.
+- New PR 2:
+  https://github.com/sourav15mukherjee/skillforge-free-skills/pull/1 from
+  verified fork `kriptoburak/skillforge-free-skills`, branch
+  `codex/add-xquik-research-skill`, commit `e288db3`. It adds a current-spec MIT
+  Xquik research skill for MCP or reviewed JSON/JSONL/CSV exports, a source
+  packet contract, pagination, confidence, untrusted-content, and approval
+  boundaries. It also fixes Claude's flat-file install examples to the required
+  directory layout and documents global/workspace OpenClaw paths. Agent Skills,
+  YAML, isolated install-loop, links, and whitespace passed.
+- New PR 3: https://github.com/timctfl/skillshelf/pull/91 from verified fork
+  `kriptoburak/skillshelf`, branch `codex/add-xquik-social-proof-skill`, commit
+  `625ff1a`. It adds an ecommerce-native, read-only X social-proof workflow with
+  normalized source packets, pagination, duplicate/spam controls, claim-support
+  rubric, confidence boundaries, catalog metadata, and a complete fictional
+  example. Python 3.12 metadata validation, Agent Skills validation, the
+  deterministic safety scanner with 0 blocks and 0 warnings, links, and
+  whitespace passed. The PR body includes the target's checked contributor
+  attestation.
+- Post-submit readback: the 3 new PRs are open, ready, and mergeable. SkillForge
+  is CLEAN with no configured check, comment, review, or thread. SkillShelf is
+  mergeable but BLOCKED by target branch policy while no check run or review is
+  attached; local target validation is clean. Duyet is mergeable and UNSTABLE
+  under target policy, with GitGuardian and both Socket checks green, positive
+  Sourcery review, and its only review thread resolved. Eleven final repaired,
+  watchlist, and new PR reads found no unresolved thread or actionable
+  maintainer comment.
+- Public links and hygiene: introduced Xquik app and docs links returned HTTP
+  200. Unauthenticated `https://xquik.com/mcp` returned its expected 401. Local
+  Markdown links resolved. Added-diff and PR-body scans found no secret value,
+  private implementation detail, restricted source name, internal cost
+  mechanic, unsupported claim, stale Xquik metadata, or banned promotion
+  wording.
+- Prompt self-improvement: no prompt edit was needed. Durable lesson: an
+  all-state duplicate check can uncover an older open Xquik PR absent from both
+  compact and archive memory, so exact-read and repair that PR before treating
+  the repository as a fresh lane. The saved prompt already requires this gate
+  plus Fast extra-high wording, quiet autonomy, crawler-first discovery, the
+  3-PR mandate, target improvements, skill/catalog coverage, OpenClaw and link
+  checks, fork rules, Context7 exclusion, secret handling, commit/push, memory
+  caps, no-promotion wording, and self-improvement. Prompt measured 13,313
+  decoded bytes and automation TOML 13,657 bytes.
+- Final TweetClaw validation and push: changed files were
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Simplify and thermo-nuclear review
+  found the split compact-index and full-archive edit direct, scoped, and
+  non-structural. Public Markdown links passed for README, OpenClaw setup,
+  agent workflows, the compact audit, compact release notes, and packaged
+  skill. `npm run check:all` passed typecheck, lint, duplication, dead-code,
+  suppression, dash, memory, frontmatter, version, build, OpenClaw fitness,
+  package artifact, and 168 tests with 100% coverage. Compact Markdown measured
+  14,598 of 15,360 bytes. The audit update was committed and pushed directly to
+  `origin/master` while untracked `0` remained untouched.
+
 ### 2026-07-10 12:45 UTC Target-Native Registry Run
 
 - Runtime and state: Codex Desktop exposed no callable model, Fast-speed, or
