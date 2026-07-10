@@ -122,7 +122,8 @@ Persistent state for TweetClaw GitHub discoverability, external placement, relea
 - Prompt self-improvement: the persisted prompt now says crawler JSON is an
   `.opportunities` envelope and that bounded enrichment failures do not erase a
   parseable result; affected repos must be exact-read instead of treating the
-  run as empty. The actual prompt measured 14,263 bytes, below the 15 KiB cap.
+  run as empty. The persisted prompt measured 14,262 bytes and its automation
+  TOML measured 14,608 bytes, both below the 15 KiB cap.
   The update preserves 5.6 Sol Ultra Fast wording, quiet autonomy, crawler and
   directory-first discovery, existing repair first, 3-PR mandate, listing and
   catalog lanes, project/skill coverage, duplicate/fork rules, OpenClaw and link
