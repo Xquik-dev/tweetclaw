@@ -174,23 +174,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 10:57 UTC: Fast and extra-high selectors unavailable. Xquik and
-  TweetClaw issue queues were empty; unrelated Xquik roadmap edits and
-  TweetClaw untracked `0` were preserved. Crawler-first PR, skill, and project
-  discovery used strict JSON, bounded timeouts, no GitHub tokens, and
-  skill-repo coverage. Broad authored-open GitHub search hit the API rate
-  limit, so complete coverage was not claimed; fallback audit, archive,
-  crawler, and exact-repo reads covered 33 open visibility PRs with 0 read
-  errors. Repaired conflicts in
-  `ogthheu/Insightify-Sentiment-API#1` commit `99b8991` and
-  `shajith003/awesome-claude-skills#4` commit `1c7a6fa`. Fresh duplicate
-  checks selected `freddy-schuetz/n8n-claw`,
-  `hectorr-st/Social-Media-Dashboard`, and
-  `ingtingt/Mahidol-Social-Listening`; opened PRs #39, #1, and #1 with Xquik
-  or `@xquik/tweetclaw` integration plus 2+ target-native improvements. All 3
-  new PRs read back OPEN, MERGEABLE, 0 comments, 0 reviews, and no checks.
-  OpenClaw docs, public links, target validations, and hygiene scans passed
-  except target-owned hectorr CRA build blockers recorded in the archive.
+- 2026-07-10 11:25 UTC: Fast and extra-high selectors were unavailable. Issue
+  queues were empty; unrelated Xquik roadmap edits and TweetClaw untracked `0`
+  were preserved. Authored-open partitions counted 4,379 PRs, including 3,127
+  Xquik matches, but GraphQL resource and secondary limits blocked a complete
+  inventory; coverage is not claimed. Repaired
+  `XinmiaoYan/awesome-mcp-servers#4` in commit `3e85df7` with correct Search
+  placement, remote discovery metadata, and 2 catalog label fixes. Token-free
+  crawler PR, skill, and project scans returned valid empty JSON after managed
+  egress failures; fallback discovery screened 3 duplicate-clean targets.
+  Opened `tmstack/mcp-servers-hub#3`, `cnych/claude-mcp#54`, and
+  `siddsachar/row-bot#275` with Xquik placement plus 2+ target improvements.
+  All are open and mergeable with no review threads. cnych has a target-owned
+  Vercel authorization failure; row-bot reports no checks. Official OpenClaw
+  docs, focused target tests, public links, and hygiene checks passed. Full
+  inventory, validation, and blocker details are in the archive.
 
 ## Reporting Checklist
 
