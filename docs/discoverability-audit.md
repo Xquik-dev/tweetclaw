@@ -46,12 +46,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-03 02:43 UTC: latest `2026.6.11`, beta
-  `2026.7.1-beta.1`, alpha `2026.5.19-alpha.1`. Current docs live on
+- OpenClaw npm checked 2026-07-10 22:32 UTC: latest `2026.6.11`, beta
+  `2026.7.1-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
-  2026-07-10 19:08 UTC.
+  2026-07-10 22:32 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
   2026-07-09 12:44 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
@@ -182,23 +182,21 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 19:08 UTC: active selector readback remained unavailable while
-  global config retained `gpt-5.6-sol`, Ultra, and Fast. Twenty-six sub-cap
-  partitions completed 61 pages and 4,406 authored-open PRs. Exact reads found
-  53 visibility PRs mergeable with no author-repairable issue; target Vercel,
-  CLA, and review blockers are archived. Token-free crawler output parsed 188
-  opportunities and 45 fresh repos. Public agent, skill, MCP, and framework
-  directories supplied 4 more exact-screened lanes before broad GitHub search.
-  Opened `maprilpedro/financial-x-recap#1`,
-  `ooosvsv/ultimate-twitter-reader#1`, and `ayotho/x-scraper#1` with explicit
-  Xquik reads plus provenance, credential and content safety, bounded response
-  handling, strict URL checks, deterministic ordering, 12 tests, configurable
-  output, packaged-skill parity, and a dead-link repair. Delayed reads found all
-  3 open, clean, mergeable, promotion-free, and thread-free. Official OpenClaw
-  routes, public Xquik schemas, handled links, and public hygiene passed. The
-  automation now mandates directory-first online discovery; its API timed out,
-  so the preserved local prompt was updated directly at 13,807 bytes. Full
-  inventory, candidates, blockers, validation, and URLs are in the archive.
+- 2026-07-10 22:32 UTC: selector readback remained unavailable while global
+  config retained `gpt-5.6-sol`, Ultra, and Fast. Twenty-six partitions fetched
+  all 4,412 authored-open PRs across 61 pages. Exact reads covered 62 initial
+  visibility PRs plus late and new lanes. Repaired 6 PRs, closed 1 weaker
+  duplicate, and recorded target-owned review, Vercel, and no-check blockers.
+  Token-free crawler output parsed 142 directory opportunities and 46 fresh
+  repos; current agent, skill, MCP, and framework directories supplied the safe
+  targets. Opened `mkurman/zorai#179`, `tekvisions/skill-index#1`, and
+  `v1truv1us/ai-eng-system#22` with Xquik integration plus tests, safer source
+  handling, schema-correct auth, discovery coverage, and docs repairs. Delayed
+  reads found all 3 open and mergeable with successful or absent checks, 0
+  comments, reviews, promotion notes, or threads. Official OpenClaw routes,
+  public schemas, and 38 handled links passed. The directory-first automation
+  now also rechecks all-state history immediately before submission and
+  validates public examples against live schemas. Full details are archived.
 
 ## Reporting Checklist
 
