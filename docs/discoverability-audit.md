@@ -85,6 +85,9 @@ archive, before any outreach or duplicate decision.
   CLA, generated drift, bot findings, target blockers, and PR body wording.
 - Repair actionable Xquik-visibility PR issues first; otherwise record blockers
   before fresh outreach.
+- If a PR shows unrelated target changes after an upstream force rewrite,
+  compare final base and head blobs. Identical blobs indicate merge-base
+  display drift; record it instead of rewriting target-owned history.
 - Avoid duplicates and record status here or in the archive.
 
 ## Codex Automation Rule
@@ -175,22 +178,23 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 14:15 UTC: Fast and extra-high selectors were unavailable. Issue
+- 2026-07-10 15:15 UTC: Fast and extra-high selectors were unavailable. Issue
   queues were empty; unrelated Xquik roadmap edits and TweetClaw untracked `0`
-  were preserved. Sixteen sub-cap authored-open partitions returned 4,385
-  unique Xquik-query PR URLs across 53 pages. Exact reads covered 19 current,
-  repaired, and new PRs. Repaired the conflict on
-  `ogthheu/Insightify-Sentiment-API#1`; no promotion note needed removal.
-  Token-free crawler packs returned 0, 0, 0, and 1 candidates, so discovery
-  continued through GitHub metadata, clones, target policies, and archive
-  duplicate checks. Opened `workflowsdiy/n8n-workflows#1`,
-  `lqshow/awesome-n8n-workflows#3`, and
-  `DragonJAR/n8n-workflows-esp#3`. Each adds a distinct read-only Xquik n8n
-  workflow plus 2+ target-native index, documentation, validation, statistics,
-  or broken-link improvements. All 3 are open, clean, and mergeable with 0
-  comments, reviews, checks, or unresolved threads. Workflow fixtures, catalog
-  parity, official OpenClaw docs, public links, and hygiene checks passed. Full
-  evidence and blockers are in the archive.
+  were preserved. Sixteen sub-cap authored-open partitions returned 4,392
+  unique PR URLs across 53 pages. Exact reads covered 15 existing and 3 new
+  PRs; no actionable review, CI, conflict, DCO/CLA, generated drift, promotion
+  note, or bot finding remained. `Paulinehot583/mcp2cli#2` is blocked by an
+  upstream force-rewrite merge-base artifact; final README blobs are identical.
+  Token-free crawler packs returned 0 skill-monitor and 94 integration results;
+  proxy closures and a search rate limit were handled through exact REST lists,
+  clones, metadata, and archive checks. Opened
+  `Sevii/agent-marketplace#10`, `Usman-Amin-AI/N8N-Templates#1`, and
+  `Orekidesu/n8n-workflow-project-lists#1`. They add a secure Xquik research
+  plugin, campaign brief workflow, and community question miner plus manifest
+  parity, catalog counts, setup safety, diagnostics, index, and broken-link
+  fixes. All 3 are open, clean, mergeable, and thread-free. Official OpenClaw
+  and Xquik contracts, validators, workflow fixtures, public links, and hygiene
+  checks passed. Full evidence and blockers are in the archive.
 
 ## Reporting Checklist
 

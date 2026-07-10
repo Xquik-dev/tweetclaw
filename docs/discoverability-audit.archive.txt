@@ -2,6 +2,146 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-10 15:15 UTC Xquik Research Plugin And n8n Source Run
+
+- Runtime and worktree state: Codex Desktop exposed no callable model,
+  Fast-speed, or reasoning-effort selector, so Codex 5.5 Fast and extra-high
+  could not be explicitly selected. Xquik and TweetClaw issue queues were
+  empty. Unrelated Xquik `docs/feature-roadmap.md` edits and TweetClaw untracked
+  `0` were preserved. No Browser, Chrome, dev server, production SSH, Context7,
+  or secret value read was used.
+- Complete partition inventory: compact memory and then the archive were
+  searched first. Crawler monitoring, audit URLs, fork branch metadata, target
+  PR lists, and 16 sub-cap authored-open GraphQL partitions were combined.
+  Counts were 1 for 2025, 92 for January-April, 530 for May, 233 for June 1-10,
+  894 for June 11-20, 919 for June 21-30, 280 for July 1, 359 for July 2, 184
+  for July 3, 422 for July 4, 211 for July 5, 0 for July 6, 3 for July 7, 53
+  for July 8, 184 for July 9, and 27 for July 10. All 53 pages completed and
+  returned 4,392 unique open PR URLs without a cap or unresolved page failure.
+- Existing PR exact-read gate: exact-read 15 current visibility PRs for state,
+  mergeability, base/head, commits, files, comments, reviews, checks, DCO/CLA,
+  conflicts, generated drift, bot findings, review threads, body wording, and
+  removable promotion notes. Current PRs included
+  `DragonJAR/n8n-workflows-esp#3`,
+  `Justicution/awesome-cli-agent-prompts#1`,
+  `Marine-softdrink524/claude-skills#1`, `MiroMindAI/MiroFlow#121`,
+  `daydreamsai/daydreams#691`, `dubious-pinetum918/clix#2`,
+  `gavinyao/awesome-skills#1`, `h4vzz/awesome-ai-agent-skills#2`,
+  `kamflowersthemacrogod/opentwitter-mcp#2`,
+  `lqshow/awesome-n8n-workflows#3`,
+  `martgueritainaccurate875/skills#1`,
+  `ninnettesudanese653/claude-plugins#1`,
+  `umairsohail049/openclaw-api-list#1`,
+  `workflowsdiy/n8n-workflows#1`, and `Paulinehot583/mcp2cli#2`.
+  No safe actionable review, CI, conflict, DCO/CLA, generated drift, current bot
+  finding, or editable promotion note remained. MiroFlow needed target review;
+  Daydreams had target-owned Vercel authorization; 2 low-activity PRs had
+  temporarily unknown mergeability with no comment, review, check, or thread.
+- Merge-base artifact blocker: `Paulinehot583/mcp2cli#2` displayed 7 unrelated
+  target README link replacements after upstream force-rewrote its shallow root.
+  A current-head clone proved the branch and current target `main` README blobs
+  were both `93f549...`; the displayed files are merge-base history drift, not
+  a final-content difference. Rewriting or force-pushing target-owned history
+  would be unsafe, so no repair was made. Durable rule: compare final blobs
+  before repairing unrelated displayed changes after a target force rewrite.
+- Crawler-first discovery: ran strict-JSON monitor, skill, and integration packs
+  from `/Users/burak/Developer/xquik` with token variables unset, bounded request
+  and proxy warmup timeouts, stable session IDs, focused queries, and coverage
+  for `SKILL.md`, `.agents/skills`, skills directories, OpenClaw, MCP, Codex,
+  Claude, agent, social, Twitter/X, awesome lists, registries, frameworks,
+  dashboards, libraries, forks, generated catalogs, examples, and package
+  tooling. Monitor and skill packs returned 0; the integration pack returned 94
+  opportunities. Strict output parsed successfully. Managed proxy socket
+  closures and quarantines were recorded without access values. GitHub search
+  later hit a rate limit, so broad search stopped and exact REST lists, clones,
+  repo metadata, local `rg`, and archive fallbacks continued.
+- Fresh screening and duplicate gates: target content, all-state target PRs and
+  issues, compact/archive history, policy files, license metadata, fork state,
+  schemas, and validation surfaces were checked for all Xquik/TweetClaw terms.
+  `spences10/mcpick` was duplicate-blocked by PR 96;
+  `pluginagentmarketplace/claude-plugin-ecosystem-hub` by PR 10;
+  `spinov001-art/awesome-scraping-apis` by PR 1; and
+  `panaversity/agentfactory-business-plugins` by PR 18.
+  `ai-driven-dev/framework` explicitly routes public users to issues;
+  `lacymorrow/paperclip-hub` requires a published Paperclip package first;
+  `hamodywe/awesome-scrape-free-apis` only accepts free scraping APIs;
+  `zatech2023-rgb/n8n-automation-portfolio` is a personal portfolio; and
+  `wiolett-industries/marketplace` is the maintainer's own runtime marketplace.
+  `doodledood/claude-code-plugins` already has Hermes Tweet PR 110. The 3
+  selected targets were fresh, duplicate-clean, non-forks, policy-compatible,
+  and had native plugin, workflow, index, and documentation surfaces for 2+
+  real improvements.
+- Fork handling: created and verified `kriptoburak/agent-marketplace-1` with
+  parent `Sevii/agent-marketplace`, `kriptoburak/usman-n8n-templates` with
+  parent `Usman-Amin-AI/N8N-Templates`, and
+  `kriptoburak/orekidesu-n8n-workflows` with parent
+  `Orekidesu/n8n-workflow-project-lists`. All owners and parents were exact-read
+  before pushing. No external target was forked to `Xquik-dev`.
+- Official reference recheck: current official OpenClaw plugin manifest,
+  plugin CLI, ClawHub skill format, plugin install, and acceptable-usage routes
+  were read and returned HTTP 200. The docs confirm Claude bundle compatibility
+  and current manifest/skill expectations. Current Xquik `llms.txt` and live
+  OpenAPI documented `GET /api/v1/x/tweets/search`, `q`, `queryType`, `limit`,
+  Header Auth, and the `tweets` response used by the workflows. The live route
+  returned its expected unauthenticated 402 challenge. No TweetClaw/OpenClaw
+  compatibility or public install metadata changed.
+- New PR 1: opened https://github.com/Sevii/agent-marketplace/pull/10 from the
+  verified personal fork, branch `codex/add-xquik-research-plugin`, commit
+  `274e953`. It adds a source-linked, read-only `xquik-research` Claude Code
+  command, plugin manifest, setup and error guidance, marketplace entry, and
+  root install command. Target improvements include untrusted-content and
+  credential safeguards, explicit 400/401/402/429 handling, canonical source
+  URLs, and correction of existing `elevator-music` catalog version drift from
+  `1.0.0` to its manifest's `1.0.2`. Official `claude plugin validate .`,
+  marketplace/source parity, Markdown links, public hygiene, and whitespace
+  passed.
+- New PR 2: opened https://github.com/Usman-Amin-AI/N8N-Templates/pull/1 from
+  the verified personal fork, branch `codex/add-xquik-campaign-brief`, commit
+  `fa9c14e`. It adds an importable campaign mention brief using n8n Header Auth,
+  normalized engagement, canonical URLs, review-only output, and a diagnostic
+  no-result branch. Target improvements include credential/setup docs, exact
+  99-workflow and 4-category catalog metadata, replacement of a fictional tree,
+  current-versus-planned category labels, repaired table-of-contents anchors,
+  and 3 repaired stale documentation URLs. JSON, graph, success/empty fixtures,
+  exact catalog counts, Markdown links, public hygiene, and CRLF-aware
+  whitespace passed.
+- New PR 3: opened
+  https://github.com/Orekidesu/n8n-workflow-project-lists/pull/1 from the
+  verified personal fork, branch `codex/add-xquik-question-miner`, commit
+  `2003705`. It adds an importable read-only community question miner with
+  secure Header Auth setup, normalized metrics, canonical URLs, a 20-result
+  review queue, and a diagnostic no-result branch. Target improvements include
+  removing the draft README preamble, linking all 6 JSON-backed workflow
+  folders, labeling in-progress folders accurately, and documenting untrusted
+  content review. JSON, graph, success/empty fixtures, index targets, Markdown
+  links, public hygiene, and whitespace passed.
+- New PR exact readback: all 3 PRs were open, ready, mergeable, and `CLEAN` on
+  commit readback. Each had 0 comments, 0 reviews, 0 checks, and 0 review
+  threads. Bodies contained the Xquik integration plus 2+ target improvements
+  and no promotion wording. Delayed readback stayed clean with no new comment,
+  review, check, or thread.
+- Public links and hygiene: all handled target Markdown links passed. TweetClaw
+  in-scope Markdown passed link checks. The 3 PRs, Xquik OpenAPI and quickstart,
+  current OpenClaw manifest, plugin CLI, and ClawHub skill routes, npm registry
+  metadata, and the canonical ClawHub listing returned HTTP 200. Added files,
+  staged diffs, commits, and PR bodies contained no secret value, private
+  implementation detail, restricted source name, internal cost mechanic,
+  unsupported claim, stale Xquik metadata, em dash, or banned promotion note.
+- Prompt self-improvement: no automation prompt edit was useful because the
+  saved prompt already preserves Fast extra-high wording, quiet autonomy,
+  crawler-first discovery, repair-first order, the 3-PR mandate, target
+  improvements, skill/project coverage, duplicate/fork rules, OpenClaw and link
+  gates, Context7 exclusion, secret handling, commit/push, memory caps, and
+  no-promotion wording. The durable force-rewrite blob-comparison rule was added
+  to compact memory and this archive. The decoded prompt measured 13,313 bytes
+  and the automation TOML 13,657 bytes, below the 15 KiB cap.
+- Final TweetClaw handling: changed TweetClaw files are
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`; untracked `0` remains untouched.
+  Simplify and thermo-nuclear review found the compact pointer plus archive
+  detail direct and non-structural. The verified audit commit is pushed to
+  `origin/master` after final repository gates.
+
 ### 2026-07-10 14:15 UTC Xquik n8n Workflow Distribution Run
 
 - Runtime and worktree state: Codex Desktop exposed no callable model,
