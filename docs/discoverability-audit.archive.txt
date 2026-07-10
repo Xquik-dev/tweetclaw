@@ -2,6 +2,140 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-10 14:15 UTC Xquik n8n Workflow Distribution Run
+
+- Runtime and worktree state: Codex Desktop exposed no callable model,
+  Fast-speed, or reasoning-effort selector, so Codex 5.5 Fast and extra-high
+  could not be explicitly selected. Xquik and TweetClaw issue queues were
+  empty. Unrelated Xquik `docs/feature-roadmap.md` edits and TweetClaw untracked
+  `0` were preserved. No Browser, Chrome, dev server, production SSH, Context7,
+  or secret value read was used.
+- Complete partition inventory: searched compact memory before the archive,
+  then combined crawler monitoring, audit URLs, fork branch metadata, target PR
+  lists, and authored-open GraphQL partitions. A July 1-5 partition reached
+  1,456 and was rejected as capped, then split into daily partitions. Final
+  counts were 1 for 2025, 92 for January-April, 530 for May, 233 for June 1-10,
+  894 for June 11-20, 919 for June 21-30, 280 for July 1, 359 for July 2, 184
+  for July 3, 422 for July 4, 211 for July 5, 0 for July 6, 3 for July 7, 53
+  for July 8, 184 for July 9, and 20 for July 10. The 16 sub-cap partitions
+  used 53 pages and returned 4,385 unique authored-open PR URLs without a page,
+  cap, or API failure.
+- Existing PR exact-read gate: 16 current visibility PRs were read before new
+  outreach for state, mergeability, base/head, commits, files, body wording,
+  comments, reviews, checks, conflicts, DCO/CLA signals, generated drift, bot
+  findings, and review threads. This included the prior 11-PR watchlist plus
+  `DuttPanchal04/n8n-ai-automation-portfolio#1`,
+  `megalor1/Awesome-Agent-Skills#1`, `YhonDev/flux-ai#1`,
+  `ogthheu/Insightify-Sentiment-API#1`, and
+  `tiendatne2004/tikhub_api_skill#1`. Dutt and megalor were CLEAN. Yhon was
+  UNSTABLE with no failing check. Olorin remained UNSTABLE behind maintainer
+  workflow approval. No actionable review thread, current bot finding, DCO/CLA
+  blocker, or editable promotion note remained.
+- Existing PR repair: `ogthheu/Insightify-Sentiment-API#1` was DIRTY after an
+  upstream README update. The verified fork `kriptoburak/ogthheu-insightify-sentiment`
+  was merged with current upstream main. The only conflict was the final README
+  line; resolution preserved upstream download links and the branch's correct
+  FastAPI route and payload documentation. `python3 -m py_compile main.py`,
+  route/payload checks against `main.py`, Markdown links, and whitespace passed.
+  Merge commit `9a693d5` was pushed. Final exact read was CLEAN and mergeable
+  with no comment, review, check, or unresolved thread.
+- Crawler-first discovery: ran monitoring and 3 focused strict-JSON packs from
+  `/Users/burak/Developer/xquik` with GitHub token variables unset, bounded
+  request and proxy warmup timeouts, stable session IDs, 2 search pages,
+  concurrency 16, and focused workflow, skill, integration, catalog, registry,
+  framework, dashboard, library, project, docs, example, package-tooling,
+  `SKILL.md`, `.agents/skills`, skill-dir, OpenClaw, MCP, Codex, Claude,
+  social, and Twitter/X query coverage. The packs returned 0, 0, 0, and 1
+  opportunities; the sole result was stale `BabyJ723/blast-ON`. All output
+  parsed as strict JSON. Discovery continued through GitHub repo metadata,
+  target clones, exact REST issue and PR searches, and archive fallbacks.
+- Fresh screening and duplicate gates: compact memory, archive, target content,
+  all-state target PRs and issues, fork state, README, contribution policy,
+  generated-file rules, license metadata, and validation surfaces were checked
+  for TweetClaw, Xquik, x-twitter-scraper, OpenClaw, and variants.
+  `sonlovinbot/n8n-templates` was Coachio-specific;
+  `creativetimofficial/ct-n8n-templates` had only a marketing README and no
+  contribution surface; `ascending-llc/jarvis-registry` required issue-first
+  discussion for a significant product integration; and
+  `nusquama/n8nworkflows.xyz` could not be safely validated after its blobless
+  checkout exposed mass deletions. `zocomputer/skills`,
+  `hashgraph-online/awesome-codex-plugins`,
+  `tech-leads-club/agent-skills`, `wshobson/agents`, `BankrBot/skills`,
+  `docker/mcp-registry`, and `enescingoz/awesome-n8n-templates` were blocked by
+  prior content or PR history. The 3 selected targets were duplicate-clean,
+  non-forks, accepted workflow contributions, and had native index or catalog
+  surfaces for 2+ useful improvements.
+- Fork handling: generic fork names collided with unrelated existing forks for
+  the first 2 targets. Unique forks
+  `kriptoburak/workflowsdiy-n8n-workflows` and
+  `kriptoburak/lqshow-awesome-n8n-workflows` were created instead. Their parent
+  repositories and `kriptoburak/n8n-workflows-esp` parent were verified before
+  pushing. Durable rule: use a unique fork name under `kriptoburak` when a
+  generic repository name already belongs to another fork, then exact-read the
+  parent before any push.
+- Official reference recheck: current Xquik `llms.txt` and OpenAPI documented
+  the read-only tweet search and account timeline contracts used by the
+  workflows. Current OpenClaw `llms.txt`, plugin manifest, tool-plugin, and
+  ClawHub routes returned HTTP 200. No OpenClaw compatibility or TweetClaw
+  public install metadata changed.
+- New PR 1: https://github.com/workflowsdiy/n8n-workflows/pull/1 from verified
+  fork `kriptoburak/workflowsdiy-n8n-workflows`, branch
+  `codex/xquik-evidence-digest`, commit `76360c2`. It adds a scheduled read-only
+  Xquik competitor evidence digest, ranks public posts by engagement, emits a
+  reviewable Markdown packet, updates the human workflow index, and synchronizes
+  the aggregate LLM dataset plus source tree. Strict JSON, connection graph,
+  fixture behavior, aggregate parity, endpoint challenge, links, and whitespace
+  passed.
+- New PR 2: https://github.com/lqshow/awesome-n8n-workflows/pull/3 from verified
+  fork `kriptoburak/lqshow-awesome-n8n-workflows`, branch
+  `codex/xquik-timeline-export`, commit `bcb83c3`. It adds a daily read-only
+  account timeline export with normalized metrics, canonical URLs, stable run
+  timestamps, and explicit empty output. It also adds setup, diagram, and demo
+  documentation, restores 4 omitted existing projects to the root catalog,
+  refreshes project and workflow statistics, and fixes the broken stars badge
+  destination. JSON, graph, fixture, count, link, endpoint, and whitespace
+  checks passed.
+- New PR 3: https://github.com/DragonJAR/n8n-workflows-esp/pull/3 from verified
+  fork `kriptoburak/n8n-workflows-esp`, branch
+  `codex/xquik-threat-monitor`, commit `ad7006f`. It adds a read-only X threat
+  signal monitor that extracts CVE identifiers, URLs, engagement, and source
+  links, emits an explicit no-signal result, and includes review guidance. It
+  synchronizes the Spanish and English Security and DevOps indexes and updates
+  both catalog totals to 10,406. JSON, graph, CVE and URL fixtures, no-signal
+  behavior, bilingual counts, endpoint, and whitespace checks passed.
+- Post-submit readback: all 3 new PRs are open, ready, CLEAN, and mergeable with
+  one commit, no configured check, comment, review, or unresolved review thread.
+  Including the repaired and watchlist reads, 19 current PRs were exact-read in
+  this run. No promotion note was added or removed.
+- Public links and hygiene: the repaired lqshow stars target, badge image,
+  Xquik docs, and GitHub links returned HTTP 200. Unauthenticated Xquik API
+  routes returned the expected 402 authentication/payment challenge. Added
+  diffs and PR bodies contained no secret value, private implementation detail,
+  restricted source name, internal cost mechanic, unsupported claim, stale
+  Xquik metadata, or banned promotion wording. Simplify made workflow timestamps
+  stable per run. Thermo-nuclear review found the integration logic isolated;
+  large-file edits were required catalog synchronization rather than structural
+  growth.
+- Prompt self-improvement: no automation prompt edit was needed. The durable
+  custom-fork collision rule was added to compact memory and this archive. The
+  saved prompt already preserves Fast extra-high wording, quiet autonomy,
+  crawler-first discovery, the 3-PR mandate, target improvements, skill and
+  project coverage, fork checks, OpenClaw and link gates, Context7 exclusion,
+  secret handling, commit/push, memory caps, no-promotion wording, and prompt
+  self-improvement. The prompt measured 13,313 decoded bytes and the automation
+  TOML measured 13,657 bytes, both below the 15 KiB prompt cap.
+- Final TweetClaw validation and push: changed files were
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt`. Simplify and thermo-nuclear review
+  found the compact replacement plus detailed archive prepend direct, scoped,
+  and non-structural. Public Markdown link checks passed for README, OpenClaw
+  setup, agent workflows, compact audit, compact release notes, and packaged
+  skill. `npm run check:all` passed typecheck, lint, duplication, dead-code,
+  suppression, dash, memory, frontmatter, version, build, OpenClaw fitness,
+  package artifact, and 168 tests with 100% coverage. Compact Markdown measured
+  14,472 of 15,360 bytes. The audit update was committed and pushed directly to
+  `origin/master` while untracked `0` remained untouched.
+
 ### 2026-07-10 13:40 UTC Marketplace and Skill Distribution Run
 
 - Runtime and worktree state: Codex Desktop exposed no callable model,

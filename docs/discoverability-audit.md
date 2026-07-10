@@ -142,6 +142,7 @@ archive, before any outreach or duplicate decision.
   distinct TweetClaw/OpenClaw plugin value exists.
 - Never fork external outreach targets to `Xquik-dev`.
 - Fork and push through `kriptoburak` unless the user explicitly changes this.
+- If a generic fork name collides, use a unique fork name under `kriptoburak`.
 - Verify fork owner and fork parent before pushing.
 
 ## Target-Fit Rules
@@ -174,24 +175,22 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 13:40 UTC: Fast and extra-high selectors were unavailable. Issue
+- 2026-07-10 14:15 UTC: Fast and extra-high selectors were unavailable. Issue
   queues were empty; unrelated Xquik roadmap edits and TweetClaw untracked `0`
-  were preserved. Eight complete authored-open partitions returned 3,136 unique
-  Xquik-query PR URLs with no paging failure. Exact reads covered 11 current
-  repaired, watchlist, and new PRs. Repaired
-  `SuperScript/sst-marketplace#1`, `AlejandroVelezGuillermo/registry#1`, and
-  previously untracked `GiladShoham/awesome-claude-plugins#14`; no promotion
-  note needed removal. Token-free crawler packs returned 97, 120, 120, and 120
-  opportunities across PR, skill, catalog, registry, framework, dashboard,
-  project, library, MCP, OpenClaw, and web-index lanes. After duplicate and
-  policy gates, opened `duyet/codex-claude-plugins#81`,
-  `sourav15mukherjee/skillforge-free-skills#1`, and
-  `timctfl/skillshelf#91`. Each makes Xquik usable in the target's install or
-  catalog workflow and adds 2+ target improvements. A valid Duyet bot finding
-  was fixed by synchronizing root marketplace count/date metadata; its review
-  thread was resolved. All 3 are open and mergeable. Current Agent Skills,
-  target validators, official OpenClaw and Claude docs, public links, hygiene,
-  and local safety checks passed. Full evidence and blockers are in the archive.
+  were preserved. Sixteen sub-cap authored-open partitions returned 4,385
+  unique Xquik-query PR URLs across 53 pages. Exact reads covered 19 current,
+  repaired, and new PRs. Repaired the conflict on
+  `ogthheu/Insightify-Sentiment-API#1`; no promotion note needed removal.
+  Token-free crawler packs returned 0, 0, 0, and 1 candidates, so discovery
+  continued through GitHub metadata, clones, target policies, and archive
+  duplicate checks. Opened `workflowsdiy/n8n-workflows#1`,
+  `lqshow/awesome-n8n-workflows#3`, and
+  `DragonJAR/n8n-workflows-esp#3`. Each adds a distinct read-only Xquik n8n
+  workflow plus 2+ target-native index, documentation, validation, statistics,
+  or broken-link improvements. All 3 are open, clean, and mergeable with 0
+  comments, reviews, checks, or unresolved threads. Workflow fixtures, catalog
+  parity, official OpenClaw docs, public links, and hygiene checks passed. Full
+  evidence and blockers are in the archive.
 
 ## Reporting Checklist
 
