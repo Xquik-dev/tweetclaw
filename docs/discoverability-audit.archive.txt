@@ -2,6 +2,144 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-10 19:08 UTC Directory-First Xquik Source Run
+
+- Runtime and worktrees: global Codex config pins `gpt-5.6-sol`, Ultra
+  reasoning, and the priority service tier used for Fast. The active heartbeat
+  still exposes no independent selector readback, so execution-time
+  verification remained unavailable. TweetClaw stayed on `master` at
+  `adb472f`; untracked `0` was preserved. Xquik's unrelated
+  `docs/feature-roadmap.md` edit was preserved. No Browser, Chrome, dev server,
+  production SSH, Context7, destructive Git action, or secret value exposure
+  was used.
+- Complete inventory: compact memory and then both archives were searched
+  first. Audit URLs, crawler evidence, fork branches, target PR lists, and 26
+  authored-open GraphQL date partitions were combined. A broad query with
+  head-repository fields hit GitHub resource limits and an HTTP 502, so the
+  reduced query split June 21-30 into daily sub-cap partitions. All 61 pages
+  completed with 4,406 unique open PR URLs and no unresolved count or page.
+  Counts were 0 before 2025, 1 in 2025, 92 in January-April, 530 in May, 233
+  in June 1-10, 892 in June 11-20, then 151, 112, 117, 17, 0, 0, 0, 39, 143,
+  and 340 for June 21-30. July counts were 280, 359, 184, 422, 211, 0, 3, 53,
+  183, and 44 for July 1-10.
+- Existing PR repair gate: exact-read 53 current Xquik visibility PRs with 0
+  errors. Reads covered state, base/head, mergeability, commits, checks,
+  comments, reviews, review threads, conflicts, DCO/CLA, generated drift, bot
+  findings, and editable promotion wording. All 53 were open and mergeable;
+  none had an unresolved review thread, human maintainer request, conflict, or
+  removable promotion note. `KPZ231/Instra#2`,
+  `adrajameet7805/Twitter-Sentiment-analysis#1`,
+  `b-i-king/Video_Game_Stats_Tracker#17`, and
+  `daydreamsai/daydreams#691` remain behind target-owned Vercel authorization.
+  `maximhq/bifrost#5069` remains behind owner-required CLA acceptance while its
+  other bot findings are clean. `LLMQuant/awesome-trading-agents#30` and
+  `MiroMindAI/MiroFlow#121` require target review only. No author-repairable
+  blocker remained before fresh outreach.
+- Crawler-first discovery: ran the internal Xquik crawler with GitHub token
+  variables unset, strict JSON output, 12-second request bounds, 10-second
+  proxy warmup bounds, 3 pages, limit 300, concurrency 32, a stable session,
+  and 20 focused packs. Coverage included `SKILL.md`, `.agents/skills`, skill
+  directories, OpenClaw, MCP, Codex, Claude, agent/social/Twitter-X skills,
+  awesome lists, registries, frameworks, dashboards, libraries, forks,
+  generated catalogs, web indexes, examples, docs, SDKs, package tooling, and
+  connectors. Strict output parsed 188 opportunities: 151 agent-directory, 24
+  MCP-directory, 11 SDK-directory, and 2 OpenAPI-directory. Forty-five repos
+  were absent from compact and archive history. Repo-mode exact screening
+  covered 9 fresh repos and found no target-content or all-state PR/issue
+  duplicate.
+- Online directory routing: in response to the owner, discovery also used
+  current public agent, skill, MCP, and framework indexes before additional
+  broad GitHub search. Sources included `skillsmd.dev`, `agent-skills.md`,
+  `agentskill.sh`, `omniskill.online`, Kymata Labs Agent Index,
+  `mcp.directory`, Glama, and AgentNDX. Directory repository links were fed
+  back through token-free crawler repo mode. Fresh exact screens covered
+  `dorukardahan/twitterapi-io-mcp`, `mzkrasner/twitter-client-mcp`,
+  `xdevplatform/xmcp`, and `lbussell/agent-skills`; all 4 were public,
+  non-forks, archive-new, and duplicate-clean across content and all-state
+  issue/PR history. The first is a single-provider docs MCP with weak
+  alternatives fit, the second is a stale direct competing MCP, the third is
+  the official X implementation and maintainer-inappropriate for Xquik
+  placement, and the fourth is a personal coding-skill collection without a
+  social integration surface. They remain screened backlog, not outreach.
+- Fresh target selection: crawler repo-mode reads, target clones, policy files,
+  fork state, target content, all-state issue/PR history, schemas, generated
+  artifacts, and validation commands were checked for 9 candidates.
+  `SiyaoZheng/ai4ss-skills` and `AlterLab-IEU/AlterLab-Academic-Skills` have
+  strict research contribution, ledger, evaluation, index, and naming
+  contracts that made a rushed social source unsafe. The 3 selected targets
+  were public non-forks, duplicate-clean, had no blocking contribution policy,
+  and exposed native skill/source surfaces for 2+ target improvements.
+- Fork handling: created and exact-verified
+  `kriptoburak/financial-x-recap-xquik`,
+  `kriptoburak/ultimate-twitter-reader-xquik`, and
+  `kriptoburak/ayotho-x-scraper-xquik` with parents
+  `maprilpedro/financial-x-recap`, `ooosvsv/ultimate-twitter-reader`, and
+  `ayotho/x-scraper`. No external target was forked to `Xquik-dev`. All 3
+  upstream heads were unchanged before commit.
+- New PR 1: opened
+  https://github.com/maprilpedro/financial-x-recap/pull/1 from
+  `codex/add-xquik-research-source`, commit `83b302f`. It adds an explicit
+  structured Xquik read source while retaining browser fallback. Target
+  improvements add URL/timestamp/source provenance, untrusted-content and
+  primary-source verification rules, opinion/fact/inference labels, configurable
+  report paths instead of a personal hardcoded vault, and opt-in Telegram
+  delivery. Link and whitespace checks passed.
+- New PR 2: opened
+  https://github.com/ooosvsv/ultimate-twitter-reader/pull/1 from
+  `codex/add-xquik-reader-source`, commit `3b63dbf`. It adds explicit Xquik
+  selection while preserving public endpoints as default. Target improvements
+  add 10-second request bounds, a 2 MB response limit, response validation,
+  sanitized errors, deterministic ID ordering, direct media normalization, 6
+  offline tests, credential/untrusted-content guidance, and replacement of a
+  dead clickable placeholder. Ruff, format, tests, compile, links, and
+  whitespace passed. Existing unrelated Markdown lint findings decreased from
+  15 to 14.
+- New PR 3: opened https://github.com/ayotho/x-scraper/pull/1 from
+  `codex/add-xquik-scrape-source`, commit `eff53d1`. It adds explicit Xquik
+  selection while preserving fxtwitter as default. Target improvements add
+  strict host parsing, sanitized failures, provenance, dual-shape metric/media
+  normalization, avatar mapping, deterministic ordering, 6 offline tests, and
+  byte-identical source/package skill parity. Ruff, format, tests, compile,
+  archive integrity, links, and whitespace passed. The local Python emitted a
+  known LibreSSL warning from urllib3 without affecting tests.
+- New PR readback: immediate and delayed exact reads found all 3 PRs open,
+  ready, mergeable, and `CLEAN` at the expected heads. Each had 1 commit, 0
+  comments, 0 reviews, 0 checks, and 0 review threads. Bodies state the Xquik
+  integration and 2+ target improvements and contain no promotion note.
+- Official contracts and links: current official OpenClaw `llms.txt`, plugin
+  CLI/building/manifest/tools/permission-request/SDK/install-override routes,
+  ClawHub publishing/skill-format routes, debugging, and skill routes all
+  returned HTTP 200. Public Xquik OpenAPI confirms the documented search
+  parameter, tweet/author response, and `mediaUrl` shape. Xquik app returned a
+  normal redirect, OpenAPI returned 200, and unauthenticated API reads returned
+  the expected 402 challenge. TweetClaw README, OpenClaw setup, agent workflow,
+  compact memory, skill, card, benchmark, report, GitHub, ClawHub, directory,
+  Xquik, and docs links passed. Two docs links briefly returned checker status
+  0, then returned HTTP 200 directly and passed on retry. The npm website
+  returned its known anti-bot 403 while the canonical registry returned 200
+  and package version `1.6.31`.
+- Public hygiene and review: simplify and thermo-nuclear review found no file
+  size, branching, abstraction, or boundary blocker. Diffs, commits, and PR
+  bodies contain no secret, private implementation detail, restricted source,
+  internal cost mechanic, unsupported claim, or banned promotion wording. No
+  NHS badge was added because none of the target surfaces had a useful badge
+  lane for it.
+- Automation self-improvement: the app automation view and update calls each
+  remained silent for 120 seconds and were terminated. The persisted heartbeat
+  prompt was therefore updated directly without changing its ID, kind, name,
+  schedule, paused status, thread, hard model wording, scope, or safety rules.
+  The new rule uses online agent, skill, MCP, and agentic-framework directories
+  before broad GitHub CLI/API discovery, feeds their repository links through
+  crawler repo mode, and reserves GitHub capacity for exact reads and
+  submissions. Decoded prompt size is 13,807 bytes and TOML size is 14,153
+  bytes, both below 15 KiB.
+- Final TweetClaw handling: only compact and archive discoverability memory are
+  automation-owned changes; untracked `0` remains untouched. Final memory size
+  is 15,151/15,360 bytes. `npm run check:all` passed with 168 tests, 100%
+  statement/branch/function/line coverage, 0 duplicate blocks, valid package
+  and skill artifacts, and OpenClaw fitness. The verified audit commit is
+  pushed directly to `origin/master` to complete this recorded run.
+
 ### 2026-07-10 16:24 UTC Xquik Skill And Source Adapter Run
 
 - Runtime and worktree state: the saved heartbeat now pins
