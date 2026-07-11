@@ -2,6 +2,162 @@
 
 Persistent state for TweetClaw GitHub discoverability, external placement, release hygiene, and no-duplicate outreach. Keep this file compact: preserve current status, blockers, PR/issue links, and next actions; remove repeated heartbeat logs.
 
+### 2026-07-11 00:41 UTC Directory Integration Run
+
+- Runtime and scope: active task selector readback remained unavailable. Local
+  Codex config retained `model = "gpt-5.6-sol"`,
+  `model_reasoning_effort = "ultra"`, and `service_tier = "priority"`, the Fast
+  service tier. TweetClaw stayed on `master`; pre-existing untracked `0` was
+  preserved. Xquik's unrelated modified `docs/feature-roadmap.md` was
+  preserved. No Context7 work, Browser, Chrome, GUI automation, dev server,
+  production SSH, secret-value read, destructive Git action, or production
+  change was used. Open issue lists for `Xquik-dev/xquik` and
+  `Xquik-dev/tweetclaw` were empty.
+- Complete authored-open inventory: compact memory and then the archive were
+  searched first. Twenty-six non-overlapping date partitions completed 61
+  pages. Expected, fetched, and unique counts all equaled 4,421: pre-2025 0;
+  2025 1; 2026 Jan-Apr 92; May 530; Jun 1-10 233; Jun 11-20 892; Jun 21 151;
+  Jun 22 112; Jun 23 117; Jun 24 17; Jun 25-27 0 each; Jun 28 39; Jun 29 143;
+  Jun 30 340; Jul 1 280; Jul 2 357; Jul 3 184; Jul 4 420; Jul 5 211; Jul 6 0;
+  Jul 7 3; Jul 8 52; Jul 9 183; and Jul 10 64. There was no 1,000-result cap,
+  incomplete page, partition mismatch, or duplicate count.
+- Existing PR exact gate: audit URLs, archive URLs, partition output, crawler
+  output, fork metadata, target PR lists, exact REST reads, GitHub PR view,
+  comments, reviews, commits, status checks, and GraphQL review threads produced
+  75 initial current reads. Target preflight then exposed a previously
+  untracked authored Xquik PR,
+  https://github.com/ginhooser-cyber/ai-agent-landscape/pull/2, which entered
+  the same run's inventory and raised the existing exact-read count to 76. It
+  was open, clean, mergeable, GitGuardian-successful, and free of comments,
+  reviews, threads, or promotion notes, so it blocked a duplicate target but
+  required no repair. Across the 76 current PRs there were 0 conflicts, 0
+  current change requests, 0 failed checks, 0 unresolved review threads, and 0
+  editable promotion notes. Three PRs from the previous run and the transferred
+  `composio-community/awesome-agent-clis#10` were clean; an upstream base update
+  on `AlejandroVelezGuillermo/registry#1` did not change its head. No
+  maintainer comment, DCO/CLA issue, generated-file drift, valid bot finding,
+  or author-owned blocker could be safely repaired. Promotion-note removals: 0.
+- Crawler-first discovery: ran the internal Xquik crawler with `GH_TOKEN` and
+  `GITHUB_TOKEN` unset, strict JSON output, a stable crawler session,
+  12-second request and 10-second warmup bounds, 20 focused query packs, 3
+  search pages, per-query limit 25, total limit 300, and concurrency 32. It
+  covered open PRs, issues, repos, code, `SKILL.md`, `.agents/skills`, skill
+  directories, OpenClaw, MCP, Codex, Claude, agent, social, Twitter-X, awesome
+  lists, registries, frameworks, dashboards, libraries, forks, generated
+  catalogs, web-index skill repos, SDKs, examples, docs, and package tooling.
+  The `.opportunities` envelope parsed 131 rows with 0 errors and 31
+  repositories absent compact/archive history.
+- Directory-first coverage: after crawler setup and before broad GitHub search,
+  current SkillsMD API/docs, OmniSkill Registry, Kymata Agent Index, Glama MCP
+  directory, open-source agent directories, and multi-agent orchestrator
+  directories supplied repositories. Sixteen links were exact-read through
+  crawler repo mode with 0 envelope errors, including agent plugin, social MCP,
+  Twitter MCP, browser, OpenClaw skill, Codex skill, Claude skill, broad skill
+  registry, and agent-framework lanes.
+- Fresh screens and blockers: `Agent-Analytics/awesome-multi-agent-orchestrators`
+  was orchestrator-only and lacked a useful Xquik placement;
+  `dmgrok/agent-plugins` requires an issue-first provider submission;
+  `ginhooser-cyber/ai-agent-landscape` was blocked by its hidden existing PR;
+  `datalayer/agent-skills` had a lower-fit maintainer-discovery lane;
+  `whypuss/ai-cdp-browser` depended on a browser-cookie workflow that was not a
+  safe fit; `BlueBirdBack/x-post-playbook-skill` had an overlapping maintainer
+  fetch rewrite; and `Lebedinskas/content-to-social-mcp-server` was proprietary
+  hosted-only documentation. Selected `sunilsucb/x-search`,
+  `bubbleberry247/x-research-skills`, and
+  `matteomilonekr/social-scraper-mcp` were public, non-fork, non-archived,
+  archive-clean, content-clean, and free of prior PRs, issues, or Xquik history.
+  Missing GitHub license metadata alone did not block these direct PRs.
+- Duplicate, policy, and fork gates: compact audit, archive, each target base
+  tree, and all-state target PR and issue lists were checked for TweetClaw,
+  tweetclaw, `@xquik/tweetclaw`, Xquik, x-twitter-scraper, TweetClaw GitHub and
+  npm URLs, OpenClaw, ClawHub, and variants. Immediate pre-submit all-state
+  reads again returned 0 PRs and 0 issues for all 3 targets; each remote `main`
+  SHA still matched the reviewed local base. No CONTRIBUTING or maintainer
+  policy blocked the changes. Existing `kriptoburak/x-search` and
+  `kriptoburak/x-research-skills` names belonged to unrelated fork networks, so
+  they were preserved. Unique forks `kriptoburak/sunilsucb-x-search` and
+  `kriptoburak/bubbleberry-x-research-skills` plus
+  `kriptoburak/social-scraper-mcp` were verified against their exact parents
+  before push. Nothing was forked to `Xquik-dev`.
+- New PR 1: opened https://github.com/sunilsucb/x-search/pull/1 from branch
+  `codex/add-xquik-provider`, final head `f9c850c`. It adds Xquik as an optional
+  structured provider while retaining xAI by default, translates existing
+  handle, exclusion, date, image, and video filters, and returns direct post
+  citations plus normalized `has_more` pagination. Target improvements include
+  bounded limits and responses, HTTPS-only endpoint validation, blocked
+  redirects, structured error sanitization, current plus legacy response-field
+  handling, source-URL validation, optional ClawHub credential metadata, setup
+  docs, and 4 unit tests. Python unittest, compile, whitespace, dash hygiene,
+  README and SKILL link checks, and public-diff hygiene passed.
+- New PR 2: opened https://github.com/bubbleberry247/x-research-skills/pull/1
+  from branch `codex/add-xquik-evidence`, head `da132b7`. It adds optional
+  structured Xquik post evidence to the existing xAI research workflow and
+  keeps posts as untrusted Secondary Sources until official-source
+  verification. Target improvements include a dedicated evidence module,
+  bounded HTTPS transport, redirect blocking, current `has_more` plus legacy
+  pagination support, source URL validation, sanitized errors for both Xquik
+  and the existing xAI call, a network-free dry-run, docs, and 5 tests. The
+  focused test suite, dry-run with credentials unset, whitespace, dash hygiene,
+  README and Skill link checks, and public-diff hygiene passed.
+- New PR 3: opened
+  https://github.com/matteomilonekr/social-scraper-mcp/pull/1 from branch
+  `codex/add-xquik-search-tool`, head `7faa181`. It adds native
+  `xquik-twitter-search` MCP registration with structured query, limit, and
+  ranking controls. Target improvements route the 98 existing tools through a
+  shared 20-second, redirect-blocked, 2 MiB HTTP boundary with sanitized errors
+  and invalid-JSON handling; isolate the new registration from the 1,946-line
+  registry; add tests and setup docs; and correct the server description and
+  tool count to 99. `npm ci`, 4 tests, `mcp-use build`, TypeScript no-emit,
+  whitespace, dash hygiene, and public-diff hygiene passed. `npm ci` reported
+  17 target-owned existing advisories (1 low, 12 moderate, 4 high); no
+  dependency version or lockfile changed. Its Markdown sweep only flagged the
+  pre-existing localhost inspector URL, and passed with that local URL excluded.
+- Target-improvement and public-hygiene gate: every PR body names the Xquik
+  integration and at least 2 concrete target improvements. Staged additions,
+  commits, and PR bodies had 0 credential literals, restricted source names,
+  internal cost mechanics, unsupported claims, stale metadata, promotion-note
+  wording, em dashes, or space-double-hyphen patterns. Introduced Xquik, target,
+  and PR URLs returned HTTP 200. No NHS badge was added because none of the
+  handled targets had a suitable existing badge area.
+- External readbacks and API fallback: initial exact PR view and GraphQL thread reads found all 3
+  PRs open, ready, mergeable, and clean with 0 comments, 0 reviews, 0 failed
+  checks, 0 unresolved review threads, and 0 promotion notes. Across existing
+  and new PRs, the run exact-read total was 79. The authenticated GitHub API
+  quota expired during the delayed read, so no broad retry was attempted.
+  Bounded unauthenticated REST reads then confirmed final heads `f9c850c`,
+  `da132b7`, and `7faa181` were open, one-commit, mergeable, and clean with 0
+  issue comments, review comments, reviews, failed checks, or promotion notes.
+  Initial GraphQL reads had already found 0 review threads; the public REST
+  fallback had 43 requests remaining.
+- OpenClaw, package, and links: `llms.txt`, CLI plugin and skill docs, plugin
+  build, manifest, tool, permission, SDK runtime, install override, ClawHub
+  publishing and skill-format, debugging, canonical `/tools/skills`, Skill
+  config, and creating-Skills routes all returned HTTP 200. Canonical
+  `/tools/skills.md` documents runtime gating through `requires.env` and
+  `primaryEnv`; `/clawhub/skill-format.md` separately documents optional
+  `metadata.openclaw.envVars`, so both schemas were applied without inventing a
+  runtime gate. OpenClaw dist-tags remained latest `2026.6.11`, beta
+  `2026.7.1-beta.2`, and alpha `2026.5.19-alpha.1`; ClawHub npm remained
+  `0.23.1`. TweetClaw registry metadata remained published `1.6.31` with
+  canonical GitHub and npm install metadata. TweetClaw README, OpenClaw setup,
+  workflow, compact audit, release memory, and packaged Skill Markdown links
+  passed. Xquik, npm registry, GitHub targets, PRs, ClawHub, and OpenClaw
+  Directory returned HTTP 200.
+- Durable prompt self-improvement: the active heartbeat prompt now requires an
+  in-scope PR found during target preflight to enter the same run's exact
+  inventory and counts, and requires canonical OpenClaw runtime plus ClawHub
+  Markdown comparison before judging metadata keys. Automation update readback
+  retained heartbeat kind, active status, 1-minute interval, and thread target.
+  Persisted prompt size is 14,503 bytes, below its 15 KiB cap.
+- TweetClaw change scope and final gate: only
+  `docs/discoverability-audit.md` and
+  `docs/discoverability-audit.archive.txt` changed; untracked `0` remained
+  untouched. Simplify and thermo-nuclear review found no code-path,
+  abstraction, branching, boundary, or file-size concern in the audit-only
+  diff. Memory-size, OpenClaw fitness, full quality, link, whitespace, dash,
+  confidentiality, and public-hygiene checks passed before the audit commit was
+  pushed to `origin/master`.
+
 ### 2026-07-10 23:40 UTC Directory Integration Run
 
 - Runtime and worktrees: active task selector readback was unavailable. Local

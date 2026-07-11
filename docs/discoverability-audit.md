@@ -46,10 +46,10 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-10 22:32 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-11 00:41 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
-  under `/plugins/*`, `/cli/plugins`, `/clawhub/*`, and `/help/*` because older
+  under `/plugins/*`, `/cli/plugins`, `/tools/*`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
   2026-07-10 22:32 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
@@ -69,6 +69,8 @@ archive, before any outreach or duplicate decision.
 - The fitness check covers package metadata, manifest contracts, optional tool
   metadata, command aliases, config and UI hints, runtime `definePluginEntry`
   shape, one-time approval boundaries, docs, and bundled skill parity.
+- Resolve redirects through `llms.txt`; compare the canonical runtime Skill
+  Markdown and ClawHub skill-format Markdown before judging metadata keys.
 - Release-like local proof is isolated `npm-pack:` install plus
   `openclaw plugins inspect tweetclaw --runtime --json`.
 - Do not treat simple `defineToolPlugin` build or validate rejection as a
@@ -142,6 +144,8 @@ archive, before any outreach or duplicate decision.
   open and closed target PRs, and open and closed target issues for TweetClaw,
   tweetclaw, `@xquik/tweetclaw`, TweetClaw GitHub URL, npm package URL,
   ClawHub listing, Xquik, x-twitter-scraper, and variants.
+- Add any in-scope PR found during target preflight to the current exact
+  inventory and counts before drafting.
 - Existing TweetClaw content, merged history, or open or closed TweetClaw PR or
   issue blocks a new TweetClaw submission unless the maintainer asks for
   follow-up.
@@ -182,22 +186,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-10 23:40 UTC: active selector readback remained unavailable while
-  persisted config retained `gpt-5.6-sol`, Ultra, and priority Fast. Twenty-six
-  uncapped partitions fetched all 4,418 authored-open PRs across 61 pages.
-  Exact reads covered 71 open visibility PRs; no actionable conflict, review,
-  check, thread, CLA/DCO, drift, bot, or promotion repair remained. Token-free
-  crawler output parsed 300 opportunities with 95 archive-fresh repos; current
-  SkillsMD, AgentSkills, MCP, and agent-framework directories fed 13 repo-mode
-  reads. Opened `Renzic-Stone/EasyAgent-SocialMedia#1`,
-  `Kimberlying/x-high-exposure-to-obsidian-skill#1`, and
-  `YingYveltal/social-hotlist-discovery#1` with tested Xquik API/import paths,
-  provenance, safer config and report handling, evidence schemas, and synced
-  docs. Delayed exact reads found all 3 open, mergeable, clean, and free of
-  comments, reviews, checks, promotion notes, or threads. Official OpenClaw
-  routes and handled links passed. The prompt now validates crawler output at
-  `.opportunities` and exact-reads bounded enrichment failures. Details are
-  archived.
+- 2026-07-11 00:41 UTC: active selector readback remained unavailable while
+  config retained `gpt-5.6-sol`, Ultra, and priority Fast. Twenty-six uncapped
+  partitions fetched all 4,421 authored-open PRs across 61 pages. Seventy-six
+  existing visibility PRs had no actionable repair; preflight added clean hidden
+  duplicate `ginhooser-cyber/ai-agent-landscape#2`. Token-free crawler output
+  parsed 131 opportunities with 31 archive-fresh repos, and current online
+  directories fed 16 repo-mode reads. Opened `sunilsucb/x-search#1`,
+  `bubbleberry247/x-research-skills#1`, and
+  `matteomilonekr/social-scraper-mcp#1` with tested providers, current contracts,
+  bounded transport, source safety, docs, and tests. All 3 read back clean with
+  no feedback or failed checks. OpenClaw, ClawHub, package, link, prompt, and
+  final validation details are archived.
 
 ## Reporting Checklist
 
