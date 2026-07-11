@@ -46,12 +46,12 @@ archive, before any outreach or duplicate decision.
 - npm latest: `@xquik/tweetclaw@1.6.31`
 - Source package: `@xquik/tweetclaw@1.6.32`, unpublished after local npm auth
   E401 on 2026-06-15. Do not use the chat-exposed npm token.
-- OpenClaw npm checked 2026-07-11 00:41 UTC: latest `2026.6.11`, beta
+- OpenClaw npm checked 2026-07-11 01:21 UTC: latest `2026.6.11`, beta
   `2026.7.1-beta.2`, alpha `2026.5.19-alpha.1`. Current docs live on
   `docs.openclaw.ai` and are indexed by `llms.txt`; use indexed plugin routes
   under `/plugins/*`, `/cli/plugins`, `/tools/*`, `/clawhub/*`, and `/help/*` because older
   guessed detail routes now 404. The indexed docs routes returned HTTP 200 on
-  2026-07-10 22:32 UTC.
+  2026-07-11 01:19 UTC.
 - ClawHub route `clawhub.ai/plugins/@xquik/tweetclaw` returned HTTP 200 on
   2026-07-09 12:44 UTC after redirecting to
   `clawhub.ai/xquik/plugins/tweetclaw`, but latest ClawHub page remains
@@ -186,18 +186,18 @@ archive, before any outreach or duplicate decision.
 
 ## Latest Validated Run
 
-- 2026-07-11 00:41 UTC: active selector readback remained unavailable while
-  config retained `gpt-5.6-sol`, Ultra, and priority Fast. Twenty-six uncapped
-  partitions fetched all 4,421 authored-open PRs across 61 pages. Seventy-six
-  existing visibility PRs had no actionable repair; preflight added clean hidden
-  duplicate `ginhooser-cyber/ai-agent-landscape#2`. Token-free crawler output
-  parsed 131 opportunities with 31 archive-fresh repos, and current online
-  directories fed 16 repo-mode reads. Opened `sunilsucb/x-search#1`,
-  `bubbleberry247/x-research-skills#1`, and
-  `matteomilonekr/social-scraper-mcp#1` with tested providers, current contracts,
-  bounded transport, source safety, docs, and tests. All 3 read back clean with
-  no feedback or failed checks. OpenClaw, ClawHub, package, link, prompt, and
-  final validation details are archived.
+- 2026-07-11 01:22 UTC: selector readback remained unavailable while config
+  retained `gpt-5.6-sol`, Ultra, and priority Fast. Current GraphQL exhaustion
+  blocked a fresh 4,421-PR partition and thread refresh; REST deltas and exact
+  reads produced 105 in-scope PRs, 102 open and 3 closed. Repaired conflicts in
+  `JessiJCJingyi/X-KOL-impressions#1` and `#2`; a concurrent update repaired
+  `Saminiscool/twitter-ai-agent#2`. Crawler output parsed 279 opportunities;
+  directory repo-mode failures were exact-read through REST. Opened
+  `poshjosh/automate-idea-to-social-mcp#1`,
+  `kevinten-ai/mcp-social-publisher#1`, and
+  `spiralcrew-ou/profilespider-agent-skills#1`; all read back clean with tested
+  integrations and 2+ target improvements. Full inventory, OpenClaw, link,
+  prompt, and validation evidence is archived.
 
 ## Reporting Checklist
 
