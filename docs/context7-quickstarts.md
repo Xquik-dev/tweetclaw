@@ -4,7 +4,7 @@ Use these recipes when an agent needs the shortest correct path from install to 
 
 ## Install And Verify
 
-Install the official OpenClaw package:
+Install the canonical OpenClaw package:
 
 ```bash
 openclaw plugins install @xquik/tweetclaw

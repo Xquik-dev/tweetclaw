@@ -1,5 +1,8 @@
 # TweetClaw
 
+> **Xquik is an independent third-party service.** Not affiliated with X Corp.
+> "Twitter" and "X" are trademarks of X Corp.
+
 [![npm](https://img.shields.io/npm/v/@xquik%2Ftweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![npm downloads](https://img.shields.io/npm/dm/@xquik/tweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -24,7 +27,7 @@ Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Sear
 openclaw plugins install npm:@xquik/tweetclaw
 ```
 
-This command installs the official npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while ClawHub owner-scope validation is pending.
+This command installs the canonical npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while ClawHub owner-scope validation is pending.
 
 For normal upgrades, reuse the tracked install source:
 
@@ -54,7 +57,7 @@ Agent-skill installers can also discover TweetClaw through [Skills.sh](https://w
 npx skills add xquik-dev/tweetclaw
 ```
 
-> **Note:** `@xquik/tweetclaw` is the only official npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is an unofficial redistribution and may ship stale metadata or outdated endpoint counts.
+> **Note:** `@xquik/tweetclaw` is the canonical npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is a third-party redistribution and may ship stale metadata or outdated endpoint counts.
 
 ## Pricing
 

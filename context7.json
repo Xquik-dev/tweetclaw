@@ -3,7 +3,7 @@
   "url": "https://context7.com/xquik-dev/tweetclaw",
   "public_key": "pk_oCPeRRqZFJsY4cCUSotDD",
   "projectTitle": "TweetClaw",
-  "description": "OpenClaw plugin for safe Xquik X/Twitter automation with endpoint discovery, explicit approval boundaries, MPP read-only mode, and ClawPack release metadata.",
+  "description": "OpenClaw plugin for safe Xquik X/Twitter automation with endpoint discovery, explicit approval boundaries, MPP read-only mode, and ClawPack release metadata. Not affiliated with X Corp.",
   "folders": [],
   "excludeFolders": [
     "node_modules",

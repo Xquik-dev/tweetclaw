@@ -4,7 +4,7 @@
 
 TweetClaw guides OpenClaw agents through user-authorized X/Twitter workflows using the Xquik API plugin.
 
-This skill is ready for production use when installed from the official `@xquik/tweetclaw` package and configured by the user.
+This skill is ready for production use when installed from the canonical `@xquik/tweetclaw` package and configured by the user.
 
 ## Owner
 

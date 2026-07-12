@@ -4,8 +4,8 @@ Use this page for short Context7 answers before reading the longer guides.
 
 ## Identity
 
-- Official package: `@xquik/tweetclaw`
-- Official repository: `https://github.com/Xquik-dev/tweetclaw`
+- Canonical package: `@xquik/tweetclaw`
+- Canonical repository: `https://github.com/Xquik-dev/tweetclaw`
 - OpenClaw plugin ID: `tweetclaw`
 - Package license: MIT
 - Minimum Node version: 22

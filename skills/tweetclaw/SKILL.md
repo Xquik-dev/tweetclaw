@@ -17,7 +17,7 @@ OpenClaw plugin for X/Twitter automation powered by Xquik.
 openclaw plugins install npm:@xquik/tweetclaw
 ```
 
-The `npm:` selector makes OpenClaw install the official npm package explicitly. Bare `@xquik/tweetclaw` remains compatible during OpenClaw's launch cutover, but use `npm:` when the ClawHub listing is behind npm.
+The `npm:` selector makes OpenClaw install the published npm package explicitly. Bare `@xquik/tweetclaw` remains compatible during OpenClaw's launch cutover, but use `npm:` when the ClawHub listing is behind npm.
 
 For routine upgrades, keep the tracked install source:
 

@@ -1,7 +1,7 @@
 {
   "name": "@xquik/tweetclaw",
   "version": "1.6.32",
-  "description": "Search tweets, search replies, post tweets, export followers, manage media, monitor X/Twitter, and run giveaway draws from OpenClaw via Xquik.",
+  "description": "Search tweets, search replies, post tweets, export followers, manage media, monitor X/Twitter, and run giveaway draws from OpenClaw via Xquik. Not affiliated with X Corp.",
   "license": "MIT",
   "type": "module",
   "repository": {

@@ -2,7 +2,7 @@
 
 Use this guide when an AI coding agent needs current TweetClaw setup, safety, pricing, MPP, endpoint-catalog, and troubleshooting behavior. It is intentionally shorter than the README and skill so Context7 retrieval can return the operational facts first.
 
-TweetClaw is the official `@xquik/tweetclaw` OpenClaw plugin for structured Xquik X/Twitter workflows. It gives OpenClaw two tools:
+TweetClaw is the canonical `@xquik/tweetclaw` OpenClaw plugin for structured Xquik X/Twitter workflows. It gives OpenClaw two tools:
 
 - `explore`: free local endpoint catalog search. It makes no network request.
 - `tweetclaw`: structured Xquik API invoker for catalog-listed endpoints only.
