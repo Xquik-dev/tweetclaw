@@ -107,17 +107,7 @@ Dashboard-only account admin, billing, support, raw credential, API-key manageme
 
 ## Costs
 
-TweetClaw uses Xquik credits. 1 credit equals `$0.00015`.
-
-| Operation | Credits |
-|-----------|---------|
-| Tweet, timeline, bookmark, user, or search read | 1 |
-| Trend read | 3 |
-| Follow check or article lookup | 5 |
-| Write action | 10 |
-| Extraction | 1 to 5 per result |
-| Draw | 1 per entry |
-| Monitors, webhooks, radar, compose, and drafts | 0 |
+Use the [Xquik billing guide](https://docs.xquik.com/guides/billing) for current account-backed charges. For MPP, show `mpp.price` from `explore` and confirm any amount returned by the API. Show the current price, scope, and limit before paid work.
 
 TweetClaw does not create checkout sessions or charge saved payment methods from the agent. Users top up credits in the Xquik dashboard.
 
@@ -157,6 +147,6 @@ If Context7 results mention stale endpoint counts, trust `src/api-spec.ts`, `REA
 - `skills/tweetclaw/SKILL.md`: agent-facing safety rules and workflow details.
 - `openclaw.plugin.json`: plugin manifest, config schema, sensitive UI hints, commands, tools, and skills.
 - `package.json`: npm metadata and OpenClaw install metadata.
-- `src/api-spec.ts`: endpoint catalog, categories, costs, MPP flags, and response shapes.
+- `src/api-spec.ts`: endpoint catalog, categories, MPP flags, and response shapes.
 - `src/tools/catalog.ts`: endpoint matching, approval classification, and MPP enforcement.
 - `src/index.ts`: OpenClaw runtime registration, credential-mode selection, command registration, and event polling.

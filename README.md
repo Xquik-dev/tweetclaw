@@ -63,7 +63,7 @@ npx skills add xquik-dev/tweetclaw
 
 TweetClaw uses Xquik billing for account-backed automation, credit top-ups, and
 optional MPP pay-per-use reads. See [Billing & Pricing](https://docs.xquik.com/guides/billing)
-for the current plans, eligible endpoints, and operation costs.
+for current plans, eligible endpoints, and live prices.
 
 ## Configure
 

@@ -109,7 +109,7 @@ Keep read limits narrow by default. For private or account-scoped reads, confirm
 
 ## Visible Write Approval
 
-Before any visible write, show the exact account, target, final text, media list, action, and estimated credits. Wait for explicit approval.
+Before any visible write, show the exact account, target, final text, media list, action, and current charge when applicable. Wait for explicit approval.
 
 After approval, call the catalog-listed write endpoint:
 
@@ -128,7 +128,7 @@ Ask for approval again if the user changes the text, account, target, media, or 
 
 ## Extraction And Draws
 
-Before extraction or giveaway draws, ask for the target, filters, export format, limit, and approval for estimated credits. Do not expand limits silently.
+Before extraction or giveaway draws, ask for the target, filters, export format, limit, and approval for the current charge. Do not expand limits silently.
 
 Use estimate endpoints when available before starting long-running jobs. Summarize job IDs, limits, and next steps without dumping unrelated private data.
 

@@ -12,7 +12,7 @@ Xquik is an independent third-party service. Not affiliated with X Corp. "Twitte
 4. Call `tweetclaw` with one catalog-listed path, method, query object, and body object.
 5. Summarize only the result the user needs.
 
-The agent should not guess endpoint paths. The catalog is the source of truth for callable paths, methods, parameters, costs, response shapes, and MPP eligibility.
+The agent should not guess endpoint paths. The catalog is the source of truth for callable paths, methods, parameters, response shapes, and MPP eligibility. Use the billing guide and catalog MPP metadata for current prices.
 
 ## Approval Boundaries
 
@@ -28,7 +28,7 @@ Ask for explicit approval before:
 
 For visible writes, show the account, target, final text, media list, and action before approval. Do not add links, hashtags, mentions, claims, or media the user did not request.
 
-For paid work, state the endpoint, scope, limit, and estimated credits before approval.
+For paid work, state the endpoint, scope, limit, and current charge before approval.
 
 OpenClaw's `tweetclaw` tool is optional, so users must opt into live endpoint
 access before the model can call it. After opt-in, the plugin still requests
@@ -141,7 +141,7 @@ Extraction jobs and giveaway draws can process many results. Ask for:
 - The target URL, username, search query, list, community, or tweet.
 - The result limit.
 - Filters and export format.
-- Approval for the estimated credits.
+- Approval for the current charge.
 
 Use estimate endpoints when available before starting a job. Do not expand limits silently.
 

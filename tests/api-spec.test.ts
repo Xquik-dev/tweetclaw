@@ -80,11 +80,7 @@ describe('API_SPEC', () => {
       ].sort(),
     );
     expect(mppEntries.every(([, mpp]) => mpp?.intent === 'charge')).toBe(true);
-    expect(
-      mppEntries
-        .filter(([key]) => key === 'GET /api/v1/x/followers/check' || key === 'GET /api/v1/x/articles/:tweetId')
-        .every(([, mpp]) => mpp?.price === '$0.00075/call'),
-    ).toBe(true);
+    expect(mppEntries.every(([, mpp]) => /^\$\d+\.\d+\/call$/u.test(mpp?.price ?? ''))).toBe(true);
     expect(mppKeys).not.toContain('POST /api/v1/x/media/download');
     expect(mediaDownload?.summary).toContain('Not MPP-eligible');
   });
