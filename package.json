@@ -1,8 +1,9 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.32",
+  "version": "1.6.33",
   "description": "OpenClaw X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes through Xquik. Not affiliated with X Corp.",
   "license": "MIT",
+  "packageManager": "npm@11.12.1",
   "type": "module",
   "repository": {
     "type": "git",
@@ -31,12 +32,12 @@
       "minGatewayVersion": "2026.6.11"
     },
     "build": {
-      "openclawVersion": "2026.6.11",
-      "pluginSdkVersion": "2026.6.11"
+      "openclawVersion": "2026.7.1",
+      "pluginSdkVersion": "2026.7.1"
     },
     "install": {
       "defaultChoice": "npm",
-      "npmSpec": "@xquik/tweetclaw@1.6.32",
+      "npmSpec": "@xquik/tweetclaw@1.6.33",
       "minHostVersion": ">=2026.6.11"
     }
   },
@@ -77,7 +78,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "knip": "knip --strict --include-libs --treat-config-hints-as-errors",
+    "knip": "knip --strict --treat-config-hints-as-errors",
     "cpd": "jscpd .",
     "check-suppressions": "tsx check-suppressions.ts",
     "check-em-dash": "tsx check-em-dash.ts",
@@ -109,7 +110,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@sinclair/typebox": "^0.34.48",
-    "@types/node": "^25.5.0",
+    "@types/node": "26.1.1",
     "@typescript-eslint/eslint-plugin": "^8.57.0",
     "@typescript-eslint/parser": "^8.57.0",
     "@vitest/coverage-v8": "^4.1.8",
@@ -118,18 +119,18 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
-    "eslint-plugin-n": "^17.24.0",
+    "eslint-plugin-n": "18.2.2",
     "eslint-plugin-no-secrets": "^2.3.3",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-regexp": "^3.1.0",
     "eslint-plugin-security": "^4.0.0",
     "eslint-plugin-sonarjs": "^4.0.2",
-    "eslint-plugin-unicorn": "^63.0.0",
+    "eslint-plugin-unicorn": "63.0.0",
     "globals": "^17.4.0",
-    "jscpd": "^4.0.8",
-    "knip": "^5.86.0",
+    "jscpd": "5.0.12",
+    "knip": "6.26.0",
     "tsx": "^4.22.4",
-    "typescript": "^5.8.0",
+    "typescript": "5.9.3",
     "vitest": "^4.1.8"
   },
   "overrides": {

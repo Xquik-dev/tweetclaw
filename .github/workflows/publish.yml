@@ -5,19 +5,24 @@ on:
     tags:
       - "v*"
 
+permissions: {}
+
 concurrency:
   cancel-in-progress: false
   group: tweetclaw-npm-release
 
 jobs:
   publish:
+    name: Publish Verified Package
     if: github.repository == 'Xquik-dev/tweetclaw'
     environment: npm
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    outputs:
+      tag: ${{ steps.release.outputs.tag }}
     permissions:
-      contents: write
-      id-token: write
+      contents: read
+      id-token: write # Request npm's short-lived OIDC credential.
     steps:
       - name: Check out tagged source
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
@@ -27,11 +32,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
-          node-version: "24"
+          node-version: "24.15.0"
           registry-url: "https://registry.npmjs.org"
           package-manager-cache: false
-      - name: Install trusted-publishing npm CLI
-        run: npm install --global npm@12.0.1
       - name: Install dependencies
         run: npm ci --ignore-scripts
       - name: Verify release ref
@@ -73,14 +76,17 @@ jobs:
       - name: Run release checks
         run: npm run check:all
       - name: Audit dependencies
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=low
       - name: Check npm registry
         id: registry
+        env:
+          PACKAGE_NAME: ${{ steps.release.outputs.name }}
+          PACKAGE_VERSION: ${{ steps.release.outputs.version }}
         shell: bash
         run: |
           set -euo pipefail
 
-          package="${{ steps.release.outputs.name }}@${{ steps.release.outputs.version }}"
+          package="${PACKAGE_NAME}@${PACKAGE_VERSION}"
           if npm view "$package" version --json >/dev/null 2>&1; then
             echo "published=true" >> "$GITHUB_OUTPUT"
             echo "$package is already published. Skipping npm publish."
@@ -91,20 +97,33 @@ jobs:
         if: steps.registry.outputs.published != 'true'
         run: npm run publish-clean
       - name: Verify npm publication
+        env:
+          PACKAGE_NAME: ${{ steps.release.outputs.name }}
+          PACKAGE_VERSION: ${{ steps.release.outputs.version }}
         shell: bash
         run: |
           set -euo pipefail
 
-          package="${{ steps.release.outputs.name }}@${{ steps.release.outputs.version }}"
+          package="${PACKAGE_NAME}@${PACKAGE_VERSION}"
           published_version="$(npm view "$package" version)"
-          if [ "$published_version" != "${{ steps.release.outputs.version }}" ]; then
+          if [ "$published_version" != "$PACKAGE_VERSION" ]; then
             echo "::error ::npm returned version $published_version after publication."
             exit 1
           fi
+
+  release:
+    name: Create GitHub Release
+    if: github.repository == 'Xquik-dev/tweetclaw'
+    needs: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write # Create the verified tag's GitHub release.
+    steps:
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_TAG: ${{ needs.publish.outputs.tag }}
         shell: bash
         run: |
           set -euo pipefail

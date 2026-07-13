@@ -33,6 +33,22 @@ const EXTRACTION_SEARCH_PARAMS: readonly EndpointParameter[] = [
   { description: 'Raw X search operators (tweet_search_extractor)', in: 'body', name: 'advancedQuery', required: false, type: 'string' },
 ];
 
+const EXTRACTION_TARGET_PARAMS: readonly EndpointParameter[] = [
+  { description: 'Target X username', in: 'body', name: 'targetUsername', required: false, type: 'string' },
+  { description: 'Target tweet ID', in: 'body', name: 'targetTweetId', required: false, type: 'string' },
+  { description: 'Search query for search tools', in: 'body', name: 'searchQuery', required: false, type: 'string' },
+  { description: 'Community ID for community tools', in: 'body', name: 'targetCommunityId', required: false, type: 'string' },
+  { description: 'List ID for list tools', in: 'body', name: 'targetListId', required: false, type: 'string' },
+  { description: 'Space ID for space_explorer', in: 'body', name: 'targetSpaceId', required: false, type: 'string' },
+  { description: 'Max results to return', in: 'body', name: 'resultsLimit', required: false, type: 'number' },
+  ...EXTRACTION_SEARCH_PARAMS,
+];
+
+const TREND_PARAMS: readonly EndpointParameter[] = [
+  { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
+  { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
+];
+
 const PARAM_STYLE_USERNAME: EndpointParameter =
   { description: DESCRIPTION_STYLE_USERNAME, in: 'path', name: 'username', required: true, type: 'string' };
 
@@ -434,14 +450,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: [
       { description: 'Extraction tool type (reply_extractor, community_extractor, etc.)', in: 'body', name: 'toolType', required: true, type: 'string' },
-      { description: 'Target X username', in: 'body', name: 'targetUsername', required: false, type: 'string' },
-      { description: 'Target tweet ID', in: 'body', name: 'targetTweetId', required: false, type: 'string' },
-      { description: 'Search query for search tools', in: 'body', name: 'searchQuery', required: false, type: 'string' },
-      { description: 'Community ID for community tools', in: 'body', name: 'targetCommunityId', required: false, type: 'string' },
-      { description: 'List ID for list tools', in: 'body', name: 'targetListId', required: false, type: 'string' },
-      { description: 'Space ID for space_explorer', in: 'body', name: 'targetSpaceId', required: false, type: 'string' },
-      { description: 'Max results to return', in: 'body', name: 'resultsLimit', required: false, type: 'number' },
-      ...EXTRACTION_SEARCH_PARAMS,
+      ...EXTRACTION_TARGET_PARAMS,
     ],
     path: '/api/v1/extractions',
     responseShape: '{ id, toolType, status }',
@@ -453,14 +462,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: [
       { description: 'Extraction tool type', in: 'body', name: 'toolType', required: true, type: 'string' },
-      { description: 'Target X username', in: 'body', name: 'targetUsername', required: false, type: 'string' },
-      { description: 'Target tweet ID', in: 'body', name: 'targetTweetId', required: false, type: 'string' },
-      { description: 'Search query for search tools', in: 'body', name: 'searchQuery', required: false, type: 'string' },
-      { description: 'Community ID for community tools', in: 'body', name: 'targetCommunityId', required: false, type: 'string' },
-      { description: 'List ID for list tools', in: 'body', name: 'targetListId', required: false, type: 'string' },
-      { description: 'Space ID for space_explorer', in: 'body', name: 'targetSpaceId', required: false, type: 'string' },
-      { description: 'Max results to return', in: 'body', name: 'resultsLimit', required: false, type: 'number' },
-      ...EXTRACTION_SEARCH_PARAMS,
+      ...EXTRACTION_TARGET_PARAMS,
     ],
     path: '/api/v1/extractions/estimate',
     responseShape: '{ estimatedResults?, usagePercent?, projectedPercent?, allowed?, source? }',
@@ -762,10 +764,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [
-      { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
-      { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
-    ],
+    parameters: TREND_PARAMS,
     mpp: { intent: 'charge', price: MPP_PRICE_TREND },
     path: '/api/v1/trends',
     responseShape: '{ trends: [{ name, query?, description?, rank? }], total, woeid }',
@@ -775,10 +774,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [
-      { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
-      { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
-    ],
+    parameters: TREND_PARAMS,
     mpp: { intent: 'charge', price: MPP_PRICE_TREND },
     path: '/api/v1/x/trends',
     responseShape: '{ trends: [{ name, query?, description?, rank? }], count, woeid }',

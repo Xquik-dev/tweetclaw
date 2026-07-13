@@ -17,9 +17,14 @@ on:
 
 permissions: {}
 
+concurrency:
+  group: tweetclaw-context7-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   refresh:
-    runs-on: ubuntu-latest
+    name: Refresh Context7 Library
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - name: Trigger Context7 refresh
