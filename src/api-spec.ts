@@ -559,7 +559,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/monitors/keywords',
     responseShape: '{ id, query, eventTypes, isActive, createdAt }',
-    summary: 'Create an instant keyword monitor. Active monitors cost 21 credits per hour.',
+    summary: 'Create an instant keyword monitor. Confirm current usage pricing before activation.',
   },
   {
     category: 'monitoring',
@@ -1447,11 +1447,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'POST',
     parameters: [
-      { description: 'Amount in USD to top up ($10 minimum)', in: 'body', name: 'dollars', required: true, type: 'number' },
+      { description: 'Allowed top-up amount in USD', in: 'body', name: 'dollars', required: true, type: 'number' },
     ],
     path: '/api/v1/credits/topup',
     responseShape: '{ url: string }',
-    summary: 'Top up credits via Stripe Checkout. $10 min.',
+    summary: 'Top up credits through Stripe Checkout.',
   },
   {
     agentProhibited: true,
@@ -1471,11 +1471,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'POST',
     parameters: [
-      { description: 'Amount in USD to charge saved card ($10 minimum, $500 maximum)', in: 'body', name: 'dollars', required: true, type: 'number' },
+      { description: 'Allowed saved-card charge amount in USD', in: 'body', name: 'dollars', required: true, type: 'number' },
     ],
     path: '/api/v1/credits/quick-topup',
     responseShape: '{ outcome: "charged", credits: number, balance: number } | { outcome: "no_payment_method" } | { outcome: "requires_action", clientSecret: string }',
-    summary: 'Instantly charge saved card for credits. Falls back to checkout redirect if no payment method.',
+    summary: 'Charge a saved payment method for credits when available.',
   },
 ] as const;
 

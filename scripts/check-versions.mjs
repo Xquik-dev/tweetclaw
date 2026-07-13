@@ -94,7 +94,7 @@ if (packageJson.scripts?.["check-openclaw-platform-fitness"] !== "node scripts/c
 }
 if (
   packageJson.scripts?.prepack !==
-  "npm run build && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare"
+  "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare"
 ) {
   drifts.push("  package.json: prepack must build output, validate metadata, and sanitize package.json before packing");
 }
@@ -109,7 +109,7 @@ if (packageJson.scripts?.["publish-clean"] !== "node scripts/publish-clean.mjs")
 }
 if (
   packageJson.scripts?.prepublishOnly !==
-  "npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact"
+  "npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact"
 ) {
   drifts.push("  package.json: prepublishOnly must validate skill metadata, versions, build output, and package artifacts");
 }
@@ -118,6 +118,9 @@ if (!packageJson.scripts?.["check:all"]?.includes("npm run check-skill-frontmatt
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-memory-md-size")) {
   drifts.push("  package.json: check:all must include automation memory Markdown size validation");
+}
+if (!packageJson.scripts?.["check:all"]?.includes("npm run check-public-copy")) {
+  drifts.push("  package.json: check:all must include public copy validation");
 }
 if (!packageJson.scripts?.["check:all"]?.includes("npm run check-openclaw-platform-fitness")) {
   drifts.push("  package.json: check:all must include OpenClaw platform fitness validation");
@@ -233,7 +236,7 @@ const contentChecks = [
       "99 agent-callable endpoints across 9 categories",
       "Search tweets, search tweet replies, post tweets, post tweet replies",
       "npm is the canonical install source",
-      "for the current plans, eligible endpoints, and operation costs",
+      "for current plans, eligible endpoints, and live prices",
       "Account-backed or MPP where eligible",
       "33 public paid-read routes",
       "7 direct MPP routes",
@@ -246,13 +249,12 @@ const contentChecks = [
       "113 endpoints",
       "112 endpoints",
       "63 agent-callable endpoints",
-      "1-7 credits",
     ],
   },
   {
     path: "skills/tweetclaw/SKILL.md",
-    required: ["agent-safe Xquik endpoint catalog", "1-5 credits", "33 public paid-read routes", "7 direct read routes", "$0.00075", "Not affiliated with X Corp."],
-    forbidden: ["113 endpoints", "112 endpoints", "1-7 credits"],
+    required: ["agent-safe Xquik endpoint catalog", "billing guide", "33 public paid-read routes", "7 direct read routes", "Not affiliated with X Corp."],
+    forbidden: ["113 endpoints", "112 endpoints", "Per-Operation Costs"],
   },
   {
     path: "src/api-spec.ts",

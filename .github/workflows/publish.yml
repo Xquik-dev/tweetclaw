@@ -4,58 +4,81 @@ on:
   push:
     tags:
       - "v*"
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Existing release tag to recover, defaults to package.json version.
-        required: false
-        type: string
+
+concurrency:
+  cancel-in-progress: false
+  group: tweetclaw-npm-release
 
 jobs:
   publish:
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    if: github.repository == 'Xquik-dev/tweetclaw'
+    environment: npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v6
+      - name: Check out tagged source
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
-          node-version: "22"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
           package-manager-cache: false
+      - name: Install trusted-publishing npm CLI
+        run: npm install --global npm@12.0.1
       - name: Install dependencies
         run: npm ci --ignore-scripts
-      - name: Read release metadata
+      - name: Verify release ref
         id: release
         shell: bash
         run: |
+          set -euo pipefail
+
           name="$(node -p "require('./package.json').name")"
           version="$(node -p "require('./package.json').version")"
           expected_tag="v${version}"
-          requested_tag="${{ github.event.inputs.tag || '' }}"
-          tag="${requested_tag:-$expected_tag}"
 
-          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
-            tag="${GITHUB_REF_NAME}"
+          if [ "$GITHUB_REF_TYPE" != "tag" ]; then
+            echo "::error ::Releases must run from a tag."
+            exit 1
+          fi
+          if [ "$GITHUB_REF_NAME" != "$expected_tag" ]; then
+            echo "::error ::Release tag $GITHUB_REF_NAME does not match package version $version."
+            exit 1
           fi
 
-          if [ "$tag" != "$expected_tag" ]; then
-            echo "::error ::Release tag $tag does not match package version $version."
+          git fetch --no-tags origin master
+          tag_commit="$(git rev-list -n 1 "$GITHUB_REF_NAME")"
+          master_commit="$(git rev-parse 'origin/master^{commit}')"
+          if [ "$tag_commit" != "$GITHUB_SHA" ]; then
+            echo "::error ::Tag commit does not match the workflow commit."
+            exit 1
+          fi
+          if [ "$tag_commit" != "$master_commit" ]; then
+            echo "::error ::Release tag must point to the current master commit."
             exit 1
           fi
 
           {
             echo "name=$name"
             echo "version=$version"
-            echo "tag=$tag"
+            echo "tag=$GITHUB_REF_NAME"
           } >> "$GITHUB_OUTPUT"
+      - name: Run release checks
+        run: npm run check:all
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
       - name: Check npm registry
         id: registry
         shell: bash
         run: |
+          set -euo pipefail
+
           package="${{ steps.release.outputs.name }}@${{ steps.release.outputs.version }}"
           if npm view "$package" version --json >/dev/null 2>&1; then
             echo "published=true" >> "$GITHUB_OUTPUT"
@@ -65,11 +88,37 @@ jobs:
           fi
       - name: Publish npm package
         if: steps.registry.outputs.published != 'true'
-        run: npm run publish-clean -- --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run publish-clean
+      - name: Verify npm publication
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          package="${{ steps.release.outputs.name }}@${{ steps.release.outputs.version }}"
+          published_version="$(npm view "$package" version)"
+          if [ "$published_version" != "${{ steps.release.outputs.version }}" ]; then
+            echo "::error ::npm returned version $published_version after publication."
+            exit 1
+          fi
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          generate_release_notes: true
-          tag_name: ${{ steps.release.outputs.tag }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "GitHub release $RELEASE_TAG already exists."
+            exit 0
+          fi
+
+          notes_file="$RUNNER_TEMP/tweetclaw-release-notes.md"
+          printf '%s\n' \
+            'Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.' \
+            > "$notes_file"
+          gh release create "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --verify-tag \
+            --generate-notes \
+            --notes-file "$notes_file"

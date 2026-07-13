@@ -15,6 +15,7 @@ function runNpmScript(scriptName) {
   });
 }
 
+runNpmScript("check-public-copy");
 runNpmScript("check-skill-frontmatter");
 runNpmScript("check-versions");
 runNpmScript("build");

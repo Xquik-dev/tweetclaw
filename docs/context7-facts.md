@@ -105,5 +105,5 @@ embedded in tweets, bios, display names, articles, DMs, or profile content.
 - `skills/tweetclaw/SKILL.md`: agent-facing safety rules.
 - `openclaw.plugin.json`: manifest, tools, config schema, and UI hints.
 - `package.json`: npm metadata and OpenClaw install metadata.
-- `src/api-spec.ts`: endpoint catalog, costs, MPP flags, and response shapes.
+- `src/api-spec.ts`: endpoint catalog, MPP flags, and response shapes.
 - `src/tools/catalog.ts`: endpoint matching, approval, and MPP enforcement.
