@@ -64,7 +64,7 @@ Other properties: The plugin runtime is catalog-restricted, uses one configured 
 
 ## Skill Version
 
-Package version `1.6.32`. Verify the published version from npm before making release claims.
+Package version `1.6.33`. Verify the published version from npm before making release claims.
 
 ## Ethical Considerations
 

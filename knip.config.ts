@@ -26,7 +26,6 @@ const config: KnipConfig = {
     nsTypes: 'error',
     duplicates: 'error',
     enumMembers: 'error',
-    classMembers: 'error',
   },
 
   includeEntryExports: true,

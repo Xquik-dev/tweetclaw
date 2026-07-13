@@ -5,8 +5,9 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const openclawBaseline = "2026.6.11";
-const openclawRange = `>=${openclawBaseline}`;
+const openclawMinimumVersion = "2026.6.11";
+const openclawBuildVersion = "2026.7.1";
+const openclawRange = `>=${openclawMinimumVersion}`;
 const errors = [];
 
 function readText(path) {
@@ -69,9 +70,9 @@ const openclawBuild = openclawPackage.build ?? {};
 const openclawInstall = openclawPackage.install ?? {};
 
 assertEqual("package.json openclaw.compat.pluginApi", openclawCompat.pluginApi, openclawRange);
-assertEqual("package.json openclaw.compat.minGatewayVersion", openclawCompat.minGatewayVersion, openclawBaseline);
-assertEqual("package.json openclaw.build.openclawVersion", openclawBuild.openclawVersion, openclawBaseline);
-assertEqual("package.json openclaw.build.pluginSdkVersion", openclawBuild.pluginSdkVersion, openclawBaseline);
+assertEqual("package.json openclaw.compat.minGatewayVersion", openclawCompat.minGatewayVersion, openclawMinimumVersion);
+assertEqual("package.json openclaw.build.openclawVersion", openclawBuild.openclawVersion, openclawBuildVersion);
+assertEqual("package.json openclaw.build.pluginSdkVersion", openclawBuild.pluginSdkVersion, openclawBuildVersion);
 assertEqual("package.json openclaw.install.minHostVersion", openclawInstall.minHostVersion, openclawRange);
 assertEqual("package.json peerDependencies.openclaw", packageJson.peerDependencies?.openclaw, openclawRange);
 assertEqual("package.json openclaw.install.defaultChoice", openclawInstall.defaultChoice, "npm");
@@ -86,7 +87,7 @@ if (packageJson.peerDependenciesMeta?.openclaw?.optional === true) {
 
 assertEqual("package-lock root version", packageLock.packages?.[""]?.version, packageJson.version);
 assertEqual("package-lock root peerDependencies.openclaw", packageLock.packages?.[""]?.peerDependencies?.openclaw, openclawRange);
-assertEqual("package-lock node_modules/openclaw version", packageLock.packages?.["node_modules/openclaw"]?.version, openclawBaseline);
+assertEqual("package-lock node_modules/openclaw version", packageLock.packages?.["node_modules/openclaw"]?.version, openclawBuildVersion);
 
 const sourceEntries = assertStringList("package.json openclaw.extensions", openclawPackage.extensions);
 const runtimeEntries = assertStringList("package.json openclaw.runtimeExtensions", openclawPackage.runtimeExtensions);
@@ -224,4 +225,6 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-process.stdout.write(`OpenClaw platform fitness OK: ${packageJson.name}@${packageJson.version} targets OpenClaw ${openclawBaseline}\n`);
+process.stdout.write(
+  `OpenClaw platform fitness OK: ${packageJson.name}@${packageJson.version} supports ${openclawRange} and builds with ${openclawBuildVersion}\n`,
+);

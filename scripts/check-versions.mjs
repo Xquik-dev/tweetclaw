@@ -27,10 +27,18 @@ for (const s of surfaces) {
   }
 }
 
-const expectedOpenClawVersion = packageJson.openclaw?.build?.openclawVersion;
-const expectedOpenClawRange = `>=${expectedOpenClawVersion}`;
 const openclawCompat = packageJson.openclaw?.compat;
+const openclawBuild = packageJson.openclaw?.build;
 const openclawInstall = packageJson.openclaw?.install;
+const expectedOpenClawBuildVersion = openclawBuild?.openclawVersion;
+const expectedOpenClawMinimumVersion = openclawCompat?.minGatewayVersion;
+const expectedOpenClawRange = `>=${expectedOpenClawMinimumVersion}`;
+
+if (openclawBuild?.pluginSdkVersion !== expectedOpenClawBuildVersion) {
+  drifts.push(
+    `  package.json: openclaw.build.pluginSdkVersion ${openclawBuild?.pluginSdkVersion ?? "<missing>"} (expected ${expectedOpenClawBuildVersion})`,
+  );
+}
 
 if (packageJson.peerDependencies?.openclaw !== expectedOpenClawRange) {
   drifts.push(
@@ -43,11 +51,6 @@ if (packageJson.peerDependenciesMeta?.openclaw?.optional === true) {
 if (openclawCompat?.pluginApi !== expectedOpenClawRange) {
   drifts.push(
     `  package.json: openclaw.compat.pluginApi ${openclawCompat?.pluginApi ?? "<missing>"} (expected ${expectedOpenClawRange})`,
-  );
-}
-if (openclawCompat?.minGatewayVersion !== expectedOpenClawVersion) {
-  drifts.push(
-    `  package.json: openclaw.compat.minGatewayVersion ${openclawCompat?.minGatewayVersion ?? "<missing>"} (expected ${expectedOpenClawVersion})`,
   );
 }
 if (openclawInstall?.minHostVersion !== expectedOpenClawRange) {

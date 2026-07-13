@@ -24,7 +24,13 @@ function readPackedPackage() {
       stdio: ["ignore", "pipe", "pipe"],
     },
   );
-  const rows = JSON.parse(output);
+  const parsed = JSON.parse(output);
+  let rows = [];
+  if (Array.isArray(parsed)) {
+    rows = parsed;
+  } else if (typeof parsed === "object" && parsed !== null) {
+    rows = Object.values(parsed);
+  }
   if (!Array.isArray(rows) || rows.length !== 1 || typeof rows[0] !== "object" || rows[0] === null) {
     throw new TypeError("npm pack did not return exactly one package row");
   }
