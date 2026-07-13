@@ -2,6 +2,8 @@
 
 Use this guide when an AI coding agent needs current TweetClaw setup, safety, pricing, MPP, endpoint-catalog, and troubleshooting behavior. It is intentionally shorter than the README and skill so Context7 retrieval can return the operational facts first.
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 TweetClaw is the canonical `@xquik/tweetclaw` OpenClaw plugin for structured Xquik X/Twitter workflows. It gives OpenClaw two tools:
 
 - `explore`: free local endpoint catalog search. It makes no network request.
@@ -39,8 +41,8 @@ TweetClaw supports 3 modes.
 | Mode | Config | What it enables |
 |------|--------|-----------------|
 | No credentials | none | Install, skill docs, and `explore` catalog search |
-| API key | `plugins.entries.tweetclaw.config.apiKey` | Account-backed reads, writes, extraction, monitors, webhooks, media, and account status |
-| MPP | `plugins.entries.tweetclaw.config.tempoSigningKey` | 31 read-only pay-per-use endpoints with no Xquik account |
+| API key | `plugins.entries.tweetclaw.config.apiKey` | Account-backed workflows plus 33 prepaid public paid-read routes |
+| MPP | `plugins.entries.tweetclaw.config.tempoSigningKey` | 7 direct pay-per-use read routes with no Xquik account |
 
 Store credentials in OpenClaw plugin config. Do not paste API keys or signing keys into chat, docs, logs, screenshots, issue bodies, or tool arguments.
 
@@ -81,11 +83,7 @@ For private account reads, such as bookmarks, timeline, notifications, DMs, conn
 
 MPP mode is read-only. If only `tempoSigningKey` is configured, do not try writes, account-backed reads, monitors, webhooks, DMs, profile changes, uploads, media downloads, extraction jobs, draws, or account admin actions.
 
-MPP currently covers 31 read-only X API endpoints. Media download is not MPP-eligible because it creates account-tied gallery links and requires authenticated access.
-
-The MPP user media endpoint returns media tweets from a user timeline. It does not download media files or create gallery links.
-
-Do not describe MPP coverage as 32 endpoints. Current source-backed coverage is 31 until the endpoint catalog changes.
+Direct MPP covers exactly 7 routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. Other paid reads require an API key with prepaid credits. Media download requires account-backed access.
 
 Use `explore` with `mpp: true` to find MPP-eligible endpoints.
 

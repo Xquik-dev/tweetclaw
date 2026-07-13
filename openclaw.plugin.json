@@ -2,7 +2,7 @@
   "id": "tweetclaw",
   "name": "TweetClaw",
   "version": "1.6.32",
-  "description": "Search tweets, search replies, post tweets, export followers, manage media, monitor X/Twitter, and run giveaway draws from OpenClaw through structured Xquik endpoints.",
+  "description": "Search tweets, publish, export followers, manage media, monitor X/Twitter, and run draws through structured Xquik endpoints. Includes 33 prepaid paid-read routes and 7 direct MPP routes. Not affiliated with X Corp.",
   "activation": {
     "onStartup": false,
     "onCapabilities": ["tool"]
@@ -24,8 +24,8 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key (get one at dashboard.xquik.com). Use for account-backed X automation." },
-      "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for pay-per-use mode. Use for accountless access to 31 read-only X-API endpoints." },
+      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key for account-backed automation and 33 prepaid public paid-read routes. Not affiliated with X Corp." },
+      "tempoSigningKey": { "type": "string", "minLength": 1, "description": "MPP signing key for accountless access to 7 direct read routes. Not affiliated with X Corp." },
       "baseUrl": { "type": "string", "default": "https://xquik.com", "pattern": "^https://", "description": "HTTPS Xquik-compatible API base URL. Only change if using a self-hosted Xquik instance." },
       "pollingInterval": { "type": "number", "default": 60, "minimum": 5, "description": "Event polling interval in seconds" },
       "pollingEnabled": { "type": "boolean", "default": true }
@@ -33,7 +33,7 @@
   },
   "uiHints": {
     "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Account-backed X automation. Generate at dashboard.xquik.com." },
-    "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Pay-per-use mode via Machine Payments Protocol. No account needed. 31 read-only X-API endpoints only." },
+    "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Machine Payments Protocol for 7 direct read routes. No account needed." },
     "baseUrl": { "label": "API Base URL", "placeholder": "https://xquik.com", "advanced": true, "help": "HTTPS only. Only change if using a self-hosted Xquik instance." },
     "pollingInterval": { "label": "Event Poll Interval (seconds)", "advanced": true, "help": "How often to check for new monitor events. Default: 60 seconds." },
     "pollingEnabled": { "label": "Enable Event Notifications", "advanced": true, "help": "Deliver monitor alerts and extraction completions to your chat." }

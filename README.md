@@ -79,11 +79,11 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 
 ### Option B: Credits (pay-per-use, no subscription)
 
-Top up credits from the Xquik dashboard. TweetClaw does not create checkout sessions or charge saved payment methods from the agent.
+Top up credits from the Xquik dashboard. An API key can spend prepaid credits across 33 public paid-read routes without a subscription. TweetClaw does not create checkout sessions or charge saved payment methods from the agent.
 
-### Option C: MPP pay-per-use (no account needed, 31 read-only endpoints)
+### Option C: Direct MPP pay-per-use (no account needed)
 
-MPP (Machine Payments Protocol) lets agents pay per API call without an account, API key, or subscription. 31 read-only endpoints. Create an MPP account with `mppx account create`. The signing key stays local and is only used to sign payment proofs.
+Machine Payments Protocol (MPP) lets agents pay 7 direct read routes without an account, API key, or subscription. Create an MPP account with `mppx account create`. The signing key stays local and signs payment proofs only.
 
 ```bash
 npm i mppx viem
@@ -92,13 +92,9 @@ openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNI
 
 **Security**: Keep the signing key out of chats, docs, and shell history. Prefer the environment-variable command above so OpenClaw writes the secret to its local config without exposing it in the prompt.
 
-MPP-eligible read endpoints include tweet lookup, tweet search, user lookup,
-user tweets, follower checks, articles, trends, quotes, replies, retweeters,
-favoriters, threads, user likes, user media timeline reads, communities, lists,
-users batch lookup, people search, followers, following, mentions, and verified
-followers. See the billing guide for current endpoint eligibility and costs.
+The 7 direct MPP routes cover tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. See the billing guide for current eligibility and costs.
 
-Media downloads and gallery creation are not MPP-eligible. The user media endpoint returns a user's media-tweet timeline; it does not download files or create gallery links.
+Other paid reads use an API key with prepaid credits. Media downloads and gallery creation require account-backed access.
 
 ### Enable the optional action tool
 
@@ -240,7 +236,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 | **X Accounts** | List connected account handles for explicit user-selected actions | Account-backed |
 | **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | Account-backed with approval |
 
-Media download requires authenticated access and is not MPP-eligible. MPP only includes media-tweet timeline reads, not file download or gallery creation.
+Media download requires account-backed access and is not MPP-eligible.
 
 ## Links
 

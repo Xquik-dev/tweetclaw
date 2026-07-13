@@ -2,6 +2,8 @@
 
 Use this page for short Context7 answers before reading the longer guides.
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## Identity
 
 - Canonical package: `@xquik/tweetclaw`
@@ -52,9 +54,8 @@ works and live calls return setup guidance.
 TweetClaw supports 3 credential states:
 
 - No credentials: install, skill docs, and `explore`.
-- API key: account-backed reads, writes, extraction, monitors, webhooks, media,
-  commands, and account status.
-- MPP signing key: accountless pay-per-use access to 31 read-only endpoints.
+- API key: account-backed workflows plus prepaid credits for 33 public paid-read routes.
+- MPP signing key: accountless pay-per-use access to 7 direct read routes.
 
 Store credentials in OpenClaw config. Do not paste API keys or signing keys into
 chat, docs, logs, screenshots, issue bodies, or tool arguments.
@@ -66,10 +67,7 @@ profiles, upload media, download media files, create monitors, create webhooks,
 start extraction jobs, run draws, read account-backed private data, manage
 billing, or manage support flows.
 
-MPP covers 31 read-only X API endpoints. Media download is not MPP-eligible
-because it requires authenticated access and creates account-tied gallery links.
-The MPP user media endpoint returns timeline posts that contain media; it does
-not download files or create gallery links.
+Direct MPP covers tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. Other paid reads require an API key with prepaid credits. Media download requires account-backed access.
 
 Use `explore` with `mpp: true` before every MPP live call.
 

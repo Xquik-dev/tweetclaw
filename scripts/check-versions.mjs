@@ -5,7 +5,7 @@
 
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -183,12 +183,13 @@ function readPublicCandidateFiles() {
 
 function scanPublicHygiene() {
   for (const file of readPublicCandidateFiles()) {
-    if (!publicHygieneExtensions.some((extension) => file.endsWith(extension))) {
+    const filePath = join(root, file);
+    if (!existsSync(filePath) || !publicHygieneExtensions.some((extension) => file.endsWith(extension))) {
       continue;
     }
 
     let lineNumber = 0;
-    for (const line of readFileSync(join(root, file), "utf8").split("\n")) {
+    for (const line of readFileSync(filePath, "utf8").split("\n")) {
       lineNumber += 1;
       if (containsConfidentialTerm(line)) {
         drifts.push(`  ${file}:${lineNumber} contains confidential public wording`);
@@ -234,12 +235,14 @@ const contentChecks = [
       "npm is the canonical install source",
       "for the current plans, eligible endpoints, and operation costs",
       "Account-backed or MPP where eligible",
+      "33 public paid-read routes",
+      "7 direct MPP routes",
+      "Not affiliated with X Corp.",
     ],
     forbidden: [
       "about 33x cheaper",
       "vs Official X API",
       "Per-Operation Costs",
-      "| Follow check, article | 7 | $0.00105 |",
       "113 endpoints",
       "112 endpoints",
       "63 agent-callable endpoints",
@@ -248,7 +251,7 @@ const contentChecks = [
   },
   {
     path: "skills/tweetclaw/SKILL.md",
-    required: ["agent-safe Xquik endpoint catalog", "1-5 credits"],
+    required: ["agent-safe Xquik endpoint catalog", "1-5 credits", "33 public paid-read routes", "7 direct read routes", "$0.00075", "Not affiliated with X Corp."],
     forbidden: ["113 endpoints", "112 endpoints", "1-7 credits"],
   },
   {
@@ -258,12 +261,12 @@ const contentChecks = [
   },
   {
     path: "server.json",
-    required: ["99 agent-callable endpoints"],
+    required: ["99 agent-callable endpoints", "33 prepaid paid-read routes", "7 direct MPP routes", "Not affiliated with X Corp."],
     forbidden: ["113 endpoints", "112 endpoints", "63 agent-callable endpoints"],
   },
   {
     path: "openclaw.plugin.json",
-    required: ["structured Xquik endpoints"],
+    required: ["structured Xquik endpoints", "7 direct read routes", "Not affiliated with X Corp."],
     forbidden: ["113 endpoints", "112 endpoints"],
   },
 ];

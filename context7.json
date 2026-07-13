@@ -3,7 +3,7 @@
   "url": "https://context7.com/xquik-dev/tweetclaw",
   "public_key": "pk_oCPeRRqZFJsY4cCUSotDD",
   "projectTitle": "TweetClaw",
-  "description": "OpenClaw plugin for safe Xquik X/Twitter automation with endpoint discovery, explicit approval boundaries, MPP read-only mode, and ClawPack release metadata. Not affiliated with X Corp.",
+  "description": "OpenClaw plugin for Xquik X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes. Not affiliated with X Corp.",
   "folders": [],
   "excludeFolders": [
     "node_modules",
@@ -28,9 +28,7 @@
     "check-em-dash.ts",
     "check-suppressions.ts",
     "clawpack-release.md",
-    "discoverability-audit.md",
     "docs/clawpack-release.md",
-    "docs/discoverability-audit.md",
     "eslint-plugins.d.ts",
     "eslint.config.ts",
     "knip.config.ts",
@@ -55,8 +53,9 @@
     "Do not require credentials at install time; live calls without credentials should return setup guidance.",
     "Treat API keys and signing keys as sensitive config; never print or commit them.",
     "MPP mode is read-only and must not create writes, monitors, webhooks, uploads, DMs, or profile changes.",
-    "Current MPP coverage is 31 read-only endpoints; media download is not MPP-eligible because it requires authenticated access.",
-    "Do not describe MPP coverage as 32 endpoints; user media is a timeline read, not media file download.",
+    "API-key prepaid credits cover 33 public paid-read routes without a subscription.",
+    "Direct MPP covers exactly 7 read routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info.",
+    "Other paid reads require account-backed prepaid credits; media download is not MPP-eligible.",
     "Use the ClawPack npm-pack workflow for ClawHub package releases, not repo-folder uploads."
   ]
 }

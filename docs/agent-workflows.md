@@ -2,6 +2,8 @@
 
 Use this guide when deciding how an OpenClaw agent should use TweetClaw for real Xquik X/Twitter work. It focuses on safe task execution, endpoint discovery, and approval boundaries.
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## Default Flow
 
 1. Use `explore` to find the endpoint and required fields.
@@ -110,29 +112,27 @@ Useful OpenClaw write workflows:
 
 ## MPP Workflow
 
-MPP mode is read-only and accountless. It covers 31 read-only endpoints. It does not support writes, account-backed reads, monitors, webhooks, DMs, profile changes, uploads, media downloads, extraction jobs, draws, billing, support, or account admin actions.
+MPP mode is read-only and accountless. It covers 7 direct routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. It does not support other reads, writes, account-backed data, monitors, webhooks, DMs, profile changes, uploads, media downloads, extraction jobs, draws, billing, support, or account admin actions. API-key prepaid credits cover 33 public paid-read routes.
 
 Use `explore` with `mpp: true` before every MPP live call:
 
 ```json
-{ "mpp": true, "query": "user tweets", "limit": 10 }
+{ "mpp": true, "query": "user lookup", "limit": 10 }
 ```
 
 Then call only an endpoint that returned an `mpp` field:
 
 ```json
 {
-  "path": "/api/v1/x/users/:id/tweets",
+  "path": "/api/v1/x/users/:username",
   "method": "GET",
-  "query": {
-    "limit": 25
-  }
+  "query": {}
 }
 ```
 
 If MPP details conflict across public surfaces, trust `src/api-spec.ts`, `docs/context7-agent-guide.md`, this guide, and live Xquik billing docs. Media download remains outside MPP unless Xquik publishes a source-backed API-spec change.
 
-The MPP user media endpoint is a media-tweet timeline read. It is not media file download or gallery creation.
+Media download and gallery creation require account-backed access.
 
 ## Extraction And Draw Workflow
 
@@ -162,7 +162,7 @@ user has approved the target and event types.
 
 ## Media Workflow
 
-Media upload is a write-like action and requires approval. Media download requires authenticated access and is not MPP-eligible. MPP user media reads return timeline posts that contain media, not media files.
+Media upload is a write-like action and requires approval. Media download requires account-backed access and is not MPP-eligible.
 
 For media upload, verify the media URL is user-provided and intended for the post. For media download, summarize the gallery link and avoid exposing unrelated private data.
 

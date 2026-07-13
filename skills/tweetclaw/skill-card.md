@@ -1,5 +1,7 @@
 # Skill Card
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## Description
 
 TweetClaw guides OpenClaw agents through user-authorized X/Twitter workflows using the Xquik API plugin.
@@ -16,7 +18,7 @@ Skill instructions use MIT-0. Package code uses MIT. See the repository license 
 
 ## Use Case
 
-Use this skill when an agent needs to install, configure, inspect, or safely operate TweetClaw from OpenClaw for X/Twitter reads, writes, extraction jobs, media workflows, monitors, webhooks, giveaway draws, trends, and account-scoped workflows.
+Use this skill when an agent needs to install, configure, inspect, or safely operate TweetClaw from OpenClaw. API keys support 33 prepaid public paid-read routes. Direct MPP supports 7 read routes.
 
 ## Deployment Geography for Use
 
@@ -62,7 +64,7 @@ Other properties: The plugin runtime is catalog-restricted, uses one configured 
 
 ## Skill Version
 
-Package version `1.6.32`, source package unpublished as of 2026-06-21. Public npm latest remains `1.6.31`.
+Package version `1.6.32`. Verify the published version from npm before making release claims.
 
 ## Ethical Considerations
 

@@ -2,6 +2,8 @@
 
 Use these recipes when an agent needs the shortest correct path from install to a safe TweetClaw call. These examples are optimized for Context7 retrieval and mirror the public README, setup guide, workflow guide, skill, and runtime catalog.
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## Install And Verify
 
 Install the canonical OpenClaw package:
@@ -25,7 +27,7 @@ openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
 
 ## Configure API Key Mode
 
-Use API key mode for account-backed reads, writes, extraction, monitors, webhooks, media, commands, and account status.
+Use API key mode for account-backed workflows. Prepaid credits cover 33 public paid-read routes without a subscription.
 
 ```bash
 openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
@@ -35,7 +37,7 @@ Keep API keys out of chat, docs, logs, screenshots, issue bodies, and tool argum
 
 ## Configure MPP Mode
 
-Use MPP mode for accountless read-only pay-per-use calls. MPP covers 31 read-only endpoints.
+Use MPP mode for accountless payments on 7 direct read routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info.
 
 ```bash
 npm i mppx viem
@@ -146,7 +148,7 @@ openclaw config set plugins.entries.tweetclaw.config.pollingEnabled false
 
 Media upload is a write-like action and requires approval. Verify that the media URL is user-provided and intended for the post.
 
-Media download requires account-backed authenticated access and is not MPP-eligible. The MPP user media endpoint returns media-tweet timeline posts, not media files or gallery links.
+Media download requires account-backed authenticated access and is not MPP-eligible.
 
 ## Troubleshooting
 

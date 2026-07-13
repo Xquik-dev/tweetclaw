@@ -1,6 +1,6 @@
 ---
 name: tweetclaw
-description: "Safety-reviewed guide for @xquik/tweetclaw, the Xquik OpenClaw plugin for structured X/Twitter workflows. Covers setup, credential boundaries, explicit approval for writes and paid actions, spending limits, private-data handling, and monitor controls."
+description: "Safety-reviewed guide for @xquik/tweetclaw, the Xquik OpenClaw plugin for structured X/Twitter workflows. Covers setup, credential boundaries, approvals, spending limits, private-data handling, and monitor controls. Not affiliated with X Corp."
 homepage: https://xquik.com
 read_when: ["Installing or configuring the TweetClaw OpenClaw plugin","Using Xquik from OpenClaw with explicit user approval","Checking TweetClaw pricing, credentials, permissions, or safety boundaries","Planning X/Twitter reads, writes, extractions, draws, or monitors safely"]
 capabilities: {"tools":["explore","tweetclaw"],"network":["https://xquik.com/api/v1 through the plugin runtime","https://docs.xquik.com for documentation retrieval"],"environment":["XQUIK_API_KEY","MPP_SIGNING_KEY"],"shell":["OpenClaw CLI setup and inspection commands only"],"filesystem":["No runtime filesystem access; user-selected media files may be uploaded through reviewed endpoints"],"mcp":["none"]}
@@ -12,6 +12,8 @@ license: MIT-0
 # TweetClaw
 
 OpenClaw plugin for X/Twitter automation powered by Xquik.
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ```bash
 openclaw plugins install npm:@xquik/tweetclaw
@@ -113,10 +115,10 @@ TweetClaw uses Xquik's credit-based pricing. 1 credit = $0.00015.
 
 ### Pay-Per-Use (No Subscription)
 
-- **Credits**: Top up credits in the Xquik dashboard. The plugin can read the current balance.
-- **MPP**: 31 read-only endpoints accept anonymous on-chain payments. No account needed. SDK: `npm i mppx viem`.
+- **Credits**: API keys can spend prepaid credits across 33 public paid-read routes without a subscription.
+- **MPP**: 7 direct read routes accept accountless payments. SDK: `npm i mppx viem`.
 
-MPP pricing: tweet lookup ($0.00015), tweet search ($0.00015/tweet), user lookup ($0.00015), user tweets ($0.00015/tweet), follower check ($0.00105), article ($0.00105), trends ($0.00045), X trends ($0.00045), quotes ($0.00015/tweet), replies ($0.00015/tweet), retweeters ($0.00015/user), favoriters ($0.00015/user), thread ($0.00015/tweet), user likes ($0.00015/tweet), user media timeline reads ($0.00015/tweet), community info ($0.00015), community members ($0.00015/user), community moderators ($0.00015/user), community tweets ($0.00015/tweet), community search ($0.00015/community), communities tweets ($0.00015/tweet), list followers ($0.00015/user), list members ($0.00015/user), list tweets ($0.00015/tweet), users batch ($0.00015/user), users search ($0.00015/user), user followers ($0.00015/user), followers you know ($0.00015/user), user following ($0.00015/user), user mentions ($0.00015/tweet), verified followers ($0.00015/user).
+Direct MPP pricing: tweet lookup ($0.00015), user lookup ($0.00015), follower check ($0.00075), article lookup ($0.00075), trends ($0.00045), X trends ($0.00045), and community info ($0.00015).
 
 ## Documentation
 
@@ -162,11 +164,11 @@ Credentials are stored in OpenClaw plugin config after setup. Users should pass 
 
 ### API key mode (account-backed X automation)
 
-Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com/).
+Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com/). Prepaid credits cover 33 public paid-read routes without a subscription.
 
 ### MPP mode (no account, pay-per-use)
 
-MPP (Machine Payments Protocol) is an optional mode for anonymous, pay-per-use access to 31 read-only X-API endpoints - no Xquik account or API key required. The `tempoSigningKey` is a 66-character hex key that signs on-chain micropayment proofs (via the `mppx` SDK) when the runtime receives an HTTP 402 challenge. The signing key stays in the plugin config and is used only to sign payment proofs; it is not an API credential and grants no account access. The user media endpoint is a timeline read, not media file download; media downloads require account-backed access and are not MPP-eligible. If you don't use MPP, leave this field unset.
+Machine Payments Protocol (MPP) is an optional mode for accountless access to 7 direct read routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. The `tempoSigningKey` is a 66-character hex key that signs payment proofs through the `mppx` SDK after an HTTP 402 challenge. The signing key stays in plugin config, grants no account access, and is not an API credential. Other paid reads and media downloads require account-backed access. Leave this field unset when you don't use MPP.
 
 ```bash
 npm i mppx viem

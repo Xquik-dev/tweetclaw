@@ -2,6 +2,8 @@
 
 Use this guide when installing, configuring, or verifying TweetClaw in OpenClaw. It is optimized for agent retrieval and keeps the setup path short, current, and public-safe.
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## What TweetClaw Adds
 
 TweetClaw is the `@xquik/tweetclaw` OpenClaw plugin for Xquik X/Twitter workflows. It registers 2 structured tools:
@@ -122,8 +124,8 @@ TweetClaw has 3 modes:
 | Mode | Required config | Use it for |
 |------|-----------------|------------|
 | Explore-only | none | Install checks, docs, and endpoint discovery |
-| API key | `plugins.entries.tweetclaw.config.apiKey` | Account-backed reads, writes, extraction, monitors, webhooks, media, commands, and account status |
-| MPP | `plugins.entries.tweetclaw.config.tempoSigningKey` | 31 read-only pay-per-use endpoints with no Xquik account |
+| API key | `plugins.entries.tweetclaw.config.apiKey` | Account-backed workflows plus 33 prepaid public paid-read routes |
+| MPP | `plugins.entries.tweetclaw.config.tempoSigningKey` | 7 direct pay-per-use read routes with no Xquik account |
 
 Store credentials in OpenClaw plugin config. Never paste API keys, signing keys, passwords, cookies, account IDs, or payment material into chat, docs, issues, logs, screenshots, or tool arguments.
 
@@ -190,6 +192,6 @@ If tools are not visible, inspect runtime loading with `--runtime --json` and se
 
 If live calls return setup guidance, configure either `apiKey` or `tempoSigningKey`.
 
-If an MPP call is rejected, use `explore` with `mpp: true`. MPP covers 31 read-only endpoints. Media download is not MPP-eligible because it creates account-tied gallery links and requires authenticated access. The MPP user media endpoint returns media-tweet timeline posts, not media files.
+If an MPP call is rejected, use `explore` with `mpp: true`. Direct MPP covers tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. Other paid reads require an API key with prepaid credits. Media download requires account-backed access.
 
 If a path is rejected, remove embedded query strings and fragments from the path, then provide query fields through the structured `query` object.

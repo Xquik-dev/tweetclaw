@@ -11,7 +11,7 @@ interface EndpointInfo {
   readonly category: string;
   readonly free: boolean;
   readonly method: string;
-  readonly mpp?: { readonly intent: string; readonly price: string };
+  readonly mpp?: { readonly intent: 'charge'; readonly price: string };
   readonly parameters?: readonly EndpointParameter[];
   readonly path: string;
   readonly responseShape?: string;

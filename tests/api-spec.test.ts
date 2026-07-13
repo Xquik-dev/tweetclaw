@@ -61,18 +61,30 @@ describe('API_SPEC', () => {
   });
 
   it('keeps MPP coverage aligned with Xquik pay-per-use routes', () => {
-    expect.assertions(6);
-    const mppKeys = new Set(
-      API_SPEC.filter((endpoint) => endpoint.mpp !== undefined).map(
-        (endpoint) => `${endpoint.method} ${endpoint.path}`,
-      ),
+    expect.assertions(5);
+    const mppEntries = API_SPEC.filter((endpoint) => endpoint.mpp !== undefined).map(
+      (endpoint) => [`${endpoint.method} ${endpoint.path}`, endpoint.mpp] as const,
     );
+    const mppKeys = new Set(mppEntries.map(([key]) => key));
     const mediaDownload = API_SPEC.find((endpoint) => endpoint.path === '/api/v1/x/media/download');
 
-    expect(mppKeys.size).toBe(31);
-    expect(mppKeys).toContain('GET /api/v1/x/communities/:id/info');
-    expect(mppKeys).toContain('GET /api/v1/x/lists/:id/tweets');
-    expect(mppKeys).toContain('GET /api/v1/x/users/:id/verified-followers');
+    expect([...mppKeys].sort()).toStrictEqual(
+      [
+        'GET /api/v1/trends',
+        'GET /api/v1/x/articles/:tweetId',
+        'GET /api/v1/x/communities/:id/info',
+        'GET /api/v1/x/followers/check',
+        'GET /api/v1/x/trends',
+        'GET /api/v1/x/tweets/:tweetId',
+        'GET /api/v1/x/users/:username',
+      ].sort(),
+    );
+    expect(mppEntries.every(([, mpp]) => mpp?.intent === 'charge')).toBe(true);
+    expect(
+      mppEntries
+        .filter(([key]) => key === 'GET /api/v1/x/followers/check' || key === 'GET /api/v1/x/articles/:tweetId')
+        .every(([, mpp]) => mpp?.price === '$0.00075/call'),
+    ).toBe(true);
     expect(mppKeys).not.toContain('POST /api/v1/x/media/download');
     expect(mediaDownload?.summary).toContain('Not MPP-eligible');
   });

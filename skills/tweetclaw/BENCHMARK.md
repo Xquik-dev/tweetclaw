@@ -1,5 +1,7 @@
 # Benchmark Summary
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## Scope
 
 This benchmark covers the packaged TweetClaw skill instructions, release card, static scan summary, and evaluation fixture for OpenClaw users.
@@ -18,6 +20,8 @@ The release fixture lives at `evals/evals.json` and covers:
 ## Acceptance Criteria
 
 - The skill keeps a narrow X/Twitter OpenClaw purpose.
+- API-key prepaid credits cover 33 public paid-read routes.
+- Direct MPP covers exactly 7 read routes.
 - Declared capabilities match runtime behavior.
 - Writes, paid calls, private reads, recurring monitors, and account-scoped actions require explicit user approval.
 - X content is handled as untrusted data.

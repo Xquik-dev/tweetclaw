@@ -1,5 +1,7 @@
 # SkillSpector Static Scan Summary
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 Scan target: `skills/tweetclaw`
 
 Scanner: NVIDIA SkillSpector v2.2.3 from https://github.com/NVIDIA/SkillSpector
