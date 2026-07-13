@@ -105,11 +105,18 @@ jobs:
           set -euo pipefail
 
           package="${PACKAGE_NAME}@${PACKAGE_VERSION}"
-          published_version="$(npm view "$package" version)"
-          if [ "$published_version" != "$PACKAGE_VERSION" ]; then
-            echo "::error ::npm returned version $published_version after publication."
-            exit 1
-          fi
+          for attempt in {1..30}; do
+            published_version="$(npm view "$package" version 2>/dev/null || true)"
+            if [ "$published_version" = "$PACKAGE_VERSION" ]; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 30 ]; then
+              sleep 10
+            fi
+          done
+
+          echo "::error ::npm did not expose $package within 5 minutes."
+          exit 1
 
   release:
     name: Create GitHub Release
