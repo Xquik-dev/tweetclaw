@@ -11,7 +11,6 @@
 [![Context7](https://img.shields.io/badge/Context7-agent_docs-059669)](https://context7.com/xquik-dev/tweetclaw)
 [![Skills.sh](https://www.skills.sh/b/xquik-dev/tweetclaw)](https://www.skills.sh/xquik-dev/tweetclaw)
 [![Skills.sh x-twitter-scraper Skill](https://www.skills.sh/b/xquik-dev/x-twitter-scraper)](https://www.skills.sh/xquik-dev/x-twitter-scraper)
-[![Smithery](https://smithery.ai/badge/github/Xquik-dev/tweetclaw)](https://smithery.ai/servers/github/Xquik-dev/tweetclaw)
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
 
@@ -58,6 +57,11 @@ Agent-skill installers can also discover TweetClaw through [Skills.sh](https://w
 ```bash
 npx skills add xquik-dev/tweetclaw
 ```
+
+TweetClaw is an OpenClaw plugin, not an MCP server. For remote MCP clients, add
+`https://xquik.com/mcp` and complete OAuth 2.1. Clients without OAuth can use
+an Xquik API key as an `Authorization: Bearer` token. See the
+[Xquik MCP guide](https://docs.xquik.com/mcp/overview).
 
 > **Note:** `@xquik/tweetclaw` is the canonical npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is a third-party redistribution and may ship stale metadata or outdated endpoint counts.
 

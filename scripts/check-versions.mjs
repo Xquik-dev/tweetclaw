@@ -14,7 +14,6 @@ const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8"))
 const expected = packageJson.version;
 
 const surfaces = [
-  { path: "server.json", get: (j) => JSON.parse(j).version },
   { path: "openclaw.plugin.json", get: (j) => JSON.parse(j).version },
 ];
 
@@ -269,11 +268,6 @@ const contentChecks = [
     path: "src/api-spec.ts",
     required: ["/api/v1/credits/topup/status"],
     forbidden: [],
-  },
-  {
-    path: "server.json",
-    required: ["99 agent-callable endpoints", "33 prepaid paid-read routes", "7 direct MPP routes", "Not affiliated with X Corp."],
-    forbidden: ["113 endpoints", "112 endpoints", "63 agent-callable endpoints"],
   },
   {
     path: "openclaw.plugin.json",

@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a problem with the skill or MCP server
+about: Report a problem with the TweetClaw plugin or skill
 title: "[Bug] "
 labels: bug
 ---

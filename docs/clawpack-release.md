@@ -4,7 +4,7 @@ Use this checklist to validate TweetClaw before publishing a package. Xquik is a
 
 ## Verify release metadata
 
-Keep `package.json`, `openclaw.plugin.json`, and `server.json` on the same version. Keep npm as the canonical install source until every public registry serves the same package.
+Keep `package.json` and `openclaw.plugin.json` on the same version. Publish through the verified ClawHub scope, with npm as the supported fallback.
 
 The release must describe 33 prepaid public paid-read routes and exactly 7 direct Machine Payments Protocol (MPP) routes. The direct routes are tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info.
 
