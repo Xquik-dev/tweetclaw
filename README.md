@@ -24,10 +24,12 @@ Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Sear
 ## Install
 
 ```bash
-openclaw plugins install npm:@xquik/tweetclaw
+openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
-This command installs the canonical npm package `@xquik/tweetclaw` with OpenClaw's explicit npm source selector. Bare `@xquik/tweetclaw` installs still work during OpenClaw's launch cutover, but `npm:` keeps the source deterministic because npm is the canonical install source while ClawHub owner-scope validation is pending.
+This command installs TweetClaw from Xquik's verified ClawHub publisher scope. OpenClaw records ClawHub as the tracked update source.
+
+Use `openclaw plugins install npm:@xquik/tweetclaw` when you need the npm fallback.
 
 For normal upgrades, reuse the tracked install source:
 

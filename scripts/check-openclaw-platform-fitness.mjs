@@ -75,12 +75,10 @@ assertEqual("package.json openclaw.build.openclawVersion", openclawBuild.opencla
 assertEqual("package.json openclaw.build.pluginSdkVersion", openclawBuild.pluginSdkVersion, openclawBuildVersion);
 assertEqual("package.json openclaw.install.minHostVersion", openclawInstall.minHostVersion, openclawRange);
 assertEqual("package.json peerDependencies.openclaw", packageJson.peerDependencies?.openclaw, openclawRange);
-assertEqual("package.json openclaw.install.defaultChoice", openclawInstall.defaultChoice, "npm");
+assertEqual("package.json openclaw.install.defaultChoice", openclawInstall.defaultChoice, "clawhub");
+assertEqual("package.json openclaw.install.clawhubSpec", openclawInstall.clawhubSpec, `clawhub:${packageJson.name}`);
 assertEqual("package.json openclaw.install.npmSpec", openclawInstall.npmSpec, `${packageJson.name}@${packageJson.version}`);
 
-if (Object.hasOwn(openclawInstall, "clawhubSpec")) {
-  addError("package.json openclaw.install.clawhubSpec must stay absent until ClawHub publishes the current scoped package");
-}
 if (packageJson.peerDependenciesMeta?.openclaw?.optional === true) {
   addError("package.json peerDependenciesMeta.openclaw must not mark the host peer optional");
 }
@@ -167,7 +165,7 @@ const docChecks = [
   {
     path: "README.md",
     fragments: [
-      "openclaw plugins install npm:@xquik/tweetclaw",
+      "openclaw plugins install clawhub:@xquik/tweetclaw",
       "openclaw plugins update tweetclaw",
       "openclaw plugins install npm:@xquik/tweetclaw@<version> --pin",
       "openclaw plugins inspect tweetclaw --runtime --json",
@@ -181,7 +179,7 @@ const docChecks = [
   {
     path: "docs/openclaw-setup.md",
     fragments: [
-      "openclaw plugins install npm:@xquik/tweetclaw",
+      "openclaw plugins install clawhub:@xquik/tweetclaw",
       "openclaw plugins update tweetclaw",
       "openclaw plugins install npm:@xquik/tweetclaw@<version> --pin",
       "openclaw plugins inspect tweetclaw --runtime --json",
@@ -203,7 +201,7 @@ const docChecks = [
   {
     path: "skills/tweetclaw/SKILL.md",
     fragments: [
-      "openclaw plugins install npm:@xquik/tweetclaw",
+      "openclaw plugins install clawhub:@xquik/tweetclaw",
       "openclaw plugins update tweetclaw",
       "openclaw plugins install npm:@xquik/tweetclaw@<version> --pin",
       "openclaw plugins inspect tweetclaw --runtime --json",

@@ -16,10 +16,10 @@ OpenClaw plugin for X/Twitter automation powered by Xquik.
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ```bash
-openclaw plugins install npm:@xquik/tweetclaw
+openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
-The `npm:` selector makes OpenClaw install the published npm package explicitly. Bare `@xquik/tweetclaw` remains compatible during OpenClaw's launch cutover, but use `npm:` when the ClawHub listing is behind npm.
+This command installs TweetClaw from Xquik's verified ClawHub publisher scope. OpenClaw records ClawHub as the tracked update source. Use `openclaw plugins install npm:@xquik/tweetclaw` when you need the npm fallback.
 
 For routine upgrades, keep the tracked install source:
 

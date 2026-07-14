@@ -16,7 +16,7 @@ TweetClaw can install before credentials exist. In that state, `explore` works a
 Prefer the published package path:
 
 ```bash
-openclaw plugins install @xquik/tweetclaw
+openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
 For OpenClaw install-on-demand metadata, the package prefers the exact ClawHub spec and keeps exact npm fallback metadata in `package.json#openclaw.install`.
