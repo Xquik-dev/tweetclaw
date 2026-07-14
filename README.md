@@ -59,7 +59,8 @@ npx skills add xquik-dev/tweetclaw
 ```
 
 TweetClaw is an OpenClaw plugin, not an MCP server. For remote MCP clients, add
-`https://xquik.com/mcp` and complete OAuth 2.1. See the
+`https://xquik.com/mcp` and complete OAuth 2.1. Clients without OAuth can use
+an Xquik API key as an `Authorization: Bearer` token. See the
 [Xquik MCP guide](https://docs.xquik.com/mcp/overview).
 
 > **Note:** `@xquik/tweetclaw` is the canonical npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is a third-party redistribution and may ship stale metadata or outdated endpoint counts.
