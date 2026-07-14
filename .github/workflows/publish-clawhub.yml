@@ -1,0 +1,26 @@
+name: Publish to ClawHub
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Validate the package without publishing it
+        required: true
+        type: boolean
+        default: true
+
+permissions: {}
+
+jobs:
+  publish:
+    permissions:
+      actions: read # Read package artifacts in the reusable publisher.
+      contents: read # Check out the exact TweetClaw source revision.
+      id-token: write # Exchange GitHub OIDC for a scoped ClawHub token.
+    uses: openclaw/clawhub/.github/workflows/package-publish.yml@a230d962db64019462c2c8ee400755eb92169908
+    with:
+      source: Xquik-dev/tweetclaw
+      ref: ${{ github.sha }}
+      owner: xquik
+      dry_run: ${{ inputs.dry_run }}
+      json: true
