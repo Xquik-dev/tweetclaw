@@ -15,13 +15,13 @@ The plugin can install before credentials exist. Without credentials, `explore` 
 
 ## Install
 
-Install the published package:
+Install the verified ClawHub listing:
 
 ```bash
-openclaw plugins install npm:@xquik/tweetclaw
+openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
-TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw` package version. The `npm:` selector keeps source selection explicit. Bare `@xquik/tweetclaw` still installs from npm during OpenClaw's launch cutover, but use the ClawHub page for browsing only while its listing lags behind npm. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
+OpenClaw records ClawHub as the tracked source and retains the exact npm package as fallback metadata. Use `openclaw plugins install npm:@xquik/tweetclaw` when you need the npm fallback. Avoid repo-folder installs for release verification because they do not represent the published artifact.
 
 Current source metadata targets OpenClaw `2026.7.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 

@@ -64,12 +64,15 @@ if (openclawInstall?.npmSpec !== expectedNpmSpec) {
     `  package.json: openclaw.install.npmSpec ${openclawInstall?.npmSpec ?? "<missing>"} (expected ${expectedNpmSpec})`,
   );
 }
-if (Object.hasOwn(openclawInstall ?? {}, "clawhubSpec")) {
-  drifts.push("  package.json: openclaw.install.clawhubSpec must stay absent until ClawHub publishes the current @xquik/tweetclaw package");
-}
-if (openclawInstall?.defaultChoice !== "npm") {
+const expectedClawHubSpec = `clawhub:${packageJson.name}`;
+if (openclawInstall?.clawhubSpec !== expectedClawHubSpec) {
   drifts.push(
-    `  package.json: openclaw.install.defaultChoice ${openclawInstall?.defaultChoice ?? "<missing>"} (expected npm)`,
+    `  package.json: openclaw.install.clawhubSpec ${openclawInstall?.clawhubSpec ?? "<missing>"} (expected ${expectedClawHubSpec})`,
+  );
+}
+if (openclawInstall?.defaultChoice !== "clawhub") {
+  drifts.push(
+    `  package.json: openclaw.install.defaultChoice ${openclawInstall?.defaultChoice ?? "<missing>"} (expected clawhub)`,
   );
 }
 if (packageJson.openclaw?.runtimeExtensions?.[0] !== "./dist/index.js") {
@@ -238,7 +241,7 @@ const contentChecks = [
       "account-backed X automation",
       "99 agent-callable endpoints across 9 categories",
       "Search tweets, search tweet replies, post tweets, post tweet replies",
-      "npm is the canonical install source",
+      "verified ClawHub publisher scope",
       "for current plans, eligible endpoints, and live prices",
       "Account-backed or MPP where eligible",
       "33 public paid-read routes",
@@ -252,6 +255,9 @@ const contentChecks = [
       "113 endpoints",
       "112 endpoints",
       "63 agent-callable endpoints",
+      "npm is the canonical install source",
+      "ClawHub owner-scope validation is pending",
+      "listing lags behind npm",
     ],
   },
   {

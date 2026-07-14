@@ -7,7 +7,7 @@
       "id": "install-and-inspect",
       "prompt": "Install TweetClaw in OpenClaw and verify the runtime tools.",
       "must_include": [
-        "openclaw plugins install npm:@xquik/tweetclaw",
+        "openclaw plugins install clawhub:@xquik/tweetclaw",
         "openclaw plugins inspect tweetclaw --runtime --json",
         "explore",
         "tweetclaw"
