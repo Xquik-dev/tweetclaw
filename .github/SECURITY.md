@@ -24,7 +24,7 @@ This skill uses an API key for authentication. Key guidelines:
 
 In scope:
 - The skill files (`skills/`, `commands/`, `.claude-plugin/`)
-- The MCP server configuration (`server.json`, `.mcp.json`, `smithery.yaml`)
+- Related Xquik MCP documentation links
 - The npm package (`x-developer`)
 
 Out of scope:

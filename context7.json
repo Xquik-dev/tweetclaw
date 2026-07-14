@@ -48,7 +48,7 @@
     "Use docs/agent-workflows.md for task planning, approval boundaries, MPP workflows, extraction, monitors, webhooks, media, and common mistakes.",
     "Use openclaw.plugin.json for OpenClaw tool definitions, config schema, sensitive field hints, and approval boundaries.",
     "Use package.json for the npm package name, current version, package files, repository, homepage, license, keywords, and install metadata.",
-    "Use server.json, glama.json, and smithery.yaml only for public MCP discovery metadata and hosted endpoint configuration.",
+    "TweetClaw is an OpenClaw plugin, not an MCP server. Link MCP users to https://docs.xquik.com/mcp/overview.",
     "Use tools.alsoAllow with explore and tweetclaw so users keep their normal OpenClaw tool profile.",
     "Do not require credentials at install time; live calls without credentials should return setup guidance.",
     "Treat API keys and signing keys as sensitive config; never print or commit them.",

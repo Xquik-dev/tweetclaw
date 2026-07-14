@@ -7,7 +7,7 @@ Thanks for your interest in improving `x-developer` / `x-twitter-scraper`.
 This repo packages the Xquik skill for AI coding agents (Claude Code, Cursor, Codex, Gemini CLI, Windsurf, Copilot). Changes should focus on:
 
 - Skill instructions clarity (`skills/`, `commands/`)
-- MCP server metadata (`server.json`, `.mcp.json`, `smithery.yaml`)
+- Related Xquik MCP links and OAuth setup guidance
 - Cross-agent compatibility (SKILL.md spec adherence)
 - Documentation (`README.md`, `docs/`)
 

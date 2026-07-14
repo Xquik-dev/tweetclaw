@@ -1,9 +1,0 @@
-{
-  "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "description": "Xquik X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes. Not affiliated with X Corp.",
-  "maintainers": ["kriptoburak"],
-  "authentication": {
-    "type": "api-key",
-    "instructions": "Get an API key at dashboard.xquik.com. Keys start with xq_."
-  }
-}
