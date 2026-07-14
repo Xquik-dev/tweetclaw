@@ -55,7 +55,6 @@ jobs:
     with:
       source: Xquik-dev/tweetclaw
       ref: ${{ github.sha }}
-      owner: xquik
       dry_run: ${{ inputs.dry_run }}
       json: true
       package_artifact_name: clawhub-package
