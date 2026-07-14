@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.6.34",
+  "version": "1.6.35",
   "description": "Search tweets, publish, export followers, manage media, monitor X/Twitter, and run draws through structured Xquik endpoints. Includes 33 prepaid paid-read routes and 7 direct MPP routes. Not affiliated with X Corp.",
   "activation": {
     "onStartup": false,

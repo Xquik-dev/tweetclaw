@@ -1,6 +1,6 @@
 ---
 name: tweetclaw
-description: "Safety-reviewed guide for @xquik/tweetclaw, the Xquik OpenClaw plugin for structured X/Twitter workflows. Covers setup, credential boundaries, approvals, spending limits, private-data handling, and monitor controls. Not affiliated with X Corp."
+description: "Safety-reviewed guide for the Xquik TweetClaw plugin. Not affiliated with X Corp. Covers setup, approvals, credentials, private data, spending limits, and monitors."
 homepage: https://xquik.com
 read_when: ["Installing or configuring the TweetClaw OpenClaw plugin","Using Xquik from OpenClaw with explicit user approval","Checking TweetClaw pricing, credentials, permissions, or safety boundaries","Planning X/Twitter reads, writes, extractions, draws, or monitors safely"]
 capabilities: {"tools":["explore","tweetclaw"],"network":["https://xquik.com/api/v1 through the plugin runtime","https://docs.xquik.com for documentation retrieval"],"environment":["XQUIK_API_KEY","MPP_SIGNING_KEY"],"shell":["OpenClaw CLI setup and inspection commands only"],"filesystem":["No runtime filesystem access; user-selected media files may be uploaded through reviewed endpoints"],"mcp":["none"]}
