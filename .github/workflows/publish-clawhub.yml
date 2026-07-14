@@ -11,8 +11,42 @@ on:
 
 permissions: {}
 
+concurrency:
+  group: clawhub-publish-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
+  build:
+    name: Build ClawHub Package
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read # Check out the exact TweetClaw source revision.
+    steps:
+      - name: Check out source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.2.0
+        with:
+          node-version: "24.15.0"
+          package-manager-cache: false
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Build package artifact
+        run: npm pack
+      - name: Upload package artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.0
+        with:
+          name: clawhub-package
+          path: xquik-tweetclaw-*.tgz
+          if-no-files-found: error
+          retention-days: 1
+
   publish:
+    name: Publish ClawHub Package
+    needs: build
     permissions:
       actions: read # Read package artifacts in the reusable publisher.
       contents: read # Check out the exact TweetClaw source revision.
@@ -24,3 +58,7 @@ jobs:
       owner: xquik
       dry_run: ${{ inputs.dry_run }}
       json: true
+      package_artifact_name: clawhub-package
+      source_repo: Xquik-dev/tweetclaw
+      source_commit: ${{ github.sha }}
+      source_ref: ${{ github.ref }}
