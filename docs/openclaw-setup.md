@@ -23,7 +23,7 @@ openclaw plugins install npm:@xquik/tweetclaw
 
 TweetClaw publishes npm-first install metadata with the exact `@xquik/tweetclaw` package version. The `npm:` selector keeps source selection explicit. Bare `@xquik/tweetclaw` still installs from npm during OpenClaw's launch cutover, but use the ClawHub page for browsing only while its listing lags behind npm. Avoid repo-folder installs for release-like verification because they do not represent the published artifact.
 
-Current source metadata targets OpenClaw `2026.6.11` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
+Current source metadata targets OpenClaw `2026.7.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
 
 If OpenClaw runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle mutators are
 disabled. Install or update TweetClaw through your Nix OpenClaw source instead
@@ -186,7 +186,7 @@ For live calls, pass only catalog-listed `/api/v1/...` paths. Put query paramete
 
 ## Troubleshooting
 
-If install fails, verify OpenClaw is at least `2026.6.11` for current source builds and install the published package.
+If install fails, verify OpenClaw is at least `2026.7.1` for current source builds and install the published package.
 
 If tools are not visible, inspect runtime loading with `--runtime --json` and set `tools.alsoAllow` for `explore` and `tweetclaw`.
 

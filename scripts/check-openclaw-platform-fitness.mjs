@@ -5,7 +5,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const openclawMinimumVersion = "2026.6.11";
+const openclawMinimumVersion = "2026.7.1";
 const openclawBuildVersion = "2026.7.1";
 const openclawRange = `>=${openclawMinimumVersion}`;
 const errors = [];
