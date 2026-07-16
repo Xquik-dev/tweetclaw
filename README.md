@@ -59,9 +59,17 @@ npx skills add xquik-dev/tweetclaw
 ```
 
 TweetClaw is an OpenClaw plugin, not an MCP server. For remote MCP clients, add
-`https://xquik.com/mcp` and complete OAuth 2.1. Clients without OAuth can use
-an Xquik API key as an `Authorization: Bearer` token. See the
-[Xquik MCP guide](https://docs.xquik.com/mcp/overview).
+`https://xquik.com/mcp`, then follow the [current client compatibility
+path](https://docs.xquik.com/mcp/overview#client-compatibility). OAuth-capable
+clients complete OAuth 2.1. Clients that support custom bearer headers can use
+an Xquik API key. ChatGPT custom apps require OAuth.
+
+> **Codex OAuth compatibility:** Affected Codex releases discard the RFC 9207
+> `iss` callback value even though Xquik returns it. If Codex reports
+> `Authorization server response missing required issuer: expected https://xquik.com`,
+> use `XQUIK_API_KEY` through the Codex `bearer_token_env_var` setting. Follow the
+> [Codex OAuth troubleshooting guide](https://docs.xquik.com/guides/troubleshooting#codex-oauth-issuer-validation-error)
+> and track [openai/codex#31573](https://github.com/openai/codex/issues/31573).
 
 > **Note:** `@xquik/tweetclaw` is the canonical npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is a third-party redistribution and may ship stale metadata or outdated endpoint counts.
 
