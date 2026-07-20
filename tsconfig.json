@@ -15,6 +15,7 @@
     "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
+    "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
     "sourceMap": true
