@@ -5,6 +5,7 @@ import * as mpp from '../src/mpp.js';
 import type { ToolResult } from '../src/types.js';
 
 const { configSchema, register } = plugin;
+const VALID_SIGNING_KEY = `0x${'2'.repeat(64)}`;
 
 interface RegisteredTool {
   readonly description: string;
@@ -413,7 +414,7 @@ describe('register', () => {
   it('registers tools in MPP mode with signing key and no apiKey', () => {
     expect.assertions(4);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('skip'));
-    const { api, tools, infos, services } = createMockApi({ tempoSigningKey: '0xabc123' });
+    const { api, tools, infos, services } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
     register(api);
     vi.restoreAllMocks();
     expect(tools).toHaveLength(2);
@@ -425,7 +426,7 @@ describe('register', () => {
   it('registers only xtrends command in MPP mode (no xstatus)', () => {
     expect.assertions(2);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('skip'));
-    const { api, commands } = createMockApi({ tempoSigningKey: '0xabc123' });
+    const { api, commands } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
     register(api);
     vi.restoreAllMocks();
     expect(commands).toHaveLength(1);
@@ -436,7 +437,7 @@ describe('register', () => {
     expect.assertions(1);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('MPP requires mppx'));
     const errors: string[] = [];
-    const { api } = createMockApi({ tempoSigningKey: '0xabc123' });
+    const { api } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
     const apiWithErrors = {
       ...api,
       logger: { ...api.logger, error: (m: string) => { errors.push(m); } },
@@ -451,7 +452,7 @@ describe('register', () => {
     expect.assertions(1);
     vi.spyOn(mpp, 'initMpp').mockResolvedValue();
     const infos: string[] = [];
-    const { api } = createMockApi({ tempoSigningKey: '0xabc123' });
+    const { api } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
     const apiWithInfos = {
       ...api,
       logger: { ...api.logger, info: (m: string) => { infos.push(m); } },
@@ -462,11 +463,11 @@ describe('register', () => {
     expect(infos.some((m) => m.includes('MPP initialized'))).toBe(true);
   });
 
-  it('logs non-Error MPP init failures', async () => {
-    expect.assertions(1);
+  it('logs a fixed message for non-Error MPP init failures', async () => {
+    expect.assertions(2);
     vi.spyOn(mpp, 'initMpp').mockRejectedValue('string error');
     const errors: string[] = [];
-    const { api } = createMockApi({ tempoSigningKey: '0xabc123' });
+    const { api } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
     const apiWithErrors = {
       ...api,
       logger: { ...api.logger, error: (m: string) => { errors.push(m); } },
@@ -474,7 +475,8 @@ describe('register', () => {
     register(apiWithErrors);
     await vi.advanceTimersByTimeAsync(100);
     vi.restoreAllMocks();
-    expect(errors.some((m) => m.includes('string error'))).toBe(true);
+    expect(errors).toStrictEqual(['TweetClaw: MPP init failed. Check local plugin configuration.']);
+    expect(errors[0]).not.toContain('string error');
   });
 
   it('event poller logs events with known types', async () => {

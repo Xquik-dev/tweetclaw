@@ -101,7 +101,7 @@ Machine Payments Protocol (MPP) lets agents pay 7 direct read routes without an 
 
 ```bash
 npm i mppx@0.8.12 viem@2.55.4
-openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
+openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$tempoSigningKey"
 ```
 
 **Security**: Keep the signing key out of chats, docs, and shell history. Prefer the environment-variable command above so OpenClaw writes the secret to its local config without exposing it in the prompt.

@@ -1149,7 +1149,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/tweets',
     responseShape: '{ tweetId, success: true }',
-    summary: 'Create tweet',
+    summary: 'Create tweet. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1158,7 +1158,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Delete tweet',
+    summary: 'Delete tweet. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1167,7 +1167,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/like',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Like tweet',
+    summary: 'Like tweet. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1176,7 +1176,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/like',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Unlike tweet',
+    summary: 'Unlike tweet. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1185,7 +1185,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/retweet',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Retweet',
+    summary: 'Retweet. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1194,7 +1194,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/retweet',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Unretweet',
+    summary: 'Unretweet. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1203,7 +1203,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID_FOLLOW, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/follow',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Follow user',
+    summary: 'Follow user. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1212,7 +1212,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID_UNFOLLOW, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/follow',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Unfollow user',
+    summary: 'Unfollow user. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1221,7 +1221,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID_REMOVE_FOLLOWER, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/remove-follower',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Remove follower',
+    summary: 'Remove follower. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1236,7 +1236,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/dm/:userId',
     responseShape: '{ messageId, success: true }',
-    summary: 'Send DM',
+    summary: 'Send DM. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1250,7 +1250,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/media',
     responseShape: '{ mediaId, success: true }',
-    summary: 'Upload media',
+    summary: 'Upload media. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1265,7 +1265,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/profile',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Update profile',
+    summary: 'Update profile. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1278,7 +1278,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/profile/avatar',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Update avatar',
+    summary: 'Update avatar. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1291,7 +1291,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/profile/banner',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Update banner',
+    summary: 'Update banner. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1304,7 +1304,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/communities',
     responseShape: '{ communityId, success: true }',
-    summary: 'Create community',
+    summary: 'Create community. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1317,7 +1317,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/communities/:id',
     responseShape: RESPONSE_SUCCESS,
-    summary: 'Delete community',
+    summary: 'Delete community. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1326,7 +1326,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_COMMUNITY_ACTION,
     path: '/api/v1/x/communities/:id/join',
     responseShape: RESPONSE_COMMUNITY_ACTION,
-    summary: 'Join community',
+    summary: 'Join community. Requires one-time user approval after showing the exact target and payload.',
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1335,7 +1335,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_COMMUNITY_ACTION,
     path: '/api/v1/x/communities/:id/join',
     responseShape: RESPONSE_COMMUNITY_ACTION,
-    summary: 'Leave community',
+    summary: 'Leave community. Requires one-time user approval after showing the exact target and payload.',
   },
 
 

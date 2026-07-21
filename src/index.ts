@@ -48,8 +48,9 @@ const CONFIG_SCHEMA = {
       type: 'number',
     },
     tempoSigningKey: {
-      description: 'MPP signing key for accountless access to 7 direct read routes. Not affiliated with X Corp.',
-      minLength: 1,
+      description:
+        'Optional read-only MPP payment-proof signing key for 7 direct read routes. Stored as sensitive OpenClaw plugin config and never exposed to the agent. Not affiliated with X Corp.',
+      pattern: '^0x[0-9a-fA-F]{64}$',
       type: 'string',
     },
   },
@@ -326,8 +327,8 @@ function registerMppMode(api: OpenClawApi, credentialMode: CredentialMode, signi
     try {
       await initMpp(signingValue);
       api.logger.info('TweetClaw: MPP initialized - payment account ready');
-    } catch (error: unknown) {
-      api.logger.error(`TweetClaw: MPP init failed - ${error instanceof Error ? error.message : String(error)}`);
+    } catch {
+      api.logger.error('TweetClaw: MPP init failed. Check local plugin configuration.');
     }
   })();
   api.logger.info('TweetClaw: direct MPP mode - 7 read routes, no subscription needed');

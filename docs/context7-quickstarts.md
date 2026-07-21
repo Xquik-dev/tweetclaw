@@ -41,7 +41,7 @@ Use MPP mode for accountless payments on 7 direct read routes: tweet lookup, use
 
 ```bash
 npm i mppx@0.8.12 viem@2.55.4
-openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
+openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$tempoSigningKey"
 ```
 
 MPP mode cannot post, reply, like, follow, send DMs, edit profiles, upload media, download media files, create monitors, create webhooks, start extraction jobs, run draws, read account-backed private data, or manage billing.

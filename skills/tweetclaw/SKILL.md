@@ -3,9 +3,9 @@ name: tweetclaw
 description: "Safety-reviewed guide for the Xquik TweetClaw plugin. Not affiliated with X Corp. Covers setup, approvals, credentials, private data, spending limits, and monitors."
 homepage: https://xquik.com
 read_when: ["Installing or configuring the TweetClaw OpenClaw plugin","Using Xquik from OpenClaw with explicit user approval","Checking TweetClaw pricing, credentials, permissions, or safety boundaries","Planning X/Twitter reads, writes, extractions, draws, or monitors safely"]
-capabilities: {"tools":["explore","tweetclaw"],"network":["https://xquik.com/api/v1 through the plugin runtime","https://docs.xquik.com for documentation retrieval"],"environment":["XQUIK_API_KEY","MPP_SIGNING_KEY"],"shell":["OpenClaw CLI setup and inspection commands only"],"filesystem":["No runtime filesystem access; user-selected media files may be uploaded through reviewed endpoints"],"mcp":["none"]}
+capabilities: {"tools":["explore","tweetclaw"],"network":["https://xquik.com/api/v1 through the plugin runtime","https://docs.xquik.com for documentation retrieval"],"environment":["XQUIK_API_KEY","tempoSigningKey"],"shell":["OpenClaw CLI setup and inspection commands only"],"filesystem":["No runtime filesystem access; user-selected media files may be uploaded through reviewed endpoints"],"mcp":["none"]}
 metadata:
-  openclaw: {"emoji":"🐦","tags":["twitter","x","xquik","automation","social-media","tweets","tweet-scraper","scraping","search-tweets","search-replies","post-tweets","twitter-api","x-api","follower-export","user-lookup","media-upload","media-download","direct-messages","monitoring","webhooks","giveaway","openclaw-plugin","agent-tools","rest-api","pay-per-use","clawhub","context7"],"primaryEnv":"XQUIK_API_KEY","envVars":[{"name":"XQUIK_API_KEY","required":false,"description":"Optional Xquik API key for account-backed TweetClaw workflows. Prefer storing it in OpenClaw plugin config rather than exposing it to the agent session."},{"name":"MPP_SIGNING_KEY","required":false,"description":"Optional Machine Payments Protocol signing key for read-only pay-per-use mode. Store as sensitive OpenClaw plugin config and never print it."}]}
+  openclaw: {"emoji":"🐦","tags":["twitter","x","xquik","automation","social-media","tweets","tweet-scraper","scraping","search-tweets","search-replies","post-tweets","twitter-api","x-api","follower-export","user-lookup","media-upload","media-download","direct-messages","monitoring","webhooks","giveaway","openclaw-plugin","agent-tools","rest-api","pay-per-use","clawhub","context7"],"primaryEnv":"XQUIK_API_KEY","envVars":[{"name":"XQUIK_API_KEY","required":false,"description":"Optional Xquik API key for account-backed TweetClaw workflows. Prefer storing it in OpenClaw plugin config rather than exposing it to the agent session."},{"name":"tempoSigningKey","required":false,"description":"Optional read-only MPP payment-proof signing key. Store only as sensitive OpenClaw plugin config and never expose it to the agent."}]}
 license: MIT-0
 ---
 
@@ -64,7 +64,7 @@ so lifecycle timings go to stderr while JSON stays parseable.
 | License | Skill instructions: MIT-0. Package code: MIT. |
 | Use case | User-authorized X/Twitter reads, writes, extractions, media, monitors, webhooks, draws, trends, and account-scoped workflows through OpenClaw. |
 | Deployment geography | Global, subject to the user's account, Xquik plan, local law, platform rules, and organization policy. |
-| Runtime capabilities | Optional OpenClaw tools `explore` and `tweetclaw`; network only to the configured HTTPS Xquik-compatible API origin; sensitive config in `XQUIK_API_KEY` or `MPP_SIGNING_KEY`; no shell, filesystem, browser, local network, or MCP access from the plugin runtime. |
+| Runtime capabilities | Optional OpenClaw tools `explore` and `tweetclaw`; network only to the configured HTTPS Xquik-compatible API origin; sensitive config in `XQUIK_API_KEY` or `tempoSigningKey`; no shell, filesystem, browser, local network, or MCP access from the plugin runtime. |
 | Output | Markdown guidance, OpenClaw CLI commands, endpoint descriptors, or structured JSON responses returned by Xquik API endpoints. |
 | Main risks | Public account changes, private data exposure, paid usage, recurring monitors, prompt injection from X content, and credential leakage. |
 | Main mitigations | Explicit per-action confirmation, spending limits, blocked credential and billing endpoints, catalog-restricted invocation, one known API origin, untrusted-content handling, and dashboard auditability. |
@@ -392,7 +392,7 @@ Before broadly sharing a new skill release or claiming verified status:
 
 1. Confirm `SKILL.md` still has a narrow purpose, clear activation contexts, declared capabilities, owner, license, output shape, risks, and mitigations.
 2. Run `npm run check-skill-frontmatter`, `npm run check-openclaw-platform-fitness`, `npm run check-package-artifact`, and `npm run check:all`.
-3. Scan the complete skill directory with SkillSpector when available, for example `skillspector scan skills/tweetclaw --format markdown --output skillspector-report.md`.
+3. Scan the complete skill directory with the reviewed SkillSpector release recorded in `skillspector-report.md`.
 4. Resolve critical and high findings, or record formal acceptance before release.
 5. Keep `skill-card.md`, `skillspector-report.md`, `evals/evals.json`, and `BENCHMARK.md` tied to the exact package version.
 6. Sign the exact reviewed skill directory with a detached `skill.oms.sig` before publishing a signed skill artifact, and verify the signature before announcing availability.

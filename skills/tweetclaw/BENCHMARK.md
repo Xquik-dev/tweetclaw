@@ -40,7 +40,8 @@ Validation commands:
 npm run check-skill-frontmatter
 npm run check-openclaw-platform-fitness
 npm run check-package-artifact
-uvx --from git+https://github.com/NVIDIA/SkillSpector.git skillspector scan skills/tweetclaw --no-llm
 ```
+
+External SkillSpector validation uses reviewed commit `11567e8d1d5140722225fcaeb3c0f637c21ec40d` from NVIDIA's official repository in an isolated environment. Never execute mutable repository HEAD.
 
 Signature status: unsigned source release. Add and verify `skill.oms.sig` before claiming a signed or NVIDIA-verified release.

@@ -76,6 +76,18 @@ describe('catalog matching', () => {
 });
 
 describe('specEndpoints', () => {
+  it('embeds one-time approval guidance in all 18 X write definitions', () => {
+    expect.assertions(2);
+    const writeEndpoints = exploreCatalog({ category: 'x-write', limit: 100 });
+    expect(writeEndpoints).toHaveLength(18);
+    expect(
+      writeEndpoints.every((endpoint) =>
+        endpoint.summary.includes(
+          'Requires one-time user approval after showing the exact target and payload.',
+        )),
+    ).toBe(true);
+  });
+
   it('excludes agent-prohibited endpoints', () => {
     expect.assertions(8);
     const paths = specEndpoints.map((endpoint) => `${endpoint.method} ${endpoint.path}`);

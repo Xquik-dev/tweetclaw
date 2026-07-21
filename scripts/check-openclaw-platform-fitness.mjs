@@ -135,6 +135,11 @@ for (const key of ["apiKey", "tempoSigningKey", "baseUrl", "pollingInterval", "p
 }
 assertEqual("openclaw.plugin.json uiHints.apiKey.sensitive", uiHints.apiKey?.sensitive, true);
 assertEqual("openclaw.plugin.json uiHints.tempoSigningKey.sensitive", uiHints.tempoSigningKey?.sensitive, true);
+assertEqual(
+  "openclaw.plugin.json configSchema.properties.tempoSigningKey.pattern",
+  configProperties.tempoSigningKey?.pattern,
+  "^0x[0-9a-fA-F]{64}$",
+);
 assertEqual("openclaw.plugin.json configSchema.properties.baseUrl.pattern", configProperties.baseUrl?.pattern, "^https://");
 assertEqual("openclaw.plugin.json configSchema.properties.pollingInterval.minimum", configProperties.pollingInterval?.minimum, 5);
 
