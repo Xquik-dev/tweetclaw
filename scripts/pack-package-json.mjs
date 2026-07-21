@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { mkdirSync, readFileSync, rmSync, writeFileSync, existsSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,23 +25,38 @@ function buildPackedPackageJson(packageJson) {
   return packedPackageJson;
 }
 
-function preparePackedPackageJson() {
-  if (existsSync(backupPath)) {
-    throw new Error(`Refusing to overwrite existing package.json backup: ${backupPath}`);
-  }
+function hasErrorCode(error, code) {
+  return error instanceof Error && "code" in error && error.code === code;
+}
 
+function preparePackedPackageJson() {
   mkdirSync(tempDir, { recursive: true });
   const packageJson = readPackageJson();
-  writeFileSync(backupPath, `${JSON.stringify(packageJson, null, 2)}\n`);
+  try {
+    writeFileSync(backupPath, `${JSON.stringify(packageJson, null, 2)}\n`, {
+      encoding: "utf8",
+      flag: "wx",
+    });
+  } catch (error) {
+    if (hasErrorCode(error, "EEXIST")) {
+      throw new Error(`Refusing to overwrite existing package.json backup: ${backupPath}`, { cause: error });
+    }
+    throw error;
+  }
   writePackageJson(buildPackedPackageJson(packageJson));
 }
 
 function restorePackedPackageJson() {
-  if (!existsSync(backupPath)) {
-    return;
+  let backupPackageJson;
+  try {
+    backupPackageJson = JSON.parse(readFileSync(backupPath, "utf8"));
+  } catch (error) {
+    if (hasErrorCode(error, "ENOENT")) {
+      return;
+    }
+    throw error;
   }
 
-  const backupPackageJson = JSON.parse(readFileSync(backupPath, "utf8"));
   writePackageJson(backupPackageJson);
   rmSync(backupPath);
 }
