@@ -40,7 +40,7 @@ Keep API keys out of chat, docs, logs, screenshots, issue bodies, and tool argum
 Use MPP mode for accountless payments on 7 direct read routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info.
 
 ```bash
-npm i mppx viem
+npm i mppx@0.8.12 viem@2.55.4
 openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
 ```
 

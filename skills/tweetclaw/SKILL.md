@@ -101,7 +101,7 @@ Use the [Xquik billing guide](https://docs.xquik.com/guides/billing) for current
 ### Pay-Per-Use (No Subscription)
 
 - **Credits**: API keys can spend prepaid credits across 33 public paid-read routes without a subscription.
-- **MPP**: 7 direct read routes accept accountless payments. SDK: `npm i mppx viem`.
+- **MPP**: 7 direct read routes accept accountless payments. SDK: `npm i mppx@0.8.12 viem@2.55.4`.
 
 The `mpp.price` value returned by `explore` is authoritative for a direct MPP call. Show it before requesting approval.
 
@@ -156,7 +156,7 @@ Requires an Xquik API key from [dashboard.xquik.com](https://dashboard.xquik.com
 Machine Payments Protocol (MPP) is an optional mode for accountless access to 7 direct read routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info. The `tempoSigningKey` is a 66-character hex key that signs payment proofs through the `mppx` SDK after an HTTP 402 challenge. The signing key stays in plugin config, grants no account access, and is not an API credential. Other paid reads and media downloads require account-backed access. Leave this field unset when you don't use MPP.
 
 ```bash
-npm i mppx viem
+npm i mppx@0.8.12 viem@2.55.4
 ```
 
 Configure the signing key in your OpenClaw plugin config:

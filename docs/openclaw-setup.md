@@ -138,7 +138,7 @@ openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
 MPP mode:
 
 ```bash
-npm i mppx viem
+npm i mppx@0.8.12 viem@2.55.4
 openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
 ```
 

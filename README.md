@@ -100,7 +100,7 @@ Top up credits from the Xquik dashboard. An API key can spend prepaid credits ac
 Machine Payments Protocol (MPP) lets agents pay 7 direct read routes without an account, API key, or subscription. Create an MPP account with `mppx account create`. The signing key stays local and signs payment proofs only.
 
 ```bash
-npm i mppx viem
+npm i mppx@0.8.12 viem@2.55.4
 openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
 ```
 

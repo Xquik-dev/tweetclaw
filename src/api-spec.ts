@@ -1101,21 +1101,8 @@ const API_SPEC: readonly EndpointInfo[] = [
     responseShape: '{ accounts: [{ id, xUserId, xUsername, status, createdAt }] }',
     summary: 'List connected X accounts',
   },
-  {
-    agentProhibited: true,
-    category: CATEGORY_X_ACCOUNTS,
-    free: true,
-    method: 'POST',
-    parameters: [
-      { description: 'X username', in: 'body', name: 'username', required: true, type: 'string' },
-      { description: 'Account email', in: 'body', name: 'email', required: true, type: 'string' },
-      { description: 'Account password', in: 'body', name: 'password', required: true, type: 'string' },
-      { description: 'TOTP secret for 2FA', in: 'body', name: 'totp_secret', required: false, type: 'string' },
-    ],
-    path: '/api/v1/x/accounts',
-    responseShape: '{ id, xUserId, xUsername, status }',
-    summary: 'Connect X account (dashboard only - agent-prohibited)',
-  },
+  // Credential-taking account setup is intentionally absent from this
+  // agent-facing specification. Users must complete it in the dashboard.
   {
     agentProhibited: true,
     category: CATEGORY_X_ACCOUNTS,
@@ -1135,20 +1122,6 @@ const API_SPEC: readonly EndpointInfo[] = [
     path: '/api/v1/x/accounts/:id',
     responseShape: RESPONSE_SUCCESS,
     summary: 'Disconnect X account',
-  },
-  {
-    agentProhibited: true,
-    category: CATEGORY_X_ACCOUNTS,
-    free: true,
-    method: 'POST',
-    parameters: [
-      PARAM_X_ACCOUNT_ID,
-      { description: 'Account password', in: 'body', name: 'password', required: true, type: 'string' },
-      { description: 'TOTP secret for 2FA', in: 'body', name: 'totp_secret', required: false, type: 'string' },
-    ],
-    path: '/api/v1/x/accounts/:id/reauth',
-    responseShape: '{ id, xUsername, status }',
-    summary: 'Re-authenticate X account (dashboard only - agent-prohibited)',
   },
   {
     agentProhibited: true,
