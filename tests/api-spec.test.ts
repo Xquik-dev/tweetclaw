@@ -35,9 +35,9 @@ describe('API_SPEC', () => {
     expect(allValid).toBe(true);
   });
 
-  it('matches the canonical Xquik endpoint count', () => {
+  it('matches the agent-facing endpoint count', () => {
     expect.assertions(1);
-    expect(API_SPEC).toHaveLength(118);
+    expect(API_SPEC).toHaveLength(116);
   });
 
   it('matches the canonical trends, credits, monitor, and X read catalog', () => {
@@ -103,5 +103,21 @@ describe('API_SPEC', () => {
         !['body', 'path', 'query'].includes(p.in),
     );
     expect(invalid).toStrictEqual([]);
+  });
+
+  it('omits credential-taking account workflows', () => {
+    expect.assertions(4);
+    const endpointKeys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
+    const parameterNames: string[] = [];
+    for (const endpoint of API_SPEC) {
+      for (const parameter of endpoint.parameters ?? []) {
+        parameterNames.push(parameter.name);
+      }
+    }
+
+    expect(endpointKeys).not.toContain('POST /api/v1/x/accounts');
+    expect(endpointKeys).not.toContain('POST /api/v1/x/accounts/:id/reauth');
+    expect(parameterNames).not.toContain('password');
+    expect(parameterNames).not.toContain('totp_secret');
   });
 });

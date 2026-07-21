@@ -23,10 +23,10 @@ function createModuleLoader(): ModuleLoader {
 async function initMpp(tempoSigningKey: string, loadModule?: ModuleLoader): Promise<void> {
   const load = loadModule ?? createModuleLoader();
   const mppxMod = await load('mppx/client').catch((): never => {
-    throw new Error('MPP requires mppx package. Run: npm i mppx viem');
+    throw new Error('MPP requires mppx package. Run: npm i mppx@0.8.12 viem@2.55.4');
   });
   const viemMod = await load('viem/accounts').catch((): never => {
-    throw new Error('MPP requires viem package. Run: npm i mppx viem');
+    throw new Error('MPP requires viem package. Run: npm i mppx@0.8.12 viem@2.55.4');
   });
   if (!isCallable(viemMod['privateKeyToAccount'])) throw new Error('viem missing privateKeyToAccount');
   if (!isCallable(mppxMod['tempo'])) throw new Error('mppx missing tempo');
