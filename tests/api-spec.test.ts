@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { API_SPEC } from '../src/api-spec.js';
 
+function hasRequiredIdempotencyKey(endpoint: (typeof API_SPEC)[number]): boolean {
+  return endpoint.parameters?.some(
+    (parameter) =>
+      parameter.in === 'header'
+      && parameter.name === 'Idempotency-Key'
+      && parameter.required,
+  ) ?? false;
+}
+
 describe('API_SPEC', () => {
   it('has no duplicate method+path combinations', () => {
     expect.assertions(1);
@@ -36,12 +45,13 @@ describe('API_SPEC', () => {
   });
 
   it('matches the agent-facing endpoint count', () => {
-    expect.assertions(1);
-    expect(API_SPEC).toHaveLength(116);
+    expect.assertions(2);
+    expect(API_SPEC).toHaveLength(119);
+    expect(API_SPEC.filter((endpoint) => endpoint.agentProhibited !== true)).toHaveLength(102);
   });
 
   it('matches the canonical trends, credits, monitor, and X read catalog', () => {
-    expect.assertions(12);
+    expect.assertions(15);
     const keys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
     const categories = new Set(API_SPEC.map((endpoint) => endpoint.category));
     const removedTrendingRoutePath = 'trending/:source';
@@ -55,6 +65,9 @@ describe('API_SPEC', () => {
     expect(keys).toContain('GET /api/v1/x/timeline');
     expect(keys).toContain('GET /api/v1/x/dm/:userId/history');
     expect(keys).toContain('GET /api/v1/x/users/:id/verified-followers');
+    expect(keys).toContain('GET /api/v1/x/users/:id/replies');
+    expect(keys).toContain('GET /api/v1/x/write-actions/:id');
+    expect(keys).toContain('POST /api/v1/webhooks/:id/resume');
     expect(keys).not.toContain(`GET /api/v1/${removedTrendingRoutePath}`);
     expect(categories).not.toContain('trends');
     expect(categories.size).toBe(10);
@@ -75,8 +88,8 @@ describe('API_SPEC', () => {
         'GET /api/v1/x/communities/:id/info',
         'GET /api/v1/x/followers/check',
         'GET /api/v1/x/trends',
-        'GET /api/v1/x/tweets/:tweetId',
-        'GET /api/v1/x/users/:username',
+        'GET /api/v1/x/tweets/:id',
+        'GET /api/v1/x/users/:id',
       ].sort(),
     );
     expect(mppEntries.every(([, mpp]) => mpp?.intent === 'charge')).toBe(true);
@@ -100,9 +113,20 @@ describe('API_SPEC', () => {
         typeof p.description !== 'string' ||
         typeof p.required !== 'boolean' ||
         typeof p.type !== 'string' ||
-        !['body', 'path', 'query'].includes(p.in),
+        !['body', 'header', 'path', 'query'].includes(p.in),
     );
     expect(invalid).toStrictEqual([]);
+  });
+
+  it('documents required idempotency keys for every X write', () => {
+    expect.assertions(1);
+    const writes = API_SPEC.filter(
+      (endpoint) => endpoint.category === 'x-write' && endpoint.method !== 'GET',
+    );
+    const missing = writes.filter(
+      (endpoint) => !hasRequiredIdempotencyKey(endpoint),
+    );
+    expect(missing).toStrictEqual([]);
   });
 
   it('omits credential-taking account workflows', () => {

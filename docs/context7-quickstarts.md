@@ -9,7 +9,7 @@ Xquik is an independent third-party service. Not affiliated with X Corp. "Twitte
 Install the canonical OpenClaw package:
 
 ```bash
-openclaw plugins install @xquik/tweetclaw
+openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
 Verify the plugin runtime and packaged skill:
@@ -85,11 +85,9 @@ Find a user:
 
 ```json
 {
-  "path": "/api/v1/x/users/by-username/:username",
+  "path": "/api/v1/x/users/xquik",
   "method": "GET",
-  "query": {
-    "username": "xquik"
-  }
+  "query": {}
 }
 ```
 
@@ -117,6 +115,7 @@ After approval, call the catalog-listed write endpoint:
 {
   "path": "/api/v1/x/tweets",
   "method": "POST",
+  "idempotencyKey": "post-2026-07-22-001",
   "body": {
     "account": "@myaccount",
     "text": "Hello from TweetClaw."
@@ -152,7 +151,7 @@ Media download requires account-backed authenticated access and is not MPP-eligi
 
 ## Troubleshooting
 
-If install fails, use the published package and verify OpenClaw is at least `2026.5.4`.
+If install fails, use the published package. Require OpenClaw `2026.7.1` or newer.
 
 If live calls return setup guidance, configure either `apiKey` or `tempoSigningKey`.
 

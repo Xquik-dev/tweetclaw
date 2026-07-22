@@ -19,7 +19,7 @@ describe('catalog matching', () => {
 
   it('finds endpoints by method and concrete path', () => {
     expect.assertions(1);
-    expect(findEndpoint('GET', '/api/v1/x/tweets/123')?.path).toBe('/api/v1/x/tweets/:tweetId');
+    expect(findEndpoint('GET', '/api/v1/x/tweets/123')?.path).toBe('/api/v1/x/tweets/:id');
   });
 
   it('filters endpoints by structured fields', () => {
@@ -64,14 +64,35 @@ describe('catalog matching', () => {
     expect(request.query).toStrictEqual({ limit: '5', q: 'ai', verified: 'true' });
   });
 
+  it('requires valid idempotency keys for X writes', () => {
+    expect.assertions(4);
+    const request = {
+      body: { account: '@xquik', text: 'Hello.' },
+      method: 'POST',
+      path: '/api/v1/x/tweets',
+    } as const;
+
+    expect(() => resolveCatalogRequest(request)).toThrow('idempotencyKey');
+    expect(() => resolveCatalogRequest({ ...request, idempotencyKey: 'bad key' })).toThrow(
+      'idempotencyKey',
+    );
+    expect(() => resolveCatalogRequest({ ...request, idempotencyKey: 'x'.repeat(256) })).toThrow(
+      'idempotencyKey',
+    );
+    expect(resolveCatalogRequest({ ...request, idempotencyKey: 'post-001' }).idempotencyKey)
+      .toBe('post-001');
+  });
+
   it('flags write and private read requests for approval', () => {
-    expect.assertions(6);
+    expect.assertions(8);
     expect(requestNeedsApproval('POST', '/api/v1/x/tweets')).toBe(true);
     expect(requestNeedsApproval('GET', '/api/v1/events')).toBe(true);
     expect(requestNeedsApproval('GET', '/api/v1/x/accounts')).toBe(true);
     expect(requestNeedsApproval('GET', '/api/v1/x/bookmarks')).toBe(true);
     expect(requestNeedsApproval('GET', '/api/v1/x/dm/123/history')).toBe(true);
-    expect(requestNeedsApproval('GET', '/api/v1/x/tweets/123')).toBe(false);
+    expect(requestNeedsApproval('GET', '/api/v1/x/tweets/123')).toBe(true);
+    expect(requestNeedsApproval('GET', '/api/v1/account')).toBe(true);
+    expect(requestNeedsApproval('GET', '/api/v1/radar')).toBe(false);
   });
 });
 

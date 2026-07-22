@@ -28,6 +28,8 @@ Ask for explicit approval before:
 
 For visible writes, show the account, target, final text, media list, and action before approval. Do not add links, hashtags, mentions, claims, or media the user did not request.
 
+Generate one `idempotencyKey` per intended X write. Reuse it only for an identical retry.
+
 For paid work, state the endpoint, scope, limit, and current charge before approval.
 
 OpenClaw's `tweetclaw` tool is optional, so users must opt into live endpoint
@@ -94,6 +96,7 @@ Use this pattern for writes only after explicit approval:
 {
   "path": "/api/v1/x/tweets",
   "method": "POST",
+  "idempotencyKey": "post-2026-07-22-001",
   "body": {
     "account": "@myaccount",
     "text": "Hello from TweetClaw."
@@ -124,7 +127,7 @@ Then call only an endpoint that returned an `mpp` field:
 
 ```json
 {
-  "path": "/api/v1/x/users/:username",
+  "path": "/api/v1/x/users/xquik",
   "method": "GET",
   "query": {}
 }

@@ -4,6 +4,31 @@ import type { EndpointInfo, ExploreParams, TweetclawParams } from '../types.js';
 const API_V1_PREFIX = '/api/v1/';
 const DEFAULT_EXPLORE_LIMIT = 25;
 const MAX_EXPLORE_LIMIT = 100;
+const MAX_IDEMPOTENCY_KEY_LENGTH = 255;
+const VISIBLE_ASCII_FIRST = '!';
+const VISIBLE_ASCII_LAST = '~';
+
+const PRIVATE_GET_PATHS = new Set([
+  '/api/v1/account',
+  '/api/v1/credits',
+  '/api/v1/x/accounts',
+]);
+
+const PRIVATE_GET_PREFIXES = [
+  '/api/v1/drafts',
+  '/api/v1/draws',
+  '/api/v1/events',
+  '/api/v1/extractions',
+  '/api/v1/monitors',
+  '/api/v1/styles',
+  '/api/v1/webhooks',
+  '/api/v1/x/accounts/',
+  '/api/v1/x/bookmarks',
+  '/api/v1/x/dm/',
+  '/api/v1/x/notifications',
+  '/api/v1/x/timeline',
+  '/api/v1/x/write-actions/',
+];
 
 const specEndpoints: readonly EndpointInfo[] = API_SPEC.filter((endpoint) => endpoint.agentProhibited !== true);
 
@@ -55,19 +80,42 @@ function normalizeQuery(query?: Readonly<Record<string, boolean | number | strin
   return Object.fromEntries(Object.entries(query).map(([key, value]) => [key, String(value)]));
 }
 
+function isVisibleAscii(value: string): boolean {
+  for (const character of value) {
+    if (character < VISIBLE_ASCII_FIRST || character > VISIBLE_ASCII_LAST) return false;
+  }
+  return true;
+}
+
+function validateWriteIdempotencyKey(
+  endpoint: Readonly<EndpointInfo>,
+  idempotencyKey: string | undefined,
+): void {
+  if (endpoint.category !== 'x-write') return;
+  if (
+    idempotencyKey === undefined
+    || idempotencyKey.length === 0
+    || idempotencyKey.length > MAX_IDEMPOTENCY_KEY_LENGTH
+    || !isVisibleAscii(idempotencyKey)
+  ) {
+    throw new Error(
+      'X writes require a unique 1-255 character idempotencyKey. Reuse it only for the exact same retry.',
+    );
+  }
+}
+
 function requestNeedsApproval(method: string, path: string): boolean {
   if (method !== 'GET') {
     return true;
   }
 
-  return path.startsWith('/api/v1/events')
-    || path.startsWith('/api/v1/webhooks')
-    || path === '/api/v1/x/accounts'
-    || path.startsWith('/api/v1/x/accounts/')
-    || path.startsWith('/api/v1/x/bookmarks')
-    || path.startsWith('/api/v1/x/dm/')
-    || path.startsWith('/api/v1/x/notifications')
-    || path.startsWith('/api/v1/x/timeline');
+  const endpoint = findEndpoint(method, path);
+  if (endpoint?.free === false || endpoint?.sensitive === true) {
+    return true;
+  }
+
+  return PRIVATE_GET_PATHS.has(path)
+    || PRIVATE_GET_PREFIXES.some((prefix) => path.startsWith(prefix));
 }
 
 function resolveCatalogRequest(
@@ -76,12 +124,13 @@ function resolveCatalogRequest(
 ): {
   readonly body?: unknown;
   readonly endpoint: EndpointInfo;
+  readonly idempotencyKey?: string;
   readonly method: string;
   readonly path: string;
   readonly query?: Readonly<Record<string, string>>;
 } {
   const method = normalizeMethod(params.method);
-  const { body, path } = params;
+  const { body, idempotencyKey, path } = params;
   assertSafePath(path);
   const endpoint = findEndpoint(method, path);
   if (endpoint === undefined) {
@@ -90,12 +139,17 @@ function resolveCatalogRequest(
   if (options?.mppMode === true && endpoint.mpp === undefined) {
     throw new Error(`Endpoint is not available in MPP mode: ${method} ${endpoint.path}`);
   }
+  validateWriteIdempotencyKey(endpoint, idempotencyKey);
 
   const query = normalizeQuery(params.query);
-  if (query === undefined) {
-    return { body, endpoint, method, path };
-  }
-  return { body, endpoint, method, path, query };
+  return {
+    body,
+    endpoint,
+    ...(idempotencyKey === undefined ? {} : { idempotencyKey }),
+    method,
+    path,
+    ...(query === undefined ? {} : { query }),
+  };
 }
 
 function endpointMatchesQuery(endpoint: EndpointInfo, query: string): boolean {

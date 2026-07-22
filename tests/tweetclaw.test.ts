@@ -140,11 +140,16 @@ describe('handleTweetclaw', () => {
   });
 
   it('handles POST with body', async () => {
-    expect.assertions(1);
+    expect.assertions(2);
     const mockFetch: typeof fetch = async (_input, init) => {
       const body = JSON.parse(init?.body as string) as Record<string, unknown>;
       expect(body).toStrictEqual({ account: '@test', text: 'hello' });
-      return new Response(JSON.stringify({ tweetId: '123', success: true }));
+      expect(init?.headers).toStrictEqual({
+        'Idempotency-Key': 'post-001',
+        'content-type': 'application/json',
+        'x-api-key': 'xq_test',
+      });
+      return new Response(JSON.stringify({ id: '123', status: 'success', terminal: true }));
     };
     await handleTweetclaw({
       baseUrl: 'https://xquik.com',
@@ -152,6 +157,7 @@ describe('handleTweetclaw', () => {
       fetchFunction: mockFetch,
       params: {
         body: { account: '@test', text: 'hello' },
+        idempotencyKey: 'post-001',
         method: 'POST',
         path: '/api/v1/x/tweets',
       },
