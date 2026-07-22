@@ -134,6 +134,7 @@
     "vitest": "^4.1.8"
   },
   "overrides": {
+    "@hono/node-server": "2.0.11",
     "ip-address": "10.2.0",
     "vite": ">=7.3.2",
     "postcss": ">=8.5.10"
