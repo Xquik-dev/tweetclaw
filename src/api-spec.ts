@@ -2,16 +2,16 @@ import type { EndpointInfo, EndpointParameter } from './types.js';
 
 const RESPONSE_SUCCESS = '{ success: true }';
 const DESCRIPTION_PAGINATION_CURSOR = 'Pagination cursor';
-const DESCRIPTION_STYLE_USERNAME = 'X username of cached style';
 const DESCRIPTION_EXPORT_FORMAT = 'Export format (csv, json, md, md-document, pdf, txt, xlsx)';
 const CATEGORY_X_ACCOUNTS = 'x-accounts';
 const MPP_PRICE_CALL = '$0.00015/call';
 const MPP_PRICE_FOLLOW_CHECK = '$0.00075/call';
 const MPP_PRICE_TREND = '$0.00045/call';
+const TWEET_FILTER_PARAMETER_COUNT = 25;
 
 const PAGINATION_PARAMS: readonly EndpointParameter[] = [
   { description: 'Max items per page', in: 'query', name: 'limit', required: false, type: 'number' },
-  { description: DESCRIPTION_PAGINATION_CURSOR, in: 'query', name: 'after', required: false, type: 'string' },
+  { description: DESCRIPTION_PAGINATION_CURSOR, in: 'query', name: 'cursor', required: false, type: 'string' },
 ];
 
 const EXTRACTION_SEARCH_PARAMS: readonly EndpointParameter[] = [
@@ -21,17 +21,47 @@ const EXTRACTION_SEARCH_PARAMS: readonly EndpointParameter[] = [
   { description: 'Language code filter, e.g. en, tr (tweet_search_extractor)', in: 'body', name: 'language', required: false, type: 'string' },
   { description: 'Start date YYYY-MM-DD (tweet_search_extractor)', in: 'body', name: 'sinceDate', required: false, type: 'string' },
   { description: 'End date YYYY-MM-DD (tweet_search_extractor)', in: 'body', name: 'untilDate', required: false, type: 'string' },
-  { description: 'Filter by media type: images, videos, gifs, media (tweet_search_extractor)', in: 'body', name: 'mediaType', required: false, type: 'string' },
+  { description: 'Filter by media type: images, videos, gifs, media, links, or none (tweet_search_extractor)', in: 'body', name: 'mediaType', required: false, type: 'string' },
   { description: 'Minimum likes threshold (tweet_search_extractor)', in: 'body', name: 'minFaves', required: false, type: 'number' },
   { description: 'Minimum retweets threshold (tweet_search_extractor)', in: 'body', name: 'minRetweets', required: false, type: 'number' },
   { description: 'Minimum replies threshold (tweet_search_extractor)', in: 'body', name: 'minReplies', required: false, type: 'number' },
+  { description: 'Minimum quotes threshold (tweet_search_extractor)', in: 'body', name: 'minQuotes', required: false, type: 'number' },
   { description: 'Only verified authors (tweet_search_extractor)', in: 'body', name: 'verifiedOnly', required: false, type: 'boolean' },
   { description: 'Control reply inclusion (tweet_search_extractor): include, exclude, only', in: 'body', name: 'replies', required: false, type: 'string' },
   { description: 'Control retweet inclusion (tweet_search_extractor): include, exclude, only', in: 'body', name: 'retweets', required: false, type: 'string' },
+  { description: 'Control quote inclusion (tweet_search_extractor): include, exclude, only', in: 'body', name: 'quotes', required: false, type: 'string' },
   { description: 'Exact phrase match (tweet_search_extractor)', in: 'body', name: 'exactPhrase', required: false, type: 'string' },
-  { description: 'Comma-separated words to exclude (tweet_search_extractor)', in: 'body', name: 'excludeWords', required: false, type: 'string' },
+  { description: 'Words or phrases to exclude (tweet_search_extractor)', in: 'body', name: 'excludeWords', required: false, type: 'string' },
+  { description: 'Words or phrases where any can match (tweet_search_extractor)', in: 'body', name: 'anyWords', required: false, type: 'string' },
+  { description: 'Hashtags to match (tweet_search_extractor)', in: 'body', name: 'hashtags', required: false, type: 'string' },
+  { description: 'Cashtags to match (tweet_search_extractor)', in: 'body', name: 'cashtags', required: false, type: 'string' },
+  { description: 'URL substring or domain (tweet_search_extractor)', in: 'body', name: 'url', required: false, type: 'string' },
+  { description: 'Conversation ID (tweet_search_extractor)', in: 'body', name: 'conversationId', required: false, type: 'string' },
+  { description: 'Parent tweet ID (tweet_search_extractor)', in: 'body', name: 'inReplyToTweetId', required: false, type: 'string' },
+  { description: 'Quoted tweet ID (tweet_search_extractor)', in: 'body', name: 'quotesOfTweetId', required: false, type: 'string' },
+  { description: 'Retweeted tweet ID (tweet_search_extractor)', in: 'body', name: 'retweetsOfTweetId', required: false, type: 'string' },
+  { description: 'List ID (tweet_search_extractor)', in: 'body', name: 'listId', required: false, type: 'string' },
+  { description: 'Place ID (tweet_search_extractor)', in: 'body', name: 'place', required: false, type: 'string' },
+  { description: 'Country code (tweet_search_extractor)', in: 'body', name: 'placeCountry', required: false, type: 'string' },
+  { description: 'Geo point and radius (tweet_search_extractor)', in: 'body', name: 'pointRadius', required: false, type: 'string' },
+  { description: 'Geo bounding box (tweet_search_extractor)', in: 'body', name: 'boundingBox', required: false, type: 'string' },
   { description: 'Raw X search operators (tweet_search_extractor)', in: 'body', name: 'advancedQuery', required: false, type: 'string' },
 ];
+
+function asQueryParameters(
+  parameters: readonly EndpointParameter[],
+): readonly EndpointParameter[] {
+  return parameters.map((parameter) => ({
+    ...parameter,
+    description: parameter.description.replace(' (tweet_search_extractor)', ''),
+    in: 'query',
+  }));
+}
+
+const TWEET_FILTER_QUERY_PARAMS = asQueryParameters(
+  EXTRACTION_SEARCH_PARAMS.slice(0, TWEET_FILTER_PARAMETER_COUNT),
+);
+const TWEET_SEARCH_QUERY_PARAMS = asQueryParameters(EXTRACTION_SEARCH_PARAMS);
 
 const EXTRACTION_TARGET_PARAMS: readonly EndpointParameter[] = [
   { description: 'Target X username', in: 'body', name: 'targetUsername', required: false, type: 'string' },
@@ -49,11 +79,11 @@ const TREND_PARAMS: readonly EndpointParameter[] = [
   { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
 ];
 
-const PARAM_STYLE_USERNAME: EndpointParameter =
-  { description: DESCRIPTION_STYLE_USERNAME, in: 'path', name: 'username', required: true, type: 'string' };
+const PARAM_STYLE_ID: EndpointParameter =
+  { description: 'Style profile ID or X username', in: 'path', name: 'id', required: true, type: 'string' };
 
 const PARAM_EXPORT_FORMAT: EndpointParameter =
-  { description: DESCRIPTION_EXPORT_FORMAT, in: 'query', name: 'format', required: false, type: 'string' };
+  { description: DESCRIPTION_EXPORT_FORMAT, in: 'query', name: 'format', required: true, type: 'string' };
 
 const PARAM_DRAW_ID: EndpointParameter =
   { description: 'Draw public ID', in: 'path', name: 'id', required: true, type: 'string' };
@@ -67,13 +97,23 @@ const PARAM_X_ACCOUNT: EndpointParameter =
 const PARAM_X_ACCOUNT_ID: EndpointParameter =
   { description: 'X account ID', in: 'path', name: 'id', required: true, type: 'string' };
 
-const DESCRIPTION_EVENT_TYPES = 'tweet.new, tweet.reply, tweet.quote, tweet.retweet';
+const TWEET_EVENT_TYPES =
+  'tweet.new, tweet.reply, tweet.retweet, tweet.quote, tweet.media, tweet.link, tweet.poll, tweet.mention, tweet.hashtag, tweet.longform';
+const PROFILE_EVENT_TYPES =
+  'profile.avatar.changed, profile.banner.changed, profile.name.changed, profile.username.changed, profile.bio.changed, profile.location.changed, profile.url.changed, profile.verified.changed, profile.protected.changed, profile.pinned_tweet.changed, profile.unavailable.changed';
+const ALL_EVENT_TYPES = `${TWEET_EVENT_TYPES}, ${PROFILE_EVENT_TYPES}`;
 
 const PARAM_EVENT_TYPES_REQUIRED: EndpointParameter =
-  { description: `Event types: ${DESCRIPTION_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: true, type: 'string[]' };
+  { description: `Event types: ${ALL_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: true, type: 'string[]' };
 
 const PARAM_EVENT_TYPES_OPTIONAL: EndpointParameter =
-  { description: `Updated event types: ${DESCRIPTION_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: false, type: 'string[]' };
+  { description: `Updated event types: ${ALL_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: false, type: 'string[]' };
+
+const PARAM_TWEET_EVENT_TYPES_REQUIRED: EndpointParameter =
+  { description: `Tweet event types: ${TWEET_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: true, type: 'string[]' };
+
+const PARAM_TWEET_EVENT_TYPES_OPTIONAL: EndpointParameter =
+  { description: `Updated tweet event types: ${TWEET_EVENT_TYPES}`, in: 'body', name: 'eventTypes', required: false, type: 'string[]' };
 
 const PARAM_MONITOR_ID: EndpointParameter =
   { description: 'Monitor ID', in: 'path', name: 'id', required: true, type: 'string' };
@@ -87,8 +127,19 @@ const PARAM_TWEET_ID: EndpointParameter =
 const PARAM_COMMUNITY_ID: EndpointParameter =
   { description: 'Community ID', in: 'path', name: 'id', required: true, type: 'string' };
 
-const PARAMS_TWEET_ACTION: readonly EndpointParameter[] = [PARAM_TWEET_ID, PARAM_X_ACCOUNT];
-const PARAMS_COMMUNITY_ACTION: readonly EndpointParameter[] = [PARAM_COMMUNITY_ID, PARAM_X_ACCOUNT];
+const PARAM_WRITE_IDEMPOTENCY_KEY: EndpointParameter =
+  { description: 'Unique key for this write. Reuse only for an identical retry.', in: 'header', name: 'Idempotency-Key', required: true, type: 'string' };
+
+const PARAMS_TWEET_ACTION: readonly EndpointParameter[] = [
+  PARAM_WRITE_IDEMPOTENCY_KEY,
+  PARAM_TWEET_ID,
+  PARAM_X_ACCOUNT,
+];
+const PARAMS_COMMUNITY_ACTION: readonly EndpointParameter[] = [
+  PARAM_WRITE_IDEMPOTENCY_KEY,
+  PARAM_COMMUNITY_ID,
+  PARAM_X_ACCOUNT,
+];
 
 const PARAM_USER_ID_FOLLOW: EndpointParameter =
   { description: 'User ID to follow', in: 'path', name: 'id', required: true, type: 'string' };
@@ -100,7 +151,7 @@ const PARAM_USER_ID_REMOVE_FOLLOWER: EndpointParameter =
   { description: 'User ID to remove from your followers', in: 'path', name: 'id', required: true, type: 'string' };
 
 const PARAM_MEDIA_URL: EndpointParameter =
-  { description: 'URL to download media from (alternative to file, HTTPS only)', in: 'body', name: 'url', required: false, type: 'string' };
+  { description: 'Public HTTPS media URL', in: 'body', name: 'url', required: true, type: 'string' };
 
 const PARAM_KEYWORD_MONITOR_ID: EndpointParameter =
   { description: 'Keyword monitor ID', in: 'path', name: 'id', required: true, type: 'string' };
@@ -112,7 +163,7 @@ const PARAM_AFTER_ALIAS: EndpointParameter =
   { description: 'Legacy cursor alias. Prefer cursor.', in: 'query', name: 'after', required: false, type: 'string' };
 
 const PARAM_PAGE_SIZE_20: EndpointParameter =
-  { description: 'Upper bound for items per page (20-200, default 20)', in: 'query', name: 'pageSize', required: false, type: 'number' };
+  { description: 'Upper bound for items per page (1-100, default 20)', in: 'query', name: 'pageSize', required: false, type: 'number' };
 
 const PARAM_PAGE_SIZE_200: EndpointParameter =
   { description: 'Upper bound for items per page (20-200, default 200)', in: 'query', name: 'pageSize', required: false, type: 'number' };
@@ -125,6 +176,14 @@ const PARAM_QUERY_TYPE: EndpointParameter =
 
 const PARAM_SEARCH_QUERY: EndpointParameter =
   { description: 'Search query', in: 'query', name: 'q', required: true, type: 'string' };
+
+const COMMUNITY_SEARCH_PARAMS: readonly EndpointParameter[] = [
+  { description: 'Community ID', in: 'query', name: 'communityId', required: true, type: 'string' },
+  PARAM_SEARCH_QUERY,
+  PARAM_QUERY_TYPE,
+  PARAM_CURSOR,
+  PARAM_PAGE_SIZE_20,
+];
 
 const PARAM_SINCE_TIME: EndpointParameter =
   { description: 'Filter results since this Unix timestamp in seconds', in: 'query', name: 'sinceTime', required: false, type: 'number' };
@@ -139,20 +198,23 @@ const PARAM_LIST_ID: EndpointParameter =
   { description: 'List ID', in: 'path', name: 'id', required: true, type: 'string' };
 
 const RESPONSE_TWEET =
-  '{ id, text, created?, retweet_count?, reply_count?, like_count?, quote_count?, view_count?, bookmark_count?, media?, url?, lang?, is_reply?, is_note_tweet?, is_quote_status?, in_reply_to_id?, conversation_id?, source?, entities?, quoted_tweet?, author? }';
-const RESPONSE_TWEET_BASIC =
-  '{ id, text, created?, retweet_count?, reply_count?, like_count?, quote_count?, view_count?, bookmark_count?, media?, url?, lang?, is_reply?, in_reply_to_id?, conversation_id?, source?, entities?, author? }';
-const RESPONSE_TWEETS_PAGINATED = `{ tweets: [${RESPONSE_TWEET}], has_more, next_cursor }`;
+  '{ id, text, createdAt?, retweetCount, replyCount, likeCount, quoteCount, viewCount, bookmarkCount, media?, url?, lang?, isReply?, isNoteTweet?, isQuoteStatus?, inReplyToId?, conversationId?, source?, entities?, quoted_tweet?, retweeted_tweet?, author? }';
+const RESPONSE_TWEET_BASIC = RESPONSE_TWEET;
+const RESPONSE_TWEETS_PAGINATED = `{ tweets: [${RESPONSE_TWEET}], has_next_page, next_cursor }`;
 const RESPONSE_USER =
-  '{ id, username, name, followers?, following?, verified?, profile_picture?, cover_picture?, description?, location?, created?, statuses_count?, media_count?, can_dm? }';
-const RESPONSE_USERS_PAGINATED = `{ users: [${RESPONSE_USER}], has_more, next_cursor }`;
+  '{ id, username, name, followers?, following?, verified?, profilePicture?, coverPicture?, description?, location?, createdAt?, statusesCount?, mediaCount?, canDm? }';
+const RESPONSE_USERS_PAGINATED = `{ users: [${RESPONSE_USER}], has_next_page, next_cursor }`;
 
-const RESPONSE_COMMUNITY_ACTION = '{ communityId, communityName, success: true }';
+const RESPONSE_WRITE_ACTION =
+  '{ object: "x_write_action", id, writeActionId, action, status, terminal, retryable, safeToRetry, statusUrl, pollAfterMs, charged, chargedCredits, billing, request, account, target, targetId, result, nextAction, sendDispatched, success }';
 const CATEGORY_SUPPORT = 'support';
 const CATEGORY_X_WRITE = 'x-write';
 
 const PARAM_TICKET_ID: EndpointParameter =
   { description: 'Ticket public ID', in: 'path', name: 'id', required: true, type: 'string' };
+
+const PARAM_SUPPORT_IDEMPOTENCY_KEY: EndpointParameter =
+  { description: 'Optional retry key for identical support submissions', in: 'header', name: 'Idempotency-Key', required: false, type: 'string' };
 
 const API_SPEC: readonly EndpointInfo[] = [
   // --- Account ---
@@ -161,7 +223,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     path: '/api/v1/account',
-    responseShape: '{ email, locale, xUsername, subscription, usage }',
+    responseShape: '{ plan, monitorsUsed, monitorsAllowed, monitorBilling, creditInfo?, xUsername? }',
     summary: 'Get current account info and subscription status',
   },
   {
@@ -226,8 +288,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'account',
     free: true,
     method: 'POST',
+    parameters: [
+      { description: 'Subscription tier to preselect', in: 'body', name: 'tier', required: false, type: 'string' },
+    ],
     path: '/api/v1/subscribe',
-    responseShape: '{ url }',
+    responseShape: '{ url, status, message }',
     summary: 'Get checkout or billing portal URL',
   },
 
@@ -250,7 +315,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Whether media is attached (score)', in: 'body', name: 'hasMedia', required: false, type: 'boolean' },
     ],
     path: '/api/v1/compose',
-    responseShape: '{ contentRules, scorerWeights, followUpQuestions, ... }',
+    responseShape: '{ text?, score?, feedback?, suggestions? }',
     summary: 'Compose, refine, or score a tweet using algorithm data',
   },
   {
@@ -323,8 +388,8 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'composition',
     free: true,
     method: 'GET',
-    parameters: [PARAM_STYLE_USERNAME],
-    path: '/api/v1/styles/:username',
+    parameters: [PARAM_STYLE_ID],
+    path: '/api/v1/styles/:id',
     responseShape: '{ xUsername, tweetCount, isOwnAccount, fetchedAt, tweets }',
     summary: 'Get a cached style profile by username',
   },
@@ -333,11 +398,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'PUT',
     parameters: [
-      { description: 'Style label (username key)', in: 'path', name: 'username', required: true, type: 'string' },
+      PARAM_STYLE_ID,
       { description: 'Display label for the style', in: 'body', name: 'label', required: true, type: 'string' },
       { description: 'Array of tweet objects with text field', in: 'body', name: 'tweets', required: true, type: 'array' },
     ],
-    path: '/api/v1/styles/:username',
+    path: '/api/v1/styles/:id',
     responseShape: '{ xUsername, tweetCount, isOwnAccount, fetchedAt, tweets }',
     summary: 'Create or update a style profile with custom tweets',
   },
@@ -346,9 +411,9 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'DELETE',
     parameters: [
-      { description: 'X username of style to delete', in: 'path', name: 'username', required: true, type: 'string' },
+      PARAM_STYLE_ID,
     ],
-    path: '/api/v1/styles/:username',
+    path: '/api/v1/styles/:id',
     responseShape: '204 No Content',
     summary: 'Delete a cached style profile',
   },
@@ -356,8 +421,8 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'composition',
     free: false,
     method: 'GET',
-    parameters: [PARAM_STYLE_USERNAME],
-    path: '/api/v1/styles/:username/performance',
+    parameters: [PARAM_STYLE_ID],
+    path: '/api/v1/styles/:id/performance',
     responseShape: '{ xUsername, tweetCount, tweets: [{ id, text, likeCount, retweetCount, ... }] }',
     summary: 'Get engagement metrics for cached style tweets',
   },
@@ -407,7 +472,16 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       { description: 'URL of the giveaway tweet', in: 'body', name: 'tweetUrl', required: true, type: 'string' },
       { description: 'Number of winners to pick', in: 'body', name: 'winnerCount', required: false, type: 'number' },
-      { description: 'Winner eligibility filters (follow, like, retweet, etc.)', in: 'body', name: 'filters', required: false, type: 'object' },
+      { description: 'Number of backup winners', in: 'body', name: 'backupCount', required: false, type: 'number' },
+      { description: 'Allow one entry per author', in: 'body', name: 'uniqueAuthorsOnly', required: false, type: 'boolean' },
+      { description: 'Require a retweet', in: 'body', name: 'mustRetweet', required: false, type: 'boolean' },
+      { description: 'Required followed username', in: 'body', name: 'mustFollowUsername', required: false, type: 'string' },
+      { description: 'Minimum follower count', in: 'body', name: 'filterMinFollowers', required: false, type: 'number' },
+      { description: 'Minimum account age in days', in: 'body', name: 'filterAccountAgeDays', required: false, type: 'number' },
+      { description: 'Required language code', in: 'body', name: 'filterLanguage', required: false, type: 'string' },
+      { description: 'Required hashtags', in: 'body', name: 'requiredHashtags', required: false, type: 'string[]' },
+      { description: 'Required keywords', in: 'body', name: 'requiredKeywords', required: false, type: 'string[]' },
+      { description: 'Required mentions', in: 'body', name: 'requiredMentions', required: false, type: 'string[]' },
     ],
     path: '/api/v1/draws',
     responseShape: '{ id, tweetId, totalEntries, validEntries, winners: [{ position, authorUsername, tweetId, isBackup }] }',
@@ -426,7 +500,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'extraction',
     free: true,
     method: 'GET',
-    parameters: [PARAM_DRAW_ID, PARAM_EXPORT_FORMAT],
+    parameters: [
+      PARAM_DRAW_ID,
+      PARAM_EXPORT_FORMAT,
+      { description: 'Export winners or all entries', in: 'query', name: 'type', required: false, type: 'string' },
+    ],
     path: '/api/v1/draws/:id/export',
     responseShape: 'CSV, XLSX, or Markdown file download',
     summary: 'Export draw results as CSV, XLSX, or Markdown',
@@ -465,7 +543,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       ...EXTRACTION_TARGET_PARAMS,
     ],
     path: '/api/v1/extractions/estimate',
-    responseShape: '{ estimatedResults?, usagePercent?, projectedPercent?, allowed?, source? }',
+    responseShape: '{ estimatedResults, creditsRequired, creditsAvailable, allowed, source, resolvedXUserId? }',
     summary: 'Estimate extraction cost before running',
   },
   {
@@ -475,7 +553,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       PARAM_EXTRACTION_ID,
       { description: 'Max results per page', in: 'query', name: 'limit', required: false, type: 'number' },
-      { description: DESCRIPTION_PAGINATION_CURSOR, in: 'query', name: 'after', required: false, type: 'string' },
+      PARAM_CURSOR,
     ],
     path: '/api/v1/extractions/:id',
     responseShape: '{ job: { id, toolType, status, ... }, results: [...], hasMore, nextCursor? }',
@@ -497,7 +575,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     path: '/api/v1/monitors',
-    responseShape: '{ monitors: [{ id, xUsername, eventTypes, isActive, createdAt }], total }',
+    responseShape: '{ monitors: [{ id, username, xUserId, eventTypes, isActive, createdAt, nextBillingAt }], total }',
     summary: 'List all account monitors',
   },
   {
@@ -509,7 +587,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       PARAM_EVENT_TYPES_REQUIRED,
     ],
     path: '/api/v1/monitors',
-    responseShape: '{ id, username, eventTypes, createdAt, xUserId }',
+    responseShape: '{ id, username, xUserId, eventTypes, isActive, createdAt, nextBillingAt }',
     summary: 'Create a new account monitor',
   },
   {
@@ -518,7 +596,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'GET',
     parameters: [PARAM_MONITOR_ID],
     path: '/api/v1/monitors/:id',
-    responseShape: '{ id, xUsername, eventTypes, isActive, createdAt }',
+    responseShape: '{ id, username, xUserId, eventTypes, isActive, createdAt, nextBillingAt }',
     summary: 'Get monitor details by ID',
   },
   {
@@ -531,7 +609,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       PARAM_EVENT_TYPES_OPTIONAL,
     ],
     path: '/api/v1/monitors/:id',
-    responseShape: '{ id, xUsername, eventTypes, isActive, createdAt }',
+    responseShape: '{ id, username, xUserId, eventTypes, isActive, createdAt, nextBillingAt }',
     summary: 'Update monitor settings or toggle active state',
   },
   {
@@ -548,7 +626,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     path: '/api/v1/monitors/keywords',
-    responseShape: '{ monitors: [{ id, query, eventTypes, isActive, createdAt }], total }',
+    responseShape: '{ monitors: [{ id, query, eventTypes, isActive, createdAt, nextBillingAt }], total }',
     summary: 'List all keyword monitors',
   },
   {
@@ -557,10 +635,10 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: [
       { description: 'Keyword, phrase, or X search query to monitor', in: 'body', name: 'query', required: true, type: 'string' },
-      PARAM_EVENT_TYPES_REQUIRED,
+      PARAM_TWEET_EVENT_TYPES_REQUIRED,
     ],
     path: '/api/v1/monitors/keywords',
-    responseShape: '{ id, query, eventTypes, isActive, createdAt }',
+    responseShape: '{ id, query, eventTypes, isActive, createdAt, nextBillingAt }',
     summary: 'Create an instant keyword monitor. Confirm current usage pricing before activation.',
   },
   {
@@ -569,7 +647,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'GET',
     parameters: [PARAM_KEYWORD_MONITOR_ID],
     path: '/api/v1/monitors/keywords/:id',
-    responseShape: '{ id, query, eventTypes, isActive, createdAt }',
+    responseShape: '{ id, query, eventTypes, isActive, createdAt, nextBillingAt }',
     summary: 'Get keyword monitor details by ID',
   },
   {
@@ -579,10 +657,10 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       PARAM_KEYWORD_MONITOR_ID,
       { description: 'Set active or paused', in: 'body', name: 'isActive', required: false, type: 'boolean' },
-      PARAM_EVENT_TYPES_OPTIONAL,
+      PARAM_TWEET_EVENT_TYPES_OPTIONAL,
     ],
     path: '/api/v1/monitors/keywords/:id',
-    responseShape: '{ id, query, eventTypes, isActive, createdAt }',
+    responseShape: '{ id, query, eventTypes, isActive, createdAt, nextBillingAt }',
     summary: 'Update keyword monitor settings or toggle active state',
   },
   {
@@ -601,10 +679,10 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       ...PAGINATION_PARAMS,
       { description: 'Filter by monitor ID', in: 'query', name: 'monitorId', required: false, type: 'string' },
-      { description: `Filter by event type: ${DESCRIPTION_EVENT_TYPES}`, in: 'query', name: 'eventType', required: false, type: 'string' },
+      { description: `Filter by event type: ${ALL_EVENT_TYPES}`, in: 'query', name: 'eventType', required: false, type: 'string' },
     ],
     path: '/api/v1/events',
-    responseShape: '{ events: [{ id, eventType, xUsername, payload, createdAt }], hasMore, nextCursor? }',
+    responseShape: '{ events: [{ id, type, username?, query?, monitorId, monitorType, keywordMonitorId?, occurredAt, data }], hasMore, nextCursor? }',
     summary: 'List stream events with filters and pagination',
   },
   {
@@ -615,7 +693,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Event ID', in: 'path', name: 'id', required: true, type: 'string' },
     ],
     path: '/api/v1/events/:id',
-    responseShape: '{ id, eventType, xUsername, payload, createdAt, xEventId? }',
+    responseShape: '{ id, type, username?, query?, monitorId, monitorType, keywordMonitorId?, occurredAt, data, xEventId? }',
     summary: 'Get a single event by ID',
   },
   {
@@ -623,7 +701,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     path: '/api/v1/webhooks',
-    responseShape: '{ webhooks: [{ id, url, eventTypes, isActive, createdAt }] }',
+    responseShape: '{ webhooks: [{ id, url, eventTypes, isActive, consecutiveFailures, deliveryStatus, failureHardCap, createdAt }] }',
     summary: 'List all webhook endpoints',
   },
   {
@@ -649,7 +727,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Set active or inactive', in: 'body', name: 'isActive', required: false, type: 'boolean' },
     ],
     path: '/api/v1/webhooks/:id',
-    responseShape: '{ id, url, eventTypes, isActive, createdAt }',
+    responseShape: '{ id, url, eventTypes, isActive, consecutiveFailures, deliveryStatus, failureHardCap, createdAt }',
     summary: 'Update webhook URL, events, or active state',
   },
   {
@@ -667,7 +745,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'GET',
     parameters: [PARAM_WEBHOOK_ID],
     path: '/api/v1/webhooks/:id/deliveries',
-    responseShape: '{ deliveries: [{ id, status, attempts, statusCode?, createdAt }] }',
+    responseShape: '{ deliveries: [{ id, streamEventId, status, attempts, createdAt, deliveredAt?, lastStatusCode?, lastError? }] }',
     summary: 'List recent deliveries for a webhook',
   },
   {
@@ -679,17 +757,24 @@ const API_SPEC: readonly EndpointInfo[] = [
     responseShape: '{ success, statusCode, error? }',
     summary: 'Send a test event to a webhook endpoint',
   },
+  {
+    category: 'monitoring',
+    free: true,
+    method: 'POST',
+    parameters: [PARAM_WEBHOOK_ID],
+    path: '/api/v1/webhooks/:id/resume',
+    responseShape: '{ success, statusCode, webhook }',
+    summary: 'Test and resume an inactive webhook',
+  },
 
   // --- Twitter ---
   {
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [
-      { description: 'Tweet ID to look up', in: 'path', name: 'tweetId', required: true, type: 'string' },
-    ],
+    parameters: [PARAM_TWEET_ID],
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
-    path: '/api/v1/x/tweets/:tweetId',
+    path: '/api/v1/x/tweets/:id',
     responseShape: '{ tweet: { id, text, likeCount, retweetCount, replyCount, viewCount, ... }, author? }',
     summary: 'Look up a single tweet with engagement metrics',
   },
@@ -698,22 +783,25 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'GET',
     parameters: [
-      { description: 'Search query (X search syntax)', in: 'query', name: 'q', required: true, type: 'string' },
+      PARAM_SEARCH_QUERY,
+      PARAM_QUERY_TYPE,
+      PARAM_CURSOR,
+      PARAM_SINCE_TIME,
+      PARAM_UNTIL_TIME,
       { description: 'Max tweets to return (default 20, max 200)', in: 'query', name: 'limit', required: false, type: 'number' },
+      ...TWEET_SEARCH_QUERY_PARAMS,
     ],
     path: '/api/v1/x/tweets/search',
-    responseShape: '{ tweets: [{ id, text, author?, likeCount?, retweetCount?, media? }], total }',
-    summary: 'Search tweets by query with optional limit for pagination',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Search tweets with filters and cursor pagination',
   },
   {
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [
-      { description: 'X username to look up', in: 'path', name: 'username', required: true, type: 'string' },
-    ],
+    parameters: [PARAM_USER_ID],
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
-    path: '/api/v1/x/users/:username',
+    path: '/api/v1/x/users/:id',
     responseShape: '{ id, username, name, followers?, following?, verified?, description? }',
     summary: 'Get X user profile by username',
   },
@@ -784,7 +872,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_TWEET_ID, PARAM_CURSOR],
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/tweets/:id/favoriters',
     responseShape: RESPONSE_USERS_PAGINATED,
     summary: 'Get users who liked a tweet. Returns about 20 per page.',
@@ -793,7 +881,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20, ...TWEET_FILTER_QUERY_PARAMS],
     path: '/api/v1/x/users/:id/likes',
     responseShape: RESPONSE_TWEETS_PAGINATED,
     summary: 'Get tweets liked by a user. Returns about 20 per page.',
@@ -802,7 +890,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20, ...TWEET_FILTER_QUERY_PARAMS],
     path: '/api/v1/x/users/:id/media',
     responseShape: RESPONSE_TWEETS_PAGINATED,
     summary: 'Get media tweets by a user. Returns about 20 per page.',
@@ -811,7 +899,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/users/:id/followers-you-know',
     responseShape: RESPONSE_USERS_PAGINATED,
     summary: 'Get followers you know for a user. Returns about 20 per page.',
@@ -833,9 +921,9 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_CURSOR],
+    parameters: [],
     path: '/api/v1/x/bookmarks/folders',
-    responseShape: '{ folders: [{ id, name }], has_more, next_cursor }',
+    responseShape: '{ folders: [{ id, name }], has_next_page, next_cursor }',
     sensitive: true,
     summary: 'Get bookmark folders. Requires explicit user request.',
   },
@@ -848,7 +936,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       PARAM_CURSOR,
     ],
     path: '/api/v1/x/notifications',
-    responseShape: '{ notifications: [{ id, type?, message?, timestamp? }], has_more, next_cursor }',
+    responseShape: '{ notifications: [{ id, type?, message?, timestamp? }], has_next_page, next_cursor }',
     sensitive: true,
     summary: 'Get notifications. Requires explicit user request.',
   },
@@ -873,9 +961,10 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Target user ID', in: 'path', name: 'userId', required: true, type: 'string' },
       { description: 'Connected X account username without @', in: 'query', name: 'account', required: true, type: 'string' },
       PARAM_CURSOR,
+      { description: 'Legacy pagination cursor', in: 'query', name: 'maxId', required: false, type: 'string' },
     ],
     path: '/api/v1/x/dm/:userId/history',
-    responseShape: '{ messages: [{ id, text?, sender_id?, receiver_id?, created?, media_url? }], has_more, next_cursor }',
+    responseShape: '{ messages: [{ id, text?, senderId, receiverId, createdAt?, mediaUrl? }], has_next_page, next_cursor }',
     sensitive: true,
     summary: 'Get DM conversation history. Requires explicit user request.',
   },
@@ -886,8 +975,10 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       PARAM_USER_ID,
       PARAM_CURSOR,
+      PARAM_PAGE_SIZE_20,
       { description: 'Include replies (default false)', in: 'query', name: 'includeReplies', required: false, type: 'boolean' },
       { description: 'Include parent tweet for replies (default false)', in: 'query', name: 'includeParentTweet', required: false, type: 'boolean' },
+      ...TWEET_FILTER_QUERY_PARAMS,
     ],
     path: '/api/v1/x/users/:id/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
@@ -897,10 +988,25 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
+    parameters: [
+      PARAM_USER_ID,
+      PARAM_CURSOR,
+      PARAM_PAGE_SIZE_20,
+      { description: 'Include each reply parent tweet', in: 'query', name: 'includeParentTweet', required: false, type: 'boolean' },
+      ...TWEET_FILTER_QUERY_PARAMS,
+    ],
+    path: '/api/v1/x/users/:id/replies',
+    responseShape: RESPONSE_TWEETS_PAGINATED,
+    summary: 'Get a user timeline with replies',
+  },
+  {
+    category: 'twitter',
+    free: false,
+    method: 'GET',
     parameters: [PARAM_COMMUNITY_ID],
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/communities/:id/info',
-    responseShape: '{ community: { id, name?, description?, member_count?, moderator_count?, created?, banner_url?, join_policy?, rules? } }',
+    responseShape: '{ community: { id, name?, description?, member_count?, moderator_count?, created_at?, banner_url?, join_policy?, rules? } }',
     summary: 'Get community details.',
   },
   {
@@ -925,7 +1031,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR],
+    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/communities/:id/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
     summary: 'Get community tweets. Returns about 20 per page.',
@@ -934,25 +1040,25 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_SEARCH_QUERY, PARAM_QUERY_TYPE, PARAM_CURSOR],
+    parameters: COMMUNITY_SEARCH_PARAMS,
     path: '/api/v1/x/communities/search',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Search tweets across all communities.',
+    summary: 'Search tweets within a community.',
   },
   {
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_SEARCH_QUERY, PARAM_QUERY_TYPE, PARAM_CURSOR],
+    parameters: COMMUNITY_SEARCH_PARAMS,
     path: '/api/v1/x/communities/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get tweets from all communities matching a query.',
+    summary: 'Get matching tweets from a community.',
   },
   {
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_LIST_ID, PARAM_CURSOR],
+    parameters: [PARAM_LIST_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/lists/:id/followers',
     responseShape: RESPONSE_USERS_PAGINATED,
     summary: 'Get list followers.',
@@ -973,6 +1079,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       PARAM_LIST_ID,
       PARAM_CURSOR,
+      PARAM_PAGE_SIZE_20,
       PARAM_SINCE_TIME,
       PARAM_UNTIL_TIME,
       { description: 'Include replies (default false)', in: 'query', name: 'includeReplies', required: false, type: 'boolean' },
@@ -989,7 +1096,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Comma-separated tweet IDs (max 100)', in: 'query', name: 'ids', required: true, type: 'string' },
     ],
     path: '/api/v1/x/tweets',
-    responseShape: `{ tweets: [${RESPONSE_TWEET_BASIC}], has_more: false, next_cursor: "" }`,
+    responseShape: `{ tweets: [${RESPONSE_TWEET_BASIC}], has_next_page, next_cursor }`,
     summary: 'Get multiple tweets by IDs. Max 100 IDs per request.',
   },
   {
@@ -999,9 +1106,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [
       PARAM_TWEET_ID,
       PARAM_CURSOR,
+      PARAM_PAGE_SIZE_20,
       PARAM_SINCE_TIME,
       PARAM_UNTIL_TIME,
       { description: 'Include replies (default true)', in: 'query', name: 'includeReplies', required: false, type: 'boolean' },
+      ...TWEET_FILTER_QUERY_PARAMS,
     ],
     path: '/api/v1/x/tweets/:id/quotes',
     responseShape: RESPONSE_TWEETS_PAGINATED,
@@ -1011,7 +1120,14 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_SINCE_TIME, PARAM_UNTIL_TIME],
+    parameters: [
+      PARAM_TWEET_ID,
+      PARAM_CURSOR,
+      PARAM_PAGE_SIZE_20,
+      PARAM_SINCE_TIME,
+      PARAM_UNTIL_TIME,
+      ...TWEET_FILTER_QUERY_PARAMS,
+    ],
     path: '/api/v1/x/tweets/:id/replies',
     responseShape: RESPONSE_TWEETS_PAGINATED,
     summary: 'Get replies to a tweet.',
@@ -1020,7 +1136,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_TWEET_ID, PARAM_CURSOR],
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/tweets/:id/retweeters',
     responseShape: RESPONSE_USERS_PAGINATED,
     summary: 'Get users who retweeted a tweet.',
@@ -1029,7 +1145,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_TWEET_ID, PARAM_CURSOR],
+    parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/tweets/:id/thread',
     responseShape: RESPONSE_TWEETS_PAGINATED,
     summary: 'Get thread context for a tweet.',
@@ -1042,7 +1158,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Comma-separated user IDs (max 100)', in: 'query', name: 'ids', required: true, type: 'string' },
     ],
     path: '/api/v1/x/users/batch',
-    responseShape: `{ users: [${RESPONSE_USER}] }`,
+    responseShape: `{ users: [${RESPONSE_USER}], has_next_page, next_cursor, processed_count, requested_count, returned_count, unavailable_ids, unprocessed_ids }`,
     summary: 'Get multiple users by IDs. Max 100 IDs per request.',
   },
   {
@@ -1076,7 +1192,14 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_SINCE_TIME, PARAM_UNTIL_TIME],
+    parameters: [
+      PARAM_USER_ID,
+      PARAM_CURSOR,
+      PARAM_PAGE_SIZE_20,
+      PARAM_SINCE_TIME,
+      PARAM_UNTIL_TIME,
+      ...TWEET_FILTER_QUERY_PARAMS,
+    ],
     path: '/api/v1/x/users/:id/mentions',
     responseShape: RESPONSE_TWEETS_PAGINATED,
     summary: 'Get tweets mentioning a user.',
@@ -1085,7 +1208,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_USER_ID, PARAM_CURSOR],
+    parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/users/:id/verified-followers',
     responseShape: RESPONSE_USERS_PAGINATED,
     summary: 'Get verified followers.',
@@ -1098,7 +1221,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     path: '/api/v1/x/accounts',
-    responseShape: '{ accounts: [{ id, xUserId, xUsername, status, createdAt }] }',
+    responseShape: '{ accounts: [{ id, xUserId, xUsername, status, health, createdAt, updatedAt, cookiesObtainedAt? }] }',
     summary: 'List connected X accounts',
   },
   // Credential-taking account setup is intentionally absent from this
@@ -1110,7 +1233,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'GET',
     parameters: [PARAM_X_ACCOUNT_ID],
     path: '/api/v1/x/accounts/:id',
-    responseShape: '{ id, xUserId, xUsername, status, cookiesObtainedAt, createdAt }',
+    responseShape: '{ id, xUserId, xUsername, status, health, createdAt, updatedAt, cookiesObtainedAt? }',
     summary: 'Get X account details',
   },
   {
@@ -1136,19 +1259,30 @@ const API_SPEC: readonly EndpointInfo[] = [
   // --- X Write Actions ---
   {
     category: CATEGORY_X_WRITE,
+    free: true,
+    method: 'GET',
+    parameters: [
+      { description: 'Write action ID', in: 'path', name: 'id', required: true, type: 'string' },
+    ],
+    path: '/api/v1/x/write-actions/:id',
+    responseShape: RESPONSE_WRITE_ACTION,
+    summary: 'Get a durable write action status',
+  },
+  {
+    category: CATEGORY_X_WRITE,
     free: false,
     method: 'POST',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_X_ACCOUNT,
-      { description: 'Tweet text', in: 'body', name: 'text', required: true, type: 'string' },
+      { description: 'Tweet text', in: 'body', name: 'text', required: false, type: 'string' },
       { description: 'Tweet ID to reply to', in: 'body', name: 'reply_to_tweet_id', required: false, type: 'string' },
-      { description: 'URL to attach', in: 'body', name: 'attachment_url', required: false, type: 'string' },
       { description: 'Community ID to post in', in: 'body', name: 'community_id', required: false, type: 'string' },
       { description: 'Whether this is a long-form note tweet', in: 'body', name: 'is_note_tweet', required: false, type: 'boolean' },
-      { description: 'Array of media IDs to attach', in: 'body', name: 'media_ids', required: false, type: 'array' },
+      { description: 'Public media URLs to attach', in: 'body', name: 'media', required: false, type: 'string[]' },
     ],
     path: '/api/v1/x/tweets',
-    responseShape: '{ tweetId, success: true }',
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Create tweet',
   },
   {
@@ -1157,7 +1291,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'DELETE',
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Delete tweet',
   },
   {
@@ -1166,7 +1300,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/like',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Like tweet',
   },
   {
@@ -1175,7 +1309,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'DELETE',
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/like',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Unlike tweet',
   },
   {
@@ -1184,7 +1318,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/retweet',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Retweet',
   },
   {
@@ -1193,34 +1327,34 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'DELETE',
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/retweet',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Unretweet',
   },
   {
     category: CATEGORY_X_WRITE,
     free: false,
     method: 'POST',
-    parameters: [PARAM_USER_ID_FOLLOW, PARAM_X_ACCOUNT],
+    parameters: [PARAM_WRITE_IDEMPOTENCY_KEY, PARAM_USER_ID_FOLLOW, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/follow',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Follow user',
   },
   {
     category: CATEGORY_X_WRITE,
     free: false,
     method: 'DELETE',
-    parameters: [PARAM_USER_ID_UNFOLLOW, PARAM_X_ACCOUNT],
+    parameters: [PARAM_WRITE_IDEMPOTENCY_KEY, PARAM_USER_ID_UNFOLLOW, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/follow',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Unfollow user',
   },
   {
     category: CATEGORY_X_WRITE,
     free: false,
     method: 'POST',
-    parameters: [PARAM_USER_ID_REMOVE_FOLLOWER, PARAM_X_ACCOUNT],
+    parameters: [PARAM_WRITE_IDEMPOTENCY_KEY, PARAM_USER_ID_REMOVE_FOLLOWER, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/remove-follower',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Remove follower',
   },
   {
@@ -1228,14 +1362,14 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'POST',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       { description: 'Recipient user ID', in: 'path', name: 'userId', required: true, type: 'string' },
       PARAM_X_ACCOUNT,
       { description: 'Message text', in: 'body', name: 'text', required: true, type: 'string' },
       { description: 'Array of media IDs to attach', in: 'body', name: 'media_ids', required: false, type: 'array' },
-      { description: 'Message ID to reply to', in: 'body', name: 'reply_to_message_id', required: false, type: 'string' },
     ],
     path: '/api/v1/x/dm/:userId',
-    responseShape: '{ messageId, success: true }',
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Send DM',
   },
   {
@@ -1243,13 +1377,12 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'POST',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_X_ACCOUNT,
-      { description: 'Media file to upload', in: 'body', name: 'file', required: false, type: 'binary' },
       PARAM_MEDIA_URL,
-      { description: 'Whether this is a long video', in: 'body', name: 'is_long_video', required: false, type: 'boolean' },
     ],
     path: '/api/v1/x/media',
-    responseShape: '{ mediaId, success: true }',
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Upload media',
   },
   {
@@ -1257,6 +1390,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'PATCH',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_X_ACCOUNT,
       { description: 'Display name', in: 'body', name: 'name', required: false, type: 'string' },
       { description: 'Bio description', in: 'body', name: 'description', required: false, type: 'string' },
@@ -1264,7 +1398,7 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Website URL', in: 'body', name: 'url', required: false, type: 'string' },
     ],
     path: '/api/v1/x/profile',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Update profile',
   },
   {
@@ -1272,12 +1406,12 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'PATCH',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_X_ACCOUNT,
-      { description: 'Avatar image file', in: 'body', name: 'file', required: false, type: 'binary' },
       PARAM_MEDIA_URL,
     ],
     path: '/api/v1/x/profile/avatar',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Update avatar',
   },
   {
@@ -1285,12 +1419,12 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'PATCH',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_X_ACCOUNT,
-      { description: 'Banner image file', in: 'body', name: 'file', required: false, type: 'binary' },
       PARAM_MEDIA_URL,
     ],
     path: '/api/v1/x/profile/banner',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Update banner',
   },
   {
@@ -1298,12 +1432,13 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'POST',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_X_ACCOUNT,
       { description: 'Community name', in: 'body', name: 'name', required: true, type: 'string' },
       { description: 'Community description', in: 'body', name: 'description', required: false, type: 'string' },
     ],
     path: '/api/v1/x/communities',
-    responseShape: '{ communityId, success: true }',
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Create community',
   },
   {
@@ -1311,12 +1446,13 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'DELETE',
     parameters: [
+      PARAM_WRITE_IDEMPOTENCY_KEY,
       PARAM_COMMUNITY_ID,
       PARAM_X_ACCOUNT,
       { description: 'Community name for confirmation', in: 'body', name: 'community_name', required: true, type: 'string' },
     ],
     path: '/api/v1/x/communities/:id',
-    responseShape: RESPONSE_SUCCESS,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Delete community',
   },
   {
@@ -1325,7 +1461,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: PARAMS_COMMUNITY_ACTION,
     path: '/api/v1/x/communities/:id/join',
-    responseShape: RESPONSE_COMMUNITY_ACTION,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Join community',
   },
   {
@@ -1334,7 +1470,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'DELETE',
     parameters: PARAMS_COMMUNITY_ACTION,
     path: '/api/v1/x/communities/:id/join',
-    responseShape: RESPONSE_COMMUNITY_ACTION,
+    responseShape: RESPONSE_WRITE_ACTION,
     summary: 'Leave community',
   },
 
@@ -1346,11 +1482,12 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'POST',
     parameters: [
+      PARAM_SUPPORT_IDEMPOTENCY_KEY,
       { description: 'Ticket subject (1-500 chars)', in: 'body', name: 'subject', required: true, type: 'string' },
       { description: 'Initial message (1-10000 chars)', in: 'body', name: 'body', required: true, type: 'string' },
     ],
     path: '/api/v1/support/tickets',
-    responseShape: '{ publicId }',
+    responseShape: '{ publicId, attachments? }',
     summary: 'Open a new support ticket',
   },
   {
@@ -1391,11 +1528,12 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'POST',
     parameters: [
+      PARAM_SUPPORT_IDEMPOTENCY_KEY,
       PARAM_TICKET_ID,
       { description: 'Message content (1-10000 chars)', in: 'body', name: 'body', required: true, type: 'string' },
     ],
     path: '/api/v1/support/tickets/:id/messages',
-    responseShape: '{ publicId }',
+    responseShape: '{ publicId, attachments? }',
     summary: 'Reply to a support ticket',
   },
 
@@ -1407,7 +1545,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     path: '/api/v1/credits',
-    responseShape: '{ auto_topup_enabled: boolean, balance: number, lifetime_purchased: number, lifetime_used: number }',
+    responseShape: '{ auto_topup_amount_dollars, auto_topup_enabled, auto_topup_threshold, balance, lifetime_purchased, lifetime_used }',
     summary: 'Get credits balance',
   },
   {
@@ -1417,10 +1555,11 @@ const API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     parameters: [
       { description: 'Allowed top-up amount in USD', in: 'body', name: 'dollars', required: true, type: 'number' },
+      { description: 'Checkout locale', in: 'body', name: 'locale', required: false, type: 'string' },
     ],
     path: '/api/v1/credits/topup',
-    responseShape: '{ url: string }',
-    summary: 'Top up credits through Stripe Checkout.',
+    responseShape: '{ url, redirect_url }',
+    summary: 'Open hosted checkout to top up credits.',
   },
   {
     agentProhibited: true,
@@ -1428,7 +1567,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     parameters: [
-      { description: 'Stripe Checkout session ID returned from credit top-up checkout', in: 'query', name: 'session_id', required: true, type: 'string' },
+      { description: 'Checkout session ID returned after a credit top-up', in: 'query', name: 'session_id', required: true, type: 'string' },
     ],
     path: '/api/v1/credits/topup/status',
     responseShape: '{ status: "paid" | "open" | "expired" | "unknown", amount_dollars?: number, credits?: number }',

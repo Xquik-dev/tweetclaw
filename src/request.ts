@@ -4,6 +4,7 @@ const FETCH_TIMEOUT_MS = 30_000;
 const CONTENT_TYPE_HEADER = 'content-type';
 const API_KEY_HEADER = 'x-api-key';
 const AUTHORIZATION_HEADER = 'authorization';
+const IDEMPOTENCY_KEY_HEADER = 'Idempotency-Key';
 const BEARER_PREFIX = 'Bearer ';
 const API_KEY_PREFIX = 'xq_';
 const API_V1_PREFIX = '/api/v1/';
@@ -17,12 +18,17 @@ function buildAuthHeader(credential: string): Record<string, string> {
   return { [AUTHORIZATION_HEADER]: `${BEARER_PREFIX}${credential}` };
 }
 
-function buildFetchHeaders(credential: string, hasBody: boolean): Record<string, string> {
+function buildFetchHeaders(
+  credential: string,
+  hasBody: boolean,
+  idempotencyKey?: string,
+): Record<string, string> {
   const auth = credential === '' ? {} : buildAuthHeader(credential);
-  if (hasBody) {
-    return { ...auth, [CONTENT_TYPE_HEADER]: 'application/json' };
-  }
-  return auth;
+  const contentType = hasBody ? { [CONTENT_TYPE_HEADER]: 'application/json' } : {};
+  const idempotency = idempotencyKey === undefined
+    ? {}
+    : { [IDEMPOTENCY_KEY_HEADER]: idempotencyKey };
+  return { ...auth, ...contentType, ...idempotency };
 }
 
 function createBaseUrl(baseUrl: string): URL {
@@ -187,15 +193,16 @@ function formatApiError(response: Response, payload: unknown): string {
 function createProxiedRequest(
   baseUrl: string,
   credential: string,
-  fetchFunction: FetchFunction = fetch,
+  fetchFunction?: FetchFunction,
 ): RequestFunction {
   return async (path: string, options?: Readonly<RequestOptions>): Promise<unknown> => {
     const method = options?.method ?? 'GET';
     validateRequestPath(method, path);
     const hasBody = options?.body !== undefined;
-    const response = await fetchFunction(buildFetchUrl(baseUrl, path, options?.query), {
+    const activeFetch = fetchFunction ?? globalThis.fetch;
+    const response = await activeFetch(buildFetchUrl(baseUrl, path, options?.query), {
       ...(hasBody ? { body: JSON.stringify(options.body) } : {}),
-      headers: buildFetchHeaders(credential, hasBody),
+      headers: buildFetchHeaders(credential, hasBody, options?.idempotencyKey),
       method,
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });

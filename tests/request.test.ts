@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { buildAuthHeader, buildFetchHeaders, buildFetchUrl, createProxiedRequest, isProhibitedRequest } from '../src/request.js';
 
 describe('buildAuthHeader', () => {
@@ -39,6 +39,15 @@ describe('buildFetchHeaders', () => {
     expect.assertions(1);
     const headers = buildFetchHeaders('', true);
     expect(headers).toStrictEqual({ 'content-type': 'application/json' });
+  });
+
+  it('adds the write idempotency key', () => {
+    expect.assertions(1);
+    expect(buildFetchHeaders('xq_key', true, 'post-001')).toStrictEqual({
+      'Idempotency-Key': 'post-001',
+      'content-type': 'application/json',
+      'x-api-key': 'xq_key',
+    });
   });
 });
 
@@ -109,6 +118,19 @@ describe('createProxiedRequest', () => {
     };
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
     await request('/api/v1/x/tweets/search', { query: { q: 'test' } });
+  });
+
+  it('uses the current global fetch when no fetch function is injected', async () => {
+    expect.assertions(2);
+    const mockFetch = vi.fn(async () => new Response(JSON.stringify({ ok: true })));
+    vi.stubGlobal('fetch', mockFetch);
+    try {
+      const request = createProxiedRequest('https://xquik.com', 'xq_test');
+      await expect(request('/api/v1/radar')).resolves.toStrictEqual({ ok: true });
+      expect(mockFetch).toHaveBeenCalledOnce();
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 
   it('throws on non-/api/v1/ paths', async () => {

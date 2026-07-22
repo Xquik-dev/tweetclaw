@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatTrends, handleXTrends } from '../src/commands/xtrends.js';
+import { formatTrends, formatXTrends, handleXTrends, mppTrendQuery } from '../src/commands/xtrends.js';
 import type { RequestFunction } from '../src/types.js';
 
 describe('formatTrends', () => {
@@ -21,6 +21,37 @@ describe('formatTrends', () => {
     expect.assertions(1);
     const result = formatTrends({ items: [], total: 0 });
     expect(result).toContain('0 items');
+  });
+});
+
+describe('formatXTrends', () => {
+  it('formats regional X trends', () => {
+    expect.assertions(3);
+    const result = formatXTrends({
+      total: 2,
+      trends: [
+        { description: 'Agent news', name: '#Agents', rank: 4 },
+        { name: 'TypeScript' },
+      ],
+      woeid: 1,
+    });
+    expect(result).toContain('WOEID 1');
+    expect(result).toContain('4. #Agents');
+    expect(result).toContain('2. TypeScript');
+  });
+});
+
+describe('mppTrendQuery', () => {
+  it('accepts empty or numeric WOEID filters', () => {
+    expect.assertions(3);
+    expect(mppTrendQuery()).toBeUndefined();
+    expect(mppTrendQuery('   ')).toBeUndefined();
+    expect(mppTrendQuery('23424977')).toStrictEqual({ woeid: '23424977' });
+  });
+
+  it('rejects nonnumeric filters', () => {
+    expect.assertions(1);
+    expect(() => mppTrendQuery('tech')).toThrow('numeric WOEID');
   });
 });
 
@@ -77,5 +108,23 @@ describe('handleXTrends', () => {
     const mockRequest: RequestFunction = async () => 'not an object';
     const result = await handleXTrends(mockRequest);
     expect(result).toBe('--- Trending Topics (0 items) ---');
+  });
+
+  it('uses the MPP trends route with a WOEID', async () => {
+    expect.assertions(3);
+    const mockRequest: RequestFunction = async (path, options) => {
+      expect(path).toBe('/api/v1/trends');
+      expect(options?.query).toStrictEqual({ woeid: '23424977' });
+      return { total: 1, trends: [{ name: '#AI' }], woeid: 23_424_977 };
+    };
+    const result = await handleXTrends(mockRequest, '23424977', true);
+    expect(result).toContain('#AI');
+  });
+
+  it('returns an MPP fallback for an invalid response', async () => {
+    expect.assertions(1);
+    const mockRequest: RequestFunction = async () => null;
+    const result = await handleXTrends(mockRequest, undefined, true);
+    expect(result).toBe('--- X Trends (0 items) ---');
   });
 });

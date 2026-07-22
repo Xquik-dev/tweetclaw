@@ -109,6 +109,9 @@ if (packageJson.scripts?.postpack !== "node scripts/pack-package-json.mjs restor
 if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
   drifts.push("  package.json: check-package-artifact must validate packed files");
 }
+if (packageJson.scripts?.["check-contract-drift"] !== "npm run build && node scripts/check-contract-drift.mjs") {
+  drifts.push("  package.json: check-contract-drift must compare the bundled catalog with OpenAPI");
+}
 if (packageJson.scripts?.["publish-clean"] !== "node scripts/publish-clean.mjs") {
   drifts.push("  package.json: publish-clean must publish with sanitized package metadata");
 }
@@ -238,8 +241,7 @@ const contentChecks = [
     path: "README.md",
     required: [
       "account-backed X automation",
-      "99 agent-callable endpoints across 9 categories",
-      "Search tweets, search tweet replies, post tweets, post tweet replies",
+      "102 agent-callable endpoints across 9 categories",
       "verified ClawHub publisher scope",
       "for current plans, eligible endpoints, and live prices",
       "Account-backed or MPP where eligible",
@@ -254,6 +256,7 @@ const contentChecks = [
       "113 endpoints",
       "112 endpoints",
       "63 agent-callable endpoints",
+      "99 agent-callable endpoints",
       "npm is the canonical install source",
       "ClawHub owner-scope validation is pending",
       "listing lags behind npm",
@@ -261,13 +264,34 @@ const contentChecks = [
   },
   {
     path: "skills/tweetclaw/SKILL.md",
-    required: ["agent-safe Xquik endpoint catalog", "billing guide", "33 public paid-read routes", "7 direct read routes", "Not affiliated with X Corp."],
-    forbidden: ["113 endpoints", "112 endpoints", "Per-Operation Costs"],
+    required: ["agent-safe Xquik endpoint catalog", "billing guide", "33 public paid-read routes", "7 direct read routes", "idempotencyKey", "Not affiliated with X Corp."],
+    forbidden: ["113 endpoints", "112 endpoints", "Per-Operation Costs", "/api/v1/x/users/{id}/unfollow", "/api/v1/x/users/:username"],
+  },
+  {
+    path: "docs/context7-agent-guide.md",
+    required: ["102 endpoints", "2026.7.1"],
+    forbidden: ["99 endpoints", "2026.5.4"],
+  },
+  {
+    path: "docs/context7-quickstarts.md",
+    required: ["idempotencyKey", "2026.7.1"],
+    forbidden: ["/api/v1/x/users/by-username/:username", "2026.5.4"],
   },
   {
     path: "src/api-spec.ts",
-    required: ["/api/v1/credits/topup/status"],
-    forbidden: [],
+    required: [
+      "/api/v1/credits/topup/status",
+      "/api/v1/webhooks/:id/resume",
+      "/api/v1/x/users/:id/replies",
+      "/api/v1/x/write-actions/:id",
+      "Idempotency-Key",
+    ],
+    forbidden: [
+      "/api/v1/x/users/by-username/:username",
+      "/api/v1/x/users/:id/unfollow",
+      "attachment_url",
+      "reply_to_message_id",
+    ],
   },
   {
     path: "openclaw.plugin.json",

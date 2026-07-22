@@ -11,7 +11,7 @@ Xquik is an independent third-party service. Not affiliated with X Corp. "Twitte
 - OpenClaw plugin ID: `tweetclaw`
 - Package license: MIT
 - Minimum Node version: 22
-- OpenClaw compatibility floor: `2026.5.4`
+- OpenClaw compatibility floor: `2026.7.1`
 
 ## Tools
 
@@ -29,7 +29,7 @@ workflows.
 Install the plugin from the published package:
 
 ```bash
-openclaw plugins install @xquik/tweetclaw
+openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
 Verify runtime loading and skill visibility:
@@ -76,6 +76,8 @@ Use `explore` with `mpp: true` before every MPP live call.
 The live tool accepts only catalog-listed `/api/v1/...` paths. Put query string
 values in the structured `query` object, not in the path. Do not include `?` or
 `#` in `path`.
+
+X writes require a unique `idempotencyKey`. Reuse it only for an identical retry.
 
 Dashboard-only account admin, billing, support, raw credential, API-key
 management, subscription, and checkout flows are excluded from the tool catalog

@@ -15,11 +15,8 @@
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
 
-Search tweets, search tweet replies, post tweets, post tweet replies, export
-followers, monitor X/Twitter, manage media, send direct messages, and run
-giveaway draws from [OpenClaw](https://github.com/openclaw/openclaw).
-
-Use TweetClaw as an OpenClaw tweet scraper and X/Twitter automation plugin. Search tweets, search tweet replies, post tweets, post tweet replies, scrape tweets, run follower export, perform user lookup, handle media upload and media download, send direct messages, monitor tweets, deliver webhooks, and run giveaway draws. Powered by [Xquik](https://xquik.com), the all-in-one X automation platform.
+Use TweetClaw for approved X workflows from [OpenClaw](https://github.com/openclaw/openclaw).
+Search, post, export, monitor, manage media, send DMs, and run draws.
 
 ## Install
 
@@ -71,8 +68,6 @@ an Xquik API key. ChatGPT custom apps require OAuth.
 > use `XQUIK_API_KEY` through the Codex `bearer_token_env_var` setting. Follow the
 > [Codex OAuth troubleshooting guide](https://docs.xquik.com/guides/troubleshooting#codex-oauth-issuer-validation-error)
 > and track [openai/codex#31573](https://github.com/openai/codex/issues/31573).
-
-> **Note:** `@xquik/tweetclaw` is the canonical npm package. Any other scope (for example `@intentsolutionsio/tweetclaw`) is a third-party redistribution and may ship stale metadata or outdated endpoint counts.
 
 ## Pricing
 
@@ -192,7 +187,8 @@ AI uses explore → filters spec by category "composition"
 
 ### `tweetclaw` (invoke API endpoints)
 
-Invoke catalog-listed API endpoints with structured `path`, `method`, `query`, and `body` fields. Auth is injected automatically - the LLM never sees your API key.
+Invoke catalog-listed endpoints with structured fields. Auth is injected automatically.
+X writes also require `idempotencyKey`.
 
 This tool is optional in OpenClaw. If your agent can see the skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so your normal tool profile stays intact.
 
@@ -202,7 +198,7 @@ OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls.
 You: "Post a tweet saying 'Hello from TweetClaw!'"
 
 AI uses tweetclaw → finds connected account, posts tweet
-→ Returns { tweetId, success: true }
+→ Returns a durable write action. Poll `statusUrl` when `terminal` is false.
 ```
 
 ```
@@ -220,8 +216,9 @@ Instant responses, no LLM needed:
 | Command | Description |
 |---------|-------------|
 | `/xstatus` | Account info, subscription status, usage, credit balance |
-| `/xtrends` | Trending topics from curated sources |
-| `/xtrends tech` | Trending topics filtered by category |
+| `/xtrends` | Curated topics with an API key. Worldwide X trends with MPP. |
+| `/xtrends tech` | API-key mode: curated topics in one category. |
+| `/xtrends 23424977` | MPP mode: X trends for one WOEID. |
 
 ## Event Notifications
 
@@ -237,7 +234,7 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 
 ## API Coverage
 
-99 agent-callable endpoints across 9 categories. Dashboard-only account-admin, billing, support, and raw credential flows are excluded from the tool catalog and blocked at runtime.
+102 agent-callable endpoints across 9 categories. Dashboard-only flows stay blocked.
 
 | Category | Examples | Access |
 |----------|---------|--------|
