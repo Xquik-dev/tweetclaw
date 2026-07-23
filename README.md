@@ -1,4 +1,4 @@
-# TweetClaw
+# TweetClaw: X Search, Followers, Monitoring & Actions for OpenClaw
 
 > **Xquik is an independent third-party service.** Not affiliated with X Corp.
 > "Twitter" and "X" are trademarks of X Corp.
@@ -17,6 +17,19 @@
 
 Use TweetClaw for approved X workflows from [OpenClaw](https://github.com/openclaw/openclaw).
 Search, post, export, monitor, manage media, send DMs, and run draws.
+
+## Common OpenClaw Tasks
+
+Use `explore` before every live call. It returns the current supported route.
+
+| Customer Question | Catalog Query | Next Step |
+| --- | --- | --- |
+| How can I search tweets? | `search tweets by query` | Call the listed read route. |
+| How can I read an X timeline? | `list recent tweets posted by a user` | Approve private timelines. |
+| How can I export followers? | `run extraction` | Choose followers, then approve. |
+| How can I scrape following accounts? | `run extraction` | Choose following, then approve. |
+| How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
+| How can I post or reply? | `create tweet` | Approve each write. |
 
 ## Install
 
