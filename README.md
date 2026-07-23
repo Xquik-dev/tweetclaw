@@ -278,3 +278,5 @@ Media download requires account-backed access and is not MPP-eligible.
 ## License
 
 MIT
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
