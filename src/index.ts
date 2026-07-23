@@ -93,12 +93,14 @@ type BeforeToolCallHandler = (
 
 type CredentialMode = 'api-key' | 'mpp' | 'none';
 type XquikRequest = ReturnType<typeof createProxiedRequest>;
+type MppInitialization = Promise<Error | undefined>;
 
 interface RegisterToolsOptions {
   readonly baseUrl: string;
   readonly credential: string;
   readonly credentialMode: CredentialMode;
   readonly fetchFunction?: FetchFunction;
+  readonly mppInitialization: MppInitialization;
 }
 
 interface CredentialState {
@@ -167,6 +169,14 @@ const TWEETCLAW_PARAMETERS = {
       description: 'JSON request body',
       items: {},
       type: ['object', 'array', 'string', 'number', 'boolean', 'null'],
+    },
+    idempotencyKey: {
+      description:
+        'Unique 1-255 character key for an X write. Reuse it only to retry the exact same write.',
+      maxLength: 255,
+      minLength: 1,
+      pattern: '^[!-~]+$',
+      type: 'string',
     },
     method: { default: 'GET', description: 'HTTP method', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
     path: { description: 'Concrete /api/v1/... endpoint path from the catalog', type: 'string' },
@@ -241,7 +251,7 @@ function asTweetclawParams(params: unknown): Readonly<TweetclawParams> {
   if (value === undefined) {
     return { path: '' };
   }
-  const { body, method, path, query: rawQuery } = value;
+  const { body, idempotencyKey, method, path, query: rawQuery } = value;
   if (typeof path !== 'string') {
     return { path: '' };
   }
@@ -249,6 +259,7 @@ function asTweetclawParams(params: unknown): Readonly<TweetclawParams> {
   const query = asQueryParams(rawQuery);
   return {
     ...(body === undefined ? {} : { body }),
+    ...(typeof idempotencyKey === 'string' ? { idempotencyKey } : {}),
     ...(typeof method === 'string' ? { method } : {}),
     path,
     ...(query === undefined ? {} : { query }),
@@ -293,7 +304,7 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
         requireApproval: {
           allowedDecisions: ['allow-once', 'deny'],
           description:
-            'TweetClaw is about to invoke an endpoint that can change X accounts, create jobs, or expose private data. Review the tool call before allowing it.',
+            'TweetClaw may spend credits, change an X account, create a job, or expose private data. Review the call before allowing it.',
           pluginId: 'tweetclaw',
           severity: 'warning',
           timeoutBehavior: 'deny',
@@ -320,18 +331,33 @@ function resolveCredentialState(config: Readonly<PluginConfig>): CredentialState
   return { accountValue: '', mode: 'none', signingValue: '' };
 }
 
-function registerMppMode(api: OpenClawApi, credentialMode: CredentialMode, signingValue: string): void {
-  if (credentialMode !== 'mpp') return;
+async function initializeMpp(api: OpenClawApi, signingValue: string): Promise<Error | undefined> {
+  try {
+    await initMpp(signingValue);
+    api.logger.info('TweetClaw: MPP initialized - payment account ready');
+    return undefined;
+  } catch {
+    api.logger.error('TweetClaw: MPP init failed. Check local plugin configuration.');
+    return new Error('Check local plugin configuration and optional packages.');
+  }
+}
 
-  void (async (): Promise<void> => {
-    try {
-      await initMpp(signingValue);
-      api.logger.info('TweetClaw: MPP initialized - payment account ready');
-    } catch {
-      api.logger.error('TweetClaw: MPP init failed. Check local plugin configuration.');
-    }
-  })();
+async function waitForMppInitialization(initialization: MppInitialization): Promise<void> {
+  const error = await initialization;
+  if (error !== undefined) {
+    throw new Error(`MPP unavailable. ${error.message}`);
+  }
+}
+
+async function registerMppMode(
+  api: OpenClawApi,
+  credentialMode: CredentialMode,
+  signingValue: string,
+): MppInitialization {
+  if (credentialMode !== 'mpp') return undefined;
+
   api.logger.info('TweetClaw: direct MPP mode - 7 read routes, no subscription needed');
+  return initializeMpp(api, signingValue);
 }
 
 function registerTools(api: OpenClawApi, options: RegisterToolsOptions): void {
@@ -356,6 +382,11 @@ function registerTools(api: OpenClawApi, options: RegisterToolsOptions): void {
           await Promise.resolve();
           return errorResult(new Error(MISSING_CREDENTIALS_MESSAGE));
         }
+        try {
+          await waitForMppInitialization(options.mppInitialization);
+        } catch (error: unknown) {
+          return errorResult(error);
+        }
         return handleTweetclaw({
           baseUrl: options.baseUrl,
           credential: options.credential,
@@ -371,7 +402,12 @@ function registerTools(api: OpenClawApi, options: RegisterToolsOptions): void {
   );
 }
 
-function registerCommands(api: OpenClawApi, credentialMode: CredentialMode, request: XquikRequest): void {
+function registerCommands(
+  api: OpenClawApi,
+  credentialMode: CredentialMode,
+  request: XquikRequest,
+  mppInitialization: MppInitialization,
+): void {
   if (credentialMode === 'api-key') {
     api.registerCommand({
       description: 'Show Xquik account status & usage',
@@ -387,7 +423,8 @@ function registerCommands(api: OpenClawApi, credentialMode: CredentialMode, requ
     acceptsArgs: true,
     description: 'Show trending topics on X',
     handler: async ({ args }) => {
-      const text = await handleXTrends(request, args);
+      await waitForMppInitialization(mppInitialization);
+      const text = await handleXTrends(request, args, credentialMode === 'mpp');
       return { text };
     },
     name: 'xtrends',
@@ -425,7 +462,7 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   const { baseUrl = DEFAULT_BASE_URL } = config;
   const credential = resolveCredentialState(config);
 
-  registerMppMode(api, credential.mode, credential.signingValue);
+  const mppInitialization = registerMppMode(api, credential.mode, credential.signingValue);
   const request = createProxiedRequest(baseUrl, credential.accountValue, fetchFunction);
   registerWriteApprovalHook(api);
 
@@ -435,11 +472,15 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
     );
   }
 
-  const toolOptions: RegisterToolsOptions = fetchFunction === undefined
-    ? { baseUrl, credential: credential.accountValue, credentialMode: credential.mode }
-    : { baseUrl, credential: credential.accountValue, credentialMode: credential.mode, fetchFunction };
+  const toolOptions: RegisterToolsOptions = {
+    baseUrl,
+    credential: credential.accountValue,
+    credentialMode: credential.mode,
+    ...(fetchFunction === undefined ? {} : { fetchFunction }),
+    mppInitialization,
+  };
   registerTools(api, toolOptions);
-  registerCommands(api, credential.mode, request);
+  registerCommands(api, credential.mode, request, mppInitialization);
   registerPoller(api, config, credential.mode, request);
   api.logger.info('TweetClaw: Plugin registered successfully');
 }

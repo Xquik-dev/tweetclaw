@@ -1,6 +1,6 @@
 interface EndpointParameter {
   readonly description: string;
-  readonly in: 'body' | 'path' | 'query';
+  readonly in: 'body' | 'header' | 'path' | 'query';
   readonly name: string;
   readonly required: boolean;
   readonly type: string;
@@ -21,6 +21,7 @@ interface EndpointInfo {
 
 interface RequestOptions {
   readonly body?: unknown;
+  readonly idempotencyKey?: string;
   readonly method?: string;
   readonly query?: Readonly<Record<string, string>>;
 }
@@ -41,6 +42,7 @@ interface ExploreParams {
 
 interface TweetclawParams {
   readonly body?: unknown;
+  readonly idempotencyKey?: string;
   readonly method?: string;
   readonly path: string;
   readonly query?: Readonly<Record<string, boolean | number | string>>;

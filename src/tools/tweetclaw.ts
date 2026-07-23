@@ -10,6 +10,7 @@ Use "explore" first to find the endpoint, then call this tool with structured pa
 - method: GET, POST, PATCH, PUT, or DELETE
 - query: query parameters as an object
 - body: JSON request body
+- idempotencyKey: unique key required for X write actions
 
 Auth is injected automatically. Never pass API keys, signing keys, passwords, cookies, or TOTP secrets.
 
@@ -19,6 +20,7 @@ Auth is injected automatically. Never pass API keys, signing keys, passwords, co
 - Account connection, re-authentication, API-key administration, subscription checkout, credit top-up, and support-ticket actions are dashboard-only.
 - TWEET ACTIONS: SENDING a tweet ("tweet this", "post this") uses POST /api/v1/x/tweets. DRAFTING a tweet ("help me write", "compose") uses the compose flow.
 - WRITE ACTIONS: Show the exact endpoint and payload to the user before approval. All write-like calls trigger an OpenClaw approval prompt.
+- IDEMPOTENCY: Generate one unique key for each intended X write. Reuse it only to retry the exact same write.
 - MPP MODE: When configured with a signing key and no API key, only MPP-eligible read endpoints are allowed.
 - CURRENT EVENTS: Use /api/v1/radar for curated trends.
 
@@ -26,6 +28,7 @@ Auth is injected automatically. Never pass API keys, signing keys, passwords, co
 {
   "path": "/api/v1/x/tweets",
   "method": "POST",
+  "idempotencyKey": "post-2026-07-22-001",
   "body": { "account": "@myaccount", "text": "Hello world!" }
 }
 
@@ -85,6 +88,9 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
       const result: unknown = await Promise.race([
         request(requestInfo.path, {
           ...(requestInfo.body === undefined ? {} : { body: requestInfo.body }),
+          ...(requestInfo.idempotencyKey === undefined
+            ? {}
+            : { idempotencyKey: requestInfo.idempotencyKey }),
           method: requestInfo.method,
           ...(requestInfo.query === undefined ? {} : { query: requestInfo.query }),
         }),

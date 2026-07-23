@@ -56,7 +56,7 @@ MPP setup:
 
 ```bash
 npm i mppx@0.8.12 viem@2.55.4
-openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$tempoSigningKey"
+openclaw config set plugins.entries.tweetclaw.config.tempoSigningKey "$MPP_SIGNING_KEY"
 ```
 
 Only change `baseUrl` for a trusted Xquik-compatible HTTPS API. The runtime rejects non-HTTPS URLs and URLs with embedded credentials.
@@ -91,7 +91,7 @@ Use `explore` with `mpp: true` to find MPP-eligible endpoints.
 
 The runtime accepts only endpoints listed in `src/api-spec.ts` after dashboard-only and sensitive admin routes are filtered out. Runtime matching requires `/api/v1/` paths and rejects query strings embedded in the path.
 
-Agent-callable coverage is 99 endpoints across:
+Agent-callable coverage is 102 endpoints across:
 
 - Account status and usage
 - Composition, drafts, styles, and radar
@@ -126,7 +126,7 @@ Disable polling in isolated smoke-test profiles unless testing notifications.
 
 ## Common Troubleshooting
 
-If install fails, check that OpenClaw is at least `2026.5.4` and use the published package, not a repo-folder install.
+If install fails, require OpenClaw `2026.7.1` or newer. Use the published package.
 
 If tools are not model-visible, run `openclaw plugins inspect tweetclaw --runtime`, `openclaw skills info tweetclaw`, and add `tools.alsoAllow` for `explore` and `tweetclaw`.
 

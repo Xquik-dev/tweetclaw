@@ -30,7 +30,7 @@ The release fixture lives at `evals/evals.json` and covers:
 
 ## Latest Result
 
-Result date: 2026-06-21
+Result date: 2026-07-23
 
 Status: Passed by static review and SkillSpector static scan.
 
@@ -42,6 +42,12 @@ npm run check-openclaw-platform-fitness
 npm run check-package-artifact
 ```
 
-External SkillSpector validation uses reviewed commit `11567e8d1d5140722225fcaeb3c0f637c21ec40d` from NVIDIA's official repository in an isolated environment. Never execute mutable repository HEAD.
+External SkillSpector validation uses the reviewed commit below. Run it only inside an isolated environment. Never execute mutable repository HEAD.
+
+Reproduce only inside an isolated environment:
+
+```bash
+uvx --from 'git+https://github.com/NVIDIA/SkillSpector.git@11567e8d1d5140722225fcaeb3c0f637c21ec40d' skillspector scan skills/tweetclaw --no-llm
+```
 
 Signature status: unsigned source release. Add and verify `skill.oms.sig` before claiming a signed or NVIDIA-verified release.

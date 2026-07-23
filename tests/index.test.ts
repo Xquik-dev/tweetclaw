@@ -199,8 +199,8 @@ describe('register', () => {
     expect(services[0]?.id).toBe('tweetclaw-poller');
   });
 
-  it('requires OpenClaw approval for write-like tweetclaw tool calls', async () => {
-    expect.assertions(9);
+  it('requires OpenClaw approval for writes and private reads', async () => {
+    expect.assertions(10);
     const { api, hooks } = createMockApi({ apiKey: 'xq_test123' });
     register(api);
     const hook = requireHook(hooks);
@@ -212,8 +212,12 @@ describe('register', () => {
       },
       toolName: 'tweetclaw',
     });
-    const readResult = await hook.handler({
+    const privateReadResult = await hook.handler({
       params: { path: '/api/v1/account' },
+      toolName: 'tweetclaw',
+    });
+    const publicReadResult = await hook.handler({
+      params: { path: '/api/v1/radar' },
       toolName: 'tweetclaw',
     });
     const otherToolResult = await hook.handler({
@@ -234,7 +238,8 @@ describe('register', () => {
     expect(hook.priority).toBe(50);
     expect(approval?.allowedDecisions).toStrictEqual(['allow-once', 'deny']);
     expect(approval?.severity).toBe('warning');
-    expect(readResult).toBeUndefined();
+    expect(privateReadResult?.requireApproval).toBeDefined();
+    expect(publicReadResult).toBeUndefined();
     expect(otherToolResult).toBeUndefined();
     expect(invalidParamsResult).toBeUndefined();
     expect(missingParamsResult).toBeUndefined();
@@ -342,7 +347,7 @@ describe('register', () => {
       path: '/api/v1/x/tweets/123',
       query: 'tweet',
     });
-    expect(result?.content[0]?.text).toContain('/api/v1/x/tweets/:tweetId');
+    expect(result?.content[0]?.text).toContain('/api/v1/x/tweets/:id');
   });
 
   it('explore tool ignores unsupported filter types', async () => {
@@ -374,6 +379,24 @@ describe('register', () => {
       path: '/api/v1/account',
     });
     expect(result?.content[0]?.text).toContain('test@example.com');
+  });
+
+  it('tweetclaw tool forwards X write idempotency keys', async () => {
+    expect.assertions(2);
+    const mockFetch: typeof fetch = async (_input, init) => {
+      expect(init?.headers).toMatchObject({ 'Idempotency-Key': 'post-001' });
+      return new Response(JSON.stringify({ status: 'completed', terminal: true }));
+    };
+    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    register(api, mockFetch);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    const result = await tweetclaw?.execute('call_write', {
+      body: { account: '@demo', text: 'Hello.' },
+      idempotencyKey: 'post-001',
+      method: 'POST',
+      path: '/api/v1/x/tweets',
+    });
+    expect(result?.isError).toBeUndefined();
   });
 
   it('tweetclaw tool ignores unsupported query value types', async () => {
@@ -434,8 +457,10 @@ describe('register', () => {
   });
 
   it('logs MPP init failure', async () => {
-    expect.assertions(1);
-    vi.spyOn(mpp, 'initMpp').mockRejectedValue(new Error('MPP requires mppx'));
+    expect.assertions(2);
+    vi.spyOn(mpp, 'initMpp').mockRejectedValue(
+      new Error('provider error containing supplied key material'),
+    );
     const errors: string[] = [];
     const { api } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
     const apiWithErrors = {
@@ -445,7 +470,8 @@ describe('register', () => {
     register(apiWithErrors);
     await vi.advanceTimersByTimeAsync(100);
     vi.restoreAllMocks();
-    expect(errors.some((m) => m.includes('MPP init failed'))).toBe(true);
+    expect(errors).toStrictEqual(['TweetClaw: MPP init failed. Check local plugin configuration.']);
+    expect(errors[0]).not.toContain('provider error');
   });
 
   it('logs MPP success when initMpp succeeds', async () => {
@@ -477,6 +503,50 @@ describe('register', () => {
     vi.restoreAllMocks();
     expect(errors).toStrictEqual(['TweetClaw: MPP init failed. Check local plugin configuration.']);
     expect(errors[0]).not.toContain('string error');
+  });
+
+  it('waits for MPP initialization before tool and command requests', async () => {
+    expect.assertions(4);
+    let finishInitialization: (() => void) | undefined;
+    const initialization = new Promise<void>((resolve) => {
+      finishInitialization = resolve;
+    });
+    vi.spyOn(mpp, 'initMpp').mockReturnValue(initialization);
+    const mockFetch = vi.fn(createMockFetch({ items: [], total: 0, trends: [], woeid: 1 }));
+    const { api, commands, tools } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
+    register(api, mockFetch);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    const xtrends = commands.find((command) => command.name === 'xtrends');
+    const toolRequest = tweetclaw?.execute('call_mpp_wait', { path: '/api/v1/trends' });
+    const commandRequest = xtrends?.handler({});
+
+    await Promise.resolve();
+    expect(mockFetch).not.toHaveBeenCalled();
+    finishInitialization?.();
+    await expect(toolRequest).resolves.toBeDefined();
+    await expect(commandRequest).resolves.toBeDefined();
+    expect(mockFetch).toHaveBeenCalledTimes(2);
+    vi.restoreAllMocks();
+  });
+
+  it('returns the MPP initialization error before a tool request', async () => {
+    expect.assertions(4);
+    vi.spyOn(mpp, 'initMpp').mockRejectedValue(
+      new Error('provider error containing supplied key material'),
+    );
+    const mockFetch = vi.fn(createMockFetch({ items: [], total: 0 }));
+    const { api, tools } = createMockApi({ tempoSigningKey: VALID_SIGNING_KEY });
+    register(api, mockFetch);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    const result = await tweetclaw?.execute('call_mpp_error', { path: '/api/v1/trends' });
+
+    expect(result?.isError).toBe(true);
+    expect(result?.content[0]?.text).toContain(
+      'MPP unavailable. Check local plugin configuration and optional packages.',
+    );
+    expect(result?.content[0]?.text).not.toContain('provider error');
+    expect(mockFetch).not.toHaveBeenCalled();
+    vi.restoreAllMocks();
   });
 
   it('event poller logs events with known types', async () => {

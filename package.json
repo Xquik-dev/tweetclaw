@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.39",
+  "version": "1.6.40",
   "description": "OpenClaw X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes through Xquik. Not affiliated with X Corp.",
   "license": "MIT",
   "packageManager": "npm@11.12.1",
@@ -38,7 +38,7 @@
     "install": {
       "defaultChoice": "clawhub",
       "clawhubSpec": "clawhub:@xquik/tweetclaw",
-      "npmSpec": "@xquik/tweetclaw@1.6.39",
+      "npmSpec": "@xquik/tweetclaw@1.6.40",
       "minHostVersion": ">=2026.7.1"
     }
   },
@@ -83,6 +83,7 @@
     "check-em-dash": "tsx check-em-dash.ts",
     "check-skill-frontmatter": "node scripts/check-skill-frontmatter.mjs",
     "check-versions": "node scripts/check-versions.mjs",
+    "check-contract-drift": "npm run build && node scripts/check-contract-drift.mjs",
     "check-memory-md-size": "node scripts/check-memory-md-size.mjs",
     "check-public-copy": "node scripts/check-public-copy.mjs",
     "check-openclaw-platform-fitness": "node scripts/check-openclaw-platform-fitness.mjs",
@@ -133,6 +134,7 @@
     "vitest": "^4.1.8"
   },
   "overrides": {
+    "@hono/node-server": "2.0.11",
     "ip-address": "10.2.0",
     "vite": ">=7.3.2",
     "postcss": ">=8.5.10"
