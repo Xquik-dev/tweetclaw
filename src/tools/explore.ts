@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { exploreCatalog, specEndpoints } from './catalog.js';
 import { errorResult, successResult } from './result.js';
 import type { EndpointInfo, ExploreParams, ToolResult } from '../types.js';

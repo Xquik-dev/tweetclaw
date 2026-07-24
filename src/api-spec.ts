@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import type { EndpointInfo, EndpointParameter } from './types.js';
 
 const RESPONSE_SUCCESS = '{ success: true }';
@@ -8,6 +12,12 @@ const MPP_PRICE_CALL = '$0.00015/call';
 const MPP_PRICE_FOLLOW_CHECK = '$0.00075/call';
 const MPP_PRICE_TREND = '$0.00045/call';
 const TWEET_FILTER_PARAMETER_COUNT = 25;
+const WRITE_APPROVAL_NOTICE =
+  'Requires one-time user approval after showing the exact target and payload.';
+
+function writeSummary(action: string): string {
+  return `${action}. ${WRITE_APPROVAL_NOTICE}`;
+}
 
 const PAGINATION_PARAMS: readonly EndpointParameter[] = [
   { description: 'Max items per page', in: 'query', name: 'limit', required: false, type: 'number' },
@@ -315,8 +325,9 @@ const API_SPEC: readonly EndpointInfo[] = [
       { description: 'Whether media is attached (score)', in: 'body', name: 'hasMedia', required: false, type: 'boolean' },
     ],
     path: '/api/v1/compose',
-    responseShape: '{ text?, score?, feedback?, suggestions? }',
-    summary: 'Compose, refine, or score a tweet using algorithm data',
+    responseShape:
+      '{ nextStep, intentUrl?, contentRules?, engagementMultipliers?, engagementVelocity?, followUpQuestions?, radarRecommendations?, scorerWeights?, source?, topPenalties?, savedStyles?, styleTweets?, styleNote?, compositionGuidance?, examplePatterns?, checklist?, passed?, passedCount?, topSuggestion?, totalChecks? }',
+    summary: 'Build, refine, or check a post draft',
   },
   {
     category: 'composition',
@@ -1283,7 +1294,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/tweets',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Create tweet',
+    summary: writeSummary('Create tweet'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1292,7 +1303,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Delete tweet',
+    summary: writeSummary('Delete tweet'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1301,7 +1312,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/like',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Like tweet',
+    summary: writeSummary('Like tweet'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1310,7 +1321,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/like',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Unlike tweet',
+    summary: writeSummary('Unlike tweet'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1319,7 +1330,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/retweet',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Retweet',
+    summary: writeSummary('Retweet'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1328,7 +1339,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_TWEET_ACTION,
     path: '/api/v1/x/tweets/:id/retweet',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Unretweet',
+    summary: writeSummary('Unretweet'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1337,7 +1348,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_WRITE_IDEMPOTENCY_KEY, PARAM_USER_ID_FOLLOW, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/follow',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Follow user',
+    summary: writeSummary('Follow user'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1346,7 +1357,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_WRITE_IDEMPOTENCY_KEY, PARAM_USER_ID_UNFOLLOW, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/follow',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Unfollow user',
+    summary: writeSummary('Unfollow user'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1355,7 +1366,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_WRITE_IDEMPOTENCY_KEY, PARAM_USER_ID_REMOVE_FOLLOWER, PARAM_X_ACCOUNT],
     path: '/api/v1/x/users/:id/remove-follower',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Remove follower',
+    summary: writeSummary('Remove follower'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1370,7 +1381,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/dm/:userId',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Send DM',
+    summary: writeSummary('Send DM'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1383,7 +1394,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/media',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Upload media',
+    summary: writeSummary('Upload media'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1399,7 +1410,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/profile',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Update profile',
+    summary: writeSummary('Update profile'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1412,7 +1423,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/profile/avatar',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Update avatar',
+    summary: writeSummary('Update avatar'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1425,7 +1436,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/profile/banner',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Update banner',
+    summary: writeSummary('Update banner'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1439,7 +1450,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/communities',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Create community',
+    summary: writeSummary('Create community'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1453,7 +1464,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/communities/:id',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Delete community',
+    summary: writeSummary('Delete community'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1462,7 +1473,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_COMMUNITY_ACTION,
     path: '/api/v1/x/communities/:id/join',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Join community',
+    summary: writeSummary('Join community'),
   },
   {
     category: CATEGORY_X_WRITE,
@@ -1471,7 +1482,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: PARAMS_COMMUNITY_ACTION,
     path: '/api/v1/x/communities/:id/join',
     responseShape: RESPONSE_WRITE_ACTION,
-    summary: 'Leave community',
+    summary: writeSummary('Leave community'),
   },
 
 

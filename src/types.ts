@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 interface EndpointParameter {
   readonly description: string;
   readonly in: 'body' | 'header' | 'path' | 'query';

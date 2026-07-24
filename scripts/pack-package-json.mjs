@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";

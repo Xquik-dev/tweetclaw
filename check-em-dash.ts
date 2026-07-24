@@ -1,4 +1,9 @@
 #!/usr/bin/env tsx
+
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 /**
  * TweetClaw - Dash Detector
  *

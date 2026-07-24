@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
 import { handleXStatus } from './commands/xstatus.js';
 import { handleXTrends } from './commands/xtrends.js';
@@ -48,8 +52,9 @@ const CONFIG_SCHEMA = {
       type: 'number',
     },
     tempoSigningKey: {
-      description: 'MPP signing key for accountless access to 7 direct read routes. Not affiliated with X Corp.',
-      minLength: 1,
+      description:
+        'Optional read-only MPP payment-proof signing key for 7 direct read routes. Stored as sensitive OpenClaw plugin config and never exposed to the agent. Not affiliated with X Corp.',
+      pattern: '^0x[0-9a-fA-F]{64}$',
       type: 'string',
     },
   },
@@ -330,19 +335,14 @@ function resolveCredentialState(config: Readonly<PluginConfig>): CredentialState
   return { accountValue: '', mode: 'none', signingValue: '' };
 }
 
-function normalizeError(error: unknown): Error {
-  return error instanceof Error ? error : new Error(String(error));
-}
-
 async function initializeMpp(api: OpenClawApi, signingValue: string): Promise<Error | undefined> {
   try {
     await initMpp(signingValue);
     api.logger.info('TweetClaw: MPP initialized - payment account ready');
     return undefined;
-  } catch (error: unknown) {
-    const normalized = normalizeError(error);
-    api.logger.error(`TweetClaw: MPP init failed - ${normalized.message}`);
-    return normalized;
+  } catch {
+    api.logger.error('TweetClaw: MPP init failed. Check local plugin configuration.');
+    return new Error('Check local plugin configuration and optional packages.');
   }
 }
 

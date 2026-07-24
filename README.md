@@ -18,6 +18,12 @@
 Use TweetClaw for approved X workflows from [OpenClaw](https://github.com/openclaw/openclaw).
 Search, post, export, monitor, manage media, send DMs, and run draws.
 
+## Choose TweetClaw
+
+Choose TweetClaw for catalog-first Xquik tasks inside OpenClaw.
+Choose Xquik MCP for remote MCP clients.
+Choose an SDK for application code outside an agent runtime.
+
 ## Common OpenClaw Tasks
 
 Use `explore` before every live call. It returns the current supported route.
@@ -278,3 +284,5 @@ Media download requires account-backed access and is not MPP-eligible.
 ## License
 
 MIT
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.

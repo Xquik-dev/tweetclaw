@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { describe, expect, it } from 'vitest';
 import { API_SPEC } from '../src/api-spec.js';
 
@@ -71,6 +75,35 @@ describe('API_SPEC', () => {
     expect(keys).not.toContain(`GET /api/v1/${removedTrendingRoutePath}`);
     expect(categories).not.toContain('trends');
     expect(categories.size).toBe(10);
+  });
+
+  it('matches the canonical compose union contract', () => {
+    expect.assertions(4);
+    const compose = API_SPEC.find(
+      (endpoint) => endpoint.method === 'POST' && endpoint.path === '/api/v1/compose',
+    );
+    const parameters = compose?.parameters ?? [];
+
+    expect(compose?.summary).toBe('Build, refine, or check a post draft');
+    expect(compose?.responseShape).toContain('nextStep');
+    expect(parameters.map((parameter) => parameter.name).sort()).toStrictEqual(
+      [
+        'additionalContext',
+        'callToAction',
+        'draft',
+        'goal',
+        'hasLink',
+        'hasMedia',
+        'mediaType',
+        'step',
+        'styleUsername',
+        'tone',
+        'topic',
+      ],
+    );
+    expect(
+      parameters.filter((parameter) => parameter.required).map((parameter) => parameter.name),
+    ).toStrictEqual(['step']);
   });
 
   it('keeps MPP coverage aligned with Xquik pay-per-use routes', () => {

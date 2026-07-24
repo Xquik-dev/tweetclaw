@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { API_SPEC } from "../dist/api-spec.js";
 
 const OPENAPI_URL = "https://xquik.com/openapi.json";
@@ -35,13 +39,20 @@ function requestParameters(openapi, operation) {
   const parameters = (operation.parameters ?? []).map((parameter) =>
     dereference(openapi, parameter, "parameters"),
   );
-  let schema = operation.requestBody?.content?.["application/json"]?.schema;
-  schema = dereference(openapi, schema, "schemas");
-  const requiredBodyFields = new Set(schema?.required ?? []);
-  const bodyParameters = Object.keys(schema?.properties ?? {}).map((name) => ({
+  const rawSchema = operation.requestBody?.content?.["application/json"]?.schema;
+  const schema = dereference(openapi, rawSchema, "schemas");
+  const bodySchemas = (schema?.oneOf ?? [schema])
+    .map((variant) => dereference(openapi, variant, "schemas"))
+    .filter((variant) => variant !== undefined);
+  const bodyFields = new Set(
+    bodySchemas.flatMap((variant) => Object.keys(variant.properties ?? {})),
+  );
+  const bodyParameters = [...bodyFields].map((name) => ({
     in: "body",
     name,
-    required: requiredBodyFields.has(name),
+    required:
+      bodySchemas.length > 0
+      && bodySchemas.every((variant) => (variant.required ?? []).includes(name)),
   }));
   return [
     ...parameters.map((parameter) => ({

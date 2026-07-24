@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { describe, expect, it } from 'vitest';
 import { handleExplore } from '../src/tools/explore.js';
 

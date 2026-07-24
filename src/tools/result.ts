@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { truncateResponse } from '../truncate.js';
 import type { ToolResult } from '../types.js';
 

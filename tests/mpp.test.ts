@@ -1,6 +1,12 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { describe, expect, it, vi } from 'vitest';
 import { createModuleLoader, initMpp, isCallable, isRecord } from '../src/mpp.js';
 import type { ModuleLoader } from '../src/mpp.js';
+
+const VALID_SIGNING_KEY = `0x${'1'.repeat(64)}`;
 
 describe('isRecord', () => {
   it('returns true for plain objects', () => {
@@ -46,15 +52,18 @@ describe('createModuleLoader', () => {
     expect(typeof loader).toBe('function');
   });
 
-  it('rejects for unavailable modules', async () => {
-    expect.assertions(1);
+  it('restricts dynamic loading to the two optional MPP modules', async () => {
+    expect.assertions(3);
     const loader = createModuleLoader();
-    await expect(loader('nonexistent-module-xyz-12345')).rejects.toThrow();
+    await expect(loader('mppx/client')).rejects.toThrow();
+    await expect(loader('viem/accounts')).rejects.toThrow();
+    const untypedLoader = loader as (name: string) => Promise<Record<string, unknown>>;
+    await expect(untypedLoader('untrusted/module')).rejects.toThrow('Unsupported MPP module.');
   });
 });
 
 function mockLoader(modules: Readonly<Record<string, Record<string, unknown>>>): ModuleLoader {
-  return async (name: string): Promise<Record<string, unknown>> => {
+  return async (name): Promise<Record<string, unknown>> => {
     const mod: Record<string, unknown> | undefined = modules[name];
     if (mod === undefined) throw new Error(`Module not found: ${name}`);
     return mod;
@@ -62,10 +71,24 @@ function mockLoader(modules: Readonly<Record<string, Record<string, unknown>>>):
 }
 
 describe('initMpp', () => {
+  it('rejects malformed signing keys before loading optional modules', async () => {
+    expect.assertions(2);
+    let loadCount = 0;
+    const loader: ModuleLoader = async (): Promise<Record<string, unknown>> => {
+      loadCount += 1;
+      return {};
+    };
+
+    await expect(initMpp('not-a-signing-key', loader)).rejects.toThrow(
+      'Invalid MPP signing key configuration.',
+    );
+    expect(loadCount).toBe(0);
+  });
+
   it('throws when mppx is not installed', async () => {
     expect.assertions(1);
     const loader = mockLoader({});
-    await expect(initMpp('0xabc', loader)).rejects.toThrow('MPP requires mppx package');
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow('MPP requires mppx package');
   });
 
   it('throws when viem is not installed', async () => {
@@ -73,7 +96,7 @@ describe('initMpp', () => {
     const loader = mockLoader({
       'mppx/client': { Mppx: { create: vi.fn() }, tempo: vi.fn() },
     });
-    await expect(initMpp('0xabc', loader)).rejects.toThrow('MPP requires viem package');
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow('MPP requires viem package');
   });
 
   it('calls Mppx.create with tempo account when modules are available', async () => {
@@ -85,8 +108,8 @@ describe('initMpp', () => {
       'mppx/client': { Mppx: { create: mockCreate }, tempo: mockTempo },
       'viem/accounts': { privateKeyToAccount: mockPkta },
     });
-    await initMpp('0xabc123', loader);
-    expect(mockPkta).toHaveBeenCalledWith('0xabc123');
+    await initMpp(VALID_SIGNING_KEY, loader);
+    expect(mockPkta).toHaveBeenCalledWith(VALID_SIGNING_KEY);
     expect(mockTempo).toHaveBeenCalledWith({ account: 'mock-account' });
     expect(mockCreate).toHaveBeenCalledWith({ methods: ['mock-method'] });
   });
@@ -97,7 +120,7 @@ describe('initMpp', () => {
       'mppx/client': { Mppx: { create: vi.fn() }, tempo: vi.fn() },
       'viem/accounts': { privateKeyToAccount: 'not-a-function' },
     });
-    await expect(initMpp('0x', loader)).rejects.toThrow('viem missing privateKeyToAccount');
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow('viem missing privateKeyToAccount');
   });
 
   it('throws when tempo is not a function', async () => {
@@ -106,7 +129,7 @@ describe('initMpp', () => {
       'mppx/client': { Mppx: { create: vi.fn() }, tempo: 'not-a-function' },
       'viem/accounts': { privateKeyToAccount: vi.fn() },
     });
-    await expect(initMpp('0x', loader)).rejects.toThrow('mppx missing tempo');
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow('mppx missing tempo');
   });
 
   it('throws when Mppx is not a record', async () => {
@@ -115,7 +138,7 @@ describe('initMpp', () => {
       'mppx/client': { Mppx: 'not-an-object', tempo: vi.fn() },
       'viem/accounts': { privateKeyToAccount: vi.fn() },
     });
-    await expect(initMpp('0x', loader)).rejects.toThrow('mppx missing Mppx');
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow('mppx missing Mppx');
   });
 
   it('throws when Mppx.create is not a function', async () => {
@@ -124,11 +147,27 @@ describe('initMpp', () => {
       'mppx/client': { Mppx: { create: 'not-a-function' }, tempo: vi.fn() },
       'viem/accounts': { privateKeyToAccount: vi.fn() },
     });
-    await expect(initMpp('0x', loader)).rejects.toThrow('mppx Mppx.create is not a function');
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow('mppx Mppx.create is not a function');
+  });
+
+  it('replaces account-derivation errors with a fixed secret-free message', async () => {
+    expect.assertions(1);
+    const loader = mockLoader({
+      'mppx/client': { Mppx: { create: vi.fn() }, tempo: vi.fn() },
+      'viem/accounts': {
+        privateKeyToAccount: (): never => {
+          throw new Error('provider error containing supplied key material');
+        },
+      },
+    });
+
+    await expect(initMpp(VALID_SIGNING_KEY, loader)).rejects.toThrow(
+      'Invalid MPP signing key configuration.',
+    );
   });
 
   it('uses default loader when none provided', async () => {
     expect.assertions(1);
-    await expect(initMpp('0xabc')).rejects.toThrow('MPP requires mppx package');
+    await expect(initMpp(VALID_SIGNING_KEY)).rejects.toThrow();
   });
 });

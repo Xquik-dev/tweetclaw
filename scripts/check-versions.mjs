@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 // Pre-publish / pre-commit guard: fails if any known version surface
 // disagrees with package.json. See Xquik-dev/xquik#2024.
 

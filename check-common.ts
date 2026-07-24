@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 

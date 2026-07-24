@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 const MAX_RESPONSE_CHARS = 24_000;
 const CHARS_PER_TOKEN = 4;
 const MAX_TOKENS = 6000;
