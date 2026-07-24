@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
 import { handleXStatus } from './commands/xstatus.js';
 import { handleXTrends } from './commands/xtrends.js';

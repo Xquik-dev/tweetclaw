@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import manifest from '../openclaw.plugin.json' with { type: 'json' };
 import plugin from '../src/index.js';

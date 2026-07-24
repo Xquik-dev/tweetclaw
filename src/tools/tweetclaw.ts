@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { createProxiedRequest } from '../request.js';
 import { resolveCatalogRequest, specEndpoints } from './catalog.js';
 import { errorResult, successResult } from './result.js';

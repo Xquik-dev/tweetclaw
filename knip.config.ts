@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import type { KnipConfig } from 'knip';
 
 const config: KnipConfig = {

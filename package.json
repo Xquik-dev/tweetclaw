@@ -84,6 +84,7 @@
     "check-skill-frontmatter": "node scripts/check-skill-frontmatter.mjs",
     "check-versions": "node scripts/check-versions.mjs",
     "check-contract-drift": "npm run build && node scripts/check-contract-drift.mjs",
+    "check-reproducible": "node scripts/check-reproducible.mjs",
     "check-memory-md-size": "node scripts/check-memory-md-size.mjs",
     "check-public-copy": "node scripts/check-public-copy.mjs",
     "check-openclaw-platform-fitness": "node scripts/check-openclaw-platform-fitness.mjs",
@@ -92,7 +93,7 @@
     "prepack": "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare",
     "postpack": "node scripts/pack-package-json.mjs restore-after-pack",
     "prepublishOnly": "npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-memory-md-size && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact && npm run test:coverage"
+    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-memory-md-size && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact && npm run check-reproducible && npm run test:coverage"
   },
   "peerDependencies": {
     "mppx": "0.8.12",

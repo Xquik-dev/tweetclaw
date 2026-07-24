@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 type MppModuleName = 'mppx/client' | 'viem/accounts';
 type ModuleLoader = (name: MppModuleName) => Promise<Record<string, unknown>>;
 

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { describe, expect, it, vi } from 'vitest';
 import { createModuleLoader, initMpp, isCallable, isRecord } from '../src/mpp.js';
 import type { ModuleLoader } from '../src/mpp.js';

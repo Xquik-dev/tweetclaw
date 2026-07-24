@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import type { FetchFunction, RequestFunction, RequestOptions } from './types.js';
 
 const FETCH_TIMEOUT_MS = 30_000;

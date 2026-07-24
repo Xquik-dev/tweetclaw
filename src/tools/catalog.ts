@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import { API_SPEC } from '../api-spec.js';
 import type { EndpointInfo, ExploreParams, TweetclawParams } from '../types.js';
 

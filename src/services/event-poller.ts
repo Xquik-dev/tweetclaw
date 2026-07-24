@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import type { EventPollerOptions } from '../types.js';
 
 const MAX_BACKOFF_SECONDS = 300;

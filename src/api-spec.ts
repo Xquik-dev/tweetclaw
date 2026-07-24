@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Xquik Contributors
+//
+// SPDX-License-Identifier: MIT
+
 import type { EndpointInfo, EndpointParameter } from './types.js';
 
 const RESPONSE_SUCCESS = '{ success: true }';
