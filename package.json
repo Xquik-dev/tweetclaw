@@ -127,6 +127,7 @@
     "eslint-plugin-security": "^4.0.0",
     "eslint-plugin-sonarjs": "^4.2.0",
     "eslint-plugin-unicorn": "63.0.0",
+    "fast-check": "4.9.0",
     "globals": "^17.4.0",
     "jscpd": "5.0.12",
     "knip": "6.27.0",
@@ -136,8 +137,10 @@
   },
   "overrides": {
     "@hono/node-server": "2.0.11",
+    "brace-expansion": "5.0.8",
     "ip-address": "10.2.0",
-    "vite": ">=7.3.2",
-    "postcss": ">=8.5.10"
+    "postcss": ">=8.5.10",
+    "tar": "7.5.21",
+    "vite": ">=7.3.2"
   }
 }

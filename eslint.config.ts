@@ -421,6 +421,7 @@ export default [
         allowList: {
           acceptsArguments: true,
           argsIgnorePattern: true,
+          numRuns: true,
           utils: true,
           varsIgnorePattern: true,
         },
