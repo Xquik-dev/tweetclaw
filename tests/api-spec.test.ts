@@ -4,6 +4,11 @@
 
 import { describe, expect, it } from 'vitest';
 import { API_SPEC } from '../src/api-spec.js';
+import {
+  MEDIA_RESPONSE_FIELDS,
+  TWEET_RESPONSE_FIELDS,
+  USER_RESPONSE_FIELDS,
+} from '../src/read-data-richness.js';
 
 function hasRequiredIdempotencyKey(endpoint: (typeof API_SPEC)[number]): boolean {
   return endpoint.parameters?.some(
@@ -50,12 +55,12 @@ describe('API_SPEC', () => {
 
   it('matches the agent-facing endpoint count', () => {
     expect.assertions(2);
-    expect(API_SPEC).toHaveLength(119);
+    expect(API_SPEC).toHaveLength(120);
     expect(API_SPEC.filter((endpoint) => endpoint.agentProhibited !== true)).toHaveLength(102);
   });
 
   it('matches the canonical trends, credits, monitor, and X read catalog', () => {
-    expect.assertions(15);
+    expect.assertions(16);
     const keys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
     const categories = new Set(API_SPEC.map((endpoint) => endpoint.category));
     const removedTrendingRoutePath = 'trending/:source';
@@ -71,6 +76,7 @@ describe('API_SPEC', () => {
     expect(keys).toContain('GET /api/v1/x/users/:id/verified-followers');
     expect(keys).toContain('GET /api/v1/x/users/:id/replies');
     expect(keys).toContain('GET /api/v1/x/write-actions/:id');
+    expect(keys).toContain('GET /api/v1/x/account-connection-attempts/:id');
     expect(keys).toContain('POST /api/v1/webhooks/:id/resume');
     expect(keys).not.toContain(`GET /api/v1/${removedTrendingRoutePath}`);
     expect(categories).not.toContain('trends');
@@ -135,6 +141,48 @@ describe('API_SPEC', () => {
     expect.assertions(2);
     expect(API_SPEC.some((endpoint) => endpoint.free)).toBe(true);
     expect(API_SPEC.some((endpoint) => !endpoint.free)).toBe(true);
+  });
+
+  it('documents complete safe tweet, media, and profile richness', () => {
+    expect.assertions(5);
+    const tweet = API_SPEC.find(
+      (endpoint) =>
+        endpoint.method === 'GET' && endpoint.path === '/api/v1/x/tweets/:id',
+    );
+    const search = API_SPEC.find(
+      (endpoint) =>
+        endpoint.method === 'GET' &&
+        endpoint.path === '/api/v1/x/tweets/search',
+    );
+    const user = API_SPEC.find(
+      (endpoint) =>
+        endpoint.method === 'GET' && endpoint.path === '/api/v1/x/users/:id',
+    );
+    const allFields = [
+      ...TWEET_RESPONSE_FIELDS,
+      ...MEDIA_RESPONSE_FIELDS,
+      ...USER_RESPONSE_FIELDS,
+    ];
+
+    expect(
+      allFields.filter((field) => !tweet?.responseShape?.includes(field)),
+    ).toStrictEqual([]);
+    expect(
+      allFields.filter((field) => !search?.responseShape?.includes(field)),
+    ).toStrictEqual([]);
+    expect(
+      USER_RESPONSE_FIELDS.filter(
+        (field) => !user?.responseShape?.includes(field),
+      ),
+    ).toStrictEqual([]);
+    expect(tweet?.responseShape).not.toContain('...');
+    expect(
+      [tweet?.responseShape, search?.responseShape, user?.responseShape].join(
+        ' ',
+      ),
+    ).not.toMatch(
+      /\b(?:bookmarked|canDm|canMediaTag|favorited|followRequestSent|notificationsEnabled|quickPromoteEligibility|retweeted|superFollowedBy|superFollowing|viewerBlockedBy|viewerBlocking|viewerFollowedBy|viewerFollowing|viewerLiveFollowing|viewerMuting)\b/u,
+    );
   });
 
   it('parameters have required fields when present', () => {

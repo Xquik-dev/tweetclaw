@@ -115,9 +115,10 @@ describe('specEndpoints', () => {
   });
 
   it('excludes agent-prohibited endpoints', () => {
-    expect.assertions(8);
+    expect.assertions(9);
     const paths = specEndpoints.map((endpoint) => `${endpoint.method} ${endpoint.path}`);
     expect(paths).not.toContain('POST /api/v1/x/accounts');
+    expect(paths).not.toContain('GET /api/v1/x/account-connection-attempts/:id');
     expect(paths).not.toContain('POST /api/v1/x/accounts/:id/reauth');
     expect(paths).not.toContain('POST /api/v1/x/accounts/bulk-retry');
     expect(paths).not.toContain('POST /api/v1/api-keys');

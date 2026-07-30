@@ -37,6 +37,18 @@ Use `explore` before every live call. It returns the current supported route.
 | How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
 | How can I post or reply? | `create tweet` | Approve each write. |
 
+## Complete Read Data
+
+TweetClaw preserves every safe field returned by Xquik.
+Optional fields stay absent when X does not supply them.
+Keep requesting `next_cursor` while `has_next_page` is true.
+
+Fetching-account actions and relationships stay private.
+This includes bookmark, like, follow, block, mute, and notification state.
+
+See [Read Data Richness](https://docs.xquik.com/guides/read-data-richness)
+for exact tweet, profile, and media fields.
+
 ## Install
 
 ```bash

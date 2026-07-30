@@ -2,6 +2,13 @@
 //
 // SPDX-License-Identifier: MIT
 
+import {
+  RESPONSE_TWEET,
+  RESPONSE_TWEET_BASIC,
+  RESPONSE_TWEETS_PAGINATED,
+  RESPONSE_USER,
+  RESPONSE_USERS_PAGINATED,
+} from './read-data-richness.js';
 import type { EndpointInfo, EndpointParameter } from './types.js';
 
 const RESPONSE_SUCCESS = '{ success: true }';
@@ -107,6 +114,9 @@ const PARAM_X_ACCOUNT: EndpointParameter =
 const PARAM_X_ACCOUNT_ID: EndpointParameter =
   { description: 'X account ID', in: 'path', name: 'id', required: true, type: 'string' };
 
+const PARAM_X_ACCOUNT_CONNECTION_ATTEMPT_ID: EndpointParameter =
+  { description: 'X account connection attempt ID', in: 'path', name: 'id', required: true, type: 'string' };
+
 const TWEET_EVENT_TYPES =
   'tweet.new, tweet.reply, tweet.retweet, tweet.quote, tweet.media, tweet.link, tweet.poll, tweet.mention, tweet.hashtag, tweet.longform';
 const PROFILE_EVENT_TYPES =
@@ -206,14 +216,6 @@ const PARAM_USER_ID: EndpointParameter =
 
 const PARAM_LIST_ID: EndpointParameter =
   { description: 'List ID', in: 'path', name: 'id', required: true, type: 'string' };
-
-const RESPONSE_TWEET =
-  '{ id, text, createdAt?, retweetCount, replyCount, likeCount, quoteCount, viewCount, bookmarkCount, media?, url?, lang?, isReply?, isNoteTweet?, isQuoteStatus?, inReplyToId?, conversationId?, source?, entities?, quoted_tweet?, retweeted_tweet?, author? }';
-const RESPONSE_TWEET_BASIC = RESPONSE_TWEET;
-const RESPONSE_TWEETS_PAGINATED = `{ tweets: [${RESPONSE_TWEET}], has_next_page, next_cursor }`;
-const RESPONSE_USER =
-  '{ id, username, name, followers?, following?, verified?, profilePicture?, coverPicture?, description?, location?, createdAt?, statusesCount?, mediaCount?, canDm? }';
-const RESPONSE_USERS_PAGINATED = `{ users: [${RESPONSE_USER}], has_next_page, next_cursor }`;
 
 const RESPONSE_WRITE_ACTION =
   '{ object: "x_write_action", id, writeActionId, action, status, terminal, retryable, safeToRetry, statusUrl, pollAfterMs, charged, chargedCredits, billing, request, account, target, targetId, result, nextAction, sendDispatched, success }';
@@ -786,7 +788,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_TWEET_ID],
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/tweets/:id',
-    responseShape: '{ tweet: { id, text, likeCount, retweetCount, replyCount, viewCount, ... }, author? }',
+    responseShape: `{ tweet: ${RESPONSE_TWEET}, author?: ${RESPONSE_USER} }`,
     summary: 'Look up a single tweet with engagement metrics',
   },
   {
@@ -813,7 +815,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID],
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/users/:id',
-    responseShape: '{ id, username, name, followers?, following?, verified?, description? }',
+    responseShape: RESPONSE_USER,
     summary: 'Get X user profile by username',
   },
   {
@@ -838,7 +840,7 @@ const API_SPEC: readonly EndpointInfo[] = [
     ],
     mpp: { intent: 'charge', price: MPP_PRICE_FOLLOW_CHECK },
     path: '/api/v1/x/articles/:tweetId',
-    responseShape: '{ article: { title, previewText, coverImageUrl, contents, createdAt, likeCount, replyCount, quoteCount, viewCount }, author? }',
+    responseShape: `{ article: { title, previewText, coverImageUrl, contents, createdAt, likeCount, replyCount, quoteCount, viewCount }, author?: ${RESPONSE_USER} }`,
     summary: 'Get full content of an X Article (long-form post) by tweet ID',
   },
 
@@ -1237,6 +1239,17 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
   // Credential-taking account setup is intentionally absent from this
   // agent-facing specification. Users must complete it in the dashboard.
+  {
+    agentProhibited: true,
+    category: CATEGORY_X_ACCOUNTS,
+    free: true,
+    method: 'GET',
+    parameters: [PARAM_X_ACCOUNT_CONNECTION_ATTEMPT_ID],
+    path: '/api/v1/x/account-connection-attempts/:id',
+    responseShape:
+      '{ object, id, status, pollAfterMs? } | { object, id, status, error, reason?, retryable } | { object, id, status, expiresAt, message, username }',
+    summary: 'Get X account connection status (dashboard only - agent-prohibited)',
+  },
   {
     agentProhibited: true,
     category: CATEGORY_X_ACCOUNTS,

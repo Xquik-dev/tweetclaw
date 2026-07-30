@@ -80,6 +80,7 @@ const PROHIBITED_PATHS: ReadonlyArray<readonly [string, string]> = [
 
 const PROHIBITED_PATH_PATTERNS: ReadonlyArray<readonly [string, RegExp]> = [
   ['DELETE', /^\/api\/v1\/api-keys\/[^/]+\/?$/u],
+  ['GET', /^\/api\/v1\/x\/account-connection-attempts\/[^/]+\/?$/u],
   ['DELETE', /^\/api\/v1\/x\/accounts\/[^/]+\/?$/u],
   ['GET', /^\/api\/v1\/x\/accounts\/[^/]+\/?$/u],
   ['POST', /^\/api\/v1\/x\/accounts\/[^/]+\/reauth\/?$/u],
