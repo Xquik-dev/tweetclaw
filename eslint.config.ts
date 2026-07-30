@@ -321,7 +321,7 @@ export default [
       'unicorn/new-for-builtins': 'error',
       'unicorn/no-abusive-eslint-disable': 'error',
       'unicorn/no-array-callback-reference': 'error',
-      'unicorn/no-array-for-each': 'error',
+      'unicorn/no-for-each': 'error',
       'unicorn/no-array-method-this-argument': 'error',
       'unicorn/no-array-push-push': 'error',
       'unicorn/no-array-reduce': 'error',
@@ -373,7 +373,7 @@ export default [
       'unicorn/prefer-date-now': 'error',
       'unicorn/prefer-default-parameters': 'error',
       'unicorn/prefer-event-target': 'error',
-      'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
+      'unicorn/prefer-export-from': ['error', { checkUsedVariables: false }],
       'unicorn/prefer-global-this': 'error',
       'unicorn/prefer-includes': 'error',
       'unicorn/prefer-logical-operator-over-ternary': 'error',
@@ -403,7 +403,7 @@ export default [
       'unicorn/prefer-ternary': 'error',
       'unicorn/prefer-top-level-await': 'error',
       'unicorn/prefer-type-error': 'error',
-      'unicorn/prevent-abbreviations': ['error', {
+      'unicorn/name-replacements': ['error', {
         checkFilenames: true,
         checkProperties: true,
         replacements: {
