@@ -29,8 +29,8 @@ function extractCursor(events: ReadonlyArray<Readonly<Record<string, unknown>>>)
 }
 
 function createEventPoller(options: EventPollerOptions): EventPollerHandle {
-  let timer: ReturnType<typeof setTimeout> | undefined = undefined;
-  let cursor: string | undefined = undefined;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let cursor: string | undefined;
   let consecutiveErrors = 0;
   let stopped = false;
 
