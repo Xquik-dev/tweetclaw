@@ -249,6 +249,14 @@ describe('createProxiedRequest', () => {
     ).rejects.toThrow('Agent-prohibited endpoint');
   });
 
+  it('blocks GET /api/v1/x/account-connection-attempts/:id', async () => {
+    expect.assertions(1);
+    const request = createProxiedRequest('https://xquik.com', 'xq_test');
+    await expect(
+      request('/api/v1/x/account-connection-attempts/xatt_123'),
+    ).rejects.toThrow('Agent-prohibited endpoint');
+  });
+
   it('allows GET /api/v1/x/accounts (list accounts)', async () => {
     expect.assertions(1);
     const mockFetch: typeof fetch = async () => new Response(JSON.stringify({ accounts: [] }));
@@ -329,6 +337,16 @@ describe('isProhibitedRequest', () => {
   it('blocks POST /api/v1/x/accounts/ (trailing slash)', () => {
     expect.assertions(1);
     expect(isProhibitedRequest('POST', '/api/v1/x/accounts/')).toBe(true);
+  });
+
+  it('blocks GET /api/v1/x/account-connection-attempts/:id', () => {
+    expect.assertions(1);
+    expect(
+      isProhibitedRequest(
+        'GET',
+        '/api/v1/x/account-connection-attempts/xatt_123',
+      ),
+    ).toBe(true);
   });
 
   it('blocks dashboard-only exact paths with repeated trailing slashes', () => {

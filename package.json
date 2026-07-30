@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.40",
+  "version": "1.6.41",
   "description": "OpenClaw X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes through Xquik. Not affiliated with X Corp.",
   "license": "MIT",
   "packageManager": "npm@11.12.1",
@@ -38,11 +38,12 @@
     "install": {
       "defaultChoice": "clawhub",
       "clawhubSpec": "clawhub:@xquik/tweetclaw",
-      "npmSpec": "@xquik/tweetclaw@1.6.40",
+      "npmSpec": "@xquik/tweetclaw@1.6.41",
       "minHostVersion": ">=2026.7.1"
     }
   },
   "files": [
+    "CHANGELOG.md",
     "dist/",
     "src/",
     "skills/tweetclaw/",

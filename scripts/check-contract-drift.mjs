@@ -18,6 +18,12 @@ const EXCLUDED_OPERATIONS = new Set([
   "POST /api/v1/x/accounts",
   "POST /api/v1/x/accounts/{id}/reauth",
 ]);
+const RICH_RESPONSE_COMPONENTS = [
+  "SearchTweet",
+  "TweetDetail",
+  "TweetMedia",
+  "UserProfile",
+];
 
 function normalizePath(path) {
   return path
@@ -75,7 +81,7 @@ function successfulJsonSchemas(openapi, operation) {
     const response = dereference(openapi, rawResponse, "responses");
     const rawSchema = response?.content?.["application/json"]?.schema;
     const schema = dereference(openapi, rawSchema, "schemas");
-    if (schema !== undefined) schemas.push(schema);
+    if (schema !== undefined) schemas.push({ raw: rawSchema, resolved: schema });
   }
   return schemas;
 }
@@ -87,6 +93,45 @@ function requiredResponseFields(openapi, schema) {
   );
   if (variants.length === 0) return new Set();
   return new Set([...variants[0]].filter((field) => variants.every((set) => set.has(field))));
+}
+
+function referencedSchemas(schema) {
+  if (schema === undefined || schema === null || typeof schema !== "object") {
+    return [];
+  }
+  return [
+    ...Object.values(schema.properties ?? {}),
+    ...(schema.allOf ?? []),
+    ...(schema.anyOf ?? []),
+    ...(schema.oneOf ?? []),
+    schema.items,
+    typeof schema.additionalProperties === "object"
+      ? schema.additionalProperties
+      : undefined,
+  ].filter((value) => value !== undefined);
+}
+
+function schemaIncludesComponent(openapi, schema, componentName, seen = new Set()) {
+  const ref = schema?.$ref;
+  if (typeof ref === "string") {
+    if (ref === `#/components/schemas/${componentName}`) return true;
+    if (seen.has(ref)) return false;
+    seen.add(ref);
+    return schemaIncludesComponent(
+      openapi,
+      dereference(openapi, schema, "schemas"),
+      componentName,
+      seen,
+    );
+  }
+  return referencedSchemas(schema).some((nested) =>
+    schemaIncludesComponent(openapi, nested, componentName, new Set(seen)),
+  );
+}
+
+function componentFields(openapi, componentName) {
+  const schema = openapi.components?.schemas?.[componentName];
+  return Object.keys(schema?.properties ?? {});
 }
 
 function mppPrice(amount) {
@@ -121,8 +166,8 @@ const catalog = new Map(
 );
 const errors = [];
 
-if (canonical.size !== 119) errors.push(`canonical operation count is ${String(canonical.size)}, expected 119`);
-if (catalog.size !== 119) errors.push(`catalog operation count is ${String(catalog.size)}, expected 119`);
+if (canonical.size !== 120) errors.push(`canonical operation count is ${String(canonical.size)}, expected 120`);
+if (catalog.size !== 120) errors.push(`catalog operation count is ${String(catalog.size)}, expected 120`);
 const callableCount = API_SPEC.filter((endpoint) => endpoint.agentProhibited !== true).length;
 if (callableCount !== 102) errors.push(`callable operation count is ${String(callableCount)}, expected 102`);
 
@@ -144,10 +189,20 @@ for (const [key, { operation }] of canonical) {
     if (!expectedParameters.has(parameter)) errors.push(`${key} has extra parameter ${parameter}`);
   }
 
-  for (const schema of successfulJsonSchemas(openapi, operation)) {
-    for (const field of requiredResponseFields(openapi, schema)) {
+  for (const { raw, resolved } of successfulJsonSchemas(openapi, operation)) {
+    for (const field of requiredResponseFields(openapi, resolved)) {
       if (!(endpoint.responseShape ?? "").includes(field)) {
         errors.push(`${key} response shape is missing required field ${field}`);
+      }
+    }
+    for (const componentName of RICH_RESPONSE_COMPONENTS) {
+      if (!schemaIncludesComponent(openapi, raw, componentName)) continue;
+      for (const field of componentFields(openapi, componentName)) {
+        if (!(endpoint.responseShape ?? "").includes(field)) {
+          errors.push(
+            `${key} response shape is missing ${componentName}.${field}`,
+          );
+        }
       }
     }
   }
@@ -173,4 +228,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-process.stdout.write("TweetClaw matches 119 canonical operations and 102 callable operations.\n");
+process.stdout.write("TweetClaw matches 120 canonical operations and 102 callable operations.\n");
