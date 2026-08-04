@@ -130,7 +130,7 @@
     "eslint-plugin-unicorn": "72.0.0",
     "fast-check": "4.9.0",
     "globals": "^17.4.0",
-    "jscpd": "5.0.12",
+    "jscpd": "5.0.14",
     "knip": "6.27.0",
     "tsx": "^4.22.4",
     "typescript": "6.0.3",
