@@ -215,7 +215,7 @@ Once the user has created a monitor, the plugin polls the Xquik events endpoint 
 | "Who liked this tweet?" | Call the favoriters endpoint with user-requested tweet ID. |
 | "Show my bookmarks" or "What's on my timeline?" | Confirm account authorization, then fetch private account-scoped data with minimal disclosure. |
 | "Pick 3 random winners from replies" | State entry filters, storage behavior, and cost ceiling before creating a draw. |
-| "Extract the last 1000 followers" | State max-result ceiling and estimated maximum cost before creating extraction. |
+| "Extract the last 1000 followers" | Confirm targets, filters, deduplication, output shape, result ceiling, and estimated maximum cost. |
 | "Monitor @username for new activity" | Create a monitor only after confirming target, events, poll behavior, and notifications. |
 | "Download all media from this tweet" | Return gallery or media URLs from reviewed media endpoints. |
 | "Help me write a tweet" | Use free compose/refine/score workflow; user must still approve any later post. |

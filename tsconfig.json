@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2023",
-    "module": "ES2022",
+    "module": "ESNext",
     "lib": ["ES2023"],
     "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "strict": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

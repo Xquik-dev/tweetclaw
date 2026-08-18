@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 import { describe, expect, it } from 'vitest';
-import { API_SPEC } from '../src/api-spec.js';
+import { API_SPEC, mergeGeneratedContract } from '../src/api-spec.js';
 import {
   MEDIA_RESPONSE_FIELDS,
   TWEET_RESPONSE_FIELDS,
@@ -11,12 +11,12 @@ import {
 } from '../src/read-data-richness.js';
 
 function hasRequiredIdempotencyKey(endpoint: (typeof API_SPEC)[number]): boolean {
-  return endpoint.parameters?.some(
+  return endpoint.parameters.some(
     (parameter) =>
       parameter.in === 'header'
       && parameter.name === 'Idempotency-Key'
       && parameter.required,
-  ) ?? false;
+  );
 }
 
 describe('API_SPEC', () => {
@@ -187,7 +187,7 @@ describe('API_SPEC', () => {
 
   it('parameters have required fields when present', () => {
     expect.assertions(1);
-    const allParameters = API_SPEC.flatMap((endpoint) => endpoint.parameters ?? []);
+    const allParameters = API_SPEC.flatMap((endpoint) => endpoint.parameters);
     const invalid = allParameters.filter(
       (p) =>
         typeof p.name !== 'string' ||
@@ -197,6 +197,18 @@ describe('API_SPEC', () => {
         !['body', 'header', 'path', 'query'].includes(p.in),
     );
     expect(invalid).toStrictEqual([]);
+  });
+
+  it('rejects corrupt generated contract data', () => {
+    expect.assertions(2);
+    const endpoint = API_SPEC[0] ?? {
+      category: 'test', free: true, method: 'GET', path: '/api/v1/test', summary: 'Test',
+    };
+    expect(() => mergeGeneratedContract(endpoint, undefined)).toThrow('Missing generated contract');
+    expect(() => mergeGeneratedContract(endpoint, {
+      parameters: [{ description: 'Invalid', in: 99, name: 'invalid', required: false, type: 'string' }],
+      responseFields: '',
+    })).toThrow('Invalid parameter location');
   });
 
   it('documents required idempotency keys for every X write', () => {
@@ -215,7 +227,7 @@ describe('API_SPEC', () => {
     const endpointKeys = new Set(API_SPEC.map((endpoint) => `${endpoint.method} ${endpoint.path}`));
     const parameterNames: string[] = [];
     for (const endpoint of API_SPEC) {
-      for (const parameter of endpoint.parameters ?? []) {
+      for (const parameter of endpoint.parameters) {
         parameterNames.push(parameter.name);
       }
     }

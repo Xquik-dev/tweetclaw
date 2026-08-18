@@ -34,7 +34,7 @@ const PRIVATE_GET_PREFIXES = [
   '/api/v1/x/write-actions/',
 ];
 
-const specEndpoints: readonly EndpointInfo[] = API_SPEC.filter((endpoint) => endpoint.agentProhibited !== true);
+const specEndpoints = API_SPEC.filter((endpoint) => endpoint.agentProhibited !== true);
 
 function normalizeMethod(method?: string): string {
   return (method ?? 'GET').toUpperCase();
@@ -156,7 +156,7 @@ function resolveCatalogRequest(
   };
 }
 
-function endpointMatchesQuery(endpoint: EndpointInfo, query: string): boolean {
+function endpointMatchesQuery(endpoint: (typeof API_SPEC)[number], query: string): boolean {
   const normalized = query.toLowerCase();
   const { category, method, parameters, path, responseShape, summary } = endpoint;
   const haystack = [
@@ -165,7 +165,7 @@ function endpointMatchesQuery(endpoint: EndpointInfo, query: string): boolean {
     path,
     responseShape,
     summary,
-    ...(parameters ?? []).flatMap((parameter) => [
+    ...parameters.flatMap((parameter) => [
       parameter.description,
       parameter.name,
       parameter.type,
