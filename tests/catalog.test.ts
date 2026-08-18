@@ -132,7 +132,7 @@ describe('specEndpoints', () => {
     expect.assertions(2);
     const allParamNames: string[] = [];
     for (const endpoint of specEndpoints) {
-      for (const parameter of endpoint.parameters ?? []) {
+      for (const parameter of endpoint.parameters) {
         allParamNames.push(parameter.name);
       }
     }

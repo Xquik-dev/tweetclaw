@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+import GENERATED_API_CONTRACT from '../generated-api-contract.json' with { type: 'json' };
 import {
   RESPONSE_TWEET,
   RESPONSE_TWEET_BASIC,
@@ -10,6 +11,10 @@ import {
   RESPONSE_USERS_PAGINATED,
 } from './read-data-richness.js';
 import type { EndpointInfo, EndpointParameter } from './types.js';
+
+type ContractEndpointInfo = Omit<EndpointInfo, 'parameters'> & {
+  readonly parameters: readonly EndpointParameter[];
+};
 
 const RESPONSE_SUCCESS = '{ success: true }';
 const DESCRIPTION_PAGINATION_CURSOR = 'Pagination cursor';
@@ -228,7 +233,7 @@ const PARAM_TICKET_ID: EndpointParameter =
 const PARAM_SUPPORT_IDEMPOTENCY_KEY: EndpointParameter =
   { description: 'Optional retry key for identical support submissions', in: 'header', name: 'Idempotency-Key', required: false, type: 'string' };
 
-const API_SPEC: readonly EndpointInfo[] = [
+const BASE_API_SPEC: readonly EndpointInfo[] = [
   // --- Account ---
   {
     category: 'account',
@@ -1611,4 +1616,47 @@ const API_SPEC: readonly EndpointInfo[] = [
   },
 ] as const;
 
-export { API_SPEC };
+type GeneratedContract = Readonly<Record<string, {
+  readonly parameters: ReadonlyArray<Omit<EndpointParameter, 'in'> & { readonly in: number }>;
+  readonly responseFields: string;
+}>>;
+
+const PARAMETER_LOCATIONS = ['body', 'header', 'path', 'query'] as const;
+
+function normalizedContractKey(endpoint: EndpointInfo): string {
+  return `${endpoint.method} ${endpoint.path.replaceAll(/:[^/]+/gu, ':param')}`;
+}
+
+function contractParameters(
+  parameters: GeneratedContract[string]['parameters'],
+  documented: readonly EndpointParameter[] = [],
+): readonly EndpointParameter[] {
+  return parameters.map(({ in: locationIndex, ...parameter }) => {
+    const location = PARAMETER_LOCATIONS.at(locationIndex);
+    if (location === undefined) throw new Error(`Invalid parameter location: ${String(locationIndex)}`);
+    const description = documented.find(
+      (candidate) => candidate.in === location && candidate.name === parameter.name,
+    )?.description ?? parameter.description;
+    return { ...parameter, description, in: location };
+  });
+}
+
+const contract: GeneratedContract = GENERATED_API_CONTRACT;
+function mergeGeneratedContract(
+  endpoint: EndpointInfo,
+  generated: GeneratedContract[string] | undefined,
+): ContractEndpointInfo {
+  if (generated === undefined) throw new Error(`Missing generated contract for ${endpoint.method} ${endpoint.path}`);
+  const { parameters, ...base } = endpoint;
+  return {
+    ...base,
+    parameters: contractParameters(generated.parameters, parameters),
+    responseShape: [endpoint.responseShape, generated.responseFields].filter(Boolean).join('; '),
+  };
+}
+
+const API_SPEC: readonly ContractEndpointInfo[] = BASE_API_SPEC.map(
+  (endpoint) => mergeGeneratedContract(endpoint, contract[normalizedContractKey(endpoint)]),
+);
+
+export { API_SPEC, mergeGeneratedContract };
