@@ -55,7 +55,7 @@ describe('mppTrendQuery', () => {
 
   it('rejects nonnumeric filters', () => {
     expect.assertions(1);
-    expect(() => mppTrendQuery('tech')).toThrow('numeric WOEID');
+    expect(() => mppTrendQuery('tech')).toThrow('WOEID is invalid');
   });
 });
 
@@ -111,7 +111,7 @@ describe('handleXTrends', () => {
     expect.assertions(1);
     const mockRequest: RequestFunction = async () => 'not an object';
     const result = await handleXTrends(mockRequest);
-    expect(result).toBe('--- Trending Topics (0 items) ---');
+    expect(result).toBe('Trending topics (0 items)');
   });
 
   it('uses the MPP trends route with a WOEID', async () => {
@@ -129,6 +129,6 @@ describe('handleXTrends', () => {
     expect.assertions(1);
     const mockRequest: RequestFunction = async () => null;
     const result = await handleXTrends(mockRequest, undefined, true);
-    expect(result).toBe('--- X Trends (0 items) ---');
+    expect(result).toBe('X trends (0 items)');
   });
 });

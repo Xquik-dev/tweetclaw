@@ -20,9 +20,9 @@ const totalBytes = rows.reduce((sum, row) => sum + row.bytes, 0);
 if (totalBytes > byteLimit) {
   const details = rows.map((row) => `  ${row.filePath}: ${row.bytes}`).join("\n");
   process.stderr.write(
-    `Release guide exceeds ${byteLimit} bytes:\n${details}\n  total: ${totalBytes}\nKeep operational logs outside the public repository.\n`,
+    `Release guide exceeds ${byteLimit} bytes:\n${details}\n  total: ${totalBytes}\nMove operational logs outside the public repository.\n`,
   );
   process.exit(1);
 }
 
-process.stdout.write(`Release guide size OK: ${totalBytes}/${byteLimit} bytes\n`);
+process.stdout.write(`Release guide size check passed: ${totalBytes}/${byteLimit} bytes\n`);

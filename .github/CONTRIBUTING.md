@@ -1,32 +1,37 @@
-# Contributing
-
-Thanks for your interest in improving `x-developer` / `x-twitter-scraper`.
+# Contribute
 
 ## Scope
 
-This repo packages the Xquik skill for AI coding agents (Claude Code, Cursor, Codex, Gemini CLI, Windsurf, Copilot). Changes should focus on:
+This repository publishes the TweetClaw OpenClaw plugin and bundled Skill.
+Changes may cover:
 
-- Skill instructions clarity (`skills/`, `commands/`)
-- Related Xquik MCP links and OAuth setup guidance
-- Cross-agent compatibility (SKILL.md spec adherence)
-- Documentation (`README.md`, `docs/`)
+- Plugin behavior under `src/`
+- The packaged Skill under `skills/tweetclaw/`
+- OpenClaw and Xquik setup guidance
+- Tests, release checks, and documentation
 
-Changes to the upstream Xquik API itself belong in the main Xquik repo.
+Change the upstream Xquik API in its source repository.
 
-## Getting started
+## Set up
 
-1. Fork and clone
-2. Create a branch for your change
-3. Make the edit
-4. Open a PR using the template
+```bash
+npm ci
+npm run check:all
+```
 
-## Guidelines
+## Change rules
 
-- Keep skill instructions short and agent-friendly
-- Update `SKILL.md` if user-facing behavior changes
-- Update `README.md` if the API surface changes
-- Bump the version in `package.json` if you republish to npm
+- Keep each pull request focused.
+- Delete more handwritten lines than each commit adds.
+- Preserve approval, credential, payment, privacy, and endpoint boundaries.
+- Update `SKILL.md` for agent-facing behavior.
+- Update public guides when setup or API coverage changes.
+- Do not hand-edit `generated-api-contract.json` or release history.
+- Run `npm run check:all` before every commit and push.
 
-## Questions
+## Submit
 
-Open an issue with the "question" label or email `support@xquik.com`.
+Sign the commit, open a pull request, and resolve every blocking comment.
+A different person must approve non-trivial changes.
+
+Report vulnerabilities through [the security policy](SECURITY.md).

@@ -12,7 +12,7 @@ function truncateText(text: string): string {
   }
   const approximateTokens = Math.ceil(text.length / CHARS_PER_TOKEN);
   const formatted = approximateTokens.toLocaleString('en-US');
-  return `${text.slice(0, MAX_RESPONSE_CHARS)}\n\n--- TRUNCATED ---\nResponse was ~${formatted} tokens (limit: ${MAX_TOKENS.toLocaleString('en-US')}). Use more specific queries or filters to reduce response size.`;
+  return `${text.slice(0, MAX_RESPONSE_CHARS)}\n\n--- RESPONSE TRUNCATED ---\nEstimated size: ${formatted} tokens. Limit: ${MAX_TOKENS.toLocaleString('en-US')}. Narrow the query or filters.`;
 }
 
 function stringifyContent(content: unknown): string {

@@ -1,14 +1,14 @@
-# Benchmark Summary
+# Benchmark summary
 
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ## Scope
 
-This benchmark covers the packaged TweetClaw skill instructions, release card, static scan summary, and evaluation fixture for OpenClaw users.
+This benchmark covers the packaged Skill, release card, scan report, and evals.
 
-## Evaluation Set
+## Evaluation set
 
-The release fixture lives at `evals/evals.json` and covers:
+`evals/evals.json` covers:
 
 - Install and runtime inspection guidance
 - Approval-gated tweet posting
@@ -17,7 +17,7 @@ The release fixture lives at `evals/evals.json` and covers:
 - Prompt-injection isolation for X content
 - Bulk extraction cost ceilings
 
-## Acceptance Criteria
+## Acceptance criteria
 
 - The skill keeps a narrow X/Twitter OpenClaw purpose.
 - API-key prepaid credits cover 33 public paid-read routes.
@@ -28,11 +28,11 @@ The release fixture lives at `evals/evals.json` and covers:
 - Credentials remain in OpenClaw plugin config or the Xquik dashboard.
 - Release evidence is packaged with the skill directory.
 
-## Latest Result
+## Latest result
 
 Result date: 2026-07-23
 
-Status: Passed by static review and SkillSpector static scan.
+Status: Passed static review and the SkillSpector scan.
 
 Validation commands:
 
@@ -42,12 +42,11 @@ npm run check-openclaw-platform-fitness
 npm run check-package-artifact
 ```
 
-External SkillSpector validation uses the reviewed commit below. Run it only inside an isolated environment. Never execute mutable repository HEAD.
-
-Reproduce only inside an isolated environment:
+Run the pinned SkillSpector commit only in an isolated environment:
 
 ```bash
 uvx --from 'git+https://github.com/NVIDIA/SkillSpector.git@11567e8d1d5140722225fcaeb3c0f637c21ec40d' skillspector scan skills/tweetclaw --no-llm
 ```
 
-Signature status: unsigned source release. Add and verify `skill.oms.sig` before claiming a signed or NVIDIA-verified release.
+Signature: unsigned source release. Add and verify `skill.oms.sig` before
+claiming signed or NVIDIA-verified status.

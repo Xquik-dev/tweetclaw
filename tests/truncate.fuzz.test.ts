@@ -28,7 +28,7 @@ describe('truncate fuzz properties', () => {
             assert.equal(output, text);
           } else {
             assert.equal(output.slice(0, MAX_RESPONSE_CHARS), text.slice(0, MAX_RESPONSE_CHARS));
-            assert.match(output, /\n\n--- TRUNCATED ---\n/u);
+            assert.match(output, /\n\n--- RESPONSE TRUNCATED ---\n/u);
             assert.ok(output.length < MAX_RESPONSE_CHARS + 256);
           }
           completedRuns += 1;

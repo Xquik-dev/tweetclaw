@@ -48,11 +48,11 @@ jobs:
           expected_tag="v${version}"
 
           if [ "$GITHUB_REF_TYPE" != "tag" ]; then
-            echo "::error ::Releases must run from a tag."
+            echo "::error ::Release ref is not a tag. Push a signed version tag."
             exit 1
           fi
           if [ "$GITHUB_REF_NAME" != "$expected_tag" ]; then
-            echo "::error ::Release tag $GITHUB_REF_NAME does not match package version $version."
+            echo "::error ::Release tag $GITHUB_REF_NAME does not match version $version. Use $expected_tag."
             exit 1
           fi
 
@@ -60,11 +60,11 @@ jobs:
           tag_commit="$(git rev-list -n 1 "$GITHUB_REF_NAME")"
           master_commit="$(git rev-parse 'origin/master^{commit}')"
           if [ "$tag_commit" != "$GITHUB_SHA" ]; then
-            echo "::error ::Tag commit does not match the workflow commit."
+            echo "::error ::Tag and workflow commits differ. Rerun from the tagged commit."
             exit 1
           fi
           if [ "$tag_commit" != "$master_commit" ]; then
-            echo "::error ::Release tag must point to the current master commit."
+            echo "::error ::Release tag is behind master. Tag the current master commit."
             exit 1
           fi
 
@@ -89,7 +89,7 @@ jobs:
           package="${PACKAGE_NAME}@${PACKAGE_VERSION}"
           if npm view "$package" version --json >/dev/null 2>&1; then
             echo "published=true" >> "$GITHUB_OUTPUT"
-            echo "$package is already published. Skipping npm publish."
+            echo "$package is published. Skipping npm publish."
           else
             echo "published=false" >> "$GITHUB_OUTPUT"
           fi
@@ -115,7 +115,7 @@ jobs:
             fi
           done
 
-          echo "::error ::npm did not expose $package within 5 minutes."
+          echo "::error ::npm did not expose $package within 5 minutes. Check registry status before retrying."
           exit 1
 
   release:
@@ -136,7 +136,7 @@ jobs:
           set -euo pipefail
 
           if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "GitHub release $RELEASE_TAG already exists."
+            echo "GitHub release $RELEASE_TAG exists."
             exit 0
           fi
 

@@ -97,7 +97,7 @@ describe('handleTweetclaw', () => {
       fetchFunction: createMockFetch({ data: 'x'.repeat(30_000) }),
       params: { path: '/api/v1/account' },
     });
-    expect(result.content[0]?.text).toContain('--- TRUNCATED ---');
+    expect(result.content[0]?.text).toContain('--- RESPONSE TRUNCATED ---');
   });
 
   it('handles execution timeout', async () => {
@@ -195,6 +195,6 @@ describe('handleTweetclaw', () => {
       params: { path: '/api/v1/account' },
     });
     expect(result.isError).toBe(true);
-    expect(result.content[0]?.text).toContain('not available in MPP mode');
+    expect(result.content[0]?.text).toContain('does not support MPP');
   });
 });

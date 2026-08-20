@@ -18,21 +18,21 @@ type ContractEndpointInfo = Omit<EndpointInfo, 'parameters'> & {
 
 const RESPONSE_SUCCESS = '{ success: true }';
 const DESCRIPTION_PAGINATION_CURSOR = 'Pagination cursor';
-const DESCRIPTION_EXPORT_FORMAT = 'Export format (csv, json, md, md-document, pdf, txt, xlsx)';
+const DESCRIPTION_EXPORT_FORMAT = 'Export format: csv, json, md, md-document, pdf, txt, or xlsx';
 const CATEGORY_X_ACCOUNTS = 'x-accounts';
 const MPP_PRICE_CALL = '$0.00015/call';
 const MPP_PRICE_FOLLOW_CHECK = '$0.00075/call';
 const MPP_PRICE_TREND = '$0.00045/call';
 const TWEET_FILTER_PARAMETER_COUNT = 25;
 const WRITE_APPROVAL_NOTICE =
-  'Requires one-time user approval after showing the exact target and payload.';
+  'Requires one-time approval after showing the exact target and payload.';
 
 function writeSummary(action: string): string {
   return `${action}. ${WRITE_APPROVAL_NOTICE}`;
 }
 
 const PAGINATION_PARAMS: readonly EndpointParameter[] = [
-  { description: 'Max items per page', in: 'query', name: 'limit', required: false, type: 'number' },
+  { description: 'Maximum items per page', in: 'query', name: 'limit', required: false, type: 'number' },
   { description: DESCRIPTION_PAGINATION_CURSOR, in: 'query', name: 'cursor', required: false, type: 'string' },
 ];
 
@@ -88,17 +88,17 @@ const TWEET_SEARCH_QUERY_PARAMS = asQueryParameters(EXTRACTION_SEARCH_PARAMS);
 const EXTRACTION_TARGET_PARAMS: readonly EndpointParameter[] = [
   { description: 'Target X username', in: 'body', name: 'targetUsername', required: false, type: 'string' },
   { description: 'Target tweet ID', in: 'body', name: 'targetTweetId', required: false, type: 'string' },
-  { description: 'Search query for search tools', in: 'body', name: 'searchQuery', required: false, type: 'string' },
+  { description: 'Twitter search query', in: 'body', name: 'searchQuery', required: false, type: 'string' },
   { description: 'Community ID for community tools', in: 'body', name: 'targetCommunityId', required: false, type: 'string' },
   { description: 'List ID for list tools', in: 'body', name: 'targetListId', required: false, type: 'string' },
   { description: 'Space ID for space_explorer', in: 'body', name: 'targetSpaceId', required: false, type: 'string' },
-  { description: 'Max results to return', in: 'body', name: 'resultsLimit', required: false, type: 'number' },
+  { description: 'Maximum results', in: 'body', name: 'resultsLimit', required: false, type: 'number' },
   ...EXTRACTION_SEARCH_PARAMS,
 ];
 
 const TREND_PARAMS: readonly EndpointParameter[] = [
   { description: 'WOEID location ID (1 for worldwide)', in: 'query', name: 'woeid', required: false, type: 'number' },
-  { description: 'Max number of trends', in: 'query', name: 'count', required: false, type: 'number' },
+  { description: 'Maximum trends', in: 'query', name: 'count', required: false, type: 'number' },
 ];
 
 const PARAM_STYLE_ID: EndpointParameter =
@@ -202,12 +202,25 @@ const PARAM_QUERY_TYPE: EndpointParameter =
 const PARAM_SEARCH_QUERY: EndpointParameter =
   { description: 'Search query', in: 'query', name: 'q', required: true, type: 'string' };
 
+const COMMUNITY_TWEET_FILTER_PARAMS: readonly EndpointParameter[] = [
+  { description: 'Language code, such as en or tr', in: 'query', name: 'language', required: false, type: 'string' },
+  { description: 'Start date in YYYY-MM-DD format', in: 'query', name: 'sinceDate', required: false, type: 'string' },
+  { description: 'End date in YYYY-MM-DD format', in: 'query', name: 'untilDate', required: false, type: 'string' },
+  { description: 'Media type filter', in: 'query', name: 'mediaType', required: false, type: 'string' },
+  { description: 'Minimum likes', in: 'query', name: 'minFaves', required: false, type: 'number' },
+  { description: 'Minimum retweets', in: 'query', name: 'minRetweets', required: false, type: 'number' },
+  { description: 'Minimum replies', in: 'query', name: 'minReplies', required: false, type: 'number' },
+  { description: 'Minimum views', in: 'query', name: 'minViews', required: false, type: 'number' },
+  { description: 'Only tweets from verified authors', in: 'query', name: 'verifiedOnly', required: false, type: 'boolean' },
+];
+
 const COMMUNITY_SEARCH_PARAMS: readonly EndpointParameter[] = [
   { description: 'Community ID', in: 'query', name: 'communityId', required: true, type: 'string' },
   PARAM_SEARCH_QUERY,
   PARAM_QUERY_TYPE,
   PARAM_CURSOR,
   PARAM_PAGE_SIZE_20,
+  ...COMMUNITY_TWEET_FILTER_PARAMS,
 ];
 
 const PARAM_SINCE_TIME: EndpointParameter =
@@ -221,6 +234,13 @@ const PARAM_USER_ID: EndpointParameter =
 
 const PARAM_LIST_ID: EndpointParameter =
   { description: 'List ID', in: 'path', name: 'id', required: true, type: 'string' };
+
+const USER_BATCH_FILTER_PARAMS: readonly EndpointParameter[] = [
+  { description: 'Minimum follower count', in: 'query', name: 'minFollowers', required: false, type: 'number' },
+  { description: 'Maximum follower count', in: 'query', name: 'maxFollowers', required: false, type: 'number' },
+  { description: 'Minimum account age in whole days', in: 'query', name: 'minAccountAgeDays', required: false, type: 'number' },
+  { description: 'Only verified profiles', in: 'query', name: 'verifiedOnly', required: false, type: 'boolean' },
+];
 
 const RESPONSE_WRITE_ACTION =
   '{ object: "x_write_action", id, writeActionId, action, status, terminal, retryable, safeToRetry, statusUrl, pollAfterMs, charged, chargedCredits, billing, request, account, target, targetId, result, nextAction, sendDispatched, success }';
@@ -794,7 +814,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/tweets/:id',
     responseShape: `{ tweet: ${RESPONSE_TWEET}, author?: ${RESPONSE_USER} }`,
-    summary: 'Look up a single tweet with engagement metrics',
+    summary: 'Look up one tweet with engagement metrics',
   },
   {
     category: 'twitter',
@@ -806,12 +826,12 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
       PARAM_CURSOR,
       PARAM_SINCE_TIME,
       PARAM_UNTIL_TIME,
-      { description: 'Max tweets to return (default 20, max 200)', in: 'query', name: 'limit', required: false, type: 'number' },
+      { description: 'Maximum tweets (default 20, max 200)', in: 'query', name: 'limit', required: false, type: 'number' },
       ...TWEET_SEARCH_QUERY_PARAMS,
     ],
     path: '/api/v1/x/tweets/search',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Search tweets with filters and cursor pagination',
+    summary: 'Search X/Twitter tweets with filters and cursor pagination',
   },
   {
     category: 'twitter',
@@ -821,7 +841,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/users/:id',
     responseShape: RESPONSE_USER,
-    summary: 'Get X user profile by username',
+    summary: 'Look up an X/Twitter user profile',
   },
   {
     category: 'twitter',
@@ -846,7 +866,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     mpp: { intent: 'charge', price: MPP_PRICE_FOLLOW_CHECK },
     path: '/api/v1/x/articles/:tweetId',
     responseShape: `{ article: { title, previewText, coverImageUrl, contents, createdAt, likeCount, replyCount, quoteCount, viewCount }, author?: ${RESPONSE_USER} }`,
-    summary: 'Get full content of an X Article (long-form post) by tweet ID',
+    summary: 'Get an X Article by tweet ID',
   },
 
   // --- Media ---
@@ -874,7 +894,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     mpp: { intent: 'charge', price: MPP_PRICE_TREND },
     path: '/api/v1/trends',
     responseShape: '{ trends: [{ name, query?, description?, rank? }], total, woeid }',
-    summary: 'Get current trending topics on X',
+    summary: 'Get current X/Twitter trends',
   },
   {
     category: 'twitter',
@@ -884,7 +904,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     mpp: { intent: 'charge', price: MPP_PRICE_TREND },
     path: '/api/v1/x/trends',
     responseShape: '{ trends: [{ name, query?, description?, rank? }], count, woeid }',
-    summary: 'Get X trending topics by region',
+    summary: 'Get regional X/Twitter trends',
   },
   {
     category: 'twitter',
@@ -1000,7 +1020,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/users/:id/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get latest tweets by a user. Preferred over search for user timelines.',
+    summary: 'Get recent tweets from one user. Prefer this route for timelines.',
   },
   {
     category: 'twitter',
@@ -1025,7 +1045,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     mpp: { intent: 'charge', price: MPP_PRICE_CALL },
     path: '/api/v1/x/communities/:id/info',
     responseShape: '{ community: { id, name?, description?, member_count?, moderator_count?, created_at?, banner_url?, join_policy?, rules? } }',
-    summary: 'Get community details.',
+    summary: 'Get community details',
   },
   {
     category: 'twitter',
@@ -1034,7 +1054,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/communities/:id/members',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get community members. Use cursor for pagination.',
+    summary: 'Get community members with cursor pagination',
   },
   {
     category: 'twitter',
@@ -1043,16 +1063,16 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR],
     path: '/api/v1/x/communities/:id/moderators',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get community moderators. Returns about 20 per page.',
+    summary: 'Get community moderators, about 20 per page',
   },
   {
     category: 'twitter',
     free: false,
     method: 'GET',
-    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
+    parameters: [PARAM_COMMUNITY_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20, ...COMMUNITY_TWEET_FILTER_PARAMS],
     path: '/api/v1/x/communities/:id/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get community tweets. Returns about 20 per page.',
+    summary: 'Get community tweets, about 20 per page',
   },
   {
     category: 'twitter',
@@ -1061,7 +1081,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: COMMUNITY_SEARCH_PARAMS,
     path: '/api/v1/x/communities/search',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Search tweets within a community.',
+    summary: 'Search tweets within a community',
   },
   {
     category: 'twitter',
@@ -1070,7 +1090,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: COMMUNITY_SEARCH_PARAMS,
     path: '/api/v1/x/communities/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get matching tweets from a community.',
+    summary: 'Get matching tweets from a community',
   },
   {
     category: 'twitter',
@@ -1079,7 +1099,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_LIST_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/lists/:id/followers',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get list followers.',
+    summary: 'Get list followers',
   },
   {
     category: 'twitter',
@@ -1088,7 +1108,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_LIST_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/lists/:id/members',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get list members.',
+    summary: 'Get list members',
   },
   {
     category: 'twitter',
@@ -1104,7 +1124,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/lists/:id/tweets',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get list tweets. Returns about 20 per page.',
+    summary: 'Get list tweets, about 20 per page',
   },
   {
     category: 'twitter',
@@ -1115,7 +1135,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/tweets',
     responseShape: `{ tweets: [${RESPONSE_TWEET_BASIC}], has_next_page, next_cursor }`,
-    summary: 'Get multiple tweets by IDs. Max 100 IDs per request.',
+    summary: 'Get up to 100 tweets by ID',
   },
   {
     category: 'twitter',
@@ -1132,7 +1152,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/tweets/:id/quotes',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get quote tweets of a tweet.',
+    summary: 'Get a tweet\'s quote tweets',
   },
   {
     category: 'twitter',
@@ -1148,7 +1168,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/tweets/:id/replies',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get replies to a tweet.',
+    summary: 'Get replies to a tweet',
   },
   {
     category: 'twitter',
@@ -1157,7 +1177,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/tweets/:id/retweeters',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get users who retweeted a tweet.',
+    summary: 'Get users who retweeted a tweet',
   },
   {
     category: 'twitter',
@@ -1166,7 +1186,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_TWEET_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/tweets/:id/thread',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get thread context for a tweet.',
+    summary: 'Get a tweet thread',
   },
   {
     category: 'twitter',
@@ -1174,10 +1194,11 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     method: 'GET',
     parameters: [
       { description: 'Comma-separated user IDs (max 100)', in: 'query', name: 'ids', required: true, type: 'string' },
+      ...USER_BATCH_FILTER_PARAMS,
     ],
     path: '/api/v1/x/users/batch',
     responseShape: `{ users: [${RESPONSE_USER}], has_next_page, next_cursor, processed_count, requested_count, returned_count, unavailable_ids, unprocessed_ids }`,
-    summary: 'Get multiple users by IDs. Max 100 IDs per request.',
+    summary: 'Get up to 100 users by ID',
   },
   {
     category: 'twitter',
@@ -1186,7 +1207,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_SEARCH_QUERY, PARAM_CURSOR],
     path: '/api/v1/x/users/search',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Search users by name or username.',
+    summary: 'Search users by name or username',
   },
   {
     category: 'twitter',
@@ -1195,7 +1216,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_AFTER_ALIAS, PARAM_PAGE_SIZE_200, PARAM_LIMIT_ALIAS],
     path: '/api/v1/x/users/:id/followers',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get user followers. Use cursor for pagination.',
+    summary: 'Get user followers with cursor pagination',
   },
   {
     category: 'twitter',
@@ -1204,7 +1225,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_AFTER_ALIAS, PARAM_PAGE_SIZE_200, PARAM_LIMIT_ALIAS],
     path: '/api/v1/x/users/:id/following',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get users this user follows. Use cursor for pagination.',
+    summary: 'Get accounts followed by a user with cursor pagination',
   },
   {
     category: 'twitter',
@@ -1220,7 +1241,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/x/users/:id/mentions',
     responseShape: RESPONSE_TWEETS_PAGINATED,
-    summary: 'Get tweets mentioning a user.',
+    summary: 'Get tweets mentioning a user',
   },
   {
     category: 'twitter',
@@ -1229,7 +1250,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     parameters: [PARAM_USER_ID, PARAM_CURSOR, PARAM_PAGE_SIZE_20],
     path: '/api/v1/x/users/:id/verified-followers',
     responseShape: RESPONSE_USERS_PAGINATED,
-    summary: 'Get verified followers.',
+    summary: 'Get verified followers',
   },
 
 
@@ -1253,7 +1274,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     path: '/api/v1/x/account-connection-attempts/:id',
     responseShape:
       '{ object, id, status, pollAfterMs? } | { object, id, status, error, reason?, retryable } | { object, id, status, expiresAt, message, username }',
-    summary: 'Get X account connection status (dashboard only - agent-prohibited)',
+    summary: 'Dashboard-only: get X account connection status',
   },
   {
     agentProhibited: true,
@@ -1282,7 +1303,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     method: 'POST',
     path: '/api/v1/x/accounts/bulk-retry',
     responseShape: '{ cleared }',
-    summary: 'Bulk retry temporarily failed X accounts (dashboard only - agent-prohibited)',
+    summary: 'Dashboard-only: retry temporarily failed X accounts',
   },
 
   // --- X Write Actions ---
@@ -1588,7 +1609,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/credits/topup',
     responseShape: '{ url, redirect_url }',
-    summary: 'Open hosted checkout to top up credits.',
+    summary: 'Open hosted checkout to top up credits',
   },
   {
     agentProhibited: true,
@@ -1600,7 +1621,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/credits/topup/status',
     responseShape: '{ status: "paid" | "open" | "expired" | "unknown", amount_dollars?: number, credits?: number }',
-    summary: 'Check credit top-up checkout status.',
+    summary: 'Check credit top-up checkout status',
   },
   {
     agentProhibited: true,
@@ -1612,7 +1633,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     ],
     path: '/api/v1/credits/quick-topup',
     responseShape: '{ outcome: "charged", credits: number, balance: number } | { outcome: "no_payment_method" } | { outcome: "requires_action", clientSecret: string }',
-    summary: 'Charge a saved payment method for credits when available.',
+    summary: 'Charge an available saved payment method for credits',
   },
 ] as const;
 

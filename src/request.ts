@@ -39,17 +39,17 @@ function createBaseUrl(baseUrl: string): URL {
   try {
     return new URL(baseUrl);
   } catch {
-    throw new Error('Base URL must be a valid HTTPS URL.');
+    throw new Error('Base URL is invalid. Enter an HTTPS URL.');
   }
 }
 
 function parseBaseUrl(baseUrl: string): URL {
   const url = createBaseUrl(baseUrl);
   if (url.protocol !== 'https:') {
-    throw new Error('Base URL must use HTTPS.');
+    throw new Error('Base URL is not HTTPS. Use an HTTPS URL.');
   }
   if (url.username.length > 0 || url.password.length > 0) {
-    throw new Error('Base URL must not include credentials.');
+    throw new Error('Base URL contains credentials. Remove them.');
   }
   return url;
 }
@@ -115,11 +115,11 @@ function isProhibitedRequest(method: string, path: string): boolean {
 
 function validateRequestPath(method: string, path: string): void {
   if (!path.startsWith(API_V1_PREFIX)) {
-    throw new Error(`Path must start with /api/v1/ but got: ${path}`);
+    throw new Error(`Path is outside /api/v1/. Use a catalog-listed API path: ${path}`);
   }
   if (isProhibitedRequest(method, path)) {
     throw new Error(
-      'Agent-prohibited endpoint. Account connection and re-authentication must be done through the Xquik dashboard at dashboard.xquik.com, not through the agent.',
+      'Endpoint is blocked for agents. Complete account, credential, billing, or support administration at dashboard.xquik.com.',
     );
   }
 }
@@ -190,9 +190,9 @@ function formatApiError(response: Response, payload: unknown): string {
     : String(response.status);
   const code = safeErrorCode(payload);
   if (code === undefined) {
-    return `API request failed: ${status}`;
+    return `Xquik API returned ${status}.`;
   }
-  return `API request failed: ${status} (${code})`;
+  return `Xquik API returned ${status} (${code}).`;
 }
 
 function createProxiedRequest(

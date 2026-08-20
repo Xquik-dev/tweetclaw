@@ -43,13 +43,13 @@ function packClawPack() {
   ]);
   const pack = JSON.parse(output);
   if (pack.name !== packageJson.name) {
-    throw new Error(`Packed name ${pack.name ?? "<missing>"} does not match ${packageJson.name}`);
+    throw new Error(`Packed name is ${pack.name ?? "<missing>"}. Expected ${packageJson.name}.`);
   }
   if (pack.version !== packageJson.version) {
-    throw new Error(`Packed version ${pack.version ?? "<missing>"} does not match ${packageJson.version}`);
+    throw new Error(`Packed version is ${pack.version ?? "<missing>"}. Expected ${packageJson.version}.`);
   }
   if (typeof pack.path !== "string" || !existsSync(pack.path)) {
-    throw new Error(`Packed ClawPack tarball is missing: ${String(pack.path)}`);
+    throw new Error(`ClawPack tarball is missing. Check the pack output: ${String(pack.path)}`);
   }
   process.stdout.write(`${JSON.stringify(pack, null, 2)}\n`);
   return pack.path;

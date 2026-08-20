@@ -70,18 +70,18 @@ describe('buildFetchUrl', () => {
 
   it('rejects plain HTTP base URLs', () => {
     expect.assertions(1);
-    expect(() => { buildFetchUrl('http://xquik.com', '/api/v1/account'); }).toThrow('Base URL must use HTTPS');
+    expect(() => { buildFetchUrl('http://xquik.com', '/api/v1/account'); }).toThrow('Base URL is not HTTPS');
   });
 
   it('rejects malformed base URLs', () => {
     expect.assertions(1);
-    expect(() => { buildFetchUrl('not a url', '/api/v1/account'); }).toThrow('Base URL must be a valid HTTPS URL.');
+    expect(() => { buildFetchUrl('not a url', '/api/v1/account'); }).toThrow('Base URL is invalid');
   });
 
   it('rejects credentialed base URLs', () => {
     expect.assertions(1);
     expect(() => { buildFetchUrl('https://user:pass@xquik.com', '/api/v1/account'); }).toThrow(
-      'Base URL must not include credentials',
+      'Base URL contains credentials',
     );
   });
 });
@@ -140,7 +140,7 @@ describe('createProxiedRequest', () => {
   it('throws on non-/api/v1/ paths', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/invalid/path')).rejects.toThrow('Path must start with /api/v1/');
+    await expect(request('/invalid/path')).rejects.toThrow('Path is outside /api/v1/');
   });
 
   it('throws on non-2xx responses with status and body', async () => {
@@ -148,7 +148,7 @@ describe('createProxiedRequest', () => {
     const mockFetch: typeof fetch = async () =>
       new Response(JSON.stringify({ error: 'not found' }), { status: 404, statusText: 'Not Found' });
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
-    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 404 Not Found');
+    await expect(request('/api/v1/account')).rejects.toThrow('Xquik API returned 404 Not Found.');
   });
 
   it('does not echo private response fields in API error messages', async () => {
@@ -164,7 +164,7 @@ describe('createProxiedRequest', () => {
         { status: 403, statusText: 'Forbidden' },
       );
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
-    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 403 Forbidden (account_error)');
+    await expect(request('/api/v1/account')).rejects.toThrow('Xquik API returned 403 Forbidden (account_error).');
     await expect(request('/api/v1/account')).rejects.not.toThrow('user@example.com');
     await expect(request('/api/v1/account')).rejects.not.toThrow('acct_123');
   });
@@ -174,7 +174,7 @@ describe('createProxiedRequest', () => {
     const mockFetch: typeof fetch = async () =>
       new Response(JSON.stringify({ code: 'rate_limit' }), { status: 429 });
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
-    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 429 (rate_limit)');
+    await expect(request('/api/v1/account')).rejects.toThrow('Xquik API returned 429 (rate_limit).');
   });
 
   it('falls back to a safe code field when error is not text', async () => {
@@ -182,7 +182,7 @@ describe('createProxiedRequest', () => {
     const mockFetch: typeof fetch = async () =>
       new Response(JSON.stringify({ code: 'payment_required', error: 402 }), { status: 402 });
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
-    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 402 (payment_required)');
+    await expect(request('/api/v1/account')).rejects.toThrow('Xquik API returned 402 (payment_required).');
   });
 
   it('omits API error codes when the error body has no string code', async () => {
@@ -190,7 +190,7 @@ describe('createProxiedRequest', () => {
     const mockFetch: typeof fetch = async () =>
       new Response(JSON.stringify({ message: 'private failure' }), { status: 400, statusText: 'Bad Request' });
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
-    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 400 Bad Request');
+    await expect(request('/api/v1/account')).rejects.toThrow('Xquik API returned 400 Bad Request.');
   });
 
   it('omits unsafe API error codes', async () => {
@@ -201,16 +201,16 @@ describe('createProxiedRequest', () => {
       );
 
     await expect(requestWithError('')('/api/v1/account')).rejects.toThrow(
-      'API request failed: 400 Bad Request',
+      'Xquik API returned 400 Bad Request.',
     );
     await expect(requestWithError('1bad')('/api/v1/account')).rejects.toThrow(
-      'API request failed: 400 Bad Request',
+      'Xquik API returned 400 Bad Request.',
     );
     await expect(requestWithError('bad code')('/api/v1/account')).rejects.toThrow(
-      'API request failed: 400 Bad Request',
+      'Xquik API returned 400 Bad Request.',
     );
     await expect(requestWithError('a'.repeat(81))('/api/v1/account')).rejects.toThrow(
-      'API request failed: 400 Bad Request',
+      'Xquik API returned 400 Bad Request.',
     );
   });
 
@@ -219,7 +219,7 @@ describe('createProxiedRequest', () => {
     const mockFetch: typeof fetch = async () =>
       new Response('private body', { status: 502, statusText: 'Bad Gateway' });
     const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
-    await expect(request('/api/v1/account')).rejects.toThrow('API request failed: 502 Bad Gateway');
+    await expect(request('/api/v1/account')).rejects.toThrow('Xquik API returned 502 Bad Gateway.');
     await expect(request('/api/v1/account')).rejects.not.toThrow('private body');
   });
 
@@ -238,7 +238,7 @@ describe('createProxiedRequest', () => {
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(
       request('/api/v1/x/accounts', { method: 'POST', body: { username: 'test', email: 'a@b.com', password: 'pass' } }),
-    ).rejects.toThrow('Agent-prohibited endpoint');
+    ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks POST /api/v1/x/accounts/:id/reauth', async () => {
@@ -246,7 +246,7 @@ describe('createProxiedRequest', () => {
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(
       request('/api/v1/x/accounts/123/reauth', { method: 'POST', body: { password: 'pass' } }),
-    ).rejects.toThrow('Agent-prohibited endpoint');
+    ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks GET /api/v1/x/account-connection-attempts/:id', async () => {
@@ -254,7 +254,7 @@ describe('createProxiedRequest', () => {
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(
       request('/api/v1/x/account-connection-attempts/xatt_123'),
-    ).rejects.toThrow('Agent-prohibited endpoint');
+    ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('allows GET /api/v1/x/accounts (list accounts)', async () => {
@@ -269,40 +269,40 @@ describe('createProxiedRequest', () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(request('/api/v1/x/accounts/bulk-retry', { method: 'POST' })).rejects.toThrow(
-      'Agent-prohibited endpoint',
+      'Endpoint is blocked for agents',
     );
   });
 
   it('blocks DELETE /api/v1/x/accounts/:id (disconnect)', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/api/v1/x/accounts/123', { method: 'DELETE' })).rejects.toThrow('Agent-prohibited endpoint');
+    await expect(request('/api/v1/x/accounts/123', { method: 'DELETE' })).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks API key creation', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(request('/api/v1/api-keys', { method: 'POST', body: { name: 'agent' } })).rejects.toThrow(
-      'Agent-prohibited endpoint',
+      'Endpoint is blocked for agents',
     );
   });
 
   it('blocks API key reads with trailing slash', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/api/v1/api-keys/')).rejects.toThrow('Agent-prohibited endpoint');
+    await expect(request('/api/v1/api-keys/')).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks checkout creation', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/api/v1/subscribe', { method: 'POST' })).rejects.toThrow('Agent-prohibited endpoint');
+    await expect(request('/api/v1/subscribe', { method: 'POST' })).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks checkout creation with trailing slash', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/api/v1/subscribe/', { method: 'POST' })).rejects.toThrow('Agent-prohibited endpoint');
+    await expect(request('/api/v1/subscribe/', { method: 'POST' })).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks credit top-up status reads', async () => {
@@ -310,7 +310,7 @@ describe('createProxiedRequest', () => {
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(
       request('/api/v1/credits/topup/status', { query: { session_id: 'cs_test' } }),
-    ).rejects.toThrow('Agent-prohibited endpoint');
+    ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks credit top-up status reads with trailing slash', async () => {
@@ -318,13 +318,13 @@ describe('createProxiedRequest', () => {
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
     await expect(
       request('/api/v1/credits/topup/status/', { query: { session_id: 'cs_test' } }),
-    ).rejects.toThrow('Agent-prohibited endpoint');
+    ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
   it('blocks support ticket access', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/api/v1/support/tickets')).rejects.toThrow('Agent-prohibited endpoint');
+    await expect(request('/api/v1/support/tickets')).rejects.toThrow('Endpoint is blocked for agents');
   });
 });
 

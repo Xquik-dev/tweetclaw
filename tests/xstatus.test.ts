@@ -43,7 +43,7 @@ describe('formatAccountStatus', () => {
   it('handles missing fields gracefully', () => {
     expect.assertions(1);
     const result = formatAccountStatus({});
-    expect(result).toContain('--- Xquik Account Status ---');
+    expect(result).toContain('Xquik account status');
   });
 });
 
@@ -70,6 +70,6 @@ describe('handleXStatus', () => {
     expect.assertions(1);
     const mockRequest: RequestFunction = async () => 'not an object';
     const result = await handleXStatus(mockRequest);
-    expect(result).toBe('--- Xquik Account Status ---');
+    expect(result).toBe('Xquik account status');
   });
 });

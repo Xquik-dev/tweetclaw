@@ -46,7 +46,7 @@ describe('catalog matching', () => {
 
   it('rejects unsafe paths before catalog lookup', () => {
     expect.assertions(1);
-    expect(() => resolveCatalogRequest({ path: '/invalid/path' })).toThrow('Path must start with /api/v1/');
+    expect(() => resolveCatalogRequest({ path: '/invalid/path' })).toThrow('Path is outside /api/v1/');
   });
 
   it('rejects query strings in path', () => {
@@ -56,7 +56,7 @@ describe('catalog matching', () => {
 
   it('rejects non-MPP endpoints in MPP mode', () => {
     expect.assertions(1);
-    expect(() => resolveCatalogRequest({ path: '/api/v1/account' }, { mppMode: true })).toThrow('not available in MPP mode');
+    expect(() => resolveCatalogRequest({ path: '/api/v1/account' }, { mppMode: true })).toThrow('does not support MPP');
   });
 
   it('normalizes query parameter values', () => {
@@ -109,7 +109,7 @@ describe('specEndpoints', () => {
     expect(
       writeEndpoints.every((endpoint) =>
         endpoint.summary.includes(
-          'Requires one-time user approval after showing the exact target and payload.',
+          'Requires one-time approval after showing the exact target and payload.',
         )),
     ).toBe(true);
   });

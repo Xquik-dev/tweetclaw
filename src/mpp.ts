@@ -19,12 +19,12 @@ function isCallable(value: unknown): value is (...args: readonly unknown[]) => u
 
 async function loadDynamicModule(name: string): Promise<Record<string, unknown>> {
   if (name !== MPP_CLIENT_MODULE && name !== VIEM_ACCOUNTS_MODULE) {
-    throw new Error('Unsupported MPP module.');
+    throw new Error('MPP module is not allowed.');
   }
 
   const mod: unknown = await import(name);
   if (!isRecord(mod)) {
-    throw new Error(`Failed to load ${name}`);
+    throw new Error(`MPP module failed to load: ${name}`);
   }
   return mod;
 }
@@ -35,26 +35,26 @@ function createModuleLoader(): ModuleLoader {
 
 async function initMpp(tempoSigningKey: string, loadModule?: ModuleLoader): Promise<void> {
   if (!TEMPO_SIGNING_KEY_PATTERN.test(tempoSigningKey)) {
-    throw new Error('Invalid MPP signing key configuration.');
+    throw new Error('MPP signing key is invalid. Use a 0x-prefixed 32-byte hex key.');
   }
 
   const load = loadModule ?? createModuleLoader();
   const mppxMod = await load(MPP_CLIENT_MODULE).catch((): never => {
-    throw new Error('MPP requires mppx package. Run: npm i mppx@0.8.12 viem@2.55.4');
+    throw new Error('mppx is missing. Run npm i mppx@0.8.12 viem@2.55.4.');
   });
   const viemMod = await load(VIEM_ACCOUNTS_MODULE).catch((): never => {
-    throw new Error('MPP requires viem package. Run: npm i mppx@0.8.12 viem@2.55.4');
+    throw new Error('viem is missing. Run npm i mppx@0.8.12 viem@2.55.4.');
   });
-  if (!isCallable(viemMod['privateKeyToAccount'])) throw new Error('viem missing privateKeyToAccount');
-  if (!isCallable(mppxMod['tempo'])) throw new Error('mppx missing tempo');
-  if (!isRecord(mppxMod['Mppx'])) throw new Error('mppx missing Mppx');
+  if (!isCallable(viemMod['privateKeyToAccount'])) throw new Error('viem export is missing: privateKeyToAccount');
+  if (!isCallable(mppxMod['tempo'])) throw new Error('mppx export is missing: tempo');
+  if (!isRecord(mppxMod['Mppx'])) throw new Error('mppx export is missing: Mppx');
   const createMethod: unknown = mppxMod['Mppx']['create'];
-  if (!isCallable(createMethod)) throw new Error('mppx Mppx.create is not a function');
+  if (!isCallable(createMethod)) throw new Error('mppx export is invalid: Mppx.create');
   let account: unknown;
   try {
     account = viemMod['privateKeyToAccount'](tempoSigningKey);
   } catch {
-    throw new Error('Invalid MPP signing key configuration.');
+    throw new Error('MPP signing key is invalid. Use a 0x-prefixed 32-byte hex key.');
   }
   const method: unknown = mppxMod['tempo']({ account });
   createMethod({ methods: [method] });

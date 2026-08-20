@@ -1,26 +1,24 @@
-# Security Policy
+# Security policy
 
-## Reporting A Vulnerability
+## Report a vulnerability
 
-If you discover a security vulnerability, please **do not** open a public issue.
+Do not publish vulnerability details in an issue.
 
 Email [security@xquik.com](mailto:security@xquik.com) with:
 
-- A description of the issue
-- Steps to reproduce
-- Impact assessment
+- Affected version and component
+- Minimal reproduction steps
+- Impact and required access
 
-We aim to acknowledge reports within 72 hours. We will coordinate a disclosure
-timeline after confirming the issue.
+Expect an acknowledgment within 72 hours. We will set a disclosure timeline
+after confirming the issue.
 
 ## Credential handling
 
-This skill uses an API key for authentication. Key guidelines:
-
-- Never commit API keys to the repo or share them publicly
-- Store keys in environment variables (`XQUIK_API_KEY`) or your agent's secret store
-- Rotate keys immediately if you suspect compromise
-- Use per-agent / per-environment keys to limit blast radius
+- Never commit or publish API keys and signing keys.
+- Store keys in OpenClaw config or an approved secret store.
+- Rotate any exposed or suspected key immediately.
+- Use separate keys for each agent and environment.
 
 ## Scope
 
@@ -32,7 +30,5 @@ In scope:
 - The optional MPP integration
 - Dependencies and release metadata
 
-Out of scope:
-
-- The upstream Xquik API (report at `security@xquik.com`)
-- Third-party registries that list this skill
+Report upstream Xquik API issues to the same private address. Contact third-party
+registries about defects in their own services.

@@ -144,7 +144,7 @@ describe('API_SPEC', () => {
   });
 
   it('documents complete safe tweet, media, and profile richness', () => {
-    expect.assertions(5);
+    expect.assertions(6);
     const tweet = API_SPEC.find(
       (endpoint) =>
         endpoint.method === 'GET' && endpoint.path === '/api/v1/x/tweets/:id',
@@ -183,6 +183,19 @@ describe('API_SPEC', () => {
     ).not.toMatch(
       /\b(?:bookmarked|canDm|canMediaTag|favorited|followRequestSent|notificationsEnabled|quickPromoteEligibility|retweeted|superFollowedBy|superFollowing|viewerBlockedBy|viewerBlocking|viewerFollowedBy|viewerFollowing|viewerLiveFollowing|viewerMuting)\b/u,
     );
+    expect(MEDIA_RESPONSE_FIELDS).toContain('otherSensitiveContent');
+  });
+
+  it('documents current community and user batch filters', () => {
+    expect.assertions(2);
+    const endpoint = (path: string) => API_SPEC.find((entry) => entry.method === 'GET' && entry.path === path);
+    const parameterNames = (path: string) => endpoint(path)?.parameters.map((parameter) => parameter.name);
+    expect(parameterNames('/api/v1/x/communities/:id/tweets')).toEqual(expect.arrayContaining([
+      'language', 'sinceDate', 'untilDate', 'mediaType', 'minFaves', 'minRetweets', 'minReplies', 'minViews', 'verifiedOnly',
+    ]));
+    expect(parameterNames('/api/v1/x/users/batch')).toEqual(expect.arrayContaining([
+      'minFollowers', 'maxFollowers', 'minAccountAgeDays', 'verifiedOnly',
+    ]));
   });
 
   it('parameters have required fields when present', () => {

@@ -6,21 +6,28 @@ labels: bug
 ---
 
 ## Description
-A clear description of the bug.
+Describe the problem and its impact.
 
 ## Steps to reproduce
+
 1. ...
 2. ...
 
 ## Expected behavior
-What should happen.
+
+Describe the expected result.
 
 ## Actual behavior
-What actually happens. Include error messages and stack traces.
+
+Describe the result. Include sanitized errors and stack traces.
 
 ## Environment
-- Agent (Claude Code, Cursor, Codex, etc.):
-- Version:
+
+- OpenClaw version:
+- TweetClaw version:
+- Node.js version:
 - OS:
 
 ## Additional context
+
+Remove credentials, private X data, and payment material.
