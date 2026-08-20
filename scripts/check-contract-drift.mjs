@@ -145,7 +145,7 @@ async function loadOpenApi() {
     signal: AbortSignal.timeout(30_000),
   });
   if (!response.ok) {
-    throw new Error(`OpenAPI request failed with HTTP ${String(response.status)}.`);
+    throw new Error(`OpenAPI returned HTTP ${String(response.status)}. Retry after checking xquik.com.`);
   }
   return response.json();
 }

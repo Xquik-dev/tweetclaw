@@ -1,7 +1,7 @@
 {
   "name": "@xquik/tweetclaw",
   "version": "1.6.41",
-  "description": "OpenClaw X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes through Xquik. Not affiliated with X Corp.",
+  "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Includes 33 prepaid reads and 7 direct read routes through MPP. Not affiliated with X Corp.",
   "license": "MIT",
   "packageManager": "npm@11.12.1",
   "type": "module",

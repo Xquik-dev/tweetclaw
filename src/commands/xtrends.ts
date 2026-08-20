@@ -45,7 +45,7 @@ function isXTrendsResponse(value: unknown): value is XTrendsResponse {
 
 function formatTrends(radar: RadarResponse): string {
   const lines: string[] = [];
-  lines.push(`--- Trending Topics (${String(radar.total)} items) ---`);
+  lines.push(`Trending topics (${String(radar.total)} items)`);
 
   for (const [index, item] of radar.items.entries()) {
     const position = String(index + 1);
@@ -66,7 +66,7 @@ function formatTrends(radar: RadarResponse): string {
 }
 
 function formatXTrends(response: XTrendsResponse): string {
-  const lines = [`--- X Trends (${String(response.total)} items, WOEID ${String(response.woeid)}) ---`];
+  const lines = [`X trends (${String(response.total)} items, WOEID ${String(response.woeid)})`];
   for (const [index, item] of response.trends.entries()) {
     const rank = item.rank ?? index + 1;
     lines.push(`${String(rank)}. ${item.name}`);
@@ -82,7 +82,7 @@ function mppTrendQuery(filter?: string): Readonly<Record<string, string>> | unde
   if (trimmed.length === 0) return undefined;
   const woeid = Number(trimmed);
   if (!Number.isSafeInteger(woeid) || woeid < 1) {
-    throw new Error('MPP /xtrends accepts a numeric WOEID. Use 1 for worldwide trends.');
+    throw new Error('WOEID is invalid. Use a positive integer such as 1 for worldwide trends.');
   }
   return { woeid: String(woeid) };
 }
@@ -105,7 +105,7 @@ async function handleMppTrends(request: RequestFunction, filter?: string): Promi
   );
   return isXTrendsResponse(result)
     ? formatXTrends(result)
-    : '--- X Trends (0 items) ---';
+    : 'X trends (0 items)';
 }
 
 async function handleRadarTrends(request: RequestFunction, filter?: string): Promise<string> {
@@ -119,7 +119,7 @@ async function handleRadarTrends(request: RequestFunction, filter?: string): Pro
   const hasQuery = Object.keys(query).length > 0;
   const result: unknown = await request('/api/v1/radar', hasQuery ? { query } : undefined);
   if (!isRadarResponse(result)) {
-    return '--- Trending Topics (0 items) ---';
+    return 'Trending topics (0 items)';
   }
   return formatTrends(result);
 }

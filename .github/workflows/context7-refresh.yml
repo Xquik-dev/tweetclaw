@@ -1,4 +1,4 @@
-name: Refresh Context7 Docs
+name: Refresh Context7 Documentation
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
           set -euo pipefail
 
           if [ -z "$CONTEXT7_API_KEY" ]; then
-            echo "::warning ::CONTEXT7_API_KEY secret is not configured. Configure it to enable automatic Context7 refreshes."
+            echo "::warning ::Context7 API key is missing. Add CONTEXT7_API_KEY to enable refreshes."
             exit 0
           fi
 
@@ -51,10 +51,10 @@ jobs:
               ;;
             400)
               if grep -Eiq "active-task|being processed|already.*process" "$body_file"; then
-                echo "::warning ::Context7 is already processing another library. Retry on the next docs change."
+                echo "::warning ::Context7 is busy. Retry on the next documentation change."
                 cat "$body_file"
               elif grep -Eiq "too-early|minimum .* days|required between updates" "$body_file"; then
-                echo "::warning ::Context7 refresh is not due yet."
+                echo "::warning ::Context7 refresh is not due."
                 cat "$body_file"
               else
                 echo "::error ::Context7 refresh returned HTTP $status."
@@ -63,15 +63,15 @@ jobs:
               fi
               ;;
             404)
-              echo "::warning ::Context7 library /xquik-dev/tweetclaw is not available yet. Add processing may still be pending."
+              echo "::warning ::Context7 library is unavailable. Initial processing may still be pending."
               cat "$body_file"
               ;;
             401|403)
-              echo "::error ::Context7 authentication failed."
+              echo "::error ::Context7 authentication failed. Check CONTEXT7_API_KEY."
               exit 1
               ;;
             429)
-              echo "::warning ::Context7 refresh is rate limited. Retry on the next docs change."
+              echo "::warning ::Context7 rate limit reached. Retry on the next documentation change."
               ;;
             *)
               echo "::error ::Context7 refresh returned HTTP $status."

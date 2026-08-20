@@ -6,12 +6,17 @@ labels: enhancement
 ---
 
 ## Problem
-What user problem would this solve?
+
+Describe the user problem.
 
 ## Proposed solution
-Describe the desired behavior.
+
+Describe the intended behavior and approval boundary.
 
 ## Alternatives considered
-Other approaches you've thought about.
+
+List relevant alternatives.
 
 ## Additional context
+
+Add public examples or links. Remove private account data.

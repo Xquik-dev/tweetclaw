@@ -22,9 +22,9 @@ describe('truncateText', () => {
     expect.assertions(3);
     const long = 'a'.repeat(30_000);
     const result = truncateText(long);
-    expect(result).toContain('--- TRUNCATED ---');
+    expect(result).toContain('--- RESPONSE TRUNCATED ---');
     expect(result).toContain('7,500');
-    expect(result).toContain('limit: 6,000');
+    expect(result).toContain('Limit: 6,000');
   });
 
   it('includes correct token count estimation', () => {
@@ -57,6 +57,6 @@ describe('truncateResponse', () => {
     expect.assertions(1);
     const large = { data: 'x'.repeat(30_000) };
     const result = truncateResponse(large);
-    expect(result).toContain('--- TRUNCATED ---');
+    expect(result).toContain('--- RESPONSE TRUNCATED ---');
   });
 });

@@ -7,28 +7,27 @@ import { resolveCatalogRequest, specEndpoints } from './catalog.js';
 import { errorResult, successResult } from './result.js';
 import type { FetchFunction, RequestFunction, ToolResult, TweetclawParams } from '../types.js';
 
-const EXECUTE_DESCRIPTION = `Invoke one Xquik API endpoint from the bundled TweetClaw catalog.
+const EXECUTE_DESCRIPTION = `Call one Xquik API endpoint from TweetClaw's catalog.
 
-Use "explore" first to find the endpoint, then call this tool with structured parameters:
+Use "explore" first. Then provide:
 - path: concrete /api/v1/... path
 - method: GET, POST, PATCH, PUT, or DELETE
 - query: query parameters as an object
 - body: JSON request body
 - idempotencyKey: unique key required for X write actions
 
-Auth is injected automatically. Never pass API keys, signing keys, passwords, cookies, or TOTP secrets.
+TweetClaw injects auth. Never pass keys, passwords, cookies, or TOTP secrets.
 
-## Important rules
-- Only endpoints listed in the bundled catalog can be invoked. Unknown paths are rejected.
-- The plugin only calls the configured Xquik API base URL and only /api/v1 paths.
-- Account connection, re-authentication, API-key administration, subscription checkout, credit top-up, and support-ticket actions are dashboard-only.
-- TWEET ACTIONS: SENDING a tweet ("tweet this", "post this") uses POST /api/v1/x/tweets. DRAFTING a tweet ("help me write", "compose") uses the compose flow.
-- WRITE ACTIONS: Show the exact endpoint and payload to the user before approval. All write-like calls trigger an OpenClaw approval prompt.
-- IDEMPOTENCY: Generate one unique key for each intended X write. Reuse it only to retry the exact same write.
-- MPP MODE: When configured with a signing key and no API key, only MPP-eligible read endpoints are allowed.
-- CURRENT EVENTS: Use /api/v1/radar for curated trends.
+Rules:
+- Only catalog-listed /api/v1 paths on the configured Xquik base URL can run.
+- Use dashboard.xquik.com for accounts, API keys, billing, and support.
+- "Tweet this" uses POST /api/v1/x/tweets. "Draft this" uses the compose flow.
+- Show the exact endpoint and payload before approval. Write-like calls require approval.
+- Create one idempotency key per X write. Reuse it only for an identical retry.
+- MPP mode permits only MPP-supported reads.
+- Use /api/v1/radar for current events.
 
-## Example: Send a tweet
+Example: send a tweet
 {
   "path": "/api/v1/x/tweets",
   "method": "POST",
@@ -36,7 +35,7 @@ Auth is injected automatically. Never pass API keys, signing keys, passwords, co
   "body": { "account": "@myaccount", "text": "Hello world!" }
 }
 
-## Example: Search tweets
+Example: search tweets
 {
   "path": "/api/v1/x/tweets/search",
   "method": "GET",
@@ -53,7 +52,7 @@ function createExecutionTimeout(timeoutMs: number): {
   const controller = new AbortController();
   const promise = new Promise<never>((_resolve, reject) => {
     const timeoutId = setTimeout(() => {
-      reject(new Error(`Execution timed out after ${String(timeoutMs / MS_PER_SECOND)}s`));
+      reject(new Error(`Request timed out after ${String(timeoutMs / MS_PER_SECOND)} seconds. Narrow the request or retry.`));
     }, timeoutMs);
     controller.signal.addEventListener('abort', () => { clearTimeout(timeoutId); }, { once: true });
   });

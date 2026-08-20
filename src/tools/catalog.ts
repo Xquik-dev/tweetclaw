@@ -66,7 +66,7 @@ function matchesEndpointPath(endpointPath: string, requestPath: string): boolean
 
 function assertSafePath(path: string): void {
   if (!path.startsWith(API_V1_PREFIX)) {
-    throw new Error(`Path must start with /api/v1/ but got: ${path}`);
+    throw new Error(`Path is outside /api/v1/. Use a catalog-listed API path: ${path}`);
   }
   if (path.includes('?') || path.includes('#')) {
     throw new Error('Pass query parameters through the query object, not in the path.');
@@ -103,7 +103,7 @@ function validateWriteIdempotencyKey(
     || !isVisibleAscii(idempotencyKey)
   ) {
     throw new Error(
-      'X writes require a unique 1-255 character idempotencyKey. Reuse it only for the exact same retry.',
+      'idempotencyKey is invalid. Use 1-255 visible ASCII characters and reuse it only for an identical retry.',
     );
   }
 }
@@ -138,10 +138,10 @@ function resolveCatalogRequest(
   assertSafePath(path);
   const endpoint = findEndpoint(method, path);
   if (endpoint === undefined) {
-    throw new Error(`Endpoint is not in the TweetClaw catalog: ${method} ${path}`);
+    throw new Error(`Endpoint is not in the TweetClaw catalog. Choose a route returned by explore: ${method} ${path}`);
   }
   if (options?.mppMode === true && endpoint.mpp === undefined) {
-    throw new Error(`Endpoint is not available in MPP mode: ${method} ${endpoint.path}`);
+    throw new Error(`Endpoint does not support MPP. Choose an MPP-eligible read route: ${method} ${endpoint.path}`);
   }
   validateWriteIdempotencyKey(endpoint, idempotencyKey);
 

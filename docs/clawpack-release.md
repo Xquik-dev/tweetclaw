@@ -1,17 +1,19 @@
-# Release TweetClaw
+# Publish TweetClaw
 
-Use this checklist to validate TweetClaw before publishing a package. Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+Validate the package before publishing. Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ## Verify release metadata
 
-Keep `package.json`, `openclaw.plugin.json`, and `CHANGELOG.md` aligned.
-Publish through the verified ClawHub scope, with npm as the supported fallback.
+Keep `package.json`, `openclaw.plugin.json`, and `CHANGELOG.md` aligned. Publish
+through verified ClawHub, with npm as the fallback.
 
-The release must describe 33 prepaid public paid-read routes and exactly 7 direct Machine Payments Protocol (MPP) routes. The direct routes are tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info.
+Document 33 prepaid public read routes and exactly 7 direct MPP routes: tweet
+lookup, user lookup, follower check, article lookup, trends, X trends, and
+community info.
 
 ## Run release checks
 
-Run all source, package, and dependency checks:
+Run every source, package, and dependency check:
 
 ```bash
 npm ci
@@ -19,7 +21,7 @@ npm run check:all
 npm audit --audit-level=moderate
 ```
 
-The checks must pass before packing or publishing.
+All checks must pass before packing or publishing.
 
 ## Inspect the package artifact
 
@@ -32,7 +34,9 @@ openclaw plugins inspect tweetclaw --runtime --json
 openclaw skills info tweetclaw
 ```
 
-Confirm the artifact contains `dist/`, `openclaw.plugin.json`, and the complete `skills/tweetclaw/` directory. Confirm `explore`, optional `tweetclaw`, the approval hook, and `xtrends` load from the packed artifact.
+Confirm the artifact contains `dist/`, `openclaw.plugin.json`, and
+`skills/tweetclaw/`. Verify `explore`, optional `tweetclaw`, approvals, and
+`xtrends` from the installed archive.
 
 ## Verify public readbacks
 

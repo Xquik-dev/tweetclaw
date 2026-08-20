@@ -1,17 +1,17 @@
-# OpenClaw Setup Guide
+# Set up TweetClaw in OpenClaw
 
-Use this guide when installing, configuring, or verifying TweetClaw in OpenClaw. It is optimized for agent retrieval and keeps the setup path short, current, and public-safe.
+Install, configure, and verify the TweetClaw OpenClaw plugin.
 
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
-## What TweetClaw Adds
+## Plugin tools
 
-TweetClaw is the `@xquik/tweetclaw` OpenClaw plugin for Xquik X/Twitter workflows. It registers 2 structured tools:
+TweetClaw registers 2 structured tools:
 
 - `explore`: free local catalog search with no network request.
 - `tweetclaw`: live endpoint invoker for catalog-listed Xquik API paths.
 
-The plugin can install before credentials exist. Without credentials, `explore` remains usable and live calls return setup guidance.
+Without credentials, `explore` works and live calls return setup guidance.
 
 ## Install
 
@@ -21,9 +21,11 @@ Install the verified ClawHub listing:
 openclaw plugins install clawhub:@xquik/tweetclaw
 ```
 
-OpenClaw records ClawHub as the tracked source and retains the exact npm package as fallback metadata. Use `openclaw plugins install npm:@xquik/tweetclaw` when you need the npm fallback. Avoid repo-folder installs for release verification because they do not represent the published artifact.
+OpenClaw tracks the ClawHub package and keeps npm fallback metadata. Use
+`openclaw plugins install npm:@xquik/tweetclaw` for the fallback. Release checks
+must use a packed artifact, not a repository folder.
 
-Current source metadata targets OpenClaw `2026.7.1` or newer. Update OpenClaw before testing source builds or freshly packed artifacts from this repository.
+Source builds require OpenClaw `2026.7.1` or newer.
 
 If OpenClaw runs with `OPENCLAW_NIX_MODE=1`, plugin lifecycle mutators are
 disabled. Install or update TweetClaw through your Nix OpenClaw source instead
@@ -31,7 +33,7 @@ of `openclaw plugins install` or `openclaw plugins update`.
 
 ## Update
 
-For routine upgrades, keep the tracked install source and update the installed plugin id:
+Update through the tracked source:
 
 ```bash
 openclaw plugins update tweetclaw
@@ -43,9 +45,10 @@ For reproducible production installs, pin a published npm version:
 openclaw plugins install npm:@xquik/tweetclaw@<version> --pin
 ```
 
-OpenClaw keeps pinned npm records on the selected version during later `plugins update tweetclaw` runs. Move back to the default npm release line with `openclaw plugins update @xquik/tweetclaw` when you want the current stable package again.
+Pinned installs stay pinned. Run `openclaw plugins update @xquik/tweetclaw` to
+return to the stable release line.
 
-## Verify Runtime Loading
+## Verify runtime loading
 
 After install or update, inspect the runtime and bundled skill:
 
@@ -54,7 +57,7 @@ openclaw plugins inspect tweetclaw --runtime --json
 openclaw skills info tweetclaw
 ```
 
-Expected result:
+Confirm:
 
 - The `tweetclaw` plugin loads.
 - The `explore` tool is available.
@@ -63,7 +66,7 @@ Expected result:
 - The `xtrends` command is registered.
 - The TweetClaw skill is visible to the agent.
 
-Managed Gateways with config reload enabled can restart automatically after an install or update. If the Gateway is unmanaged or reload is disabled, run `openclaw gateway restart` before runtime inspection.
+If the Gateway does not reload automatically, run `openclaw gateway restart`.
 
 For packaged release checks, validate the installed artifact instead of the source checkout:
 
@@ -73,7 +76,9 @@ openclaw plugins install npm-pack:./xquik-tweetclaw-<version>.tgz
 openclaw plugins inspect tweetclaw --runtime --json
 ```
 
-`openclaw plugins build --entry ./dist/index.js --check` and `openclaw plugins validate --entry ./dist/index.js` are the generated metadata lane for simple `defineToolPlugin` packages. TweetClaw uses `definePluginEntry` because it registers tools, a command, an approval hook, and an event-polling service, so the package smoke above is the authoritative local release proof.
+Generated metadata checks target simple `defineToolPlugin` packages. TweetClaw
+uses `definePluginEntry` for tools, commands, approvals, and polling. The packed
+artifact smoke test is the local release proof.
 
 Maintainers should also run the deterministic source gate after building:
 
@@ -81,9 +86,8 @@ Maintainers should also run the deterministic source gate after building:
 npm run check-openclaw-platform-fitness
 ```
 
-That gate checks package metadata, the OpenClaw host peer, runtime entrypoints,
-manifest tool ownership, optional-tool metadata, command aliases, approval-hook
-shape, setup docs, workflow docs, and the packaged skill.
+The gate checks package metadata, runtime entries, tool ownership, approvals,
+commands, documentation, and the packaged Skill.
 
 For slow install or inspect debugging, keep machine-readable output and send
 lifecycle timings to stderr:
@@ -92,20 +96,19 @@ lifecycle timings to stderr:
 OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json
 ```
 
-## Enable The Optional Tool
+## Enable live API calls
 
-Many OpenClaw profiles keep a coding-focused tool set by default. If the skill is visible but the agent cannot call TweetClaw tools, add the 2 tool names to `tools.alsoAllow`:
+If the Skill is visible but its tools are not, add both names:
 
 ```bash
 openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
 ```
 
-Use `tools.alsoAllow` instead of replacing the whole tool profile unless strict allowlist mode is intentional.
+Use `tools.alsoAllow` to preserve the current tool profile.
 
-## Approval Model
+## Approval model
 
-OpenClaw optional tools and plugin permission requests solve different problems.
-TweetClaw uses both:
+TweetClaw uses 2 distinct gates:
 
 - `tweetclaw` is optional so the model does not see the live endpoint invoker
   until the user opts in.
@@ -117,7 +120,7 @@ extraction, monitor, webhook, and account-scoped calls. Approval prompts offer
 one-time approval or deny; they do not offer persistent trust for future
 social-account actions.
 
-## Credential Modes
+## Credential modes
 
 TweetClaw has 3 modes:
 
@@ -152,7 +155,7 @@ openclaw config set plugins.entries.tweetclaw.config.baseUrl "https://xquik.com"
 
 TweetClaw rejects non-HTTPS URLs and URLs with embedded credentials.
 
-## Event Polling
+## Event polling
 
 Polling is optional runtime behavior for monitor events the user already created. It does not create monitors, scan targets, post content, or change account state.
 
@@ -168,7 +171,7 @@ The default interval is 60 seconds. The config schema and runtime normalize the 
 openclaw config set plugins.entries.tweetclaw.config.pollingInterval 60
 ```
 
-## First Checks
+## First checks
 
 Use `explore` before live calls:
 
@@ -184,7 +187,7 @@ For MPP mode, filter for eligible endpoints:
 
 For live calls, pass only catalog-listed `/api/v1/...` paths. Put query parameters in the `query` object, not inside the path string.
 
-## Troubleshooting
+## Fix setup problems
 
 If install fails, verify OpenClaw is at least `2026.7.1` for current source builds and install the published package.
 

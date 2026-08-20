@@ -4,14 +4,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-/**
- * TweetClaw - Error Suppression Detector
- *
- * Scans all source files for banned error suppressions.
- * CRITICAL: Error suppressions are NEVER allowed. Fix the underlying issues instead.
- *
- * Exits with code 1 if any suppressions are found.
- */
+/** Reject error suppressions. Fix the underlying issue instead. */
 
 import { reportViolations, walkSourceFiles } from './check-common';
 
@@ -70,13 +63,12 @@ const violations = walkSourceFiles<SuppressionViolation>(
 if (violations.length > 0) {
   reportViolations(
     violations,
-    'Error suppressions detected!',
+    'Error suppressions found.',
     [
-      'NEVER use error suppressions (eslint-disable, @ts-ignore, etc.)',
-      'Fix the underlying issues instead.',
+      'Remove each suppression and fix its underlying issue.',
     ],
   );
   process.exit(1);
 }
 
-globalThis.console.log('No error suppressions found!');
+globalThis.console.log('Error suppression check passed.');

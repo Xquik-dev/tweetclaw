@@ -10,16 +10,16 @@ const categories = [...new Set(specEndpoints.map((endpoint) => endpoint.category
   .toSorted((a, b) => a.localeCompare(b))
   .join(', ');
 
-const SEARCH_DESCRIPTION = `Search the X (Twitter) API endpoint catalog. No network calls and no code execution.
+const SEARCH_DESCRIPTION = `Search the X (Twitter) API catalog without network calls or code execution.
 
-Use structured filters:
-- query: keyword search across summaries, paths, response shapes, and parameters
+Filters:
+- query: summaries, paths, response fields, and parameters
 - category: one of ${categories}
 - method: GET, POST, PATCH, PUT, or DELETE
 - path: exact or partial API path
 - free: true for free endpoints, false for paid endpoints
-- mpp: true for MPP-eligible endpoints only
-- limit: 1-100 results, default 25
+- mpp: true for MPP-supported endpoints only
+- limit: 1-100 results; default 25
 
 Returns endpoint descriptors with method, path, summary, category, parameters, cost, and response shape.`;
 

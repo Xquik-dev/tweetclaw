@@ -2,7 +2,7 @@
   "id": "tweetclaw",
   "name": "TweetClaw",
   "version": "1.6.41",
-  "description": "Search tweets, publish, export followers, manage media, monitor X/Twitter, and run draws through structured Xquik endpoints. Includes 33 prepaid paid-read routes and 7 direct MPP routes. Not affiliated with X Corp.",
+  "description": "OpenClaw Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Includes 33 prepaid reads and 7 direct read routes through MPP. Not affiliated with X Corp.",
   "activation": {
     "onStartup": false,
     "onCapabilities": ["tool"]
@@ -24,18 +24,18 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key for account-backed automation and 33 prepaid public paid-read routes. Not affiliated with X Corp." },
-      "tempoSigningKey": { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$", "description": "Optional read-only MPP payment-proof signing key for 7 direct read routes. Stored as sensitive OpenClaw plugin config and never exposed to the agent. Not affiliated with X Corp." },
-      "baseUrl": { "type": "string", "default": "https://xquik.com", "pattern": "^https://", "description": "HTTPS Xquik-compatible API base URL. Only change if using a self-hosted Xquik instance." },
-      "pollingInterval": { "type": "number", "default": 60, "minimum": 5, "description": "Event polling interval in seconds" },
+      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key for account-backed automation and 33 prepaid public read routes. Not affiliated with X Corp." },
+      "tempoSigningKey": { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$", "description": "Optional read-only MPP signing key for 7 direct routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp." },
+      "baseUrl": { "type": "string", "default": "https://xquik.com", "pattern": "^https://", "description": "HTTPS base URL for Xquik or a compatible self-hosted instance." },
+      "pollingInterval": { "type": "number", "default": 60, "minimum": 5, "description": "Seconds between event checks" },
       "pollingEnabled": { "type": "boolean", "default": true }
     }
   },
   "uiHints": {
-    "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Account-backed X automation. Generate at dashboard.xquik.com." },
-    "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Optional read-only payment-proof signing for 7 direct read routes. Kept in sensitive local plugin config; never exposed to the agent." },
-    "baseUrl": { "label": "API Base URL", "placeholder": "https://xquik.com", "advanced": true, "help": "HTTPS only. Only change if using a self-hosted Xquik instance." },
-    "pollingInterval": { "label": "Event Poll Interval (seconds)", "advanced": true, "help": "How often to check for new monitor events. Default: 60 seconds." },
-    "pollingEnabled": { "label": "Enable Event Notifications", "advanced": true, "help": "Deliver monitor alerts and extraction completions to your chat." }
+    "apiKey": { "label": "Xquik API Key", "sensitive": true, "placeholder": "xq_...", "help": "Create an account-backed automation key at dashboard.xquik.com." },
+    "tempoSigningKey": { "label": "MPP Signing Key", "sensitive": true, "placeholder": "0x...", "help": "Signs payments for 7 read-only routes. Hidden from the agent." },
+    "baseUrl": { "label": "API Base URL", "placeholder": "https://xquik.com", "advanced": true, "help": "Change only for a self-hosted HTTPS API." },
+    "pollingInterval": { "label": "Event Polling Interval (Seconds)", "advanced": true, "help": "Check every 60 seconds by default." },
+    "pollingEnabled": { "label": "Notify This Chat About Events", "advanced": true, "help": "Send monitor and extraction events here." }
   }
 }

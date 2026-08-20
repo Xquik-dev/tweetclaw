@@ -43,7 +43,7 @@ function preparePackedPackageJson() {
     });
   } catch (error) {
     if (hasErrorCode(error, "EEXIST")) {
-      throw new Error(`Refusing to overwrite existing package.json backup: ${backupPath}`, { cause: error });
+      throw new Error(`package.json backup exists. Restore or remove it first: ${backupPath}`, { cause: error });
     }
     throw error;
   }
@@ -83,7 +83,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   } else if (command === "restore") {
     restorePackedPackageJson();
   } else {
-    throw new Error("Expected one of: prepare, restore-after-pack, restore");
+    throw new Error("Command is invalid. Use prepare, restore-after-pack, or restore.");
   }
 }
 

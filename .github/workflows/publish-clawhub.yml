@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Validate the package without publishing it
+        description: Validate without publishing
         required: true
         type: boolean
         default: true
@@ -34,9 +34,9 @@ jobs:
           package-manager-cache: false
       - name: Install dependencies
         run: npm ci --ignore-scripts
-      - name: Build package artifact
+      - name: Pack plugin
         run: npm pack
-      - name: Upload package artifact
+      - name: Upload plugin package
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: clawhub-package

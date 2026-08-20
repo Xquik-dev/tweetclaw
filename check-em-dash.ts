@@ -4,18 +4,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-/**
- * TweetClaw - Dash Detector
- *
- * Scans all source and JSON files for banned dash patterns:
- * - Raw em-dash character U+2014
- * - Escaped em-dash in JSON (\u2014)
- * - Double-dash separator " -- " (space-hyphen-hyphen-space)
- *
- * All are banned in copy. Use " - " (space-hyphen-space) instead.
- *
- * Exits with code 1 if any violations are found.
- */
+/** Reject em dashes, escaped em dashes, and spaced double hyphens. */
 
 import { reportViolations, walkSourceFiles } from './check-common';
 import type { BaseViolation } from './check-common';
@@ -43,10 +32,10 @@ const violations = walkSourceFiles<BaseViolation>(
 if (violations.length > 0) {
   reportViolations(
     violations,
-    'Banned dashes detected!',
-    ['Em-dashes and double-dash separators (" -- ") are banned. Use " - " (space-hyphen-space) instead.'],
+    'Banned dashes found.',
+    ['Replace each em dash or spaced double hyphen with plain punctuation.'],
   );
   process.exit(1);
 }
 
-globalThis.console.log('No banned dashes found!');
+globalThis.console.log('Dash check passed.');

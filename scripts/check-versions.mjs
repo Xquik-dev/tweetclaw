@@ -325,4 +325,4 @@ if (drifts.length > 0) {
   process.exit(1);
 }
 
-process.stdout.write(`All surfaces at ${expected}\n`);
+process.stdout.write(`Version check passed: ${expected}\n`);

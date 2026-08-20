@@ -16,7 +16,6 @@ import type { ExploreParams, FetchFunction, PluginConfig, TweetclawParams } from
 
 interface PollerEvent {
   readonly eventType?: string;
-  readonly xUsername?: string;
 }
 
 function isPollerEvent(value: unknown): value is PollerEvent {
@@ -27,33 +26,33 @@ const DEFAULT_POLLING_INTERVAL_SECONDS = 60;
 const MIN_POLLING_INTERVAL_SECONDS = 5;
 const DEFAULT_BASE_URL = 'https://xquik.com';
 const MISSING_CREDENTIALS_MESSAGE =
-  'TweetClaw is installed but not configured. Add an Xquik API key for account-backed workflows or a Tempo signing key for MPP read-only mode in OpenClaw plugin config.';
+  'TweetClaw is not configured. Add an Xquik API key for account-backed workflows or a Tempo signing key for MPP reads before live calls.';
 
 const CONFIG_SCHEMA = {
   additionalProperties: false,
   properties: {
     apiKey: {
       description:
-        'Xquik API key for account-backed automation and 33 prepaid public paid-read routes. Not affiliated with X Corp.',
+        'Xquik API key for account-backed automation and 33 prepaid public read routes. Not affiliated with X Corp.',
       minLength: 1,
       type: 'string',
     },
     baseUrl: {
       default: 'https://xquik.com',
-      description: 'HTTPS Xquik-compatible API base URL. Only change if using a self-hosted Xquik instance.',
+      description: 'HTTPS base URL for Xquik or a compatible self-hosted instance.',
       pattern: '^https://',
       type: 'string',
     },
     pollingEnabled: { default: true, type: 'boolean' },
     pollingInterval: {
       default: 60,
-      description: 'Event polling interval in seconds',
+      description: 'Seconds between event checks',
       minimum: 5,
       type: 'number',
     },
     tempoSigningKey: {
       description:
-        'Optional read-only MPP payment-proof signing key for 7 direct read routes. Stored as sensitive OpenClaw plugin config and never exposed to the agent. Not affiliated with X Corp.',
+        'Optional read-only MPP signing key for 7 direct routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp.',
       pattern: '^0x[0-9a-fA-F]{64}$',
       type: 'string',
     },
@@ -155,13 +154,13 @@ interface OpenClawApi {
 
 const EXPLORE_PARAMETERS = {
   properties: {
-    category: { description: 'Endpoint category filter', type: 'string' },
+    category: { description: 'Filter by endpoint category', type: 'string' },
     free: { description: 'Filter by free or paid endpoints', type: 'boolean' },
-    limit: { default: 25, description: 'Maximum endpoint descriptors to return', maximum: 100, minimum: 1, type: 'number' },
+    limit: { default: 25, description: 'Maximum results', maximum: 100, minimum: 1, type: 'number' },
     method: { description: 'HTTP method filter', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
-    mpp: { description: 'Filter by MPP eligibility', type: 'boolean' },
+    mpp: { description: 'Filter by MPP support', type: 'boolean' },
     path: { description: 'Exact or partial API path filter', type: 'string' },
-    query: { description: 'Keyword search across endpoint metadata', type: 'string' },
+    query: { description: 'Search summaries, paths, response fields, and parameters', type: 'string' },
   },
   type: 'object',
 };
@@ -175,15 +174,14 @@ const TWEETCLAW_PARAMETERS = {
       type: ['object', 'array', 'string', 'number', 'boolean', 'null'],
     },
     idempotencyKey: {
-      description:
-        'Unique 1-255 character key for an X write. Reuse it only to retry the exact same write.',
+      description: 'Unique 1-255 character key for an X write. Reuse it only for an identical retry.',
       maxLength: 255,
       minLength: 1,
       pattern: '^[!-~]+$',
       type: 'string',
     },
     method: { default: 'GET', description: 'HTTP method', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
-    path: { description: 'Concrete /api/v1/... endpoint path from the catalog', type: 'string' },
+    path: { description: 'Catalog-listed /api/v1/... endpoint path', type: 'string' },
     query: {
       additionalProperties: { type: ['string', 'number', 'boolean'] },
       description: 'Query parameters',
@@ -286,7 +284,7 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
   const registerHook = api.on ?? api.registerHook;
   if (registerHook === undefined) {
     api.logger.warn(
-      'TweetClaw: OpenClaw approval hooks are unavailable. Keep explicit user approval before write actions.',
+      'TweetClaw: Approval hook unavailable. Require explicit approval before risky calls.',
     );
     return;
   }
@@ -308,12 +306,12 @@ function registerWriteApprovalHook(api: OpenClawApi): void {
         requireApproval: {
           allowedDecisions: ['allow-once', 'deny'],
           description:
-            'TweetClaw may spend credits, change an X account, create a job, or expose private data. Review the call before allowing it.',
+            'This call may spend credits, change X, create a job, or expose private data. Review it before allowing.',
           pluginId: 'tweetclaw',
           severity: 'warning',
           timeoutBehavior: 'deny',
           timeoutMs: 60_000,
-          title: 'Approve TweetClaw Action',
+          title: 'Approve TweetClaw action',
         },
       };
     },
@@ -338,11 +336,11 @@ function resolveCredentialState(config: Readonly<PluginConfig>): CredentialState
 async function initializeMpp(api: OpenClawApi, signingValue: string): Promise<Error | undefined> {
   try {
     await initMpp(signingValue);
-    api.logger.info('TweetClaw: MPP initialized - payment account ready');
+    api.logger.info('TweetClaw: MPP ready for 7 direct read routes.');
     return undefined;
   } catch {
-    api.logger.error('TweetClaw: MPP init failed. Check local plugin configuration.');
-    return new Error('Check local plugin configuration and optional packages.');
+    api.logger.error('TweetClaw: MPP setup failed. Check config and optional packages.');
+    return new Error('Check the signing key and install mppx and viem.');
   }
 }
 
@@ -360,7 +358,7 @@ async function registerMppMode(
 ): MppInitialization {
   if (credentialMode !== 'mpp') return undefined;
 
-  api.logger.info('TweetClaw: direct MPP mode - 7 read routes, no subscription needed');
+  api.logger.info('TweetClaw: Direct MPP mode enabled for 7 read routes.');
   return initializeMpp(api, signingValue);
 }
 
@@ -445,10 +443,7 @@ function registerPoller(api: OpenClawApi, config: Readonly<PluginConfig>, creden
         const eventType: string = isPollerEvent(event) && typeof event['eventType'] === 'string'
           ? event['eventType']
           : 'unknown';
-        const username: string = isPollerEvent(event) && typeof event['xUsername'] === 'string'
-          ? event['xUsername']
-          : '';
-        api.logger.info(`[TweetClaw] ${eventType} from @${username}`);
+        api.logger.info(`TweetClaw: ${eventType} event received.`);
       }
     },
     request,
@@ -472,7 +467,7 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
 
   if (credential.mode === 'none') {
     api.logger.warn(
-      'TweetClaw: No API key or signing key configured. Install succeeded; configure credentials before network calls.',
+      'TweetClaw: No API key or signing key configured. Add one before live calls.',
     );
   }
 
@@ -486,7 +481,7 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   registerTools(api, toolOptions);
   registerCommands(api, credential.mode, request, mppInitialization);
   registerPoller(api, config, credential.mode, request);
-  api.logger.info('TweetClaw: Plugin registered successfully');
+  api.logger.info('TweetClaw: Plugin registered.');
 }
 
 const plugin = definePluginEntry({

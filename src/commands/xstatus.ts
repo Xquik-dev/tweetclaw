@@ -47,7 +47,7 @@ function formatUsageLines(usage: AccountResponse['usage']): readonly string[] {
 
 function formatAccountStatus(account: AccountResponse): string {
   const lines: string[] = [];
-  lines.push('--- Xquik Account Status ---');
+  lines.push('Xquik account status');
 
   if (account.xUsername !== undefined) {
     lines.push(`X Account: @${account.xUsername}`);
@@ -72,7 +72,7 @@ function formatAccountStatus(account: AccountResponse): string {
 async function handleXStatus(request: RequestFunction): Promise<string> {
   const result: unknown = await request('/api/v1/account');
   if (!isAccountResponse(result)) {
-    return '--- Xquik Account Status ---';
+    return 'Xquik account status';
   }
   return formatAccountStatus(result);
 }

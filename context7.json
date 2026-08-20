@@ -3,7 +3,7 @@
   "url": "https://context7.com/xquik-dev/tweetclaw",
   "public_key": "pk_oCPeRRqZFJsY4cCUSotDD",
   "projectTitle": "TweetClaw",
-  "description": "OpenClaw plugin for Xquik X/Twitter automation with 33 prepaid paid-read routes and 7 direct MPP routes. Not affiliated with X Corp.",
+  "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Includes 33 prepaid reads and 7 direct read routes through MPP. Not affiliated with X Corp.",
   "folders": [],
   "excludeFolders": [
     "node_modules",
@@ -41,22 +41,22 @@
     "xquik-tweetclaw-1.6.2.tgz"
   ],
   "rules": [
-    "Use docs/context7-quickstarts.md first for copy-paste install, auth, explore, read, write, MPP, monitor, webhook, media, and troubleshooting recipes.",
-    "Use docs/context7-facts.md for short source-backed answers about identity, install, tools, credential modes, MPP boundaries, endpoint rules, and approval rules.",
-    "Use docs/context7-agent-guide.md as the concise agent-facing map before falling back to README, skill, or source.",
-    "Use docs/openclaw-setup.md for install, configuration, verification, polling, and troubleshooting questions.",
-    "Use docs/agent-workflows.md for task planning, approval boundaries, MPP workflows, extraction, monitors, webhooks, media, and common mistakes.",
-    "Use openclaw.plugin.json for OpenClaw tool definitions, config schema, sensitive field hints, and approval boundaries.",
-    "Use package.json for the npm package name, current version, package files, repository, homepage, license, keywords, and install metadata.",
+    "Start with docs/context7-quickstarts.md for installation, authentication, API calls, MPP, monitors, webhooks, media, and fixes.",
+    "Use docs/context7-facts.md for identity, tools, credentials, MPP, endpoints, and approvals.",
+    "Use docs/context7-agent-guide.md for the concise agent contract.",
+    "Use docs/openclaw-setup.md for installation, configuration, runtime checks, polling, and fixes.",
+    "Use docs/agent-workflows.md for approvals, MPP, extraction, monitors, webhooks, and media.",
+    "Use openclaw.plugin.json for tool definitions, config, sensitive fields, and approvals.",
+    "Use package.json for package and OpenClaw install metadata.",
     "TweetClaw is an OpenClaw plugin, not an MCP server. Link MCP users to https://docs.xquik.com/mcp/overview. Prefer OAuth 2.1. Clients that support custom bearer headers can use an Xquik API key; ChatGPT custom apps require OAuth.",
-    "If Codex reports Authorization server response missing required issuer: expected https://xquik.com, do not repeat OAuth. Affected Codex releases discard the RFC 9207 iss value even though Xquik returns it. Set XQUIK_API_KEY and bearer_token_env_var = \"XQUIK_API_KEY\" in Codex TOML, then use https://docs.xquik.com/guides/troubleshooting#codex-oauth-issuer-validation-error and track https://github.com/openai/codex/issues/31573.",
+    "If Codex reports Authorization server response missing required issuer: expected https://xquik.com, do not retry OAuth. Set XQUIK_API_KEY and bearer_token_env_var = \"XQUIK_API_KEY\" in Codex TOML. See https://docs.xquik.com/guides/troubleshooting#codex-oauth-issuer-validation-error and https://github.com/openai/codex/issues/31573.",
     "Use tools.alsoAllow with explore and tweetclaw so users keep their normal OpenClaw tool profile.",
-    "Do not require credentials at install time; live calls without credentials should return setup guidance.",
+    "Do not require credentials during installation. Live calls without them return setup guidance.",
     "Treat API keys and signing keys as sensitive config; never print or commit them.",
     "MPP mode is read-only and must not create writes, monitors, webhooks, uploads, DMs, or profile changes.",
     "API-key prepaid credits cover 33 public paid-read routes without a subscription.",
     "Direct MPP covers exactly 7 read routes: tweet lookup, user lookup, follower check, article lookup, trends, X trends, and community info.",
     "Other paid reads require account-backed prepaid credits; media download is not MPP-eligible.",
-    "Use the ClawPack npm-pack workflow for ClawHub package releases, not repo-folder uploads."
+    "Use the ClawPack npm-pack workflow for ClawHub releases."
   ]
 }

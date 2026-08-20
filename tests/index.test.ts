@@ -266,7 +266,7 @@ describe('register', () => {
     const { api, hooks, warnings } = createMockApi({ apiKey: 'xq_test123' }, 'none');
     register(api);
     expect(hooks).toHaveLength(0);
-    expect(warnings[0]).toContain('approval hooks are unavailable');
+    expect(warnings[0]).toContain('Approval hook unavailable');
   });
 
   it('skips event poller when pollingEnabled is false', () => {
@@ -474,7 +474,7 @@ describe('register', () => {
     register(apiWithErrors);
     await vi.advanceTimersByTimeAsync(100);
     vi.restoreAllMocks();
-    expect(errors).toStrictEqual(['TweetClaw: MPP init failed. Check local plugin configuration.']);
+    expect(errors).toStrictEqual(['TweetClaw: MPP setup failed. Check config and optional packages.']);
     expect(errors[0]).not.toContain('provider error');
   });
 
@@ -490,7 +490,7 @@ describe('register', () => {
     register(apiWithInfos);
     await vi.advanceTimersByTimeAsync(100);
     vi.restoreAllMocks();
-    expect(infos.some((m) => m.includes('MPP initialized'))).toBe(true);
+    expect(infos.some((m) => m.includes('MPP ready'))).toBe(true);
   });
 
   it('logs a fixed message for non-Error MPP init failures', async () => {
@@ -505,7 +505,7 @@ describe('register', () => {
     register(apiWithErrors);
     await vi.advanceTimersByTimeAsync(100);
     vi.restoreAllMocks();
-    expect(errors).toStrictEqual(['TweetClaw: MPP init failed. Check local plugin configuration.']);
+    expect(errors).toStrictEqual(['TweetClaw: MPP setup failed. Check config and optional packages.']);
     expect(errors[0]).not.toContain('string error');
   });
 
@@ -546,7 +546,7 @@ describe('register', () => {
 
     expect(result?.isError).toBe(true);
     expect(result?.content[0]?.text).toContain(
-      'MPP unavailable. Check local plugin configuration and optional packages.',
+      'MPP unavailable. Check the signing key and install mppx and viem.',
     );
     expect(result?.content[0]?.text).not.toContain('provider error');
     expect(mockFetch).not.toHaveBeenCalled();

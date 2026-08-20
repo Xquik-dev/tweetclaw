@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 const MEDIA_RESPONSE_FIELDS =
-  'mediaUrl type url allowDownload altText aspectRatio availabilityStatus displayUrl durationMillis expandedUrl faceRects focusRects height id indices mediaKey monetizable sizes videoVariants width'.split(' ');
+  'mediaUrl type url allowDownload altText aspectRatio availabilityStatus displayUrl durationMillis expandedUrl faceRects focusRects height id indices mediaKey monetizable otherSensitiveContent sizes videoVariants width'.split(' ');
 
 const USER_RESPONSE_FIELDS = [
   ...'id username name description followers following verified isBlueVerified isVerified profilePicture coverPicture profileBannerUrl location createdAt statusesCount mediaCount protected url favouritesCount hasCustomTimelines isTranslator withheldInCountries possiblySensitive pinnedTweetIds isAutomated automatedBy unavailable unavailableReason verifiedType affiliatesHighlightedLabel businessAccountAffiliatesCount creatorSubscriptionsCount hasGraduatedAccess'.split(' '),

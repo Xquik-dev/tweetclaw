@@ -75,7 +75,7 @@ function reportViolations(
   const consoleReference = globalThis.console;
 
   consoleReference.error(`\n${errorHeader}\n`);
-  consoleReference.error('The following files contain violations:');
+  consoleReference.error('Files:');
   consoleReference.error('');
 
   for (const violation of violations) {
@@ -85,7 +85,7 @@ function reportViolations(
   }
 
   consoleReference.error(
-    `Found ${String(violations.length)} violation(s) in ${String(new Set(violations.map((v) => v.file)).size)} file(s).`,
+    `${String(violations.length)} violation(s) in ${String(new Set(violations.map((v) => v.file)).size)} file(s).`,
   );
   consoleReference.error('');
 
