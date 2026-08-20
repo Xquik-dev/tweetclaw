@@ -151,29 +151,7 @@ Add both tools without replacing the current profile:
 openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
 ```
 
-Verify runtime registration after install or update:
-
-```bash
-openclaw plugins inspect tweetclaw --runtime --json
-openclaw skills info tweetclaw
-```
-
-The runtime should show `explore`, optional `tweetclaw`, the `before_tool_call`
-approval hook, and `xtrends`. If the Gateway does not reload automatically, run
-`openclaw gateway restart`. Use
-`OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins inspect tweetclaw --runtime --json`
-to send slow lifecycle timings to stderr without corrupting JSON output.
-
-For release-like local checks, pack and install the artifact rather than a repo folder so OpenClaw loads the published `dist/index.js` entry:
-
-```bash
-npm pack
-openclaw plugins install npm-pack:./xquik-tweetclaw-<version>.tgz
-openclaw plugins inspect tweetclaw --runtime --json
-```
-
-Maintainers must run `npm run check-openclaw-platform-fitness` after
-`npm run build`.
+Verify runtime registration and packed releases with the [OpenClaw setup guide](docs/openclaw-setup.md).
 
 ### Optional settings
 
@@ -276,8 +254,6 @@ You: "Monitor @elonmusk for new tweets, replies, and retweets"
 | **Twitter** | Search, lookups, timelines, articles, trends, bookmarks, notifications | Account-backed or MPP where eligible |
 | **X Accounts** | List connected account handles for explicit user-selected actions | Account-backed |
 | **X Write** | Post, reply, like, retweet, follow, remove follower, DM, profile, communities | Account-backed with approval |
-
-Media download requires account-backed access and is not MPP-eligible.
 
 ## References
 

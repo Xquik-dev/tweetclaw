@@ -41,15 +41,29 @@ function dereference(openapi, value, componentType) {
   return openapi.components?.[componentType]?.[name];
 }
 
+function bodySchemaVariants(openapi, value) {
+  const schema = dereference(openapi, value, "schemas");
+  if (schema === undefined) return [];
+  if (schema.oneOf !== undefined) {
+    return schema.oneOf.flatMap((variant) => bodySchemaVariants(openapi, variant));
+  }
+  if (schema.allOf === undefined) return [schema];
+  return schema.allOf.reduce(
+    (combined, part) => combined.flatMap((base) =>
+      bodySchemaVariants(openapi, part).map((variant) => ({
+        properties: { ...base.properties, ...variant.properties },
+        required: [...new Set([...(base.required ?? []), ...(variant.required ?? [])])],
+      }))),
+    [{ properties: schema.properties ?? {}, required: schema.required ?? [] }],
+  );
+}
+
 function requestParameters(openapi, operation) {
   const parameters = (operation.parameters ?? []).map((parameter) =>
     dereference(openapi, parameter, "parameters"),
   );
   const rawSchema = operation.requestBody?.content?.["application/json"]?.schema;
-  const schema = dereference(openapi, rawSchema, "schemas");
-  const bodySchemas = (schema?.oneOf ?? [schema])
-    .map((variant) => dereference(openapi, variant, "schemas"))
-    .filter((variant) => variant !== undefined);
+  const bodySchemas = bodySchemaVariants(openapi, rawSchema);
   const bodyFields = new Set(
     bodySchemas.flatMap((variant) => Object.keys(variant.properties ?? {})),
   );

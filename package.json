@@ -1,7 +1,7 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.41",
-  "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Includes 33 prepaid reads and 7 direct read routes through MPP. Not affiliated with X Corp.",
+  "version": "1.6.42",
+  "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Not affiliated with X Corp.",
   "license": "MIT",
   "packageManager": "npm@11.12.1",
   "type": "module",
@@ -38,7 +38,7 @@
     "install": {
       "defaultChoice": "clawhub",
       "clawhubSpec": "clawhub:@xquik/tweetclaw",
-      "npmSpec": "@xquik/tweetclaw@1.6.41",
+      "npmSpec": "@xquik/tweetclaw@1.6.42",
       "minHostVersion": ">=2026.7.1"
     }
   },

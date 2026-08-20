@@ -40,7 +40,7 @@ const EXTRACTION_SEARCH_PARAMS: readonly EndpointParameter[] = [
   { description: 'Filter tweets by author username (tweet_search_extractor)', in: 'body', name: 'fromUser', required: false, type: 'string' },
   { description: 'Filter tweets to a specific user (tweet_search_extractor)', in: 'body', name: 'toUser', required: false, type: 'string' },
   { description: 'Filter tweets mentioning a user (tweet_search_extractor)', in: 'body', name: 'mentioning', required: false, type: 'string' },
-  { description: 'Language code filter, e.g. en, tr (tweet_search_extractor)', in: 'body', name: 'language', required: false, type: 'string' },
+  { description: 'Language code such as en or tr (tweet_search_extractor)', in: 'body', name: 'language', required: false, type: 'string' },
   { description: 'Start date YYYY-MM-DD (tweet_search_extractor)', in: 'body', name: 'sinceDate', required: false, type: 'string' },
   { description: 'End date YYYY-MM-DD (tweet_search_extractor)', in: 'body', name: 'untilDate', required: false, type: 'string' },
   { description: 'Filter by media type: images, videos, gifs, media, links, or none (tweet_search_extractor)', in: 'body', name: 'mediaType', required: false, type: 'string' },
@@ -481,7 +481,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     free: true,
     method: 'GET',
     parameters: [
-      { description: 'Filter by category (general, tech, dev, etc.)', in: 'query', name: 'category', required: false, type: 'string' },
+      { description: 'Category: general, tech, or dev', in: 'query', name: 'category', required: false, type: 'string' },
       { description: 'Max items to return (1-100, default 50)', in: 'query', name: 'limit', required: false, type: 'number' },
       { description: 'Lookback window in hours (1-72, default 6)', in: 'query', name: 'hours', required: false, type: 'number' },
       { description: 'Region filter (US, GB, TR, ES, DE, FR, JP, IN, BR, CA, MX, global)', in: 'query', name: 'region', required: false, type: 'string' },
@@ -565,7 +565,7 @@ const BASE_API_SPEC: readonly EndpointInfo[] = [
     free: false,
     method: 'POST',
     parameters: [
-      { description: 'Extraction tool type (reply_extractor, community_extractor, etc.)', in: 'body', name: 'toolType', required: true, type: 'string' },
+      { description: 'Extraction tool type, such as reply_extractor or community_extractor', in: 'body', name: 'toolType', required: true, type: 'string' },
       ...EXTRACTION_TARGET_PARAMS,
     ],
     path: '/api/v1/extractions',
