@@ -3,7 +3,7 @@
   "url": "https://context7.com/xquik-dev/tweetclaw",
   "public_key": "pk_oCPeRRqZFJsY4cCUSotDD",
   "projectTitle": "TweetClaw",
-  "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Includes 33 prepaid reads and 7 direct read routes through MPP. Not affiliated with X Corp.",
+  "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Not affiliated with X Corp.",
   "folders": [],
   "excludeFolders": [
     "node_modules",

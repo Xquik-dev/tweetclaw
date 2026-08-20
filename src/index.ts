@@ -52,7 +52,7 @@ const CONFIG_SCHEMA = {
     },
     tempoSigningKey: {
       description:
-        'Optional read-only MPP signing key for 7 direct routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp.',
+        'Optional MPP signing key for 7 direct read routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp.',
       pattern: '^0x[0-9a-fA-F]{64}$',
       type: 'string',
     },
