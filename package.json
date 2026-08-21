@@ -1,6 +1,6 @@
 {
   "name": "@xquik/tweetclaw",
-  "version": "1.6.42",
+  "version": "1.6.43",
   "description": "OpenClaw plugin for Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Not affiliated with X Corp.",
   "license": "MIT",
   "packageManager": "npm@11.12.1",
@@ -38,7 +38,7 @@
     "install": {
       "defaultChoice": "clawhub",
       "clawhubSpec": "clawhub:@xquik/tweetclaw",
-      "npmSpec": "@xquik/tweetclaw@1.6.42",
+      "npmSpec": "@xquik/tweetclaw@1.6.43",
       "minHostVersion": ">=2026.7.1"
     }
   },

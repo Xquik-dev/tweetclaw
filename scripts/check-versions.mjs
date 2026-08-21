@@ -268,7 +268,7 @@ const contentChecks = [
   },
   {
     path: "skills/tweetclaw/SKILL.md",
-    required: ["agent-safe Xquik endpoint catalog", "billing guide", "33 public paid-read routes", "7 direct read routes", "idempotencyKey", "Not affiliated with X Corp."],
+    required: ["local Xquik endpoint catalog", "billing guide", "33 public paid-read routes", "7 direct read routes", "idempotencyKey", "Not affiliated with X Corp."],
     forbidden: ["113 endpoints", "112 endpoints", "Per-Operation Costs", "/api/v1/x/users/{id}/unfollow", "/api/v1/x/users/:username"],
   },
   {

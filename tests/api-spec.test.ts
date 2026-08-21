@@ -191,7 +191,7 @@ describe('API_SPEC', () => {
     const endpoint = (path: string) => API_SPEC.find((entry) => entry.method === 'GET' && entry.path === path);
     const parameterNames = (path: string) => endpoint(path)?.parameters.map((parameter) => parameter.name);
     expect(parameterNames('/api/v1/x/communities/:id/tweets')).toEqual(expect.arrayContaining([
-      'language', 'sinceDate', 'untilDate', 'mediaType', 'minFaves', 'minRetweets', 'minReplies', 'minViews', 'verifiedOnly',
+      'language', 'sinceDate', 'untilDate', 'mediaType', 'minLikes', 'minRetweets', 'minReplies', 'minViews', 'verifiedOnly',
     ]));
     expect(parameterNames('/api/v1/x/users/batch')).toEqual(expect.arrayContaining([
       'minFollowers', 'maxFollowers', 'minAccountAgeDays', 'verifiedOnly',

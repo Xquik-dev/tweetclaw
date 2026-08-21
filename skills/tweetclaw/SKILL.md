@@ -158,7 +158,7 @@ Credentialed or non-HTTPS URLs are rejected.
 
 ### `explore`
 
-Search the agent-safe Xquik endpoint catalog without a network call. Results include
+Search the local Xquik endpoint catalog. Results include
 paths, methods, parameters, access flags, response shapes, and MPP prices.
 
 ### `tweetclaw`

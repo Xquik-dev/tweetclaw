@@ -15,13 +15,9 @@
 <a href="https://nothumansearch.ai/site/xquik.com" target="_blank" rel="noopener"><img src="https://nothumansearch.ai/badge/xquik.com.svg" alt="NHS Agentic Readiness Score" height="28"></a>
 [![Apify Actor](https://apify.com/actor-badge?actor=xquik/x-tweet-scraper)](https://apify.com/xquik/x-tweet-scraper)
 
-TweetClaw connects [OpenClaw](https://github.com/openclaw/openclaw) to Xquik.
-Search tweets, export followers, monitor accounts, manage media, and run approved X actions.
-
-## When to use TweetClaw
-
-Use TweetClaw for catalog-first X/Twitter automation inside OpenClaw. Use Xquik
-MCP for remote MCP clients and an SDK for application code.
+TweetClaw connects [OpenClaw](https://github.com/openclaw/openclaw) to Xquik for
+Twitter search, follower exports, monitoring, media, and approved X actions. Use
+Xquik MCP with remote MCP clients and an SDK in application code.
 
 ## Common OpenClaw tasks
 
@@ -36,13 +32,12 @@ Use `explore` before every live call. It returns the current supported route.
 | How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
 | How can I post or reply? | `create tweet` | Approve each write. |
 
-## Complete read data
+## Read response fields
 
-TweetClaw preserves every safe field returned by Xquik. Optional fields remain
-absent when X omits them. Request `next_cursor` while `has_next_page` is true.
+TweetClaw keeps every allowed Xquik response field. Optional fields remain absent
+when X omits them. Request `next_cursor` while `has_next_page` is true.
 
-Fetching-account actions and relationships stay private.
-This includes bookmark, like, follow, block, mute, and notification state.
+Fetching-account bookmark, like, follow, block, mute, and notification state stays private.
 
 See [Read Data Richness](https://docs.xquik.com/guides/read-data-richness)
 for exact tweet, profile, and media fields.
@@ -174,13 +169,11 @@ TweetClaw uses 2 OpenClaw gates:
   offers one-time approval or deny for those calls so a social-account action is
   reviewed each time.
 
-These gates prevent unattended publishing. Safe workflows include Twitter
-search before drafting, reply review before draws, follower exports, approved
-media posts, user-created monitors, and reviewed webhook automation.
+These gates prevent unattended publishing. Examples include Twitter search before
+drafting, reply review before draws, follower exports, approved media posts,
+user-created monitors, and reviewed webhook automation.
 
 ## Tools
-
-TweetClaw uses 2 structured tools for the agent-safe endpoint catalog:
 
 ### `explore` (free, no network)
 

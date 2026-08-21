@@ -42,7 +42,10 @@ function parameters(operation) {
     required: value.required === true, type: parameterType(resolve(value.schema, "schemas")),
   }));
   const body = resolve(operation.requestBody?.content?.["application/json"]?.schema, "schemas");
-  const variants = (body?.oneOf ?? [body]).map((value) => resolve(value, "schemas")).filter(Boolean);
+  const variants = body?.allOf === undefined
+    ? (body?.oneOf ?? [body]).map((value) => resolve(value, "schemas")).filter(Boolean)
+    : [{ properties: Object.assign({}, ...body.allOf.map((value) => resolve(value, "schemas")?.properties ?? {})),
+      required: body.allOf.flatMap((value) => resolve(value, "schemas")?.required ?? []) }];
   const names = [...new Set(variants.flatMap((value) => Object.keys(value.properties ?? {})))];
   return [...direct, ...names.map((name) => {
     const property = variants.find((value) => value.properties?.[name] !== undefined)?.properties[name];
