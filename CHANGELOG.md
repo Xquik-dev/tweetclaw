@@ -2,6 +2,10 @@
 
 All notable public changes appear in this file.
 
+## [1.6.44] - 2026-08-21
+
+- Mark secret config fields for registry discovery and remove repeated tool-call scripts.
+
 ## [1.6.43] - 2026-08-21
 
 - Replace catalog jargon, remove repeated setup copy, and align the read filter contract.
@@ -31,3 +35,4 @@ All notable public changes appear in this file.
 [1.6.41]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.41
 [1.6.42]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.42
 [1.6.43]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.43
+[1.6.44]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.44

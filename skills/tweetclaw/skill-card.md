@@ -59,7 +59,7 @@ has no shell, filesystem, browser, local network, or MCP access.
 
 ## Version
 
-Package version `1.6.43`. Verify the published version from npm before making release claims.
+Package version `1.6.44`. Verify the published version from npm before making release claims.
 
 ## Use restrictions
 
