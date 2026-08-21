@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.6.43",
+  "version": "1.6.44",
   "description": "OpenClaw Twitter search, follower exports, monitoring, media, and approved X automation through structured Xquik endpoints. Not affiliated with X Corp.",
   "activation": {
     "onStartup": false,
@@ -24,8 +24,8 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "apiKey": { "type": "string", "minLength": 1, "description": "Xquik API key for account-backed automation and 33 prepaid public read routes. Not affiliated with X Corp." },
-      "tempoSigningKey": { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$", "description": "Optional MPP signing key for 7 direct read routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp." },
+      "apiKey": { "type": "string", "minLength": 1, "x-sensitive": true, "description": "Xquik API key for account-backed automation and 33 prepaid public read routes. Not affiliated with X Corp." },
+      "tempoSigningKey": { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$", "x-sensitive": true, "description": "Optional MPP signing key for 7 direct read routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp." },
       "baseUrl": { "type": "string", "default": "https://xquik.com", "pattern": "^https://", "description": "HTTPS base URL for Xquik or a compatible self-hosted instance." },
       "pollingInterval": { "type": "number", "default": 60, "minimum": 5, "description": "Seconds between event checks" },
       "pollingEnabled": { "type": "boolean", "default": true }

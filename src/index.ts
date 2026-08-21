@@ -25,6 +25,7 @@ function isPollerEvent(value: unknown): value is PollerEvent {
 const DEFAULT_POLLING_INTERVAL_SECONDS = 60;
 const MIN_POLLING_INTERVAL_SECONDS = 5;
 const DEFAULT_BASE_URL = 'https://xquik.com';
+const SENSITIVE_SCHEMA_KEY = 'x-sensitive';
 const MISSING_CREDENTIALS_MESSAGE =
   'TweetClaw is not configured. Add an Xquik API key for account-backed workflows or a Tempo signing key for MPP reads before live calls.';
 
@@ -36,6 +37,7 @@ const CONFIG_SCHEMA = {
         'Xquik API key for account-backed automation and 33 prepaid public read routes. Not affiliated with X Corp.',
       minLength: 1,
       type: 'string',
+      [SENSITIVE_SCHEMA_KEY]: true,
     },
     baseUrl: {
       default: 'https://xquik.com',
@@ -55,6 +57,7 @@ const CONFIG_SCHEMA = {
         'Optional MPP signing key for 7 direct read routes. OpenClaw stores it as sensitive config and hides it from the agent. Not affiliated with X Corp.',
       pattern: '^0x[0-9a-fA-F]{64}$',
       type: 'string',
+      [SENSITIVE_SCHEMA_KEY]: true,
     },
   },
   type: 'object',

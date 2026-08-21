@@ -179,13 +179,6 @@ user-created monitors, and reviewed webhook automation.
 
 Search the bundled API catalog without a network request.
 
-```
-You: "What endpoints are available for tweet composition?"
-
-AI uses explore → filters spec by category "composition"
-→ Returns matching endpoints with parameters and response shapes
-```
-
 ### `tweetclaw` (invoke API endpoints)
 
 Invoke catalog-listed endpoints with structured fields. The runtime injects
@@ -194,21 +187,6 @@ authentication. X writes also require `idempotencyKey`.
 This tool is optional in OpenClaw. If your agent can see the skill but cannot call TweetClaw tools, add `explore` and `tweetclaw` to `tools.alsoAllow` so your normal tool profile stays intact.
 
 OpenClaw approval prompts are enforced before write-like `tweetclaw` tool calls. Review the structured request before approving any post, delete, follow, DM, monitor, extraction, webhook, or profile-change action. Risky calls offer one-time approval or deny so future social-account actions still require review.
-
-```
-You: "Post a tweet saying 'Hello from TweetClaw!'"
-
-AI uses tweetclaw → finds connected account, posts tweet
-→ Returns a durable write action. Poll `statusUrl` when `terminal` is false.
-```
-
-```
-You: "Search tweets about AI agents"
-
-AI uses explore → finds /api/v1/x/tweets/search
-AI uses tweetclaw → calls the endpoint with auth
-→ Returns tweet results
-```
 
 ## Commands
 
