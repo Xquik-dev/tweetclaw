@@ -2,9 +2,11 @@
 
 All notable public changes appear in this file.
 
-## [1.6.42] - 2026-08-20
+## [1.6.43] - 2026-08-21
 
-### Changed
+- Replace catalog jargon, remove repeated setup copy, and align the read filter contract.
+
+## [1.6.42] - 2026-08-20
 
 - Remove volatile route counts from package discovery metadata.
 - Replace open-ended catalog examples with concrete wording.
@@ -28,3 +30,4 @@ All notable public changes appear in this file.
 
 [1.6.41]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.41
 [1.6.42]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.42
+[1.6.43]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.43

@@ -207,7 +207,7 @@ const COMMUNITY_TWEET_FILTER_PARAMS: readonly EndpointParameter[] = [
   { description: 'Start date in YYYY-MM-DD format', in: 'query', name: 'sinceDate', required: false, type: 'string' },
   { description: 'End date in YYYY-MM-DD format', in: 'query', name: 'untilDate', required: false, type: 'string' },
   { description: 'Media type filter', in: 'query', name: 'mediaType', required: false, type: 'string' },
-  { description: 'Minimum likes', in: 'query', name: 'minFaves', required: false, type: 'number' },
+  { description: 'Minimum likes', in: 'query', name: 'minLikes', required: false, type: 'number' },
   { description: 'Minimum retweets', in: 'query', name: 'minRetweets', required: false, type: 'number' },
   { description: 'Minimum replies', in: 'query', name: 'minReplies', required: false, type: 'number' },
   { description: 'Minimum views', in: 'query', name: 'minViews', required: false, type: 'number' },
