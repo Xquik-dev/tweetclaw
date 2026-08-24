@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Publish TweetClaw release
 
 on:
   push:
@@ -118,10 +118,47 @@ jobs:
           echo "::error ::npm did not expose $package within 5 minutes. Check registry status before retrying."
           exit 1
 
+  clawhub:
+    name: Publish ClawHub Package
+    if: github.repository == 'Xquik-dev/tweetclaw'
+    needs: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      actions: write # Dispatch and follow the trusted ClawHub workflow.
+    steps:
+      - name: Publish tagged package
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ needs.publish.outputs.tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          run_id="$(
+            gh api \
+              --method POST \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/$GITHUB_REPOSITORY/actions/workflows/publish-clawhub.yml/dispatches" \
+              -f ref="$RELEASE_TAG" \
+              -F return_run_details=true \
+              -F "inputs[dry_run]=false" \
+              --jq .workflow_run_id
+          )"
+          if [[ ! "$run_id" =~ ^[0-9]+$ ]]; then
+            echo "::error ::ClawHub dispatch did not return a workflow run."
+            exit 1
+          fi
+
+          if ! gh run watch "$run_id" --repo "$GITHUB_REPOSITORY" --compact --exit-status; then
+            gh run view "$run_id" --repo "$GITHUB_REPOSITORY" --log-failed
+            exit 1
+          fi
+
   release:
     name: Create GitHub Release
     if: github.repository == 'Xquik-dev/tweetclaw'
-    needs: publish
+    needs: [publish, clawhub]
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
