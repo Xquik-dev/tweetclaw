@@ -1,14 +1,7 @@
 # Contribute
 
-## Scope
-
-This repository publishes the TweetClaw OpenClaw plugin and bundled Skill.
-Changes may cover:
-
-- Plugin behavior under `src/`
-- The packaged Skill under `skills/tweetclaw/`
-- OpenClaw and Xquik setup guidance
-- Tests, release checks, and documentation
+This repository publishes the TweetClaw plugin and bundled Skill. Change
+runtime code, the packaged Skill, setup guidance, checks, or documentation here.
 
 Change the upstream Xquik API in its source repository.
 
@@ -22,7 +15,6 @@ npm run check:all
 ## Change rules
 
 - Keep each pull request focused.
-- Delete more handwritten lines than each commit adds.
 - Preserve approval, credential, payment, privacy, and endpoint boundaries.
 - Update `SKILL.md` for agent-facing behavior.
 - Update public guides when setup or API coverage changes.
