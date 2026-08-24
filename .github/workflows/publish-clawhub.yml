@@ -61,3 +61,80 @@ jobs:
       source_repo: Xquik-dev/tweetclaw
       source_commit: ${{ github.sha }}
       source_ref: ${{ github.ref }}
+
+  skill:
+    name: Publish ClawHub Skill
+    if: inputs.dry_run || github.ref_type == 'tag'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read # Check out the exact TweetClaw source revision.
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check out ClawHub publisher
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: openclaw/clawhub
+          ref: a230d962db64019462c2c8ee400755eb92169908
+          path: clawhub-source
+          persist-credentials: false
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: "1.3.10"
+      - name: Install ClawHub publisher
+        working-directory: clawhub-source
+        run: bun install --frozen-lockfile
+      - name: Publish tagged skill
+        env:
+          CLAWHUB_CONFIG_PATH: ${{ runner.temp }}/clawhub-config.json
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          trap 'rm -f "$CLAWHUB_CONFIG_PATH"' EXIT
+
+          node -e 'require("node:fs").writeFileSync(process.env.CLAWHUB_CONFIG_PATH, JSON.stringify({ registry: "https://clawhub.ai", token: process.env.CLAWHUB_TOKEN }), { mode: 0o600 })'
+          args=(
+            skill publish skills/tweetclaw
+            --owner xquik
+            --slug tweetclaw
+            --name TweetClaw
+            --tags latest
+            --json
+            --source-repo "$GITHUB_REPOSITORY"
+            --source-commit "$GITHUB_SHA"
+            --source-ref "$GITHUB_REF"
+            --source-path skills/tweetclaw
+          )
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
+          else
+            version="${GITHUB_REF_NAME#v}"
+            listing="$(curl -fsSL --max-time 10 https://clawhub.ai/api/v1/skills/tweetclaw)"
+            [ "$(jq -r '.owner.handle // empty' <<<"$listing")" = "xquik" ] || {
+              echo "::error ::ClawHub returned the wrong TweetClaw skill owner."
+              exit 1
+            }
+            current_version="$(jq -r '.latestVersion.version // empty' <<<"$listing")"
+            if [ "$current_version" = "$version" ]; then
+              echo "TweetClaw skill $version is published."
+              exit 0
+            fi
+            args+=(--version "$version" --changelog "Sync with TweetClaw $GITHUB_REF_NAME.")
+          fi
+
+          bun clawhub-source/packages/clawhub/src/cli.ts "${args[@]}"
+          [ "$DRY_RUN" = "true" ] && exit 0
+
+          for attempt in {1..180}; do
+            current_version="$(curl -fsSL --max-time 10 https://clawhub.ai/api/v1/skills/tweetclaw 2>/dev/null | jq -r '.latestVersion.version // empty' 2>/dev/null || true)"
+            [ "$current_version" = "$version" ] && exit 0
+            [ "$attempt" -lt 180 ] && sleep 10
+          done
+          echo "::error ::ClawHub did not publish TweetClaw skill $version within 30 minutes."
+          exit 1
