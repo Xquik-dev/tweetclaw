@@ -113,7 +113,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@sinclair/typebox": "0.34.52",
-    "@types/node": "26.2.0",
+    "@types/node": "26.3.0",
     "@typescript-eslint/eslint-plugin": "8.67.0",
     "@typescript-eslint/parser": "8.67.0",
     "@vitest/coverage-v8": "4.1.11",
