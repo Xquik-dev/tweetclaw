@@ -129,7 +129,7 @@
     "eslint-plugin-security": "4.0.1",
     "eslint-plugin-sonarjs": "4.2.0",
     "eslint-plugin-unicorn": "73.0.0",
-    "fast-check": "4.9.0",
+    "fast-check": "4.10.2",
     "globals": "17.11.0",
     "jscpd": "5.0.16",
     "knip": "6.32.2",
