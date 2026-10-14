@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { createProxiedRequest } from '../request.js';
@@ -69,7 +68,6 @@ interface TweetclawOptions {
   readonly fetchFunction?: FetchFunction | undefined;
   readonly mppMode?: boolean | undefined;
   readonly params: Readonly<TweetclawParams>;
-  /** Pays a route's listed MPP offer. Set in MPP mode only. */
   readonly payFor?: PayingFetch | undefined;
   readonly timeoutMs?: number | undefined;
 }

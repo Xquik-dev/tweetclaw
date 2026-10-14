@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { execFileSync } from "node:child_process";
@@ -14,9 +13,6 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const scannedExtensions = new Set([".cjs", ".js", ".json", ".jsx", ".md", ".mjs", ".ts", ".tsx", ".yaml", ".yml"]);
 const ignoredFiles = new Set(["scripts/check-public-copy.mjs"]);
 
-// `explore` publishes each MPP route's price per call. The generator copies
-// those prices from the spec into the contract, and tests assert them. No
-// other file may state one.
 function withoutPublicMppPrices(file, line) {
   return file === "generated-api-contract.json" || file.startsWith("tests/")
     ? line.replaceAll(MPP_PRICE_PATTERN, "")

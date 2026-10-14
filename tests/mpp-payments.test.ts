@@ -1,10 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Runs the plugin's MPP mode with the real mppx client against servers on
-// localhost. Every key is made here and holds nothing. The test's own fetch
-// maps each host name to a local server and fails on any other host.
 
 import { createServer } from 'node:http';
 import { Challenge, Credential, Receipt } from 'mppx';
@@ -21,7 +16,6 @@ type RegisteredCommand = Parameters<RegistrationApi['registerCommand']>[0];
 
 interface Seen {
   readonly path: string;
-  /** The payload type of the payment credential, when the request carried one. */
   readonly payment?: string;
 }
 
@@ -47,7 +41,6 @@ const XQUIK_HOST = 'xquik.com';
 const OTHER_HOST = 'other.test';
 const RPC_HOST = 'rpc.tempo.xyz';
 const TEMPO_MAINNET = 4217;
-// The offer the live spec and server state for trends, and the larger article price.
 const TRENDS_OFFER: Offer = {
   amount: '150',
   currency: '0x20c000000000000000000000b9537d11c60e8b50',
@@ -117,7 +110,6 @@ function paidAnswer(): Answer {
   return { body: TRENDS, headers: { 'payment-receipt': Receipt.serialize(receipt) }, status: 200 };
 }
 
-/** A server that asks for the offer and serves the request once it carries a payment. */
 async function chargingServer(host: string, offer: Offer): Promise<LocalServer> {
   return listen(host, (request) => (paymentOf(request) === undefined ? paymentRequired(host, offer) : paidAnswer()));
 }
@@ -129,7 +121,6 @@ const RPC_RESULTS: Readonly<Record<string, unknown>> = {
   eth_maxPriorityFeePerGas: '0x3b9aca00',
 };
 
-/** Answers the chain reads the client makes before it signs. It accepts no transaction. */
 async function chainServer(): Promise<LocalServer> {
   return listen(RPC_HOST, (_request, body) => {
     const call = JSON.parse(body) as { readonly id: number; readonly method: string };
@@ -184,7 +175,6 @@ beforeEach(() => {
     }
     const local = `http://127.0.0.1:${String(port)}${url.pathname}${url.search}`;
     const answer = await networkFetch(input instanceof Request ? new Request(local, input) : local, init);
-    // A fresh response hides the local address, as a real host name would.
     return new Response(answer.body, { headers: answer.headers, status: answer.status });
   });
 });

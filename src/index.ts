@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { definePluginEntry } from 'openclaw/plugin-sdk/plugin-entry';
@@ -79,9 +78,6 @@ interface BeforeToolCallEvent {
   readonly toolName?: string;
 }
 
-// The approval request this plugin returns from the before_tool_call hook. The
-// compiler checks it against the SDK where the plugin entry hands the hook to
-// the host.
 interface BeforeToolCallResult {
   readonly requireApproval: {
     readonly allowedDecisions: Array<'allow-once' | 'deny'>;
@@ -106,8 +102,6 @@ type BeforeToolCallRegistration = (
 
 type CredentialMode = 'api-key' | 'mpp' | 'none';
 type XquikRequest = ReturnType<typeof createProxiedRequest>;
-// Settles to the maker of paying fetches in MPP mode, to an error when MPP
-// setup failed, and to nothing in the other modes.
 type MppInitialization = Promise<Error | PayingFetch | undefined>;
 
 interface RegisterToolsOptions {
@@ -336,7 +330,6 @@ async function initializeMpp(
   }
 }
 
-/** Waits for MPP setup and returns the maker of paying fetches, if any. */
 async function readyPayer(initialization: MppInitialization): Promise<PayingFetch | undefined> {
   const state = await initialization;
   if (state instanceof Error) {
@@ -460,7 +453,6 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   const { baseUrl = DEFAULT_BASE_URL } = config;
   const credential = resolveCredentialState(config);
 
-  // The plugin's own fetch. MPP payments wrap this one.
   const baseFetch: FetchFunction = async (input, init) => (fetchFunction ?? globalThis.fetch)(input, init);
   const mppInitialization = registerMppMode(api, credential.mode, credential.signingValue, baseFetch);
   const createRequest = (payFor?: PayingFetch): XquikRequest =>

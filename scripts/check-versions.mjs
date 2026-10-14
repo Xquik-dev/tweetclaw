@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Pre-publish / pre-commit guard: fails if any known version surface
-// disagrees with package.json.
 
 import { readdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -178,8 +174,6 @@ for (const configPath of ["tsconfig.json", "tsconfig.eslint.json"]) {
   }
 }
 
-// Counts and install versions that earlier releases stated by hand. The API
-// coverage block in README.md is now the only place that counts operations.
 const retiredFacts = [
   "102 agent-callable endpoints",
   "102 endpoints",
@@ -262,8 +256,6 @@ for (const check of contentChecks) {
   }
 }
 
-// No copy file may restate a retired count. Copy that names an optional MPP
-// package version must name the pinned one.
 const copyFiles = [
   "README.md",
   "context7.json",
@@ -285,7 +277,6 @@ for (const path of copyFiles) {
   }
 }
 
-// The README coverage block must be the one the committed catalog renders.
 const readme = readFileSync(join(root, "README.md"), "utf8");
 const { counts } = JSON.parse(readFileSync(join(root, "generated-api-contract.json"), "utf8"));
 if (replaceCoverage(readme, counts) !== readme) {

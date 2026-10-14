@@ -1,17 +1,7 @@
 #!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Writes generated-api-contract.json and the README coverage block from the
-// live Xquik OpenAPI spec. Run it after the API changes.
-//
-//   node scripts/generate-api-contract.mjs [--check] [--root <folder>] [spec]
-//
-// `spec` is a URL or a file and defaults to the live spec. `--check` writes
-// nothing and exits 1 when the files differ from what the spec gives.
-// `--root` names the folder that holds the 2 files.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";

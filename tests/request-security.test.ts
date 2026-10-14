@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -26,8 +25,6 @@ interface Outcome {
   readonly text: string;
 }
 
-// Routes an agent must never reach. Key management, payments, account
-// credentials, account settings and support stay in the dashboard.
 const REFUSED_ROUTES = [
   ['GET', '/api/v1/api-keys'],
   ['POST', '/api/v1/api-keys'],
@@ -66,11 +63,9 @@ const UNKNOWN_ROUTES = [
 ] as const;
 
 const API_PREFIX = '/api/v1/';
+// A URL parser turns a backslash into a slash, so a value that climbs with backslashes names another route. https://url.spec.whatwg.org/#path-state
 const BACKSLASH = String.fromCodePoint(92);
 
-// A callable route that ends in a path value, for each method, and the climb
-// from that value back to /api/v1. A URL parser turns a backslash into a
-// slash, so a value that climbs with backslashes names another route.
 const VALUE_ROUTES: Readonly<Record<string, readonly [string, readonly string[]]>> = {
   DELETE: ['/api/v1/drafts/', ['..']],
   GET: ['/api/v1/drafts/', ['..']],
@@ -133,8 +128,6 @@ function routeCases(
 
 const API_KEY_CONFIG: Readonly<Record<string, unknown>> = { apiKey: 'xq_test' };
 
-// Calls the `tweetclaw` tool the way OpenClaw does and records every request
-// that leaves, with the approval hook's verdict for the same arguments.
 async function callTool(params: Readonly<Record<string, unknown>>, config = API_KEY_CONFIG): Promise<Outcome> {
   const sent: Sent[] = [];
   const tools: RegisteredTool[] = [];
@@ -162,7 +155,6 @@ async function callTool(params: Readonly<Record<string, unknown>>, config = API_
 }
 
 beforeEach(() => {
-  // MPP setup is replaced by a payer that pays nothing and uses the plugin's fetch.
   vi.spyOn(mpp, 'initMpp').mockImplementation(async (_key, baseFetch) => () => baseFetch);
 });
 
@@ -176,7 +168,6 @@ interface Spelling {
   readonly path: string;
 }
 
-// Each callable route in both method cases, with 0, 1 and 2 trailing slashes.
 function spellings(endpoint: (typeof specEndpoints)[number]): readonly Spelling[] {
   const concrete = endpoint.path.replaceAll(/:[^/]+/gu, '123');
   const key = `${endpoint.method} ${endpoint.path}`;

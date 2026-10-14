@@ -1,25 +1,7 @@
 #!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Publishes the checked-out release tag from a maintainer machine, in this
-// order. npm first, then the ClawHub package, then the ClawHub Skill, then the
-// GitHub release. docs/clawpack-release.md lists the checks to pass first.
-//
-//   node scripts/release.mjs [--dry-run] [--only npm|clawhub]
-//
-// Each step skips a target that already has this version, so a rerun resumes
-// after a failure. `--dry-run` validates every step and publishes nothing. It
-// skips npm when npm already has the version. `--only` releases 1 registry and
-// needs only that registry's credential.
-//
-// npm publishes with the token in the macOS Keychain item that
-// NPM_KEYCHAIN_SERVICE and NPM_KEYCHAIN_ACCOUNT name. The machine's own npm
-// sign-in is never used. ClawHub publishes with the login in the ClawHub CLI
-// config file that CLAWHUB_CONFIG_PATH names. Every credential is checked
-// before the first upload.
 
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -87,8 +69,6 @@ function readOptions() {
   };
 }
 
-// Stops before any upload when a chosen registry has no credential, so a
-// release never publishes to 1 registry and then fails on the next.
 function checkCredentials() {
   const missingSetting = releasesNpm ? missingKeychainSetting() : undefined;
   if (missingSetting !== undefined) {
@@ -158,7 +138,6 @@ function verifyReleaseRef() {
 }
 
 async function publishNpm() {
-  // npm refuses even a dry run over a published version.
   if (npmHasVersion()) {
     say(`npm already has ${name}@${version}.`);
     return;

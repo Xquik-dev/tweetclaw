@@ -1,10 +1,7 @@
 #!/usr/bin/env tsx
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-/** Reject error suppressions. Fix the underlying issue instead. */
 
 import { reportViolations, walkSourceFiles } from './check-common';
 

@@ -1,9 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Turns a built contract into the 2 files that ship it:
-// generated-api-contract.json and the coverage block in README.md.
 
 const COVERAGE_START = "<!-- api-coverage:start (npm run generate-api-contract writes this block) -->";
 const COVERAGE_END = "<!-- api-coverage:end -->";
@@ -13,7 +9,6 @@ function byText(left, right) {
   return left.localeCompare(right, "en");
 }
 
-// Stores each distinct value once. Operations then name a value by its position.
 function intern(values) {
   const table = [...new Set(values.map((value) => JSON.stringify(value)))].toSorted(byText);
   const positions = new Map(table.map((text, position) => [text, position]));
@@ -27,7 +22,6 @@ function jsonLines(items) {
   return `[\n${items.map((item) => JSON.stringify(item)).join(",\n")}\n]`;
 }
 
-// Writes 1 value per line, so a spec change shows as the lines it touched.
 function serializeContract(contract) {
   const parameters = intern(contract.operations.flatMap((operation) => operation.parameters));
   const responseShapes = intern(contract.operations.map((operation) => operation.responseShape));
@@ -50,7 +44,6 @@ function serializeContract(contract) {
   ].join("\n");
 }
 
-// Reverses serializeContract for one operation list, keyed by method and path.
 function expandOperations(serialized) {
   const stored = JSON.parse(serialized);
   return new Map(stored.operations.map((operation) => [
@@ -63,8 +56,6 @@ function expandOperations(serialized) {
   ]));
 }
 
-// Names what differs between 2 serialized contracts. Equal contracts give no
-// lines.
 function describeDrift(committed, generated) {
   if (committed === generated) return [];
   const before = expandOperations(committed);
@@ -104,8 +95,6 @@ function renderCoverage(counts) {
   ].join("\n");
 }
 
-// Returns the README with its coverage block replaced, or undefined when the
-// README has no block markers.
 function replaceCoverage(readme, counts) {
   const start = readme.indexOf(COVERAGE_START);
   const end = readme.indexOf(COVERAGE_END);

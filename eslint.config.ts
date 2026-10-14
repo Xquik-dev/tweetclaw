@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import js from '@eslint/js';
@@ -16,6 +15,7 @@ import securityPlugin from 'eslint-plugin-security';
 import sonarjsPlugin from 'eslint-plugin-sonarjs';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
+import { noCodeComments } from './eslint-no-code-comments';
 
 export default [
   js.configs.recommended,
@@ -23,7 +23,16 @@ export default [
     ignores: ['.tmp/**', 'coverage/**', 'dist/**', 'package/**', 'tmp/**'],
   },
 
-  // Base configuration for all TypeScript files
+  {
+    files: ['**/*.ts', '**/*.mjs', '**/*.cjs'],
+    plugins: {
+      xquik: { rules: { 'no-code-comments': noCodeComments } },
+    },
+    rules: {
+      'xquik/no-code-comments': 'error',
+    },
+  },
+
   {
     files: ['**/*.ts'],
     languageOptions: {
@@ -57,7 +66,6 @@ export default [
       },
     },
     rules: {
-      // Core JavaScript Rules
       'no-console': 'error',
       'no-debugger': 'error',
       'no-alert': 'error',
@@ -66,7 +74,7 @@ export default [
       'eqeqeq': ['error', 'always'],
       'curly': ['error', 'all'],
       'no-eval': 'error',
-      'no-new-func': 'off', // AsyncFunction constructor used for code execution
+      'no-new-func': 'off',
       'no-param-reassign': 'error',
       'no-return-assign': 'error',
       'no-sequences': 'error',
@@ -84,7 +92,6 @@ export default [
       'no-promise-executor-return': 'error',
       'no-unused-vars': 'off',
 
-      // Disable base rules that conflict with TypeScript ESLint
       'consistent-return': 'off',
       'dot-notation': 'off',
       'no-array-constructor': 'off',
@@ -99,7 +106,6 @@ export default [
       'no-useless-constructor': 'off',
       'prefer-destructuring': 'off',
 
-      // TypeScript ESLint - Critical Type Safety
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unsafe-assignment': 'error',
       '@typescript-eslint/no-unsafe-member-access': 'error',
@@ -129,7 +135,6 @@ export default [
         detectObjects: false,
       }],
 
-      // TypeScript ESLint - Type-Checked Rules
       '@typescript-eslint/consistent-return': 'error',
       '@typescript-eslint/dot-notation': 'error',
       '@typescript-eslint/no-array-delete': 'error',
@@ -198,7 +203,6 @@ export default [
         treatMethodsAsReadonly: true,
       }],
 
-      // TypeScript ESLint - Non-Type-Checked Rules
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
       '@typescript-eslint/ban-tslint-comment': 'error',
@@ -250,7 +254,6 @@ export default [
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/unified-signatures': 'error',
 
-      // Naming Convention
       '@typescript-eslint/naming-convention': ['error',
         { selector: 'variable', format: ['camelCase', 'UPPER_CASE', 'PascalCase'], leadingUnderscore: 'allow' },
         { selector: 'function', format: ['camelCase', 'PascalCase'] },
@@ -262,12 +265,10 @@ export default [
         { selector: 'memberLike', modifiers: ['private'], format: ['camelCase'], leadingUnderscore: 'allow' },
       ],
 
-      // Complexity limits
       'complexity': ['error', 10],
       'max-depth': ['error', 3],
       'max-nested-callbacks': ['error', 3],
 
-      // Modern Syntax
       '@typescript-eslint/prefer-nullish-coalescing': 'error',
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/prefer-as-const': 'error',
@@ -275,7 +276,6 @@ export default [
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/no-require-imports': 'error',
 
-      // Import Rules
       'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
       'import-x/default': 'error',
       'import-x/export': 'error',
@@ -307,7 +307,6 @@ export default [
         'alphabetize': { order: 'asc', caseInsensitive: true },
       }],
 
-      // Unicorn Rules - All strict
       'unicorn/better-regex': 'error',
       'unicorn/catch-error-name': ['error', { name: 'error' }],
       'unicorn/consistent-destructuring': 'error',
@@ -435,7 +434,6 @@ export default [
       'unicorn/text-encoding-identifier-case': 'error',
       'unicorn/throw-new-error': 'error',
 
-      // Promise Rules
       'promise/always-return': 'error',
       'promise/catch-or-return': 'error',
       'promise/no-callback-in-promise': 'error',
@@ -452,7 +450,6 @@ export default [
       'promise/spec-only': 'error',
       'promise/valid-params': 'error',
 
-      // Security Rules
       'security/detect-bidi-characters': 'error',
       'security/detect-buffer-noassert': 'error',
       'security/detect-child-process': 'error',
@@ -468,7 +465,6 @@ export default [
       'security/detect-pseudoRandomBytes': 'error',
       'security/detect-unsafe-regex': 'error',
 
-      // SonarJS Rules
       'sonarjs/no-all-duplicated-branches': 'error',
       'sonarjs/no-element-overwrite': 'error',
       'sonarjs/no-empty-collection': 'error',
@@ -504,22 +500,18 @@ export default [
       'sonarjs/no-hardcoded-passwords': 'error',
       'sonarjs/no-hardcoded-secrets': 'error',
 
-      // Regexp Rules
       ...regexpPlugin.configs['flat/recommended'].rules,
 
-      // No Secrets
       'no-secrets/no-secrets': 'error',
     },
   },
 
-  // Test file overrides
   {
     files: ['**/*.test.ts', 'tests/**/*.ts'],
     plugins: {
       'vitest': vitestPlugin,
     },
     rules: {
-      // Relax rules that conflict with test patterns
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
@@ -542,7 +534,6 @@ export default [
       'unicorn/consistent-function-scoping': 'off',
       'import-x/no-anonymous-default-export': 'off',
 
-      // Vitest rules
       'vitest/expect-expect': 'error',
       'vitest/no-identical-title': 'error',
       'vitest/no-focused-tests': 'error',
@@ -551,7 +542,6 @@ export default [
     },
   },
 
-  // Node scripts
   {
     files: ['scripts/**/*.mjs'],
     languageOptions: {
@@ -563,7 +553,6 @@ export default [
     },
   },
 
-  // Check scripts override
   {
     files: ['check-*.ts', 'check-common.ts'],
     rules: {
@@ -575,7 +564,6 @@ export default [
     },
   },
 
-  // VM sandbox executor - Proxy-based isolation requires unsafe type operations
   {
     files: ['src/tools/executor.ts'],
     rules: {
@@ -586,7 +574,6 @@ export default [
     },
   },
 
-  // Config files override
   {
     files: ['*.config.ts', 'eslint.config.ts', 'knip.config.ts'],
     rules: {
@@ -598,7 +585,6 @@ export default [
     },
   },
 
-  // Knip config override - property names dictated by knip API
   {
     files: ['knip.config.ts'],
     rules: {

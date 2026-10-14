@@ -1,9 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Runs the release and REUSE scripts with stand-ins for every command they
-// start. PATH holds the stand-ins only, so nothing here can publish.
 
 import { spawnSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -43,8 +39,6 @@ function loggedCommands(): readonly string[] {
     : [];
 }
 
-// The scripts inherit these variables. PATH holds only the stand-ins, and the
-// ClawHub config path names a file made for the test.
 function run(script: string, flags: readonly string[], extra: Readonly<Record<string, string>>): Run {
   const variables: Readonly<Record<string, string>> = {
     CLAWHUB_CONFIG_PATH: '',
@@ -72,7 +66,6 @@ beforeEach(() => {
   mkdirSync('.tmp/release-test/bin', { recursive: true });
   mkdirSync('.tmp/release-test/tmp', { recursive: true });
   writeFileSync('.tmp/release-test/clawhub.json', '{}');
-  // The copy keeps the fixture's executable mode.
   for (const command of ['git', 'gh', 'node', 'npm', 'npx']) {
     copyFileSync('tests/fixtures/fake-command.sh', scratch('bin', command));
   }

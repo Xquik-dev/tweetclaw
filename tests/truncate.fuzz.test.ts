@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import assert from 'node:assert/strict';

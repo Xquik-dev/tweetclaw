@@ -1,9 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Runs under scripts/with-npm-token.mjs in tests. It records the npm user
-// config that npm would read, without printing it.
 
 const fs = require("node:fs");
 const process = require("node:process");

@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Runs the pinned REUSE lint through uv. Every tracked file needs license and
-// copyright information, from its own header or from REUSE.toml.
 
 import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";

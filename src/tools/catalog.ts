@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { API_SPEC, APPROVAL_FREE_READS } from '../api-spec.js';
@@ -66,8 +65,6 @@ function validateWriteIdempotencyKey(
   }
 }
 
-// Every call asks first, except the free public reads the contract names. A
-// path outside the catalog needs no prompt, because the tool refuses it.
 function requestNeedsApproval(method: string, path: string): boolean {
   if (method !== 'GET') {
     return true;

@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import PACKAGE from '../package.json' with { type: 'json' };
@@ -11,8 +10,6 @@ type ModuleLoader = (name: MppModuleName) => Promise<Record<string, unknown>>;
 const TEMPO_SIGNING_KEY_PATTERN = /^0x[0-9a-fA-F]{64}$/u;
 const MPP_CLIENT_MODULE: MppModuleName = 'mppx/client';
 const VIEM_ACCOUNTS_MODULE: MppModuleName = 'viem/accounts';
-// Payments go to Xquik and nowhere else. Both values are written by hand on
-// purpose, so no spec, catalog or config change can move a payment.
 const MPP_ORIGIN = 'https://xquik.com';
 const MPP_RECIPIENT = '0xbe6c07f6fce303483458a7ddc929eb50a8ae6574';
 const MPP_METHOD = 'tempo';
@@ -20,7 +17,6 @@ const MPP_INTENT = 'charge';
 const WHOLE_AMOUNT_PATTERN = /^\d+$/u;
 const REFUSED_OFFER =
   'MPP payment refused. The server asked for more than the listed price, or for another currency or recipient.';
-// Names the versions package.json pins, so the hint cannot fall behind them.
 const INSTALL_HINT =
   `Run npm i mppx@${PACKAGE.peerDependencies.mppx} viem@${PACKAGE.peerDependencies.viem}.`;
 
@@ -63,8 +59,6 @@ function isWithinOffer(amount: unknown, offer: Readonly<MppOffer>): boolean {
     && BigInt(amount) <= BigInt(offer.amount);
 }
 
-// True when the request asks for the offer or less, in the offer's currency,
-// for Xquik alone.
 function isListedRequest(request: Readonly<Record<string, unknown>>, offer: Readonly<MppOffer>): boolean {
   return isWithinOffer(request['amount'], offer)
     && lowerCased(request['currency']) === offer.currency
@@ -82,7 +76,6 @@ function assertListedOffer(challenge: unknown, offer: Readonly<MppOffer>): void 
   if (!listed) throw new Error(REFUSED_OFFER);
 }
 
-/** Sends a request to the Xquik host and refuses every other host. */
 function xquikOnly(baseFetch: FetchFunction): FetchFunction {
   return async (input, init) => {
     const url = new URL(input instanceof Request ? input.url : String(input));
@@ -103,10 +96,6 @@ function asFetch(client: unknown): FetchFunction {
   };
 }
 
-/**
- * Prepares MPP payments and returns a maker of paying fetches. Each paying
- * fetch settles 1 offer for 1 request to the Xquik host.
- */
 async function initMpp(
   tempoSigningKey: string,
   baseFetch: FetchFunction,
@@ -138,7 +127,7 @@ async function initMpp(
 
   return (offer) => asFetch(createClient({
     fetch: xquikOnly(baseFetch),
-    // 1 payment for 1 request. A second challenge ends the request.
+    // 1 payment for 1 request. A second challenge ends the request. https://github.com/wevm/mppx/blob/mppx@0.13.4/src/client/internal/Fetch.ts#L240
     maxPaymentRetries: 1,
     methods: [tempo({ account, expectedRecipients: [MPP_RECIPIENT] })],
     onChallenge: (challenge: unknown, helpers: unknown): unknown => {

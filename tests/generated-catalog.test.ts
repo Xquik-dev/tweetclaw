@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { describe, expect, it } from 'vitest';
@@ -33,7 +32,6 @@ const MPP_ROUTES = [
   'GET /api/v1/x/users/:id',
 ];
 
-// Operations an agent must never reach. Each pair is a method and a concrete path.
 const BLOCKED_CALLS = [
   ['PATCH', '/api/v1/account'],
   ['PUT', '/api/v1/account/x-identity'],
@@ -74,8 +72,6 @@ function concretePath(template: string): string {
   return template.replaceAll(/:[^/]+/gu, '123');
 }
 
-// `explore` prints these entries as JSON and cuts long answers, so list checks
-// read the entries before printing.
 const explore = exploreCatalog;
 
 function exploreOne(method: string, path: string): ExploredEndpoint | undefined {

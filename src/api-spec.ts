@@ -1,10 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Loads the endpoint catalog that scripts/generate-api-contract.mjs builds from
-// the Xquik OpenAPI spec. Nothing here is written by hand. To change the
-// catalog, run `npm run generate-api-contract`.
 
 import GENERATED_API_CONTRACT from '../generated-api-contract.json' with { type: 'json' };
 import type { EndpointInfo, EndpointParameter, MppOffer } from './types.js';
@@ -18,8 +13,6 @@ interface StoredParameter extends Omit<EndpointParameter, 'in'> {
   readonly in: string;
 }
 
-// Each operation names its parameters and its response shape by their position
-// in the 2 lists that all operations share.
 interface StoredOperation extends Omit<EndpointInfo, 'mpp' | 'parameters' | 'responseShape'> {
   readonly mpp?: MppOffer & { readonly price: string };
   readonly parameters: readonly number[];
@@ -36,12 +29,9 @@ interface StoredContract {
 }
 
 interface ApiContract {
-  /** Free reads, as "GET /api/v1/path", that run without an approval prompt. */
   readonly approvalFreeReads: ReadonlySet<string>;
-  /** Operations under /api/v1 that the catalog leaves out. */
   readonly blockedOperations: readonly OperationKey[];
   readonly endpoints: readonly EndpointInfo[];
-  /** The offer of each endpoint that accepts MPP. */
   readonly mppOffers: ReadonlyMap<EndpointInfo, MppOffer>;
   readonly sessionOnlyOperations: readonly OperationKey[];
 }

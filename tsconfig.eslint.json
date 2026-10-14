@@ -17,6 +17,6 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts", "types/**/*.d.ts", "*.config.ts", "check-*.ts", "check-common.ts", "eslint-plugins.d.ts"],
+  "include": ["src/**/*.ts", "tests/**/*.ts", "types/**/*.d.ts", "*.config.ts", "check-*.ts", "check-common.ts", "eslint-no-code-comments.ts", "eslint-plugins.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { spawnSync } from 'node:child_process';
@@ -22,9 +21,6 @@ const KEYCHAIN_ITEM = { NPM_KEYCHAIN_ACCOUNT: 'test-account', NPM_KEYCHAIN_SERVI
 
 const PROBE = [process.execPath, 'tests/fixtures/npm-config-probe.cjs'];
 
-// The scripts under test inherit these variables. The fake `security` in
-// tests/fixtures comes first on PATH, and TMPDIR points at a folder the tests
-// can inspect.
 function run(script: string, scriptArguments: readonly string[], extra: Readonly<Record<string, string>>): Run {
   const scratch = path.resolve('.tmp/with-npm-token-test');
   const variables: Readonly<Record<string, string>> = {

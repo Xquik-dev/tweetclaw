@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { spawnSync } from 'node:child_process';
@@ -40,8 +39,6 @@ interface GeneratorRun {
   readonly stdout: string;
 }
 
-// The generator reads and writes the 2 shipped files in the folder `--root`
-// names. Tests give it this scratch folder, which Git ignores.
 const ROOT = '.tmp/generate-api-contract-test';
 const REFERENCE_KEY = '$ref';
 const README_WITH_BLOCK = [
@@ -55,8 +52,6 @@ const README_WITH_BLOCK = [
   '',
 ].join('\n');
 
-// Spec sentences that state a price. The public copy check scans this file
-// too, so the sentences are built from parts and never appear whole.
 const TWEET_PRICE_SENTENCE = ['Each tweet costs', '1', 'credit.'].join(' ');
 const MEDIA_PRICE_SENTENCE = ['Media adds', '2', 'credits per started MB.'].join(' ');
 
@@ -78,7 +73,6 @@ function stub(tag: string, extra: JsonObject = {}): JsonObject {
   return { description: `${tag} stub.`, responses: { '200': OK_RESPONSE }, tags: [tag], ...extra };
 }
 
-// Every operation scripts/catalog-policy.mjs names must exist in the spec.
 const POLICY_PATHS: JsonObject = {
   '/api/v1/account': { patch: stub('Account') },
   '/api/v1/account/x-identity': { put: stub('Account') },

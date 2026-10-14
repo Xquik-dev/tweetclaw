@@ -1,18 +1,7 @@
 #!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Runs a command with an npm user config that holds the npm token from the
-// macOS Keychain. NPM_KEYCHAIN_SERVICE and NPM_KEYCHAIN_ACCOUNT name the
-// Keychain item. The config is a temporary file with mode 600 that exists only
-// while the command runs. Nothing here prints the token.
-//
-//   node scripts/with-npm-token.mjs <command> [arguments]
-//   node scripts/with-npm-token.mjs --check
-//
-// `--check` confirms the Keychain item exists without reading the token.
 
 import { execFileSync, spawnSync } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
@@ -28,7 +17,6 @@ const KEYCHAIN_SETTINGS = [
 const MISSING_ITEM =
   "The Keychain has no item for NPM_KEYCHAIN_SERVICE and NPM_KEYCHAIN_ACCOUNT. Add the npm token to the Keychain, then run again.";
 
-// Returns the line that names the first unset setting, or undefined.
 function missingKeychainSetting(env = process.env) {
   for (const [name, field] of KEYCHAIN_SETTINGS) {
     if ((env[name] ?? "") === "") {
@@ -38,8 +26,6 @@ function missingKeychainSetting(env = process.env) {
   return undefined;
 }
 
-// Returns what `security` prints for the item. Without `-w` that is the item's
-// attributes, and with `-w` it is the token. It throws when no item matches.
 function findKeychainItem(env, ...extraArguments) {
   return execFileSync(
     "security",

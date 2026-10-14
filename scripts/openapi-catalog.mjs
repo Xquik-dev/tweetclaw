@@ -1,13 +1,8 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-// Builds TweetClaw's endpoint catalog from an OpenAPI document and the policy
-// in catalog-policy.mjs. It reads no files and makes no requests.
 
 import { RESTRICTED_BILLING_PATTERNS } from "./public-copy-rules.mjs";
 
-// Every method OpenAPI allows counts as an operation. The tool sends 5 of them.
 const OPENAPI_METHODS = ["delete", "get", "head", "options", "patch", "post", "put", "trace"];
 const TOOL_METHODS = new Set(["delete", "get", "patch", "post", "put"]);
 const PARAMETER_LOCATIONS = new Set(["header", "path", "query"]);
@@ -15,10 +10,8 @@ const API_PREFIX = "/api/v1/";
 const JSON_CONTENT = "application/json";
 const EVENT_STREAM_CONTENT = "text/event-stream";
 const PAYMENT_REQUIRED_STATUS = "402";
-// MPP offers state amounts in millionths of a US dollar.
 const MPP_UNITS_PER_DOLLAR = 1_000_000;
 const MPP_PRICE_DECIMALS = 6;
-// Object levels a response shape spells out before it names a schema instead.
 const SHAPE_DEPTH = 3;
 const WRITE_NOTICE = "Requires one-time approval after showing the exact target and payload.";
 const PRIVATE_READ_NOTICE = "Requires explicit user request.";
@@ -59,8 +52,6 @@ function schemaName(schema) {
     : undefined;
 }
 
-// Rewrites the spec's `{id}` path values as the catalog's `:id`. It takes a
-// path or a whole "METHOD /path" key.
 function catalogPath(path) {
   return path.replaceAll(/\{([^}]+)\}/gu, (_match, name) => `:${name}`);
 }
@@ -77,7 +68,6 @@ function categoryFor(operation, key, policy) {
   return policy.categoryByTag[tag] ?? tag.toLowerCase().replaceAll(/\s+/gu, "-");
 }
 
-// Collapses whitespace and drops sentences that state a price.
 function cleanText(text) {
   if (typeof text !== "string") return "";
   return text
@@ -129,7 +119,7 @@ function describeField(resolve, field) {
 
 function declaredParameters(resolve, pathItem, operation, key) {
   const declared = new Map();
-  // An operation's own parameter replaces the path's parameter of that name.
+  // An operation's own parameter replaces the path's parameter of that name. https://spec.openapis.org/oas/v3.1.0.html#operation-object
   for (const raw of [...(pathItem.parameters ?? []), ...(operation.parameters ?? [])]) {
     const parameter = resolve(raw);
     if (!PARAMETER_LOCATIONS.has(parameter.in)) {
@@ -147,8 +137,6 @@ function declaredParameters(resolve, pathItem, operation, key) {
   }));
 }
 
-// Lists every object a schema may be. `oneOf` and `anyOf` offer alternatives,
-// and `allOf` merges its parts into each alternative.
 function objectVariants(resolve, raw) {
   const schema = resolve(raw);
   if (schema === undefined) return [];
@@ -187,8 +175,6 @@ function joinAlternatives(shapes) {
   return [...new Set(shapes)].filter((shape) => shape.length > 0).join(" | ");
 }
 
-// Prints a schema as `{ id, name?, author?: User { id } }`. A field that may
-// be absent ends in `?`. A named schema prints its fields once per shape.
 function printShape(resolve, raw, depth, printed) {
   const name = schemaName(raw);
   const schema = resolve(raw) ?? {};
@@ -247,8 +233,6 @@ function needsBrowserSession(openapi, operation) {
   });
 }
 
-// Returns an MPP route's offer. `explore` shows the price per call, and the
-// plugin pays no more than the amount, in that currency.
 function mppOffer(operation, key) {
   const offers = operation["x-payment-info"]?.offers;
   if (offers === undefined) return undefined;
@@ -311,7 +295,6 @@ function listOperations(openapi) {
     })));
 }
 
-// Says where the catalog puts an operation. The value names its count.
 function placement(context, entry) {
   if (!entry.path.startsWith(API_PREFIX)) return "outsideApiV1";
   if (context.policy.excluded.includes(entry.key)) return "excluded";
@@ -343,9 +326,6 @@ function operationKey(key) {
   return { method, path };
 }
 
-// Returns the contract that ships as generated-api-contract.json, and the
-// excluded operations that the document does not publish. The contract's
-// blocked operations are the /api/v1 operations it does not catalog.
 function buildContract(openapi, policy) {
   const context = { openapi, policy, resolve: createResolver(openapi) };
   const entries = listOperations(openapi);

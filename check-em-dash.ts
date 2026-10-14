@@ -1,10 +1,7 @@
 #!/usr/bin/env tsx
 
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
-
-/** Reject em dashes, escaped em dashes, and spaced double hyphens. */
 
 import { reportViolations, walkSourceFiles } from './check-common';
 import type { BaseViolation } from './check-common';

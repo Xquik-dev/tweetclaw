@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { MPP_OFFERS } from './api-spec.js';
@@ -69,11 +68,6 @@ function buildFetchUrl(baseUrl: string, path: string, query?: Readonly<Record<st
   return url.toString();
 }
 
-// Path families an agent never reaches, whatever the generated catalog says.
-// Key management, payments, account credentials, account settings and support
-// stay in the dashboard. A family covers its own path and every path under it,
-// for every method. A `readable` family still allows a GET of its own path.
-// This list is written by hand on purpose, so no spec change can open a route.
 const REFUSED_PATH_FAMILIES: ReadonlyArray<{ readonly path: string; readonly readable?: true }> = [
   { path: '/api/v1/account', readable: true },
   { path: '/api/v1/api-keys' },
@@ -123,9 +117,6 @@ type Verdict = { readonly endpoint: EndpointInfo } | { readonly refusal: string 
 const BLOCKED_FOR_AGENTS =
   'Endpoint is blocked for agents. Complete account, credential, billing, or support administration at dashboard.xquik.com.';
 
-// A request goes out only when it names an operation the catalog lists as
-// agent-callable and the static list does not refuse. Every other request is
-// refused, whatever the reason the catalog lacks it.
 function judgeRequest(method: string, path: string): Verdict {
   const pathProblem = apiPathProblem(path);
   if (pathProblem !== undefined) return { refusal: pathProblem };
@@ -141,8 +132,6 @@ function isProhibitedRequest(method: string, path: string): boolean {
   return 'refusal' in judgeRequest(method.toUpperCase(), path);
 }
 
-// A route with a listed MPP offer goes through a fetch that pays that offer.
-// Every other request uses the plain fetch and can pay nothing.
 function fetchFor(
   endpoint: EndpointInfo,
   fetchFunction: FetchFunction | undefined,
@@ -217,7 +206,6 @@ function formatApiError(response: Response, payload: unknown): string {
   return code === undefined ? `Xquik API returned ${status}.` : `Xquik API returned ${status} (${code}).`;
 }
 
-// No redirect is followed.
 function assertNoRedirect(response: Response): void {
   if (response.status >= REDIRECT_STATUS_FIRST && response.status <= REDIRECT_STATUS_LAST) {
     throw new Error('Xquik API answered with a redirect. TweetClaw follows none, so the credential stays on this host.');

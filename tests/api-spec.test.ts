@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
-//
 // SPDX-License-Identifier: MIT
 
 import { describe, expect, it } from 'vitest';
@@ -7,7 +6,6 @@ import contract from '../generated-api-contract.json' with { type: 'json' };
 import { API_SPEC, loadApiContract } from '../src/api-spec.js';
 import type { StoredContract } from '../src/api-spec.js';
 
-// Fields the read data richness guide promises for tweets, media, and profiles.
 const MEDIA_RESPONSE_FIELDS =
   'mediaUrl type url allowDownload altText aspectRatio availabilityStatus displayUrl durationMillis expandedUrl faceRects focusRects height id indices mediaKey monetizable otherSensitiveContent sizes videoVariants width'.split(' ');
 

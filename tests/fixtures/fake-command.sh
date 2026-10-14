@@ -1,11 +1,7 @@
 #!/bin/sh
 
 # SPDX-FileCopyrightText: 2026 Xquik Contributors
-#
 # SPDX-License-Identifier: MIT
-
-# Stands in for git, npm, npx, gh, node and uvx in tests. It logs its name and
-# arguments and gives the few answers the scripts under test read.
 
 name="${0##*/}"
 printf '%s %s\n' "$name" "$*" >> "$FAKE_COMMAND_LOG"
