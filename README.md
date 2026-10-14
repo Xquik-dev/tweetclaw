@@ -245,7 +245,12 @@ Agents can call 156 of them through `tweetclaw`. TweetClaw leaves out the other 
 
 ## References
 
-- [Xquik Platform](https://xquik.com)
+- [Xquik X API & Twitter scraper](https://xquik.com)
+- [X (Twitter) scraper API & Twitter MCP server](https://github.com/Xquik-dev/x-twitter-scraper)
+- [Hermes Agent Twitter plugin](https://github.com/Xquik-dev/hermes-tweet)
+- [n8n community node for Twitter](https://github.com/Xquik-dev/n8n-nodes-xquik)
+- [Twitter API TypeScript SDK](https://github.com/Xquik-dev/x-twitter-scraper-typescript)
+- [Twitter advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search)
 - [API Documentation](https://docs.xquik.com)
 - [Billing & Pricing](https://docs.xquik.com/guides/billing)
 - [Context7 Agent Docs](https://context7.com/xquik-dev/tweetclaw)
