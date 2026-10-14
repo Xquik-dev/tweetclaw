@@ -58,7 +58,7 @@ Global, subject to the user's account authorization, Xquik plan, platform rules,
 
 ## Version
 
-Package version `1.7.0`. Verify the published version from npm before making release claims.
+Package version `1.7.1`. Verify the published version from npm before making release claims.
 
 ## Use restrictions
 

@@ -2,6 +2,24 @@
 
 All notable public changes appear in this file.
 
+## [1.7.1] - 2026-10-14
+
+### Added
+
+- Catalog 4 more read operations. Agents can now call 156 of the 184 in the live OpenAPI spec.
+- Add the Community Notes contributor lookup, with the contributor's notes & deleted notes.
+- Add the Twitter trends archive of a place.
+
+### Changed
+
+- Take the latest parameter descriptions from the spec. They cover Community IDs, `from:` in Tweet search & the `near` filter.
+- Say in the README that TweetClaw installs as an OpenClaw skill, and link the related Xquik repositories.
+- Remove code comments from the source. The lint now fails on a new one.
+
+### Security
+
+- Refuse the 10 operations the API serves only to dashboard sessions, on top of the refused account, API key, billing, support & X account paths.
+
 ## [1.7.0] - 2026-10-13
 
 ### Added
@@ -75,3 +93,4 @@ All notable public changes appear in this file.
 [1.6.43]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.43
 [1.6.44]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.44
 [1.7.0]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.0
+[1.7.1]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.1
