@@ -6,7 +6,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { isList, isRecord, parseJsonObject, recordOf } from "./json-shape.ts";
+import { at, isList, readJsonObject, recordOf } from "./json-shape.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const openclawMinimumVersion = "2026.7.1";
@@ -16,18 +16,6 @@ const errors: string[] = [];
 
 function readText(path: string): string {
   return readFileSync(join(root, path), "utf8");
-}
-
-function readJson(path: string): Readonly<Record<string, unknown>> {
-  return parseJsonObject(readText(path), path);
-}
-
-function at(value: unknown, ...keys: readonly string[]): unknown {
-  let current = value;
-  for (const key of keys) {
-    current = isRecord(current) ? current[key] : undefined;
-  }
-  return current;
 }
 
 function addError(message: string): void {
@@ -73,9 +61,9 @@ function assertStringList(label: string, value: unknown): readonly string[] {
   });
 }
 
-const packageJson = readJson("package.json");
-const packageLock = readJson("package-lock.json");
-const manifest = readJson("openclaw.plugin.json");
+const packageJson = readJsonObject("package.json");
+const packageLock = readJsonObject("package-lock.json");
+const manifest = readJsonObject("openclaw.plugin.json");
 const openclawPackage = recordOf(packageJson["openclaw"]);
 const openclawCompat = recordOf(openclawPackage["compat"]);
 const openclawBuild = recordOf(openclawPackage["build"]);

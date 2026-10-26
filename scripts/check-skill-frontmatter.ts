@@ -6,7 +6,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { isList, parseJsonObject } from "./json-shape.ts";
+import { isList, readJsonObject } from "./json-shape.ts";
 
 interface FrontmatterLine {
   readonly line: number;
@@ -20,10 +20,6 @@ interface FrontmatterField extends FrontmatterLine {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const violations: string[] = [];
-
-function readJson(relativePath: string): Readonly<Record<string, unknown>> {
-  return parseJsonObject(readFileSync(path.join(root, relativePath), "utf8"), relativePath);
-}
 
 function toRelativePath(filePath: string): string {
   return path.relative(root, filePath).split(path.sep).join("/");
@@ -169,7 +165,7 @@ function validateMetadata(filePath: string, fields: ReadonlyMap<string, Frontmat
   }
 }
 
-const pluginManifest = readJson("openclaw.plugin.json");
+const pluginManifest = readJsonObject("openclaw.plugin.json");
 const manifestSkills = pluginManifest["skills"];
 const skillEntries = isList(manifestSkills) ? manifestSkills : [];
 

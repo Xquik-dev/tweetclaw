@@ -12,6 +12,7 @@ const config: KnipConfig = {
   ],
 
   project: [
+    'scripts/**/*.ts',
     'src/**/*.ts',
     'tests/**/*.ts',
   ],
