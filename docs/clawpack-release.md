@@ -15,7 +15,7 @@ through verified ClawHub, with npm as the fallback.
 catalog from the live OpenAPI spec and rewrites the API coverage block in
 `README.md`. Never edit either by hand.
 
-`scripts/catalog-policy.mjs` is the only hand-kept part. It lists the operations
+`scripts/catalog-policy.ts` is the only hand-kept part. It lists the operations
 an agent must not call, the private reads, the reads that skip approval, and the
 category of each spec tag.
 
@@ -78,7 +78,7 @@ Sign in to GitHub with `gh auth login`. Then release.
 1. Merge the version bump to master. Tag that commit `v<version>` and push the
    tag.
 2. Check out the tag in a clean checkout.
-3. Run `node scripts/release.mjs --dry-run`. It builds and validates the npm package,
+3. Run `node scripts/release.ts --dry-run`. It builds and validates the npm package,
    the ClawHub package, and the ClawHub Skill without publishing. It also
    confirms the Keychain item exists and the ClawHub login works.
 4. Run `npm run release` in a terminal, so npm can ask for 2FA approval. It
@@ -86,7 +86,7 @@ Sign in to GitHub with `gh auth login`. Then release.
    It creates the GitHub release with the legal notice last.
 
 Pass `--only npm` or `--only clawhub` to release 1 registry, as in
-`node scripts/release.mjs --only npm`. That run needs only that registry's
+`node scripts/release.ts --only npm`. That run needs only that registry's
 credential, and it still creates the GitHub release.
 
 The script checks every credential before the first upload. It stops with 1
@@ -95,7 +95,7 @@ line that names the variable when `NPM_KEYCHAIN_SERVICE`,
 the checkout has changes or the tag is not the current master commit. A rerun
 skips each target that already has the version.
 
-`scripts/with-npm-token.mjs` reads the token into a temporary npm user config
+`scripts/with-npm-token.ts` reads the token into a temporary npm user config
 with mode 600. The file exists only while `npm publish` runs. The release uses
 no provenance and no OIDC.
 

@@ -289,7 +289,7 @@ function readContractFile(): string {
 function generate(...flags: readonly string[]): GeneratorRun {
   const run = spawnSync(
     process.execPath,
-    ['scripts/generate-api-contract.mjs', '--root', ROOT, ...flags, `${ROOT}/spec.json`],
+    ['scripts/generate-api-contract.ts', '--root', ROOT, ...flags, `${ROOT}/spec.json`],
     { encoding: 'utf8' },
   );
   return { status: run.status, stderr: run.stderr, stdout: run.stdout };
@@ -541,7 +541,7 @@ describe('generate-api-contract', () => {
       'the policy names an operation the spec lacks',
       withPaths((paths) => { delete paths['/api/v1/x/timeline']; }),
       README_WITH_BLOCK,
-      'catalog-policy.mjs lists GET /api/v1/x/timeline in privateReads, and the catalog has no such operation.',
+      'catalog-policy.ts lists GET /api/v1/x/timeline in privateReads, and the catalog has no such operation.',
     ],
     [
       'a read that skips approval is not free',
@@ -549,7 +549,7 @@ describe('generate-api-contract', () => {
         paths['/api/v1/radar'] = { get: stub('Composition', { responses: { '200': OK_RESPONSE, '402': PAID } }) };
       }),
       README_WITH_BLOCK,
-      'catalog-policy.mjs lets GET /api/v1/radar run without approval, and it is not a free, callable GET.',
+      'catalog-policy.ts lets GET /api/v1/radar run without approval, and it is not a free, callable GET.',
     ],
     [
       'an operation uses a method the tool cannot send',
