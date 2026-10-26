@@ -8,6 +8,7 @@ const config: KnipConfig = {
     'src/index.ts',
     'vitest.config.ts',
     'tests/**/*.test.ts',
+    'tests/fixtures/*.ts',
   ],
 
   project: [

@@ -19,7 +19,7 @@ const NPM_ITEM = { NPM_KEYCHAIN_ACCOUNT: 'test-account', NPM_KEYCHAIN_SERVICE: '
 const CLAWHUB = 'npx --yes clawhub@0.23.3';
 const SOURCE = '--source-repo Xquik-dev/tweetclaw --source-commit abc123 --source-ref refs/heads/release';
 const NPM_VIEW = `npm view ${name}@${version} version`;
-const PUBLISH_NPM = 'node scripts/with-npm-token.mjs node scripts/publish-clean.mjs';
+const PUBLISH_NPM = 'node scripts/with-npm-token.ts node scripts/publish-clean.ts';
 const CLAWHUB_DRY_RUN = [
   'npm pack --pack-destination <tmp>',
   `${CLAWHUB} package publish <tmp>/package.tgz --family code-plugin ${SOURCE} --dry-run --json`,
@@ -59,7 +59,7 @@ function run(script: string, flags: readonly string[], extra: Readonly<Record<st
 }
 
 function release(flags: readonly string[], extra: Readonly<Record<string, string>>): Run {
-  return run('scripts/release.mjs', flags, extra);
+  return run('scripts/release.ts', flags, extra);
 }
 
 beforeEach(() => {
@@ -106,8 +106,8 @@ describe('release', () => {
         'git rev-parse --symbolic-full-name HEAD',
         `${CLAWHUB} whoami`,
         NPM_VIEW,
-        'node scripts/with-npm-token.mjs --check',
-        'node scripts/publish-clean.mjs --dry-run',
+        'node scripts/with-npm-token.ts --check',
+        'node scripts/publish-clean.ts --dry-run',
         ...CLAWHUB_DRY_RUN,
       ],
       output: `release: dry run passed for ${name}@${version} on npm and ClawHub. Nothing was published.\n`,
@@ -152,13 +152,13 @@ describe('release', () => {
       '--only names no registry',
       ['--only', 'github'],
       NPM_ITEM,
-      'release: --only takes npm or clawhub. Run node scripts/release.mjs [--dry-run] [--only npm|clawhub].\n',
+      'release: --only takes npm or clawhub. Run node scripts/release.ts [--dry-run] [--only npm|clawhub].\n',
     ],
     [
       'an option is unknown',
       ['--force'],
       NPM_ITEM,
-      'release: an option is unknown. Run node scripts/release.mjs [--dry-run] [--only npm|clawhub].\n',
+      'release: an option is unknown. Run node scripts/release.ts [--dry-run] [--only npm|clawhub].\n',
     ],
   ])('stops with 1 line and starts nothing when %s', (_case, flags, variables, line) => {
     expect.assertions(1);
@@ -182,17 +182,17 @@ describe('check-reuse', () => {
   it('runs the pinned REUSE lint and returns its exit code', () => {
     expect.assertions(2);
     copyFileSync('tests/fixtures/fake-command.sh', scratch('bin', 'uvx'));
-    expect(run('scripts/check-reuse.mjs', [], {})).toStrictEqual({
+    expect(run('scripts/check-reuse.ts', [], {})).toStrictEqual({
       commands: ['uvx --from reuse==6.2.0 reuse lint'],
       output: '',
       status: 0,
     });
-    expect(run('scripts/check-reuse.mjs', [], { FAKE_UVX_EXIT: '3' }).status).toBe(3);
+    expect(run('scripts/check-reuse.ts', [], { FAKE_UVX_EXIT: '3' }).status).toBe(3);
   });
 
   it('stops with 1 line when uvx is missing', () => {
     expect.assertions(1);
-    expect(run('scripts/check-reuse.mjs', [], {})).toStrictEqual({
+    expect(run('scripts/check-reuse.ts', [], {})).toStrictEqual({
       commands: [],
       output: 'check-reuse: uvx is missing. Install uv from https://docs.astral.sh/uv, then run again.\n',
       status: 1,

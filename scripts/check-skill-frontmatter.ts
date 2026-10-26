@@ -6,24 +6,34 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { isList, parseJsonObject } from "./json-shape.ts";
+
+interface FrontmatterLine {
+  readonly line: number;
+  readonly value: string;
+}
+
+interface FrontmatterField extends FrontmatterLine {
+  readonly block?: readonly FrontmatterLine[];
+}
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-const violations = [];
+const violations: string[] = [];
 
-function readJson(relativePath) {
-  return JSON.parse(readFileSync(path.join(root, relativePath), "utf8"));
+function readJson(relativePath: string): Readonly<Record<string, unknown>> {
+  return parseJsonObject(readFileSync(path.join(root, relativePath), "utf8"), relativePath);
 }
 
-function toRelativePath(filePath) {
+function toRelativePath(filePath: string): string {
   return path.relative(root, filePath).split(path.sep).join("/");
 }
 
-function addViolation(filePath, line, message) {
+function addViolation(filePath: string, line: number, message: string): void {
   violations.push(`${toRelativePath(filePath)}:${String(line)} ${message}`);
 }
 
-function resolveSkillFile(skillEntry) {
+function resolveSkillFile(skillEntry: unknown): string | null {
   if (typeof skillEntry !== "string" || skillEntry.trim() === "") {
     violations.push("openclaw.plugin.json: skills entries must be non-empty strings");
     return null;
@@ -38,7 +48,7 @@ function resolveSkillFile(skillEntry) {
   return skillEntry.endsWith(".md") ? resolvedEntry : path.join(resolvedEntry, "SKILL.md");
 }
 
-function parseFrontmatter(filePath) {
+function parseFrontmatter(filePath: string): Map<string, FrontmatterField> | null {
   if (!existsSync(filePath)) {
     violations.push(`${toRelativePath(filePath)}: missing skill file`);
     return null;
@@ -56,7 +66,7 @@ function parseFrontmatter(filePath) {
     return null;
   }
 
-  const fields = new Map();
+  const fields = new Map<string, FrontmatterField>();
   const keyPattern = /^([A-Za-z][A-Za-z0-9_-]*):(?:\s+(.+))?$/u;
 
   for (let index = 1; index < endIndex; index += 1) {
@@ -71,13 +81,12 @@ function parseFrontmatter(filePath) {
       continue;
     }
 
-    const match = keyPattern.exec(line);
-    if (!match) {
+    const [, key, rawValue = ""] = keyPattern.exec(line) ?? [];
+    if (key === undefined) {
       addViolation(filePath, lineNumber, "frontmatter line must be `key: value`");
       continue;
     }
 
-    const [, key, rawValue = ""] = match;
     if (fields.has(key)) {
       addViolation(filePath, lineNumber, `duplicate frontmatter key: ${key}`);
     }
@@ -91,7 +100,7 @@ function parseFrontmatter(filePath) {
       continue;
     }
 
-    const block = [];
+    const block: FrontmatterLine[] = [];
     index += 1;
     while (index < endIndex) {
       const blockLine = lines[index] ?? "";
@@ -108,7 +117,7 @@ function parseFrontmatter(filePath) {
   return fields;
 }
 
-function validateRequiredField(filePath, fields, key) {
+function validateRequiredField(filePath: string, fields: ReadonlyMap<string, FrontmatterField>, key: string): void {
   const field = fields.get(key);
   if (!field) {
     addViolation(filePath, 1, `missing required frontmatter key: ${key}`);
@@ -119,7 +128,7 @@ function validateRequiredField(filePath, fields, key) {
   }
 }
 
-function validateMetadata(filePath, fields) {
+function validateMetadata(filePath: string, fields: ReadonlyMap<string, FrontmatterField>): void {
   const field = fields.get("metadata");
   if (!field) {
     addViolation(filePath, 1, "missing required frontmatter key: metadata");
@@ -127,18 +136,18 @@ function validateMetadata(filePath, fields) {
   }
 
   if (field.block) {
-    if (field.block.length !== 1) {
+    const [entry, ...extraEntries] = field.block;
+    if (entry === undefined || extraEntries.length > 0) {
       addViolation(filePath, field.line, "metadata block must contain exactly one openclaw entry");
       return;
     }
-    const entry = field.block[0];
-    const openclawMatch = /^\s+openclaw:\s+(.+)$/u.exec(entry.value);
-    if (!openclawMatch) {
+    const [, openclawJson] = /^\s+openclaw:\s+(.+)$/u.exec(entry.value) ?? [];
+    if (openclawJson === undefined) {
       addViolation(filePath, entry.line, "metadata block must use `openclaw: { ... }`");
       return;
     }
     try {
-      const parsed = JSON.parse(openclawMatch[1]);
+      const parsed: unknown = JSON.parse(openclawJson);
       if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
         addViolation(filePath, entry.line, "metadata.openclaw must be a JSON object");
       }
@@ -150,7 +159,7 @@ function validateMetadata(filePath, fields) {
   }
 
   try {
-    const parsed = JSON.parse(field.value);
+    const parsed: unknown = JSON.parse(field.value);
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
       addViolation(filePath, field.line, "metadata must be a single-line JSON object");
     }
@@ -161,7 +170,8 @@ function validateMetadata(filePath, fields) {
 }
 
 const pluginManifest = readJson("openclaw.plugin.json");
-const skillEntries = Array.isArray(pluginManifest.skills) ? pluginManifest.skills : [];
+const manifestSkills = pluginManifest["skills"];
+const skillEntries = isList(manifestSkills) ? manifestSkills : [];
 
 if (skillEntries.length === 0) {
   violations.push("openclaw.plugin.json: skills must list at least one packaged skill");

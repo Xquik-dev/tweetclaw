@@ -10,7 +10,8 @@ import { dirname, join } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
-import { missingKeychainSetting } from "./with-npm-token.mjs";
+import { isRecord } from "./json-shape.ts";
+import { missingKeychainSetting } from "./with-npm-token.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const repository = "Xquik-dev/tweetclaw";
@@ -19,20 +20,30 @@ const clawhubApi = "https://clawhub.ai/api/v1";
 const skillSlug = "tweetclaw";
 const legalNotice =
   'Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.';
-const usage = "Run node scripts/release.mjs [--dry-run] [--only npm|clawhub].";
-const { name, version } = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+const usage = "Run node scripts/release.ts [--dry-run] [--only npm|clawhub].";
+const packageJson: unknown = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+const name = packageString(packageJson, "name");
+const version = packageString(packageJson, "version");
 const tag = `v${version}`;
 const { dryRun, releasesClawhub, releasesNpm } = readOptions();
 
-function capture(command, args) {
+function packageString(json: unknown, field: string): string {
+  const value = isRecord(json) ? json[field] : undefined;
+  if (typeof value !== "string") {
+    throw new Error(`package.json: ${field} must be a string`);
+  }
+  return value;
+}
+
+function capture(command: string, args: readonly string[]): string {
   return execFileSync(command, args, { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "inherit"] }).trim();
 }
 
-function run(command, args) {
+function run(command: string, args: readonly string[]): void {
   execFileSync(command, args, { cwd: root, stdio: "inherit" });
 }
 
-function succeeds(command, args) {
+function succeeds(command: string, args: readonly string[]): boolean {
   try {
     execFileSync(command, args, { cwd: root, stdio: "ignore" });
     return true;
@@ -41,24 +52,27 @@ function succeeds(command, args) {
   }
 }
 
-function stop(message) {
+function stop(message: string): never {
   process.stderr.write(`release: ${message}\n`);
   process.exit(1);
 }
 
-function say(message) {
+function say(message: string): void {
   process.stdout.write(`release: ${message}\n`);
 }
 
-function readOptions() {
-  let values;
+function parseFlags() {
   try {
-    ({ values } = parseArgs({
+    return parseArgs({
       options: { "dry-run": { default: false, type: "boolean" }, only: { type: "string" } },
-    }));
+    }).values;
   } catch {
-    stop(`an option is unknown. ${usage}`);
+    return stop(`an option is unknown. ${usage}`);
   }
+}
+
+function readOptions() {
+  const values = parseFlags();
   if (values.only !== undefined && values.only !== "npm" && values.only !== "clawhub") {
     stop(`--only takes npm or clawhub. ${usage}`);
   }
@@ -69,7 +83,7 @@ function readOptions() {
   };
 }
 
-function checkCredentials() {
+function checkCredentials(): void {
   const missingSetting = releasesNpm ? missingKeychainSetting() : undefined;
   if (missingSetting !== undefined) {
     stop(missingSetting);
@@ -77,7 +91,7 @@ function checkCredentials() {
   if (!releasesClawhub) {
     return;
   }
-  const configPath = process.env.CLAWHUB_CONFIG_PATH ?? "";
+  const configPath = process.env["CLAWHUB_CONFIG_PATH"] ?? "";
   if (configPath === "") {
     stop("CLAWHUB_CONFIG_PATH is unset. Set it to the ClawHub CLI config file that holds your login, or pass --only npm.");
   }
@@ -86,13 +100,13 @@ function checkCredentials() {
   }
 }
 
-function checkClawhubLogin() {
+function checkClawhubLogin(): void {
   if (releasesClawhub && !succeeds("npx", [...clawhubCli, "whoami"])) {
     stop("ClawHub rejected the login. Run `npx clawhub@0.23.3 login`, or pass --only npm.");
   }
 }
 
-async function waitFor(label, check) {
+async function waitFor(label: string, check: () => boolean | Promise<boolean>): Promise<void> {
   for (let attempt = 1; attempt <= 60; attempt += 1) {
     if (await check()) {
       return;
@@ -102,24 +116,28 @@ async function waitFor(label, check) {
   stop(`${label} did not show ${version} within 10 minutes. Check the registry, then rerun.`);
 }
 
-async function clawhubJson(path) {
+async function clawhubJson(path: string): Promise<unknown> {
   const response = await fetch(`${clawhubApi}/${path}`);
   return response.ok ? response.json() : {};
 }
 
-async function clawhubPackageVersion() {
-  return (await clawhubJson(`packages/${encodeURIComponent(name)}`)).package?.latestVersion;
+async function clawhubPackageVersion(): Promise<unknown> {
+  const body = await clawhubJson(`packages/${encodeURIComponent(name)}`);
+  const packageInfo = isRecord(body) ? body["package"] : undefined;
+  return isRecord(packageInfo) ? packageInfo["latestVersion"] : undefined;
 }
 
-async function clawhubSkillVersion() {
-  return (await clawhubJson(`skills/${skillSlug}`)).latestVersion?.version;
+async function clawhubSkillVersion(): Promise<unknown> {
+  const body = await clawhubJson(`skills/${skillSlug}`);
+  const latestVersion = isRecord(body) ? body["latestVersion"] : undefined;
+  return isRecord(latestVersion) ? latestVersion["version"] : undefined;
 }
 
-function npmHasVersion() {
+function npmHasVersion(): boolean {
   return succeeds("npm", ["view", `${name}@${version}`, "version"]);
 }
 
-function verifyReleaseRef() {
+function verifyReleaseRef(): string {
   if (capture("git", ["status", "--porcelain"]) !== "") {
     stop("the checkout has changes. Release from a clean checkout of the tag.");
   }
@@ -137,21 +155,21 @@ function verifyReleaseRef() {
   return head;
 }
 
-async function publishNpm() {
+async function publishNpm(): Promise<void> {
   if (npmHasVersion()) {
     say(`npm already has ${name}@${version}.`);
     return;
   }
   if (dryRun) {
-    run("node", ["scripts/with-npm-token.mjs", "--check"]);
-    run("node", ["scripts/publish-clean.mjs", "--dry-run"]);
+    run("node", ["scripts/with-npm-token.ts", "--check"]);
+    run("node", ["scripts/publish-clean.ts", "--dry-run"]);
     return;
   }
-  run("node", ["scripts/with-npm-token.mjs", "node", "scripts/publish-clean.mjs"]);
+  run("node", ["scripts/with-npm-token.ts", "node", "scripts/publish-clean.ts"]);
   await waitFor("npm", () => npmHasVersion());
 }
 
-async function publishClawhubPackage(source) {
+async function publishClawhubPackage(source: readonly string[]): Promise<void> {
   if (!dryRun && (await clawhubPackageVersion()) === version) {
     say(`ClawHub already has package ${name}@${version}.`);
     return;
@@ -160,6 +178,9 @@ async function publishClawhubPackage(source) {
   try {
     run("npm", ["pack", "--pack-destination", folder]);
     const [archive] = readdirSync(folder);
+    if (archive === undefined) {
+      throw new Error(`${folder}: npm pack wrote no package archive`);
+    }
     run("npx", [
       ...clawhubCli,
       "package",
@@ -178,7 +199,7 @@ async function publishClawhubPackage(source) {
   }
 }
 
-async function publishClawhubSkill(source) {
+async function publishClawhubSkill(source: readonly string[]): Promise<void> {
   if (!dryRun && (await clawhubSkillVersion()) === version) {
     say(`ClawHub already has Skill ${skillSlug}@${version}.`);
     return;
@@ -211,7 +232,7 @@ async function publishClawhubSkill(source) {
   }
 }
 
-function createGithubRelease() {
+function createGithubRelease(): void {
   if (succeeds("gh", ["release", "view", tag, "--repo", repository])) {
     say(`GitHub release ${tag} exists.`);
     return;

@@ -6,12 +6,12 @@
 import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { preparePackedPackageJson, restorePackedPackageJson } from "./pack-package-json.mjs";
+import { preparePackedPackageJson, restorePackedPackageJson } from "./pack-package-json.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publishArgs = ["publish", "--access", "public", "--ignore-scripts", ...process.argv.slice(2)];
 
-function runNpmScript(scriptName) {
+function runNpmScript(scriptName: string): void {
   execFileSync("npm", ["run", scriptName], {
     cwd: root,
     stdio: "inherit",

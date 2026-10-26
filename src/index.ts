@@ -19,7 +19,12 @@ import type {
   ToolResult,
   TweetclawParams,
 } from './types.js';
-import type { AnyAgentTool, PluginCommandContext, PluginLogger } from 'openclaw/plugin-sdk/plugin-entry';
+import type {
+  AnyAgentTool,
+  OpenClawPluginApi,
+  PluginCommandContext,
+  PluginLogger,
+} from 'openclaw/plugin-sdk/plugin-entry';
 
 interface PollerEvent {
   readonly eventType?: string;
@@ -478,22 +483,29 @@ function register(api: OpenClawApi, fetchFunction?: FetchFunction): void {
   api.logger.info('TweetClaw: Plugin registered.');
 }
 
+type PluginHost = Readonly<Pick<OpenClawPluginApi, 'on' | 'registerCommand' | 'registerService' | 'registerTool'>> & {
+  readonly logger: Readonly<PluginLogger>;
+  readonly pluginConfig?: Readonly<Record<string, unknown>>;
+};
+
+function registerHost(api: PluginHost): void {
+  register({
+    logger: api.logger,
+    ...(api.pluginConfig === undefined ? {} : { pluginConfig: api.pluginConfig }),
+    registerCommand: api.registerCommand,
+    registerService: api.registerService,
+    registerTool: api.registerTool,
+    on: (name, handler, options): void => { api.on(name, handler, options); },
+  });
+}
+
 const plugin: ReturnType<typeof definePluginEntry> = definePluginEntry({
   configSchema: { jsonSchema: CONFIG_SCHEMA },
   description: 'Twitter bot plugin that runs on Xquik',
   id: 'tweetclaw',
   name: 'TweetClaw',
-  register: (api): void => {
-    register({
-      logger: api.logger,
-      ...(api.pluginConfig === undefined ? {} : { pluginConfig: api.pluginConfig }),
-      registerCommand: api.registerCommand,
-      registerService: api.registerService,
-      registerTool: api.registerTool,
-      on: (name, handler, options): void => { api.on(name, handler, options); },
-    });
-  },
+  register: registerHost,
 });
 
-export { register };
+export { register, registerHost };
 export default plugin;
