@@ -5,15 +5,15 @@
 
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { isList, isRecord, listOf, parseJsonObject, recordOf } from "./json-shape.ts";
+import { at, isList, isRecord, listOf, readJsonObject, recordOf } from "./json-shape.ts";
 import { preparePackedPackageJson, restorePackedPackageJson } from "./pack-package-json.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const packageJson = parseJsonObject(readFileSync(join(root, "package.json"), "utf8"), "package.json");
-const pluginManifest = parseJsonObject(readFileSync(join(root, "openclaw.plugin.json"), "utf8"), "openclaw.plugin.json");
+const packageJson = readJsonObject("package.json");
+const pluginManifest = readJsonObject("openclaw.plugin.json");
 
 function normalizePackagePath(value: string): string {
   return value.replace(/\\/g, "/").replace(/^package\//u, "").replace(/^\.\//u, "");
@@ -198,10 +198,10 @@ for (const forbiddenManifestField of ["devDependencies", "overrides", "scripts"]
     errors.push(`packed package.json must omit ${forbiddenManifestField}`);
   }
 }
-if (recordOf(packedPackageJson["peerDependencies"])["openclaw"] !== recordOf(packageJson["peerDependencies"])["openclaw"]) {
+if (at(packedPackageJson, "peerDependencies", "openclaw") !== at(packageJson, "peerDependencies", "openclaw")) {
   errors.push("packed package.json must preserve the OpenClaw host peer dependency");
 }
-if (recordOf(recordOf(packedPackageJson["peerDependenciesMeta"])["openclaw"])["optional"] === true) {
+if (at(packedPackageJson, "peerDependenciesMeta", "openclaw", "optional") === true) {
   errors.push("packed package.json must not mark the OpenClaw host peer optional");
 }
 if (runtimeExtensions.length === 0) {

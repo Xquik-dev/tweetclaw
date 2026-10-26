@@ -10,7 +10,7 @@ import { dirname, join } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
-import { isRecord } from "./json-shape.ts";
+import { at, isRecord } from "./json-shape.ts";
 import { missingKeychainSetting } from "./with-npm-token.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -30,7 +30,7 @@ const { dryRun, releasesClawhub, releasesNpm } = readOptions();
 function packageString(json: unknown, field: string): string {
   const value = isRecord(json) ? json[field] : undefined;
   if (typeof value !== "string") {
-    throw new Error(`package.json: ${field} must be a string`);
+    throw new Error(`package.json field ${field} is not text`);
   }
   return value;
 }
@@ -122,15 +122,11 @@ async function clawhubJson(path: string): Promise<unknown> {
 }
 
 async function clawhubPackageVersion(): Promise<unknown> {
-  const body = await clawhubJson(`packages/${encodeURIComponent(name)}`);
-  const packageInfo = isRecord(body) ? body["package"] : undefined;
-  return isRecord(packageInfo) ? packageInfo["latestVersion"] : undefined;
+  return at(await clawhubJson(`packages/${encodeURIComponent(name)}`), "package", "latestVersion");
 }
 
 async function clawhubSkillVersion(): Promise<unknown> {
-  const body = await clawhubJson(`skills/${skillSlug}`);
-  const latestVersion = isRecord(body) ? body["latestVersion"] : undefined;
-  return isRecord(latestVersion) ? latestVersion["version"] : undefined;
+  return at(await clawhubJson(`skills/${skillSlug}`), "latestVersion", "version");
 }
 
 function npmHasVersion(): boolean {

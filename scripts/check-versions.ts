@@ -7,13 +7,9 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { replaceCoverage } from "./contract-files.ts";
-import { listOf, parseJsonObject, recordOf } from "./json-shape.ts";
+import { at, listOf, parseJsonObject, readJsonObject, recordOf } from "./json-shape.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-
-function readJsonObject(path: string): Readonly<Record<string, unknown>> {
-  return parseJsonObject(readFileSync(join(root, path), "utf8"), path);
-}
 
 const packageJson = readJsonObject("package.json");
 const expected = packageJson["version"];
@@ -56,7 +52,7 @@ if (peerDependencies["openclaw"] !== expectedOpenClawRange) {
     `  package.json: peerDependencies.openclaw ${String(peerDependencies["openclaw"] ?? "<missing>")} (expected ${expectedOpenClawRange})`,
   );
 }
-if (recordOf(recordOf(packageJson["peerDependenciesMeta"])["openclaw"])["optional"] === true) {
+if (at(packageJson, "peerDependenciesMeta", "openclaw", "optional") === true) {
   drifts.push("  package.json: peerDependenciesMeta.openclaw must not mark the OpenClaw host peer optional");
 }
 if (openclawCompat["pluginApi"] !== expectedOpenClawRange) {
@@ -201,7 +197,7 @@ const legalLine =
   'Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.';
 const listingDescription = packageJson["description"];
 if (typeof listingDescription !== "string") {
-  throw new TypeError("package.json: description must be a string");
+  throw new TypeError("package.json field description is not text");
 }
 
 const contentChecks = [
@@ -299,7 +295,7 @@ function readCoverageCounts() {
   const count = (key: string): number => {
     const value = counts[key];
     if (typeof value !== "number") {
-      throw new TypeError(`generated-api-contract.json: counts.${key} must be a number`);
+      throw new TypeError(`generated-api-contract.json field counts.${key} is not a number`);
     }
     return value;
   };

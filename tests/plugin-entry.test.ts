@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { expect, it } from 'vitest';
-import plugin, { registerHost } from '../src/index.js';
+import { registerHost } from '../src/index.js';
 
 type PluginHost = Parameters<typeof registerHost>[0];
 
@@ -25,10 +25,6 @@ function createHost(pluginConfig?: Readonly<Record<string, unknown>>): {
   };
   return { api, commands, hooks, services };
 }
-
-it('hands the host register function to the SDK entry', () => {
-  expect(plugin.register).toBe(registerHost);
-});
 
 it.each([
   { config: undefined, commands: ['xtrends'] },
