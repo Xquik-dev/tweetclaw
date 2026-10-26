@@ -261,7 +261,7 @@ function schemaName(raw: unknown): string | undefined {
 }
 
 function catalogPath(path: string): string {
-  return path.replaceAll(/\{([^}]+)\}/gu, ":$1");
+  return path.replaceAll(/\{(?<name>[^}]+)\}/gu, ":$<name>");
 }
 
 function byPathThenMethod(left: OperationKey, right: OperationKey): number {
