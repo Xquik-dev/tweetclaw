@@ -19,7 +19,7 @@ interface ProbeReport {
 const TOKEN = 'npm_test_token_value';
 const KEYCHAIN_ITEM = { NPM_KEYCHAIN_ACCOUNT: 'test-account', NPM_KEYCHAIN_SERVICE: 'test-service' };
 
-const PROBE = [process.execPath, 'tests/fixtures/npm-config-probe.cjs'];
+const PROBE = [process.execPath, 'tests/fixtures/npm-config-probe.ts'];
 
 function run(script: string, scriptArguments: readonly string[], extra: Readonly<Record<string, string>>): Run {
   const scratch = path.resolve('.tmp/with-npm-token-test');
@@ -41,7 +41,7 @@ function run(script: string, scriptArguments: readonly string[], extra: Readonly
 }
 
 function wrap(extra: Readonly<Record<string, string>>, ...command: readonly string[]): Run {
-  return run('scripts/with-npm-token.mjs', command.length === 0 ? PROBE : command, extra);
+  return run('scripts/with-npm-token.ts', command.length === 0 ? PROBE : command, extra);
 }
 
 function report(): ProbeReport {
@@ -154,7 +154,7 @@ describe('release', () => {
     ['NPM_KEYCHAIN_ACCOUNT', { NPM_KEYCHAIN_SERVICE: 'test-service' }, 'account'],
   ])('stops with 1 line that names %s before it reads Git or npm', (name, item, field) => {
     expect.assertions(3);
-    const result = run('scripts/release.mjs', ['--dry-run'], item);
+    const result = run('scripts/release.ts', ['--dry-run'], item);
     expect(result.status).toBe(1);
     expect(result.output).toBe(
       `release: ${name} is unset. Set it to the ${field} name of the Keychain item that holds the npm token.\n`,

@@ -6,146 +6,154 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { replaceCoverage } from "./contract-files.mjs";
+import { replaceCoverage } from "./contract-files.ts";
+import { at, listOf, parseJsonObject, readJsonObject, recordOf } from "./json-shape.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-const expected = packageJson.version;
+
+const packageJson = readJsonObject("package.json");
+const expected = packageJson["version"];
 
 const surfaces = [
-  { path: "openclaw.plugin.json", get: (j) => JSON.parse(j).version },
-  { path: "skills/tweetclaw/skill-card.md", get: (text) => /Package version `([^`]+)`/u.exec(text)?.[1] },
+  { path: "openclaw.plugin.json", get: (text: string) => parseJsonObject(text, "openclaw.plugin.json")["version"] },
+  { path: "skills/tweetclaw/skill-card.md", get: (text: string) => /Package version `([^`]+)`/u.exec(text)?.[1] },
 ];
 
-const drifts = [];
+const drifts: string[] = [];
 for (const s of surfaces) {
   const raw = readFileSync(join(root, s.path), "utf8");
   const found = s.get(raw);
   if (found !== expected) {
-    drifts.push(`  ${s.path}: ${found ?? "<missing>"} (expected ${expected})`);
+    drifts.push(`  ${s.path}: ${String(found ?? "<missing>")} (expected ${String(expected)})`);
   }
 }
 
-const openclawCompat = packageJson.openclaw?.compat;
-const openclawBuild = packageJson.openclaw?.build;
-const openclawInstall = packageJson.openclaw?.install;
-const expectedOpenClawBuildVersion = openclawBuild?.openclawVersion;
-const expectedOpenClawMinimumVersion = openclawCompat?.minGatewayVersion;
-const expectedOpenClawRange = `>=${expectedOpenClawMinimumVersion}`;
+const openclaw = recordOf(packageJson["openclaw"]);
+const openclawCompat = recordOf(openclaw["compat"]);
+const openclawBuild = recordOf(openclaw["build"]);
+const openclawInstall = recordOf(openclaw["install"]);
+const peerDependencies = recordOf(packageJson["peerDependencies"]);
+const packageFiles = listOf(packageJson["files"]);
+const packageScripts = recordOf(packageJson["scripts"]);
+const checkAllScript = packageScripts["check:all"];
+const checkAll = typeof checkAllScript === "string" ? checkAllScript : "";
+const expectedOpenClawBuildVersion = openclawBuild["openclawVersion"];
+const expectedOpenClawMinimumVersion = openclawCompat["minGatewayVersion"];
+const expectedOpenClawRange = `>=${String(expectedOpenClawMinimumVersion)}`;
 
-if (openclawBuild?.pluginSdkVersion !== expectedOpenClawBuildVersion) {
+if (openclawBuild["pluginSdkVersion"] !== expectedOpenClawBuildVersion) {
   drifts.push(
-    `  package.json: openclaw.build.pluginSdkVersion ${openclawBuild?.pluginSdkVersion ?? "<missing>"} (expected ${expectedOpenClawBuildVersion})`,
+    `  package.json: openclaw.build.pluginSdkVersion ${String(openclawBuild["pluginSdkVersion"] ?? "<missing>")} (expected ${String(expectedOpenClawBuildVersion)})`,
   );
 }
 
-if (packageJson.peerDependencies?.openclaw !== expectedOpenClawRange) {
+if (peerDependencies["openclaw"] !== expectedOpenClawRange) {
   drifts.push(
-    `  package.json: peerDependencies.openclaw ${packageJson.peerDependencies?.openclaw ?? "<missing>"} (expected ${expectedOpenClawRange})`,
+    `  package.json: peerDependencies.openclaw ${String(peerDependencies["openclaw"] ?? "<missing>")} (expected ${expectedOpenClawRange})`,
   );
 }
-if (packageJson.peerDependenciesMeta?.openclaw?.optional === true) {
+if (at(packageJson, "peerDependenciesMeta", "openclaw", "optional") === true) {
   drifts.push("  package.json: peerDependenciesMeta.openclaw must not mark the OpenClaw host peer optional");
 }
-if (openclawCompat?.pluginApi !== expectedOpenClawRange) {
+if (openclawCompat["pluginApi"] !== expectedOpenClawRange) {
   drifts.push(
-    `  package.json: openclaw.compat.pluginApi ${openclawCompat?.pluginApi ?? "<missing>"} (expected ${expectedOpenClawRange})`,
+    `  package.json: openclaw.compat.pluginApi ${String(openclawCompat["pluginApi"] ?? "<missing>")} (expected ${expectedOpenClawRange})`,
   );
 }
-if (openclawInstall?.minHostVersion !== expectedOpenClawRange) {
+if (openclawInstall["minHostVersion"] !== expectedOpenClawRange) {
   drifts.push(
-    `  package.json: openclaw.install.minHostVersion ${openclawInstall?.minHostVersion ?? "<missing>"} (expected ${expectedOpenClawRange})`,
+    `  package.json: openclaw.install.minHostVersion ${String(openclawInstall["minHostVersion"] ?? "<missing>")} (expected ${expectedOpenClawRange})`,
   );
 }
-const expectedNpmSpec = `${packageJson.name}@${expected}`;
-if (openclawInstall?.npmSpec !== expectedNpmSpec) {
+const expectedNpmSpec = `${String(packageJson["name"])}@${String(expected)}`;
+if (openclawInstall["npmSpec"] !== expectedNpmSpec) {
   drifts.push(
-    `  package.json: openclaw.install.npmSpec ${openclawInstall?.npmSpec ?? "<missing>"} (expected ${expectedNpmSpec})`,
+    `  package.json: openclaw.install.npmSpec ${String(openclawInstall["npmSpec"] ?? "<missing>")} (expected ${expectedNpmSpec})`,
   );
 }
-const expectedClawHubSpec = `clawhub:${packageJson.name}`;
-if (openclawInstall?.clawhubSpec !== expectedClawHubSpec) {
+const expectedClawHubSpec = `clawhub:${String(packageJson["name"])}`;
+if (openclawInstall["clawhubSpec"] !== expectedClawHubSpec) {
   drifts.push(
-    `  package.json: openclaw.install.clawhubSpec ${openclawInstall?.clawhubSpec ?? "<missing>"} (expected ${expectedClawHubSpec})`,
+    `  package.json: openclaw.install.clawhubSpec ${String(openclawInstall["clawhubSpec"] ?? "<missing>")} (expected ${expectedClawHubSpec})`,
   );
 }
-if (openclawInstall?.defaultChoice !== "clawhub") {
+if (openclawInstall["defaultChoice"] !== "clawhub") {
   drifts.push(
-    `  package.json: openclaw.install.defaultChoice ${openclawInstall?.defaultChoice ?? "<missing>"} (expected clawhub)`,
+    `  package.json: openclaw.install.defaultChoice ${String(openclawInstall["defaultChoice"] ?? "<missing>")} (expected clawhub)`,
   );
 }
-if (packageJson.openclaw?.runtimeExtensions?.[0] !== "./dist/index.js") {
+if (listOf(openclaw["runtimeExtensions"])[0] !== "./dist/index.js") {
   drifts.push(
-    `  package.json: openclaw.runtimeExtensions ${JSON.stringify(packageJson.openclaw?.runtimeExtensions ?? null)} (expected ["./dist/index.js"])`,
+    `  package.json: openclaw.runtimeExtensions ${JSON.stringify(openclaw["runtimeExtensions"] ?? null)} (expected ["./dist/index.js"])`,
   );
 }
-if (!packageJson.files?.includes("dist/")) {
+if (!packageFiles.includes("dist/")) {
   drifts.push("  package.json: files missing dist/");
 }
-if (!packageJson.files?.includes("skills/tweetclaw/")) {
+if (!packageFiles.includes("skills/tweetclaw/")) {
   drifts.push("  package.json: files must include the complete TweetClaw skill directory");
 }
-if (packageJson.files?.includes("skills/tweetclaw/SKILL.md")) {
+if (packageFiles.includes("skills/tweetclaw/SKILL.md")) {
   drifts.push("  package.json: files must not package only SKILL.md without release evidence");
 }
-if (packageJson.scripts?.["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.mjs") {
+if (packageScripts["check-skill-frontmatter"] !== "node scripts/check-skill-frontmatter.ts") {
   drifts.push("  package.json: check-skill-frontmatter must validate packaged skill metadata");
 }
-if (packageJson.scripts?.["check-memory-md-size"] !== "node scripts/check-memory-md-size.mjs") {
+if (packageScripts["check-memory-md-size"] !== "node scripts/check-memory-md-size.ts") {
   drifts.push("  package.json: check-memory-md-size must validate automation memory Markdown size");
 }
-if (packageJson.scripts?.["check-openclaw-platform-fitness"] !== "node scripts/check-openclaw-platform-fitness.mjs") {
+if (packageScripts["check-openclaw-platform-fitness"] !== "node scripts/check-openclaw-platform-fitness.ts") {
   drifts.push("  package.json: check-openclaw-platform-fitness must validate OpenClaw platform metadata");
 }
 if (
-  packageJson.scripts?.prepack !==
-  "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare"
+  packageScripts["prepack"] !==
+  "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.ts prepare"
 ) {
   drifts.push("  package.json: prepack must build output, validate metadata, and sanitize package.json before packing");
 }
-if (packageJson.scripts?.postpack !== "node scripts/pack-package-json.mjs restore-after-pack") {
+if (packageScripts["postpack"] !== "node scripts/pack-package-json.ts restore-after-pack") {
   drifts.push("  package.json: postpack must restore after npm pack and defer restore during npm publish");
 }
-if (packageJson.scripts?.["check-package-artifact"] !== "node scripts/check-package-artifact.mjs") {
+if (packageScripts["check-package-artifact"] !== "node scripts/check-package-artifact.ts") {
   drifts.push("  package.json: check-package-artifact must validate packed files");
 }
-if (packageJson.scripts?.["generate-api-contract"] !== "node scripts/generate-api-contract.mjs") {
+if (packageScripts["generate-api-contract"] !== "node scripts/generate-api-contract.ts") {
   drifts.push("  package.json: generate-api-contract must build the catalog from OpenAPI");
 }
-if (packageJson.scripts?.["check-contract-drift"] !== "node scripts/generate-api-contract.mjs --check") {
+if (packageScripts["check-contract-drift"] !== "node scripts/generate-api-contract.ts --check") {
   drifts.push("  package.json: check-contract-drift must compare the bundled catalog with OpenAPI");
 }
-if (packageJson.scripts?.["publish-clean"] !== "node scripts/publish-clean.mjs") {
+if (packageScripts["publish-clean"] !== "node scripts/publish-clean.ts") {
   drifts.push("  package.json: publish-clean must publish with sanitized package metadata");
 }
 if (
-  packageJson.scripts?.prepublishOnly !==
+  packageScripts["prepublishOnly"] !==
   "npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact"
 ) {
   drifts.push("  package.json: prepublishOnly must validate skill metadata, versions, build output, and package artifacts");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-skill-frontmatter")) {
+if (!checkAll.includes("npm run check-skill-frontmatter")) {
   drifts.push("  package.json: check:all must include skill frontmatter validation");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-memory-md-size")) {
+if (!checkAll.includes("npm run check-memory-md-size")) {
   drifts.push("  package.json: check:all must include automation memory Markdown size validation");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-public-copy")) {
+if (!checkAll.includes("npm run check-public-copy")) {
   drifts.push("  package.json: check:all must include public copy validation");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-openclaw-platform-fitness")) {
+if (!checkAll.includes("npm run check-openclaw-platform-fitness")) {
   drifts.push("  package.json: check:all must include OpenClaw platform fitness validation");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-package-artifact")) {
+if (!checkAll.includes("npm run check-package-artifact")) {
   drifts.push("  package.json: check:all must include package artifact validation");
 }
-if (packageJson.scripts?.["check-reuse"] !== "node scripts/check-reuse.mjs") {
+if (packageScripts["check-reuse"] !== "node scripts/check-reuse.ts") {
   drifts.push("  package.json: check-reuse must run the pinned REUSE lint");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-reuse")) {
+if (!checkAll.includes("npm run check-reuse")) {
   drifts.push("  package.json: check:all must include the REUSE lint");
 }
-if (!packageJson.scripts?.["check:all"]?.includes("npm run check-contract-drift")) {
+if (!checkAll.includes("npm run check-contract-drift")) {
   drifts.push("  package.json: check:all must include the catalog drift check");
 }
 
@@ -163,8 +171,7 @@ const requiredCompilerOptions = {
 };
 
 for (const configPath of ["tsconfig.json", "tsconfig.eslint.json"]) {
-  const config = JSON.parse(readFileSync(join(root, configPath), "utf8"));
-  const compilerOptions = config.compilerOptions ?? {};
+  const compilerOptions = recordOf(readJsonObject(configPath)["compilerOptions"]);
   for (const [key, expectedValue] of Object.entries(requiredCompilerOptions)) {
     if (compilerOptions[key] !== expectedValue) {
       drifts.push(
@@ -188,7 +195,10 @@ const positioning =
   "the world's fastest and cheapest X Twitter scraper service with the most complete X data";
 const legalLine =
   'Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.';
-const listingDescription = packageJson.description;
+const listingDescription = packageJson["description"];
+if (typeof listingDescription !== "string") {
+  throw new TypeError("package.json field description is not text");
+}
 
 const contentChecks = [
   {
@@ -271,23 +281,46 @@ for (const path of copyFiles) {
     }
   }
   for (const [mention, name, version] of raw.matchAll(/\b(mppx|viem)@(\d+\.\d+\.\d+)/gu)) {
-    if (version !== packageJson.peerDependencies?.[name]) {
-      drifts.push(`  ${path}: ${mention} (expected ${name}@${packageJson.peerDependencies?.[name]})`);
+    if (name === undefined) {
+      continue;
+    }
+    if (version !== peerDependencies[name]) {
+      drifts.push(`  ${path}: ${mention} (expected ${name}@${String(peerDependencies[name])})`);
     }
   }
 }
 
+function readCoverageCounts() {
+  const counts = recordOf(readJsonObject("generated-api-contract.json")["counts"]);
+  const count = (key: string): number => {
+    const value = counts[key];
+    if (typeof value !== "number") {
+      throw new TypeError(`generated-api-contract.json field counts.${key} is not a number`);
+    }
+    return value;
+  };
+  return {
+    agentProhibited: count("agentProhibited"),
+    callable: count("callable"),
+    cataloged: count("cataloged"),
+    eventStreams: count("eventStreams"),
+    excluded: count("excluded"),
+    mpp: count("mpp"),
+    outsideApiV1: count("outsideApiV1"),
+    specOperations: count("specOperations"),
+  };
+}
+
 const readme = readFileSync(join(root, "README.md"), "utf8");
-const { counts } = JSON.parse(readFileSync(join(root, "generated-api-contract.json"), "utf8"));
-if (replaceCoverage(readme, counts) !== readme) {
+if (replaceCoverage(readme, readCoverageCounts()) !== readme) {
   drifts.push("  README.md: the API coverage block differs from generated-api-contract.json. Run npm run generate-api-contract.");
 }
 
 if (drifts.length > 0) {
   process.stderr.write(
-    `Version drift detected (package.json = ${expected}):\n${drifts.join("\n")}\n`,
+    `Version drift detected (package.json = ${String(expected)}):\n${drifts.join("\n")}\n`,
   );
   process.exit(1);
 }
 
-process.stdout.write(`Version check passed: ${expected}\n`);
+process.stdout.write(`Version check passed: ${String(expected)}\n`);

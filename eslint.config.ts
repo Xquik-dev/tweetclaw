@@ -34,7 +34,7 @@ export default [
   },
 
   {
-    files: ['**/*.ts'],
+    files: ['*.ts', 'src/**/*.ts', 'tests/*.ts'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
@@ -507,7 +507,7 @@ export default [
   },
 
   {
-    files: ['**/*.test.ts', 'tests/**/*.ts'],
+    files: ['tests/*.ts'],
     plugins: {
       'vitest': vitestPlugin,
     },
@@ -543,13 +543,32 @@ export default [
   },
 
   {
-    files: ['scripts/**/*.mjs'],
+    files: ['scripts/*.ts', 'tests/fixtures/*.ts'],
     languageOptions: {
-      ecmaVersion: 2023,
+      parser: typescriptParser,
+      parserOptions: { project: './tsconfig.json' },
       globals: {
         ...globals.node,
       },
-      sourceType: 'module',
+    },
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+    },
+    rules: {
+      'no-undef': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/ban-ts-comment': 'error',
+      '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'never' }],
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@typescript-eslint/no-unsafe-argument': 'error',
+      '@typescript-eslint/no-unsafe-assignment': 'error',
+      '@typescript-eslint/no-unsafe-call': 'error',
+      '@typescript-eslint/no-unsafe-member-access': 'error',
+      '@typescript-eslint/no-unsafe-return': 'error',
+      '@typescript-eslint/no-unused-vars': 'error',
     },
   },
 

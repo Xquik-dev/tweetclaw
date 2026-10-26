@@ -7,19 +7,19 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { MPP_PRICE_PATTERN, RESTRICTED_BILLING_PATTERNS } from "./public-copy-rules.mjs";
+import { MPP_PRICE_PATTERN, RESTRICTED_BILLING_PATTERNS } from "./public-copy-rules.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const scannedExtensions = new Set([".cjs", ".js", ".json", ".jsx", ".md", ".mjs", ".ts", ".tsx", ".yaml", ".yml"]);
-const ignoredFiles = new Set(["scripts/check-public-copy.mjs"]);
+const ignoredFiles = new Set(["scripts/check-public-copy.ts"]);
 
-function withoutPublicMppPrices(file, line) {
+function withoutPublicMppPrices(file: string, line: string): string {
   return file === "generated-api-contract.json" || file.startsWith("tests/")
     ? line.replaceAll(MPP_PRICE_PATTERN, "")
     : line;
 }
 
-function listCandidateFiles() {
+function listCandidateFiles(): string[] {
   return execFileSync("git", ["ls-files", "-z", "--cached", "--others", "--exclude-standard"], {
     cwd: root,
     encoding: "utf8",
@@ -29,7 +29,7 @@ function listCandidateFiles() {
     .filter((file) => file.length > 0);
 }
 
-const violations = [];
+const violations: string[] = [];
 for (const file of listCandidateFiles()) {
   if (ignoredFiles.has(file) || !scannedExtensions.has(extname(file))) {
     continue;

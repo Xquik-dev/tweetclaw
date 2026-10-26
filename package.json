@@ -19,6 +19,13 @@
   "engines": {
     "node": ">=22"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22.18.0",
+      "onFail": "error"
+    }
+  },
   "openclaw": {
     "extensions": [
       "./src/index.ts"
@@ -77,7 +84,7 @@
     "openclaw x plugin"
   ],
   "scripts": {
-    "build": "node -e \"require('node:fs').rmSync('dist', { force: true, recursive: true })\" && tsc -p tsconfig.json",
+    "build": "node -e \"require('node:fs').rmSync('dist', { force: true, recursive: true })\" && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
@@ -86,20 +93,20 @@
     "cpd": "jscpd .",
     "check-suppressions": "tsx check-suppressions.ts",
     "check-em-dash": "tsx check-em-dash.ts",
-    "check-skill-frontmatter": "node scripts/check-skill-frontmatter.mjs",
-    "check-versions": "node scripts/check-versions.mjs",
-    "generate-api-contract": "node scripts/generate-api-contract.mjs",
-    "check-contract-drift": "node scripts/generate-api-contract.mjs --check",
-    "check-reproducible": "node scripts/check-reproducible.mjs",
-    "check-memory-md-size": "node scripts/check-memory-md-size.mjs",
-    "check-public-copy": "node scripts/check-public-copy.mjs",
-    "check-openclaw-platform-fitness": "node scripts/check-openclaw-platform-fitness.mjs",
-    "check-package-artifact": "node scripts/check-package-artifact.mjs",
-    "check-reuse": "node scripts/check-reuse.mjs",
-    "publish-clean": "node scripts/publish-clean.mjs",
-    "release": "node scripts/release.mjs",
-    "prepack": "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare",
-    "postpack": "node scripts/pack-package-json.mjs restore-after-pack",
+    "check-skill-frontmatter": "node scripts/check-skill-frontmatter.ts",
+    "check-versions": "node scripts/check-versions.ts",
+    "generate-api-contract": "node scripts/generate-api-contract.ts",
+    "check-contract-drift": "node scripts/generate-api-contract.ts --check",
+    "check-reproducible": "node scripts/check-reproducible.ts",
+    "check-memory-md-size": "node scripts/check-memory-md-size.ts",
+    "check-public-copy": "node scripts/check-public-copy.ts",
+    "check-openclaw-platform-fitness": "node scripts/check-openclaw-platform-fitness.ts",
+    "check-package-artifact": "node scripts/check-package-artifact.ts",
+    "check-reuse": "node scripts/check-reuse.ts",
+    "publish-clean": "node scripts/publish-clean.ts",
+    "release": "node scripts/release.ts",
+    "prepack": "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.ts prepare",
+    "postpack": "node scripts/pack-package-json.ts restore-after-pack",
     "prepublishOnly": "npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact",
     "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-memory-md-size && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact && npm run check-reproducible && npm run test:coverage && npm run check-reuse && npm run check-contract-drift && npm audit --audit-level=low"
   },

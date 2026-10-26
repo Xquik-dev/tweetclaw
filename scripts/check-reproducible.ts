@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-function runNpm(args) {
+function runNpm(args: readonly string[]): void {
   const result = spawnSync("npm", args, {
     cwd: root,
     stdio: "inherit",
@@ -26,8 +26,8 @@ function runNpm(args) {
   }
 }
 
-async function hashFiles(rootDirectory, currentDirectory = rootDirectory) {
-  const hashes = [];
+async function hashFiles(rootDirectory: string, currentDirectory = rootDirectory): Promise<[string, string][]> {
+  const hashes: [string, string][] = [];
   const entries = await readdir(currentDirectory, { withFileTypes: true });
   entries.sort((left, right) => left.name.localeCompare(right.name));
 
@@ -46,10 +46,10 @@ async function hashFiles(rootDirectory, currentDirectory = rootDirectory) {
   return hashes;
 }
 
-async function readPackage(directory) {
-  const packageNames = (await readdir(directory)).filter((name) => name.endsWith(".tgz"));
-  assert.equal(packageNames.length, 1, "Expected exactly one package archive");
-  return readFile(join(directory, packageNames[0]));
+async function readPackage(directory: string): Promise<Buffer> {
+  const [packageName, ...otherPackageNames] = (await readdir(directory)).filter((name) => name.endsWith(".tgz"));
+  assert.ok(packageName !== undefined && otherPackageNames.length === 0, "Expected exactly one package archive");
+  return readFile(join(directory, packageName));
 }
 
 runNpm(["run", "build"]);
