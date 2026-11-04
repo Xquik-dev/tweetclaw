@@ -4,8 +4,13 @@
 import type { Rule } from 'eslint';
 
 const PROOF = /https:\/\/|SPDX-|REUSE-Ignore/u;
-const DIRECTIVE = /^\/\s*<reference\s|[#@]__(?:PURE|NO_SIDE_EFFECTS)__/u;
+const REFERENCE_DIRECTIVE = /^\/\s*<reference\s/u;
+const PURITY_ANNOTATION = /[#@]__(?:PURE|NO_SIDE_EFFECTS)__/u;
 const MAX_ADJACENT_LINE_BREAKS = 1;
+
+function isDirective(text: string): boolean {
+  return REFERENCE_DIRECTIVE.test(text) || PURITY_ANNOTATION.test(text);
+}
 
 export const noCodeComments: Rule.RuleModule = {
   meta: {
@@ -39,7 +44,7 @@ export const noCodeComments: Rule.RuleModule = {
           })
           .toReversed();
         for (const [index, comment] of comments.entries()) {
-          if (proven.at(index) !== true && !DIRECTIVE.test(comment.value) && comment.loc) {
+          if (proven.at(index) !== true && !isDirective(comment.value) && comment.loc) {
             context.report({ loc: comment.loc, messageId: 'comment' });
           }
         }
