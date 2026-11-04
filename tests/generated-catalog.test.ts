@@ -20,11 +20,19 @@ const MPP_ROUTES = [
   'GET /api/v1/trends',
   'GET /api/v1/x/articles/:tweetId',
   'GET /api/v1/x/broadcasts/:id',
+  'GET /api/v1/x/communities/:id/analytics',
   'GET /api/v1/x/communities/:id/info',
   'GET /api/v1/x/followers/check',
   'GET /api/v1/x/lists/:id',
   'GET /api/v1/x/spaces/:id',
   'GET /api/v1/x/spaces/:id/replay',
+  'GET /api/v1/x/sports/:league/games',
+  'GET /api/v1/x/sports/:league/games/:id',
+  'GET /api/v1/x/sports/:league/games/:id/audience',
+  'GET /api/v1/x/sports/:league/games/:id/box-score',
+  'GET /api/v1/x/sports/:league/games/:id/player-props',
+  'GET /api/v1/x/sports/:league/games/:id/plays',
+  'GET /api/v1/x/sports/:league/games/:id/roster',
   'GET /api/v1/x/trends',
   'GET /api/v1/x/tweets/:id',
   'GET /api/v1/x/tweets/:id/embed',
@@ -131,7 +139,7 @@ describe('explore over the generated catalog', () => {
       .toStrictEqual([exploreOne('GET', '/api/v1/x/broadcasts/:id')]);
   });
 
-  it('marks the 13 MPP routes and no others', () => {
+  it('marks the 21 MPP routes and no others', () => {
     expect.assertions(1);
     const endpoints = explore({ limit: 100, mpp: true });
     expect(endpoints.map((endpoint) => `${endpoint.method} ${endpoint.path}`).toSorted())

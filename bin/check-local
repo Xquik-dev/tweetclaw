@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 Xquik Contributors
+# SPDX-License-Identifier: MIT
+
+set -euo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+readonly status_repo="Xquik-dev/tweetclaw"
+readonly status_context="xquik-local-checks"
+
+post_status=true
+for arg in "$@"; do
+	case $arg in
+		--no-status) post_status=false ;;
+		*)
+			printf 'Unknown option %s. Run bin/check-local or bin/check-local --no-status.\n' "$arg" >&2
+			exit 2
+			;;
+	esac
+done
+
+status_sha=$(git rev-parse HEAD)
+if [[ $post_status == true ]]; then
+	if ! command -v gh >/dev/null 2>&1; then
+		post_status=false
+		printf 'Not posting the %s status. Install the GitHub CLI to post it.\n' "$status_context"
+	elif [[ -n "$(git status --porcelain)" ]]; then
+		post_status=false
+		printf 'Not posting the %s status. Commit or remove local changes first.\n' "$status_context"
+	elif ! gh api --silent "repos/$status_repo/commits/$status_sha" >/dev/null 2>&1; then
+		post_status=false
+		printf 'Not posting the %s status. Push commit %s first, or check gh auth status.\n' \
+			"$status_context" "${status_sha:0:12}"
+	fi
+fi
+
+send_status() {
+	local description=${2:0:139}
+	if [[ $post_status == true ]] &&
+		! gh api --silent "repos/$status_repo/statuses/$status_sha" \
+			-f state="$1" -f context="$status_context" -f description="$description" >/dev/null; then
+		printf 'Could not post the %s status. Check gh auth status.\n' "$status_context" >&2
+	fi
+}
+
+current_check=""
+
+report_result() {
+	local exit_status=$?
+	if ((exit_status == 0)); then
+		send_status success "Install and check:all passed."
+	elif [[ -z $current_check ]]; then
+		send_status failure "Stopped before the checks finished."
+	elif ((exit_status == 130)); then
+		send_status failure "Interrupted during $current_check."
+	else
+		send_status failure "Failed at $current_check."
+	fi
+	exit "$exit_status"
+}
+trap report_result EXIT
+trap 'exit 130' INT TERM
+
+send_status pending "Running local checks."
+
+fail_check() {
+	printf '%s failed. %s\n' "$current_check" "$1" >&2
+	exit 1
+}
+
+run_check() {
+	current_check=$1
+	local next_step=$2
+	shift 2
+	printf 'Running %s.\n' "$current_check"
+	"$@" || fail_check "$next_step"
+	current_check=""
+}
+
+run_check "npm ci" \
+	"Sync package-lock.json with package.json, then retry." \
+	npm ci --ignore-scripts
+
+run_check "npm run check:all" \
+	"Fix the last npm script check:all started, then retry." \
+	npm run check:all
+
+printf 'All checks passed.\n'
