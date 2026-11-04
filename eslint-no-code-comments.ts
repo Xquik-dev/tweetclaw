@@ -4,7 +4,7 @@
 import type { Rule } from 'eslint';
 
 const PROOF = /https:\/\/|SPDX-|REUSE-Ignore/u;
-const DIRECTIVE = /^\/\s*<reference\s|[#@]__(?:PURE|NO_SIDE_EFFECTS)__/u;
+const DIRECTIVE = /(?:^\/\s*<reference\s)|(?:[#@]__(?:PURE|NO_SIDE_EFFECTS)__)/u;
 const MAX_ADJACENT_LINE_BREAKS = 1;
 
 export const noCodeComments: Rule.RuleModule = {
