@@ -14,6 +14,7 @@ All notable public changes appear in this file.
 
 ### Changed
 
+- Take the latest descriptions from the spec. Analysis settings mention `images`, and extraction jobs return their `url`.
 - Show live trust & usage numbers, the p99 server read time & the Convex Component badge in the README.
 
 ### Security
