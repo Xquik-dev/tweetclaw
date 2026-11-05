@@ -2,6 +2,26 @@
 
 All notable public changes appear in this file.
 
+## [1.8.0] - 2026-11-05
+
+### Added
+
+- Catalog 22 more operations. Agents can now call 175 of the 212 in the live OpenAPI spec.
+- Add post monitors with their metrics, and the activity feed.
+- Add sports games with box scores, plays, rosters, player props, posts & audience.
+- Add the shadowban check, Community analytics & news story versions.
+- Mark 21 MPP routes, up from 13. Sports games & Community analytics now accept MPP.
+
+### Changed
+
+- Take the latest descriptions from the spec. Analysis settings mention `images`, and extraction jobs return their `url`.
+- Show live trust & usage numbers, the p99 server read time & the Convex Component badge in the README.
+
+### Security
+
+- Refuse the 3 API key update & revoke operations, which the API serves only to dashboard sessions.
+- Pin minimatch 11.0.4, undici 8.12.3 & zod 4.6.7 so `npm audit` reports no advisory.
+
 ## [1.7.1] - 2026-10-14
 
 ### Added
@@ -94,3 +114,4 @@ All notable public changes appear in this file.
 [1.6.44]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.44
 [1.7.0]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.0
 [1.7.1]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.1
+[1.8.0]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.8.0
