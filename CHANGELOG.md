@@ -2,6 +2,17 @@
 
 All notable public changes appear in this file.
 
+## [1.7.2] - 2026-11-05
+
+### Changed
+
+- Show live trust & usage numbers, the p99 server read time & the Convex Component badge in the README.
+- Refresh `generated-api-contract.json` from the live OpenAPI spec.
+
+### Security
+
+- Pin minimatch 11.0.4, undici 8.12.3 & zod 4.6.7 so `npm audit` reports no advisory.
+
 ## [1.7.1] - 2026-10-14
 
 ### Added
@@ -94,3 +105,4 @@ All notable public changes appear in this file.
 [1.6.44]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.6.44
 [1.7.0]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.0
 [1.7.1]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.1
+[1.7.2]: https://github.com/Xquik-dev/tweetclaw/releases/tag/v1.7.2
