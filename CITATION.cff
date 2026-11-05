@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2026 Xquik Contributors
+# SPDX-License-Identifier: MIT
+
+cff-version: 1.2.0
+message: If you use TweetClaw, the OpenClaw Twitter plugin, cite it using this metadata.
+title: TweetClaw, the OpenClaw Twitter plugin
+type: software
+abstract: >-
+  OpenClaw Twitter plugin & skill for Xquik. A Twitter bot to scrape tweets,
+  export followers, monitor accounts & run approved X automation from
+  OpenClaw.
+authors:
+  - name: Xquik
+    website: https://xquik.com
+url: https://github.com/Xquik-dev/tweetclaw
+repository-code: https://github.com/Xquik-dev/tweetclaw
+license: MIT
+keywords:
+  - Xquik
+  - OpenClaw
+  - OpenClaw Twitter
+  - Twitter bot
+  - Twitter automation
+  - scrape tweets
+  - X API

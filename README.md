@@ -19,64 +19,7 @@ Your agent can post, reply, search tweets, export followers & monitor accounts.
 Every write waits for your approval. Use Xquik MCP with remote MCP clients and
 an SDK in application code.
 
-<!-- trust:start -->
-
-## Trust & usage
-
-[![Twitter API package downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fdownloads.json)](https://xquik.com/trust#downloads)
-[![Twitter scraper users on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-users.json)](https://apify.com/xquik)
-[![Twitter scraper runs on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-runs.json)](https://apify.com/xquik)
-[![Tweet scraper rating on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-rating.json)](https://apify.com/xquik/x-tweet-scraper/reviews)
-[![Xquik Twitter API accounts](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Faccounts.json)](https://xquik.com/trust#accounts)
-[![Twitter Skill installs](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskill-installs.json)](https://xquik.com/trust#skill-installs)
-[![Twitter API p99 server read time](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frest-p99.json)](https://xquik.com/trust#speed)
-[![Xquik GitHub stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fgithub-stars.json)](https://github.com/Xquik-dev)
-[![@xquik/tweetclaw downloads on npm](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fnpm-xquik-tweetclaw.json)](https://www.npmjs.com/package/@xquik/tweetclaw)
-[![tweetclaw downloads on ClawHub](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fclawhub-tweetclaw.json)](https://clawhub.ai/xquik/skills/tweetclaw)
-[![tweetclaw Skill installs on skills.sh](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskills-tweetclaw.json)](https://skills.sh/xquik-dev/tweetclaw)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13730/badge)](https://www.bestpractices.dev/projects/13730)
-
-- 53,000+ downloads of Xquik's Twitter API packages on npm, PyPI, RubyGems, NuGet, Packagist & Terraform ([source](https://xquik.com/trust#downloads)) <!-- trust:downloads 53547 -->
-- 9,500+ users of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-users 9595 -->
-- 6,700,000+ runs of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-runs 6765249 -->
-- 4.66 of 5 for the X Tweet Scraper from 16 Apify reviews ([source](https://apify.com/xquik/x-tweet-scraper/reviews)) <!-- trust:apify-rating 4.66 16 -->
-- 4,000+ accounts on xquik.com ([source](https://xquik.com/trust#accounts)) <!-- trust:accounts 4073 -->
-- 1,600+ installs of Xquik's Twitter Skills on skills.sh ([source](https://xquik.com/trust#skill-installs)) <!-- trust:skill-installs 1617 -->
-- 13.2 s p99 REST API server read time over 7 days, failed reads included ([source](https://xquik.com/trust#speed)) <!-- trust:rest-p99 13194 -->
-- 380+ GitHub stars across Xquik's repos ([source](https://github.com/Xquik-dev)) <!-- trust:github-stars 383 -->
-- 10,000+ downloads of @xquik/tweetclaw on npm ([source](https://www.npmjs.com/package/@xquik/tweetclaw)) <!-- trust:npm-xquik-tweetclaw 10858 -->
-- 2,600+ downloads of tweetclaw on ClawHub ([source](https://clawhub.ai/xquik/skills/tweetclaw)) <!-- trust:clawhub-tweetclaw 2691 -->
-- 78 installs of this repo's Skills on skills.sh ([source](https://skills.sh/xquik-dev/tweetclaw)) <!-- trust:skills-tweetclaw 78 -->
-- This repo meets the OpenSSF Best Practices passing criteria ([source](https://www.bestpractices.dev/projects/13730)) <!-- trust:openssf-tweetclaw 1 -->
-
-Checked on 2026-10-25. See each number with its date & source on [xquik.com/trust](https://xquik.com/trust) or as [JSON](https://xquik.com/trust.json).
-
-<!-- trust:end -->
-
-## Common OpenClaw tasks
-
-Use `explore` before every live call. It returns the current supported route.
-
-| Customer Question | Catalog Query | Next Step |
-| --- | --- | --- |
-| How can I search tweets? | `search tweets by query` | Call the listed read route. |
-| How can I read an X timeline? | `list recent tweets posted by a user` | Approve private timelines. |
-| How can I export followers? | `run extraction` | Choose followers, then approve. |
-| How can I scrape following accounts? | `run extraction` | Choose following, then approve. |
-| How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
-| How can I post or reply? | `create tweet` | Approve each write. |
-
-## Read response fields
-
-TweetClaw keeps every allowed Xquik response field. Optional fields remain absent
-when X omits them. Request `next_cursor` while `has_next_page` is true.
-
-Fetching-account bookmark, like, follow, block, mute, and notification state stays private.
-
-See [Read Data Richness](https://docs.xquik.com/guides/read-data-richness)
-for exact tweet, profile, and media fields.
-
-## Install
+## Install the OpenClaw Twitter plugin
 
 ```bash
 openclaw plugins install clawhub:@xquik/tweetclaw
@@ -130,6 +73,83 @@ an Xquik API key. ChatGPT custom apps require OAuth.
 > use `XQUIK_API_KEY` through the Codex `bearer_token_env_var` setting. Follow the
 > [Codex OAuth troubleshooting guide](https://docs.xquik.com/guides/troubleshooting#codex-oauth-issuer-validation-error)
 > and track [openai/codex#31573](https://github.com/openai/codex/issues/31573).
+
+<!-- trust:start -->
+
+## Trust & usage
+
+[![Twitter API package downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fdownloads.json)](https://xquik.com/trust#downloads)
+[![Twitter scraper users on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-users.json)](https://apify.com/xquik)
+[![Twitter scraper runs on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-runs.json)](https://apify.com/xquik)
+[![Tweet scraper rating on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-rating.json)](https://apify.com/xquik/x-tweet-scraper/reviews)
+[![Xquik Twitter API accounts](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Faccounts.json)](https://xquik.com/trust#accounts)
+[![Twitter Skill installs](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskill-installs.json)](https://xquik.com/trust#skill-installs)
+[![Twitter API p99 server read time](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frest-p99.json)](https://xquik.com/trust#speed)
+[![Xquik GitHub stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fgithub-stars.json)](https://github.com/Xquik-dev)
+[![@xquik/tweetclaw downloads on npm](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fnpm-xquik-tweetclaw.json)](https://www.npmjs.com/package/@xquik/tweetclaw)
+[![tweetclaw downloads on ClawHub](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fclawhub-tweetclaw.json)](https://clawhub.ai/xquik/skills/tweetclaw)
+[![tweetclaw Skill installs on skills.sh](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskills-tweetclaw.json)](https://skills.sh/xquik-dev/tweetclaw)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13730/badge)](https://www.bestpractices.dev/projects/13730)
+
+- 53,000+ downloads of Xquik's Twitter API packages on npm, PyPI, RubyGems, NuGet, Packagist & Terraform ([source](https://xquik.com/trust#downloads)) <!-- trust:downloads 53547 -->
+- 9,500+ users of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-users 9595 -->
+- 6,700,000+ runs of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-runs 6765249 -->
+- 4.66 of 5 for the X Tweet Scraper from 16 Apify reviews ([source](https://apify.com/xquik/x-tweet-scraper/reviews)) <!-- trust:apify-rating 4.66 16 -->
+- 4,000+ accounts on xquik.com ([source](https://xquik.com/trust#accounts)) <!-- trust:accounts 4073 -->
+- 1,600+ installs of Xquik's Twitter Skills on skills.sh ([source](https://xquik.com/trust#skill-installs)) <!-- trust:skill-installs 1617 -->
+- 13.2 s p99 REST API server read time over 7 days, failed reads included ([source](https://xquik.com/trust#speed)) <!-- trust:rest-p99 13194 -->
+- 380+ GitHub stars across Xquik's repos ([source](https://github.com/Xquik-dev)) <!-- trust:github-stars 383 -->
+- 10,000+ downloads of @xquik/tweetclaw on npm ([source](https://www.npmjs.com/package/@xquik/tweetclaw)) <!-- trust:npm-xquik-tweetclaw 10858 -->
+- 2,600+ downloads of tweetclaw on ClawHub ([source](https://clawhub.ai/xquik/skills/tweetclaw)) <!-- trust:clawhub-tweetclaw 2691 -->
+- 78 installs of this repo's Skills on skills.sh ([source](https://skills.sh/xquik-dev/tweetclaw)) <!-- trust:skills-tweetclaw 78 -->
+- This repo meets the OpenSSF Best Practices passing criteria ([source](https://www.bestpractices.dev/projects/13730)) <!-- trust:openssf-tweetclaw 1 -->
+
+Checked on 2026-10-25. See each number with its date & source on [xquik.com/trust](https://xquik.com/trust) or as [JSON](https://xquik.com/trust.json).
+
+<!-- trust:end -->
+
+## Common OpenClaw tasks
+
+Use `explore` before every live call. It returns the current supported route.
+
+| Customer Question | Catalog Query | Next Step |
+| --- | --- | --- |
+| How can I search tweets? | `search tweets by query` | Call the listed read route. |
+| How can I read an X timeline? | `list recent tweets posted by a user` | Approve private timelines. |
+| How can I export followers? | `run extraction` | Choose followers, then approve. |
+| How can I scrape following accounts? | `run extraction` | Choose following, then approve. |
+| How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
+| How can I post or reply? | `create tweet` | Approve each write. |
+
+## Run a Twitter bot & Twitter automation from OpenClaw
+
+Ask your agent in plain words. Every write waits for your approval, so the bot
+posts only what you approve.
+
+```text
+Reply to my latest post with a thank-you note
+Post "Launch day" from my connected X account
+```
+
+## Scrape tweets & export followers
+
+Reads run through the same `tweetclaw` tool. Exports of followers and following
+accounts run as extractions.
+
+```text
+Search tweets about "AI agents" from the last day
+Export the followers of @NASA
+```
+
+## Read response fields
+
+TweetClaw keeps every allowed Xquik response field. Optional fields remain absent
+when X omits them. Request `next_cursor` while `has_next_page` is true.
+
+Fetching-account bookmark, like, follow, block, mute, and notification state stays private.
+
+See [Read Data Richness](https://docs.xquik.com/guides/read-data-richness)
+for exact tweet, profile, and media fields.
 
 ## Pricing & access
 
@@ -273,6 +293,18 @@ Agents can call 175 of them through `tweetclaw`. TweetClaw leaves out the other 
 | **Twitter** | Search, lookups, timelines, articles, trends, lists, communities, Spaces, jobs, bookmarks, notifications | Account-backed or MPP where eligible |
 | **X Accounts** | List connected account handles for explicit user-selected actions | Account-backed |
 | **X Write** | Post, reply, like, retweet, follow, remove follower, DM, upload media, profile, communities | Account-backed with approval |
+
+## Questions
+
+### Do I need an X developer account?
+
+No. Public reads need only an Xquik API key. Private reads & X account actions
+need a connected X account.
+
+### Is TweetClaw the official X API?
+
+No. Xquik is an independent third-party service with its own REST API.
+TweetClaw calls that API, not the official X API.
 
 ## References
 
