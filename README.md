@@ -43,7 +43,7 @@ Reply to my latest post with a thank-you note
 Post "Launch day" from my connected X account
 ```
 
-Next, read the [OpenClaw setup guide](docs/openclaw-setup.md), the [agent workflow guide](docs/agent-workflows.md) or the [TweetClaw guide](https://docs.xquik.com/guides/tweetclaw).
+Next, read the [TweetClaw guide](https://docs.xquik.com/guides/tweetclaw) or the [OpenClaw setup guide](docs/openclaw-setup.md).
 
 <!-- trust:start -->
 
@@ -54,7 +54,7 @@ Next, read the [OpenClaw setup guide](docs/openclaw-setup.md), the [agent workfl
 [![tweetclaw Skill installs on skills.sh](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskills-tweetclaw.json)](https://skills.sh/xquik-dev/tweetclaw)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13730/badge)](https://www.bestpractices.dev/projects/13730)
 
-- 11,000+ downloads of @xquik/tweetclaw on npm ([source](https://www.npmjs.com/package/@xquik/tweetclaw)) <!-- trust:npm-xquik-tweetclaw 11438 -->
+- 11,000+ downloads of @xquik/tweetclaw on npm ([source](https://www.npmjs.com/package/@xquik/tweetclaw)) <!-- trust:npm-xquik-tweetclaw 11875 -->
 - 2,700+ downloads of tweetclaw on ClawHub ([source](https://clawhub.ai/xquik/skills/tweetclaw)) <!-- trust:clawhub-tweetclaw 2783 -->
 - 83 installs of this repo's Skills on skills.sh ([source](https://skills.sh/xquik-dev/tweetclaw)) <!-- trust:skills-tweetclaw 83 -->
 - This repo meets the OpenSSF Best Practices passing criteria ([source](https://www.bestpractices.dev/projects/13730)) <!-- trust:openssf-tweetclaw 1 -->
@@ -86,6 +86,8 @@ It returns the current supported route.
 | How can I scrape following accounts? | `run extraction` | Choose following, then approve. |
 | How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
 | How can I post or reply? | `create tweet` | Approve each write. |
+
+See the [agent workflow guide](docs/agent-workflows.md) for longer jobs.
 
 ## Install options
 
@@ -133,7 +135,7 @@ Keep API keys out of chats, documentation, logs & shell history.
 ### Credits for pay per use without a subscription
 
 Top up credits from the Xquik dashboard.
-An API key can spend prepaid credits across public paid-read routes without a subscription.
+An API key can spend prepaid credits on public paid reads without a subscription.
 TweetClaw does not create checkout sessions or charge saved payment methods from the agent.
 
 ### Direct MPP for accountless pay per use
@@ -170,7 +172,7 @@ TweetClaw requires an HTTPS base URL with no embedded credentials.
 TweetClaw uses 2 OpenClaw gates, which stop unattended publishing.
 
 - Optional tool exposure. `explore` is a safe local catalog search that OpenClaw always loads. `tweetclaw` can read private data, spend credits or change X accounts. It stays off until you add it to `tools.alsoAllow`.
-- Per-call approval. Writes, private reads, paid calls & account-scoped calls trigger a plugin approval prompt. Recurring jobs do too. TweetClaw offers one-time approval or deny for those calls, so you review each action.
+- Per-call approval. Writes, private reads, paid calls & account-scoped calls trigger a plugin approval prompt. Recurring jobs do too. TweetClaw offers one-time approval or deny for those calls.
 
 ## Tools
 
@@ -273,11 +275,13 @@ TweetClaw calls that API, not the official X API.
 ## More Xquik tools
 
 - [X (Twitter) scraper API & Twitter MCP server](https://github.com/Xquik-dev/x-twitter-scraper) with REST, MCP & Skill setup.
-- Twitter API SDKs for [TypeScript](https://github.com/Xquik-dev/x-twitter-scraper-typescript), [Python](https://github.com/Xquik-dev/x-twitter-scraper-python), [Go](https://github.com/Xquik-dev/x-twitter-scraper-go), [Ruby](https://github.com/Xquik-dev/x-twitter-scraper-ruby), [Java](https://github.com/Xquik-dev/x-twitter-scraper-java), [Kotlin](https://github.com/Xquik-dev/x-twitter-scraper-kotlin), [C#](https://github.com/Xquik-dev/x-twitter-scraper-csharp) & [PHP](https://github.com/Xquik-dev/x-twitter-scraper-php).
+- Twitter API SDKs for [TypeScript](https://github.com/Xquik-dev/x-twitter-scraper-typescript), [Python](https://github.com/Xquik-dev/x-twitter-scraper-python), [Go](https://github.com/Xquik-dev/x-twitter-scraper-go) & [Ruby](https://github.com/Xquik-dev/x-twitter-scraper-ruby).
+- Twitter API SDKs for [Java](https://github.com/Xquik-dev/x-twitter-scraper-java), [Kotlin](https://github.com/Xquik-dev/x-twitter-scraper-kotlin), [C#](https://github.com/Xquik-dev/x-twitter-scraper-csharp) & [PHP](https://github.com/Xquik-dev/x-twitter-scraper-php).
 - [Twitter CLI & X CLI](https://github.com/Xquik-dev/x-twitter-scraper-cli) for terminal workflows.
 - [Twitter advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search) with tested examples.
 - [Hermes Agent Twitter plugin](https://github.com/Xquik-dev/hermes-tweet) and the [Twitter API documentation source](https://github.com/Xquik-dev/xquik-docs).
-- Twitter integrations for [n8n](https://github.com/Xquik-dev/n8n-nodes-xquik), [Prefect](https://github.com/Xquik-dev/prefect-xquik), [Haystack](https://github.com/Xquik-dev/xquik-haystack), [Paperclip](https://github.com/Xquik-dev/paperclip-plugin-xquik), [Terraform](https://github.com/Xquik-dev/terraform-provider-x-twitter-scraper), [Convex](https://github.com/Xquik-dev/xquik-convex), [Supabase](https://github.com/Xquik-dev/xquik-supabase) & [Strapi](https://github.com/Xquik-dev/strapi-plugin-xquik).
+- Twitter integrations for [n8n](https://github.com/Xquik-dev/n8n-nodes-xquik), [Prefect](https://github.com/Xquik-dev/prefect-xquik), [Haystack](https://github.com/Xquik-dev/xquik-haystack) & [Paperclip](https://github.com/Xquik-dev/paperclip-plugin-xquik).
+- Twitter integrations for [Terraform](https://github.com/Xquik-dev/terraform-provider-x-twitter-scraper), [Convex](https://github.com/Xquik-dev/xquik-convex), [Supabase](https://github.com/Xquik-dev/xquik-supabase) & [Strapi](https://github.com/Xquik-dev/strapi-plugin-xquik).
 - Twitter MCP for [AI agents](https://github.com/Xquik-dev/xquik-mcp), [VS Code](https://github.com/Xquik-dev/xquik-vscode) & [Raycast](https://github.com/Xquik-dev/xquik-raycast).
 - [Xquik X API & Twitter scraper](https://xquik.com) and the [Twitter API documentation](https://docs.xquik.com/api-reference/overview).
 
