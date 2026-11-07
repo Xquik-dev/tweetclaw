@@ -3,7 +3,7 @@
 Use this OpenClaw Twitter plugin by Xquik to search tweets, export followers & post.
 Every write waits for your approval.
 
-Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
+Xquik is the world's fastest and cheapest X (Twitter) scraper service with the most complete X (Twitter) data.
 Most other Apify Actors charge before filtering or deduplication.
 Xquik charges only for delivered, unique, filter-matching results and never pads rows.
 Xquik is independent and not affiliated with X Corp.
@@ -20,7 +20,7 @@ openclaw plugins install clawhub:@xquik/tweetclaw
 
 OpenClaw records the verified ClawHub publisher scope and package as the update source.
 
-Create an API key for account-backed X automation at [dashboard.xquik.com](https://dashboard.xquik.com/).
+Create an API key for account-backed X (Twitter) automation at [dashboard.xquik.com](https://dashboard.xquik.com/).
 Then store it through OpenClaw.
 
 ```bash
@@ -81,7 +81,7 @@ It returns the current supported route.
 | Customer question | Catalog query | Next step |
 | --- | --- | --- |
 | How can I search tweets? | `search tweets by query` | Call the listed read route. |
-| How can I read an X timeline? | `list recent tweets posted by a user` | Approve private timelines. |
+| How can I read an X (Twitter) timeline? | `list recent tweets posted by a user` | Approve private timelines. |
 | How can I export followers? | `run extraction` | Choose followers, then approve. |
 | How can I scrape following accounts? | `run extraction` | Choose following, then approve. |
 | How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
@@ -171,7 +171,7 @@ TweetClaw requires an HTTPS base URL with no embedded credentials.
 
 TweetClaw uses 2 OpenClaw gates, which stop unattended publishing.
 
-- Optional tool exposure. `explore` is a safe local catalog search that OpenClaw always loads. `tweetclaw` can read private data, spend credits or change X accounts. It stays off until you add it to `tools.alsoAllow`.
+- Optional tool exposure. `explore` is a safe local catalog search that OpenClaw always loads. `tweetclaw` can read private data, spend credits or change X (Twitter) accounts. It stays off until you add it to `tools.alsoAllow`.
 - Per-call approval. Writes, private reads, paid calls & account-scoped calls trigger a plugin approval prompt. Recurring jobs do too. TweetClaw offers one-time approval or deny for those calls.
 
 ## Tools
@@ -184,7 +184,7 @@ Search the bundled API catalog without a network request.
 
 Invoke catalog-listed endpoints with structured fields.
 The runtime injects authentication.
-X writes also require `idempotencyKey`.
+X (Twitter) writes also require `idempotencyKey`.
 
 Can your agent see the skill but not call TweetClaw tools?
 Add `explore` and `tweetclaw` to `tools.alsoAllow`.
@@ -199,9 +199,9 @@ These commands answer at once, without the LLM.
 | Command | Description |
 | --- | --- |
 | `/xstatus` | Account info, subscription status, usage & credit balance |
-| `/xtrends` | Curated topics with an API key. Worldwide X trends with MPP. |
+| `/xtrends` | Curated topics with an API key. Worldwide X (Twitter) trends with MPP. |
 | `/xtrends tech` | API-key mode shows curated topics in 1 category. |
-| `/xtrends 23424977` | MPP mode shows X trends for 1 WOEID. |
+| `/xtrends 23424977` | MPP mode shows X (Twitter) trends for 1 WOEID. |
 
 ## Event notifications
 
@@ -218,7 +218,7 @@ Monitor @elonmusk for new tweets, replies, and retweets
 ## Read response fields
 
 TweetClaw keeps every allowed Xquik response field.
-Optional fields stay absent when X omits them.
+Optional fields stay absent when X (Twitter) omits them.
 Request `next_cursor` while `has_next_page` is true.
 
 Bookmark, like, follow, block, mute & notification state of the fetching account stays private.
@@ -256,16 +256,16 @@ Agents can call 175 of them through `tweetclaw`. TweetClaw leaves out the other 
 | Extraction | Extraction tools, giveaway draws, exports | Account-backed |
 | Media | Authenticated media download, gallery links | Account-backed |
 | Monitoring | Create monitors, view events, manage webhooks, Telegram links | Account-backed |
-| Twitter | Search, lookups, timelines, articles, trends, lists, communities, Spaces, jobs, bookmarks, notifications | Account-backed or MPP where eligible |
-| X accounts | List connected account handles for explicit user-selected actions | Account-backed |
-| X write | Post, reply, like, retweet, follow, remove follower, DM, upload media, profile, communities | Account-backed with approval |
+| X (Twitter) | Search, lookups, timelines, articles, trends, lists, communities, Spaces, jobs, bookmarks, notifications | Account-backed or MPP where eligible |
+| X (Twitter) accounts | List connected account handles for explicit user-selected actions | Account-backed |
+| X (Twitter) write | Post, reply, like, retweet, follow, remove follower, DM, upload media, profile, communities | Account-backed with approval |
 
 ## Questions
 
-### Do I need an X developer account?
+### Do I need an X (Twitter) developer account?
 
 No. Public reads need only an Xquik API key.
-Private reads & X account actions need a connected X account.
+Private reads & X (Twitter) account actions need a connected account.
 
 ### Is TweetClaw the official X API?
 

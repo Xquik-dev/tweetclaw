@@ -185,7 +185,7 @@ const retiredFacts = [
   "exactly 7",
 ];
 const positioning =
-  "the world's fastest and cheapest X Twitter scraper service with the most complete X data";
+  "the world's fastest and cheapest X (Twitter) scraper service with the most complete X (Twitter) data";
 const legalLine =
   'Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.';
 const listingDescription = packageJson.description;
@@ -194,7 +194,7 @@ const contentChecks = [
   {
     path: "README.md",
     required: [
-      "account-backed X automation",
+      "account-backed X (Twitter) automation",
       positioning,
       "Xquik charges only for delivered, unique, filter-matching results and never pads rows.",
       legalLine,
