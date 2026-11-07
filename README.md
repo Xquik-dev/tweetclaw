@@ -1,4 +1,4 @@
-# TweetClaw, the Twitter Bot Plugin for OpenClaw
+# TweetClaw, the OpenClaw Twitter Bot Plugin
 
 Use this OpenClaw Twitter plugin by Xquik to search tweets, export followers & post.
 Every write waits for your approval.
