@@ -126,7 +126,7 @@ describe('register', () => {
 
   it('registers 2 tools with valid API key', () => {
     expect.assertions(3);
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     expect(tools).toHaveLength(2);
     expect(tools[0]?.name).toBe('explore');
@@ -135,7 +135,7 @@ describe('register', () => {
 
   it('keeps tweetclaw body schema compatible with OpenAI tool validation', () => {
     expect.assertions(1);
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
     const parameters = tweetclaw?.parameters as { readonly properties?: { readonly body?: { readonly items?: unknown } } };
@@ -144,7 +144,7 @@ describe('register', () => {
 
   it('registers 2 commands', () => {
     expect.assertions(3);
-    const { api, commands } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, commands } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     expect(commands).toHaveLength(2);
     expect(commands[0]?.name).toBe('xstatus');
@@ -153,7 +153,7 @@ describe('register', () => {
 
   it('registers event poller service by default', () => {
     expect.assertions(2);
-    const { api, services } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, services } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     expect(services).toHaveLength(1);
     expect(services[0]?.id).toBe('tweetclaw-poller');
@@ -161,7 +161,7 @@ describe('register', () => {
 
   it('requires OpenClaw approval for writes and private reads', async () => {
     expect.assertions(10);
-    const { api, hooks } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, hooks } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     const hook = requireHook(hooks);
     const writeResult = await hook.handler({
@@ -208,7 +208,7 @@ describe('register', () => {
   it('uses registerHook when OpenClaw exposes the legacy hook method', () => {
     expect.assertions(3);
     const { api, hooks, warnings } = createMockApi(
-      { apiKey: 'xq_test123' },
+      { apiKey: 'xq_example' },
       'registerHook',
     );
     register(api);
@@ -219,7 +219,7 @@ describe('register', () => {
 
   it('warns when OpenClaw approval hooks are unavailable', () => {
     expect.assertions(2);
-    const { api, hooks, warnings } = createMockApi({ apiKey: 'xq_test123' }, 'none');
+    const { api, hooks, warnings } = createMockApi({ apiKey: 'xq_example' }, 'none');
     register(api);
     expect(hooks).toHaveLength(0);
     expect(warnings[0]).toContain('Approval hook unavailable');
@@ -227,21 +227,21 @@ describe('register', () => {
 
   it('skips event poller when pollingEnabled is false', () => {
     expect.assertions(1);
-    const { api, services } = createMockApi({ apiKey: 'xq_test123', pollingEnabled: false });
+    const { api, services } = createMockApi({ apiKey: 'xq_example', pollingEnabled: false });
     register(api);
     expect(services).toHaveLength(0);
   });
 
   it('uses custom baseUrl from config', () => {
     expect.assertions(1);
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123', baseUrl: 'https://custom.example.com' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example', baseUrl: 'https://custom.example.com' });
     register(api);
     expect(tools).toHaveLength(2);
   });
 
   it('uses custom pollingInterval from config', () => {
     expect.assertions(1);
-    const { api, services } = createMockApi({ apiKey: 'xq_test123', pollingInterval: 120 });
+    const { api, services } = createMockApi({ apiKey: 'xq_example', pollingInterval: 120 });
     register(api);
     expect(services).toHaveLength(1);
   });
@@ -253,7 +253,7 @@ describe('register', () => {
       callCount += 1;
       return new Response(JSON.stringify({ events: [] }));
     };
-    const { api, services } = createMockApi({ apiKey: 'xq_test123', pollingInterval: 0 });
+    const { api, services } = createMockApi({ apiKey: 'xq_example', pollingInterval: 0 });
     register(api, mockFetch);
     const [pollerService] = services;
     pollerService?.start();
@@ -276,7 +276,7 @@ describe('register', () => {
 
   it('poller service can start and stop', () => {
     expect.assertions(1);
-    const { api, services } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, services } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     const [pollerService] = services;
     pollerService?.start();
@@ -286,7 +286,7 @@ describe('register', () => {
 
   it('explore tool executes structured catalog search', async () => {
     expect.assertions(1);
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     const explore = tools.find((tool) => tool.name === 'explore');
     const result = await explore?.execute('call_1', { query: 'tweet' });
@@ -295,7 +295,7 @@ describe('register', () => {
 
   it('explore tool accepts every structured filter', async () => {
     expect.assertions(1);
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     const explore = tools.find((tool) => tool.name === 'explore');
     const result = await explore?.execute('call_filters', {
@@ -312,7 +312,7 @@ describe('register', () => {
 
   it('explore tool ignores unsupported filter types', async () => {
     expect.assertions(2);
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api);
     const explore = tools.find((tool) => tool.name === 'explore');
     const nullResult = await explore?.execute('call_null', null);
@@ -332,7 +332,7 @@ describe('register', () => {
   it('tweetclaw tool executes structured catalog request', async () => {
     expect.assertions(1);
     const mockFetch = createMockFetch({ email: 'test@example.com' });
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api, mockFetch);
     const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
     const result = await tweetclaw?.execute('call_2', {
@@ -347,7 +347,7 @@ describe('register', () => {
       expect(init?.headers).toMatchObject({ 'Idempotency-Key': 'post-001' });
       return new Response(JSON.stringify({ status: 'completed', terminal: true }));
     };
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api, mockFetch);
     const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
     const result = await tweetclaw?.execute('call_write', {
@@ -365,7 +365,7 @@ describe('register', () => {
       expect(String(input)).toBe('https://xquik.com/api/v1/x/tweets/search?q=ai');
       return new Response(JSON.stringify({ tweets: [] }));
     };
-    const { api, tools } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
     register(api, mockFetch);
     const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
     await tweetclaw?.execute('call_3', {
@@ -377,7 +377,7 @@ describe('register', () => {
   it('xstatus command handler returns formatted account', async () => {
     expect.assertions(1);
     const mockFetch = createMockFetch({ email: 'user@test.com', xUsername: 'demo' });
-    const { api, commands } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, commands } = createMockApi({ apiKey: 'xq_example' });
     register(api, mockFetch);
     const xstatus = commands.find((command) => command.name === 'xstatus');
     const result = await xstatus?.handler({});
@@ -387,7 +387,7 @@ describe('register', () => {
   it('xtrends command handler returns formatted trends', async () => {
     expect.assertions(1);
     const mockFetch = createMockFetch({ items: [{ title: 'AI Agents' }], total: 1 });
-    const { api, commands } = createMockApi({ apiKey: 'xq_test123' });
+    const { api, commands } = createMockApi({ apiKey: 'xq_example' });
     register(api, mockFetch);
     const xtrends = commands.find((command) => command.name === 'xtrends');
     const result = await xtrends?.handler({ args: 'tech' });
@@ -517,7 +517,7 @@ describe('register', () => {
     const mockFetch = createMockFetch({
       events: [{ eventType: 'monitor_event', id: 'evt_1', xUsername: 'testuser' }],
     });
-    const { api, infos, services } = createMockApi({ apiKey: 'xq_test123', pollingInterval: 1 });
+    const { api, infos, services } = createMockApi({ apiKey: 'xq_example', pollingInterval: 1 });
     register(api, mockFetch);
     const [pollerService] = services;
     pollerService?.start();
@@ -531,7 +531,7 @@ describe('register', () => {
     const mockFetch = createMockFetch({
       events: [{ id: 'evt_2' }],
     });
-    const { api, infos, services } = createMockApi({ apiKey: 'xq_test123', pollingInterval: 1 });
+    const { api, infos, services } = createMockApi({ apiKey: 'xq_example', pollingInterval: 1 });
     register(api, mockFetch);
     const [pollerService] = services;
     pollerService?.start();

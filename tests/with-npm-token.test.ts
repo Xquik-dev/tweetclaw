@@ -16,7 +16,7 @@ interface ProbeReport {
   readonly mode: string;
 }
 
-const TOKEN = 'npm_test_token_value';
+const TOKEN = 'npm_token_example';
 const KEYCHAIN_ITEM = { NPM_KEYCHAIN_ACCOUNT: 'test-account', NPM_KEYCHAIN_SERVICE: 'test-service' };
 
 const PROBE = [process.execPath, 'tests/fixtures/npm-config-probe.cjs'];
