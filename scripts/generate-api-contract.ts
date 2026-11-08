@@ -7,14 +7,14 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { parseArgs } from "node:util";
 import { fileURLToPath } from "node:url";
-import { CATALOG_POLICY } from "./catalog-policy.mjs";
-import { describeDrift, OPENAPI_URL, replaceCoverage, serializeContract } from "./contract-files.mjs";
-import { buildContract } from "./openapi-catalog.mjs";
+import { CATALOG_POLICY } from "./catalog-policy.ts";
+import { describeDrift, OPENAPI_URL, replaceCoverage, serializeContract } from "./contract-files.ts";
+import { buildContract } from "./openapi-catalog.ts";
 
 const FETCH_TIMEOUT_MS = 30_000;
 const REGENERATE = "Run `npm run generate-api-contract`, review the diff, and commit it.";
 
-async function readSpec(source) {
+async function readSpec(source: string): Promise<unknown> {
   if (!/^https?:\/\//u.test(source)) return JSON.parse(readFileSync(source, "utf8"));
   const response = await fetch(source, {
     headers: { accept: "application/json" },
@@ -26,11 +26,11 @@ async function readSpec(source) {
   return response.json();
 }
 
-function report(message) {
+function report(message: string): void {
   process.stdout.write(`generate-api-contract: ${message}\n`);
 }
 
-async function main() {
+async function main(): Promise<void> {
   const { positionals, values } = parseArgs({
     allowPositionals: true,
     options: {

@@ -267,14 +267,14 @@ Monitor @elonmusk for new tweets, replies, and retweets
 ## API coverage
 
 <!-- api-coverage:start (npm run generate-api-contract writes this block) -->
-The live [Xquik OpenAPI spec](https://xquik.com/openapi.json) lists 220 operations. An operation is 1 method on 1 path.
+The live [Xquik OpenAPI spec](https://xquik.com/openapi.json) lists 223 operations. An operation is 1 method on 1 path.
 
-Agents can call 183 of them through `tweetclaw`. TweetClaw leaves out the other 37.
+Agents can call 183 of them through `tweetclaw`. TweetClaw leaves out the other 40.
 
 | Left out | Operations |
 | --- | --- |
 | Account settings, API keys, billing & support, which stay in the dashboard | 21 |
-| X account connection, guest wallet checkout & support file downloads | 7 |
+| X account connection, guest wallet checkout & support file downloads | 10 |
 | Documentation search outside `/api/v1` | 8 |
 | Event streams, which the tool cannot read | 1 |
 

@@ -77,6 +77,7 @@ const REFUSED_PATH_FAMILIES: ReadonlyArray<{ readonly path: string; readonly rea
   { path: '/api/v1/support' },
   { path: '/api/v1/x/account-connection-attempts' },
   { path: '/api/v1/x/account-connection-challenges' },
+  { path: '/api/v1/x/account-connection-links' },
   { path: '/api/v1/x/accounts', readable: true },
 ];
 

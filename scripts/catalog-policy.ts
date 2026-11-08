@@ -1,7 +1,15 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
 // SPDX-License-Identifier: MIT
 
-const CATALOG_POLICY = {
+interface CatalogPolicy {
+  readonly excluded: readonly string[];
+  readonly agentProhibited: readonly string[];
+  readonly privateReads: readonly string[];
+  readonly approvalFreeReads: readonly string[];
+  readonly categoryByTag: Readonly<Record<string, string>>;
+}
+
+const CATALOG_POLICY: CatalogPolicy = {
   excluded: [
     "GET /api/v1/credits/topup/redirect",
     "GET /api/v1/guest-wallets/status",
@@ -10,6 +18,9 @@ const CATALOG_POLICY = {
     "POST /api/v1/x/account-connection-challenges/{id}/submit",
     "POST /api/v1/x/accounts",
     "POST /api/v1/x/accounts/{id}/reauth",
+    "POST /api/v1/x/account-connection-links",
+    "GET /api/v1/x/account-connection-links/{id}",
+    "DELETE /api/v1/x/account-connection-links/{id}",
     "GET /api/v1/support/attachments/{id}",
   ],
 
@@ -62,3 +73,4 @@ const CATALOG_POLICY = {
 };
 
 export { CATALOG_POLICY };
+export type { CatalogPolicy };
