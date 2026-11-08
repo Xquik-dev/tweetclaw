@@ -151,7 +151,7 @@
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "viem": "2.57.5",
-    "vitest": "5.0.4"
+    "vitest": "5.0.5"
   },
   "overrides": {
     "@modelcontextprotocol/sdk": "1.32.1",
