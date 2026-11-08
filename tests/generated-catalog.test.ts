@@ -67,6 +67,9 @@ const BLOCKED_CALLS = [
   ['POST', '/api/v1/x/accounts/bulk-retry'],
   ['GET', '/api/v1/x/account-connection-attempts/attempt_1'],
   ['POST', '/api/v1/x/account-connection-challenges/challenge_1/submit'],
+  ['POST', '/api/v1/x/account-connection-links'],
+  ['GET', '/api/v1/x/account-connection-links/link_1'],
+  ['DELETE', '/api/v1/x/account-connection-links/link_1'],
 ] as const;
 
 const BILLING_DETAIL = /\$\d|\b\d+\s+credits?\b/iu;
