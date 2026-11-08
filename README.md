@@ -1,4 +1,4 @@
-# TweetClaw, the Twitter bot plugin for OpenClaw
+# TweetClaw, the OpenClaw X (Twitter) Bot Plugin
 
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13730/badge)](https://www.bestpractices.dev/projects/13730)
 [![npm](https://img.shields.io/npm/v/@xquik%2Ftweetclaw.svg)](https://registry.npmjs.org/@xquik%2ftweetclaw)
@@ -11,7 +11,7 @@
 
 TweetClaw is the Twitter bot plugin for [OpenClaw](https://github.com/openclaw/openclaw). It runs on Xquik. Its packaged `SKILL.md` also installs as an OpenClaw skill.
 
-Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data. Xquik charges only for delivered, unique, filter-matching results and never pads rows.
+Xquik is the world's fastest and cheapest X (Twitter) scraper service with the most complete X (Twitter) data. Xquik charges only for delivered, unique, filter-matching results and never pads rows.
 
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
@@ -78,20 +78,20 @@ an Xquik API key. ChatGPT custom apps require OAuth.
 
 ## Trust & usage
 
-[![Twitter API package downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fdownloads.json)](https://xquik.com/trust#downloads)
+[![X (Twitter) API package downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fdownloads.json)](https://xquik.com/trust#downloads)
 [![Twitter scraper users on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-users.json)](https://apify.com/xquik)
 [![Twitter scraper runs on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-runs.json)](https://apify.com/xquik)
 [![Tweet scraper rating on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-rating.json)](https://apify.com/xquik/x-tweet-scraper/reviews)
-[![Xquik Twitter API accounts](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Faccounts.json)](https://xquik.com/trust#accounts)
+[![Xquik X (Twitter) API accounts](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Faccounts.json)](https://xquik.com/trust#accounts)
 [![Twitter Skill installs](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskill-installs.json)](https://xquik.com/trust#skill-installs)
-[![Twitter API p99 server read time](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frest-p99.json)](https://xquik.com/trust#speed)
+[![X (Twitter) API p99 server read time](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frest-p99.json)](https://xquik.com/trust#speed)
 [![Xquik GitHub stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fgithub-stars.json)](https://github.com/Xquik-dev)
 [![@xquik/tweetclaw downloads on npm](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fnpm-xquik-tweetclaw.json)](https://www.npmjs.com/package/@xquik/tweetclaw)
 [![tweetclaw downloads on ClawHub](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fclawhub-tweetclaw.json)](https://clawhub.ai/xquik/skills/tweetclaw)
 [![tweetclaw Skill installs on skills.sh](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskills-tweetclaw.json)](https://skills.sh/xquik-dev/tweetclaw)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13730/badge)](https://www.bestpractices.dev/projects/13730)
 
-- 53,000+ downloads of Xquik's Twitter API packages on npm, PyPI, RubyGems, NuGet, Packagist & Terraform ([source](https://xquik.com/trust#downloads)) <!-- trust:downloads 53547 -->
+- 53,000+ downloads of Xquik's X (Twitter) API packages across 6 registries ([source](https://xquik.com/trust#downloads)) <!-- trust:downloads 53547 -->
 - 9,500+ users of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-users 9595 -->
 - 6,700,000+ runs of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-runs 6765249 -->
 - 4.66 of 5 for the X Tweet Scraper from 16 Apify reviews ([source](https://apify.com/xquik/x-tweet-scraper/reviews)) <!-- trust:apify-rating 4.66 16 -->
@@ -115,13 +115,13 @@ Use `explore` before every live call. It returns the current supported route.
 | Customer Question | Catalog Query | Next Step |
 | --- | --- | --- |
 | How can I search tweets? | `search tweets by query` | Call the listed read route. |
-| How can I read an X timeline? | `list recent tweets posted by a user` | Approve private timelines. |
+| How can I read an X (Twitter) timeline? | `list recent tweets posted by a user` | Approve private timelines. |
 | How can I export followers? | `run extraction` | Choose followers, then approve. |
 | How can I scrape following accounts? | `run extraction` | Choose following, then approve. |
 | How can I monitor an account or keyword? | `create monitor` | Approve recurring usage. |
 | How can I post or reply? | `create tweet` | Approve each write. |
 
-## Run a Twitter bot & Twitter automation from OpenClaw
+## Run a Twitter bot & X (Twitter) automation from OpenClaw
 
 Ask your agent in plain words. Every write waits for your approval, so the bot
 posts only what you approve.
@@ -159,7 +159,7 @@ for current plans, eligible endpoints, and live prices.
 
 ## Configure
 
-### API key for account-backed X automation
+### API key for account-backed X (Twitter) automation
 
 Create an API key at [dashboard.xquik.com](https://dashboard.xquik.com/), then
 store it through OpenClaw.
@@ -249,9 +249,9 @@ These commands answer at once, without the LLM.
 | Command | Description |
 |---------|-------------|
 | `/xstatus` | Account info, subscription status, usage, credit balance |
-| `/xtrends` | Curated topics with an API key. Worldwide X trends with MPP. |
+| `/xtrends` | Curated topics with an API key. Worldwide X (Twitter) trends with MPP. |
 | `/xtrends tech` | API-key mode shows curated topics in one category. |
-| `/xtrends 23424977` | MPP mode shows X trends for one WOEID. |
+| `/xtrends 23424977` | MPP mode shows X (Twitter) trends for one WOEID. |
 
 ## Event notifications
 
@@ -296,7 +296,7 @@ Agents can call 175 of them through `tweetclaw`. TweetClaw leaves out the other 
 
 ## Questions
 
-### Do I need an X developer account?
+### Do I need an X (Twitter) developer account?
 
 No. Public reads need only an Xquik API key. Private reads & X account actions
 need a connected X account.
@@ -309,10 +309,10 @@ TweetClaw calls that API, not the official X API.
 ## References
 
 - [Xquik X API & Twitter scraper](https://xquik.com)
-- [X (Twitter) scraper API & Twitter MCP server](https://github.com/Xquik-dev/x-twitter-scraper)
+- [X (Twitter) scraper API & X (Twitter) MCP server](https://github.com/Xquik-dev/x-twitter-scraper)
 - [Hermes Agent Twitter plugin](https://github.com/Xquik-dev/hermes-tweet)
 - [n8n community node for Twitter](https://github.com/Xquik-dev/n8n-nodes-xquik)
-- [Twitter API TypeScript SDK](https://github.com/Xquik-dev/x-twitter-scraper-typescript)
+- [X (Twitter) API TypeScript SDK](https://github.com/Xquik-dev/x-twitter-scraper-typescript)
 - [Twitter advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search)
 - [API Documentation](https://docs.xquik.com)
 - [Billing & Pricing](https://docs.xquik.com/guides/billing)
