@@ -101,7 +101,7 @@
     "prepack": "npm run build && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run check-openclaw-platform-fitness && node scripts/pack-package-json.mjs prepare",
     "postpack": "node scripts/pack-package-json.mjs restore-after-pack",
     "prepublishOnly": "npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact",
-    "check:all": "npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-memory-md-size && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact && npm run check-reproducible && npm run test:coverage && npm run check-reuse && npm run check-contract-drift && npm audit --audit-level=low"
+    "check:all": "npm run check-contract-drift && npm run typecheck && npm run lint && npm run cpd && npm run knip && npm run check-suppressions && npm run check-em-dash && npm run check-memory-md-size && npm run check-public-copy && npm run check-skill-frontmatter && npm run check-versions && npm run build && npm run check-openclaw-platform-fitness && npm run check-package-artifact && npm run check-reproducible && npm run test:coverage && npm run check-reuse && npm audit --audit-level=low"
   },
   "peerDependencies": {
     "mppx": "0.13.4",
