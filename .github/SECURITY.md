@@ -4,14 +4,22 @@
 
 Do not publish vulnerability details in an issue.
 
-Email [security@xquik.com](mailto:security@xquik.com) with these details.
+Email [support@xquik.com](mailto:support@xquik.com) with the subject
+`Security report` and these details.
 
 - Affected version and component
 - Minimal reproduction steps
 - Impact and required access
 
-Expect an acknowledgment within 72 hours. We will set a disclosure timeline
-after confirming the issue.
+Expect an acknowledgment within 3 business days. We will set a disclosure
+timeline after confirming the issue.
+
+## Rewards
+
+Rewards can be monetary and depend on the bug's impact. Xquik decides each
+reward, and not every report earns one. The
+[bug bounty and vulnerability disclosure policy](https://xquik.com/en/vulnerability-disclosure)
+lists the scope and test rules.
 
 ## Credential handling
 
