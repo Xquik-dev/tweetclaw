@@ -27,4 +27,4 @@ npm run check:all
 Sign the commit, open a pull request, and resolve every blocking comment.
 A different person must approve non-trivial changes.
 
-Report vulnerabilities through [the security policy](SECURITY.md).
+Report vulnerabilities through [the security policy](../SECURITY.md).

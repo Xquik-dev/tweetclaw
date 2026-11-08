@@ -109,7 +109,7 @@ try {
   assert.deepEqual(approval.requireApproval.allowedDecisions, ["allow-once", "deny"]);
   assert.equal(approval.requireApproval.timeoutBehavior, "deny");
   commands.clear();
-  plugin.register({ ...host, pluginConfig: { apiKey: "test-key", pollingEnabled: false } });
+  plugin.register({ ...host, pluginConfig: { apiKey: "<test api key>", pollingEnabled: false } });
   assert.deepEqual(commands, new Set(["xstatus", "xtrends"]));
 } finally {
   restorePackedPackageJson();

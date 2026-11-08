@@ -20,7 +20,7 @@ function createHost(pluginConfig) {
 
 it.each([
   { config: undefined, commands: ['xtrends'] },
-  { config: { apiKey: 'test-key', pollingEnabled: false }, commands: ['xstatus', 'xtrends'] },
+  { config: { apiKey: 'example-key', pollingEnabled: false }, commands: ['xstatus', 'xtrends'] },
 ])('registers SDK commands from host config $config', ({ config, commands }) => {
   const host = createHost(config);
   plugin.register(host.api);
@@ -34,7 +34,7 @@ it('registers the SDK before-tool hook', () => {
 });
 
 it('registers SDK polling when configured without disabling polling', () => {
-  const host = createHost({ apiKey: 'test-key' });
+  const host = createHost({ apiKey: 'example-key' });
   plugin.register(host.api);
   expect(host.services).toStrictEqual(new Set(['tweetclaw-poller']));
 });
