@@ -68,6 +68,18 @@ describe('readEventStream', () => {
     expect(result).toStrictEqual({ events: [{ data: 'first\nsecond', event: 'message' }] });
   });
 
+  it('reads a bare data line and a value with no space after the colon', async () => {
+    expect.assertions(1);
+    const result = await readEventStream(streamOf(['data\n\ndata:x\n\n']), { waitMs: 1000 });
+    expect(result).toStrictEqual({ events: [{ data: '', event: 'message' }, { data: 'x', event: 'message' }] });
+  });
+
+  it('keeps the ID of a frame that has no data and sends no event for it', async () => {
+    expect.assertions(1);
+    const result = await readEventStream(streamOf(['id: 7\n\n']), { lastEventId: '6', waitMs: 1000 });
+    expect(result).toStrictEqual({ events: [], lastEventId: '7' });
+  });
+
   it('closes the stream once it returns', async () => {
     expect.assertions(1);
     let cancelled = false;

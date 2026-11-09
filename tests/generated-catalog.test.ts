@@ -273,6 +273,13 @@ describe('tweetclaw over the generated catalog', () => {
     expect(sent[0]?.headers).toMatchObject({ 'Last-Event-ID': '42' });
   });
 
+  it.each(['', 'é', '1'.repeat(33)])('refuses the invalid last event ID %j on the event stream', async (lastEventId) => {
+    expect.assertions(2);
+    const result = await call({ lastEventId, path: '/api/v1/events/stream' });
+    expect(result.text).toContain('lastEventId is invalid');
+    expect(result.sent).toStrictEqual([]);
+  });
+
   it('refuses a last event ID on a route that takes none', async () => {
     expect.assertions(2);
     const result = await call({ lastEventId: '42', path: '/api/v1/events' });
