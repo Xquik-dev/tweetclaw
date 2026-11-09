@@ -10,7 +10,7 @@ import { at, isList, readJsonObject, recordOf } from "./json-shape.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const openclawMinimumVersion = "2026.7.1";
-const openclawBuildVersion = "2026.10.9";
+const openclawBuildVersion = "2026.9.6";
 const openclawRange = `>=${openclawMinimumVersion}`;
 const errors: string[] = [];
 

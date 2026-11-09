@@ -38,8 +38,8 @@
       "minGatewayVersion": "2026.7.1"
     },
     "build": {
-      "openclawVersion": "2026.10.9",
-      "pluginSdkVersion": "2026.10.9"
+      "openclawVersion": "2026.9.6",
+      "pluginSdkVersion": "2026.9.6"
     },
     "install": {
       "defaultChoice": "clawhub",
@@ -147,7 +147,7 @@
     "jscpd": "5.4.1",
     "knip": "6.44.1",
     "mppx": "0.13.4",
-    "openclaw": "2026.10.9",
+    "openclaw": "2026.9.6",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "viem": "2.57.5",
