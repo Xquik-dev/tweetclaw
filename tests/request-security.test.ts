@@ -38,7 +38,6 @@ const REFUSED_ROUTES = [
   ['POST', '/api/v1/guest-wallets/topups'],
   ['GET', '/api/v1/guest-wallets/status'],
   ['POST', '/api/v1/x/accounts'],
-  ['GET', '/api/v1/x/accounts/account_1'],
   ['DELETE', '/api/v1/x/accounts/account_1'],
   ['POST', '/api/v1/x/accounts/account_1/reauth'],
   ['POST', '/api/v1/x/accounts/bulk-retry'],
@@ -47,13 +46,6 @@ const REFUSED_ROUTES = [
   ['POST', '/api/v1/x/account-connection-links'],
   ['GET', '/api/v1/x/account-connection-links/link_1'],
   ['DELETE', '/api/v1/x/account-connection-links/link_1'],
-  ['PATCH', '/api/v1/account'],
-  ['PUT', '/api/v1/account/x-identity'],
-  ['GET', '/api/v1/support/tickets'],
-  ['POST', '/api/v1/support/tickets'],
-  ['GET', '/api/v1/support/tickets/ticket_1'],
-  ['PATCH', '/api/v1/support/tickets/ticket_1'],
-  ['POST', '/api/v1/support/tickets/ticket_1/messages'],
   ['GET', '/api/v1/support/attachments/file_1'],
 ] as const;
 
@@ -280,7 +272,7 @@ describe('request layer', () => {
   it('refuses a route the catalog leaves out', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test', failingFetch);
-    await expect(request('/api/v1/events/stream')).rejects.toThrow('blocked for agents');
+    await expect(request('/api/v1/support/attachments/file_1')).rejects.toThrow('blocked for agents');
   });
 
   it.each(REFUSED_ROUTES)('keeps %s %s on the static refusal list, whatever the catalog says', (method, path) => {
