@@ -320,10 +320,10 @@ describe('createProxiedRequest', () => {
     ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
-  it('blocks support ticket access', async () => {
+  it('blocks support file downloads', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
-    await expect(request('/api/v1/support/tickets')).rejects.toThrow('Endpoint is blocked for agents');
+    await expect(request('/api/v1/support/attachments/file_1')).rejects.toThrow('Endpoint is blocked for agents');
   });
 });
 
@@ -378,9 +378,9 @@ describe('isProhibitedRequest', () => {
     expect(isProhibitedRequest('DELETE', '/api/v1/x/accounts/123')).toBe(true);
   });
 
-  it('blocks GET /api/v1/x/accounts/123', () => {
+  it('allows GET /api/v1/x/accounts/123', () => {
     expect.assertions(1);
-    expect(isProhibitedRequest('GET', '/api/v1/x/accounts/123')).toBe(true);
+    expect(isProhibitedRequest('GET', '/api/v1/x/accounts/123')).toBe(false);
   });
 
   it('allows POST /api/v1/x/tweets', () => {

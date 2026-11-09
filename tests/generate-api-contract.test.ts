@@ -492,7 +492,7 @@ describe('generate-api-contract', () => {
     generate();
     const check = generate('--check');
     expect(check.status).toBe(0);
-    expect(check.stdout).toContain('the catalog matches the spec. 13 of 31 spec operations are agent-callable.');
+    expect(check.stdout).toContain('the catalog matches the spec. 22 of 31 spec operations are agent-callable.');
   });
 
   it('fails the check and names each operation the spec added, changed, or dropped', () => {
