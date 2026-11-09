@@ -303,7 +303,6 @@ function readCoverageCounts() {
     agentProhibited: count("agentProhibited"),
     callable: count("callable"),
     cataloged: count("cataloged"),
-    eventStreams: count("eventStreams"),
     excluded: count("excluded"),
     mpp: count("mpp"),
     outsideApiV1: count("outsideApiV1"),

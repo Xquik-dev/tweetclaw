@@ -1,10 +1,12 @@
 // SPDX-FileCopyrightText: 2026 Xquik Contributors
 // SPDX-License-Identifier: MIT
 
-import { createProxiedRequest } from '../request.js';
+import { createProxiedRequest, EVENT_STREAM_WAIT_MS } from '../request.js';
 import { resolveCatalogRequest, specEndpoints } from './catalog.js';
 import { errorResult, successResult } from './result.js';
 import type { FetchFunction, PayingFetch, RequestFunction, ToolResult, TweetclawParams } from '../types.js';
+
+const MS_PER_SECOND = 1000;
 
 const EXECUTE_DESCRIPTION = `Call one Xquik API endpoint from TweetClaw's catalog.
 
@@ -14,17 +16,19 @@ Use "explore" first. Then provide these fields.
 - query holds the query parameters as an object
 - body holds the JSON request body
 - idempotencyKey is a unique key that X write actions require
+- lastEventId resumes GET /api/v1/events/stream after the lastEventId it returned
 
 TweetClaw injects auth. Never pass keys, passwords, cookies, or TOTP secrets.
 
 Rules.
 - Only catalog-listed /api/v1 paths on the configured Xquik base URL can run.
-- Use dashboard.xquik.com for accounts, API keys, billing, and support.
+- Use dashboard.xquik.com for API keys, billing, X account connection, and support files.
 - "Tweet this" uses POST /api/v1/x/tweets. "Draft this" uses the compose flow.
 - Show the exact endpoint and payload before approval. Write-like calls require approval.
 - Create one idempotency key per X write. Reuse it only for an identical retry.
 - MPP mode permits only MPP-supported reads.
 - Use /api/v1/radar for current events.
+- GET /api/v1/events/stream waits up to ${String(EVENT_STREAM_WAIT_MS / MS_PER_SECOND)} seconds and returns once events arrive.
 
 This example sends a tweet.
 {
@@ -42,7 +46,6 @@ This example searches tweets.
 }`;
 
 const EXECUTION_TIMEOUT_MS = 30_000;
-const MS_PER_SECOND = 1000;
 
 function createExecutionTimeout(timeoutMs: number): {
   readonly cancel: () => void;
@@ -95,6 +98,7 @@ async function handleTweetclaw(options: Readonly<TweetclawOptions>): Promise<Too
           ...(requestInfo.idempotencyKey === undefined
             ? {}
             : { idempotencyKey: requestInfo.idempotencyKey }),
+          ...(requestInfo.lastEventId === undefined ? {} : { lastEventId: requestInfo.lastEventId }),
           method: requestInfo.method,
           ...(requestInfo.query === undefined ? {} : { query: requestInfo.query }),
         }),

@@ -2,13 +2,14 @@
 // SPDX-License-Identifier: MIT
 
 import { API_SPEC, APPROVAL_FREE_READS } from '../api-spec.js';
-import { IDEMPOTENCY_KEY_HEADER } from '../request.js';
+import { IDEMPOTENCY_KEY_HEADER, LAST_EVENT_ID_HEADER } from '../request.js';
 import { apiPathProblem, findRoute, matchesEndpointPath } from '../routes.js';
 import type { EndpointInfo, ExploreParams, TweetclawParams } from '../types.js';
 
 const DEFAULT_EXPLORE_LIMIT = 25;
 const MAX_EXPLORE_LIMIT = 100;
 const MAX_IDEMPOTENCY_KEY_LENGTH = 255;
+const MAX_LAST_EVENT_ID_LENGTH = 32;
 const VISIBLE_ASCII_FIRST = '!';
 const VISIBLE_ASCII_LAST = '~';
 
@@ -65,6 +66,19 @@ function validateWriteIdempotencyKey(
   }
 }
 
+function validateLastEventId(endpoint: Readonly<EndpointInfo>, lastEventId: string | undefined): void {
+  if (lastEventId === undefined) return;
+  const resumes = endpoint.parameters.some(
+    (parameter) => parameter.in === 'header' && parameter.name === LAST_EVENT_ID_HEADER,
+  );
+  if (!resumes) {
+    throw new Error(`lastEventId applies only to an event stream. Leave it out for ${endpoint.method} ${endpoint.path}.`);
+  }
+  if (lastEventId.length === 0 || lastEventId.length > MAX_LAST_EVENT_ID_LENGTH || !isVisibleAscii(lastEventId)) {
+    throw new Error('lastEventId is invalid. Use the 1-32 character lastEventId the stream returned.');
+  }
+}
+
 function requestNeedsApproval(method: string, path: string): boolean {
   if (method !== 'GET') {
     return true;
@@ -82,12 +96,13 @@ function resolveCatalogRequest(
   readonly body?: unknown;
   readonly endpoint: EndpointInfo;
   readonly idempotencyKey?: string;
+  readonly lastEventId?: string;
   readonly method: string;
   readonly path: string;
   readonly query?: Readonly<Record<string, string>>;
 } {
   const method = normalizeMethod(params.method);
-  const { body, idempotencyKey, path } = params;
+  const { body, idempotencyKey, lastEventId, path } = params;
   const pathProblem = apiPathProblem(path);
   if (pathProblem !== undefined) {
     throw new Error(pathProblem);
@@ -100,12 +115,14 @@ function resolveCatalogRequest(
     throw new Error(`Endpoint does not support MPP. Choose an MPP-eligible read route: ${method} ${endpoint.path}`);
   }
   validateWriteIdempotencyKey(endpoint, idempotencyKey);
+  validateLastEventId(endpoint, lastEventId);
 
   const query = normalizeQuery(params.query);
   return {
     body,
     endpoint,
     ...(idempotencyKey === undefined ? {} : { idempotencyKey }),
+    ...(lastEventId === undefined ? {} : { lastEventId }),
     method,
     path,
     ...(query === undefined ? {} : { query }),

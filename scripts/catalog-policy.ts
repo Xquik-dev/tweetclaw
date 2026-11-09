@@ -25,20 +25,12 @@ const CATALOG_POLICY: CatalogPolicy = {
   ],
 
   agentProhibited: [
-    "PATCH /api/v1/account",
-    "PUT /api/v1/account/x-identity",
     "POST /api/v1/subscribe",
     "POST /api/v1/credits/topup",
     "GET /api/v1/credits/topup/status",
     "GET /api/v1/x/account-connection-attempts/{id}",
-    "GET /api/v1/x/accounts/{id}",
     "DELETE /api/v1/x/accounts/{id}",
     "POST /api/v1/x/accounts/bulk-retry",
-    "GET /api/v1/support/tickets",
-    "POST /api/v1/support/tickets",
-    "GET /api/v1/support/tickets/{id}",
-    "PATCH /api/v1/support/tickets/{id}",
-    "POST /api/v1/support/tickets/{id}/messages",
   ],
 
   privateReads: [
