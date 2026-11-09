@@ -23,7 +23,7 @@ interface Frame {
   readonly id?: string;
 }
 
-type Chunk = ReadableStreamReadResult<Uint8Array>;
+type Chunk = Awaited<ReturnType<ReadableStreamDefaultReader<Uint8Array>['read']>>;
 
 function parseData(text: string): unknown {
   try {
