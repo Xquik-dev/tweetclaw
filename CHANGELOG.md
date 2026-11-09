@@ -2,6 +2,24 @@
 
 All notable public changes appear in this file.
 
+## [1.9.0] - 2026-11-09
+
+### Added
+
+- Catalog 8 more operations. Agents can now call 183 of the 223 in the live OpenAPI spec.
+- Add bookmarks, blocks, mutes, the follower audit & monitor updates by username.
+- Add Twitter bot & scraping guides to the README.
+
+### Changed
+
+- Take the latest descriptions from the spec, including the API key `connectsXAccounts` note.
+- Lead the README with the OpenClaw install & dated proof.
+- Move the security policy to the repository root. It states the bug bounty reward & real response times.
+
+### Security
+
+- Watch dependencies with Dependabot.
+
 ## [1.8.0] - 2026-11-05
 
 ### Added
