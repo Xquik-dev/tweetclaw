@@ -9,8 +9,6 @@ import { truncateResponse, truncateText } from '../src/truncate.js';
 const MAX_RESPONSE_CHARS = 24_000;
 const FUZZ_RUNS = 250;
 
-// A random head, then a random unit repeated to a random length. Drawing every character of a 50,000 character string took
-// most of the test's 5 second budget on a loaded runner, and the property depends on the length and the retained prefix.
 function sizedText(minLength: number, maxLength: number): fc.Arbitrary<string> {
   return fc
     .tuple(fc.string({ maxLength: 256 }), fc.string({ minLength: 1, maxLength: 64 }), fc.integer({ min: minLength, max: maxLength }))
