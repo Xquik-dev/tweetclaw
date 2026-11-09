@@ -2,6 +2,18 @@
 
 All notable public changes appear in this file.
 
+## [1.10.0] - 2026-11-09
+
+### Added
+
+- Let agents call 9 more operations. Agents can now call 192 of the 223 in the live OpenAPI spec.
+- Read monitor events from the event stream. A call waits up to 25 seconds for new events and returns them with the `lastEventId` to resume from.
+- Change account settings, open & answer support tickets and read 1 connected X account.
+
+### Changed
+
+- Leave out only API keys, checkout & X account connection, which stay in the dashboard.
+
 ## [1.9.0] - 2026-11-09
 
 ### Added
