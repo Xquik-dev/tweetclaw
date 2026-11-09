@@ -220,6 +220,20 @@ function isEventStream(response: Response): boolean {
   return response.headers.get(CONTENT_TYPE_HEADER)?.split(';')[0]?.trim().toLowerCase() === EVENT_STREAM_CONTENT;
 }
 
+async function readResponse(response: Response, options?: Readonly<RequestOptions>): Promise<unknown> {
+  if (response.ok && isEventStream(response)) {
+    return readEventStream(response.body, {
+      ...(options?.lastEventId === undefined ? {} : { lastEventId: options.lastEventId }),
+      waitMs: EVENT_STREAM_WAIT_MS,
+    });
+  }
+  const json: unknown = await readResponseJson(response);
+  if (!response.ok) {
+    throw new Error(formatApiError(response, json));
+  }
+  return json;
+}
+
 function createProxiedRequest(
   baseUrl: string,
   credential: string,
@@ -242,17 +256,7 @@ function createProxiedRequest(
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
     assertNoRedirect(response);
-    if (response.ok && isEventStream(response)) {
-      return readEventStream(response.body, {
-        ...(options?.lastEventId === undefined ? {} : { lastEventId: options.lastEventId }),
-        waitMs: EVENT_STREAM_WAIT_MS,
-      });
-    }
-    const json: unknown = await readResponseJson(response);
-    if (!response.ok) {
-      throw new Error(formatApiError(response, json));
-    }
-    return json;
+    return readResponse(response, options);
   };
 }
 

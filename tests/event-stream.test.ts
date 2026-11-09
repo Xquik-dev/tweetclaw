@@ -8,11 +8,11 @@ import { readEventStream } from '../src/event-stream.js';
 const FUZZ_RUNS = 200;
 const encoder = new TextEncoder();
 
-function streamOf(chunks: readonly string[], options: Readonly<{ close: boolean }> = { close: true }): ReadableStream<Uint8Array> {
+function streamOf(chunks: readonly string[], options?: Readonly<{ close: boolean }>): ReadableStream<Uint8Array> {
   return new ReadableStream<Uint8Array>({
     start(controller): void {
       for (const chunk of chunks) controller.enqueue(encoder.encode(chunk));
-      if (options.close) controller.close();
+      if (options?.close !== false) controller.close();
     },
   });
 }
@@ -29,6 +29,17 @@ function splitAt(text: string, cuts: readonly number[]): string[] {
   return pieces.filter((piece) => piece.length > 0);
 }
 
+function streamText(
+  events: ReadonlyArray<Readonly<{ data: Readonly<Record<string, number | string>>; event: string; id: string }>>,
+  newline: string,
+): string {
+  return [
+    `retry: 3000${newline}${newline}`,
+    `: heartbeat${newline}${newline}`,
+    ...events.map((item) => [`id: ${item.id}`, `event: ${item.event}`, `data: ${JSON.stringify(item.data)}`, '', ''].join(newline)),
+  ].join('');
+}
+
 const event = fc.record({
   data: fc.dictionary(fc.string({ maxLength: 8 }), fc.oneof(fc.integer(), fc.string({ maxLength: 16 })), { maxKeys: 3 }),
   event: fc.stringMatching(/^[a-z][a-z.]{0,15}$/u),
@@ -41,12 +52,7 @@ describe('readEventStream', () => {
     let completedRuns = 0;
     await fc.assert(
       fc.asyncProperty(fc.array(event, { maxLength: 8, minLength: 1 }), fc.array(fc.nat(), { maxLength: 6 }), fc.boolean(), async (events, cuts, crlf) => {
-        const newline = crlf ? '\r\n' : '\n';
-        const text = [
-          `retry: 3000${newline}${newline}`,
-          `: heartbeat${newline}${newline}`,
-          ...events.map((item) => [`id: ${item.id}`, `event: ${item.event}`, `data: ${JSON.stringify(item.data)}`, '', ''].join(newline)),
-        ].join('');
+        const text = streamText(events, crlf ? '\r\n' : '\n');
         const result = await readEventStream(streamOf(splitAt(text, cuts), { close: false }), { waitMs: 1000 });
         completedRuns += 1;
         return JSON.stringify(result) === JSON.stringify({ events, lastEventId: events.at(-1)?.id });

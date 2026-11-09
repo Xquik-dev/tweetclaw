@@ -45,7 +45,9 @@ function addField(frame: Frame, line: string): Frame {
 }
 
 function parseFrame(text: string): Frame {
-  return text.split(LINE_END).reduce(addField, { data: [], event: DEFAULT_EVENT });
+  let frame: Frame = { data: [], event: DEFAULT_EVENT };
+  for (const line of text.split(LINE_END)) frame = addField(frame, line);
+  return frame;
 }
 
 function toEvent(frame: Frame): StreamedEvent | undefined {
@@ -75,12 +77,11 @@ async function readQueued(reader: ReadableStreamDefaultReader<Uint8Array>): Prom
 }
 
 class FrameReader {
-  readonly #decoder = new TextDecoder();
   readonly #events: StreamedEvent[] = [];
   #buffer = '';
   #lastEventId: string | undefined;
 
-  public constructor(lastEventId: string | undefined) {
+  constructor(lastEventId: string | undefined) {
     this.#lastEventId = lastEventId;
   }
 
@@ -88,10 +89,11 @@ class FrameReader {
     return this.#events.length;
   }
 
-  public add(bytes: Uint8Array): void {
-    const frames = (this.#buffer + this.#decoder.decode(bytes, { stream: true })).split(FRAME_END);
+  public add(text: string): void {
+    const frames = (this.#buffer + text).split(FRAME_END);
     this.#buffer = frames.pop() ?? '';
-    for (const frame of frames.map(parseFrame)) {
+    for (const frameText of frames) {
+      const frame = parseFrame(frameText);
       if (frame.id !== undefined) this.#lastEventId = frame.id;
       const event = toEvent(frame);
       if (event !== undefined) this.#events.push(event);
@@ -112,13 +114,14 @@ async function readEventStream(
 ): Promise<EventStreamRead> {
   const frames = new FrameReader(options.lastEventId);
   if (body === null) return frames.result();
+  const decoder = new TextDecoder();
   const reader = body.getReader();
   const window = settleAfter(options.waitMs);
   try {
     for (;;) {
       const chunk = frames.count === 0 ? await Promise.race([reader.read(), window.done]) : await readQueued(reader);
       if (chunk === undefined || chunk.done) break;
-      frames.add(chunk.value);
+      frames.add(decoder.decode(chunk.value, { stream: true }));
     }
   } finally {
     window.cancel();
