@@ -91,7 +91,7 @@ class FrameReader {
 
   public add(text: string): void {
     const frames = (this.#buffer + text).split(FRAME_END);
-    this.#buffer = frames.pop() ?? '';
+    this.#buffer = frames.splice(-1).join('');
     for (const frameText of frames) {
       const frame = parseFrame(frameText);
       if (frame.id !== undefined) this.#lastEventId = frame.id;

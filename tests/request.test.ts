@@ -320,6 +320,20 @@ describe('createProxiedRequest', () => {
     ).rejects.toThrow('Endpoint is blocked for agents');
   });
 
+  it('reads an event stream with no resume header when no last event ID is given', async () => {
+    expect.assertions(2);
+    const sent: unknown[] = [];
+    const mockFetch: typeof fetch = async (_input, init) => {
+      sent.push(init?.headers);
+      return new Response('event: tweet.new\ndata: {}\n\n', {
+        headers: { 'content-type': 'text/event-stream; charset=utf-8' },
+      });
+    };
+    const request = createProxiedRequest('https://xquik.com', 'xq_test', mockFetch);
+    await expect(request('/api/v1/events/stream')).resolves.toStrictEqual({ events: [{ data: {}, event: 'tweet.new' }] });
+    expect(sent[0]).not.toHaveProperty('Last-Event-ID');
+  });
+
   it('blocks support file downloads', async () => {
     expect.assertions(1);
     const request = createProxiedRequest('https://xquik.com', 'xq_test');
