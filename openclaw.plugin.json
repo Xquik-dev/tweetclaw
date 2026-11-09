@@ -1,7 +1,7 @@
 {
   "id": "tweetclaw",
   "name": "TweetClaw",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Twitter bot plugin for OpenClaw. Post, reply, search tweets, export followers & monitor accounts through Xquik. Not affiliated with X Corp.",
   "activation": {
     "onStartup": false,
