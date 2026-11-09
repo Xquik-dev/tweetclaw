@@ -257,16 +257,15 @@ const EXPECTED_COVERAGE = [
   '<!-- api-coverage:start (npm run generate-api-contract writes this block) -->',
   'The live [Xquik OpenAPI spec](https://xquik.com/openapi.json) lists 31 operations. An operation is 1 method on 1 path.',
   '',
-  'Agents can call 13 of them through `tweetclaw`. TweetClaw leaves out the other 18.',
+  'Agents can call 22 of them through `tweetclaw`. TweetClaw leaves out the other 9.',
   '',
   '| Left out | Operations |',
   '| --- | --- |',
-  '| Account settings, API keys, billing & support, which stay in the dashboard | 15 |',
+  '| API keys, checkout & X account connection, which stay in the dashboard | 7 |',
   '| X account connection, guest wallet checkout & support file downloads | 1 |',
   '| Documentation search outside `/api/v1` | 1 |',
-  '| Event streams, which the tool cannot read | 1 |',
   '',
-  '2 of the 13 accept MPP. Run `explore` with `mpp` set to `true` to list them.',
+  '2 of the 22 accept MPP. Run `explore` with `mpp` set to `true` to list them.',
   '<!-- api-coverage:end -->',
 ].join('\n');
 
@@ -334,7 +333,7 @@ afterEach(() => {
 
 describe('generate-api-contract', () => {
   it('counts 1 operation per method and path, and says what it leaves out', () => {
-    expect.assertions(4);
+    expect.assertions(6);
     const run = generate();
     const contract = readContract();
     expect(run).toStrictEqual({
@@ -351,25 +350,29 @@ describe('generate-api-contract', () => {
         'generate-api-contract: the spec does not publish GET /api/v1/x/account-connection-links/{id}. It stays excluded.',
         'generate-api-contract: the spec does not publish DELETE /api/v1/x/account-connection-links/{id}. It stays excluded.',
         'generate-api-contract: the spec does not publish GET /api/v1/support/attachments/{id}. It stays excluded.',
-        'generate-api-contract: wrote the catalog. 13 of 31 spec operations are agent-callable.',
+        'generate-api-contract: wrote the catalog. 22 of 31 spec operations are agent-callable.',
         '',
       ].join('\n'),
     });
     expect(contract.counts).toStrictEqual({
-      callable: 13,
-      cataloged: 28,
-      agentProhibited: 15,
-      eventStreams: 1,
+      callable: 22,
+      cataloged: 29,
+      agentProhibited: 7,
       excluded: 1,
       mpp: 2,
       outsideApiV1: 1,
       specOperations: 31,
     });
     expect([...contract.operations.keys()]).not.toStrictEqual(
-      expect.arrayContaining(['GET /ask', 'GET /api/v1/events/stream', 'POST /api/v1/x/accounts']),
+      expect.arrayContaining(['GET /ask', 'POST /api/v1/x/accounts']),
+    );
+    expect(contract.operations.get('GET /api/v1/events/stream')?.responseShape).toBe(
+      '{ events: [{ data, event, id? }], lastEventId? }',
+    );
+    expect(contract.blockedOperations).not.toStrictEqual(
+      expect.arrayContaining([{ method: 'GET', path: '/api/v1/events/stream' }]),
     );
     expect(contract.blockedOperations).toStrictEqual(expect.arrayContaining([
-      { method: 'GET', path: '/api/v1/events/stream' },
       { method: 'POST', path: '/api/v1/x/accounts' },
       { method: 'POST', path: '/api/v1/x/accounts/:id/reauth' },
     ]));
@@ -441,7 +444,7 @@ describe('generate-api-contract', () => {
   it('marks dashboard-only operations from the policy and from browser-only auth', () => {
     expect.assertions(3);
     const { operations } = generated();
-    expect(operations.get('PATCH /api/v1/account')?.agentProhibited).toBe(true);
+    expect(operations.get('POST /api/v1/subscribe')?.agentProhibited).toBe(true);
     expect(operations.get('GET /api/v1/api-keys')?.agentProhibited).toBe(true);
     expect(operations.get('GET /api/v1/radar')?.agentProhibited).toBeUndefined();
   });
