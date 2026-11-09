@@ -9,6 +9,12 @@ import { truncateResponse, truncateText } from '../src/truncate.js';
 const MAX_RESPONSE_CHARS = 24_000;
 const FUZZ_RUNS = 250;
 
+function sizedText(minLength: number, maxLength: number): fc.Arbitrary<string> {
+  return fc
+    .tuple(fc.string({ maxLength: 256 }), fc.string({ minLength: 1, maxLength: 64 }), fc.integer({ min: minLength, max: maxLength }))
+    .map(([head, unit, length]) => (head + unit.repeat(Math.ceil(length / unit.length))).slice(0, length));
+}
+
 describe('truncate fuzz properties', () => {
   it('bounds arbitrary text without changing its retained prefix', () => {
     expect.assertions(1);
@@ -18,8 +24,8 @@ describe('truncate fuzz properties', () => {
       fc.property(
         fc.oneof(
           fc.string({ maxLength: 256 }),
-          fc.string({ minLength: 23_990, maxLength: 24_010 }),
-          fc.string({ minLength: 24_001, maxLength: 50_000 }),
+          sizedText(23_990, 24_010),
+          sizedText(24_001, 50_000),
         ),
         (text) => {
           const output = truncateText(text);

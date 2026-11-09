@@ -127,9 +127,9 @@
     "@eslint/js": "10.0.1",
     "@sinclair/typebox": "0.34.52",
     "@types/node": "26.6.5",
-    "@typescript-eslint/eslint-plugin": "8.71.2",
-    "@typescript-eslint/parser": "8.71.2",
-    "@vitest/coverage-v8": "5.0.4",
+    "@typescript-eslint/eslint-plugin": "8.72.1",
+    "@typescript-eslint/parser": "8.72.1",
+    "@vitest/coverage-v8": "5.0.5",
     "@vitest/eslint-plugin": "1.6.27",
     "eslint": "10.12.0",
     "eslint-config-prettier": "10.1.8",
@@ -145,13 +145,13 @@
     "fast-check": "4.10.2",
     "globals": "17.13.0",
     "jscpd": "5.4.1",
-    "knip": "6.41.0",
+    "knip": "6.44.1",
     "mppx": "0.13.4",
     "openclaw": "2026.9.6",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "viem": "2.57.5",
-    "vitest": "5.0.4"
+    "vitest": "5.0.5"
   },
   "overrides": {
     "@modelcontextprotocol/sdk": "1.32.1",

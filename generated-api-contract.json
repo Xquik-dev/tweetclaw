@@ -79,7 +79,7 @@
 {"name":"communityId","in":"query","required":false,"type":"string","description":"ID or link of the Community whose posts to search, such as x.com/i/communities/1500000000000000000. Leave it out to search posts across every Community."},
 {"name":"company","in":"query","required":false,"type":"string","description":"Company name to match. Xquik's cap is 4,096 characters."},
 {"name":"compare","in":"query","required":false,"type":"string","description":"ID of another run of this tool. For an earlier whole run of the same account, the export holds only the rows that differ. For a run of another account, it holds only this run's rows that the other run also lists."},
-{"name":"connectsXAccounts","in":"body","required":false,"type":"boolean","description":"Lets this key connect, reconnect, retry & remove X accounts. Those calls carry X passwords. Full access doesn't include it. Missing saves false."},
+{"name":"connectsXAccounts","in":"body","required":false,"type":"boolean","description":"Lets this key connect, reconnect, retry & remove X accounts. Full access doesn't include it. Missing saves false."},
 {"name":"connectsXAccounts","in":"body","required":false,"type":"boolean","description":"Turns on or off connecting, reconnecting, retrying & removing X accounts with this key. Only a dashboard session can change it. Missing keeps the current value."},
 {"name":"conversationId","in":"body","required":false,"type":"string","description":"Conversation ID filter (tweet_search_extractor)"},
 {"name":"conversationId","in":"query","required":false,"type":"string","description":"Conversation ID filter."},
