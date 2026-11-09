@@ -132,7 +132,7 @@ describe('specEndpoints', () => {
     expect(paths).not.toContain('POST /api/v1/subscribe');
     expect(paths).not.toContain('POST /api/v1/credits/topup');
     expect(paths).not.toContain('GET /api/v1/credits/topup/status');
-    expect(paths).not.toContain('POST /api/v1/support/tickets');
+    expect(paths).not.toContain('DELETE /api/v1/x/accounts/:id');
   });
 
   it('does not expose raw credential parameters', () => {

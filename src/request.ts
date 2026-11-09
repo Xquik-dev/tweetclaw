@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { MPP_OFFERS } from './api-spec.js';
+import { readEventStream } from './event-stream.js';
 import { apiPathProblem, canonicalPath, findRoute, matchesEndpointPath } from './routes.js';
 import type { EndpointInfo, FetchFunction, PayingFetch, RequestFunction, RequestOptions } from './types.js';
 
@@ -10,6 +11,9 @@ const CONTENT_TYPE_HEADER = 'content-type';
 const API_KEY_HEADER = 'x-api-key';
 const AUTHORIZATION_HEADER = 'authorization';
 const IDEMPOTENCY_KEY_HEADER = 'Idempotency-Key';
+const LAST_EVENT_ID_HEADER = 'Last-Event-ID';
+const EVENT_STREAM_CONTENT = 'text/event-stream';
+const EVENT_STREAM_WAIT_MS = 25_000;
 const BEARER_PREFIX = 'Bearer ';
 const API_KEY_PREFIX = 'xq_';
 const REDIRECT_STATUS_FIRST = 300;
@@ -26,13 +30,15 @@ function buildFetchHeaders(
   credential: string,
   hasBody: boolean,
   idempotencyKey?: string,
+  lastEventId?: string,
 ): Record<string, string> {
   const auth = credential === '' ? {} : buildAuthHeader(credential);
   const contentType = hasBody ? { [CONTENT_TYPE_HEADER]: 'application/json' } : {};
   const idempotency = idempotencyKey === undefined
     ? {}
     : { [IDEMPOTENCY_KEY_HEADER]: idempotencyKey };
-  return { ...auth, ...contentType, ...idempotency };
+  const resume = lastEventId === undefined ? {} : { [LAST_EVENT_ID_HEADER]: lastEventId };
+  return { ...auth, ...contentType, ...idempotency, ...resume };
 }
 
 function createBaseUrl(baseUrl: string): URL {
@@ -69,16 +75,14 @@ function buildFetchUrl(baseUrl: string, path: string, query?: Readonly<Record<st
 }
 
 const REFUSED_PATH_FAMILIES: ReadonlyArray<{ readonly path: string; readonly readable?: true }> = [
-  { path: '/api/v1/account', readable: true },
   { path: '/api/v1/api-keys' },
   { path: '/api/v1/credits', readable: true },
   { path: '/api/v1/guest-wallets' },
   { path: '/api/v1/subscribe' },
-  { path: '/api/v1/support' },
+  { path: '/api/v1/support/attachments' },
   { path: '/api/v1/x/account-connection-attempts' },
   { path: '/api/v1/x/account-connection-challenges' },
   { path: '/api/v1/x/account-connection-links' },
-  { path: '/api/v1/x/accounts', readable: true },
 ];
 
 const SESSION_ONLY_REFUSALS: ReadonlyArray<{ readonly method: string; readonly path: string }> = [
@@ -116,7 +120,7 @@ function isStaticallyRefused(method: string, path: string): boolean {
 type Verdict = { readonly endpoint: EndpointInfo } | { readonly refusal: string };
 
 const BLOCKED_FOR_AGENTS =
-  'Endpoint is blocked for agents. Complete account, credential, billing, or support administration at dashboard.xquik.com.';
+  'Endpoint is blocked for agents. Manage API keys, billing, X account connection, and support files at dashboard.xquik.com.';
 
 function judgeRequest(method: string, path: string): Verdict {
   const pathProblem = apiPathProblem(path);
@@ -213,6 +217,24 @@ function assertNoRedirect(response: Response): void {
   }
 }
 
+function isEventStream(response: Response): boolean {
+  return response.headers.get(CONTENT_TYPE_HEADER)?.split(';')[0]?.trim().toLowerCase() === EVENT_STREAM_CONTENT;
+}
+
+async function readResponse(response: Response, options?: Readonly<RequestOptions>): Promise<unknown> {
+  if (response.ok && isEventStream(response)) {
+    return readEventStream(response.body, {
+      ...(options?.lastEventId === undefined ? {} : { lastEventId: options.lastEventId }),
+      waitMs: EVENT_STREAM_WAIT_MS,
+    });
+  }
+  const json: unknown = await readResponseJson(response);
+  if (!response.ok) {
+    throw new Error(formatApiError(response, json));
+  }
+  return json;
+}
+
 function createProxiedRequest(
   baseUrl: string,
   credential: string,
@@ -229,17 +251,13 @@ function createProxiedRequest(
     const hasBody = options?.body !== undefined;
     const response = await activeFetch(buildFetchUrl(baseUrl, canonicalPath(path), options?.query), {
       ...(hasBody ? { body: JSON.stringify(options.body) } : {}),
-      headers: buildFetchHeaders(credential, hasBody, options?.idempotencyKey),
+      headers: buildFetchHeaders(credential, hasBody, options?.idempotencyKey, options?.lastEventId),
       method,
       redirect: 'manual',
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
     assertNoRedirect(response);
-    const json: unknown = await readResponseJson(response);
-    if (!response.ok) {
-      throw new Error(formatApiError(response, json));
-    }
-    return json;
+    return readResponse(response, options);
   };
 }
 
@@ -248,7 +266,9 @@ export {
   buildFetchHeaders,
   buildFetchUrl,
   createProxiedRequest,
+  EVENT_STREAM_WAIT_MS,
   IDEMPOTENCY_KEY_HEADER,
   isProhibitedRequest,
   isStaticallyRefused,
+  LAST_EVENT_ID_HEADER,
 };

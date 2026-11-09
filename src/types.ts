@@ -34,6 +34,7 @@ type PayingFetch = (offer: Readonly<MppOffer>) => FetchFunction;
 interface RequestOptions {
   readonly body?: unknown;
   readonly idempotencyKey?: string;
+  readonly lastEventId?: string;
   readonly method?: string;
   readonly query?: Readonly<Record<string, string>>;
 }
@@ -55,6 +56,7 @@ interface ExploreParams {
 interface TweetclawParams {
   readonly body?: unknown;
   readonly idempotencyKey?: string;
+  readonly lastEventId?: string;
   readonly method?: string;
   readonly path: string;
   readonly query?: Readonly<Record<string, boolean | number | string>>;

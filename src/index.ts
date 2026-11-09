@@ -176,6 +176,13 @@ const TWEETCLAW_PARAMETERS = {
       pattern: '^[!-~]+$',
       type: 'string',
     },
+    lastEventId: {
+      description: 'The lastEventId an event stream returned. The stream then sends every event after it.',
+      maxLength: 32,
+      minLength: 1,
+      pattern: '^[!-~]+$',
+      type: 'string',
+    },
     method: { default: 'GET', description: 'HTTP method', enum: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], type: 'string' },
     path: { description: 'Catalog-listed /api/v1/... endpoint path', type: 'string' },
     query: {
@@ -245,7 +252,7 @@ function asTweetclawParams(params: unknown): Readonly<TweetclawParams> {
   if (value === undefined) {
     return { path: '' };
   }
-  const { body, idempotencyKey, method, path, query: rawQuery } = value;
+  const { body, idempotencyKey, lastEventId, method, path, query: rawQuery } = value;
   if (typeof path !== 'string') {
     return { path: '' };
   }
@@ -254,6 +261,7 @@ function asTweetclawParams(params: unknown): Readonly<TweetclawParams> {
   return {
     ...(body === undefined ? {} : { body }),
     ...(typeof idempotencyKey === 'string' ? { idempotencyKey } : {}),
+    ...(typeof lastEventId === 'string' ? { lastEventId } : {}),
     ...(typeof method === 'string' ? { method } : {}),
     path,
     ...(query === undefined ? {} : { query }),

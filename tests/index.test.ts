@@ -359,6 +359,27 @@ describe('register', () => {
     expect(result?.isError).toBeUndefined();
   });
 
+  it('tweetclaw tool resumes the event stream from a last event ID', async () => {
+    expect.assertions(2);
+    const mockFetch: typeof fetch = async (_input, init) => {
+      expect(init?.headers).toMatchObject({ 'Last-Event-ID': '42' });
+      return new Response('id: 43\nevent: tweet.new\ndata: {}\n\n', {
+        headers: { 'content-type': 'text/event-stream' },
+      });
+    };
+    const { api, tools } = createMockApi({ apiKey: 'xq_example' });
+    register(api, mockFetch);
+    const tweetclaw = tools.find((tool) => tool.name === 'tweetclaw');
+    const result = await tweetclaw?.execute('call_stream', {
+      lastEventId: '42',
+      path: '/api/v1/events/stream',
+    });
+    expect(JSON.parse(result?.content[0]?.text ?? '')).toStrictEqual({
+      events: [{ data: {}, event: 'tweet.new', id: '43' }],
+      lastEventId: '43',
+    });
+  });
+
   it('tweetclaw tool ignores unsupported query value types', async () => {
     expect.assertions(1);
     const mockFetch: typeof fetch = async (input) => {

@@ -11,6 +11,7 @@ const PARAMETER_LOCATIONS = new Set(["header", "path", "query"]);
 const API_PREFIX = "/api/v1/";
 const JSON_CONTENT = "application/json";
 const EVENT_STREAM_CONTENT = "text/event-stream";
+const EVENT_STREAM_SHAPE = "{ events: [{ data, event, id? }], lastEventId? }";
 const PAYMENT_REQUIRED_STATUS = "402";
 const MPP_UNITS_PER_DOLLAR = 1_000_000;
 const MPP_PRICE_DECIMALS = 6;
@@ -21,7 +22,7 @@ const NO_FIELDS: JsonObject = {};
 
 type JsonObject = Readonly<Record<string, unknown>>;
 type Method = (typeof OPENAPI_METHODS)[number];
-type Placement = "cataloged" | "eventStreams" | "excluded" | "outsideApiV1";
+type Placement = "cataloged" | "excluded" | "outsideApiV1";
 type Resolve = (value: unknown) => unknown;
 
 interface Fields {
@@ -130,7 +131,6 @@ interface CatalogOperation extends OperationKey {
 interface ContractCounts {
   readonly specOperations: number;
   readonly outsideApiV1: number;
-  readonly eventStreams: number;
   readonly excluded: number;
   readonly cataloged: number;
   readonly agentProhibited: number;
@@ -422,7 +422,14 @@ function successResponses(resolve: Resolve, entry: Entry): SuccessResponse[] {
     .map(([status, raw]) => ({ content: readContent(resolve, raw, `OpenAPI ${entry.key} response ${status}`), status }));
 }
 
+function isEventStream(resolve: Resolve, entry: Entry): boolean {
+  return successResponses(resolve, entry).some(
+    ({ content }) => content[EVENT_STREAM_CONTENT] !== undefined && content[JSON_CONTENT] === undefined,
+  );
+}
+
 function responseShape(resolve: Resolve, entry: Entry): string {
+  if (isEventStream(resolve, entry)) return EVENT_STREAM_SHAPE;
   const shapes = successResponses(resolve, entry).map(({ content, status }) => {
     const types = Object.keys(content);
     if (types.length === 0) return `${status} No Content`;
@@ -431,12 +438,6 @@ function responseShape(resolve: Resolve, entry: Entry): string {
     return printShape(resolve, json.schema, SHAPE_DEPTH, new Set()) || schemaType(resolve, json.schema);
   });
   return [...new Set(shapes)].join(" | ");
-}
-
-function isEventStream(resolve: Resolve, entry: Entry): boolean {
-  return successResponses(resolve, entry).some(
-    ({ content }) => content[EVENT_STREAM_CONTENT] !== undefined && content[JSON_CONTENT] === undefined,
-  );
 }
 
 function needsBrowserSession(document: Document, entry: Entry): boolean {
@@ -536,7 +537,7 @@ function placement(context: Context, entry: Entry): Placement {
   if (!TOOL_METHODS.has(entry.method)) {
     throw new Error(`${entry.key} uses a method the tool cannot send. Exclude it in catalog-policy.ts or add the method to the tool.`);
   }
-  return isEventStream(context.resolve, entry) ? "eventStreams" : "cataloged";
+  return "cataloged";
 }
 
 function assertPolicyNamesCatalogedOperations(policy: CatalogPolicy, operations: readonly CatalogOperation[]): void {
@@ -568,7 +569,7 @@ function buildContract(openapi: unknown, policy: CatalogPolicy): { readonly abse
   const document = readDocument(openapi);
   const context: Context = { document, policy, resolve: createResolver(openapi) };
   const entries = listOperations(document);
-  const placed: Record<Placement, Entry[]> = { cataloged: [], eventStreams: [], excluded: [], outsideApiV1: [] };
+  const placed: Record<Placement, Entry[]> = { cataloged: [], excluded: [], outsideApiV1: [] };
   for (const entry of entries) {
     placed[placement(context, entry)].push(entry);
   }
@@ -584,7 +585,6 @@ function buildContract(openapi: unknown, policy: CatalogPolicy): { readonly abse
       counts: {
         specOperations: entries.length,
         outsideApiV1: placed.outsideApiV1.length,
-        eventStreams: placed.eventStreams.length,
         excluded: placed.excluded.length,
         cataloged: operations.length,
         agentProhibited,
@@ -592,7 +592,7 @@ function buildContract(openapi: unknown, policy: CatalogPolicy): { readonly abse
         mpp: operations.filter((operation) => operation.mpp !== undefined).length,
       },
       approvalFreeReads: policy.approvalFreeReads.map((key) => catalogPath(key)),
-      blockedOperations: [...policy.excluded, ...placed.eventStreams.map((entry) => entry.key)]
+      blockedOperations: policy.excluded
         .map((key) => operationKey(key))
         .toSorted(byPathThenMethod),
       sessionOnlyOperations: entries

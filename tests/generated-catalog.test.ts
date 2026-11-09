@@ -41,8 +41,6 @@ const MPP_ROUTES = [
 ];
 
 const BLOCKED_CALLS = [
-  ['PATCH', '/api/v1/account'],
-  ['PUT', '/api/v1/account/x-identity'],
   ['GET', '/api/v1/api-keys'],
   ['POST', '/api/v1/api-keys'],
   ['DELETE', '/api/v1/api-keys/key_1'],
@@ -55,13 +53,7 @@ const BLOCKED_CALLS = [
   ['POST', '/api/v1/guest-wallets/topups'],
   ['GET', '/api/v1/guest-wallets/status'],
   ['GET', '/api/v1/support/attachments/file_1'],
-  ['GET', '/api/v1/support/tickets'],
-  ['POST', '/api/v1/support/tickets'],
-  ['GET', '/api/v1/support/tickets/ticket_1'],
-  ['PATCH', '/api/v1/support/tickets/ticket_1'],
-  ['POST', '/api/v1/support/tickets/ticket_1/messages'],
   ['POST', '/api/v1/x/accounts'],
-  ['GET', '/api/v1/x/accounts/account_1'],
   ['DELETE', '/api/v1/x/accounts/account_1'],
   ['POST', '/api/v1/x/accounts/account_1/reauth'],
   ['POST', '/api/v1/x/accounts/bulk-retry'],
@@ -70,6 +62,18 @@ const BLOCKED_CALLS = [
   ['POST', '/api/v1/x/account-connection-links'],
   ['GET', '/api/v1/x/account-connection-links/link_1'],
   ['DELETE', '/api/v1/x/account-connection-links/link_1'],
+] as const;
+
+const ACCOUNT_AND_SUPPORT_CALLS = [
+  ['PATCH', '/api/v1/account'],
+  ['PUT', '/api/v1/account/x-identity'],
+  ['GET', '/api/v1/support/tickets'],
+  ['POST', '/api/v1/support/tickets'],
+  ['GET', '/api/v1/support/tickets/ticket_1'],
+  ['PATCH', '/api/v1/support/tickets/ticket_1'],
+  ['POST', '/api/v1/support/tickets/ticket_1/messages'],
+  ['GET', '/api/v1/x/accounts/account_1'],
+  ['GET', '/api/v1/events/stream'],
 ] as const;
 
 const BILLING_DETAIL = /\$\d|\b\d+\s+credits?\b/iu;
@@ -187,11 +191,16 @@ describe('explore over the generated catalog', () => {
     expect(explore({ limit: 100, method, path })).toStrictEqual([]);
   });
 
-  it('hides the event stream and documentation search', () => {
+  it('lists the event stream and hides documentation search', () => {
     expect.assertions(2);
     const paths = specEndpoints.map((endpoint) => endpoint.path);
-    expect(paths).not.toContain('/api/v1/events/stream');
+    expect(paths).toContain('/api/v1/events/stream');
     expect(explore({ path: '/ask' })).toStrictEqual([]);
+  });
+
+  it.each(ACCOUNT_AND_SUPPORT_CALLS)('lists %s %s', (method, path) => {
+    expect.assertions(1);
+    expect(findEndpoint(method, path)?.agentProhibited).toBeUndefined();
   });
 
   it('states no credit charge and no price other than MPP call prices', () => {
@@ -202,8 +211,8 @@ describe('explore over the generated catalog', () => {
 
   it('covers every spec operation that the contract does not leave out', () => {
     expect.assertions(3);
-    const { cataloged, callable, eventStreams, excluded, outsideApiV1, specOperations } = contract.counts;
-    expect(cataloged).toBe(specOperations - outsideApiV1 - eventStreams - excluded);
+    const { cataloged, callable, excluded, outsideApiV1, specOperations } = contract.counts;
+    expect(cataloged).toBe(specOperations - outsideApiV1 - excluded);
     expect(specEndpoints).toHaveLength(callable);
     expect(new Set(specEndpoints.map((endpoint) => `${endpoint.method} ${endpoint.path}`)).size).toBe(callable);
   });
@@ -234,10 +243,47 @@ describe('tweetclaw over the generated catalog', () => {
     expect(result.sent).toStrictEqual([]);
   });
 
-  it('refuses the event stream without a request', async () => {
+  it.each(ACCOUNT_AND_SUPPORT_CALLS)('sends %s %s', async (method, path) => {
     expect.assertions(2);
-    const result = await call({ path: '/api/v1/events/stream' });
-    expect(result.text).toContain('not in the TweetClaw catalog');
+    const result = await call({ method, path });
+    expect(result.isError).toBe(false);
+    expect(result.sent.map((request) => [request.method, request.url]))
+      .toStrictEqual([[method, `https://xquik.com${path}`]]);
+  });
+
+  it('reads the event stream and resumes it from the last event ID', async () => {
+    expect.assertions(3);
+    const sent: SentRequest[] = [];
+    const result = await handleTweetclaw({
+      baseUrl: 'https://xquik.com',
+      credential: 'xq_test',
+      fetchFunction: async (input, init) => {
+        sent.push({ headers: init?.headers, method: init?.method, url: String(input) });
+        return new Response('retry: 3000\n\nid: 43\nevent: tweet.new\ndata: {"username":"NASA"}\n\n', {
+          headers: { 'content-type': 'text/event-stream' },
+        });
+      },
+      params: { lastEventId: '42', path: '/api/v1/events/stream' },
+    });
+    expect(result.isError).toBeUndefined();
+    expect(JSON.parse(result.content[0]?.text ?? '')).toStrictEqual({
+      events: [{ data: { username: 'NASA' }, event: 'tweet.new', id: '43' }],
+      lastEventId: '43',
+    });
+    expect(sent[0]?.headers).toMatchObject({ 'Last-Event-ID': '42' });
+  });
+
+  it.each(['', 'é', '1'.repeat(33)])('refuses the invalid last event ID %j on the event stream', async (lastEventId) => {
+    expect.assertions(2);
+    const result = await call({ lastEventId, path: '/api/v1/events/stream' });
+    expect(result.text).toContain('lastEventId is invalid');
+    expect(result.sent).toStrictEqual([]);
+  });
+
+  it('refuses a last event ID on a route that takes none', async () => {
+    expect.assertions(2);
+    const result = await call({ lastEventId: '42', path: '/api/v1/events' });
+    expect(result.text).toContain('lastEventId');
     expect(result.sent).toStrictEqual([]);
   });
 
