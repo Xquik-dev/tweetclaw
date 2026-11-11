@@ -19,8 +19,6 @@ function withoutPublicMppPrices(file: string, line: string): string {
     : line;
 }
 
-// The README's benchmark block comes from https://xquik.com/trust.json and
-// states the dated cost of a benchmark run, which is public proof, not a price.
 const BENCHMARK_START = "<!-- trust:win:start -->";
 const BENCHMARK_END = "<!-- trust:win:end -->";
 
