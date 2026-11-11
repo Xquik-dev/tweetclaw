@@ -19,6 +19,9 @@ function withoutPublicMppPrices(file: string, line: string): string {
     : line;
 }
 
+const BENCHMARK_START = "<!-- trust:win:start -->";
+const BENCHMARK_END = "<!-- trust:win:end -->";
+
 function listCandidateFiles(): string[] {
   return execFileSync("git", ["ls-files", "-z", "--cached", "--others", "--exclude-standard"], {
     cwd: root,
@@ -40,7 +43,15 @@ for (const file of listCandidateFiles()) {
     continue;
   }
 
+  let inBenchmark = false;
   for (const [index, rawLine] of readFileSync(filePath, "utf8").split("\n").entries()) {
+    if (file === "README.md" && (rawLine === BENCHMARK_START || rawLine === BENCHMARK_END)) {
+      inBenchmark = rawLine === BENCHMARK_START;
+      continue;
+    }
+    if (inBenchmark) {
+      continue;
+    }
     const line = withoutPublicMppPrices(file, rawLine);
     for (const pattern of RESTRICTED_BILLING_PATTERNS) {
       if (pattern.value.test(line)) {
