@@ -113,7 +113,7 @@
   "peerDependencies": {
     "mppx": "0.13.4",
     "openclaw": ">=2026.7.1",
-    "viem": "2.57.5"
+    "viem": "2.57.16"
   },
   "peerDependenciesMeta": {
     "mppx": {
@@ -150,7 +150,7 @@
     "openclaw": "2026.9.6",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
-    "viem": "2.57.5",
+    "viem": "2.57.16",
     "vitest": "5.0.5"
   },
   "overrides": {
