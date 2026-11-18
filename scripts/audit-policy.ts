@@ -133,7 +133,7 @@ function ungrounded(entries: readonly Entry[]): readonly string[] {
   let grew = true;
   while (grew) {
     const next = entries.filter(
-      ({ name, reaches }) => !grounded.has(name) && reaches.length > 0 && reaches.every((reached) => grounded.has(reached)),
+      ({ name, reaches }) => !grounded.has(name) && reaches.some((reached) => grounded.has(reached)),
     );
     for (const { name } of next) grounded.add(name);
     grew = next.length > 0;

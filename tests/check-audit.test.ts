@@ -25,6 +25,7 @@ const INSTALLED = new Map([
   ['node_modules/picomatch', '4.0.7'],
   ['node_modules/vitest', '5.0.5'],
   ['node_modules/knip', '6.1.0'],
+  ['node_modules/@vitest/coverage-v8', '5.0.5'],
   ['node_modules/hono', '4.13.13'],
 ]);
 
@@ -162,6 +163,22 @@ describe('verify, on reports built to slip past it', () => {
   it('passes a cycle that holds the excused advisory', () => {
     const looped: Entry = { ...picomatchEntry, via: [advisory('picomatch', PICOMATCH), 'vitest'] };
     expect(verify(inputs({ report: report([looped, ...dependents]) })).failures).toBe(0);
+  });
+
+  it('passes the cycle real npm reports, where vitest and its coverage reach each other and picomatch', () => {
+    const vitest: Entry = {
+      name: 'vitest',
+      nodes: ['node_modules/vitest'],
+      severity: 'high',
+      via: ['@vitest/coverage-v8', 'picomatch'],
+    };
+    const coverage: Entry = {
+      name: '@vitest/coverage-v8',
+      nodes: ['node_modules/@vitest/coverage-v8'],
+      severity: 'high',
+      via: ['vitest'],
+    };
+    expect(verify(inputs({ report: report([picomatchEntry, vitest, coverage]) })).failures).toBe(0);
   });
 
   it('fails when npm audit exits 1 on a report with no findings', () => {
