@@ -60,6 +60,7 @@ const dependents: readonly Entry[] = [
 const MASTER_REPORT = report([picomatchEntry, ...dependents]);
 
 const inputs = (overrides: Partial<AuditInputs> = {}): AuditInputs => ({
+  auditStatus: 1,
   exceptions: [EXCEPTION],
   installed: INSTALLED,
   newest: new Map([['picomatch', '4.0.7']]),
@@ -129,6 +130,7 @@ function failuresWhenExcused(codes: readonly string[], excused: readonly boolean
     .filter((_, index) => excused[index] === true)
     .map((code) => ({ ...EXCEPTION, id: `GHSA-${code}-${code}-${code}`, package: `pkg${code}`, version: '1.0.0' }));
   const verdict = verify({
+    auditStatus: 1,
     exceptions,
     installed: new Map(codes.map((code) => [`node_modules/pkg${code}`, '1.0.0'])),
     newest: new Map(codes.map((code) => [`pkg${code}`, '1.0.0'])),
@@ -137,6 +139,52 @@ function failuresWhenExcused(codes: readonly string[], excused: readonly boolean
   });
   return { actual: verdict.failures, expected: codes.length - exceptions.length };
 }
+
+describe('verify, on reports built to slip past it', () => {
+  const critical = 'https://github.com/advisories/GHSA-46wx-v44x-9hh2';
+
+  it('fails an advisory on an entry that lists no install path', () => {
+    const hidden: Entry = { name: 'hono', nodes: [], severity: 'critical', via: [advisory('hono', critical)] };
+    expect(verify(inputs({ report: report([picomatchEntry, ...dependents, hidden]) })).failures).toBe(1);
+  });
+
+  it('fails entries whose via chains reach each other and never an advisory', () => {
+    const first: Entry = { name: 'vitest', nodes: ['node_modules/vitest'], severity: 'critical', via: ['knip'] };
+    const second: Entry = { name: 'knip', nodes: ['node_modules/knip'], severity: 'critical', via: ['vitest'] };
+    expect(verify(inputs({ report: report([first, second]) })).failures).toBe(2);
+  });
+
+  it('fails an entry whose via reaches only itself', () => {
+    const own: Entry = { name: 'vitest', nodes: ['node_modules/vitest'], severity: 'critical', via: ['vitest'] };
+    expect(verify(inputs({ report: report([own]) })).failures).toBe(1);
+  });
+
+  it('passes a cycle that holds the excused advisory', () => {
+    const looped: Entry = { ...picomatchEntry, via: [advisory('picomatch', PICOMATCH), 'vitest'] };
+    expect(verify(inputs({ report: report([looped, ...dependents]) })).failures).toBe(0);
+  });
+
+  it('fails when npm audit exits 1 on a report with no findings', () => {
+    expect(verify(inputs({ auditStatus: 1, report: report([]) })).failures).toBe(1);
+  });
+
+  it('fails when npm audit exits 0 on a report with findings', () => {
+    expect(verify(inputs({ auditStatus: 0 })).failures).toBe(1);
+  });
+
+  it.each([
+    ['another host', 'https://example.com/advisories/GHSA-fc5q-39xc-vjpf'],
+    ['a longer id', 'https://github.com/advisories/GHSA-fc5q-39xc-vjpf-abcd'],
+    ['a path around the id', 'https://github.com/advisories/x/GHSA-fc5q-39xc-vjpf'],
+  ])('fails an advisory link on %s', (_label, url) => {
+    const forged: Entry = { ...picomatchEntry, via: [advisory('picomatch', url)] };
+    expect(verify(inputs({ report: report([forged, ...dependents]) })).failures).toBeGreaterThan(0);
+  });
+
+  it('fails an exception whose exposure note is only spaces', () => {
+    expect(verify(inputs({ exceptions: [{ ...EXCEPTION, exposure: '   ' }] })).failures).toBeGreaterThan(0);
+  });
+});
 
 describe('verify, over any set of advisories', () => {
   it('fails exactly the findings no exception matches by advisory, package and version', () => {
@@ -161,7 +209,7 @@ describe('verify, over any set of advisories', () => {
 describe('parseExceptions', () => {
   it('reads the committed exceptions, each with an evidence issue and at most its day limit', () => {
     const exceptions = parseExceptions(JSON.parse(readFileSync('audit-exceptions.json', 'utf8')));
-    expect(verify(inputs({ exceptions, report: report([]) })).failures).toBe(0);
+    expect(verify(inputs({ auditStatus: 0, exceptions, report: report([]) })).failures).toBe(0);
   });
 
   it('refuses an entry that misses a field', () => {

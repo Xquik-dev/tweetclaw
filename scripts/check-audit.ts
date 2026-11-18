@@ -47,7 +47,7 @@ const newest = new Map(
   }),
 );
 
-const verdict = verify({ exceptions, installed, newest, now: Date.now(), report: JSON.parse(audit.stdout) });
+const verdict = verify({ auditStatus: audit.status, exceptions, installed, newest, now: Date.now(), report: JSON.parse(audit.stdout) });
 for (const line of verdict.lines) process.stdout.write(`check-audit: ${line}\n`);
 if (verdict.failures > 0) {
   process.stderr.write(`check-audit: ${String(verdict.failures)} lines above fail the dependency audit.\n`);
