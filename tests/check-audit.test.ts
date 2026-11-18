@@ -6,7 +6,7 @@ import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
 import { EXCUSED, verify } from '../scripts/audit-policy.ts';
-import type { AuditInputs, AuditRun } from '../scripts/audit-policy.ts';
+import type { AuditInputs, AuditRun, InstalledPackage } from '../scripts/audit-policy.ts';
 
 const DURING = Date.parse('2026-11-20T00:00:00Z');
 const PICOMATCH_URL = 'https://github.com/advisories/GHSA-fc5q-39xc-vjpf';
@@ -43,8 +43,18 @@ const HONO: Entry = { name: 'hono', via: [advisory('hono', HONO_URL)] };
 const lockOf = (packages: Readonly<Record<string, unknown>>): unknown => ({ packages });
 const LODASH_URL = 'https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz';
 
+const installedFrom = (lock: unknown): ReadonlyMap<string, InstalledPackage> => {
+  const packages = (lock as { packages?: Readonly<Record<string, Readonly<Record<string, unknown>>>> }).packages ?? {};
+  return new Map(
+    Object.entries(packages)
+      .filter(([node, value]) => node.includes('node_modules/') && value['link'] !== true)
+      .map(([node, value]) => [node, { name: value['name'] ?? node.split('node_modules/').at(-1), version: value['version'] }]),
+  );
+};
+
 const inputs = (overrides: Partial<AuditInputs> = {}): AuditInputs => ({
   full: runOf(REAL_CYCLE),
+  installed: new Map(),
   lock: lockOf({}),
   now: DURING,
   runtime: runOf([]),
@@ -128,18 +138,36 @@ describe('verify', () => {
 });
 
 describe('verify, on the lockfile', () => {
-  it('passes every entry of the committed lockfile', () => {
-    expect(verify(inputs({ lock: JSON.parse(readFileSync('package-lock.json', 'utf8')) }))).toStrictEqual([]);
+  it('passes every entry of the committed lockfile, installed as it says', () => {
+    const lock: unknown = JSON.parse(readFileSync('package-lock.json', 'utf8'));
+    expect(verify(inputs({ installed: installedFrom(lock), lock }))).toStrictEqual([]);
   });
 
   it('fails a lockfile that names a clean version for a vulnerable tarball', () => {
     const lock = lockOf({ 'node_modules/lodash': { resolved: LODASH_URL, version: '4.18.1' } });
+    expect(verify(inputs({ installed: installedFrom(lock), lock }))).toHaveLength(1);
+  });
+
+  it.each([
+    ['a bundled mark', { inBundle: true }],
+    ['a clean tarball url', { resolved: 'https://registry.npmjs.org/lodash/-/lodash-4.18.1.tgz' }],
+  ])('fails a lockfile whose entry says 4.18.1 with %s while npm installed 4.17.20', (_label, forged) => {
+    const lock = lockOf({ 'node_modules/lodash': { resolved: LODASH_URL, version: '4.18.1', ...forged } });
+    const installed = new Map([['node_modules/lodash', { name: 'lodash', version: '4.17.20' }]]);
+    expect(verify(inputs({ installed, lock }))).toHaveLength(1);
+  });
+
+  it('fails an entry that npm ci never installed, and passes a skipped optional one', () => {
+    const lock = lockOf({
+      'node_modules/lodash': { resolved: LODASH_URL, version: '4.17.20' },
+      'node_modules/fsevents': { optional: true, resolved: 'https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz', version: '2.3.3' },
+    });
     expect(verify(inputs({ lock }))).toHaveLength(1);
   });
 
   it('fails an entry that resolves outside the public registry', () => {
     const lock = lockOf({ 'node_modules/lodash': { resolved: 'https://example.com/lodash-4.17.20.tgz', version: '4.17.20' } });
-    expect(verify(inputs({ lock }))).toHaveLength(1);
+    expect(verify(inputs({ installed: installedFrom(lock), lock }))).toHaveLength(1);
   });
 
   it('passes scoped, aliased, bundled and linked entries that agree', () => {
@@ -150,7 +178,7 @@ describe('verify, on the lockfile', () => {
       'node_modules/bundled': { inBundle: true, version: '1.0.0' },
       'node_modules/linked': { link: true, resolved: 'packages/linked' },
     });
-    expect(verify(inputs({ lock }))).toStrictEqual([]);
+    expect(verify(inputs({ installed: installedFrom(lock), lock }))).toStrictEqual([]);
   });
 
   it('fails a lockfile it cannot read', () => {
@@ -189,7 +217,7 @@ describe('verify, over any set of advisories', () => {
 });
 
 const WHOLE_TREE = '--include=optional --include=peer --workspaces=null';
-const SOURCE = '--registry=https://registry.npmjs.org/ --offline=false';
+const SOURCE = '--registry=https://registry.npmjs.org/ --offline=false --proxy=null --https-proxy=null --noproxy=registry.npmjs.org --strict-ssl=true';
 const FAKE_FOLDER = '.tmp/check-audit-test';
 const FAKE_NPM = '.tmp/check-audit-test/npm.mjs';
 const FAKE_ARGS = '.tmp/check-audit-test/args.log';

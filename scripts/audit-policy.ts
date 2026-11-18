@@ -19,8 +19,14 @@ export interface AuditRun {
   readonly status: number | null;
 }
 
+export interface InstalledPackage {
+  readonly name: unknown;
+  readonly version: unknown;
+}
+
 export interface AuditInputs {
   readonly full: AuditRun;
+  readonly installed: ReadonlyMap<string, InstalledPackage>;
   readonly lock: unknown;
   readonly now: number;
   readonly runtime: AuditRun;
@@ -123,26 +129,35 @@ function excuseProblems(now: number, versions: unknown): readonly string[] {
   return newer.length === 0 ? [] : [`${named} needs review, since npm now has ${EXCUSED.package} ${newer.map(String).join(", ")}`];
 }
 
-function lockEntryProblem(node: string, value: unknown): readonly string[] {
-  if (!node.includes("node_modules/") || !isRecord(value) || value["link"] === true || value["inBundle"] === true) return [];
+function lockEntryProblem(node: string, value: unknown, installed: ReadonlyMap<string, InstalledPackage>): readonly string[] {
+  if (!node.includes("node_modules/") || !isRecord(value) || value["link"] === true) return [];
   const name = typeof value["name"] === "string" ? value["name"] : String(node.split("node_modules/").at(-1));
   const version = String(value["version"]);
+  const onDisk = installed.get(node);
+  if (onDisk === undefined) {
+    return value["optional"] === true ? [] : [`package-lock.json entry ${node} isn't installed, so run npm ci first`];
+  }
+  if (onDisk.name !== name || onDisk.version !== version) {
+    return [`package-lock.json entry ${node} says ${name} ${version} but ${String(onDisk.name)} ${String(onDisk.version)} is installed`];
+  }
   const expected = `${REGISTRY}${name}/-/${String(name.split("/").at(-1))}-${version}.tgz`;
-  return value["resolved"] === expected ? [] : [`package-lock.json entry ${node} says ${version} but resolves to ${String(value["resolved"])}`];
+  return value["inBundle"] === true || value["resolved"] === expected
+    ? []
+    : [`package-lock.json entry ${node} says ${version} but resolves to ${String(value["resolved"])}`];
 }
 
-function lockProblems(lock: unknown): readonly string[] {
+function lockProblems(lock: unknown, installed: ReadonlyMap<string, InstalledPackage>): readonly string[] {
   const packages = isRecord(lock) ? lock["packages"] : undefined;
   if (!isRecord(packages)) return ["package-lock.json holds no packages"];
-  return Object.entries(packages).flatMap(([node, value]) => lockEntryProblem(node, value));
+  return Object.entries(packages).flatMap(([node, value]) => lockEntryProblem(node, value, installed));
 }
 
-export function verify({ full, lock, now, runtime, versions }: AuditInputs): readonly string[] {
+export function verify({ full, installed, lock, now, runtime, versions }: AuditInputs): readonly string[] {
   const all = readRun("the full audit", full);
   const shipped = readRun("the runtime audit", runtime);
   const isExcused = ({ id, name }: Advisory): boolean => id === EXCUSED.advisory && name === EXCUSED.package;
   return [
-    ...lockProblems(lock),
+    ...lockProblems(lock, installed),
     ...all.problems,
     ...shipped.problems,
     ...shipped.advisories.map(({ id, name }) => `${id} on ${name} reaches runtime dependencies, which no excuse covers`),
