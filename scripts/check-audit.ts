@@ -26,7 +26,7 @@ function readJson(relativePath: string): unknown {
   return JSON.parse(readFileSync(join(root, relativePath), "utf8"));
 }
 
-const audit = npm(["audit", "--json"]);
+const audit = npm(["audit", "--json", "--include=dev"]);
 if (audit.status !== 0 && audit.status !== 1) {
   process.stderr.write(`check-audit: npm audit exited ${String(audit.status)}. ${audit.stderr}\n`);
   process.exit(1);
@@ -39,6 +39,7 @@ const installed = new Map(
     return typeof version === "string" ? [[node, version] as const] : [];
   }),
 );
+const runtimeNodes = new Set(Object.keys(lockPackages).filter((node) => recordOf(lockPackages[node])["dev"] !== true));
 const exceptions = parseExceptions(readJson("audit-exceptions.json"));
 const newest = new Map(
   [...new Set(exceptions.map((exception) => exception.package))].map((name) => {
@@ -47,7 +48,7 @@ const newest = new Map(
   }),
 );
 
-const verdict = verify({ auditStatus: audit.status, exceptions, installed, newest, now: Date.now(), report: JSON.parse(audit.stdout) });
+const verdict = verify({ auditStatus: audit.status, exceptions, installed, newest, now: Date.now(), report: JSON.parse(audit.stdout), runtimeNodes });
 for (const line of verdict.lines) process.stdout.write(`check-audit: ${line}\n`);
 if (verdict.failures > 0) {
   process.stderr.write(`check-audit: ${String(verdict.failures)} lines above fail the dependency audit.\n`);

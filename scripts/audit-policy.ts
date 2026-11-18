@@ -20,6 +20,7 @@ export interface AuditInputs {
   readonly newest: ReadonlyMap<string, string>;
   readonly now: number;
   readonly report: unknown;
+  readonly runtimeNodes: ReadonlySet<string>;
 }
 
 export interface AuditVerdict {
@@ -30,6 +31,7 @@ export interface AuditVerdict {
 interface Finding {
   readonly id: string;
   readonly name: string;
+  readonly runtime: boolean;
   readonly severity: string;
   readonly version: string;
 }
@@ -60,7 +62,7 @@ function exceptionProblem(exception: AuditException): string | undefined {
   if (expires - added > MAX_EXCEPTION_DAYS * DAY_MS) {
     return `the exception for ${exception.id} lasts more than ${String(MAX_EXCEPTION_DAYS)} days`;
   }
-  if (!EVIDENCE.test(exception.evidence) || exception.exposure.trim() === "") {
+  if (!EVIDENCE.test(exception.evidence) || !/[A-Za-z0-9]/u.test(exception.exposure)) {
     return `the exception for ${exception.id} names no exposure or tweetclaw issue with its evidence`;
   }
   return undefined;
@@ -88,15 +90,15 @@ export function parseExceptions(value: unknown): readonly AuditException[] {
   });
 }
 
-function advisoryOf(name: string, via: Readonly<Record<string, unknown>>): Omit<Finding, "version"> | undefined {
+function advisoryOf(name: string, via: Readonly<Record<string, unknown>>): Omit<Finding, "runtime" | "version"> | undefined {
   const url = via["url"];
   const severity = via["severity"];
   const id = typeof url === "string" ? ADVISORY_URL.exec(url)?.groups?.["id"] : undefined;
-  if (id === undefined || via["name"] !== name || typeof severity !== "string") return undefined;
+  if (id === undefined || via["name"] !== name || typeof severity !== "string" || !SEVERITIES.includes(severity)) return undefined;
   return { id, name, severity };
 }
 
-function entryOf(name: string, value: unknown, installed: ReadonlyMap<string, string>): Entry | string {
+function entryOf(name: string, value: unknown, inputs: AuditInputs): Entry | string {
   if (!isRecord(value) || value["name"] !== name || !SEVERITIES.includes(String(value["severity"]))) {
     return `entry ${name} lacks its name or a known severity`;
   }
@@ -105,7 +107,11 @@ function entryOf(name: string, value: unknown, installed: ReadonlyMap<string, st
   if (!isList(via) || via.length === 0 || !isList(nodes) || nodes.length === 0 || !nodes.every((node) => typeof node === "string")) {
     return `entry ${name} lacks its via or nodes list`;
   }
-  const versions = nodes.map((node) => installed.get(String(node)));
+  if (!nodes.every((node) => String(node).split("node_modules/").at(-1) === name)) {
+    return `entry ${name} names an install path of another package`;
+  }
+  const versions = nodes.map((node) => inputs.installed.get(String(node)));
+  const runtime = nodes.some((node) => inputs.runtimeNodes.has(String(node)));
   if (versions.some((version) => version === undefined)) {
     return `entry ${name} names an install path package-lock.json doesn't hold`;
   }
@@ -114,7 +120,7 @@ function entryOf(name: string, value: unknown, installed: ReadonlyMap<string, st
     return `entry ${name} has a via item that isn't a package name or an advisory with its GHSA link`;
   }
   const findings = advisories.flatMap((advisory) =>
-    advisory === undefined ? [] : [...new Set(versions)].map((version) => ({ ...advisory, version: String(version) })),
+    advisory === undefined ? [] : [...new Set(versions)].map((version) => ({ ...advisory, runtime, version: String(version) })),
   );
   return { findings, name, reaches: via.filter((item) => typeof item === "string").map(String) };
 }
@@ -141,14 +147,15 @@ function ungrounded(entries: readonly Entry[]): readonly string[] {
   return entries.filter(({ name }) => !grounded.has(name)).map(({ name }) => `entry ${name} reaches no advisory`);
 }
 
-function readReport(report: unknown, installed: ReadonlyMap<string, string>): Reading {
+function readReport(inputs: AuditInputs): Reading {
+  const { report } = inputs;
   const vulnerabilities = isRecord(report) ? report["vulnerabilities"] : undefined;
   const metadata = isRecord(report) ? report["metadata"] : undefined;
   const counts = isRecord(metadata) ? metadata["vulnerabilities"] : undefined;
   if (!isRecord(vulnerabilities) || !isRecord(counts)) {
     return { entries: [], problems: ["it holds no vulnerabilities object & metadata.vulnerabilities counts"] };
   }
-  const read = Object.entries(vulnerabilities).map(([name, value]) => entryOf(name, value, installed));
+  const read = Object.entries(vulnerabilities).map(([name, value]) => entryOf(name, value, inputs));
   const entries = read.filter((item): item is Entry => typeof item !== "string");
   const known = new Set(entries.map(({ name }) => name));
   const unknown = entries.flatMap(({ name, reaches }) =>
@@ -171,6 +178,7 @@ function exceptionFor(finding: Finding, inputs: AuditInputs): AuditException | u
       exception.id === finding.id &&
       exception.package === finding.name &&
       exception.version === finding.version &&
+      !finding.runtime &&
       inputs.now >= Date.parse(exception.added) &&
       inputs.now < Date.parse(exception.expires) &&
       inputs.newest.get(finding.name) === finding.version,
@@ -179,7 +187,7 @@ function exceptionFor(finding: Finding, inputs: AuditInputs): AuditException | u
 
 export function verify(inputs: AuditInputs): AuditVerdict {
   const exceptionProblems = inputs.exceptions.flatMap((exception) => exceptionProblem(exception) ?? []);
-  const { entries, problems } = readReport(inputs.report, inputs.installed);
+  const { entries, problems } = readReport(inputs);
   const findings = entries.flatMap(({ findings: own }) => own);
   const expectedStatus = entries.length > 0 ? 1 : 0;
   const statusProblems =

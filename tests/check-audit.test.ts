@@ -67,6 +67,7 @@ const inputs = (overrides: Partial<AuditInputs> = {}): AuditInputs => ({
   newest: new Map([['picomatch', '4.0.7']]),
   now: DURING,
   report: MASTER_REPORT,
+  runtimeNodes: new Set(),
   ...overrides,
 });
 
@@ -137,6 +138,7 @@ function failuresWhenExcused(codes: readonly string[], excused: readonly boolean
     newest: new Map(codes.map((code) => [`pkg${code}`, '1.0.0'])),
     now: DURING,
     report: report(codes.map((code) => advisoryEntry(code))),
+    runtimeNodes: new Set(),
   });
   return { actual: verdict.failures, expected: codes.length - exceptions.length };
 }
@@ -196,6 +198,24 @@ describe('verify, on reports built to slip past it', () => {
   ])('fails an advisory link on %s', (_label, url) => {
     const forged: Entry = { ...picomatchEntry, via: [advisory('picomatch', url)] };
     expect(verify(inputs({ report: report([forged, ...dependents]) })).failures).toBeGreaterThan(0);
+  });
+
+  it('fails an entry that names the install path of another package', () => {
+    const borrowed: Entry = { ...picomatchEntry, nodes: ['node_modules/vitest'] };
+    expect(verify(inputs({ report: report([borrowed, ...dependents]) })).failures).toBeGreaterThan(0);
+  });
+
+  it.each(['\u200B', '\u00AD', '\u3164', '\u2800', ' \u2060 '])('fails an exposure note of only the invisible text %j', (exposure) => {
+    expect(verify(inputs({ exceptions: [{ ...EXCEPTION, exposure }] })).failures).toBeGreaterThan(0);
+  });
+
+  it.each(['banana', ''])('fails an advisory whose severity is %j', (severity) => {
+    const unknown: Entry = { ...picomatchEntry, via: [{ ...advisory('picomatch', PICOMATCH), severity }] };
+    expect(verify(inputs({ report: report([unknown, ...dependents]) })).failures).toBeGreaterThan(0);
+  });
+
+  it('fails the excused advisory once picomatch is a runtime dependency', () => {
+    expect(verify(inputs({ runtimeNodes: new Set(['node_modules/picomatch']) })).failures).toBe(1);
   });
 
   it('fails an exception whose exposure note is only spaces', () => {
