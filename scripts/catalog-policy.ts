@@ -18,6 +18,7 @@ const CATALOG_POLICY: CatalogPolicy = {
     "POST /api/v1/x/account-connection-challenges/{id}/submit",
     "POST /api/v1/x/accounts",
     "POST /api/v1/x/accounts/{id}/reauth",
+    "GET /api/v1/x/account-connection-links",
     "POST /api/v1/x/account-connection-links",
     "GET /api/v1/x/account-connection-links/{id}",
     "DELETE /api/v1/x/account-connection-links/{id}",

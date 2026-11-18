@@ -346,6 +346,7 @@ describe('generate-api-contract', () => {
         'generate-api-contract: the spec does not publish POST /api/v1/guest-wallets/topups. It stays excluded.',
         'generate-api-contract: the spec does not publish POST /api/v1/x/account-connection-challenges/{id}/submit. It stays excluded.',
         'generate-api-contract: the spec does not publish POST /api/v1/x/accounts/{id}/reauth. It stays excluded.',
+        'generate-api-contract: the spec does not publish GET /api/v1/x/account-connection-links. It stays excluded.',
         'generate-api-contract: the spec does not publish POST /api/v1/x/account-connection-links. It stays excluded.',
         'generate-api-contract: the spec does not publish GET /api/v1/x/account-connection-links/{id}. It stays excluded.',
         'generate-api-contract: the spec does not publish DELETE /api/v1/x/account-connection-links/{id}. It stays excluded.',
