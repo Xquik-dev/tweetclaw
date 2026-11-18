@@ -3,208 +3,132 @@
 
 import { isList, isRecord } from "./json-shape.ts";
 
-export interface AuditException {
-  readonly added: string;
-  readonly evidence: string;
-  readonly expires: string;
-  readonly exposure: string;
-  readonly id: string;
-  readonly package: string;
-  readonly version: string;
+export const EXCUSED = {
+  added: "2026-11-18T13:00:00Z",
+  advisory: "GHSA-fc5q-39xc-vjpf",
+  evidence: "https://github.com/Xquik-dev/tweetclaw/issues/131",
+  expires: "2026-12-02T13:00:00Z",
+  newestVersion: "4.0.7",
+  package: "picomatch",
+} as const;
+
+export interface AuditRun {
+  readonly report: unknown;
+  readonly status: number | null;
 }
 
 export interface AuditInputs {
-  readonly auditStatus: number | null;
-  readonly exceptions: readonly AuditException[];
-  readonly installed: ReadonlyMap<string, string>;
-  readonly newest: ReadonlyMap<string, string>;
+  readonly full: AuditRun;
   readonly now: number;
-  readonly report: unknown;
-  readonly runtimeNodes: ReadonlySet<string>;
+  readonly runtime: AuditRun;
+  readonly versions: unknown;
 }
 
-export interface AuditVerdict {
-  readonly failures: number;
-  readonly lines: readonly string[];
-}
-
-interface Finding {
+interface Advisory {
   readonly id: string;
   readonly name: string;
-  readonly runtime: boolean;
-  readonly severity: string;
-  readonly version: string;
+}
+
+interface Reading {
+  readonly advisories: readonly Advisory[];
+  readonly problems: readonly string[];
 }
 
 interface Entry {
-  readonly findings: readonly Finding[];
+  readonly advisories: readonly Advisory[];
   readonly name: string;
   readonly reaches: readonly string[];
 }
 
-interface Reading {
-  readonly entries: readonly Entry[];
-  readonly problems: readonly string[];
-}
-
-export const MAX_EXCEPTION_DAYS = 14;
-const DAY_MS = 86_400_000;
-const SEVERITIES: readonly string[] = ["info", "low", "moderate", "high", "critical"];
+const SEVERITIES = ["info", "low", "moderate", "high", "critical"] as const;
 const ADVISORY_URL = /^https:\/\/github\.com\/advisories\/(?<id>GHSA(?:-[\da-z]{4}){3})$/u;
-const EVIDENCE = /^https:\/\/github\.com\/Xquik-dev\/tweetclaw\/issues\/\d+$/u;
 
-function exceptionProblem(exception: AuditException): string | undefined {
-  const added = Date.parse(exception.added);
-  const expires = Date.parse(exception.expires);
-  if (Number.isNaN(added) || Number.isNaN(expires) || expires <= added) {
-    return `the exception for ${exception.id} has no valid added & expires dates`;
+function entryOf(name: string, value: unknown): Entry | string {
+  const via = isRecord(value) ? value["via"] : undefined;
+  if (!isRecord(value) || value["name"] !== name || !isList(via) || via.length === 0) {
+    return `entry ${name} lacks its name or via list`;
   }
-  if (expires - added > MAX_EXCEPTION_DAYS * DAY_MS) {
-    return `the exception for ${exception.id} lasts more than ${String(MAX_EXCEPTION_DAYS)} days`;
+  const advisories: Advisory[] = [];
+  const reaches: string[] = [];
+  for (const item of via) {
+    const url = isRecord(item) ? item["url"] : undefined;
+    const id = typeof url === "string" ? ADVISORY_URL.exec(url)?.groups?.["id"] : undefined;
+    if (typeof item === "string") reaches.push(item);
+    else if (id !== undefined && isRecord(item) && item["name"] === name) advisories.push({ id, name });
+    else return `entry ${name} has a via item that is no package name or advisory link`;
   }
-  if (!EVIDENCE.test(exception.evidence) || !/[A-Za-z0-9]/u.test(exception.exposure)) {
-    return `the exception for ${exception.id} names no exposure or tweetclaw issue with its evidence`;
-  }
-  return undefined;
+  return { advisories, name, reaches };
 }
 
-export function parseExceptions(value: unknown): readonly AuditException[] {
-  const list = isRecord(value) ? value["exceptions"] : undefined;
-  if (!isList(list)) {
-    throw new TypeError("audit-exceptions.json must hold an exceptions list");
-  }
-  return list.map((item, index) => {
-    const fields = ["added", "evidence", "expires", "exposure", "id", "package", "version"] as const;
-    if (!isRecord(item) || !fields.every((field) => typeof item[field] === "string")) {
-      throw new TypeError(`audit-exceptions.json entry ${String(index)} needs string ${fields.join(", ")}`);
-    }
-    return {
-      added: String(item["added"]),
-      evidence: String(item["evidence"]),
-      expires: String(item["expires"]),
-      exposure: String(item["exposure"]),
-      id: String(item["id"]),
-      package: String(item["package"]),
-      version: String(item["version"]),
-    };
-  });
-}
-
-function advisoryOf(name: string, via: Readonly<Record<string, unknown>>): Omit<Finding, "runtime" | "version"> | undefined {
-  const url = via["url"];
-  const severity = via["severity"];
-  const id = typeof url === "string" ? ADVISORY_URL.exec(url)?.groups?.["id"] : undefined;
-  if (id === undefined || via["name"] !== name || typeof severity !== "string" || !SEVERITIES.includes(severity)) return undefined;
-  return { id, name, severity };
-}
-
-function entryOf(name: string, value: unknown, inputs: AuditInputs): Entry | string {
-  if (!isRecord(value) || value["name"] !== name || !SEVERITIES.includes(String(value["severity"]))) {
-    return `entry ${name} lacks its name or a known severity`;
-  }
-  const via = value["via"];
-  const nodes = value["nodes"];
-  if (!isList(via) || via.length === 0 || !isList(nodes) || nodes.length === 0 || !nodes.every((node) => typeof node === "string")) {
-    return `entry ${name} lacks its via or nodes list`;
-  }
-  if (!nodes.every((node) => String(node).split("node_modules/").at(-1) === name)) {
-    return `entry ${name} names an install path of another package`;
-  }
-  const versions = nodes.map((node) => inputs.installed.get(String(node)));
-  const runtime = nodes.some((node) => inputs.runtimeNodes.has(String(node)));
-  if (versions.some((version) => version === undefined)) {
-    return `entry ${name} names an install path package-lock.json doesn't hold`;
-  }
-  const advisories = via.filter((item) => isRecord(item)).map((item) => advisoryOf(name, item));
-  if (advisories.some((advisory) => advisory === undefined) || !via.every((item) => isRecord(item) || typeof item === "string")) {
-    return `entry ${name} has a via item that isn't a package name or an advisory with its GHSA link`;
-  }
-  const findings = advisories.flatMap((advisory) =>
-    advisory === undefined ? [] : [...new Set(versions)].map((version) => ({ ...advisory, runtime, version: String(version) })),
-  );
-  return { findings, name, reaches: via.filter((item) => typeof item === "string").map(String) };
-}
-
-function countProblems(entries: Readonly<Record<string, unknown>>, counts: Readonly<Record<string, unknown>>): readonly string[] {
-  const values = Object.values(entries).filter((entry) => isRecord(entry));
-  const counted = new Map(SEVERITIES.map((severity) => [severity, values.filter((entry) => entry["severity"] === severity).length]));
-  const problems = SEVERITIES.filter((severity) => counts[severity] !== counted.get(severity)).map(
-    (severity) => `metadata counts ${String(counts[severity])} ${severity} entries & the report holds ${String(counted.get(severity))}`,
-  );
-  return counts["total"] === values.length ? problems : [...problems, `metadata counts ${String(counts["total"])} entries in total & the report holds ${String(values.length)}`];
-}
-
-function ungrounded(entries: readonly Entry[]): readonly string[] {
-  const grounded = new Set(entries.filter(({ findings }) => findings.length > 0).map(({ name }) => name));
+function unreached(entries: readonly Entry[]): readonly string[] {
+  const reached = new Set(entries.filter(({ advisories }) => advisories.length > 0).map(({ name }) => name));
   let grew = true;
   while (grew) {
-    const next = entries.filter(
-      ({ name, reaches }) => !grounded.has(name) && reaches.some((reached) => grounded.has(reached)),
-    );
-    for (const { name } of next) grounded.add(name);
+    const next = entries.filter(({ name, reaches }) => !reached.has(name) && reaches.some((item) => reached.has(item)));
+    for (const { name } of next) reached.add(name);
     grew = next.length > 0;
   }
-  return entries.filter(({ name }) => !grounded.has(name)).map(({ name }) => `entry ${name} reaches no advisory`);
+  return entries.filter(({ name }) => !reached.has(name)).map(({ name }) => `entry ${name} reaches no advisory`);
 }
 
-function readReport(inputs: AuditInputs): Reading {
-  const { report } = inputs;
-  const vulnerabilities = isRecord(report) ? report["vulnerabilities"] : undefined;
-  const metadata = isRecord(report) ? report["metadata"] : undefined;
+function metadataProblems(metadata: unknown, entries: number): readonly string[] {
   const counts = isRecord(metadata) ? metadata["vulnerabilities"] : undefined;
-  if (!isRecord(vulnerabilities) || !isRecord(counts)) {
-    return { entries: [], problems: ["it holds no vulnerabilities object & metadata.vulnerabilities counts"] };
+  const dependencies = isRecord(metadata) ? metadata["dependencies"] : undefined;
+  const audited = isRecord(dependencies) ? dependencies["total"] : undefined;
+  if (!isRecord(counts) || typeof audited !== "number" || audited <= 0) return ["it audited no dependencies"];
+  const sum = SEVERITIES.reduce((total, severity) => total + Number(counts[severity]), 0);
+  return counts["total"] === entries && sum === entries ? [] : [`its counts disagree with its ${String(entries)} entries`];
+}
+
+function readRun(label: string, { report, status }: AuditRun): Reading {
+  const vulnerabilities = isRecord(report) ? report["vulnerabilities"] : undefined;
+  if (!isRecord(report) || report["auditReportVersion"] !== 2 || "error" in report || !isRecord(vulnerabilities)) {
+    return { advisories: [], problems: [`${label} wrote no readable report`] };
   }
-  const read = Object.entries(vulnerabilities).map(([name, value]) => entryOf(name, value, inputs));
+  const read = Object.entries(vulnerabilities).map(([name, value]) => entryOf(name, value));
   const entries = read.filter((item): item is Entry => typeof item !== "string");
   const known = new Set(entries.map(({ name }) => name));
-  const unknown = entries.flatMap(({ name, reaches }) =>
-    reaches.filter((reached) => !known.has(reached)).map((reached) => `entry ${name} reaches ${reached}, which the report doesn't list`),
-  );
+  const problems = [
+    ...read.filter((item): item is string => typeof item === "string"),
+    ...entries.flatMap(({ name, reaches }) => reaches.filter((item) => !known.has(item)).map((item) => `entry ${name} reaches unlisted ${item}`)),
+    ...unreached(entries),
+    ...metadataProblems(report["metadata"], read.length),
+    ...(status === (read.length > 0 ? 1 : 0) ? [] : [`npm exited ${String(status)} for ${String(read.length)} entries`]),
+  ];
   return {
-    entries,
-    problems: [
-      ...read.filter((item): item is string => typeof item === "string"),
-      ...unknown,
-      ...ungrounded(entries),
-      ...countProblems(vulnerabilities, counts),
-    ],
+    advisories: entries.flatMap(({ advisories }) => advisories),
+    problems: problems.map((problem) => `${label} fails, since ${problem}`),
   };
 }
 
-function exceptionFor(finding: Finding, inputs: AuditInputs): AuditException | undefined {
-  return inputs.exceptions.find(
-    (exception) =>
-      exception.id === finding.id &&
-      exception.package === finding.name &&
-      exception.version === finding.version &&
-      !finding.runtime &&
-      inputs.now >= Date.parse(exception.added) &&
-      inputs.now < Date.parse(exception.expires) &&
-      inputs.newest.get(finding.name) === finding.version,
-  );
+function isNewer(version: string): boolean {
+  const parts = version.split(/[.+-]/u).slice(0, 3).map(Number);
+  const newest = EXCUSED.newestVersion.split(".").map(Number);
+  const index = newest.findIndex((part, at) => parts[at] !== part);
+  return index !== -1 && Number(parts[index]) > Number(newest[index]);
 }
 
-export function verify(inputs: AuditInputs): AuditVerdict {
-  const exceptionProblems = inputs.exceptions.flatMap((exception) => exceptionProblem(exception) ?? []);
-  const { entries, problems } = readReport(inputs);
-  const findings = entries.flatMap(({ findings: own }) => own);
-  const expectedStatus = entries.length > 0 ? 1 : 0;
-  const statusProblems =
-    inputs.auditStatus === expectedStatus
-      ? []
-      : [`npm audit exited ${String(inputs.auditStatus)} for a report of ${String(entries.length)} entries`];
-  const judged = findings.map((finding) => {
-    const named = `${finding.id} (${finding.severity}) on ${finding.name} ${finding.version}`;
-    const exception = exceptionProblems.length === 0 ? exceptionFor(finding, inputs) : undefined;
-    return exception === undefined
-      ? { failed: true, line: `${named} fails. Upgrade, override or replace that package.` }
-      : {
-          failed: false,
-          line: `${named} passes until ${exception.expires} or a newer ${finding.name} release, since ${exception.exposure} ${exception.evidence}`,
-        };
-  });
-  const unread = [...exceptionProblems, ...statusProblems, ...problems].map((problem) => ({ failed: true, line: `The audit fails, since ${problem}.` }));
-  const lines = [...unread, ...judged];
-  return { failures: lines.filter(({ failed }) => failed).length, lines: lines.map(({ line }) => line) };
+function excuseProblems(now: number, versions: unknown): readonly string[] {
+  const named = `${EXCUSED.advisory} on ${EXCUSED.package}`;
+  if (now < Date.parse(EXCUSED.added) || now >= Date.parse(EXCUSED.expires)) {
+    return [`${named} is outside its excuse, from ${EXCUSED.added} to ${EXCUSED.expires}`];
+  }
+  if (!isList(versions) || !versions.includes(EXCUSED.newestVersion)) {
+    return [`npm listed no ${EXCUSED.package} versions, so ${named} can't be excused`];
+  }
+  const newer = versions.filter((version) => isNewer(String(version)));
+  return newer.length === 0 ? [] : [`${named} needs review, since npm now has ${EXCUSED.package} ${newer.map(String).join(", ")}`];
+}
+
+export function verify({ full, now, runtime, versions }: AuditInputs): readonly string[] {
+  const all = readRun("the full audit", full);
+  const shipped = readRun("the runtime audit", runtime);
+  const isExcused = ({ id, name }: Advisory): boolean => id === EXCUSED.advisory && name === EXCUSED.package;
+  return [
+    ...all.problems,
+    ...shipped.problems,
+    ...shipped.advisories.map(({ id, name }) => `${id} on ${name} reaches runtime dependencies, which no excuse covers`),
+    ...all.advisories.filter((advisory) => !isExcused(advisory)).map(({ id, name }) => `${id} on ${name} fails. Upgrade, override or replace that package`),
+    ...(all.advisories.some((advisory) => isExcused(advisory)) ? excuseProblems(now, versions) : []),
+  ];
 }
