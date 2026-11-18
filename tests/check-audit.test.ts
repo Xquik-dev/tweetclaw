@@ -40,8 +40,12 @@ const REAL_CYCLE: readonly Entry[] = [
 ];
 const HONO: Entry = { name: 'hono', via: [advisory('hono', HONO_URL)] };
 
+const lockOf = (packages: Readonly<Record<string, unknown>>): unknown => ({ packages });
+const LODASH_URL = 'https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz';
+
 const inputs = (overrides: Partial<AuditInputs> = {}): AuditInputs => ({
   full: runOf(REAL_CYCLE),
+  lock: lockOf({}),
   now: DURING,
   runtime: runOf([]),
   versions: ['4.0.6', '4.0.7'],
@@ -123,6 +127,37 @@ describe('verify', () => {
   });
 });
 
+describe('verify, on the lockfile', () => {
+  it('passes every entry of the committed lockfile', () => {
+    expect(verify(inputs({ lock: JSON.parse(readFileSync('package-lock.json', 'utf8')) }))).toStrictEqual([]);
+  });
+
+  it('fails a lockfile that names a clean version for a vulnerable tarball', () => {
+    const lock = lockOf({ 'node_modules/lodash': { resolved: LODASH_URL, version: '4.18.1' } });
+    expect(verify(inputs({ lock }))).toHaveLength(1);
+  });
+
+  it('fails an entry that resolves outside the public registry', () => {
+    const lock = lockOf({ 'node_modules/lodash': { resolved: 'https://example.com/lodash-4.17.20.tgz', version: '4.17.20' } });
+    expect(verify(inputs({ lock }))).toHaveLength(1);
+  });
+
+  it('passes scoped, aliased, bundled and linked entries that agree', () => {
+    const lock = lockOf({
+      '': { name: 'tweetclaw' },
+      'node_modules/@scope/tool': { resolved: 'https://registry.npmjs.org/@scope/tool/-/tool-1.0.0.tgz', version: '1.0.0' },
+      'node_modules/alias': { name: 'lodash', resolved: LODASH_URL, version: '4.17.20' },
+      'node_modules/bundled': { inBundle: true, version: '1.0.0' },
+      'node_modules/linked': { link: true, resolved: 'packages/linked' },
+    });
+    expect(verify(inputs({ lock }))).toStrictEqual([]);
+  });
+
+  it('fails a lockfile it cannot read', () => {
+    expect(verify(inputs({ lock: undefined }))).toHaveLength(1);
+  });
+});
+
 describe('the excuse', () => {
   it('names 1 advisory for at most 14 days and links its evidence', () => {
     const days = (Date.parse(EXCUSED.expires) - Date.parse(EXCUSED.added)) / DAY_MS;
@@ -153,6 +188,8 @@ describe('verify, over any set of advisories', () => {
   });
 });
 
+const WHOLE_TREE = '--include=optional --include=peer --workspaces=null';
+const SOURCE = '--registry=https://registry.npmjs.org/ --offline=false';
 const FAKE_FOLDER = '.tmp/check-audit-test';
 const FAKE_NPM = '.tmp/check-audit-test/npm.mjs';
 const FAKE_ARGS = '.tmp/check-audit-test/args.log';
@@ -180,12 +217,12 @@ function runScript(): Readonly<{ args: readonly string[]; status: number | null 
 }
 
 describe('check-audit', () => {
-  it('audits online with and without dev dependencies and fails once npm has a newer picomatch', () => {
+  it('audits the whole tree on the public registry and fails once npm has a newer picomatch', () => {
     expect(runScript()).toStrictEqual({
       args: [
-        'audit --json --include=dev --offline=false',
-        'audit --json --omit=dev --offline=false',
-        'view picomatch versions --json --offline=false',
+        `audit --json --include=dev ${WHOLE_TREE} ${SOURCE}`,
+        `audit --json --omit=dev ${WHOLE_TREE} ${SOURCE}`,
+        `view picomatch versions --json ${SOURCE}`,
       ],
       status: 1,
     });

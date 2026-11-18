@@ -12,6 +12,8 @@ export const EXCUSED = {
   package: "picomatch",
 } as const;
 
+export const REGISTRY = "https://registry.npmjs.org/";
+
 export interface AuditRun {
   readonly report: unknown;
   readonly status: number | null;
@@ -19,6 +21,7 @@ export interface AuditRun {
 
 export interface AuditInputs {
   readonly full: AuditRun;
+  readonly lock: unknown;
   readonly now: number;
   readonly runtime: AuditRun;
   readonly versions: unknown;
@@ -120,11 +123,26 @@ function excuseProblems(now: number, versions: unknown): readonly string[] {
   return newer.length === 0 ? [] : [`${named} needs review, since npm now has ${EXCUSED.package} ${newer.map(String).join(", ")}`];
 }
 
-export function verify({ full, now, runtime, versions }: AuditInputs): readonly string[] {
+function lockEntryProblem(node: string, value: unknown): readonly string[] {
+  if (!node.includes("node_modules/") || !isRecord(value) || value["link"] === true || value["inBundle"] === true) return [];
+  const name = typeof value["name"] === "string" ? value["name"] : String(node.split("node_modules/").at(-1));
+  const version = String(value["version"]);
+  const expected = `${REGISTRY}${name}/-/${String(name.split("/").at(-1))}-${version}.tgz`;
+  return value["resolved"] === expected ? [] : [`package-lock.json entry ${node} says ${version} but resolves to ${String(value["resolved"])}`];
+}
+
+function lockProblems(lock: unknown): readonly string[] {
+  const packages = isRecord(lock) ? lock["packages"] : undefined;
+  if (!isRecord(packages)) return ["package-lock.json holds no packages"];
+  return Object.entries(packages).flatMap(([node, value]) => lockEntryProblem(node, value));
+}
+
+export function verify({ full, lock, now, runtime, versions }: AuditInputs): readonly string[] {
   const all = readRun("the full audit", full);
   const shipped = readRun("the runtime audit", runtime);
   const isExcused = ({ id, name }: Advisory): boolean => id === EXCUSED.advisory && name === EXCUSED.package;
   return [
+    ...lockProblems(lock),
     ...all.problems,
     ...shipped.problems,
     ...shipped.advisories.map(({ id, name }) => `${id} on ${name} reaches runtime dependencies, which no excuse covers`),
