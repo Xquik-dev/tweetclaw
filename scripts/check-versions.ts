@@ -156,6 +156,9 @@ if (!checkAll.includes("npm run check-reuse")) {
 if (!checkAll.includes("npm run check-contract-drift")) {
   drifts.push("  package.json: check:all must include the catalog drift check");
 }
+if (!checkAll.includes("npm run check-audit")) {
+  drifts.push("  package.json: check:all must include the dependency audit check");
+}
 
 const requiredCompilerOptions = {
   allowUnreachableCode: false,
