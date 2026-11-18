@@ -235,14 +235,14 @@ See [Billing & Pricing](https://docs.xquik.com/guides/billing) for current plans
 ## API coverage
 
 <!-- api-coverage:start (npm run generate-api-contract writes this block) -->
-The live [Xquik OpenAPI spec](https://xquik.com/openapi.json) lists 223 operations. An operation is 1 method on 1 path.
+The live [Xquik OpenAPI spec](https://xquik.com/openapi.json) lists 224 operations. An operation is 1 method on 1 path.
 
-Agents can call 192 of them through `tweetclaw`. TweetClaw leaves out the other 31.
+Agents can call 192 of them through `tweetclaw`. TweetClaw leaves out the other 32.
 
 | Left out | Operations |
 | --- | --- |
 | API keys, checkout & X account connection, which stay in the dashboard | 13 |
-| X account connection, guest wallet checkout & support file downloads | 10 |
+| X account connection, guest wallet checkout & support file downloads | 11 |
 | Documentation search outside `/api/v1` | 8 |
 
 21 of the 192 accept MPP. Run `explore` with `mpp` set to `true` to list them.
