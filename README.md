@@ -56,12 +56,12 @@ Next, read the [TweetClaw guide](https://docs.xquik.com/guides/tweetclaw) or the
 [![tweetclaw Skill installs on skills.sh](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskills-tweetclaw.json)](https://skills.sh/xquik-dev/tweetclaw)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13730/badge)](https://www.bestpractices.dev/projects/13730)
 
-- 12,000+ downloads of @xquik/tweetclaw on npm ([source](https://www.npmjs.com/package/@xquik/tweetclaw)) <!-- trust:npm-xquik-tweetclaw 12641 -->
-- 2,900+ downloads of tweetclaw on ClawHub ([source](https://clawhub.ai/xquik/skills/tweetclaw)) <!-- trust:clawhub-tweetclaw 2958 -->
-- 83 installs of this repo's Skills on skills.sh ([source](https://skills.sh/xquik-dev/tweetclaw)) <!-- trust:skills-tweetclaw 83 -->
+- 13,000+ downloads of @xquik/tweetclaw on npm ([source](https://www.npmjs.com/package/@xquik/tweetclaw)) <!-- trust:npm-xquik-tweetclaw 13043 -->
+- 3,000+ downloads of tweetclaw on ClawHub ([source](https://clawhub.ai/xquik/skills/tweetclaw)) <!-- trust:clawhub-tweetclaw 3015 -->
+- 87 installs of this repo's Skills on skills.sh ([source](https://skills.sh/xquik-dev/tweetclaw)) <!-- trust:skills-tweetclaw 87 -->
 - This repo meets the OpenSSF Best Practices passing criteria ([source](https://www.bestpractices.dev/projects/13730)) <!-- trust:openssf-tweetclaw 1 -->
 
-Checked on 2026-11-16. See each number with its date & source on [xquik.com/benchmarks](https://xquik.com/benchmarks) or as [JSON](https://xquik.com/trust.json).
+Checked on 2026-11-23. See each number with its date & source on [xquik.com/benchmarks](https://xquik.com/benchmarks) or as [JSON](https://xquik.com/trust.json).
 
 <!-- trust:end -->
 
