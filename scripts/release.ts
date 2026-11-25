@@ -21,8 +21,11 @@ const skillSlug = "tweetclaw";
 const legalNotice =
   'Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.';
 const usage = "Run node scripts/release.ts [--dry-run] [--only npm|clawhub].";
+const name = "@xquik/tweetclaw";
 const packageJson: unknown = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-const name = packageString(packageJson, "name");
+if (packageString(packageJson, "name") !== name) {
+  stop(`package.json names another package than ${name}. Fix its name field, then rerun.`);
+}
 const version = packageString(packageJson, "version");
 const tag = `v${version}`;
 const { dryRun, releasesClawhub, releasesNpm } = readOptions();
